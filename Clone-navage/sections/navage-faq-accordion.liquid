@@ -1,173 +1,199 @@
 {% comment %}
   Clone-navage/sections/navage-faq-accordion.liquid
-  Interactive Accordion with authentic Naväge Clinical & Consumer FAQs
+  1:1 Frequently Asked Questions Accordion from navage.com
 {% endcomment %}
 
 <div id="SectionId-{{ section.id }}" class="navage-faq-section">
   <div class="navage-faq-container">
-    <div class="navage-section-header">
-      <span class="navage-section-tag">FREQUENTLY ASKED QUESTIONS</span>
-      <h2 class="navage-section-heading">Got Questions? We’ve Got Answers.</h2>
-      <p class="navage-section-subheading">
-        Everything you need to know about using Naväge safely, effectively, and effortlessly.
-      </p>
+    <div class="navage-faq-header">
+      <h2 class="navage-faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+      <p class="navage-faq-subtitle">Everything you need to know about Naväge and how it works.</p>
     </div>
 
     <div class="navage-faq-list">
-      <!-- FAQ 1 -->
-      <details class="navage-faq-item" open>
-        <summary class="navage-faq-question">
-          <span>What kind of water should I use with Naväge?</span>
-          <span class="navage-faq-icon">+</span>
-        </summary>
+      <div class="navage-faq-item active">
+        <button type="button" class="navage-faq-question">
+          <span>How is Naväge different from a neti pot?</span>
+          <span class="navage-faq-toggle">−</span>
+        </button>
         <div class="navage-faq-answer">
           <p>
-            For your safety, always use distilled, micro-filtered (0.2 micron), commercially bottled, or previously boiled water that has cooled to lukewarm temperature. Never use tap water directly from the sink.
+            Naväge is the world's only nasal irrigator with gentle powered suction. Unlike neti pots and squeeze bottles that push fluids into your sinuses with gravity or pressure (often leading to ear pain or choking sensations), Naväge creates a comfortable closed loop: clean saline flows in through one nostril and gentle suction pulls it out through the other, completely flushing allergens, mucus, and irritants in 30 seconds without the mess.
           </p>
         </div>
-      </details>
+      </div>
 
-      <!-- FAQ 2 -->
-      <details class="navage-faq-item">
-        <summary class="navage-faq-question">
-          <span>How often can I use Naväge?</span>
-          <span class="navage-faq-icon">+</span>
-        </summary>
+      <div class="navage-faq-item">
+        <button type="button" class="navage-faq-question">
+          <span>How does Naväge work?</span>
+          <span class="navage-faq-toggle">+</span>
+        </button>
         <div class="navage-faq-answer">
           <p>
-            Naväge is 100% all-natural and drug-free! Most users find twice a day (morning and before bed) provides optimal sinus relief, but you can use it whenever you feel congested, exposed to allergens, or need a refreshing cleanse.
+            Naväge uses powered suction to pull saline from the upper tank, through your nasal cavity, and into the lower tank. You simply fill the upper tank with warm distilled water, insert a Naväge SaltPod capsule, place the nose pillows against your nostrils, and press the power button. In 30 seconds, your sinuses feel completely clear and refreshed.
           </p>
         </div>
-      </details>
+      </div>
 
-      <!-- FAQ 3 -->
-      <details class="navage-faq-item">
-        <summary class="navage-faq-question">
-          <span>How does the 30-Day Zero-Risk Trial work?</span>
-          <span class="navage-faq-icon">+</span>
-        </summary>
+      <div class="navage-faq-item">
+        <button type="button" class="navage-faq-question">
+          <span>What are SaltPods?</span>
+          <span class="navage-faq-toggle">+</span>
+        </button>
         <div class="navage-faq-answer">
           <p>
-            Try Naväge for 30 days from delivery. If you are not completely satisfied with your clear breathing and sinus relief, simply contact our customer support team for a full refund of your purchase price.
+            SaltPods are precisely pre-measured single-dose capsules containing pure pharmaceutical-grade sodium chloride and purified water concentrate. When mixed with water in the upper tank, it creates perfectly isotonic saline that matches your body's natural chemistry to prevent any burning or stinging.
           </p>
         </div>
-      </details>
+      </div>
 
-      <!-- FAQ 4 -->
-      <details class="navage-faq-item">
-        <summary class="navage-faq-question">
-          <span>Can I purchase Naväge with my HSA or FSA card?</span>
-          <span class="navage-faq-icon">+</span>
-        </summary>
+      <div class="navage-faq-item">
+        <button type="button" class="navage-faq-question">
+          <span>Is nasal irrigation safe to use every day?</span>
+          <span class="navage-faq-toggle">+</span>
+        </button>
         <div class="navage-faq-answer">
           <p>
-            Yes! Naväge Nose Cleaners and SaltPods are classified as eligible medical expenses under IRS guidelines. You can use your HSA or FSA debit card directly at checkout or submit your receipt for reimbursement.
+            Yes! In fact, clinical research shows daily nasal irrigation is safe, natural, and highly effective for chronic allergies, sinusitis, cold and flu prevention, and improving breathing quality without drugs or side effects.
           </p>
         </div>
-      </details>
+      </div>
 
-      <!-- FAQ 5 -->
-      <details class="navage-faq-item">
-        <summary class="navage-faq-question">
-          <span>Why do I need authentic Naväge SaltPod capsules?</span>
-          <span class="navage-faq-icon">+</span>
-        </summary>
+      <div class="navage-faq-item">
+        <button type="button" class="navage-faq-question">
+          <span>Is Naväge good for allergies and sinus pressure?</span>
+          <span class="navage-faq-toggle">+</span>
+        </button>
         <div class="navage-faq-answer">
           <p>
-            Naväge SaltPods are pre-measured pharmaceutical-grade saline concentrate designed to mix instantly with warm water in the upper tank to produce an isotonic saline solution (0.9% w/v). It prevents burning or stinging from improper salt ratios.
+            Absolutely. Naväge flushes away airborne pollen, dust, pet dander, viruses, and thick mucus trapped in nasal cilia, providing fast, natural relief from congestion and facial sinus pressure.
           </p>
         </div>
-      </details>
+      </div>
+
+      <div class="navage-faq-item">
+        <button type="button" class="navage-faq-question">
+          <span>Is Naväge covered by FSA or HSA?</span>
+          <span class="navage-faq-toggle">+</span>
+        </button>
+        <div class="navage-faq-answer">
+          <p>
+            Yes, Naväge Nose Cleaners and SaltPod refills are eligible medical expenses under Flexible Spending Accounts (FSA) and Health Savings Accounts (HSA). You can use your FSA/HSA debit card directly at checkout.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
   #SectionId-{{ section.id }} {
-    padding: 80px 24px;
     background-color: #ffffff;
+    padding: 70px 24px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   #SectionId-{{ section.id }} .navage-faq-container {
-    max-width: 900px;
+    max-width: 860px;
     margin: 0 auto;
   }
-  #SectionId-{{ section.id }} .navage-section-header {
+  #SectionId-{{ section.id }} .navage-faq-header {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 45px;
   }
-  #SectionId-{{ section.id }} .navage-section-tag {
-    color: #00A3E0;
-    font-size: 12px;
+  #SectionId-{{ section.id }} .navage-faq-title {
+    font-size: 38px;
     font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 12px;
+    color: #0b4a82;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
   }
-  #SectionId-{{ section.id }} .navage-section-heading {
-    color: #003B71;
-    font-size: 36px;
-    font-weight: 900;
-    margin: 0 0 12px;
-  }
-  #SectionId-{{ section.id }} .navage-section-subheading {
-    color: #556B7D;
+  #SectionId-{{ section.id }} .navage-faq-subtitle {
     font-size: 15px;
-    line-height: 1.6;
+    color: #00A3E0;
+    font-weight: 600;
     margin: 0;
   }
   #SectionId-{{ section.id }} .navage-faq-list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
   #SectionId-{{ section.id }} .navage-faq-item {
-    border: 1px solid #E1EDF2;
+    border: 1px solid #dce8f3;
     border-radius: 12px;
-    background: #F8FBFC;
     overflow: hidden;
-    transition: border-color 0.2s, background-color 0.2s;
+    transition: all 0.25s ease;
   }
-  #SectionId-{{ section.id }} .navage-faq-item[open] {
-    background: #ffffff;
+  #SectionId-{{ section.id }} .navage-faq-item.active {
     border-color: #00A3E0;
-    box-shadow: 0 4px 16px rgba(0, 163, 224, 0.08);
+    box-shadow: 0 4px 18px rgba(0, 163, 224, 0.08);
   }
   #SectionId-{{ section.id }} .navage-faq-question {
+    width: 100%;
     padding: 20px 24px;
-    font-size: 17px;
-    font-weight: 700;
-    color: #003B71;
-    cursor: pointer;
+    background: #ffffff;
+    border: none;
+    text-align: left;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    list-style: none;
-    user-select: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0b4a82;
+    transition: color 0.2s ease;
   }
-  #SectionId-{{ section.id }} .navage-faq-question::-webkit-details-marker {
-    display: none;
-  }
-  #SectionId-{{ section.id }} .navage-faq-icon {
-    font-size: 24px;
+  #SectionId-{{ section.id }} .navage-faq-question:hover {
     color: #00A3E0;
-    font-weight: 300;
-    transition: transform 0.2s;
   }
-  #SectionId-{{ section.id }} .navage-faq-item[open] .navage-faq-icon {
-    transform: rotate(45deg);
+  #SectionId-{{ section.id }} .navage-faq-toggle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #00A3E0;
+    margin-left: 16px;
+    flex-shrink: 0;
+    line-height: 1;
   }
   #SectionId-{{ section.id }} .navage-faq-answer {
-    padding: 0 24px 20px;
-    color: #556B7D;
+    display: none;
+    padding: 0 24px 22px;
     font-size: 15px;
     line-height: 1.6;
+    color: #4a5d6e;
+    border-top: 1px solid #f1f5f9;
+  }
+  #SectionId-{{ section.id }} .navage-faq-item.active .navage-faq-answer {
+    display: block;
   }
   #SectionId-{{ section.id }} .navage-faq-answer p {
-    margin: 0;
+    margin: 16px 0 0 0;
   }
 </style>
+
+<script>
+  (function() {
+    const section = document.getElementById('SectionId-{{ section.id }}');
+    if (!section) return;
+    const items = section.querySelectorAll('.navage-faq-item');
+
+    items.forEach(item => {
+      const btn = item.querySelector('.navage-faq-question');
+      const toggle = item.querySelector('.navage-faq-toggle');
+      btn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        items.forEach(i => {
+          i.classList.remove('active');
+          const t = i.querySelector('.navage-faq-toggle');
+          if (t) t.textContent = '+';
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          if (toggle) toggle.textContent = '−';
+        }
+      });
+    });
+  })();
+</script>
 
 {% schema %}
 {

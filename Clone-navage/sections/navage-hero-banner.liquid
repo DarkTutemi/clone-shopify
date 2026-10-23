@@ -1,59 +1,32 @@
 {% comment %}
   Clone-navage/sections/navage-hero-banner.liquid
-  1:1 Naväge Hero Banner with headline, subcopy, trust stats, and dual CTAs
+  1:1 Full-Fidelity Hero with original MP4 Background Video, Centered Headline & Dual Pill CTAs
 {% endcomment %}
 
-<div id="SectionId-{{ section.id }}" class="navage-hero-banner">
-  <div class="navage-hero-container">
-    <div class="navage-hero-content">
-      <div class="navage-hero-pill">
-        <span class="navage-pill-dot"></span> THE WORLD'S ONLY POWERED NASAL IRRIGATION SYSTEM
-      </div>
-      <h1 class="navage-hero-title">
-        Nasal Irrigation,<br>
-        <span class="navage-highlight">Reinvented.</span>
-      </h1>
+<div id="SectionId-{{ section.id }}" class="navage-hero-section">
+  <div class="navage-hero-video-wrapper">
+    <video
+      class="navage-hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="https://navage.com/cdn/shop/files/Navage_Advanced_B__Main_Update_V2.jpg?v=1788963959&width=1600"
+    >
+      <source src="https://cdn.shopify.com/videos/c/o/v/5034861873ab40fba0b18bf807e95606.mp4" type="video/mp4">
+    </video>
+    <div class="navage-hero-overlay"></div>
+  </div>
+
+  <div class="navage-hero-content-wrapper">
+    <div class="navage-hero-inner">
+      <h1 class="navage-hero-title">Nasal Irrigation, Reinvented.</h1>
       <p class="navage-hero-subtitle">
-        Uses gentle suction to flush out allergens, mucus, bacteria, and viruses. Feel the clean in as little as 30 seconds.
+        9 out of 10 users say Naväge works better than anything they've tried.*
       </p>
-
       <div class="navage-hero-actions">
-        <a href="/products/navage-advanced-nose-cleaner" class="navage-hero-btn-primary">
-          SHOP ADVANCED CLEANER
-        </a>
-        <a href="/collections/products-nose-cleaner-bundles" class="navage-hero-btn-secondary">
-          EXPLORE BUNDLES
-        </a>
-      </div>
-
-      <!-- Trust bar beneath CTAs -->
-      <div class="navage-hero-trust-bar">
-        <div class="navage-trust-item">
-          <span class="navage-trust-icon">✓</span>
-          <span>9 out of 10 users say Naväge works better*</span>
-        </div>
-        <div class="navage-trust-item">
-          <span class="navage-trust-icon">✓</span>
-          <span>30-Day Zero-Risk Trial</span>
-        </div>
-        <div class="navage-trust-item">
-          <span class="navage-trust-icon">✓</span>
-          <span>HSA / FSA Eligible</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="navage-hero-media">
-      <div class="navage-media-wrapper">
-        <img src="//navage.com/cdn/shop/files/Gentle_Single_Powered_Flow.png?v=1777048833&width=800" 
-             alt="Naväge Powered Suction Flow" 
-             class="navage-hero-main-img" 
-             width="600" 
-             height="600">
-        <div class="navage-floating-badge">
-          <span class="navage-badge-number">99%</span>
-          <span class="navage-badge-label">VIRUS & ALLERGEN<br>REMOVAL</span>
-        </div>
+        <a href="/products/navage-advanced-nose-cleaner" class="navage-btn navage-btn-primary">Shop Now</a>
+        <a href="/pages/how-does-navage-work" class="navage-btn navage-btn-secondary">Why Naväge</a>
       </div>
     </div>
   </div>
@@ -61,189 +34,158 @@
 
 <style>
   #SectionId-{{ section.id }} {
-    background: linear-gradient(135deg, #001A33 0%, #003B71 60%, #004D94 100%);
-    color: #ffffff;
-    padding: 80px 24px 100px;
     position: relative;
+    width: 100%;
+    min-height: 640px;
+    height: 75vh;
+    max-height: 850px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+    background-color: #03254c;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
-  #SectionId-{{ section.id }} .navage-hero-container {
-    max-width: 1280px;
+
+  #SectionId-{{ section.id }} .navage-hero-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  #SectionId-{{ section.id }} .navage-hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  #SectionId-{{ section.id }} .navage-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(3, 37, 76, 0.45) 0%, rgba(3, 37, 76, 0.75) 100%);
+    z-index: 2;
+  }
+
+  #SectionId-{{ section.id }} .navage-hero-content-wrapper {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 24px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 48px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  #SectionId-{{ section.id }} .navage-hero-inner {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 18px;
   }
-  #SectionId-{{ section.id }} .navage-hero-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(0, 163, 224, 0.2);
-    border: 1px solid rgba(0, 163, 224, 0.4);
-    color: #6CD2FF;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    margin-bottom: 24px;
-    text-transform: uppercase;
-  }
-  #SectionId-{{ section.id }} .navage-pill-dot {
-    width: 6px;
-    height: 6px;
-    background: #00A3E0;
-    border-radius: 50%;
-  }
+
   #SectionId-{{ section.id }} .navage-hero-title {
-    font-size: 56px;
+    font-size: 58px;
+    font-weight: 800;
     line-height: 1.1;
-    font-weight: 900;
-    margin: 0 0 20px;
-    letter-spacing: -1px;
-    color: #ffffff !important;
+    letter-spacing: -1.2px;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   }
-  #SectionId-{{ section.id }} .navage-highlight {
-    color: #00A3E0;
-  }
+
   #SectionId-{{ section.id }} .navage-hero-subtitle {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #D6E4F0;
-    max-width: 540px;
-    margin: 0 0 36px;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #f0f7ff;
+    max-width: 780px;
+    margin: 0 auto;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   }
+
   #SectionId-{{ section.id }} .navage-hero-actions {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 14px;
   }
-  #SectionId-{{ section.id }} .navage-hero-btn-primary {
-    background-color: #00A3E0;
-    color: #ffffff;
+
+  #SectionId-{{ section.id }} .navage-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 38px;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 9999px;
     text-decoration: none;
-    padding: 16px 36px;
-    border-radius: 30px;
-    font-weight: 800;
-    font-size: 15px;
-    letter-spacing: 0.5px;
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 0 6px 20px rgba(0, 163, 224, 0.4);
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    letter-spacing: 0.2px;
   }
-  #SectionId-{{ section.id }} .navage-hero-btn-primary:hover {
-    background-color: #0087BA;
+
+  #SectionId-{{ section.id }} .navage-btn-primary {
+    background-color: #ffffff;
+    color: #002b54;
+    border: 2px solid #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  #SectionId-{{ section.id }} .navage-btn-primary:hover {
+    background-color: #f0f7ff;
     transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   }
-  #SectionId-{{ section.id }} .navage-hero-btn-secondary {
+
+  #SectionId-{{ section.id }} .navage-btn-secondary {
     background-color: transparent;
     color: #ffffff;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    text-decoration: none;
-    padding: 14px 32px;
-    border-radius: 30px;
-    font-weight: 800;
-    font-size: 15px;
-    letter-spacing: 0.5px;
-    transition: border-color 0.2s, background-color 0.2s;
+    border: 2px solid #ffffff;
   }
-  #SectionId-{{ section.id }} .navage-hero-btn-secondary:hover {
-    border-color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
+
+  #SectionId-{{ section.id }} .navage-btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
   }
-  #SectionId-{{ section.id }} .navage-hero-trust-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding-top: 24px;
-    font-size: 13px;
-    color: #B8D5E5;
-  }
-  #SectionId-{{ section.id }} .navage-trust-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  #SectionId-{{ section.id }} .navage-trust-icon {
-    color: #00A3E0;
-    font-weight: 900;
-  }
-  #SectionId-{{ section.id }} .navage-hero-media {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #SectionId-{{ section.id }} .navage-media-wrapper {
-    position: relative;
-  }
-  #SectionId-{{ section.id }} .navage-hero-main-img {
-    width: 100%;
-    max-width: 520px;
-    height: auto;
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));
-    animation: navageFloat 4s ease-in-out infinite;
-  }
-  @keyframes navageFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-  #SectionId-{{ section.id }} .navage-floating-badge {
-    position: absolute;
-    bottom: 20px;
-    left: -20px;
-    background: #ffffff;
-    color: #003B71;
-    border-radius: 16px;
-    padding: 16px 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  #SectionId-{{ section.id }} .navage-badge-number {
-    font-size: 32px;
-    font-weight: 900;
-    color: #00A3E0;
-    line-height: 1;
-  }
-  #SectionId-{{ section.id }} .navage-badge-label {
-    font-size: 10px;
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
-  }
-  @media (max-width: 992px) {
-    #SectionId-{{ section.id }} .navage-hero-container {
-      grid-template-columns: 1fr;
-      text-align: center;
+
+  @media (max-width: 768px) {
+    #SectionId-{{ section.id }} {
+      min-height: 520px;
+      height: 70vh;
     }
     #SectionId-{{ section.id }} .navage-hero-title {
-      font-size: 40px;
+      font-size: 38px;
     }
     #SectionId-{{ section.id }} .navage-hero-subtitle {
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 18px;
     }
     #SectionId-{{ section.id }} .navage-hero-actions {
-      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      gap: 12px;
     }
-    #SectionId-{{ section.id }} .navage-hero-trust-bar {
-      justify-content: center;
-    }
-    #SectionId-{{ section.id }} .navage-floating-badge {
-      left: 10px;
-      bottom: 10px;
+    #SectionId-{{ section.id }} .navage-btn {
+      width: 100%;
+      max-width: 300px;
+      padding: 13px 24px;
+      font-size: 16px;
     }
   }
 </style>
 
 {% schema %}
 {
-  "name": "Navage Hero Banner",
+  "name": "Navage Hero Video Banner",
   "settings": []
 }
 {% endschema %}

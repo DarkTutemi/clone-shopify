@@ -8,8 +8,24 @@
       "type": "navage-trust-badges",
       "settings": {}
     },
-    "navage_bundles": {
-      "type": "navage-bundle-showcase",
+    "navage_symptoms": {
+      "type": "navage-symptoms-relief",
+      "settings": {}
+    },
+    "navage_categories": {
+      "type": "navage-category-rail",
+      "settings": {}
+    },
+    "navage_doctor": {
+      "type": "navage-doctor-spotlight",
+      "settings": {}
+    },
+    "navage_before_after": {
+      "type": "navage-before-after",
+      "settings": {}
+    },
+    "navage_brooke": {
+      "type": "navage-brooke-burke",
       "settings": {}
     },
     "navage_how_it_works": {
@@ -20,8 +36,16 @@
       "type": "navage-comparison-table",
       "settings": {}
     },
-    "navage_doctor": {
-      "type": "navage-doctor-spotlight",
+    "navage_bundles": {
+      "type": "navage-bundle-showcase",
+      "settings": {}
+    },
+    "navage_reviews": {
+      "type": "navage-reviews-slider",
+      "settings": {}
+    },
+    "navage_commitment": {
+      "type": "navage-commitment",
       "settings": {}
     },
     "navage_faq": {
@@ -32,10 +56,16 @@
   "order": [
     "navage_hero",
     "navage_trust",
-    "navage_bundles",
+    "navage_symptoms",
+    "navage_categories",
+    "navage_doctor",
+    "navage_before_after",
+    "navage_brooke",
     "navage_how_it_works",
     "navage_comparison",
-    "navage_doctor",
+    "navage_bundles",
+    "navage_reviews",
+    "navage_commitment",
     "navage_faq"
   ]
 }

@@ -1,0 +1,121 @@
+{% comment %}
+  Clone-navage/sections/navage-before-after.liquid
+  1:1 Before/After Infographic: Naväge Cleans Where Sprays Can't Reach
+{% endcomment %}
+
+<div id="SectionId-{{ section.id }}" class="navage-ba-section">
+  <div class="navage-ba-container">
+    <div class="navage-ba-grid">
+      <div class="navage-ba-media">
+        <img
+          src="https://navage.com/cdn/shop/files/9-out-of-10-homepage_e48c518a-c3c3-47d2-8261-b387c384e4ae.png?v=1786028379&width=1200"
+          alt="9 out of 10 users say Naväge does a better job - Before and After"
+          loading="lazy"
+          class="navage-ba-img"
+        >
+      </div>
+
+      <div class="navage-ba-content">
+        <h2 class="navage-ba-title">Naväge Cleans Where Sprays Can’t Reach</h2>
+
+        <div class="navage-ba-block">
+          <h4 class="navage-ba-block-title">The Gunk Builds Up</h4>
+          <p class="navage-ba-block-text">
+            Mucus, bacteria, viruses, and germs accumulate in the nose causing congestion.
+          </p>
+        </div>
+
+        <div class="navage-ba-block">
+          <h4 class="navage-ba-block-title">Naväge Flushes it Out</h4>
+          <p class="navage-ba-block-text">
+            Powered suction provides breathable relief — in as little as 30 seconds.
+          </p>
+        </div>
+
+        <div class="navage-ba-footnote">
+          <p>Illustration of Removal</p>
+          <p>*Proprietary Consumer Study April 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #SectionId-{{ section.id }} {
+    background-color: #ffffff;
+    padding: 70px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  #SectionId-{{ section.id }} .navage-ba-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  #SectionId-{{ section.id }} .navage-ba-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  #SectionId-{{ section.id }} .navage-ba-media {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  #SectionId-{{ section.id }} .navage-ba-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+  }
+  #SectionId-{{ section.id }} .navage-ba-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  #SectionId-{{ section.id }} .navage-ba-title {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #0b4a82;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+  #SectionId-{{ section.id }} .navage-ba-block-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #0b4a82;
+    margin: 0 0 6px 0;
+  }
+  #SectionId-{{ section.id }} .navage-ba-block-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4a5d6e;
+    margin: 0;
+  }
+  #SectionId-{{ section.id }} .navage-ba-footnote {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #8c9ba5;
+    line-height: 1.4;
+  }
+  #SectionId-{{ section.id }} .navage-ba-footnote p {
+    margin: 2px 0;
+  }
+  @media (max-width: 900px) {
+    #SectionId-{{ section.id }} .navage-ba-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    #SectionId-{{ section.id }} .navage-ba-title {
+      font-size: 30px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Navage Before After",
+  "settings": []
+}
+{% endschema %}

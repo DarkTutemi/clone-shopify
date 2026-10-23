@@ -1,0 +1,152 @@
+{% comment %}
+  Clone-navage/sections/navage-brooke-burke.liquid
+  1:1 Brooke Burke Celebrity Quote & Video Section
+{% endcomment %}
+
+<div id="SectionId-{{ section.id }}" class="navage-brooke-section">
+  <div class="navage-brooke-container">
+    <div class="navage-brooke-grid">
+      <div class="navage-brooke-content">
+        <span class="navage-brooke-quote-mark">&ldquo;</span>
+        <h2 class="navage-brooke-quote-text">
+          In as little as 30 seconds, you can feel the difference.&rdquo;
+        </h2>
+        <div class="navage-brooke-author">
+          <h4 class="navage-brooke-name">BROOKE BURKE</h4>
+          <p class="navage-brooke-role">National Television Host &amp; Wellness Advocate</p>
+        </div>
+      </div>
+
+      <div class="navage-brooke-media">
+        <div class="navage-brooke-video-card">
+          <img
+            src="https://navage.com/cdn/shop/files/20260423_SVOLLAND_TRNDY_BROOKEHOME_2865_f.jpg?v=1780507694&width=1200"
+            alt="Brooke Burke with Naväge Nose Cleaner"
+            loading="lazy"
+            class="navage-brooke-poster"
+          >
+          <div class="navage-brooke-play-btn" aria-label="Play Video">
+            <svg viewBox="0 0 24 24" fill="#002244" width="28" height="28">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #SectionId-{{ section.id }} {
+    background: linear-gradient(135deg, #073b6c 0%, #0c568d 100%);
+    padding: 70px 24px;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 50px;
+    align-items: center;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-quote-mark {
+    font-size: 80px;
+    font-weight: 900;
+    color: #00A3E0;
+    line-height: 0.8;
+    margin-bottom: -10px;
+    display: inline-block;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-quote-text {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-author {
+    margin-top: 14px;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-name {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-role {
+    font-size: 14px;
+    color: #cfe2f7;
+    margin: 0;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-media {
+    width: 100%;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-video-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-poster {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-video-card:hover .navage-brooke-poster {
+    transform: scale(1.03);
+  }
+  #SectionId-{{ section.id }} .navage-brooke-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72px;
+    height: 72px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: all 0.25s ease;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-play-btn svg {
+    margin-left: 4px;
+  }
+  #SectionId-{{ section.id }} .navage-brooke-video-card:hover .navage-brooke-play-btn {
+    background-color: #ffffff;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  @media (max-width: 900px) {
+    #SectionId-{{ section.id }} .navage-brooke-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    #SectionId-{{ section.id }} .navage-brooke-quote-text {
+      font-size: 28px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Navage Brooke Burke Quote",
+  "settings": []
+}
+{% endschema %}

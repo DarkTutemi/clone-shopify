@@ -1,94 +1,165 @@
 {% comment %}
   Clone-navage/sections/navage-trust-badges.liquid
-  Official Naväge Medical & Clinical Proof Badges
+  1:1 Full-Fidelity 5 Circular Trust Badges from navage.com
 {% endcomment %}
 
-<div id="SectionId-{{ section.id }}" class="navage-trust-section">
-  <div class="navage-trust-grid">
-    <div class="navage-badge-card">
-      <div class="navage-badge-icon-wrap">
-        <span class="navage-badge-symbol">🩺</span>
+<div id="SectionId-{{ section.id }}" class="navage-trust-bar">
+  <div class="navage-trust-container">
+    <div class="navage-trust-grid">
+      <div class="navage-trust-item">
+        <div class="navage-trust-icon-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/Badge-12.png?v=1776613787&width=200"
+            alt="#1 Doctor Recommended"
+            loading="lazy"
+            class="navage-trust-icon-img"
+          >
+        </div>
+        <div class="navage-trust-text">
+          <h4 class="navage-trust-title">#1 Doctor Recommended¹</h4>
+          <p class="navage-trust-desc">Trusted by healthcare professionals</p>
+        </div>
       </div>
-      <h3 class="navage-badge-title">#1 Doctor Recommended¹</h3>
-      <p class="navage-badge-desc">Recommended by leading ENT physicians and allergy specialists nationwide.</p>
-    </div>
 
-    <div class="navage-badge-card">
-      <div class="navage-badge-icon-wrap">
-        <span class="navage-badge-symbol">🛡️</span>
+      <div class="navage-trust-item">
+        <div class="navage-trust-icon-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/virus.png?v=1777045434&width=200"
+            alt="99% Virus Removal"
+            loading="lazy"
+            class="navage-trust-icon-img"
+          >
+        </div>
+        <div class="navage-trust-text">
+          <h4 class="navage-trust-title">99% Virus Removal²</h4>
+          <p class="navage-trust-desc">Flushes out allergens &amp; irritants</p>
+        </div>
       </div>
-      <h3 class="navage-badge-title">99% Virus Removal²</h3>
-      <p class="navage-badge-desc">Flushes out trapped viruses, bacteria, pollen, and airborne contaminants.</p>
-    </div>
 
-    <div class="navage-badge-card">
-      <div class="navage-badge-icon-wrap">
-        <span class="navage-badge-symbol">⚡</span>
+      <div class="navage-trust-item">
+        <div class="navage-trust-icon-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/9_out_of_10_d5aa18b3-0f6a-4e2b-8c97-ddaea92db78c.png?v=1785351912&width=200"
+            alt="Naväge Outperforms Alternatives"
+            loading="lazy"
+            class="navage-trust-icon-img"
+          >
+        </div>
+        <div class="navage-trust-text">
+          <h4 class="navage-trust-title">Naväge Outperforms Alternatives.⁵</h4>
+          <p class="navage-trust-desc">9 out of 10 users say</p>
+        </div>
       </div>
-      <h3 class="navage-badge-title">Relief in 30 Seconds³</h3>
-      <p class="navage-badge-desc">Fast, all-natural saline suction flow provides instant decongestion.</p>
-    </div>
 
-    <div class="navage-badge-card">
-      <div class="navage-badge-icon-wrap">
-        <span class="navage-badge-symbol">💳</span>
+      <div class="navage-trust-item">
+        <div class="navage-trust-icon-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/Badge-11.png?v=1777318284&width=200"
+            alt="100k+ 5-Star Reviews"
+            loading="lazy"
+            class="navage-trust-icon-img"
+          >
+        </div>
+        <div class="navage-trust-text">
+          <h4 class="navage-trust-title">100k+ 5-Star Reviews</h4>
+          <p class="navage-trust-desc">Highly rated irrigation device</p>
+        </div>
       </div>
-      <h3 class="navage-badge-title">HSA / FSA Approved</h3>
-      <p class="navage-badge-desc">100% tax-free eligible medical device with health savings accounts.</p>
+
+      <div class="navage-trust-item">
+        <div class="navage-trust-icon-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/HSA.png?v=1777044949&width=200"
+            alt="HSA/FSA Approved"
+            loading="lazy"
+            class="navage-trust-icon-img"
+          >
+        </div>
+        <div class="navage-trust-text">
+          <h4 class="navage-trust-title">HSA/FSA Approved</h4>
+          <p class="navage-trust-desc">Eligible for reimbursement</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
   #SectionId-{{ section.id }} {
-    background-color: #F4F8FA;
-    border-bottom: 1px solid #E1E8ED;
-    padding: 48px 24px;
+    background-color: #0b4a82;
+    padding: 22px 16px;
+    color: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-  #SectionId-{{ section.id }} .navage-trust-grid {
-    max-width: 1280px;
+
+  #SectionId-{{ section.id }} .navage-trust-container {
+    max-width: 1360px;
     margin: 0 auto;
+  }
+
+  #SectionId-{{ section.id }} .navage-trust-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    align-items: center;
   }
-  #SectionId-{{ section.id }} .navage-badge-card {
-    background: #ffffff;
-    border: 1px solid #E1E8ED;
-    border-radius: 12px;
-    padding: 24px 20px;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+
+  #SectionId-{{ section.id }} .navage-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
-  #SectionId-{{ section.id }} .navage-badge-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 59, 113, 0.08);
+
+  #SectionId-{{ section.id }} .navage-trust-icon-wrap {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  #SectionId-{{ section.id }} .navage-badge-icon-wrap {
-    font-size: 32px;
-    margin-bottom: 12px;
+
+  #SectionId-{{ section.id }} .navage-trust-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
-  #SectionId-{{ section.id }} .navage-badge-title {
-    color: #003B71;
-    font-size: 17px;
-    font-weight: 800;
-    margin: 0 0 8px;
+
+  #SectionId-{{ section.id }} .navage-trust-text {
+    display: flex;
+    flex-direction: column;
   }
-  #SectionId-{{ section.id }} .navage-badge-desc {
-    color: #556B7D;
-    font-size: 13px;
-    line-height: 1.5;
+
+  #SectionId-{{ section.id }} .navage-trust-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 2px 0;
+    line-height: 1.25;
+  }
+
+  #SectionId-{{ section.id }} .navage-trust-desc {
+    font-size: 12px;
+    color: #cfe2f7;
     margin: 0;
+    line-height: 1.2;
   }
-  @media (max-width: 992px) {
+
+  @media (max-width: 1100px) {
     #SectionId-{{ section.id }} .navage-trust-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
   }
-  @media (max-width: 576px) {
+
+  @media (max-width: 768px) {
     #SectionId-{{ section.id }} .navage-trust-grid {
       grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    #SectionId-{{ section.id }} .navage-trust-item {
+      justify-content: flex-start;
     }
   }
 </style>

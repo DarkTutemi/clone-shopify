@@ -1,204 +1,171 @@
 {% comment %}
   Clone-navage/sections/navage-how-it-works.liquid
-  1:1 Naväge 3-Step "From Congested to Clear" Section
+  1:1 From Congested to Clear in 3 Simple Steps with Original Photos
 {% endcomment %}
 
-<div id="SectionId-{{ section.id }}" class="navage-how-it-works">
-  <div class="navage-section-container">
-    <div class="navage-section-header">
-      <span class="navage-section-tag">EFFORTLESS OPERATION</span>
-      <h2 class="navage-section-heading">From Congested to Clear in 3 Simple Steps</h2>
-      <p class="navage-section-subheading">
-        Unlike Neti pots that push water with gravity or bulb syringes that push allergens further in, Naväge uses gentle powered suction.
+<div id="SectionId-{{ section.id }}" class="navage-steps-section">
+  <div class="navage-steps-container">
+    <div class="navage-steps-header">
+      <h2 class="navage-steps-title">From Congested to Clear in 3 Simple Steps</h2>
+      <p class="navage-steps-subtitle">
+        Relief has never been easier. Follow these simple steps for effective nasal irrigation.
       </p>
     </div>
 
     <div class="navage-steps-grid">
-      <!-- Step 1 -->
       <div class="navage-step-card">
-        <div class="navage-step-num">1</div>
-        <div class="navage-step-icon-area">
-          <span class="navage-step-icon">💧</span>
+        <div class="navage-step-circle-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/READY-updated_1a6be14b-1f59-4d4a-8de1-524dee845e33.png?v=1731609026&width=800"
+            alt="Step 1 Ready - Fill water and drop SaltPod"
+            loading="lazy"
+            class="navage-step-img"
+          >
         </div>
-        <h3 class="navage-step-title">READY</h3>
+        <h3 class="navage-step-heading">Ready</h3>
         <p class="navage-step-desc">
-          Fill the upper tank with warm distilled or filtered water. Drop in an authentic Naväge SaltPod capsule and close the lid to mix perfectly.
+          Fill the tank with distilled or bottled water and add a pre-measured SaltPod for perfect saline solution.
         </p>
       </div>
 
-      <!-- Step 2 -->
       <div class="navage-step-card">
-        <div class="navage-step-num">2</div>
-        <div class="navage-step-icon-area">
-          <span class="navage-step-icon">👃</span>
+        <div class="navage-step-circle-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/Set_-_Image.png?v=1723135597&width=800"
+            alt="Step 2 Set - Place nose pillows and press button"
+            loading="lazy"
+            class="navage-step-img"
+          >
         </div>
-        <h3 class="navage-step-title">SET</h3>
+        <h3 class="navage-step-heading">Set</h3>
         <p class="navage-step-desc">
-          Position the soft silicone nose pillows snugly against your nostrils to create a comfortable, gentle seal. Stand upright and relax.
+          Place nose pillows in nostrils, press the button, and let the powered suction do the work.
         </p>
       </div>
 
-      <!-- Step 3 -->
-      <div class="navage-step-card highlight">
-        <div class="navage-step-num">3</div>
-        <div class="navage-step-icon-area">
-          <span class="navage-step-icon">🌀</span>
+      <div class="navage-step-card">
+        <div class="navage-step-circle-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/Flow_-_Image.png?v=1723135601&width=800"
+            alt="Step 3 Flow - Gentle suction flushes allergens"
+            loading="lazy"
+            class="navage-step-img"
+          >
         </div>
-        <h3 class="navage-step-title">FLOW</h3>
+        <h3 class="navage-step-heading">Flow</h3>
         <p class="navage-step-desc">
-          Press the button. Gentle suction pulls refreshing saline into one nostril, loops around the nasal cavity, and flushes gunk into the bottom tank.
+          Experience relief in as little as 30 seconds. Rinse, clean, and enjoy clear breathing.
         </p>
       </div>
     </div>
 
-    <!-- CTA & Demo Link -->
-    <div class="navage-steps-cta-wrap">
-      <a href="/products/navage-advanced-nose-cleaner" class="navage-btn-primary">
-        GET STARTED WITH NAVÄGE
-      </a>
-      <a href="/pages/how-does-navage-work" class="navage-btn-link">
-        Watch 30-Second Video Demo →
-      </a>
+    <div class="navage-steps-action">
+      <a href="/pages/how-does-navage-work" class="navage-steps-btn">Watch Live Demo</a>
     </div>
   </div>
 </div>
 
 <style>
   #SectionId-{{ section.id }} {
-    padding: 90px 24px;
     background-color: #ffffff;
+    padding: 70px 24px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
-  #SectionId-{{ section.id }} .navage-section-container {
-    max-width: 1240px;
+  #SectionId-{{ section.id }} .navage-steps-container {
+    max-width: 1200px;
     margin: 0 auto;
-  }
-  #SectionId-{{ section.id }} .navage-section-header {
     text-align: center;
-    max-width: 720px;
-    margin: 0 auto 60px;
   }
-  #SectionId-{{ section.id }} .navage-section-tag {
-    color: #00A3E0;
-    font-size: 12px;
+  #SectionId-{{ section.id }} .navage-steps-title {
+    font-size: 38px;
     font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 12px;
-  }
-  #SectionId-{{ section.id }} .navage-section-heading {
-    color: #003B71;
-    font-size: 40px;
-    font-weight: 900;
-    margin: 0 0 16px;
-    line-height: 1.2;
+    color: #0b4a82;
+    margin: 0 0 12px 0;
     letter-spacing: -0.5px;
   }
-  #SectionId-{{ section.id }} .navage-section-subheading {
-    color: #556B7D;
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
+  #SectionId-{{ section.id }} .navage-steps-subtitle {
+    font-size: 15px;
+    color: #14b8a6;
+    font-weight: 600;
+    margin: 0 0 50px 0;
   }
   #SectionId-{{ section.id }} .navage-steps-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-bottom: 50px;
+    gap: 36px;
+    margin-bottom: 45px;
   }
   #SectionId-{{ section.id }} .navage-step-card {
-    background: #F8FBFC;
-    border: 1px solid #E1EDF2;
-    border-radius: 16px;
-    padding: 40px 30px;
-    position: relative;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  #SectionId-{{ section.id }} .navage-step-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 59, 113, 0.08);
-  }
-  #SectionId-{{ section.id }} .navage-step-card.highlight {
-    background: #F0F9FD;
-    border-color: #BBE4F7;
-  }
-  #SectionId-{{ section.id }} .navage-step-num {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 32px;
-    height: 32px;
-    background: #003B71;
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 14px;
-    border-radius: 50%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    text-align: center;
   }
-  #SectionId-{{ section.id }} .navage-step-icon-area {
-    font-size: 48px;
-    margin: 10px 0 20px;
+  #SectionId-{{ section.id }} .navage-step-circle-wrap {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: 0 0 0 10px #e6f6fd, 0 10px 25px rgba(0, 163, 224, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  #SectionId-{{ section.id }} .navage-step-title {
-    color: #003B71;
-    font-size: 22px;
-    font-weight: 900;
-    margin: 0 0 12px;
-    letter-spacing: 0.5px;
+  #SectionId-{{ section.id }} .navage-step-card:hover .navage-step-circle-wrap {
+    transform: translateY(-4px);
+    box-shadow: 0 0 0 12px #d0f0fc, 0 14px 30px rgba(0, 163, 224, 0.25);
+  }
+  #SectionId-{{ section.id }} .navage-step-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  #SectionId-{{ section.id }} .navage-step-heading {
+    font-size: 26px;
+    font-weight: 800;
+    color: #14b8a6;
+    margin: 0 0 12px 0;
   }
   #SectionId-{{ section.id }} .navage-step-desc {
-    color: #556B7D;
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-  }
-  #SectionId-{{ section.id }} .navage-steps-cta-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  #SectionId-{{ section.id }} .navage-btn-primary {
-    background-color: #00A3E0;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 16px 36px;
-    border-radius: 30px;
-    font-weight: 800;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    transition: background-color 0.2s, transform 0.1s;
-    box-shadow: 0 6px 18px rgba(0, 163, 224, 0.3);
-  }
-  #SectionId-{{ section.id }} .navage-btn-primary:hover {
-    background-color: #0087BA;
-    transform: translateY(-1px);
-  }
-  #SectionId-{{ section.id }} .navage-btn-link {
-    color: #003B71;
-    font-weight: 700;
-    text-decoration: none;
     font-size: 15px;
-    transition: color 0.2s;
+    line-height: 1.55;
+    color: #3b5166;
+    margin: 0;
+    max-width: 320px;
   }
-  #SectionId-{{ section.id }} .navage-btn-link:hover {
-    color: #00A3E0;
+  #SectionId-{{ section.id }} .navage-steps-action {
+    display: flex;
+    justify-content: center;
   }
-  @media (max-width: 992px) {
+  #SectionId-{{ section.id }} .navage-steps-btn {
+    background-color: #8ca3d7;
+    color: #002244;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 13px 40px;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  #SectionId-{{ section.id }} .navage-steps-btn:hover {
+    background-color: #7994d1;
+    transform: translateY(-2px);
+  }
+  @media (max-width: 860px) {
     #SectionId-{{ section.id }} .navage-steps-grid {
       grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    #SectionId-{{ section.id }} .navage-steps-title {
+      font-size: 28px;
     }
   }
 </style>
 
 {% schema %}
 {
-  "name": "Navage How It Works",
+  "name": "Navage 3 Simple Steps",
   "settings": []
 }
 {% endschema %}

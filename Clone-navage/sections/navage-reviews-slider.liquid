@@ -1,0 +1,197 @@
+{% comment %}
+  Clone-navage/sections/navage-reviews-slider.liquid
+  1:1 Real Stories of Real Relief - Customer Reviews
+{% endcomment %}
+
+<div id="SectionId-{{ section.id }}" class="navage-reviews-section">
+  <div class="navage-reviews-container">
+    <div class="navage-reviews-header">
+      <h2 class="navage-reviews-title">Real Stories of Real Relief</h2>
+      <p class="navage-reviews-subtitle">Listen to customers who found relief in Naväge.</p>
+    </div>
+
+    <div class="navage-reviews-grid">
+      <div class="navage-review-card">
+        <div class="navage-review-stars">★★★★★</div>
+        <p class="navage-review-body">
+          &ldquo;I absolutely loved this product. Both Daytime &amp; Nighttime I found to be helpful. Because I liked the sample, I am now online looking for the product to buy.&rdquo;
+        </p>
+        <div class="navage-review-meta">
+          <div class="navage-review-author">
+            <span class="navage-reviewer-name">Cameo</span>
+            <span class="navage-reviewer-loc">Carbondale, IL</span>
+          </div>
+          <span class="navage-verified-badge">✓ Verified Purchase</span>
+        </div>
+      </div>
+
+      <div class="navage-review-card">
+        <div class="navage-review-stars">★★★★★</div>
+        <p class="navage-review-body">
+          &ldquo;I like how this pod makes me feel like I just stepped out into the cool crisp air. It takes me back to Michigan on a new freshly powder snow cover day in the winter. It instantly cooled and moistened my sinuses, lasting all day long.&rdquo;
+        </p>
+        <div class="navage-review-meta">
+          <div class="navage-review-author">
+            <span class="navage-reviewer-name">Thelovelylisa</span>
+            <span class="navage-reviewer-loc">Coolidge, AZ</span>
+          </div>
+          <span class="navage-verified-badge">✓ Verified Purchase</span>
+        </div>
+      </div>
+
+      <div class="navage-review-card">
+        <div class="navage-review-stars">★★★★★</div>
+        <p class="navage-review-body">
+          &ldquo;I have chronic sinus issues and get sinus infections. Got a sinus infection and got the Navage and it has helped me tremendously. Regular pods and eucalyptus are great. The Alkalol pods are really a game changer. Really tingles and stimulates the sinuses and really seems to sooth/calm sinuses with regular use.&rdquo;
+        </p>
+        <div class="navage-review-meta">
+          <div class="navage-review-author">
+            <span class="navage-reviewer-name">Joe T</span>
+            <span class="navage-reviewer-loc">Pittsburgh, PA</span>
+          </div>
+          <span class="navage-verified-badge">✓ Verified Purchase</span>
+        </div>
+      </div>
+
+      <div class="navage-review-card">
+        <div class="navage-review-stars">★★★★★</div>
+        <p class="navage-review-body">
+          &ldquo;I've been using Navage for years and enjoy using all the different pods. The new AM/PM options are very soothing and I will be adding them to my rotation. I do prefer the Alkalol option when I'm feeling a bit congested.&rdquo;
+        </p>
+        <div class="navage-review-meta">
+          <div class="navage-review-author">
+            <span class="navage-reviewer-name">Amy</span>
+            <span class="navage-reviewer-loc">Massachusetts</span>
+          </div>
+          <span class="navage-verified-badge">✓ Verified Purchase</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="navage-reviews-action">
+      <a href="/pages/reviews" class="navage-reviews-btn">&#9733; 4.9 Read all reviews (1,247)</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  #SectionId-{{ section.id }} {
+    background-color: #f8fafc;
+    padding: 70px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  #SectionId-{{ section.id }} .navage-reviews-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #SectionId-{{ section.id }} .navage-reviews-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0b4a82;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+  }
+  #SectionId-{{ section.id }} .navage-reviews-subtitle {
+    font-size: 15px;
+    color: #14b8a6;
+    font-weight: 600;
+    margin: 0 0 45px 0;
+  }
+  #SectionId-{{ section.id }} .navage-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  #SectionId-{{ section.id }} .navage-review-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+  }
+  #SectionId-{{ section.id }} .navage-review-stars {
+    color: #00A3E0;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  #SectionId-{{ section.id }} .navage-review-body {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #334155;
+    margin: 0 0 24px 0;
+    flex-grow: 1;
+  }
+  #SectionId-{{ section.id }} .navage-review-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 14px;
+  }
+  #SectionId-{{ section.id }} .navage-review-author {
+    display: flex;
+    flex-direction: column;
+  }
+  #SectionId-{{ section.id }} .navage-reviewer-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0b4a82;
+  }
+  #SectionId-{{ section.id }} .navage-reviewer-loc {
+    font-size: 12px;
+    color: #64748b;
+  }
+  #SectionId-{{ section.id }} .navage-verified-badge {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 12px;
+  }
+  #SectionId-{{ section.id }} .navage-reviews-action {
+    display: flex;
+    justify-content: center;
+  }
+  #SectionId-{{ section.id }} .navage-reviews-btn {
+    background-color: #8ca3d7;
+    color: #002244;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 13px 36px;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  #SectionId-{{ section.id }} .navage-reviews-btn:hover {
+    background-color: #7994d1;
+    transform: translateY(-2px);
+  }
+  @media (max-width: 1024px) {
+    #SectionId-{{ section.id }} .navage-reviews-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    #SectionId-{{ section.id }} .navage-reviews-grid {
+      grid-template-columns: 1fr;
+    }
+    #SectionId-{{ section.id }} .navage-reviews-title {
+      font-size: 28px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Navage Reviews Slider",
+  "settings": []
+}
+{% endschema %}

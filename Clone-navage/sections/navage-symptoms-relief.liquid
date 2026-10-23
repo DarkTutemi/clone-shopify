@@ -1,0 +1,220 @@
+{% comment %}
+  Clone-navage/sections/navage-symptoms-relief.liquid
+  1:1 Clinically Proven Relief in 30-Seconds³ - Targeted Symptoms Cards
+{% endcomment %}
+
+<div id="SectionId-{{ section.id }}" class="navage-symptoms-section">
+  <div class="navage-symptoms-container">
+    <div class="navage-symptoms-header">
+      <h2 class="navage-symptoms-title">Clinically Proven Relief in 30-Seconds³</h2>
+      <p class="navage-symptoms-subtitle">TARGETED RELIEF FOR THE SYMPTOMS THAT IMPACT YOUR DAY.</p>
+    </div>
+
+    <div class="navage-symptoms-grid">
+      <div class="navage-symptom-card">
+        <div class="navage-symptom-icon-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/navage-check.png?v=1721937617&width=400"
+            alt="Check icon"
+            loading="lazy"
+            class="navage-symptom-check"
+          >
+        </div>
+        <h3 class="navage-symptom-name">Nasal<br>Congestion</h3>
+        <span class="navage-symptom-tag">CLEAR WHAT'S BLOCKING YOU</span>
+        <p class="navage-symptom-desc">
+          Clinically proven to ease nasal congestion, Naväge flushes mucus and irritants from your nasal passages for better relief.
+        </p>
+        <a href="/pages/how-does-navage-work" class="navage-symptom-link">Learn More &rarr;</a>
+      </div>
+
+      <div class="navage-symptom-card">
+        <div class="navage-symptom-icon-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/navage-check.png?v=1721937617&width=400"
+            alt="Check icon"
+            loading="lazy"
+            class="navage-symptom-check"
+          >
+        </div>
+        <h3 class="navage-symptom-name">Sinus<br>Pressure</h3>
+        <span class="navage-symptom-tag">RELIEVE BUILT UP PRESSURE</span>
+        <p class="navage-symptom-desc">
+          Clears nasal passages for sinus relief. Supports consistent comfort when needed.
+        </p>
+        <a href="/pages/how-does-navage-work" class="navage-symptom-link">Learn More &rarr;</a>
+      </div>
+
+      <div class="navage-symptom-card">
+        <div class="navage-symptom-icon-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/navage-check.png?v=1721937617&width=400"
+            alt="Check icon"
+            loading="lazy"
+            class="navage-symptom-check"
+          >
+        </div>
+        <h3 class="navage-symptom-name">Allergies<br>&nbsp;</h3>
+        <span class="navage-symptom-tag">WASH AWAY ALLERGENS</span>
+        <p class="navage-symptom-desc">
+          Proven for allergy congestion, removing pollen and dust. Supports clearer breathing during allergy season.
+        </p>
+        <a href="/pages/how-does-navage-work" class="navage-symptom-link">Learn More &rarr;</a>
+      </div>
+
+      <div class="navage-symptom-card">
+        <div class="navage-symptom-icon-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/navage-check.png?v=1721937617&width=400"
+            alt="Check icon"
+            loading="lazy"
+            class="navage-symptom-check"
+          >
+        </div>
+        <h3 class="navage-symptom-name">Post-Nasal<br>Drip</h3>
+        <span class="navage-symptom-tag">CLEAR THE SOURCE</span>
+        <p class="navage-symptom-desc">
+          Flushes excess mucus from nasal passages to reduce post-nasal drip. Supports a cleaner, refreshed feeling.
+        </p>
+        <a href="/pages/how-does-navage-work" class="navage-symptom-link">Learn More &rarr;</a>
+      </div>
+    </div>
+
+    <div class="navage-symptoms-action">
+      <a href="/products/navage-advanced-nose-cleaner" class="navage-symptoms-btn">SHOP NOW</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  #SectionId-{{ section.id }} {
+    background-color: #ffffff;
+    padding: 70px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  #SectionId-{{ section.id }} .navage-symptoms-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #SectionId-{{ section.id }} .navage-symptoms-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0b4a82;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+  }
+  #SectionId-{{ section.id }} .navage-symptoms-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #00A3E0;
+    letter-spacing: 1.2px;
+    margin: 0 0 45px 0;
+    text-transform: uppercase;
+  }
+  #SectionId-{{ section.id }} .navage-symptoms-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 45px;
+  }
+  #SectionId-{{ section.id }} .navage-symptom-card {
+    background: #ffffff;
+    border: 1px solid #e1eaf2;
+    border-radius: 12px;
+    padding: 32px 20px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  #SectionId-{{ section.id }} .navage-symptom-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(11, 74, 130, 0.08);
+    border-color: #00A3E0;
+  }
+  #SectionId-{{ section.id }} .navage-symptom-icon-wrap {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  #SectionId-{{ section.id }} .navage-symptom-check {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  #SectionId-{{ section.id }} .navage-symptom-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0b4a82;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    min-height: 54px;
+  }
+  #SectionId-{{ section.id }} .navage-symptom-tag {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: #00A3E0;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  #SectionId-{{ section.id }} .navage-symptom-desc {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #4a5d6e;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+  }
+  #SectionId-{{ section.id }} .navage-symptom-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: #00A3E0;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  #SectionId-{{ section.id }} .navage-symptom-link:hover {
+    color: #0b4a82;
+    text-decoration: underline;
+  }
+  #SectionId-{{ section.id }} .navage-symptoms-action {
+    display: flex;
+    justify-content: center;
+  }
+  #SectionId-{{ section.id }} .navage-symptoms-btn {
+    background-color: #8ca3d7;
+    color: #002244;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    padding: 14px 44px;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  #SectionId-{{ section.id }} .navage-symptoms-btn:hover {
+    background-color: #7994d1;
+    transform: translateY(-2px);
+  }
+  @media (max-width: 992px) {
+    #SectionId-{{ section.id }} .navage-symptoms-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    #SectionId-{{ section.id }} .navage-symptoms-grid {
+      grid-template-columns: 1fr;
+    }
+    #SectionId-{{ section.id }} .navage-symptoms-title {
+      font-size: 28px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Navage Symptoms Relief",
+  "settings": []
+}
+{% endschema %}

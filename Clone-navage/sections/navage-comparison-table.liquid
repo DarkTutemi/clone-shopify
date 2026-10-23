@@ -1,200 +1,310 @@
 {% comment %}
   Clone-navage/sections/navage-comparison-table.liquid
-  1:1 Authentic Naväge Comparison Table matching live navage.com
+  1:1 Interactive Comparison Matrix with Naväge Mint Teal Highlight & Experience Difference CTA
 {% endcomment %}
 
 <div id="SectionId-{{ section.id }}" class="navage-compare-section">
   <div class="navage-compare-container">
-    <div class="navage-section-header">
-      <h2 class="navage-section-heading">See How Naväge Compares</h2>
-      <p class="navage-section-subheading">
-        9 OUT OF 10 USERS SAY NAVÄGE DOES A BETTER JOB THAN ANYTHING THEY'VE TRIED.⁵
-      </p>
+    <div class="navage-compare-header">
+      <h2 class="navage-compare-title">See How Naväge Compares</h2>
+      <p class="navage-compare-subtitle">9 OUT OF 10 USERS SAY NAVÄGE DOES A BETTER JOB THAN ANYTHING THEY’VE TRIED.⁵</p>
+    </div>
 
-      <div class="navage-toggle-pill-wrap">
-        <button class="navage-toggle-pill active" onclick="switchCompareTab('countertop')">Vs. Countertop Devices</button>
-        <button class="navage-toggle-pill" onclick="switchCompareTab('neti')">Vs. Neti Pots</button>
+    <!-- Toggle Switch -->
+    <div class="navage-compare-toggle-wrap">
+      <button type="button" class="navage-toggle-pill active" data-target="countertop">Vs. Countertop Devices</button>
+      <button type="button" class="navage-toggle-pill" data-target="netipots">Vs. Neti Pots</button>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="navage-compare-table-card">
+      <div class="navage-compare-table">
+        <div class="navage-compare-row navage-compare-header-row">
+          <div class="navage-cell navage-cell-feature">Features</div>
+          <div class="navage-cell navage-cell-navage">Naväge</div>
+          <div class="navage-cell navage-cell-competitor" id="competitor-col-header">Countertop Devices</div>
+        </div>
+
+        <div class="navage-compare-row">
+          <div class="navage-cell navage-cell-feature">
+            <strong>Comfortable Grip &amp; Cordless</strong>
+            <span class="navage-feature-sub">Easy Hand-Held Form</span>
+          </div>
+          <div class="navage-cell navage-cell-navage">
+            <span class="navage-check-circle">✓</span>
+          </div>
+          <div class="navage-cell navage-cell-competitor">
+            <span class="navage-cross-circle">✕</span>
+          </div>
+        </div>
+
+        <div class="navage-compare-row">
+          <div class="navage-cell navage-cell-feature">
+            <strong>Powered Suction</strong>
+            <span class="navage-feature-sub">Flushes Gunk In &amp; Out</span>
+          </div>
+          <div class="navage-cell navage-cell-navage">
+            <span class="navage-check-circle">✓</span>
+          </div>
+          <div class="navage-cell navage-cell-competitor">
+            <span class="navage-cross-circle">✕</span>
+          </div>
+        </div>
+
+        <div class="navage-compare-row">
+          <div class="navage-cell navage-cell-feature">
+            <strong>Cleaner, Safer, Smarter</strong>
+            <span class="navage-feature-sub">Closed-Loop System</span>
+          </div>
+          <div class="navage-cell navage-cell-navage">
+            <span class="navage-check-circle">✓</span>
+          </div>
+          <div class="navage-cell navage-cell-competitor">
+            <span class="navage-cross-circle">✕</span>
+          </div>
+        </div>
+
+        <div class="navage-compare-row">
+          <div class="navage-cell navage-cell-feature">
+            <strong>Effortless to Use in 30 Seconds</strong>
+            <span class="navage-feature-sub">Push-Button Simplicity</span>
+          </div>
+          <div class="navage-cell navage-cell-navage">
+            <span class="navage-check-circle">✓</span>
+          </div>
+          <div class="navage-cell navage-cell-competitor">
+            <span class="navage-cross-circle">✕</span>
+          </div>
+        </div>
+
+        <div class="navage-compare-row">
+          <div class="navage-cell navage-cell-feature">
+            <strong>Pre-Measured Pharmaceutical SaltPods</strong>
+            <span class="navage-feature-sub">Pure Saline Concentrate</span>
+          </div>
+          <div class="navage-cell navage-cell-navage">
+            <span class="navage-check-circle">✓</span>
+          </div>
+          <div class="navage-cell navage-cell-competitor">
+            <span class="navage-cross-circle">✕</span>
+          </div>
+        </div>
+
+        <div class="navage-compare-row">
+          <div class="navage-cell navage-cell-feature">
+            <strong>HSA / FSA Approved Medical Expense</strong>
+            <span class="navage-feature-sub">Tax-Free Health Savings</span>
+          </div>
+          <div class="navage-cell navage-cell-navage">
+            <span class="navage-check-circle">✓</span>
+          </div>
+          <div class="navage-cell navage-cell-competitor">
+            <span class="navage-check-circle competitor-check">✓</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="navage-table-wrapper">
-      <table class="navage-compare-table">
-        <thead>
-          <tr>
-            <th class="feature-col">Features</th>
-            <th class="navage-col">Naväge</th>
-            <th class="other-col" id="compareColHeader">Countertop Devices</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="feature-col">Comfortable Grip & Cordless</td>
-            <td class="navage-col"><span class="badge-check">✔</span></td>
-            <td class="other-col"><span class="badge-cross">✖</span></td>
-          </tr>
-          <tr>
-            <td class="feature-col">Powered Suction (Flushes Gunk In & Out)</td>
-            <td class="navage-col"><span class="badge-check">✔</span></td>
-            <td class="other-col"><span class="badge-cross">✖</span></td>
-          </tr>
-          <tr>
-            <td class="feature-col">Cleaner, Safer, Smarter Closed-Loop</td>
-            <td class="navage-col"><span class="badge-check">✔</span></td>
-            <td class="other-col"><span class="badge-cross">✖</span></td>
-          </tr>
-          <tr>
-            <td class="feature-col">Effortless to Use in 30 Seconds</td>
-            <td class="navage-col"><span class="badge-check">✔</span></td>
-            <td class="other-col"><span class="badge-cross">✖</span></td>
-          </tr>
-          <tr>
-            <td class="feature-col">Pre-Measured Pharmaceutical SaltPods</td>
-            <td class="navage-col"><span class="badge-check">✔</span></td>
-            <td class="other-col"><span class="badge-cross">✖</span></td>
-          </tr>
-          <tr>
-            <td class="feature-col">HSA / FSA Approved Medical Expense</td>
-            <td class="navage-col"><span class="badge-check">✔</span></td>
-            <td class="other-col"><span class="badge-check">✔</span></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="navage-compare-action">
+      <a href="/products/navage-advanced-nose-cleaner" class="navage-compare-btn">Experience the Naväge Difference</a>
     </div>
   </div>
 </div>
 
-<script>
-  function switchCompareTab(type) {
-    const pills = document.querySelectorAll('#SectionId-{{ section.id }} .navage-toggle-pill');
-    pills.forEach(p => p.classList.remove('active'));
-    event.target.classList.add('active');
-    const header = document.getElementById('compareColHeader');
-    if (header) {
-      header.textContent = type === 'neti' ? 'Neti Pots' : 'Countertop Devices';
-    }
-  }
-</script>
-
 <style>
   #SectionId-{{ section.id }} {
-    padding: 80px 24px 90px;
     background-color: #003B5C;
+    padding: 70px 24px;
     color: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   #SectionId-{{ section.id }} .navage-compare-container {
     max-width: 960px;
     margin: 0 auto;
-  }
-  #SectionId-{{ section.id }} .navage-section-header {
     text-align: center;
-    margin-bottom: 40px;
   }
-  #SectionId-{{ section.id }} .navage-section-heading {
-    color: #ffffff !important;
-    font-size: 42px;
-    font-weight: 900;
-    margin: 0 0 12px;
+  #SectionId-{{ section.id }} .navage-compare-title {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    color: #ffffff;
     letter-spacing: -0.5px;
   }
-  #SectionId-{{ section.id }} .navage-section-subheading {
-    color: #6CD2FF;
+  #SectionId-{{ section.id }} .navage-compare-subtitle {
     font-size: 13px;
     font-weight: 800;
+    color: #00A3E0;
     letter-spacing: 1px;
-    margin: 0 0 32px;
+    margin: 0 0 35px 0;
   }
-  #SectionId-{{ section.id }} .navage-toggle-pill-wrap {
+  #SectionId-{{ section.id }} .navage-compare-toggle-wrap {
     display: inline-flex;
-    background: #002B44;
-    border-radius: 30px;
+    background-color: #00253d;
     padding: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    margin-bottom: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
   #SectionId-{{ section.id }} .navage-toggle-pill {
     background: transparent;
     color: #ffffff;
     border: none;
-    border-radius: 25px;
-    padding: 10px 24px;
+    padding: 10px 26px;
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 700;
+    border-radius: 9999px;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
+    transition: all 0.25s ease;
   }
   #SectionId-{{ section.id }} .navage-toggle-pill.active {
-    background: #ffffff;
+    background-color: #ffffff;
     color: #003B5C;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
-  #SectionId-{{ section.id }} .navage-table-wrapper {
+  #SectionId-{{ section.id }} .navage-compare-table-card {
     background: #ffffff;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    color: #1e293b;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   }
   #SectionId-{{ section.id }} .navage-compare-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
   }
-  #SectionId-{{ section.id }} th, 
-  #SectionId-{{ section.id }} td {
-    padding: 20px 24px;
-    border-bottom: 1px solid #E5ECF0;
+  #SectionId-{{ section.id }} .navage-compare-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr;
+    align-items: center;
+    border-bottom: 1px solid #edf2f7;
+  }
+  #SectionId-{{ section.id }} .navage-compare-row:last-child {
+    border-bottom: none;
+  }
+  #SectionId-{{ section.id }} .navage-compare-header-row {
+    background-color: #f8fafc;
+    font-weight: 800;
+    font-size: 16px;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  #SectionId-{{ section.id }} .navage-cell {
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+  }
+  #SectionId-{{ section.id }} .navage-cell-feature {
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
     font-size: 15px;
+    color: #0f172a;
   }
-  #SectionId-{{ section.id }} th {
-    background: #FAFCFD;
+  #SectionId-{{ section.id }} .navage-feature-sub {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 3px;
+    font-weight: 400;
+  }
+  #SectionId-{{ section.id }} .navage-cell-navage {
+    background-color: #A3E5D4;
+    color: #064e3b;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+    height: 100%;
+  }
+  #SectionId-{{ section.id }} .navage-cell-competitor {
+    justify-content: center;
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 700;
+    height: 100%;
+  }
+  #SectionId-{{ section.id }} .navage-check-circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #00A3E0;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+  }
+  #SectionId-{{ section.id }} .navage-check-circle.competitor-check {
+    background-color: #00A3E0;
+  }
+  #SectionId-{{ section.id }} .navage-cross-circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    color: #94a3b8;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  #SectionId-{{ section.id }} .navage-compare-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+  }
+  #SectionId-{{ section.id }} .navage-compare-btn {
+    background-color: #ffffff;
     color: #003B5C;
     font-size: 16px;
-    font-weight: 900;
+    font-weight: 800;
+    padding: 15px 42px;
+    border-radius: 9999px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
   }
-  #SectionId-{{ section.id }} .feature-col {
-    text-align: left;
-    font-weight: 700;
-    color: #003B5C;
-    width: 48%;
+  #SectionId-{{ section.id }} .navage-compare-btn:hover {
+    background-color: #f1f5f9;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   }
-  #SectionId-{{ section.id }} .navage-col {
-    background: #A3E5D4;
-    color: #003B5C;
-    font-weight: 900;
-    width: 26%;
-  }
-  #SectionId-{{ section.id }} th.navage-col {
-    background: #87DAC5;
-    font-size: 18px;
-  }
-  #SectionId-{{ section.id }} .other-col {
-    background: #F4F8FA;
-    color: #6C7D8C;
-    width: 26%;
-  }
-  #SectionId-{{ section.id }} .badge-check {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    background: #0087BA;
-    color: #ffffff;
-    border-radius: 50%;
-    font-size: 14px;
-    font-weight: 900;
-  }
-  #SectionId-{{ section.id }} .badge-cross {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    background: #D9E2E8;
-    color: #8C9CA8;
-    border-radius: 50%;
-    font-size: 14px;
-    font-weight: 900;
+  @media (max-width: 640px) {
+    #SectionId-{{ section.id }} .navage-compare-row {
+      grid-template-columns: 1.6fr 1fr 1fr;
+    }
+    #SectionId-{{ section.id }} .navage-cell {
+      padding: 12px 10px;
+    }
+    #SectionId-{{ section.id }} .navage-cell-feature {
+      font-size: 13px;
+    }
+    #SectionId-{{ section.id }} .navage-compare-title {
+      font-size: 28px;
+    }
   }
 </style>
+
+<script>
+  (function() {
+    const section = document.getElementById('SectionId-{{ section.id }}');
+    if (!section) return;
+    const pills = section.querySelectorAll('.navage-toggle-pill');
+    const compHeader = section.querySelector('#competitor-col-header');
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const target = pill.getAttribute('data-target');
+        if (target === 'netipots') {
+          if (compHeader) compHeader.textContent = 'Neti Pots';
+        } else {
+          if (compHeader) compHeader.textContent = 'Countertop Devices';
+        }
+      });
+    });
+  })();
+</script>
 
 {% schema %}
 {

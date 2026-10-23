@@ -1,0 +1,158 @@
+{% comment %}
+  Clone-navage/sections/navage-category-rail.liquid
+  1:1 Category Rail with 4 Cards & Teal Background
+{% endcomment %}
+
+<div id="SectionId-{{ section.id }}" class="navage-category-rail">
+  <div class="navage-category-container">
+    <div class="navage-category-grid">
+      <a href="/collections/nasal-care" class="navage-category-card">
+        <div class="navage-category-img-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/Navage_Advanced_B__Main_Update_V2.jpg?v=1788963959&width=500"
+            alt="Nasal Care"
+            loading="lazy"
+            class="navage-category-img"
+          >
+        </div>
+        <div class="navage-category-info">
+          <span class="navage-category-title">Nasal Care</span>
+          <span class="navage-category-arrow">&rarr;</span>
+        </div>
+      </a>
+
+      <a href="/collections/saltpods" class="navage-category-card">
+        <div class="navage-category-img-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/Saltpod_30-Pack_Original_with_SaltPod_f8b46262-df44-4d3c-885e-5857147daf2d.jpg?v=1762457237&width=500"
+            alt="Saline Refills"
+            loading="lazy"
+            class="navage-category-img"
+          >
+        </div>
+        <div class="navage-category-info">
+          <span class="navage-category-title">Saline Refills</span>
+          <span class="navage-category-arrow">&rarr;</span>
+        </div>
+      </a>
+
+      <a href="/collections/baby-nasal-care" class="navage-category-card">
+        <div class="navage-category-img-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/BabyNasalAspiratorCarton_3QProduct_159_ENDORSED.jpg?v=1768578508&width=500"
+            alt="Baby Care"
+            loading="lazy"
+            class="navage-category-img"
+          >
+        </div>
+        <div class="navage-category-info">
+          <span class="navage-category-title">Baby Care</span>
+          <span class="navage-category-arrow">&rarr;</span>
+        </div>
+      </a>
+
+      <a href="/collections/ear-care" class="navage-category-card">
+        <div class="navage-category-img-wrap">
+          <img
+            src="https://navage.com/cdn/shop/files/Ear_B__1.jpg?v=1772659305&width=500"
+            alt="Ear Care"
+            loading="lazy"
+            class="navage-category-img"
+          >
+        </div>
+        <div class="navage-category-info">
+          <span class="navage-category-title">Ear Care</span>
+          <span class="navage-category-arrow">&rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  #SectionId-{{ section.id }} {
+    background: linear-gradient(180deg, #0b4a82 0%, #157e9e 100%);
+    padding: 35px 24px 45px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  #SectionId-{{ section.id }} .navage-category-container {
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+  #SectionId-{{ section.id }} .navage-category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  #SectionId-{{ section.id }} .navage-category-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  #SectionId-{{ section.id }} .navage-category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  #SectionId-{{ section.id }} .navage-category-img-wrap {
+    width: 100%;
+    height: 220px;
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 12px;
+  }
+  #SectionId-{{ section.id }} .navage-category-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  #SectionId-{{ section.id }} .navage-category-card:hover .navage-category-img {
+    transform: scale(1.04);
+  }
+  #SectionId-{{ section.id }} .navage-category-info {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #edf2f7;
+  }
+  #SectionId-{{ section.id }} .navage-category-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0b4a82;
+  }
+  #SectionId-{{ section.id }} .navage-category-arrow {
+    font-size: 18px;
+    font-weight: 700;
+    color: #00A3E0;
+    transition: transform 0.2s ease;
+  }
+  #SectionId-{{ section.id }} .navage-category-card:hover .navage-category-arrow {
+    transform: translateX(4px);
+  }
+  @media (max-width: 992px) {
+    #SectionId-{{ section.id }} .navage-category-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 500px) {
+    #SectionId-{{ section.id }} .navage-category-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Navage Category Rail",
+  "settings": []
+}
+{% endschema %}
