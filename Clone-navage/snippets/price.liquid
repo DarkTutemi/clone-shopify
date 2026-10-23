@@ -26,13 +26,47 @@
   assign price_min = product.price_min
   assign price_max = product.price_max
   assign available = target.available | default: false
-  assign money_price = price | money
-  assign money_price_min = price_min | money
-  assign money_price_max = price_max | money
-  if settings.currency_code_enabled
-    assign money_price = price | money_with_currency
-    assign money_price_min = price_min | money_with_currency
-    assign money_price_max = price_max | money_with_currency
+  # Naväge USD Currency Formatter
+  assign p_int = price | divided_by: 10000
+  assign p_mod = price | modulo: 10000 | divided_by: 100
+  if p_mod < 10
+    assign p_mod_str = '0' | append: p_mod
+  else
+    assign p_mod_str = p_mod
+  endif
+  assign money_price = '$' | append: p_int | append: '.' | append: p_mod_str
+
+  if price_min
+    assign p_int = price_min | divided_by: 10000
+    assign p_mod = price_min | modulo: 10000 | divided_by: 100
+    if p_mod < 10
+      assign p_mod_str = '0' | append: p_mod
+    else
+      assign p_mod_str = p_mod
+    endif
+    assign money_price_min = '$' | append: p_int | append: '.' | append: p_mod_str
+  endif
+
+  if price_max
+    assign p_int = price_max | divided_by: 10000
+    assign p_mod = price_max | modulo: 10000 | divided_by: 100
+    if p_mod < 10
+      assign p_mod_str = '0' | append: p_mod
+    else
+      assign p_mod_str = p_mod
+    endif
+    assign money_price_max = '$' | append: p_int | append: '.' | append: p_mod_str
+  endif
+
+  if compare_at_price
+    assign c_int = compare_at_price | divided_by: 10000
+    assign c_mod = compare_at_price | modulo: 10000 | divided_by: 100
+    if c_mod < 10
+      assign c_mod_str = '0' | append: c_mod
+    else
+      assign c_mod_str = c_mod
+    endif
+    assign money_compare_at_price = '$' | append: c_int | append: '.' | append: c_mod_str
   endif
 
   if target == product and product.price_varies
@@ -67,11 +101,7 @@
               </span>
               <span>
                 <s class="price-item price-item--regular variant-item__old-price">
-                  {% if settings.currency_code_enabled %}
-                    {{ compare_at_price | money_with_currency }}
-                  {% else %}
-                    {{ compare_at_price | money }}
-                  {% endif %}
+                  {{ money_compare_at_price }}
                 </s>
               </span>
             {%- endunless -%}
@@ -94,13 +124,9 @@
         {%- unless product.price_varies == false and product.compare_at_price_varies %}
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
           <span>
-            <s class="price-item price-item--regular">
-              {% if settings.currency_code_enabled %}
-                {{ compare_at_price | money_with_currency }}
-              {% else %}
-                {{ compare_at_price | money }}
-              {% endif %}
-            </s>
+              <s class="price-item price-item--regular">
+                {{ money_compare_at_price }}
+              </s>
           </span>
         {%- endunless -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>

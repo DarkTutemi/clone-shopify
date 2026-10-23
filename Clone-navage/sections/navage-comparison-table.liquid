@@ -1,73 +1,61 @@
 {% comment %}
   Clone-navage/sections/navage-comparison-table.liquid
-  1:1 Comparison Table: Naväge vs Neti Pots vs Countertop Devices
+  1:1 Authentic Naväge Comparison Table matching live navage.com
 {% endcomment %}
 
 <div id="SectionId-{{ section.id }}" class="navage-compare-section">
   <div class="navage-compare-container">
     <div class="navage-section-header">
-      <span class="navage-section-tag">THE POWER OF SUCTION</span>
       <h2 class="navage-section-heading">See How Naväge Compares</h2>
       <p class="navage-section-subheading">
-        Why millions of former Neti pot users and sinus sufferers have permanently switched to Naväge.
+        9 OUT OF 10 USERS SAY NAVÄGE DOES A BETTER JOB THAN ANYTHING THEY'VE TRIED.⁵
       </p>
+
+      <div class="navage-toggle-pill-wrap">
+        <button class="navage-toggle-pill active" onclick="switchCompareTab('countertop')">Vs. Countertop Devices</button>
+        <button class="navage-toggle-pill" onclick="switchCompareTab('neti')">Vs. Neti Pots</button>
+      </div>
     </div>
 
     <div class="navage-table-wrapper">
       <table class="navage-compare-table">
         <thead>
           <tr>
-            <th class="feature-col">Features & Benefits</th>
-            <th class="navage-col">
-              <span class="table-brand">Naväge</span>
-              <small>Powered Suction System</small>
-            </th>
-            <th>
-              <span class="table-other">Neti Pots</span>
-              <small>Gravity Flow</small>
-            </th>
-            <th>
-              <span class="table-other">Countertop Devices</span>
-              <small>Positive Pressure</small>
-            </th>
+            <th class="feature-col">Features</th>
+            <th class="navage-col">Naväge</th>
+            <th class="other-col" id="compareColHeader">Countertop Devices</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="feature-col">Powered Gentle Suction Technology</td>
-            <td class="navage-col"><span class="check-yes">✔ YES</span></td>
-            <td><span class="check-no">✖ NO (Gravity only)</span></td>
-            <td><span class="check-no">✖ NO (Pushes in)</span></td>
+            <td class="feature-col">Comfortable Grip & Cordless</td>
+            <td class="navage-col"><span class="badge-check">✔</span></td>
+            <td class="other-col"><span class="badge-cross">✖</span></td>
           </tr>
           <tr>
-            <td class="feature-col">No Messy Water Spilling Out</td>
-            <td class="navage-col"><span class="check-yes">✔ Closed-Loop</span></td>
-            <td><span class="check-no">✖ Very Messy</span></td>
-            <td><span class="check-no">✖ Spills in sink</span></td>
+            <td class="feature-col">Powered Suction (Flushes Gunk In & Out)</td>
+            <td class="navage-col"><span class="badge-check">✔</span></td>
+            <td class="other-col"><span class="badge-cross">✖</span></td>
           </tr>
           <tr>
-            <td class="feature-col">Perfect Saline Mixing Every Time</td>
-            <td class="navage-col"><span class="check-yes">✔ Pre-measured SaltPods</span></td>
-            <td><span class="check-no">✖ Manual packet stirring</span></td>
-            <td><span class="check-no">✖ Manual packet stirring</span></td>
+            <td class="feature-col">Cleaner, Safer, Smarter Closed-Loop</td>
+            <td class="navage-col"><span class="badge-check">✔</span></td>
+            <td class="other-col"><span class="badge-cross">✖</span></td>
           </tr>
           <tr>
-            <td class="feature-col">Clinically Proven Virus & Allergen Removal</td>
-            <td class="navage-col"><span class="check-yes">✔ 99% Removal</span></td>
-            <td><span class="check-partial">~ Partial</span></td>
-            <td><span class="check-partial">~ Partial</span></td>
+            <td class="feature-col">Effortless to Use in 30 Seconds</td>
+            <td class="navage-col"><span class="badge-check">✔</span></td>
+            <td class="other-col"><span class="badge-cross">✖</span></td>
           </tr>
           <tr>
-            <td class="feature-col">HSA & FSA Eligible</td>
-            <td class="navage-col"><span class="check-yes">✔ 100% Eligible</span></td>
-            <td><span class="check-yes">✔ Eligible</span></td>
-            <td><span class="check-partial">~ Varies</span></td>
+            <td class="feature-col">Pre-Measured Pharmaceutical SaltPods</td>
+            <td class="navage-col"><span class="badge-check">✔</span></td>
+            <td class="other-col"><span class="badge-cross">✖</span></td>
           </tr>
           <tr>
-            <td class="feature-col">30-Day Zero-Risk Trial</td>
-            <td class="navage-col"><span class="check-yes">✔ Full Money-Back</span></td>
-            <td><span class="check-no">✖ Non-refundable</span></td>
-            <td><span class="check-no">✖ 15-day limited</span></td>
+            <td class="feature-col">HSA / FSA Approved Medical Expense</td>
+            <td class="navage-col"><span class="badge-check">✔</span></td>
+            <td class="other-col"><span class="badge-check">✔</span></td>
           </tr>
         </tbody>
       </table>
@@ -75,48 +63,74 @@
   </div>
 </div>
 
+<script>
+  function switchCompareTab(type) {
+    const pills = document.querySelectorAll('#SectionId-{{ section.id }} .navage-toggle-pill');
+    pills.forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    const header = document.getElementById('compareColHeader');
+    if (header) {
+      header.textContent = type === 'neti' ? 'Neti Pots' : 'Countertop Devices';
+    }
+  }
+</script>
+
 <style>
   #SectionId-{{ section.id }} {
-    padding: 80px 24px;
-    background-color: #F8FBFC;
+    padding: 80px 24px 90px;
+    background-color: #003B5C;
+    color: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   #SectionId-{{ section.id }} .navage-compare-container {
-    max-width: 1100px;
+    max-width: 960px;
     margin: 0 auto;
   }
   #SectionId-{{ section.id }} .navage-section-header {
     text-align: center;
-    max-width: 680px;
-    margin: 0 auto 50px;
-  }
-  #SectionId-{{ section.id }} .navage-section-tag {
-    color: #00A3E0;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 12px;
+    margin-bottom: 40px;
   }
   #SectionId-{{ section.id }} .navage-section-heading {
-    color: #003B71;
-    font-size: 38px;
+    color: #ffffff !important;
+    font-size: 42px;
     font-weight: 900;
     margin: 0 0 12px;
+    letter-spacing: -0.5px;
   }
   #SectionId-{{ section.id }} .navage-section-subheading {
-    color: #556B7D;
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 0;
+    color: #6CD2FF;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0 0 32px;
+  }
+  #SectionId-{{ section.id }} .navage-toggle-pill-wrap {
+    display: inline-flex;
+    background: #002B44;
+    border-radius: 30px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  #SectionId-{{ section.id }} .navage-toggle-pill {
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  #SectionId-{{ section.id }} .navage-toggle-pill.active {
+    background: #ffffff;
+    color: #003B5C;
   }
   #SectionId-{{ section.id }} .navage-table-wrapper {
     background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 59, 113, 0.08);
-    overflow-x: auto;
-    border: 1px solid #E1EDF2;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
   }
   #SectionId-{{ section.id }} .navage-compare-table {
     width: 100%;
@@ -125,58 +139,60 @@
   }
   #SectionId-{{ section.id }} th, 
   #SectionId-{{ section.id }} td {
-    padding: 18px 20px;
-    border-bottom: 1px solid #EAEFF2;
-    font-size: 14px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #E5ECF0;
+    font-size: 15px;
   }
   #SectionId-{{ section.id }} th {
     background: #FAFCFD;
-    padding: 24px 20px;
+    color: #003B5C;
+    font-size: 16px;
+    font-weight: 900;
   }
   #SectionId-{{ section.id }} .feature-col {
     text-align: left;
     font-weight: 700;
-    color: #003B71;
-    width: 40%;
+    color: #003B5C;
+    width: 48%;
   }
   #SectionId-{{ section.id }} .navage-col {
-    background: #F0F9FD;
-    font-weight: 800;
+    background: #A3E5D4;
+    color: #003B5C;
+    font-weight: 900;
+    width: 26%;
   }
   #SectionId-{{ section.id }} th.navage-col {
-    background: #E1F4FD;
-    border-top: 3px solid #00A3E0;
-  }
-  #SectionId-{{ section.id }} .table-brand {
-    color: #003B71;
+    background: #87DAC5;
     font-size: 18px;
+  }
+  #SectionId-{{ section.id }} .other-col {
+    background: #F4F8FA;
+    color: #6C7D8C;
+    width: 26%;
+  }
+  #SectionId-{{ section.id }} .badge-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: #0087BA;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 14px;
     font-weight: 900;
-    display: block;
   }
-  #SectionId-{{ section.id }} .table-other {
-    color: #6B7C8E;
-    font-size: 16px;
-    font-weight: 700;
-    display: block;
-  }
-  #SectionId-{{ section.id }} th small {
-    font-size: 11px;
-    color: #7B8B9B;
-    display: block;
-    margin-top: 4px;
-    font-weight: 500;
-  }
-  #SectionId-{{ section.id }} .check-yes {
-    color: #0087BA;
-    font-weight: 800;
-  }
-  #SectionId-{{ section.id }} .check-no {
-    color: #9AA7B2;
-    font-size: 13px;
-  }
-  #SectionId-{{ section.id }} .check-partial {
-    color: #E67E22;
-    font-size: 13px;
+  #SectionId-{{ section.id }} .badge-cross {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: #D9E2E8;
+    color: #8C9CA8;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 900;
   }
 </style>
 

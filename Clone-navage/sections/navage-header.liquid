@@ -1,6 +1,6 @@
 {% comment %}
   Clone-navage/sections/navage-header.liquid
-  Full-fidelity Naväge Header with Brand Navigation, Cart Drawer trigger, and Search
+  1:1 Naväge Header with Deep Navy (#003B71), White Logo, Navigation Links, and Cart Icon
 {% endcomment %}
 
 <header id="SectionId-{{ section.id }}" class="navage-header-wrapper">
@@ -19,7 +19,7 @@
     <nav class="navage-nav">
       <ul class="navage-nav-list">
         <li class="navage-nav-item has-dropdown">
-          <a href="/collections/products" class="navage-nav-link">Shop <span class="navage-arrow">▾</span></a>
+          <a href="/collections/products" class="navage-nav-link">Products <span class="navage-arrow">▾</span></a>
           <div class="navage-dropdown-menu">
             <a href="/products/navage-advanced-nose-cleaner" class="navage-dropdown-link">
               <strong>Naväge Advanced Nose Cleaner</strong>
@@ -46,11 +46,35 @@
         <li class="navage-nav-item">
           <a href="/pages/how-does-navage-work" class="navage-nav-link">Why Naväge</a>
         </li>
-        <li class="navage-nav-item">
-          <a href="/pages/reviews" class="navage-nav-link">Reviews <span class="navage-review-star-count">★ 4.9</span></a>
+        <li class="navage-nav-item has-dropdown">
+          <a href="/pages/about" class="navage-nav-link">Learn More <span class="navage-arrow">▾</span></a>
+          <div class="navage-dropdown-menu">
+            <a href="/pages/how-does-navage-work" class="navage-dropdown-link">
+              <strong>How It Works</strong>
+              <small>The powered suction principle</small>
+            </a>
+            <a href="/pages/nasal-irrigation-works" class="navage-dropdown-link">
+              <strong>Clinical Science</strong>
+              <small>Studies & ENT recommendations</small>
+            </a>
+            <a href="/pages/patents" class="navage-dropdown-link">
+              <strong>Patents & Innovation</strong>
+              <small>Proprietary closed-loop system</small>
+            </a>
+          </div>
         </li>
         <li class="navage-nav-item">
-          <a href="/pages/30-day-no-risk-trial" class="navage-nav-link">Guarantee</a>
+          <a href="/pages/reviews" class="navage-nav-link">Reviews</a>
+        </li>
+        <li class="navage-nav-item has-dropdown">
+          <a href="/pages/customer-support" class="navage-nav-link">Customer Service <span class="navage-arrow">▾</span></a>
+          <div class="navage-dropdown-menu">
+            <a href="/pages/quickstart-instructions" class="navage-dropdown-link">Quickstart Guide</a>
+            <a href="/pages/cleaning-instructions" class="navage-dropdown-link">Cleaning & Care</a>
+            <a href="/pages/troubleshooting" class="navage-dropdown-link">Troubleshooting</a>
+            <a href="/pages/owner-s-manual" class="navage-dropdown-link">Owner's Manual</a>
+            <a href="/pages/contact-navage" class="navage-dropdown-link">Contact Support</a>
+          </div>
         </li>
         <li class="navage-nav-item">
           <a href="/pages/faqs" class="navage-nav-link">FAQs</a>
@@ -77,17 +101,17 @@
 
 <style>
   #SectionId-{{ section.id }} {
-    background-color: #ffffff;
-    border-bottom: 1px solid #E1E8ED;
+    background-color: #003B71;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     position: sticky;
     top: 0;
     z-index: 999;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   #SectionId-{{ section.id }} .navage-header-inner {
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 12px 24px;
+    padding: 14px 28px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -103,13 +127,13 @@
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 28px;
   }
   #SectionId-{{ section.id }} .navage-nav-item {
     position: relative;
   }
   #SectionId-{{ section.id }} .navage-nav-link {
-    color: #003B71;
+    color: #ffffff !important;
     text-decoration: none;
     font-size: 15px;
     font-weight: 700;
@@ -120,22 +144,18 @@
     transition: color 0.2s;
   }
   #SectionId-{{ section.id }} .navage-nav-link:hover {
-    color: #00A3E0;
+    color: #6CD2FF !important;
   }
-  #SectionId-{{ section.id }} .navage-review-star-count {
-    background: #E8F5FD;
-    color: #00A3E0;
-    font-size: 11px;
-    padding: 2px 6px;
-    border-radius: 8px;
-    font-weight: 800;
+  #SectionId-{{ section.id }} .navage-arrow {
+    font-size: 10px;
+    opacity: 0.8;
   }
   #SectionId-{{ section.id }} .navage-dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
     background: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 59, 113, 0.12);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     padding: 12px 0;
     min-width: 280px;
@@ -154,9 +174,12 @@
     display: flex;
     flex-direction: column;
     transition: background-color 0.2s;
+    font-size: 13px;
+    font-weight: 600;
   }
   #SectionId-{{ section.id }} .navage-dropdown-link strong {
     font-size: 14px;
+    color: #003B71;
   }
   #SectionId-{{ section.id }} .navage-dropdown-link small {
     font-size: 11px;
@@ -173,7 +196,7 @@
   }
   #SectionId-{{ section.id }} .navage-btn-primary {
     background-color: #00A3E0;
-    color: #ffffff;
+    color: #ffffff !important;
     text-decoration: none;
     padding: 10px 22px;
     border-radius: 24px;
@@ -189,7 +212,7 @@
   }
   #SectionId-{{ section.id }} .navage-cart-icon-btn {
     position: relative;
-    color: #003B71;
+    color: #ffffff;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -198,7 +221,7 @@
     position: absolute;
     top: -6px;
     right: -8px;
-    background-color: #003B71;
+    background-color: #00A3E0;
     color: #ffffff;
     font-size: 11px;
     font-weight: 800;
@@ -221,7 +244,7 @@
     display: block;
     width: 22px;
     height: 2px;
-    background-color: #003B71;
+    background-color: #ffffff;
   }
   @media (max-width: 992px) {
     #SectionId-{{ section.id }} .navage-mobile-menu-btn {
@@ -233,8 +256,8 @@
       top: 100%;
       left: 0;
       right: 0;
-      background: #ffffff;
-      border-bottom: 1px solid #E1E8ED;
+      background: #002B54;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       padding: 16px;
     }
     #SectionId-{{ section.id }} .navage-nav.is-open {
