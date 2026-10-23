@@ -1,0 +1,391 @@
+<!-- Earthly Derm Corner Discount Teaser & Klaviyo-Style Modal -->
+<div id="earthlyKlaviyoTeaser" class="earthly-kl-teaser" onclick="openEarthlyDiscountModal()">
+  <span tabindex="0" role="button" aria-label="Get 5% Off" class="earthly-kl-teaser-btn">
+    <div class="earthly-kl-teaser-rotated">
+      <div style="padding: 8px 0px; margin: 0px;">
+        <p style="text-align: center; font-family: Arial, sans-serif; margin: 0; padding: 0; font-size: 14px;">
+          <span style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 18px;"><strong style="font-weight: 700;">Get 5% Off</strong></span>
+        </p>
+      </div>
+    </div>
+  </span>
+</div>
+
+<div id="earthlyDiscountModal" class="earthly-kl-modal" role="dialog" aria-modal="true" aria-label="POPUP Form" onclick="handleEarthlyModalBackdrop(event)">
+  <div class="earthly-kl-modal-container">
+    <button type="button" class="earthly-kl-close-btn" onclick="closeEarthlyDiscountModal()" aria-label="Close dialog">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="9.5" fill="#2C5801"></circle>
+        <path d="M6 6L14 14M6 14L14 6L6 14Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+
+    <div class="earthly-kl-form-col">
+      <div class="earthly-kl-badge">
+        <img src="https://d3k81ch9hvuctc.cloudfront.net/company/RaxNJM/images/aaa16ccc-cc4b-4874-847e-abf2d41356e2.png" width="180" height="138" alt="Earthly Derm" loading="lazy">
+      </div>
+
+      <h2 class="earthly-kl-title">Unlock Your <strong>Mystery Discount</strong></h2>
+      
+      <p class="earthly-kl-subtitle">
+        <em>Join <strong>500,000+</strong> in discovering skincare made for dark marks, uneven tones, and melanin-rich skin.</em>
+      </p>
+
+      <form id="earthlyDiscountForm" onsubmit="handleEarthlyDiscountSubmit(event)" novalidate>
+        <div class="earthly-kl-input-wrap">
+          <input type="email" id="earthlyDiscountEmail" placeholder="Enter Email Address" required autocomplete="email">
+        </div>
+        <button type="submit" class="earthly-kl-submit-btn" id="earthlyDiscountBtn">
+          GET MY DISCOUNT
+        </button>
+      </form>
+
+      <div id="earthlyDiscountSuccess" class="earthly-kl-success" style="display: none;">
+        <div class="earthly-kl-coupon-code">EARTHLY5</div>
+        <p class="earthly-kl-coupon-desc">Use code at checkout for 5% off your entire order!</p>
+        <button type="button" class="earthly-kl-copy-btn" onclick="copyEarthlyCode(this)">
+          COPY CODE & SHOP
+        </button>
+      </div>
+    </div>
+
+    <div class="earthly-kl-image-col">
+      <img src="https://d3k81ch9hvuctc.cloudfront.net/company/RaxNJM/images/05393252-747e-46c6-85c5-0ca9f1770886.png" alt="Earthly Derm Results" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<style>
+/* Corner Teaser Button */
+.earthly-kl-teaser {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  z-index: 90000;
+  filter: drop-shadow(rgba(0, 0, 0, 0.15) 0px 0px 30px);
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.earthly-kl-teaser:hover {
+  transform: scale(1.05);
+}
+.earthly-kl-teaser-btn {
+  display: block;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  clip-path: polygon(0px 0px, 0px 100%, 100% 100%);
+  outline: none;
+}
+.earthly-kl-teaser-rotated {
+  height: 104px;
+  width: 169.706px;
+  transform: rotate(45deg);
+  transform-origin: left top;
+  background-color: #ffffff;
+  display: block;
+}
+
+/* Modal Backdrop */
+.earthly-kl-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 90001;
+  background-color: rgba(20, 20, 20, 0.65);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.earthly-kl-modal.is-open {
+  display: flex;
+  opacity: 1;
+}
+
+/* Modal Container */
+.earthly-kl-modal-container {
+  display: flex;
+  flex-direction: row;
+  width: 780px;
+  max-width: 95vw;
+  min-height: 480px;
+  border-radius: 20px;
+  background-color: #F2FBEA;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 40px;
+  position: relative;
+  overflow: hidden;
+  animation: earthlyKlScale 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes earthlyKlScale {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.earthly-kl-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+.earthly-kl-close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* Form Column */
+.earthly-kl-form-col {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 35px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.earthly-kl-badge {
+  margin-bottom: 12px;
+}
+.earthly-kl-badge img {
+  max-width: 170px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.earthly-kl-title {
+  font-family: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: #111111;
+  line-height: 1.15;
+  margin: 0 0 10px 0;
+}
+.earthly-kl-title strong {
+  font-weight: 700;
+}
+
+.earthly-kl-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #333333;
+  line-height: 1.45;
+  margin: 0 0 20px 0;
+}
+
+.earthly-kl-input-wrap {
+  margin-bottom: 12px;
+}
+.earthly-kl-input-wrap input {
+  width: 100%;
+  height: 48px;
+  border: 1.2px solid #2C5801;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  background-color: #ffffff;
+  color: #111111;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.earthly-kl-input-wrap input:focus {
+  border-color: #1a3800;
+  box-shadow: 0 0 0 2px rgba(44, 88, 1, 0.2);
+}
+
+.earthly-kl-submit-btn {
+  width: 100%;
+  height: 48px;
+  background-color: #2C5801;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+.earthly-kl-submit-btn:hover {
+  background-color: #1f3f01;
+}
+.earthly-kl-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Success State */
+.earthly-kl-success {
+  background: #ffffff;
+  border: 2px dashed #2C5801;
+  border-radius: 12px;
+  padding: 20px 16px;
+  margin-top: 10px;
+  animation: earthlyKlScale 0.3s ease;
+}
+.earthly-kl-coupon-code {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #2C5801;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.earthly-kl-coupon-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #555555;
+  margin: 0 0 14px 0;
+}
+.earthly-kl-copy-btn {
+  width: 100%;
+  height: 42px;
+  background: #2C5801;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Right Image Banner */
+.earthly-kl-image-col {
+  width: 380px;
+  min-width: 380px;
+  background-color: #b8b9ba;
+  display: block;
+}
+.earthly-kl-image-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .earthly-kl-modal-container {
+    flex-direction: column;
+    width: 92vw;
+    max-width: 400px;
+    min-height: auto;
+  }
+  .earthly-kl-image-col {
+    display: none;
+  }
+  .earthly-kl-form-col {
+    padding: 30px 20px;
+  }
+  .earthly-kl-title {
+    font-size: 24px;
+  }
+  .earthly-kl-teaser {
+    width: 95px;
+    height: 95px;
+  }
+  .earthly-kl-teaser-rotated {
+    height: 82px;
+    width: 135px;
+    padding-top: 14px;
+  }
+  .earthly-kl-teaser-text {
+    font-size: 15px;
+  }
+}
+</style>
+
+<script>
+function openEarthlyDiscountModal() {
+  const modal = document.getElementById('earthlyDiscountModal');
+  const teaser = document.getElementById('earthlyKlaviyoTeaser');
+  if (modal) {
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  if (teaser) {
+    teaser.style.display = 'none';
+  }
+}
+
+function closeEarthlyDiscountModal() {
+  const modal = document.getElementById('earthlyDiscountModal');
+  const teaser = document.getElementById('earthlyKlaviyoTeaser');
+  if (modal) {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  if (teaser) {
+    teaser.style.display = 'block';
+  }
+}
+
+function handleEarthlyModalBackdrop(e) {
+  if (e.target.id === 'earthlyDiscountModal') {
+    closeEarthlyDiscountModal();
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeEarthlyDiscountModal();
+  }
+});
+
+function handleEarthlyDiscountSubmit(e) {
+  e.preventDefault();
+  const input = document.getElementById('earthlyDiscountEmail');
+  if (!input || !input.value || !input.checkValidity()) {
+    input.focus();
+    return;
+  }
+
+  // Hide form & show coupon code
+  document.getElementById('earthlyDiscountForm').style.display = 'none';
+  document.getElementById('earthlyDiscountSuccess').style.display = 'block';
+}
+
+function copyEarthlyCode(btn) {
+  navigator.clipboard.writeText('EARTHLY5').then(function() {
+    btn.innerText = 'COPIED TO CLIPBOARD! ✓';
+    btn.style.background = '#1a3800';
+    setTimeout(function() {
+      closeEarthlyDiscountModal();
+    }, 1200);
+  }).catch(function() {
+    closeEarthlyDiscountModal();
+  });
+}
+</script>

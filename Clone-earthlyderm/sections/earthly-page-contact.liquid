@@ -1,0 +1,118 @@
+{% schema %}
+{
+  "name": "Earthly Contact Us",
+  "settings": []
+}
+{% endschema %}
+
+<div class="earthly-contact-page-wrapper">
+  <div class="contact-header text-center">
+    <h1 class="contact-title">Contact Us</h1>
+    <p class="contact-subtitle">Have a question or need assistance with your order? Send us a message and our team will get back to you within 24 hours.</p>
+  </div>
+
+  <div class="contact-card">
+    {% form 'contact' %}
+      {% if form.posted_successfully? %}
+        <p class="contact-success">Thank you for reaching out! We will be in touch shortly.</p>
+      {% endif %}
+
+      <div class="contact-field">
+        <label for="ContactName">Name</label>
+        <input type="text" id="ContactName" name="contact[name]" placeholder="Your full name" required>
+      </div>
+
+      <div class="contact-field">
+        <label for="ContactEmail">Email</label>
+        <input type="email" id="ContactEmail" name="contact[email]" placeholder="your.email@example.com" required>
+      </div>
+
+      <div class="contact-field">
+        <label for="ContactOrder">Order Number (optional)</label>
+        <input type="text" id="ContactOrder" name="contact[order_number]" placeholder="#ED1234">
+      </div>
+
+      <div class="contact-field">
+        <label for="ContactMessage">Message</label>
+        <textarea id="ContactMessage" name="contact[body]" rows="5" placeholder="How can we help you?" required></textarea>
+      </div>
+
+      <button type="submit" class="contact-submit-btn">SEND MESSAGE</button>
+    {% endform %}
+  </div>
+</div>
+
+<style>
+.earthly-contact-page-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 50px 20px 90px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+.contact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: #111111;
+  margin: 0 0 10px 0;
+}
+.contact-subtitle {
+  color: #666666;
+  font-size: 15px;
+  margin: 0 0 36px 0;
+  line-height: 1.6;
+}
+.contact-card {
+  background: #ffffff;
+  border: 1px solid #e7efe2;
+  border-radius: 12px;
+  padding: 36px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+}
+.contact-field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.contact-field label {
+  font-weight: 600;
+  font-size: 13px;
+  color: #333333;
+}
+.contact-field input, .contact-field textarea {
+  border: 1px solid #d8e5d0;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+.contact-field input:focus, .contact-field textarea:focus {
+  outline: none;
+  border-color: #2C5801;
+}
+.contact-submit-btn {
+  width: 100%;
+  background: #2C5801;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.contact-submit-btn:hover {
+  background: #1e3d01;
+}
+.contact-success {
+  background: #f2fbea;
+  color: #2c5801;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+</style>

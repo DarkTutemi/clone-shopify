@@ -1,0 +1,94 @@
+{
+  "african-black-soap": {
+    "id": 15459760013466,
+    "graphqlId": "gid://shopify/Product/15459760013466",
+    "title": "Anti-Acne & Blemish Bar.",
+    "handle": "african-black-soap",
+    "variants": [
+      {
+        "id": 67939260825754,
+        "title": "1 Bar",
+        "price": "34"
+      },
+      {
+        "id": 67939260858522,
+        "title": "2 Bars",
+        "price": "52"
+      },
+      {
+        "id": 67939260891290,
+        "title": "3 Bars",
+        "price": "72"
+      }
+    ]
+  },
+  "turmeric-fade-glow-bar": {
+    "id": 15459761651866,
+    "graphqlId": "gid://shopify/Product/15459761651866",
+    "title": "Turmeric Fade & Glow Bar.",
+    "handle": "turmeric-fade-glow-bar",
+    "variants": [
+      {
+        "id": 67939263086746,
+        "title": "Buy 1",
+        "price": "34"
+      },
+      {
+        "id": 67939263119514,
+        "title": "Buy 2 + 1 Free",
+        "price": "49"
+      },
+      {
+        "id": 67939263152282,
+        "title": "Buy 3 + 2 Free",
+        "price": "69"
+      }
+    ]
+  },
+  "turmeric-fade-glow-bar-razor-bumps": {
+    "id": 15459762831514,
+    "graphqlId": "gid://shopify/Product/15459762831514",
+    "title": "Turmeric Glow Bar",
+    "handle": "turmeric-fade-glow-bar-razor-bumps",
+    "variants": [
+      {
+        "id": 67939264331930,
+        "title": "Buy 1",
+        "price": "34"
+      },
+      {
+        "id": 67939264364698,
+        "title": "Buy 2 + 1 Free",
+        "price": "49"
+      },
+      {
+        "id": 67939264397466,
+        "title": "Buy 3 + 2 Free",
+        "price": "69"
+      }
+    ]
+  },
+  "turmeric-glow-soap": {
+    "id": 15459764043930,
+    "graphqlId": "gid://shopify/Product/15459764043930",
+    "title": "Turmeric Fade & Glow Bar.",
+    "handle": "turmeric-glow-soap",
+    "variants": [
+      {
+        "id": 67939266035866,
+        "title": "Buy 1",
+        "price": "34"
+      },
+      {
+        "id": 67939266068634,
+        "title": "Buy 2 + 1 Free",
+        "price": "49"
+      },
+      {
+        "id": 67939266101402,
+        "title": "Buy 3 + 2 Free",
+        "price": "69"
+      }
+    ]
+  }
+}

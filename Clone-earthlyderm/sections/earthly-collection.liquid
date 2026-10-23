@@ -1,0 +1,149 @@
+{% schema %}
+{
+  "name": "Earthly Collection",
+  "settings": []
+}
+{% endschema %}
+
+<div class="earthly-col-container">
+  <div class="earthly-col-hero text-center">
+    <h1 class="earthly-col-title">Earthly Derm Handcrafted Bars</h1>
+    <p class="earthly-col-desc">All-natural organic soaps crafted with raw African botanicals. Target dark spots, blemishes & hyperpigmentation safely.</p>
+  </div>
+
+  <div class="earthly-col-grid">
+    {% for product in collection.products %}
+      <div class="col-card">
+        <a href="{{ product.url }}" class="col-card-img-link">
+          <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}" class="col-card-img" loading="lazy">
+        </a>
+        <div class="col-card-content">
+          <div class="col-card-stars">★★★★★ <span class="score">4.9</span></div>
+          <h2 class="col-card-title"><a href="{{ product.url }}">{{ product.title }}</a></h2>
+          <div class="col-card-price">
+            <span class="price-from">From</span> {{ product.price_min | money }}
+            {% if product.compare_at_price_max > product.price_min %}
+              <span class="price-comp">{{ product.compare_at_price_max | money }}</span>
+            {% endif %}
+          </div>
+          <a href="{{ product.url }}" class="col-card-btn">SELECT BUNDLE ➔</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.earthly-col-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 80px 20px;
+}
+.earthly-col-hero {
+  margin-bottom: 48px;
+}
+.earthly-col-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: #111111;
+  margin: 0 0 12px 0;
+}
+.earthly-col-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #555555;
+  max-width: 620px;
+  margin: 0 auto;
+}
+.earthly-col-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 36px;
+}
+.col-card {
+  background: #ffffff;
+  border: 1px solid #e7efe2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.col-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(44, 88, 1, 0.1);
+}
+.col-card-img-link {
+  display: block;
+  aspect-ratio: 1;
+  background: #f7faf4;
+  overflow: hidden;
+}
+.col-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.col-card-content {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.col-card-stars {
+  color: #F1B948;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.col-card-stars .score {
+  font-family: 'Poppins', sans-serif;
+  color: #444444;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.col-card-title {
+  margin: 0 0 12px 0;
+}
+.col-card-title a {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #111111;
+  text-decoration: none;
+}
+.col-card-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2C5801;
+  margin-bottom: 18px;
+}
+.col-card-price .price-from {
+  font-size: 13px;
+  font-weight: 400;
+  color: #666666;
+}
+.col-card-price .price-comp {
+  font-size: 15px;
+  color: #888888;
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+.col-card-btn {
+  margin-top: auto;
+  display: block;
+  text-align: center;
+  background: #2C5801;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 13px 20px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+.col-card-btn:hover {
+  background: #1e3d01;
+}
+</style>

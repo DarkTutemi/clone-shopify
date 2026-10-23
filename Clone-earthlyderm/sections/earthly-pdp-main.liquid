@@ -1,0 +1,1337 @@
+{% schema %}
+{
+  "name": "Earthly PDP Main",
+  "settings": []
+}
+{% endschema %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<div class="earthly-pdp-wrapper">
+  <div class="earthly-pdp-container">
+    <!-- LEFT: Gallery Column -->
+    <div class="pdp-gallery-col">
+      <div class="pdp-main-image-container">
+        <div class="pdp-bestseller-badge">BEST SELLER 🔥</div>
+        <img id="pdpMainImage" src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.title }}" class="pdp-main-image">
+        
+        <button type="button" class="pdp-nav-arrow pdp-nav-prev" onclick="navPdpImage(-1)" aria-label="Previous image">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button type="button" class="pdp-nav-arrow pdp-nav-next" onclick="navPdpImage(1)" aria-label="Next image">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+
+      <div class="pdp-thumbnails-scroll">
+        {% for image in product.images %}
+          <button type="button" class="pdp-thumb-card {% if forloop.first %}active{% endif %}" onclick="switchPdpThumb(this, '{{ image | image_url: width: 1000 }}', {{ forloop.index0 }})">
+            <img src="{{ image | image_url: width: 150 }}" alt="{{ product.title }}" class="pdp-thumb-img">
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- RIGHT: Buy Box Column -->
+    <div class="pdp-buybox-col">
+      <!-- Ratings with customer faces -->
+      <div class="pdp-happy-faces-flex">
+        <div class="pdp-stars">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 77 14" height="14" width="77">
+            <path fill="#F1B948" d="M3.16 13.34L4.2 8.52L1.04 6.26C0.57 5.76 0.89 4.8 1.55 4.68L5.43 4.71L6.61 1C6.94 0.28 7.93 0.28 8.26 1L9.44 4.71L13.32 4.68C13.98 4.8 14.3 5.76 13.84 6.26L10.68 8.52L11.92 12.2C12.02 12.87 11.18 13.46 10.57 13.18L7.43 10.88L4.3 13.18C3.69 13.46 3.01 12.87 3.16 12.2V13.34Z"></path>
+            <path fill="#F1B948" d="M18.69 13.34L19.73 8.52L16.57 6.26C16.1 5.76 16.42 4.8 17.08 4.68L20.96 4.71L22.14 1C22.47 0.28 23.46 0.28 23.8 1L24.97 4.71L28.85 4.68C29.51 4.8 29.83 5.76 29.37 6.26L26.21 8.52L27.45 12.2C27.55 12.87 26.71 13.46 26.1 13.18L22.96 10.88L19.83 13.18C19.22 13.46 18.54 12.87 18.69 12.2V13.34Z"></path>
+            <path fill="#F1B948" d="M34.22 13.34L35.26 8.52L32.1 6.26C31.63 5.76 31.95 4.8 32.61 4.68L36.49 4.71L37.67 1C38 0.28 38.99 0.28 39.33 1L40.5 4.71L44.38 4.68C45.04 4.8 45.36 5.76 44.9 6.26L41.74 8.52L42.98 12.2C43.08 12.87 42.24 13.46 41.63 13.18L38.5 10.88L35.36 13.18C34.75 13.46 34.07 12.87 34.22 12.2V13.34Z"></path>
+            <path fill="#F1B948" d="M49.76 13.34L50.79 8.52L47.63 6.26C47.17 5.76 47.48 4.8 48.14 4.68L52.03 4.71L53.21 1C53.54 0.28 54.53 0.28 54.86 1L56.04 4.71L59.91 4.68C60.58 4.8 60.9 5.76 60.43 6.26L57.27 8.52L58.51 12.2C58.61 12.87 57.77 13.46 57.17 13.18L54.03 10.88L50.9 13.18C50.29 13.46 49.61 12.87 49.76 12.2V13.34Z"></path>
+            <path fill="#F1B948" d="M65.29 13.34L66.33 8.52L63.16 6.26C62.7 5.76 63.02 4.8 63.68 4.68L67.56 4.71L68.74 1C69.07 0.28 70.06 0.28 70.39 1L71.57 4.71L75.45 4.68C76.11 4.8 76.43 5.76 75.96 6.26L72.8 8.52L74.04 12.2C74.14 12.87 73.3 13.46 72.7 13.18L69.56 10.88L66.43 13.18C65.82 13.46 65.14 12.87 65.29 12.2V13.34Z"></path>
+          </svg>
+        </div>
+        <p class="pdp-happy-faces-text">
+          {% if product.handle contains 'african' or product.handle contains 'black' %}
+            Rated 5/5 by <span>674</span> happy customers
+          {% else %}
+            Rated 5/5 by <span>6,791</span> happy customers
+          {% endif %}
+        </p>
+        <img src="//earthlyderm.com/cdn/shop/files/WhatsApp_Image_2024-12-20_at_14.51.30.jpg?v=1769476103" alt="Happy customers" class="pdp-happy-faces-img">
+      </div>
+
+      <!-- Title -->
+      <h1 class="pdp-headline">{{ product.title }}</h1>
+
+      <!-- Price & Badge Row -->
+      <div class="pdp-price-badge-row">
+        {% if product.handle contains 'african' or product.handle contains 'black' %}
+          <span class="pdp-live-price" id="pdpLivePrice">$41.60</span>
+          <span class="pdp-live-compare" id="pdpLiveCompare">$68.00</span>
+        {% else %}
+          <span class="pdp-live-price" id="pdpLivePrice">$39.20</span>
+          <span class="pdp-live-compare" id="pdpLiveCompare">$102.00</span>
+        {% endif %}
+        <div class="pdp-us-badge">
+          <span>🇺🇸</span>
+          <span>100% US OWNED</span>
+        </div>
+      </div>
+
+      <!-- 4 USP Points (2x2 Grid) -->
+      {% if product.handle contains 'african' or product.handle contains 'black' %}
+      <div class="usp-points-grid">
+        <div class="usp-point-card">
+          <svg viewBox="0 0 82 82" width="20" height="20" fill="#2C5801"><path d="M28.405 48.928S44.542 23.912 75.372 2.55c2.763-1.915 6.046 1.572 3.979 4.234-13.918 17.921-37.073 49.81-43.093 70.8-.782 2.728-4.346 3.291-5.927.941C25.63 71.543 17 60.565 3.384 49.668c-2.359-1.888-1.617-5.774 1.574-6.211 5.206-.714 13.211-.483 23.447 5.471Z"/></svg>
+          <span>Prevents Breakouts</span>
+        </div>
+        <div class="usp-point-card">
+          <svg viewBox="0 0 82 82" width="20" height="20" fill="#2C5801"><path d="M28.405 48.928S44.542 23.912 75.372 2.55c2.763-1.915 6.046 1.572 3.979 4.234-13.918 17.921-37.073 49.81-43.093 70.8-.782 2.728-4.346 3.291-5.927.941C25.63 71.543 17 60.565 3.384 49.668c-2.359-1.888-1.617-5.774 1.574-6.211 5.206-.714 13.211-.483 23.447 5.471Z"/></svg>
+          <span>Calms Inflammation</span>
+        </div>
+        <div class="usp-point-card">
+          <svg viewBox="0 0 82 82" width="20" height="20" fill="#2C5801"><path d="M28.405 48.928S44.542 23.912 75.372 2.55c2.763-1.915 6.046 1.572 3.979 4.234-13.918 17.921-37.073 49.81-43.093 70.8-.782 2.728-4.346 3.291-5.927.941C25.63 71.543 17 60.565 3.384 49.668c-2.359-1.888-1.617-5.774 1.574-6.211 5.206-.714 13.211-.483 23.447 5.471Z"/></svg>
+          <span>Restores the Skin Barrier</span>
+        </div>
+        <div class="usp-point-card">
+          <svg viewBox="0 0 82 82" width="20" height="20" fill="#2C5801"><path d="M28.405 48.928S44.542 23.912 75.372 2.55c2.763-1.915 6.046 1.572 3.979 4.234-13.918 17.921-37.073 49.81-43.093 70.8-.782 2.728-4.346 3.291-5.927.941C25.63 71.543 17 60.565 3.384 49.668c-2.359-1.888-1.617-5.774 1.574-6.211 5.206-.714 13.211-.483 23.447 5.471Z"/></svg>
+          <span>60 day money-back guarantee</span>
+        </div>
+      </div>
+      {% else %}
+      <div class="usp-points-grid">
+        <div class="usp-point-card">
+          <img src="//earthlyderm.com/cdn/shop/files/icons_smooche_new_17_2C5801_FIXED.svg?v=1789810720" alt="Fades dark spots" width="22" height="22">
+          <span>Fades dark spots</span>
+        </div>
+        <div class="usp-point-card">
+          <img src="//earthlyderm.com/cdn/shop/files/svgviewer-output_2.svg?v=1789810839" alt="For melanin-rich skin" width="22" height="22">
+          <span>For melanin-rich skin</span>
+        </div>
+        <div class="usp-point-card">
+          <img src="//earthlyderm.com/cdn/shop/files/svgviewer-output_4.svg?v=1789811013" alt="1 million+ bars sold" width="22" height="22">
+          <span>1 million+ bars sold</span>
+        </div>
+        <div class="usp-point-card">
+          <img src="//earthlyderm.com/cdn/shop/files/svgviewer-output_3.svg?v=1789810974" alt="Results in 2-3 weeks" width="22" height="22">
+          <span>Results in 2-3 weeks</span>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Subtitle Description -->
+      <div class="pdp-subheading-text">
+        {% if product.handle contains 'african' or product.handle contains 'black' %}
+          <p>Nature's remedy for recurring breakouts on melanin-rich skin.</p>
+        {% else %}
+          <p><strong>Most products only work on the top layer of skin.</strong> Dark marks, acne scars and bumps start deeper. Our turmeric is ground extra fine so it gets down to where they start.</p>
+        {% endif %}
+      </div>
+
+      <!-- Kaching Bundles Section -->
+      <div class="kaching-bundles-container">
+        <div class="kaching-bundles-title">LOW STOCK - SELLING FAST</div>
+
+        <div class="kaching-deal-bars">
+          {% if product.handle contains 'african' or product.handle contains 'black' %}
+          <!-- Card 1: Buy 1 Single Bar -->
+          <div class="kaching-bar" onclick="selectKachingDeal(this, 1, '{{ product.variants[0].id }}', '$27.20', '$34.00')">
+            <div class="kaching-bar-inner">
+              <img class="kaching-bar-img" src="https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Kaching-Bundles-image-1790062636636_300x300.png?v=1790062666" alt="Single Bar">
+              <div class="kaching-bar-info">
+                <div class="kaching-bar-line1">
+                  <span class="kaching-bar-name">Single Bar</span>
+                  <span class="kaching-bar-pill">Only $0.88/day</span>
+                </div>
+                <div class="kaching-bar-line2">You save 20%</div>
+              </div>
+              <div class="kaching-bar-pricing">
+                <div class="kaching-bar-cur">$27.20</div>
+                <div class="kaching-bar-orig">$34.00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Two Bars (Active Default) -->
+          <div class="kaching-bar active" onclick="selectKachingDeal(this, 2, '{{ product.variants[1].id | default: product.variants[0].id }}', '$41.60', '$68.00')">
+            <div class="kaching-badge-pill popular">MOST POPULAR</div>
+            <div class="kaching-bar-inner">
+              <img class="kaching-bar-img" src="https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Kaching-Bundles-image-1790062714750_300x300.png?v=1790062730" alt="Two Bars">
+              <div class="kaching-bar-info">
+                <div class="kaching-bar-line1">
+                  <span class="kaching-bar-name">Two Bars</span>
+                  <span class="kaching-bar-pill">Only $0.45/day</span>
+                </div>
+                <div class="kaching-bar-line2">You Save 39%</div>
+              </div>
+              <div class="kaching-bar-pricing">
+                <div class="kaching-bar-cur">$41.60</div>
+                <div class="kaching-bar-orig">$68.00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Three Bars -->
+          <div class="kaching-bar" onclick="selectKachingDeal(this, 3, '{{ product.variants[2].id | default: product.variants[0].id }}', '$57.60', '$102.00')">
+            <div class="kaching-badge-pill best-value">BEST VALUE</div>
+            <div class="kaching-bar-inner">
+              <img class="kaching-bar-img" src="https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Kaching-Bundles-image-1790062739365_300x300.png?v=1790062756" alt="Three Bars">
+              <div class="kaching-bar-info">
+                <div class="kaching-bar-line1">
+                  <span class="kaching-bar-name">Three Bars</span>
+                  <span class="kaching-bar-pill">Only $0.37/day</span>
+                </div>
+                <div class="kaching-bar-line2">You Save 44%</div>
+              </div>
+              <div class="kaching-bar-pricing">
+                <div class="kaching-bar-cur">$57.60</div>
+                <div class="kaching-bar-orig">$102.00</div>
+              </div>
+            </div>
+          </div>
+          {% else %}
+          <!-- Card 1: Buy 1 -->
+          <div class="kaching-bar" onclick="selectKachingDeal(this, 1, '{{ product.variants[0].id }}', '$27.20', '$34.00')">
+            <div class="kaching-bar-inner">
+              <img class="kaching-bar-img" src="https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Kaching-Bundles-image-1790062636636_300x300.png?v=1790062666" alt="Buy 1">
+              <div class="kaching-bar-info">
+                <div class="kaching-bar-line1">
+                  <span class="kaching-bar-name">Buy 1</span>
+                  <span class="kaching-bar-pill">Only $0.88/day</span>
+                </div>
+                <div class="kaching-bar-line2">You save 20%</div>
+              </div>
+              <div class="kaching-bar-pricing">
+                <div class="kaching-bar-cur">$27.20</div>
+                <div class="kaching-bar-orig">$34.00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Buy 2 + Get 1 Free (Active Default) -->
+          <div class="kaching-bar active" onclick="selectKachingDeal(this, 2, '{{ product.variants[1].id | default: product.variants[0].id }}', '$39.20', '$102.00')">
+            <div class="kaching-badge-pill popular">MOST POPULAR</div>
+            <div class="kaching-bar-inner">
+              <img class="kaching-bar-img" src="https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Kaching-Bundles-image-1790062714750_300x300.png?v=1790062730" alt="Buy 2 + Get 1 Free">
+              <div class="kaching-bar-info">
+                <div class="kaching-bar-line1">
+                  <span class="kaching-bar-name">Buy 2 + Get 1 Free</span>
+                  <span class="kaching-bar-pill">Only $0.42/day</span>
+                </div>
+                <div class="kaching-bar-line2">You save 62%</div>
+              </div>
+              <div class="kaching-bar-pricing">
+                <div class="kaching-bar-cur">$39.20</div>
+                <div class="kaching-bar-orig">$102.00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Buy 3 + Get 2 Free -->
+          <div class="kaching-bar" onclick="selectKachingDeal(this, 3, '{{ product.variants[2].id | default: product.variants[0].id }}', '$55.20', '$170.00')">
+            <div class="kaching-badge-pill best-value">BEST VALUE</div>
+            <div class="kaching-bar-inner">
+              <img class="kaching-bar-img" src="https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Kaching-Bundles-image-1790062739365_300x300.png?v=1790062756" alt="Buy 3 + Get 2 Free">
+              <div class="kaching-bar-info">
+                <div class="kaching-bar-line1">
+                  <span class="kaching-bar-name">Buy 3 + Get 2 Free</span>
+                  <span class="kaching-bar-pill">Only $0.36/day</span>
+                </div>
+                <div class="kaching-bar-line2">You save 68%</div>
+              </div>
+              <div class="kaching-bar-pricing">
+                <div class="kaching-bar-cur">$55.20</div>
+                <div class="kaching-bar-orig">$170.00</div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Subscription Checkbox -->
+        <div class="kaching-sub-card">
+          <div class="kaching-sub-row">
+            <input type="checkbox" id="kachingSubToggle" checked onchange="toggleSubscription(this)" class="kaching-sub-check">
+            <label for="kachingSubToggle" class="kaching-sub-content">
+              {% if product.handle contains 'african' or product.handle contains 'black' %}
+                <div class="kaching-sub-title">Save 15% More With Auto-Delivery</div>
+              {% else %}
+                <div class="kaching-sub-title">Save 20% More With Auto-Delivery</div>
+              {% endif %}
+              <div class="kaching-sub-desc">Never lose progress. Zero Commitment. Cancel Anytime.</div>
+            </label>
+          </div>
+          <div class="kaching-sub-select-wrapper" id="subSelectWrapper">
+            <select class="kaching-sub-select" id="kachingDeliveryFreq">
+              <option value="1">Delivers every month</option>
+              <option value="2">Deliver every 2 months</option>
+              <option value="3">Deliver every 3 months</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add To Cart Button -->
+      <div class="pdp-action-area">
+        <input type="hidden" id="pdpSelectedVariantId" value="{{ product.variants[1].id | default: product.selected_or_first_available_variant.id }}">
+        <button type="button" class="pdp-main-atc-button" id="pdpAtcBtn" onclick="triggerPdpAddToCart()">
+          <span id="atcActionText">ADD TO CART</span>
+          <span class="vs-dash">-</span>
+          {% if product.handle contains 'african' or product.handle contains 'black' %}
+            <span id="atcPriceText">$41.60</span>
+            <span id="atcCompareText" class="atc-compare-price">$68.00</span>
+          {% else %}
+            <span id="atcPriceText">$39.20</span>
+            <span id="atcCompareText" class="atc-compare-price">$102.00</span>
+          {% endif %}
+        </button>
+      </div>
+
+      <!-- Express Delivery Line -->
+      <div class="pdp-delivery-line">
+        <div class="delivery-truck-svg">
+          <svg width="28" height="16" viewBox="0 0 33 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32.7 9L28.86 5.18C28.79 5.11 28.71 5.06 28.62 5.02C28.53 4.98 28.43 4.96 28.33 4.96H25.84V0.73C25.84 0.3 -0.03 0.73 -0.03 0.73H11.35V14.46H13.15C13.16 15.32 14.67 18.03 16.32 18.03C17.97 18.03 19.48 15.32 19.48 15.22H24.06C24.07 15.32 25.58 18.03 27.23 18.03C28.88 18.03 30.39 15.32 30.39 15.22H32.16C32.66 15.22 32.92 14.46 32.92 14.46V9.47C32.92 9.38 32.86 9.22 32.7 9ZM16.31 16.57C15.45 16.57 14.63 15.75 14.63 14.9C14.63 14.05 15.45 13.21 16.31 13.21C17.17 13.21 17.97 14.05 17.97 14.9C17.97 15.75 17.17 16.57 16.31 16.57ZM27.23 16.57C26.37 16.57 25.63 15.75 25.63 14.9C25.63 14.05 26.37 13.21 27.23 13.21C28.09 13.21 28.89 14.05 28.89 14.9C28.89 15.75 28.09 16.57 27.23 16.57ZM28.07 6.48L31.46 9.81L31.41 13.76H30.2C29.61 12.83 28.58 12.02 27.28 11.9C26.47 12.01 25.89 12.2 25.89 12.2V6.48H28.07Z" fill="#1A1A1A"/>
+          </svg>
+        </div>
+        <p>Delivered on <span class="pdp-delivery-date" id="pdpExpressDate">Wednesday, 28 October</span> with Express Shipping</p>
+      </div>
+
+      <!-- Trust Badges (Warehouse & Guarantee) -->
+      <div class="pdp-trust-dual-row">
+        <div class="pdp-trust-dual-item">
+          <img src="//earthlyderm.com/cdn/shop/files/60-days_11622780_1.webp?v=1776003100&width=60" alt="60-Day Money-Back Guarantee" width="46" height="46">
+          <p>60-Day Money-Back Guarantee</p>
+        </div>
+        <div class="pdp-trust-dual-item">
+          <img src="//earthlyderm.com/cdn/shop/files/Frame_1000003293.webp?v=1776003881&width=60" alt="Indiana Warehouse" width="46" height="46">
+          <p>Ships From Our Indiana Warehouse</p>
+        </div>
+      </div>
+
+      <!-- Accordions Section -->
+      {% if product.handle contains 'african' or product.handle contains 'black' %}
+
+      <!-- Accordion 1: Will this work for my skin type? -->
+      <div class="pdp-rich-acc-card">
+        <button type="button" class="pdp-rich-acc-header" onclick="toggleRichAcc(this)">
+          <span>Will this work for my skin type?</span>
+          <span class="pdp-acc-toggle-icon">+</span>
+        </button>
+        <div class="pdp-rich-acc-body">
+          <p>Yes. While it's made for melanin-rich skin, it works on all skin types and tones.</p><p>If you deal with breakouts, clogged pores, oily skin or constant blemishes, this is built for you.</p>
+        </div>
+      </div>
+
+      <!-- Accordion 2: When will I see results? -->
+      <div class="pdp-rich-acc-card">
+        <button type="button" class="pdp-rich-acc-header" onclick="toggleRichAcc(this)">
+          <span>When will I see results?</span>
+          <span class="pdp-acc-toggle-icon">+</span>
+        </button>
+        <div class="pdp-rich-acc-body">
+          <p>Most people start seeing fewer breakouts and calmer, clearer skin within the first two weeks of regular use. The deep-cleaning works fast on the surface, then over the following weeks fewer new pimples come through as your pores stay clear.</p><p>Acne built up over years won't vanish overnight, so the people who get the best results use it consistently and stick with it. That consistency is what keeps the breakouts from coming back.</p>
+        </div>
+      </div>
+
+      <!-- Accordion 3: How is this different to everything else? -->
+      <div class="pdp-rich-acc-card">
+        <button type="button" class="pdp-rich-acc-header" onclick="toggleRichAcc(this)">
+          <span>How is this different to everything else?</span>
+          <span class="pdp-acc-toggle-icon">+</span>
+        </button>
+        <div class="pdp-rich-acc-body">
+          <p>If acids, benzoyl peroxide and medicated washes left your skin dry, raw and breaking out worse, you're not alone. On melanin-rich skin, harsh products often trigger more than they clear.</p><p>This works with your skin, not against it. The natural plant ash lifts the dead skin and oil clogging your pores, then clears the bacteria that turns them into breakouts, so acne stops at the source. Shea butter keeps your skin balanced so it never dries out.</p>
+        </div>
+      </div>
+
+      <!-- Accordion 4: Is it safe for facial use? -->
+      <div class="pdp-rich-acc-card">
+        <button type="button" class="pdp-rich-acc-header" onclick="toggleRichAcc(this)">
+          <span>Is it safe for facial use?</span>
+          <span class="pdp-acc-toggle-icon">+</span>
+        </button>
+        <div class="pdp-rich-acc-body">
+          <p>Absolutely.<br><br>Unlike traditional soap bars (which have a pH of 9–10 and can strip the skin), our formula is a <strong>syndet bar with a skin-friendly pH of 5</strong>, which matches the skin’s natural acid mantle (pH 4.5–5.5).</p><p>This means:</p><ul><li>It won’t dry or strip your skin<br></li><li>It won’t cause irritation that leads to dark marks<br></li><li>It’s safe for melanin-rich and sensitive skin<br></li><li>It’s suitable for daily use on the face, underarms, and bikini line</li></ul>
+        </div>
+      </div>
+
+      <!-- Accordion 5: It seems expensive? -->
+      <div class="pdp-rich-acc-card">
+        <button type="button" class="pdp-rich-acc-header" onclick="toggleRichAcc(this)">
+          <span>It seems expensive?</span>
+          <span class="pdp-acc-toggle-icon">+</span>
+        </button>
+        <div class="pdp-rich-acc-body">
+          <p>One bar lasts most people weeks, since you only need a small lather, so the cost per wash is low. And it replaces the cleansers, spot treatments and products you've been stacking and replacing to fight breakouts.</p><p>It's also backed by our 60 day money-back guarantee. If your skin doesn't get clearer, you get your money back, so there's no real risk in trying it.</p>
+        </div>
+      </div>
+
+      <!-- Accordion 6: How do I use it? -->
+      <div class="pdp-rich-acc-card">
+        <button type="button" class="pdp-rich-acc-header" onclick="toggleRichAcc(this)">
+          <span>How do I use it?</span>
+          <span class="pdp-acc-toggle-icon">+</span>
+        </button>
+        <div class="pdp-rich-acc-body">
+          <p><strong>Daily Use:</strong><br>Wet your skin, lather the bar, and massage over dark spots using circular motions for 30-60 seconds. Rinse thoroughly and pat dry. Follow with moisturizer. Use on face, underarms, bikini line, or anywhere you have hyperpigmentation.</p><p><strong>Sensitive skin?</strong> Start 2-3 times per week, then increase to daily as your skin adjusts.</p><p><strong>What to expect:</strong></p><ul><li><strong>First few days:</strong> Smoother texture, softer feel</li><li><strong>Weeks 2-4:</strong> Visible fading of dark spots with consistent daily use</li><li><strong>Ongoing:</strong> Prevents new dark spots, razor bumps, and ingrown hairs from forming</li></ul><p>Each bar lasts 30 days with daily use.</p><p></p>
+        </div>
+      </div>
+
+      <!-- Accordion 7: Shipping Details -->
+      <div class="pdp-rich-acc-card">
+        <button type="button" class="pdp-rich-acc-header" onclick="toggleRichAcc(this)">
+          <span>Shipping Details</span>
+          <span class="pdp-acc-toggle-icon">+</span>
+        </button>
+        <div class="pdp-rich-acc-body">
+          <p>Orders are dispatched within <strong>24 hours (Monday–Friday)</strong>. </p><p>We ship directly from our warehouse based in Indiana.<br><br>Shipping takes 2-4 business days.</p>
+        </div>
+      </div>
+
+      <!-- Accordion 8: Ingredients List -->
+      <div class="pdp-rich-acc-card">
+        <button type="button" class="pdp-rich-acc-header" onclick="toggleRichAcc(this)">
+          <span>Ingredients List</span>
+          <span class="pdp-acc-toggle-icon">+</span>
+        </button>
+        <div class="pdp-rich-acc-body">
+          <p>🧈 <strong>Unrefined Shea Butter</strong> – Deeply moisturizes and calms the skin, balancing the deep-cleanse so your skin clears without drying out or feeling tight.</p><p>🥥 <strong>Coconut Oil</strong> – Locks in moisture and supports the skin barrier, keeping skin soft and hydrated while it clears.</p><p>🌴 <strong>Palm Kernel Oil </strong>– Conditions and nourishes the skin, working with the shea butter to keep the bar gentle enough for daily use.</p><p>🌿 <strong>Moringa Oil</strong> – Rich in antioxidants and vitamins, it soothes irritation and helps keep breakout-prone skin calm and clear.</p><p>⚫ <strong>Cocoa Pod Ash</strong> – The active heart of the bar. Its natural cleansing and antibacterial properties lift the dead skin and oil that clog pores and clear the bacteria that turns into breakouts.</p><p>💧 <strong>Purified Water</strong> – The clean base that binds the formula together.</p><p><strong>No harsh chemicals, no synthetic dyes, just raw natural ingredients that clear breakouts and keep your skin balanced.</strong></p>
+  <a href="javascript:void(0)" class="see-ingredients" onclick="showIngredientsPopup()">See all ingredients</a>
+
+  <style>
+    .see-ingredients {
+      padding: 15px 12px;
+      background: #f7f7f7;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      text-decoration: underline;
+      border-radius: 0px 0px 6px 6px;
+      cursor: pointer;
+    }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 30px;
+      max-width: 600px;
+      margin: 20vh auto;
+      position: relative;
+      border-radius: 8px;
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .ingredients-text {
+      margin-top: 20px;
+    }
+  </style>
+
+  <script>
+    function showIngredientsPopup() {
+      document.getElementById('ingredientsPopup').style.display = 'block';
+    }
+
+    function closeIngredientsPopup() {
+      document.getElementById('ingredientsPopup').style.display = 'none';
+    }
+
+    // Close when clicking outside the popup
+    window.onclick = function(event) {
+      const popup = document.getElementById('ingredientsPopup');
+      if (event.target === popup) {
+        popup.style.display = 'none';
+      }
+    }
+  </script>
+        </div>
+      </div>
+      {% else %}
+
+      <!-- Accordion: Why It Works -->
+      <div class="pdp-rich-acc-card">
+        <button type="button" class="pdp-rich-acc-header" onclick="toggleRichAcc(this)">
+          <span>Why It Works</span>
+          <span class="pdp-acc-toggle-icon">+</span>
+        </button>
+        <div class="pdp-rich-acc-body">
+          <div class="acc-content-bullet">
+            <img src="//earthlyderm.com/cdn/shop/files/svgviewer-output_5.svg?v=1789857836" alt="" width="18" height="18">
+            <div>
+              <strong>MADE FOR:</strong>
+              <span>Black skin, first. Most products are made for lighter skin and sold to everyone. Earthly Derm was built for melanin-rich skin from day one.</span>
+            </div>
+          </div>
+          <div class="acc-content-bullet">
+            <img src="//earthlyderm.com/cdn/shop/files/svgviewer-output_5.svg?v=1789857836" alt="" width="18" height="18">
+            <div>
+              <strong>BEST FOR:</strong>
+              <span>Dark marks, acne scars, razor bumps and uneven tone. Use it on your face, underarms, inner thighs, bikini line, knees and elbows.</span>
+            </div>
+          </div>
+          <div class="acc-content-bullet">
+            <img src="//earthlyderm.com/cdn/shop/files/svgviewer-output_5.svg?v=1789857836" alt="" width="18" height="18">
+            <div>
+              <strong>COLD PRESSED:</strong>
+              <span>Most turmeric soap is made with heat, which kills the part of turmeric that fades dark marks. Ours is cold pressed within 48 hours of harvest, so it reaches your skin with everything still in it.</span>
+            </div>
+          </div>
+          <div class="acc-content-bullet">
+            <img src="//earthlyderm.com/cdn/shop/files/svgviewer-output_5.svg?v=1789857836" alt="" width="18" height="18">
+            <div>
+              <strong>WHAT'S INSIDE:</strong>
+              <span>Kerala turmeric, tea tree, activated charcoal, shea butter, aloe and raw honey. No hydroquinone, no bleach, no sulfates, no synthetic dyes or fragrance.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion: Your 4-Week Fade Plan -->
+      <div class="pdp-rich-acc-card">
+        <button type="button" class="pdp-rich-acc-header" onclick="toggleRichAcc(this)">
+          <span>Your 4-Week Fade Plan</span>
+          <span class="pdp-acc-toggle-icon">+</span>
+        </button>
+        <div class="pdp-rich-acc-body">
+          <div class="acc-content-bullet">
+            <img src="//earthlyderm.com/cdn/shop/files/gempages_541528186094093173-72dc17b8-b5fd-4e96-802a-31865f4ae9fb_1.png?v=1789861535" alt="" width="48" height="48">
+            <div>
+              <strong>1. TAKE YOUR BEFORE PHOTO</strong>
+              <span>Do it right away. The most common thing our customers tell us is "I wish I'd taken a before picture."</span>
+            </div>
+          </div>
+          <div class="acc-content-bullet">
+            <img src="//earthlyderm.com/cdn/shop/files/svgviewer-output_5.svg?v=1789857836" alt="" width="18" height="18">
+            <div>
+              <strong>2. WASH TWICE A DAY</strong>
+              <span>Lather gently into wet skin morning and evening. Let the natural botanical lather sit for 60 seconds before rinsing.</span>
+            </div>
+          </div>
+          <div class="acc-content-bullet">
+            <img src="//earthlyderm.com/cdn/shop/files/svgviewer-output_5.svg?v=1789857836" alt="" width="18" height="18">
+            <div>
+              <strong>3. NOTICE THE GLOW BY WEEK 2</strong>
+              <span>Active turmeric antioxidants penetrate the dermal layer to visibly diminish hyperpigmentation and discoloration.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion: How To Use It -->
+      <div class="pdp-rich-acc-card">
+        <button type="button" class="pdp-rich-acc-header" onclick="toggleRichAcc(this)">
+          <span>How To Use It</span>
+          <span class="pdp-acc-toggle-icon">+</span>
+        </button>
+        <div class="pdp-rich-acc-body">
+          <p style="margin:0 0 10px 0; color:#444; font-size:14px; line-height:1.6;">
+            <strong>Face:</strong> Wet face with lukewarm water. Rub bar between hands to create a rich lather. Massage into skin for 60 seconds. Rinse clean.
+          </p>
+          <p style="margin:0; color:#444; font-size:14px; line-height:1.6;">
+            <strong>Body:</strong> Safe for daily full body cleansing. Target dark inner thighs, underarms, knees and bikini line. Keep soap bar in a dry spot between uses.
+          </p>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- More FAQ's Link -->
+      <div class="pdp-more-faqs-wrap">
+        <a class="more-faqs" href="#vsFaqSection">More FAQ's</a>
+      </div>
+
+      {% unless product.handle contains 'african' or product.handle contains 'black' %}
+      <!-- SEE IT IN ACTION Videos Block -->
+      <div class="s-main-product__videos-block">
+        <h3 class="s-main-product__videos-title">SEE IT IN ACTION</h3>
+        <div class="s-main-product__videos-wrapper">
+          <div class="s-main-product__video" onclick="playPdpVideo(this)">
+            <div class="s-main-product__video-inner">
+              <video class="s-main-product__video-file" playsinline loop src="//earthlyderm.com/cdn/shop/videos/c/vp/8211bd2d53794932b84f86e5921fd5b3/8211bd2d53794932b84f86e5921fd5b3.HD-1080p-7.2Mbps-68074137.mp4?v=0"></video>
+              <div class="s-main-product__preview-image">
+                <img src="//earthlyderm.com/cdn/shop/files/Screenshot_2025-11-04_at_16.49.53.png?v=1769506410&width=600" alt="Action video 1">
+              </div>
+              <div class="s-main-product__play-icon">
+                <svg width="34" height="34" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.85"/><polygon points="19,14 35,24 19,34" fill="#2C5801"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="s-main-product__video" onclick="playPdpVideo(this)">
+            <div class="s-main-product__video-inner">
+              <video class="s-main-product__video-file" playsinline loop src="//earthlyderm.com/cdn/shop/videos/c/vp/f4e25a4a1c6d4f1687849a86785883a0/f4e25a4a1c6d4f1687849a86785883a0.HD-720p-1.6Mbps-67893799.mp4?v=0"></video>
+              <div class="s-main-product__preview-image">
+                <img src="//earthlyderm.com/cdn/shop/files/Screenshot_2025-09-04_at_12.14.52.png?v=1769475088&width=600" alt="Action video 2">
+              </div>
+              <div class="s-main-product__play-icon">
+                <svg width="34" height="34" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.85"/><polygon points="19,14 35,24 19,34" fill="#2C5801"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="s-main-product__video" onclick="playPdpVideo(this)">
+            <div class="s-main-product__video-inner">
+              <video class="s-main-product__video-file" playsinline loop src="//earthlyderm.com/cdn/shop/videos/c/vp/38f39f1d32754a5ba3a7bccd47c66dfa/38f39f1d32754a5ba3a7bccd47c66dfa.HD-1080p-7.2Mbps-67894105.mp4?v=0"></video>
+              <div class="s-main-product__preview-image">
+                <img src="//earthlyderm.com/cdn/shop/files/Screenshot_2024-12-25_at_11.42.26.png?v=1769475173&width=600" alt="Action video 3">
+              </div>
+              <div class="s-main-product__play-icon">
+                <svg width="34" height="34" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.85"/><polygon points="19,14 35,24 19,34" fill="#2C5801"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="s-main-product__video" onclick="playPdpVideo(this)">
+            <div class="s-main-product__video-inner">
+              <video class="s-main-product__video-file" playsinline loop src="//earthlyderm.com/cdn/shop/videos/c/vp/d2acbcde9f9b4dbd8663733c21e3a1b9/d2acbcde9f9b4dbd8663733c21e3a1b9.HD-720p-1.6Mbps-67894215.mp4?v=0"></video>
+              <div class="s-main-product__preview-image">
+                <img src="//earthlyderm.com/cdn/shop/files/Screenshot_2025-09-04_at_12.17.56.png?v=1769475210&width=600" alt="Action video 4">
+              </div>
+              <div class="s-main-product__play-icon">
+                <svg width="34" height="34" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.85"/><polygon points="19,14 35,24 19,34" fill="#2C5801"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endunless %}
+    </div>
+  </div>
+</div>
+
+<style>
+/* Palo Alto Theme Typography & Base PDP Styles */
+.earthly-pdp-wrapper {
+  background: #ffffff;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #111111;
+  padding: 40px 0 80px 0;
+}
+.earthly-pdp-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 60px;
+  align-items: start;
+}
+
+/* Gallery Column */
+.pdp-gallery-col {
+  position: sticky;
+  top: 100px;
+}
+.pdp-main-image-container {
+  position: relative;
+  background: #F4F9F1;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #edf4eb;
+}
+.pdp-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.25s ease;
+}
+.pdp-bestseller-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #F1B948;
+  color: #111111;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.pdp-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e2e8df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 3;
+  color: #222222;
+  transition: all 0.2s ease;
+}
+.pdp-nav-arrow:hover {
+  background: #f7faf5;
+  transform: translateY(-50%) scale(1.06);
+}
+.pdp-nav-prev { left: 14px; }
+.pdp-nav-next { right: 14px; }
+
+.pdp-thumbnails-scroll {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.pdp-thumb-card {
+  width: 76px;
+  height: 76px;
+  border-radius: 8px;
+  border: 1px solid #dce8d5;
+  background: #ffffff;
+  padding: 2px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.2s ease;
+}
+.pdp-thumb-card.active {
+  border: 2px solid #2C5801;
+}
+.pdp-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Buy Box Column */
+.pdp-happy-faces-flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.pdp-happy-faces-text {
+  font-size: 13.5px;
+  color: #4b4b4b;
+  margin: 0;
+  font-weight: 500;
+}
+.pdp-happy-faces-text span {
+  font-weight: 700;
+  color: #111111;
+}
+.pdp-happy-faces-img {
+  width: 82px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.pdp-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 14px 0;
+  line-height: 1.15;
+}
+
+.pdp-price-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.pdp-live-price {
+  font-size: 32px;
+  font-weight: 800;
+  color: #2C5801;
+}
+.pdp-live-compare {
+  font-size: 20px;
+  color: #7b7b7b;
+  text-decoration: line-through;
+}
+.pdp-us-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #ffffff;
+  border: 1px solid #111111;
+  border-radius: 12px;
+  padding: 3px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: 0.5px;
+}
+
+/* USP Points 2x2 Grid */
+.usp-points-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.usp-point-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #F2FBEA;
+  border-radius: 8px;
+}
+.usp-point-card span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2C5801;
+  line-height: 1.25;
+}
+
+.pdp-subheading-text {
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: #333333;
+  margin-bottom: 24px;
+}
+
+/* Kaching Bundles */
+.kaching-bundles-container {
+  margin-bottom: 24px;
+}
+.kaching-bundles-title {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+  color: #2C5801;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.kaching-bundles-title::before,
+.kaching-bundles-title::after {
+  content: "";
+  display: inline-block;
+  height: 1px;
+  width: 40px;
+  background: #2C5801;
+}
+
+.kaching-deal-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.kaching-bar {
+  border: 1px solid rgba(44, 88, 1, 0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+  background: #ffffff;
+  position: relative;
+  transition: all 0.2s ease;
+}
+.kaching-bar:hover {
+  background: #fafdf8;
+  border-color: #2C5801;
+}
+.kaching-bar.active {
+  border: 2px solid #2C5801;
+  background: #fafdf8;
+}
+.kaching-badge-pill {
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: #2C5801;
+  color: #F1B948;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+.kaching-bar-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.kaching-bar-img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #f7faf5;
+}
+.kaching-bar-info {
+  flex-grow: 1;
+}
+.kaching-bar-line1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.kaching-bar-name {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #2C5801;
+}
+.kaching-bar-pill {
+  background: #F2FBEA;
+  color: #2C5801;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.kaching-bar-line2 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555555;
+}
+.kaching-bar-pricing {
+  text-align: right;
+}
+.kaching-bar-cur {
+  font-size: 18px;
+  font-weight: 800;
+  color: #2C5801;
+}
+.kaching-bar-orig {
+  font-size: 13.5px;
+  color: #7b7b7b;
+  text-decoration: line-through;
+}
+
+/* Subscription Checkbox Card */
+.kaching-sub-card {
+  border: 1px solid #dce8d5;
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #ffffff;
+}
+.kaching-sub-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.kaching-sub-check {
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  accent-color: #2C5801;
+  cursor: pointer;
+}
+.kaching-sub-content {
+  cursor: pointer;
+}
+.kaching-sub-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #2C5801;
+}
+.kaching-sub-desc {
+  font-size: 12.5px;
+  color: #666666;
+  margin-top: 2px;
+}
+.kaching-sub-select-wrapper {
+  margin-top: 10px;
+  padding-left: 30px;
+}
+.kaching-sub-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #c9d8c3;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #333333;
+  background: #fbfdfa;
+}
+
+/* ATC Button */
+.pdp-main-atc-button {
+  width: 100%;
+  background: #2C5801;
+  color: #ffffff;
+  padding: 18px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(44, 88, 1, 0.28);
+  transition: all 0.2s ease;
+  margin-top: 18px;
+}
+.pdp-main-atc-button:hover {
+  background: #204101;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(44, 88, 1, 0.35);
+}
+.vs-dash {
+  opacity: 0.7;
+}
+.atc-compare-price {
+  text-decoration: line-through;
+  opacity: 0.75;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+/* Express Delivery */
+.pdp-delivery-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0;
+  font-size: 13.5px;
+  color: #222222;
+}
+.pdp-delivery-line p {
+  margin: 0;
+}
+.pdp-delivery-date {
+  background: #F2FBEA;
+  color: #2C5801;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* Trust Dual Row */
+.pdp-trust-dual-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid #edf4eb;
+  border-bottom: 1px solid #edf4eb;
+  margin-bottom: 24px;
+}
+.pdp-trust-dual-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pdp-trust-dual-item p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #222222;
+  line-height: 1.3;
+}
+
+/* Rich Accordions */
+.pdp-rich-acc-card {
+  border: 1px solid #e2ece0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+.pdp-rich-acc-header {
+  width: 100%;
+  background: #fbfdfa;
+  border: none;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+  text-align: left;
+}
+.pdp-acc-toggle-icon {
+  font-size: 20px;
+  color: #2C5801;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+.pdp-rich-acc-card.active .pdp-acc-toggle-icon {
+  transform: rotate(45deg);
+}
+.pdp-rich-acc-body {
+  display: none;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-top: 1px solid #f0f5ee;
+}
+.pdp-rich-acc-card.active .pdp-rich-acc-body {
+  display: block;
+}
+.acc-content-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.acc-content-bullet:last-child {
+  margin-bottom: 0;
+}
+.acc-content-bullet img {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.acc-content-bullet div {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #444444;
+}
+.acc-content-bullet strong {
+  color: #111111;
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+/* More FAQs Link */
+.pdp-more-faqs-wrap {
+  text-align: right;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+.more-faqs {
+  color: #2C5801;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* SEE IT IN ACTION Videos Block */
+.s-main-product__videos-block {
+  margin-top: 24px;
+}
+.s-main-product__videos-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #2C5801;
+  letter-spacing: 0.8px;
+  margin: 0 0 12px 0;
+}
+.s-main-product__videos-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.s-main-product__video {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+  cursor: pointer;
+  aspect-ratio: 9/16;
+}
+.s-main-product__video-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.s-main-product__video-file {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.s-main-product__preview-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+.s-main-product__preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.s-main-product__preview-image.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.s-main-product__play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+.s-main-product__play-icon.is-hidden {
+  opacity: 0;
+}
+.s-main-product__video:hover .s-main-product__play-icon {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Full Product Description */
+.pdp-full-sections-wrapper {
+  margin-top: 60px;
+}
+
+@media (max-width: 900px) {
+  .earthly-pdp-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .pdp-gallery-col {
+    position: static;
+  }
+}
+</style>
+
+<script>
+var currentPdpImages = [
+  {% for image in product.images %}
+    "{{ image | image_url: width: 1000 }}",
+  {% endfor %}
+];
+var currentImageIndex = 0;
+
+function switchPdpThumb(btn, src, idx) {
+  document.querySelectorAll('.pdp-thumb-card').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  var main = document.getElementById('pdpMainImage');
+  if (main) main.src = src;
+  currentImageIndex = idx;
+}
+
+function navPdpImage(direction) {
+  if (!currentPdpImages.length) return;
+  currentImageIndex = (currentImageIndex + direction + currentPdpImages.length) % currentPdpImages.length;
+  var main = document.getElementById('pdpMainImage');
+  if (main) main.src = currentPdpImages[currentImageIndex];
+  var thumbs = document.querySelectorAll('.pdp-thumb-card');
+  thumbs.forEach(function(t, i) {
+    if (i === currentImageIndex) t.classList.add('active');
+    else t.classList.remove('active');
+  });
+}
+
+function selectKachingDeal(card, bundleNumber, variantId, curPrice, compPrice) {
+  document.querySelectorAll('.kaching-bar').forEach(function(b) { b.classList.remove('active'); });
+  card.classList.add('active');
+
+  document.getElementById('pdpSelectedVariantId').value = variantId;
+  document.getElementById('pdpLivePrice').textContent = curPrice;
+  document.getElementById('pdpLiveCompare').textContent = compPrice;
+  document.getElementById('atcPriceText').textContent = curPrice;
+  document.getElementById('atcCompareText').textContent = compPrice;
+}
+
+function toggleSubscription(cb) {
+  var wrapper = document.getElementById('subSelectWrapper');
+  if (wrapper) {
+    wrapper.style.display = cb.checked ? 'block' : 'none';
+  }
+}
+
+function toggleRichAcc(btn) {
+  var card = btn.closest('.pdp-rich-acc-card');
+  card.classList.toggle('active');
+}
+
+// Compute dynamic express delivery date (3 business days ahead)
+(function() {
+  function getBusinessDate(offset) {
+    var d = new Date();
+    var count = 0;
+    while (count < offset) {
+      d.setDate(d.getDate() + 1);
+      var day = d.getDay();
+      if (day !== 0 && day !== 6) count++;
+    }
+    var weekday = d.toLocaleDateString('en-US', { weekday: 'long' });
+    var dateNum = d.getDate();
+    var month = d.toLocaleDateString('en-US', { month: 'long' });
+    return weekday + ', ' + dateNum + ' ' + month;
+  }
+  var dateEl = document.getElementById('pdpExpressDate');
+  if (dateEl) dateEl.textContent = getBusinessDate(3);
+})();
+
+async function triggerPdpAddToCart() {
+  var btn = document.getElementById('pdpAtcBtn');
+  var origHtml = btn.innerHTML;
+  btn.innerHTML = '<span>ADDING TO CART...</span>';
+  btn.disabled = true;
+
+  var varId = document.getElementById('pdpSelectedVariantId').value;
+
+  try {
+    var res = await fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: varId, quantity: 1 })
+    });
+    if (res.ok) {
+      btn.innerHTML = '<span>ADDED TO CART ✓</span>';
+      var cartRes = await fetch('/cart.js');
+      var cartData = await cartRes.json();
+      var countEl = document.getElementById('earthlyCartCount');
+      if (countEl) countEl.textContent = cartData.item_count;
+
+      setTimeout(function() {
+        btn.innerHTML = origHtml;
+        btn.disabled = false;
+        if (typeof openEarthlyCartDrawer === 'function') {
+          openEarthlyCartDrawer();
+        }
+      }, 600);
+    } else {
+      btn.innerHTML = '<span>TRY AGAIN</span>';
+      setTimeout(function() { btn.innerHTML = origHtml; btn.disabled = false; }, 1200);
+    }
+  } catch(e) {
+    btn.innerHTML = '<span>TRY AGAIN</span>';
+    setTimeout(function() { btn.innerHTML = origHtml; btn.disabled = false; }, 1200);
+  }
+}
+function playPdpVideo(container) {
+  var video = container.querySelector('.s-main-product__video-file');
+  var poster = container.querySelector('.s-main-product__preview-image');
+  var icon = container.querySelector('.s-main-product__play-icon');
+  if (video.paused) {
+    video.play();
+    if (poster) poster.classList.add('is-hidden');
+    if (icon) icon.classList.add('is-hidden');
+  } else {
+    video.pause();
+    if (icon) icon.classList.remove('is-hidden');
+  }
+}
+</script>
+

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 294993854598,
+    "title": "Earthly Derm",
+    "handle": "earthly-derm",
+    "description": "Earthly Derm Handcrafted Skincare Bars",
+    "products_count": 3,
+    "has_countdown": false,
+    "layout_type": "grid_2_column",
+    "product_handles": [
+      "turmeric-glow-soap",
+      "african-black-soap",
+      "turmeric-fade-glow-bar"
+    ]
+  }
+]

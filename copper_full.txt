@@ -1,0 +1,173 @@
+The secret element that recharges your body and mind</h2>
+      </div>
+      
+  </div>
+  <div class="video-with-content">
+    <div class="left-content">
+        <div class="section-titles desktop">
+      
+      
+      <div class="section-heading">
+        <h2>The secret element that recharges your body and mind</h2>
+      </div>
+        </div>
+      
+      
+    </div>
+    <div class="right-content">
+      
+        <div
+          class="video-wrapperrrr"
+          style="--ratio-percent: Liquid error (sections/video-with-text line 270): divided by 0%;"
+        >
+          
+          <video playsinline="playsinline" loop="loop" class="video-element" preload="metadata" loading="lazy"><source src="//trybronoir.com/cdn/shop/videos/c/vp/faaab3359de74533a88c2363be50dce4/faaab3359de74533a88c2363be50dce4.HD-1080p-7.2Mbps-62197190.mp4?v=0" type="video/mp4"><img src="//trybronoir.com/cdn/shop/files/preview_images/faaab3359de74533a88c2363be50dce4.thumbnail.0000000000_600x.jpg?v=1762759930"></video>
+          <div class="play-button">
+            <svg width="80" height="81" viewBox="0 0 80 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80.9102C62.0914 80.9102 80 63.0016 80 40.9102C80 18.8188 62.0914 0.910156 40 0.910156C17.9086 0.910156 0 18.8188 0 40.9102C0 63.0016 17.9086 80.9102 40 80.9102ZM30 54.244V27.5773C29.9999 27.2808 30.079 26.9896 30.229 26.7338C30.379 26.478 30.5945 26.2668 30.8534 26.1221C31.1122 25.9774 31.405 25.9044 31.7015 25.9106C31.998 25.9168 32.2874 26.0019 32.54 26.1573L54.2067 39.4907C54.4493 39.6398 54.6497 39.8486 54.7888 40.0972C54.9278 40.3458 55.0008 40.6259 55.0008 40.9107C55.0008 41.1955 54.9278 41.4756 54.7888 41.7241C54.6497 41.9727 54.4493 42.1816 54.2067 42.3307L32.54 55.664C32.2874 55.8194 31.998 55.9046 31.7015 55.9108C31.405 55.917 31.1122 55.8439 30.8534 55.6992C30.5945 55.5545 30.379 55.3434 30.229 55.0876C30.079 54.8318 29.9999 54.5406 30 54.244Z" fill="white" fill-opacity="0.8"/>
+            </svg>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+      
+        <div class="ctm-btn desktop">
+          <a class="button button--primary" href="#">GET 50% OFF TODAY! ➞</a>
+        </div>
+      
+</div>
+      
+                  <div class="ctm-btn mobile">
+    <a class="button button--primary" href="#">GET 50% OFF TODAY! ➞</a>
+  </div>
+      
+
+
+
+
+
+ 
+</section><div id="shopify-section-template--27860728578148__video_review_V6XFw7" class="shopify-section shopify-section--videoreview"><style>
+    #shopify-section-template--27860728578148__video_review_V6XFw7 {--secondary-background: 245, 245, 245;
+      --heading-color: 40, 40, 40;
+      --text-color: 40, 40, 40;
+
+      --section-background: 255, 255, 255;
+    }
+    .video-review-section .video-wrapperrrr {
+      padding-top: 138.35%;
+      position:relative;
+    }
+      .video-review-section .video-wrapperrrr video {
+      position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        border-radius:20px 20px 0 0;
+    }
+    .video-review-section .video-main {
+      border:1px solid #000;
+      border-radius:20px;
+      height:100%;
+          display: flex
+  ;
+      flex-direction: column;
+    }
+    .video-review-section .video-content {
+      padding:20px 16px;
+      height:100%;
+          display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .rip-video-slider .swiper-slide {
+      height:auto;
+    }
+    .video-review-section .video-content h5 {
+      font-size: 20px;
+      line-height:24px;
+      font-family: "Open Sans", sans-serif;
+    }
+    .video-review-section .video-description p {
+      font-size: 14px;
+      line-height:20.8px;
+      color:#000;
+      font-family: "Open Sans", sans-serif;
+    }
+    .video-review-section .video-description  {
+      margin-top:10px;
+    }
+    .video-review-section .star-img {
+      display:flex;
+    }
+    .video-review-section .video-title {
+      margin-top:10px;
+    }
+    .video-review-section .video-reviewer {
+      margin-top:10px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 27px;
+    }
+    .video-review-section .video-reviewer h6 {
+      font-size:18px;
+      line-height:27px;
+      font-weight:700;
+      font-family: "Open Sans", sans-serif;
+    }
+     .video-review-section .star-image {
+       display:flex;
+       justify-content: center;
+     }
+    .video-review-section .star-image img {
+      margin:0;
+    }
+  .faq-with-video .video-wrapperrrr {
+    position: relative;
+    padding-top: 145%;
+  }
+  .faq-with-video .video-wrapperrrr video {
+        position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+   .faq-with-video .play-button {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }
+  .faq-with-video .video-slider {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  
+
+  .custom_title_dd {text-align: center;}
+  .custom_title_dd * {margin: 0;line-height: 1.5;color: #192e43;}
+  .custom_title_dd h2 {font-weight: 700;font-size: 2em;}
+  .custom_title_dd h2 strong {font-weight: 700;color: #2BCEFF;}
+  .custom_title_dd h3 {font-weight: 700;font-size: 1.5em;}
+  @media (max-width: 600px) {
+    .custom_title_dd h2 {font-size: 1.5em;}
+    .custom_title_dd h3 {font-size: 1em;}
+  }
+</style><section class=" section faq-with-video   ">
+  <div class="section__color-wrapper">
+    <div class="container">
+      <div class="">
+        
+<header class="section__header  text-container">
+              <div class="bronoir-logo">
+                <img src="//trybronoir.com/cdn/shop/files/Heading_1_Link_Bronoir_1200_x_300_px_4_310x_png.png?v=1761583451&amp;width=213" alt="" srcset="//trybronoir.com/cdn/shop/files/Heading_1_Link_Bronoir_1200_x_300_px_4_310x_png.png?v=1761583451&amp;width=213 213w" width="213" height="54" loading="lazy">
+              </div>
+            
+<h2 class

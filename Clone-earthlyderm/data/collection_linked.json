@@ -1,0 +1,35 @@
+{
+  "collectionId": 493156499610,
+  "collectionGid": "gid://shopify/Collection/493156499610",
+  "productGids": [
+    "gid://shopify/Product/15459760013466",
+    "gid://shopify/Product/15459761651866",
+    "gid://shopify/Product/15459762831514",
+    "gid://shopify/Product/15459764043930"
+  ],
+  "result": {
+    "data": {
+      "collectionAddProducts": {
+        "collection": {
+          "id": "gid://shopify/Collection/493156499610",
+          "title": "Earthly Derm",
+          "productsCount": {
+            "count": 0
+          }
+        },
+        "userErrors": []
+      }
+    },
+    "extensions": {
+      "cost": {
+        "requestedQueryCost": 11,
+        "actualQueryCost": 11,
+        "throttleStatus": {
+          "maximumAvailable": 2000,
+          "currentlyAvailable": 1989,
+          "restoreRate": 100
+        }
+      }
+    }
+  }
+}

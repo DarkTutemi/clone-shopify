@@ -1,0 +1,718 @@
+{
+  "prods": [
+    {
+      "id": "gid://shopify/Product/15459273212058",
+      "handle": "bronoir-skin-pro-with-copper-grounding-allround-barefoot-shoes",
+      "title": "Bronoir™ Skin Pro with Copper - Grounding Allround Barefoot Shoes",
+      "productType": "Barefoot Shoes",
+      "tags": [
+        "barefoot-shoes-bogo-volume",
+        "barefoot-shoes-for-summer",
+        "bestsellers",
+        "copper-grounding"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459273310362",
+      "handle": "bronoir-cosycloud-boot-barefoot-winter-boots",
+      "title": "Bronoir CosyCloud Boot - Warm & Comfy Winter Barefoot Boot",
+      "productType": "Winter Boots",
+      "tags": [
+        "barefoot-shoes-bogo-volume",
+        "bestsellers",
+        "winter-collection"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459273441434",
+      "handle": "bronoir-hikers-orthopedic-outdoor-trail-shoes",
+      "title": "Bronoir™ Hikers - Orthopedic Outdoor Trail Shoes (BOGO)",
+      "productType": "Outdoor Shoes",
+      "tags": [
+        "barefoot-shoes-bogo-volume",
+        "bestsellers",
+        "winter-collection"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459273539738",
+      "handle": "bronoir-flex-barefoot-shoes",
+      "title": "Bronoir™ Flex - Barefoot Shoes",
+      "productType": "Barefoot Shoes",
+      "tags": [
+        "barefoot-shoes-for-summer",
+        "bestsellers"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459273703578",
+      "handle": "bronoir-streets-minimalist-everyday-barefoot-sneakers",
+      "title": "Bronoir Streets - Minimalist Everyday Barefoot Sneakers",
+      "productType": "Sneakers",
+      "tags": [
+        "barefoot-shoes-for-summer",
+        "bestsellers"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459273867418",
+      "handle": "bronoir-runner-pro-barefoot-performance-running-shoes",
+      "title": "Bronoir™ Runner Pro - Barefoot Performance Running Shoes",
+      "productType": "Running Shoes",
+      "tags": [
+        "barefoot-shoes-for-summer",
+        "bestsellers"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459273965722",
+      "handle": "bronoir-winter-shoes-waterproof-thermal-barefoot-boots",
+      "title": "Bronoir™ Winter Shoes - Waterproof Thermal Barefoot Boots",
+      "productType": "Winter Boots",
+      "tags": [
+        "barefoot-shoes-bogo-volume",
+        "winter-collection"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459274064026",
+      "handle": "bronoir-barefoot-recovery-socks-3-pack",
+      "title": "Bronoir™ Barefoot Recovery Socks (3-Pack)",
+      "productType": "Socks",
+      "tags": [
+        "socks-and-insoles"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459274227866",
+      "handle": "bronoir-connect-orthopedic-fleece-conductive-insoles",
+      "title": "Bronoir Connect - Orthopedic Fleece Conductive Insoles",
+      "productType": "Insoles",
+      "tags": [
+        "socks-and-insoles"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459334619290",
+      "handle": "bronoir-skin-pro-with-copper-grounding-allround-barefoot-shoes-kopie",
+      "title": "Bronoir™ Skin Pro with Copper - Grounding Allround Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "google ads page - non branded",
+        "google bestseller - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459335340186",
+      "handle": "bronoir-cosycloud-boot-warm-comfy-winter-barefoot-boot-bogo",
+      "title": "Bronoir CosyCloud Boot - Warm & Comfy Winter Barefoot Boot",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "bogo",
+        "google ads page - branded",
+        "google ads page - non branded",
+        "google bestseller - branded",
+        "google bestseller - non branded"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459335897242",
+      "handle": "hikers-bogo",
+      "title": "Bronoir™ Hikers - Orthopedic Outdoor Shoes (BOGO)",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459336290458",
+      "handle": "bronoir-flex-barefoot-shoes-1-1-free",
+      "title": "Bronoir™ Flex - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459336781978",
+      "handle": "bronoir-lift",
+      "title": "Bronoir™ Lift- Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459337470106",
+      "handle": "bronoir-freestride-winter-barefoot-shoes",
+      "title": "Bronoir™ FreeStride - Winter Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "winter shoes"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459340451994",
+      "handle": "bronoir-arctic-2-0-winter-barefoot-shoes-1-1-free",
+      "title": "Bronoir™ Arctic 2.0 - Winter Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459342549146",
+      "handle": "bronoir-high-pro-winter-barefoot-shoes-1-1-free",
+      "title": "Bronoir™ High-Pro - Winter Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459344285850",
+      "handle": "bronoir-hike-barefoot-shoes-1-1-free",
+      "title": "Bronoir™ Hike - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459346579610",
+      "handle": "bronoir-sport-pro-barefoot-shoes-1-1-free",
+      "title": "Bronoir™ Sport Pro - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459348775066",
+      "handle": "bronoir-fleece-winter-barefoot-shoes-1-1-free",
+      "title": "Bronoir™ Fleece - Winter Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459350347930",
+      "handle": "bronoir-streets-casual-everyday-barefoot-shoes-1-1-free",
+      "title": "Bronoir Streets - Casual Everyday Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459351888026",
+      "handle": "bronoir-sport-pro-barefoot-shoes-1",
+      "title": "Bronoir™ Sport Pro - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459353002138",
+      "handle": "bronoir-military-barefoot-shoes-1-1-free",
+      "title": "Bronoir™ Military - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459354181786",
+      "handle": "bronoir-runner-pro-barefoot-shoes-big-sizes-1-1-gratis",
+      "title": "Bronoir™ Runner Pro - Barefoot Shoes (big sizes)",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459355066522",
+      "handle": "bronoir-autumn-2-0-barefoot-shoes",
+      "title": "Bronoir™ Hike - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459356278938",
+      "handle": "bronoir-warmers-fleece-lined-non-slip-winter-boots-for-pain-free-walking",
+      "title": "Bronoir™ Warmers - Fleece Lined & Non-Slip Winter Boots for Pain Free Walking",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "winter shoes (important)"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459357884570",
+      "handle": "bronoir-air-barefoot-shoes-1-1-free",
+      "title": "Bronoir Air - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459359293594",
+      "handle": "bronoir-workers-casual-everyday-barefoot-shoes-1-1-free",
+      "title": "Bronoir Workers - Casual Everyday Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459360899226",
+      "handle": "bronoir-sports-barefoot-shoes-1-1-free",
+      "title": "Bronoir™ Sports - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459363061914",
+      "handle": "bronoir-sky-barefoot-shoes",
+      "title": "Bronoir™ Sky - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459364569242",
+      "handle": "bronoir-snowpiercer-winter-barefoot-shoes-1-1-free",
+      "title": "Bronoir™ Snowpiercer - Winter Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459365421210",
+      "handle": "bronoir-ayelith-lightweight-arch-supportive-walking-sandals",
+      "title": "Bronoir Ayelith – Lightweight & Arch-Supportive Walking Sandals",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "sandals launch july goolge"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459366568090",
+      "handle": "bronoir-drifters-barefoot-shoes-1-1-free",
+      "title": "Bronoir™ Drifters - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459368075418",
+      "handle": "bronoir-insulated-winter-barefoot-shoes-1",
+      "title": "Bronoir™ Insulated - Winter Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "winter shoes"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459368992922",
+      "handle": "bronoir-limited-barefoot-shoes-1-1-free",
+      "title": "Bronoir™ Limited - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459369877658",
+      "handle": "bronoir-sports-barefoot-shoes",
+      "title": "Bronoir™ Sports - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459370762394",
+      "handle": "bronoir-feel-barefoot-shoes",
+      "title": "Bronoir™ Feel - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459371581594",
+      "handle": "hiking-footwear-high-pro-winter-barefoot-shoes",
+      "title": "Hiking Footwear High-Pro - Winter Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459372466330",
+      "handle": "bronoir-drifters-barefoot-shoes",
+      "title": "Bronoir™ Drifters - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459373449370",
+      "handle": "bronoir-limited-barefoot-shoes",
+      "title": "Bronoir™ Limited - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459374006426",
+      "handle": "bronoir-warmers-fleece-lined-non-slip-winter-boots-for-pain-free-walking-1",
+      "title": "Bronoir™ Warmers - Fleece Lined & Non-Slip Winter Boots for Pain Free Walking",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459374629018",
+      "handle": "bronoir-nola-cozy-elegant-supportive-ballerinas-for-daily-comfort",
+      "title": "Bronoir Nola Cozy - Elegant & Supportive Ballerinas for Daily Comfort",
+      "productType": "Shoes",
+      "tags": [
+        "ballerinas launch july google",
+        "bestseller"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459375579290",
+      "handle": "bronoir-arctic-2-0-winter-barefoot-shoes-1",
+      "title": "Bronoir™ Arctic 2.0 - Winter Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459376169114",
+      "handle": "bronoir-ergo-streets-orthopedic-sneakers-for-pain-free-walking-1",
+      "title": "Bronoir™ Ergo Streets - Orthopedic Sneakers for Pain Free Walking",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459376726170",
+      "handle": "bronoir-feel-barefoot-shoes-1-1-free",
+      "title": "Bronoir™ Feel - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "Barefoot Shoes Bogo 1 + 1 Free",
+        "bestseller",
+        "Buy 1 Get 1 Free",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459377479834",
+      "handle": "bronoir-arctic-barefoot-shoes",
+      "title": "Bronoir™ Arctic 2.0 - Winter Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "winter shoes"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459377938586",
+      "handle": "bronoir-force-barefoot-shoes",
+      "title": "Bronoir™ Force - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459378167962",
+      "handle": "bronoir-insulated-winter-barefoot-shoes-2",
+      "title": "Bronoir™ Insulated - Winter Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459378266266",
+      "handle": "bronoir-vista-barefoot-shoes",
+      "title": "Bronoir™ Vista - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459378331802",
+      "handle": "bronoir-arctic-2-0-winter-barefoot-shoes",
+      "title": "Bronoir™ Arctic 2.0 - Winter Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459378430106",
+      "handle": "bronoir-insulated-winter-barefoot-shoes",
+      "title": "Bronoir™ Insulated - Winter Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "winter shoes"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459378593946",
+      "handle": "bronoir-lift-elegant-supportive-ballerinas-for-daily-comfort",
+      "title": "Bronoir™ Lift - Elegant & Supportive Ballerinas for Daily Comfort",
+      "productType": "Shoes",
+      "tags": [
+        "ballerinas launch july google",
+        "bestseller"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459378692250",
+      "handle": "bronoir-flex-barefoot-shoes-limited-spring-offer",
+      "title": "Bronoir™ Flex - Barefoot Shoes Buy 1 Get 1 Free",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "google ads page - non branded",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459378790554",
+      "handle": "bronoir-myava-lightweight-arch-supportive-walking-sandals",
+      "title": "Bronoir™ Myava – Lightweight & Arch-Supportive Walking Sandals",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "sandals launch july goolge"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459379019930",
+      "handle": "bronoir-stridea-lightweight-arch-supportive-walking-sandals",
+      "title": "Bronoir™ Stridea – Lightweight & Arch-Supportive Walking Sandals",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "sandals launch july goolge"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459379314842",
+      "handle": "bronoir-skin-pro-with-copper-grounding-allround-barefoot-shoes-buy-2-get-1-free",
+      "title": "Bronoir™ Skin Pro with Copper - Grounding Allround Barefoot Shoes Buy 2 Get 1 Free",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "Buy 2 Get 1 Free",
+        "google ads page - non branded",
+        "google bestseller - non branded"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459379675290",
+      "handle": "hikers",
+      "title": "Bronoir™ Hikers - Orthopedic Outdoor Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "new products launch 31.5"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459379937434",
+      "handle": "bronoir-runner-pro-barefoot-shoes",
+      "title": "Bronoir™ Runner Pro - Barefoot Shoes (big sizes)",
+      "productType": "Shoes",
+      "tags": [
+        "__label:🏃 Running",
+        "bestseller",
+        "new products launch 31.5",
+        "new-product-badge"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15459380166810",
+      "handle": "bronoir-military-barefoot-shoes",
+      "title": "Bronoir™ Military - Barefoot Shoes",
+      "productType": "Shoes",
+      "tags": [
+        "bestseller",
+        "new products launch 31.5"
+      ]
+    }
+  ],
+  "groups": {
+    "ballerinas": [
+      "bronoir-lift",
+      "bronoir-nola-cozy-elegant-supportive-ballerinas-for-daily-comfort",
+      "bronoir-lift-elegant-supportive-ballerinas-for-daily-comfort"
+    ],
+    "sandals": [
+      "bronoir-ayelith-lightweight-arch-supportive-walking-sandals",
+      "bronoir-myava-lightweight-arch-supportive-walking-sandals",
+      "bronoir-stridea-lightweight-arch-supportive-walking-sandals"
+    ],
+    "winter_boots": [
+      "bronoir-cosycloud-boot-barefoot-winter-boots",
+      "bronoir-winter-shoes-waterproof-thermal-barefoot-boots",
+      "bronoir-connect-orthopedic-fleece-conductive-insoles",
+      "bronoir-cosycloud-boot-warm-comfy-winter-barefoot-boot-bogo",
+      "bronoir-freestride-winter-barefoot-shoes",
+      "bronoir-arctic-2-0-winter-barefoot-shoes-1-1-free",
+      "bronoir-high-pro-winter-barefoot-shoes-1-1-free",
+      "bronoir-fleece-winter-barefoot-shoes-1-1-free",
+      "bronoir-warmers-fleece-lined-non-slip-winter-boots-for-pain-free-walking",
+      "bronoir-snowpiercer-winter-barefoot-shoes-1-1-free",
+      "bronoir-insulated-winter-barefoot-shoes-1",
+      "hiking-footwear-high-pro-winter-barefoot-shoes",
+      "bronoir-warmers-fleece-lined-non-slip-winter-boots-for-pain-free-walking-1",
+      "bronoir-arctic-2-0-winter-barefoot-shoes-1",
+      "bronoir-arctic-barefoot-shoes",
+      "bronoir-insulated-winter-barefoot-shoes-2",
+      "bronoir-arctic-2-0-winter-barefoot-shoes",
+      "bronoir-insulated-winter-barefoot-shoes"
+    ],
+    "force": [
+      "bronoir-force-barefoot-shoes"
+    ],
+    "limited": [
+      "bronoir-limited-barefoot-shoes-1-1-free",
+      "bronoir-limited-barefoot-shoes",
+      "bronoir-flex-barefoot-shoes-limited-spring-offer"
+    ],
+    "vista": [
+      "bronoir-vista-barefoot-shoes"
+    ],
+    "barefoot_sneakers": [
+      "bronoir-skin-pro-with-copper-grounding-allround-barefoot-shoes",
+      "bronoir-hikers-orthopedic-outdoor-trail-shoes",
+      "bronoir-flex-barefoot-shoes",
+      "bronoir-streets-minimalist-everyday-barefoot-sneakers",
+      "bronoir-runner-pro-barefoot-performance-running-shoes",
+      "bronoir-barefoot-recovery-socks-3-pack",
+      "bronoir-skin-pro-with-copper-grounding-allround-barefoot-shoes-kopie",
+      "hikers-bogo",
+      "bronoir-flex-barefoot-shoes-1-1-free",
+      "bronoir-hike-barefoot-shoes-1-1-free",
+      "bronoir-sport-pro-barefoot-shoes-1-1-free",
+      "bronoir-streets-casual-everyday-barefoot-shoes-1-1-free",
+      "bronoir-sport-pro-barefoot-shoes-1",
+      "bronoir-military-barefoot-shoes-1-1-free",
+      "bronoir-runner-pro-barefoot-shoes-big-sizes-1-1-gratis",
+      "bronoir-autumn-2-0-barefoot-shoes",
+      "bronoir-air-barefoot-shoes-1-1-free",
+      "bronoir-workers-casual-everyday-barefoot-shoes-1-1-free",
+      "bronoir-sports-barefoot-shoes-1-1-free",
+      "bronoir-sky-barefoot-shoes",
+      "bronoir-drifters-barefoot-shoes-1-1-free",
+      "bronoir-sports-barefoot-shoes",
+      "bronoir-feel-barefoot-shoes",
+      "bronoir-drifters-barefoot-shoes",
+      "bronoir-ergo-streets-orthopedic-sneakers-for-pain-free-walking-1",
+      "bronoir-feel-barefoot-shoes-1-1-free",
+      "bronoir-skin-pro-with-copper-grounding-allround-barefoot-shoes-buy-2-get-1-free",
+      "hikers",
+      "bronoir-runner-pro-barefoot-shoes",
+      "bronoir-military-barefoot-shoes"
+    ]
+  }
+}

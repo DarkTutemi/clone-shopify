@@ -1,0 +1,853 @@
+{
+  "products": [
+    {
+      "id": 7535023849606,
+      "title": "Anti-Acne & Blemish Bar.",
+      "handle": "african-black-soap",
+      "body_html": "<p></p>",
+      "published_at": "2026-05-24T04:41:47-04:00",
+      "created_at": "2026-01-27T04:22:38-05:00",
+      "updated_at": "2026-10-23T03:30:04-04:00",
+      "vendor": "Earthly Derm",
+      "product_type": "",
+      "tags": [],
+      "variants": [
+        {
+          "id": 43082566140038,
+          "title": "1 Bar",
+          "option1": "1 Bar",
+          "option2": null,
+          "option3": null,
+          "sku": "BlkSoap1Bar",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 37170643468422,
+            "product_id": 7535023849606,
+            "position": 1,
+            "created_at": "2026-01-27T04:22:38-05:00",
+            "updated_at": "2026-01-27T04:22:41-05:00",
+            "alt": null,
+            "width": 1506,
+            "height": 1506,
+            "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Afircan_Black_Soap_1st_Image_b0317818-35e2-4f95-a39b-549b7d702d26.png?v=1769505761",
+            "variant_ids": [
+              43082566074502,
+              43082566107270,
+              43082566140038
+            ]
+          },
+          "available": true,
+          "price": "34.00",
+          "grams": 210,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 7535023849606,
+          "created_at": "2026-01-27T04:22:38-05:00",
+          "updated_at": "2026-10-23T03:30:04-04:00"
+        },
+        {
+          "id": 43082566107270,
+          "title": "2 Bars",
+          "option1": "2 Bars",
+          "option2": null,
+          "option3": null,
+          "sku": "BlkSoap2Bar",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 37170643468422,
+            "product_id": 7535023849606,
+            "position": 1,
+            "created_at": "2026-01-27T04:22:38-05:00",
+            "updated_at": "2026-01-27T04:22:41-05:00",
+            "alt": null,
+            "width": 1506,
+            "height": 1506,
+            "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Afircan_Black_Soap_1st_Image_b0317818-35e2-4f95-a39b-549b7d702d26.png?v=1769505761",
+            "variant_ids": [
+              43082566074502,
+              43082566107270,
+              43082566140038
+            ]
+          },
+          "available": true,
+          "price": "52.00",
+          "grams": 630,
+          "compare_at_price": "68.00",
+          "position": 2,
+          "product_id": 7535023849606,
+          "created_at": "2026-01-27T04:22:38-05:00",
+          "updated_at": "2026-10-23T03:30:04-04:00"
+        },
+        {
+          "id": 43082566074502,
+          "title": "3 Bars",
+          "option1": "3 Bars",
+          "option2": null,
+          "option3": null,
+          "sku": "BlkSoap3Bar",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 37170643468422,
+            "product_id": 7535023849606,
+            "position": 1,
+            "created_at": "2026-01-27T04:22:38-05:00",
+            "updated_at": "2026-01-27T04:22:41-05:00",
+            "alt": null,
+            "width": 1506,
+            "height": 1506,
+            "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Afircan_Black_Soap_1st_Image_b0317818-35e2-4f95-a39b-549b7d702d26.png?v=1769505761",
+            "variant_ids": [
+              43082566074502,
+              43082566107270,
+              43082566140038
+            ]
+          },
+          "available": true,
+          "price": "72.00",
+          "grams": 1260,
+          "compare_at_price": "102.00",
+          "position": 3,
+          "product_id": 7535023849606,
+          "created_at": "2026-01-27T04:22:38-05:00",
+          "updated_at": "2026-10-23T03:30:04-04:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 37170643468422,
+          "created_at": "2026-01-27T04:22:38-05:00",
+          "position": 1,
+          "updated_at": "2026-01-27T04:22:41-05:00",
+          "product_id": 7535023849606,
+          "variant_ids": [
+            43082566074502,
+            43082566107270,
+            43082566140038
+          ],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Afircan_Black_Soap_1st_Image_b0317818-35e2-4f95-a39b-549b7d702d26.png?v=1769505761",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 38042511605894,
+          "created_at": "2026-05-24T08:32:30-04:00",
+          "position": 2,
+          "updated_at": "2026-05-24T08:32:31-04:00",
+          "product_id": 7535023849606,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/BEFORE.png?v=1779625951",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "id": 38042523172998,
+          "created_at": "2026-05-24T08:36:29-04:00",
+          "position": 3,
+          "updated_at": "2026-05-24T08:36:31-04:00",
+          "product_id": 7535023849606,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/BEFORE_1.png?v=1779626191",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "id": 38042525892742,
+          "created_at": "2026-05-24T08:37:34-04:00",
+          "position": 4,
+          "updated_at": "2026-05-24T08:37:35-04:00",
+          "product_id": 7535023849606,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/BEFORE_2.png?v=1779626255",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "id": 38042573242502,
+          "created_at": "2026-05-24T08:53:17-04:00",
+          "position": 5,
+          "updated_at": "2026-05-24T08:53:21-04:00",
+          "product_id": 7535023849606,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/hf_20260524_125008_d9740dc2-07b1-4cd4-813c-3ee62cedfbda_peeled.png?v=1779627201",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "id": 38042628325510,
+          "created_at": "2026-05-24T09:11:54-04:00",
+          "position": 6,
+          "updated_at": "2026-05-24T09:11:56-04:00",
+          "product_id": 7535023849606,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/hf_20260524_131003_726e3c64-3ce2-4a17-be44-ad06ba4bad4d_peeled.png?v=1779628316",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "id": 37170643599494,
+          "created_at": "2026-01-27T04:22:38-05:00",
+          "position": 7,
+          "updated_at": "2026-01-27T04:22:41-05:00",
+          "product_id": 7535023849606,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/0947E675-F7B8-4C6E-9F6B-0344BBC939A8_4af380bd-8cae-447b-afa8-8b6dc1d81d5a.png?v=1769505761",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "id": 37170643632262,
+          "created_at": "2026-01-27T04:22:38-05:00",
+          "position": 8,
+          "updated_at": "2026-01-27T04:22:42-05:00",
+          "product_id": 7535023849606,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/4_3886fcad-b2cc-411a-8e5b-e9a138eeb928.jpg?v=1769505762",
+          "width": 3455,
+          "height": 3455
+        },
+        {
+          "id": 38042642612358,
+          "created_at": "2026-05-24T09:17:05-04:00",
+          "position": 9,
+          "updated_at": "2026-05-24T09:17:06-04:00",
+          "product_id": 7535023849606,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/hf_20260524_131534_f7dea02e-8c85-44ba-8542-932d26a3f338_peeled.png?v=1779628626",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "options": [
+        {
+          "name": "Bundle",
+          "position": 1,
+          "values": [
+            "1 Bar",
+            "2 Bars",
+            "3 Bars"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7608099766406,
+      "title": "Turmeric Fade & Glow Bar.",
+      "handle": "turmeric-fade-glow-bar",
+      "body_html": "<p></p>",
+      "published_at": "2026-05-22T19:59:01-04:00",
+      "created_at": "2026-05-22T19:57:33-04:00",
+      "updated_at": "2026-10-23T03:30:04-04:00",
+      "vendor": "Earthly Derm",
+      "product_type": "",
+      "tags": [
+        "AB TEST"
+      ],
+      "variants": [
+        {
+          "id": 44004883234950,
+          "title": "Buy 1",
+          "option1": "Buy 1",
+          "option2": null,
+          "option3": null,
+          "sku": "USA-YK24040000954-0",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "34.00",
+          "grams": 120,
+          "compare_at_price": "0.00",
+          "position": 1,
+          "product_id": 7608099766406,
+          "created_at": "2026-05-22T19:57:33-04:00",
+          "updated_at": "2026-10-23T03:30:04-04:00"
+        },
+        {
+          "id": 44004883267718,
+          "title": "Buy 2 + 1 Free",
+          "option1": "Buy 2 + 1 Free",
+          "option2": null,
+          "option3": null,
+          "sku": "USA-YK24040001069-0",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "49.00",
+          "grams": 360,
+          "compare_at_price": "102.00",
+          "position": 2,
+          "product_id": 7608099766406,
+          "created_at": "2026-05-22T19:57:33-04:00",
+          "updated_at": "2026-10-23T03:30:04-04:00"
+        },
+        {
+          "id": 44004883300486,
+          "title": "Buy 3 + 2 Free",
+          "option1": "Buy 3 + 2 Free",
+          "option2": null,
+          "option3": null,
+          "sku": "USA-YK24110000632-0",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "69.00",
+          "grams": 720,
+          "compare_at_price": "170.00",
+          "position": 3,
+          "product_id": 7608099766406,
+          "created_at": "2026-05-22T19:57:33-04:00",
+          "updated_at": "2026-10-23T03:30:04-04:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 39009503871110,
+          "created_at": "2026-09-25T02:04:02-04:00",
+          "position": 1,
+          "updated_at": "2026-09-25T02:04:04-04:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/earthlyderm-turmeric-no-badge-screenshot.png?v=1790316244",
+          "width": 2700,
+          "height": 2708
+        },
+        {
+          "id": 37170644582534,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 2,
+          "updated_at": "2026-01-27T04:22:48-05:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/turmeric_soap_website_image_2_78a7aadb-cf25-452e-bdca-2e00379bbe76.jpg?v=1769505768",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644615302,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 3,
+          "updated_at": "2026-01-27T04:22:48-05:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/before-after_2_1_72b28344-7297-4a25-a8eb-a1ba995f189f.png?v=1769505768",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644648070,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 4,
+          "updated_at": "2026-01-27T04:22:48-05:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/before-after_3_1_b65f133d-7f73-4d52-b5c9-3c15577d3a70.png?v=1769505768",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644680838,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 5,
+          "updated_at": "2026-01-27T04:22:48-05:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/before-after_1_1_5eeb6630-abc4-4a98-ab35-d8ed060d0110.png?v=1769505768",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37552023470214,
+          "created_at": "2026-03-28T01:03:05-04:00",
+          "position": 6,
+          "updated_at": "2026-03-28T01:04:33-04:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/hf_20260328_045956_3befd4e7-8795-46fb-b618-d5240d137d60.png?v=1774674273",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "id": 37170644746374,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 7,
+          "updated_at": "2026-03-28T01:04:33-04:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/turmeric_soap_website_image_4_0070aede-22a6-499f-aaf6-19baaff50be4.jpg?v=1774674273",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644713606,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 8,
+          "updated_at": "2026-03-28T01:04:33-04:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/before-after_4_68fb4bcb-38e9-47a9-958f-df16aad6011a.png?v=1774674273",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644779142,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 9,
+          "updated_at": "2026-03-28T01:04:33-04:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/turmeric_soap_website_image_3_6b834ef4-eae8-49a2-9f63-42a49263a9fe.jpg?v=1774674273",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644811910,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 10,
+          "updated_at": "2026-03-28T01:04:33-04:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/dermatologist_1_5d008e34-0365-4e70-a8d7-3aebba07e40c.png?v=1774674273",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "id": 37170644844678,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 11,
+          "updated_at": "2026-03-28T01:04:33-04:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/SocialPost7_c6c7201d-d370-40a3-a299-4b35a1baf398.png?v=1774674273",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "id": 37552041656454,
+          "created_at": "2026-03-28T01:06:22-04:00",
+          "position": 12,
+          "updated_at": "2026-03-28T01:06:48-04:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/image_1.webp?v=1774674408",
+          "width": 1920,
+          "height": 1920
+        },
+        {
+          "id": 37170644877446,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 13,
+          "updated_at": "2026-03-28T01:06:48-04:00",
+          "product_id": 7608099766406,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Turmeric_Soap_Queen_601f183a-7dc0-48cc-b051-25598b1952a5.png?v=1774674408",
+          "width": 1506,
+          "height": 1506
+        }
+      ],
+      "options": [
+        {
+          "name": "Bundle",
+          "position": 1,
+          "values": [
+            "Buy 1",
+            "Buy 2 + 1 Free",
+            "Buy 3 + 2 Free"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7599251619974,
+      "title": "Turmeric Glow Bar",
+      "handle": "turmeric-fade-glow-bar-razor-bumps",
+      "body_html": "<p></p>",
+      "published_at": "2026-05-15T08:39:16-04:00",
+      "created_at": "2026-05-11T08:26:46-04:00",
+      "updated_at": "2026-10-23T03:30:04-04:00",
+      "vendor": "Earthly Derm",
+      "product_type": "",
+      "tags": [],
+      "variants": [
+        {
+          "id": 43975455146118,
+          "title": "Buy 1",
+          "option1": "Buy 1",
+          "option2": null,
+          "option3": null,
+          "sku": "USA-YK24040000954-0",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "34.00",
+          "grams": 120,
+          "compare_at_price": "0.00",
+          "position": 1,
+          "product_id": 7599251619974,
+          "created_at": "2026-05-11T08:26:46-04:00",
+          "updated_at": "2026-10-23T03:30:04-04:00"
+        },
+        {
+          "id": 43975455178886,
+          "title": "Buy 2 + 1 Free",
+          "option1": "Buy 2 + 1 Free",
+          "option2": null,
+          "option3": null,
+          "sku": "USA-YK24040001069-0",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "49.00",
+          "grams": 360,
+          "compare_at_price": "102.00",
+          "position": 2,
+          "product_id": 7599251619974,
+          "created_at": "2026-05-11T08:26:46-04:00",
+          "updated_at": "2026-10-23T03:30:04-04:00"
+        },
+        {
+          "id": 43975455211654,
+          "title": "Buy 3 + 2 Free",
+          "option1": "Buy 3 + 2 Free",
+          "option2": null,
+          "option3": null,
+          "sku": "USA-YK24110000632-0",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "69.00",
+          "grams": 720,
+          "compare_at_price": "170.00",
+          "position": 3,
+          "product_id": 7599251619974,
+          "created_at": "2026-05-11T08:26:46-04:00",
+          "updated_at": "2026-10-23T03:30:04-04:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 38321956946054,
+          "created_at": "2026-07-10T02:27:31-04:00",
+          "position": 1,
+          "updated_at": "2026-07-10T02:27:32-04:00",
+          "product_id": 7599251619974,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Razor_bump_PDP_image..png?v=1783664852",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "id": 37885014212742,
+          "created_at": "2026-05-14T20:24:51-04:00",
+          "position": 2,
+          "updated_at": "2026-05-14T20:24:53-04:00",
+          "product_id": 7599251619974,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/hf_20260515_002223_d3149e55-e9d0-473d-be98-ae391b47d748.png?v=1778804693",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "id": 37886101323910,
+          "created_at": "2026-05-14T22:05:49-04:00",
+          "position": 3,
+          "updated_at": "2026-05-14T22:05:51-04:00",
+          "product_id": 7599251619974,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/hf_20260515_020147_4d0fede5-9ff0-4c2c-b5a6-60db6277ed30.png?v=1778810751",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "id": 37903234334854,
+          "created_at": "2026-05-15T05:25:20-04:00",
+          "position": 4,
+          "updated_at": "2026-05-15T05:25:21-04:00",
+          "product_id": 7599251619974,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/hf_20260515_091157_d3d9669f-2137-4be4-b29c-310a7538c2f8.png?v=1778837121",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "id": 38321996267654,
+          "created_at": "2026-07-10T02:50:55-04:00",
+          "position": 5,
+          "updated_at": "2026-07-10T02:50:57-04:00",
+          "product_id": 7599251619974,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/razor_bump_pdp.png2.png?v=1783666257",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "id": 37907218366598,
+          "created_at": "2026-05-15T06:28:45-04:00",
+          "position": 6,
+          "updated_at": "2026-05-15T06:28:46-04:00",
+          "product_id": 7599251619974,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/hf_20260515_102440_64800840-e1f4-4fc4-93a2-bb43152e5eda.png?v=1778840926",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "id": 37170644779142,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 7,
+          "updated_at": "2026-03-28T01:04:33-04:00",
+          "product_id": 7599251619974,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/turmeric_soap_website_image_3_6b834ef4-eae8-49a2-9f63-42a49263a9fe.jpg?v=1774674273",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 38321996136582,
+          "created_at": "2026-07-10T02:50:53-04:00",
+          "position": 8,
+          "updated_at": "2026-07-10T02:50:54-04:00",
+          "product_id": 7599251619974,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/razor_bump_pdp.png?v=1783666254",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "options": [
+        {
+          "name": "Bundle",
+          "position": 1,
+          "values": [
+            "Buy 1",
+            "Buy 2 + 1 Free",
+            "Buy 3 + 2 Free"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7535024013446,
+      "title": "Turmeric Fade & Glow Bar.",
+      "handle": "turmeric-glow-soap",
+      "body_html": "<p></p>",
+      "published_at": "2026-01-27T04:22:46-05:00",
+      "created_at": "2026-01-27T04:22:46-05:00",
+      "updated_at": "2026-10-23T03:30:04-04:00",
+      "vendor": "Earthly Derm",
+      "product_type": "",
+      "tags": [],
+      "variants": [
+        {
+          "id": 43082567254150,
+          "title": "Buy 1",
+          "option1": "Buy 1",
+          "option2": null,
+          "option3": null,
+          "sku": "USA-YK24040000954-0",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "34.00",
+          "grams": 120,
+          "compare_at_price": "0.00",
+          "position": 1,
+          "product_id": 7535024013446,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "updated_at": "2026-10-23T03:30:04-04:00"
+        },
+        {
+          "id": 43082567221382,
+          "title": "Buy 2 + 1 Free",
+          "option1": "Buy 2 + 1 Free",
+          "option2": null,
+          "option3": null,
+          "sku": "USA-YK24040001069-0",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "49.00",
+          "grams": 360,
+          "compare_at_price": "102.00",
+          "position": 2,
+          "product_id": 7535024013446,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "updated_at": "2026-10-23T03:30:04-04:00"
+        },
+        {
+          "id": 43082567188614,
+          "title": "Buy 3 + 2 Free",
+          "option1": "Buy 3 + 2 Free",
+          "option2": null,
+          "option3": null,
+          "sku": "USA-YK24110000632-0",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "69.00",
+          "grams": 720,
+          "compare_at_price": "170.00",
+          "position": 3,
+          "product_id": 7535024013446,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "updated_at": "2026-10-23T03:30:04-04:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 39009503871110,
+          "created_at": "2026-09-25T02:04:02-04:00",
+          "position": 1,
+          "updated_at": "2026-09-25T02:04:04-04:00",
+          "product_id": 7535024013446,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/earthlyderm-turmeric-no-badge-screenshot.png?v=1790316244",
+          "width": 2700,
+          "height": 2708
+        },
+        {
+          "id": 37170644582534,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 2,
+          "updated_at": "2026-01-27T04:22:48-05:00",
+          "product_id": 7535024013446,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/turmeric_soap_website_image_2_78a7aadb-cf25-452e-bdca-2e00379bbe76.jpg?v=1769505768",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644615302,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 3,
+          "updated_at": "2026-01-27T04:22:48-05:00",
+          "product_id": 7535024013446,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/before-after_2_1_72b28344-7297-4a25-a8eb-a1ba995f189f.png?v=1769505768",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644648070,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 4,
+          "updated_at": "2026-01-27T04:22:48-05:00",
+          "product_id": 7535024013446,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/before-after_3_1_b65f133d-7f73-4d52-b5c9-3c15577d3a70.png?v=1769505768",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644680838,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 5,
+          "updated_at": "2026-01-27T04:22:48-05:00",
+          "product_id": 7535024013446,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/before-after_1_1_5eeb6630-abc4-4a98-ab35-d8ed060d0110.png?v=1769505768",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 38589584179334,
+          "created_at": "2026-08-12T16:40:27-04:00",
+          "position": 6,
+          "updated_at": "2026-08-12T16:40:29-04:00",
+          "product_id": 7535024013446,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/rework_1.jpg?v=1786567229",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 38589584146566,
+          "created_at": "2026-08-12T16:40:27-04:00",
+          "position": 7,
+          "updated_at": "2026-08-12T16:40:28-04:00",
+          "product_id": 7535024013446,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/rework_2.jpg?v=1786567228",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644746374,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 8,
+          "updated_at": "2026-03-28T01:04:33-04:00",
+          "product_id": 7535024013446,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/turmeric_soap_website_image_4_0070aede-22a6-499f-aaf6-19baaff50be4.jpg?v=1774674273",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644713606,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 9,
+          "updated_at": "2026-03-28T01:04:33-04:00",
+          "product_id": 7535024013446,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/before-after_4_68fb4bcb-38e9-47a9-958f-df16aad6011a.png?v=1774674273",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644844678,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 10,
+          "updated_at": "2026-03-28T01:04:33-04:00",
+          "product_id": 7535024013446,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/SocialPost7_c6c7201d-d370-40a3-a299-4b35a1baf398.png?v=1774674273",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "id": 37170644779142,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 11,
+          "updated_at": "2026-03-28T01:04:33-04:00",
+          "product_id": 7535024013446,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/turmeric_soap_website_image_3_6b834ef4-eae8-49a2-9f63-42a49263a9fe.jpg?v=1774674273",
+          "width": 1506,
+          "height": 1506
+        },
+        {
+          "id": 37170644877446,
+          "created_at": "2026-01-27T04:22:46-05:00",
+          "position": 12,
+          "updated_at": "2026-03-28T01:06:48-04:00",
+          "product_id": 7535024013446,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0650/9808/8582/files/Turmeric_Soap_Queen_601f183a-7dc0-48cc-b051-25598b1952a5.png?v=1774674408",
+          "width": 1506,
+          "height": 1506
+        }
+      ],
+      "options": [
+        {
+          "name": "Bundle",
+          "position": 1,
+          "values": [
+            "Buy 1",
+            "Buy 2 + 1 Free",
+            "Buy 3 + 2 Free"
+          ]
+        }
+      ]
+    }
+  ]
+}

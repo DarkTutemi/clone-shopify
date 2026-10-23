@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "announcement": {
+      "type": "earthly-announcement-bar",
+      "settings": {}
+    },
+    "header": {
+      "type": "earthly-header",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "earthly-reviews",
+      "settings": {}
+    },
+    "moneyback": {
+      "type": "earthly-moneyback",
+      "settings": {}
+    },
+    "footer": {
+      "type": "earthly-footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement",
+    "header",
+    "reviews",
+    "moneyback",
+    "footer"
+  ]
+}

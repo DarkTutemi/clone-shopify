@@ -1,0 +1,39 @@
+{% schema %}
+{
+  "name": "Earthly Promo Bar",
+  "settings": []
+}
+{% endschema %}
+
+<section class="s-promo-bar">
+  <div class="s-promo-bar__container">
+    <div class="pb__line1">BLACK MONTH SALE IS LIVE</div>
+    <div class="pb__line2">Buy 2 Get 1 FREE + Save 30% Site-wide on all handcrafted soap bars!</div>
+  </div>
+</section>
+
+<style>
+.s-promo-bar {
+  background: linear-gradient(92deg, rgba(44, 88, 1, 1), rgba(161, 196, 153, 0.4) 50%, rgba(246, 252, 241, 1) 88%);
+  padding: 16px 20px;
+  text-align: center;
+}
+.pb__line1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #1f1f1f;
+  line-height: 1.2;
+}
+.pb__line2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #1f1f1f;
+  margin-top: 4px;
+}
+@media (max-width: 768px) {
+  .pb__line1 { font-size: 18px; }
+  .pb__line2 { font-size: 13px; }
+}
+</style>

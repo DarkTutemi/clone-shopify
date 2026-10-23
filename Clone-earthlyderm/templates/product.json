@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "announcement": {
+      "type": "earthly-announcement-bar",
+      "settings": {}
+    },
+    "header": {
+      "type": "earthly-header",
+      "settings": {}
+    },
+    "main": {
+      "type": "earthly-pdp-main",
+      "settings": {}
+    },
+    "reviews_slider": {
+      "type": "earthly-pdp-reviews-slider",
+      "settings": {}
+    },
+    "what_to_expect": {
+      "type": "earthly-what-to-expect",
+      "settings": {}
+    },
+    "before_after_results": {
+      "type": "earthly-before-after-results",
+      "settings": {}
+    },
+    "ingredients_info": {
+      "type": "earthly-ingredients-info",
+      "settings": {}
+    },
+    "faqs": {
+      "type": "earthly-faqs",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "earthly-reviews",
+      "settings": {}
+    },
+    "moneyback": {
+      "type": "earthly-moneyback",
+      "settings": {}
+    },
+    "footer": {
+      "type": "earthly-footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement",
+    "header",
+    "main",
+    "reviews_slider",
+    "what_to_expect",
+    "before_after_results",
+    "ingredients_info",
+    "faqs",
+    "reviews",
+    "moneyback",
+    "footer"
+  ]
+}

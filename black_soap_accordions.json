@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Will this work for my skin type?",
+    "content": "<div class=\"product__accordion__inner rte\" data-collapsible-content=\"\"><p>Yes. While it's made for melanin-rich skin, it works on all skin types and tones.</p><p>If you deal with breakouts, clogged pores, oily skin or constant blemishes, this is built for you.</p>"
+  },
+  {
+    "title": "When will I see results?",
+    "content": "<div class=\"product__accordion__inner rte\" data-collapsible-content=\"\"><p>Most people start seeing fewer breakouts and calmer, clearer skin within the first two weeks of regular use. The deep-cleaning works fast on the surface, then over the following weeks fewer new pimples come through as your pores stay clear.</p><p>Acne built up over years won't vanish overnight, so the people who get the best results use it consistently and stick with it. That consistency is what keeps the breakouts from coming back.</p>"
+  },
+  {
+    "title": "How is this different to everything else?",
+    "content": "<div class=\"product__accordion__inner rte\" data-collapsible-content=\"\"><p>If acids, benzoyl peroxide and medicated washes left your skin dry, raw and breaking out worse, you're not alone. On melanin-rich skin, harsh products often trigger more than they clear.</p><p>This works with your skin, not against it. The natural plant ash lifts the dead skin and oil clogging your pores, then clears the bacteria that turns them into breakouts, so acne stops at the source. Shea butter keeps your skin balanced so it never dries out.</p>"
+  },
+  {
+    "title": "Is it safe for facial use?",
+    "content": "<div class=\"product__accordion__inner rte\" data-collapsible-content=\"\"><p>Absolutely.<br><br>Unlike traditional soap bars (which have a pH of 9–10 and can strip the skin), our formula is a <strong>syndet bar with a skin-friendly pH of 5</strong>, which matches the skin’s natural acid mantle (pH 4.5–5.5).</p><p>This means:</p><ul><li>It won’t dry or strip your skin<br></li><li>It won’t cause irritation that leads to dark marks<br></li><li>It’s safe for melanin-rich and sensitive skin<br></li><li>It’s suitable for daily use on the face, underarms, and bikini line</li></ul>"
+  },
+  {
+    "title": "It seems expensive?",
+    "content": "<div class=\"product__accordion__inner rte\" data-collapsible-content=\"\"><p>One bar lasts most people weeks, since you only need a small lather, so the cost per wash is low. And it replaces the cleansers, spot treatments and products you've been stacking and replacing to fight breakouts.</p><p>It's also backed by our 60 day money-back guarantee. If your skin doesn't get clearer, you get your money back, so there's no real risk in trying it.</p>"
+  },
+  {
+    "title": "How do I use it?",
+    "content": "<div class=\"product__accordion__inner rte\" data-collapsible-content=\"\"><p><strong>Daily Use:</strong><br>Wet your skin, lather the bar, and massage over dark spots using circular motions for 30-60 seconds. Rinse thoroughly and pat dry. Follow with moisturizer. Use on face, underarms, bikini line, or anywhere you have hyperpigmentation.</p><p><strong>Sensitive skin?</strong> Start 2-3 times per week, then increase to daily as your skin adjusts.</p><p><strong>What to expect:</strong></p><ul><li><strong>First few days:</strong> Smoother texture, softer feel</li><li><strong>Weeks 2-4:</strong> Visible fading of dark spots with consistent daily use</li><li><strong>Ongoing:</strong> Prevents new dark spots, razor bumps, and ingrown hairs from forming</li></ul><p>Each bar lasts 30 days with daily use.</p><p></p>"
+  },
+  {
+    "title": "Shipping Details",
+    "content": "<div class=\"product__accordion__inner rte\" data-collapsible-content=\"\"><p>Orders are dispatched within <strong>24 hours (Monday–Friday)</strong>. </p><p>We ship directly from our warehouse based in Indiana.<br><br>Shipping takes 2-4 business days.</p>"
+  },
+  {
+    "title": "Ingredients List",
+    "content": "<div class=\"product__accordion__inner rte\" data-collapsible-content=\"\"><p>🧈 <strong>Unrefined Shea Butter</strong> – Deeply moisturizes and calms the skin, balancing the deep-cleanse so your skin clears without drying out or feeling tight.</p><p>🥥 <strong>Coconut Oil</strong> – Locks in moisture and supports the skin barrier, keeping skin soft and hydrated while it clears.</p><p>🌴 <strong>Palm Kernel Oil </strong>– Conditions and nourishes the skin, working with the shea butter to keep the bar gentle enough for daily use.</p><p>🌿 <strong>Moringa Oil</strong> – Rich in antioxidants and vitamins, it soothes irritation and helps keep breakout-prone skin calm and clear.</p><p>⚫ <strong>Cocoa Pod Ash</strong> – The active heart of the bar. Its natural cleansing and antibacterial properties lift the dead skin and oil that clog pores and clear the bacteria that turns into breakouts.</p><p>💧 <strong>Purified Water</strong> – The clean base that binds the formula together.</p><p><strong>No harsh chemicals, no synthetic dyes, just raw natural ingredients that clear breakouts and keep your skin balanced.</strong></p>\n  <a href=\"javascript:void(0)\" class=\"see-ingredients\" onclick=\"showIngredientsPopup()\">See all ingredients</a>\n\n  <style>\n    .see-ingredients {\n      padding: 15px 12px;\n      background: #f7f7f7;\n      position: relative;\n      display: inline-block;\n      width: 100%;\n      text-decoration: underline;\n      border-radius: 0px 0px 6px 6px;\n      cursor: pointer;\n    }\n\n    .popup-overlay {\n      display: none;\n      position: fixed;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      background: rgba(0,0,0,0.5);\n      z-index: 9999;\n      padding: 20px;\n    }\n\n    .popup-content {\n      background: white;\n      padding: 30px;\n      max-width: 600px;\n      margin: 20vh auto;\n      position: relative;\n      border-radius: 8px;\n    }\n\n    .close-btn {\n      position: absolute;\n      right: 20px;\n      top: 10px;\n      font-size: 28px;\n      cursor: pointer;\n    }\n\n    .ingredients-text {\n      margin-top: 20px;\n    }\n  </style>\n\n  <script>\n    function showIngredientsPopup() {\n      document.getElementById('ingredientsPopup').style.display = 'block';\n    }\n\n    function closeIngredientsPopup() {\n      document.getElementById('ingredientsPopup').style.display = 'none';\n    }\n\n    // Close when clicking outside the popup\n    window.onclick = function(event) {\n      const popup = document.getElementById('ingredientsPopup');\n      if (event.target === popup) {\n        popup.style.display = 'none';\n      }\n    }\n  </script>"
+  }
+]
