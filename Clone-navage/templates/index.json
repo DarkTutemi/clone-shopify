@@ -40,6 +40,10 @@
       "type": "navage-bundle-showcase",
       "settings": {}
     },
+    "navage_feature_slider": {
+      "type": "navage-feature-slider",
+      "settings": {}
+    },
     "navage_reviews": {
       "type": "navage-reviews-slider",
       "settings": {}
@@ -64,6 +68,7 @@
     "navage_how_it_works",
     "navage_comparison",
     "navage_bundles",
+    "navage_feature_slider",
     "navage_reviews",
     "navage_commitment",
     "navage_faq"

@@ -1,0 +1,242 @@
+{% comment %}
+  Section: Not All Nasal Irrigation Works the Same (Feature Slider)
+  Full-fidelity clone from navage.com (feature-slider)
+{% endcomment %}
+
+<section id="SectionId-{{ section.id }}" class="navage-feature-slider-section">
+  <div class="navage-fs-container">
+    <div class="navage-fs-header">
+      <h2 class="navage-fs-headline">{{ section.settings.headline | default: 'Not All Nasal Irrigation Works the Same' }}</h2>
+      <h3 class="navage-fs-subheadline">{{ section.settings.subheadline | default: 'Naväge is the only nasal irrigation system that combines gentle rinse, powered suction, and pre-measured SaltPods in a single handheld device.' }}</h3>
+    </div>
+
+    <div class="navage-fs-wrapper">
+      <div class="navage-fs-track" id="NavageFsTrack-{{ section.id }}">
+        <!-- Card 1 -->
+        <div class="navage-fs-card">
+          <div class="navage-fs-image-wrap">
+            <img src="https://navage.com/cdn/shop/files/Gentle_Single_Powered_Flow.png?v=1777048833&width=800" alt="#1 TRUSTED NASAL RINSE⁴" loading="lazy" width="400" height="400">
+          </div>
+          <div class="navage-fs-card-content">
+            <h4 class="navage-fs-card-title">#1 TRUSTED NASAL RINSE⁴</h4>
+            <p class="navage-fs-card-text">Navage pioneered powered nasal irrigation and has been the category leader ever since — chosen by more people, more consistently, than any other system on the market.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="navage-fs-card">
+          <div class="navage-fs-image-wrap">
+            <img src="https://navage.com/cdn/shop/files/Powered_Suction_System.png?v=1777048829&width=800" alt="GENTLE POWERED FLOW" loading="lazy" width="400" height="400">
+          </div>
+          <div class="navage-fs-card-content">
+            <h4 class="navage-fs-card-title">GENTLE POWERED FLOW</h4>
+            <p class="navage-fs-card-text">Unlike harsh squeeze bottles, Navage's generates a smooth, controlled flow with no added pressure during the rinse cycle — making it comfortable enough for daily use, even for first-timers.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="navage-fs-card">
+          <div class="navage-fs-image-wrap">
+            <img src="https://navage.com/cdn/shop/files/Navage_SFOdessaJames_8738.jpg?v=1777488020&width=800" alt="HANDHELD DESIGN" loading="lazy" width="400" height="400">
+          </div>
+          <div class="navage-fs-card-content">
+            <h4 class="navage-fs-card-title">HANDHELD DESIGN</h4>
+            <p class="navage-fs-card-text">A compact handheld design means no leaning over a sink, no managing hoses, no awkward positioning. Stand upright, rinse in seconds, and get on with your day — even while traveling.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="navage-fs-card">
+          <div class="navage-fs-image-wrap">
+            <img src="https://navage.com/cdn/shop/files/Navage_SFOdessaJames_8758.jpg?v=1777396298&width=800" alt="PRE-MEASURED SALTPODS" loading="lazy" width="400" height="400">
+          </div>
+          <div class="navage-fs-card-content">
+            <h4 class="navage-fs-card-title">PRE-MEASURED SALTPODS</h4>
+            <p class="navage-fs-card-text">Every SaltPod delivers a perfectly balanced 0.9% isotonic saline concentration — sealed for purity, with no measuring, no contamination risk, and no mixing errors that can irritate nasal tissue.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="navage-fs-card">
+          <div class="navage-fs-image-wrap">
+            <img src="https://navage.com/cdn/shop/files/Navage_SFOdessaJames_8726.jpg?v=1777407804&width=800" alt="BUILT IN AROMATICS" loading="lazy" width="400" height="400">
+          </div>
+          <div class="navage-fs-card-content">
+            <h4 class="navage-fs-card-title">BUILT IN AROMATICS</h4>
+            <p class="navage-fs-card-text">Naväge can deliver soothing aromatics — like eucalyptus, menthol, and lavender — directly through the SaltPod, turning a routine rinse into invigorating congestion relief.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #SectionId-{{ section.id }} {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 60px 20px;
+    display: block;
+    box-sizing: border-box;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  #SectionId-{{ section.id }} .navage-fs-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  #SectionId-{{ section.id }} .navage-fs-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  #SectionId-{{ section.id }} .navage-fs-headline {
+    font-size: 40px;
+    font-weight: 700;
+    color: #074174;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+  }
+
+  #SectionId-{{ section.id }} .navage-fs-subheadline {
+    font-weight: 400;
+    font-size: 20px;
+    color: #39bfad;
+    margin: 0 auto;
+    line-height: 1.4;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  #SectionId-{{ section.id }} .navage-fs-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: 20px;
+  }
+
+  #SectionId-{{ section.id }} .navage-fs-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #SectionId-{{ section.id }} .navage-fs-card {
+    flex: 0 0 240px;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  #SectionId-{{ section.id }} .navage-fs-image-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    margin: 0 auto 20px;
+    border-radius: 0px;
+    overflow: hidden;
+    background-color: #f8fafc;
+  }
+
+  #SectionId-{{ section.id }} .navage-fs-image-wrap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #SectionId-{{ section.id }} .navage-fs-card-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #SectionId-{{ section.id }} .navage-fs-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #39bfad;
+    margin: 0;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  #SectionId-{{ section.id }} .navage-fs-card-text {
+    font-size: 15px;
+    font-weight: 400;
+    color: #074174;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 1200px) {
+    #SectionId-{{ section.id }} .navage-fs-track {
+      justify-content: flex-start;
+      padding: 0 10px;
+    }
+    #SectionId-{{ section.id }} .navage-fs-card {
+      flex: 0 0 240px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #SectionId-{{ section.id }} {
+      padding: 40px 16px;
+    }
+    #SectionId-{{ section.id }} .navage-fs-headline {
+      font-size: 28px;
+    }
+    #SectionId-{{ section.id }} .navage-fs-subheadline {
+      font-size: 16px;
+    }
+    #SectionId-{{ section.id }} .navage-fs-track {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    #SectionId-{{ section.id }} .navage-fs-card {
+      flex: 0 0 auto;
+      max-width: 320px;
+      width: 100%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Navage Feature Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Not All Nasal Irrigation Works the Same"
+    },
+    {
+      "type": "textarea",
+      "id": "subheadline",
+      "label": "Subheadline",
+      "default": "Naväge is the only nasal irrigation system that combines gentle rinse, powered suction, and pre-measured SaltPods in a single handheld device."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Navage Feature Slider"
+    }
+  ]
+}
+{% endschema %}
