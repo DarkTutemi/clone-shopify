@@ -55,6 +55,10 @@
     "navage_faq": {
       "type": "navage-faq-accordion",
       "settings": {}
+    },
+    "navage_footnotes": {
+      "type": "navage-legal-footnotes",
+      "settings": {}
     }
   },
   "order": [
@@ -71,6 +75,7 @@
     "navage_feature_slider",
     "navage_reviews",
     "navage_commitment",
-    "navage_faq"
+    "navage_faq",
+    "navage_footnotes"
   ]
 }
