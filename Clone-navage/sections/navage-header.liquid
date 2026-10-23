@@ -1,0 +1,256 @@
+{% comment %}
+  Clone-navage/sections/navage-header.liquid
+  Full-fidelity Naväge Header with Brand Navigation, Cart Drawer trigger, and Search
+{% endcomment %}
+
+<header id="SectionId-{{ section.id }}" class="navage-header-wrapper">
+  <div class="navage-header-inner">
+    <!-- Mobile Hamburger -->
+    <button class="navage-mobile-menu-btn" aria-label="Open Menu" onclick="document.querySelector('#SectionId-{{ section.id }} .navage-nav').classList.toggle('is-open')">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Logo -->
+    <a href="/" class="navage-logo-link">
+      <img src="//navage.com/cdn/shop/files/logo_420x.png?v=1720725569" alt="Naväge Nasal Care" class="navage-logo-img" width="165" height="42">
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="navage-nav">
+      <ul class="navage-nav-list">
+        <li class="navage-nav-item has-dropdown">
+          <a href="/collections/products" class="navage-nav-link">Shop <span class="navage-arrow">▾</span></a>
+          <div class="navage-dropdown-menu">
+            <a href="/products/navage-advanced-nose-cleaner" class="navage-dropdown-link">
+              <strong>Naväge Advanced Nose Cleaner</strong>
+              <small>All-new next generation system</small>
+            </a>
+            <a href="/collections/products-nose-cleaner-bundles" class="navage-dropdown-link">
+              <strong>Bundles & Starter Kits</strong>
+              <small>Save up to 25% with accessories</small>
+            </a>
+            <a href="/collections/saltpods" class="navage-dropdown-link">
+              <strong>SaltPods & Refills</strong>
+              <small>Original, Eucalyptus & Alkalol</small>
+            </a>
+            <a href="/collections/accessories" class="navage-dropdown-link">
+              <strong>Accessories & Caddies</strong>
+              <small>Countertop caddy, travel cases, parts</small>
+            </a>
+            <a href="/collections/navage-baby-products" class="navage-dropdown-link">
+              <strong>Baby & Pediatric Care</strong>
+              <small>Aspirators & Micro-Mist inhalers</small>
+            </a>
+          </div>
+        </li>
+        <li class="navage-nav-item">
+          <a href="/pages/how-does-navage-work" class="navage-nav-link">Why Naväge</a>
+        </li>
+        <li class="navage-nav-item">
+          <a href="/pages/reviews" class="navage-nav-link">Reviews <span class="navage-review-star-count">★ 4.9</span></a>
+        </li>
+        <li class="navage-nav-item">
+          <a href="/pages/30-day-no-risk-trial" class="navage-nav-link">Guarantee</a>
+        </li>
+        <li class="navage-nav-item">
+          <a href="/pages/faqs" class="navage-nav-link">FAQs</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="navage-header-actions">
+      <a href="/products/navage-advanced-nose-cleaner" class="navage-btn-primary navage-header-cta">
+        SHOP NOW
+      </a>
+      <a href="/cart" class="navage-cart-icon-btn" aria-label="Cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span class="navage-cart-count">{{ cart.item_count | default: 0 }}</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  #SectionId-{{ section.id }} {
+    background-color: #ffffff;
+    border-bottom: 1px solid #E1E8ED;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  #SectionId-{{ section.id }} .navage-header-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #SectionId-{{ section.id }} .navage-logo-img {
+    display: block;
+    max-width: 165px;
+    height: auto;
+  }
+  #SectionId-{{ section.id }} .navage-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  #SectionId-{{ section.id }} .navage-nav-item {
+    position: relative;
+  }
+  #SectionId-{{ section.id }} .navage-nav-link {
+    color: #003B71;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s;
+  }
+  #SectionId-{{ section.id }} .navage-nav-link:hover {
+    color: #00A3E0;
+  }
+  #SectionId-{{ section.id }} .navage-review-star-count {
+    background: #E8F5FD;
+    color: #00A3E0;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-weight: 800;
+  }
+  #SectionId-{{ section.id }} .navage-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 59, 113, 0.12);
+    border-radius: 8px;
+    padding: 12px 0;
+    min-width: 280px;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    border: 1px solid #E1E8ED;
+  }
+  #SectionId-{{ section.id }} .navage-nav-item.has-dropdown:hover .navage-dropdown-menu {
+    display: flex;
+  }
+  #SectionId-{{ section.id }} .navage-dropdown-link {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #003B71;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.2s;
+  }
+  #SectionId-{{ section.id }} .navage-dropdown-link strong {
+    font-size: 14px;
+  }
+  #SectionId-{{ section.id }} .navage-dropdown-link small {
+    font-size: 11px;
+    color: #6B7C8E;
+  }
+  #SectionId-{{ section.id }} .navage-dropdown-link:hover {
+    background-color: #F4F8FA;
+    color: #00A3E0;
+  }
+  #SectionId-{{ section.id }} .navage-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  #SectionId-{{ section.id }} .navage-btn-primary {
+    background-color: #00A3E0;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 24px;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 12px rgba(0, 163, 224, 0.25);
+  }
+  #SectionId-{{ section.id }} .navage-btn-primary:hover {
+    background-color: #0087BA;
+    transform: translateY(-1px);
+  }
+  #SectionId-{{ section.id }} .navage-cart-icon-btn {
+    position: relative;
+    color: #003B71;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  #SectionId-{{ section.id }} .navage-cart-count {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background-color: #003B71;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #SectionId-{{ section.id }} .navage-mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+  #SectionId-{{ section.id }} .navage-mobile-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #003B71;
+  }
+  @media (max-width: 992px) {
+    #SectionId-{{ section.id }} .navage-mobile-menu-btn {
+      display: flex;
+    }
+    #SectionId-{{ section.id }} .navage-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border-bottom: 1px solid #E1E8ED;
+      padding: 16px;
+    }
+    #SectionId-{{ section.id }} .navage-nav.is-open {
+      display: block;
+    }
+    #SectionId-{{ section.id }} .navage-nav-list {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Navage Header",
+  "settings": []
+}
+{% endschema %}

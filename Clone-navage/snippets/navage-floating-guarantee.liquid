@@ -1,0 +1,59 @@
+{% comment %}
+  Clone-navage/snippets/navage-floating-guarantee.liquid
+  Floating Guarantee Badge with z-index: 99999 !important to clear Shopify preview bar
+{% endcomment %}
+
+<div id="navageFloatingGuarantee" class="navage-floating-teaser" onclick="window.location.href='/pages/30-day-no-risk-trial'">
+  <div class="navage-teaser-inner">
+    <span class="navage-teaser-icon">🛡️</span>
+    <div class="navage-teaser-text">
+      <strong>30-DAY TRIAL</strong>
+      <small>100% Zero-Risk</small>
+    </div>
+  </div>
+</div>
+
+<style>
+  #navageFloatingGuarantee {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 99999 !important;
+    background: #ffffff;
+    border: 2px solid #00A3E0;
+    border-radius: 30px;
+    padding: 8px 16px;
+    box-shadow: 0 10px 25px rgba(0, 59, 113, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  #navageFloatingGuarantee:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(0, 59, 113, 0.28);
+  }
+  #navageFloatingGuarantee .navage-teaser-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  #navageFloatingGuarantee .navage-teaser-icon {
+    font-size: 20px;
+  }
+  #navageFloatingGuarantee .navage-teaser-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  #navageFloatingGuarantee .navage-teaser-text strong {
+    color: #003B71;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+  }
+  #navageFloatingGuarantee .navage-teaser-text small {
+    color: #00A3E0;
+    font-size: 10px;
+    font-weight: 700;
+  }
+</style>

@@ -1,0 +1,297 @@
+[
+  {
+    "handle": "products",
+    "title": "Navage.com Purchasable Products",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 26,
+    "productHandles": [
+      "navage-essentials-bundle",
+      "navage-saltpod-30-pack",
+      "navage-starter-bundle",
+      "travel-case",
+      "nasal-dock",
+      "countertop-caddy",
+      "navage-dock-pillow-combo",
+      "nose-pillow",
+      "navage-eucalyptus-saltpod-30-pack",
+      "navage-deluxe-bundle",
+      "navage-scrubber",
+      "travel-bag",
+      "navage-custom-cleaning-kit",
+      "navage-multi-user-bundle",
+      "lower-tank",
+      "battery-door",
+      "upper-tank",
+      "navage-premier-bundle",
+      "navage-travel-bundle-nose-cleaner-20-saltpods-travel-bag",
+      "navage-baby-aspirator",
+      "navage-baby-mist-inhaler",
+      "navage-adult-mist",
+      "navage-baby-bundle-baby-nasal-aspirator-micro-mist-inhaler",
+      "navage-nasal-care-bundle-navage-nose-cleaner-baby-nasal-aspirator",
+      "navage-saline-nasal-mist",
+      "daytime-nighttime-saltpod-30-pack"
+    ]
+  },
+  {
+    "handle": "products-nose-cleaner-bundles",
+    "title": "Nose Cleaner Bundles",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 6,
+    "productHandles": [
+      "navage-starter-bundle",
+      "navage-multi-user-bundle",
+      "navage-essentials-bundle",
+      "navage-deluxe-bundle",
+      "navage-premier-bundle",
+      "navage-travel-bundle-nose-cleaner-20-saltpods-travel-bag"
+    ]
+  },
+  {
+    "handle": "all",
+    "title": "{!= form_name !}",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 41,
+    "productHandles": [
+      "promo-saltpod-10-pack",
+      "aspirator-cleaning-brush",
+      "aspirator-cleaning-brush-small",
+      "aspirator-funnel-tip",
+      "aspirator-large-gourd-tip-1",
+      "aspirator-gourd-tip-small",
+      "baby-micro-mist-mask",
+      "countertop-caddy",
+      "nasal-dock",
+      "navage-advanced-nose-cleaner",
+      "navage-alkalol-saltpod-30-pack",
+      "navage-baby-bundle-baby-nasal-aspirator-micro-mist-inhaler",
+      "navage-baby-mist-inhaler",
+      "navage-baby-aspirator",
+      "navage-custom-cleaning-kit",
+      "daytime-nighttime-saltpod-30-pack",
+      "navage-deluxe-bundle",
+      "dual-action-powered-ear-cleaner",
+      "navage-essentials-bundle",
+      "navage-essentials-plus-bundle",
+      "navage-eucalyptus-saltpod-30-pack",
+      "navage-nasal-care-bundle-navage-nose-cleaner-baby-nasal-aspirator",
+      "navage-multi-user-bundle",
+      "navage-nasal-rinse-packets-50-ct",
+      "lower-tank",
+      "battery-door",
+      "upper-tank",
+      "nose-pillow",
+      "navage-saltpod-30-pack",
+      "navage-portable-nebulizer",
+      "portable-nose-cleaner",
+      "navage-premier-bundle",
+      "navage-saline-nasal-mist",
+      "navage-adult-mist",
+      "navage-scrubber",
+      "navage-starter-bundle",
+      "navage-travel-bundle-nose-cleaner-20-saltpods-travel-bag",
+      "navage-dock-pillow-combo",
+      "power-cord",
+      "travel-bag",
+      "travel-case"
+    ]
+  },
+  {
+    "handle": "saltpods",
+    "title": "SaltPods",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 4,
+    "productHandles": [
+      "navage-saltpod-30-pack",
+      "navage-eucalyptus-saltpod-30-pack",
+      "navage-alkalol-saltpod-30-pack",
+      "daytime-nighttime-saltpod-30-pack"
+    ]
+  },
+  {
+    "handle": "accessories",
+    "title": "Accessories",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 11,
+    "productHandles": [
+      "countertop-caddy",
+      "navage-custom-cleaning-kit",
+      "navage-dock-pillow-combo",
+      "nose-pillow",
+      "travel-case",
+      "travel-bag",
+      "navage-scrubber",
+      "lower-tank",
+      "nasal-dock",
+      "upper-tank",
+      "battery-door"
+    ]
+  },
+  {
+    "handle": "replacement-parts",
+    "title": "Replacement Parts",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 3,
+    "productHandles": [
+      "lower-tank",
+      "upper-tank",
+      "battery-door"
+    ]
+  },
+  {
+    "handle": "wholesale",
+    "title": "Wholesale",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 0,
+    "productHandles": []
+  },
+  {
+    "handle": "home-page",
+    "title": "Home Page",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 10,
+    "productHandles": [
+      "navage-starter-bundle",
+      "navage-essentials-bundle",
+      "navage-saltpod-30-pack",
+      "navage-eucalyptus-saltpod-30-pack",
+      "navage-baby-aspirator",
+      "navage-baby-mist-inhaler",
+      "navage-adult-mist",
+      "navage-baby-bundle-baby-nasal-aspirator-micro-mist-inhaler",
+      "navage-nasal-care-bundle-navage-nose-cleaner-baby-nasal-aspirator",
+      "navage-saline-nasal-mist"
+    ]
+  },
+  {
+    "handle": "navage-baby-products",
+    "title": "Baby Care",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 4,
+    "productHandles": [
+      "navage-baby-aspirator",
+      "navage-baby-mist-inhaler",
+      "navage-baby-bundle-baby-nasal-aspirator-micro-mist-inhaler",
+      "navage-nasal-care-bundle-navage-nose-cleaner-baby-nasal-aspirator"
+    ]
+  },
+  {
+    "handle": "alkalol-saltpod",
+    "title": "Alkalol SaltPod",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 1,
+    "productHandles": [
+      "navage-alkalol-saltpod-30-pack"
+    ]
+  },
+  {
+    "handle": "saline-mist",
+    "title": "Saline Mist",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 1,
+    "productHandles": [
+      "navage-adult-mist"
+    ]
+  },
+  {
+    "handle": "navage-ear",
+    "title": "Navage Dual Action Powered Ear Cleaner",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 1,
+    "productHandles": [
+      "dual-action-powered-ear-cleaner"
+    ]
+  },
+  {
+    "handle": "navage-day-deals",
+    "title": "Fall Deal Days",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 10,
+    "productHandles": [
+      "navage-starter-bundle",
+      "navage-essentials-bundle",
+      "navage-multi-user-bundle",
+      "navage-deluxe-bundle",
+      "navage-premier-bundle",
+      "navage-travel-bundle-nose-cleaner-20-saltpods-travel-bag",
+      "navage-adult-mist",
+      "navage-baby-aspirator",
+      "navage-saline-nasal-mist",
+      "navage-baby-mist-inhaler"
+    ]
+  },
+  {
+    "handle": "nasal-care",
+    "title": "Nasal Care",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 12,
+    "productHandles": [
+      "navage-advanced-nose-cleaner",
+      "navage-starter-bundle",
+      "navage-multi-user-bundle",
+      "navage-essentials-bundle",
+      "navage-essentials-plus-bundle",
+      "navage-travel-bundle-nose-cleaner-20-saltpods-travel-bag",
+      "navage-deluxe-bundle",
+      "navage-premier-bundle",
+      "portable-nose-cleaner",
+      "navage-nasal-care-bundle-navage-nose-cleaner-baby-nasal-aspirator",
+      "navage-saline-nasal-mist",
+      "navage-adult-mist"
+    ]
+  },
+  {
+    "handle": "respiratory-care",
+    "title": "Respiratory Care",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 1,
+    "productHandles": [
+      "navage-portable-nebulizer"
+    ]
+  },
+  {
+    "handle": "saline-refills",
+    "title": "Saline Refills",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 5,
+    "productHandles": [
+      "navage-saltpod-30-pack",
+      "navage-eucalyptus-saltpod-30-pack",
+      "navage-alkalol-saltpod-30-pack",
+      "daytime-nighttime-saltpod-30-pack",
+      "navage-nasal-rinse-packets-50-ct"
+    ]
+  },
+  {
+    "handle": "products-nasal-care-condensed",
+    "title": "Naväge Nasal Care",
+    "description": "",
+    "bannerImage": "",
+    "productCount": 7,
+    "productHandles": [
+      "navage-advanced-nose-cleaner",
+      "navage-starter-bundle",
+      "portable-nose-cleaner",
+      "navage-multi-user-bundle",
+      "navage-adult-mist",
+      "navage-essentials-bundle",
+      "navage-deluxe-bundle"
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+{% comment %}
+  Clone-navage/sections/navage-announcement-bar.liquid
+  Full-fidelity Naväge Top Bar with rotating guarantee & shipping benefits
+{% endcomment %}
+
+<div id="SectionId-{{ section.id }}" class="navage-announcement-bar">
+  <div class="navage-announcement-container">
+    <div class="navage-announcement-text">
+      <span class="navage-badge-pill">FAST RELIEF</span>
+      <span class="navage-announcement-msg">
+        <strong>FREE SHIPPING</strong> on orders over $50 &nbsp;|&nbsp; <strong>30-DAY ZERO-RISK TRIAL</strong>
+      </span>
+    </div>
+    <div class="navage-announcement-links">
+      <a href="/pages/30-day-no-risk-trial" class="navage-top-link">30-Day Guarantee</a>
+      <span class="navage-sep">•</span>
+      <a href="/pages/faqs" class="navage-top-link">FAQs</a>
+      <span class="navage-sep">•</span>
+      <a href="/pages/contact-navage" class="navage-top-link">Contact</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  #SectionId-{{ section.id }} {
+    background-color: #002244;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.4;
+    padding: 8px 16px;
+    position: relative;
+    z-index: 100;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  #SectionId-{{ section.id }} .navage-announcement-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #SectionId-{{ section.id }} .navage-badge-pill {
+    background-color: #00A3E0;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-right: 8px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  #SectionId-{{ section.id }} .navage-announcement-text {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+  #SectionId-{{ section.id }} .navage-announcement-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  #SectionId-{{ section.id }} .navage-top-link {
+    color: #B0C4DE;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.2s ease;
+  }
+  #SectionId-{{ section.id }} .navage-top-link:hover {
+    color: #ffffff;
+  }
+  #SectionId-{{ section.id }} .navage-sep {
+    color: #4A6B82;
+    font-size: 10px;
+  }
+  @media (max-width: 768px) {
+    #SectionId-{{ section.id }} .navage-announcement-links {
+      display: none;
+    }
+    #SectionId-{{ section.id }} .navage-announcement-container {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Navage Top Bar",
+  "settings": []
+}
+{% endschema %}

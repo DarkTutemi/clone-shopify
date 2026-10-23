@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "navage_hero": {
+      "type": "navage-hero-banner",
+      "settings": {}
+    },
+    "navage_trust": {
+      "type": "navage-trust-badges",
+      "settings": {}
+    },
+    "navage_bundles": {
+      "type": "navage-bundle-showcase",
+      "settings": {}
+    },
+    "navage_how_it_works": {
+      "type": "navage-how-it-works",
+      "settings": {}
+    },
+    "navage_comparison": {
+      "type": "navage-comparison-table",
+      "settings": {}
+    },
+    "navage_doctor": {
+      "type": "navage-doctor-spotlight",
+      "settings": {}
+    },
+    "navage_faq": {
+      "type": "navage-faq-accordion",
+      "settings": {}
+    }
+  },
+  "order": [
+    "navage_hero",
+    "navage_trust",
+    "navage_bundles",
+    "navage_how_it_works",
+    "navage_comparison",
+    "navage_doctor",
+    "navage_faq"
+  ]
+}

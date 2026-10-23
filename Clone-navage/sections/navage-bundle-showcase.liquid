@@ -1,0 +1,241 @@
+{% comment %}
+  Clone-navage/sections/navage-bundle-showcase.liquid
+  1:1 Naväge Best-Seller Bundles Grid with dynamic pricing and save badges
+{% endcomment %}
+
+<div id="SectionId-{{ section.id }}" class="navage-bundles-section">
+  <div class="navage-bundle-container">
+    <div class="navage-section-header">
+      <span class="navage-section-tag">MOST POPULAR OPTIONS</span>
+      <h2 class="navage-section-heading">Starter Kits & Value Bundles</h2>
+      <p class="navage-section-subheading">
+        Everything you need to experience the deepest, most refreshing sinus relief right out of the box.
+      </p>
+    </div>
+
+    <div class="navage-bundle-grid">
+      <!-- Bundle 1: Naväge Essentials Plus Bundle -->
+      <div class="navage-bundle-card">
+        <div class="navage-bundle-badge">BEST VALUE</div>
+        <div class="navage-bundle-img-wrap">
+          <img src="//navage.com/cdn/shop/files/Badge-12.png?v=1776613787&width=400" alt="Naväge Essentials Plus Bundle" class="navage-bundle-img" loading="lazy">
+        </div>
+        <h3 class="navage-bundle-title">Naväge Essentials Plus Bundle</h3>
+        <p class="navage-bundle-includes">
+          Includes: Nose Cleaner, 30 SaltPods, Countertop Caddy & Custom Cleaning Kit.
+        </p>
+        <div class="navage-bundle-price-wrap">
+          <span class="navage-bundle-price">$129.95</span>
+          <span class="navage-bundle-compare">$154.95</span>
+          <span class="navage-bundle-save">SAVE $25</span>
+        </div>
+        <a href="/products/navage-essentials-plus-bundle" class="navage-bundle-btn">
+          VIEW BUNDLE
+        </a>
+      </div>
+
+      <!-- Bundle 2: Naväge Premier Bundle -->
+      <div class="navage-bundle-card featured">
+        <div class="navage-bundle-badge featured">MOST POPULAR</div>
+        <div class="navage-bundle-img-wrap">
+          <img src="//navage.com/cdn/shop/files/Gentle_Single_Powered_Flow.png?v=1777048833&width=400" alt="Naväge Premier Bundle" class="navage-bundle-img" loading="lazy">
+        </div>
+        <h3 class="navage-bundle-title">Naväge Premier Bundle</h3>
+        <p class="navage-bundle-includes">
+          Includes: Nose Cleaner, 30 SaltPods, Countertop Caddy & Travel Case.
+        </p>
+        <div class="navage-bundle-price-wrap">
+          <span class="navage-bundle-price">$139.95</span>
+          <span class="navage-bundle-compare">$169.95</span>
+          <span class="navage-bundle-save">SAVE $30</span>
+        </div>
+        <a href="/products/navage-premier-bundle" class="navage-bundle-btn featured">
+          VIEW BUNDLE
+        </a>
+      </div>
+
+      <!-- Bundle 3: Naväge Multi-User Bundle -->
+      <div class="navage-bundle-card">
+        <div class="navage-bundle-badge">FOR FAMILIES</div>
+        <div class="navage-bundle-img-wrap">
+          <img src="//navage.com/cdn/shop/files/Our_Commitment.png?v=1777057682&width=400" alt="Naväge Multi-User Bundle" class="navage-bundle-img" loading="lazy">
+        </div>
+        <h3 class="navage-bundle-title">Naväge Multi-User Bundle</h3>
+        <p class="navage-bundle-includes">
+          Includes: Nose Cleaner, 30 SaltPods, 2nd Nasal Dock & 2nd Pair of Nose Pillows.
+        </p>
+        <div class="navage-bundle-price-wrap">
+          <span class="navage-bundle-price">$144.95</span>
+          <span class="navage-bundle-compare">$174.95</span>
+          <span class="navage-bundle-save">SAVE $30</span>
+        </div>
+        <a href="/products/navage-multi-user-bundle" class="navage-bundle-btn">
+          VIEW BUNDLE
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #SectionId-{{ section.id }} {
+    padding: 80px 24px;
+    background-color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  #SectionId-{{ section.id }} .navage-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+  }
+  #SectionId-{{ section.id }} .navage-section-tag {
+    color: #00A3E0;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  #SectionId-{{ section.id }} .navage-section-heading {
+    color: #003B71;
+    font-size: 38px;
+    font-weight: 900;
+    margin: 0 0 12px;
+  }
+  #SectionId-{{ section.id }} .navage-section-subheading {
+    color: #556B7D;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-card {
+    background: #ffffff;
+    border: 1px solid #E1EDF2;
+    border-radius: 16px;
+    padding: 32px 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 59, 113, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 59, 113, 0.1);
+  }
+  #SectionId-{{ section.id }} .navage-bundle-card.featured {
+    border: 2px solid #00A3E0;
+    box-shadow: 0 8px 24px rgba(0, 163, 224, 0.12);
+  }
+  #SectionId-{{ section.id }} .navage-bundle-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #E8F5FD;
+    color: #0087BA;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 12px;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-badge.featured {
+    background: #00A3E0;
+    color: #ffffff;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-img-wrap {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-img {
+    max-height: 180px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-title {
+    color: #003B71;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0 0 10px;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-includes {
+    color: #6B7C8E;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 20px;
+    min-height: 40px;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-price-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-price {
+    font-size: 24px;
+    font-weight: 900;
+    color: #003B71;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-compare {
+    font-size: 15px;
+    color: #8E9FAA;
+    text-decoration: line-through;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-save {
+    background: #EBF8EE;
+    color: #1E8E3E;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 10px;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-btn {
+    display: block;
+    background: #003B71;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-btn:hover {
+    background: #002244;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-btn.featured {
+    background: #00A3E0;
+  }
+  #SectionId-{{ section.id }} .navage-bundle-btn.featured:hover {
+    background: #0087BA;
+  }
+  @media (max-width: 992px) {
+    #SectionId-{{ section.id }} .navage-bundle-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Navage Bundle Showcase",
+  "settings": []
+}
+{% endschema %}

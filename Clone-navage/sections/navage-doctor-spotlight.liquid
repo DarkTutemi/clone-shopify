@@ -1,0 +1,128 @@
+{% comment %}
+  Clone-navage/sections/navage-doctor-spotlight.liquid
+  1:1 Doctor & Celebrity Endorsement Section (Dr. Howard Levine & Brooke Burke)
+{% endcomment %}
+
+<div id="SectionId-{{ section.id }}" class="navage-doctor-section">
+  <div class="navage-doctor-container">
+    <div class="navage-doctor-grid">
+      <!-- Doctor Quote -->
+      <div class="navage-doctor-card">
+        <div class="navage-doc-badge">CLINICAL PERSPECTIVE</div>
+        <p class="navage-doc-quote">
+          “Naväge is the first real innovation in nasal irrigation in decades. The powered suction creates a closed-loop system that thoroughly cleanses without the mess or choking sensation of Neti pots.”
+        </p>
+        <div class="navage-doc-author">
+          <div class="navage-doc-avatar">👨‍⚕️</div>
+          <div>
+            <h4 class="navage-doc-name">Dr. Howard Levine, MD, FACS</h4>
+            <span class="navage-doc-title">World-Renowned Rhinologist & Past President, American Rhinologic Society</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brooke Burke Endorsement -->
+      <div class="navage-doctor-card celeb">
+        <div class="navage-doc-badge celeb">CELEBRITY AMBASSADOR</div>
+        <p class="navage-doc-quote">
+          “In as little as 30 seconds, you can feel the difference. It has completely transformed my daily wellness routine and sleep quality.”
+        </p>
+        <div class="navage-doc-author">
+          <div class="navage-doc-avatar celeb">⭐</div>
+          <div>
+            <h4 class="navage-doc-name">Brooke Burke</h4>
+            <span class="navage-doc-title">TV Host, Fitness Author & Wellness Advocate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #SectionId-{{ section.id }} {
+    background: #002B54;
+    color: #ffffff;
+    padding: 80px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  #SectionId-{{ section.id }} .navage-doctor-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  #SectionId-{{ section.id }} .navage-doctor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+  #SectionId-{{ section.id }} .navage-doctor-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #SectionId-{{ section.id }} .navage-doctor-card.celeb {
+    background: rgba(0, 163, 224, 0.08);
+    border-color: rgba(0, 163, 224, 0.25);
+  }
+  #SectionId-{{ section.id }} .navage-doc-badge {
+    color: #6CD2FF;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+  }
+  #SectionId-{{ section.id }} .navage-doc-badge.celeb {
+    color: #FFD700;
+  }
+  #SectionId-{{ section.id }} .navage-doc-quote {
+    font-size: 20px;
+    line-height: 1.6;
+    font-style: italic;
+    color: #E8F2FA;
+    margin: 0 0 30px;
+  }
+  #SectionId-{{ section.id }} .navage-doc-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  #SectionId-{{ section.id }} .navage-doc-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  #SectionId-{{ section.id }} .navage-doc-name {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+  }
+  #SectionId-{{ section.id }} .navage-doc-title {
+    font-size: 12px;
+    color: #9EC0D6;
+    line-height: 1.4;
+    display: block;
+  }
+  @media (max-width: 768px) {
+    #SectionId-{{ section.id }} .navage-doctor-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Navage Doctor Spotlight",
+  "settings": []
+}
+{% endschema %}

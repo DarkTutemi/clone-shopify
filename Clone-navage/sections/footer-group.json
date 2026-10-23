@@ -1,0 +1,13 @@
+{
+  "name": "Footer Group",
+  "type": "footer",
+  "sections": {
+    "navage_footer": {
+      "type": "navage-footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "navage_footer"
+  ]
+}

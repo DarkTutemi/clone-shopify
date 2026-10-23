@@ -1,0 +1,188 @@
+{% comment %}
+  Clone-navage/sections/navage-comparison-table.liquid
+  1:1 Comparison Table: Naväge vs Neti Pots vs Countertop Devices
+{% endcomment %}
+
+<div id="SectionId-{{ section.id }}" class="navage-compare-section">
+  <div class="navage-compare-container">
+    <div class="navage-section-header">
+      <span class="navage-section-tag">THE POWER OF SUCTION</span>
+      <h2 class="navage-section-heading">See How Naväge Compares</h2>
+      <p class="navage-section-subheading">
+        Why millions of former Neti pot users and sinus sufferers have permanently switched to Naväge.
+      </p>
+    </div>
+
+    <div class="navage-table-wrapper">
+      <table class="navage-compare-table">
+        <thead>
+          <tr>
+            <th class="feature-col">Features & Benefits</th>
+            <th class="navage-col">
+              <span class="table-brand">Naväge</span>
+              <small>Powered Suction System</small>
+            </th>
+            <th>
+              <span class="table-other">Neti Pots</span>
+              <small>Gravity Flow</small>
+            </th>
+            <th>
+              <span class="table-other">Countertop Devices</span>
+              <small>Positive Pressure</small>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature-col">Powered Gentle Suction Technology</td>
+            <td class="navage-col"><span class="check-yes">✔ YES</span></td>
+            <td><span class="check-no">✖ NO (Gravity only)</span></td>
+            <td><span class="check-no">✖ NO (Pushes in)</span></td>
+          </tr>
+          <tr>
+            <td class="feature-col">No Messy Water Spilling Out</td>
+            <td class="navage-col"><span class="check-yes">✔ Closed-Loop</span></td>
+            <td><span class="check-no">✖ Very Messy</span></td>
+            <td><span class="check-no">✖ Spills in sink</span></td>
+          </tr>
+          <tr>
+            <td class="feature-col">Perfect Saline Mixing Every Time</td>
+            <td class="navage-col"><span class="check-yes">✔ Pre-measured SaltPods</span></td>
+            <td><span class="check-no">✖ Manual packet stirring</span></td>
+            <td><span class="check-no">✖ Manual packet stirring</span></td>
+          </tr>
+          <tr>
+            <td class="feature-col">Clinically Proven Virus & Allergen Removal</td>
+            <td class="navage-col"><span class="check-yes">✔ 99% Removal</span></td>
+            <td><span class="check-partial">~ Partial</span></td>
+            <td><span class="check-partial">~ Partial</span></td>
+          </tr>
+          <tr>
+            <td class="feature-col">HSA & FSA Eligible</td>
+            <td class="navage-col"><span class="check-yes">✔ 100% Eligible</span></td>
+            <td><span class="check-yes">✔ Eligible</span></td>
+            <td><span class="check-partial">~ Varies</span></td>
+          </tr>
+          <tr>
+            <td class="feature-col">30-Day Zero-Risk Trial</td>
+            <td class="navage-col"><span class="check-yes">✔ Full Money-Back</span></td>
+            <td><span class="check-no">✖ Non-refundable</span></td>
+            <td><span class="check-no">✖ 15-day limited</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<style>
+  #SectionId-{{ section.id }} {
+    padding: 80px 24px;
+    background-color: #F8FBFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  #SectionId-{{ section.id }} .navage-compare-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  #SectionId-{{ section.id }} .navage-section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 50px;
+  }
+  #SectionId-{{ section.id }} .navage-section-tag {
+    color: #00A3E0;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  #SectionId-{{ section.id }} .navage-section-heading {
+    color: #003B71;
+    font-size: 38px;
+    font-weight: 900;
+    margin: 0 0 12px;
+  }
+  #SectionId-{{ section.id }} .navage-section-subheading {
+    color: #556B7D;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  #SectionId-{{ section.id }} .navage-table-wrapper {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 59, 113, 0.08);
+    overflow-x: auto;
+    border: 1px solid #E1EDF2;
+  }
+  #SectionId-{{ section.id }} .navage-compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  #SectionId-{{ section.id }} th, 
+  #SectionId-{{ section.id }} td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #EAEFF2;
+    font-size: 14px;
+  }
+  #SectionId-{{ section.id }} th {
+    background: #FAFCFD;
+    padding: 24px 20px;
+  }
+  #SectionId-{{ section.id }} .feature-col {
+    text-align: left;
+    font-weight: 700;
+    color: #003B71;
+    width: 40%;
+  }
+  #SectionId-{{ section.id }} .navage-col {
+    background: #F0F9FD;
+    font-weight: 800;
+  }
+  #SectionId-{{ section.id }} th.navage-col {
+    background: #E1F4FD;
+    border-top: 3px solid #00A3E0;
+  }
+  #SectionId-{{ section.id }} .table-brand {
+    color: #003B71;
+    font-size: 18px;
+    font-weight: 900;
+    display: block;
+  }
+  #SectionId-{{ section.id }} .table-other {
+    color: #6B7C8E;
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+  }
+  #SectionId-{{ section.id }} th small {
+    font-size: 11px;
+    color: #7B8B9B;
+    display: block;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  #SectionId-{{ section.id }} .check-yes {
+    color: #0087BA;
+    font-weight: 800;
+  }
+  #SectionId-{{ section.id }} .check-no {
+    color: #9AA7B2;
+    font-size: 13px;
+  }
+  #SectionId-{{ section.id }} .check-partial {
+    color: #E67E22;
+    font-size: 13px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Navage Comparison Table",
+  "settings": []
+}
+{% endschema %}

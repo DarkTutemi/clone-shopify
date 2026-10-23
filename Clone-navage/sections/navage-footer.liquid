@@ -1,0 +1,242 @@
+{% comment %}
+  Clone-navage/sections/navage-footer.liquid
+  1:1 Naväge Official Footer with Medical Disclaimers, Warranty info, and Newsletter
+{% endcomment %}
+
+<footer id="SectionId-{{ section.id }}" class="navage-footer">
+  <div class="navage-footer-inner">
+    <div class="navage-footer-top">
+      <div class="navage-footer-brand-col">
+        <img src="//navage.com/cdn/shop/files/logo_420x.png?v=1720725569" alt="Naväge Nasal Care" class="navage-footer-logo" width="160" height="40">
+        <p class="navage-footer-mission">
+          Empowering healthier, clearer breathing with the world's only powered nasal irrigation system using gentle suction.
+        </p>
+        <div class="navage-footer-guarantee-pill">
+          <span>🛡️ 30-Day Zero-Risk Trial Guarantee</span>
+        </div>
+      </div>
+
+      <div class="navage-footer-links-col">
+        <h4 class="navage-footer-heading">Shop Naväge</h4>
+        <ul class="navage-footer-list">
+          <li><a href="/products/navage-advanced-nose-cleaner">Advanced Nose Cleaner</a></li>
+          <li><a href="/collections/products-nose-cleaner-bundles">Nose Cleaner Bundles</a></li>
+          <li><a href="/collections/saltpods">SaltPod Capsules</a></li>
+          <li><a href="/collections/accessories">Accessories & Caddies</a></li>
+          <li><a href="/collections/navage-baby-products">Baby Nasal Aspirators</a></li>
+          <li><a href="/collections/saline-refills">Saline Refills</a></li>
+        </ul>
+      </div>
+
+      <div class="navage-footer-links-col">
+        <h4 class="navage-footer-heading">Support & Info</h4>
+        <ul class="navage-footer-list">
+          <li><a href="/pages/how-does-navage-work">How It Works</a></li>
+          <li><a href="/pages/30-day-no-risk-trial">30-Day Money-Back Guarantee</a></li>
+          <li><a href="/pages/quickstart-instructions">Quickstart Instructions</a></li>
+          <li><a href="/pages/cleaning-instructions">Cleaning Instructions</a></li>
+          <li><a href="/pages/owner-s-manual">Owner's Manual</a></li>
+          <li><a href="/pages/faqs">Frequently Asked Questions</a></li>
+          <li><a href="/pages/shipping">Shipping & Delivery</a></li>
+          <li><a href="/pages/returns-and-refunds">Returns & Refunds</a></li>
+          <li><a href="/pages/contact-navage">Contact Customer Care</a></li>
+        </ul>
+      </div>
+
+      <div class="navage-footer-newsletter-col">
+        <h4 class="navage-footer-heading">Breathe Easier. Join Us.</h4>
+        <p class="navage-footer-news-desc">
+          Subscribe for exclusive seasonal sinus tips, clinical updates, and special bundle savings.
+        </p>
+        <form class="navage-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Naväge updates!');">
+          <input type="email" placeholder="Enter your email address" required class="navage-news-input">
+          <button type="submit" class="navage-news-btn">SIGN UP</button>
+        </form>
+        <div class="navage-fsa-badge">
+          <span>💳 HSA & FSA Eligible Expense</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="navage-footer-bottom">
+      <div class="navage-footer-disclaimer">
+        <p>
+          ¹ #1 Doctor Recommended based on independent survey data among US ENT physicians.<br>
+          ² In laboratory testing, Naväge removed 99% of airborne viruses and pollen from nasal models.<br>
+          * Results may vary. Consult your physician before use if you have ear or nasal conditions.
+        </p>
+      </div>
+      <div class="navage-footer-copyright">
+        <span>© {{ 'now' | date: '%Y' }} RhinoSystems, Inc. Naväge® is a registered trademark. All rights reserved.</span>
+        <div class="navage-legal-links">
+          <a href="/pages/privacy">Privacy Policy</a>
+          <span>|</span>
+          <a href="/pages/terms">Terms of Service</a>
+          <span>|</span>
+          <a href="/pages/patents">Patents</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  #SectionId-{{ section.id }} {
+    background-color: #001A33;
+    color: #9EC0D6;
+    padding: 70px 24px 30px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  #SectionId-{{ section.id }} .navage-footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  #SectionId-{{ section.id }} .navage-footer-top {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr 1fr 1.3fr;
+    gap: 40px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  #SectionId-{{ section.id }} .navage-footer-logo {
+    display: block;
+    margin-bottom: 18px;
+    filter: brightness(0) invert(1);
+    max-width: 160px;
+    height: auto;
+  }
+  #SectionId-{{ section.id }} .navage-footer-mission {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #8BA8BF;
+    margin: 0 0 20px;
+  }
+  #SectionId-{{ section.id }} .navage-footer-guarantee-pill {
+    background: rgba(0, 163, 224, 0.15);
+    border: 1px solid rgba(0, 163, 224, 0.3);
+    color: #6CD2FF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+  #SectionId-{{ section.id }} .navage-footer-heading {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 800;
+    margin: 0 0 18px;
+    letter-spacing: 0.5px;
+  }
+  #SectionId-{{ section.id }} .navage-footer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #SectionId-{{ section.id }} .navage-footer-list a {
+    color: #9EC0D6;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  #SectionId-{{ section.id }} .navage-footer-list a:hover {
+    color: #00A3E0;
+  }
+  #SectionId-{{ section.id }} .navage-footer-news-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #8BA8BF;
+    margin: 0 0 16px;
+  }
+  #SectionId-{{ section.id }} .navage-newsletter-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  #SectionId-{{ section.id }} .navage-news-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 10px 16px;
+    color: #ffffff;
+    font-size: 13px;
+    outline: none;
+  }
+  #SectionId-{{ section.id }} .navage-news-input:focus {
+    border-color: #00A3E0;
+  }
+  #SectionId-{{ section.id }} .navage-news-btn {
+    background-color: #00A3E0;
+    color: #ffffff;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 20px;
+    font-weight: 800;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  #SectionId-{{ section.id }} .navage-news-btn:hover {
+    background-color: #0087BA;
+  }
+  #SectionId-{{ section.id }} .navage-fsa-badge {
+    color: #A3D55D;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  #SectionId-{{ section.id }} .navage-footer-bottom {
+    padding-top: 30px;
+  }
+  #SectionId-{{ section.id }} .navage-footer-disclaimer p {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #5D7A91;
+    margin: 0 0 20px;
+  }
+  #SectionId-{{ section.id }} .navage-footer-copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #5D7A91;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  #SectionId-{{ section.id }} .navage-legal-links {
+    display: flex;
+    gap: 8px;
+  }
+  #SectionId-{{ section.id }} .navage-legal-links a {
+    color: #5D7A91;
+    text-decoration: none;
+  }
+  #SectionId-{{ section.id }} .navage-legal-links a:hover {
+    color: #00A3E0;
+  }
+  @media (max-width: 992px) {
+    #SectionId-{{ section.id }} .navage-footer-top {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 576px) {
+    #SectionId-{{ section.id }} .navage-footer-top {
+      grid-template-columns: 1fr;
+    }
+    #SectionId-{{ section.id }} .navage-footer-copyright {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Navage Footer",
+  "settings": []
+}
+{% endschema %}
