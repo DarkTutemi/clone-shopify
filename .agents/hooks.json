@@ -1,0 +1,12 @@
+{
+  "chat-auto-backup": {
+    "enabled": true,
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node ./scripts/backup_chat_session.mjs --hook",
+        "timeout": 60
+      }
+    ]
+  }
+}
