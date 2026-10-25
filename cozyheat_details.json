@@ -1,0 +1,837 @@
+{
+  "bundleTiers": [
+    {
+      "title": "BUNDLE & SAVE",
+      "price": "$59.99 USD",
+      "text": "BUNDLE & SAVE A Little Comfort One cozy wrap, just for you $59.99 USD $79.99 USD Add Cozy Winter Gloves $14.99 USD $22.99 USD Share the Warmth Just $45.00 each Get 1 FREE Pair of Cozy Winter Gloves $8"
+    },
+    {
+      "title": "BUNDLE & SAVE",
+      "price": "$59.99 USD",
+      "text": "BUNDLE & SAVE A Little Comfort One cozy wrap, just for you $59.99 USD $79.99 USD Add Cozy Winter Gloves $14.99 USD $22.99 USD Share the Warmth Just $45.00 each Get 1 FREE Pair of Cozy Winter Gloves $8"
+    },
+    {
+      "title": "A Little Comfort",
+      "price": "$59.99 USD",
+      "text": "A Little Comfort One cozy wrap, just for you $59.99 USD $79.99 USD Add Cozy Winter Gloves $14.99 USD $22.99 USD Share the Warmth Just $45.00 each Get 1 FREE Pair of Cozy Winter Gloves $89.99 USD $159."
+    },
+    {
+      "title": "A Little Comfort",
+      "price": "$59.99 USD",
+      "text": "A Little Comfort One cozy wrap, just for you $59.99 USD $79.99 USD Add Cozy Winter Gloves $14.99 USD $22.99 USD"
+    },
+    {
+      "title": "A Little Comfort",
+      "price": "$59.99 USD",
+      "text": "A Little Comfort One cozy wrap, just for you $59.99 USD $79.99 USD Add Cozy Winter Gloves $14.99 USD $22.99 USD"
+    },
+    {
+      "title": "A Little Comfort",
+      "price": "$59.99 USD",
+      "text": "A Little Comfort One cozy wrap, just for you $59.99 USD $79.99 USD"
+    },
+    {
+      "title": "A Little Comfort",
+      "price": "$59.99 USD",
+      "text": "A Little Comfort One cozy wrap, just for you $59.99 USD $79.99 USD"
+    },
+    {
+      "title": "A Little Comfort",
+      "price": "$59.99 USD",
+      "text": "A Little Comfort One cozy wrap, just for you $59.99 USD $79.99 USD"
+    },
+    {
+      "title": "Share the Warmth",
+      "price": "$89.99 USD",
+      "text": "Share the Warmth Just $45.00 each Get 1 FREE Pair of Cozy Winter Gloves $89.99 USD $159.98 USD Color Warm Brown Apricot Green Maple Red Purple Warm Brown Apricot Green Maple Red Purple + FREE Shipping"
+    },
+    {
+      "title": "Share the Warmth",
+      "price": "$89.99 USD",
+      "text": "Share the Warmth Just $45.00 each Get 1 FREE Pair of Cozy Winter Gloves $89.99 USD $159.98 USD Color Warm Brown Apricot Green Maple Red Purple Warm Brown Apricot Green Maple Red Purple + FREE Shipping"
+    },
+    {
+      "title": "Share the Warmth",
+      "price": "$89.99 USD",
+      "text": "Share the Warmth Just $45.00 each Get 1 FREE Pair of Cozy Winter Gloves $89.99 USD $159.98 USD Color Warm Brown Apricot Green Maple Red Purple Warm Brown Apricot Green Maple Red Purple"
+    },
+    {
+      "title": "Share the Warmth",
+      "price": "$89.99 USD",
+      "text": "Share the Warmth Just $45.00 each Get 1 FREE Pair of Cozy Winter Gloves $89.99 USD $159.98 USD"
+    },
+    {
+      "title": "Share the Warmth",
+      "price": "$89.99 USD",
+      "text": "Share the Warmth Just $45.00 each Get 1 FREE Pair of Cozy Winter Gloves $89.99 USD $159.98 USD"
+    },
+    {
+      "title": "The Family Cozy Set",
+      "price": "$129.99 USD",
+      "text": "The Family Cozy Set Buy 2, Get 1 Free + 2 FREE Pairs of Cozy Winter Gloves $129.99 USD $239.97 USD + FREE Shipping + FREE Winter Cashmere Gloves $22.99 USD"
+    },
+    {
+      "title": "The Family Cozy Set",
+      "price": "$129.99 USD",
+      "text": "The Family Cozy Set Buy 2, Get 1 Free + 2 FREE Pairs of Cozy Winter Gloves $129.99 USD $239.97 USD + FREE Shipping + FREE Winter Cashmere Gloves $22.99 USD"
+    },
+    {
+      "title": "The Family Cozy Set",
+      "price": "$129.99 USD",
+      "text": "The Family Cozy Set Buy 2, Get 1 Free + 2 FREE Pairs of Cozy Winter Gloves $129.99 USD $239.97 USD"
+    },
+    {
+      "title": "The Family Cozy Set",
+      "price": "$129.99 USD",
+      "text": "The Family Cozy Set Buy 2, Get 1 Free + 2 FREE Pairs of Cozy Winter Gloves $129.99 USD $239.97 USD"
+    },
+    {
+      "title": "The Family Cozy Set",
+      "price": "$129.99 USD",
+      "text": "The Family Cozy Set Buy 2, Get 1 Free + 2 FREE Pairs of Cozy Winter Gloves $129.99 USD $239.97 USD"
+    }
+  ],
+  "swatches": [
+    "A Little Comfort\nOne cozy wrap, just for you\n$59.99 USD\n$79.99 USD\nAdd Cozy Winter Gloves\n$14.99 USD\n$22.99 USD",
+    "Warm BrownApricotGreenMaple RedPurple",
+    "Warm Brown",
+    "Apricot",
+    "Green",
+    "Maple Red",
+    "Purple",
+    "Share the Warmth\nJust $45.00 each\nGet 1 FREE Pair of Cozy Winter Gloves\n$89.99 USD\n$159.98 USD\nColor\nWarm Brown\nApricot\nGreen\nMaple Red\nPurple\nWarm Brown\nApricot\nGreen\nMaple Red\nPurple\n+ FREE Shipping\n+ FREE Winter Cashmere Gloves\nKhaki\nDark Gray\nPink\nBeige\nBlack\nLight Gray\n$22.99 USD",
+    "Warm Brown\nApricot\nGreen\nMaple Red\nPurple",
+    "Khaki\nDark Gray\nPink\nBeige\nBlack\nLight Gray",
+    "Khaki",
+    "Dark Gray",
+    "Pink",
+    "Beige",
+    "Black",
+    "Light Gray",
+    "The Family Cozy Set\nBuy 2, Get 1 Free\n+ 2 FREE Pairs of Cozy Winter Gloves\n$129.99 USD\n$239.97 USD\n+ FREE Shipping\n+ FREE Winter Cashmere Gloves\n$22.99 USD",
+    "Email",
+    "US Dollar",
+    "Euro",
+    "British Pound Sterling",
+    "Canadian Dollar",
+    "Australian Dollar",
+    "Afghan Afghani",
+    "Albanian Lek",
+    "Azerbaijani Manat",
+    "Algerian Dinar",
+    "Angolan Kwanza",
+    "Argentine Peso",
+    "Armenian Dram",
+    "Aruban Florin",
+    "Bahamian Dollar",
+    "Bahraini Dinar",
+    "Bangladeshi Taka",
+    "Barbadian Dollar",
+    "Belarusian Ruble",
+    "Belize Dollar",
+    "Bermudan Dollar",
+    "Bhutanese Ngultrum",
+    "Bitcoin",
+    "Bolivian Boliviano",
+    "Bosnia-Herzegovina Convertible Mark",
+    "Botswanan Pula",
+    "Brazilian Real",
+    "Brunei Dollar",
+    "Bulgarian Lev",
+    "Burundian Franc",
+    "Cambodian Riel",
+    "Cape Verdean Escudo",
+    "Central African CFA Franc",
+    "CFA Franc BCEAO",
+    "CFP Franc",
+    "Czech Republic Koruna",
+    "Cayman Islands Dollar",
+    "Chilean Peso",
+    "Chinese Yuan",
+    "Colombian Peso",
+    "Comorian Franc",
+    "Congolese Franc",
+    "Costa Rican Colon",
+    "Croatian Kuna",
+    "Cuban Convertible Peso",
+    "Cuban Peso",
+    "Danish Krone",
+    "Djiboutian Franc",
+    "Dominican Peso",
+    "East Caribbean Dollar",
+    "Egyptian Pound",
+    "Eritrean Nakfa",
+    "Ethiopian Birr",
+    "Falkland Islands Pound",
+    "Fijian Dollar",
+    "Gambian Dalasi",
+    "Georgian Lari",
+    "Ghanaian Cedi",
+    "Gibraltar Pound",
+    "Gold Ounce",
+    "Guatemalan Quetzal",
+    "Guernsey Pound",
+    "Guinean Franc",
+    "Guyanaese Dollar",
+    "Haitian Gourde",
+    "Honduran Lempira",
+    "Hong Kong Dollar",
+    "Hungarian Forint",
+    "Icelandic Krona",
+    "IMF Special Drawing Rights",
+    "Indian Rupee",
+    "Indonesian Rupiah",
+    "Iranian Rial",
+    "Iraqi Dinar",
+    "Isle of Man Pound",
+    "Israeli New Shekel",
+    "Jamaican Dollar",
+    "Japanese Yen",
+    "Jersey Pound",
+    "Jordanian Dinar",
+    "Kazakhstani Tenge",
+    "Kenyan Shilling",
+    "Kuwaiti Dinar",
+    "Kyrgystani Som",
+    "Laotian Kip",
+    "Latvian Lats",
+    "Lebanese Pound",
+    "Lesotho Loti",
+    "Liberian Dollar",
+    "Libyan Dinar",
+    "Lithuanian Litas",
+    "Macanese Pataca",
+    "Macedonian Denar",
+    "Malagasy Ariary",
+    "Malawian Kwacha",
+    "Malaysian Ringgit",
+    "Maldivian Rufiyaa",
+    "Mauritanian Ouguiya",
+    "Mauritian Rupee",
+    "Mexican Peso",
+    "Moldovan Leu",
+    "Mongolian Tugrik",
+    "Moroccan Dirham",
+    "Mozambican Metical",
+    "Myanmar Kyat",
+    "Namibian Dollar",
+    "Nepalese Rupee",
+    "Netherlands Antillean Guilder",
+    "New Taiwan Dollar",
+    "New Zealand Dollar",
+    "Nicaraguan Cordoba",
+    "Nigerian Naira",
+    "North Korean Won",
+    "Norwegian Krone",
+    "Omani Rial",
+    "Pakistani Rupee",
+    "Panamanian Balboa",
+    "Papua New Guinean Kina",
+    "Paraguayan Guarani",
+    "Peruvian Nuevo Sol",
+    "Philippine Peso",
+    "Polish Zloty",
+    "Qatari Rial",
+    "Romanian Leu",
+    "Russian Ruble",
+    "Rwandan Franc",
+    "Saint Helena Pound",
+    "Samoan Tala",
+    "Sao Tome and Principe Dobra",
+    "Salvadoran Colon",
+    "Saudi Riyal",
+    "Serbian Dinar",
+    "Seychellois Rupee",
+    "Sierra Leonean Leone",
+    "Silver Ounce",
+    "Singapore Dollar",
+    "Solomon Islands Dollar",
+    "Somali Shilling",
+    "South African Rand",
+    "South Korean Won",
+    "Sri Lankan Rupee",
+    "Sudanese Pound",
+    "Surinamese Dollar",
+    "Swazi Lilangeni",
+    "Swedish Krona",
+    "Swiss Franc",
+    "Syrian Pound",
+    "Tajikistani Somoni",
+    "Tanzanian Shilling",
+    "Thai Baht",
+    "Tongan Paʻanga",
+    "Trinidad and Tobago Dollar",
+    "Tunisian Dinar",
+    "Turkmenistani Manat",
+    "Turkish Lira",
+    "Ugandan Shilling",
+    "Ukrainian Hryvnia",
+    "United Arab Emirates Dirham",
+    "Uruguayan Peso",
+    "Uzbekistan Som",
+    "Vanuatu Vatu",
+    "Venezuelan Bolivar",
+    "Vietnamese Dong",
+    "Yemeni Rial",
+    "Zambian Kwacha",
+    "✍️ YÊU CẦU SỬA CHO AGENT (Prompt Note):",
+    "🎨 COMPUTED CSS STYLES:",
+    "📄 OUTER HTML:"
+  ],
+  "sections": [
+    {
+      "id": "shopify-section-sections--28751489958180__2c2ec774-3430-481f-b927-e9c035b9d24e",
+      "text": "LOVED BY 10,000 PARENTS 30 DAY MONEYBACK GUARANTEE FREE SHIPPING WORLDWIDE LOVED BY 10,000 PARENTS 30 DAY MONEYBACK GUARANTEE FREE SHIPPING WORLDWIDE LOVED BY 10,000 PARENTS 30 DAY MONEYBACK GUARANTEE FREE SHIPPING WORLDWIDE LOVED BY 10,000 PARENTS 30 DAY MONEYBACK GUARANTEE FREE SHIPPING",
+      "images": []
+    },
+    {
+      "id": "shopify-section-sections--28751489958180__header",
+      "heading": "",
+      "text": "Log in Cart",
+      "images": [
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/Everlittle_rising_sun_wordmark.png?v=1791997565&width=500",
+          "alt": "Everlittle 3"
+        }
+      ]
+    },
+    {
+      "id": "shopify-section-template--28751661334820__main",
+      "heading": "CozyHeat™ Heated Sweater",
+      "text": "Skip to product information CozyHeat™ Heated Sweater BUNDLE & SAVE A Little Comfort One cozy wrap, just for you $59.99 USD $79.99 USD Add Cozy Winter Gloves $14.99 USD $22.99 USD Share the Warmth Just $45.00 each Get 1 FREE Pair of Cozy Winter Gloves $89.99 USD $159.98 USD Color Warm Brown Apricot G",
+      "images": [
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?v=1791997900&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/exec-26648f3d-b5ac-403f-8087-84212258f672.webp?v=1791997900&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/exec-9f21ca2f-2f50-4d45-a6bc-9dbe87a7ee33.webp?v=1791997900&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0064.webp?v=1791997900&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/exec-892d6cfe-7a6d-4523-967d-6fba0cde5ec1.webp?v=1791997900&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0063.webp?v=1791997900&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0065.webp?v=1791997900&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0066.webp?v=1791997900&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/exec-61c73085-cd30-45d0-95ad-d8fa83da2539.webp?v=1791997900&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/exec-4ac818e1-963d-4660-a9c8-537baa872359.webp?v=1791997900&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?v=1791997900&width=416",
+          "alt": "CozyHeat™ Heated Sweater"
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/exec-26648f3d-b5ac-403f-8087-84212258f672.webp?v=1791997900&width=416",
+          "alt": "CozyHeat™ Heated Sweater"
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/exec-9f21ca2f-2f50-4d45-a6bc-9dbe87a7ee33.webp?v=1791997900&width=416",
+          "alt": "CozyHeat™ Heated Sweater"
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0064.webp?v=1791997900&width=416",
+          "alt": "CozyHeat™ Heated Sweater"
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/exec-892d6cfe-7a6d-4523-967d-6fba0cde5ec1.webp?v=1791997900&width=416",
+          "alt": "CozyHeat™ Heated Sweater"
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0063.webp?v=1791997900&width=416",
+          "alt": "CozyHeat™ Heated Sweater"
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0065.webp?v=1791997900&width=416",
+          "alt": "CozyHeat™ Heated Sweater"
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0066.webp?v=1791997900&width=416",
+          "alt": "CozyHeat™ Heated Sweater"
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/exec-61c73085-cd30-45d0-95ad-d8fa83da2539.webp?v=1791997900&width=416",
+          "alt": "CozyHeat™ Heated Sweater"
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/exec-4ac818e1-963d-4660-a9c8-537baa872359.webp?v=1791997900&width=416",
+          "alt": "CozyHeat™ Heated Sweater"
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/cd7cbfa7-785b-452d-9979-cb12bfa06a8e.jpg?height=200&v=1791997358",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/cd7cbfa7-785b-452d-9979-cb12bfa06a8e.jpg?height=200&v=1791997358",
+          "alt": "Winter Cashmere Gloves"
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/cd7cbfa7-785b-452d-9979-cb12bfa06a8e.jpg?height=200&v=1791997358",
+          "alt": "Winter Cashmere Gloves"
+        }
+      ]
+    },
+    {
+      "id": "ProductInfo-template--28751661334820__main",
+      "heading": "CozyHeat™ Heated Sweater",
+      "text": "CozyHeat™ Heated Sweater BUNDLE & SAVE A Little Comfort One cozy wrap, just for you $59.99 USD $79.99 USD Add Cozy Winter Gloves $14.99 USD $22.99 USD Share the Warmth Just $45.00 each Get 1 FREE Pair of Cozy Winter Gloves $89.99 USD $159.98 USD Color Warm Brown Apricot Green Maple Red Purple Warm B",
+      "images": [
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/cd7cbfa7-785b-452d-9979-cb12bfa06a8e.jpg?height=200&v=1791997358",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/cd7cbfa7-785b-452d-9979-cb12bfa06a8e.jpg?height=200&v=1791997358",
+          "alt": "Winter Cashmere Gloves"
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/cd7cbfa7-785b-452d-9979-cb12bfa06a8e.jpg?height=200&v=1791997358",
+          "alt": "Winter Cashmere Gloves"
+        }
+      ]
+    },
+    {
+      "id": "shopify-section-template--28751661334820__ss-feature-54-2",
+      "heading": "Warmth you can take anywhere",
+      "text": "Warmth you can take anywhere Connect a power bank or USB adapter for heat. Pick the level that feels right, on the couch or at your desk. Feel USB warmth Warms up fast Rapid warmth, so you're not shivering long. Heat you control Three levels let you turn it up or down to suit you. Light and f",
+      "images": [
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-5f4c165e.png?v=1791998345&width=1500",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "id": "shopify-section-template--28751661334820__ss-before-after-image-pro-3",
+      "heading": "Wear it your way",
+      "text": "Shawl Cloak One wrap, three ways to wear it Wear it your way Drape it over your shoulders, spread it on your lap, or wear it as a cloak. One piece, three ways to wear. Shawl, lap blanket or cloak, your call.",
+      "images": [
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-before_image-69e70463.png?v=1791998345&width=3000",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-after_image-6d4fd412.png?v=1791998345&width=3000",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "id": "shopify-section-template--28751661334820__ss-hotspots-9-4",
+      "heading": "Wearable warmth, one piece",
+      "text": "Wearable warmth, one piece 1 Zip front Zip it closed to wear as a cloak, or open it up. 2 Ribbed knit The ribbed knit look gives it a cozy, textured feel. 1 2 3 4 3 Easy control A round control on the cloak lets you set the heat level. 4 Bound edges Bound edges give it a neat, finish",
+      "images": [
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-bae6cdde.png?v=1791998345&width=750",
+          "alt": "<h2>Wearable warmth, one piece</h2>"
+        }
+      ]
+    },
+    {
+      "id": "shopify-section-template--28751661334820__ss-testimonials-42-5",
+      "heading": "Warmth that moves with the day",
+      "text": "From real sofas and desks Warmth that moves with the day Verified customer Folded it into my tote for a weekend trip. Used it as a blanket on the train with a USB adapter. Heats up faster than I expected. Wish there was a pocket for the cable, but it still beats carrying a bulky throw. Ian E. I",
+      "images": [
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-bed327a3.png?v=1791998345&width=1500",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-f98840a4.png?v=1791998345&width=1500",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-b67d7b76.png?v=1791998345&width=1500",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-5f4c165e.png?v=1791998345&width=1500",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-bed327a3.png?v=1791998345&width=1500",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-f98840a4.png?v=1791998345&width=1500",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-b67d7b76.png?v=1791998345&width=1500",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-5f4c165e.png?v=1791998345&width=1500",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-bed327a3.png?v=1791998345&width=1500",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-f98840a4.png?v=1791998345&width=1500",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "id": "shopify-section-template--28751661334820__ss-faq-pro-6",
+      "heading": "Quick answers before you buy",
+      "text": "Questions Quick answers before you buy Size, power, heat levels and what's in the box. Feel USB warmth Specs In the box Colors How big is it? What do I plug it into? How many heat levels?",
+      "images": [
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/section-store-avatar-01.jpg?v=1792522003&width=160",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/section-store-avatar-02.jpg?v=1792522003&width=160",
+          "alt": ""
+        },
+        {
+          "src": "https://everlittlekid.store/cdn/shop/files/section-store-avatar-03.jpg?v=1792522003&width=160",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "id": "shopify-section-promo-popup",
+      "text": "",
+      "images": []
+    },
+    {
+      "id": "shopify-section-sections--28751489925412__footer",
+      "heading": "Shop",
+      "text": "Shop Home Shop Now Contact Customer Care Search Stay in the loop Get Everlittle updates and offers in your inbox. Email Join Payment methods © 2026, Everlittle 3  Privacy policy Terms of service Refund policy Shipping policy",
+      "images": []
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Heat and Power Info",
+      "answer": ""
+    },
+    {
+      "question": "Heat and Power Info",
+      "answer": ""
+    },
+    {
+      "question": "Our Guarantee",
+      "answer": ""
+    },
+    {
+      "question": "Our Guarantee",
+      "answer": ""
+    },
+    {
+      "question": "Shipping & Delivery",
+      "answer": ""
+    },
+    {
+      "question": "Shipping & Delivery",
+      "answer": ""
+    },
+    {
+      "question": "How big is it?",
+      "answer": "Questions\n\nQuick answers before you buy\n\nSize, power, heat levels and what's in the box.\n\nFeel USB warmth"
+    },
+    {
+      "question": "How big is it?",
+      "answer": "Questions\n\nQuick answers before you buy\n\nSize, power, heat levels and what's in the box.\n\nFeel USB warmth"
+    },
+    {
+      "question": "How big is it?",
+      "answer": "Questions\n\nQuick answers before you buy\n\nSize, power, heat levels and what's in the box.\n\nFeel USB warmth"
+    },
+    {
+      "question": "How big is it?",
+      "answer": "It measures 150 x 80 cm, enough to wrap around you."
+    },
+    {
+      "question": "How big is it?",
+      "answer": "It measures 150 x 80 cm, enough to wrap around you."
+    },
+    {
+      "question": "How big is it?",
+      "answer": "It measures 150 x 80 cm, enough to wrap around you."
+    },
+    {
+      "question": "How big is it?",
+      "answer": "It measures 150 x 80 cm, enough to wrap around you."
+    },
+    {
+      "question": "How big is it?"
+    },
+    {
+      "question": "What do I plug it into?",
+      "answer": "Any USB power bank or adapter. The cable is included."
+    },
+    {
+      "question": "What do I plug it into?"
+    },
+    {
+      "question": "How many heat levels?",
+      "answer": "Three adjustable levels."
+    },
+    {
+      "question": "How many heat levels?"
+    },
+    {
+      "question": "Is it safe to use?",
+      "answer": "It runs on low 5V power with overheat protection."
+    },
+    {
+      "question": "Is it safe to use?",
+      "answer": "It runs on low 5V power with overheat protection."
+    },
+    {
+      "question": "Is it safe to use?"
+    },
+    {
+      "question": "Which colors?",
+      "answer": "Six, from Pink to Maple Red."
+    },
+    {
+      "question": "Which colors?"
+    },
+    {
+      "question": "What comes in the box?",
+      "answer": "The blanket, a USB cable and a user manual."
+    },
+    {
+      "question": "What comes in the box?",
+      "answer": "The blanket, a USB cable and a user manual."
+    },
+    {
+      "question": "What comes in the box?"
+    }
+  ],
+  "galleryImages": [
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?v=1791997900&width=1946",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/exec-26648f3d-b5ac-403f-8087-84212258f672.webp?v=1791997900&width=1946",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/exec-9f21ca2f-2f50-4d45-a6bc-9dbe87a7ee33.webp?v=1791997900&width=1946",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0064.webp?v=1791997900&width=1946",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/exec-892d6cfe-7a6d-4523-967d-6fba0cde5ec1.webp?v=1791997900&width=1946",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0063.webp?v=1791997900&width=1946",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0065.webp?v=1791997900&width=1946",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0066.webp?v=1791997900&width=1946",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/exec-61c73085-cd30-45d0-95ad-d8fa83da2539.webp?v=1791997900&width=1946",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/exec-4ac818e1-963d-4660-a9c8-537baa872359.webp?v=1791997900&width=1946",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?v=1791997900&width=416",
+      "alt": "CozyHeat™ Heated Sweater"
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/exec-26648f3d-b5ac-403f-8087-84212258f672.webp?v=1791997900&width=416",
+      "alt": "CozyHeat™ Heated Sweater"
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/exec-9f21ca2f-2f50-4d45-a6bc-9dbe87a7ee33.webp?v=1791997900&width=416",
+      "alt": "CozyHeat™ Heated Sweater"
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0064.webp?v=1791997900&width=416",
+      "alt": "CozyHeat™ Heated Sweater"
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/exec-892d6cfe-7a6d-4523-967d-6fba0cde5ec1.webp?v=1791997900&width=416",
+      "alt": "CozyHeat™ Heated Sweater"
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0063.webp?v=1791997900&width=416",
+      "alt": "CozyHeat™ Heated Sweater"
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0065.webp?v=1791997900&width=416",
+      "alt": "CozyHeat™ Heated Sweater"
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0066.webp?v=1791997900&width=416",
+      "alt": "CozyHeat™ Heated Sweater"
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/exec-61c73085-cd30-45d0-95ad-d8fa83da2539.webp?v=1791997900&width=416",
+      "alt": "CozyHeat™ Heated Sweater"
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/exec-4ac818e1-963d-4660-a9c8-537baa872359.webp?v=1791997900&width=416",
+      "alt": "CozyHeat™ Heated Sweater"
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/cd7cbfa7-785b-452d-9979-cb12bfa06a8e.jpg?height=200&v=1791997358",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/cd7cbfa7-785b-452d-9979-cb12bfa06a8e.jpg?height=200&v=1791997358",
+      "alt": "Winter Cashmere Gloves"
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/IMG-0067.webp?height=200&v=1791997900",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/cd7cbfa7-785b-452d-9979-cb12bfa06a8e.jpg?height=200&v=1791997358",
+      "alt": "Winter Cashmere Gloves"
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-bed327a3.png?v=1791998345&width=1500",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-f98840a4.png?v=1791998345&width=1500",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-b67d7b76.png?v=1791998345&width=1500",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-5f4c165e.png?v=1791998345&width=1500",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-bed327a3.png?v=1791998345&width=1500",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-f98840a4.png?v=1791998345&width=1500",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-b67d7b76.png?v=1791998345&width=1500",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-5f4c165e.png?v=1791998345&width=1500",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-bed327a3.png?v=1791998345&width=1500",
+      "alt": ""
+    },
+    {
+      "src": "https://everlittlekid.store/cdn/shop/files/pdp-image-f98840a4.png?v=1791998345&width=1500",
+      "alt": ""
+    }
+  ]
+}

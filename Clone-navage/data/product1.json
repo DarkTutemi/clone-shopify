@@ -1,0 +1,194 @@
+{
+  "product": {
+    "id": 10366898995480,
+    "title": "Naväge Advanced Nose Cleaner",
+    "body_html": "<p><span lang=\"EN-US\" class=\"TextRun SCXW10650465 BCX0\"><span class=\"NormalTextRun SCXW10650465 BCX0\">Outsmart congestion with a</span><span class=\"NormalTextRun SCXW10650465 BCX0\">n electronically controlled<span> </span></span><span class=\"NormalTextRun SCXW10650465 BCX0\">pressure sensor<span> </span></span><span class=\"NormalTextRun SCXW10650465 BCX0\">and<span> </span></span><span class=\"NormalTextRun SCXW10650465 BCX0\">three comfort settings to customize the power of your rinse, flushing out allergens, germs, mucus, and over 99% of viruses¹</span><span class=\"NormalTextRun SCXW10650465 BCX0\">.</span><span class=\"NormalTextRun SCXW10650465 BCX0\"><span> </span>Designed with a board-certified ENT, the Naväge Advanced Nose Cleaner uses powered suction to wash and moisturize the nasal cavity with a pressure-controlled stream of saline.<span> </span></span><span class=\"NormalTextRun SCXW10650465 BCX0\">It’s</span><span class=\"NormalTextRun SCXW10650465 BCX0\"><span> </span></span></span><span lang=\"EN-US\" class=\"TextRun SCXW10650465 BCX0\"><span class=\"NormalTextRun SCXW10650465 BCX0\">USB-C rechargeable with<span> </span></span><span class=\"NormalTextRun SCXW10650465 BCX0\">a<span> </span></span><span class=\"NormalTextRun SCXW10650465 BCX0\">Clean-Assist Mode and a Premium Air-Dry Mat</span><span class=\"NormalTextRun SCXW10650465 BCX0\"><span> </span>for</span><span class=\"NormalTextRun SCXW10650465 BCX0\"><span> </span>easy maintenance and<span> </span></span><span class=\"NormalTextRun SCXW10650465 BCX0\">hygienic</span><span class=\"NormalTextRun SCXW10650465 BCX0\"><span> </span></span><span class=\"NormalTextRun SCXW10650465 BCX0\">drying.</span><span class=\"NormalTextRun SCXW10650465 BCX0\"> </span></span><span class=\"EOP Selected SCXW10650465 BCX0\"> </span></p>\n<div class=\"OutlineElement Ltr SCXW256023997 BCX0\">\n<p class=\"Paragraph SCXW256023997 BCX0\"><strong><span lang=\"EN-US\" class=\"TextRun SCXW256023997 BCX0\"><span class=\"NormalTextRun SCXW256023997 BCX0\">WHAT'S IN THE BOX</span></span><span class=\"EOP Selected SCXW256023997 BCX0\"> </span></strong></p>\n</div>\n<div class=\"ListContainerWrapper SCXW256023997 BCX0\">\n<ul class=\"BulletListStyle1 SCXW256023997 BCX0\" role=\"list\">\n<li role=\"listitem\" class=\"OutlineElement Ltr SCXW256023997 BCX0\">\n<p class=\"Paragraph SCXW256023997 BCX0\"><span lang=\"EN-US\" class=\"TextRun SCXW256023997 BCX0\"><span class=\"NormalTextRun SCXW256023997 BCX0\">Naväge Advanced Nose Cleaner, Model SDG-2.5</span></span><span class=\"EOP Selected SCXW256023997 BCX0\"> </span></p>\n</li>\n</ul>\n</div>\n<div class=\"ListContainerWrapper SCXW256023997 BCX0\">\n<ul class=\"BulletListStyle1 SCXW256023997 BCX0\" role=\"list\">\n<li role=\"listitem\" class=\"OutlineElement Ltr SCXW256023997 BCX0\">\n<p class=\"Paragraph SCXW256023997 BCX0\"><span lang=\"EN-US\" class=\"TextRun SCXW256023997 BCX0\"><span class=\"NormalTextRun SCXW256023997 BCX0\">20 Naväge<span> </span></span><span class=\"NormalTextRun SpellingErrorV2Themed SCXW256023997 BCX0\">SaltPod</span><span class=\"NormalTextRun SCXW256023997 BCX0\"><span> </span>capsules (Original Sea Salt)</span></span><span class=\"EOP Selected SCXW256023997 BCX0\"> </span></p>\n</li>\n</ul>\n</div>\n<div class=\"ListContainerWrapper SCXW256023997 BCX0\">\n<ul class=\"BulletListStyle1 SCXW256023997 BCX0\" role=\"list\">\n<li role=\"listitem\" class=\"OutlineElement Ltr SCXW256023997 BCX0\">\n<p class=\"Paragraph SCXW256023997 BCX0\"><span lang=\"EN-US\" class=\"TextRun SCXW256023997 BCX0\"><span class=\"NormalTextRun SCXW256023997 BCX0\">Premium Air-Dry Mat</span></span></p>\n</li>\n</ul>\n</div>",
+    "vendor": "Navage Nasal Care",
+    "product_type": "Nose Cleaners",
+    "created_at": "2026-08-05T15:38:31-04:00",
+    "handle": "navage-advanced-nose-cleaner",
+    "updated_at": "2026-10-23T18:52:52-04:00",
+    "published_at": "2026-08-12T11:42:25-04:00",
+    "template_suffix": "advanced_nose-cleaner",
+    "published_scope": "web",
+    "tags": "",
+    "variants": [
+      {
+        "id": 52480889454872,
+        "product_id": 10366898995480,
+        "title": "Default Title",
+        "price": "114.99",
+        "sku": "BNDL-80060",
+        "position": 1,
+        "compare_at_price": "149.99",
+        "fulfillment_service": "manual",
+        "inventory_management": "shopify",
+        "option1": "Default Title",
+        "option2": null,
+        "option3": null,
+        "created_at": "2026-08-05T15:38:31-04:00",
+        "updated_at": "2026-10-23T18:52:52-04:00",
+        "taxable": true,
+        "barcode": null,
+        "grams": 482,
+        "image_id": null,
+        "weight": 17,
+        "weight_unit": "oz",
+        "requires_shipping": true,
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "price_currency": "USD",
+        "compare_at_price_currency": "USD",
+        "quantity_price_breaks": []
+      }
+    ],
+    "options": [
+      {
+        "id": 12960535249176,
+        "product_id": 10366898995480,
+        "name": "Title",
+        "position": 1,
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "id": 53952861077784,
+        "product_id": 10366898995480,
+        "position": 1,
+        "created_at": "2026-09-09T10:25:58-04:00",
+        "updated_at": "2026-09-09T10:25:59-04:00",
+        "alt": null,
+        "width": 2048,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Navage_Advanced_B__Main_Update_V2.jpg?v=1788963959",
+        "variant_ids": []
+      },
+      {
+        "id": 53752247550232,
+        "product_id": 10366898995480,
+        "position": 2,
+        "created_at": "2026-08-11T15:32:27-04:00",
+        "updated_at": "2026-08-11T15:32:29-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Advanced_B__2.jpg?v=1786476749",
+        "variant_ids": []
+      },
+      {
+        "id": 53752247583000,
+        "product_id": 10366898995480,
+        "position": 3,
+        "created_at": "2026-08-11T15:32:27-04:00",
+        "updated_at": "2026-08-11T15:32:29-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Advanced_B__3.jpg?v=1786476749",
+        "variant_ids": []
+      },
+      {
+        "id": 53752247615768,
+        "product_id": 10366898995480,
+        "position": 4,
+        "created_at": "2026-08-11T15:32:27-04:00",
+        "updated_at": "2026-08-11T15:32:29-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Advanced_B__4.jpg?v=1786476749",
+        "variant_ids": []
+      },
+      {
+        "id": 53752247648536,
+        "product_id": 10366898995480,
+        "position": 5,
+        "created_at": "2026-08-11T15:32:27-04:00",
+        "updated_at": "2026-08-11T15:32:29-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Advanced_B__5.jpg?v=1786476749",
+        "variant_ids": []
+      },
+      {
+        "id": 53752247681304,
+        "product_id": 10366898995480,
+        "position": 6,
+        "created_at": "2026-08-11T15:32:27-04:00",
+        "updated_at": "2026-08-11T15:32:29-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Advanced_B__6.jpg?v=1786476749",
+        "variant_ids": []
+      },
+      {
+        "id": 53752247714072,
+        "product_id": 10366898995480,
+        "position": 7,
+        "created_at": "2026-08-11T15:32:27-04:00",
+        "updated_at": "2026-08-11T15:32:30-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Advanced_B__7.jpg?v=1786476750",
+        "variant_ids": []
+      },
+      {
+        "id": 53752247746840,
+        "product_id": 10366898995480,
+        "position": 8,
+        "created_at": "2026-08-11T15:32:27-04:00",
+        "updated_at": "2026-08-11T15:32:29-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Advanced_B__8.jpg?v=1786476749",
+        "variant_ids": []
+      },
+      {
+        "id": 53752247779608,
+        "product_id": 10366898995480,
+        "position": 9,
+        "created_at": "2026-08-11T15:32:27-04:00",
+        "updated_at": "2026-08-11T15:32:29-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Advanced_B__9.jpg?v=1786476749",
+        "variant_ids": []
+      },
+      {
+        "id": 53752247812376,
+        "product_id": 10366898995480,
+        "position": 10,
+        "created_at": "2026-08-11T15:32:27-04:00",
+        "updated_at": "2026-08-11T15:32:29-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Advanced_B__10.jpg?v=1786476749",
+        "variant_ids": []
+      }
+    ],
+    "image": {
+      "id": 53952861077784,
+      "product_id": 10366898995480,
+      "position": 1,
+      "created_at": "2026-09-09T10:25:58-04:00",
+      "updated_at": "2026-09-09T10:25:59-04:00",
+      "alt": null,
+      "width": 2048,
+      "height": 2048,
+      "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Navage_Advanced_B__Main_Update_V2.jpg?v=1788963959",
+      "variant_ids": []
+    }
+  }
+}

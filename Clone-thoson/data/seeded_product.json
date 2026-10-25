@@ -1,0 +1,29 @@
+{
+  "productId": 15455481102521,
+  "handle": "thoson-magtrack",
+  "title": "Thoson MagTrack™",
+  "url": "https://tryzavelyn.com/products/thoson-magtrack",
+  "variants": [
+    {
+      "id": 67925383741625,
+      "title": "Rookie",
+      "price": "69.00",
+      "compareAtPrice": "139.00",
+      "sku": "MAGTRACK-32"
+    },
+    {
+      "id": 67925383774393,
+      "title": "PRO",
+      "price": "119.00",
+      "compareAtPrice": "169.00",
+      "sku": "MAGTRACK-68"
+    },
+    {
+      "id": 67925383807161,
+      "title": "Master",
+      "price": "159.00",
+      "compareAtPrice": "299.00",
+      "sku": "MAGTRACK-141"
+    }
+  ]
+}

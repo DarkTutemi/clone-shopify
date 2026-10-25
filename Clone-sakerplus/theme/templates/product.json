@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_vendor": true,
+        "show_sku": false,
+        "show_tax_note": false
+      }
+    },
+    "reviews": {
+      "type": "saker-reviews-widget",
+      "settings": {}
+    },
+    "related": {
+      "type": "related-products",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "reviews",
+    "related"
+  ]
+}

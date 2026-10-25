@@ -1,0 +1,124 @@
+{
+  "title": "100,000+  Happy Customers",
+  "bundles": [
+    {
+      "class": "w-full product-item mt-[12px]",
+      "text": "Sakerplus® Cordless Leaf Blower Portable Blower with 1 Battery 1 x Battery 1 x Charger 1 x Packaging Box $151.99 $75.99 50% OFF"
+    },
+    {
+      "class": "flex items-center justify-between",
+      "text": "1 x Battery 1 x Charger 1 x Packaging Box $151.99 $75.99 50% OFF"
+    },
+    {
+      "class": "w-full product-item mt-[12px]",
+      "text": "Best Seller Sakerplus® Cordless Leaf Blower Portable Blower with 2 Batteries + Toolbox 2 x Batteries 1 x Charger 1 x Tool Box $191.99 $95.99 50% OFF"
+    },
+    {
+      "class": "flex items-center justify-between",
+      "text": "2 x Batteries 1 x Charger 1 x Tool Box $191.99 $95.99 50% OFF"
+    },
+    {
+      "class": "w-full product-item mt-[12px]",
+      "text": "Sakerplus® Cordless Leaf Blower Maxpower Blower Kit – 2 Batteries + 2 Power Nozzles 2 x Batteries 2 x Power Nozzles 1 x Charger 1 x Packaging Box $183.99 $91.99 50% OFF Free Shipping"
+    },
+    {
+      "class": "flex items-center justify-between",
+      "text": "2 x Batteries 2 x Power Nozzles 1 x Charger 1 x Packaging Box $183.99 $91.99 50% OFF Free Shipping"
+    },
+    {
+      "class": "w-full product-item mt-[12px]",
+      "text": "Sakerplus® Cordless Leaf Blower Maxpower Blower Kit – 2 Batteries + 2 Power Nozzles+ Toolbox 2 x Batteries 2 x Power Nozzles 1 x Charger 1 x Tool Box $211.99 $105.99 50% OFF Free Shipping"
+    },
+    {
+      "class": "flex items-center justify-between",
+      "text": "2 x Batteries 2 x Power Nozzles 1 x Charger 1 x Tool Box $211.99 $105.99 50% OFF Free Shipping"
+    },
+    {
+      "class": "flex items-center justify-between w-full text-base font-semibold text-[#006B24]",
+      "text": "Total savings - $96.00"
+    },
+    {
+      "class": "flex items-center justify-between py-[16px] cursor-pointer select-none relative z-10",
+      "text": "Order Summary $98.87"
+    },
+    {
+      "class": "productList mb-[18px] flex items-start justify-center flex-col gap-[16px]",
+      "text": "Sakerplus® Cordless Leaf Blower Portable Blower with 2 Batteries + Toolbox X 1 $191.99 $95.99"
+    },
+    {
+      "class": "w-full flex items-center text-sm font-normal text-[#333]",
+      "text": "Sakerplus® Cordless Leaf Blower Portable Blower with 2 Batteries + Toolbox X 1 $191.99 $95.99"
+    },
+    {
+      "class": "flex items-center justify-between mt-[8px]",
+      "text": "X 1 $191.99 $95.99"
+    },
+    {
+      "class": "flex items-center",
+      "text": "$191.99 $95.99"
+    },
+    {
+      "class": "flex items-center justify-center gap-[6px] flex-col mb-[16px] border-t border-[#e8e8e8] pt-[16px]",
+      "text": "Shipping Free Shipping Protection $2.88"
+    },
+    {
+      "class": "flex items-center justify-between w-full text-sm font-normal text-[#333] summary-insurance-row",
+      "text": "Shipping Protection $2.88"
+    },
+    {
+      "class": "flex items-center justify-center gap-[13px] flex-col",
+      "text": "Total $98.87"
+    },
+    {
+      "class": "flex items-center justify-between w-full text-base font-semibold text-[#006B24] total-savings",
+      "text": "Total savings - $96.00"
+    },
+    {
+      "class": "flex items-center justify-between w-full text-base font-semibold text-[#333]",
+      "text": "Total $98.87"
+    }
+  ],
+  "prices": [
+    "",
+    "",
+    "",
+    ""
+  ],
+  "images": [
+    "https://cdn.myshopage.com/c5fa5a60-fe3a-49fa-771d-8b2bf7a2c200/w450.png",
+    "https://cdn.myshopage.com/38b473eb-0e6d-4032-f972-ea328339e700/w1280.jpg",
+    "https://cdn.myshopage.com/7aa47916-5526-4dee-8707-e82d64103700/w400.png",
+    "https://cdn.myshopage.com/fc42354a-5f6d-4c09-e4d3-77b4967e7400/w400.jpg",
+    "https://cdn.myshopage.com/a1704d8e-6e5c-4367-d23c-47246e0a9800/w400.jpg",
+    "https://cdn.myshopage.com/963288ce-079a-4d55-5d61-c4ad6f98b300/w400.jpg",
+    "https://cdn.myshopage.com/fc42354a-5f6d-4c09-e4d3-77b4967e7400/w200.jpg",
+    "https://cdn.myshopage.com/4abe7ab3-8109-4b2f-dc0a-5b34baf98900.png",
+    "https://cdn.myshopage.com/8c6e4be7-85d0-4709-3770-4ab2ad273500.svg",
+    "https://cdn.myshopage.com/abdc729f-da9b-4dc7-7cab-2a1bab718500.png",
+    "https://cdn.myshopage.com/dd70d4a9-8db8-4da3-60eb-a1fa0b6dec00.png",
+    "https://cdn.myshopage.com/595d34cd-ad2d-4b6b-9724-f53872bcef00.png",
+    "https://cdn.myshopage.com/68dc8267-b959-43b4-9066-5aafbf84ba00.png",
+    "https://cdn.myshopage.com/efa23329-6b69-4137-9fd3-23d4f9850900/w200.png",
+    "https://cdn.myshopage.com/b9cab546-b3ff-4f44-11ab-043bd7e73900/w200.png",
+    "https://cdn.myshopage.com/9c334cb6-ac44-4beb-4284-bb3112ddbb00.png",
+    "https://cdn.myshopage.com/efa23329-6b69-4137-9fd3-23d4f9850900/w200.png",
+    "https://cdn.myshopage.com/502d8e88-8038-4a39-df0b-5c0704075a00/w200.jpg",
+    "https://cdn.myshopage.com/67580df9-a79b-4660-8bad-a342197cc500.png",
+    "https://cdn.myshopage.com/efa23329-6b69-4137-9fd3-23d4f9850900/w200.png",
+    "https://cdn.myshopage.com/3d122bcd-93ca-4d59-7ad0-c6d265230100/w200.jpg",
+    "https://cdn.myshopage.com/2b99b985-834e-4fc1-878a-d97df6918c00.png",
+    "https://cdn.myshopage.com/efa23329-6b69-4137-9fd3-23d4f9850900/w200.png",
+    "https://cdn.myshopage.com/d04e4f78-3eb6-41ee-4049-46dfcc258c00/w200.jpg",
+    "https://cdn.myshopage.com/c5fa5a60-fe3a-49fa-771d-8b2bf7a2c200/w200.png",
+    "https://cdn.myshopage.com/7b4e2e96-606c-4ab1-07ee-b7f9654d2200.jpg",
+    "https://cdn.myshopage.com/066aa7cc-33b7-4d5c-6434-02d3bfc4fa00.jpg",
+    "https://cdn.myshopage.com/48f526bb-90b9-4a74-fe9b-ee0786647500.jpg",
+    "https://cdn.myshopage.com/09d31e6e-8ed3-4c5f-3f60-7a8e1a78b100.jpg",
+    "https://cdn.myshopage.com/bc2d277c-b322-4fcc-661e-ddd1ef72c400.jpg",
+    "https://cdn.myshopage.com/6fed926e-cf4e-4e2f-d855-7c3d46ca5600.jpg",
+    "https://cdn.myshopage.com/4f369144-595b-4b87-7588-4ba680a98f00.jpg",
+    "https://cdn.myshopage.com/91087b09-b32e-441c-ab62-95e44f7c8500.svg",
+    "https://cdn.myshopage.com/1297cff4-da32-48d0-3d87-ece702e43800.svg",
+    "https://cdn.myshopage.com/f3f10bfd-99c9-45fb-63fe-3543653c3800.svg"
+  ]
+}

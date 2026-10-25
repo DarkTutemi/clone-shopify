@@ -5,10 +5,10 @@ import fs from 'fs';
  * With automatic exponential backoff retry.
  */
 
-const CLIENT_ID = process.env.SHOPIFY_CLIENT_ID || '82d6aaab9e73809cb37b6643302b1255';
-const CLIENT_SECRET = process.env.SHOPIFY_CLIENT_SECRET || process.env.SHOPIFY_API_SECRET || "SHOPIFY_SECRET_TOKEN";
-const SHOP_DOMAIN = process.env.SHOPIFY_SHOP_DOMAIN || 'vwpb1k-8z.myshopify.com';
-const THEME_ID = process.env.SHOPIFY_THEME_ID || '189555966106';
+const CLIENT_ID = process.env.SHOPIFY_CLIENT_ID || '172e9e29abd0fe12f671d8441479c7c2';
+const CLIENT_SECRET = process.env.SHOPIFY_CLIENT_SECRET || process.env.SHOPIFY_API_SECRET || "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";
+const SHOP_DOMAIN = process.env.SHOPIFY_SHOP_DOMAIN || 'dsdujr-vn.myshopify.com';
+const THEME_ID = process.env.SHOPIFY_THEME_ID || '186607567033';
 
 async function fetchWithRetry(url, options = {}, retries = 3, delay = 1500) {
   for (let attempt = 1; attempt <= retries; attempt++) {

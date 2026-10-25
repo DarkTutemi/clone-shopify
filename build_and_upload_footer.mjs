@@ -1,9 +1,9 @@
 import fs from 'fs';
 
-const CLIENT_ID = '82d6aaab9e73809cb37b6643302b1255';
-const CLIENT_SECRET = process.env.SHOPIFY_API_SECRET || "SHOPIFY_SECRET_TOKEN";
-const SHOP_DOMAIN = 'vwpb1k-8z.myshopify.com';
-const THEME_ID = '189572219034';
+const CLIENT_ID = '172e9e29abd0fe12f671d8441479c7c2';
+const CLIENT_SECRET = process.env.SHOPIFY_API_SECRET || "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";
+const SHOP_DOMAIN = 'dsdujr-vn.myshopify.com';
+const THEME_ID = '186607567033';
 
 const rawStepOutput = fs.readFileSync('C:/Users/vutru/.gemini/antigravity-ide/brain/52dfdbad-95ab-4a1a-a447-55fbc8ecb7fd/.system_generated/steps/4474/output.txt', 'utf8');
 const jsonMatch = rawStepOutput.match(/```json\n([\s\S]*?)\n```/);

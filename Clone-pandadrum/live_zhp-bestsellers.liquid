@@ -1,0 +1,243 @@
+
+{{ 'zhp-collection.css' | asset_url | stylesheet_tag }}
+{{ 'zhp-collection.js' | asset_url | script_tag }}
+<div class="zhp-wrapper">
+  <section class="zhp-bestsellers" id="zhp-bestsellers">
+    <div class="zhp-container">
+      <div class="zhp-section-header">
+        <span class="zhp-tag">{{ section.settings.tag | default: 'OUR COLLECTION' }}</span>
+        <h2 class="zhp-section-title">{{ section.settings.title | default: "Zavelyn Drums™ You'll Love" }}</h2>
+        <p class="zhp-section-subtitle">{{ section.settings.subtitle | default: 'Save up to 48% today. Every instrument includes a complete starter kit, padded bag, bamboo mallets, and tutorial songbook.' }}</p>
+      </div>
+
+      <div class="zhp-product-grid">
+        <!-- Product 1: Pro 15 Tones -->
+        <div class="zhp-product-card zhp-card-featured">
+          <div class="zhp-card-badge zhp-badge-gold">BEST VALUE • SAVE 48%</div>
+          <div class="zhp-card-media">
+            <a href="/products/zavelyn-drum-pro">
+              {% if section.settings.image_pro != blank %}
+                {{ section.settings.image_pro | image_url: width: 600 | image_tag: class: 'zhp-card-img', loading: 'lazy', alt: 'Zavelyn Drum Pro' }}
+              {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/PandaDrumPro_White.webp?v=1792868508" alt="Zavelyn Drum Pro 15 Tones" class="zhp-card-img" loading="lazy">
+              {% endif %}
+            </a>
+          </div>
+          <div class="zhp-card-content">
+            <div class="zhp-card-rating">
+              <span class="zhp-stars">★★★★★</span>
+              <span class="zhp-review-count">(571 reviews)</span>
+            </div>
+            <h3 class="zhp-card-title"><a href="/products/zavelyn-drum-pro">Zavelyn Drum™ Pro</a></h3>
+            <div class="zhp-card-meta">Rich sound • 15" • 15 Tones (D-Major)</div>
+            <ul class="zhp-card-features">
+              <li>✓ Broadest 15-note chromatic range for infinite melodies</li>
+              <li>✓ Deep resonant chamber with acoustic warmth</li>
+              <li>✓ Handcrafted alloy steel with woolen edge wrap</li>
+            </ul>
+
+            <!-- Audio Player -->
+            <div class="zhp-audio-player" data-audio-src="https://cdn.shopify.com/s/files/1/0566/1209/4037/files/Pro_Sound_Bar_v2.mp3">
+              <button type="button" class="zhp-audio-btn" aria-label="Play sound preview">
+                <svg class="zhp-icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="zhp-icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              </button>
+              <div class="zhp-audio-info">
+                <span class="zhp-audio-label">Hear it in action: <strong>Pro (15 Tones)</strong></span>
+                <div class="zhp-audio-bar"><div class="zhp-audio-progress"></div></div>
+              </div>
+            </div>
+
+            <div class="zhp-card-package">
+              <div class="zhp-package-title">What's Included:</div>
+              <div class="zhp-package-tags">
+                <span>Zavelyn Pro 15"</span>
+                <span>FREE Travel Backpack</span>
+                <span>FREE Bamboo Mallets</span>
+                <span>FREE Songbook (20+ songs)</span>
+                <span>Braided Wool Wrap</span>
+              </div>
+            </div>
+
+            <div class="zhp-card-pricing">
+              <span class="zhp-price-current">$259.95</span>
+              <span class="zhp-price-compare">$499.95</span>
+              <span class="zhp-price-save">Save $240.00</span>
+            </div>
+
+            <a href="/products/zavelyn-drum-pro" class="zhp-btn zhp-btn-block zhp-btn-cart">SELECT COLOR & ORDER</a>
+            <div class="zhp-card-guarantee">🛡️ 30-Day Money Back • Lifetime Serenity Warranty</div>
+          </div>
+        </div>
+
+        <!-- Product 2: Plus 11 Tones -->
+        <div class="zhp-product-card zhp-card-popular">
+          <div class="zhp-card-badge zhp-badge-green">MOST POPULAR • SAVE 47%</div>
+          <div class="zhp-card-media">
+            <a href="/products/zavelyn-drum-plus">
+              {% if section.settings.image_plus != blank %}
+                {{ section.settings.image_plus | image_url: width: 600 | image_tag: class: 'zhp-card-img', loading: 'lazy', alt: 'Zavelyn Drum Plus' }}
+              {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/PandaDrum_Plus_White.webp?v=1792868520" alt="Zavelyn Drum Plus 11 Tones" class="zhp-card-img" loading="lazy">
+              {% endif %}
+            </a>
+          </div>
+          <div class="zhp-card-content">
+            <div class="zhp-card-rating">
+              <span class="zhp-stars">★★★★★</span>
+              <span class="zhp-review-count">(690 reviews)</span>
+            </div>
+            <h3 class="zhp-card-title"><a href="/products/zavelyn-drum-plus">Zavelyn Drum™ Plus</a></h3>
+            <div class="zhp-card-meta">Most versatile • 11" • 11 Tones (D-Major)</div>
+            <ul class="zhp-card-features">
+              <li>✓ Ideal balance between portability and musical depth</li>
+              <li>✓ Tuned to pure 432 Hz healing relaxation frequency</li>
+              <li>✓ Perfect for family bonding, yoga, and meditation</li>
+            </ul>
+
+            <!-- Audio Player -->
+            <div class="zhp-audio-player" data-audio-src="https://cdn.shopify.com/s/files/1/0566/1209/4037/files/Plus_Sound_Bar_v2.mp3">
+              <button type="button" class="zhp-audio-btn" aria-label="Play sound preview">
+                <svg class="zhp-icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="zhp-icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              </button>
+              <div class="zhp-audio-info">
+                <span class="zhp-audio-label">Hear it in action: <strong>Plus (11 Tones)</strong></span>
+                <div class="zhp-audio-bar"><div class="zhp-audio-progress"></div></div>
+              </div>
+            </div>
+
+            <div class="zhp-card-package">
+              <div class="zhp-package-title">What's Included:</div>
+              <div class="zhp-package-tags">
+                <span>Zavelyn Plus 11"</span>
+                <span>FREE Travel Shoulder Bag</span>
+                <span>FREE Bamboo Mallets</span>
+                <span>FREE Songbook (20+ songs)</span>
+                <span>Fingertip Picks</span>
+              </div>
+            </div>
+
+            <div class="zhp-card-pricing">
+              <span class="zhp-price-current">$159.95</span>
+              <span class="zhp-price-compare">$299.95</span>
+              <span class="zhp-price-save">Save $140.00</span>
+            </div>
+
+            <a href="/products/zavelyn-drum-plus" class="zhp-btn zhp-btn-block zhp-btn-cart">SELECT COLOR & ORDER</a>
+            <div class="zhp-card-guarantee">🛡️ 30-Day Money Back • 3-Year Quality Warranty</div>
+          </div>
+        </div>
+
+        <!-- Product 3: Mini 8 Tones -->
+        <div class="zhp-product-card">
+          <div class="zhp-card-badge zhp-badge-blue">BEST FOR KIDS & GIFTS • SAVE 39%</div>
+          <div class="zhp-card-media">
+            <a href="/products/zavelyn-drum-mini">
+              {% if section.settings.image_mini != blank %}
+                {{ section.settings.image_mini | image_url: width: 600 | image_tag: class: 'zhp-card-img', loading: 'lazy', alt: 'Zavelyn Drum Mini' }}
+              {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/Mini_white.webp?v=1792868532" alt="Zavelyn Drum Mini 8 Tones" class="zhp-card-img" loading="lazy">
+              {% endif %}
+            </a>
+          </div>
+          <div class="zhp-card-content">
+            <div class="zhp-card-rating">
+              <span class="zhp-stars">★★★★★</span>
+              <span class="zhp-review-count">(503 reviews)</span>
+            </div>
+            <h3 class="zhp-card-title"><a href="/products/zavelyn-drum-mini">Zavelyn Drum™ Mini</a></h3>
+            <div class="zhp-card-meta">Best for kids • 6" • 8 Tones (C-Major)</div>
+            <ul class="zhp-card-features">
+              <li>✓ Ultra-lightweight (1.5 lbs) and portable for tiny hands</li>
+              <li>✓ Intuitive pentatonic scale - impossible to hit a wrong note</li>
+              <li>✓ Spark musical curiosity and peaceful playtime</li>
+            </ul>
+
+            <!-- Audio Player -->
+            <div class="zhp-audio-player" data-audio-src="https://cdn.shopify.com/s/files/1/0566/1209/4037/files/Mini_Sound_Bar_v2.mp3">
+              <button type="button" class="zhp-audio-btn" aria-label="Play sound preview">
+                <svg class="zhp-icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="zhp-icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              </button>
+              <div class="zhp-audio-info">
+                <span class="zhp-audio-label">Hear it in action: <strong>Mini (8 Tones)</strong></span>
+                <div class="zhp-audio-bar"><div class="zhp-audio-progress"></div></div>
+              </div>
+            </div>
+
+            <div class="zhp-card-package">
+              <div class="zhp-package-title">What's Included:</div>
+              <div class="zhp-package-tags">
+                <span>Zavelyn Mini 6"</span>
+                <span>FREE Travel Pouch</span>
+                <span>FREE Mallets</span>
+                <span>FREE Songbook (20+ songs)</span>
+                <span>Tone Stickers</span>
+              </div>
+            </div>
+
+            <div class="zhp-card-pricing">
+              <span class="zhp-price-current">$109.95</span>
+              <span class="zhp-price-compare">$179.95</span>
+              <span class="zhp-price-save">Save $70.00</span>
+            </div>
+
+            <a href="/products/zavelyn-drum-mini" class="zhp-btn zhp-btn-block zhp-btn-cart">SELECT COLOR & ORDER</a>
+            <div class="zhp-card-guarantee">🛡️ 30-Day Money Back • 2-Year Warranty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "03. Bộ 3 Sản phẩm",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Nhãn danh mục",
+      "default": "OUR COLLECTION"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tiêu đề",
+      "default": "Zavelyn Drums™ You'll Love"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Mô tả phụ",
+      "default": "Save up to 48% today. Every instrument includes a complete starter kit, padded bag, bamboo mallets, and tutorial songbook."
+    },
+    {
+      "type": "header",
+      "content": "Thay thế ảnh sản phẩm (Nếu dính logo)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_pro",
+      "label": "Ảnh sản phẩm Pro 15-Tone"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_plus",
+      "label": "Ảnh sản phẩm Plus 11-Tone"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mini",
+      "label": "Ảnh sản phẩm Mini 8-Tone"
+    }
+  ],
+  "presets": [
+    {
+      "name": "03. Bộ 3 Sản phẩm"
+    }
+  ]
+}
+{% endschema %}

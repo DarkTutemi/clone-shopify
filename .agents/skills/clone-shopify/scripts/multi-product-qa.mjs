@@ -5,7 +5,7 @@ import fs from 'fs';
  * Verifies that the deployed store does NOT suffer from cross-pollination.
  */
 
-const SHOP_DOMAIN = process.env.SHOPIFY_SHOP_DOMAIN || 'vwpb1k-8z.myshopify.com';
+const SHOP_DOMAIN = process.env.SHOPIFY_SHOP_DOMAIN || 'dsdujr-vn.myshopify.com';
 
 const TEST_HANDLES = [
   { handle: 'bronoir-nola-cozy-elegant-supportive-ballerinas-for-daily-comfort', category: 'Ballerinas', forbiddenWords: ['winter boots', 'in snow', 'cold weather boots'] },

@@ -1,0 +1,569 @@
+[
+  {
+    "id": 15455040241849,
+    "status": "SUCCESS",
+    "oldTitle": "Naväge Advanced Nose Cleaner",
+    "newTitle": "Zavelyn® Advanced Nose Cleaner",
+    "oldVendor": "Navage Nasal Care",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15455040340153,
+    "status": "SUCCESS",
+    "oldTitle": "Naväge Starter Bundle: Nose Cleaner and 30 SaltPod Capsules",
+    "newTitle": "Zavelyn® Starter Bundle: Nose Cleaner and 30 SaltPod Capsules",
+    "oldVendor": "Navage Nasal Care",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454951801017,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus Camping Fan with Light & Battery-Clearance Sale",
+    "newTitle": "Zavelyn® Camping Fan with Light & Battery-Clearance Sale",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454960517305,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus®  Electronic Rotating Goose Target Game",
+    "newTitle": "Zavelyn® Electronic Rotating Goose Target Game",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454948982969,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® 1500W Flame Effect Oscillating Space Heater",
+    "newTitle": "Zavelyn® 1500W Flame Effect Oscillating Space Heater",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454955372729,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® 3-in-1 Gypsum Board Cutting Tool",
+    "newTitle": "Zavelyn® 3-in-1 Gypsum Board Cutting Tool",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454957633721,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® 360° App-Controlled Magnetic Work Light",
+    "newTitle": "Zavelyn® 360° App-Controlled Magnetic Work Light",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454962778297,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® 5-in-1 Magnetic Wireless Charging Station",
+    "newTitle": "Zavelyn® 5-in-1 Magnetic Wireless Charging Station",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454958158009,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® 50FT Industrial LED Construction String Lights",
+    "newTitle": "Zavelyn® 50FT Industrial LED Construction String Lights",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454960255161,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Adjustable Red Light Therapy Panel",
+    "newTitle": "Zavelyn® Adjustable Red Light Therapy Panel",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454961565881,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Adjustable Workbench Tail Vise Clamp",
+    "newTitle": "Zavelyn® Adjustable Workbench Tail Vise Clamp",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454950850745,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Bathroom Exhaust Fan With LED Light",
+    "newTitle": "Zavelyn® Bathroom Exhaust Fan With LED Light",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454956781753,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Battery Powered Automatic Chicken Coop Door",
+    "newTitle": "Zavelyn® Battery Powered Automatic Chicken Coop Door",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454953898169,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Cordless Handheld UV Mattress Vacuum Cleaner",
+    "newTitle": "Zavelyn® Cordless Handheld UV Mattress Vacuum Cleaner",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454961860793,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Cordless Heated Knee Massage Device",
+    "newTitle": "Zavelyn® Cordless Heated Knee Massage Device",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454954422457,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Cordless Hydraulic Pipe Crimping Tool Kit",
+    "newTitle": "Zavelyn® Cordless Hydraulic Pipe Crimping Tool Kit",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454955045049,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Dimmable Half Moon LED Lash Lamp",
+    "newTitle": "Zavelyn® Dimmable Half Moon LED Lash Lamp",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454946951353,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Fence Post Repair Kit",
+    "newTitle": "Zavelyn® Fence Post Repair Kit",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454953504953,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® High Precision Infrared Thermal Imaging Camera",
+    "newTitle": "Zavelyn® High Precision Infrared Thermal Imaging Camera",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454958420153,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Hydraulic Battery Cable Lug Crimping Tool",
+    "newTitle": "Zavelyn® Hydraulic Battery Cable Lug Crimping Tool",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454952882361,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Kids Indoor Outdoor Basketball Hoop Set",
+    "newTitle": "Zavelyn® Kids Indoor Outdoor Basketball Hoop Set",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454961238201,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Kids Metal Detector With LCD Display",
+    "newTitle": "Zavelyn® Kids Metal Detector With LCD Display",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454952292537,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Laser Guided Electric Wall Chaser",
+    "newTitle": "Zavelyn® Laser Guided Electric Wall Chaser",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15455757336761,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Livestock Heating Lamp",
+    "newTitle": "Zavelyn® Livestock Heating Lamp",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": false
+  },
+  {
+    "id": 15454964187321,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Livestock Massage Grooming Scratch Brush",
+    "newTitle": "Zavelyn® Livestock Massage Grooming Scratch Brush",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454959403193,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Low Profile Downspout Catch Basin",
+    "newTitle": "Zavelyn® Low Profile Downspout Catch Basin",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454964744377,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Outdoor Flexible-Neck Work Flashlight",
+    "newTitle": "Zavelyn® Outdoor Flexible-Neck Work Flashlight",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": false
+  },
+  {
+    "id": 15454962286777,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Outdoor Solar Motion Sensor Security Light",
+    "newTitle": "Zavelyn® Outdoor Solar Motion Sensor Security Light",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454958878905,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Panoramic Dash Camera With Night Vision",
+    "newTitle": "Zavelyn® Panoramic Dash Camera With Night Vision",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454956355769,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Portable Digital Mini Heat Press Machine",
+    "newTitle": "Zavelyn® Portable Digital Mini Heat Press Machine",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454951997625,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Portable Home Sauna Steam Generator",
+    "newTitle": "Zavelyn® Portable Home Sauna Steam Generator",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454957142201,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Portable Infrared Sauna Blanket For Home",
+    "newTitle": "Zavelyn® Portable Infrared Sauna Blanket For Home",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454949343417,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Portable Welding Machine-Clearance",
+    "newTitle": "Zavelyn® Portable Welding Machine-Clearance",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454956028089,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Rechargeable Retractable LED Fill Light Stick",
+    "newTitle": "Zavelyn® Rechargeable Retractable LED Fill Light Stick",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454963073209,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Rolling Nut And Ball Picker",
+    "newTitle": "Zavelyn® Rolling Nut And Ball Picker",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454955765945,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Rotating Galaxy Projector With Adjustable Focus",
+    "newTitle": "Zavelyn® Rotating Galaxy Projector With Adjustable Focus",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454960910521,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Self-Leveling Laser Level With Tripod",
+    "newTitle": "Zavelyn® Self-Leveling Laser Level With Tripod",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454954750137,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Smart Thermometer Hygrometer Clock",
+    "newTitle": "Zavelyn® Smart Thermometer Hygrometer Clock",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454951211193,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Solar Street Lights-Clearance Sale",
+    "newTitle": "Zavelyn® Solar Street Lights-Clearance Sale",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454950490297,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Squishy Egg Multicolor Tap Night Light",
+    "newTitle": "Zavelyn® Squishy Egg Multicolor Tap Night Light",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454959894713,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Stainless Steel Wheel Alignment Kit",
+    "newTitle": "Zavelyn® Stainless Steel Wheel Alignment Kit",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454949998777,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Steam Disinfection Cleaner-Clearance",
+    "newTitle": "Zavelyn® Steam Disinfection Cleaner-Clearance",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": false
+  },
+  {
+    "id": 15454954193081,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Tactical MOLLE Utility Vest",
+    "newTitle": "Zavelyn® Tactical MOLLE Utility Vest",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454948163769,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Tearable Non-Slip Drawer Liner",
+    "newTitle": "Zavelyn® Tearable Non-Slip Drawer Liner",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454948556985,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Tearable Shelf Liner And Drawer Liner",
+    "newTitle": "Zavelyn® Tearable Shelf Liner And Drawer Liner",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454953177273,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Three-Tier Clamp-On Desk Shelf Organizer",
+    "newTitle": "Zavelyn® Three-Tier Clamp-On Desk Shelf Organizer",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454949540025,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Titanium Alloy Multifunction Pocket Pry Bar",
+    "newTitle": "Zavelyn® Titanium Alloy Multifunction Pocket Pry Bar",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454951473337,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Toyota RAV4 LED USB Charging Hub",
+    "newTitle": "Zavelyn® Toyota RAV4 LED USB Charging Hub",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454947901625,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® TPU Sensory Textured Floor Mats",
+    "newTitle": "Zavelyn® TPU Sensory Textured Floor Mats",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454963433657,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Ultra Fine Cooking Oil Spray Bottle",
+    "newTitle": "Zavelyn® Ultra Fine Cooking Oil Spray Bottle",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454952620217,
+    "status": "SUCCESS",
+    "oldTitle": "Sakerplus® Universal Diesel Injector Removal Kit Clearance Sale",
+    "newTitle": "Zavelyn® Universal Diesel Injector Removal Kit Clearance Sale",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15455032115385,
+    "status": "SUCCESS",
+    "oldTitle": "Saker® 40kHz Cordless Ultrasonic Precision Cutter Kit",
+    "newTitle": "Zavelyn® 40kHz Cordless Ultrasonic Precision Cutter Kit",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454963859641,
+    "status": "SUCCESS",
+    "oldTitle": "Saker® Cordless Electric Garden Tiller Cultivator – Clearance",
+    "newTitle": "Zavelyn® Cordless Electric Garden Tiller Cultivator – Clearance",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15454948786361,
+    "status": "SUCCESS",
+    "oldTitle": "Saker® Powerful UV Bed Vacuum Cleaner-Clearance Sale",
+    "newTitle": "Zavelyn® Powerful UV Bed Vacuum Cleaner-Clearance Sale",
+    "oldVendor": "Sakerplus",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15455242387641,
+    "status": "SUCCESS",
+    "oldTitle": "SrefalSteam™",
+    "newTitle": "Zavelyn® Steam Pro",
+    "oldVendor": "Srefal",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": false
+  },
+  {
+    "id": 15455092572345,
+    "status": "SUCCESS",
+    "oldTitle": "The Yeoman Sweep",
+    "newTitle": "Zavelyn® Yeoman Sweep",
+    "oldVendor": "Field & Harvest Co",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": false
+  },
+  {
+    "id": 15455481102521,
+    "status": "SUCCESS",
+    "oldTitle": "Thoson MagTrack™",
+    "newTitle": "Zavelyn® MagTrack™",
+    "oldVendor": "Thoson",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": false
+  },
+  {
+    "id": 15420647702713,
+    "status": "SUCCESS",
+    "oldTitle": "Zavelyn Foot Drop AFO Brace",
+    "newTitle": "Zavelyn® Foot Drop AFO Brace",
+    "oldVendor": "Zavelyn",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": false
+  },
+  {
+    "id": 15420985966777,
+    "status": "SUCCESS",
+    "oldTitle": "Zavelyn Foot Sleeve (BOGO Free Unit)",
+    "newTitle": "Zavelyn® Foot Sleeve (BOGO Free Unit)",
+    "oldVendor": "Zavelyn",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": false
+  },
+  {
+    "id": 15424429457593,
+    "status": "SUCCESS",
+    "oldTitle": "Zavelyn Miracle Balm™ | Plantar Fasciitis Relief",
+    "newTitle": "Zavelyn® Miracle Balm™ | Plantar Fasciitis Relief",
+    "oldVendor": "Zavelyn",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  },
+  {
+    "id": 15420277653689,
+    "status": "SUCCESS",
+    "oldTitle": "Zavelyn V1 Device + Bonuses",
+    "newTitle": "Zavelyn® V1 Device + Bonuses",
+    "oldVendor": "Zavelyn",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": false
+  },
+  {
+    "id": 15424286589113,
+    "status": "SUCCESS",
+    "oldTitle": "Zavelyn | Rehabilitation Glove",
+    "newTitle": "Zavelyn® Rehabilitation Glove",
+    "oldVendor": "Zavelyn",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": false
+  },
+  {
+    "id": 15416491933881,
+    "status": "SUCCESS",
+    "oldTitle": "Zavelyn® Foot Sleeves",
+    "newTitle": "Zavelyn® Foot Sleeves",
+    "oldVendor": "Zavelyn",
+    "newVendor": "Zavelyn®",
+    "bodyChanged": true
+  }
+]

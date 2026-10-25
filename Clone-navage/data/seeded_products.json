@@ -1,0 +1,18 @@
+{
+  "product1": {
+    "id": 15455040241849,
+    "handle": "navage-advanced-nose-cleaner",
+    "title": "Naväge Advanced Nose Cleaner",
+    "variantId": 67916567937209,
+    "price": "114.99",
+    "url": "https://tryzavelyn.com/products/navage-advanced-nose-cleaner"
+  },
+  "product2": {
+    "id": 15455040340153,
+    "handle": "navage-starter-bundle",
+    "title": "Naväge Starter Bundle: Nose Cleaner and 30 SaltPod Capsules",
+    "variantId": 67916568035513,
+    "price": "99.95",
+    "url": "https://tryzavelyn.com/products/navage-starter-bundle"
+  }
+}

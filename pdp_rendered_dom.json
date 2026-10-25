@@ -1,0 +1,75 @@
+{
+  "sections": [
+    {
+      "id": "shopify-section-sections--27952590192825__willa-header",
+      "className": "shopify-section shopify-section-group-header-group",
+      "html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n<link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&amp;display=swap\""
+    },
+    {
+      "id": "shopify-section-template--27952591438009__main",
+      "className": "shopify-section",
+      "html": "<div class=\"willa-pdp-page\">\n  <div class=\"willa-container\">\n    \n      <div class=\"willa-breadcrumbs\">\n        <a href=\"/\">Home</a> &gt; <a href=\"/collections/all-products\">Shop</a> &gt; <span>Zavelyn CozyHeat™ USB Heated Wearable Blanket Sweater</span>\n      </div>\n    \n\n    <div class=\"willa-pdp-"
+    },
+    {
+      "id": "shopify-section-template--27952591438009__facts",
+      "className": "shopify-section",
+      "html": "<section class=\"willa-facts-section\">\n  <div class=\"willa-container\">\n    <div class=\"willa-section-header\">\n      <span class=\"willa-pill\">THE ZAVELYN® ADVANTAGE</span>\n      <h2 class=\"willa-section-title willa-serif\">Engineered for Performance &amp; Long-Lasting Durability</h2>\n      <p class=\"wi"
+    },
+    {
+      "id": "",
+      "className": "willa-facts-section",
+      "html": "\n  <div class=\"willa-container\">\n    <div class=\"willa-section-header\">\n      <span class=\"willa-pill\">THE ZAVELYN® ADVANTAGE</span>\n      <h2 class=\"willa-section-title willa-serif\">Engineered for Performance &amp; Long-Lasting Durability</h2>\n      <p class=\"willa-section-subtitle\">Discover why ho"
+    },
+    {
+      "id": "shopify-section-template--27952591438009__steps",
+      "className": "shopify-section",
+      "html": "<section class=\"willa-steps-section\">\n  <div class=\"willa-container\">\n    <div class=\"willa-section-header\">\n      <span class=\"willa-pill\">HOW IT WORKS</span>\n      <h2 class=\"willa-section-title willa-serif\">Simple Setup. Immediate Results.</h2>\n      <p class=\"willa-section-subtitle\">Designed for"
+    },
+    {
+      "id": "",
+      "className": "willa-steps-section",
+      "html": "\n  <div class=\"willa-container\">\n    <div class=\"willa-section-header\">\n      <span class=\"willa-pill\">HOW IT WORKS</span>\n      <h2 class=\"willa-section-title willa-serif\">Simple Setup. Immediate Results.</h2>\n      <p class=\"willa-section-subtitle\">Designed for effortless plug-and-play operation s"
+    },
+    {
+      "id": "shopify-section-template--27952591438009__comparison",
+      "className": "shopify-section",
+      "html": "<section class=\"willa-comparison-section\">\n  <div class=\"willa-container\">\n    <div class=\"willa-section-header\">\n      <span class=\"willa-pill\">HEAD-TO-HEAD COMPARISON</span>\n      <h2 class=\"willa-section-title willa-serif\">The Zavelyn Difference</h2>\n    </div>\n\n    <div class=\"willa-comp-table-w"
+    },
+    {
+      "id": "",
+      "className": "willa-comparison-section",
+      "html": "\n  <div class=\"willa-container\">\n    <div class=\"willa-section-header\">\n      <span class=\"willa-pill\">HEAD-TO-HEAD COMPARISON</span>\n      <h2 class=\"willa-section-title willa-serif\">The Zavelyn Difference</h2>\n    </div>\n\n    <div class=\"willa-comp-table-wrap\">\n      <table class=\"willa-comp-table"
+    },
+    {
+      "id": "shopify-section-template--27952591438009__faq",
+      "className": "shopify-section",
+      "html": "<section class=\"willa-faq-section\">\n  <div class=\"willa-container\">\n    <div class=\"willa-section-header\">\n      <span class=\"willa-pill\">GOT QUESTIONS?</span>\n      <h2 class=\"willa-section-title willa-serif\">Frequently Asked Questions</h2>\n      <p class=\"willa-section-subtitle\">Everything you nee"
+    },
+    {
+      "id": "",
+      "className": "willa-faq-section",
+      "html": "\n  <div class=\"willa-container\">\n    <div class=\"willa-section-header\">\n      <span class=\"willa-pill\">GOT QUESTIONS?</span>\n      <h2 class=\"willa-section-title willa-serif\">Frequently Asked Questions</h2>\n      <p class=\"willa-section-subtitle\">Everything you need to know about setup, warranties, "
+    },
+    {
+      "id": "shopify-section-template--27952591438009__reviews",
+      "className": "shopify-section",
+      "html": "<section class=\"willa-reviews-section\">\n  <div class=\"willa-container\">\n\n    <!-- SHIPPING & DELIVERY GUARANTEE BANNER (Directly before Customer Reviews) -->\n    <div class=\"wf-shipping-trust-card\" style=\"margin-bottom: 50px;\">\n      <div class=\"wf-shipping-badge-pill\">\n        <span class=\"wf-shipp"
+    },
+    {
+      "id": "",
+      "className": "willa-reviews-section",
+      "html": "\n  <div class=\"willa-container\">\n\n    <!-- SHIPPING & DELIVERY GUARANTEE BANNER (Directly before Customer Reviews) -->\n    <div class=\"wf-shipping-trust-card\" style=\"margin-bottom: 50px;\">\n      <div class=\"wf-shipping-badge-pill\">\n        <span class=\"wf-shipping-pill-icon\">🚚</span>\n        <span>"
+    },
+    {
+      "id": "shopify-section-sections--27952590127289__willa-footer",
+      "className": "shopify-section shopify-section-group-footer-group",
+      "html": "<footer class=\"willa-footer-wrap\">\n  <div class=\"willa-container\">\n    <!-- Top Footer: Newsletter & Brand Story -->\n    <div class=\"willa-footer-top\">\n      <div class=\"willa-footer-brand-col\">\n        <div class=\"willa-footer-logo\">\n          <span>🌿</span>\n          <span class=\"willa-serif\">ZAV"
+    },
+    {
+      "id": "shopify-section-willa-cart-drawer",
+      "className": "shopify-section",
+      "html": "<!-- Willa Style Slide-Out Cart Drawer -->\n<div class=\"willa-cart-drawer-overlay\" id=\"willaCartOverlay\" onclick=\"closeWillaCart()\"></div>\n\n<div class=\"willa-cart-drawer\" id=\"willaCartDrawer\">\n  <div class=\"willa-cart-drawer-header\">\n    <div class=\"willa-cart-title\">\n      <span>🛒</span> Your Cart "
+    }
+  ],
+  "bundleHtml": "<div class=\"willa-pdp-bundle-wrap\">\n              <label class=\"variant-label\" style=\"font-weight: 700; margin-bottom: 10px; display: block;\">Select Bundle Option:</label>\n              <div class=\"wf-bundle-selector\">\n                \n                  \n                  \n\n                  \n                  \n                  \n                  \n                  \n\n                  \n\n                  <div class=\"wf-bundle-card active\" onclick=\"selectPdpBundleCard('67975202799801', '$59.99', '$79.99', '//tryzavelyn.com/cdn/shop/files/cozyheat_hero_brown.webp?v=1792920283&amp;width=1000', this)\">\n                    <div class=\"wf-card-radio\"></div>\n                    <div class=\"wf-card-info\">\n                      <div class=\"wf-card-title-row\">\n                        <span class=\"wf-card-title\">Warm Brown (1 pc)</span>\n                        <span class=\"wf-card-tag standard\">Standard</span>\n                        \n                      </div>\n                      <div class=\"wf-card-desc\">Standard Kit • Fast &amp; Easy Setup</div>\n                    </div>\n                    <div class=\"wf-card-pricing\">\n                      <span class=\"wf-card-price\">$59.99</span>\n                      \n                        <span class=\"wf-card-comp\">$79.99</span>\n                      \n                      \n                      \n                    </div>\n                  </div>\n                \n                  \n                  \n\n                  \n                "
+}

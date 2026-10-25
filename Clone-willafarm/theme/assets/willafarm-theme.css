@@ -1,0 +1,200 @@
+/* ==========================================================================
+   WILLA FARMS UX/UI RECONSTRUCTION - DESIGN SYSTEM TOKENS & UTILITIES
+   Tailored for Zavelyn (tryzavelyn.com) - 80% Mobile Traffic Priority
+   ========================================================================== */
+
+:root {
+  --willa-bg: #faf7f4;
+  --willa-bg-light: #fbf8f4;
+  --willa-bg-card: #ffffff;
+  --willa-bg-cream: #f4efe9;
+  
+  --willa-primary: #8a2c13;          /* Signature Terracotta Crimson */
+  --willa-primary-hover: #71230e;
+  --willa-primary-light: #fbeee9;
+  
+  --willa-espresso: #3b2b2f;         /* Deep Rich Espresso */
+  --willa-espresso-dark: #231f20;
+  --willa-text: #231f20;
+  --willa-text-muted: #645a55;
+  --willa-text-light: #8e847f;
+  
+  --willa-border: #e7e4df;
+  --willa-border-dark: #d8d3cb;
+  
+  --willa-green: #2e7d32;
+  --willa-green-bg: #edf7ee;
+  --willa-amber: #eab308;
+  --willa-red: #dc2626;
+
+  --willa-radius-xs: 4px;
+  --willa-radius-sm: 8px;
+  --willa-radius-md: 16px;
+  --willa-radius-lg: 24px;
+  --willa-radius-full: 9999px;
+
+  --willa-shadow-sm: 0 2px 8px rgba(59, 43, 47, 0.04);
+  --willa-shadow-md: 0 8px 24px rgba(59, 43, 47, 0.08);
+  --willa-shadow-lg: 0 16px 40px rgba(59, 43, 47, 0.12);
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --max-w-content: 1200px;
+  --max-w-narrow: 800px;
+}
+
+/* Base Body & Reset */
+body.willa-body {
+  background-color: var(--willa-bg) !important;
+  color: var(--willa-text) !important;
+  font-family: var(--font-sans) !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.willa-container {
+  width: 100%;
+  max-width: var(--max-w-content);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .willa-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* Typography Classes */
+.willa-serif {
+  font-family: var(--font-serif) !important;
+}
+
+.willa-sans {
+  font-family: var(--font-sans) !important;
+}
+
+/* Global Buttons */
+.willa-btn-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background-color: var(--willa-primary) !important;
+  color: #ffffff !important;
+  font-family: var(--font-sans) !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  padding: 16px 28px !important;
+  border-radius: var(--willa-radius-full) !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 16px rgba(138, 44, 19, 0.3) !important;
+  text-align: center !important;
+}
+
+.willa-btn-primary:hover {
+  background-color: var(--willa-primary-hover) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(138, 44, 19, 0.4) !important;
+  color: #ffffff !important;
+}
+
+.willa-btn-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background-color: transparent !important;
+  color: var(--willa-text) !important;
+  border: 1.5px solid var(--willa-border-dark) !important;
+  font-family: var(--font-sans) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  padding: 14px 24px !important;
+  border-radius: var(--willa-radius-full) !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.willa-btn-secondary:hover {
+  background-color: var(--willa-bg-cream) !important;
+  border-color: var(--willa-espresso) !important;
+}
+
+/* Badge Pill */
+.willa-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--willa-primary-light);
+  color: var(--willa-primary);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 6px 14px;
+  border-radius: var(--willa-radius-full);
+}
+
+.willa-pill-green {
+  background-color: var(--willa-green-bg);
+  color: var(--willa-green);
+}
+
+/* Star Rating */
+.willa-stars {
+  color: var(--willa-amber);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* Responsive Grid Utilities */
+.willa-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.willa-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.willa-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 991px) {
+  .willa-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .willa-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .willa-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

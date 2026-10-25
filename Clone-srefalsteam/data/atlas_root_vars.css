@@ -1,0 +1,1402 @@
+<style data-shopify>
+@font-face {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("//srefal.com/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
+       url("//srefal.com/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
+}
+@font-face {
+  font-family: Inter;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("//srefal.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//srefal.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+}
+@font-face {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("//srefal.com/cdn/fonts/inter/inter_i4.feae1981dda792ab80d117249d9c7e0f1017e5b3.woff2") format("woff2"),
+       url("//srefal.com/cdn/fonts/inter/inter_i4.62773b7113d5e5f02c71486623cf828884c85c6e.woff") format("woff");
+}
+@font-face {
+  font-family: Inter;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("//srefal.com/cdn/fonts/inter/inter_i7.b377bcd4cc0f160622a22d638ae7e2cd9b86ea4c.woff2") format("woff2"),
+       url("//srefal.com/cdn/fonts/inter/inter_i7.7c69a6a34e3bb44fcf6f975857e13b9a9b25beb4.woff") format("woff");
+}
+@font-face {
+  font-family: Inter;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("//srefal.com/cdn/fonts/inter/inter_n5.d7101d5e168594dd06f56f290dd759fba5431d97.woff2") format("woff2"),
+       url("//srefal.com/cdn/fonts/inter/inter_n5.5332a76bbd27da00474c136abb1ca3cbbf259068.woff") format("woff");
+}
+@font-face {
+  font-family: Inter;
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url("//srefal.com/cdn/fonts/inter/inter_i5.4474f48e6ab2b1e01aa2b6d942dd27fa24f2d99f.woff2") format("woff2"),
+       url("//srefal.com/cdn/fonts/inter/inter_i5.493dbd6ee8e49f4ad722ebb68d92f201af2c2f56.woff") format("woff");
+}
+
+
+  :root {
+    /* Page Layout */
+    --sidebar-width: 25rem;
+    --narrow-content-width: 36rem;
+    --normal-content-width: 42rem;
+    --wide-content-width: 46rem;
+    --narrow-page-width: 90rem;
+    --normal-page-width: 120rem;
+    --wide-page-width: 150rem;
+
+    /* Section Heights */
+    --section-height-small: 15rem;
+    --section-height-medium: 25rem;
+    --section-height-large: 35rem;
+
+    @media screen and (min-width: 40em) {
+      --section-height-small: 40svh;
+      --section-height-medium: 55svh;
+      --section-height-large: 70svh;
+    }
+
+    @media screen and (min-width: 60em) {
+      --section-height-small: 50svh;
+      --section-height-medium: 65svh;
+      --section-height-large: 80svh;
+    }
+
+    /* Letter spacing */
+    --letter-spacing-sm: 0.06em;
+    --letter-spacing-md: 0.13em;
+
+    /* Font families */
+    --font-body--family: Inter, sans-serif;
+    --font-body--style: normal;
+    --font-body--weight: 400;
+    --font-subheading--family: Inter, sans-serif;
+    --font-subheading--style: normal;
+    --font-subheading--weight: 500;
+    --font-heading--family: Inter, sans-serif;
+    --font-heading--style: normal;
+    --font-heading--weight: 700;
+    --font-accent--family: Inter, sans-serif;
+    --font-accent--style: normal;
+    --font-accent--weight: 700;
+
+    /* Margin sizes */
+    --font-heading--spacing: 0.25em;
+    --font-h1--spacing: var(--font-heading--spacing);
+    --font-h2--spacing: var(--font-heading--spacing);
+    --font-h3--spacing: var(--font-heading--spacing);
+    --font-h4--spacing: var(--font-heading--spacing);
+    --font-h5--spacing: var(--font-heading--spacing);
+    --font-h6--spacing: var(--font-heading--spacing);
+    --font-paragraph--spacing: 0.5em;
+
+    /* Heading colors */
+    --font-h1--color: var(--color-foreground-heading);
+    --font-h2--color: var(--color-foreground-heading);
+    --font-h3--color: var(--color-foreground-heading);
+    --font-h4--color: var(--color-foreground-heading);
+    --font-h5--color: var(--color-foreground-heading);
+    --font-h6--color: var(--color-foreground-heading);
+
+    /** Z-Index / Layering */
+    --layer-section-background: -2;
+    --layer-lowest: -1;
+    --layer-base: 0;
+    --layer-flat: 1;
+    --layer-raised: 2;
+    --layer-heightened: 4;
+    --layer-sticky: 8;
+    --layer-window-overlay: 10;
+    --layer-header-menu: 12;
+    --layer-overlay: 16;
+    --layer-menu-drawer: 18;
+    --layer-temporary: 20;
+
+    /* Max-width / Measure */
+    --max-width--body-normal: 32.5em;
+    --max-width--body-narrow: 22.75em;
+
+    --max-width--heading-normal: 32.5em;
+    --max-width--heading-narrow: 19.5em;
+
+    --max-width--display-normal: 13em;
+    --max-width--display-narrow: 9.75em;
+    --max-width--display-tight: 3.25em;
+
+    /* Letter-spacing / Tracking */
+    --letter-spacing--display-tight: -0.03em;
+    --letter-spacing--display-normal: 0em;
+    --letter-spacing--display-loose: 0.03em;
+
+    --letter-spacing--heading-tight: -0.03em;
+    --letter-spacing--heading-normal: 0em;
+    --letter-spacing--heading-loose: 0.03em;
+
+    --letter-spacing--body-tight: -0.03em;
+    --letter-spacing--body-normal: 0em;
+    --letter-spacing--body-loose: 0.03em;
+
+    /* Line height / Leading */
+    --line-height: 1;
+
+    --line-height--display-tight: 1;
+    --line-height--display-normal: 1.1;
+    --line-height--display-loose: 1.2;
+
+    --line-height--heading-tight: 1.15;
+    --line-height--heading-normal: 1.25;
+    --line-height--heading-loose: 1.35;
+
+    --line-height--body-tight: 1.2;
+    --line-height--body-normal: 1.4;
+    --line-height--body-loose: 1.6;
+
+    /* Typography presets */
+    --font-size--paragraph: 0.875rem;--font-size--h1: clamp(3.0rem, 5.6vw, 3.5rem);--font-size--h2: clamp(2.25rem, 4.8vw, 3.0rem);--font-size--h3: 2.0rem;--font-size--h4: 1.5rem;--font-size--h5: 0.875rem;--font-size--h6: 0.75rem;--font-paragraph--weight: 400;--font-paragraph--letter-spacing: var(--letter-spacing--body-normal);--font-paragraph--size: var(--font-size--paragraph);--font-paragraph--family: var(--font-body--family);--font-paragraph--style: var(--font-body--style);--font-paragraph--case: ;--font-paragraph--line-height: var(--line-height--body-loose);--font-h1--weight: var(--font-heading--weight);--font-h1--letter-spacing: var(--letter-spacing--heading-normal);--font-h1--size: var(--font-size--h1);--font-h1--family: var(--font-heading--family);--font-h1--style: var(--font-heading--style);--font-h1--case: none;--font-h1--line-height: var(--line-height--display-tight);--font-h2--weight: var(--font-heading--weight);--font-h2--letter-spacing: var(--letter-spacing--heading-normal);--font-h2--size: var(--font-size--h2);--font-h2--family: var(--font-heading--family);--font-h2--style: var(--font-heading--style);--font-h2--case: none;--font-h2--line-height: var(--line-height--display-tight);--font-h3--weight: var(--font-heading--weight);--font-h3--letter-spacing: var(--letter-spacing--heading-normal);--font-h3--size: var(--font-size--h3);--font-h3--family: var(--font-heading--family);--font-h3--style: var(--font-heading--style);--font-h3--case: none;--font-h3--line-height: var(--line-height--display-normal);--font-h4--weight: var(--font-heading--weight);--font-h4--letter-spacing: var(--letter-spacing--heading-normal);--font-h4--size: var(--font-size--h4);--font-h4--family: var(--font-heading--family);--font-h4--style: var(--font-heading--style);--font-h4--case: none;--font-h4--line-height: var(--line-height--display-tight);--font-h5--weight: var(--font-subheading--weight);--font-h5--letter-spacing: var(--letter-spacing--heading-normal);--font-h5--size: var(--font-size--h5);--font-h5--family: var(--font-subheading--family);--font-h5--style: var(--font-subheading--style);--font-h5--case: none;--font-h5--line-height: var(--line-height--display-loose);--font-h6--weight: var(--font-subheading--weight);--font-h6--letter-spacing: var(--letter-spacing--heading-normal);--font-h6--size: var(--font-size--h6);--font-h6--family: var(--font-subheading--family);--font-h6--style: var(--font-subheading--style);--font-h6--case: none;--font-h6--line-height: var(--line-height--display-loose);
+
+    /* Hardcoded font sizes */
+    --font-size--3xs: 0.625rem;
+    --font-size--2xs: 0.75rem;
+    --font-size--xs: 0.8125rem;
+    --font-size--sm: 0.875rem;
+    --font-size--md: 1rem;
+    --font-size--lg: 1.125rem;
+    --font-size--xl: 1.25rem;
+    --font-size--2xl: 1.5rem;
+    --font-size--3xl: 2rem;
+    --font-size--4xl: 2.5rem;
+    --font-size--5xl: 3rem;
+    --font-size--6xl: 3.5rem;
+
+    /* Menu font sizes */
+    --menu-font-sm--size: 0.875rem;
+    --menu-font-sm--line-height: calc(1.1 + 0.5 * min(16 / 14));
+    --menu-font-md--size: 1rem;
+    --menu-font-md--line-height: calc(1.1 + 0.5 * min(16 / 16));
+    --menu-font-lg--size: 1.125rem;
+    --menu-font-lg--line-height: calc(1.1 + 0.5 * min(16 / 18));
+    --menu-font-xl--size: 1.25rem;
+    --menu-font-xl--line-height: calc(1.1 + 0.5 * min(16 / 20));
+    --menu-font-2xl--size: 1.75rem;
+    --menu-font-2xl--line-height: calc(1.1 + 0.5 * min(16 / 28));
+
+    /* Colors */
+    --color-error: #8B0000;
+    --color-success: #006400;
+    --color-white: #FFFFFF;
+    --color-white-rgb: 255 255 255;
+    --color-black: #000000;
+    --color-instock: #3ED660;
+    --color-lowstock: #EE9441;
+    --color-outofstock: #C8C8C8;
+
+    /* Opacity */
+    --opacity-5: 0.05;
+    --opacity-8: 0.08;
+    --opacity-10: 0.1;
+    --opacity-15: 0.15;
+    --opacity-20: 0.2;
+    --opacity-25: 0.25;
+    --opacity-30: 0.3;
+    --opacity-40: 0.4;
+    --opacity-50: 0.5;
+    --opacity-60: 0.6;
+    --opacity-70: 0.7;
+    --opacity-80: 0.8;
+    --opacity-85: 0.85;
+    --opacity-90: 0.9;
+    --opacity-subdued-text: var(--opacity-70);
+
+    --shadow-button: 0 2px 3px rgb(0 0 0 / 20%);
+    --gradient-image-overlay: linear-gradient(to top, rgb(0 0 0 / 0.5), transparent);
+
+    /* Spacing */
+    --margin-3xs: 0.125rem;
+    --margin-2xs: 0.3rem;
+    --margin-xs: 0.5rem;
+    --margin-sm: 0.7rem;
+    --margin-md: 0.8rem;
+    --margin-lg: 1rem;
+    --margin-xl: 1.25rem;
+    --margin-2xl: 1.5rem;
+    --margin-3xl: 1.75rem;
+    --margin-4xl: 2rem;
+    --margin-5xl: 3rem;
+    --margin-6xl: 5rem;
+
+    --scroll-margin: 50px;
+
+    --padding-3xs: 0.125rem;
+    --padding-2xs: 0.25rem;
+    --padding-xs: 0.5rem;
+    --padding-sm: 0.7rem;
+    --padding-md: 0.8rem;
+    --padding-lg: 1rem;
+    --padding-xl: 1.25rem;
+    --padding-2xl: 1.5rem;
+    --padding-3xl: 1.75rem;
+    --padding-4xl: 2rem;
+    --padding-5xl: 3rem;
+    --padding-6xl: 4rem;
+
+    --gap-3xs: 0.125rem;
+    --gap-2xs: 0.3rem;
+    --gap-xs: 0.5rem;
+    --gap-sm: 0.7rem;
+    --gap-md: 0.9rem;
+    --gap-lg: 1rem;
+    --gap-xl: 1.25rem;
+    --gap-2xl: 2rem;
+    --gap-3xl: 3rem;
+
+    --spacing-scale-sm: 0.6;
+    --spacing-scale-md: 0.7;
+    --spacing-scale-default: 1.0;
+
+    /* Checkout buttons gap */
+    --checkout-button-gap: 10px;
+
+    /* Borders */
+    --style-border-width: 1px;
+    --style-border-radius-xs: 0.2rem;
+    --style-border-radius-sm: 0.6rem;
+    --style-border-radius-md: 0.8rem;
+    --style-border-radius-50: 50%;
+    --style-border-radius-lg: 1rem;
+    --style-border-radius-pills: 40px;
+    --style-border-radius-inputs: 4px;
+    --style-border-radius-buttons-primary: 14px;
+    --style-border-radius-buttons-secondary: 14px;
+    --style-border-width-primary: 0px;
+    --style-border-width-secondary: 1px;
+    --style-border-width-inputs: 1px;
+    --style-border-radius-popover: 14px;
+    --style-border-popover: 1px none rgb(var(--color-border-rgb) / 50%);
+    --style-border-drawer: 1px none rgb(var(--color-border-rgb) / 50%);
+    --style-border-swatch-opacity: 10%;
+    --style-border-swatch-width: 1px;
+    --style-border-swatch-style: solid;
+
+    /* Animation */
+    --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+    --ease-out-quad: cubic-bezier(0.32, 0.72, 0, 1);
+    --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    --animation-speed-fast: 0.0625s;
+    --animation-speed: 0.125s;
+    --animation-speed-slow: 0.2s;
+    --animation-speed-medium: 0.15s;
+    --animation-easing: ease-in-out;
+    --animation-slideshow-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    --drawer-animation-speed: 0.2s;
+    --animation-values-slow: var(--animation-speed-slow) var(--animation-easing);
+    --animation-values: var(--animation-speed) var(--animation-easing);
+    --animation-values-fast: var(--animation-speed-fast) var(--animation-easing);
+    --animation-values-allow-discrete: var(--animation-speed) var(--animation-easing) allow-discrete;
+    --animation-timing-hover: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --animation-timing-active: cubic-bezier(0.5, 0, 0.75, 0);
+    --animation-timing-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --animation-timing-default: cubic-bezier(0, 0, 0.2, 1);
+    --animation-timing-fade-in: cubic-bezier(0.16, 1, 0.3, 1);
+    --animation-timing-fade-out: cubic-bezier(0.4, 0, 0.2, 1);
+    /* Spring definitions suffixed with perceptual duration (d<ms>) and bounce (b<%>)*/
+    --spring-d300-b0-easing: linear(0, 0.0033 0.81%, 0.027 2.42%, 0.0916 4.84%, 0.4745 15.32%, 0.6422 20.97%, 0.7175, 0.7789, 0.8283 30.64%, 0.876, 0.9111 38.71%, 0.941, 0.9611 48.39%, 0.9707, 0.978 54.84%, 0.9885 62.1%, 0.9949 70.97%, 0.9982 82.26%, 0.9997 100%);
+    --spring-d300-b0-duration: 0.4980s;
+    --spring-d280-b0-easing: linear(0, 0.0044, 0.0164 1.85%, 0.085 4.63%, 0.4571 14.81%, 0.575 18.52%, 0.6505, 0.7148 24.07%, 0.7849, 0.8393, 0.8809 35.18%, 0.9189, 0.9453 44.44%, 0.9662, 0.9793 55.55%, 0.9894 62.95%, 0.995 71.28%, 0.9982 82.39%, 0.9997 99.98%);
+    --spring-d280-b0-duration: 0.4648s;
+    --spring-d260-b0-easing: linear(0, 0.0058, 0.0216 2.15%, 0.0748 4.29%, 0.4646 15.03%, 0.5673, 0.655, 0.7279, 0.7872, 0.8349, 0.8727 34.36%, 0.9107, 0.9379 42.95%, 0.9609 48.31%, 0.9778 54.76%, 0.9887 62.27%, 0.9948 70.86%, 0.9983 82.67%, 0.9997 99.85%);
+    --spring-d260-b0-duration: 0.4316s;
+    --spring-d220-b0-easing: linear(
+      0,
+      0.0093 1.37%,
+      0.0696 4.12%,
+      0.4667 15.09%,
+      0.6322 20.58%,
+      0.6986 23.32%,
+      0.7793 27.44%,
+      0.8219 30.18%,
+      0.8721,
+      0.9089 38.42%,
+      0.9427,
+      0.9644,
+      0.978 54.88%,
+      0.9881 61.74%,
+      0.9944 69.97%,
+      0.998 80.95%,
+      0.9996 98.78%
+    );
+    --spring-d220-b0-duration: 0.3818s;
+    --spring-d180-b0-easing: linear(0, 0.0234, 0.0805 4.48%, 0.4865 15.68%, 0.6211 20.16%, 0.7696 26.88%, 0.8064 29.12%, 0.8646, 0.9063, 0.9358, 0.9563 47.04%, 0.9757, 0.9867 60.48%, 0.9941 69.44%, 0.9979 80.64%, 0.9996 98.56%);
+    --spring-d180-b0-duration: 0.2988s;
+
+    /* View transitions */
+    /* View transition old */
+    --view-transition-old-main-content: var(--animation-speed) var(--animation-easing) both fadeOut;
+
+    /* View transition new */
+    --view-transition-new-main-content: var(--animation-speed) var(--animation-easing) both fadeIn, var(--animation-speed) var(--animation-easing) both slideInTopViewTransition;
+
+    /* Focus */
+    --focus-outline-width: 0.09375rem;
+    --focus-outline-offset: 0.2em;
+
+    /* Badges */
+    --badge-blob-padding-block: 1px;
+    --badge-blob-padding-inline: 12px 8px;
+    --badge-rectangle-padding-block: 1px;
+    --badge-rectangle-padding-inline: 6px;
+    @media screen and (min-width: 750px) {
+      --badge-blob-padding-block: 4px;
+      --badge-blob-padding-inline: 16px 12px;
+      --badge-rectangle-padding-block: 4px;
+      --badge-rectangle-padding-inline: 10px;
+    }
+
+    /* Icons */
+    --icon-size-2xs: 0.6rem;
+    --icon-size-xs: 0.85rem;
+    --icon-size-sm: 1.25rem;
+    --icon-size-md: 1.375rem;
+    --icon-size-lg: 1.5rem;
+    --icon-stroke-width: 1.5px;
+
+    /* Input */
+    --input-email-min-width: 200px;
+    --input-search-max-width: 650px;
+    --input-padding-y: 0.8rem;
+    --input-padding-x: 0.8rem;
+    --input-padding: var(--input-padding-y) var(--input-padding-x);
+    --input-box-shadow-width: var(--style-border-width-inputs);
+    --input-box-shadow: 0 0 0 var(--input-box-shadow-width) var(--color-input-border);
+    --input-box-shadow-focus: 0 0 0 calc(var(--input-box-shadow-width) + 0.5px) var(--color-input-border);
+    --input-disabled-background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+    --input-disabled-border-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    --input-disabled-text-color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+    --input-textarea-min-height: 55px;
+
+    /* Checkbox */
+    --checkbox-size: 22px;
+    --checkbox-border-radius: 7px;
+    --checkbox-border: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-35-55));
+    --checkbox-label-padding: 8px;
+
+    @media screen and (min-width: 750px) {
+      --checkbox-size: 16px;
+      --checkbox-border-radius: 5px;
+      --checkbox-label-padding: 6px;
+    }
+
+    /* Button size */
+    --button-size-sm: 30px;
+    --button-size-md: 36px;
+    --button-size: var(--minimum-touch-target);
+    --button-padding-inline: 24px;
+    --button-padding-block: 16px;
+
+    /* Button font-family */
+    --button-font-family-primary: var(--font-body--family);
+    --button-font-family-secondary: var(--font-body--family);
+
+    /* Button text case */
+    --button-text-case: ;
+    --button-text-case-primary: default;
+    --button-text-case-secondary: default;
+
+    /* Borders */
+    --border-color: rgb(var(--color-border-rgb) / var(--opacity-50));
+    --border-width-sm: 1px;
+    --border-width-md: 2px;
+    --border-width-lg: 5px;
+    --border-radius-sm: 0.25rem;
+
+    /* Drawers */
+    --drawer-inline-padding: 25px;
+    --drawer-menu-inline-padding: 2.5rem;
+    --drawer-header-block-padding: 20px;
+    --drawer-content-block-padding: 10px;
+    --drawer-header-desktop-top: 0rem;
+    --drawer-padding: calc(var(--padding-sm) + 7px);
+    --drawer-height: 100dvh;
+    --drawer-width: 95vw;
+    --drawer-max-width: 500px;
+
+    /* Variant Picker Swatches */
+    --variant-picker-swatch-width-unitless: 34;
+    --variant-picker-swatch-height-unitless: 34;
+    --variant-picker-swatch-width: 34px;
+    --variant-picker-swatch-height: 34px;
+    --variant-picker-swatch-radius: 32px;
+    --variant-picker-border-width: 1px;
+    --variant-picker-border-style: solid;
+    --variant-picker-border-opacity: 10%;
+
+    /* Variant Picker Buttons */
+    --variant-picker-button-radius: 14px;
+    --variant-picker-button-border-width: 1px;
+
+    /* Slideshow */
+    --slideshow-controls-size: 3.5rem;
+    --slideshow-controls-icon: 2rem;
+    --peek-next-slide-size: 3rem;
+
+    /* Utilities */
+    --backdrop-opacity: 0.15;
+    --backdrop-color-rgb: var(--color-shadow-rgb);
+    --minimum-touch-target: 44px;
+    --disabled-opacity: 0.5;
+    --skeleton-opacity: 0.025;
+
+    /* Shapes */
+    --shape--circle: circle(50% at center);
+    --shape--sunburst: polygon(100% 50%,94.62% 55.87%,98.3% 62.94%,91.57% 67.22%,93.3% 75%,85.7% 77.39%,85.36% 85.36%,77.39% 85.7%,75% 93.3%,67.22% 91.57%,62.94% 98.3%,55.87% 94.62%,50% 100%,44.13% 94.62%,37.06% 98.3%,32.78% 91.57%,25% 93.3%,22.61% 85.7%,14.64% 85.36%,14.3% 77.39%,6.7% 75%,8.43% 67.22%,1.7% 62.94%,5.38% 55.87%,0% 50%,5.38% 44.13%,1.7% 37.06%,8.43% 32.78%,6.7% 25%,14.3% 22.61%,14.64% 14.64%,22.61% 14.3%,25% 6.7%,32.78% 8.43%,37.06% 1.7%,44.13% 5.38%,50% 0%,55.87% 5.38%,62.94% 1.7%,67.22% 8.43%,75% 6.7%,77.39% 14.3%,85.36% 14.64%,85.7% 22.61%,93.3% 25%,91.57% 32.78%,98.3% 37.06%,94.62% 44.13%);
+    --shape--diamond: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    --shape--blob: polygon(85.349% 11.712%, 87.382% 13.587%, 89.228% 15.647%, 90.886% 17.862%, 92.359% 20.204%, 93.657% 22.647%, 94.795% 25.169%, 95.786% 27.752%, 96.645% 30.382%, 97.387% 33.048%, 98.025% 35.740%, 98.564% 38.454%, 99.007% 41.186%, 99.358% 43.931%, 99.622% 46.685%, 99.808% 49.446%, 99.926% 52.210%, 99.986% 54.977%, 99.999% 57.744%, 99.975% 60.511%, 99.923% 63.278%, 99.821% 66.043%, 99.671% 68.806%, 99.453% 71.565%, 99.145% 74.314%, 98.724% 77.049%, 98.164% 79.759%, 97.433% 82.427%, 96.495% 85.030%, 95.311% 87.529%, 93.841% 89.872%, 92.062% 91.988%, 89.972% 93.796%, 87.635% 95.273%, 85.135% 96.456%, 82.532% 97.393%, 79.864% 98.127%, 77.156% 98.695%, 74.424% 99.129%, 71.676% 99.452%, 68.918% 99.685%, 66.156% 99.844%, 63.390% 99.942%, 60.624% 99.990%, 57.856% 99.999%, 55.089% 99.978%, 52.323% 99.929%, 49.557% 99.847%, 46.792% 99.723%, 44.031% 99.549%, 41.273% 99.317%, 38.522% 99.017%, 35.781% 98.639%, 33.054% 98.170%, 30.347% 97.599%, 27.667% 96.911%, 25.024% 96.091%, 22.432% 95.123%, 19.907% 93.994%, 17.466% 92.690%, 15.126% 91.216%, 12.902% 89.569%, 10.808% 87.761%, 8.854% 85.803%, 7.053% 83.703%, 5.418% 81.471%, 3.962% 79.119%, 2.702% 76.656%, 1.656% 74.095%, 0.846% 71.450%, 0.294% 68.740%, 0.024% 65.987%, 0.050% 63.221%, 0.343% 60.471%, 0.858% 57.752%, 1.548% 55.073%, 2.370% 52.431%, 3.283% 49.819%, 4.253% 47.227%, 5.249% 44.646%, 6.244% 42.063%, 7.211% 39.471%, 8.124% 36.858%, 8.958% 34.220%, 9.711% 31.558%, 10.409% 28.880%, 11.083% 26.196%, 11.760% 23.513%, 12.474% 20.839%, 13.259% 18.186%, 14.156% 15.569%, 15.214% 13.012%, 16.485% 10.556%, 18.028% 8.261%, 19.883% 6.211%, 22.041% 4.484%, 24.440% 3.110%, 26.998% 2.057%, 29.651% 1.275%, 32.360% 0.714%, 35.101% 0.337%, 37.859% 0.110%, 40.624% 0.009%, 43.391% 0.016%, 46.156% 0.113%, 48.918% 0.289%, 51.674% 0.533%, 54.425% 0.837%, 57.166% 1.215%, 59.898% 1.654%, 62.618% 2.163%, 65.322% 2.750%, 68.006% 3.424%, 70.662% 4.197%, 73.284% 5.081%, 75.860% 6.091%, 78.376% 7.242%, 80.813% 8.551%, 83.148% 10.036%, 85.349% 11.712%);
+
+    /* Buy buttons */
+    --height-buy-buttons: calc(var(--padding-lg) * 2 + var(--icon-size-sm));
+
+    /* Card image width and height variables */
+    --card-width-small: 10rem;
+
+    --height-small: 10rem;
+    --height-medium: 11.5rem;
+    --height-large: 13rem;
+    --height-full: 100vh;
+
+    @media screen and (min-width: 750px) {
+      --height-small: 17.5rem;
+      --height-medium: 21.25rem;
+      --height-large: 25rem;
+    }
+
+    /* Modal */
+    --modal-max-height: 65dvh;
+    --quick-add-modal-height: min(38.5rem, 96vh);
+    --quick-add-modal-width: min(54rem, 96vw);
+    --quick-add-modal-gallery-width: 24rem;
+
+    /* Card styles for search */
+    --card-bg-hover: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    --card-border-hover: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+    --card-border-focus: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+
+    /* Cart */
+    --cart-primary-font-family: var(--font-body--family);
+    --cart-primary-font-style: var(--font-body--style);
+    --cart-primary-font-weight: var(--font-body--weight);
+    --cart-secondary-font-family: var(--font-secondary--family);
+    --cart-secondary-font-style: var(--font-secondary--style);
+    --cart-secondary-font-weight: var(--font-secondary--weight);
+  }
+</style>
+<style data-shopify>
+  
+    
+      :root,
+    
+    
+    
+    .color-scheme-1 {
+        --color-background: rgb(255 255 255 / 1.0);
+        /* RGB values only to apply different opacities - Relative color values are not supported in iOS < 16.4 */
+        --color-background-rgb: 255 255 255;
+        --opacity-5-15: 0.05;
+        --opacity-10-25: 0.1;
+        --opacity-35-55: 0.35;
+        --opacity-40-60: 0.4;
+        --opacity-30-60: 0.3;
+        --color-foreground: rgb(0 0 0 / 0.81);
+        --color-foreground-rgb: 0 0 0;
+        --color-foreground-heading: rgb(0 0 0 / 1.0);
+        --color-foreground-heading-rgb: 0 0 0;
+        --color-primary: rgb(0 0 0 / 0.81);
+        --color-primary-rgb: 0 0 0;
+        --color-primary-hover: rgb(0 0 0 / 1.0);
+        --color-primary-hover-rgb: 0 0 0;
+        --color-border: rgb(0 0 0 / 0.06);
+        --color-border-rgb: 0 0 0;
+        --color-shadow: rgb(0 0 0 / 1.0);
+        --color-shadow-rgb: 0 0 0;
+        --color-primary-button-text: rgb(255 255 255 / 1.0);
+        --color-primary-button-background: rgb(0 0 0 / 1.0);
+        --color-primary-button-border: rgb(0 0 0 / 1.0);
+        --color-primary-button-hover-text: rgb(255 255 255 / 1.0);
+        --color-primary-button-hover-background: rgb(51 51 51 / 1.0);
+        --color-primary-button-hover-border: rgb(0 0 0 / 1.0);
+        --color-secondary-button-text: rgb(0 0 0 / 1.0);
+        --color-secondary-button-background: rgb(0 0 0 / 0.0);
+        --color-secondary-button-border: rgb(0 0 0 / 1.0);
+        --color-secondary-button-hover-text: rgb(51 51 51 / 1.0);
+        --color-secondary-button-hover-background: rgb(250 250 250 / 1.0);
+        --color-secondary-button-hover-border: rgb(51 51 51 / 1.0);
+        --color-input-background: rgb(255 255 255 / 0.78);
+        --color-input-text: rgb(51 51 51 / 1.0);
+        --color-input-text-rgb: 51 51 51;
+        --color-input-border: rgb(223 223 223 / 1.0);
+        --color-input-hover-background: rgb(0 0 0 / 0.01);
+        --color-variant-background: rgb(255 255 255 / 1.0);
+        --color-variant-border: rgb(0 0 0 / 0.13);
+        --color-variant-text: rgb(0 0 0 / 1.0);
+        --color-variant-text-rgb: 0 0 0;
+        --color-variant-hover-background: rgb(245 245 245 / 1.0);
+        --color-variant-hover-text: rgb(0 0 0 / 1.0);
+        --color-variant-hover-border: rgb(230 230 230 / 1.0);
+        --color-selected-variant-background: rgb(0 0 0 / 1.0);
+        --color-selected-variant-border: rgb(0 0 0 / 1.0);
+        --color-selected-variant-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-background: rgb(26 26 26 / 1.0);
+        --color-selected-variant-hover-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-border: rgb(26 26 26 / 1.0);
+
+        --input-disabled-background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+        --input-disabled-border-color: rgb(var(--color-foreground-rgb) / var(--opacity-5-15));
+        --input-disabled-text-color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+        --color-foreground-muted: rgb(var(--color-foreground-rgb) / var(--opacity-60));
+        --font-h1--color: var(--color-foreground-heading);
+        --font-h2--color: var(--color-foreground-heading);
+        --font-h3--color: var(--color-foreground-heading);
+        --font-h4--color: var(--color-foreground-heading);
+        --font-h5--color: var(--color-foreground-heading);
+        --font-h6--color: var(--color-foreground-heading);
+
+        /* Shadows */
+        
+          --shadow-drawer: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+        
+          --shadow-blur: 20px;
+          --shadow-popover: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+      }
+  
+    
+    
+    
+    .color-scheme-2 {
+        --color-background: rgb(245 245 245 / 1.0);
+        /* RGB values only to apply different opacities - Relative color values are not supported in iOS < 16.4 */
+        --color-background-rgb: 245 245 245;
+        --opacity-5-15: 0.05;
+        --opacity-10-25: 0.1;
+        --opacity-35-55: 0.35;
+        --opacity-40-60: 0.4;
+        --opacity-30-60: 0.3;
+        --color-foreground: rgb(0 0 0 / 0.81);
+        --color-foreground-rgb: 0 0 0;
+        --color-foreground-heading: rgb(0 0 0 / 1.0);
+        --color-foreground-heading-rgb: 0 0 0;
+        --color-primary: rgb(0 0 0 / 0.81);
+        --color-primary-rgb: 0 0 0;
+        --color-primary-hover: rgb(255 255 255 / 1.0);
+        --color-primary-hover-rgb: 255 255 255;
+        --color-border: rgb(223 223 223 / 1.0);
+        --color-border-rgb: 223 223 223;
+        --color-shadow: rgb(0 0 0 / 1.0);
+        --color-shadow-rgb: 0 0 0;
+        --color-primary-button-text: rgb(255 255 255 / 1.0);
+        --color-primary-button-background: rgb(0 0 0 / 1.0);
+        --color-primary-button-border: rgb(0 0 0 / 1.0);
+        --color-primary-button-hover-text: rgb(255 255 255 / 1.0);
+        --color-primary-button-hover-background: rgb(51 51 51 / 1.0);
+        --color-primary-button-hover-border: rgb(51 51 51 / 1.0);
+        --color-secondary-button-text: rgb(0 0 0 / 1.0);
+        --color-secondary-button-background: rgb(0 0 0 / 0.0);
+        --color-secondary-button-border: rgb(0 0 0 / 1.0);
+        --color-secondary-button-hover-text: rgb(0 0 0 / 1.0);
+        --color-secondary-button-hover-background: rgb(255 255 255 / 0.36);
+        --color-secondary-button-hover-border: rgb(51 51 51 / 0.73);
+        --color-input-background: rgb(0 0 0 / 0.0);
+        --color-input-text: rgb(0 0 0 / 0.53);
+        --color-input-text-rgb: 0 0 0;
+        --color-input-border: rgb(0 0 0 / 0.13);
+        --color-input-hover-background: rgb(255 255 255 / 0.36);
+        --color-variant-background: rgb(255 255 255 / 1.0);
+        --color-variant-border: rgb(230 230 230 / 1.0);
+        --color-variant-text: rgb(0 0 0 / 1.0);
+        --color-variant-text-rgb: 0 0 0;
+        --color-variant-hover-background: rgb(245 245 245 / 1.0);
+        --color-variant-hover-text: rgb(0 0 0 / 1.0);
+        --color-variant-hover-border: rgb(230 230 230 / 1.0);
+        --color-selected-variant-background: rgb(0 0 0 / 1.0);
+        --color-selected-variant-border: rgb(0 0 0 / 1.0);
+        --color-selected-variant-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-background: rgb(26 26 26 / 1.0);
+        --color-selected-variant-hover-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-border: rgb(26 26 26 / 1.0);
+
+        --input-disabled-background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+        --input-disabled-border-color: rgb(var(--color-foreground-rgb) / var(--opacity-5-15));
+        --input-disabled-text-color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+        --color-foreground-muted: rgb(var(--color-foreground-rgb) / var(--opacity-60));
+        --font-h1--color: var(--color-foreground-heading);
+        --font-h2--color: var(--color-foreground-heading);
+        --font-h3--color: var(--color-foreground-heading);
+        --font-h4--color: var(--color-foreground-heading);
+        --font-h5--color: var(--color-foreground-heading);
+        --font-h6--color: var(--color-foreground-heading);
+
+        /* Shadows */
+        
+          --shadow-drawer: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+        
+          --shadow-blur: 20px;
+          --shadow-popover: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+      }
+  
+    
+    
+    
+    .color-scheme-3 {
+        --color-background: rgb(238 241 234 / 1.0);
+        /* RGB values only to apply different opacities - Relative color values are not supported in iOS < 16.4 */
+        --color-background-rgb: 238 241 234;
+        --opacity-5-15: 0.05;
+        --opacity-10-25: 0.1;
+        --opacity-35-55: 0.35;
+        --opacity-40-60: 0.4;
+        --opacity-30-60: 0.3;
+        --color-foreground: rgb(0 0 0 / 0.81);
+        --color-foreground-rgb: 0 0 0;
+        --color-foreground-heading: rgb(0 0 0 / 1.0);
+        --color-foreground-heading-rgb: 0 0 0;
+        --color-primary: rgb(0 0 0 / 0.81);
+        --color-primary-rgb: 0 0 0;
+        --color-primary-hover: rgb(0 0 0 / 1.0);
+        --color-primary-hover-rgb: 0 0 0;
+        --color-border: rgb(0 0 0 / 0.81);
+        --color-border-rgb: 0 0 0;
+        --color-shadow: rgb(0 0 0 / 1.0);
+        --color-shadow-rgb: 0 0 0;
+        --color-primary-button-text: rgb(255 255 255 / 1.0);
+        --color-primary-button-background: rgb(0 0 0 / 1.0);
+        --color-primary-button-border: rgb(0 0 0 / 1.0);
+        --color-primary-button-hover-text: rgb(255 255 255 / 1.0);
+        --color-primary-button-hover-background: rgb(51 51 51 / 1.0);
+        --color-primary-button-hover-border: rgb(51 51 51 / 1.0);
+        --color-secondary-button-text: rgb(0 0 0 / 1.0);
+        --color-secondary-button-background: rgb(0 0 0 / 0.0);
+        --color-secondary-button-border: rgb(0 0 0 / 1.0);
+        --color-secondary-button-hover-text: rgb(0 0 0 / 0.81);
+        --color-secondary-button-hover-background: rgb(255 255 255 / 0.36);
+        --color-secondary-button-hover-border: rgb(0 0 0 / 0.81);
+        --color-input-background: rgb(0 0 0 / 0.0);
+        --color-input-text: rgb(0 0 0 / 0.81);
+        --color-input-text-rgb: 0 0 0;
+        --color-input-border: rgb(0 0 0 / 0.81);
+        --color-input-hover-background: rgb(255 255 255 / 0.36);
+        --color-variant-background: rgb(255 255 255 / 1.0);
+        --color-variant-border: rgb(230 230 230 / 1.0);
+        --color-variant-text: rgb(0 0 0 / 1.0);
+        --color-variant-text-rgb: 0 0 0;
+        --color-variant-hover-background: rgb(245 245 245 / 1.0);
+        --color-variant-hover-text: rgb(0 0 0 / 1.0);
+        --color-variant-hover-border: rgb(230 230 230 / 1.0);
+        --color-selected-variant-background: rgb(0 0 0 / 1.0);
+        --color-selected-variant-border: rgb(0 0 0 / 1.0);
+        --color-selected-variant-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-background: rgb(26 26 26 / 1.0);
+        --color-selected-variant-hover-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-border: rgb(26 26 26 / 1.0);
+
+        --input-disabled-background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+        --input-disabled-border-color: rgb(var(--color-foreground-rgb) / var(--opacity-5-15));
+        --input-disabled-text-color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+        --color-foreground-muted: rgb(var(--color-foreground-rgb) / var(--opacity-60));
+        --font-h1--color: var(--color-foreground-heading);
+        --font-h2--color: var(--color-foreground-heading);
+        --font-h3--color: var(--color-foreground-heading);
+        --font-h4--color: var(--color-foreground-heading);
+        --font-h5--color: var(--color-foreground-heading);
+        --font-h6--color: var(--color-foreground-heading);
+
+        /* Shadows */
+        
+          --shadow-drawer: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+        
+          --shadow-blur: 20px;
+          --shadow-popover: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+      }
+  
+    
+    
+    
+    .color-scheme-4 {
+        --color-background: rgb(225 237 245 / 1.0);
+        /* RGB values only to apply different opacities - Relative color values are not supported in iOS < 16.4 */
+        --color-background-rgb: 225 237 245;
+        --opacity-5-15: 0.05;
+        --opacity-10-25: 0.1;
+        --opacity-35-55: 0.35;
+        --opacity-40-60: 0.4;
+        --opacity-30-60: 0.3;
+        --color-foreground: rgb(0 0 0 / 0.81);
+        --color-foreground-rgb: 0 0 0;
+        --color-foreground-heading: rgb(0 0 0 / 1.0);
+        --color-foreground-heading-rgb: 0 0 0;
+        --color-primary: rgb(0 0 0 / 0.81);
+        --color-primary-rgb: 0 0 0;
+        --color-primary-hover: rgb(0 0 0 / 1.0);
+        --color-primary-hover-rgb: 0 0 0;
+        --color-border: rgb(29 54 134 / 0.5);
+        --color-border-rgb: 29 54 134;
+        --color-shadow: rgb(0 0 0 / 1.0);
+        --color-shadow-rgb: 0 0 0;
+        --color-primary-button-text: rgb(255 255 255 / 1.0);
+        --color-primary-button-background: rgb(0 0 0 / 1.0);
+        --color-primary-button-border: rgb(29 54 134 / 1.0);
+        --color-primary-button-hover-text: rgb(255 255 255 / 1.0);
+        --color-primary-button-hover-background: rgb(51 51 51 / 1.0);
+        --color-primary-button-hover-border: rgb(0 0 0 / 1.0);
+        --color-secondary-button-text: rgb(0 0 0 / 1.0);
+        --color-secondary-button-background: rgb(0 0 0 / 0.0);
+        --color-secondary-button-border: rgb(0 0 0 / 1.0);
+        --color-secondary-button-hover-text: rgb(0 0 0 / 0.81);
+        --color-secondary-button-hover-background: rgb(255 255 255 / 0.36);
+        --color-secondary-button-hover-border: rgb(0 0 0 / 0.81);
+        --color-input-background: rgb(0 0 0 / 0.0);
+        --color-input-text: rgb(0 0 0 / 0.81);
+        --color-input-text-rgb: 0 0 0;
+        --color-input-border: rgb(0 0 0 / 0.81);
+        --color-input-hover-background: rgb(255 255 255 / 0.36);
+        --color-variant-background: rgb(255 255 255 / 1.0);
+        --color-variant-border: rgb(230 230 230 / 1.0);
+        --color-variant-text: rgb(0 0 0 / 1.0);
+        --color-variant-text-rgb: 0 0 0;
+        --color-variant-hover-background: rgb(245 245 245 / 1.0);
+        --color-variant-hover-text: rgb(0 0 0 / 1.0);
+        --color-variant-hover-border: rgb(230 230 230 / 1.0);
+        --color-selected-variant-background: rgb(0 0 0 / 1.0);
+        --color-selected-variant-border: rgb(0 0 0 / 1.0);
+        --color-selected-variant-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-background: rgb(26 26 26 / 1.0);
+        --color-selected-variant-hover-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-border: rgb(26 26 26 / 1.0);
+
+        --input-disabled-background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+        --input-disabled-border-color: rgb(var(--color-foreground-rgb) / var(--opacity-5-15));
+        --input-disabled-text-color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+        --color-foreground-muted: rgb(var(--color-foreground-rgb) / var(--opacity-60));
+        --font-h1--color: var(--color-foreground-heading);
+        --font-h2--color: var(--color-foreground-heading);
+        --font-h3--color: var(--color-foreground-heading);
+        --font-h4--color: var(--color-foreground-heading);
+        --font-h5--color: var(--color-foreground-heading);
+        --font-h6--color: var(--color-foreground-heading);
+
+        /* Shadows */
+        
+          --shadow-drawer: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+        
+          --shadow-blur: 20px;
+          --shadow-popover: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+      }
+  
+    
+    
+    
+    .color-scheme-5 {
+        --color-background: rgb(51 51 51 / 1.0);
+        /* RGB values only to apply different opacities - Relative color values are not supported in iOS < 16.4 */
+        --color-background-rgb: 51 51 51;
+        --opacity-5-15: 0.15;
+        --opacity-10-25: 0.25;
+        --opacity-35-55: 0.55;
+        --opacity-40-60: 0.6;
+        --opacity-30-60: 0.6;
+        --color-foreground: rgb(255 255 255 / 1.0);
+        --color-foreground-rgb: 255 255 255;
+        --color-foreground-heading: rgb(255 255 255 / 1.0);
+        --color-foreground-heading-rgb: 255 255 255;
+        --color-primary: rgb(255 255 255 / 1.0);
+        --color-primary-rgb: 255 255 255;
+        --color-primary-hover: rgb(255 255 255 / 0.69);
+        --color-primary-hover-rgb: 255 255 255;
+        --color-border: rgb(255 255 255 / 0.69);
+        --color-border-rgb: 255 255 255;
+        --color-shadow: rgb(0 0 0 / 1.0);
+        --color-shadow-rgb: 0 0 0;
+        --color-primary-button-text: rgb(0 0 0 / 1.0);
+        --color-primary-button-background: rgb(255 255 255 / 1.0);
+        --color-primary-button-border: rgb(255 255 255 / 1.0);
+        --color-primary-button-hover-text: rgb(255 255 255 / 1.0);
+        --color-primary-button-hover-background: rgb(0 0 0 / 1.0);
+        --color-primary-button-hover-border: rgb(0 0 0 / 1.0);
+        --color-secondary-button-text: rgb(255 255 255 / 1.0);
+        --color-secondary-button-background: rgb(0 0 0 / 0.0);
+        --color-secondary-button-border: rgb(255 255 255 / 0.69);
+        --color-secondary-button-hover-text: rgb(255 255 255 / 0.93);
+        --color-secondary-button-hover-background: rgb(255 255 255 / 0.04);
+        --color-secondary-button-hover-border: rgb(255 255 255 / 0.69);
+        --color-input-background: rgb(51 51 51 / 1.0);
+        --color-input-text: rgb(255 255 255 / 0.93);
+        --color-input-text-rgb: 255 255 255;
+        --color-input-border: rgb(255 255 255 / 0.69);
+        --color-input-hover-background: rgb(255 255 255 / 0.04);
+        --color-variant-background: rgb(255 255 255 / 1.0);
+        --color-variant-border: rgb(230 230 230 / 1.0);
+        --color-variant-text: rgb(0 0 0 / 1.0);
+        --color-variant-text-rgb: 0 0 0;
+        --color-variant-hover-background: rgb(245 245 245 / 1.0);
+        --color-variant-hover-text: rgb(0 0 0 / 1.0);
+        --color-variant-hover-border: rgb(230 230 230 / 1.0);
+        --color-selected-variant-background: rgb(0 0 0 / 1.0);
+        --color-selected-variant-border: rgb(0 0 0 / 1.0);
+        --color-selected-variant-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-background: rgb(26 26 26 / 1.0);
+        --color-selected-variant-hover-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-border: rgb(26 26 26 / 1.0);
+
+        --input-disabled-background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+        --input-disabled-border-color: rgb(var(--color-foreground-rgb) / var(--opacity-5-15));
+        --input-disabled-text-color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+        --color-foreground-muted: rgb(var(--color-foreground-rgb) / var(--opacity-60));
+        --font-h1--color: var(--color-foreground-heading);
+        --font-h2--color: var(--color-foreground-heading);
+        --font-h3--color: var(--color-foreground-heading);
+        --font-h4--color: var(--color-foreground-heading);
+        --font-h5--color: var(--color-foreground-heading);
+        --font-h6--color: var(--color-foreground-heading);
+
+        /* Shadows */
+        
+          --shadow-drawer: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+        
+          --shadow-blur: 20px;
+          --shadow-popover: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+      }
+  
+    
+    
+    
+    .color-scheme-6 {
+        --color-background: rgb(0 0 0 / 0.0);
+        /* RGB values only to apply different opacities - Relative color values are not supported in iOS < 16.4 */
+        --color-background-rgb: 0 0 0;
+        --opacity-5-15: 0.15;
+        --opacity-10-25: 0.25;
+        --opacity-35-55: 0.55;
+        --opacity-40-60: 0.6;
+        --opacity-30-60: 0.6;
+        --color-foreground: rgb(255 255 255 / 1.0);
+        --color-foreground-rgb: 255 255 255;
+        --color-foreground-heading: rgb(255 255 255 / 1.0);
+        --color-foreground-heading-rgb: 255 255 255;
+        --color-primary: rgb(255 255 255 / 1.0);
+        --color-primary-rgb: 255 255 255;
+        --color-primary-hover: rgb(255 255 255 / 0.69);
+        --color-primary-hover-rgb: 255 255 255;
+        --color-border: rgb(230 230 230 / 1.0);
+        --color-border-rgb: 230 230 230;
+        --color-shadow: rgb(0 0 0 / 1.0);
+        --color-shadow-rgb: 0 0 0;
+        --color-primary-button-text: rgb(0 0 0 / 1.0);
+        --color-primary-button-background: rgb(255 255 255 / 1.0);
+        --color-primary-button-border: rgb(255 255 255 / 1.0);
+        --color-primary-button-hover-text: rgb(255 255 255 / 1.0);
+        --color-primary-button-hover-background: rgb(0 0 0 / 1.0);
+        --color-primary-button-hover-border: rgb(0 0 0 / 1.0);
+        --color-secondary-button-text: rgb(255 255 255 / 1.0);
+        --color-secondary-button-background: rgb(0 0 0 / 0.0);
+        --color-secondary-button-border: rgb(255 255 255 / 1.0);
+        --color-secondary-button-hover-text: rgb(255 255 255 / 1.0);
+        --color-secondary-button-hover-background: rgb(255 255 255 / 0.08);
+        --color-secondary-button-hover-border: rgb(255 255 255 / 1.0);
+        --color-input-background: rgb(255 255 255 / 1.0);
+        --color-input-text: rgb(0 0 0 / 0.53);
+        --color-input-text-rgb: 0 0 0;
+        --color-input-border: rgb(0 0 0 / 0.13);
+        --color-input-hover-background: rgb(250 250 250 / 1.0);
+        --color-variant-background: rgb(255 255 255 / 1.0);
+        --color-variant-border: rgb(230 230 230 / 1.0);
+        --color-variant-text: rgb(0 0 0 / 1.0);
+        --color-variant-text-rgb: 0 0 0;
+        --color-variant-hover-background: rgb(245 245 245 / 1.0);
+        --color-variant-hover-text: rgb(0 0 0 / 1.0);
+        --color-variant-hover-border: rgb(230 230 230 / 1.0);
+        --color-selected-variant-background: rgb(0 0 0 / 1.0);
+        --color-selected-variant-border: rgb(0 0 0 / 1.0);
+        --color-selected-variant-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-background: rgb(26 26 26 / 1.0);
+        --color-selected-variant-hover-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-border: rgb(26 26 26 / 1.0);
+
+        --input-disabled-background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+        --input-disabled-border-color: rgb(var(--color-foreground-rgb) / var(--opacity-5-15));
+        --input-disabled-text-color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+        --color-foreground-muted: rgb(var(--color-foreground-rgb) / var(--opacity-60));
+        --font-h1--color: var(--color-foreground-heading);
+        --font-h2--color: var(--color-foreground-heading);
+        --font-h3--color: var(--color-foreground-heading);
+        --font-h4--color: var(--color-foreground-heading);
+        --font-h5--color: var(--color-foreground-heading);
+        --font-h6--color: var(--color-foreground-heading);
+
+        /* Shadows */
+        
+          --shadow-drawer: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+        
+          --shadow-blur: 20px;
+          --shadow-popover: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+      }
+  
+    
+    
+    
+    .color-scheme-58084d4c-a86e-4d0a-855e-a0966e5043f7 {
+        --color-background: rgb(0 0 0 / 0.0);
+        /* RGB values only to apply different opacities - Relative color values are not supported in iOS < 16.4 */
+        --color-background-rgb: 0 0 0;
+        --opacity-5-15: 0.15;
+        --opacity-10-25: 0.25;
+        --opacity-35-55: 0.55;
+        --opacity-40-60: 0.6;
+        --opacity-30-60: 0.6;
+        --color-foreground: rgb(0 0 0 / 1.0);
+        --color-foreground-rgb: 0 0 0;
+        --color-foreground-heading: rgb(0 0 0 / 1.0);
+        --color-foreground-heading-rgb: 0 0 0;
+        --color-primary: rgb(0 0 0 / 1.0);
+        --color-primary-rgb: 0 0 0;
+        --color-primary-hover: rgb(0 0 0 / 0.53);
+        --color-primary-hover-rgb: 0 0 0;
+        --color-border: rgb(230 230 230 / 1.0);
+        --color-border-rgb: 230 230 230;
+        --color-shadow: rgb(0 0 0 / 1.0);
+        --color-shadow-rgb: 0 0 0;
+        --color-primary-button-text: rgb(255 255 255 / 1.0);
+        --color-primary-button-background: rgb(0 0 0 / 1.0);
+        --color-primary-button-border: rgb(0 0 0 / 1.0);
+        --color-primary-button-hover-text: rgb(255 255 255 / 1.0);
+        --color-primary-button-hover-background: rgb(51 51 51 / 1.0);
+        --color-primary-button-hover-border: rgb(51 51 51 / 1.0);
+        --color-secondary-button-text: rgb(0 0 0 / 1.0);
+        --color-secondary-button-background: rgb(0 0 0 / 0.0);
+        --color-secondary-button-border: rgb(0 0 0 / 1.0);
+        --color-secondary-button-hover-text: rgb(51 51 51 / 1.0);
+        --color-secondary-button-hover-background: rgb(250 250 250 / 1.0);
+        --color-secondary-button-hover-border: rgb(51 51 51 / 1.0);
+        --color-input-background: rgb(255 255 255 / 1.0);
+        --color-input-text: rgb(0 0 0 / 0.53);
+        --color-input-text-rgb: 0 0 0;
+        --color-input-border: rgb(0 0 0 / 0.13);
+        --color-input-hover-background: rgb(250 250 250 / 1.0);
+        --color-variant-background: rgb(255 255 255 / 1.0);
+        --color-variant-border: rgb(230 230 230 / 1.0);
+        --color-variant-text: rgb(0 0 0 / 1.0);
+        --color-variant-text-rgb: 0 0 0;
+        --color-variant-hover-background: rgb(245 245 245 / 1.0);
+        --color-variant-hover-text: rgb(0 0 0 / 1.0);
+        --color-variant-hover-border: rgb(230 230 230 / 1.0);
+        --color-selected-variant-background: rgb(0 0 0 / 1.0);
+        --color-selected-variant-border: rgb(0 0 0 / 1.0);
+        --color-selected-variant-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-background: rgb(26 26 26 / 1.0);
+        --color-selected-variant-hover-text: rgb(255 255 255 / 1.0);
+        --color-selected-variant-hover-border: rgb(26 26 26 / 1.0);
+
+        --input-disabled-background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+        --input-disabled-border-color: rgb(var(--color-foreground-rgb) / var(--opacity-5-15));
+        --input-disabled-text-color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+        --color-foreground-muted: rgb(var(--color-foreground-rgb) / var(--opacity-60));
+        --font-h1--color: var(--color-foreground-heading);
+        --font-h2--color: var(--color-foreground-heading);
+        --font-h3--color: var(--color-foreground-heading);
+        --font-h4--color: var(--color-foreground-heading);
+        --font-h5--color: var(--color-foreground-heading);
+        --font-h6--color: var(--color-foreground-heading);
+
+        /* Shadows */
+        
+          --shadow-drawer: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+        
+          --shadow-blur: 20px;
+          --shadow-popover: 0px 4px 20px rgb(var(--color-shadow-rgb) / var(--opacity-15));
+        
+      }
+  
+
+  body, .color-scheme-1, .color-scheme-2, .color-scheme-3, .color-scheme-4, .color-scheme-5, .color-scheme-6, .color-scheme-58084d4c-a86e-4d0a-855e-a0966e5043f7 {
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+  }
+</style>
+<style>
+  .atlas-isolation-wrapper {
+    /* Dawn/standard: --font-body-family | Horizon: --font-body--family | fallback: Inter */
+    --atlas-font-body-family: var(--font-body-family, var(--font-body--family, Inter, sans-serif));
+    --atlas-font-body-style: var(--font-body-style, var(--font-body--style, normal));
+    --atlas-font-body-weight: var(--font-body-weight, var(--font-body--weight, 300));
+    --atlas-font-body-weight-bold: var(--font-body-weight-bold, 600);
+
+    --atlas-font-heading-family: var(--font-heading-family, var(--font-heading--family, Inter, sans-serif));
+    --atlas-font-heading-style: var(--font-heading-style, var(--font-heading--style, normal));
+    --atlas-font-heading-weight: var(--font-heading-weight, var(--font-heading--weight, 400));
+    --atlas-font-heading-size: 35px;
+    --atlas-font-heading-mob-size: 30px;
+
+    --atlas-heading-text-transform: none;
+
+    --atlas-font-button-family: var(--font-body-family, var(--font-body--family, Inter, sans-serif));
+    --atlas-font-button-weight: var(--font-body-weight, var(--font-body--weight, 400));
+
+    --atlas-font-body-scale: 1;
+    --atlas-global-body-text-font-size: 16px;
+    --atlas-font-heading-scale: 1;
+
+    --atlas-media-padding: px;
+    --atlas-media-border-opacity: 0.1;
+    --atlas-media-border-width: 0px;
+    --atlas-media-radius: 12px;
+    --atlas-media-shadow-opacity: 0;
+    --atlas-media-shadow-horizontal-offset: 0px;
+    --atlas-media-shadow-vertical-offset: 0px;
+    --atlas-media-shadow-blur-radius: 20px;
+    --atlas-media-shadow-visible: 0;
+
+    --atlas-page-width: 1600px;
+    --atlas-page-width-margin: 0px;
+
+    --atlas-product-card-padding: 5px;
+    --atlas-product-card-corner-radius: 12px;
+    --atlas-product-card-text-alignment: left;
+    --atlas-product-card-border-width: 0px;
+    --atlas-product-card-border-opacity: 0.05;
+    --atlas-product-card-shadow-opacity: 0;
+    --atlas-product-card-shadow-visible: 0;
+    --atlas-product-card-shadow-horizontal-offset: 10px;
+    --atlas-product-card-shadow-vertical-offset: 10px;
+    --atlas-product-card-shadow-blur-radius: 35px;
+    --atlas-product-card-title-font-size: 16px;
+    --atlas-product-card-title-font-size-mobile: 14px;
+    --atlas-product-card-price-font-size: 20px;
+    --atlas-product-card-price-font-size-mobile: 16px;
+    --atlas-product-card-compare-at-price-font-size: 16px;
+    --atlas-product-card-compare-at-price-font-size-mobile: 14px;
+    --atlas-product-card-vendor-font-size: 14px;
+    --atlas-product-card-vendor-font-size-mobile: 14px;
+    --atlas-product-card-stock-indicator-font-size: 12px;
+    --atlas-product-card-stock-indicator-font-size-mobile: 10px;
+    --atlas-product-card-button-text-font-size: 14px;
+    --atlas-product-card-button-text-font-size-mobile: 12px;
+
+    --atlas-product-card-border-thickness: 0px;
+    --atlas-product-card-border-radius: 6px;
+    --atlas-product-card-border-opacity: 0.05;
+
+    --atlas-collection-card-image-padding: 0px;
+    --atlas-collection-card-corner-radius: 12px;
+    --atlas-collection-card-text-alignment: center;
+    --atlas-collection-card-border-width: 0px;
+    --atlas-collection-card-border-opacity: 0.1;
+    --atlas-collection-card-shadow-opacity: 0.05;
+    --atlas-collection-card-shadow-visible: 1;
+    --atlas-collection-card-shadow-horizontal-offset: 10px;
+    --atlas-collection-card-shadow-vertical-offset: 10px;
+    --atlas-collection-card-shadow-blur-radius: 35px;
+
+    --atlas-blog-card-image-padding: 0px;
+    --atlas-blog-card-corner-radius: 12px;
+    --atlas-blog-card-text-alignment: left;
+    --atlas-blog-card-border-width: 0px;
+    --atlas-blog-card-border-opacity: 0.1;
+    --atlas-blog-card-shadow-opacity: 0;
+    --atlas-blog-card-shadow-visible: 0;
+    --atlas-blog-card-shadow-horizontal-offset: 10px;
+    --atlas-blog-card-shadow-vertical-offset: 10px;
+    --atlas-blog-card-shadow-blur-radius: 35px;
+    --atlas-blog-card-title-font-size: 25px;
+    --atlas-blog-card-title-font-size-mobile: 20px;
+    --atlas-blog-card-excerpt-font-size: 14px;
+    --atlas-blog-card-excerpt-font-size-mobile: 14px;
+    --atlas-blog-card-author-font-size: 14px;
+    --atlas-blog-card-author-font-size-mobile: 10px;
+    --atlas-blog-card-date-font-size: 14px;
+    --atlas-blog-card-date-font-size-mobile: 12px;
+    --atlas-blog-card-tags-font-size: 14px;
+    --atlas-blog-card-tags-font-size-mobile: 12px;
+    --atlas-blog-card-content-padding-top: 30px;
+    --atlas-blog-card-content-padding-bottom: 10px;
+    --atlas-blog-card-content-padding-left: 5px;
+    --atlas-blog-card-content-padding-right: 10px;
+    --atlas-blog-card-content-padding-mobile-top: 20px;
+    --atlas-blog-card-content-padding-mobile-bottom: 10px;
+    --atlas-blog-card-content-padding-mobile-left: 5px;
+    --atlas-blog-card-content-padding-mobile-right: 10px;
+
+    --atlas-popup-border-width: 1px;
+    --atlas-popup-border-opacity: 0.1;
+    --atlas-popup-corner-radius: 22px;
+    --atlas-popup-shadow-opacity: 0.1;
+    --atlas-popup-shadow-horizontal-offset: 10px;
+    --atlas-popup-shadow-vertical-offset: 12px;
+    --atlas-popup-shadow-blur-radius: 20px;
+
+    --atlas-drawer-border-width: 1px;
+    --atlas-drawer-border-opacity: 0.1;
+    --atlas-drawer-shadow-opacity: 0;
+    --atlas-drawer-shadow-horizontal-offset: 0px;
+    --atlas-drawer-shadow-vertical-offset: 4px;
+    --atlas-drawer-shadow-blur-radius: 5px;
+
+    --atlas-cart-drawer-border-thickness: 1px;
+    --atlas-cart-drawer-image-border-radius: 6px;
+    --atlas-cart-drawer-quantity-border-thickness: 1px;
+    --atlas-cart-drawer-quantity-border-radius: 6px;
+    --atlas-cart-drawer-quantity-button-border-radius: 3px;
+
+    --atlas-spacing-sections-desktop: 0px;
+    --atlas-spacing-sections-mobile: 0px;
+
+    --atlas-grid-desktop-vertical-spacing: 24px;
+    --atlas-grid-desktop-horizontal-spacing: 28px;
+    --atlas-grid-mobile-vertical-spacing: 12px;
+    --atlas-grid-mobile-horizontal-spacing: 14px;
+
+    --atlas-text-boxes-border-opacity: 0.1;
+    --atlas-text-boxes-border-width: 0px;
+    --atlas-text-boxes-radius: 12px;
+    --atlas-text-boxes-shadow-opacity: 0;
+    --atlas-text-boxes-shadow-visible: 0;
+    --atlas-text-boxes-shadow-horizontal-offset: 10px;
+    --atlas-text-boxes-shadow-vertical-offset: 12px;
+    --atlas-text-boxes-shadow-blur-radius: 20px;
+
+    --atlas-buttons-radius: 10px;
+    --atlas-buttons-radius-outset: 12px;
+    --atlas-buttons-border-width: 2px;
+    --atlas-buttons-border-opacity: 1;
+    --atlas-buttons-shadow-opacity: 0;
+    --atlas-buttons-shadow-visible: 0;
+    --atlas-buttons-shadow-horizontal-offset: 4px;
+    --atlas-buttons-shadow-vertical-offset: 4px;
+    --atlas-buttons-shadow-blur-radius: 5px;
+    --atlas-buttons-border-offset: 0.3px;
+
+    --atlas-inputs-radius: 5px;
+    --atlas-inputs-border-width: 2px;
+    --atlas-inputs-border-opacity: 0.55;
+    --atlas-inputs-shadow-opacity: 0;
+    --atlas-inputs-shadow-horizontal-offset: 0px;
+    --atlas-inputs-margin-offset: 0px;
+    --atlas-inputs-shadow-vertical-offset: 0px;
+    --atlas-inputs-shadow-blur-radius: 5px;
+    --atlas-inputs-radius-outset: 7px;
+
+    --atlas-variant-pills-radius: 4px;
+    --atlas-variant-pills-border-width: 1px;
+    --atlas-variant-pills-border-opacity: 0.55;
+    --atlas-variant-pills-shadow-opacity: 0;
+    --atlas-variant-pills-shadow-horizontal-offset: 0px;
+    --atlas-variant-pills-shadow-vertical-offset: 4px;
+    --atlas-variant-pills-shadow-blur-radius: 5px;
+
+    --atlas-animatioin-button-text-with-arrow-content: none;
+    --atlas-animatioin-button-text-with-arrow-padding: 30px;
+    --atlas-animatioin-button-text-with-arrow-white-space: normal;
+    --atlas-animation-scale: 1;
+    --atlas-animation-slide-background: block;
+
+    --atlas-facets-desktop-header-font-size: 16px;
+    --atlas-facets-desktop-dropdown-header-font-size: 14px;
+    --atlas-facets-desktop-dropdown-option-font-size: 12px;
+    --atlas-active-facets-font-size: 12px;
+    --atlas-mobile-drawer-filter-font-size: 12px;
+    --atlas-filter-drawer-border-thickness: 1px;
+    --atlas-active-facets-border-thickness: 1px;
+    --atlas-active-facets-border-radius: 3px;
+    --atlas-mobile-drawer-filter-button-border-radius: 6px;
+
+    --atlas-pagination-font-size: 14px;
+    --atlas-pagination-size: 41px;
+    --atlas-pagination-border-thickness: 1px;
+    --atlas-pagination-border-opacity: 0.1;
+    --atlas-pagination-border-radius: 10px;
+  }
+
+  /* Neutralize host theme .section CSS grid (Horizon, etc.) on atlas section wrappers */
+  .atlas-isolation-wrapper.section {
+    display: block;
+    grid-template-columns: unset;
+    min-height: auto;
+  }
+
+  .atlas-isolation-wrapper *,
+  .atlas-isolation-wrapper *::before,
+  .atlas-isolation-wrapper *::after {
+    box-sizing: border-box;
+  }
+
+  .atlas-isolation-wrapper {
+    letter-spacing: 0.6px;
+    line-height: 1.4em;
+    font-family: var(--atlas-font-body-family);
+    font-style: var(--atlas-font-body-style);
+    font-weight: var(--atlas-font-body-weight);
+    font-size: var(--atlas-global-body-text-font-size);
+  }
+
+  .atlas-isolation-wrapper p,
+  .atlas-isolation-wrapper span {
+    font-family: var(--atlas-font-body-family);
+  }
+
+  /* Base styles for custom elements that host themes may not style */
+  .atlas-isolation-wrapper modal-opener {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .atlas-isolation-wrapper .product {
+    margin: 0;
+  }
+
+  /* Critical grid/layout rules — inline to prevent host theme CSS conflicts on .grid/.page-width */
+  .atlas-isolation-wrapper .page-width {
+    max-width: var(--atlas-page-width);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .atlas-isolation-wrapper .grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 0;
+    list-style: none;
+    column-gap: var(--atlas-grid-mobile-horizontal-spacing);
+    row-gap: var(--atlas-grid-mobile-vertical-spacing);
+  }
+  .atlas-isolation-wrapper .grid:last-child {
+    margin-bottom: 0;
+  }
+  .atlas-isolation-wrapper .grid__item {
+    width: calc(25% - var(--atlas-grid-mobile-horizontal-spacing) * 3 / 4);
+    max-width: calc(50% - var(--atlas-grid-mobile-horizontal-spacing) / 2);
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+  .atlas-isolation-wrapper .grid--1-col .grid__item {
+    max-width: 100%;
+    width: 100%;
+  }
+  .atlas-isolation-wrapper .grid--2-col .grid__item {
+    width: calc(50% - var(--atlas-grid-mobile-horizontal-spacing) / 2);
+  }
+  @media screen and (min-width: 750px) {
+    .atlas-isolation-wrapper .page-width {
+      padding: 0 50px;
+    }
+    .atlas-isolation-wrapper .grid {
+      column-gap: var(--atlas-grid-desktop-horizontal-spacing);
+      row-gap: var(--atlas-grid-desktop-vertical-spacing);
+    }
+    .atlas-isolation-wrapper .grid__item {
+      width: calc(25% - var(--atlas-grid-desktop-horizontal-spacing) * 3 / 4);
+      max-width: calc(50% - var(--atlas-grid-desktop-horizontal-spacing) / 2);
+    }
+    .atlas-isolation-wrapper .grid--2-col .grid__item {
+      width: calc(50% - var(--atlas-grid-desktop-horizontal-spacing) / 2);
+    }
+    .atlas-isolation-wrapper .grid--2-col-tablet .grid__item {
+      width: calc(50% - var(--atlas-grid-desktop-horizontal-spacing) / 2);
+    }
+    .atlas-isolation-wrapper .grid--3-col .grid__item {
+      width: calc(33.33% - var(--atlas-grid-desktop-horizontal-spacing) * 2 / 3);
+    }
+  }
+</style>
+<style>
+  .atlas-isolation-wrapper .rte:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+
+  .atlas-isolation-wrapper .rte > p:first-child {
+    margin-top: 0;
+  }
+
+  .atlas-isolation-wrapper .rte > p:last-child {
+    margin-bottom: 0;
+  }
+
+  .atlas-isolation-wrapper .rte table {
+    table-layout: fixed;
+  }
+
+  @media screen and (min-width: 750px) {
+    .atlas-isolation-wrapper .rte table td {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+
+  .atlas-isolation-wrapper .rte img {
+    height: auto;
+    max-width: 100%;
+    border: var(--atlas-media-border-width) solid rgba(var(--atlas-color-foreground), var(--atlas-media-border-opacity));
+    border-radius: var(--atlas-media-radius);
+    box-shadow: var(--atlas-media-shadow-horizontal-offset) var(--atlas-media-shadow-vertical-offset)
+      var(--atlas-media-shadow-blur-radius) rgba(var(--atlas-color-shadow), var(--atlas-media-shadow-opacity));
+    margin-bottom: var(--atlas-media-shadow-vertical-offset);
+  }
+
+  .atlas-isolation-wrapper .rte ul,
+  .atlas-isolation-wrapper .rte ol {
+    list-style-position: inside;
+    padding-left: 20px;
+  }
+
+  .atlas-isolation-wrapper .rte li {
+    list-style: inherit;
+  }
+
+  .atlas-isolation-wrapper .rte li:last-child {
+    margin-bottom: 0;
+  }
+
+  .atlas-isolation-wrapper .rte a {
+    color: rgba(var(--atlas-color-link), var(--atlas-alpha-link));
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-thickness var(--atlas-duration-short) ease;
+  }
+
+  .atlas-isolation-wrapper .rte a:hover {
+    color: rgb(var(--atlas-color-link));
+    text-decoration-thickness: 2px;
+  }
+
+  .atlas-isolation-wrapper .rte blockquote {
+    display: inline-flex;
+  }
+
+  .atlas-isolation-wrapper .rte blockquote > * {
+    margin: -5px 0 -5px 0;
+  }
+</style>

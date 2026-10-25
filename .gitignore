@@ -27,3 +27,19 @@ Thumbs.db
 *.log
 scratch/
 tempmediaStorage/
+
+# Large harvested media binaries (already uploaded & hosted on Shopify CDN)
+*_media/*.jpg
+*_media/*.jpeg
+*_media/*.png
+*_media/*.webp
+ali_images/
+ali_images2/
+fence_gifs/
+scratch_colors/
+
+# Large scraped raw HTML dumps
+*.html
+
+# Verification screenshots
+*.png

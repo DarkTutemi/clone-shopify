@@ -1,0 +1,182 @@
+{
+  "product": {
+    "id": 15562968269126,
+    "title": "SrefalSteam™",
+    "body_html": "",
+    "vendor": "Srefal",
+    "product_type": "",
+    "created_at": "2026-05-18T23:48:42+03:00",
+    "handle": "srefalsteam",
+    "updated_at": "2026-10-24T03:50:28+03:00",
+    "published_at": "2026-05-18T23:48:43+03:00",
+    "template_suffix": "steamclean",
+    "published_scope": "global",
+    "tags": "",
+    "variants": [
+      {
+        "id": 56604272591174,
+        "product_id": 15562968269126,
+        "title": "Default Title",
+        "price": "89.99",
+        "sku": "200",
+        "position": 1,
+        "compare_at_price": "149.99",
+        "fulfillment_service": "manual",
+        "inventory_management": null,
+        "option1": "Default Title",
+        "option2": null,
+        "option3": null,
+        "created_at": "2026-05-18T23:48:42+03:00",
+        "updated_at": "2026-10-24T03:50:28+03:00",
+        "taxable": false,
+        "barcode": "",
+        "grams": 0,
+        "image_id": null,
+        "weight": 0,
+        "weight_unit": "kg",
+        "requires_shipping": true,
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "price_currency": "USD",
+        "compare_at_price_currency": "USD",
+        "quantity_price_breaks": []
+      }
+    ],
+    "options": [
+      {
+        "id": 18057662792006,
+        "product_id": 15562968269126,
+        "name": "Title",
+        "position": 1,
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "id": 86746911048006,
+        "product_id": 15562968269126,
+        "position": 1,
+        "created_at": "2026-06-18T15:26:29+03:00",
+        "updated_at": "2026-06-18T15:26:33+03:00",
+        "alt": null,
+        "width": 1024,
+        "height": 1024,
+        "src": "https://cdn.shopify.com/s/files/1/0992/8120/7622/files/hf_20260618_121833_7b368bb9-3ee8-4101-9676-74160a6be69e.png?v=1781785593",
+        "variant_ids": []
+      },
+      {
+        "id": 86380559171910,
+        "product_id": 15562968269126,
+        "position": 2,
+        "created_at": "2026-05-31T00:04:04+03:00",
+        "updated_at": "2026-05-31T00:04:13+03:00",
+        "alt": null,
+        "width": 2048,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0992/8120/7622/files/hf_20260530_135331_dde1cd91-99cd-486c-8939-77cc50b3445b.png?v=1780175053",
+        "variant_ids": []
+      },
+      {
+        "id": 86381219610950,
+        "product_id": 15562968269126,
+        "position": 3,
+        "created_at": "2026-05-31T00:26:36+03:00",
+        "updated_at": "2026-05-31T00:26:40+03:00",
+        "alt": null,
+        "width": 216,
+        "height": 384,
+        "src": "https://cdn.shopify.com/s/files/1/0992/8120/7622/files/m2-res_1920p_42f95f1a-f9be-41c7-aa34-337841accce7.gif?v=1780176400",
+        "variant_ids": []
+      },
+      {
+        "id": 86747045462342,
+        "product_id": 15562968269126,
+        "position": 4,
+        "created_at": "2026-06-18T15:50:32+03:00",
+        "updated_at": "2026-06-18T15:50:37+03:00",
+        "alt": null,
+        "width": 1728,
+        "height": 2304,
+        "src": "https://cdn.shopify.com/s/files/1/0992/8120/7622/files/hf_20260618_124723_edea0ac8-dfb9-459c-b21a-6e6bf7145081.png?v=1781787037",
+        "variant_ids": []
+      },
+      {
+        "id": 86380559434054,
+        "product_id": 15562968269126,
+        "position": 5,
+        "created_at": "2026-05-31T00:04:05+03:00",
+        "updated_at": "2026-05-31T00:04:11+03:00",
+        "alt": null,
+        "width": 2048,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0992/8120/7622/files/hf_20260530_134720_c1183634-b8e6-4954-a330-d6ff19726078.png?v=1780175051",
+        "variant_ids": []
+      },
+      {
+        "id": 86380557238598,
+        "product_id": 15562968269126,
+        "position": 6,
+        "created_at": "2026-05-31T00:04:00+03:00",
+        "updated_at": "2026-05-31T00:04:05+03:00",
+        "alt": null,
+        "width": 2048,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0992/8120/7622/files/hf_20260525_203558_aa2f513f-7d7a-44b1-ba5d-400f30d7ef36.png?v=1780175045",
+        "variant_ids": []
+      },
+      {
+        "id": 86631514571078,
+        "product_id": 15562968269126,
+        "position": 7,
+        "created_at": "2026-06-10T22:55:45+03:00",
+        "updated_at": "2026-06-10T22:55:49+03:00",
+        "alt": null,
+        "width": 1024,
+        "height": 1024,
+        "src": "https://cdn.shopify.com/s/files/1/0992/8120/7622/files/hf_20260610_195049_beaff0af-637c-4c19-b5e2-f6529a15cb8a.png?v=1781121349",
+        "variant_ids": []
+      },
+      {
+        "id": 86380559532358,
+        "product_id": 15562968269126,
+        "position": 8,
+        "created_at": "2026-05-31T00:04:05+03:00",
+        "updated_at": "2026-05-31T00:04:11+03:00",
+        "alt": null,
+        "width": 2048,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0992/8120/7622/files/hf_20260530_135125_b34fbcec-7980-400e-b25a-8c3931b1165f.png?v=1780175051",
+        "variant_ids": []
+      },
+      {
+        "id": 86380559139142,
+        "product_id": 15562968269126,
+        "position": 9,
+        "created_at": "2026-05-31T00:04:04+03:00",
+        "updated_at": "2026-05-31T00:04:12+03:00",
+        "alt": null,
+        "width": 2048,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0992/8120/7622/files/hf_20260525_205139_3771fcba-345c-40f5-a6da-27236589de39.png?v=1780175052",
+        "variant_ids": []
+      }
+    ],
+    "image": {
+      "id": 86746911048006,
+      "product_id": 15562968269126,
+      "position": 1,
+      "created_at": "2026-06-18T15:26:29+03:00",
+      "updated_at": "2026-06-18T15:26:33+03:00",
+      "alt": null,
+      "width": 1024,
+      "height": 1024,
+      "src": "https://cdn.shopify.com/s/files/1/0992/8120/7622/files/hf_20260618_121833_7b368bb9-3ee8-4101-9676-74160a6be69e.png?v=1781785593",
+      "variant_ids": []
+    }
+  }
+}

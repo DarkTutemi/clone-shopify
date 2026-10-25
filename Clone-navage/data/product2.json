@@ -1,0 +1,206 @@
+{
+  "product": {
+    "id": 8303786033432,
+    "title": "Naväge Starter Bundle: Nose Cleaner and 30 SaltPod Capsules",
+    "body_html": "<p>Designed with your nose in mind. Naväge helps relieve nasal congestion and stuffiness by washing and moisturizing the nasal cavity with a pressure-controlled stream of saline. <span data-teams=\"true\"><span dir=\"ltr\" class=\"ui-provider a b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak\">With one-touch, Naväge uses powered suction to flush out mucus and germs, the device does the work to send you on your way to a better day</span></span>. Bundle includes: </p>\n<ul>\n<li>Naväge Nose Cleaner</li>\n<li>30 SaltPods</li>\n<li>One pair of Standard Nose Pillows</li>\n<li>Two preinstalled AA batteries</li>\n</ul>",
+    "vendor": "Navage Nasal Care",
+    "product_type": "Nose Cleaners",
+    "created_at": "2023-05-10T23:01:52-04:00",
+    "handle": "navage-starter-bundle",
+    "updated_at": "2026-10-23T18:52:52-04:00",
+    "published_at": "2023-05-10T23:01:52-04:00",
+    "template_suffix": "nose-cleaner",
+    "published_scope": "web",
+    "tags": "",
+    "variants": [
+      {
+        "id": 45191692779800,
+        "product_id": 8303786033432,
+        "title": "Default Title",
+        "price": "99.95",
+        "sku": "BNDL-80030",
+        "position": 1,
+        "compare_at_price": "",
+        "fulfillment_service": "manual",
+        "inventory_management": "shopify",
+        "option1": "Default Title",
+        "option2": null,
+        "option3": null,
+        "created_at": "2023-05-10T23:01:52-04:00",
+        "updated_at": "2026-10-23T18:52:52-04:00",
+        "taxable": true,
+        "barcode": null,
+        "grams": 1043,
+        "image_id": null,
+        "weight": 2.3,
+        "weight_unit": "lb",
+        "requires_shipping": true,
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "price_currency": "USD",
+        "compare_at_price_currency": "",
+        "quantity_price_breaks": []
+      }
+    ],
+    "options": [
+      {
+        "id": 10535798997272,
+        "product_id": 8303786033432,
+        "name": "Title",
+        "position": 1,
+        "values": [
+          "Default Title"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "id": 46360182882584,
+        "product_id": 8303786033432,
+        "position": 1,
+        "created_at": "2024-08-15T08:30:17-04:00",
+        "updated_at": "2025-11-06T14:27:21-05:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Artboard_6_9ea3b0e3-fe57-446d-a65f-3211e620b349.png?v=1762457241",
+        "variant_ids": []
+      },
+      {
+        "id": 53156569612568,
+        "product_id": 8303786033432,
+        "position": 2,
+        "created_at": "2026-06-09T12:52:28-04:00",
+        "updated_at": "2026-06-09T12:52:30-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/B__2_4b95e584-0870-455d-9b84-9292f267875e.jpg?v=1781023950",
+        "variant_ids": []
+      },
+      {
+        "id": 53612237881624,
+        "product_id": 8303786033432,
+        "position": 3,
+        "created_at": "2026-07-24T10:06:58-04:00",
+        "updated_at": "2026-07-24T10:06:59-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Original_B__3.jpg?v=1784902019",
+        "variant_ids": []
+      },
+      {
+        "id": 53612241387800,
+        "product_id": 8303786033432,
+        "position": 4,
+        "created_at": "2026-07-24T10:09:03-04:00",
+        "updated_at": "2026-07-24T10:09:04-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Original_B__4.jpg?v=1784902144",
+        "variant_ids": []
+      },
+      {
+        "id": 53156569645336,
+        "product_id": 8303786033432,
+        "position": 5,
+        "created_at": "2026-06-09T12:52:28-04:00",
+        "updated_at": "2026-06-09T12:52:30-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/B__4_e7889620-37d7-4a90-936e-120f2f417311.png?v=1781023950",
+        "variant_ids": []
+      },
+      {
+        "id": 53156570497304,
+        "product_id": 8303786033432,
+        "position": 6,
+        "created_at": "2026-06-09T12:52:55-04:00",
+        "updated_at": "2026-06-09T12:52:57-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/B__5_404a797f-f2af-473e-b9d9-7ad720aab729.jpg?v=1781023977",
+        "variant_ids": []
+      },
+      {
+        "id": 53156570530072,
+        "product_id": 8303786033432,
+        "position": 7,
+        "created_at": "2026-06-09T12:52:55-04:00",
+        "updated_at": "2026-06-09T12:52:57-04:00",
+        "alt": null,
+        "width": 4167,
+        "height": 4167,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/B__6_f410e68f-1201-4337-9e65-20c2cf3d748c.jpg?v=1781023977",
+        "variant_ids": []
+      },
+      {
+        "id": 53156570562840,
+        "product_id": 8303786033432,
+        "position": 8,
+        "created_at": "2026-06-09T12:52:55-04:00",
+        "updated_at": "2026-06-09T12:52:57-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/B__7_947962cc-2d36-4079-93c2-88a03a7cc287.jpg?v=1781023977",
+        "variant_ids": []
+      },
+      {
+        "id": 53612238340376,
+        "product_id": 8303786033432,
+        "position": 9,
+        "created_at": "2026-07-24T10:07:14-04:00",
+        "updated_at": "2026-07-24T10:07:16-04:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Original_B__9.jpg?v=1784902036",
+        "variant_ids": []
+      },
+      {
+        "id": 52095529681176,
+        "product_id": 8303786033432,
+        "position": 10,
+        "created_at": "2026-01-28T13:48:03-05:00",
+        "updated_at": "2026-01-29T16:23:14-05:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/6_8481de7d-0c2a-47ac-b381-04ba4fee0b13.jpg?v=1769721794",
+        "variant_ids": []
+      },
+      {
+        "id": 52103166329112,
+        "product_id": 8303786033432,
+        "position": 11,
+        "created_at": "2026-01-29T16:16:54-05:00",
+        "updated_at": "2026-01-29T16:24:00-05:00",
+        "alt": null,
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/7_b5d12e38-5419-4de6-b913-65918e4810b0.jpg?v=1769721840",
+        "variant_ids": []
+      }
+    ],
+    "image": {
+      "id": 46360182882584,
+      "product_id": 8303786033432,
+      "position": 1,
+      "created_at": "2024-08-15T08:30:17-04:00",
+      "updated_at": "2025-11-06T14:27:21-05:00",
+      "alt": null,
+      "width": 2000,
+      "height": 2000,
+      "src": "https://cdn.shopify.com/s/files/1/0750/9835/8040/files/Artboard_6_9ea3b0e3-fe57-446d-a65f-3211e620b349.png?v=1762457241",
+      "variant_ids": []
+    }
+  }
+}

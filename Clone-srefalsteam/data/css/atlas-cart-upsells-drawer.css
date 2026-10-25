@@ -1,0 +1,551 @@
+#atlas-upsell-cart-drawer-main-container {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  opacity: 0;
+  transition:
+    visibility 0s linear 0.3s,
+    opacity 0.3s;
+}
+body.atlas-no-scroll-for-cart-drawer {
+  overflow: hidden;
+}
+#atlas-upsell-cart-drawer-main-container div:empty {
+  display: block;
+}
+
+#atlas-upsell-cart-drawer-main-container.is-open {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.atlas-upsell-cart-drawer-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  /* transition: opacity 0.3s; */
+}
+
+#atlas-upsell-cart-drawer-main-container.is-open
+  .atlas-upsell-cart-drawer-overlay {
+  opacity: 1;
+}
+
+.atlas-upsell-cart-drawer-header-h2 {
+  margin: 0px;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--cart_drawer_text_color);
+}
+
+.atlas-upsell-cart-drawer-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(520px, 100vw);
+  background: var(--cart_drawer_background_color);
+  color: var(--cart_drawer_text_color);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+}
+
+#atlas-upsell-cart-drawer-main-container.is-open
+  .atlas-upsell-cart-drawer-content {
+  transform: translateX(0);
+}
+
+.atlas-upsell-cart-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--cart_drawer_close_button_color);
+  width: 34px;
+  height: 34px;
+}
+
+.atlas-upsell-cart-close:hover {
+  opacity: 0.8;
+  font-size: 28px;
+}
+
+.atlas-upsell-cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.atlas-upsell-cart-announcement {
+  font-size: var(--announcement_font_size);
+  font-weight: 500;
+  text-align: center;
+  padding: var(--announcement_size) 16px;
+  color: var(--announcement_text_color);
+}
+
+.atlas-upsell-cart-progress-reward-container {
+  padding-top: 12px;
+  padding-bottom: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.atlas-upsell-cart-progress-reward-text {
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--cart_drawer_text_color);
+}
+
+.atlas-upsell-cart-progress-reward-bar-container {
+  margin-top: 10px;
+  position: relative;
+
+  --progress_bar_height: 10px;
+  height: var(--progress_bar_height);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.atlas-upsell-cart-progress-reward-bar-background {
+  background-color: var(--progress_reward_bar_background_color);
+  height: var(--progress_bar_height);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.atlas-upsell-cart-progress-reward-bar {
+  height: 40px;
+  position: relative;
+}
+
+.atlas-upsell-cart-items-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  border-bottom: 1px solid #e1e3e5;
+  display: flex;
+  flex-direction: column;
+}
+
+.atlas-upsell-cart-item-outer-container {
+  padding: 23px 19px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.atlas-upsell-cart-item-info-container {
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.atlas-upsell-cart-item-price-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  flex-direction: column;
+  gap: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .atlas-upsell-cart-item-price-container {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+}
+
+.atlas-upsell-cart-item-price-inner-container {
+  display: flex;
+  align-items: end;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .atlas-upsell-cart-item-price-inner-container {
+    align-items: flex-end;
+    justify-content: flex-end;
+    line-height: 1.3;
+  }
+  
+  .atlas-upsell-cart-item-total-saved-on-line {
+    display: none !important;
+  }
+  
+  .atlas-upsell-cart-item-total-saved-on-line-mobile {
+    display: flex !important;
+    width: fit-content;
+  }
+  
+  .atlas-upsell-cart-item-total-saved-on-line-mobile:empty {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .atlas-upsell-cart-item-total-saved-on-line-mobile {
+    display: none !important
+  }
+}
+
+.atlas-upsell-cart-item {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+}
+
+.atlas-upsell-cart-item img {
+  width: 99px;
+  height: 103px;
+  min-width: 99px;
+  min-height: 103px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .atlas-upsell-cart-item img {
+    width: 89px;
+    height: 93px;
+    min-width: 89px;
+    min-height: 93px;
+  }
+}
+
+.atlas-upsell-cart-footer {
+  background-color: var(--cart_drawer_accent_color);
+  padding: 20px;
+}
+
+.atlas-upsell-cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.atlas-checkout-button-styles {
+  all: unset;
+  border: none;
+  padding: 16px 12px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cart_drawer_button_text_color);
+  background-color: var(--cart_drawer_button_color);
+  border-radius: var(--cart_drawer_button_corner_radius);
+  position: relative;
+}
+.atlas-upsell-cart-subtotal-amount-span {
+  font-weight: 500;
+  color: var(--cart_drawer_button_text_color);
+}
+
+.atlas-checkout-button-styles:hover {
+  opacity: 0.8;
+}
+
+.atlas-upsell-cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-up,
+.quantity-down {
+  padding: 2px 8px;
+  background: var(--cart_drawer_button_color);
+  color: var(--cart_drawer_button_text_color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.atlas-upsell-cart-item-delete-icon-container button {
+  all: unset;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  /* min-height: 4.5rem; */
+  padding: 0;
+  margin: 0;
+  background: none !important;
+  /* color: #000 !important; */
+}
+
+.atlas-upsell-cart-item-delete-icon-container button svg {
+  color: #686868;
+  transition: color 0.2s ease;
+}
+
+.atlas-upsell-cart-item-delete-icon-container button:hover svg {
+  color: #dc2626;
+}
+
+.atlas-upsell-cart-item-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.atlas-upsell-cart-spinner {
+  border: 3px solid rgb(50, 50, 50);
+  border-top: 3px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  animation: atlas-cart-upsell-loading-spinner-spin 1s linear infinite;
+}
+@keyframes atlas-cart-upsell-loading-spinner-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.atlas-upsell-cart-item-quantity-container {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 6px;
+  padding: 3px;
+  background-color: var(--cart_drawer_quantity_text_background_color);
+}
+
+.atlas-upsell-cart-item-quantity-container button {
+  all: unset;
+  cursor: pointer;
+  background-color: var(--cart_drawer_quantity_button_background_color);
+  width: 24px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: rgb(32, 34, 35);
+}
+
+.atlas-upsell-cart-item-quantity-container
+  button.atlas-upsell-cart-item-quantity-up {
+  border-radius: 3px;
+}
+
+.atlas-upsell-cart-item-quantity-container
+  button.atlas-upsell-cart-item-quantity-down {
+  border-radius: 3px;
+}
+
+.atlas-upsell-cart-item-quantity-amount {
+  width: 60px;
+  height: 28px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1em;
+  background-color: var(--cart_drawer_quantity_text_background_color);
+  color: #000000;
+}
+
+.atlas-upsell-cart-item-quantity-button-loading-spinner {
+  border: 1.5px solid #637381;
+  border-top: 1.5px solid transparent;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: atlas-cart-upsell-loading-spinner-spin 2s linear infinite;
+}
+
+#atlas-upsell-cart-shipping-protection-switch:checked + span {
+  position: absolute;
+  cursor: pointer;
+  inset: 0px;
+  background-color: var(--shipping_protection_switch_color);
+  transition: 0.4s;
+  border-radius: 26px;
+  border: 2px solid var(--shipping_protection_switch_color);
+}
+#atlas-upsell-cart-shipping-protection-switch:checked + span > span {
+  position: absolute;
+  /* content: &quot;&quot;; */
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 1px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+  transform: translateX(20px);
+}
+
+#atlas-upsell-cart-shipping-protection-switch:not(:checked) + span {
+  position: absolute;
+  cursor: pointer;
+  inset: 0px;
+  background-color: rgb(204, 204, 204);
+  transition: 0.4s;
+  border-radius: 26px;
+  border: 2px solid rgb(225, 227, 229);
+}
+#atlas-upsell-cart-shipping-protection-switch:not(:checked) + span > span {
+  position: absolute;
+  /* content: &quot;&quot;; */
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 1px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+  transform: translateX(0px);
+}
+
+.atlas-upsell-cart-checkout-button-loading-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.atlas-upsell-cart-checkout-button-spinner {
+  border: 2.5px solid rgba(0, 0, 0, 0.1);
+  border-top: 2.5px solid var(--cart_drawer_button_text_color);
+  border-right: 2.5px solid var(--cart_drawer_button_text_color);
+  border-left: 2.5px solid var(--cart_drawer_button_text_color);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  animation: atlas-cart-upsell-checkout-button-spinner-spin 1.1s linear infinite;
+}
+@keyframes atlas-cart-upsell-checkout-button-spinner-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.atlas-upsell-cart-slide-right {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+/* Subscription Upgrades Styles */
+.atlas-subscription-upgrade-container {
+  position: relative;
+}
+
+.atlas-subscription-upgrade-button {
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.atlas-subscription-upgrade-button:hover {
+  opacity: 0.9;
+}
+
+.atlas-subscription-upgrade-button:active {
+  transform: scale(0.98);
+}
+
+.atlas-subscription-upgrade-dropdown {
+  background-color: var(--cart_drawer_background_color);
+  color: var(--cart_drawer_text_color);
+}
+
+.atlas-subscription-upgrade-option {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.15s;
+}
+
+.atlas-subscription-upgrade-option:last-child {
+  border-bottom: none;
+}
+
+.atlas-subscription-upgrade-option:hover {
+  background-color: #f5f5f5;
+}
+
+.atlas-subscription-upgrade-option-selected {
+  background-color: #e8f5e9;
+  font-weight: 500;
+}
+
+.atlas-subscription-upgrade-option-selected:hover {
+  background-color: #d4edd6;
+}
+
+/* Discount Code Styles */
+.atlas-discount-code-input:focus {
+  border-color: #9CA3AF;
+}
+
+.atlas-discount-code-apply-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.atlas-discount-code-apply-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.atlas-discount-code-message.success {
+  color: var(--discount_code_success_message_color);
+}
+
+.atlas-discount-code-message.error {
+  color: var(--discount_code_error_message_color);
+}
+
+@keyframes atlas-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

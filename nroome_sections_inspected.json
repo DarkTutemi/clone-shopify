@@ -1,0 +1,426 @@
+{
+  "sections": [
+    {
+      "index": 0,
+      "id": "shopify-section-sections--26004749779125__announcement-bar",
+      "className": "shopify-section shopify-section-group-header-group announcement-bar-section",
+      "textPreview": "❄️ Flu Season Sale | 55% Off + Get 1 FREE",
+      "images": []
+    },
+    {
+      "index": 1,
+      "id": "shopify-section-sections--26004749779125__header",
+      "className": "shopify-section shopify-section-group-header-group section-header",
+      "heading": "",
+      "textPreview": "Cart",
+      "images": [
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome-Logo-Black.png?v=1714883837&width=500",
+          "alt": "Nroome"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "id": "shopify-section-template--26004775567541__main",
+      "className": "shopify-section section",
+      "heading": "Nroome® 2.0 | Breathe Easy, Anytime, Anywhere",
+      "textPreview": "Skip to product information  1233 verified reviews Nroome® 2.0 | Breathe Easy, Anytime, Anywhere Regular price $49.95 Sale price $112.00 SAVE 55% Because every parent deserves peace of mind - a quiet mist you can count on, day or night. 💨 Whisper-quiet for peaceful sessions 🔋 Use it in bed, car ",
+      "images": [
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome_Hero_BOGO.webp?v=1764308733&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/BreatheBuddy3.webp?v=1765431684&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome2-Parts.webp?v=1765431684&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome2-Case.webp?v=1765431684&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome_2_-_Testimonials2.webp?v=1765431684&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Product_Image_2.webp?v=1764308733&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome_Hero_BOGO.webp?v=1764308733&width=416",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/BreatheBuddy3.webp?v=1765431684&width=416",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome2-Parts.webp?v=1765431684&width=416",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome2-Case.webp?v=1765431684&width=416",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome_2_-_Testimonials2.webp?v=1765431684&width=416",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Product_Image_2.webp?v=1764308733&width=416",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome_Hero_BOGO.webp?v=1764308733&width=500",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/testimonial2.webp?v=1715066517",
+          "alt": "Susan D. - TX, USA"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "id": "MainProduct-template--26004775567541__main",
+      "className": "page-width section-template--26004775567541__main-padding",
+      "heading": "Nroome® 2.0 | Breathe Easy, Anytime, Anywhere",
+      "textPreview": "Skip to product information  1233 verified reviews Nroome® 2.0 | Breathe Easy, Anytime, Anywhere Regular price $49.95 Sale price $112.00 SAVE 55% Because every parent deserves peace of mind - a quiet mist you can count on, day or night. 💨 Whisper-quiet for peaceful sessions 🔋 Use it in bed, car ",
+      "images": [
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome_Hero_BOGO.webp?v=1764308733&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/BreatheBuddy3.webp?v=1765431684&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome2-Parts.webp?v=1765431684&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome2-Case.webp?v=1765431684&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome_2_-_Testimonials2.webp?v=1765431684&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Product_Image_2.webp?v=1764308733&width=1946",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome_Hero_BOGO.webp?v=1764308733&width=416",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/BreatheBuddy3.webp?v=1765431684&width=416",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome2-Parts.webp?v=1765431684&width=416",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome2-Case.webp?v=1765431684&width=416",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome_2_-_Testimonials2.webp?v=1765431684&width=416",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Product_Image_2.webp?v=1764308733&width=416",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome_Hero_BOGO.webp?v=1764308733&width=500",
+          "alt": "Nroome® 2.0  | Breathe Easy, Anytime, Anywhere"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/testimonial2.webp?v=1715066517",
+          "alt": "Susan D. - TX, USA"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "id": "shopify-section-template--26004775567541__logo_list_8fajFP",
+      "className": "shopify-section",
+      "heading": "As Seen On",
+      "textPreview": "As Seen On",
+      "images": [
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/WebMD_logo.webp?v=1715237054",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/2560px-Womenshealthlogo_svg.webp?v=1715237278",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/19.01_-_ConversionWise_Ltd_-_DDV_-_82426_-_USA_Today.png?v=1715237107",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Bastion-Health-At-Home-Testing-Assessment-Treatment-Telehealth-Online-Men_s-Fertility-Reproductive-Health-Urologist-Sperm-Count-Infertility-Testing-Urologist-Prostate-Enlargement-Canc.webp?v=1715237559",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "id": "shopify-section-template--26004775567541__image_with_text_DwiTgM",
+      "className": "shopify-section section",
+      "heading": "Whisper-Quiet Comfort",
+      "textPreview": "Whisper-Quiet Comfort Bulky old machines are loud and stressful - especially for little ones. Nroome® is so quiet you can use it while your child sleeps, without waking or scaring them. That means fewer struggles, calmer nights, and more peace of mind for you.",
+      "images": []
+    },
+    {
+      "index": 6,
+      "id": "shopify-section-template--26004775567541__image_with_text_WVHkdz",
+      "className": "shopify-section section",
+      "heading": "Portable & Always Ready",
+      "textPreview": "Portable & Always Ready Parenting doesn’t stop when you leave the house. Nroome® is cordless, lightweight, and battery-powered, so you can take it anywhere. From the bedroom, to the car seat, to a family trip. Comfort is always within reach.",
+      "images": []
+    },
+    {
+      "index": 7,
+      "id": "shopify-section-template--26004775567541__image_with_text_mcYrHi",
+      "className": "shopify-section section",
+      "heading": "Simple, Safe, and Family Friendly",
+      "textPreview": "Simple, Safe, and Family Friendly No complicated setup. No wires. No stress. Just add saline solution, press one button, and Nroome® creates a gentle mist for kids or adults. It’s designed to be easy for parents, safe for little ones, and useful for the whole family.",
+      "images": [
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome2-Parts.webp?v=1765431684&width=1500",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "id": "shopify-section-template--26004775567541__results_cmTtRU",
+      "className": "shopify-section",
+      "heading": "We've helped 50,000+ parents & children",
+      "textPreview": "We've helped 50,000+ parents & children 92% of parents said Nroome® gave them more peace of mind during cold season, helping them feel calmer at night. 88% of families reported that Nroome® made everyday life easier - from bedtime routines to family outings. 95% of users found that Nroome®’s s",
+      "images": [
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome_2_-_Testimonials2.webp?v=1765431684&width=1500",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "id": "shopify-section-template--26004775567541__e21ff573-e051-4bf7-867b-94765a3b8f11",
+      "className": "shopify-section section",
+      "heading": "Trusted by 50,000+ Parents",
+      "textPreview": "Trusted by 50,000+ Parents Over 50,000 happy customers! Insured Shipping Package lost or arrive broken? We'll send a new one free of charge! 30-Day Money Back Guarantee Buy with peace of mind.",
+      "images": []
+    },
+    {
+      "index": 10,
+      "id": "shopify-section-template--26004775567541__bb7d2784-ae42-434b-aece-ca60bb5e9aa5",
+      "className": "shopify-section section",
+      "heading": "FAQs",
+      "textPreview": "FAQs What do I put in it? Most parents use saline solution which is completely natural & drug-free to clear mucus and blocked airways, making it easier to breathe. Saline is just a mixture of 1/2 tsp of salt and 1 cup distilled water you can make at home. Always follow your healthcare provider’s ",
+      "images": []
+    },
+    {
+      "index": 11,
+      "id": "shopify-section-template--26004775567541__testimonials_yRUtw9",
+      "className": "shopify-section section",
+      "heading": "Join 50,000+ Happy Parents",
+      "textPreview": "Join 50,000+ Happy Parents ★★★★★ \"Seasonal allergies & asthma flareup can you please sit down!\" Just got this device and absolutely 💯 love it! My 4yo used it while traveling this weekend and worked so great. It was so frustrating bringing the big machine now that this little portable nebulizer i",
+      "images": [
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/1740968553__image__huge.jpg?v=1759318780&width=1420",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/1740925469__img_8722__huge.jpg?v=1759318839&width=1420",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/1736032603__1000051230__huge.jpg?v=1759318947&width=1420",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "id": "shopify-section-template--26004775567541__featured_collection_yTmwtD",
+      "className": "shopify-section section",
+      "heading": "You might also like",
+      "textPreview": "You might also like SAVE 50% Carry Case Regular price $9.95  Sale price $20.00 Add to cart SAVE 50% Hushtemp | Infrared Forehead Thermometer for Baby & Kids Regular price $13.95  Sale price $28.00 Add to cart SAVE 50% SnotBuddy | The Electric Nasal Aspirator That Actually Works Regular price $19.95 ",
+      "images": [
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Carry_Case_w_Nroome.webp?v=1747350725&width=533",
+          "alt": "Carry Case"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Carry_Case_V2.webp?v=1747350725&width=533",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Hushtemp4.webp?v=1776840204&width=533",
+          "alt": "Hushtemp | Infrared Forehead Thermometer for Baby & Kids"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Hushtemp1.webp?v=1776840205&width=533",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/SnotBuddy.webp?v=1776224410&width=533",
+          "alt": "SnotBuddy | The Electric Nasal Aspirator That Actually Works"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/SnotBuddy2.webp?v=1776224410&width=533",
+          "alt": ""
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/NasalSyringecopy.webp?v=1720589754&width=533",
+          "alt": "Baby Nose Hero | Say Goodbye to Stuffy Noses"
+        },
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nasal_Syringe_2.webp?v=1720589760&width=533",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "id": "shopify-section-template--26004775567541__1715070597cf39a213",
+      "className": "shopify-section section",
+      "heading": "Customer Reviews",
+      "textPreview": "Customer Reviews  4.96 out of 5 Based on 1233 reviews    1181    52    0    0    0 Customer photos & videos Sort by Most Recent Highest Rating Lowest Rating Only Pictures Pictures First Videos First Most Helpful Meredith  Great purchase for sick girls! We squirt saline up their noses and give them ",
+      "images": [
+        {
+          "src": "https://public-images.judge.me/judgeme/logos/verified-checkmark.svg",
+          "alt": "Verified Checkmark"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "id": "shopify-section-promo-popup",
+      "className": "shopify-section",
+      "textPreview": "",
+      "images": []
+    },
+    {
+      "index": 15,
+      "id": "shopify-section-scroll-to-top-btn",
+      "className": "shopify-section",
+      "textPreview": "",
+      "images": []
+    },
+    {
+      "index": 16,
+      "id": "shopify-section-global-music-player",
+      "className": "shopify-section",
+      "textPreview": "",
+      "images": []
+    },
+    {
+      "index": 17,
+      "id": "shopify-section-sections--26004749746357__footer",
+      "className": "shopify-section shopify-section-group-footer-group",
+      "heading": "Quick links",
+      "textPreview": "Quick links Search Shipping Policy Refund Policy How To Use Privacy Policy Terms of Service Join the Nroome Fam! Sign up and get exclusive discounts! Email Sign up Country/region United States (USD $) Payment methods © 2026, Nroome  Refund policy Privacy policy Terms of service Shipping policy Con",
+      "images": [
+        {
+          "src": "https://www.nroome.com/cdn/shop/files/Nroome-Logo-White.png?v=1714883872&width=760",
+          "alt": ""
+        }
+      ]
+    }
+  ],
+  "reviewCount": 13,
+  "faqs": [
+    {
+      "question": "What do I put in it?",
+      "answer": "Most parents use saline solution which is completely natural & drug-free to clear mucus and blocked airways, making it easier to breathe.\n\nSaline is just a mixture of 1/2 tsp of salt and 1 cup distilled water you can make at home.\n\nAlways follow your healthcare provider’s advice if you choose to use it with prescribed solutions."
+    },
+    {
+      "question": "What do I put in it?"
+    },
+    {
+      "question": "What do I put in it?"
+    },
+    {
+      "question": "Can adults also use this?",
+      "answer": "Absolutely. Nroome® comes with both child and adult attachments, so it’s perfect for the whole family. Many parents keep one for themselves as well as their kids."
+    },
+    {
+      "question": "Can adults also use this?"
+    },
+    {
+      "question": "Can adults also use this?"
+    },
+    {
+      "question": "How long is the battery life?",
+      "answer": "Nroome is powered with 2x AA batteries (Not included) or plugged in using USB-C. The battery life should last multiple 10-15 minute treatment sessions, depending on the mist setting. \n\nIf you’d like the device to be rechargeable, you can get rechargeable AA batteries, or use a powerbank.\n\n\nUpdate: Starting January 15th, 2026, all models will now be battery powered, instead of rechargeable using lithium batteries. This was a heavily requested change as our customers preferred to have the option to use AA batteries instead.\n\nIf your device has a seal at the bottom, it is rechargeable. Please do not unseal it as it will affect your warranty."
+    },
+    {
+      "question": "How long is the battery life?"
+    },
+    {
+      "question": "How long is the battery life?"
+    },
+    {
+      "question": "How do I clean and maintain it?",
+      "answer": "Here are the steps for cleaning after each use:\n\n1) Drain any residue solution, then refill a small amount (2-5ml) of water and close the lid. Gently shake to remove any leftover residue. Repeat 1-2 times.\n\n2) Pour a small amount (2-5ml) of hot water (30°C or 86°F) into the medicine bottle and close the cover\n\n3) Hold the power button down to put the device into cleaning mode, let it run for 1-2 minutes to remove residue from mesh holes (the device can clog and not produce mist if you don't clean off the residue)\n\n4) Rinse the medicine bottle and cap with water and gently wipe with a clean cloth, including the front nozzle (you can use a tissue or cottonpick to reach the mesh), then allow the parts to fully dry in a clean environment\n\n5) Rinse the masks and mouthpiece under warm or hot water, to clean off any residue there too\n\nWe also recommend disinfecting with 75% alcohol or acetic acid water after each use to ensure no transfer of bacteria. All of this will be covered in the included manual."
+    },
+    {
+      "question": "How do I clean and maintain it?"
+    },
+    {
+      "question": "How do I clean and maintain it?"
+    },
+    {
+      "question": "Does it include warranty?",
+      "answer": "Yes! We 100% stand by our product. Every order includes free 1-year warranty so if the product stops working, we will replace it free of charge!"
+    },
+    {
+      "question": "Does it include warranty?"
+    },
+    {
+      "question": "Does it include warranty?"
+    },
+    {
+      "question": "How long does shipping take?",
+      "answer": "Here are our usual delivery times per location:\n\nUnited States: 5-12 Business days\nCanada: 8-15 Business days\nUnited Kingdom: 5-12 Business days\nAustralia: 5-12 Business days\nNew Zealand: 8-15 Business days\nRest Of World: 8-15 Business days\n\n*This doesn’t include our 1-3 business day processing time.\n*All shipping times exclude clearance/customs delays"
+    },
+    {
+      "question": "How long does shipping take?"
+    },
+    {
+      "question": "How long does shipping take?"
+    },
+    {
+      "question": "Disclaimer",
+      "answer": "Nroome® is a general wellness device designed for comfort. It is not intended to diagnose, treat, cure, or prevent any disease. Always follow medical advice for health conditions or when using prescribed solutions."
+    },
+    {
+      "question": "Disclaimer"
+    },
+    {
+      "question": "Disclaimer"
+    }
+  ],
+  "bundleCards": [
+    "52128695517365",
+    "52128695517365",
+    "44157804970165",
+    "52452540842165",
+    "44414984323253"
+  ]
+}

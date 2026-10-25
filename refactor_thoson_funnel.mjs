@@ -1,0 +1,2870 @@
+import fs from 'fs';
+
+const SHOP_DOMAIN = 'dsdujr-vn.myshopify.com';
+const THEME_ID = '186607567033';
+const CLIENT_ID = '172e9e29abd0fe12f671d8441479c7c2';
+const CLIENT_SECRET = process.env.SHOPIFY_API_SECRET || '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';
+
+async function getAccessToken() {
+  const res = await fetch(`https://${SHOP_DOMAIN}/admin/oauth/access_token`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ client_id: CLIENT_ID, client_secret: CLIENT_SECRET, grant_type: 'client_credentials' })
+  });
+  const data = await res.json();
+  return data.access_token;
+}
+
+async function uploadThemeAsset(token, key, value) {
+  const url = `https://${SHOP_DOMAIN}/admin/api/2024-10/themes/${THEME_ID}/assets.json`;
+  const res = await fetch(url, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json', 'X-Shopify-Access-Token': token },
+    body: JSON.stringify({ asset: { key, value } })
+  });
+  const data = await res.json();
+  if (res.ok) console.log(`  ✔ Successfully uploaded asset: ${key}`);
+  else {
+    console.error(`  ✗ Failed to upload ${key}:`, JSON.stringify(data.errors || data));
+    throw new Error(`Upload failed for ${key}`);
+  }
+}
+
+// Payment SVG Icons (Crisp, High-Resolution, Retina-Ready)
+const paymentSvgIcons = `
+  <div class="wf-payment-badges">
+    <div class="wf-secure-label">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      <span>GUARANTEED 100% SAFE &amp; SECURE CHECKOUT</span>
+    </div>
+    <div class="wf-badge-icons">
+      <!-- Visa -->
+      <svg class="wf-pay-icon" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="32" rx="4" fill="#ffffff" stroke="#e5e7eb"/>
+        <path d="M19.5 21H16.8L18.5 11H21.2L19.5 21Z" fill="#1434CB"/>
+        <path d="M28.2 11.3C27.6 11.1 26.8 10.9 25.8 10.9C23.2 10.9 21.4 12.2 21.4 14.1C21.4 15.5 22.7 16.3 23.7 16.8C24.7 17.3 25.1 17.6 25.1 18.1C25.1 18.8 24.2 19.2 23.3 19.2C22.2 19.2 21.5 19 20.6 18.6L20.2 18.4L19.8 20.8C20.6 21.1 22 21.4 23.4 21.4C26.2 21.4 28 20 28 18C28 16.4 27 15.5 25.4 14.7C24.5 14.2 23.9 13.9 23.9 13.3C23.9 12.8 24.5 12.3 25.6 12.3C26.5 12.3 27.2 12.5 27.8 12.8L28.2 11.3Z" fill="#1434CB"/>
+        <path d="M32.8 17.7C33 17.2 33.7 15.3 33.7 15.3C33.7 15.3 33.9 14.8 34 14.3L34.2 15.2C34.2 15.2 34.6 17.1 34.8 17.7H32.8ZM36.5 21H38.8L36.8 11H34.7C34.2 11 33.8 11.3 33.6 11.8L29.8 21H32.6L33.2 19.4H36.3L36.5 21Z" fill="#1434CB"/>
+        <path d="M15.4 11H12.6L8.8 20.2C8.6 20.7 8.5 20.9 8.2 21C7.7 21.2 6.8 21.4 6 21.4L6.1 21.7H10.6C11.3 21.7 11.8 21.2 12 20.5L13.1 14.8L15.4 11Z" fill="#1434CB"/>
+      </svg>
+
+      <!-- Mastercard -->
+      <svg class="wf-pay-icon" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="32" rx="4" fill="#ffffff" stroke="#e5e7eb"/>
+        <circle cx="19" cy="16" r="9" fill="#EB001B"/>
+        <circle cx="29" cy="16" r="9" fill="#F79E1B"/>
+        <path d="M24 9.8C25.8 11.4 27 13.6 27 16C27 18.4 25.8 20.6 24 22.2C22.2 20.6 21 18.4 21 16C21 13.6 22.2 11.4 24 9.8Z" fill="#FF5F00"/>
+      </svg>
+
+      <!-- American Express -->
+      <svg class="wf-pay-icon" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="32" rx="4" fill="#006FCF"/>
+        <path d="M10 16L12.5 10H16L17.5 13.5L19 10H22.5L25 16L22.5 22H19L17.5 18.5L16 22H12.5L10 16ZM26 10H38V12.5H33.5V14.5H38V17H33.5V19.5H38V22H26V10Z" fill="#ffffff"/>
+      </svg>
+
+      <!-- PayPal -->
+      <svg class="wf-pay-icon" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="32" rx="4" fill="#ffffff" stroke="#e5e7eb"/>
+        <path d="M18.5 23.5L16.2 9H22C24.4 9 26.2 9.5 27 10.6C27.8 11.7 27.8 13.2 27.3 15C26.5 17.6 24.6 19.3 21.8 19.3H19.6L19 23.5H18.5Z" fill="#003087"/>
+        <path d="M21 21.5L22 15C22.1 14.6 22.4 14.3 22.8 14.3H24.5C26.3 14.3 27.7 13.5 28.2 11.8C28.5 10.9 28.4 10.1 28 9.5C27.7 9.1 27.2 8.8 26.5 8.6C25.9 8.4 25.1 8.3 24.2 8.3H18.2C17.6 8.3 17.1 8.7 17 9.3L15 22.3C14.9 22.8 15.3 23.2 15.8 23.2H19.5L20.1 19.3L21 21.5Z" fill="#0079C1"/>
+      </svg>
+
+      <!-- Apple Pay -->
+      <svg class="wf-pay-icon" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="32" rx="4" fill="#000000"/>
+        <path d="M17.4 15.8C17.4 14.1 18.5 13.1 18.5 13C17.7 11.8 16.4 11.7 15.9 11.7C14.7 11.5 13.5 12.4 12.9 12.4C12.3 12.4 11.3 11.6 10.3 11.6C9 11.6 7.8 12.4 7.1 13.6C5.7 16.1 6.8 19.7 8.1 21.6C8.8 22.5 9.5 23.5 10.5 23.5C11.5 23.5 11.9 22.8 13.1 22.8C14.3 22.8 14.6 23.5 15.7 23.5C16.8 23.5 17.5 22.5 18.1 21.6C18.9 20.5 19.2 19.5 19.2 19.4C19.1 19.4 17.4 18.7 17.4 15.8ZM15.4 10.4C16 9.7 16.4 8.7 16.3 7.7C15.4 7.8 14.3 8.3 13.7 9C13.2 9.6 12.7 10.7 12.9 11.7C13.9 11.7 14.9 11.1 15.4 10.4Z" fill="#ffffff"/>
+        <path d="M22.8 12H24.8V23.5H22.8V12ZM29.2 15.6C27.8 15.6 26.8 16.7 26.8 18.2C26.8 19.7 27.8 20.8 29.2 20.8C30.6 20.8 31.6 19.7 31.6 18.2C31.6 16.7 30.6 15.6 29.2 15.6ZM29.2 22.4C26.9 22.4 25.1 20.7 25.1 18.2C25.1 15.7 26.9 14 29.2 14C31.5 14 33.3 15.7 33.3 18.2C33.3 20.7 31.5 22.4 29.2 22.4Z" fill="#ffffff"/>
+        <path d="M35 12H36.7L39.4 19.8L42.1 12H43.8L40.2 22.2C39.6 23.9 38.8 24.6 37.2 24.6C36.8 24.6 36.3 24.5 36.1 24.4V22.9C36.3 23 36.6 23.1 36.9 23.1C37.8 23.1 38.3 22.7 38.6 21.8L38.9 21.1L35 12Z" fill="#ffffff"/>
+      </svg>
+
+      <!-- Google Pay -->
+      <svg class="wf-pay-icon" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="32" rx="4" fill="#ffffff" stroke="#e5e7eb"/>
+        <path d="M18.8 16.2C18.8 15.7 18.8 15.2 18.7 14.8H13.5V17.3H16.5C16.3 18.2 15.8 18.9 15 19.4V21.1H17.3C18.6 19.9 18.8 17.8 18.8 16.2Z" fill="#4285F4"/>
+        <path d="M13.5 21.7C15 21.7 16.3 21.2 17.3 20.2L15 18.5C14.4 18.9 13.6 19.2 12.6 19.2C11 19.2 9.6 18.1 9.1 16.6H6.7V18.4C7.9 20.8 10.5 21.7 13.5 21.7Z" fill="#34A853"/>
+        <path d="M9.1 15.8C8.9 15.3 8.9 14.7 8.9 14.2C8.9 13.7 8.9 13.1 9.1 12.6V10.8H6.7C6.1 12 5.8 13.3 5.8 14.7C5.8 16.1 6.1 17.4 6.7 18.6L9.1 16.8V15.8Z" fill="#FBBC04"/>
+        <path d="M13.5 9.1C14.7 9.1 15.8 9.5 16.6 10.3L18.4 8.5C17.1 7.3 15.4 6.6 13.5 6.6C10.5 6.6 7.9 7.5 6.7 9.9L9.1 11.7C9.6 10.2 11 9.1 13.5 9.1Z" fill="#EA4335"/>
+        <path d="M25 10H27.5C29 10 30 11.1 30 12.5C30 13.9 29 15 27.5 15H26.2V19H25V10ZM26.2 13.9H27.4C28.3 13.9 28.8 13.3 28.8 12.5C28.8 11.7 28.3 11.1 27.4 11.1H26.2V13.9Z" fill="#5F6368"/>
+        <path d="M32.8 19C31.5 19 30.5 18 30.5 16.6C30.5 15.2 31.5 14.2 32.8 14.2C34.1 14.2 35.1 15.2 35.1 16.6C35.1 18 34.1 19 32.8 19ZM32.8 15.2C32 15.2 31.5 15.8 31.5 16.6C31.5 17.4 32 18 32.8 18C33.6 18 34.1 17.4 34.1 16.6C34.1 15.8 33.6 15.2 32.8 15.2Z" fill="#5F6368"/>
+        <path d="M37 19.3L35.7 14.3H36.8L37.6 17.6L38.4 14.3H39.5L37.6 20.3C37.2 21.2 36.6 21.6 35.8 21.6H35.4V20.6H35.7C36.2 20.6 36.6 20.3 37 19.3Z" fill="#5F6368"/>
+      </svg>
+
+      <!-- Shop Pay -->
+      <svg class="wf-pay-icon" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="32" rx="4" fill="#5A31F4"/>
+        <path d="M14.5 14.3C14.1 13.8 13.4 13.4 12.5 13.4C11.1 13.4 10.1 14.2 10.1 15.5C10.1 18.2 14.9 16.9 14.9 20.2C14.9 21.8 13.5 22.8 11.9 22.8C10.7 22.8 9.6 22.2 9 21.4L10 20.2C10.5 20.8 11.2 21.3 12 21.3C13.1 21.3 13.6 20.7 13.6 20C13.6 17.6 8.8 18.6 8.8 15.4C8.8 13.8 10.2 12 12.6 12C13.7 12 14.6 12.4 15.3 13.1L14.5 14.3ZM16.3 10.5H17.7V14.6C18.3 13.8 19.2 13.3 20.2 13.3C21.9 13.3 23 14.5 23 16.4V22.6H21.6V16.6C21.6 15.4 20.9 14.6 19.8 14.6C18.8 14.6 17.7 15.4 17.7 16.6V22.6H16.3V10.5ZM29.2 14.6C30.6 14.6 31.7 15.7 31.7 17.2C31.7 18.7 30.6 19.8 29.2 19.8C27.8 19.8 26.7 18.7 26.7 17.2C26.7 15.7 27.8 14.6 29.2 14.6ZM29.2 22.8C31.7 22.8 33.1 20.9 33.1 18.4C33.1 15.9 31.7 14 29.2 14C28.2 14 27.3 14.5 26.7 15.3V14.2H25.3V25.5H26.7V21.5C27.3 22.3 28.2 22.8 29.2 22.8ZM34.7 10.5H36.1V22.6H34.7V10.5Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </div>
+`;
+
+// Construct the high-converting Liquid section with complete CSS and JavaScript
+const completeLiquidSection = `
+<!-- ======================================================== -->
+<!-- ZAVELYN MAGTRACK MODULAR MAGNETIC TRAIN SET - PDP FUNNEL -->
+<!-- High-Converting Direct-to-Consumer Design System         -->
+<!-- ======================================================== -->
+
+<div class="wf-pdp-page" id="fn-offer">
+  
+  <!-- BREADCRUMBS -->
+  <div class="wf-container">
+    <div class="wf-breadcrumbs">
+      <a href="/">Home</a> &gt; <a href="/collections/all-products">Shop</a> &gt; <span>Zavelyn MagTrack™ Modular Magnetic Train Set</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1: HERO BUYBOX -->
+  <section class="wf-section wf-hero-buybox">
+    <div class="wf-container wf-hero-grid">
+      
+      <!-- LEFT COLUMN: Sticky Media Gallery -->
+      <div class="wf-gallery-col">
+        <div class="wf-gallery-sticky">
+          
+          <!-- Main Display Image -->
+          <div class="wf-gallery-main" id="wfMainImgWrap">
+            <span class="wf-gallery-badge">50% OFF TODAY</span>
+            <button type="button" class="wf-gallery-nav-btn prev" onclick="skipWfGallery(-1)" aria-label="Previous image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <img id="wf-main-img" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/MagTrack.webp?v=1792809300" alt="Zavelyn MagTrack Modular Magnetic Train Set" loading="eager" width="800" height="800">
+            <button type="button" class="wf-gallery-nav-btn next" onclick="skipWfGallery(1)" aria-label="Next image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+
+          <!-- Thumbnails Row (Horizontal Scroll) -->
+          <div class="wf-gallery-thumbs" id="wfThumbsContainer">
+            <button type="button" class="wf-thumb active" onclick="switchWfGallery('https://cdn.shopify.com/s/files/1/0826/2483/9865/files/MagTrack.webp?v=1792809300', 0)" aria-label="Thumbnail 1">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/MagTrack.webp?v=1792809300" alt="MagTrack Master Set" width="120" height="120">
+            </button>
+            <button type="button" class="wf-thumb" onclick="switchWfGallery('https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-03.png?v=1792809300', 1)" aria-label="Thumbnail 2">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-03.png?v=1792809300" alt="MagTrack Layout in Action" width="120" height="120">
+            </button>
+            <button type="button" class="wf-thumb" onclick="switchWfGallery('https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-01.png?v=1792809300', 2)" aria-label="Thumbnail 3">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-01.png?v=1792809300" alt="Magnetic Click Pieces" width="120" height="120">
+            </button>
+            <button type="button" class="wf-thumb" onclick="switchWfGallery('https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-05.png?v=1792809300', 3)" aria-label="Thumbnail 4">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-05.png?v=1792809300" alt="Motorized Train" width="120" height="120">
+            </button>
+            <button type="button" class="wf-thumb" onclick="switchWfGallery('https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-04.png?v=1792809300', 4)" aria-label="Thumbnail 5">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-04.png?v=1792809300" alt="Endless Modular Track" width="120" height="120">
+            </button>
+            <button type="button" class="wf-thumb" onclick="switchWfGallery('https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-02.png?v=1792809300', 5)" aria-label="Thumbnail 6">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-02.png?v=1792809300" alt="Safe Durable Pieces" width="120" height="120">
+            </button>
+          </div>
+
+          <!-- Quick Trust Badges below thumbs -->
+          <div class="wf-gallery-guarantees">
+            <div class="wf-gal-guarantee-item">
+              <span class="wf-gal-icon">🛡️</span>
+              <span><strong>90-Day</strong> Risk-Free Trial</span>
+            </div>
+            <div class="wf-gal-guarantee-item">
+              <span class="wf-gal-icon">🚚</span>
+              <span><strong>Free Shipping</strong> on 64 &amp; 128 Pc Sets</span>
+            </div>
+            <div class="wf-gal-guarantee-item">
+              <span class="wf-gal-icon">🧩</span>
+              <span><strong>100%</strong> BPA-Free &amp; Drop-Proof</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Buybox & Package Selectors -->
+      <div class="wf-buybox-col">
+        
+        <!-- Trustpilot & Eyebrow -->
+        <div class="wf-header-group">
+          <div class="wf-rating-row">
+            <span class="wf-trustpilot-stars">{% render 'trustpilot-stars', width: 92, height: 17 %}</span>
+            <span class="wf-rating-text">4.9 / 5.0 (2,180+ Verified Parents &amp; Teachers)</span>
+          </div>
+          
+          <div class="wf-eyebrow-pill">
+            <span>STEM ACCREDITED</span> &bull; <span>ZERO SCREEN TIME</span> &bull; <span>AGES 3+</span>
+          </div>
+
+          <h1 class="wf-product-title">Zavelyn MagTrack™ Modular Magnetic Train Set</h1>
+          <p class="wf-product-subtitle">The snap-together magnetic train set kids engineer themselves. Build gravity-defying loops, multi-level 3D bridges, and endless custom routes with high-torque USB-rechargeable electric train.</p>
+        </div>
+
+        <!-- Package Section Header -->
+        <div class="wf-package-header">
+          <div class="wf-package-heading">Select Your Package</div>
+          <div class="wf-package-sub-badge">🔥 Instant 50% Off Applied</div>
+        </div>
+
+        <!-- BUNDLE CARDS SELECTOR -->
+        <div class="wf-bundle-selector">
+          
+          <!-- Master Package (128 Pcs) - SELECTED BY DEFAULT -->
+          <div class="wf-bundle-card selected" id="wf-bundle-3" onclick="selectWfBundle('67925383807161', '159.00', '299.00', 'wf-bundle-3', 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/MagTrack.webp?v=1792809300')">
+            <div class="wf-bundle-ribbon ribbon-gold">★ BEST VALUE &bull; EXTRA 10% OFF &bull; FREE EXPEDITED SHIPPING</div>
+            <div class="wf-bundle-body">
+              <div class="wf-bundle-radio">
+                <span class="wf-radio-outer"><span class="wf-radio-inner"></span></span>
+              </div>
+              <div class="wf-bundle-thumb">
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/MagTrack.webp?v=1792809300" alt="Master Set" width="68" height="68">
+              </div>
+              <div class="wf-bundle-details">
+                <div class="wf-bundle-name-wrap">
+                  <span class="wf-bundle-title">Master Kit (128 Pcs + 2 Electric Trains)</span>
+                  <span class="wf-bundle-tag tag-green">Mega Layout</span>
+                </div>
+                <div class="wf-bundle-specs">
+                  <span>✔ 128 Modular Magnetic Track &amp; Stunt Pieces</span>
+                  <span>✔ 2x Motorized USB-Rechargeable Trains</span>
+                  <span>✔ Multi-Tier Bridge Pillars &amp; Looping Rails</span>
+                  <span>✔ Free Domestic Expedited Shipping</span>
+                </div>
+              </div>
+              <div class="wf-bundle-pricing">
+                <span class="wf-price-old">$299.00</span>
+                <span class="wf-price-current">$159.00</span>
+                <span class="wf-save-pill">SAVE $140.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRO Package (64 Pcs) -->
+          <div class="wf-bundle-card" id="wf-bundle-2" onclick="selectWfBundle('67925383774393', '119.00', '169.00', 'wf-bundle-2', 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-03.png?v=1792809300')">
+            <div class="wf-bundle-ribbon ribbon-blue">★ MOST POPULAR &bull; FREE SHIPPING</div>
+            <div class="wf-bundle-body">
+              <div class="wf-bundle-radio">
+                <span class="wf-radio-outer"><span class="wf-radio-inner"></span></span>
+              </div>
+              <div class="wf-bundle-thumb">
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-03.png?v=1792809300" alt="PRO Set" width="68" height="68">
+              </div>
+              <div class="wf-bundle-details">
+                <div class="wf-bundle-name-wrap">
+                  <span class="wf-bundle-title">PRO Kit (64 Pcs + 1 Electric Train)</span>
+                  <span class="wf-bundle-tag tag-blue">Family Favorite</span>
+                </div>
+                <div class="wf-bundle-specs">
+                  <span>✔ 64 Modular Magnetic Track Pieces</span>
+                  <span>✔ 1x Motorized USB-Rechargeable Train</span>
+                  <span>✔ Elevated Bridge Piers &amp; Stunt Curves</span>
+                  <span>✔ Free Domestic Shipping</span>
+                </div>
+              </div>
+              <div class="wf-bundle-pricing">
+                <span class="wf-price-old">$169.00</span>
+                <span class="wf-price-current">$119.00</span>
+                <span class="wf-save-pill">SAVE $50.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rookie Package (32 Pcs) -->
+          <div class="wf-bundle-card" id="wf-bundle-1" onclick="selectWfBundle('67925383741625', '69.00', '139.00', 'wf-bundle-1', 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-01.png?v=1792809300')">
+            <div class="wf-bundle-ribbon ribbon-gray">STARTER PACK</div>
+            <div class="wf-bundle-body">
+              <div class="wf-bundle-radio">
+                <span class="wf-radio-outer"><span class="wf-radio-inner"></span></span>
+              </div>
+              <div class="wf-bundle-thumb">
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-01.png?v=1792809300" alt="Rookie Set" width="68" height="68">
+              </div>
+              <div class="wf-bundle-details">
+                <div class="wf-bundle-name-wrap">
+                  <span class="wf-bundle-title">Rookie Starter (32 Pcs + 1 Train)</span>
+                </div>
+                <div class="wf-bundle-specs">
+                  <span>✔ 32 Modular Magnetic Track Pieces</span>
+                  <span>✔ 1x Motorized USB-Rechargeable Train</span>
+                  <span>✔ Flat &amp; Curve Layout Essentials</span>
+                </div>
+              </div>
+              <div class="wf-bundle-pricing">
+                <span class="wf-price-old">$139.00</span>
+                <span class="wf-price-current">$69.00</span>
+                <span class="wf-save-pill">SAVE $70.00</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Quantity & Subtotal Row -->
+        <div class="wf-action-box">
+          <div class="wf-qty-subtotal-row">
+            <div class="wf-qty-picker-wrap">
+              <span class="wf-qty-label">Quantity:</span>
+              <div class="wf-qty-stepper">
+                <button type="button" class="wf-qty-btn minus" onclick="changeWfQty(-1)" aria-label="Decrease quantity">-</button>
+                <span class="wf-qty-val" id="wf-qty-num">1</span>
+                <button type="button" class="wf-qty-btn plus" onclick="changeWfQty(1)" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+            
+            <div class="wf-subtotal-wrap">
+              <span class="wf-subtotal-label">Subtotal:</span>
+              <span id="wf-total-compare" class="wf-subtotal-compare">$299.00</span>
+              <span id="wf-total-display" class="wf-subtotal-price">$159.00</span>
+            </div>
+          </div>
+
+          <!-- PRIMARY ADD TO CART CTA -->
+          <button type="button" id="wf-main-atc-btn" class="wf-cta-primary" onclick="submitWfOrder()">
+            <span class="wf-cta-main-text">ADD TO CART &bull; CLAIM 50% OFF TODAY ➔</span>
+          </button>
+
+          <!-- 1-CLICK INSTANT CHECKOUT -->
+          <button type="button" id="wf-main-shopnow-btn" class="wf-cta-secondary" onclick="submitWfDirectCheckout()">
+            <span>⚡ BUY NOW WITH 1-CLICK CHECKOUT ➔</span>
+          </button>
+
+          <!-- 3-Pillar Trust Grid -->
+          <div class="wf-trust-badges-grid">
+            <div class="wf-trust-badge-cell">
+              <span class="wf-tb-icon">🛡️</span>
+              <div class="wf-tb-text">
+                <strong>90-Day Money-Back</strong>
+                <span>100% Risk-Free Guarantee</span>
+              </div>
+            </div>
+            <div class="wf-trust-badge-cell">
+              <span class="wf-tb-icon">📦</span>
+              <div class="wf-tb-text">
+                <strong>Fast US Dispatch</strong>
+                <span>Tracked 24-48h Delivery</span>
+              </div>
+            </div>
+            <div class="wf-trust-badge-cell">
+              <span class="wf-tb-icon">🔒</span>
+              <div class="wf-tb-text">
+                <strong>Bank-Grade SSL</strong>
+                <span>256-Bit Encrypted Checkout</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Crisp Inline Payment SVGs -->
+          ${paymentSvgIcons}
+
+          <!-- Highlights & Benefits Accordion/Card -->
+          <div class="wf-benefits-card">
+            <div class="wf-benefits-header">
+              <span class="wf-bf-title">WHY PARENTS &amp; EDUCATORS CHOOSE ZAVELYN</span>
+            </div>
+            <div class="wf-benefits-list">
+              <div class="wf-benefit-item">
+                <span class="wf-check-mark">&#10004;</span>
+                <div class="wf-benefit-text"><strong>100% Screen-Free Engagement:</strong> Keeps kids focused, creative, and happily building for hours without phones or tablets.</div>
+              </div>
+              <div class="wf-benefit-item">
+                <span class="wf-check-mark">&#10004;</span>
+                <div class="wf-benefit-text"><strong>Patented Snap-Lock Magnets:</strong> Ultra-strong dual-polarity neodymium magnets click tight instantly and hold steady through loops and steep climbs.</div>
+              </div>
+              <div class="wf-benefit-item">
+                <span class="wf-check-mark">&#10004;</span>
+                <div class="wf-benefit-text"><strong>Certified STEM Engineering:</strong> Fosters 3D spatial reasoning, architectural planning, and hands-on physics through intuitive play.</div>
+              </div>
+              <div class="wf-benefit-item">
+                <span class="wf-check-mark">&#10004;</span>
+                <div class="wf-benefit-text"><strong>Durable &amp; Non-Toxic ABS:</strong> Ultra-tough drop-resistant polymers with silky chamfered edges, 100% BPA-free and child-safe.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: 4-COLUMN FEATURE CARDS GRID -->
+  <section class="wf-section wf-features-section">
+    <div class="wf-container">
+      <div class="wf-section-header">
+        <span class="wf-section-pill">ENGINEERED FOR BRILLIANCE</span>
+        <h2 class="wf-section-title">Designed for Independent Creative Engineering</h2>
+        <p class="wf-section-subtitle">Real architectural freedom. Drop-resistant components. Hours of screen-free focus.</p>
+      </div>
+
+      <div class="wf-features-grid">
+        <!-- Feature 1 -->
+        <div class="wf-feature-card">
+          <div class="wf-feature-img-box">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-01.png?v=1792809300" alt="Magnetic Click Pieces" width="500" height="320" loading="lazy">
+          </div>
+          <div class="wf-feature-info">
+            <h3 class="wf-feature-title">Instant Magnetic Click</h3>
+            <p class="wf-feature-desc">Neodymium magnetic joints align automatically with a satisfying snap. Toddlers and big kids can construct complex layouts without frustrating pinches or stuck connectors.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="wf-feature-card">
+          <div class="wf-feature-img-box">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-02.png?v=1792809300" alt="Durable and Child-Safe" width="500" height="320" loading="lazy">
+          </div>
+          <div class="wf-feature-info">
+            <h3 class="wf-feature-title">Indestructible ABS Polymer</h3>
+            <p class="wf-feature-desc">Engineered from premium impact-resistant ABS. Magnets are ultrasonically sealed inside reinforced double-shell walls so they never dislodge or expose loose parts.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="wf-feature-card">
+          <div class="wf-feature-img-box">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-04.png?v=1792809300" alt="Modular 3D Track System" width="500" height="320" loading="lazy">
+          </div>
+          <div class="wf-feature-info">
+            <h3 class="wf-feature-title">Modular 3D Engineering</h3>
+            <p class="wf-feature-desc">Go beyond flat carpet layouts. Interlocking vertical bridge piers let young builders elevate tracks, create multi-tier spirals, steep overpasses, and roller-coaster dips.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="wf-feature-card">
+          <div class="wf-feature-img-box">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-05.png?v=1792809300" alt="Motorized USB-Rechargeable Train" width="500" height="320" loading="lazy">
+          </div>
+          <div class="wf-feature-info">
+            <h3 class="wf-feature-title">USB Fast-Recharge Engine</h3>
+            <p class="wf-feature-desc">No expensive AA/AAA batteries that die every two days. High-torque motorized train recharges quickly via standard USB-C and features magnetic guide rollers that cling firmly to the tracks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: EDITORIAL STORY & NARRATIVE -->
+  <section class="wf-section wf-story-section">
+    <div class="wf-container">
+      <div class="wf-story-card">
+        <div class="wf-story-grid">
+          <div class="wf-story-media-col">
+            <div class="wf-story-img-wrap">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/MagTrack.webp?v=1792809300" alt="Kids playing with Zavelyn MagTrack" width="600" height="600" loading="lazy">
+              <div class="wf-story-badge">
+                <span>🌟 Voted #1 Screen-Free Toy of 2026</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="wf-story-content-col">
+            <span class="wf-section-pill">SCREEN-FREE CHILDHOOD JOY</span>
+            <h2 class="wf-story-heading">End Screen Battles: Give Your Child A Toy That Teaches, Focuses, and Delights</h2>
+            
+            <div class="wf-story-paragraphs">
+              <p>Every parent knows the dreaded tablet struggle. Hours slip away behind glowing screens, followed by irritable meltdowns, scattered focus, and passive consumption. Modern kids crave real tactile feedback, spatial problem-solving, and the thrill of making things work with their own two hands.</p>
+              <p>With <strong>Zavelyn MagTrack</strong>, your living room floor transforms into an active engineering laboratory. Watch your child plan multi-tier bridge crossovers, test gravity drops, iterate when the train derails, and beam with genuine pride when their custom route completes its maiden voyage.</p>
+            </div>
+
+            <div class="wf-story-perks">
+              <div class="wf-story-perk-item">
+                <div class="wf-perk-icon-circle">🧠</div>
+                <div class="wf-perk-text">
+                  <strong>Calm, Deep Focus</strong>
+                  <span>Engages dopamine pathways through physical creation, not addictive algorithmic flashing lights.</span>
+                </div>
+              </div>
+              <div class="wf-story-perk-item">
+                <div class="wf-perk-icon-circle">🤝</div>
+                <div class="wf-perk-text">
+                  <strong>Collaborative Sibling Play</strong>
+                  <span>Large modular kits give multiple children plenty of pieces to build sprawling cities together without fighting.</span>
+                </div>
+              </div>
+              <div class="wf-story-perk-item">
+                <div class="wf-perk-icon-circle">⚡</div>
+                <div class="wf-perk-text">
+                  <strong>3-Minute Quick Tidy-Up</strong>
+                  <span>Magnets attract each other during pack-up, making clean-up time take under 3 minutes.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: 3-STEP SETUP -->
+  <section class="wf-section wf-steps-section">
+    <div class="wf-container">
+      <div class="wf-section-header">
+        <span class="wf-section-pill">EFFORTLESS PLAYTIME</span>
+        <h2 class="wf-section-title">How MagTrack Works in 3 Simple Steps</h2>
+        <p class="wf-section-subtitle">Zero complicated tools or frustrating tiny screws. Open the box and start building.</p>
+      </div>
+
+      <div class="wf-steps-grid">
+        <div class="wf-step-card">
+          <div class="wf-step-badge">STEP 01</div>
+          <div class="wf-step-icon-wrap">🧩</div>
+          <h3 class="wf-step-name">Snap the Tracks Together</h3>
+          <p class="wf-step-description">Strong magnetic joints snap into place effortlessly at any angle. Lay down loops, curves, switchbacks, and straightaways in seconds.</p>
+        </div>
+
+        <div class="wf-step-card">
+          <div class="wf-step-badge">STEP 02</div>
+          <div class="wf-step-icon-wrap">🚂</div>
+          <h3 class="wf-step-name">Switch On the Train</h3>
+          <p class="wf-step-description">Press the top power toggle on the motorized electric engine. Magnetic guide wheels latch onto the tracks and cruise through steep inclines.</p>
+        </div>
+
+        <div class="wf-step-card">
+          <div class="wf-step-badge">STEP 03</div>
+          <div class="wf-step-icon-wrap">🏗️</div>
+          <h3 class="wf-step-name">Elevate, Test &amp; Expand</h3>
+          <p class="wf-step-description">Stack bridge piers to build multi-story elevated roller-coasters. Reconfigure tracks in real-time as the train is running!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: VIDEO & STUNT DEMO SHOWCASE -->
+  <section class="wf-section wf-video-section">
+    <div class="wf-container">
+      <div class="wf-video-card">
+        <div class="wf-video-grid">
+          <div class="wf-video-media-col">
+            <div class="wf-video-frame">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/6a8eaac1-5d40-418f-aa89-b6522654543f_1e60f38e-84d1-4c22-bb85-35158bc9c2a0.webp?v=1792809300" alt="MagTrack Live Stunt Run" width="600" height="400" loading="lazy">
+              <div class="wf-video-tag">
+                <span class="wf-pulse-dot"></span>
+                <span>REAL KIDS TESTED &bull; 100% ACTIVE PLAY</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="wf-video-text-col">
+            <span class="wf-section-pill">SEE IT IN ACTION &bull; 3D MAGNETIC STUNTS</span>
+            <h2 class="wf-video-heading">Gravity-Defying Magnetic Grip &amp; High-Torque Climbing</h2>
+            
+            <p class="wf-video-lead">Unlike old-fashioned wooden or plastic toy trains that derail at the slightest bump, MagTrack features integrated magnetic stability rails that keep the train firmly glued to the track even on steep 45-degree climbs and inverted loops.</p>
+            
+            <div class="wf-video-checklist">
+              <div class="wf-vc-item">
+                <span class="wf-vc-icon">🧲</span>
+                <div>
+                  <strong>Ultra-Secure Anti-Derailment:</strong>
+                  <span>Continuous magnetic pull keeps wheels tracking smoothly at top speed without falling off.</span>
+                </div>
+              </div>
+              <div class="wf-vc-item">
+                <span class="wf-vc-icon">🔋</span>
+                <div>
+                  <strong>Zero Battery Costs (USB Fast Charge):</strong>
+                  <span>High-capacity rechargeable lithium cell delivers hours of high-torque climbing without AA purchases.</span>
+                </div>
+              </div>
+              <div class="wf-vc-item">
+                <span class="wf-vc-icon">🧱</span>
+                <div>
+                  <strong>100% Modular &amp; Expandable:</strong>
+                  <span>All Zavelyn MagTrack packages combine seamlessly into giant mega-layouts.</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="wf-video-cta" onclick="document.querySelector('#fn-offer').scrollIntoView({behavior: 'smooth'})">
+              <span>CLAIM 50% OFF TODAY &bull; SELECT PACKAGE &rarr;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: PRODUCT SPECIFICATIONS MATRIX -->
+  <section class="wf-section wf-specs-section">
+    <div class="wf-container">
+      <div class="wf-section-header">
+        <span class="wf-section-pill">PREMIUM CRAFTSMANSHIP</span>
+        <h2 class="wf-section-title">Product Specifications at a Glance</h2>
+        <p class="wf-section-subtitle">Engineered for commercial-grade durability and complete child safety.</p>
+      </div>
+
+      <div class="wf-specs-grid">
+        <div class="wf-spec-card">
+          <div class="wf-spec-label">Magnetic Core</div>
+          <div class="wf-spec-val">Ultrasonic Sealed N52 Neodymium</div>
+        </div>
+        <div class="wf-spec-card">
+          <div class="wf-spec-label">Material Safety</div>
+          <div class="wf-spec-val">100% BPA-Free Non-Toxic Impact ABS</div>
+        </div>
+        <div class="wf-spec-card">
+          <div class="wf-spec-label">Train Power Supply</div>
+          <div class="wf-spec-val">USB-C Fast Rechargeable Lithium-Ion</div>
+        </div>
+        <div class="wf-spec-card">
+          <div class="wf-spec-label">Battery Life</div>
+          <div class="wf-spec-val">Up to 90 Mins Continuous Run</div>
+        </div>
+        <div class="wf-spec-card">
+          <div class="wf-spec-label">Safety Compliance</div>
+          <div class="wf-spec-val">ASTM F963 &amp; CPSIA Safety Certified</div>
+        </div>
+        <div class="wf-spec-card">
+          <div class="wf-spec-label">Recommended Age</div>
+          <div class="wf-spec-val">Ages 3+ (Toddler to Pre-Teen)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: COMPARISON TABLE -->
+  <section class="wf-section wf-comparison-section">
+    <div class="wf-container">
+      <div class="wf-section-header">
+        <span class="wf-section-pill">THE SUPERIOR CHOICE</span>
+        <h2 class="wf-section-title">Zavelyn MagTrack vs. Traditional Toy Trains</h2>
+        <p class="wf-section-subtitle">See why over 50,000+ families chose MagTrack for screen-free creative playtime.</p>
+      </div>
+
+      <div class="wf-table-card">
+        <table class="wf-comp-table">
+          <thead>
+            <tr>
+              <th class="wf-th-feature">KEY FEATURE</th>
+              <th class="wf-th-winner">ZAVELYN MAGTRACK™</th>
+              <th class="wf-th-loser">CHEAP PLASTIC / WOODEN TRACKS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="wf-td-feature">Magnetic 3D Elevation</td>
+              <td class="wf-winner-cell">&#10004; Strong magnetic climbing &amp; inverted loops</td>
+              <td class="wf-loser-cell">&#10008; Flat carpet only, collapses easily</td>
+            </tr>
+            <tr>
+              <td class="wf-td-feature">Screen-Free Attention Span</td>
+              <td class="wf-winner-cell">&#10004; 2+ hours absorbed creative engineering</td>
+              <td class="wf-loser-cell">&#10008; Kids lose interest within 10 minutes</td>
+            </tr>
+            <tr>
+              <td class="wf-td-feature">Battery &amp; Running Costs</td>
+              <td class="wf-winner-cell">&#10004; USB-C Rechargeable (Zero battery costs)</td>
+              <td class="wf-loser-cell">&#10008; Requires non-stop expensive AAA batteries</td>
+            </tr>
+            <tr>
+              <td class="wf-td-feature">Durability &amp; Child Safety</td>
+              <td class="wf-winner-cell">&#10004; Sealed ABS polymers, shatterproof</td>
+              <td class="wf-loser-cell">&#10008; Snaps, splinters, and exposed small magnets</td>
+            </tr>
+            <tr>
+              <td class="wf-td-feature">Assembly Speed</td>
+              <td class="wf-winner-cell">&#10004; 100% Tool-free instant magnetic snap</td>
+              <td class="wf-loser-cell">&#10008; Difficult interlocking pegs that pinch fingers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: FAQ ACCORDION -->
+  <section class="wf-section wf-faq-section">
+    <div class="wf-container wf-faq-container">
+      <div class="wf-section-header">
+        <span class="wf-section-pill">COMMON QUESTIONS</span>
+        <h2 class="wf-section-title">Frequently Asked Questions</h2>
+        <p class="wf-section-subtitle">Everything you need to know about setting up and enjoying MagTrack.</p>
+      </div>
+
+      <div class="wf-faq-list">
+        <details class="wf-faq-item" open>
+          <summary class="wf-faq-question">
+            <span>Does the motorized train require regular batteries?</span>
+            <span class="wf-faq-toggle">+</span>
+          </summary>
+          <div class="wf-faq-answer">
+            <p>No! The electric train features an integrated USB-rechargeable battery. Simply plug the included charging cable into any USB port or wall adapter, and in about 30 minutes your train is fully powered and ready for up to 90 minutes of continuous high-torque climbing.</p>
+          </div>
+        </details>
+
+        <details class="wf-faq-item">
+          <summary class="wf-faq-question">
+            <span>Are the magnets safe and secure for toddlers and young children?</span>
+            <span class="wf-faq-toggle">+</span>
+          </summary>
+          <div class="wf-faq-answer">
+            <p>Yes, 100%. Safety is our top priority. Every neodymium magnet is ultrasonically sealed inside reinforced double-layered impact-resistant ABS plastic. There are zero loose magnets, sharp splinters, or swallow hazards. Certified compliant with ASTM F963 and CPSIA child toy safety standards.</p>
+          </div>
+        </details>
+
+        <details class="wf-faq-item">
+          <summary class="wf-faq-question">
+            <span>Can I combine multiple sets into one massive layout?</span>
+            <span class="wf-faq-toggle">+</span>
+          </summary>
+          <div class="wf-faq-answer">
+            <p>Absolutely! All Zavelyn MagTrack packages (Rookie, PRO, and Master) use identical universal magnetic joint dimensions. You can connect two, three, or more sets together to span entire bedrooms, weave around table legs, and build soaring multi-level sky bridges.</p>
+          </div>
+        </details>
+
+        <details class="wf-faq-item">
+          <summary class="wf-faq-question">
+            <span>What age range is MagTrack designed for?</span>
+            <span class="wf-faq-toggle">+</span>
+          </summary>
+          <div class="wf-faq-answer">
+            <p>MagTrack is ideal for children ages 3 to 12. Toddlers love the satisfying magnetic snap and watching the motorized train cruise, while older kids (ages 6 to 12) love engineering complex gravity-defying bridges, switch-tracks, and high-speed stunt layouts.</p>
+          </div>
+        </details>
+
+        <details class="wf-faq-item">
+          <summary class="wf-faq-question">
+            <span>What is your guarantee and return policy?</span>
+            <span class="wf-faq-toggle">+</span>
+          </summary>
+          <div class="wf-faq-answer">
+            <p>Every order is covered by our 90-Day 100% Satisfaction Money-Back Guarantee. If your child doesn't absolutely love building with MagTrack, or if any piece is ever damaged during playtime, contact our US support team for a full refund or free replacement.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: DOORSTEP DELIVERY GUARANTEE & REAL-TIME TRACKING -->
+  <section class="wf-section wf-delivery-section">
+    <div class="wf-container">
+      <div class="wf-delivery-card">
+        
+        <div class="wf-delivery-header">
+          <div class="wf-delivery-pill">
+            <span>🚚 FAST &amp; INSURED WORLDWIDE EXPRESS SHIPPING</span>
+          </div>
+          <h2 class="wf-delivery-heading">Doorstep Delivery Guarantee &amp; Real-Time Tracking</h2>
+        </div>
+
+        <div class="wf-delivery-grid">
+          <!-- Left Media Column: FedEx Truck + 3D Globe with Trucks -->
+          <div class="wf-delivery-media-col">
+            <div class="wf-delivery-img-box main-truck">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/5555.webp?v=1792856415" alt="FedEx Tracked Delivery Truck" width="560" height="350" loading="lazy">
+              <div class="wf-truck-badge">
+                <span>⚡ Handled with Care &bull; Direct Carrier Dispatch</span>
+              </div>
+            </div>
+            <div class="wf-delivery-img-box globe-box">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/44444.webp?v=1792856415" alt="Worldwide &amp; US Express Delivery" width="560" height="350" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Right Content Column: Detailed Narrative + 2x2 Badges -->
+          <div class="wf-delivery-content-col">
+            <div class="wf-delivery-body-text">
+              <p>Every Zavelyn order is meticulously inspected, cushioned in heavy-duty protective packaging, and dispatched directly from our regional fulfillment centers within <strong>24–48 business hours</strong>. We partner directly with trusted premier carriers including <strong>FedEx, USPS, and DHL Express</strong> to guarantee rapid, dependable, door-to-door transit across the United States and worldwide.</p>
+              <p>The moment your shipment leaves our facility, you will automatically receive an instant tracking link via email and SMS with live, step-by-step delivery updates. Backed by our <strong>100% In-Transit Protection Guarantee</strong> &mdash; if your parcel experiences any transit delay or packaging damage, our dedicated 24/7 support team will arrange an immediate zero-cost replacement without delay.</p>
+            </div>
+
+            <div class="wf-delivery-badges-grid">
+              <div class="wf-db-item">
+                <span class="wf-db-icon">⏱️</span>
+                <div class="wf-db-text">
+                  <strong>24–48h Dispatch</strong>
+                  <span>Swift domestic fulfillment from regional hubs</span>
+                </div>
+              </div>
+              <div class="wf-db-item">
+                <span class="wf-db-icon">🛡️</span>
+                <div class="wf-db-text">
+                  <strong>100% Insured Transit</strong>
+                  <span>Full coverage against lost or transit-damaged items</span>
+                </div>
+              </div>
+              <div class="wf-db-item">
+                <span class="wf-db-icon">🔍</span>
+                <div class="wf-db-text">
+                  <strong>Live Real-Time Tracking</strong>
+                  <span>Doorstep progress notifications via SMS &amp; email</span>
+                </div>
+              </div>
+              <div class="wf-db-item">
+                <span class="wf-db-icon">🔄</span>
+                <div class="wf-db-text">
+                  <strong>90-Day Money-Back</strong>
+                  <span>Total risk-free satisfaction guarantee on all orders</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: CUSTOMER REVIEWS -->
+  <section class="wf-section wf-reviews-section">
+    <div class="wf-container">
+      <div class="wf-section-header">
+        <span class="wf-section-pill">REAL PARENT FEEDBACK</span>
+        <h2 class="wf-section-title">What Parents &amp; Grandparents Are Saying</h2>
+        <div class="wf-reviews-stars-summary">
+          <span class="wf-tp-stars">{% render 'trustpilot-stars', width: 104, height: 20 %}</span>
+          <span class="wf-reviews-count-text">4.9 / 5.0 Rating (2,180+ Verified Customer Reviews)</span>
+        </div>
+      </div>
+
+      <div class="wf-reviews-grid">
+        <div class="wf-review-card">
+          <div class="wf-review-head">
+            <div class="wf-rev-author">
+              <strong>Sarah M.</strong>
+              <span class="wf-verified-badge">✔ Verified Buyer</span>
+            </div>
+            <span class="wf-review-date">3 days ago</span>
+          </div>
+          <div class="wf-card-stars">★★★★★</div>
+          <h3 class="wf-review-headline">"Finally a toy he plays with every single day!"</h3>
+          <p class="wf-review-body">"I was skeptical because my 5-year-old usually gets bored of new toys in 24 hours. MagTrack completely surprised us. He woke up on Saturday and built a three-level track across his rug and coffee table. It's been two weeks and he hasn't asked for the iPad once!"</p>
+          <div class="wf-review-photo">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-03.png?v=1792809300" alt="Sarah M. Review Photo" width="400" height="260" loading="lazy">
+          </div>
+        </div>
+
+        <div class="wf-review-card">
+          <div class="wf-review-head">
+            <div class="wf-rev-author">
+              <strong>David K.</strong>
+              <span class="wf-verified-badge">✔ Verified Buyer</span>
+            </div>
+            <span class="wf-review-date">1 week ago</span>
+          </div>
+          <div class="wf-card-stars">★★★★★</div>
+          <h3 class="wf-review-headline">"The magnetic strength is genuinely impressive."</h3>
+          <p class="wf-review-body">"Much higher quality than the wooden tracks we bought last Christmas. The train actually climbs steep inclines without stalling, and the magnets click together so smoothly my 3-year-old can do it all by herself. Ended up ordering another Master kit for my nephew!"</p>
+          <div class="wf-review-photo">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-04.png?v=1792809300" alt="David K. Review Photo" width="400" height="260" loading="lazy">
+          </div>
+        </div>
+
+        <div class="wf-review-card">
+          <div class="wf-review-head">
+            <div class="wf-rev-author">
+              <strong>Elena R.</strong>
+              <span class="wf-verified-badge">✔ Verified Buyer</span>
+            </div>
+            <span class="wf-review-date">2 weeks ago</span>
+          </div>
+          <div class="wf-card-stars">★★★★★</div>
+          <h3 class="wf-review-headline">"Zero battery headaches, brilliant design."</h3>
+          <p class="wf-review-body">"Having USB rechargeable trains is a total game changer. We just plug them in when the kids take a snack break and they're ready to run again. Super durable plastic, zero sharp edges, and super easy cleanup because the pieces just stick to each other!"</p>
+          <div class="wf-review-photo">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-05.png?v=1792809300" alt="Elena R. Review Photo" width="400" height="260" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY BOTTOM PURCHASE BAR -->
+  <div class="wf-sticky-bar" id="wf-sticky-bar">
+    <div class="wf-container wf-sticky-inner">
+      <div class="wf-sticky-left">
+        <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/MagTrack.webp?v=1792809300" id="wf-sticky-img" alt="MagTrack Sticky" width="48" height="48">
+        <div class="wf-sticky-meta">
+          <div class="wf-sticky-title">Zavelyn MagTrack™</div>
+          <div class="wf-sticky-price" id="wf-sticky-price-val">$159.00 (Master Kit)</div>
+        </div>
+      </div>
+      <button type="button" class="wf-sticky-btn" onclick="document.querySelector('#fn-offer').scrollIntoView({behavior:'smooth'})">
+        SELECT PACKAGE &rarr;
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ======================================================== -->
+<!-- COMPREHENSIVE CSS DESIGN SYSTEM                          -->
+<!-- ======================================================== -->
+<style>
+  :root {
+    --wf-primary: #8a2c13;
+    --wf-primary-hover: #72240f;
+    --wf-primary-light: #fbeee8;
+    --wf-ink: #231f20;
+    --wf-body: #4a3e41;
+    --wf-muted: #736b69;
+    --wf-border: #e7e4df;
+    --wf-card-bg: #ffffff;
+    --wf-bg-soft: #faf7f4;
+    --wf-green: #219662;
+    --wf-green-light: #eaf6f0;
+    --wf-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .wf-pdp-page {
+    font-family: var(--wf-font);
+    color: var(--wf-body);
+    background-color: #ffffff;
+    padding-bottom: 60px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wf-pdp-page * {
+    box-sizing: border-box;
+  }
+
+  .wf-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Breadcrumbs */
+  .wf-breadcrumbs {
+    font-size: 13px;
+    color: var(--wf-muted);
+    padding: 16px 0 10px 0;
+  }
+  .wf-breadcrumbs a {
+    color: #59514f;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .wf-breadcrumbs a:hover {
+    color: var(--wf-primary);
+  }
+  .wf-breadcrumbs span {
+    color: var(--wf-ink);
+    font-weight: 600;
+  }
+
+  /* Section Layout */
+  .wf-section {
+    padding: 48px 0;
+  }
+
+  .wf-section-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 36px auto;
+  }
+
+  .wf-section-pill {
+    display: inline-block;
+    background: var(--wf-primary-light);
+    color: var(--wf-primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .wf-section-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    line-height: 1.25;
+    margin: 0 0 10px 0;
+  }
+
+  .wf-section-subtitle {
+    font-size: 15px;
+    color: var(--wf-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ====================================================== */
+  /* HERO BUYBOX SECTION                                    */
+  /* ====================================================== */
+  .wf-hero-buybox {
+    padding-top: 12px;
+    border-bottom: 1px solid var(--wf-border);
+  }
+
+  .wf-hero-grid {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+  }
+
+  .wf-gallery-col {
+    flex: 1 1 52%;
+    position: sticky;
+    top: 90px;
+  }
+
+  .wf-buybox-col {
+    flex: 1 1 48%;
+  }
+
+  /* Media Gallery */
+  .wf-gallery-main {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #faf7f4;
+    border: 1px solid var(--wf-border);
+    box-shadow: 0 8px 30px rgba(59, 43, 47, 0.05);
+    margin-bottom: 14px;
+  }
+
+  .wf-gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s ease;
+  }
+
+  .wf-gallery-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--wf-primary);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    z-index: 2;
+  }
+
+  .wf-gallery-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--wf-ink);
+    z-index: 3;
+    transition: all 0.2s ease;
+  }
+
+  .wf-gallery-nav-btn:hover {
+    background: #ffffff;
+    color: var(--wf-primary);
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  .wf-gallery-nav-btn.prev { left: 12px; }
+  .wf-gallery-nav-btn.next { right: 12px; }
+
+  /* Gallery Thumbs (Horizontal row) */
+  .wf-gallery-thumbs {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: thin;
+  }
+
+  .wf-thumb {
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+    background: #faf7f4;
+    border: 2px solid transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .wf-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .wf-thumb:hover {
+    border-color: #d1c8c0;
+  }
+
+  .wf-thumb.active {
+    border-color: var(--wf-primary);
+    box-shadow: 0 0 0 1px var(--wf-primary);
+    transform: scale(0.96);
+  }
+
+  /* Gallery Guarantees below thumbs */
+  .wf-gallery-guarantees {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: #fdfbf9;
+    border: 1px solid var(--wf-border);
+    border-radius: 10px;
+    font-size: 12px;
+    color: #4a3e41;
+  }
+
+  .wf-gal-guarantee-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .wf-gal-icon {
+    font-size: 14px;
+  }
+
+  /* ====================================================== */
+  /* BUYBOX HEADER & TYPOGRAPHY                             */
+  /* ====================================================== */
+  .wf-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .wf-rating-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--wf-muted);
+  }
+
+  .wf-eyebrow-pill {
+    display: inline-block;
+    background: var(--wf-primary-light);
+    color: var(--wf-primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    margin-bottom: 12px;
+  }
+
+  .wf-product-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    line-height: 1.25;
+    margin: 0 0 10px 0;
+  }
+
+  .wf-product-subtitle {
+    font-size: 14px;
+    color: var(--wf-muted);
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+  }
+
+  .wf-package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0ede8;
+  }
+
+  .wf-package-heading {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .wf-package-sub-badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--wf-primary);
+  }
+
+  /* ====================================================== */
+  /* BUNDLE CARDS SELECTOR                                  */
+  /* ====================================================== */
+  .wf-bundle-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .wf-bundle-card {
+    border: 2px solid var(--wf-border);
+    border-radius: 14px;
+    background: #ffffff;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .wf-bundle-card:hover {
+    border-color: #d1c8c0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  }
+
+  .wf-bundle-card.selected {
+    border-color: var(--wf-primary);
+    background: #fdfbf9;
+    box-shadow: 0 6px 20px rgba(138, 44, 19, 0.08);
+  }
+
+  /* Bundle Ribbon Header */
+  .wf-bundle-ribbon {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    padding: 5px 14px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .ribbon-gold {
+    background: #8a2c13;
+    color: #ffffff;
+  }
+
+  .ribbon-blue {
+    background: #231f20;
+    color: #ffffff;
+  }
+
+  .ribbon-gray {
+    background: #f0ede8;
+    color: #59514f;
+  }
+
+  .wf-bundle-body {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    gap: 14px;
+  }
+
+  .wf-bundle-radio {
+    flex-shrink: 0;
+  }
+
+  .wf-radio-outer {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ccc5bd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    transition: all 0.15s ease;
+  }
+
+  .wf-bundle-card.selected .wf-radio-outer {
+    border-color: var(--wf-primary);
+  }
+
+  .wf-radio-inner {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.15s ease;
+  }
+
+  .wf-bundle-card.selected .wf-radio-inner {
+    background: var(--wf-primary);
+  }
+
+  .wf-bundle-thumb {
+    width: 68px;
+    height: 68px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #faf7f4;
+    border: 1px solid var(--wf-border);
+    flex-shrink: 0;
+  }
+
+  .wf-bundle-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .wf-bundle-details {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .wf-bundle-name-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+
+  .wf-bundle-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    line-height: 1.3;
+  }
+
+  .wf-bundle-tag {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .tag-green {
+    background: var(--wf-green-light);
+    color: var(--wf-green);
+  }
+
+  .tag-blue {
+    background: #ebf5ff;
+    color: #1e40af;
+  }
+
+  .wf-bundle-specs {
+    font-size: 12px;
+    color: var(--wf-muted);
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .wf-bundle-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+    gap: 2px;
+  }
+
+  .wf-price-old {
+    font-size: 13px;
+    text-decoration: line-through;
+    color: #8c827a;
+  }
+
+  .wf-price-current {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--wf-primary);
+    line-height: 1;
+  }
+
+  .wf-save-pill {
+    font-size: 10px;
+    font-weight: 800;
+    background: var(--wf-primary-light);
+    color: var(--wf-primary);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  /* ====================================================== */
+  /* QUANTITY, ACTIONS & BUTTONS                            */
+  /* ====================================================== */
+  .wf-action-box {
+    margin-top: 16px;
+  }
+
+  .wf-qty-subtotal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background: #faf7f4;
+    border: 1px solid var(--wf-border);
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+
+  .wf-qty-picker-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .wf-qty-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--wf-ink);
+  }
+
+  .wf-qty-stepper {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--wf-border);
+    border-radius: 8px;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  .wf-qty-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--wf-ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+  }
+
+  .wf-qty-btn:hover {
+    background: #f0ede8;
+  }
+
+  .wf-qty-val {
+    width: 32px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--wf-ink);
+  }
+
+  .wf-subtotal-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .wf-subtotal-label {
+    font-size: 13px;
+    color: var(--wf-muted);
+    font-weight: 600;
+  }
+
+  .wf-subtotal-compare {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #8c827a;
+  }
+
+  .wf-subtotal-price {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--wf-primary);
+  }
+
+  /* Primary CTA Button */
+  .wf-cta-primary {
+    width: 100%;
+    height: 54px;
+    background: var(--wf-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 16px rgba(138, 44, 19, 0.25);
+    transition: all 0.2s ease;
+  }
+
+  .wf-cta-primary:hover {
+    background: var(--wf-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(138, 44, 19, 0.35);
+  }
+
+  .wf-cta-primary:active {
+    transform: translateY(0);
+  }
+
+  /* Secondary Instant Checkout Button */
+  .wf-cta-secondary {
+    width: 100%;
+    height: 48px;
+    background: #231f20;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+  }
+
+  .wf-cta-secondary:hover {
+    background: #000000;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  }
+
+  /* 3-Pillar Trust Badges */
+  .wf-trust-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 14px;
+    padding: 12px 8px;
+    background: #faf7f4;
+    border: 1px solid var(--wf-border);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .wf-trust-badge-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .wf-tb-icon {
+    font-size: 16px;
+  }
+
+  .wf-tb-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wf-tb-text strong {
+    font-size: 11px;
+    color: var(--wf-ink);
+    line-height: 1.2;
+  }
+
+  .wf-tb-text span {
+    font-size: 10px;
+    color: var(--wf-muted);
+  }
+
+  /* Payment Badges & SVGs */
+  .wf-payment-badges {
+    margin-top: 16px;
+    text-align: center;
+    padding: 12px;
+    border: 1px solid var(--wf-border);
+    border-radius: 10px;
+    background: #ffffff;
+  }
+
+  .wf-secure-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #59514f;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  .wf-badge-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .wf-pay-icon {
+    width: 44px;
+    height: 28px;
+    border-radius: 4px;
+    display: block;
+  }
+
+  /* Benefits Card */
+  .wf-benefits-card {
+    margin-top: 16px;
+    background: #fdfbf9;
+    border: 1px solid var(--wf-border);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .wf-benefits-header {
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #f0ede8;
+  }
+
+  .wf-bf-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    letter-spacing: 0.5px;
+  }
+
+  .wf-benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .wf-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #4a3e41;
+    line-height: 1.4;
+  }
+
+  .wf-check-mark {
+    color: var(--wf-green);
+    font-weight: 900;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* ====================================================== */
+  /* SECTION 2: FEATURES GRID                               */
+  /* ====================================================== */
+  .wf-features-section {
+    background: #faf7f4;
+    border-bottom: 1px solid var(--wf-border);
+  }
+
+  .wf-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .wf-feature-card {
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wf-feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(59, 43, 47, 0.08);
+  }
+
+  .wf-feature-img-box {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #fdfbf9;
+  }
+
+  .wf-feature-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .wf-feature-card:hover .wf-feature-img-box img {
+    transform: scale(1.03);
+  }
+
+  .wf-feature-info {
+    padding: 22px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wf-feature-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    margin: 0 0 8px 0;
+  }
+
+  .wf-feature-desc {
+    font-size: 14px;
+    color: var(--wf-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ====================================================== */
+  /* SECTION 3: STORY & EDITORIAL                           */
+  /* ====================================================== */
+  .wf-story-section {
+    background: #ffffff;
+    border-bottom: 1px solid var(--wf-border);
+  }
+
+  .wf-story-card {
+    background: #fdfbf9;
+    border: 1px solid var(--wf-border);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(59, 43, 47, 0.04);
+  }
+
+  .wf-story-grid {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .wf-story-media-col {
+    flex: 1 1 45%;
+  }
+
+  .wf-story-img-wrap {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--wf-border);
+  }
+
+  .wf-story-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .wf-story-badge {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(35, 31, 32, 0.88);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 9999px;
+  }
+
+  .wf-story-content-col {
+    flex: 1 1 55%;
+  }
+
+  .wf-story-heading {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    line-height: 1.25;
+    margin: 0 0 16px 0;
+  }
+
+  .wf-story-paragraphs {
+    font-size: 15px;
+    color: #59514f;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .wf-story-paragraphs p {
+    margin: 0 0 12px 0;
+  }
+
+  .wf-story-perks {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .wf-story-perk-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .wf-perk-icon-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--wf-primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .wf-perk-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .wf-perk-text strong {
+    font-size: 15px;
+    color: var(--wf-ink);
+    margin-bottom: 2px;
+  }
+
+  .wf-perk-text span {
+    color: var(--wf-muted);
+  }
+
+  /* ====================================================== */
+  /* SECTION 4: 3-STEP SETUP                                */
+  /* ====================================================== */
+  .wf-steps-section {
+    background: #faf7f4;
+    border-bottom: 1px solid var(--wf-border);
+  }
+
+  .wf-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .wf-step-card {
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    border-radius: 16px;
+    padding: 30px 24px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease;
+  }
+
+  .wf-step-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .wf-step-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--wf-primary);
+    background: var(--wf-primary-light);
+    padding: 3px 10px;
+    border-radius: 9999px;
+  }
+
+  .wf-step-icon-wrap {
+    font-size: 44px;
+    margin: 14px 0 16px 0;
+  }
+
+  .wf-step-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    margin: 0 0 10px 0;
+  }
+
+  .wf-step-description {
+    font-size: 14px;
+    color: var(--wf-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ====================================================== */
+  /* SECTION 5: VIDEO & STUNT DEMO                          */
+  /* ====================================================== */
+  .wf-video-section {
+    background: #ffffff;
+    border-bottom: 1px solid var(--wf-border);
+  }
+
+  .wf-video-card {
+    background: #231f20;
+    color: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 44px;
+  }
+
+  .wf-video-grid {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .wf-video-media-col {
+    flex: 1 1 50%;
+  }
+
+  .wf-video-frame {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .wf-video-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .wf-video-tag {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .wf-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ef4444;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.8; }
+  }
+
+  .wf-video-text-col {
+    flex: 1 1 50%;
+  }
+
+  .wf-video-text-col .wf-section-pill {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+  }
+
+  .wf-video-heading {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.25;
+    margin: 0 0 14px 0;
+  }
+
+  .wf-video-lead {
+    font-size: 14px;
+    color: #d1c8c0;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+  }
+
+  .wf-video-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .wf-vc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .wf-vc-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .wf-vc-item strong {
+    color: #ffffff;
+  }
+
+  .wf-vc-item span {
+    color: #a89f91;
+  }
+
+  .wf-video-cta {
+    background: var(--wf-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .wf-video-cta:hover {
+    background: var(--wf-primary-hover);
+    transform: translateY(-2px);
+  }
+
+  /* ====================================================== */
+  /* SECTION 6: SPECS MATRIX                                */
+  /* ====================================================== */
+  .wf-specs-section {
+    background: #faf7f4;
+    border-bottom: 1px solid var(--wf-border);
+  }
+
+  .wf-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .wf-spec-card {
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .wf-spec-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--wf-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .wf-spec-val {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--wf-ink);
+  }
+
+  /* ====================================================== */
+  /* SECTION 7: COMPARISON TABLE                            */
+  /* ====================================================== */
+  .wf-comparison-section {
+    background: #ffffff;
+    border-bottom: 1px solid var(--wf-border);
+  }
+
+  .wf-table-card {
+    border: 1px solid var(--wf-border);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  .wf-comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .wf-comp-table th {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+
+  .wf-th-feature {
+    background: #faf7f4;
+    color: var(--wf-ink);
+    width: 30%;
+  }
+
+  .wf-th-winner {
+    background: var(--wf-primary);
+    color: #ffffff;
+    width: 35%;
+  }
+
+  .wf-th-loser {
+    background: #f0ede8;
+    color: #736b69;
+    width: 35%;
+  }
+
+  .wf-comp-table td {
+    padding: 16px 20px;
+    border-top: 1px solid var(--wf-border);
+    line-height: 1.4;
+  }
+
+  .wf-td-feature {
+    font-weight: 700;
+    color: var(--wf-ink);
+    background: #ffffff;
+  }
+
+  .wf-winner-cell {
+    background: #fdfbf9;
+    color: var(--wf-green);
+    font-weight: 700;
+  }
+
+  .wf-loser-cell {
+    background: #ffffff;
+    color: #9ca3af;
+  }
+
+  /* ====================================================== */
+  /* SECTION 8: FAQ ACCORDION                               */
+  /* ====================================================== */
+  .wf-faq-section {
+    background: #faf7f4;
+    border-bottom: 1px solid var(--wf-border);
+  }
+
+  .wf-faq-container {
+    max-width: 820px;
+  }
+
+  .wf-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .wf-faq-item {
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .wf-faq-item[open] {
+    border-color: #d1c8c0;
+  }
+
+  .wf-faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .wf-faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .wf-faq-toggle {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--wf-primary);
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .wf-faq-item[open] .wf-faq-toggle {
+    transform: rotate(45deg);
+  }
+
+  .wf-faq-answer {
+    padding: 0 22px 20px 22px;
+    font-size: 14px;
+    color: #59514f;
+    line-height: 1.6;
+  }
+
+  .wf-faq-answer p {
+    margin: 0;
+  }
+
+  /* ====================================================== */
+  /* SECTION 9: DOORSTEP DELIVERY GUARANTEE                 */
+  /* ====================================================== */
+  .wf-delivery-section {
+    background: #ffffff;
+    border-bottom: 1px solid var(--wf-border);
+  }
+
+  .wf-delivery-card {
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    border-radius: 20px;
+    padding: 36px 40px;
+    box-shadow: 0 4px 20px rgba(59, 43, 47, 0.03);
+  }
+
+  .wf-delivery-header {
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  .wf-delivery-pill {
+    display: inline-block;
+    background: #fdf2ed;
+    color: var(--wf-primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .wf-delivery-heading {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .wf-delivery-grid {
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+  }
+
+  .wf-delivery-media-col {
+    flex: 1 1 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .wf-delivery-img-box {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--wf-border);
+    position: relative;
+    background: #faf7f4;
+  }
+
+  .wf-delivery-img-box.main-truck {
+    aspect-ratio: 16 / 10;
+  }
+
+  .wf-delivery-img-box.main-truck img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .wf-truck-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(35, 31, 32, 0.9);
+    backdrop-filter: blur(6px);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    letter-spacing: 0.3px;
+  }
+
+  .wf-delivery-img-box.globe-box {
+    aspect-ratio: 16 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+  }
+
+  .wf-delivery-img-box.globe-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    padding: 6px;
+  }
+
+  .wf-delivery-content-col {
+    flex: 1 1 52%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wf-delivery-body-text {
+    font-size: 14px;
+    color: #59514f;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .wf-delivery-body-text p {
+    margin: 0 0 14px 0;
+  }
+
+  .wf-delivery-body-text strong {
+    color: var(--wf-ink);
+  }
+
+  .wf-delivery-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .wf-db-item {
+    background: #fdfbf9;
+    border: 1px solid var(--wf-border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .wf-db-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+
+  .wf-db-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .wf-db-text strong {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    line-height: 1.3;
+  }
+
+  .wf-db-text span {
+    font-size: 12px;
+    color: var(--wf-muted);
+    line-height: 1.4;
+  }
+
+  /* ====================================================== */
+  /* SECTION 10: CUSTOMER REVIEWS                           */
+  /* ====================================================== */
+  .wf-reviews-section {
+    background: #faf7f4;
+  }
+
+  .wf-reviews-stars-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .wf-reviews-count-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: #59514f;
+  }
+
+  .wf-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .wf-review-card {
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  }
+
+  .wf-review-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .wf-rev-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .wf-rev-author strong {
+    font-size: 15px;
+    color: var(--wf-ink);
+  }
+
+  .wf-verified-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--wf-green);
+    background: var(--wf-green-light);
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+
+  .wf-review-date {
+    font-size: 12px;
+    color: var(--wf-muted);
+  }
+
+  .wf-card-stars {
+    color: #d97706;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .wf-review-headline {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    margin: 0 0 8px 0;
+    line-height: 1.35;
+  }
+
+  .wf-review-body {
+    font-size: 13px;
+    color: #59514f;
+    line-height: 1.55;
+    margin: 0 0 16px 0;
+    flex: 1 1 auto;
+  }
+
+  .wf-review-photo {
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    border: 1px solid var(--wf-border);
+  }
+
+  .wf-review-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ====================================================== */
+  /* STICKY BOTTOM PURCHASE BAR                             */
+  /* ====================================================== */
+  .wf-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--wf-border);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    padding: 10px 0;
+    z-index: 999;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .wf-sticky-bar.visible {
+    transform: translateY(0);
+  }
+
+  .wf-sticky-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .wf-sticky-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .wf-sticky-left img {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid var(--wf-border);
+  }
+
+  .wf-sticky-meta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wf-sticky-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--wf-ink);
+  }
+
+  .wf-sticky-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--wf-primary);
+  }
+
+  .wf-sticky-btn {
+    background: var(--wf-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .wf-sticky-btn:hover {
+    background: var(--wf-primary-hover);
+  }
+
+  /* ====================================================== */
+  /* RESPONSIVE BREAKPOINTS (Mobile & Tablet)                */
+  /* ====================================================== */
+  @media (max-width: 991px) {
+    .wf-hero-grid {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .wf-gallery-col {
+      position: static;
+      width: 100%;
+    }
+    .wf-buybox-col {
+      width: 100%;
+    }
+    .wf-product-title {
+      font-size: 26px;
+    }
+    .wf-features-grid {
+      grid-template-columns: 1fr;
+    }
+    .wf-story-grid {
+      flex-direction: column;
+    }
+    .wf-story-card {
+      padding: 24px;
+    }
+    .wf-steps-grid {
+      grid-template-columns: 1fr;
+    }
+    .wf-video-grid {
+      flex-direction: column;
+    }
+    .wf-video-card {
+      padding: 24px;
+    }
+    .wf-specs-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .wf-delivery-grid {
+      flex-direction: column;
+      gap: 24px;
+    }
+    .wf-delivery-badges-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .wf-delivery-card {
+      padding: 24px;
+    }
+    .wf-reviews-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .wf-section {
+      padding: 36px 0;
+    }
+    .wf-section-title {
+      font-size: 24px;
+    }
+    .wf-product-title {
+      font-size: 22px;
+    }
+    .wf-bundle-body {
+      padding: 12px;
+      gap: 10px;
+    }
+    .wf-bundle-thumb {
+      width: 52px;
+      height: 52px;
+    }
+    .wf-bundle-title {
+      font-size: 14px;
+    }
+    .wf-price-current {
+      font-size: 18px;
+    }
+    .wf-trust-badges-grid {
+      grid-template-columns: 1fr;
+    }
+    .wf-specs-grid {
+      grid-template-columns: 1fr;
+    }
+    .wf-delivery-badges-grid {
+      grid-template-columns: 1fr;
+    }
+    .wf-comp-table th, .wf-comp-table td {
+      padding: 10px 8px;
+      font-size: 12px;
+    }
+    .wf-gallery-guarantees {
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+</style>
+
+<!-- ======================================================== -->
+<!-- CLIENT-SIDE LOGIC & INTERACTION SCRIPTS                  -->
+<!-- ======================================================== -->
+<script>
+  let wfCurrentGalleryIdx = 0;
+  const wfGalleryImgs = [
+    'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/MagTrack.webp?v=1792809300',
+    'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-03.png?v=1792809300',
+    'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-01.png?v=1792809300',
+    'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-05.png?v=1792809300',
+    'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-04.png?v=1792809300',
+    'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/thoson-magtrack-02.png?v=1792809300'
+  ];
+
+  let wfSelectedVariantId = '67925383807161'; // Default Master kit
+  let wfSelectedPrice = 159.00;
+  let wfSelectedOldPrice = 299.00;
+  let wfCurrentQty = 1;
+
+  function switchWfGallery(src, index) {
+    const mainImg = document.getElementById('wf-main-img');
+    if (mainImg) mainImg.src = src;
+    
+    if (typeof index === 'number') {
+      wfCurrentGalleryIdx = index;
+    } else {
+      const cleanSrc = src.split('?')[0];
+      const foundIdx = wfGalleryImgs.findIndex(u => u.split('?')[0] === cleanSrc);
+      if (foundIdx !== -1) wfCurrentGalleryIdx = foundIdx;
+    }
+
+    const thumbs = document.querySelectorAll('.wf-thumb');
+    thumbs.forEach((t, i) => {
+      if (i === wfCurrentGalleryIdx) t.classList.add('active');
+      else t.classList.remove('active');
+    });
+  }
+
+  function skipWfGallery(direction) {
+    wfCurrentGalleryIdx = (wfCurrentGalleryIdx + direction + wfGalleryImgs.length) % wfGalleryImgs.length;
+    switchWfGallery(wfGalleryImgs[wfCurrentGalleryIdx], wfCurrentGalleryIdx);
+  }
+
+  function selectWfBundle(variantId, price, oldPrice, cardId, imgSrc) {
+    wfSelectedVariantId = variantId;
+    wfSelectedPrice = parseFloat(price);
+    wfSelectedOldPrice = oldPrice ? parseFloat(oldPrice) : (wfSelectedPrice * 1.8);
+    
+    document.querySelectorAll('.wf-bundle-card').forEach(c => c.classList.remove('selected'));
+    const activeCard = document.getElementById(cardId);
+    if (activeCard) activeCard.classList.add('selected');
+
+    if (imgSrc) switchWfGallery(imgSrc);
+
+    const stickyImg = document.getElementById('wf-sticky-img');
+    if (stickyImg && imgSrc) stickyImg.src = imgSrc;
+
+    let titleText = '$159.00 (Master Kit)';
+    if (variantId === '67925383774393') titleText = '$119.00 (PRO Kit)';
+    else if (variantId === '67925383741625') titleText = '$69.00 (Rookie Set)';
+    const stickyPriceVal = document.getElementById('wf-sticky-price-val');
+    if (stickyPriceVal) stickyPriceVal.textContent = titleText;
+
+    updateWfTotal();
+  }
+
+  function changeWfQty(delta) {
+    wfCurrentQty = Math.max(1, wfCurrentQty + delta);
+    const qtyNum = document.getElementById('wf-qty-num');
+    if (qtyNum) qtyNum.textContent = wfCurrentQty;
+    updateWfTotal();
+  }
+
+  function updateWfTotal() {
+    const total = (wfSelectedPrice * wfCurrentQty).toFixed(2);
+    const compTotal = (wfSelectedOldPrice * wfCurrentQty).toFixed(2);
+    const disp = document.getElementById('wf-total-display');
+    const compDisp = document.getElementById('wf-total-compare');
+    if (disp) disp.textContent = '$' + total;
+    if (compDisp) compDisp.textContent = '$' + compTotal;
+  }
+
+  async function submitWfDirectCheckout() {
+    const btn = document.getElementById('wf-main-shopnow-btn');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML = '<span>Proceeding to Checkout...</span>';
+    }
+    try {
+      await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{ id: wfSelectedVariantId, quantity: wfCurrentQty }]
+        })
+      });
+      window.location.href = '/checkout';
+    } catch (e) {
+      window.location.href = '/cart/' + wfSelectedVariantId + ':' + wfCurrentQty;
+    }
+  }
+
+  async function submitWfOrder() {
+    const btn = document.getElementById('wf-main-atc-btn');
+    const originalContent = btn ? btn.innerHTML : '';
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML = '<span class="wf-cta-main-text">ADDING TO CART...</span>';
+    }
+
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{ id: wfSelectedVariantId, quantity: wfCurrentQty }]
+        })
+      });
+
+      if (res.ok) {
+        if (typeof window.willaRefreshCart === 'function') {
+          await window.willaRefreshCart();
+        }
+        if (typeof window.willaOpenCartDrawer === 'function') {
+          window.willaOpenCartDrawer();
+        }
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalContent;
+        }
+      } else {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalContent;
+        }
+        window.location.href = '/cart/' + wfSelectedVariantId + ':' + wfCurrentQty;
+      }
+    } catch (e) {
+      console.error(e);
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = originalContent;
+      }
+      window.location.href = '/cart/' + wfSelectedVariantId + ':' + wfCurrentQty;
+    }
+  }
+
+  // Sticky buy bar listener & mobile touch swipe
+  document.addEventListener('DOMContentLoaded', function() {
+    const mainWrap = document.getElementById('wfMainImgWrap');
+    if (mainWrap) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      mainWrap.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      mainWrap.addEventListener('touchend', function(e) {
+        const touchEndX = e.changedTouches[0].screenX;
+        const touchEndY = e.changedTouches[0].screenY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+        if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+          if (diffX < 0) skipWfGallery(1);
+          else skipWfGallery(-1);
+        }
+      }, { passive: true });
+    }
+
+    const atc = document.getElementById('wf-main-atc-btn');
+    const sticky = document.getElementById('wf-sticky-bar');
+    if (!atc || !sticky) return;
+    
+    function checkSticky() {
+      const rect = atc.getBoundingClientRect();
+      if (rect.bottom < 0) sticky.classList.add('visible');
+      else sticky.classList.remove('visible');
+    }
+    
+    window.addEventListener('scroll', checkSticky, { passive: true });
+    checkSticky();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Zavelyn MagTrack Funnel",
+  "settings": []
+}
+{% endschema %}
+`;
+
+// Save locally
+fs.writeFileSync('Clone-willafarm/theme/sections/thoson-magtrack-funnel.liquid', completeLiquidSection);
+console.log('✔ Saved local file: Clone-willafarm/theme/sections/thoson-magtrack-funnel.liquid');
+
+async function deploy() {
+  const token = await getAccessToken();
+  console.log('--- Uploading Refactored Funnel to Shopify Live Theme ---');
+  await uploadThemeAsset(token, 'sections/thoson-magtrack-funnel.liquid', completeLiquidSection);
+  console.log('🎉 Refactored MagTrack Funnel deployed successfully!');
+}
+
+deploy().catch(err => {
+  console.error('Deployment error:', err);
+  process.exit(1);
+});

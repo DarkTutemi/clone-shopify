@@ -1,0 +1,2096 @@
+{% layout none %}
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>The Yeoman Sweep – Field &amp; Harvest Co</title>
+  <meta name="description" content="The World's First Lawn Tool That Ends The Raking, Leaf Blowing And The Painful Bending. Clears Up The Yard With Ease.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global base resets */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #FBF6EC;
+      color: #241A13;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Field & Harvest Top Header Styling */
+    .fh-header {
+      background: #241A13;
+      color: #FBF6EC;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .fh-header__logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #FBF6EC;
+    }
+    .fh-header__nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .fh-header__link {
+      font-weight: 600;
+      font-size: 14px;
+      color: #F2E9DA;
+      transition: color 0.2s;
+    }
+    .fh-header__link:hover {
+      color: #C0653F;
+    }
+    .fh-header__cart {
+      background: #C0653F;
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .fh-header__cart:hover {
+      background: #9A4A25;
+    }
+
+    /* Field & Harvest Footer Styling */
+    .fh-footer-custom {
+      background: #241A13;
+      color: #F2E9DA;
+      padding: 60px 24px 30px;
+      margin-top: 40px;
+      border-top: 1px solid #3D3024;
+    }
+    .fh-footer-custom .fh-footer__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .fh-footer-custom h2, .fh-footer-custom h3 {
+      color: #FBF6EC;
+    }
+    .fh-footer-custom a {
+      color: #8A7866;
+      transition: color 0.2s;
+    }
+    .fh-footer-custom a:hover {
+      color: #C0653F;
+    }
+  </style>
+</head>
+<body class="template-product template-product--the-yeoman-sweep">
+
+  <!-- Header -->
+  <header class="fh-header">
+    <a href="/products/the-yeoman-sweep" class="fh-header__logo">
+      <img src="https://fieldandharvestco.com/cdn/shop/files/Copy_of_COMFORT_CRADLE_Logos_5.png?height=36&v=1765838330" alt="Field &amp; Harvest Co" style="height: 32px; width: auto;">
+      <span>Field &amp; Harvest Co</span>
+    </a>
+    <div class="fh-header__nav">
+      <a href="/products/the-yeoman-sweep" class="fh-header__link">The Yeoman Sweep</a>
+      <a href="/cart" class="fh-header__cart">
+        <svg width="18" height="18" viewBox="0 0 20 18" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 1h14l1 16H2L3 1z"/>
+          <path d="M7 4v0a3 3 0 003 3v0a3 3 0 003-3v0"/>
+        </svg>
+        <span>Cart</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content: The Yeoman Sweep Product Section -->
+  <main id="MainContent" role="main">
+    <div id="shopify-section-template--27754055925803__main" class="shopify-section"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
+<style>
+  /* ═══ THEME TAKEOVER ═══ */
+  body { background: #FBF6EC !important; }
+  #MainContent, .content-for-layout { background: #FBF6EC !important; }
+
+  #shopify-section-template--27754055925803__main {
+    --sup-ink:        #241A13;
+    --sup-brown:      #3D3024;
+    --sup-body:       #54463A;
+    --sup-muted:      #8A7866;
+    --sup-terra:      #C0653F;
+    --sup-terra-deep: #9A4A25;
+    --sup-cream:      #FBF6EC;
+    --sup-card:       #FFFFFF;
+    --sup-warm:       #F2E9DA;
+    --sup-line:       #E2D6C4;
+    --sup-gold:       #D89B4A;
+    --sup-ok:         #5C6B4A;
+
+    /* Inherit the theme face so this page matches the Yeoman Handle PDP,
+       which sets font-family: inherit throughout. F&H theme is Inter. */
+    --sup-display: var(--font-heading--family, Inter, sans-serif);
+    --sup-body-f:  var(--font-body--family, Inter, sans-serif);
+    --sup-mono:    var(--font-body--family, Inter, sans-serif);
+
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+    grid-template-columns: none !important;
+    background: var(--sup-cream) !important;
+  }
+
+  /* ═══ SCOPED RESETS / :where() so per-class rules always win ═══ */
+  #shopify-section-template--27754055925803__main .sup,
+  #shopify-section-template--27754055925803__main .sup * { box-sizing: border-box; }
+  :where(
+    #shopify-section-template--27754055925803__main .sup h1,
+    #shopify-section-template--27754055925803__main .sup h2,
+    #shopify-section-template--27754055925803__main .sup h3,
+    #shopify-section-template--27754055925803__main .sup h4,
+    #shopify-section-template--27754055925803__main .sup p,
+    #shopify-section-template--27754055925803__main .sup ul,
+    #shopify-section-template--27754055925803__main .sup ol,
+    #shopify-section-template--27754055925803__main .sup li,
+    #shopify-section-template--27754055925803__main .sup dl,
+    #shopify-section-template--27754055925803__main .sup dt,
+    #shopify-section-template--27754055925803__main .sup dd,
+    #shopify-section-template--27754055925803__main .sup figure,
+    #shopify-section-template--27754055925803__main .sup table
+  ) { margin: 0; padding: 0; border: 0; }
+  #shopify-section-template--27754055925803__main .sup ul,
+  #shopify-section-template--27754055925803__main .sup ol { list-style: none; }
+  #shopify-section-template--27754055925803__main .sup img { max-width: 100%; height: auto; display: block; }
+  #shopify-section-template--27754055925803__main .sup button { font: inherit; cursor: pointer; }
+  #shopify-section-template--27754055925803__main .sup :focus-visible {
+    outline: 3px solid var(--sup-terra); outline-offset: 2px; border-radius: 3px;
+  }
+
+  /* ═══ FOUNDATION ═══ */
+  .sup {
+    font-family: var(--sup-body-f);
+    color: var(--sup-body);
+    background: var(--sup-cream);
+    font-size: 16px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .sup-wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+  /* the hero runs tighter to the edge than the rest of the page, same as the
+     Handle PDP where the gallery sits nearly flush */
+  .sup-hero .sup-wrap { padding: 0 14px; }
+  @media (max-width: 520px) { .sup-hero .sup-wrap { padding: 0 10px; } }
+  .sup-narrow { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+
+  .sup-eyebrow {
+    font-family: var(--sup-mono);
+    font-size: 11px;
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    color: var(--sup-terra-deep);
+    margin-bottom: 14px !important;
+  }
+  .sup-eyebrow--light { color: var(--sup-gold); }
+
+  .sup-h2 {
+    font-family: var(--sup-display);
+    font-weight: 800;
+    font-size: clamp(32px, 5.4vw, 54px);
+    line-height: .96;
+    letter-spacing: -.005em;
+    text-transform: uppercase;
+    color: var(--sup-ink);
+    margin-bottom: 18px !important;
+  }
+  .sup-h3 {
+    font-family: var(--sup-display);
+    font-weight: 700;
+    font-size: clamp(21px, 2.6vw, 27px);
+    line-height: 1.06;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+    color: var(--sup-ink);
+  }
+  .sup-lede { font-size: 17px; line-height: 1.66; color: var(--sup-body); }
+  .sup-lede--wide { max-width: 62ch; }
+
+  /* ── MIN-WIDTH FLOOR RESET ──
+     Grid and flex children default to min-width:auto, so ONE wide descendant
+     (a scroller, a nowrap run, a long word) sizes the whole track to its
+     min-content and everything in that track overflows. Every multi-column
+     container on this page opts out. Removing these will silently break the
+     mobile layout again. */
+  #shopify-section-template--27754055925803__main .sup-hero-grid > *,
+  #shopify-section-template--27754055925803__main .sup-split > *,
+  #shopify-section-template--27754055925803__main .sup-facts > *,
+  #shopify-section-template--27754055925803__main .sup-dark-grid > *,
+  #shopify-section-template--27754055925803__main .sup-badges-grid > *,
+  #shopify-section-template--27754055925803__main .sup-ing-grid > *,
+  #shopify-section-template--27754055925803__main .sup-rev-grid > *,
+  #shopify-section-template--27754055925803__main .sup-tiles > *,
+  #shopify-section-template--27754055925803__main .sup-ing > *,
+  #shopify-section-template--27754055925803__main .sup-tier > *,
+  #shopify-section-template--27754055925803__main .sup-step > *,
+  #shopify-section-template--27754055925803__main .yh-gifts-grid > *,
+  #shopify-section-template--27754055925803__main .yh-swatch-row > *,
+  #shopify-section-template--27754055925803__main .sup-gal-thumbs,
+  #shopify-section-template--27754055925803__main .sup-table-scroll { min-width: 0; }
+
+  .sup-band { padding: 72px 0; }
+  .sup-band--warm { background: var(--sup-warm); }
+  .sup-band--card { background: var(--sup-card); }
+  .sup-band--tight { padding: 52px 0; }
+
+  /* ═══ MARQUEE STRIP ═══ */
+  .sup-marquee {
+    background: var(--sup-ink);
+    border-bottom: 1px solid #3E3025;
+    overflow: hidden;
+    padding: 15px 0;
+  }
+  .sup-marquee-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: sup-scroll 55s linear infinite;
+  }
+  .sup-marquee:hover .sup-marquee-track,
+  .sup-marquee:focus-within .sup-marquee-track { animation-play-state: paused; }
+  @keyframes sup-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .sup-mq-item {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 9px;
+    padding: 0 22px;
+    white-space: nowrap;
+    font-family: var(--sup-mono);
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--sup-warm);
+  }
+  .sup-mq-item--quote { color: #fff; }
+  .sup-mq-by { color: var(--sup-gold); font-size: 10px; letter-spacing: .13em; }
+  .sup-mq-sep { flex: none; width: 4px; height: 4px; border-radius: 50%; background: var(--sup-terra); }
+  @media (prefers-reduced-motion: reduce) {
+    .sup-marquee { overflow-x: auto; }
+    .sup-marquee-track { animation: none; }
+  }
+
+  /* ═══════════════ HERO ═══════════════ */
+  .sup-hero { padding: 10px 0 44px; }
+  .sup-hero-grid { display: grid; gap: 22px; }
+  @media (min-width: 900px) {
+    .sup-hero-grid { grid-template-columns: minmax(0,1fr) minmax(0,468px); gap: 38px; align-items: start; }
+  }
+
+  /* gallery */
+  .sup-gal-main {
+    position: relative;
+    background: var(--sup-warm);
+    border: 1px solid var(--sup-line);
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+  }
+  .sup-gal-main img { width: 100%; height: 100%; object-fit: cover; }
+  /* single-line scroller so the strip never wraps to a second row */
+  .sup-gal-thumbs {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--sup-line) transparent;
+  }
+  .sup-gal-thumbs::-webkit-scrollbar { height: 3px; }
+  .sup-gal-thumbs::-webkit-scrollbar-track { background: transparent; }
+  .sup-gal-thumbs::-webkit-scrollbar-thumb { background: var(--sup-line); border-radius: 3px; }
+  .sup-gal-thumb {
+    flex: 0 0 auto;
+    width: calc((100% - 32px) / 5);
+    min-width: 62px;
+    scroll-snap-align: start;
+    background: var(--sup-warm);
+    border: 1px solid var(--sup-line);
+    border-radius: 3px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    transition: border-color .15s ease;
+  }
+  .sup-gal-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .sup-gal-thumb[aria-current="true"] { border-color: var(--sup-terra); border-width: 2px; }
+
+  /* buy box */
+  .sup-flags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+  .sup-flag {
+    font-family: var(--sup-mono);
+    font-size: 10px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    padding: 6px 11px;
+    border-radius: 2px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--sup-line);
+    color: var(--sup-brown);
+    background: var(--sup-card);
+    white-space: nowrap;
+  }
+  .sup-flag--solid { background: var(--sup-ink); border-color: var(--sup-ink); color: var(--sup-warm); }
+  .sup-flag--ship { background: var(--sup-terra); border-color: var(--sup-terra); color: #fff; font-weight: 700; }
+  .sup-flag--ship svg { width: 15px; height: 10px; margin-right: 7px; flex: none; display: block; }
+
+  /* Rating row. Score, partial-fill stars, grade word, divider, count.
+     The star bar is two stacked layers: a full row of empty stars, and a
+     gold row clipped to score/5 as a percentage. That is what lets 4.7
+     read as 4.7 instead of rounding to five filled stars. */
+  .sup-rating { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 11px; }
+  .sup-rating-score {
+    font-family: var(--sup-display); font-weight: 800; font-size: 15px;
+    line-height: 1; color: var(--sup-ink);
+  }
+  .sup-stars { position: relative; display: inline-block; line-height: 0; }
+  .sup-stars-bg, .sup-stars-row { display: flex; gap: 2px; width: max-content; }
+  .sup-stars-bg svg, .sup-stars-row svg { width: 15px; height: 15px; display: block; flex: none; }
+  .sup-stars-bg svg { fill: var(--sup-line); }
+  .sup-stars-fg { position: absolute; top: 0; left: 0; height: 100%; overflow: hidden; }
+  .sup-stars-row svg { fill: var(--sup-gold); }
+  .sup-rating-grade { font-family: var(--sup-display); font-weight: 700; font-size: 14px; color: var(--sup-ink); }
+  .sup-rating-div { color: var(--sup-line); font-size: 13px; line-height: 1; }
+  .sup-rating-count {
+    font-family: var(--sup-mono); font-size: 11.5px; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--sup-muted);
+  }
+
+  .sup-kicker {
+    font-family: var(--sup-mono);
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--sup-muted);
+    margin-bottom: 9px !important;
+  }
+  /* ONE title. Same face, same leading throughout. Color and weight are the
+     only things that vary, so the parts read as a single lockup. */
+  .sup-h1 {
+    font-family: var(--sup-display);
+    font-weight: 800;
+    /* matched to the Yeoman Handle H1. The old settings (all caps, 35px, 1.12
+       leading, positive tracking) were tuned for Big Shoulders Display, a
+       condensed face this page no longer loads. In Inter 800 a 120-character
+       headline set in caps reads as a wall and loses every word shape. */
+    font-size: clamp(25px, 2.97vw, 30px);
+    line-height: 1.22;
+    letter-spacing: -.01em;
+    color: var(--sup-ink);
+    margin-bottom: 18px !important;
+  }
+  .sup-h1 em {
+    display: inline;     /* one continuous headline, wraps naturally */
+    margin-top: 0;
+    font-style: normal;
+    font-weight: 800;
+    color: var(--sup-ink);
+  }
+  .sup-h1-spec {
+    display: block;
+    font-weight: 600;
+    font-size: .5em;
+    line-height: 1.3;
+    letter-spacing: .07em;
+    color: var(--sup-muted);
+    margin-top: .42em;
+  }
+  .sup-sub { font-size: 16.5px; line-height: 1.6; color: var(--sup-body); margin-bottom: 20px !important; }
+
+  .sup-price-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+  .sup-price {
+    font-family: var(--sup-display);
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 1;
+    color: var(--sup-ink);
+  }
+  .sup-was { font-family: var(--sup-mono); font-size: 14px; color: var(--sup-muted); text-decoration: line-through; }
+  .sup-save {
+    font-family: var(--sup-mono);
+    font-size: 10.5px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    background: var(--sup-terra);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+
+  .sup-usp-title {
+    font-family: var(--sup-display);
+    font-weight: 700;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    color: var(--sup-ink);
+    margin-bottom: 11px !important;
+  }
+  .sup-usp { display: grid; gap: 9px; margin-bottom: 22px !important; }
+  .sup-usp li { display: grid; grid-template-columns: 21px 1fr; gap: 11px; align-items: start; font-size: 15.5px; line-height: 1.5; }
+  .sup-usp svg { width: 21px; height: 21px; margin-top: 3px; flex: none; }
+
+  /* the spec ledger, the page signature (the supplement's dose ledger) */
+  .sup-ledger {
+    border-top: 1px solid var(--sup-line);
+    border-bottom: 1px solid var(--sup-line);
+    margin-bottom: 22px;
+  }
+  .sup-ledger--in-acc { border-top: 0; border-bottom: 0; margin-bottom: 0; }
+  .sup-ledger-row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--sup-line);
+    font-family: var(--sup-mono);
+    font-size: 11.5px;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+  .sup-ledger-row:last-child { border-bottom: 0; }
+  .sup-ledger-row dt { color: var(--sup-muted); }
+  .sup-ledger-row dd { color: var(--sup-ink); font-weight: 700; text-align: right; }
+
+  /* ── COLOR ROW ── */
+  .yh-optlabel {
+    font-family: var(--sup-mono); font-size: 10.5px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--sup-muted); margin-bottom: 10px !important;
+  }
+  .yh-optlabel b { color: var(--sup-ink); font-weight: 700; }
+  .yh-swatch-row { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+  .yh-swatch {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: var(--sup-card); border: 1.5px solid var(--sup-line);
+    border-radius: 5px; padding: 10px 15px 10px 12px;
+    font-family: var(--sup-mono); font-size: 11px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--sup-brown);
+    transition: border-color .15s ease;
+  }
+  .yh-swatch:hover { border-color: var(--sup-terra); }
+  .yh-swatch.is-active { border-color: var(--sup-ink); border-width: 2px; color: var(--sup-ink); }
+  .yh-chip {
+    width: 17px; height: 17px; border-radius: 50%;
+    border: 1px solid var(--sup-line); flex: none;
+  }
+  .yh-chip--silver { background: linear-gradient(135deg,#E8E8E8 0%,#B9BCBE 48%,#8F9295 100%); }
+  .yh-chip--white  { background: linear-gradient(135deg,#FFFFFF 0%,#F2F2F0 55%,#DCDCD8 100%); }
+
+  /* pack ladder */
+  .sup-ladder-label {
+    font-family: var(--sup-mono); font-size: 10.5px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--sup-muted); margin-bottom: 10px !important;
+  }
+  .sup-ladder { display: grid; gap: 10px; margin-bottom: 20px; }
+  .sup-tier {
+    position: relative;
+    display: grid;
+    grid-template-columns: 22px 1fr auto;
+    gap: 13px;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    background: var(--sup-card);
+    border: 1.5px solid var(--sup-line);
+    border-radius: 5px;
+    padding: 15px 16px;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .sup-tier:hover { border-color: var(--sup-terra); }
+  .sup-tier.is-active { border-color: var(--sup-ink); border-width: 2px; box-shadow: 0 2px 0 0 var(--sup-line); }
+  .sup-radio {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--sup-line); display: grid; place-items: center;
+  }
+  .sup-tier.is-active .sup-radio { border-color: var(--sup-ink); }
+  .sup-tier.is-active .sup-radio::after {
+    content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--sup-ink);
+  }
+  .sup-tier-name {
+    font-family: var(--sup-display); font-weight: 700; font-size: 20px;
+    text-transform: uppercase; color: var(--sup-ink); line-height: 1.05;
+  }
+  .sup-tier-meta { font-family: var(--sup-mono); font-size: 10.5px; letter-spacing: .08em; color: var(--sup-muted); text-transform: uppercase; margin-top: 3px; }
+  .sup-tier-meta span { white-space: nowrap; }
+  .sup-tm-b::before { content: "\00B7"; margin: 0 6px; }
+  @media (max-width: 560px) {
+    .sup-tier-meta span { display: block; }
+    .sup-tm-b::before { content: none; }
+  }
+  .sup-tier-price { font-family: var(--sup-display); font-weight: 800; font-size: 21px; color: var(--sup-ink); text-align: right; line-height: 1.1; }
+  .sup-tier-was { display: block; font-family: var(--sup-mono); font-size: 11px; color: var(--sup-muted); text-decoration: line-through; font-weight: 400; }
+  .sup-tier-tag {
+    position: absolute; top: -9px; right: 13px;
+    font-family: var(--sup-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+    background: var(--sup-terra); color: #fff; padding: 3px 9px; border-radius: 2px;
+  }
+  .sup-tier-tag--dark { background: var(--sup-ink); }
+  /* Sold-out tier: driven by variant.available, so it clears itself on restock. */
+  .sup-tier.is-soldout { cursor: not-allowed; background: var(--sup-warm); border-style: dashed; }
+  .sup-tier.is-soldout > span:not(.sup-tier-tag) { opacity: .45; }
+  .sup-tier.is-soldout .sup-tier-price { text-decoration: line-through; }
+  .sup-tier-tag--soldout { background: var(--sup-muted); }
+
+  /* ── FREE GIFTS (above the cart button, toggled by the pack tier) ── */
+  .yh-gifts {
+    border: 1.5px dashed var(--sup-line);
+    border-radius: 5px;
+    background: var(--sup-warm);
+    padding: 13px 14px 14px;
+    margin-bottom: 16px;
+    transition: border-color .18s ease, background .18s ease;
+  }
+  .yh-gifts.is-unlocked { border-style: solid; border-color: var(--sup-ok); background: #F3F1E4; }
+  .yh-gifts-head {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 14px;
+  }
+  .yh-gifts-head svg { width: 15px; height: 15px; flex: none; stroke: var(--sup-terra-deep); }
+  .yh-gifts-head p {
+    font-family: var(--sup-mono); font-size: 11px; font-weight: 700; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--sup-terra-deep); line-height: 1.5;
+  }
+  /* THREE across, exact thirds (owner 2026-09-29: the spare V-brush set was cut
+     from the offer, out of stock). A grid, not flex, so the three tiles always
+     fill the row edge to edge with no leftover slot. 4:5 keeps the block short
+     now that each tile is a third wider than it was at four across. */
+  .yh-gifts-row { display: block; }
+  .yh-gifts-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; align-items: start; }
+  .yh-gift { min-width: 0; text-align: center; }
+  .yh-gift-frame {
+    position: relative; width: 100%; aspect-ratio: 4 / 5;
+    border-radius: 4px; overflow: hidden;
+    background: var(--sup-card); border: 1px solid var(--sup-line);
+    margin-bottom: 6px;
+  }
+  .yh-gift-frame img { width: 100%; height: 100%; object-fit: cover; }
+  .yh-gift-value {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    font-family: var(--sup-mono); font-size: 9px; font-weight: 700; letter-spacing: .02em;
+    background: var(--sup-terra); color: #fff; padding: 3px 0; line-height: 1.3;
+  }
+  .yh-gift-lock {
+    position: absolute; inset: 0;
+    display: grid; place-items: center; gap: 3px; align-content: center;
+    background: rgba(244,241,232,.92);
+    border: 1px dashed var(--sup-line); border-radius: 4px;
+  }
+  .yh-gift-lock svg { width: 16px; height: 16px; stroke: var(--sup-muted); fill: none; }
+  .yh-gift-lock span { display: none; }
+  .yh-gift-name {
+    font-family: var(--sup-mono); font-size: 10px; font-weight: 700; letter-spacing: .02em;
+    text-transform: uppercase; color: var(--sup-brown); line-height: 1.35;
+  }
+  .yh-gift-name b { display: none; }
+  .yh-gifts-head { margin-bottom: 10px; }
+  .yh-gifts-foot {
+    margin-top: 10px !important;
+    font-family: var(--sup-mono); font-size: 10px; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--sup-brown); line-height: 1.5; text-align: center;
+  }
+
+  /* ── DELIVERY ETA PILL (under the knock-off callout) ── */
+  .yh-eta {
+    display: inline-flex; align-items: center; gap: 9px;
+    max-width: 100%;
+    /* a solid white chip on a cream page reads as a stuck-on badge. Tinting it
+       with the page's own warm tone at low alpha lets it sit INTO the page. */
+    background: rgba(242, 233, 218, .5);
+    border: 1px solid rgba(226, 214, 196, .7);
+    border-radius: 999px;
+    padding: 9px 15px;
+    margin: 0 0 24px;
+    font-size: 13.5px; line-height: 1.4; color: var(--sup-brown);
+  }
+  .yh-eta-dot {
+    flex: none; width: 9px; height: 9px; border-radius: 50%;
+    background: #2FA84F; position: relative;
+  }
+  .yh-eta-dot::after {
+    content: ''; position: absolute; inset: -4px;
+    border-radius: 50%; background: #2FA84F;
+    opacity: .55; animation: yh-eta-pulse 1.8s ease-out infinite;
+  }
+  @keyframes yh-eta-pulse {
+    0%   { transform: scale(.55); opacity: .55; }
+    70%  { transform: scale(1.5);  opacity: 0;   }
+    100% { transform: scale(1.5);  opacity: 0;   }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .yh-eta-dot::after { animation: none; opacity: 0; }
+  }
+  .yh-eta b { color: var(--sup-ink); font-weight: 700; }
+
+  /* ── KNOCK-OFF CALLOUT + VIDEO CAROUSEL, ported from the Yeoman Handle PDP ── */
+  .yh-knock {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--sup-ink);
+    border: 1.5px dashed var(--sup-gold);
+    border-radius: 5px;
+    padding: 15px 16px;
+    margin-top: 18px;
+    margin-bottom: 24px;
+  }
+  .yh-knock-icon {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--sup-terra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+  .yh-knock-icon svg { width: 15px; height: 15px; color: #fff; }
+  .yh-knock-heading {
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 5px;
+    letter-spacing: 0.01em;
+  }
+  .yh-knock-body,
+  .yh-knock-body p {
+    font-size: 12.5px;
+    color: rgba(242,233,218,.84);
+    line-height: 1.55;
+  }
+  .yh-knock-body strong { color: #fff; font-weight: 700; }
+
+  /* ── VIDEO CAROUSEL (under ATC) ── */
+  .yh-vids {
+    margin: 24px 0 32px;
+    padding: 22px 14px 22px;
+    background: var(--sup-ink);
+    border: 1px solid rgba(242,233,218,.10);
+    border-radius: 5px;
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.06),
+      0 14px 32px rgba(45, 33, 24, 0.22);
+    position: relative;
+  }
+  .yh-vids::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--sup-gold);
+    border-radius: 0 0 3px 3px;
+  }
+  .yh-vids-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #F5EDE0;
+    margin-bottom: 28px;
+  }
+  .yh-vids-heading::before,
+  .yh-vids-heading::after {
+    content: '';
+    flex: 0 1 36px;
+    height: 1px;
+    background: rgba(245, 237, 224, 0.3);
+  }
+  .yh-vids-track {
+    --video-gap: 12px;
+    --video-peek: 32px;
+    display: flex;
+    gap: var(--video-gap);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+    scroll-behavior: smooth;
+  }
+  .yh-vids-track::-webkit-scrollbar { display: none; }
+  .yh-vid-slide {
+    flex: 0 0 calc((100% - var(--video-gap) - var(--video-peek)) / 2);
+    scroll-snap-align: start;
+    position: relative;
+    aspect-ratio: 9 / 16;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #1a1a1a;
+    border: 1px solid rgba(245, 237, 224, 0.06);
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .yh-vid-slide video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;
+    background: #1a1a1a;
+  }
+  .yh-vid-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.94);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    padding: 0;
+  }
+  .yh-vid-play svg {
+    width: 22px;
+    height: 22px;
+    color: var(--sup-terra);
+    margin-left: 3px;
+  }
+  .yh-vid-slide.playing .yh-vid-play {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  .yh-vid-sound {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.55);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    padding: 0;
+    opacity: 0.85;
+    transition: opacity 0.2s, background 0.2s;
+  }
+  .yh-vid-sound:hover { background: rgba(0,0,0,0.75); opacity: 1; }
+  .yh-vid-sound svg {
+    width: 14px;
+    height: 14px;
+    color: #fff;
+  }
+
+  /* CTA */
+  .sup-atc {
+    display: block; width: 100%;
+    background: var(--sup-terra); color: #fff;
+    border: 0; border-radius: 5px;
+    padding: 17px 20px 14px;
+    text-align: center;
+    transition: background .15s ease;
+  }
+  .sup-atc:hover { background: var(--sup-terra-deep); }
+  .sup-atc span {
+    display: block; font-family: var(--sup-display); font-weight: 800;
+    font-size: 23px; letter-spacing: .06em; text-transform: uppercase; line-height: 1;
+  }
+  .sup-atc small {
+    display: block; font-family: var(--sup-mono); font-size: 10px;
+    letter-spacing: .14em; text-transform: uppercase; opacity: .85; margin-top: 6px;
+  }
+
+  .yh-trust-strip { margin-top: 18px; }
+  .yh-trust-strip img { width: 100%; border-radius: 4px; }
+
+  /* accordions */
+  .sup-acc { border-top: 1px solid var(--sup-line); margin-top: 26px; }
+  .sup-acc-item { border-bottom: 1px solid var(--sup-line); }
+  /* Scoped to the section id on purpose. Horizon styles bare <button> elements and its
+     rules outrank a plain .class selector, which is why the 800 weight kept reading as
+     regular even after Inter 800 was loaded. The font was never the problem. */
+  #shopify-section-template--27754055925803__main .sup-acc-btn {
+    width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 14px;
+    background: none; border: 0; padding: 16px 0; text-align: left;
+    font-family: Inter, var(--sup-display), sans-serif;
+    font-weight: 800 !important;
+    font-size: 18px;
+    letter-spacing: -.005em; color: var(--sup-ink);
+  }
+  .sup-acc-ico { flex: none; width: 13px; height: 13px; position: relative; }
+  .sup-acc-ico::before, .sup-acc-ico::after {
+    content: ""; position: absolute; background: var(--sup-terra);
+    left: 0; top: 6px; width: 13px; height: 1.5px; transition: transform .2s ease;
+  }
+  .sup-acc-ico::after { transform: rotate(90deg); }
+  .sup-acc-item[data-open="true"] .sup-acc-ico::after { transform: rotate(0deg); }
+  .sup-acc-panel { max-height: 0; overflow: hidden; transition: max-height .28s ease; }
+  .sup-acc-panel-inner { padding: 0 0 18px; font-size: 15px; line-height: 1.66; }
+  .sup-acc-panel-inner p + p { margin-top: 11px !important; }
+
+  /* ═══════════════ BADGE STRIP ═══════════════ */
+  .sup-badges { background: var(--sup-ink); padding: 30px 0; }
+  .sup-badges-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 14px; }
+  @media (min-width: 700px) { .sup-badges-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1000px) { .sup-badges-grid { grid-template-columns: repeat(6, 1fr); } }
+  .sup-badge { text-align: center; color: var(--sup-warm); }
+  .sup-badge svg { width: 30px; height: 30px; margin: 0 auto 9px; stroke: var(--sup-gold); }
+  .sup-badge span {
+    font-family: var(--sup-mono); font-size: 9.5px; letter-spacing: .13em;
+    text-transform: uppercase; line-height: 1.5; display: block;
+  }
+
+  /* ═══════════════ DEMO BAND ═══════════════ */
+  /* Centered lockup, full-bleed-in-column media, then body. The media is the only
+     16:9 frame on a page that is otherwise all squares, so it reads as footage. */
+  .sup-demo-wrap { max-width: 720px; margin: 0 auto; }
+  .sup-demo-head { text-align: center; }
+  .sup-demo-h2 { text-align: center; margin-top: 7px; text-wrap: balance; }
+  .sup-demo-h2 em { font-style: italic; }
+  .sup-demo-media {
+    margin: 28px auto 0;
+    max-width: 470px;          /* a square at full column width dominates the band */
+    aspect-ratio: 1 / 1;
+    border-radius: 5px;
+    overflow: hidden;
+    background: var(--sup-card);
+    border: 1px solid var(--sup-line);
+  }
+  .sup-demo-media img,
+  .sup-demo-media video { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .sup-demo-ph {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px; height: 100%;
+    background:
+      repeating-linear-gradient(135deg, transparent 0 11px, rgba(36,26,19,.035) 11px 22px),
+      var(--sup-warm);
+    border: 1px dashed var(--sup-gold);
+    border-radius: 4px;
+    color: var(--sup-muted);
+  }
+  .sup-demo-ph svg { width: 34px; height: 34px; stroke: var(--sup-gold); stroke-width: 1.5; fill: none; }
+  .sup-demo-ph span {
+    font-family: var(--sup-mono); font-size: 10px;
+    letter-spacing: .15em; text-transform: uppercase;
+  }
+  /* The loop is decorative, so honour a reduced-motion preference the same way
+     the marquee does: pause it and leave the poster frame showing. */
+  @media (prefers-reduced-motion: reduce) {
+    .sup-demo-media video { animation: none; }
+  }
+  .sup-demo-copy { margin-top: 26px; }
+  .sup-demo-copy p + p { margin-top: 14px; }
+
+  /* ═══════════════ FIELD TILES ═══════════════ */
+  .sup-tiles {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 30px;
+  }
+  @media (min-width: 760px) { .sup-tiles { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1040px) { .sup-tiles { grid-template-columns: repeat(6, 1fr); } }
+  /* 1:1, not the supplement's 3/4 — every tile on this page is generated square */
+  .sup-tile {
+    position: relative; overflow: hidden; border-radius: 4px;
+    aspect-ratio: 1 / 1; background: var(--sup-warm);
+  }
+  .sup-tile img { width: 100%; height: 100%; object-fit: cover; }
+  .sup-tile figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 22px 11px 10px;
+    background: linear-gradient(to top, rgba(36,26,19,.88), rgba(36,26,19,0));
+    color: #fff;
+    font-family: var(--sup-mono); font-size: 9.5px; letter-spacing: .13em; text-transform: uppercase;
+  }
+
+  /* ═══════════════ COMPONENTS (the supplement's ingredient cards) ═══════════════ */
+  .sup-ing-grid { display: grid; gap: 12px; margin-top: 34px; }
+  @media (min-width: 700px) { .sup-ing-grid { grid-template-columns: repeat(2, 1fr); } }
+  .sup-ing {
+    display: grid; grid-template-columns: 1fr 132px; gap: 8px; align-items: center;
+    background: var(--sup-card); border: 1px solid var(--sup-line);
+    border-radius: 5px; overflow: hidden; padding: 20px 0 20px 22px;
+  }
+  @media (min-width: 480px) { .sup-ing { grid-template-columns: 1fr 168px; } }
+  .sup-ing-name { font-family: var(--sup-display); font-weight: 700; font-size: 25px; text-transform: uppercase; color: var(--sup-ink); line-height: 1; }
+  .sup-ing-job { font-size: 14.5px; color: var(--sup-body); margin-top: 6px !important; line-height: 1.45; }
+  .sup-ing-dose {
+    display: inline-block; margin-top: 11px;
+    font-family: var(--sup-mono); font-size: 11px; letter-spacing: .1em;
+    color: var(--sup-terra-deep); background: var(--sup-warm);
+    padding: 4px 9px; border-radius: 3px;
+  }
+  .sup-ing img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+
+  .sup-facts { display: grid; gap: 26px; margin-top: 34px; align-items: start; }
+  @media (min-width: 860px) { .sup-facts { grid-template-columns: 380px 1fr; gap: 44px; } }
+  /* the SPEC PLATE — native, not a raster. A number in an image cannot be
+     corrected in the theme editor and cannot be read by a screen reader. */
+  .yh-plate {
+    background: var(--sup-card); border: 2px solid var(--sup-ink);
+    border-radius: 4px; padding: 20px 22px 22px;
+  }
+  .yh-plate-title {
+    font-family: var(--sup-display); font-weight: 800; font-size: 27px;
+    text-transform: uppercase; color: var(--sup-ink); line-height: 1;
+    padding-bottom: 10px; border-bottom: 6px solid var(--sup-ink);
+  }
+  .yh-plate-sub {
+    font-family: var(--sup-mono); font-size: 10px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--sup-muted);
+    padding: 9px 0; border-bottom: 1px solid var(--sup-ink);
+  }
+  .yh-plate-row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    padding: 9px 0; border-bottom: 1px solid var(--sup-line);
+    font-family: var(--sup-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
+  }
+  .yh-plate-row:last-of-type { border-bottom: 3px solid var(--sup-ink); }
+  .yh-plate-row dt { color: var(--sup-body); }
+  .yh-plate-row dd { color: var(--sup-ink); font-weight: 700; text-align: right; }
+  .yh-plate-foot {
+    font-family: var(--sup-mono); font-size: 9.5px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--sup-muted); line-height: 1.7; margin-top: 11px !important;
+  }
+
+  .sup-exclude { display: grid; gap: 10px; margin-top: 18px !important; }
+  .sup-exclude li {
+    display: grid; grid-template-columns: 19px 1fr; gap: 11px; align-items: start;
+    font-size: 15px; line-height: 1.5;
+  }
+  .sup-exclude svg { width: 19px; height: 19px; margin-top: 2px; }
+
+  /* ═══════════════ DARK BAND / the one hard interrupt ═══════════════ */
+  .sup-dark { background: var(--sup-ink); color: var(--sup-warm); padding: 78px 0; }
+  .sup-dark .sup-h2 { color: #fff; }
+  .sup-dark .sup-lede { color: #D9CCBA; }
+  .sup-dark-quote {
+    font-family: var(--sup-display); font-weight: 800;
+    font-size: clamp(30px, 5.6vw, 58px); line-height: .98; text-transform: uppercase;
+    color: #fff; margin-bottom: 20px !important;
+  }
+  .sup-dark-quote b { color: var(--sup-terra); font-weight: 800; }
+  .sup-dark-grid { display: grid; gap: 26px; margin-top: 40px; }
+  @media (min-width: 820px) { .sup-dark-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; } }
+  .sup-dark-fig { background: #2E2219; border: 1px solid #3E3025; border-radius: 5px; overflow: hidden; }
+  .sup-dark-fig img,
+  .sup-dark-fig video { display: block; width: 100%; height: auto; }
+  .sup-dark-fig figcaption {
+    padding: 13px 18px 15px; font-family: var(--sup-mono); font-size: 10px;
+    letter-spacing: .12em; text-transform: uppercase; color: #A89682; line-height: 1.6;
+  }
+
+  /* ═══════════════ SPLIT (image + argument) ═══════════════ */
+  .sup-split { display: grid; gap: 30px; align-items: center; }
+  @media (min-width: 880px) { .sup-split { grid-template-columns: repeat(2, 1fr); gap: 56px; } }
+  .sup-split--flip .sup-split-media { order: 2; }
+  .sup-split-media img,
+  .sup-split-media video { border-radius: 5px; border: 1px solid var(--sup-line); }
+  .sup-note {
+    font-family: var(--sup-mono); font-size: 10.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--sup-muted); margin-top: 16px !important; line-height: 1.7;
+  }
+  .sup-body-p + .sup-body-p { margin-top: 14px !important; }
+
+  /* ═══════════════ REVIEWS ═══════════════ */
+  .sup-rev-grid { display: grid; gap: 14px; margin-top: 30px; }
+  @media (min-width: 760px) { .sup-rev-grid { grid-template-columns: repeat(3, 1fr); } }
+  .sup-rev {
+    background: var(--sup-card); border: 1px solid var(--sup-line);
+    border-radius: 5px; padding: 24px; display: flex; flex-direction: column; gap: 13px;
+  }
+  .sup-rev-stars { display: flex; gap: 2px; }
+  .sup-rev-stars svg { width: 15px; height: 15px; fill: var(--sup-gold); }
+  .sup-rev-title { font-family: var(--sup-display); font-weight: 700; font-size: 19px; text-transform: uppercase; color: var(--sup-ink); line-height: 1.08; }
+  .sup-rev-body { font-size: 15px; line-height: 1.62; flex: 1; }
+  .sup-rev-who { font-family: var(--sup-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--sup-muted); }
+
+  /* ═══════════════ GUARANTEE ═══════════════ */
+  .sup-guarantee { text-align: center; }
+  .sup-guarantee img {
+    display: block; width: 100%; max-width: 430px; height: auto;
+    margin: 0 auto 26px; border-radius: 5px; border: 1px solid var(--sup-line);
+  }
+
+  /* ═══════════════ FAQ ═══════════════ */
+  .sup-faq { max-width: 860px; margin: 30px auto 0; border-top: 1px solid var(--sup-line); }
+
+  /* ═══════════════ STICKY BAR ═══════════════ */
+  .sup-sticky {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    background: var(--sup-ink); border-top: 1px solid #3E3025;
+    padding: 10px 16px;
+    transform: translateY(110%); transition: transform .25s ease;
+  }
+  .sup-sticky.is-on { transform: translateY(0); }
+  .sup-sticky-in { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+  .sup-sticky-txt { color: var(--sup-warm); min-width: 0; }
+  .sup-sticky-txt strong { display: block; font-family: var(--sup-display); font-weight: 700; font-size: 17px; text-transform: uppercase; line-height: 1.1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sup-sticky-txt span { font-family: var(--sup-mono); font-size: 10.5px; letter-spacing: .1em; color: var(--sup-gold); }
+  .sup-sticky .sup-atc { width: auto; padding: 13px 26px 11px; flex: none; }
+  .sup-sticky .sup-atc span { font-size: 17px; }
+  .sup-sticky .sup-atc small { display: none; }
+  @media (max-width: 560px) { .sup-sticky-txt strong { font-size: 15px; } .sup-sticky .sup-atc { padding: 12px 18px 10px; } }
+
+  .sup .visually-hidden {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sup *, .sup *::before, .sup *::after { transition: none !important; animation: none !important; }
+  }
+</style>
+
+<div class="sup"><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="sup-check" viewBox="0 0 20 20">
+      <circle cx="10" cy="10" r="9" fill="#3D3024"/>
+      <path d="M6 10.3l2.6 2.6L14.2 7.3" fill="none" stroke="#FBF6EC" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="sup-x" viewBox="0 0 20 20">
+      <circle cx="10" cy="10" r="9" fill="none" stroke="#C0653F" stroke-width="1.6"/>
+      <path d="M7 7l6 6M13 7l-6 6" fill="none" stroke="#C0653F" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="sup-star" viewBox="0 0 20 20"><path d="M10 1.6l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></symbol>
+    <symbol id="sup-i-leaf" viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14.7 26.7A9.3 9.3 0 0 1 13 8.1C20.7 6.7 22.7 6 25.3 2.7c1.3 2.7 2.7 5.6 2.7 10.7 0 7.3-6.4 13.3-13.3 13.3Z"/>
+      <path d="M2.7 28c0-4 2.5-7.1 6.8-8C12.7 19.4 16 17.3 17.3 16"/>
+    </symbol>
+    <symbol id="sup-i-check" viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M26.7 8 12 22.7 5.3 16"/>
+    </symbol>
+    <symbol id="yh-gift" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12"/>
+      <path d="M12 9S10.5 4 8 4a2.2 2.2 0 000 5M12 9s1.5-5 4-5a2.2 2.2 0 010 5"/>
+    </symbol>
+    <symbol id="yh-lock" viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 018 0v3.5"/>
+    </symbol>
+    <symbol id="sup-i-spine" viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 3v26"/><path d="M11 7h10M11 12h10M11 17h10M11 22h10M11 27h10"/>
+    </symbol>
+    <symbol id="sup-i-wrench" viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 4a7 7 0 00-7 9.6L4 23.6a2.5 2.5 0 003.5 3.5l10-10A7 7 0 0027 10l-4 4-4-1-1-4z"/>
+    </symbol>
+    <symbol id="sup-i-shield" viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 3l11 4v9c0 7-4.6 11.4-11 13-6.4-1.6-11-6-11-13V7z"/><path d="M11 16l3.4 3.4L21.5 12"/>
+    </symbol>
+    <symbol id="sup-i-clamp" viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="11" width="22" height="10" rx="3"/><path d="M11 11v10M21 11v10M16 4v7M16 21v7"/>
+    </symbol>
+    <symbol id="sup-i-fit" viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="5"/><path d="M16 5v6M16 21v6M5 16h6M21 16h6"/>
+    </symbol>
+    <symbol id="sup-i-flag" viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 28V5M6 6h20l-3.5 5L26 16H6"/>
+    </symbol>
+    <symbol id="sup-i-truck" viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 8h14v13H3zM17 12h5.5l3.5 4v5h-9z"/><circle cx="9" cy="24" r="2.5"/><circle cx="22" cy="24" r="2.5"/>
+    </symbol>
+    <symbol id="sup-i-clock" viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="16" cy="16" r="12"/><path d="M16 8v8l5 3"/>
+    </symbol>
+    <symbol id="sup-i-anvil" viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 10h16l6 4-4 1-2 4H12l-3-4H4z"/><path d="M13 19v5H9v4h14v-4h-4v-5"/>
+    </symbol>
+  </svg><div class="sup-marquee" role="region" aria-label="Guarantee and customer quotes">
+      <div class="sup-marquee-track"><span class="sup-mq-item"
+                   >End Of Summer Sale
+</span>
+            <span class="sup-mq-sep" aria-hidden="true"></span><span class="sup-mq-item"
+                   >Free shipping on every order
+</span>
+            <span class="sup-mq-sep" aria-hidden="true"></span><span class="sup-mq-item"
+                   >Up to $100 off the Yeoman Sweep
+</span>
+            <span class="sup-mq-sep" aria-hidden="true"></span><span class="sup-mq-item"
+                   >Ships free from the USA
+</span>
+            <span class="sup-mq-sep" aria-hidden="true"></span><span class="sup-mq-item"
+                   >60 days to decide
+</span>
+            <span class="sup-mq-sep" aria-hidden="true"></span><span class="sup-mq-item"
+                  aria-hidden="true" >End Of Summer Sale
+</span>
+            <span class="sup-mq-sep" aria-hidden="true"></span><span class="sup-mq-item"
+                  aria-hidden="true" >Free shipping on every order
+</span>
+            <span class="sup-mq-sep" aria-hidden="true"></span><span class="sup-mq-item"
+                  aria-hidden="true" >Up to $100 off the Yeoman Sweep
+</span>
+            <span class="sup-mq-sep" aria-hidden="true"></span><span class="sup-mq-item"
+                  aria-hidden="true" >Ships free from the USA
+</span>
+            <span class="sup-mq-sep" aria-hidden="true"></span><span class="sup-mq-item"
+                  aria-hidden="true" >60 days to decide
+</span>
+            <span class="sup-mq-sep" aria-hidden="true"></span></div>
+    </div><section class="sup-hero">
+    <div class="sup-wrap sup-hero-grid"><div>
+        <div class="sup-gal-main"><img id="sup-gal-main-img"
+                 src="https://fieldandharvestco.com/cdn/shop/files/hf_20260913_100130_cc5a08ed-b3ec-4abb-95bc-a45bfdb72b96.png?v=1789293761&width=1100"
+                 alt="The Yeoman Sweep"
+                 width="1100" height="1100" fetchpriority="high" decoding="async"></div><div class="sup-gal-thumbs"><button type="button" class="sup-gal-thumb" data-gal-thumb
+                      data-full="https://fieldandharvestco.com/cdn/shop/files/hf_20260913_100130_cc5a08ed-b3ec-4abb-95bc-a45bfdb72b96.png?v=1789293761&width=1100"
+                      aria-current="true"
+                      aria-label="View image 1 of 7">
+                <img src="https://fieldandharvestco.com/cdn/shop/files/hf_20260913_100130_cc5a08ed-b3ec-4abb-95bc-a45bfdb72b96.png?v=1789293761&width=220" alt="The Yeoman Sweep"
+                     width="220" height="220" loading="lazy" decoding="async">
+              </button><button type="button" class="sup-gal-thumb" data-gal-thumb
+                      data-full="https://fieldandharvestco.com/cdn/shop/files/hf_20260913_083634_da088230-c66f-464c-8f68-ca03117a3a8d.png?v=1792570981&width=1100"
+                      aria-current="false"
+                      aria-label="View image 2 of 7">
+                <img src="https://fieldandharvestco.com/cdn/shop/files/hf_20260913_083634_da088230-c66f-464c-8f68-ca03117a3a8d.png?v=1792570981&width=220" alt="The Yeoman Sweep"
+                     width="220" height="220" loading="lazy" decoding="async">
+              </button><button type="button" class="sup-gal-thumb" data-gal-thumb
+                      data-full="https://fieldandharvestco.com/cdn/shop/files/ysp-gallery-warranty-bar.png?v=1792571239&width=1100"
+                      aria-current="false"
+                      aria-label="View image 3 of 7">
+                <img src="https://fieldandharvestco.com/cdn/shop/files/ysp-gallery-warranty-bar.png?v=1792571239&width=220" alt="A homeowner with the Yeoman Sweep on a finished autumn lawn. 2 Year Warranty and 60 Day Guarantee"
+                     width="220" height="220" loading="lazy" decoding="async">
+              </button><button type="button" class="sup-gal-thumb" data-gal-thumb
+                      data-full="https://fieldandharvestco.com/cdn/shop/files/ysp-gallery-brush-macro_e7dfbadb-e74b-4d6a-b91c-69525032dceb.png?v=1792570562&width=1100"
+                      aria-current="false"
+                      aria-label="View image 4 of 7">
+                <img src="https://fieldandharvestco.com/cdn/shop/files/ysp-gallery-brush-macro_e7dfbadb-e74b-4d6a-b91c-69525032dceb.png?v=1792570562&width=220" alt="Close-up of the Yeoman Sweep brushes lifting leaves off the grass"
+                     width="220" height="220" loading="lazy" decoding="async">
+              </button><button type="button" class="sup-gal-thumb" data-gal-thumb
+                      data-full="https://fieldandharvestco.com/cdn/shop/files/hf_20260913_102755_d44b5095-5280-481f-83f8-3c36ab1e921a.png?v=1789295464&width=1100"
+                      aria-current="false"
+                      aria-label="View image 5 of 7">
+                <img src="https://fieldandharvestco.com/cdn/shop/files/hf_20260913_102755_d44b5095-5280-481f-83f8-3c36ab1e921a.png?v=1789295464&width=220" alt="The Yeoman Sweep"
+                     width="220" height="220" loading="lazy" decoding="async">
+              </button><button type="button" class="sup-gal-thumb" data-gal-thumb
+                      data-full="https://fieldandharvestco.com/cdn/shop/files/hf_20260913_102755_b739b898-2a79-427a-beb1-a85a19e1dc69.png?v=1789295464&width=1100"
+                      aria-current="false"
+                      aria-label="View image 6 of 7">
+                <img src="https://fieldandharvestco.com/cdn/shop/files/hf_20260913_102755_b739b898-2a79-427a-beb1-a85a19e1dc69.png?v=1789295464&width=220" alt="The Yeoman Sweep"
+                     width="220" height="220" loading="lazy" decoding="async">
+              </button><button type="button" class="sup-gal-thumb" data-gal-thumb
+                      data-full="https://fieldandharvestco.com/cdn/shop/files/hf_20260913_102022_03eb4095-9fa0-49f3-9694-fad1622a0020.png?v=1789295464&width=1100"
+                      aria-current="false"
+                      aria-label="View image 7 of 7">
+                <img src="https://fieldandharvestco.com/cdn/shop/files/hf_20260913_102022_03eb4095-9fa0-49f3-9694-fad1622a0020.png?v=1789295464&width=220" alt="The Yeoman Sweep"
+                     width="220" height="220" loading="lazy" decoding="async">
+              </button></div></div><div>
+        <div class="sup-flags"><span class="sup-flag sup-flag--solid">60-Day Money Back</span><span class="sup-flag sup-flag--ship"><svg viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#B22234"/><rect y="2" width="24" height="1.6" fill="#fff"/><rect y="5.2" width="24" height="1.6" fill="#fff"/><rect y="8.4" width="24" height="1.6" fill="#fff"/><rect y="11.6" width="24" height="1.6" fill="#fff"/><rect width="10" height="8.8" fill="#3C3B6E"/></svg>Free US Shipping</span></div><p class="sup-kicker">The Yeoman Sweep</p><h1 class="sup-h1">The World's First Lawn Tool That Ends The Raking, Leaf Blowing And The Painful Bending.<em> Clears Up The Yard With Ease.</em><span class="sup-h1-spec">Metal frame · 10 V-brush heights · 7 cu ft hopper</span></h1>
+        <p class="sup-sub">Rake it into a pile. Bend down. Fill the bag. Carry it out. That is four motions for one pile, and it is before you reach the pine needles, the acorns and the sweetgum balls, which do not mulch at all. The Yeoman Sweep does it in one. You walk, it lifts, and the hopper fills behind you.</p><div class="sup-rating">
+            <span class="sup-rating-score">4.7</span>
+            <span class="sup-stars" role="img" aria-label="4.7 out of 5 stars">
+              <span class="sup-stars-bg" aria-hidden="true"><svg><use href="#sup-star"/></svg><svg><use href="#sup-star"/></svg><svg><use href="#sup-star"/></svg><svg><use href="#sup-star"/></svg><svg><use href="#sup-star"/></svg></span>
+              <span class="sup-stars-fg" aria-hidden="true" style="width: 94.0%;">
+                <span class="sup-stars-row"><svg><use href="#sup-star"/></svg><svg><use href="#sup-star"/></svg><svg><use href="#sup-star"/></svg><svg><use href="#sup-star"/></svg><svg><use href="#sup-star"/></svg></span>
+              </span>
+            </span><span class="sup-rating-grade">Great</span><span class="sup-rating-div" aria-hidden="true">|</span>
+              <span class="sup-rating-count">3,783+ Reviews</span></div><div class="sup-price-row">
+          <span class="sup-price" id="sup-price">$229.99</span><span class="sup-was" id="sup-was">$289.99</span><span class="sup-save" id="sup-save">Save 21%</span></div><h2 class="sup-usp-title">What one pass actually does</h2>
+          <ul class="sup-usp"><li >
+                <svg aria-hidden="true"><use href="#sup-check"/></svg>
+                <span>No gas, no cords, no motor. You push it.</span>
+              </li><li >
+                <svg aria-hidden="true"><use href="#sup-check"/></svg>
+                <span>Blow, rake, stoop, bag becomes one walk.</span>
+              </li><li >
+                <svg aria-hidden="true"><use href="#sup-check"/></svg>
+                <span>It lifts debris as you walk. Nothing to bend for.</span>
+              </li><li >
+                <svg aria-hidden="true"><use href="#sup-check"/></svg>
+                <span>Ten V-brush heights, set from a handle at the side.</span>
+              </li><li >
+                <svg aria-hidden="true"><use href="#sup-check"/></svg>
+                <span>Arrives assembled. You attach the frame and hopper.</span>
+              </li></ul><form id="sup-form" action="/cart/add" method="post" enctype="multipart/form-data"><p class="sup-ladder-label">Choose your sweep width</p>
+            <div class="sup-ladder">
+  <button type="button"
+          class="sup-tier is-active"
+          data-tier
+          data-pack="21 in"
+          data-units="1"
+          data-unlocks="false"
+          aria-pressed="true"
+          style="width: 100%; border: 2px solid #C0653F; background: #FBF6EC;">
+    <span class="sup-radio" aria-hidden="true" style="border-color: #C0653F; background: #C0653F;"></span>
+    <span>
+      <span class="sup-tier-name" style="font-weight: 800; font-size: 18px; color: #241A13;">21 inch</span>
+      <span class="sup-tier-meta" style="color: #54463A;">
+        <span>Small to medium yards and quick touch-ups</span>
+      </span>
+    </span>
+    <span class="sup-tier-price" data-tier-price>
+      <span data-tier-now style="font-weight: 800; color: #C0653F; font-size: 20px;">$229.99</span>
+      <span class="sup-tier-was" data-tier-was style="text-decoration: line-through; color: #8A7866; margin-left: 8px;">$289.99</span>
+    </span>
+  </button>
+</div><div class="yh-gifts" id="yh-gifts"><div class="yh-gifts-row"><div class="yh-gifts-head">
+                  <svg aria-hidden="true"><use href="#yh-gift"/></svg>
+                  <p>Included free with every Sweep</p>
+                </div><div class="yh-gifts-grid"><div class="yh-gift" >
+                    <div class="yh-gift-frame"><img src="https://fieldandharvestco.com/cdn/shop/files/hf_20260510_172057_64ca6d7c-ae3b-410b-a1d1-97d929679c7f.png?v=1778433765&width=160"
+                             alt="Tool Audit checklist"
+                             title="Tool Audit checklist ($12 value)"
+                             width="160" height="160" loading="lazy" decoding="async"><span class="yh-gift-value">$12 value</span></div>
+                    <p class="yh-gift-name">
+                      <b data-gift-flag>Free</b>
+                      <span data-gift-title>Tool Audit checklist</span>
+                    </p>
+                  </div><div class="yh-gift" >
+                    <div class="yh-gift-frame"><img src="https://fieldandharvestco.com/cdn/shop/files/hf_20260510_172049_60655980-fdd4-4023-adc1-fe36326de769.png?v=1778433768&width=160"
+                             alt="One-Pass Yard guide"
+                             title="One-Pass Yard guide ($15 value)"
+                             width="160" height="160" loading="lazy" decoding="async"><span class="yh-gift-value">$15 value</span></div>
+                    <p class="yh-gift-name">
+                      <b data-gift-flag>Free</b>
+                      <span data-gift-title>One-Pass Yard guide</span>
+                    </p>
+                  </div><div class="yh-gift" >
+                    <div class="yh-gift-frame"><img src="https://fieldandharvestco.com/cdn/shop/files/ysp-gift-2yr-warranty-tile.png?v=1792571250&width=160"
+                             alt="2 Year Warranty"
+                             title="2 Year Warranty ($50 value)"
+                             width="160" height="160" loading="lazy" decoding="async"><span class="yh-gift-value">$50 value</span></div>
+                    <p class="yh-gift-name">
+                      <b data-gift-flag>Free</b>
+                      <span data-gift-title>2 Year Warranty</span>
+                    </p>
+                  </div></div></div>
+            </div><input type="hidden" name="id" id="sup-variant-id" value="67918044954809">
+          <input type="hidden" name="quantity" value="1">
+          <button type="button" class="sup-atc" id="sup-atc">
+            <span>Add to cart</span>
+            <small>60 days to decide · free shipping both ways</small>
+          </button>
+        </form>
+
+      <!-- Watch Out For Knock-Offs (under ATC) --><div class="yh-knock">
+          <span class="yh-knock-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </span>
+          <div class="yh-knock-text">
+            <p class="yh-knock-heading">Watch Out For Cheap Knock-Offs</p>
+            <div class="yh-knock-body"><p>Look-alikes are flooding the market with plastic wheels that slip on damp grass, thin frames that flex under load, and soft brushes that skim the tops and gather nothing. They carry <strong>no warranty and no support</strong> when they fail, and no replacement parts at all. The Yeoman Sweep runs a metal frame, three V-brush rows, a lifetime frame warranty and a real team behind it.</p></div>
+          </div>
+        </div><div class="yh-eta">
+          <span class="yh-eta-dot" aria-hidden="true"></span>
+          <span>Order now and receive your order by <b>October 28</b></span>
+        </div><!-- Video Carousel --><div class="yh-vids"><p class="yh-vids-heading">See It In Action</p><div class="yh-vids-track" id="yh-vids-track"><div class="yh-vid-slide" >
+                  <video
+                    class="yh-vid"
+                    playsinline
+                    webkit-playsinline
+                    muted
+                    loop
+                    preload="metadata"
+                    poster="//fieldandharvestco.com/cdn/shop/files/ysp-demo-1-poster.png?v=1789360142&width=600"
+                  ><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/694788af887245f98d6c8d1a65691279/694788af887245f98d6c8d1a65691279.m3u8?v=0" type="application/x-mpegURL"><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/694788af887245f98d6c8d1a65691279/694788af887245f98d6c8d1a65691279.HD-1080p-4.8Mbps-94313908.mp4?v=0" type="video/mp4"></video>
+                  <button class="yh-vid-play" type="button" aria-label="Play video">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                  <button class="yh-vid-sound" type="button" aria-label="Toggle sound" data-muted="true">
+                    <svg class="yh-vid-sound-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/>
+                      <line x1="23" y1="9" x2="17" y2="15"/>
+                      <line x1="17" y1="9" x2="23" y2="15"/>
+                    </svg>
+                    <svg class="yh-vid-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/>
+                      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                  </button>
+                </div><div class="yh-vid-slide" >
+                  <video
+                    class="yh-vid"
+                    playsinline
+                    webkit-playsinline
+                    muted
+                    loop
+                    preload="metadata"
+                    poster="//fieldandharvestco.com/cdn/shop/files/ysp-demo-2-poster.png?v=1789360147&width=600"
+                  ><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/7765ff1154124270bfebc1cd2e3fe423/7765ff1154124270bfebc1cd2e3fe423.m3u8?v=0" type="application/x-mpegURL"><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/7765ff1154124270bfebc1cd2e3fe423/7765ff1154124270bfebc1cd2e3fe423.HD-720p-2.1Mbps-94313911.mp4?v=0" type="video/mp4"></video>
+                  <button class="yh-vid-play" type="button" aria-label="Play video">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                  <button class="yh-vid-sound" type="button" aria-label="Toggle sound" data-muted="true">
+                    <svg class="yh-vid-sound-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/>
+                      <line x1="23" y1="9" x2="17" y2="15"/>
+                      <line x1="17" y1="9" x2="23" y2="15"/>
+                    </svg>
+                    <svg class="yh-vid-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/>
+                      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                  </button>
+                </div><div class="yh-vid-slide" >
+                  <video
+                    class="yh-vid"
+                    playsinline
+                    webkit-playsinline
+                    muted
+                    loop
+                    preload="metadata"
+                    poster="//fieldandharvestco.com/cdn/shop/files/ysp-demo-3-poster.png?v=1789360152&width=600"
+                  ><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/aae359d037e54f179299f0a4b25e1dd1/aae359d037e54f179299f0a4b25e1dd1.m3u8?v=0" type="application/x-mpegURL"><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/aae359d037e54f179299f0a4b25e1dd1/aae359d037e54f179299f0a4b25e1dd1.HD-720p-4.5Mbps-94313912.mp4?v=0" type="video/mp4"></video>
+                  <button class="yh-vid-play" type="button" aria-label="Play video">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                  <button class="yh-vid-sound" type="button" aria-label="Toggle sound" data-muted="true">
+                    <svg class="yh-vid-sound-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/>
+                      <line x1="23" y1="9" x2="17" y2="15"/>
+                      <line x1="17" y1="9" x2="23" y2="15"/>
+                    </svg>
+                    <svg class="yh-vid-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/>
+                      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                  </button>
+                </div></div>
+        </div><div class="sup-acc"><div class="sup-acc-item" data-open="false">
+                <button type="button" class="sup-acc-btn" aria-expanded="false">
+                  Specifications
+                  <span class="sup-acc-ico" aria-hidden="true"></span>
+                </button>
+                <div class="sup-acc-panel">
+                  <div class="sup-acc-panel-inner">
+                    <dl class="sup-ledger sup-ledger--in-acc"><div class="sup-ledger-row" >
+                          <dt>Sweep path</dt><dd>21 in</dd>
+                        </div><div class="sup-ledger-row" >
+                          <dt>V-brushes</dt>
+                          <dd>3, V-shaped</dd>
+                        </div><div class="sup-ledger-row" >
+                          <dt>V-brush to wheel</dt>
+                          <dd>1:5</dd>
+                        </div><div class="sup-ledger-row" >
+                          <dt>V-brush heights</dt>
+                          <dd>10, side handle</dd>
+                        </div><div class="sup-ledger-row" >
+                          <dt>Hopper</dt>
+                          <dd>7 cu ft</dd>
+                        </div><div class="sup-ledger-row" >
+                          <dt>Weight</dt>
+                          <dd>29.77 lb</dd>
+                        </div></dl>
+                  </div>
+                </div>
+              </div><div class="sup-acc-item" data-open="false" >
+                <button type="button" class="sup-acc-btn" aria-expanded="false">
+                  Is it hard to push?
+                  <span class="sup-acc-ico" aria-hidden="true"></span>
+                </button>
+                <div class="sup-acc-panel">
+                  <div class="sup-acc-panel-inner"><p>It takes about what pushing a mower takes, and the V-brush height decides most of it. Set too low it digs in and fights you. One notch up and it rolls. Ten heights on a side handle mean you can correct it mid-lawn. If a mower is already too much for you, this will be too.</p></div>
+                </div>
+              </div><div class="sup-acc-item" data-open="false" >
+                <button type="button" class="sup-acc-btn" aria-expanded="false">
+                  Do I still have to bag?
+                  <span class="sup-acc-ico" aria-hidden="true"></span>
+                </button>
+                <div class="sup-acc-panel">
+                  <div class="sup-acc-panel-inner"><p>Not the way you do now. You never kneel and scoop. The hopper lifts off on four buckles and you empty it standing, into a bin or a bag. The three reinforced bags included stand up on their own.</p></div>
+                </div>
+              </div><div class="sup-acc-item" data-open="false" >
+                <button type="button" class="sup-acc-btn" aria-expanded="false">
+                  Will it work on my lawn?
+                  <span class="sup-acc-ico" aria-hidden="true"></span>
+                </button>
+                <div class="sup-acc-panel">
+                  <div class="sup-acc-panel-inner"><p>Flat, established grass, artificial turf, patios and driveways all work. Bumpy ground, bare patches and soft molehills will catch the V-brushes. Cut the grass first, and let wet leaves dry.</p></div>
+                </div>
+              </div><div class="sup-acc-item" data-open="false" >
+                <button type="button" class="sup-acc-btn" aria-expanded="false">
+                  How much assembly is there?
+                  <span class="sup-acc-ico" aria-hidden="true"></span>
+                </button>
+                <div class="sup-acc-panel">
+                  <div class="sup-acc-panel-inner"><p>The core arrives assembled. You attach the push frame and the hopper. Most people are done in about fifteen minutes with a screwdriver.</p></div>
+                </div>
+              </div></div></div>
+    </div>
+  </section><section class="sup-badges">
+      <div class="sup-wrap sup-badges-grid"><div class="sup-badge" >
+            <svg aria-hidden="true" fill="none"><use href="#sup-i-shield"/></svg>
+            <span>60 days to decide</span>
+          </div><div class="sup-badge" >
+            <svg aria-hidden="true" fill="none"><use href="#sup-i-anvil"/></svg>
+            <span>Metal frame</span>
+          </div><div class="sup-badge" >
+            <svg aria-hidden="true" fill="none"><use href="#sup-i-truck"/></svg>
+            <span>Free US shipping</span>
+          </div><div class="sup-badge" >
+            <svg aria-hidden="true" fill="none"><use href="#sup-i-fit"/></svg>
+            <span>10 V-brush heights</span>
+          </div><div class="sup-badge" >
+            <svg aria-hidden="true" fill="none"><use href="#sup-i-leaf"/></svg>
+            <span>No gas, no cord, no motor</span>
+          </div><div class="sup-badge" >
+            <svg aria-hidden="true" fill="none"><use href="#sup-i-shield"/></svg>
+            <span>Free yard bags included</span>
+          </div></div>
+    </section><section class="sup-band sup-band--warm">
+      <div class="sup-wrap sup-demo-wrap"><p class="sup-eyebrow sup-demo-head">The rake stays in the shed</p><h2 class="sup-h2 sup-demo-h2">One Walk Now. <em>Not Your Whole Saturday.</em></h2>
+
+        <figure class="sup-demo-media"><video autoplay muted loop playsinline preload="metadata" disablepictureinpicture
+                   aria-label="One Walk Now."
+                   poster="//fieldandharvestco.com/cdn/shop/files/preview_images/7c35df01d1294047b1800e00d9f58804.thumbnail.0000000000.jpg?v=1789377439&width=1080"><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/7c35df01d1294047b1800e00d9f58804/7c35df01d1294047b1800e00d9f58804.m3u8?v=0" type="application/x-mpegURL"><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/7c35df01d1294047b1800e00d9f58804/7c35df01d1294047b1800e00d9f58804.HD-1080p-3.3Mbps-94334458.mp4?v=0" type="video/mp4"></video></figure>
+        <script>
+          (function () {
+            var v = document.currentScript.parentNode.querySelector('.sup-demo-media video');
+            if (!v) return;
+            var q = window.matchMedia('(prefers-reduced-motion: reduce)');
+            function apply() {
+              if (q.matches) { v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls',''); }
+            }
+            apply();
+            if (q.addEventListener) q.addEventListener('change', apply);
+          })();
+        </script>
+
+        <div class="sup-demo-copy"><p class="sup-lede sup-body-p">There is no motor. The wheels turn the brushes, and they turn them fast: one turn of the wheels spins the brushes five times. So you walk at a normal pace and the brushes are moving quick enough to flick the leaves up off the grass and into the hopper behind you. Nothing gets pushed into a pile, because there is no pile.</p><p class="sup-lede sup-body-p">Three 300 liter yard bags come free with every Sweep, so the bagging is handled before you start. Tip a full hopper into one and the bag still is not full.</p></div>
+      </div>
+    </section><section class="sup-band sup-band--tight">
+      <div class="sup-wrap">
+        <p class="sup-eyebrow">In the yard</p>
+        <h2 class="sup-h2">What it picks up</h2>
+        <p class="sup-lede sup-lede--wide">Leaves, grass clippings, pine needles and pine straw, small sticks and twigs, acorns, sweetgum balls, magnolia pods, walnut hulls, and light thatch after dethatching.</p>
+        <div class="sup-tiles"><figure class="sup-tile" ><img src="https://fieldandharvestco.com/cdn/shop/files/ysp-tile-leaves.png?v=1789354973&width=520"
+                     alt="Heavy leaf fall"
+                     width="520" height="520" loading="lazy" decoding="async"><figcaption>Heavy leaf fall</figcaption>
+            </figure><figure class="sup-tile" ><img src="https://fieldandharvestco.com/cdn/shop/files/ysp-tile-clippings.png?v=1789354976&width=520"
+                     alt="Clippings after mowing"
+                     width="520" height="520" loading="lazy" decoding="async"><figcaption>Clippings after mowing</figcaption>
+            </figure><figure class="sup-tile" ><img src="https://fieldandharvestco.com/cdn/shop/files/ysp-tile-needles.png?v=1789354978&width=520"
+                     alt="Pine needles and straw"
+                     width="520" height="520" loading="lazy" decoding="async"><figcaption>Pine needles and straw</figcaption>
+            </figure><figure class="sup-tile" ><img src="https://fieldandharvestco.com/cdn/shop/files/ysp-tile-sweetgum.png?v=1789354980&width=520"
+                     alt="Sweetgum balls and pods"
+                     width="520" height="520" loading="lazy" decoding="async"><figcaption>Sweetgum balls and pods</figcaption>
+            </figure><figure class="sup-tile" ><img src="https://fieldandharvestco.com/cdn/shop/files/ysp-tile-driveway.png?v=1789356608&width=520"
+                     alt="Driveways and patios"
+                     width="520" height="520" loading="lazy" decoding="async"><figcaption>Driveways and patios</figcaption>
+            </figure><figure class="sup-tile" ><img src="https://fieldandharvestco.com/cdn/shop/files/ysp-tile-turf.png?v=1789356635&width=520"
+                     alt="Artificial turf"
+                     width="520" height="520" loading="lazy" decoding="async"><figcaption>Artificial turf</figcaption>
+            </figure></div>
+      </div>
+    </section><section class="sup-dark">
+    <div class="sup-wrap">
+      <p class="sup-eyebrow sup-eyebrow--light">The part nobody solves</p>
+      <p class="sup-dark-quote">A blower moves the pile. It never picks anything up.</p>
+      <p class="sup-lede sup-lede--wide">Gas, cord or battery, a blower relocates the problem to a spot you then have to kneel next to. You are not buying horsepower. You are buying the part of the job that happens after the pile exists.</p>
+      <div class="sup-dark-grid"><figure class="sup-dark-fig"><video autoplay muted loop playsinline preload="metadata" disablepictureinpicture
+                     aria-label="A blower relocates the pile"
+                     poster="//fieldandharvestco.com/cdn/shop/files/preview_images/63817aa5985948238541d9baa0548dcb.thumbnail.0000000000.jpg?v=1789378221&width=900"><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/63817aa5985948238541d9baa0548dcb/63817aa5985948238541d9baa0548dcb.m3u8?v=0" type="application/x-mpegURL"><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/63817aa5985948238541d9baa0548dcb/63817aa5985948238541d9baa0548dcb.HD-1080p-7.2Mbps-94335551.mp4?v=0" type="video/mp4"></video><figcaption>A blower relocates the pile</figcaption>
+          </figure><figure class="sup-dark-fig"><video autoplay muted loop playsinline preload="metadata" disablepictureinpicture
+                     aria-label="The Sweep lifts it off the ground"
+                     poster="//fieldandharvestco.com/cdn/shop/files/preview_images/c9bd6065364f43f6b82be7185e42f2bb.thumbnail.0000000000.jpg?v=1789378677&width=900"><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/c9bd6065364f43f6b82be7185e42f2bb/c9bd6065364f43f6b82be7185e42f2bb.m3u8?v=0" type="application/x-mpegURL"><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/c9bd6065364f43f6b82be7185e42f2bb/c9bd6065364f43f6b82be7185e42f2bb.HD-1080p-3.3Mbps-94336178.mp4?v=0" type="video/mp4"></video><figcaption>The Sweep lifts it off the ground</figcaption>
+          </figure></div>
+    </div>
+  </section><section class="sup-band sup-band--warm">
+    <div class="sup-wrap sup-split">
+      <div class="sup-split-media"><video autoplay muted loop playsinline preload="metadata" disablepictureinpicture
+                 aria-label="Nobody minds the raking. It is the forty times you bend down after it."
+                 poster="//fieldandharvestco.com/cdn/shop/files/preview_images/dc92eeff97654bedb1a78b932149c493.thumbnail.0000000000.jpg?v=1789378867&width=900"><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/dc92eeff97654bedb1a78b932149c493/dc92eeff97654bedb1a78b932149c493.m3u8?v=0" type="application/x-mpegURL"><source src="https://fieldandharvestco.com/cdn/shop/videos/c/vp/dc92eeff97654bedb1a78b932149c493/dc92eeff97654bedb1a78b932149c493.HD-1080p-4.8Mbps-94336431.mp4?v=0" type="video/mp4"></video></div>
+      <div>
+        <p class="sup-eyebrow">The cost of the bend</p>
+        <h2 class="sup-h2">Nobody minds the raking. It is the forty times you bend down after it.</h2>
+        <p class="sup-lede sup-body-p">You blow the leaves into a pile. Then you rake what the blower missed. Then you bend down, forty or fifty times, scooping armfuls into a bag that will not stay open. Then you do it again next Saturday because more came down overnight.</p>
+        <p class="sup-lede sup-body-p">Four separate motions to move leaves about twenty feet. If your back hurts from bending and raking leaves, that is the part this removes. Not the walking. The bending.</p>
+        <p class="sup-note">It weighs 29.77 lb and you supply the power. There is no motor. If pushing a mower is already too much, this will be too.</p>
+      </div>
+    </div>
+  </section><section class="sup-band sup-band--card">
+    <div class="sup-wrap sup-split">
+      <div class="sup-split-media"><img src="https://fieldandharvestco.com/cdn/shop/files/ysp-build.png?v=1789378302&width=900" alt="The core arrives assembled"
+               width="900" height="900" loading="lazy" decoding="async"></div>
+      <div>
+        <p class="sup-eyebrow">Out of the box</p>
+        <h2 class="sup-h2">The core arrives assembled</h2>
+        <p class="sup-lede sup-body-p">You attach the push frame and the hopper. Most people are done in about fifteen minutes with a screwdriver.</p>
+        <p class="sup-lede sup-body-p">The hopper comes off on four quick-release buckles and lifts by a padded handle, so emptying it happens standing up rather than on your knees.</p>
+        <p class="sup-note"></p>
+      </div>
+    </div>
+  </section><section class="sup-band">
+    <div class="sup-narrow sup-guarantee"><img src="https://fieldandharvestco.com/cdn/shop/files/ysp-guarantee.png?v=1789377996&width=900" alt="The 60-day clean sweep guarantee"
+             width="900" height="900" loading="lazy" decoding="async"><h2 class="sup-h2">The 60-day clean sweep guarantee</h2>
+      <p class="sup-lede">Use it for a full fall. If it has not taken the bending out of your yard cleanup, tell us inside 60 days and we will refund you in full. Free shipping both ways, and keep the bags and the guides either way.</p>
+    </div>
+  </section><section class="sup-band sup-band--warm">
+      <div class="sup-wrap" style="text-align:center">
+        <p class="sup-eyebrow">Before you order</p>
+        <h2 class="sup-h2">Questions we actually get</h2>
+      </div>
+      <div class="sup-wrap">
+        <div class="sup-faq"><div class="sup-acc-item" data-open="false" >
+              <button type="button" class="sup-acc-btn" aria-expanded="false">
+                Is it hard to push?
+                <span class="sup-acc-ico" aria-hidden="true"></span>
+              </button>
+              <div class="sup-acc-panel">
+                <div class="sup-acc-panel-inner"><p>It takes about what pushing a mower takes, and the V-brush height decides most of it. If a mower is already too much for you, this will be too.</p></div>
+              </div>
+            </div><div class="sup-acc-item" data-open="false" >
+              <button type="button" class="sup-acc-btn" aria-expanded="false">
+                What will it not pick up?
+                <span class="sup-acc-ico" aria-hidden="true"></span>
+              </button>
+              <div class="sup-acc-panel">
+                <div class="sup-acc-panel-inner"><p>Wet leaves reduce how well it works, so let them dry. Mulch tends to get thrown rather than gathered. It collects loose thatch rather than dethatching for you. Large pine cones are a maybe.</p></div>
+              </div>
+            </div><div class="sup-acc-item" data-open="false" >
+              <button type="button" class="sup-acc-btn" aria-expanded="false">
+                Which width should I take?
+                <span class="sup-acc-ico" aria-hidden="true"></span>
+              </button>
+              <div class="sup-acc-panel">
+                <div class="sup-acc-panel-inner"><p>The 26 suits an average suburban yard. The 30 sweeps wider with a bigger hopper, so a large lawn takes fewer passes and fewer stops. Stuck between them, take the 30.</p></div>
+              </div>
+            </div><div class="sup-acc-item" data-open="false" >
+              <button type="button" class="sup-acc-btn" aria-expanded="false">
+                Will it clear my yard in one pass?
+                <span class="sup-acc-ico" aria-hidden="true"></span>
+              </button>
+              <div class="sup-acc-panel">
+                <div class="sup-acc-panel-inner"><p>On light debris, usually. On heavy fall you take overlapping passes, the same way you do when you mow.</p></div>
+              </div>
+            </div><div class="sup-acc-item" data-open="false" >
+              <button type="button" class="sup-acc-btn" aria-expanded="false">
+                What if it does not suit my yard?
+                <span class="sup-acc-ico" aria-hidden="true"></span>
+              </button>
+              <div class="sup-acc-panel">
+                <div class="sup-acc-panel-inner"><p>Tell us inside sixty days and we refund you in full. Keep the bags and the guides either way.</p></div>
+              </div>
+            </div></div>
+      </div>
+    </section><section class="sup-band sup-band--tight" style="background:var(--sup-ink)">
+      <div class="sup-narrow">
+        <p style="font-family:var(--sup-mono);font-size:10.5px;letter-spacing:.09em;line-height:1.9;color:#A89682;text-transform:uppercase;text-align:center">
+          Specifications are as supplied by the manufacturer. The Yeoman Sweep is a push sweeper with no motor, no cord and no suction.
+        </p>
+      </div>
+    </section><div class="sup-sticky" id="sup-sticky">
+    <div class="sup-sticky-in">
+      <div class="sup-sticky-txt">
+        <strong>The Yeoman Sweep</strong>
+        <span id="sup-sticky-price">$229.99</span>
+      </div>
+      <button type="button" class="sup-atc" id="sup-sticky-atc"><span>Add to cart</span></button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('shopify-section-template--27754055925803__main');
+  if (!root) return;
+
+  var variants = [{
+  id: 67918044954809,
+  pack: "21 in",
+  color: "",
+  price: 22999,
+  compare: 28999,
+  priceStr: "$229.99",
+  compareStr: "$289.99",
+  image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_100130_cc5a08ed-b3ec-4abb-95bc-a45bfdb72b96.png?v=1789293761",
+  available: true
+}];
+
+  var state = {
+    pack:  "21 in",
+    color: ""
+  };
+
+  /* Money formatting without ever writing a literal double-brace in this file.
+     Liquid parses the whole section, JS included, so a "{"+"{" in a string
+     is read as the start of an output tag and the file fails validation.
+     Instead we render ONE formatted sample through the money filter and read
+     the currency prefix, suffix and decimal habit back off it. */
+  var _sample = "$1,234.56";
+  var _mm = _sample.match(/^(\D*)([\d.,\s]+)(\D*)$/) || ['', '$', '123,456', ''];
+  var MPRE = _mm[1], MNUM = _mm[2], MSUF = _mm[3];
+  var MDEC = MNUM.indexOf('.') > -1;
+
+  function money(cents) {
+    var n = MDEC ? (cents / 100).toFixed(2) : String(Math.round(cents / 100));
+    var parts = n.split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return MPRE + parts.join('.') + MSUF;
+  }
+
+  function findVariant(pack, color) {
+    for (var i = 0; i < variants.length; i++) {
+      if (variants[i].pack === pack && (!color || variants[i].color === color)) return variants[i];
+    }
+    for (var j = 0; j < variants.length; j++) {
+      if (variants[j].pack === pack) return variants[j];
+    }
+    return variants[0];
+  }
+
+  /* ── gallery ── */
+  var mainImg = document.getElementById('sup-gal-main-img');
+  root.querySelectorAll('[data-gal-thumb]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (mainImg) mainImg.src = btn.getAttribute('data-full');
+      root.querySelectorAll('[data-gal-thumb]').forEach(function (b) {
+        b.setAttribute('aria-current', b === btn ? 'true' : 'false');
+      });
+    });
+  });
+
+  /* ── accordions ── */
+  root.querySelectorAll('.sup-acc-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.sup-acc-item');
+      var panel = item.querySelector('.sup-acc-panel');
+      var open = item.getAttribute('data-open') === 'true';
+      item.setAttribute('data-open', open ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      panel.style.maxHeight = open ? '0px' : panel.scrollHeight + 'px';
+    });
+  });
+
+  /* ── hero price ── */
+  function paintPrice(variant) {
+    var price = document.getElementById('sup-price');
+    var was = document.getElementById('sup-was');
+    var save = document.getElementById('sup-save');
+    var sticky = document.getElementById('sup-sticky-price');
+    if (price) price.textContent = variant.priceStr;
+    if (sticky) sticky.textContent = variant.priceStr;
+    var hasCompare = variant.compare > variant.price;
+    if (was) { was.textContent = variant.compareStr; was.hidden = !hasCompare; }
+    if (save) {
+      save.hidden = !hasCompare;
+      if (hasCompare) {
+        save.textContent = 'Save ' + Math.round((variant.compare - variant.price) / variant.compare * 100) + '%';
+      }
+    }
+  }
+
+  /* ── VIDEO CAROUSEL (infinite scroll) ── */
+  var videoTrack = document.getElementById('yh-vids-track');
+  if (videoTrack) {
+    var originalSlides = Array.prototype.slice.call(videoTrack.children);
+    var N = originalSlides.length;
+
+    if (N > 0) {
+      /* Clone the set once before and once after so user can scroll either direction without hitting an end */
+      var cloneBefore = originalSlides.map(function(s) {
+        var c = s.cloneNode(true);
+        c.setAttribute('data-cloned', 'before');
+        return c;
+      });
+      var cloneAfter = originalSlides.map(function(s) {
+        var c = s.cloneNode(true);
+        c.setAttribute('data-cloned', 'after');
+        return c;
+      });
+      /* Prepend "before" clones in their original order so visual order is preserved */
+      for (var i = cloneBefore.length - 1; i >= 0; i--) {
+        videoTrack.insertBefore(cloneBefore[i], videoTrack.firstChild);
+      }
+      cloneAfter.forEach(function(c) { videoTrack.appendChild(c); });
+
+      function getSetWidth() {
+        var slide = videoTrack.firstElementChild;
+        if (!slide) return 0;
+        var styles = window.getComputedStyle(videoTrack);
+        var gap = parseFloat(styles.columnGap || styles.gap) || 0;
+        return (slide.offsetWidth + gap) * N;
+      }
+
+      function centerScroll() {
+        videoTrack.style.scrollBehavior = 'auto';
+        videoTrack.scrollLeft = getSetWidth();
+        /* force reflow then restore */
+        void videoTrack.offsetWidth;
+        videoTrack.style.scrollBehavior = '';
+      }
+
+      requestAnimationFrame(centerScroll);
+      window.addEventListener('load', centerScroll);
+
+      var warping = false;
+      videoTrack.addEventListener('scroll', function() {
+        if (warping) return;
+        var setW = getSetWidth();
+        if (setW <= 0) return;
+        var pos = videoTrack.scrollLeft;
+        if (pos >= setW * 2) {
+          warping = true;
+          videoTrack.style.scrollBehavior = 'auto';
+          videoTrack.scrollLeft = pos - setW;
+          requestAnimationFrame(function() {
+            videoTrack.style.scrollBehavior = '';
+            warping = false;
+          });
+        } else if (pos <= 0) {
+          warping = true;
+          videoTrack.style.scrollBehavior = 'auto';
+          videoTrack.scrollLeft = pos + setW;
+          requestAnimationFrame(function() {
+            videoTrack.style.scrollBehavior = '';
+            warping = false;
+          });
+        }
+      });
+    }
+
+    /* Event delegation — works on originals AND clones */
+    videoTrack.addEventListener('click', function(e) {
+      var slide = e.target.closest('.yh-vid-slide');
+      if (!slide) return;
+      var video = slide.querySelector('video');
+      if (!video) return;
+
+      if (e.target.closest('.yh-vid-sound')) {
+        e.stopPropagation();
+        video.muted = !video.muted;
+        var btn = slide.querySelector('.yh-vid-sound');
+        btn.setAttribute('data-muted', video.muted ? 'true' : 'false');
+        var mi = slide.querySelector('.yh-vid-sound-muted');
+        var oi = slide.querySelector('.yh-vid-sound-on');
+        if (mi) mi.style.display = video.muted ? '' : 'none';
+        if (oi) oi.style.display = video.muted ? 'none' : '';
+        return;
+      }
+
+      if (video.paused) {
+        videoTrack.querySelectorAll('video').forEach(function(v) {
+          if (v !== video && !v.paused) v.pause();
+        });
+        var p = video.play();
+        if (p && typeof p.then === 'function') p.catch(function() {});
+      } else {
+        video.pause();
+      }
+    });
+
+    /* Attach state listeners (play/pause class) to every video, including clones */
+    videoTrack.querySelectorAll('.yh-vid-slide video').forEach(function(video) {
+      var slide = video.closest('.yh-vid-slide');
+      video.addEventListener('play', function() { slide.classList.add('playing'); });
+      video.addEventListener('pause', function() { slide.classList.remove('playing'); });
+    });
+  }
+
+
+  /* ── FREE GIFTS ──
+     Driven by the selected tier's data-unlocks flag, NOT by the variant title.
+     The live section parses the title and broke once when "2 Handles" was
+     renamed "Buy 2 Get 1 Free". Keep it on the flag. */
+  var giftsBox = document.getElementById('yh-gifts');
+  var giftsFoot = document.getElementById('yh-gifts-foot');
+  var footLocked = "";
+  var footUnlocked = "";
+
+  function paintGifts(unlocked) {
+    if (!giftsBox) return;
+    giftsBox.classList.toggle('is-unlocked', unlocked);
+    giftsBox.querySelectorAll('[data-gift-lock]').forEach(function (el) {
+      el.style.display = unlocked ? 'none' : '';
+    });
+    giftsBox.querySelectorAll('[data-gift-name] [data-gift-flag]').forEach(function (el) {
+      el.textContent = unlocked ? 'Free' : 'Locked';
+      el.classList.toggle('is-locked', !unlocked);
+    });
+    if (giftsFoot) {
+      var ft = unlocked ? footUnlocked : footLocked;
+      giftsFoot.textContent = ft;
+      giftsFoot.style.display = ft ? '' : 'none';
+    }
+  }
+
+  /* ── tier ladder ── */
+  function paintTiers() {
+    root.querySelectorAll('[data-tier]').forEach(function (btn) {
+      var pack = btn.getAttribute('data-pack');
+      var units = parseInt(btn.getAttribute('data-units'), 10) || 1;
+      var variant = findVariant(pack, state.color);
+      var now = btn.querySelector('[data-tier-now]');
+      var wasEl = btn.querySelector('[data-tier-was]');
+      var perEl = btn.querySelector('[data-tier-per]');
+      if (now) now.textContent = variant.priceStr;
+      if (wasEl) {
+        var hasCompare = variant.compare > variant.price;
+        wasEl.textContent = variant.compareStr;
+        wasEl.style.display = hasCompare ? '' : 'none';
+      }
+      if (perEl && units > 1) perEl.textContent = money(Math.round(variant.price / units)) + ' each';
+
+      var on = pack === state.pack;
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (on) paintGifts(btn.getAttribute('data-unlocks') === 'true');
+    });
+  }
+
+  /* A ?variant= link to a sold-out size would otherwise load with it selected. */
+  (function () {
+    var cur = findVariant(state.pack, state.color);
+    if (cur && cur.available) return;
+    for (var i = 0; i < variants.length; i++) {
+      if (variants[i].available) { state.pack = variants[i].pack; state.color = variants[i].color; return; }
+    }
+  })();
+
+  var userPicked = false;   /* stays false through the initial commit() on load */
+  function commit() {
+    var variant = findVariant(state.pack, state.color);
+    document.getElementById('sup-variant-id').value = variant.id;
+    paintPrice(variant);
+    paintTiers();
+    if (userPicked && variant.image && mainImg && mainImg.src !== variant.image) {
+      mainImg.src = variant.image;
+    }
+  }
+
+  root.querySelectorAll('[data-tier]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (btn.hasAttribute('data-soldout')) return;
+      state.pack = btn.getAttribute('data-pack');
+      userPicked = true;
+      commit();
+    });
+  });
+
+  var colorCurrent = document.getElementById('yh-color-current');
+  root.querySelectorAll('[data-color]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      state.color = btn.getAttribute('data-color');
+      userPicked = true;
+      root.querySelectorAll('[data-color]').forEach(function (b) {
+        var on = b === btn;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-checked', on ? 'true' : 'false');
+      });
+      if (colorCurrent) colorCurrent.textContent = state.color;
+      commit();
+    });
+  });
+
+  /* ── cart drawer ──
+     This store's cart is UPCART, not the Horizon native drawer. Horizon's
+     drawer element does not exist on the page, so every selector below misses
+     and the buyer would get no confirmation at all. UpCart exposes a global
+     API, so call that first. Verified live: window.upcartOpenCart exists. */
+  function openCart() {
+    if (typeof window.upcartRefreshCart === 'function') {
+      try { window.upcartRefreshCart(); } catch (e) {}
+    }
+    if (typeof window.upcartOpenCart === 'function') {
+      try { window.upcartOpenCart(); return true; } catch (e) {}
+    }
+    document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+    document.dispatchEvent(new CustomEvent('cart:update', { bubbles: true }));
+    var drawer = document.querySelector(
+      'cart-drawer-component, cart-drawer, #cart-drawer, [id^="CartDrawer"], .cart-drawer'
+    );
+    if (drawer) {
+      if (typeof drawer.open === 'function') { drawer.open(); return true; }
+      if (typeof drawer.showDialog === 'function') { drawer.showDialog(); return true; }
+      var dlg = drawer.tagName === 'DIALOG' ? drawer : drawer.querySelector('dialog');
+      if (dlg && typeof dlg.showModal === 'function') { dlg.showModal(); return true; }
+      drawer.setAttribute('open', '');
+      return true;
+    }
+    var toggle = document.querySelector('[data-cart-drawer-toggle], .header__icon--cart, a[href$="/cart"]');
+    if (toggle && toggle.tagName !== 'A') { toggle.click(); return true; }
+    return false;
+  }
+
+  /* ── GIFT LINE ITEMS ───────────────────────────────────────────────────
+     The gifts are real products so the cart can show what they are worth.
+     Two automatic Shopify BxGy discounts take them to zero. The line items
+     are added here, NEVER priced at 0, so the buyer sees $105 of value being
+     given rather than two mystery free rows.
+
+     The locked gift follows the PAGE, not the variant title: it reads the
+     same `is-unlocked` class paintGifts() sets, so the cart can never show a
+     gift the page says is locked. Selecting 21 in after 26 in removes it.
+
+     Quantities are FORCED with /cart/update.js rather than left to
+     /cart/add.js, which increments. Two clicks of Add to cart would otherwise
+     put 2 gifts against a discount that covers 1 and the buyer would be
+     charged for a "free" gift. update.js sets an absolute quantity, and 0
+     removes the line entirely. */
+  var GIFT_ALWAYS = 0;
+  var GIFT_LOCKED = 0;
+
+  /* The spare brushes are cut to the deck, so the locked gift follows the
+     SELECTED SIZE. Each tier carries its own variant id; a tier with none
+     falls back to the section-level one, which is how this behaved before
+     the brushes were split into 26 in and 30 in. */
+  function tierGift(btn) {
+    var id = btn && parseInt(btn.getAttribute('data-gift-variant'), 10);
+    return id || GIFT_LOCKED;
+  }
+
+  function lockedGift() {
+    return tierGift(root.querySelector('[data-tier].is-active'));
+  }
+
+  /* Every gift id the page can add, so switching size REMOVES the other
+     size's brushes instead of leaving both in the cart. */
+  var ALL_LOCKED = (function () {
+    var seen = {}, out = [];
+    if (GIFT_LOCKED) { seen[GIFT_LOCKED] = 1; out.push(GIFT_LOCKED); }
+    root.querySelectorAll('[data-tier]').forEach(function (b) {
+      var id = parseInt(b.getAttribute('data-gift-variant'), 10);
+      if (id && !seen[id]) { seen[id] = 1; out.push(id); }
+    });
+    return out;
+  })();
+
+  function giftsUnlocked() {
+    var box = document.getElementById('yh-gifts');
+    return !!(box && box.classList.contains('is-unlocked'));
+  }
+
+  function syncGifts() {
+    var updates = {};
+    var want = giftsUnlocked() ? lockedGift() : 0;
+    if (GIFT_ALWAYS) updates[GIFT_ALWAYS] = 1;
+    ALL_LOCKED.forEach(function (id) { updates[id] = (id === want) ? 1 : 0; });
+    if (!Object.keys(updates).length) return Promise.resolve();
+    return fetch('/cart/update.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ updates: updates })
+    }).catch(function () {});
+  }
+
+  function addToCart(btn) {
+    var id = parseInt(document.getElementById('sup-variant-id').value, 10);
+    if (btn) btn.setAttribute('disabled', 'disabled');
+    /* /cart/add.js REVERSES this array in the resulting cart (verified in
+       browser, with and without the update call), so the Sweep is pushed LAST
+       to come out FIRST. Gifts must never sit above the paid product. */
+    var items = [];
+    var lockedId = lockedGift();
+    if (lockedId && giftsUnlocked()) items.push({ id: lockedId, quantity: 1 });
+    if (GIFT_ALWAYS) items.push({ id: GIFT_ALWAYS, quantity: 1 });
+    items.push({ id: id, quantity: 1 });
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ items: items })
+    })
+      .then(function (r) { return r.json(); })
+      .then(function () { return syncGifts(); })
+      .then(function () { if (!openCart()) window.location.href = '/cart'; })
+      .catch(function () { window.location.href = '/cart'; })
+      .then(function () { if (btn) btn.removeAttribute('disabled'); });
+  }
+
+  /* The main ATC is bound on CLICK, not on the form's submit, because UpCart
+     intercepts submit on any form posting to /cart/add and performs its own
+     single-item add. The form is kept for its fields and for the Enter key. */
+  var atcBtn = document.getElementById('sup-atc');
+  if (atcBtn) atcBtn.addEventListener('click', function (e) { e.preventDefault(); addToCart(atcBtn); });
+  var form = document.getElementById('sup-form');
+  if (form) form.addEventListener('submit', function (e) { e.preventDefault(); addToCart(document.getElementById('sup-atc')); });
+  var stickyAtc = document.getElementById('sup-sticky-atc');
+  if (stickyAtc) stickyAtc.addEventListener('click', function () { addToCart(stickyAtc); });
+
+  /* ── sticky bar: earned, not shown on load ── */
+  var sticky = document.getElementById('sup-sticky');
+  var atc = document.getElementById('sup-atc');
+  if (sticky && atc && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        sticky.classList.toggle('is-on', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+      });
+    }, { threshold: 0 }).observe(atc);
+  }
+
+  commit();
+})();
+</script>
+
+
+
+</div>
+    </main>
+
+    <!-- BEGIN sections: footer-group -->
+<div 
+  </main>
+
+  <!-- Footer -->
+  <footer class="fh-footer-custom">
+    <div class="fh-footer__inner">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;">
+        <div>
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; color: #FBF6EC;">About The Yeoman Sweep</h3>
+          <p style="font-size: 14px; line-height: 1.6; color: #8A7866;">The world's first ergonomic lawn tool engineered to replace rakes and noisy leaf blowers. Heavy-duty steel frame, 3 V-brush sweepers, and instant dump hopper.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; color: #FBF6EC;">Customer Support</h3>
+          <p style="font-size: 14px; line-height: 1.6; color: #8A7866;">60-Day Clean Sweep Guarantee. Free shipping both ways. 2-Year limited warranty included on all orders.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; color: #FBF6EC;">Fast 2-4 Day Delivery</h3>
+          <p style="font-size: 14px; line-height: 1.6; color: #8A7866;">Orders ship within 24 hours from our local fulfillment center. Tracking provided immediately upon dispatch.</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #3D3024; padding-top: 24px; text-align: center; font-size: 13px; color: #8A7866;">
+        <p>&copy; {{ 'now' | date: '%Y' }} Field &amp; Harvest Co. All rights reserved. Powered by Shopify.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

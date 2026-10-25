@@ -12,7 +12,7 @@ import path from 'path';
 
 const THEME_DIR = process.argv[2];
 const ORIGINAL_URL = process.argv[3] || '';
-const STORE_DOMAIN = process.env.SHOPIFY_SHOP_DOMAIN || 'vwpb1k-8z.myshopify.com';
+const STORE_DOMAIN = process.env.SHOPIFY_SHOP_DOMAIN || 'dsdujr-vn.myshopify.com';
 
 if (!THEME_DIR) {
   console.error('❌ Usage: node post-clone-eval.mjs <path-to-theme-dir> [original-url]');

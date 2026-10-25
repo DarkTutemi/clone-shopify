@@ -1,0 +1,725 @@
+<div class="willa-pdp-page">
+  <div class="willa-container">
+    {% if section.settings.show_breadcrumbs %}
+      <div class="willa-breadcrumbs">
+        <a href="/">Home</a> &gt; <a href="/collections/all-products">Shop</a> &gt; <span>{{ product.title }}</span>
+      </div>
+    {% endif %}
+
+    <div class="willa-pdp-layout">
+      <!-- Media Gallery -->
+      <div class="willa-pdp-gallery">
+        {% assign custom_gal_count = 0 %}
+        {% assign custom_first_img = '' %}
+        {% for block in section.blocks %}
+          {% if block.type == 'gallery_image' %}
+            {% assign custom_gal_count = custom_gal_count | plus: 1 %}
+            {% if custom_first_img == '' %}
+              {% if block.settings.image != blank %}
+                {% assign custom_first_img = block.settings.image | image_url: width: 1000 %}
+              {% elsif block.settings.image_url != blank %}
+                {% assign custom_first_img = block.settings.image_url %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+
+        <div class="willa-pdp-main-img-wrap">
+          {% if custom_gal_count > 0 and custom_first_img != '' %}
+            <img id="willaPdpMainImg" src="{{ custom_first_img }}" alt="{{ product.title | escape }}">
+          {% elsif product.featured_image %}
+            <img id="willaPdpMainImg" src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.title | escape }}">
+          {% else %}
+            <img id="willaPdpMainImg" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-hero-main.png?v=1792853600" alt="{{ product.title | escape }}">
+          {% endif %}
+
+          {% if product.compare_at_price > product.price %}
+            <div class="willa-pdp-badge">{{ section.settings.badge_text | default: 'SPECIAL OFFER' }}</div>
+          {% endif %}
+        </div>
+
+        <div class="willa-pdp-thumbs">
+          {% if custom_gal_count > 0 %}
+            {% for block in section.blocks %}
+              {% if block.type == 'gallery_image' %}
+                {% assign thumb_src = '' %}
+                {% if block.settings.image != blank %}
+                  {% assign thumb_src = block.settings.image | image_url: width: 1000 %}
+                {% elsif block.settings.image_url != blank %}
+                  {% assign thumb_src = block.settings.image_url %}
+                {% endif %}
+                {% if thumb_src != '' %}
+                  <img class="willa-pdp-thumb {% if forloop.first %}active{% endif %}" src="{{ thumb_src }}" alt="{{ block.settings.alt | default: product.title | escape }}" onclick="switchPdpImg(this.src)" {{ block.shopify_attributes }}>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          {% elsif product.images.size > 1 %}
+            {% for image in product.images limit: 8 %}
+              <img class="willa-pdp-thumb {% if forloop.first %}active{% endif %}" src="{{ image | image_url: width: 160 }}" alt="{{ product.title | escape }}" onclick="switchPdpImg(this.src)">
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Purchase Box -->
+      <div class="willa-pdp-details">
+        <div class="willa-pdp-rating-row">
+          <div class="willa-stars">{% render 'trustpilot-stars', width: 92, height: 17 %}</div>
+          <span class="rating-text">{{ section.settings.rating_text | default: '4.9 / 5.0 (1,240+ Verified Reviews)' }}</span>
+        </div>
+
+        <h1 class="willa-pdp-title willa-serif">{{ product.title }}</h1>
+
+        <div class="willa-pdp-price-row">
+          <span class="willa-pdp-active-price" id="willaPdpPrice">{{ product.selected_or_first_available_variant.price | money }}</span>
+          {% assign calc_compare = product.selected_or_first_available_variant.compare_at_price %}
+          {% if calc_compare == blank or calc_compare <= product.selected_or_first_available_variant.price %}
+            {% assign calc_compare = product.selected_or_first_available_variant.price | times: 1.8 | round %}
+          {% endif %}
+          <span class="willa-pdp-compare-price" id="willaPdpComparePrice">{{ calc_compare | money }}</span>
+          <span class="willa-pdp-save-badge">{{ section.settings.save_badge_text | default: '50% OFF TODAY' }}</span>
+        </div>
+
+        <!-- Variants Selector -->
+        {% unless product.has_only_default_variant %}
+          <div class="willa-pdp-variants-wrap">
+            <label class="variant-label">Select Option:</label>
+            <div class="willa-pdp-variant-chips">
+              {% for variant in product.variants %}
+                {% assign var_img = '' %}
+                {% if variant.featured_image != blank %}
+                  {% assign var_img = variant.featured_image | image_url: width: 1000 %}
+                {% elsif product.featured_image != blank %}
+                  {% assign var_img = product.featured_image | image_url: width: 1000 %}
+                {% endif %}
+                <button type="button" class="willa-variant-chip {% if variant.id == product.selected_or_first_available_variant.id %}active{% endif %}" onclick="selectPdpVariant('{{ variant.id }}', '{{ variant.price | money }}', '{{ variant.compare_at_price | money }}', '{{ var_img }}', this)">
+                  {{ variant.title }}
+                </button>
+              {% endfor %}
+            </div>
+          </div>
+        {% endunless %}
+
+        <!-- Quantity & ATC -->
+        <div class="willa-pdp-actions">
+          <div class="willa-pdp-qty-row">
+            <label for="willaPdpQty">Quantity:</label>
+            <div class="willa-pdp-qty-ctrl">
+              <button type="button" onclick="adjustPdpQty(-1)">-</button>
+              <input type="number" id="willaPdpQty" value="1" min="1" max="10" readonly>
+              <button type="button" onclick="adjustPdpQty(1)">+</button>
+            </div>
+          </div>
+
+          <button type="button" id="willaPdpAtcBtn" class="willa-btn-primary willa-pdp-atc" onclick="submitPdpOrder()">
+            {% if product.available %}
+              ADD TO CART ➔
+            {% else %}
+              SOLD OUT
+            {% endif %}
+          </button>
+
+          <button type="button" id="willaPdpShopNowBtn" class="willa-pdp-shopnow" onclick="submitPdpDirectCheckout()">
+            SHOP NOW ➔
+          </button>
+        </div>
+
+        <!-- Guarantees Row -->
+        <div class="willa-pdp-trust-box">
+          <div class="pdp-trust-item">
+            <span>🛡️</span> <strong>90-Day Money-Back Guarantee</strong>
+          </div>
+          <div class="pdp-trust-item">
+            <span>🚚</span> <strong>Free Express Delivery on Orders $49+</strong>
+          </div>
+          <div class="pdp-trust-item">
+            <span>🔒</span> <strong>Safe &amp; Encrypted 256-Bit Checkout</strong>
+          </div>
+        </div>
+
+        <!-- Accordions: Description, Features, Shipping -->
+        <div class="willa-pdp-accordions">
+          {% if section.blocks.size > 0 %}
+            {% for block in section.blocks %}
+              <details class="willa-faq-item" {% if forloop.first or block.settings.open_default %}open{% endif %} {{ block.shopify_attributes }}>
+                <summary>
+                  <span>{{ block.settings.title }}</span>
+                  <span class="faq-icon">+</span>
+                </summary>
+                <div class="faq-content">
+                  {% if block.settings.use_product_description %}
+                    {% if product.description != blank %}
+                      {{ product.description }}
+                    {% else %}
+                      <p>Industrial-grade construction engineered for tough jobs and reliable long-term performance.</p>
+                    {% endif %}
+                  {% else %}
+                    <p>{{ block.settings.content }}</p>
+                  {% endif %}
+                </div>
+              </details>
+            {% endfor %}
+          {% else %}
+            <details class="willa-faq-item" open>
+              <summary>
+                <span>Product Description</span>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-content">
+                {% if product.description != blank %}
+                  {{ product.description }}
+                {% else %}
+                  <p>Industrial-grade construction engineered for tough jobs and reliable long-term performance.</p>
+                {% endif %}
+              </div>
+            </details>
+
+            <details class="willa-faq-item">
+              <summary>
+                <span>Shipping &amp; Delivery Information</span>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-content">
+                <p>Orders are dispatched within 24 hours from our US warehouses. Free standard shipping is automatically applied to orders over $49. Delivery takes 3–5 business days with live tracking.</p>
+              </div>
+            </details>
+
+            <details class="willa-faq-item">
+              <summary>
+                <span>Warranty &amp; Returns</span>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-content">
+                <p>We offer an unconditional 90-day money-back guarantee. If you are not completely satisfied, email support@tryzavelyn.com for an immediate exchange or refund.</p>
+              </div>
+            </details>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Bottom Purchase Bar -->
+  {% if section.settings.enable_sticky_atc %}
+    <div class="willa-pdp-sticky-bar" id="willaStickyAtc">
+      <div class="sticky-bar-left">
+        <span class="sticky-title">{{ product.title | truncate: 30 }}</span>
+        <span class="sticky-price" id="willaStickyPrice">{{ product.selected_or_first_available_variant.price | money }}</span>
+      </div>
+      <button type="button" class="willa-sticky-btn" onclick="submitPdpOrder()">
+        {{ section.settings.sticky_btn_text | default: 'BUY NOW ➔' }}
+      </button>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  .willa-pdp-page {
+    background-color: #ffffff;
+    padding: 30px 0 60px 0;
+  }
+  .willa-breadcrumbs {
+    font-size: 13px;
+    color: #8c827a;
+    margin-bottom: 24px;
+  }
+  .willa-breadcrumbs a {
+    color: #59514f;
+    text-decoration: none;
+  }
+  .willa-breadcrumbs a:hover {
+    color: #8a2c13;
+  }
+  .willa-breadcrumbs span {
+    color: #231f20;
+    font-weight: 600;
+  }
+
+  .willa-pdp-layout {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+  }
+  .willa-pdp-gallery {
+    flex: 1 1 52%;
+    position: sticky;
+    top: 90px;
+  }
+  .willa-pdp-main-img-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #faf7f4;
+    border: 1px solid #e7e4df;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(59, 43, 47, 0.06);
+    margin-bottom: 16px;
+  }
+  .willa-pdp-main-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.25s ease;
+  }
+  .willa-pdp-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background-color: #8a2c13;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .willa-pdp-thumbs {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  .willa-pdp-thumb {
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background: #faf7f4;
+    transition: border-color 0.2s;
+  }
+  .willa-pdp-thumb.active {
+    border-color: #8a2c13;
+  }
+
+  .willa-pdp-details {
+    flex: 1 1 48%;
+  }
+  .willa-pdp-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .willa-pdp-details .willa-stars {
+    color: #d97706;
+  }
+  .willa-pdp-details .rating-text {
+    font-size: 13px;
+    color: #59514f;
+    font-weight: 600;
+  }
+  .willa-pdp-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #231f20;
+    line-height: 1.25;
+    margin: 0 0 16px 0;
+  }
+
+  .willa-pdp-price-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .willa-pdp-active-price {
+    font-size: 28px;
+    font-weight: 900;
+    color: #8a2c13;
+  }
+  .willa-pdp-compare-price {
+    font-size: 18px;
+    text-decoration: line-through;
+    color: #8c827a;
+  }
+  .willa-pdp-save-badge {
+    background-color: #fbf0ee;
+    color: #8a2c13;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .willa-pdp-variants-wrap {
+    margin-bottom: 24px;
+  }
+  .variant-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #231f20;
+    margin-bottom: 10px;
+  }
+  .willa-pdp-variant-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .willa-variant-chip {
+    background-color: #faf7f4;
+    border: 1.5px solid #e7e4df;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #231f20;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .willa-variant-chip:hover {
+    border-color: #8a2c13;
+  }
+  .willa-variant-chip.active {
+    border-color: #8a2c13;
+    background-color: #fffbf9;
+    color: #8a2c13;
+    font-weight: 700;
+  }
+
+  .willa-pdp-actions {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+  .willa-pdp-qty-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .willa-pdp-qty-row label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #59514f;
+    display: none;
+  }
+  .willa-pdp-qty-ctrl {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e7e4df;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #faf7f4;
+  }
+  .willa-pdp-qty-ctrl button {
+    background: none;
+    border: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #231f20;
+  }
+  .willa-pdp-qty-ctrl input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    background: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #231f20;
+    outline: none;
+  }
+
+  .willa-pdp-atc {
+    flex: 1;
+    padding: 16px 24px !important;
+    font-size: 15px !important;
+  }
+
+  .willa-pdp-trust-box {
+    background-color: #faf7f4;
+    border: 1px solid #e7e4df;
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pdp-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #59514f;
+  }
+  .pdp-trust-item strong {
+    color: #231f20;
+  }
+
+  .willa-pdp-accordions details {
+    margin-bottom: 12px;
+  }
+
+  .willa-pdp-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-top: 1px solid #e7e4df;
+    padding: 12px 20px;
+    z-index: 999;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .willa-pdp-sticky-bar.visible {
+    display: flex;
+  }
+  .sticky-bar-left {
+    display: flex;
+    flex-direction: column;
+  }
+  .sticky-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #231f20;
+  }
+  .sticky-price {
+    font-size: 15px;
+    font-weight: 900;
+    color: #8a2c13;
+  }
+  .willa-sticky-btn {
+    background-color: #8a2c13;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  @media (max-width: 991px) {
+    .willa-pdp-layout {
+      flex-direction: column;
+      gap: 24px;
+    }
+    .willa-pdp-gallery {
+      position: static;
+      width: 100%;
+    }
+    .willa-pdp-title {
+      font-size: 24px;
+    }
+    .willa-pdp-active-price {
+      font-size: 24px;
+    }
+  }
+</style>
+
+<script>
+  let willaCurrentPdpVariantId = '{{ product.selected_or_first_available_variant.id }}';
+  let willaCurrentPdpQty = 1;
+
+  function switchPdpImg(src) {
+    const main = document.getElementById('willaPdpMainImg');
+    if (main && src) {
+      main.style.opacity = '0.5';
+      setTimeout(() => {
+        main.src = src;
+        main.style.opacity = '1';
+      }, 150);
+    }
+    document.querySelectorAll('.willa-pdp-thumb').forEach(t => {
+      if (t.src === src) t.classList.add('active');
+      else t.classList.remove('active');
+    });
+  }
+
+  function selectPdpVariant(id, price, comparePrice, imgUrl, btn) {
+    willaCurrentPdpVariantId = id;
+    document.querySelectorAll('.willa-variant-chip').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    const priceEl = document.getElementById('willaPdpPrice');
+    if (priceEl) priceEl.innerText = price;
+
+    const stickyPriceEl = document.getElementById('willaStickyPrice');
+    if (stickyPriceEl) stickyPriceEl.innerText = price;
+
+    const compEl = document.getElementById('willaPdpComparePrice');
+    if (compEl && comparePrice) compEl.innerText = comparePrice;
+
+    if (imgUrl) switchPdpImg(imgUrl);
+  }
+
+  function adjustPdpQty(delta) {
+    const input = document.getElementById('willaPdpQty');
+    if (!input) return;
+    let val = parseInt(input.value) || 1;
+    val += delta;
+    if (val < 1) val = 1;
+    if (val > 10) val = 10;
+    input.value = val;
+    willaCurrentPdpQty = val;
+  }
+
+  async function submitPdpOrder() {
+    const btn = document.getElementById('willaPdpAtcBtn');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerText = 'ADDING...';
+    }
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{ id: willaCurrentPdpVariantId, quantity: willaCurrentPdpQty }]
+        })
+      });
+
+      if (res.ok) {
+        if (typeof window.willaOpenCartDrawer === 'function') {
+          await window.willaRefreshCart();
+          window.willaOpenCartDrawer();
+          btn.disabled = false;
+          btn.innerText = 'ADD TO CART ➔';
+        } else {
+          window.location.href = '/cart';
+        }
+      } else {
+        window.location.href = '/cart/' + willaCurrentPdpVariantId + ':' + willaCurrentPdpQty;
+      }
+    } catch (e) {
+      window.location.href = '/cart/' + willaCurrentPdpVariantId + ':' + willaCurrentPdpQty;
+    }
+  }
+
+  function initStickyBar() {
+    const mainAtc = document.getElementById('willaPdpAtcBtn');
+    const stickyBar = document.getElementById('willaStickyAtc');
+    if (!mainAtc || !stickyBar) return;
+
+    function checkSticky() {
+      const rect = mainAtc.getBoundingClientRect();
+      if (rect.bottom < 0) {
+        stickyBar.classList.add('visible');
+      } else {
+        stickyBar.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', checkSticky, { passive: true });
+    window.addEventListener('resize', checkSticky, { passive: true });
+    checkSticky();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStickyBar);
+  } else {
+    initStickyBar();
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Willa Main Product",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show Breadcrumbs Navigation",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Sale Badge Text",
+      "default": "SPECIAL OFFER"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating Text",
+      "default": "4.9 / 5.0 (1,240+ Verified Reviews)"
+    },
+    {
+      "type": "text",
+      "id": "save_badge_text",
+      "label": "Save Badge Text",
+      "default": "50% OFF"
+    },
+    {
+      "type": "header",
+      "content": "Sticky Add to Cart Bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_atc",
+      "label": "Enable Sticky Add to Cart Bar",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "sticky_btn_text",
+      "label": "Sticky Button Text",
+      "default": "BUY NOW ➔"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gallery_image",
+      "name": "Gallery Image (Slide)",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Select Image" },
+        { "type": "text", "id": "image_url", "label": "Or Image URL" },
+        { "type": "text", "id": "alt", "label": "Image Alt / Description" }
+      ]
+    },
+    {
+      "type": "accordion_item",
+      "name": "Product Accordion / Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Accordion Title",
+          "default": "Product Description"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_product_description",
+          "label": "Use Product Body Description",
+          "default": false
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Custom Content",
+          "default": "Industrial-grade construction engineered for tough jobs and reliable long-term performance."
+        },
+        {
+          "type": "checkbox",
+          "id": "open_default",
+          "label": "Open by Default",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Willa Main Product"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .willa-stars, .review-stars { display: inline-flex; align-items: center; line-height: 0; }
+</style>
+
+<style>
+  .willa-stars, .review-stars { display: inline-flex; align-items: center; line-height: 0; }
+</style>

@@ -1,0 +1,150 @@
+{
+  "id": 15460656021689,
+  "title": "Zavelyn Handpan™ Master (12-Tone 432Hz D-Minor Kurd)",
+  "body_html": "\n    <h2>The Definitive 22-Inch Concert Handpan in Pure 432 Hz Resonance</h2>\n    <p>The <strong>Zavelyn Handpan™ Master</strong> represents the absolute zenith of harmonic sound sculpture. Meticulously hand-hammered and nitrogen-hardened from high-grade nitrided carbon steel, this full-sized <strong>22-inch (55 cm)</strong> concert instrument is tuned in <strong>D-Minor Kurd</strong> across <strong>12 resonant tone fields</strong> at the biological healing frequency of <strong>432 Hz</strong>.</p>\n    \n    <h3>Why the Zavelyn Handpan™ Master is Unrivaled:</h3>\n    <ul>\n      <li>\n<strong>12 Harmonic Tone Fields (D-Minor Kurd):</strong> Central Ding (D3) surrounded by 11 meticulously tuned dimples (A3, Bb3, C4, D4, E4, F4, G4, A4, C5, D5, E5) providing expansive melodic storytelling.</li>\n      <li>\n<strong>Concert-Grade Cathedral Sustain:</strong> Nitrided steel treatment creates warm, bell-like sustain that lingers in the air without dissonant cross-talk.</li>\n      <li>\n<strong>432 Hz Natural Biological Alignment:</strong> Calibrated to induce deep parasympathetic relaxation, heart-rate deceleration, and restorative meditative states.</li>\n      <li>\n<strong>Hand-Hammered Artistry:</strong> Every individual tone field is shaped and tuned by master acoustic artisans with lifelong pitch stability.</li>\n      <li>\n<strong>All-Weather Protection:</strong> High-temperature nitriding provides extreme scratch, moisture, and corrosion resistance.</li>\n    </ul>\n\n    <h3>What's Included in Your Complete Master Set:</h3>\n    <ul>\n      <li>1x Zavelyn Handpan™ Master (22-Inch / 55 cm, 12 Notes, 432 Hz)</li>\n      <li>1x Foldable Heavy-Duty Aluminum Handpan Tripod Stand</li>\n      <li>1x Premium Padded Travel Backpack with Reinforced Dual Shoulder Straps</li>\n      <li>1x Pair of Acoustic Wooden Mallets with Balanced Rubber Heads</li>\n      <li>1x Hand-Woven Protective Braided Edge Rope Wrap</li>\n      <li>1x Set of Visual Tone Stickers</li>\n      <li>1x Microfiber Instrument Cleaning Cloth</li>\n    </ul>\n  ",
+  "vendor": "Zavelyn",
+  "product_type": "Handpan & Steel Tongue Drum",
+  "created_at": "2026-10-24T23:58:22-06:00",
+  "handle": "zavelyn-handpan-master",
+  "updated_at": "2026-10-24T23:58:25-06:00",
+  "published_at": "2026-10-24T23:58:22-06:00",
+  "template_suffix": "zavelyn-handpan-master",
+  "published_scope": "global",
+  "tags": "12 Tone, 22-Inch, 432Hz, Concert Handpan, D-Minor Kurd, Handpan, Master Series, Meditation, Sound Healing",
+  "status": "active",
+  "admin_graphql_api_id": "gid://shopify/Product/15460656021689",
+  "variants": [
+    {
+      "id": 67971900375225,
+      "product_id": 15460656021689,
+      "title": "432Hz (12 Notes)",
+      "price": "599.00",
+      "position": 1,
+      "inventory_policy": "continue",
+      "compare_at_price": "1199.00",
+      "option1": "432Hz (12 Notes)",
+      "option2": null,
+      "option3": null,
+      "created_at": "2026-10-24T23:58:22-06:00",
+      "updated_at": "2026-10-24T23:58:23-06:00",
+      "taxable": true,
+      "barcode": null,
+      "fulfillment_service": "manual",
+      "grams": 0,
+      "inventory_management": null,
+      "requires_shipping": true,
+      "sku": "ZAV-HP-MST-432-12",
+      "weight": 0,
+      "weight_unit": "kg",
+      "inventory_item_id": 69957906301113,
+      "inventory_quantity": 0,
+      "old_inventory_quantity": 0,
+      "admin_graphql_api_id": "gid://shopify/ProductVariant/67971900375225",
+      "image_id": null
+    }
+  ],
+  "options": [
+    {
+      "id": 17936194175161,
+      "product_id": 15460656021689,
+      "name": "Scale & Frequency",
+      "position": 1,
+      "values": [
+        "432Hz (12 Notes)"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": 44258917220537,
+      "alt": "Zavelyn Handpan Master 22 Inch 12 Notes 432Hz with Tripod Stand and Bag",
+      "position": 1,
+      "product_id": 15460656021689,
+      "created_at": "2026-10-24T23:58:22-06:00",
+      "updated_at": "2026-10-24T23:58:22-06:00",
+      "admin_graphql_api_id": "gid://shopify/MediaImage/47332892541113",
+      "width": 960,
+      "height": 960,
+      "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1.jpg?v=1792907902",
+      "variant_ids": []
+    },
+    {
+      "id": 44258917253305,
+      "alt": "Zavelyn Handpan Master 12 Dimple Tone Fields Close-up",
+      "position": 2,
+      "product_id": 15460656021689,
+      "created_at": "2026-10-24T23:58:22-06:00",
+      "updated_at": "2026-10-24T23:58:22-06:00",
+      "admin_graphql_api_id": "gid://shopify/MediaImage/47332892573881",
+      "width": 1000,
+      "height": 1000,
+      "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_2.jpg?v=1792907902",
+      "variant_ids": []
+    },
+    {
+      "id": 44258917286073,
+      "alt": "Zavelyn Handpan Master on Tripod Stand with Braided Rope",
+      "position": 3,
+      "product_id": 15460656021689,
+      "created_at": "2026-10-24T23:58:22-06:00",
+      "updated_at": "2026-10-24T23:58:22-06:00",
+      "admin_graphql_api_id": "gid://shopify/MediaImage/47332892606649",
+      "width": 1000,
+      "height": 1000,
+      "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_4.jpg?v=1792907902",
+      "variant_ids": []
+    },
+    {
+      "id": 44258917318841,
+      "alt": "Zavelyn Handpan Master Resonant Acoustic Gu Soundhole",
+      "position": 4,
+      "product_id": 15460656021689,
+      "created_at": "2026-10-24T23:58:22-06:00",
+      "updated_at": "2026-10-24T23:58:22-06:00",
+      "admin_graphql_api_id": "gid://shopify/MediaImage/47332892639417",
+      "width": 2500,
+      "height": 2500,
+      "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_3.png?v=1792907902",
+      "variant_ids": []
+    },
+    {
+      "id": 44258917351609,
+      "alt": "Zavelyn Handpan Master Dimensions 55cm Diameter 28cm Height",
+      "position": 5,
+      "product_id": 15460656021689,
+      "created_at": "2026-10-24T23:58:22-06:00",
+      "updated_at": "2026-10-24T23:58:22-06:00",
+      "admin_graphql_api_id": "gid://shopify/MediaImage/47332892672185",
+      "width": 1000,
+      "height": 1000,
+      "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_5.jpg?v=1792907902",
+      "variant_ids": []
+    },
+    {
+      "id": 44258917384377,
+      "alt": "Zavelyn Handpan Master Included Accessories Tripod Stand Bag Mallets",
+      "position": 6,
+      "product_id": 15460656021689,
+      "created_at": "2026-10-24T23:58:22-06:00",
+      "updated_at": "2026-10-24T23:58:22-06:00",
+      "admin_graphql_api_id": "gid://shopify/MediaImage/47332892704953",
+      "width": 1416,
+      "height": 1416,
+      "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_6.jpg?v=1792907902",
+      "variant_ids": []
+    }
+  ],
+  "image": {
+    "id": 44258917220537,
+    "alt": "Zavelyn Handpan Master 22 Inch 12 Notes 432Hz with Tripod Stand and Bag",
+    "position": 1,
+    "product_id": 15460656021689,
+    "created_at": "2026-10-24T23:58:22-06:00",
+    "updated_at": "2026-10-24T23:58:22-06:00",
+    "admin_graphql_api_id": "gid://shopify/MediaImage/47332892541113",
+    "width": 960,
+    "height": 960,
+    "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1.jpg?v=1792907902",
+    "variant_ids": []
+  }
+}

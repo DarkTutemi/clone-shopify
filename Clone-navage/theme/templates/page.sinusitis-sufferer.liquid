@@ -1,0 +1,1556 @@
+{% layout none %}
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Naväge Nasal Care - Sinusitis Sufferer</title>
+  <meta name="description" content="Discover how Naväge helps sinusitis sufferers breathe easier and relieve congestion naturally without pills.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+<link rel="preconnect" href="https://shop.app" crossorigin="anonymous">
+  {{ 'navage-sinusitis.css' | asset_url | stylesheet_tag }}
+
+  <style>
+    /* Global fixes & resets for standalone navage landing page */
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #074174;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .header__logo-image {
+      max-height: 48px;
+      width: auto;
+    }
+    .ng-banner-anc__link, .button--primary, a.button {
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+    .ng-banner-anc__link:hover {
+      opacity: 0.9;
+    }
+    .anchor {
+      position: relative;
+    }
+    /* Sticky header styles */
+    .header--sticky {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #074174;
+    }
+  </style>
+</head>
+<body class="template-page template-page--sinusitis-sufferer">
+  <!-- Top Announcement Banner -->
+  <div class="ng-banner-anc" role="banner" id="ng-banner-anc">
+  <div class="ng-banner-anc__inner ng-banner-anc__inner--desktop">
+    <span class="ng-banner-anc__tag">New</span>
+    <span class="ng-banner-anc__text">
+      <strong>Meet the Naväge Advanced Nose Cleaner. </strong>Your Naväge, leveled up  — Digital Controls, 3 Comfort Settings &amp; More!
+    </span>
+    <span class="ng-banner-anc__divider" aria-hidden="true"></span>
+    <a href="/products/navage-advanced-nose-cleaner" class="ng-banner-anc__link">See what's new →</a>
+  </div>
+  <a href="/products/navage-advanced-nose-cleaner" class="ng-banner-anc__mobile-link">
+    <span class="ng-banner-anc__mobile-line1">Meet the Naväge Advanced Nose Cleaner.</span>
+    <span class="ng-banner-anc__mobile-line2">Your Naväge, leveled up!</span>
+  </a>
+  <button type="button" class="ng-banner-anc__dismiss" id="ng-banner-anc-dismiss" aria-label="Dismiss announcement">×</button>
+</div>
+<script>
+  (function () {
+    var STORAGE_KEY = 'ng-banner-dismissed-advanced-nose-cleaner-2026';
+    var banner = document.getElementById('ng-banner-anc');
+    var dismissBtn = document.getElementById('ng-banner-anc-dismiss');
+    if (!banner) return;
+    try {
+      if (localStorage.getItem(STORAGE_KEY)) {
+        banner.style.display = 'none';
+      }
+    } catch (e) {}
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', function () {
+        banner.style.display = 'none';
+        try {
+          localStorage.setItem(STORAGE_KEY, '1');
+        } catch (e) {}
+      });
+    }
+  })();
+</script>
+
+  <!-- Navage Header -->
+  <div id="shopify-section-header" class="shopify-section shopify-section--header header--sticky">
+    <div class="container" style="max-width: 1300px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="/pages/sinusitis-sufferer" class="header__logo-link" style="display: flex; align-items: center;">
+        <img class="header__logo-image" src="https://navage.com/cdn/shop/files/logo_420x.png?v=1720725569" alt="Naväge Nasal Care" style="height: 40px; width: auto;">
+      </a>
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <a href="/products/navage-advanced-nose-cleaner" style="color: #ffffff; font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Advanced Nose Cleaner</a>
+        <a href="/products/navage-starter-bundle" style="color: #ffffff; font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Starter Bundle</a>
+        <a href="/cart" style="color: #ffffff; display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); padding: 8px 16px; border-radius: 20px; font-weight: 600;">
+          <svg width="20" height="18" viewBox="0 0 20 18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 1h14l1 16H2L3 1z"/>
+            <path d="M7 4v0a3 3 0 003 3v0a3 3 0 003-3v0"/>
+          </svg>
+          <span>Cart</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Story / Advertorial -->
+  <main id="main" role="main" class="anchor">
+    <div id="shopify-section-template--27702861398296__rich_text_bEickp" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_bEickp {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-center content-box--center text-container"><h3 class="heading h2">I spent years organizing my whole life around my sinuses. Then I finally found something that let me breathe — without another pill.</h3><p><em>A drug-free way to clear the congestion, pressure, and stuffiness — in as little as 30 seconds.</em></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__design_pack_image_with_text_nGk6rX" class="shopify-section DP__image-with-text-simple">
+
+
+
+
+<style>#DP--template--27702861398296__design_pack_image_with_text_nGk6rX {  margin-top: 0px;  margin-bottom: 0px;}#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__sizer {  padding-top: 0px;  padding-bottom: 0px;  width: 100%;  max-width: px;}#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__background {  background: ;}#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__background-image {  position: absolute;  object-fit: cover;  top: 0;  left: 0;  width: 100%;  height: 100%;  z-index: -1;}#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__grid--main {  grid-template-columns: 1fr minmax(250px, 50%);}#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__text p:last-of-type {  margin-bottom: 1.2rem;}#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__image__wrapper--main {    height: 100%;    overflow: hidden;  }#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__content {  padding: 20px;  display: flex;  justify-content: center;  align-items: center;background: linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%);}#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__inner-content {  width: 100%;  max-width: min(600px, 80%);  margin: auto;}#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__block .dsgn-pck__small-heading {  font-size: calc(var(--dp-g-small-heading-size, var(--dp-small-heading-size, 24px)) * 1.0);}#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__text p,#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__text ul {  line-height: calc(3px + 2.5ex + 3px);  color: #074174;  font-size: calc(var(--dp-g-body-size, var(--dp-body-size, 18px)) * 1.0);}#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__small-text p,#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__small-text ul {  font-size: calc(var(--dp-g-body-size, var(--dp-body-size, 18px)) * 0.8);}#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__block {  color: #074174;}#DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__block + .dsgn-pck__block {  margin-top: 15px;}/* Animation */#DP--template--27702861398296__design_pack_image_with_text_nGk6rX [style*="--dsgn-pck-animate"] {    opacity: 1;  }/* Landscape phone to portrait tablet */@media (max-width: 999px) {  #DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__grid--main {    grid-template-columns: repeat(1, minmax(250px, 1fr));  }}/* Landscape phones and down */@media (max-width: 480px) {  #DP--template--27702861398296__design_pack_image_with_text_nGk6rX {    margin-top: 0px;    margin-bottom: 0px;  }  #DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__sizer {    min-width: 70%;    padding-top: 0px;    padding-bottom: 0px;  }  #DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__inner-content {    max-width: min(400px, 100%);  }}</style><section id="DP--template--27702861398296__design_pack_image_with_text_nGk6rX" class="DP--template--27702861398296__design_pack_image_with_text_nGk6rX dsgn-pck__main dsgn-pck__section"><div class="dsgn-pck__background"><div class="dsgn-pck__sizer                dsgn-pck__grid                dsgn-pck__grid--main                dsgn-pck__grid-reverse">      <div class="dsgn-pck__image">        <div class="dsgn-pck__image__wrapper dsgn-pck__image__wrapper--main">            <svg class="dsgn-pck__svg-sizer dsgn-pck__mobile--hidden" viewBox="0 0 2688 1512"></svg>            <svg              class="dsgn-pck__svg-sizer dsgn-pck__mobile--visible dsgn-pck__desktop--hidden"              viewBox="0 0 2688 1512"            ></svg><picture><source media="(max-width: 480px)" srcset="https://navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&width=960"><img src="https://navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=2800" alt="" srcset="https://navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=180 180w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=360 360w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=540 540w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=720 720w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=900 900w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=1080 1080w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=1296 1296w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=1512 1512w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=1728 1728w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=1950 1950w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=2100 2100w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=2260 2260w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=2450 2450w, //navage.com/cdn/shop/files/shutterstock_2427484159_Web.png?v=1784655579&amp;width=2700 2700w" width="2800" height="1575" sizes="(max-width: 480px) 100vw,(max-width: 767px) 100vw,50vw" style="object-position:45.703% 25.684%;">              </picture></div>        </div>      <div class="dsgn-pck__content dsgn-pck__flex dsgn-pck__justify-left" style="--dsgn-pck-animate: 1;">        <div class="dsgn-pck__inner-content"><div id="DP--spacer_iRMKem" class="dsgn-pck__block dsgn-pck__block-id-spacer_iRMKem dsgn-pck__block--spacer dsgn-pck__block--1"  style="--dsgn-pck-animate: 1;"><style>                    #shopify-section-template--27702861398296__design_pack_image_with_text_nGk6rX #DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__block-id-spacer_iRMKem,                    #shopify-section-template--27702861398296__design_pack_image_with_text_nGk6rX #DP--template--27702861398296__design_pack_image_with_text_nGk6rX .dsgn-pck__block-id-spacer_iRMKem + .dsgn-pck__block {                      margin-top: 0;                    }                    .dsgn-pck__block-id-spacer_iRMKem .dsgn-pck__spacer {                      height: 40px;                      display: block !important;                    }                    @media (max-width: 480px) {                      .dsgn-pck__block-id-spacer_iRMKem .dsgn-pck__spacer {                        height: 30px;                      }                    }                  </style>                  <div class="dsgn-pck__spacer" aria-hidden="true"></div></div><div id="DP--heading_PmwAeh" class="dsgn-pck__block dsgn-pck__block-id-heading_PmwAeh dsgn-pck__block--heading dsgn-pck__block--2"  style="--dsgn-pck-animate: 2;"><style>.dsgn-pck__block-id-heading_PmwAeh .dsgn-pck__heading {                      margin: 0;                      line-height: calc(3px + 2ex + 3px);color: #39bfad;font-size: calc(20 * 1.0);}                    @media (max-width: 480px) {                      .dsgn-pck__block-id-heading_PmwAeh .dsgn-pck__heading {font-size: min(20, 50px);}                    }                  </style></div><div id="DP--text_3MWrta" class="dsgn-pck__block dsgn-pck__block-id-text_3MWrta dsgn-pck__block--text dsgn-pck__block--3"  style="--dsgn-pck-animate: 3;"><div class="dsgn-pck__text dsgn-pck__rte">                      <p>I don't remember exactly when it stopped being "allergies" and started being <em>my life.</em></p><p>Maybe it was the third winter in a row I spent with a tissue box in every room. Maybe it was the morning I realized I couldn't remember the last time I'd woken up with a clear head instead of that thick, plugged-up pressure behind my eyes. Somewhere along the way, "stuffed up" stopped being a thing that happened to me and became <em>who I was.</em></p><p>If you know that feeling — really know it — then you already understand why I'm writing this.</p>                    </div></div></div>      </div>    </div>  </div></section>
+
+
+<script type="application/json" data-dsgn-pck="template--27702861398296__design_pack_image_with_text_nGk6rX">
+  {
+    "id": "template--27702861398296__design_pack_image_with_text_nGk6rX",
+    "animation": "none"
+  }
+</script><script data-dsgn-pck-js="template--27702861398296__design_pack_image_with_text_nGk6rX" type="module" defer>
+(function(){
+
+  const designPack = {
+    settings: {},
+    animateSection: function(entries, observer){
+      // Target the first entry available.
+      let observedSection = entries[0];
+      if (observedSection.isIntersecting) {
+        observedSection.target.classList.add('dsgn-pck__animation-applied');
+      }
+    },
+    enableSliderBlock: function(section){
+      const sliderBlocks = section.querySelectorAll(`.dsgn-pck__slider-block`);
+
+      sliderBlocks.forEach(elem => {
+        designPack.flkty = new Flickity( elem, {
+          cellAlign: 'left',
+          contain: true,
+          wrapAround: true,
+          adaptiveHeight: true,
+          imagesLoaded: true,
+          prevNextButtons: JSON.parse(getComputedStyle(elem).getPropertyValue('--show-arrows')),
+          autoPlay: JSON.parse(getComputedStyle(elem).getPropertyValue('--autoplay')),
+          fade: JSON.parse(getComputedStyle(elem).getPropertyValue('--slider-animation')),
+          pageDots: JSON.parse(getComputedStyle(elem).getPropertyValue('--page-dots')),
+          draggable: JSON.parse(getComputedStyle(elem).getPropertyValue('--draggable')),
+          freeScrollFriction: JSON.parse(getComputedStyle(elem).getPropertyValue('--free-scroll-friction')),
+          selectedAttraction: JSON.parse(getComputedStyle(elem).getPropertyValue('--selected-attraction')),
+          friction: JSON.parse(getComputedStyle(elem).getPropertyValue('--friction')),
+          dragThreshold: JSON.parse(getComputedStyle(elem).getPropertyValue('--drag-threshold'))
+        });
+      });
+
+    },
+    initializeAndEnableClock(section) {
+      const clockSelector = '.dsgn-pck__clock';
+      const startDate = section.querySelector('[data-timer-start]').dataset.timerStart;
+      const endDate = section.querySelector('[data-timer-end]').dataset.timerEnd;
+
+      const startMs = Date.parse(startDate);
+      const endMs = Date.parse(endDate);
+      const currentMs = Date.parse(new Date());
+
+      if (endMs <= currentMs || currentMs < startMs) {
+        section.querySelector(`.dsgn-pck__clock-wrap`).style.display = 'none';
+        return;
+      }
+
+      const clock = section.querySelector(clockSelector);
+
+      function updateClock() {
+        const total = Date.parse(endDate) - Date.parse(new Date());
+        const days = Math.floor(total / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((total / 1000 / 60) % 60);
+        const seconds = Math.floor((total / 1000) % 60);
+
+        const daysSpan = clock.querySelector('.dsgn-pck__days .dsgn-pck__number');
+        const hoursSpan = clock.querySelector('.dsgn-pck__hours .dsgn-pck__number');
+        const minutesSpan = clock.querySelector('.dsgn-pck__minutes .dsgn-pck__number');
+        const secondsSpan = clock.querySelector('.dsgn-pck__seconds .dsgn-pck__number');
+
+        if (daysSpan.innerHTML != days) daysSpan.innerHTML = days;
+        if (hoursSpan.innerHTML != hours) hoursSpan.innerHTML = ('0' + hours).slice(-2);
+        if (minutesSpan.innerHTML != minutes) minutesSpan.innerHTML = ('0' + minutes).slice(-2);
+        if (secondsSpan.innerHTML != seconds) secondsSpan.innerHTML = ('0' + seconds).slice(-2);
+
+        if (total <= 0) clearInterval(timeinterval);
+      }
+
+      updateClock();
+      const timeinterval = setInterval(updateClock, 1000);
+    },
+    load: function(section){
+
+      if (this.settings.animation !== 'none'){
+        const options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: [0, 0.25, 0.5, 0.75, 1]
+        };
+        // Construct Intersection Observer.
+        const observer = new IntersectionObserver( this.animateSection, options );
+        // Observe if element is present.
+        if (section) {
+          observer.observe(section);
+        }
+      }
+
+      const countdownTimer = section.querySelector('.dsgn-pck__clock');
+      if (typeof countdownTimer !== 'undefined' && countdownTimer !== null){
+        designPack.initializeAndEnableClock(section);
+      }
+
+      const sliderBlock = section.querySelector('.dsgn-pck__slider-block');
+      if (typeof sliderBlock !== 'undefined' && sliderBlock !== null){
+        designPack.enableSliderBlock(section);
+      }
+    },
+    unload: function(section){
+      section.classList.remove('dsgn-pck__animation-applied')
+    }
+  }
+
+  window.addEventListener('shopify:section:unload', function (e) {
+    const settings = document.querySelector(`[data-dsgn-pck="${e.detail.sectionId}"]`);
+    const sectionId = e.detail.sectionId;
+    const section = document.querySelector(`#DP--${e.detail.sectionId}`);
+    if (sectionId == designPack.settings.id){
+      designPack.unload(section);
+    }
+  });
+
+  designPack.settings = JSON.parse(document.querySelector('[data-dsgn-pck="template--27702861398296__design_pack_image_with_text_nGk6rX"]').innerHTML);
+  const sectionId = "template--27702861398296__design_pack_image_with_text_nGk6rX";
+  const section = document.querySelector(`#DP--${sectionId}`);
+
+  if (sectionId == designPack.settings.id){
+    designPack.load(section);
+  }
+})()
+</script>
+</div><div id="shopify-section-template--27702861398296__rich_text_bLRMXR" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_bLRMXR {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">The thing I never told anybody</h3><p>Here's what I was embarrassed to admit, even to my own family:</p><p>I'd started <em>planning around</em> my nose.</p><p>I'd think twice about a dinner with friends because I didn't want to be the one sniffling and clearing my throat all night. I slept propped up on two pillows because lying flat meant a post-nasal drip cough that kept me — and my husband — awake. I kept a quiet little arsenal in my purse: a decongestant, an antihistamine, a backup pack of tissues, the nasal spray I knew I was leaning on a little too hard.</p><p>From the outside, I looked fine. Inside my own head, I felt foggy, tired, and frankly a little ashamed of how much energy I was spending just trying to breathe like a normal person.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_gBwNEr" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_gBwNEr {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">How it crept up on me</h3><p>It didn't arrive all at once. That's the sneaky part.</p><p>First it was just spring. Then it was spring <em>and</em> fall. Then it was the dry winter air, then the change of seasons, then — somewhere in there — it stopped really having a season at all. The congestion, the pressure headaches "every couple of days," the heavy drip at the back of my throat, the feeling of being slightly underwater all the time.</p><p>It took the small things first. Tasting my coffee. Sleeping through the night. Sitting through a movie without that maddening urge to sniff. And then it took the bigger ones: my patience, my energy, the version of me that used to say yes to things without first running a silent calculation of how stuffed up I'd be.</p><p>I kept telling myself it wasn't a big deal. But living with it <em>every single day</em> — that's a big deal.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_76YNqa" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_76YNqa {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">Everything I tried (and you&#39;ve probably tried it too)</h3><p>By the time I was at my worst, I had a graveyard of half-used products in my bathroom cabinet:</p><ul><li>The pills — Claritin, the generic stuff, the "non-drowsy" ones that still left me foggy.</li><li>The sprays — including the one I was warned not to use too often, then used too often anyway.</li><li>The neti pot a friend swore by, that I could never quite get the hang of. (Half the water went straight down the back of my throat. The other half made me feel like I was drowning. I gave up after a week.)</li><li>The squeeze bottle that "wouldn't flow through" on the days I needed it most.</li><li>The hot showers, the menthol rubs, the humidifier running all night.</li></ul><p>Every one of them was another little door slamming shut. Each one started with hope and ended in the cabinet. And every dollar I spent that <em>didn't</em> work made me a little more convinced that nothing would.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_eJiBUk" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_eJiBUk {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">&quot;It just happens. Learn to live with it.&quot;</h3><p>That's the part that still makes me a little angry.</p><p>Nobody ever sat me down and offered a real answer. The message I kept getting — from the half-working products, from the shrug-and-a-prescription routine, from the whole status quo — was some version of: <em>this is just how some people are. Take a pill. Manage it. Live with it.</em></p><p>But here's the thing I couldn't shake: I knew this stuff doesn't <em>just happen.</em> The gunk, the pressure, the drip — that was all <em>something</em>, sitting in my nose, day after day. And nobody was helping me get it <em>out.</em> They just kept handing me ways to mask it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_6bRVHA" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_6bRVHA {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">The night I almost gave up</h3><p>I want to be honest about how low it got, because if you're reading this, you might be there right now.</p><p>There was a night — I'd been congested for what felt like the hundredth week straight, exhausted from a drippy cough that wouldn't let me sleep — when I sat on the edge of my bed at 2 a.m. and thought: <em>Maybe this is just it. Maybe this is just my life now.</em></p><p>I was tired of hoping. Tired of trying something, getting my hopes up, and watching it land in the cabinet with everything else. I'd more or less decided to stop looking.</p><p>But somewhere underneath all that tiredness, there was this small, stubborn voice that wouldn't completely shut up. <em>There has to be something. One more thing.</em></p><p>So — mostly out of spite, honestly — I tried one more thing.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_Uknqt3" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_Uknqt3 {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">I wasn&#39;t optimistic. I was just out of options.</h3><p>I'd seen Naväge before. The little device, the demo, the "powered suction." My first reaction was the same one a lot of you are probably having: <em>That looks intense. There's no way I'm doing that to my face.</em></p><p>I'd also seen the price and thought, <em>for a saltwater rinse? Come on.</em></p><p>But I'd been burned enough times that I'd stopped expecting much from anything — which, weirdly, made it easier to just try. I wasn't betting my hopes on it. I had nothing left to lose. The 30-day money-back guarantee meant the only thing at risk was my pride. So I ordered it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_wjHf6R" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_wjHf6R {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">Why this actually worked when the rest didn&#39;t</h3><p>Here's the part I wish someone had explained to me years earlier.</p><p>Doctors broadly agree that saline nasal irrigation — rinsing your nasal passages with saltwater — is a natural way to flush, moisturize, and cleanse the nasal cavity. That part isn't new. Neti pots have done it for ages.</p><p>The problem is the <em>doing it.</em> A neti pot or squeeze bottle relies on gravity and you tilting your head at exactly the right angle, holding exactly the right pressure, hoping it flows <em>through</em> instead of straight down your throat. On the days you're most congested — the days you need it most — that's exactly when it tends to fail.</p><p>Naväge's difference is one word: <strong>suction.</strong></p><p>Instead of you fighting gravity, the device does the work. It sends a gentle, pressure-controlled stream of saline in one nostril and uses <strong>powered suction</strong> to draw it — along with the mucus, allergens, and dust — out the other. You're not masking the congestion. You're physically flushing out the stuff that's <em>causing</em> it. Drug-free. In as little as <strong>30 seconds.</strong></p><p>That was the click for me. For years I'd been taking things to <em>cover up</em> the problem. This was the first thing that actually got the gunk <em>out.</em></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_WWCDLR" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_WWCDLR {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">Day 1, Day 2, Day 3</h3><p>I'll be honest — the first time felt strange. New sensation, a little intimidating. (Almost everyone says this. More on that in a second.)</p><p>But then it was over, and I did the thing everyone does: I looked. And I <em>saw</em> what came out. After years of feeling that stuff sitting in my nose, watching it actually leave was — I'm not exaggerating — a little emotional.</p><p><strong>Day 1:</strong> I could breathe through both nostrils for the first time in longer than I could remember.</p><p><strong>Day 2:</strong> I slept. All the way through. No 2 a.m. coughing fit. I woke up and just lay there for a second, almost suspicious of how clear my head felt.</p><p><strong>Day 3:</strong> I caught myself taking a deep breath through my nose without thinking about it. Such a small thing. I nearly cried over it.</p><p>After all those years of feeling resigned to it, even those small wins felt enormous.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_Dp9XaG" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_Dp9XaG {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">What I got back</h3><p>It's been a while now, and here's the honest truth: I don't organize my life around my nose anymore.</p><p>I sleep through. I taste my coffee. I sit through a whole dinner without my little purse arsenal. The foggy, underwater, slightly-ashamed version of me from that 2 a.m. night feels like a different person.</p><p>I'm not telling you it's magic, and I'm not telling you to throw out everything your doctor said. I'm telling you that for the first time, I have something that lets me get <em>cleaned out</em> — on my own, at my sink, in under a minute, without reaching for another pill. And that has given me back something I'd quietly grieved: the simple, daily, taken-for-granted feeling of <em>breathing.</em></p><p>If you'd told me on that 2 a.m. night that I'd feel this way, I wouldn't have believed you. That's exactly why I'm telling you now.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__design_pack_banner_image_simple_4bh4Fw" class="shopify-section DP__banner-image-simple">
+
+<style>#DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw {      margin-top: 0px;      margin-bottom: 0px;      margin-left: auto;      margin-right: auto;      max-width: px;    }    #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__sizer {      width: 90%;      margin: auto;      max-width: px;    }    #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__background {      width: 100%;    }    #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__background > .dsgn-pck__image__wrapper::before {      content: '';      display: block;      position: absolute;      top: 0;      bottom: 0;      right: 0;      left: 0;      z-index: 1;      background: linear-gradient(180deg, rgba(251, 51, 166, 0), rgba(127, 72, 176, 0) 49%, rgba(48, 145, 211, 0) 71%, rgba(0, 0, 0, 0) 99%);    }    #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__grid--main {      height: 100%;    }    #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__content {      z-index: 2;      height: 100%;      grid-template-columns: 1fr;      grid-area: 1 / 1 / 2 / 2;      padding: 5% 0;    }    #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__inner-content {      z-index: 2;      max-width: 400px;      width: 100%;      padding:clamp(10px, 5%, 40px);      background: linear-gradient(232deg, rgba(58, 58, 58, 0), rgba(0, 0, 0, 0));    }        #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__rte p,    #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__rte ul {      line-height: calc(3px + 2.5ex + 3px);      color: #ffffff;      font-size: calc(var(--dp-g-body-size, var(--dp-body-size, 18px)) * 0.8);}    #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__small-text p,    #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__small-text ul {      font-size: calc(var(--dp-g-body-size, var(--dp-body-size, 18px)) * 0.64);    }#DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__block {      color: #ffffff;    }    #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__block + .dsgn-pck__block {      margin-top: 15px;    }        /* Animation */#DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw [style*="--dsgn-pck-animate"] {        opacity: 1;      }    /* Landscape phones and down */    @media (max-width: 480px) {      #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw {        margin-top: 0px;        margin-bottom: 0px;      }      #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__inner-content {        min-width: 100%;        padding: clamp(10px, 5%, 40px);      }}  </style><section id="DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw" class="DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw dsgn-pck__banner-image-simple dsgn-pck__section">    <div class="dsgn-pck__background">      <div class="dsgn-pck__image__wrapper">        <svg class="dsgn-pck__mobile--hidden" viewBox="0 0 1200000 400000"></svg>        <svg          class="dsgn-pck__mobile--visible dsgn-pck__desktop--hidden"          viewBox="0 0 2752 1076"        ></svg><picture><source media="(max-width: 480px)" srcset="https://navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&width=960"><img src="https://navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=5000" alt="" srcset="https://navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=180 180w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=360 360w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=540 540w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=720 720w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=900 900w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=1080 1080w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=1296 1296w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=1512 1512w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=1728 1728w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=1950 1950w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=2100 2100w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=2260 2260w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=2450 2450w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=2700 2700w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=3000 3000w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=3350 3350w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=3750 3750w, //navage.com/cdn/shop/files/Have_model_running_outside_wea_Nano_Banana_2_80024.png?v=1783961118&amp;width=4100 4100w" width="5000" height="1955" loading="lazy" sizes="100vw" style="object-position:67.1213% 43.1436%;">          </picture><div class="dsgn-pck__sizer dsgn-pck__grid dsgn-pck__grid--main">          <div class="              dsgn-pck__content              dsgn-pck__flex dsgn-pck__justify-left              dsgn-pck__align-center              dsgn-pck__text-alignment-left            "><div class="dsgn-pck__inner-content dsgn-pck__relative "><div id="DP--small_text_c9CqGq" class="dsgn-pck__block dsgn-pck__block-id-small_text_c9CqGq dsgn-pck__block--small_text dsgn-pck__block--1"  style="--dsgn-pck-animate: 1;"></div><div id="DP--heading_B4Fw4V" class="dsgn-pck__block dsgn-pck__block-id-heading_B4Fw4V dsgn-pck__block--heading dsgn-pck__block--2"  style="--dsgn-pck-animate: 2;"><style>.dsgn-pck__block-id-heading_B4Fw4V .dsgn-pck__heading {                                margin: 0;                                line-height: calc(3px + 2ex + 3px);color: ;font-size: calc(var(--dp-g-heading-size, var(--dp-heading-size, 35px)) * 0.8);}                              @media (max-width: 480px) {                                .dsgn-pck__block-id-heading_B4Fw4V .dsgn-pck__heading {}                              }                            </style></div><div id="DP--text_YGAx8X" class="dsgn-pck__block dsgn-pck__block-id-text_YGAx8X dsgn-pck__block--text dsgn-pck__block--3"  style="--dsgn-pck-animate: 3;"><style>                            .dsgn-pck__block-id-text_YGAx8X p,                            .dsgn-pck__block-id-text_YGAx8X ul {                              line-height: calc(3px + 2.5ex + 3px);                              color: #ffffff;                              font-size: calc(var(--dp-g-body-size, var(--dp-body-size, 18px)) * 0.8);}</style></div><div id="DP--spacer_d9UGNR" class="dsgn-pck__block dsgn-pck__block-id-spacer_d9UGNR dsgn-pck__block--spacer dsgn-pck__block--4"  style="--dsgn-pck-animate: 4;"><style>                            #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__block-id-spacer_d9UGNR,                            #DP--template--27702861398296__design_pack_banner_image_simple_4bh4Fw .dsgn-pck__block-id-spacer_d9UGNR + .dsgn-pck__block {                              margin-top: 0;                            }                            .dsgn-pck__block-id-spacer_d9UGNR .dsgn-pck__spacer {                              height: 40px;                              display: block !important;                            }                            @media (max-width: 480px) {                              .dsgn-pck__block-id-spacer_d9UGNR .dsgn-pck__spacer {                                height: 30px;                              }                            }                          </style>                          <div class="dsgn-pck__spacer" aria-hidden="true"></div></div><div id="DP--buttons_cGFHji" class="dsgn-pck__block dsgn-pck__block-id-buttons_cGFHji dsgn-pck__block--buttons dsgn-pck__block--5"  style="--dsgn-pck-animate: 5;"><style>.dsgn-pck__block-id-buttons_cGFHji .dsgn-pck__button-area {                              display: grid;                              grid-gap: 1.3em;grid-template-columns: 1fr;                                max-width: 200px;max-width: 100%;                              width: fit-content;                            }                            .dsgn-pck__block-id-buttons_cGFHji .dsgn-pck__button {                              display: flex;                              justify-content: center;                              align-items: center;                              text-align: center;                              text-decoration: none;                              padding: 0.5em 1.2em;                              margin-top: 0;                              border: thin solid;                              transition: all 0.3s ease-in-out;                              border-radius: 0px;                              line-height: calc(3px + 2ex + 3px);                              font-size: calc(var(--dp-g-body-size, var(--dp-body-size, 18px)) * 0.8);}                            .dsgn-pck__block-id-buttons_cGFHji .dsgn-pck__button-primary {                              color: #ffffff;                              border-color:#ffffff;                              background-color: rgba(0,0,0,0);                            }                            .dsgn-pck__block-id-buttons_cGFHji .dsgn-pck__button-secondary {                              color: #121212;                              border-color:#ffffff;                              background-color: #ffffff;                            }                            .dsgn-pck__block-id-buttons_cGFHji .dsgn-pck__button-primary:hover {                              opacity: 1;background-color: rgba(255, 255, 255, 0.1);                            }                            .dsgn-pck__block-id-buttons_cGFHji .dsgn-pck__button-secondary:hover {                              opacity: 1;background-color: #e6e6e6;                              border-color: transparent;;                            }                            @media (max-width: 480px) {                              .dsgn-pck__block-id-buttons_cGFHji div.dsgn-pck__button-area {                                grid-template-columns: 1fr;                                width: 100%;                                gap: 10px;                              }                            }                          </style>                          <div class="dsgn-pck__button-area                           "></div></div>              </div></div>        </div>      </div>    </div></section>
+
+
+<script type="application/json" data-dsgn-pck="template--27702861398296__design_pack_banner_image_simple_4bh4Fw">
+  {
+    "id": "template--27702861398296__design_pack_banner_image_simple_4bh4Fw",
+    "animation": "none"
+  }
+</script><script data-dsgn-pck-js="template--27702861398296__design_pack_banner_image_simple_4bh4Fw" type="module" defer>
+  (function(){
+
+    const designPack = {
+      settings: {},
+      animateSection: function(entries, observer){
+        // Target the first entry available.
+        let observedSection = entries[0];
+        if (observedSection.isIntersecting) {
+          observedSection.target.classList.add('dsgn-pck__animation-applied');
+        }
+      },
+      initializeClock(selector, endtime, section) {
+        function updateClock() {
+          const t = designPack.getTimeRemaining(endtime);
+          const daysSpan = clock.querySelector('.dsgn-pck__days .dsgn-pck__number');
+          const hoursSpan = clock.querySelector('.dsgn-pck__hours .dsgn-pck__number');
+          const minutesSpan = clock.querySelector('.dsgn-pck__minutes .dsgn-pck__number');
+          const secondsSpan = clock.querySelector('.dsgn-pck__seconds .dsgn-pck__number');
+
+          if (daysSpan.innerHTML != t.days){
+            daysSpan.innerHTML = t.days;
+          }
+          if (hoursSpan.innerHTML != t.hours){
+            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+          }
+          if (minutesSpan.innerHTML != t.minutes){
+            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+          }
+          if (secondsSpan.innerHTML != t.seconds){
+            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+          }
+
+          if (t.total <= 0) {
+            clearInterval(timeinterval);
+          }
+        }
+
+        const clock = section.querySelector(selector);
+        updateClock();
+        const timeinterval = setInterval(updateClock, 1000);
+      },
+      getTimeRemaining(endtime){
+        const total = Date.parse(endtime) - Date.parse(new Date());
+        const seconds = Math.floor( (total/1000) % 60 );
+        const minutes = Math.floor( (total/1000/60) % 60 );
+        const hours = Math.floor( (total/(1000*60*60)) % 24 );
+        const days = Math.floor( total/(1000*60*60*24) );
+
+        return {
+          total,
+          days,
+          hours,
+          minutes,
+          seconds
+        };
+      },
+      enableCountdownTimer: function(section){
+        const clock = '.dsgn-pck__clock';
+        const startDate = section.querySelector('[data-timer-start]').dataset.timerStart;
+        const endDate = section.querySelector('[data-timer-end]').dataset.timerEnd;
+
+        const startMs = Date.parse(startDate);
+        const endMs = Date.parse(endDate);
+        const currentMs = Date.parse(new Date());
+
+        if (endMs > currentMs && currentMs >= startMs ) {
+          designPack.initializeClock(clock, endDate, section);
+        } else {
+          section.querySelector(`.dsgn-pck__clock-wrap`).style.display = 'none';
+        }
+      },
+      load: function(section){
+
+        if (this.settings.animation !== 'none'){
+          const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: [0, 0.25, 0.5, 0.75, 1]
+          };
+          // Construct Intersection Observer.
+          const observer = new IntersectionObserver( this.animateSection, options );
+          // Observe if element is present.
+          if (section) {
+            observer.observe(section);
+          }
+        }
+
+        const countdownTimer = section.querySelector('.dsgn-pck__clock');
+        if (typeof countdownTimer !== 'undefined' && countdownTimer !== null){
+          designPack.enableCountdownTimer(section);
+        }
+      },
+      unload: function(section){
+        section.classList.remove('dsgn-pck__animation-applied')
+      }
+    }
+
+    window.addEventListener('shopify:section:unload', function (e) {
+      const settings = document.querySelector(`[data-dsgn-pck="${e.detail.sectionId}"]`);
+      const sectionId = e.detail.sectionId;
+      const section = document.querySelector(`#DP--${e.detail.sectionId}`);
+      if (sectionId == designPack.settings.id){
+        designPack.unload(section);
+      }
+    });
+
+    designPack.settings = JSON.parse(document.querySelector('[data-dsgn-pck="template--27702861398296__design_pack_banner_image_simple_4bh4Fw"]').innerHTML);
+    const sectionId = "template--27702861398296__design_pack_banner_image_simple_4bh4Fw";
+    const section = document.querySelector(`#DP--${sectionId}`);
+
+    if (sectionId == designPack.settings.id){
+      designPack.load(section);
+    }
+  })()
+</script>
+</div><div id="shopify-section-template--27702861398296__rich_text_btVDGW" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_btVDGW {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">I&#39;m not the only one</h3><p><strong>"I can really breathe now."</strong> I have never breathed through my nose so clearly until now. — <em>[Sky, S.], Verified Buyer</em></p><p><strong>Allergy & sinus sufferer for years.</strong> I've tried neti pots and bulb sinus rinses over my life and this is by far the easiest to use with the best results. It moisturized my sinuses and nasal passages and reduced the swelling. —  <em>[William, G], Verified Buyer</em></p><p><strong>No more sleepless nights.</strong> I'm sleeping all night now because I don't have the post-nasal drippy cough anymore. — <em>[Jenna, B], Verified Buyer</em></p><p><strong>Better than I expected.</strong> I noticed relief after the first day and things got better every day after that. I'm truly glad I decided to give Naväge a try. — <em>[Ray, D], Verified Buyer</em></p><p><strong>The suction is the difference.</strong> I've used other options and there's no comparison between powered and non-powered. The suction power alone puts others to shame. — <em>[Yvette, D], Verified Buyer</em></p><p><strong>Worth every penny.</strong> This little device is powerful and gets the job done. My sinuses feel great. —  <em>[Shavonne B.], Verified Buyer</em></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_WXPaad" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_WXPaad {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">&quot;But what does it actually feel like?&quot;</h3><p>I have to address this, because it was <em>my</em> biggest fear too — and it's the number-one question I see from people on the fence.</p><p>You're picturing waterboarding. Drowning. Gagging. Salt water down your throat.</p><p>Here's the truth from someone who was genuinely scared of it: it's a gentle, warm, controlled stream — not a blast. The device manages the pressure so you don't have to. Most of the "horror stories" come from technique on a <em>manual</em> rinse, which is exactly the problem Naväge's powered suction is built to solve. Warm your water slightly, follow the simple steps, and that fear tends to evaporate the first time you actually do it. As one reviewer put it: <em>"I had fear at first, but once I did it, I felt fine."</em></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_ANHXY7" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_ANHXY7 {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">What&#39;s in the box (and why this brand)</h3><p>The <strong>Naväge Advanced Nose Cleaner </strong>includes everything you need to start tonight:</p><ul><li>The <strong>Naväge Nose Cleaner</strong> — the powered device that does the work for you</li><li><strong>20 SaltPods</strong> — pre-measured, 99.9% pure sea salt capsules that mix a perfectly balanced, drug-free rinse every time (no guessing, no mess, no "too much salt" sting)</li><li><strong>Premium Air-Dry Mat</strong></li></ul><p></p><p>A few things worth knowing: Naväge is the <strong>#1 brand in powered nasal suction.</strong> It's <strong>drug-free</strong> and <strong>cleared by the U.S. FDA</strong> for use by adults and children 12 and older. The pre-measured SaltPods exist for a reason — too much or too little salt is what makes a homemade rinse burn. These take that variable off the table entirely.</p><p><em>One honest note, because I believe in being straight with you:</em> always use distilled, sterile bottled, micro-filtered, or previously boiled-and-cooled water — never untreated tap water. And clean the device after each use. It takes a minute and it matters.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_EmDVqh" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_EmDVqh {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">Why I&#39;m telling you about the offer</h3><p>Right now, the Advanced Nose Cleaner is <strong>$114.99 - down from $149.99</strong></p><p>I don't know how long that price holds, so I'll just say this plainly: if you're where I was — exhausted, foggy, half-resigned to living stuffed up forever — the thing standing between you and that first clear breath is one decision.</p><p>And here's what made it easy for me to finally make it:</p><ul><li>It's backed by a <strong>30-Day Money-Back Guarantee.</strong> If it's not for you, send it back. (You only cover return shipping.)</li><li>It's <strong>FSA & HSA eligible</strong> — so you may be able to use pre-tax dollars.</li></ul><p>The only real risk is staying exactly where you are. I did that for <em>years.</em> Don't be me.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_AYNz76" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_AYNz76 {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">Why I&#39;m telling you about the offer</h3><p>✅ <strong>Drug-free relief</strong> — flush out the congestion instead of masking it with another pill</p><p>✅ <strong>Powered suction</strong> does the work — no head-tilting.</p><p>✅ <strong>Clears your nasal passages in as little as 30 seconds</strong></p><p>✅ <strong>Clinically proven</strong> to relieve sinus pressure, relieve chronic sinus symptoms, and improve sinus-related quality of life</p><p>✅ <strong>9 out of 10 users</strong> say Naväge does a better job clearing what's causing their congestion</p><p>✅ <strong>#1 brand</strong> in powered nasal suction, <strong>FDA-cleared</strong> for ages 12+</p><p>✅ Easier to breathe → easier to <strong>sleep through the night</strong></p><p>✅ <strong>30-Day Money-Back Guarantee</strong> + <strong>FSA/HSA eligible</strong></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__rich_text_ii487p" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_ii487p {--heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--large content-box--text-left content-box--left text-container"><h3 class="heading h2">One last thing, from me to you</h3><p>I almost didn't write this. It's a strangely personal thing, telling strangers about your nose.</p><p>But I kept thinking about that 2 a.m. version of me, sitting on the edge of the bed, ready to just accept feeling foggy and tired forever. If there's even one person out there in that exact spot tonight — please, don't give up before you've tried the one thing that finally worked for me.</p><p>You deserve to breathe. You deserve to sleep. You deserve to stop organizing your whole life around your sinuses.</p><p>I never thought I'd feel this way again. You can.</p><p><strong>— Diane</strong></p><p><em>P.S. — Tip from experience: warm your saline solution to body temperature before you use it. That one small thing is the difference between "weird and cold" and "ahhh." It made me a believer on day one.</em></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__17884578899ace7cec" class="shopify-section"><div id="shopify-block-AOFE4YXFrM2xOU2JmM__ai_gen_block_e9c14c7_aetykR" class="shopify-block">
+
+
+<style data-shopify>
+  .ai-text-module-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr {
+    display: block;
+    width: 100%;
+    padding: 20px 10px;
+    
+  background-color: #ffffff;
+
+    text-align: center;
+  }
+
+  .ai-text-module__content-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .ai-text-module__headline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr {
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 1.4;
+    color: #074174;
+    margin: 0;
+  }
+
+  .ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #218dc8;
+    margin: 0px 0 0 0;
+  }
+
+  .ai-text-module__body-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #5a6c7d;
+    margin: 20px 0 0 0;
+  }
+
+  .ai-text-module__button-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 40px;
+    background-color: #074174;
+    color: #ffffff;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-text-module__button-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr:hover {
+    opacity: 0.8;
+  }
+</style>
+
+<text-module-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr class="ai-text-module-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr" >
+  <div class="ai-text-module__content-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr">
+    
+      <h2 class="ai-text-module__headline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr">Only $14.99 more for Advanced Suction Technology</h2>
+    
+
+    
+      <div class="ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr">Try Naväge risk-free for 30 days. If you’re not completely satisfied, get your money back.</div>
+    
+
+    
+
+    
+  </div>
+</text-module-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr>
+
+<script>
+  (function() {
+    class TextModuleaofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr extends HTMLElement {
+      constructor() {
+        super();
+      }
+    }
+    customElements.define('text-module-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr', TextModuleaofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr);
+  })();
+</script>
+
+
+</div>
+<div id="shopify-block-AV3ZuSkJnWWhic3BtT__ai_gen_block_445d9f7_JPdP3W" class="shopify-block">
+
+
+<style data-shopify>
+  .ai-featured-products-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+
+  .ai-featured-products__container-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .ai-featured-products__product-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ai-featured-products__image-wrapper-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w {
+    position: relative;
+    width: 100%;
+    margin-bottom: 16px;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .ai-featured-products__image-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-featured-products__placeholder-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-featured-products__placeholder-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w svg {
+    width: 60%;
+    height: 60%;
+  }
+
+  .ai-featured-products__title-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w {
+    font-size: 20px;
+    color: #074174;
+    margin: 0 0 8px;
+    font-weight: 700;
+  }
+
+  .ai-featured-products__price-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w {
+    font-size: 18px;
+    color: #074174;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .ai-featured-products__description-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w {
+    font-size: 14px;
+    color: #7b7b7b;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .ai-featured-products__button-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #97a8e3;
+    color: #074174;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+  }
+
+  .ai-featured-products__button-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w:hover {
+    background-color: #074174;
+  }
+
+  .ai-featured-products__empty-state-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w {
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-featured-products__container-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+</style>
+
+<div class="ai-featured-products-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w" >
+  <div class="ai-featured-products__container-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w">
+    
+      
+
+      <div class="ai-featured-products__product-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w">
+        <div class="ai-featured-products__image-wrapper-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w">
+          
+            <img
+              src="https://navage.com/cdn/shop/files/Navage_Advanced_B__Main_Update_V2.jpg?v=1788963959&width=800"
+              alt="Naväge Advanced Nose Cleaner"
+              width="2048"
+              height="2048"
+              loading="lazy"
+              class="ai-featured-products__image-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w"
+            >
+          
+        </div>
+
+        
+          <h3 class="ai-featured-products__title-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w">Naväge Advanced Nose Cleaner</h3>
+          <div class="ai-featured-products__price-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w">$114.99</div>
+          
+          
+
+          <a
+            href="/products/navage-advanced-nose-cleaner"
+            class="ai-featured-products__button-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w"
+          >
+            View product
+          </a>
+        
+      </div>
+    
+      
+
+      <div class="ai-featured-products__product-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w">
+        <div class="ai-featured-products__image-wrapper-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w">
+          
+            <img
+              src="https://navage.com/cdn/shop/files/Artboard_6_9ea3b0e3-fe57-446d-a65f-3211e620b349.png?v=1762457241&width=800"
+              alt="Naväge Starter Bundle: Nose Cleaner and 30 SaltPod Capsules"
+              width="2000"
+              height="2000"
+              loading="lazy"
+              class="ai-featured-products__image-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w"
+            >
+          
+        </div>
+
+        
+          <h3 class="ai-featured-products__title-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w">Naväge Starter Bundle: Nose Cleaner and 30 SaltPod Capsules</h3>
+          <div class="ai-featured-products__price-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w">$99.95</div>
+          
+          
+
+          <a
+            href="/products/navage-starter-bundle"
+            class="ai-featured-products__button-av3zuskjnwwhic3bttaigenblock445d9f7jpdp3w"
+          >
+            View product
+          </a>
+        
+      </div>
+    
+  </div>
+</div>
+
+
+</div>
+
+
+</div><div id="shopify-section-template--27702861398296__rich_text_gMUtKb" class="shopify-section shopify-section--rich-text"><style>
+  #shopify-section-template--27702861398296__rich_text_gMUtKb {--heading-color: 7, 65, 116;
+    --text-color: 123, 123, 123;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class="section ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="content-box content-box--fill content-box--text-center content-box--center text-container"><p>*¹ Source: Nielsen NIQ; Total Navage Brand, Electric Powered Nasal Suction</p><p>*² Navage is #1 doctor recommended among powered suction nasal irrigation systems* *October 2024 Survey of US ENT Physicians</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><div id="shopify-section-template--27702861398296__c7fc11f5-ca04-4627-8967-049e83cafebe" class="shopify-section shopify-section--custom-html"><style>
+  #shopify-section-template--27702861398296__c7fc11f5-ca04-4627-8967-049e83cafebe {--heading-color: 7, 65, 116;
+    --text-color: 123, 123, 123;
+
+    --section-background: 245, 245, 247;
+  }
+</style>
+
+<section class=" ">
+  <div >
+    <div class="section__color-wrapper ">
+      <div class="container "><div class="html"><style>
+.shopify-section-group-header-group,
+.shopify-section--announcement-bar, .shopify-section-group-footer-group {
+/*display: none !important;*/
+}</style></div></div>
+    </div>
+  </div>
+</section>
+
+</div>
+    </div><!-- BEGIN sections: footer-group -->
+<div id="shopify-section-sections--27702862315800__blocks_tcQcpT" class="shopify-section shopify-section-group-footer-group">
+
+</div><div id="shopify-section-sections--27702862315800__blocks_NrVFyT" class="shopify-section shopify-section-group-footer-group">
+
+</div><div id="shopify-section-sections--27702862315800__17769745185848e302" class="shopify-section shopify-section-group-footer-group">
+
+
+  </main>
+
+  <!-- Navage Footer -->
+  <div id="shopify-section-footer" class="shopify-section shopify-section--footer">
+    <div id="shopify-section-sections--27702862315800__footer" class="shopify-section shopify-section-group-footer-group shopify-section--footer"><style>
+  #shopify-section-sections--27702862315800__footer .footer {--background: 255, 255, 255;
+    --heading-color: 7, 65, 116;
+    --text-color: 7, 65, 116;
+    --border-color: 218, 227, 234;
+  }
+
+  /* ------- CUSTOM STYLING ------- */
+
+  #shopify-section-sections--27702862315800__footer .footer--bordered {
+    border-top: 1px solid #E3E3E1;
+  }
+
+  #shopify-section-sections--27702862315800__footer .footer__item-title.heading.heading--small {
+    font-size: calc(var(--heading-small-font-size) + 9px);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  #shopify-section-sections--27702862315800__footer .linklist__item a {
+    font-size: 15px;
+  }
+
+  #shopify-section-sections--27702862315800__footer .footer__item-title:first-child {
+    margin-top: 0;
+  }
+
+  #shopify-section-sections--27702862315800__footer .footer__aside {
+    background: #074174;
+    color: #ffffff;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 0;
+  }
+
+  #shopify-section-sections--27702862315800__footer .footer__aside a {
+    color: #ffffff;
+    font-size: 15px;
+    text-decoration: underline;
+  }
+  
+  #shopify-section-sections--27702862315800__footer .footer__aside span.divider {
+    display: inline-block;
+    margin: 0 10px;
+  }  
+
+  #shopify-section-sections--27702862315800__footer ul.header__numbers {
+    display: flex;
+    margin: 0 0 30px 0;
+    padding: 0;
+    gap: 20px;
+    justify-content: center;
+    font-size: var(--base-font-size);
+  }
+
+  #shopify-section-sections--27702862315800__footer ul.header__numbers li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  #shopify-section-sections--27702862315800__footer ul.header__numbers li a {
+    text-decoration: underline;
+  }  
+
+  #shopify-section-sections--27702862315800__footer .custom_after {
+    margin: 30px 0 0 0;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #shopify-section-sections--27702862315800__footer .social-media {
+    gap: 25px;
+  }  
+
+  #shopify-section-sections--27702862315800__footer .social-media__item {
+    box-shadow: none;
+  }
+
+  #shopify-section-sections--27702862315800__footer .social-media__link {
+    height: auto;
+    width: auto;
+  }
+
+  #shopify-section-sections--27702862315800__footer .social-media__link svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  #shopify-section-sections--27702862315800__footer .social-media__item:before,
+  #shopify-section-sections--27702862315800__footer .social-media__item:hover:before {
+    display: none;
+  }
+
+  #shopify-section-sections--27702862315800__footer .social-media__item:hover .social-media__link {
+    color: #004b79;
+  }  
+  
+  #shopify-section-sections--27702862315800__footer .canada_link {
+    border: 1px solid #C4C4C4;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+    padding: 10px 20px;
+    transition: 300ms all;
+  }
+
+  #shopify-section-sections--27702862315800__footer .canada_link:hover {
+    border: 1px solid #000000;
+  }
+
+  #shopify-section-sections--27702862315800__footer .footer__copyright br {
+    display: none;
+  }
+
+  #shopify-section-sections--27702862315800__footer .linklist__item a:hover {
+    color: rgb(var(--text-color));
+    opacity: 1;
+    text-decoration: underline;
+  }
+  
+  @media screen and (min-width: 741px) {
+
+    #shopify-section-sections--27702862315800__footer .footer--menu--row {
+      margin-top: 80px;
+    }
+
+    #shopify-section-sections--27702862315800__footer .footer--menu--row:first-child {
+      margin-top: 0;
+    }        
+   
+    #shopify-section-sections--27702862315800__footer .footer__item.footer__item--custom {
+      max-width: 450px;
+      width: 450px;
+    }
+
+  }
+
+  @media screen and (max-width: 740px) {
+
+    #shopify-section-sections--27702862315800__footer .footer--menu--row {
+      border-bottom: 1px solid #000000;
+      padding-bottom: 10px;
+    }    
+
+    #shopify-section-sections--27702862315800__footer .footer .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    #shopify-section-sections--27702862315800__footer .footer__item-list,
+    #shopify-section-sections--27702862315800__footer .footer__aside {
+      padding-left: var(--container-gutter);
+      padding-right: var(--container-gutter);	
+    }    
+   
+    #shopify-section-sections--27702862315800__footer .footer__item {
+      max-width: 100%;
+      width: 100%;
+      padding: 0;
+    }
+
+    #shopify-section-sections--27702862315800__footer .footer__item-title,
+    #shopify-section-sections--27702862315800__footer .footer__item-title:first-child {
+      margin-top: 10px !important;
+    }
+
+    #shopify-section-sections--27702862315800__footer .footer__item.footer__item--links.is-first .footer__item-title.footer__item-title_menu_1 {
+      margin-top: 0 !important;
+    }
+
+    #shopify-section-sections--27702862315800__footer .linklist.list--unstyled {
+      margin-top: 10px !important;
+    }
+
+    #shopify-section-sections--27702862315800__footer .footer__main {
+      flex-direction: column;
+    }
+
+    #shopify-section-sections--27702862315800__footer ul.header__numbers {
+      margin-top: 30px !important;
+    }
+
+    #shopify-section-sections--27702862315800__footer .newsletter {
+      width: 100%;
+      order: 1;
+    }
+
+    #shopify-section-sections--27702862315800__footer .footer__item--custom {
+
+    }
+
+    #shopify-section-sections--27702862315800__footer .linklist__item a {
+      font-size: calc(var(--base-font-size) + 2px);
+    }    
+  
+    #shopify-section-sections--27702862315800__footer .footer {
+      width: 100%;
+      order: 2;
+      padding-top: 30px;
+      padding-bottom: 0;     
+    }
+
+    #shopify-section-sections--27702862315800__footer .social-media {
+      gap: 18px;
+    }
+
+    #shopify-section-sections--27702862315800__footer .social-media__link svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    #shopify-section-sections--27702862315800__footer .canada_link {
+      gap: 7px;
+      padding: 10px 10px;
+    }
+
+    #shopify-section-sections--27702862315800__footer .canada_link svg {
+      width: 20px;
+      height: 20px;
+    }    
+  
+    #shopify-section-sections--27702862315800__footer .footer__copyright {
+      display: block;
+      text-align: center;
+      margin: 0;
+    }  
+
+    #shopify-section-sections--27702862315800__footer .footer__copyright br {
+      display: block;
+    }    
+  
+    #shopify-section-sections--27702862315800__footer .footer__copyright .divider {
+      margin: 0 7px;
+    }
+
+    #shopify-section-sections--27702862315800__footer .footer__copyright .divider.first-divider {
+      display: none;
+    }
+
+    #shopify-section-sections--27702862315800__footer .footer__aside a {
+      font-size: 13px;
+    }
+
+    .footer__item-list {
+      display: block;
+    }
+
+    .footer__item {
+      max-width: 100%;
+      border-bottom: 1px solid #ffffff;
+      padding: 10px;
+    } 
+    
+    .footer__item:first-child {
+      border-top: 1px solid #ffffff;
+    }
+    
+    .footer__item--links .footer__item-content {
+      display: none;
+    }
+
+    .footer__item-title {
+      margin: 0;
+    }
+
+    .footer__item-title.heading {
+      position: relative;
+    }
+
+    .footer__item-title.heading svg {
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+
+    .footer__item-title.heading.active svg {
+      transform: rotate(180deg);
+    }    
+
+    .footer__item-content.open {
+      display: block;
+    }    
+
+  }  
+
+
+</style>
+
+<footer class="footer ">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__item-list"><div class="footer__item footer__item--links is-first" ><div class="footer--menu--row">
+
+                    <p class="footer__item-title heading heading--small footer__item-title_menu_1">
+                    Nasal Care
+                    <svg class="hidden-tablet-and-up" width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.625 10.8516L10.5703 9.86328L17.4453 2.98828L18.4336 2L16.5 0.0664062L15.5117 1.05469L9.625 6.94141L3.69531 1.05469L2.75 0.0664062L0.773438 2L1.76172 2.98828L8.63672 9.86328L9.625 10.8516Z" fill="currentColor"/>
+                    </svg>                          
+                    </p>
+
+                    <div class="footer__item-content">
+                      <ul class="linklist list--unstyled" role="list"><li class="linklist__item">
+                            <a href="/products/navage-advanced-nose-cleaner" class="link--faded">Advanced Nose Cleaner</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/navage-starter-bundle" class="link--faded">Starter Bundle</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/navage-essentials-plus-bundle" class="link--faded">Essentials Bundle</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/navage-deluxe-bundle" class="link--faded">Deluxe Bundle</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/navage-multi-user-bundle" class="link--faded">Multi-User Bundle</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/portable-nose-cleaner" class="link--faded">Portable Nose Cleaner</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/navage-adult-mist" class="link--faded">Saline Mist</a>
+                          </li></ul>
+                    </div>
+
+                  </div><div class="footer--menu--row">
+
+                    <p class="footer__item-title heading heading--small footer__item-title_menu_2">
+                      Naväge Baby
+                      <svg class="hidden-tablet-and-up" width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.625 10.8516L10.5703 9.86328L17.4453 2.98828L18.4336 2L16.5 0.0664062L15.5117 1.05469L9.625 6.94141L3.69531 1.05469L2.75 0.0664062L0.773438 2L1.76172 2.98828L8.63672 9.86328L9.625 10.8516Z" fill="currentColor"/>
+                      </svg>                          
+                    </p>
+
+                    <div class="footer__item-content">
+                      <ul class="linklist list--unstyled" role="list"><li class="linklist__item">
+                            <a href="/products/navage-baby-aspirator" class="link--faded">Nasal Aspirator</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/navage-baby-mist-inhaler" class="link--faded">Micro-Mist Inhaler</a>
+                          </li><li class="linklist__item">
+                            <a href="https://navage.com/products/navage-baby-bundle-baby-nasal-aspirator-micro-mist-inhaler" class="link--faded">Naväge Baby Bundle</a>
+                          </li></ul>
+                    </div>
+
+                  </div></div><div class="footer__item footer__item--links " ><div class="footer--menu--row">
+
+                    <p class="footer__item-title heading heading--small footer__item-title_menu_1">
+                    Saline Refills
+                    <svg class="hidden-tablet-and-up" width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.625 10.8516L10.5703 9.86328L17.4453 2.98828L18.4336 2L16.5 0.0664062L15.5117 1.05469L9.625 6.94141L3.69531 1.05469L2.75 0.0664062L0.773438 2L1.76172 2.98828L8.63672 9.86328L9.625 10.8516Z" fill="currentColor"/>
+                    </svg>                          
+                    </p>
+
+                    <div class="footer__item-content">
+                      <ul class="linklist list--unstyled" role="list"><li class="linklist__item">
+                            <a href="/products/navage-saltpod-30-pack" class="link--faded">Original SaltPod Capsules</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/navage-eucalyptus-saltpod-30-pack" class="link--faded">Eucalyptus SaltPod Capsules</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/navage-alkalol-saltpod-30-pack" class="link--faded">Alkalol SaltPod Capsules</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/daytime-nighttime-saltpod-30-pack" class="link--faded">Daytime-Nighttime SaltPod Capsules</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/navage-nasal-rinse-packets-50-ct" class="link--faded">Nasal Rinse Packets</a>
+                          </li></ul>
+                    </div>
+
+                  </div><div class="footer--menu--row">
+
+                    <p class="footer__item-title heading heading--small footer__item-title_menu_2">
+                      Ear
+                      <svg class="hidden-tablet-and-up" width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.625 10.8516L10.5703 9.86328L17.4453 2.98828L18.4336 2L16.5 0.0664062L15.5117 1.05469L9.625 6.94141L3.69531 1.05469L2.75 0.0664062L0.773438 2L1.76172 2.98828L8.63672 9.86328L9.625 10.8516Z" fill="currentColor"/>
+                      </svg>                          
+                    </p>
+
+                    <div class="footer__item-content">
+                      <ul class="linklist list--unstyled" role="list"><li class="linklist__item">
+                            <a href="/products/dual-action-powered-ear-cleaner" class="link--faded">Dual Action Powered Ear Cleaner</a>
+                          </li></ul>
+                    </div>
+
+                  </div></div><div class="footer__item footer__item--links " ><div class="footer--menu--row">
+
+                    <p class="footer__item-title heading heading--small footer__item-title_menu_1">
+                    Respiratory Care
+                    <svg class="hidden-tablet-and-up" width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.625 10.8516L10.5703 9.86328L17.4453 2.98828L18.4336 2L16.5 0.0664062L15.5117 1.05469L9.625 6.94141L3.69531 1.05469L2.75 0.0664062L0.773438 2L1.76172 2.98828L8.63672 9.86328L9.625 10.8516Z" fill="currentColor"/>
+                    </svg>                          
+                    </p>
+
+                    <div class="footer__item-content">
+                      <ul class="linklist list--unstyled" role="list"><li class="linklist__item">
+                            <a href="/products/navage-portable-nebulizer" class="link--faded">Portable Nebulizer</a>
+                          </li></ul>
+                    </div>
+
+                  </div><div class="footer--menu--row">
+
+                    <p class="footer__item-title heading heading--small footer__item-title_menu_2">
+                      Accessories
+                      <svg class="hidden-tablet-and-up" width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.625 10.8516L10.5703 9.86328L17.4453 2.98828L18.4336 2L16.5 0.0664062L15.5117 1.05469L9.625 6.94141L3.69531 1.05469L2.75 0.0664062L0.773438 2L1.76172 2.98828L8.63672 9.86328L9.625 10.8516Z" fill="currentColor"/>
+                      </svg>                          
+                    </p>
+
+                    <div class="footer__item-content">
+                      <ul class="linklist list--unstyled" role="list"><li class="linklist__item">
+                            <a href="/products/navage-custom-cleaning-kit" class="link--faded">Custom Cleaning Kit</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/countertop-caddy" class="link--faded">Countertop Caddy</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/travel-bag" class="link--faded">Travel Bag</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/travel-case" class="link--faded">Travel Case</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/nasal-dock" class="link--faded">Nasal Dock</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/nose-pillow" class="link--faded">Nose Pillows</a>
+                          </li><li class="linklist__item">
+                            <a href="/products/navage-dock-pillow-combo" class="link--faded">Nasal Dock Combo</a>
+                          </li></ul>
+                    </div>
+
+                  </div></div><div class="footer__item footer__item--links " ><div class="footer--menu--row">
+
+                    <p class="footer__item-title heading heading--small footer__item-title_menu_1">
+                    Support
+                    <svg class="hidden-tablet-and-up" width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.625 10.8516L10.5703 9.86328L17.4453 2.98828L18.4336 2L16.5 0.0664062L15.5117 1.05469L9.625 6.94141L3.69531 1.05469L2.75 0.0664062L0.773438 2L1.76172 2.98828L8.63672 9.86328L9.625 10.8516Z" fill="currentColor"/>
+                    </svg>                          
+                    </p>
+
+                    <div class="footer__item-content">
+                      <ul class="linklist list--unstyled" role="list"><li class="linklist__item">
+                            <a href="/pages/product-guides" class="link--faded">Product Guide</a>
+                          </li><li class="linklist__item">
+                            <a href="/pages/faqs" class="link--faded">FAQs</a>
+                          </li><li class="linklist__item">
+                            <a href="/pages/product-registration" class="link--faded">Product Registration</a>
+                          </li><li class="linklist__item">
+                            <a href="/pages/product-warranty" class="link--faded">Product Warranty</a>
+                          </li><li class="linklist__item">
+                            <a href="/pages/returns-and-refunds-1" class="link--faded">Returns and Refunds</a>
+                          </li><li class="linklist__item">
+                            <a href="/pages/shipping" class="link--faded">Shipping</a>
+                          </li><li class="linklist__item">
+                            <a href="/pages/contact-navage" class="link--faded">Contact Us</a>
+                          </li></ul>
+                    </div>
+
+                  </div><div class="footer--menu--row">
+
+                    <p class="footer__item-title heading heading--small footer__item-title_menu_2">
+                      About
+                      <svg class="hidden-tablet-and-up" width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.625 10.8516L10.5703 9.86328L17.4453 2.98828L18.4336 2L16.5 0.0664062L15.5117 1.05469L9.625 6.94141L3.69531 1.05469L2.75 0.0664062L0.773438 2L1.76172 2.98828L8.63672 9.86328L9.625 10.8516Z" fill="currentColor"/>
+                      </svg>                          
+                    </p>
+
+                    <div class="footer__item-content">
+                      <ul class="linklist list--unstyled" role="list"><li class="linklist__item">
+                            <a href="/pages/inventor-s-story" class="link--faded">About Us</a>
+                          </li><li class="linklist__item">
+                            <a href="/pages/subscribe-and-save" class="link--faded">Subscribe & Save</a>
+                          </li><li class="linklist__item">
+                            <a href="/blogs/homepage" class="link--faded">Naväge Blogs</a>
+                          </li><li class="linklist__item">
+                            <a href="/pages/product-registration" class="link--faded">Product Registration</a>
+                          </li><li class="linklist__item">
+                            <a href="/pages/product-warranty" class="link--faded">Product Warranty</a>
+                          </li></ul>
+                    </div>
+
+                  </div></div><div class="footer__item footer__item--custom " ><ul class="header__numbers"><li>Support <a href="tel:800-203-6400">800-203-6400</a></li></ul><div class="footer__item-content"><!-- <div class="klaviyo-form-TX3hWf"></div> -->
+
+                    <div class="custom_after"><ul class="social-media  list--unstyled" role="list">
+    <li class="social-media__item social-media__item--facebook">
+      <a href="https://www.facebook.com/Navage4Life/" target="_blank" rel="noopener" class="social-media__link" aria-label="Follow us on Facebook"><svg focusable="false" width="9" height="17" class="icon icon--facebook   " viewBox="0 0 9 17">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.486 16.2084L2.486 8.81845H0L0 5.93845L2.486 5.93845L2.486 3.81845C2.38483 2.79982 2.73793 1.78841 3.45107 1.05407C4.16421 0.319722 5.16485 -0.0628415 6.186 0.00844868C6.9284 0.00408689 7.67039 0.0441585 8.408 0.128449V2.69845L6.883 2.69845C6.4898 2.61523 6.08104 2.73438 5.79414 3.01585C5.50724 3.29732 5.3803 3.70373 5.456 4.09845L5.456 5.93845H8.308L7.936 8.81845H5.46L5.46 16.2084H2.486Z" fill="currentColor"></path>
+      </svg></a>
+    </li><li class="social-media__item social-media__item--instagram">
+      <a href="https://www.instagram.com/navage4life/" target="_blank" rel="noopener" class="social-media__link" aria-label="Follow us on Instagram"><svg focusable="false" width="16" height="16" class="icon icon--instagram   " viewBox="0 0 16 16">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C5.827 0 5.555.01 4.702.048 3.85.087 3.269.222 2.76.42a3.921 3.921 0 00-1.417.923c-.445.444-.719.89-.923 1.417-.198.509-.333 1.09-.372 1.942C.01 5.555 0 5.827 0 8s.01 2.445.048 3.298c.039.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.719 1.417.923.509.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.445-.01 3.298-.048c.852-.039 1.433-.174 1.942-.372a3.922 3.922 0 001.417-.923c.445-.444.719-.89.923-1.417.198-.509.333-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.298c-.039-.852-.174-1.433-.372-1.942a3.922 3.922 0 00-.923-1.417A3.921 3.921 0 0013.24.42c-.509-.198-1.09-.333-1.942-.372C10.445.01 10.173 0 8 0zm0 1.441c2.136 0 2.39.009 3.233.047.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.009 2.39-.047 3.233c-.036.78-.166 1.203-.276 1.485-.145.374-.318.64-.598.92-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.844.038-1.097.047-3.233.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.479 2.479 0 01-.92-.598 2.478 2.478 0 01-.598-.92c-.11-.282-.24-.705-.276-1.485-.038-.844-.047-1.097-.047-3.233s.009-2.39.047-3.233c.036-.78.166-1.203.276-1.485.145-.374.318-.64.598-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.844-.038 1.097-.047 3.233-.047zm0 9.226a2.667 2.667 0 110-5.334 2.667 2.667 0 010 5.334zm0-6.775a4.108 4.108 0 100 8.216 4.108 4.108 0 000-8.216zm5.23-.162a.96.96 0 11-1.92 0 .96.96 0 011.92 0z" fill="currentColor"></path>
+      </svg></a>
+    </li><li class="social-media__item social-media__item--youtube">
+      <a href="https://www.youtube.com/user/NavageRocks" target="_blank" rel="noopener" class="social-media__link" aria-label="Follow us on YouTube"><svg fill="none" focusable="false" width="18" height="13" class="icon icon--youtube   " viewBox="0 0 18 13">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0325 0.369454C16.807 0.572743 17.4168 1.17173 17.6238 1.9324C18 3.31101 18 6.1875 18 6.1875C18 6.1875 18 9.06389 17.6238 10.4427C17.4168 11.2033 16.807 11.8023 16.0325 12.0056C14.6288 12.375 9 12.375 9 12.375C9 12.375 3.37122 12.375 1.96752 12.0056C1.19311 11.8023 0.583159 11.2033 0.376159 10.4427C0 9.06389 0 6.1875 0 6.1875C0 6.1875 0 3.31101 0.376159 1.9324C0.583159 1.17173 1.19311 0.572743 1.96752 0.369454C3.37122 0 9 0 9 0C9 0 14.6288 0 16.0325 0.369454ZM11.8636 6.1876L7.1591 8.79913V3.57588L11.8636 6.1876Z" fill="currentColor"></path>
+      </svg></a>
+    </li>
+  </ul><a href="https://navage.ca/" target="_blank" class="canada_link">
+                        
+                        <svg width="26" height="29" viewBox="0 0 26 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M19.9453 19.75C19.6719 20.0234 19.3984 20.1875 19.6719 21.0078C19.9453 21.8281 20.2188 22.9219 20.2188 22.9219C20.2188 22.9219 15.0234 21.8281 14.4766 21.6641C13.9844 21.6094 13.4922 21.8281 13.4922 22.375C13.4922 22.9219 13.8203 28.5 13.8203 28.5H12.1797C12.1797 28.5 12.4531 22.9219 12.4531 22.375C12.4531 21.8281 11.9609 21.6094 11.4688 21.6641C10.9219 21.8281 5.72656 22.9219 5.72656 22.9219C5.72656 22.9219 6 21.8281 6.27344 21.0078C6.54688 20.1875 6.27344 20.0234 6 19.75C5.83594 19.6406 0.257812 14.7188 0.257812 14.7188L1.1875 14.2812C1.73438 14.0078 1.57031 13.6797 1.46094 13.3516C1.35156 12.9141 0.367188 9.63281 0.367188 9.63281C0.367188 9.63281 2.99219 10.1797 3.53906 10.3438C3.92188 10.4531 4.08594 10.1797 4.19531 9.90625C4.35938 9.63281 5.01562 8.15625 5.01562 8.15625C5.01562 8.15625 7.91406 11.4375 8.02344 11.5469C8.57031 11.9844 9.11719 11.5469 9.00781 11C9.00781 10.4531 7.47656 3.94531 7.47656 3.94531C7.47656 3.94531 9.11719 4.875 9.66406 5.14844C10.1016 5.42188 10.375 5.42188 10.6484 4.875C10.9219 4.49219 12.9453 0.5 12.9453 0.5C12.9453 0.5 15.0234 4.49219 15.2969 4.875C15.5703 5.42188 15.8438 5.42188 16.2812 5.14844C16.8281 4.875 18.4688 3.94531 18.4688 3.94531C18.4688 3.94531 16.9375 10.4531 16.9375 11C16.8281 11.5469 17.375 11.9844 17.9219 11.5469C18.0312 11.4375 20.9297 8.15625 20.9297 8.15625C20.9297 8.15625 21.5859 9.6875 21.75 9.96094C21.8594 10.2344 22.0234 10.4531 22.4062 10.3438C22.9531 10.2344 25.5781 9.6875 25.5781 9.6875C25.5781 9.6875 24.5938 12.9141 24.4844 13.3516C24.375 13.6797 24.2109 14.0078 24.7578 14.2812L25.7422 14.7188C25.7422 14.7188 20.1094 19.6406 19.9453 19.75Z" fill="#ED1C24"/>
+                          </svg> 
+                          
+                        Shop in Canada 
+                        
+                        <svg width="15" height="23" viewBox="0 0 15 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.7109 11.5L13.4531 12.7578L4.70312 21.5078L3.5 22.7656L0.984375 20.25L2.24219 19.0469L9.73438 11.5L2.24219 4.00781L0.984375 2.75L3.5 0.289062L4.70312 1.54688L13.4531 10.2969L14.7109 11.5Z" fill="black"/>
+                        </svg>
+                      
+                      </a></div>
+
+                  </div></div></div>
+
+      <div class="footer__aside"><span class="footer__copyright text--xsmall text--subdued">© 2026 RhinoSystems, Inc. <br />  <span class="divider first-divider">|</span>   <a href="/pages/accessibility">Website Accessibility Statement</a>    <span class="divider">|</span>    <a href="/pages/privacy">Privacy Policy</a>    <span class="divider">|</span>    <a href="/pages/terms">Terms of Service</a>    <span class="divider">|</span>   <a href="/pages/patents">Patents</a></span>
+
+        <div class="footer__follow-and-payment"></div>
+      </div>
+    </div>
+  </div>
+</footer></div>
+  </div>
+
+  <script>
+    // Safe interactions
+    document.addEventListener('DOMContentLoaded', function() {
+      // Smooth scroll for anchors
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var targetId = this.getAttribute('href');
+          if (targetId && targetId !== '#') {
+            var target = document.querySelector(targetId);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1027 @@
+import fs from 'fs';
+
+const sectionContent = `
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<div class="saker-heating-lamp-funnel">
+  <!-- Top Trust & Promo Banner -->
+  <div class="shl-top-bar">
+    <div class="shl-container flex-between">
+      <span>🔒 100% Encrypted &amp; Secure Checkout</span>
+      <span>⭐ 100,000+ Happy Homesteader Customers</span>
+      <span class="desktop-only">⚡ 2026 Upgraded Auto-Thermostat Model</span>
+    </div>
+  </div>
+
+  <div class="shl-container shl-main-layout">
+    <!-- Left Column: Product Showcase & Visual Proof -->
+    <div class="shl-visual-column">
+      <div class="shl-badge-pill">🔥 LIMITED STOCK: ONLY 57 LEFT AT THIS PRICE | 50% OFF</div>
+      <h1 class="shl-title">Sakerplus® Intelligent Auto-Regulating Livestock Heating Lamp</h1>
+      <p class="shl-subtitle">The safe, fireproof brooder heater with built-in digital thermostat. Keeps baby chicks, ducks, piglets, and small livestock comfortably warm without dangerous fire hazards or harsh red glare.</p>
+
+      <div class="shl-gallery">
+        <div class="shl-main-image-wrap">
+          <img id="shl-main-img" src="https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg" alt="Sakerplus Livestock Heating Lamp" referrerpolicy="no-referrer">
+        </div>
+        <div class="shl-thumbnails">
+          <img class="shl-thumb" src="https://cdn.myshopage.com/4574c936-7435-4b05-2934-ed1e12887e00.png" onclick="switchShlImg(this.src)" referrerpolicy="no-referrer">
+          <img class="shl-thumb active" src="https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg" onclick="switchShlImg(this.src)" referrerpolicy="no-referrer">
+          <img class="shl-thumb" src="https://cdn.myshopage.com/8dfe030d-f1ec-4a8a-02a4-753863454400/w1000.jpg" onclick="switchShlImg(this.src)" referrerpolicy="no-referrer">
+          <img class="shl-thumb" src="https://cdn.myshopage.com/898406ff-0448-41a5-2440-fd49b2375e00/w1000.jpg" onclick="switchShlImg(this.src)" referrerpolicy="no-referrer">
+          <img class="shl-thumb" src="https://cdn.myshopage.com/8f765e2e-fcbd-4199-ab9b-433d4da5c000.jpg" onclick="switchShlImg(this.src)" referrerpolicy="no-referrer">
+          <img class="shl-thumb" src="https://cdn.myshopage.com/27c967b2-512d-43ee-b366-7568d2a3a700/w500.jpg" onclick="switchShlImg(this.src)" referrerpolicy="no-referrer">
+        </div>
+      </div>
+
+      <!-- Key Benefits Bullet Points -->
+      <div class="shl-key-points">
+        <div class="shl-point-item">
+          <span class="shl-point-icon">🌡️</span>
+          <div>
+            <strong>Precision Digital Auto-Thermostat:</strong> Easily adjust temperature between 82°F–95°F (28°C–35°C). Automatically shuts off when target temp is reached and restarts when temps drop.
+          </div>
+        </div>
+        <div class="shl-point-item">
+          <span class="shl-point-icon">🛡️</span>
+          <div>
+            <strong>100% Sealed Fireproof Polymer Shell:</strong> No fragile glass bulbs or exposed 400°F glowing filaments. Cool-to-touch exterior protects dry hay and bedding from fire risk.
+          </div>
+        </div>
+        <div class="shl-point-item">
+          <span class="shl-point-icon">💨</span>
+          <div>
+            <strong>Gentle Convection Air Circulation:</strong> Distributes warmth smoothly across the entire brooder. Eliminates dangerous hot spots, cold corners, and chick crowding.
+          </div>
+        </div>
+        <div class="shl-point-item">
+          <span class="shl-point-icon">💡</span>
+          <div>
+            <strong>Soft LED Ambient Glow (Zero Stress):</strong> Gentle low-lux LED lets you check your flock without disrupting their circadian sleep cycles or causing aggression/pecking.
+          </div>
+        </div>
+        <div class="shl-point-item">
+          <span class="shl-point-icon">🔌</span>
+          <div>
+            <strong>Standard E26/E27 Threaded Base:</strong> Screws directly into standard sockets. Includes US-standard switch cord for easy plug-and-play installation anywhere.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Bundle Selector & Order Box -->
+    <div class="shl-order-column">
+      <div class="shl-order-card">
+        <div class="shl-step-header">
+          <span class="shl-step-num">Step 1</span>
+          <h3>Choose Your Bundle Package</h3>
+        </div>
+
+        <div class="shl-bundle-list">
+          <!-- Bundle 1: 2 Pack (Best Seller) -->
+          <div class="shl-bundle-box active" id="bundle-box-2" onclick="selectBundle('67930179436729', '89.99', '179.99', 'bundle-box-2', 'https://cdn.myshopage.com/4574c936-7435-4b05-2934-ed1e12887e00.png')">
+            <div class="shl-sales-tag">BEST SELLER • 50% OFF • FREE SHIPPING</div>
+            <div class="shl-bundle-body">
+              <div class="shl-bundle-radio">
+                <input type="radio" name="shl_bundle" id="radio-bundle-2" checked>
+              </div>
+              <div class="shl-bundle-img">
+                <img src="https://cdn.myshopage.com/4574c936-7435-4b05-2934-ed1e12887e00.png" alt="2 Pack Bundle" referrerpolicy="no-referrer">
+              </div>
+              <div class="shl-bundle-info">
+                <h4>2 Pack (Light + US Switch Cord)</h4>
+                <div class="shl-bundle-includes">
+                  <span>✔ 2x Sakerplus® Intelligent Heating Lamps</span><br>
+                  <span>✔ 2x US-Standard Heavy-Duty Switch Cords</span><br>
+                  <span>✔ Only $44.99/set • Free Express Shipping</span>
+                </div>
+                <div class="shl-price-row">
+                  <span class="shl-old-price">$179.99</span>
+                  <span class="shl-sale-price">$89.99</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bundle 2: 1 Pack -->
+          <div class="shl-bundle-box" id="bundle-box-1" onclick="selectBundle('67930179403961', '49.99', '99.99', 'bundle-box-1', 'https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg')">
+            <div class="shl-sales-tag secondary">STARTER PACK • 50% OFF</div>
+            <div class="shl-bundle-body">
+              <div class="shl-bundle-radio">
+                <input type="radio" name="shl_bundle" id="radio-bundle-1">
+              </div>
+              <div class="shl-bundle-img">
+                <img src="https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg" alt="1 Pack Bundle" referrerpolicy="no-referrer">
+              </div>
+              <div class="shl-bundle-info">
+                <h4>1 Pack (Light + US Switch Cord)</h4>
+                <div class="shl-bundle-includes">
+                  <span>✔ 1x Sakerplus® Intelligent Heating Lamp</span><br>
+                  <span>✔ 1x US-Standard Heavy-Duty Switch Cord</span><br>
+                  <span>✔ Ideal for 1 Brooder / Coop Box</span>
+                </div>
+                <div class="shl-price-row">
+                  <span class="shl-old-price">$99.99</span>
+                  <span class="shl-sale-price">$49.99</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quantity Selector -->
+        <div class="shl-qty-row">
+          <label for="shl-qty">Quantity:</label>
+          <div class="shl-qty-control">
+            <button type="button" onclick="adjustQty(-1)">-</button>
+            <input type="number" id="shl-qty" value="1" min="1" max="10" readonly>
+            <button type="button" onclick="adjustQty(1)">+</button>
+          </div>
+        </div>
+
+        <!-- Summary & CTA Button -->
+        <div class="shl-cta-wrap">
+          <div class="shl-total-row">
+            <span>Total Today:</span>
+            <span id="shl-total-display">$89.99</span>
+          </div>
+          <button type="button" id="shl-checkout-btn" class="shl-checkout-btn" onclick="submitHeatingLampOrder()">
+            <span class="shl-btn-lock">🔒</span>
+            <span class="shl-btn-text">COMPLETE SECURE ORDER (50% OFF)</span>
+            <span class="shl-btn-arrow">➔</span>
+          </button>
+          <p class="shl-guarantee-note">🛡️ 90-Day 100% Satisfaction Money-Back Guarantee | Fast Insured Shipping</p>
+        </div>
+
+        <!-- Trust Payment Icons -->
+        <div class="shl-trust-icons">
+          <img src="https://cdn.myshopage.com/32c690d7-b984-40d7-d6a0-62fe13714000.png" alt="Guaranteed Safe Checkout" referrerpolicy="no-referrer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Features Deep Dive -->
+  <div class="shl-features-section">
+    <div class="shl-container">
+      <div class="shl-section-title">
+        <h2>Engineered for Flawless Brooding Performance</h2>
+        <p>Why experienced poultry keepers and homesteaders trust Sakerplus over old-fashioned glass bulbs.</p>
+      </div>
+
+      <div class="shl-feature-cards-grid">
+        <div class="shl-feature-card">
+          <div class="shl-feat-icon">🔥</div>
+          <h3>Zero Fire Hazard</h3>
+          <p>Sealed fireproof polymer shell stays cool to the touch. No fragile red glass that shatters when water splashes or loose feathers float by.</p>
+        </div>
+        <div class="shl-feature-card">
+          <div class="shl-feat-icon">📊</div>
+          <h3>Precision Temperature</h3>
+          <p>Digital LED display lets you calibrate warmth down to the exact degree. Automatically cycles off when target temperature is reached.</p>
+        </div>
+        <div class="shl-feature-card">
+          <div class="shl-feat-icon">🌙</div>
+          <h3>Calm Sleep Cycles</h3>
+          <p>Provides gentle low-lux light without blinding red glare, dramatically reducing stress, flock aggression, and feather picking.</p>
+        </div>
+        <div class="shl-feature-card">
+          <div class="shl-feat-icon">🔄</div>
+          <h3>Universal Compatibility</h3>
+          <p>Features a standard E26/E27 threaded screw base. Plugs into any household socket using the included heavy-duty switch cord.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison Table Section -->
+  <div class="shl-comparison-section">
+    <div class="shl-container">
+      <div class="shl-section-title">
+        <h2>Sakerplus® vs. Traditional 250W Heat Bulbs</h2>
+      </div>
+
+      <div class="shl-table-wrap">
+        <table class="shl-comp-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="highlight">Sakerplus® Livestock Lamp</th>
+              <th>Old 250W Heat Lamps</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Fire Hazard Risk</strong></td>
+              <td class="highlight-val"><span class="check-green">✔ ZERO RISK</span> (Sealed polymer)</td>
+              <td class="cross-red">✖ HIGH RISK (400°F surface temp)</td>
+            </tr>
+            <tr>
+              <td><strong>Temperature Regulation</strong></td>
+              <td class="highlight-val"><span class="check-green">✔ Automatic Smart Thermostat</span></td>
+              <td class="cross-red">✖ None (Runs hot 24/7)</td>
+            </tr>
+            <tr>
+              <td><strong>Animal Eye Strain</strong></td>
+              <td class="highlight-val"><span class="check-green">✔ Gentle Ambient Light</span></td>
+              <td class="cross-red">✖ Blinding Red Glare (Causes stress)</td>
+            </tr>
+            <tr>
+              <td><strong>Water Splash Resistance</strong></td>
+              <td class="highlight-val"><span class="check-green">✔ Splash-Proof Design</span></td>
+              <td class="cross-red">✖ Shatters instantly on contact</td>
+            </tr>
+            <tr>
+              <td><strong>Energy Efficiency</strong></td>
+              <td class="highlight-val"><span class="check-green">✔ Saves up to 60% Electricity</span></td>
+              <td class="cross-red">✖ Expensive high wattage draw</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Technical Specifications -->
+  <div class="shl-specs-section">
+    <div class="shl-container">
+      <div class="shl-section-title">
+        <h2>Technical Specifications</h2>
+      </div>
+      <div class="shl-specs-grid">
+        <div class="shl-spec-item">
+          <strong>Base Type:</strong> Standard E26 / E27 Screw-In
+        </div>
+        <div class="shl-spec-item">
+          <strong>Voltage:</strong> AC 110V - 220V (Worldwide Compatible)
+        </div>
+        <div class="shl-spec-item">
+          <strong>Temperature Range:</strong> 28°C - 35°C (82°F - 95°F)
+        </div>
+        <div class="shl-spec-item">
+          <strong>Display:</strong> High-Definition Digital LED
+        </div>
+        <div class="shl-spec-item">
+          <strong>Shell Material:</strong> High-Density Fireproof Polymer
+        </div>
+        <div class="shl-spec-item">
+          <strong>Switch Cord:</strong> Included US Standard Heavy-Duty Cord
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Real Customer Reviews Section -->
+  <div class="shl-reviews-section">
+    <div class="shl-container">
+      <div class="shl-section-title">
+        <h2>What Homesteaders &amp; Farmers Are Saying</h2>
+        <div class="shl-stars-row">
+          ⭐⭐⭐⭐⭐ <span class="shl-rating-score">4.9 / 5.0 Rating (1,480+ Verified Homesteader Reviews)</span>
+        </div>
+      </div>
+
+      <div class="shl-reviews-grid">
+        <div class="shl-review-card">
+          <div class="shl-review-header">
+            <strong>Kim D.</strong>
+            <span class="shl-verified-badge">✔ Verified Buyer</span>
+          </div>
+          <div class="shl-stars">⭐⭐⭐⭐⭐</div>
+          <p class="shl-review-headline">First season with 100% chick survival!</p>
+          <p class="shl-review-text">"I put this Chicken Coop Heaters Lamp in my chicken shed for the winter. With it, the chicks are very warm and active. The digital temperature display makes it so easy to monitor and I love that it shuts off automatically once the target warmth is reached."</p>
+        </div>
+
+        <div class="shl-review-card">
+          <div class="shl-review-header">
+            <strong>Marcus V.</strong>
+            <span class="shl-verified-badge">✔ Verified Buyer</span>
+          </div>
+          <div class="shl-stars">⭐⭐⭐⭐⭐</div>
+          <p class="shl-review-headline">No more sleepless nights worrying about coop fires</p>
+          <p class="shl-review-text">"Had a terrifying scare last winter when a clamp heat lamp slipped into dry pine shavings. Thank God I caught it in time. Swapped everything to Sakerplus lamps immediately. Completely fireproof, cool to touch, and the chicks sleep peacefully without pecking."</p>
+        </div>
+
+        <div class="shl-review-card">
+          <div class="shl-review-header">
+            <strong>Sarah L.</strong>
+            <span class="shl-verified-badge">✔ Verified Buyer</span>
+          </div>
+          <div class="shl-stars">⭐⭐⭐⭐⭐</div>
+          <p class="shl-review-headline">Game-changer for our backyard flock</p>
+          <p class="shl-review-text">"The built-in digital thermostat is worth its weight in gold. I set it to 90 degrees and go to bed with complete peace of mind. No more getting up at 2 AM in freezing weather to check the brooder. Highly recommend the 2-pack!"</p>
+        </div>
+
+        <div class="shl-review-card">
+          <div class="shl-review-header">
+            <strong>Jason B.</strong>
+            <span class="shl-verified-badge">✔ Verified Buyer</span>
+          </div>
+          <div class="shl-stars">⭐⭐⭐⭐⭐</div>
+          <p class="shl-review-headline">Great for ducklings and small animals</p>
+          <p class="shl-review-text">"Raised two batches of ducklings under this lamp this year. The gentle ambient light lets them sleep normally without the blinding red glare that causes aggression. Super simple screw-in installation and excellent build quality."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frequently Asked Questions Accordion -->
+  <div class="shl-faq-section">
+    <div class="shl-container">
+      <div class="shl-section-title">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="shl-faq-list">
+        <details class="shl-faq-item">
+          <summary>Is this heating lamp safe to use around dry hay and pine shavings?</summary>
+          <p>Yes, 100%! Unlike traditional glass bulbs that burn at over 400°F on the surface, the Sakerplus® Livestock Lamp features a sealed, fireproof polymer housing that stays cool to the touch. Even if shavings or dust touch the shell, there are no open filaments or flashpoint temperatures.</p>
+        </details>
+        <details class="shl-faq-item">
+          <summary>How does the automatic temperature control work?</summary>
+          <p>The lamp features an integrated digital sensor and microcontroller. Simply set your target temperature (28°C to 35°C / 82°F to 95°F) using the + and - buttons. The lamp automatically suspends heat once the ambient temperature reaches your setting and kicks back on when temps dip.</p>
+        </details>
+        <details class="shl-faq-item">
+          <summary>Does it screw into a regular light socket?</summary>
+          <p>Yes. It uses a standard E26 / E27 threaded screw base. Each package also includes a heavy-duty US standard switch cord with a toggle switch for convenient placement anywhere in your coop, brooder, or barn.</p>
+        </details>
+        <details class="shl-faq-item">
+          <summary>What is your return and guarantee policy?</summary>
+          <p>Every order comes with our 90-Day 100% Satisfaction Money-Back Guarantee. If for any reason you or your flock are not thrilled with its performance, simply reach out to our support team for a prompt refund.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Bottom Bar -->
+  <div class="shl-sticky-bar">
+    <div class="shl-sticky-left">
+      <span class="shl-sticky-name">Sakerplus® Livestock Lamp</span>
+      <span class="shl-sticky-price" id="shl-sticky-price-display">$89.99 (2 Pack)</span>
+    </div>
+    <button type="button" class="shl-sticky-atc-btn" onclick="submitHeatingLampOrder()">ORDER NOW ➔</button>
+  </div>
+</div>
+
+<style>
+  .saker-heating-lamp-funnel {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+    padding-bottom: 75px;
+  }
+  .shl-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .shl-top-bar {
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 9px 0;
+  }
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .desktop-only {
+    display: inline;
+  }
+  @media (max-width: 768px) {
+    .desktop-only { display: none; }
+    .flex-between { justify-content: center; gap: 15px; font-size: 12px; }
+  }
+
+  .shl-main-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    padding-top: 28px;
+    padding-bottom: 40px;
+  }
+  .shl-visual-column {
+    flex: 1 1 540px;
+    min-width: 320px;
+  }
+  .shl-order-column {
+    flex: 1 1 480px;
+    min-width: 320px;
+  }
+
+  .shl-badge-pill {
+    display: inline-block;
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .shl-title {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #0f172a;
+    margin: 0 0 10px 0;
+  }
+  .shl-subtitle {
+    font-size: 15px;
+    color: #475569;
+    margin-bottom: 20px;
+  }
+
+  /* Gallery */
+  .shl-gallery {
+    margin-bottom: 24px;
+  }
+  .shl-main-image-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shl-main-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .shl-thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  .shl-thumb {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    background: #ffffff;
+    transition: all 0.2s;
+  }
+  .shl-thumb.active {
+    border-color: #4c9a95;
+    transform: scale(1.05);
+  }
+
+  /* Key Points */
+  .shl-key-points {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .shl-point-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #334155;
+  }
+  .shl-point-item:last-child {
+    margin-bottom: 0;
+  }
+  .shl-point-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  /* Order Box */
+  .shl-order-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 20px;
+  }
+  .shl-step-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .shl-step-num {
+    background: #4c9a95;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .shl-step-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  /* Bundle Cards */
+  .shl-bundle-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .shl-bundle-box {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #fafafa;
+  }
+  .shl-bundle-box.active {
+    border-color: #4c9a95;
+    background: #f0fdfa;
+    box-shadow: 0 4px 12px rgba(76, 154, 149, 0.15);
+  }
+  .shl-sales-tag {
+    position: absolute;
+    top: -10px;
+    right: 14px;
+    background: #e11d48;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+  .shl-sales-tag.secondary {
+    background: #475569;
+  }
+  .shl-bundle-body {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .shl-bundle-radio input {
+    width: 18px;
+    height: 18px;
+    accent-color: #4c9a95;
+    cursor: pointer;
+  }
+  .shl-bundle-img img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+  }
+  .shl-bundle-info {
+    flex: 1;
+  }
+  .shl-bundle-info h4 {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .shl-bundle-includes {
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .shl-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .shl-old-price {
+    font-size: 13px;
+    color: #94a3b8;
+    text-decoration: line-through;
+  }
+  .shl-sale-price {
+    font-size: 18px;
+    font-weight: 800;
+    color: #dc2626;
+  }
+
+  /* Quantity */
+  .shl-qty-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 18px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .shl-qty-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .shl-qty-control button {
+    background: #f1f5f9;
+    border: none;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .shl-qty-control button:hover {
+    background: #e2e8f0;
+  }
+  .shl-qty-control input {
+    width: 44px;
+    height: 32px;
+    text-align: center;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  /* Total & CTA */
+  .shl-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #0f172a;
+  }
+  #shl-total-display {
+    font-size: 26px;
+    font-weight: 900;
+    color: #dc2626;
+  }
+  .shl-checkout-btn {
+    width: 100%;
+    background-color: #4c9a95;
+    color: #ffffff;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(76, 154, 149, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .shl-checkout-btn:hover {
+    background-color: #3b827e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 154, 149, 0.5);
+  }
+  .shl-guarantee-note {
+    font-size: 12px;
+    color: #64748b;
+    text-align: center;
+    margin: 12px 0 16px 0;
+  }
+  .shl-trust-icons img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Features Grid */
+  .shl-features-section, .shl-comparison-section, .shl-specs-section, .shl-reviews-section, .shl-faq-section {
+    padding: 45px 0;
+    border-top: 1px solid #e2e8f0;
+  }
+  .shl-section-title {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  .shl-section-title h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 8px 0;
+  }
+  .shl-section-title p {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0;
+  }
+  .shl-feature-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .shl-feature-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .shl-feat-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .shl-feature-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .shl-feature-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #475569;
+  }
+
+  /* Comparison Table */
+  .shl-table-wrap {
+    overflow-x: auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  }
+  .shl-comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .shl-comp-table th, .shl-comp-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .shl-comp-table th {
+    background: #f1f5f9;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .shl-comp-table th.highlight {
+    background: #f0fdfa;
+    color: #115e59;
+    border-bottom: 2px solid #4c9a95;
+  }
+  .shl-comp-table td.highlight-val {
+    background: #f0fdfa;
+    font-weight: 600;
+    color: #047857;
+  }
+  .check-green { color: #059669; font-weight: 700; }
+  .cross-red { color: #dc2626; font-weight: 600; }
+
+  /* Specs Grid */
+  .shl-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .shl-spec-item {
+    font-size: 14px;
+    color: #334155;
+    padding: 8px 12px;
+    background: #f8fafc;
+    border-radius: 6px;
+  }
+  .shl-spec-item strong {
+    color: #0f172a;
+  }
+
+  /* Reviews */
+  .shl-stars-row {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f59e0b;
+    margin-top: 6px;
+  }
+  .shl-rating-score {
+    color: #334155;
+    margin-left: 6px;
+  }
+  .shl-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .shl-review-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .shl-review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+  .shl-verified-badge {
+    color: #059669;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .shl-stars {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .shl-review-headline {
+    font-weight: 700;
+    font-size: 14px;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+  .shl-review-text {
+    font-size: 13px;
+    color: #475569;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* FAQs */
+  .shl-faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .shl-faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 18px;
+  }
+  .shl-faq-item summary {
+    font-weight: 700;
+    font-size: 15px;
+    color: #0f172a;
+    cursor: pointer;
+  }
+  .shl-faq-item p {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  /* Sticky Bar */
+  .shl-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid #cbd5e1;
+    padding: 10px 18px;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99999;
+  }
+  .shl-sticky-name {
+    font-weight: 700;
+    font-size: 13px;
+    color: #0f172a;
+    display: block;
+  }
+  .shl-sticky-price {
+    font-size: 13px;
+    color: #dc2626;
+    font-weight: 700;
+    display: block;
+  }
+  .shl-sticky-atc-btn {
+    background: #4c9a95;
+    color: #ffffff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  let currentVariantId = '67930179436729'; // 2 Pack default
+  let currentUnitPrice = 89.99;
+  let currentPackName = '2 Pack';
+  let currentQty = 1;
+
+  function switchShlImg(src) {
+    document.getElementById('shl-main-img').src = src;
+    document.querySelectorAll('.shl-thumb').forEach(t => {
+      t.classList.toggle('active', t.src === src);
+    });
+  }
+
+  function selectBundle(variantId, price, oldPrice, boxId, imgSrc) {
+    currentVariantId = variantId;
+    currentUnitPrice = parseFloat(price);
+    currentPackName = boxId === 'bundle-box-2' ? '2 Pack' : '1 Pack';
+
+    document.querySelectorAll('.shl-bundle-box').forEach(b => b.classList.remove('active'));
+    document.getElementById(boxId).classList.add('active');
+
+    if (boxId === 'bundle-box-2') {
+      document.getElementById('radio-bundle-2').checked = true;
+    } else {
+      document.getElementById('radio-bundle-1').checked = true;
+    }
+
+    if (imgSrc) switchShlImg(imgSrc);
+    updateTotalDisplay();
+  }
+
+  function adjustQty(delta) {
+    currentQty = Math.max(1, Math.min(10, currentQty + delta));
+    document.getElementById('shl-qty').value = currentQty;
+    updateTotalDisplay();
+  }
+
+  function updateTotalDisplay() {
+    const total = (currentUnitPrice * currentQty).toFixed(2);
+    document.getElementById('shl-total-display').innerText = '$' + total;
+    document.getElementById('shl-sticky-price-display').innerText = '$' + total + ' (' + currentPackName + ')';
+  }
+
+  async function submitHeatingLampOrder() {
+    const btn = document.getElementById('shl-checkout-btn');
+    btn.disabled = true;
+    btn.innerHTML = '<span>Processing Order...</span>';
+
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{
+            id: currentVariantId,
+            quantity: currentQty
+          }]
+        })
+      });
+
+      if (res.ok) {
+        window.location.href = '/checkout';
+      } else {
+        window.location.href = '/cart/' + currentVariantId + ':' + currentQty;
+      }
+    } catch (e) {
+      window.location.href = '/cart/' + currentVariantId + ':' + currentQty;
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Heating Lamp Funnel",
+  "settings": []
+}
+{% endschema %}
+`;
+
+const templateContent = `
+{% layout 'theme' %}
+
+{% section 'heating-lamp-funnel' %}
+`;
+
+fs.writeFileSync('Clone-sakerplus/data/heating_lamp/section.heating-lamp-funnel.liquid', sectionContent);
+fs.writeFileSync('Clone-sakerplus/data/heating_lamp/product.sakerplus-livestock-heating-lamp.liquid', templateContent);
+console.log('✔ Created section and template files for heating lamp!');

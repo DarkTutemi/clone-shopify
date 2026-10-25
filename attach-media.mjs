@@ -1,6 +1,6 @@
-const CLIENT_ID = '82d6aaab9e73809cb37b6643302b1255';
-const CLIENT_SECRET = process.env.SHOPIFY_API_SECRET || "SHOPIFY_SECRET_TOKEN";
-const SHOP_DOMAIN = 'vwpb1k-8z.myshopify.com';
+const CLIENT_ID = '172e9e29abd0fe12f671d8441479c7c2';
+const CLIENT_SECRET = process.env.SHOPIFY_API_SECRET || "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";
+const SHOP_DOMAIN = 'dsdujr-vn.myshopify.com';
 
 const PRODUCT_IMAGES = {
   'bronoir-skin-pro-copper-grounding': 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80',

@@ -1,0 +1,170 @@
+<section class="willa-facts-section">
+  <div class="willa-container">
+    <div class="willa-section-header">
+      <span class="willa-pill">{{ section.settings.pill_text | default: 'THE ZAVELYN® ADVANTAGE' }}</span>
+      <h2 class="willa-section-title willa-serif">{{ section.settings.heading | default: 'Engineered Without Compromise' }}</h2>
+      <p class="willa-section-subtitle">{{ section.settings.subtitle | default: 'We design tools that withstand grueling conditions, protect livestock, and streamline complex tasks.' }}</p>
+    </div>
+
+    <div class="willa-facts-grid">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <div class="willa-fact-card" {{ block.shopify_attributes }}>
+            <div class="fact-icon">{{ block.settings.icon }}</div>
+            <div class="fact-content">
+              <h3>{{ block.settings.title }}</h3>
+              <p>{{ block.settings.text }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="willa-fact-card">
+          <div class="fact-icon">🛡️</div>
+          <div class="fact-content">
+            <h3>Industrial Durability</h3>
+            <p>Built with heavy-duty alloys and reinforced polymers engineered for tough workshop and outdoor conditions.</p>
+          </div>
+        </div>
+        <div class="willa-fact-card">
+          <div class="fact-icon">⚡</div>
+          <div class="fact-content">
+            <h3>Precision Performance</h3>
+            <p>Engineered to cut labor time in half with automated thermostats, ultrasonic vibrations, and laser guides.</p>
+          </div>
+        </div>
+        <div class="willa-fact-card">
+          <div class="fact-icon">🔒</div>
+          <div class="fact-content">
+            <h3>Certified Safety</h3>
+            <p>Zero exposed flames or dangerous hot spots. Rigorously tested for maximum peace of mind on your homestead.</p>
+          </div>
+        </div>
+        <div class="willa-fact-card">
+          <div class="fact-icon">🚚</div>
+          <div class="fact-content">
+            <h3>Free US Delivery</h3>
+            <p>Fast dispatch from US regional hubs. Enjoy free express tracked shipping on all orders over $49.</p>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .willa-facts-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+    border-bottom: 1px solid #e7e4df;
+  }
+  .willa-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .willa-fact-card {
+    background-color: #faf7f4;
+    border: 1px solid #e7e4df;
+    border-radius: 18px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .willa-fact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(59, 43, 47, 0.06);
+  }
+  .fact-icon {
+    font-size: 28px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e7e4df;
+  }
+  .fact-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 800;
+    color: #231f20;
+  }
+  .fact-content p {
+    margin: 0;
+    font-size: 13px;
+    color: #59514f;
+    line-height: 1.5;
+  }
+  @media (max-width: 991px) {
+    .willa-facts-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  }
+  @media (max-width: 540px) {
+    .willa-facts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Willa Facts",
+  "settings": [
+    {
+      "type": "text",
+      "id": "pill_text",
+      "label": "Badge Pill Text",
+      "default": "THE ZAVELYN® ADVANTAGE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Engineered Without Compromise"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "We design tools that withstand grueling conditions, protect livestock, and streamline complex tasks."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "fact_card",
+      "name": "Fact Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Emoji Icon",
+          "default": "🛡️"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Industrial Durability"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Built with heavy-duty alloys and reinforced polymers engineered for tough workshop and outdoor conditions."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Willa Facts"
+    }
+  ]
+}
+{% endschema %}

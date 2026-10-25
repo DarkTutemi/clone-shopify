@@ -1,0 +1,141 @@
+<section class="willa-steps-section">
+  <div class="willa-container">
+    <div class="willa-section-header">
+      <span class="willa-pill">{{ section.settings.pill_text | default: 'HOW IT WORKS' }}</span>
+      <h2 class="willa-section-title willa-serif">{{ section.settings.heading | default: 'Simplicity in 3 Easy Steps' }}</h2>
+      <p class="willa-section-subtitle">{{ section.settings.subtitle | default: 'We eliminate friction so you can focus on building, repairing, and creating.' }}</p>
+    </div>
+
+    <div class="willa-steps-grid">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <div class="willa-step-card" {{ block.shopify_attributes }}>
+            <div class="step-num">{{ block.settings.step_number }}</div>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="willa-step-card">
+          <div class="step-num">01</div>
+          <h3>Select Your Solution</h3>
+          <p>Choose from our specialized toolkits engineered specifically for fence repair, livestock care, or precision crafting.</p>
+        </div>
+        <div class="willa-step-card">
+          <div class="step-num">02</div>
+          <h3>Quick Plug-and-Play Setup</h3>
+          <p>All kits include standard US cords, mounting hardware, or screw bases. Ready to run right out of the box with zero guesswork.</p>
+        </div>
+        <div class="willa-step-card">
+          <div class="step-num">03</div>
+          <h3>Total Peace of Mind</h3>
+          <p>Every product is backed by our 90-Day Money-Back Guarantee and dedicated customer care team ready to help 7 days a week.</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .willa-steps-section {
+    background-color: #faf7f4;
+    padding: 60px 0;
+    border-bottom: 1px solid #e7e4df;
+  }
+  .willa-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .willa-step-card {
+    background: #ffffff;
+    border: 1px solid #e7e4df;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(59, 43, 47, 0.04);
+  }
+  .step-num {
+    font-size: 32px;
+    font-weight: 900;
+    color: #8a2c13;
+    opacity: 0.8;
+    margin-bottom: 14px;
+    font-family: 'Playfair Display', serif;
+  }
+  .willa-step-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: #231f20;
+  }
+  .willa-step-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #59514f;
+    line-height: 1.6;
+  }
+  @media (max-width: 768px) {
+    .willa-steps-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Willa Steps",
+  "settings": [
+    {
+      "type": "text",
+      "id": "pill_text",
+      "label": "Badge Pill Text",
+      "default": "HOW IT WORKS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Simplicity in 3 Easy Steps"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "We eliminate friction so you can focus on building, repairing, and creating."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step_card",
+      "name": "Step Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_number",
+          "label": "Step Number (e.g. 01)",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "Select Your Solution"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Step Details",
+          "default": "Choose from our specialized toolkits engineered specifically for fence repair, livestock care, or precision crafting."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Willa Steps"
+    }
+  ]
+}
+{% endschema %}

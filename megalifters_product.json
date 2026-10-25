@@ -1,0 +1,298 @@
+{
+  "product": {
+    "id": 8292473635002,
+    "title": "Remote Control Construction Mega Lifters",
+    "body_html": "",
+    "vendor": "Wiggo's Toy Factory",
+    "product_type": "",
+    "created_at": "2025-12-15T17:25:13+10:00",
+    "handle": "mega-lifters™",
+    "updated_at": "2026-10-25T23:43:05+10:00",
+    "published_at": "2025-12-15T17:53:53+10:00",
+    "template_suffix": "mega-lifts",
+    "published_scope": "web",
+    "tags": "",
+    "variants": [
+      {
+        "id": 45448080326842,
+        "product_id": 8292473635002,
+        "title": "Excavator",
+        "price": "65.00",
+        "sku": "14:29#Excavator 1Battery",
+        "position": 1,
+        "compare_at_price": "144.00",
+        "fulfillment_service": "manual",
+        "inventory_management": "shopify",
+        "option1": "Excavator",
+        "option2": null,
+        "option3": null,
+        "created_at": "2025-12-15T17:25:14+10:00",
+        "updated_at": "2026-10-25T23:43:05+10:00",
+        "taxable": true,
+        "barcode": null,
+        "grams": 883,
+        "image_id": 40178095227066,
+        "weight": 0.883,
+        "weight_unit": "kg",
+        "requires_shipping": true,
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "price_currency": "USD",
+        "compare_at_price_currency": "USD",
+        "quantity_price_breaks": []
+      },
+      {
+        "id": 45448080294074,
+        "product_id": 8292473635002,
+        "title": "Dump Truck",
+        "price": "65.00",
+        "sku": "14:10#Dump 1Battery",
+        "position": 2,
+        "compare_at_price": "144.00",
+        "fulfillment_service": "manual",
+        "inventory_management": "shopify",
+        "option1": "Dump Truck",
+        "option2": null,
+        "option3": null,
+        "created_at": "2025-12-15T17:25:14+10:00",
+        "updated_at": "2026-10-25T23:43:05+10:00",
+        "taxable": true,
+        "barcode": null,
+        "grams": 883,
+        "image_id": 40178095194298,
+        "weight": 0.883,
+        "weight_unit": "kg",
+        "requires_shipping": true,
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "price_currency": "USD",
+        "compare_at_price_currency": "USD",
+        "quantity_price_breaks": []
+      },
+      {
+        "id": 45448080228538,
+        "product_id": 8292473635002,
+        "title": "Bulldozer",
+        "price": "65.00",
+        "sku": "14:175#Bulldozer 1Battery",
+        "position": 3,
+        "compare_at_price": "144.00",
+        "fulfillment_service": "manual",
+        "inventory_management": "shopify",
+        "option1": "Bulldozer",
+        "option2": null,
+        "option3": null,
+        "created_at": "2025-12-15T17:25:14+10:00",
+        "updated_at": "2026-10-25T23:43:05+10:00",
+        "taxable": true,
+        "barcode": null,
+        "grams": 883,
+        "image_id": 40178095128762,
+        "weight": 0.883,
+        "weight_unit": "kg",
+        "requires_shipping": true,
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "price_currency": "USD",
+        "compare_at_price_currency": "USD",
+        "quantity_price_breaks": []
+      },
+      {
+        "id": 46411872305338,
+        "product_id": 8292473635002,
+        "title": "Loader",
+        "price": "65.00",
+        "sku": "14:17#Loader 1Battery",
+        "position": 4,
+        "compare_at_price": "144.00",
+        "fulfillment_service": "manual",
+        "inventory_management": "shopify",
+        "option1": "Loader",
+        "option2": null,
+        "option3": null,
+        "created_at": "2026-08-22T08:33:23+10:00",
+        "updated_at": "2026-10-25T23:43:05+10:00",
+        "taxable": true,
+        "barcode": null,
+        "grams": 883,
+        "image_id": 43050557964474,
+        "weight": 0.883,
+        "weight_unit": "kg",
+        "requires_shipping": true,
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "price_currency": "USD",
+        "compare_at_price_currency": "USD",
+        "quantity_price_breaks": []
+      }
+    ],
+    "options": [
+      {
+        "id": 10503507968186,
+        "product_id": 8292473635002,
+        "name": "Variant",
+        "position": 1,
+        "values": [
+          "Excavator",
+          "Dump Truck",
+          "Bulldozer",
+          "Loader"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "id": 44105651191994,
+        "product_id": 8292473635002,
+        "position": 1,
+        "created_at": "2026-10-01T09:48:53+10:00",
+        "updated_at": "2026-10-01T09:48:55+10:00",
+        "alt": null,
+        "width": 1214,
+        "height": 1295,
+        "src": "https://cdn.shopify.com/s/files/1/0736/2871/3146/files/Halloween_Sale_Excavator_Toy_Promo.png?v=1790812135",
+        "variant_ids": []
+      },
+      {
+        "id": 40178192056506,
+        "product_id": 8292473635002,
+        "position": 2,
+        "created_at": "2025-12-15T17:49:23+10:00",
+        "updated_at": "2025-12-15T17:50:27+10:00",
+        "alt": null,
+        "width": 1024,
+        "height": 1536,
+        "src": "https://cdn.shopify.com/s/files/1/0736/2871/3146/files/ChatGPT_Image_Dec_15_2025_06_46_29_PM.png?v=1765785027",
+        "variant_ids": []
+      },
+      {
+        "id": 40178192122042,
+        "product_id": 8292473635002,
+        "position": 3,
+        "created_at": "2025-12-15T17:49:23+10:00",
+        "updated_at": "2025-12-15T17:50:27+10:00",
+        "alt": null,
+        "width": 1024,
+        "height": 1536,
+        "src": "https://cdn.shopify.com/s/files/1/0736/2871/3146/files/ChatGPT_Image_Dec_15_2025_06_48_09_PM.png?v=1765785027",
+        "variant_ids": []
+      },
+      {
+        "id": 43050386751674,
+        "product_id": 8292473635002,
+        "position": 4,
+        "created_at": "2026-08-22T08:30:41+10:00",
+        "updated_at": "2026-08-22T08:30:43+10:00",
+        "alt": null,
+        "width": 1280,
+        "height": 1229,
+        "src": "https://cdn.shopify.com/s/files/1/0736/2871/3146/files/ChatGPT_Image_Aug_22_2026_08_27_46_AM.png?v=1787351443",
+        "variant_ids": []
+      },
+      {
+        "id": 40178192089274,
+        "product_id": 8292473635002,
+        "position": 5,
+        "created_at": "2025-12-15T17:49:23+10:00",
+        "updated_at": "2025-12-15T17:54:03+10:00",
+        "alt": null,
+        "width": 896,
+        "height": 787,
+        "src": "https://cdn.shopify.com/s/files/1/0736/2871/3146/files/2025-12-15_18_48_49-4WD_Remote_Control_Excavator_Toy_Radio_Controlled_RC_Dump_Truck_Vehicle_Crawler.png?v=1765785243",
+        "variant_ids": []
+      },
+      {
+        "id": 40178095227066,
+        "product_id": 8292473635002,
+        "position": 6,
+        "created_at": "2025-12-15T17:25:14+10:00",
+        "updated_at": "2025-12-15T17:54:03+10:00",
+        "alt": null,
+        "width": 640,
+        "height": 640,
+        "src": "https://cdn.shopify.com/s/files/1/0736/2871/3146/files/S2b32623ebe0942ea8f34aef70262e118a.webp?v=1765785243",
+        "variant_ids": [
+          45448080326842
+        ]
+      },
+      {
+        "id": 40178095194298,
+        "product_id": 8292473635002,
+        "position": 7,
+        "created_at": "2025-12-15T17:25:14+10:00",
+        "updated_at": "2025-12-15T17:54:03+10:00",
+        "alt": null,
+        "width": 640,
+        "height": 640,
+        "src": "https://cdn.shopify.com/s/files/1/0736/2871/3146/files/S6c2a3cf774b942edaf58fef1c29cb5aaI.webp?v=1765785243",
+        "variant_ids": [
+          45448080294074
+        ]
+      },
+      {
+        "id": 40178095128762,
+        "product_id": 8292473635002,
+        "position": 8,
+        "created_at": "2025-12-15T17:25:14+10:00",
+        "updated_at": "2025-12-15T17:54:03+10:00",
+        "alt": null,
+        "width": 640,
+        "height": 640,
+        "src": "https://cdn.shopify.com/s/files/1/0736/2871/3146/files/Sdda328dd0ecc45868aace68e134418das.webp?v=1765785243",
+        "variant_ids": [
+          45448080228538
+        ]
+      },
+      {
+        "id": 43050557964474,
+        "product_id": 8292473635002,
+        "position": 9,
+        "created_at": "2026-08-22T08:34:58+10:00",
+        "updated_at": "2026-08-22T08:35:01+10:00",
+        "alt": null,
+        "width": 1277,
+        "height": 1232,
+        "src": "https://cdn.shopify.com/s/files/1/0736/2871/3146/files/ChatGPT_Image_Aug_22_2026_08_34_46_AM.png?v=1787351701",
+        "variant_ids": [
+          46411872305338
+        ]
+      },
+      {
+        "id": 40178192154810,
+        "product_id": 8292473635002,
+        "position": 10,
+        "created_at": "2025-12-15T17:49:23+10:00",
+        "updated_at": "2025-12-15T17:50:27+10:00",
+        "alt": null,
+        "width": 1024,
+        "height": 1536,
+        "src": "https://cdn.shopify.com/s/files/1/0736/2871/3146/files/ChatGPT_Image_Dec_15_2025_06_45_39_PM.png?v=1765785027",
+        "variant_ids": []
+      }
+    ],
+    "image": {
+      "id": 44105651191994,
+      "product_id": 8292473635002,
+      "position": 1,
+      "created_at": "2026-10-01T09:48:53+10:00",
+      "updated_at": "2026-10-01T09:48:55+10:00",
+      "alt": null,
+      "width": 1214,
+      "height": 1295,
+      "src": "https://cdn.shopify.com/s/files/1/0736/2871/3146/files/Halloween_Sale_Excavator_Toy_Promo.png?v=1790812135",
+      "variant_ids": []
+    }
+  }
+}

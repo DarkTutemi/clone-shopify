@@ -1,6 +1,6 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "82d6aaab9e73809cb37b6643302b1255"
+client_id = "172e9e29abd0fe12f671d8441479c7c2"
 name = "Clone-theme"
 application_url = "https://shopify.dev/apps/default-app-home"
 embedded = false

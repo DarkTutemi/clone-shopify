@@ -1,0 +1,59 @@
+{%- comment -%}
+  {% render 'product-card', product: product, lazy: true %}
+{%- endcomment -%}
+{%- liquid
+  assign card_product = product
+  assign loading_attr = 'lazy'
+  assign fetchpriority_attr = 'auto'
+  if eager
+    assign loading_attr = 'eager'
+    assign fetchpriority_attr = 'high'
+  endif
+
+  assign featured = card_product.featured_media
+  assign secondary = card_product.media[1]
+-%}
+
+<article class="product-card">
+  <a class="product-card__media" href="{{ card_product.url }}" aria-label="{{ card_product.title | escape }}">
+    {%- if card_product.compare_at_price > card_product.price -%}
+      <span class="badge badge--sale product-card__badge">Sale</span>
+    {%- endif -%}
+
+    {%- if featured -%}
+      {{
+        featured
+        | image_url: width: 900
+        | image_tag:
+          widths: '320, 480, 640, 750, 900',
+          sizes: '(min-width: 1200px) 25vw, (min-width: 750px) 33vw, 50vw',
+          loading: loading_attr,
+          fetchpriority: fetchpriority_attr,
+          class: 'product-card__media-primary',
+          alt: featured.alt | default: card_product.title | escape
+      }}
+      {%- if secondary -%}
+        {{
+          secondary
+          | image_url: width: 900
+          | image_tag:
+            widths: '320, 480, 640, 750, 900',
+            sizes: '(min-width: 1200px) 25vw, (min-width: 750px) 33vw, 50vw',
+            loading: 'lazy',
+            class: 'product-card__media-secondary',
+            alt: secondary.alt | default: card_product.title | escape
+        }}
+      {%- endif -%}
+    {%- else -%}
+      {{ 'product-1' | placeholder_svg_tag }}
+    {%- endif -%}
+  </a>
+
+  <div class="product-card__info">
+    {%- if card_product.vendor != blank and show_vendor -%}
+      <p class="product-card__vendor">{{ card_product.vendor }}</p>
+    {%- endif -%}
+    <a class="product-card__title" href="{{ card_product.url }}">{{ card_product.title }}</a>
+    {% render 'price', product: card_product %}
+  </div>
+</article>

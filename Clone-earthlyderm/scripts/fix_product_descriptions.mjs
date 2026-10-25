@@ -1,12 +1,12 @@
 import fs from 'fs';
 
 async function main() {
-  const tokenRes = await fetch('https://vwpb1k-8z.myshopify.com/admin/oauth/access_token', {
+  const tokenRes = await fetch('https://dsdujr-vn.myshopify.com/admin/oauth/access_token', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
-      client_id: '82d6aaab9e73809cb37b6643302b1255',
-      client_secret: process.env.SHOPIFY_API_SECRET || "SHOPIFY_SECRET_TOKEN",
+      client_id: '172e9e29abd0fe12f671d8441479c7c2',
+      client_secret: process.env.SHOPIFY_API_SECRET || "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",
       grant_type: 'client_credentials'
     })
   });
@@ -14,7 +14,7 @@ async function main() {
 
   const catalog = JSON.parse(fs.readFileSync('h:/Shopify-Clone/Clone-earthlyderm/data/catalog_harvested.json', 'utf8'));
 
-  const res = await fetch('https://vwpb1k-8z.myshopify.com/admin/api/2026-01/graphql.json', {
+  const res = await fetch('https://dsdujr-vn.myshopify.com/admin/api/2026-01/graphql.json', {
     method: 'POST',
     headers: {
       'X-Shopify-Access-Token': access_token,
@@ -36,7 +36,7 @@ async function main() {
     }
     p.bodyHtml = fixedHtml;
 
-    const updateRes = await fetch('https://vwpb1k-8z.myshopify.com/admin/api/2026-01/graphql.json', {
+    const updateRes = await fetch('https://dsdujr-vn.myshopify.com/admin/api/2026-01/graphql.json', {
       method: 'POST',
       headers: {
         'X-Shopify-Access-Token': access_token,

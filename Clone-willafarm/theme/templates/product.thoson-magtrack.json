@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "thoson_magtrack_funnel": {
+      "type": "thoson-magtrack-funnel",
+      "settings": {}
+    }
+  },
+  "order": [
+    "thoson_magtrack_funnel"
+  ]
+}

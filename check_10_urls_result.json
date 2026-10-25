@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Joylux vFit",
+    "url": "https://joylux.com/pages/vfit",
+    "status": 200,
+    "finalUrl": "https://joylux.com/pages/vfit",
+    "ok": true
+  },
+  {
+    "id": 2,
+    "name": "Bralisse",
+    "url": "https://bralisse.com/",
+    "status": 200,
+    "finalUrl": "https://bralisse.com/",
+    "ok": true
+  },
+  {
+    "id": 3,
+    "name": "SuperTots Food Pacifier",
+    "url": "https://www.super-tots.com/products/supertots-food-pacifier",
+    "status": 200,
+    "finalUrl": "https://www.super-tots.com/products/supertots-food-pacifier",
+    "ok": true
+  },
+  {
+    "id": 4,
+    "name": "Clarifion Air Purifier",
+    "url": "https://about.clarifion.com/",
+    "status": 200,
+    "finalUrl": "https://about.clarifion.com/",
+    "ok": true
+  },
+  {
+    "id": 5,
+    "name": "Hestia Color Changing Foundation",
+    "url": "https://hestiacosmetics.com/products/color-changing-foundation",
+    "status": 200,
+    "finalUrl": "https://hestiacosmetics.com/products/color-changing-foundation",
+    "ok": true
+  },
+  {
+    "id": 6,
+    "name": "SelenePets Interactive Toy",
+    "url": "https://selenepets.com/products/fun-8-page-16-1",
+    "status": 200,
+    "finalUrl": "https://selenepets.com/products/fun-8-page-16-1",
+    "ok": true
+  },
+  {
+    "id": 7,
+    "name": "Gravity Glider",
+    "url": "https://gravityglidersco.com/products/gravity-glider",
+    "status": 200,
+    "finalUrl": "https://gravityglidersco.com/products/gravity-glider",
+    "ok": true
+  },
+  {
+    "id": 8,
+    "name": "Wiggostoys Mega Lifters",
+    "url": "https://wiggostoyfactory.com/products/mega-lifters%E2%84%A2",
+    "status": 200,
+    "finalUrl": "https://wiggostoyfactory.com/products/mega-lifters%E2%84%A2",
+    "ok": true
+  },
+  {
+    "id": 9,
+    "name": "Botana Hair Growth Oil",
+    "url": "https://www.azureboutique.co/products/botana-natural-hair-growth-oil",
+    "status": 200,
+    "finalUrl": "https://www.azureboutique.co/products/botana-natural-hair-growth-oil",
+    "ok": true
+  },
+  {
+    "id": 10,
+    "name": "Ackerman Heated Gloves",
+    "url": "https://www.ackermanshop.com/products/smart-thermostatic-heated-fingerless-gloves",
+    "status": 403,
+    "finalUrl": "https://www.ackermanshop.com/products/smart-thermostatic-heated-fingerless-gloves",
+    "ok": false
+  }
+]

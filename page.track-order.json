@@ -1,0 +1,16 @@
+{
+  "layout": "offer",
+  "sections": {
+    "main": {
+      "type": "offer-track-order",
+      "settings": {
+        "brand_name": "Zavelyn",
+        "heading": "Track your order",
+        "subcopy": "Enter your order number or tracking number to see the latest shipping updates."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

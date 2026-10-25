@@ -1,0 +1,383 @@
+{
+  "sections": {
+    "zhp_marquee": {
+      "type": "zhp-marquee",
+      "settings": {
+        "bg_color": "#2c4236",
+        "text_color": "#faf8f5",
+        "text_1": "🚚 FREE EXPRESS WORLDWIDE SHIPPING",
+        "text_2": "✨ 432 HZ NATURAL HEALING FREQUENCY",
+        "text_3": "🛡️ 30-DAY 100% HAPPINESS GUARANTEE",
+        "text_4": "🎁 COMPLETE STARTER KIT INCLUDED WITH EVERY DRUM",
+        "text_5": "⭐ OVER 72,000+ HAPPY DRUMMERS WORLDWIDE"
+      }
+    },
+    "zhp_hero": {
+      "type": "zhp-hero",
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/Tr_ng_ZAVELYN_gi_a_n_ng_m_1.png",
+        "image_mobile": "shopify:\/\/shop_images\/Tr_ng_ZAVELYN_gi_a_n_ng_m_1.png",
+        "badge_text": "Rated 4.92\/5 by 72,000+ Happy Drummers",
+        "title": "Escape to Calmness",
+        "subtitle": "Feel the stress melt away with every note. Handcrafted steel tongue drums tuned to pure 432 Hz healing frequencies, bringing tranquility, mindfulness, and joy into your everyday life.",
+        "btn1_text": "EXPLORE ZAVELYN DRUMS",
+        "btn1_link": "",
+        "btn2_text": "WHY 432 HZ MATTERS",
+        "btn2_link": ""
+      }
+    },
+    "zhp_bestsellers": {
+      "type": "zhp-bestsellers",
+      "settings": {
+        "tag": "OUR COLLECTION",
+        "title": "Zavelyn Drums™ You'll Love",
+        "subtitle": "Save up to 48% today. Every instrument includes a complete starter kit, padded bag, bamboo mallets, and tutorial songbook.",
+        "image_pro": "shopify:\/\/shop_images\/tr-ng-en-n-n-trong-su-t.png",
+        "image_plus": "shopify:\/\/shop_images\/tr-ng-tr-ng-n-n-trong-su-t.png",
+        "image_mini": "shopify:\/\/shop_images\/tr-ng-v-ng-n-n-trong-su-t.png"
+      }
+    },
+    "zhp_model_tabs": {
+      "type": "zhp-model-tabs",
+      "settings": {
+        "tag": "EXPLORE BY MODEL",
+        "title": "Easy to Learn and Soothing to Play",
+        "subtitle": "Click each model to explore unique tones, technical dimensions, and ideal musical journeys.",
+        "image_pro": "shopify:\/\/shop_images\/Tr_ng_ZAVELYN__Hoan_thi_n_ng_c_trai_tinh_t_1.png",
+        "image_mini": "shopify:\/\/shop_images\/B_tr_ng_thi_n_Zavelyn_thanh_l_ch_1.png"
+      }
+    },
+    "zhp_what_you_get": {
+      "type": "zhp-what-you-get",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "fallback_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0772\/9528\/8652\/files\/Panda_Drum_bag_15t.avif?v=1693393541",
+            "badge": "INCLUDED",
+            "title": "Anti-Shock Travel Bag",
+            "desc": "Thickly padded custom carrying bag with shoulder straps to keep your drum safe at home or on the road."
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "fallback_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0772\/9528\/8652\/files\/mallets15t.avif?v=1693393704",
+            "badge": "INCLUDED",
+            "title": "2x Bamboo Mallets",
+            "desc": "Acoustically balanced bamboo mallets with soft rubber tips engineered for optimal resonance and pure bell tones."
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2026-10-25_105342.png",
+            "fallback_image": "",
+            "badge": "INCLUDED",
+            "title": "Handcrafted Zavelyn Drum",
+            "desc": "Master-tuned alloy steel tongue drum with permanent tone markings and laser-cut acoustic tongues."
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2026-10-25_105339.png",
+            "fallback_image": "",
+            "badge": "INCLUDED",
+            "title": "Tutorial Songbook & Videos",
+            "desc": "Comprehensive step-by-step guidebook containing 20+ songs plus QR codes for free online video lessons."
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "tag": "EVERYTHING INCLUDED",
+        "title": "What You'll Get",
+        "subtitle": "No hidden extras or surprise add-ons needed. Every Zavelyn Drum ships as a complete all-in-one musical kit."
+      }
+    },
+    "zhp_endorsements": {
+      "type": "zhp-endorsements",
+      "blocks": {
+        "endorser_1": {
+          "type": "endorser",
+          "settings": {
+            "fallback_avatar": "https:\/\/cdn.shopify.com\/s\/files\/1\/0780\/8362\/1190\/files\/radhi_v.avif?v=1697095497",
+            "name": "Radhi Devlukia",
+            "role": "Co-Founder Sama Tea & Joyo Tea",
+            "handle": "@radhidevlukia • 2.2M",
+            "tag": "INNER PEACE",
+            "quote": "When everything is noisy around me, this drum helps me find a corner of calm. It's my beautiful daily escape."
+          }
+        },
+        "endorser_2": {
+          "type": "endorser",
+          "settings": {
+            "fallback_avatar": "https:\/\/cdn.shopify.com\/s\/files\/1\/0780\/8362\/1190\/files\/adam_green.avif?v=1697097548",
+            "name": "Adam Green",
+            "role": "Sound Practitioner & Creator",
+            "handle": "@ethereal.in.e",
+            "tag": "SOUND THERAPY",
+            "quote": "The sounds of my drum make me feel good instantly. Everything seems brighter, calmer, and more joyful."
+          }
+        },
+        "endorser_3": {
+          "type": "endorser",
+          "settings": {
+            "avatar": "shopify:\/\/shop_images\/Screenshot_2026-10-25_105459.png",
+            "fallback_avatar": "",
+            "name": "Bianca Oliveira",
+            "role": "Certified Yoga Coach • Biancayoga",
+            "handle": "@biancayoga",
+            "tag": "YOGA & MINDFULNESS",
+            "quote": "The drum adds extraordinary depth to our yoga sessions. My students can feel every movement and breath more deeply."
+          }
+        },
+        "endorser_4": {
+          "type": "endorser",
+          "settings": {
+            "fallback_avatar": "https:\/\/cdn.shopify.com\/s\/files\/1\/0780\/8362\/1190\/files\/joana_green.avif?v=1697097548",
+            "name": "Joana Duarte",
+            "role": "Mindfulness Instructor & Author",
+            "handle": "@joana____duarte • 0.5M",
+            "tag": "HERE & NOW",
+            "quote": "This drum brings me back here and now, away from worries. It feels like a long, deep exhale."
+          }
+        },
+        "endorser_5": {
+          "type": "endorser",
+          "settings": {
+            "fallback_avatar": "https:\/\/cdn.shopify.com\/s\/files\/1\/0780\/8362\/1190\/files\/steve_green.avif?v=1697097548",
+            "name": "Steve Nguyen",
+            "role": "Painter, Actor & Director",
+            "handle": "@stevenguyen • 0.5M",
+            "tag": "AUDITORY INSPIRATION",
+            "quote": "When I'm stuck in my art, the acoustic vibration helps dissolve creative blocks. Fresh ideas start flowing naturally."
+          }
+        },
+        "endorser_6": {
+          "type": "endorser",
+          "settings": {
+            "avatar": "shopify:\/\/shop_images\/Screenshot_2026-10-25_105435.png",
+            "fallback_avatar": "",
+            "name": "Taylor Dorothea",
+            "role": "Percussion Influencer & Educator",
+            "handle": "@taylor.dorothea • 0.5M",
+            "tag": "LIVING RHYTHM",
+            "quote": "Each drum has a story. Zavelyn speaks immediately to the heart and inspires me to share acoustic music everywhere."
+          }
+        }
+      },
+      "block_order": [
+        "endorser_1",
+        "endorser_2",
+        "endorser_3",
+        "endorser_4",
+        "endorser_5",
+        "endorser_6"
+      ],
+      "settings": {
+        "tag": "EXPERT VOICES",
+        "title": "The Voices of Calm and Balance",
+        "subtitle": "Hear how renowned yoga instructors, authors, and percussionists use Zavelyn Drums to find serenity."
+      }
+    },
+    "zhp_comparison": {
+      "type": "zhp-comparison",
+      "settings": {
+        "tag": "SIDE BY SIDE",
+        "title": "Which Zavelyn Drum™ Should You Choose?",
+        "subtitle": "Compare all technical specifications, tone character, and included items across our 3 models."
+      }
+    },
+    "zhp_buyers_guide": {
+      "type": "zhp-buyers-guide",
+      "blocks": {
+        "fact_1": {
+          "type": "fact",
+          "settings": {
+            "fallback_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/Fena_-_IG_size-8.avif?v=1720589813",
+            "number": "01",
+            "tags": "Mini • 8 Tones, Plus • 11 Tones",
+            "title": "Awakening Inner Creativity",
+            "desc": "You don't need a single hour of music lessons. Because our drums are harmonically tuned to pentatonic and diatonic scales, every single note sounds melodic with every other note. Whether you are a first-time musical adventurer or a lifelong learner reigniting an old passion, you can play captivating melodies from your very first tap.",
+            "who": "Beginners, revitalized musicians, curious creators, and anyone seeking a joyful hobby."
+          }
+        },
+        "fact_2": {
+          "type": "fact",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2026-10-25_105537.png",
+            "fallback_image": "",
+            "number": "02",
+            "tags": "Plus • 11 Tones, Pro • 15 Tones",
+            "title": "Fun for the Whole Family (Zero Screens Needed)",
+            "desc": "Creating shared household memories has never been this harmonious. Zavelyn Drum Plus and Pro ensure every family member finds their rhythm, fostering meaningful bonding moments that last a lifetime while gently drawing children away from tablet and smartphone screens.",
+            "who": "Families of every size, kids, parents, and grandparents playing together."
+          }
+        },
+        "fact_3": {
+          "type": "fact",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2026-10-25_105600.png",
+            "fallback_image": "",
+            "number": "03",
+            "tags": "Plus • 11 Tones, Pro • 15 Tones",
+            "title": "Healing Resonance & Somatic Calming",
+            "desc": "Embark on a sound journey where every note mends, resonates, and harmonizes. Scientific studies show that 432 Hz acoustic vibrations lower cortisol levels, quiet racing thoughts, and trigger natural somatic nervous system restoration. The handcrafted resonance chamber in the Pro 15 Tones delivers unparalleled immersion.",
+            "who": "Sound healing therapists, yoga studios, meditation practitioners, and high-stress professionals."
+          }
+        },
+        "fact_4": {
+          "type": "fact",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2026-10-25_105622.png",
+            "fallback_image": "",
+            "number": "04",
+            "tags": "Plus • 11 Tones, Pro • 15 Tones",
+            "title": "Making Music More Magical",
+            "desc": "Elevate every tune, be it a bedtime lullaby, a campfire singalong, or an intricate studio recording. With 11 to 15 harmonic notes, songwriters and melophiles gain an expressive sonic flavor that blends acoustic bell-like purity with meditative sustained reverb.",
+            "who": "Musicians, multi-instrumentalists, songwriters, and melody lovers."
+          }
+        },
+        "fact_5": {
+          "type": "fact",
+          "settings": {
+            "fallback_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/panda-drum-6-inch-steel-tongue-drum.jpg?v=1792868532",
+            "number": "05",
+            "tags": "Mini • 8 Tones",
+            "title": "Boost Your Child's Cognitive Development",
+            "desc": "Unveil a world of musical wonder with the Zavelyn Drum™ Mini (8 Tones). Engineered for smaller hands, it cultivates hand-eye coordination, bilateral motor skills, and focused concentration while providing an instantly rewarding sensory experience.",
+            "who": "Curious toddlers, young dreamers, and teachers seeking positive sensory tools."
+          }
+        }
+      },
+      "block_order": [
+        "fact_1",
+        "fact_2",
+        "fact_3",
+        "fact_4",
+        "fact_5"
+      ],
+      "settings": {
+        "tag": "ESSENTIAL KNOWLEDGE • 3 MIN READ",
+        "title": "The Ultimate Zavelyn Drum™ Buyer's Guide",
+        "subtitle": "5 Essential Facts That Make Zavelyn Drums a Top Pick for Wellness, Family, and Musicians."
+      }
+    },
+    "zhp_reviews": {
+      "type": "zhp-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "title": "Touches deep into your soul...",
+            "text": "A truly magnificent instrument! The resonant sound touches so deeply. Playing for just ten minutes before bed has completely transformed my sleep quality. No musical talent needed, it just sings!",
+            "author": "Sarah M.",
+            "badge": "Verified Owner of Zavelyn Drum™ Pro"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "title": "Brought our family together",
+            "text": "Bought the Plus 11-tone for our living room. My kids (6 and 9) put down their iPads without even being asked. We pass it around every evening and make peaceful melodies together.",
+            "author": "David & Elena T.",
+            "badge": "Verified Owner of Zavelyn Drum™ Plus"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "title": "Perfection for my yoga studio",
+            "text": "The 432 Hz frequency is genuine. During savasana, playing soft tones on the Pro 15 creates goosebumps throughout the room. The finish and bag are top tier.",
+            "author": "Chloe R.",
+            "badge": "Yoga & Meditation Instructor"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "settings": {
+        "tag": "COMMUNITY VOICES",
+        "title": "What Our Customers Say",
+        "subtitle": "Real verified drummers sharing their journey of calm, focus, and musical joy.",
+        "rating_text": "4.92 \/ 5.0 Average Rating"
+      }
+    },
+    "zhp_faq": {
+      "type": "zhp-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>We provide <strong>FREE tracked shipping<\/strong> on all orders. Orders are processed within 1-3 business days. Estimated delivery times once dispatched: USA: 4-9 business days | UK: 7-12 business days | Australia & Europe: 7-12 business days | Canada: 7-18 business days.<\/p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Can literally anyone play a Zavelyn Drum?",
+            "answer": "<p><strong>Yes, 100%!<\/strong> Zavelyn Drums are purposefully engineered with harmonic scales and clear numbered tone indicators. You do not need to read sheet music or have any musical background. Included in your box is a songbook with 20+ familiar songs using simple numbers, allowing anyone from young children to seniors to play captivating melodies within 5 minutes.<\/p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your 30-Day Happiness Guarantee?",
+            "answer": "<p>We want you to experience genuine peace of mind. If for any reason you are not completely delighted with your Zavelyn Drum within 30 days of delivery, simply email our 24\/7 support team. You can return your complete package for a hassle-free, full refund.<\/p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "What comes included with my order?",
+            "answer": "<p>Every Zavelyn Drum ships as a complete all-in-one set: your selected drum (Mini, Plus, or Pro), a custom-fitted anti-shock padded travel bag\/backpack, 2 precision bamboo mallets with soft acoustic tips, fingertip picks for fingerstyle playing, tone stickers, and our full tutorial songbook.<\/p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "Why is the 432 Hz frequency so special?",
+            "answer": "<p>Unlike standard concert tuning (440 Hz), 432 Hz is known as the natural harmonic frequency of nature. Its acoustic wavelength produces warmer, softer tones that resonate with biological rhythms, promoting deep nervous system relaxation, stress reduction, and mental clarity.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "settings": {
+        "tag": "COMMON QUESTIONS",
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know about shipping, playing ease, and our 100% Happiness Guarantee.",
+        "guarantee_title": "100% Risk-Free Happiness Guarantee",
+        "guarantee_desc": "Over 72,000+ drummers love Zavelyn. If it does not bring you peace and joy, our friendly support team is here to make it right with easy 30-day returns and dedicated lifetime customer care."
+      }
+    }
+  },
+  "order": [
+    "zhp_marquee",
+    "zhp_hero",
+    "zhp_bestsellers",
+    "zhp_model_tabs",
+    "zhp_what_you_get",
+    "zhp_endorsements",
+    "zhp_comparison",
+    "zhp_buyers_guide",
+    "zhp_reviews",
+    "zhp_faq"
+  ]
+}

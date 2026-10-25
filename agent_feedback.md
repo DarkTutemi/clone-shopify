@@ -2,7 +2,7 @@
 ---
 
 ## 🚩 Phản hồi lúc: 2026-10-23T05:40:41.682Z
-**URL:** https://vwpb1k-8z.myshopify.com/products/bronoir-arctic-2-0-winter-barefoot-shoes-1-1-free?variant=67936337789082
+**URL:** https://dsdujr-vn.myshopify.com/products/bronoir-arctic-2-0-winter-barefoot-shoes-1-1-free?variant=67936337789082
 **Phần tử:** `<p>` (`div#BronoirTabPanel_desc > div.bronoir-rte > p`)
 **XPath:** `/html/body/main/div[4]/div/div/div[2]/div/p[1]`
 **Kích thước:** `980px × 53px`
@@ -38,7 +38,7 @@
 ---
 
 ## 🚩 Phản hồi lúc: 2026-10-23T05:51:03.702Z
-**URL:** https://vwpb1k-8z.myshopify.com/products/bronoir-arctic-2-0-winter-barefoot-shoes-1-1-free?variant=67936337789082
+**URL:** https://dsdujr-vn.myshopify.com/products/bronoir-arctic-2-0-winter-barefoot-shoes-1-1-free?variant=67936337789082
 **Phần tử:** `<div>` (`div#BronoirProductContent > div.bronoir-product-content-container`)
 **XPath:** `/html/body/main/div[4]/div/div`
 **Kích thước:** `980px × 5567px`

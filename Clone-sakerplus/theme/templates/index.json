@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "hero": {
+      "type": "saker-homepage-hero",
+      "settings": {}
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Popular Best Sellers",
+        "products_to_show": 8
+      }
+    },
+    "trust_badges": {
+      "type": "saker-trust-badges",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "saker-reviews-widget",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "featured_collection",
+    "trust_badges",
+    "reviews"
+  ]
+}

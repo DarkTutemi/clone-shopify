@@ -1,0 +1,222 @@
+
+  /* Typography (heading) */
+  @font-face {
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("//navage.com/cdn/fonts/roboto_condensed/robotocondensed_n7.0c73a613503672be244d2f29ab6ddd3fc3cc69ae.woff2") format("woff2"),
+       url("//navage.com/cdn/fonts/roboto_condensed/robotocondensed_n7.ef6ece86ba55f49c27c4904a493c283a40f3a66e.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("//navage.com/cdn/fonts/roboto_condensed/robotocondensed_i7.bed9f3a01efda68cdff8b63e6195c957a0da68cb.woff2") format("woff2"),
+       url("//navage.com/cdn/fonts/roboto_condensed/robotocondensed_i7.9ca5759a0bcf75a82b270218eab4c83ec254abf8.woff") format("woff");
+}
+
+/* Typography (body) */
+  @font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("//navage.com/cdn/fonts/roboto/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2") format("woff2"),
+       url("//navage.com/cdn/fonts/roboto/roboto_n4.238690e0007583582327135619c5f7971652fa9d.woff") format("woff");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("//navage.com/cdn/fonts/roboto/roboto_i4.57ce898ccda22ee84f49e6b57ae302250655e2d4.woff2") format("woff2"),
+       url("//navage.com/cdn/fonts/roboto/roboto_i4.b21f3bd061cbcb83b824ae8c7671a82587b264bf.woff") format("woff");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("//navage.com/cdn/fonts/roboto/roboto_n6.3d305d5382545b48404c304160aadee38c90ef9d.woff2") format("woff2"),
+       url("//navage.com/cdn/fonts/roboto/roboto_n6.bb37be020157f87e181e5489d5e9137ad60c47a2.woff") format("woff");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+  src: url("//navage.com/cdn/fonts/roboto/roboto_i6.ebd6b6733fb2b030d60cbf61316511a7ffd82fb3.woff2") format("woff2"),
+       url("//navage.com/cdn/fonts/roboto/roboto_i6.1363905a6d5249605bc5e0f859663ffe95ac3bed.woff") format("woff");
+}
+
+:root {--heading-color: 7, 65, 116;
+    --text-color: 123, 123, 123;
+    --background: 245, 245, 247;
+    --secondary-background: 245, 245, 247;
+    --border-color: 227, 227, 228;
+    --border-color-darker: 196, 196, 197;
+    --success-color: 46, 158, 123;
+    --success-background: 205, 228, 222;
+    --error-color: 222, 42, 42;
+    --error-background: 243, 231, 233;
+    --primary-button-background: 151, 168, 227;
+    --primary-button-text-color: 7, 65, 116;
+    --secondary-button-background: 151, 168, 227;
+    --secondary-button-text-color: 7, 65, 116;
+    --product-star-rating: 151, 168, 227;
+    --product-on-sale-accent: 57, 191, 173;
+    --product-sold-out-accent: 111, 113, 155;
+    --product-custom-label-background: 64, 93, 230;
+    --product-custom-label-text-color: 255, 255, 255;
+    --product-custom-label-2-background: 243, 229, 182;
+    --product-custom-label-2-text-color: 0, 0, 0;
+    --product-low-stock-text-color: 169, 254, 255;
+    --product-in-stock-text-color: 46, 158, 123;
+    --loading-bar-background: 123, 123, 123;
+
+    /* We duplicate some "base" colors as root colors, which is useful to use on drawer elements or popover without. Those should not be overridden to avoid issues */
+    --root-heading-color: 7, 65, 116;
+    --root-text-color: 123, 123, 123;
+    --root-background: 245, 245, 247;
+    --root-border-color: 227, 227, 228;
+    --root-primary-button-background: 151, 168, 227;
+    --root-primary-button-text-color: 7, 65, 116;
+
+    --base-font-size: 16px;
+    --heading-font-family: "Roboto Condensed", sans-serif;
+    --heading-font-weight: 700;
+    --heading-font-style: normal;
+    --heading-text-transform: normal;
+    --text-font-family: Roboto, sans-serif;
+    --text-font-weight: 400;
+    --text-font-style: normal;
+    --text-font-bold-weight: 600;
+
+    /* Typography (font size) */
+    --heading-xxsmall-font-size: 11px;
+    --heading-xsmall-font-size: 11px;
+    --heading-small-font-size: 13px;
+    --heading-large-font-size: 40px;
+    --heading-h1-font-size: 40px;
+    --heading-h2-font-size: 32px;
+    --heading-h3-font-size: 28px;
+    --heading-h4-font-size: 26px;
+    --heading-h5-font-size: 22px;
+    --heading-h6-font-size: 18px;
+
+    /* Control the look and feel of the theme by changing radius of various elements */
+    --button-border-radius: 30px;
+    --block-border-radius: 0px;
+    --block-border-radius-reduced: 0px;
+    --color-swatch-border-radius: 0px;
+
+    /* Button size */
+    --button-height: 48px;
+    --button-small-height: 40px;
+
+    /* Form related */
+    --form-input-field-height: 48px;
+    --form-input-gap: 16px;
+    --form-submit-margin: 24px;
+
+    /* Product listing related variables */
+    --product-list-block-spacing: 32px;
+
+    /* Video related */
+    --play-button-background: 245, 245, 247;
+    --play-button-arrow: 123, 123, 123;
+
+    /* RTL support */
+    --transform-logical-flip: 1;
+    --transform-origin-start: left;
+    --transform-origin-end: right;
+
+    /* Other */
+    --zoom-cursor-svg-url: url(//navage.com/cdn/shop/t/58/assets/zoom-cursor.svg?v=166473025227162404691790361319);
+    --arrow-right-svg-url: url(//navage.com/cdn/shop/t/58/assets/arrow-right.svg?v=112404696764756378191790361319);
+    --arrow-left-svg-url: url(//navage.com/cdn/shop/t/58/assets/arrow-left.svg?v=40895015509820096801790361319);
+
+    /* Some useful variables that we can reuse in our CSS. Some explanation are needed for some of them:
+       - container-max-width-minus-gutters: represents the container max width without the edge gutters
+       - container-outer-width: considering the screen width, represent all the space outside the container
+       - container-outer-margin: same as container-outer-width but get set to 0 inside a container
+       - container-inner-width: the effective space inside the container (minus gutters)
+       - grid-column-width: represents the width of a single column of the grid
+       - vertical-breather: this is a variable that defines the global "spacing" between sections, and inside the section
+                            to create some "breath" and minimum spacing
+     */
+    --container-max-width: 1600px;
+    --container-gutter: 24px;
+    --container-max-width-minus-gutters: calc(var(--container-max-width) - (var(--container-gutter)) * 2);
+    --container-outer-width: max(calc((100vw - var(--container-max-width-minus-gutters)) / 2), var(--container-gutter));
+    --container-outer-margin: var(--container-outer-width);
+    --container-inner-width: calc(100vw - var(--container-outer-width) * 2);
+
+    --grid-column-count: 10;
+    --grid-gap: 24px;
+    --grid-column-width: calc((100vw - var(--container-outer-width) * 2 - var(--grid-gap) * (var(--grid-column-count) - 1)) / var(--grid-column-count));
+
+    --vertical-breather: 48px;
+    --vertical-breather-tight: 48px;
+
+    /* Shopify related variables */
+    --payment-terms-background-color: #f5f5f7;
+  }
+
+  @media screen and (min-width: 741px) {
+    :root {
+      --container-gutter: 40px;
+      --grid-column-count: 20;
+      --vertical-breather: 64px;
+      --vertical-breather-tight: 64px;
+
+      /* Typography (font size) */
+      --heading-xsmall-font-size: 13px;
+      --heading-small-font-size: 14px;
+      --heading-large-font-size: 58px;
+      --heading-h1-font-size: 58px;
+      --heading-h2-font-size: 44px;
+      --heading-h3-font-size: 36px;
+      --heading-h4-font-size: 28px;
+      --heading-h5-font-size: 22px;
+      --heading-h6-font-size: 20px;
+
+      /* Form related */
+      --form-input-field-height: 52px;
+      --form-submit-margin: 32px;
+
+      /* Button size */
+      --button-height: 52px;
+      --button-small-height: 44px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    :root {
+      --vertical-breather: 80px;
+      --vertical-breather-tight: 64px;
+      --product-list-block-spacing: 48px;
+
+      /* Typography */
+      --heading-large-font-size: 72px;
+      --heading-h1-font-size: 62px;
+      --heading-h2-font-size: 54px;
+      --heading-h3-font-size: 40px;
+      --heading-h4-font-size: 34px;
+      --heading-h5-font-size: 26px;
+      --heading-h6-font-size: 18px;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    :root {
+      --vertical-breather: 90px;
+      --vertical-breather-tight: 64px;
+    }
+  }

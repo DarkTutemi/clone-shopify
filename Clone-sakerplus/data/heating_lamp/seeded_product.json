@@ -1,0 +1,22 @@
+{
+  "productId": 15455757336761,
+  "handle": "sakerplus-livestock-heating-lamp",
+  "title": "Sakerplus® Livestock Heating Lamp",
+  "url": "https://tryzavelyn.com/products/sakerplus-livestock-heating-lamp",
+  "variants": [
+    {
+      "id": 67930179403961,
+      "title": "1 Pack",
+      "price": "49.99",
+      "compareAtPrice": "99.99",
+      "sku": "PT131318-1PACK"
+    },
+    {
+      "id": 67930179436729,
+      "title": "2 Pack",
+      "price": "89.99",
+      "compareAtPrice": "179.99",
+      "sku": "PT131318-2PACK"
+    }
+  ]
+}

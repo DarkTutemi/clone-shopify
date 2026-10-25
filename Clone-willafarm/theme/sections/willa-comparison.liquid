@@ -1,0 +1,171 @@
+<section class="willa-comparison-section">
+  <div class="willa-container">
+    <div class="willa-section-header">
+      <span class="willa-pill">{{ section.settings.pill_text | default: 'HEAD-TO-HEAD COMPARISON' }}</span>
+      <h2 class="willa-section-title willa-serif">{{ section.settings.heading | default: 'Why Zavelyn Outperforms the Rest' }}</h2>
+    </div>
+
+    <div class="willa-comp-table-wrap">
+      <table class="willa-comp-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-brand">{{ section.settings.brand_col_title | default: 'Zavelyn Original' }}</th>
+            <th class="col-other">{{ section.settings.competitor_col_title | default: 'Generic Alternatives' }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if section.blocks.size > 0 %}
+            {% for block in section.blocks %}
+              <tr {{ block.shopify_attributes }}>
+                <td><strong>{{ block.settings.title }}</strong></td>
+                <td class="col-brand"><span class="check-icon">✓</span> {{ block.settings.brand_val }}</td>
+                <td class="col-other"><span class="cross-icon">✗</span> {{ block.settings.competitor_val }}</td>
+              </tr>
+            {% endfor %}
+          {% else %}
+            <tr>
+              <td><strong>Safety Standards</strong></td>
+              <td class="col-brand"><span class="check-icon">✓</span> 100% Certified (Sealed &amp; tested)</td>
+              <td class="col-other"><span class="cross-icon">✗</span> High risk &amp; fragile parts</td>
+            </tr>
+            <tr>
+              <td><strong>Auto-Regulation Tech</strong></td>
+              <td class="col-brand"><span class="check-icon">✓</span> Smart Digital Microchips</td>
+              <td class="col-other"><span class="cross-icon">✗</span> Manual guesswork</td>
+            </tr>
+            <tr>
+              <td><strong>Build Durability</strong></td>
+              <td class="col-brand"><span class="check-icon">✓</span> Heavy-duty reinforced alloys</td>
+              <td class="col-other"><span class="cross-icon">✗</span> Cheap thin plastic</td>
+            </tr>
+            <tr>
+              <td><strong>Risk-Free Guarantee</strong></td>
+              <td class="col-brand"><span class="check-icon">✓</span> 90-Day Money-Back Trial</td>
+              <td class="col-other"><span class="cross-icon">✗</span> 14-day restrictive terms</td>
+            </tr>
+            <tr>
+              <td><strong>Customer Support</strong></td>
+              <td class="col-brand"><span class="check-icon">✓</span> Dedicated US support 7 days/wk</td>
+              <td class="col-other"><span class="cross-icon">✗</span> Automated bot replies</td>
+            </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .willa-comparison-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+    border-bottom: 1px solid #e7e4df;
+  }
+  .willa-comp-table-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e7e4df;
+    box-shadow: 0 8px 30px rgba(59, 43, 47, 0.05);
+  }
+  .willa-comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+  }
+  .willa-comp-table th, .willa-comp-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e7e4df;
+  }
+  .willa-comp-table th {
+    background-color: #faf7f4;
+    font-size: 15px;
+    font-weight: 800;
+    color: #231f20;
+  }
+  .willa-comp-table th.col-brand, .willa-comp-table td.col-brand {
+    background-color: #fffbf9;
+    color: #8a2c13;
+    font-weight: 700;
+  }
+  .check-icon {
+    color: #2e7d32;
+    font-weight: 900;
+    margin-right: 6px;
+  }
+  .cross-icon {
+    color: #c62828;
+    font-weight: 900;
+    margin-right: 6px;
+  }
+  @media (max-width: 640px) {
+    .willa-comp-table { font-size: 12px; }
+    .willa-comp-table th, .willa-comp-table td { padding: 12px 10px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Willa Comparison Table",
+  "settings": [
+    {
+      "type": "text",
+      "id": "pill_text",
+      "label": "Badge Pill Text",
+      "default": "HEAD-TO-HEAD COMPARISON"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Zavelyn Outperforms the Rest"
+    },
+    {
+      "type": "text",
+      "id": "brand_col_title",
+      "label": "Brand Column Title",
+      "default": "Zavelyn Original"
+    },
+    {
+      "type": "text",
+      "id": "competitor_col_title",
+      "label": "Competitor Column Title",
+      "default": "Generic Alternatives"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "comparison_row",
+      "name": "Comparison Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Name",
+          "default": "Safety Standards"
+        },
+        {
+          "type": "text",
+          "id": "brand_val",
+          "label": "Zavelyn Value",
+          "default": "100% Certified (Sealed & tested)"
+        },
+        {
+          "type": "text",
+          "id": "competitor_val",
+          "label": "Competitor Value",
+          "default": "High risk & fragile parts"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Willa Comparison Table"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,163 @@
+import fs from 'fs';
+
+const SHOP_DOMAIN = 'dsdujr-vn.myshopify.com';
+const THEME_ID = '186607567033';
+const CLIENT_ID = '172e9e29abd0fe12f671d8441479c7c2';
+const CLIENT_SECRET = process.env.SHOPIFY_API_SECRET || "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";
+
+async function getAccessToken() {
+  const res = await fetch(`https://${SHOP_DOMAIN}/admin/oauth/access_token`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      client_id: CLIENT_ID,
+      client_secret: CLIENT_SECRET,
+      grant_type: 'client_credentials'
+    })
+  });
+  const data = await res.json();
+  return data.access_token;
+}
+
+async function uploadThemeAsset(token, key, value) {
+  const url = `https://${SHOP_DOMAIN}/admin/api/2024-10/themes/${THEME_ID}/assets.json`;
+  const res = await fetch(url, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Shopify-Access-Token': token
+    },
+    body: JSON.stringify({
+      asset: { key, value }
+    })
+  });
+  if (res.ok) {
+    console.log(`  ✔ Uploaded theme asset: ${key}`);
+    return true;
+  } else {
+    const err = await res.text();
+    console.error(`  ✗ Failed to upload ${key}:`, err.slice(0, 200));
+    return false;
+  }
+}
+
+async function main() {
+  const token = await getAccessToken();
+
+  const trustSection = `
+{% comment %}
+  Sakerplus 1:1 Value Props & Trust Badges Section
+{% endcomment %}
+
+<div id="SectionId-{{ section.id }}" class="saker-trust-wrapper">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="trust-icon-box">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+      </div>
+      <div class="trust-text-box">
+        <h4 class="trust-title">Free Worldwide Shipping</h4>
+        <p class="trust-desc">Free delivery on all eligible orders over $79.99</p>
+      </div>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon-box">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      </div>
+      <div class="trust-text-box">
+        <h4 class="trust-title">30-Day Money Back</h4>
+        <p class="trust-desc">Hassle-free 30 days return and exchange guarantee</p>
+      </div>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon-box">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      </div>
+      <div class="trust-text-box">
+        <h4 class="trust-title">24/7 Priority Support</h4>
+        <p class="trust-desc">Dedicated DIY and tool experts always ready to assist</p>
+      </div>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon-box">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      </div>
+      <div class="trust-text-box">
+        <h4 class="trust-title">100% Secure Checkout</h4>
+        <p class="trust-desc">Encrypted SSL payment with Visa, MasterCard & PayPal</p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #SectionId-{{ section.id }} {
+      position: relative !important;
+      background: #ffffff !important;
+      padding: 36px 20px !important;
+      border-top: 1px solid #f3f4f6 !important;
+      border-bottom: 1px solid #f3f4f6 !important;
+    }
+
+    #SectionId-{{ section.id }} .trust-grid {
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+      gap: 24px !important;
+    }
+
+    #SectionId-{{ section.id }} .trust-item {
+      display: flex !important;
+      align-items: center !important;
+      gap: 16px !important;
+      padding: 12px !important;
+    }
+
+    #SectionId-{{ section.id }} .trust-icon-box {
+      width: 52px !important;
+      height: 52px !important;
+      border-radius: 12px !important;
+      background: #fff7ed !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    #SectionId-{{ section.id }} .trust-title {
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      color: #111827 !important;
+      margin: 0 0 4px !important;
+    }
+
+    #SectionId-{{ section.id }} .trust-desc {
+      font-size: 13px !important;
+      color: #6b7280 !important;
+      margin: 0 !important;
+      line-height: 1.4 !important;
+    }
+  </style>
+</div>
+
+{% schema %}
+{
+  "name": "Saker Trust Badges",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Saker Trust Badges"
+    }
+  ]
+}
+{% endschema %}
+`;
+
+  await uploadThemeAsset(token, 'sections/saker-trust-badges.liquid', trustSection);
+  console.log('✔ Uploaded sections/saker-trust-badges.liquid');
+}
+
+main();

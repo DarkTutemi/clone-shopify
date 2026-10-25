@@ -1,0 +1,72 @@
+{
+  "h1": "Best Sellers",
+  "subtitle": "Our most loved, battle-tested tools and repair essentials rated 4.9★ by thousands of homeowners and farmers.",
+  "cardContainers": [
+    {
+      "tag": "BODY",
+      "class": "template-collection",
+      "id": ""
+    },
+    {
+      "tag": "DIV",
+      "class": "willa-collection-page",
+      "id": ""
+    },
+    {
+      "tag": "DIV",
+      "class": "willa-collection-hero",
+      "id": ""
+    },
+    {
+      "tag": "H1",
+      "class": "willa-collection-title willa-serif",
+      "id": ""
+    },
+    {
+      "tag": "DIV",
+      "class": "willa-collection-desc",
+      "id": ""
+    },
+    {
+      "tag": "DIV",
+      "class": "willa-collection-filter-bar",
+      "id": ""
+    },
+    {
+      "tag": "DIV",
+      "class": "willa-container willa-collection-body",
+      "id": ""
+    },
+    {
+      "tag": "DIV",
+      "class": "willa-products-grid",
+      "id": ""
+    }
+  ],
+  "cardHtml": "<div class=\"willa-prod-card\">\n          <a href=\"/products/zavelyn-thermoglove-smart-thermostatic-heated-fingerless-gloves\" class=\"willa-prod-img-wrap\">\n            \n              <img src=\"//tryzavelyn.com/cdn/shop/files/zavelyn-thermoglove-black.jpg?v=1792936861&amp;width=600\" alt=\"Zavelyn ThermoGlove™ Smart Thermostatic Heated Fingerless Winter Gloves\" loading=\"lazy\">\n            \n\n            \n              <span class=\"willa-sale-tag\">🏷️ SAVE 50%</span>\n            \n          </a>\n\n          <div class=\"willa-prod-card-body\">\n            <h3 class=\"willa-prod-title\">\n              <a href=\"/products/zavelyn-thermoglove-smart-thermostatic-heated-fingerless-gloves\">Zavelyn ThermoGlove™ Smart Thermostatic Heated Fingerless Winter Gloves</a>\n            </h3>\n\n            <div class=\"willa-stars\"><span class=\"trustpilot-stars-wrap \" style=\"display:inline-flex;align-items:center;vertical-align:middle;line-height:0;\">\n  <svg class=\"trustpilot-stars-svg\" width=\"92\" height=\"17\" viewBox=\"0 0 104 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"5 stars on Trustpilot\">\n    <rect width=\"19.2\" height=\"19.2\" rx=\"2\" fill=\"#00B67A\"></rect>\n    <path d=\"M9.6 3L11.5 7.4L16.2 8.1L12.8 11.4L13.6 16.1L9.6 13.8L5.6 16.1L6.4 11.4L3 8.1L7.7 7.4L9.6 3Z\" fill=\"white\"></path>\n    <rect x=\"21.2\" width=\"19.2\" height=\"19.2\" rx=\"2\" fill=\"#00B67A\"></rect>\n    <path d=\"M30.8 3L32.7 7.4L37.4 8.1L34 11.4L34.8 16.1L30.8 13.8L26.8 16.1L27.6 11.4L24.2 8.1L28.9 7.4L30.8 3Z\" fill=\"whi",
+  "sampleCardsData": [
+    {
+      "classes": "willa-prod-card",
+      "title": "🏷️ SAVE 50%",
+      "titleTag": "<a href=\"/products/zavelyn-thermoglove-smart-thermostatic-heated-fingerless-gloves\" class=\"willa-prod-img-wrap\">\n            \n              <img src=\"//tryzavelyn.com/cdn/shop/files/zavelyn-thermoglove-black.jpg?v=1792936861&amp;width=600\" alt=\"Zavelyn ThermoGlove™ Smart Thermostatic Heated Fingerle",
+      "price": "$26.77",
+      "button": "<button type=\"button\" class=\"willa-quick-atc-btn\" onclick=\"willaQuickAddToCart('67980707037369', this)\">\n                Add to cart\n              </button>",
+      "img": "https://tryzavelyn.com/cdn/shop/files/zavelyn-thermoglove-black.jpg?v=1792936861&width=600"
+    },
+    {
+      "classes": "willa-prod-card-body",
+      "title": "Zavelyn ThermoGlove™ Smart Thermostatic Heated Fingerless Winter Gloves",
+      "titleTag": "<h3 class=\"willa-prod-title\">\n              <a href=\"/products/zavelyn-thermoglove-smart-thermostatic-heated-fingerless-gloves\">Zavelyn ThermoGlove™ Smart Thermostatic Heated Fingerless Winter Gloves</a>\n            </h3>",
+      "price": "$26.77",
+      "button": "<button type=\"button\" class=\"willa-quick-atc-btn\" onclick=\"willaQuickAddToCart('67980707037369', this)\">\n                Add to cart\n              </button>"
+    },
+    {
+      "classes": "willa-prod-card",
+      "title": "🏷️ SAVE 50%",
+      "titleTag": "<a href=\"/products/zavelyn-botanaroots-organic-batana-hair-growth-oil\" class=\"willa-prod-img-wrap\">\n            \n              <img src=\"//tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1792936448&amp;width=600\" alt=\"Zavelyn BotanaRoots™ 100% Organic Honduran Batana Hair Growth &amp; Sca",
+      "price": "$39.00",
+      "button": "<button type=\"button\" class=\"willa-quick-atc-btn\" onclick=\"willaQuickAddToCart('67980643598521', this)\">\n                Add to cart\n              </button>",
+      "img": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1792936448&width=600"
+    }
+  ]
+}
