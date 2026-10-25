@@ -43,3 +43,6 @@ scratch_colors/
 
 # Verification screenshots
 *.png
+
+# Push helpers
+push_to_github.bat
