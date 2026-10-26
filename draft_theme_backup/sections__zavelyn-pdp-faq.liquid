@@ -1,0 +1,49 @@
+{% schema %}
+{
+  "name": "Zavelyn Extended FAQ",
+  "settings": [],
+  "presets": [{ "name": "Zavelyn Extended FAQ" }]
+}
+{% endschema %}
+
+{%- include 'zavelyn-pdp-data' -%}
+
+{%- comment -%}
+  Extended Product FAQ: Only renders if explicit product-level extended FAQ items exist.
+  Buy Box FAQ already handles general checkout/shipping questions.
+{%- endcomment -%}
+{%- if zv_faq_count > 0 -%}
+<section class="zv-body-section zv-bg-white" id="zv-extended-faq">
+  <div class="zv-container">
+    <div class="zv-section-header">
+      <span class="zv-badge">GOT QUESTIONS?</span>
+      <h2 class="zv-section-title">Frequently Asked Questions</h2>
+      <p class="zv-section-subtitle">Everything you need to know about {{ product.title }}.</p>
+    </div>
+
+    <div class="zv-faq-accordion">
+      {%- for i in (0..4) -%}
+        {%- case i -%}
+          {%- when 0 -%}{%- assign fq_q = zv_faq_0_q -%}{%- assign fq_a = zv_faq_0_a -%}
+          {%- when 1 -%}{%- assign fq_q = zv_faq_1_q -%}{%- assign fq_a = zv_faq_1_a -%}
+          {%- when 2 -%}{%- assign fq_q = zv_faq_2_q -%}{%- assign fq_a = zv_faq_2_a -%}
+          {%- when 3 -%}{%- assign fq_q = zv_faq_3_q -%}{%- assign fq_a = zv_faq_3_a -%}
+          {%- when 4 -%}{%- assign fq_q = zv_faq_4_q -%}{%- assign fq_a = zv_faq_4_a -%}
+        {%- endcase -%}
+
+        {%- if fq_q != blank -%}
+        <div class="zv-faq-item">
+          <button type="button" class="zv-faq-question" onclick="this.parentElement.classList.toggle('active')">
+            <span>{{ fq_q }}</span>
+            <span class="zv-faq-icon">+</span>
+          </button>
+          <div class="zv-faq-answer">
+            <p>{{ fq_a }}</p>
+          </div>
+        </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}

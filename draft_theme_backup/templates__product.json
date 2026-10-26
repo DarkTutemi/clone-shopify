@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "main": {
+      "type": "zavelyn-pdp-main",
+      "settings": {
+        "eyebrow_text": "ZAVELYN INNOVATIONS · INDUSTRIAL GRADE",
+        "urgency_text": "High US Demand · Limited Units Remaining at Clearance Pricing",
+        "cta_text": "CLAIM OFFER",
+        "enable_sticky_atc": true
+      }
+    },
+    "ticker": {
+      "type": "zavelyn-pdp-ticker",
+      "settings": {}
+    },
+    "value_prop": {
+      "type": "zavelyn-pdp-value-prop",
+      "settings": {}
+    },
+    "features": {
+      "type": "zavelyn-pdp-features",
+      "settings": {}
+    },
+    "storytelling": {
+      "type": "zavelyn-pdp-storytelling",
+      "settings": {}
+    },
+    "steps": {
+      "type": "zavelyn-pdp-steps",
+      "settings": {}
+    },
+    "comparison": {
+      "type": "zavelyn-pdp-comparison",
+      "settings": {}
+    },
+    "specs": {
+      "type": "zavelyn-pdp-specs",
+      "settings": {}
+    },
+    "included": {
+      "type": "zavelyn-pdp-included",
+      "settings": {}
+    },
+    "faq": {
+      "type": "zavelyn-pdp-faq",
+      "settings": {}
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "ticker",
+    "value_prop",
+    "features",
+    "storytelling",
+    "steps",
+    "comparison",
+    "specs",
+    "included",
+    "faq",
+    "shipping"
+  ]
+}

@@ -1,0 +1,46 @@
+{% schema %}
+{
+  "name": "Zavelyn Specs",
+  "settings": [],
+  "presets": [{ "name": "Zavelyn Specs" }]
+}
+{% endschema %}
+
+{%- include 'zavelyn-pdp-data' -%}
+
+{%- if zv_sp_count > 0 -%}
+<section class="zv-body-section zv-bg-white" id="zv-specs">
+  <div class="zv-container">
+    <div class="zv-section-header">
+      <span class="zv-badge">TECHNICAL DATA</span>
+      <h2 class="zv-section-title">Product Specifications</h2>
+      <p class="zv-section-subtitle">Verified dimensions, materials, and engineering tolerances.</p>
+    </div>
+
+    <div class="zv-specs-card">
+      <div class="zv-specs-table">
+        {%- for i in (0..8) -%}
+          {%- case i -%}
+            {%- when 0 -%}{%- assign sp_l = zv_sp_0_label -%}{%- assign sp_v = zv_sp_0_val -%}
+            {%- when 1 -%}{%- assign sp_l = zv_sp_1_label -%}{%- assign sp_v = zv_sp_1_val -%}
+            {%- when 2 -%}{%- assign sp_l = zv_sp_2_label -%}{%- assign sp_v = zv_sp_2_val -%}
+            {%- when 3 -%}{%- assign sp_l = zv_sp_3_label -%}{%- assign sp_v = zv_sp_3_val -%}
+            {%- when 4 -%}{%- assign sp_l = zv_sp_4_label -%}{%- assign sp_v = zv_sp_4_val -%}
+            {%- when 5 -%}{%- assign sp_l = zv_sp_5_label -%}{%- assign sp_v = zv_sp_5_val -%}
+            {%- when 6 -%}{%- assign sp_l = zv_sp_6_label -%}{%- assign sp_v = zv_sp_6_val -%}
+            {%- when 7 -%}{%- assign sp_l = zv_sp_7_label -%}{%- assign sp_v = zv_sp_7_val -%}
+            {%- when 8 -%}{%- assign sp_l = zv_sp_8_label -%}{%- assign sp_v = zv_sp_8_val -%}
+          {%- endcase -%}
+
+          {%- if sp_l != blank and sp_v != blank -%}
+          <div class="zv-specs-row">
+            <div class="zv-specs-label">{{ sp_l }}</div>
+            <div class="zv-specs-value">{{ sp_v }}</div>
+          </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}

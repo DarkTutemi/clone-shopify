@@ -1,0 +1,47 @@
+{% schema %}
+{
+  "name": "Zavelyn Features",
+  "settings": [],
+  "presets": [{ "name": "Zavelyn Features" }]
+}
+{% endschema %}
+
+{%- include 'zavelyn-pdp-data' -%}
+
+{%- if zv_kf_count > 0 -%}
+<section class="zv-body-section zv-bg-white" id="zv-features">
+  <div class="zv-container">
+    <div class="zv-section-header">
+      <span class="zv-badge">CORE CAPABILITIES</span>
+      <h2 class="zv-section-title">Engineered Without Compromise</h2>
+      <p class="zv-section-subtitle">Every detail is designed to solve real problems with industrial durability and effortless usability.</p>
+    </div>
+
+    <div class="zv-features-grid">
+      {%- if zv_kf_0_title != blank -%}
+      <div class="zv-feature-card">
+        <div class="zv-feature-icon-box">{{ zv_kf_0_icon | default: '⚡' }}</div>
+        <h3>{{ zv_kf_0_title }}</h3>
+        <p>{{ zv_kf_0_desc }}</p>
+      </div>
+      {%- endif -%}
+
+      {%- if zv_kf_1_title != blank -%}
+      <div class="zv-feature-card">
+        <div class="zv-feature-icon-box">{{ zv_kf_1_icon | default: '🛡️' }}</div>
+        <h3>{{ zv_kf_1_title }}</h3>
+        <p>{{ zv_kf_1_desc }}</p>
+      </div>
+      {%- endif -%}
+
+      {%- if zv_kf_2_title != blank -%}
+      <div class="zv-feature-card">
+        <div class="zv-feature-icon-box">{{ zv_kf_2_icon | default: '🔧' }}</div>
+        <h3>{{ zv_kf_2_title }}</h3>
+        <p>{{ zv_kf_2_desc }}</p>
+      </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}

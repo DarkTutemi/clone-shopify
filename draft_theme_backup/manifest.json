@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-10-26T18:48:45.417Z",
+  "draft_theme_id": "187597717689",
+  "draft_theme_name": "[Draft] Zavelyn 2.0 (Elixir Redesign)",
+  "live_theme_id": "186607567033",
+  "live_theme_name": "Zavelyn",
+  "files": [
+    {
+      "key": "templates/product.json",
+      "exists": true,
+      "size": 1344,
+      "sha256": "e9ce858ae46fa293edb8e8930a0ea44a29d582225d2f2a64819db53da7a3b368",
+      "backupFile": "templates__product.json"
+    },
+    {
+      "key": "sections/zavelyn-pdp-main.liquid",
+      "exists": true,
+      "size": 46388,
+      "sha256": "f1795abee2402685ad4636ee52934028bb98ccc96b76a37028f0f3f168ccb58f",
+      "backupFile": "sections__zavelyn-pdp-main.liquid"
+    },
+    {
+      "key": "snippets/zavelyn-pdp-data.liquid",
+      "exists": true,
+      "size": 26191,
+      "sha256": "7345bc61e1f1f3dc0bd841beb0803ba446260e7b3372a64f0fec3eaa63c6e966",
+      "backupFile": "snippets__zavelyn-pdp-data.liquid"
+    },
+    {
+      "key": "sections/zavelyn-pdp-value-prop.liquid",
+      "exists": true,
+      "size": 1274,
+      "sha256": "a7f196862fef1eeabc163a7f2b5ffe80912a7e001ad7a628db3fac9687abc08a",
+      "backupFile": "sections__zavelyn-pdp-value-prop.liquid"
+    },
+    {
+      "key": "sections/zavelyn-pdp-features.liquid",
+      "exists": true,
+      "size": 1465,
+      "sha256": "f4bb6836d742d591f4cce984346e6d1ec52bbc21bb63fc9f535ea8b973697a95",
+      "backupFile": "sections__zavelyn-pdp-features.liquid"
+    },
+    {
+      "key": "sections/zavelyn-pdp-storytelling.liquid",
+      "exists": true,
+      "size": 2353,
+      "sha256": "81f400608b7a83bf4ccd5fa5a84477edb3200ef019189808f8012ca61adbe8b0",
+      "backupFile": "sections__zavelyn-pdp-storytelling.liquid"
+    },
+    {
+      "key": "sections/zavelyn-pdp-steps.liquid",
+      "exists": true,
+      "size": 1512,
+      "sha256": "9f953eb26c28c223d33887ebe1baffc2b405702d26aad1853c16ec6a93095b20",
+      "backupFile": "sections__zavelyn-pdp-steps.liquid"
+    },
+    {
+      "key": "sections/zavelyn-pdp-specs.liquid",
+      "exists": true,
+      "size": 1869,
+      "sha256": "ae82d82e1f031e6d2266106f8d379372723a6f1dd7d38b46f178a98a7f0a82c7",
+      "backupFile": "sections__zavelyn-pdp-specs.liquid"
+    },
+    {
+      "key": "sections/zavelyn-pdp-comparison.liquid",
+      "exists": true,
+      "size": 2608,
+      "sha256": "e580653cf4be1adf0b63eb99faecc90f0590eefc43be88dffb44b0b85cc59fa2",
+      "backupFile": "sections__zavelyn-pdp-comparison.liquid"
+    },
+    {
+      "key": "sections/zavelyn-pdp-included.liquid",
+      "exists": true,
+      "size": 1792,
+      "sha256": "4a87897abfaeefca4e0b71b506d987a66fbba6708857e90b0b463899f7f75171",
+      "backupFile": "sections__zavelyn-pdp-included.liquid"
+    },
+    {
+      "key": "sections/zavelyn-pdp-faq.liquid",
+      "exists": true,
+      "size": 1778,
+      "sha256": "917aca9569905c327fbb1ccfbe5c1037aabfac4475121a0be4a096e1d83fd0c8",
+      "backupFile": "sections__zavelyn-pdp-faq.liquid"
+    },
+    {
+      "key": "assets/zavelyn-pdp-body.css",
+      "exists": true,
+      "size": 12184,
+      "sha256": "ea63dff54319484b6c574670eed52171d37367418fe2afa568b56daeed5a279d",
+      "backupFile": "assets__zavelyn-pdp-body.css"
+    },
+    {
+      "key": "layout/theme.liquid",
+      "exists": true,
+      "size": 8565,
+      "sha256": "e75920f9b7bde8903b7616c62554b06bda1443dbb0780bd651857e4652bb54f9",
+      "backupFile": "layout__theme.liquid"
+    }
+  ]
+}

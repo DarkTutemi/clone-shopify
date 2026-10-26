@@ -1,0 +1,33 @@
+<!-- DEBUG HANDLE: {{ product.handle }} TITLE: {{ zv_vp_title }} -->{% schema %}
+{
+  "name": "Zavelyn Value Prop",
+  "settings": [],
+  "presets": [{ "name": "Zavelyn Value Prop" }]
+}
+{% endschema %}
+
+{%- include 'zavelyn-pdp-data' -%}
+
+{%- if zv_vp_title != blank -%}
+<section class="zv-body-section zv-bg-warm" id="zv-value-prop">
+  <div class="zv-container">
+    <div class="zv-value-prop-card">
+      <div class="zv-value-prop-content">
+        <span class="zv-badge zv-badge-lime">{{ zv_vp_badge | default: 'OFFICIAL INNOVATION' }}</span>
+        <h2>{{ zv_vp_title }}</h2>
+        <p>{{ zv_vp_sub }}</p>
+        <div class="zv-value-prop-highlights">
+          <div class="zv-vp-highlight-item"><span class="zv-vp-check">✓</span> Tested & Verified for US Standards</div>
+          <div class="zv-vp-highlight-item"><span class="zv-vp-check">✓</span> 60-Day Risk-Free Satisfaction Guarantee</div>
+          <div class="zv-vp-highlight-item"><span class="zv-vp-check">✓</span> Direct USA Express Fulfillment</div>
+        </div>
+      </div>
+      {%- if zv_vp_img != blank -%}
+      <div class="zv-value-prop-media">
+        <img src="{{ zv_vp_img }}" alt="{{ zv_vp_title }}" loading="lazy">
+      </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}

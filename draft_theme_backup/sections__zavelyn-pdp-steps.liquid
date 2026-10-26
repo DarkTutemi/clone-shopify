@@ -1,0 +1,42 @@
+{% schema %}
+{
+  "name": "Zavelyn How It Works",
+  "settings": [],
+  "presets": [{ "name": "Zavelyn How It Works" }]
+}
+{% endschema %}
+
+{%- include 'zavelyn-pdp-data' -%}
+
+{%- if zv_hw_count > 0 -%}
+<section class="zv-body-section zv-bg-white" id="zv-how-it-works">
+  <div class="zv-container">
+    <div class="zv-section-header">
+      <span class="zv-badge">SIMPLE OPERATION</span>
+      <h2 class="zv-section-title">{{ zv_hw_title | default: 'How It Works' }}</h2>
+      <p class="zv-section-subtitle">{{ zv_hw_sub | default: 'Intuitively designed for instant setup and effortless daily use.' }}</p>
+    </div>
+
+    <div class="zv-steps-grid">
+      {%- for i in (0..2) -%}
+        {%- case i -%}
+          {%- when 0 -%}
+            {%- assign hw_tag = zv_hw_0_tag -%}{%- assign hw_title = zv_hw_0_title -%}{%- assign hw_desc = zv_hw_0_desc -%}
+          {%- when 1 -%}
+            {%- assign hw_tag = zv_hw_1_tag -%}{%- assign hw_title = zv_hw_1_title -%}{%- assign hw_desc = zv_hw_1_desc -%}
+          {%- when 2 -%}
+            {%- assign hw_tag = zv_hw_2_tag -%}{%- assign hw_title = zv_hw_2_title -%}{%- assign hw_desc = zv_hw_2_desc -%}
+        {%- endcase -%}
+
+        {%- if hw_title != blank -%}
+        <div class="zv-step-card">
+          <span class="zv-step-tag">{{ hw_tag | default: 'STEP 0' | append: forloop.index }}</span>
+          <h4>{{ hw_title }}</h4>
+          <p>{{ hw_desc }}</p>
+        </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}

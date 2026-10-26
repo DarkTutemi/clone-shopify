@@ -1,0 +1,54 @@
+{% schema %}
+{
+  "name": "Zavelyn Comparison",
+  "settings": [],
+  "presets": [{ "name": "Zavelyn Comparison" }]
+}
+{% endschema %}
+
+{%- include 'zavelyn-pdp-data' -%}
+
+{%- if zv_cp_count > 0 -%}
+<section class="zv-body-section zv-bg-warm" id="zv-comparison">
+  <div class="zv-container">
+    <div class="zv-section-header">
+      <span class="zv-badge">THE ZAVELYN ADVANTAGE</span>
+      <h2 class="zv-section-title">{{ zv_cp_title | default: 'How We Compare' }}</h2>
+      <p class="zv-section-subtitle">{{ zv_cp_sub | default: 'See why thousands of customers choose Zavelyn over traditional alternatives.' }}</p>
+    </div>
+
+    <div class="zv-comp-table-wrap">
+      <table class="zv-comp-table">
+        <thead>
+          <tr>
+            <th style="width: 40%; background: #FFFFFF; color: #17433C;">Feature / Capability</th>
+            <th class="zv-target-col" style="width: 32%;">{{ zv_cp_target | default: 'Zavelyn' }}</th>
+            <th class="zv-comp-col" style="width: 28%;">{{ zv_cp_comp | default: 'Traditional Alternative' }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for i in (0..6) -%}
+            {%- case i -%}
+              {%- when 0 -%}{%- assign feat = zv_cp_0_feat -%}{%- assign tval = zv_cp_0_tval -%}{%- assign cval = zv_cp_0_cval -%}
+              {%- when 1 -%}{%- assign feat = zv_cp_1_feat -%}{%- assign tval = zv_cp_1_tval -%}{%- assign cval = zv_cp_1_cval -%}
+              {%- when 2 -%}{%- assign feat = zv_cp_2_feat -%}{%- assign tval = zv_cp_2_tval -%}{%- assign cval = zv_cp_2_cval -%}
+              {%- when 3 -%}{%- assign feat = zv_cp_3_feat -%}{%- assign tval = zv_cp_3_tval -%}{%- assign cval = zv_cp_3_cval -%}
+              {%- when 4 -%}{%- assign feat = zv_cp_4_feat -%}{%- assign tval = zv_cp_4_tval -%}{%- assign cval = zv_cp_4_cval -%}
+              {%- when 5 -%}{%- assign feat = zv_cp_5_feat -%}{%- assign tval = zv_cp_5_tval -%}{%- assign cval = zv_cp_5_cval -%}
+              {%- when 6 -%}{%- assign feat = zv_cp_6_feat -%}{%- assign tval = zv_cp_6_tval -%}{%- assign cval = zv_cp_6_cval -%}
+            {%- endcase -%}
+
+            {%- if feat != blank -%}
+            <tr>
+              <td style="font-weight: 600; color: #17433C;">{{ feat }}</td>
+              <td class="zv-target-cell"><span style="color: #17433C; margin-right: 6px;">✓</span> {{ tval }}</td>
+              <td class="zv-comp-cell"><span style="color: #94A3B8; margin-right: 6px;">✕</span> {{ cval }}</td>
+            </tr>
+            {%- endif -%}
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{%- endif -%}
