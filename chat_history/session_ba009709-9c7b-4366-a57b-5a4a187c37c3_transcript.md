@@ -3,8 +3,8 @@
 > **Dự án:** DarkTutemi/clone-shopify  
 > **Store:** dsdujr-vn.myshopify.com (Zavelyn)  
 > **Theme ID:** 186607567033  
-> **Ngày cập nhật:** 2026-10-26T16:06:01.365Z  
-> **Tổng số lượt tương tác (User Turns):** 89  
+> **Ngày cập nhật:** 2026-10-26T17:02:25.048Z  
+> **Tổng số lượt tương tác (User Turns):** 93  
 
 ---
 
@@ -99,6 +99,10 @@
 - [Turn 87 (2026-10-26T14:48:20Z)](#turn-87) - *"giờ web đang chạy ads rồi tao không muốn đụng vào nữa, tao muốn mày thiết kế the..."*
 - [Turn 88 (2026-10-26T14:57:34Z)](#turn-88) - *"2. Thông tin dự án Website chính: [https://tryzavelyn.com/](https://tryzavelyn.c..."*
 - [Turn 89 (2026-10-26T15:43:28Z)](#turn-89) - *"Tôi đồng ý triển khai theo kế hoạch đã thống nhất.  Hãy bắt đầu chỉnh sửa trên..."*
+- [Turn 90 (2026-10-26T16:17:38Z)](#turn-90) - *"DỰ ÁN NHÓM 2: UNIVERSAL PRODUCT PAGE SYSTEM CHO ZAVELYN A. Ngôn ngữ giao tiếp Bắ..."*
+- [Turn 91 (2026-10-26T16:24:02Z)](#turn-91) - *"làm tiếp..."*
+- [Turn 92 (2026-10-26T16:31:55Z)](#turn-92) - *"DỰ ÁN NHÓM 2: UNIVERSAL PRODUCT PAGE SYSTEM CHO ZAVELYN A. Ngôn ngữ giao tiếp Bắ..."*
+- [Turn 93 (2026-10-26T16:41:08Z)](#turn-93) - *"Tôi phê duyệt kế hoạch kiến trúc Universal Product Page System sau Giai đoạn 1, ..."*
 
 ---
 
@@ -3290,38 +3294,352 @@ Sau mỗi nhóm, hãy báo cáo bằng tiếng Việt:
 Không publish theme và không sửa website đang hoạt động. Nếu phát hiện cần thay đổi ngoài phạm vi đã duyệt, hãy hỏi tôi trước.
 ```
 
-#### 🛠️ Các công cụ đã thực thi (57):
-- `run_command` (21), `write_to_file` (10), `manage_task` (4), `list_dir` (1), `view_file` (15), `read_url_content` (1), `browser_subagent` (3), `grep_search` (1), `replace_file_content` (1)
+#### 🛠️ Các công cụ đã thực thi (58):
+- `run_command` (21), `write_to_file` (10), `manage_task` (5), `list_dir` (1), `view_file` (15), `read_url_content` (1), `browser_subagent` (3), `grep_search` (1), `replace_file_content` (1)
 
 #### 🤖 Assistant Response:
-Created At: 2026-10-26T22:57:59+07:00
-Completed At: 2026-10-26T22:57:59+07:00
-Task: ba009709-9c7b-4366-a57b-5a4a187c37c3/task-8473
+Created At: 2026-10-26T23:06:12+07:00
+Completed At: 2026-10-26T23:06:13+07:00
+Task: ba009709-9c7b-4366-a57b-5a4a187c37c3/task-8518
 Status: DONE
-Log: C:\Users\Admin\.gemini\antigravity-ide\brain\ba009709-9c7b-4366-a57b-5a4a187c37c3\.system_generated\tasks\task-8473.log
+Log: C:\Users\Admin\.gemini\antigravity-ide\brain\ba009709-9c7b-4366-a57b-5a4a187c37c3\.system_generated\tasks\task-8518.log
 Log output:
-<truncated 10 lines>
-lyn-pain-solution.liquid
-Uploading sections/zavelyn-categories.liquid to Draft Theme 187597717689...
-✔ Uploaded sections/zavelyn-categories.liquid
-Uploading sections/zavelyn-bestsellers.liquid to Draft Theme 187597717689...
-✔ Uploaded sections/zavelyn-bestsellers.liquid
-Uploading sections/zavelyn-comparison-elixir.liquid to Draft Theme 187597717689...
-✔ Uploaded sections/zavelyn-comparison-elixir.liquid
-Uploading sections/zavelyn-faq-elixir.liquid to Draft Theme 187597717689...
-✔ Uploaded sections/zavelyn-faq-elixir.liquid
-Uploading layout/theme.liquid to Draft Theme 187597717689...
-✔ Uploaded layout/theme.liquid
-Uploading templates/index.json to Draft Theme 187597717689...
-✔ Uploaded templates/index.json
+[Backup] Processing conversation: ba009709-9c7b-4366-a57b-5a4a187c37c3
+[Backup] Transcript path: C:\Users\Admin\.gemini\antigravity-ide\brain\ba009709-9c7b-4366-a57b-5a4a187c37c3\.system_generated\logs\transcript.jsonl
+[Backup] Sanitized Markdown generated: c:\Users\Admin\Desktop\CLONE SPF\chat_history\session_ba009709-9c7b-4366-a57b-5a4a187c37c3_transcript.md
+[Backup] Sanitized Raw JSONL copied: c:\Users\Admin\Desktop\CLONE SPF\chat_history\session_ba009709-9c7b-4366-a57b-5a4a187c37c3_full.jsonl
+[Backup] Git changes detected in chat_history. Committing and pushing...
+warning: in the working copy of 'chat_history/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'chat_history/session_ba009709-9c7b-4366-a57b-5a4a187c37c3_full.jsonl', LF will be replaced by CRLF the next time Git touches it
+To https://github.com/DarkTutemi/clone-shopify
+   431816b..972f487  main -> main
+[Backup] Successfully pushed sanitized chat backup to GitHub!
 
-======================================================
-🎉 HOMEPAGE MILESTONE SUCCESSFULLY DEPLOYED TO DRAFT!
-Draft Theme ID: 187597717689
-Preview Link: https://dsdujr-vn.myshopify.com/?preview_theme_id=187597717689
-======================================================
+Last progress: 5s ago
+
+
+---
+
+### Turn 90
+* **Thời gian:** `2026-10-26T16:17:38Z` | **Step Index:** `8523`
+
+#### 👤 User Request:
+```text
+DỰ ÁN NHÓM 2: UNIVERSAL PRODUCT PAGE SYSTEM CHO ZAVELYN
+A. Ngôn ngữ giao tiếp
+Bắt buộc trao đổi với tôi hoàn toàn bằng tiếng Việt trong tất cả các giai đoạn phân tích, lập kế hoạch, viết code, báo cáo lỗi và hướng dẫn kiểm tra.
+Các thuật ngữ kỹ thuật, tên file, Shopify Liquid, API, CSS class và tên biến có thể giữ nguyên bằng tiếng Anh.
+Tất cả nội dung hiển thị với khách hàng trên website Mỹ phải sử dụng tiếng Anh tự nhiên, chuyên nghiệp.
+B. Mục tiêu
+Website: [https://tryzavelyn.com/](https://tryzavelyn.com/)
+Draft Theme: [Draft] Zavelyn 2.0 (Elixir Redesign)
+Theme ID: 187597717689
+Live Theme ID: 186607567033
+Tôi đã cung cấp ảnh chụp so sánh Product Detail Page của Zavelyn và Kitty Collective.
+Hãy sử dụng ảnh tham khảo để hiểu chính xác thứ tự nội dung, bố cục khu vực mua hàng, bundle offer, trust badges, payment icons và cách trình bày nội dung của Kitty Collective.
+Mục tiêu là chuẩn hóa TOÀN BỘ trang chi tiết sản phẩm trên Zavelyn theo một hệ thống thiết kế thống nhất, lấy cảm hứng từ cấu trúc chuyển đổi của Kitty Collective nhưng giữ nhận diện thương hiệu Zavelyn.
+Không sao chép nguyên văn nội dung, hình ảnh, thương hiệu hoặc mã nguồn của website tham khảo.
+C. Nguyên tắc bảo vệ website
+Chỉ chỉnh sửa Draft Theme ID 187597717689.
+Không chỉnh sửa Live Theme ID 186607567033.
+Không publish theme.
+Không thay đổi sản phẩm, giá, tồn kho, đơn hàng, thanh toán, domain hoặc dữ liệu khách hàng.
+Không cài app mới hoặc phát sinh chi phí khi chưa được tôi đồng ý.
+Không xóa hoặc vô hiệu hóa chức năng đang hoạt động mà chưa phân tích tác động.
+Trước khi chỉnh sửa, kiểm tra trạng thái code hiện tại và tạo phương án rollback.
+Không tuyên bố đã kiểm thử nế
+<truncated 10760 bytes>
+hất hai sản phẩm khác loại để kiểm tra khả năng tái sử dụng template.
+Bước 4: Chỉ sau khi tôi duyệt kết quả, mới mở rộng và xử lý các template đặc biệt.
+H. Giai đoạn 5: QA và nghiệm thu
+Kiểm tra:
+Tên, ảnh, giá và compare-at price.
+Variant selection.
+Bundle selection.
+Add to Cart.
+Buy Now.
+Cart drawer và cart page.
+Payment icons.
+FAQ accordion.
+Ticker.
+Mobile sticky Add to Cart nếu được triển khai.
+Customer reviews.
+Nội dung giao hàng và chính sách.
+Desktop, mobile và các kích thước màn hình trung gian.
+Console errors, Liquid errors và các vấn đề responsive.
+Tương thích với chức năng của theme gốc.
+Không thực hiện đơn hàng thật hoặc thanh toán thật.
+Phân biệt rõ PASS, FAIL và NEEDS VERIFICATION. Không tuyên bố đã kiểm tra thành công các luồng mà môi trường hiện tại không cho phép kiểm thử.
+I. Điều kiện kết thúc
+Sau khi hoàn thành PDP mẫu, hãy báo cáo bằng tiếng Việt:
+Những file đã thay đổi.
+Những chức năng đã hoàn thành.
+Các lỗi còn tồn tại.
+Các dữ liệu hoặc chính sách cần tôi xác nhận.
+Những phần cần kiểm tra thủ công trong Shopify Preview.
+Cách kiểm tra PDP của các sản phẩm khác.
+Các rủi ro khi áp dụng template cho toàn bộ catalog.
+Không publish theme. Không chỉnh sửa Live Theme. Chờ tôi duyệt PDP mẫu trước khi triển khai trên diện rộng.
+Bắt đầu bằng Giai đoạn 1: audit cấu trúc hiện tại và đề xuất kiến trúc. Chưa chỉnh sửa code cho đến khi tôi duyệt kế hoạch.
+```
+
+#### 🛠️ Các công cụ đã thực thi (11):
+- `write_to_file` (2), `run_command` (2), `manage_task` (1), `view_file` (6)
+
+#### 🤖 Assistant Response:
+Created At: 2026-10-26T23:18:43+07:00
+Completed At: 2026-10-26T23:18:43+07:00
+Task: ba009709-9c7b-4366-a57b-5a4a187c37c3/task-8527
+Status: DONE
+Log: C:\Users\Admin\.gemini\antigravity-ide\brain\ba009709-9c7b-4366-a57b-5a4a187c37c3\.system_generated\tasks\task-8527.log
+Log output:
+<truncated 237 lines>
+Removal Kit',
+  handle: 'sakerplus®-universal-diesel-injector-removal-kit-clearance-sale',
+  template_suffix: null,
+  variantsCount: 1,
+  variants: [
+    {
+      id: 67914452992185,
+      title: 'Default Title',
+      price: '72.99',
+      compare_at_price: '145.99',
+      available: undefined
+    }
+  ],
+  options: [
+    {
+      id: 17929109143737,
+      product_id: 15454952620217,
+      name: 'Title',
+      position: 1,
+      values: [Array]
+    }
+  ]
+}
+Metafields for Diesel Injector (0): []
+
+--- 4. CHECKING SHOP SETTINGS & PAYMENT GATEWAYS ---
+Shop details: {
+  name: 'Zavelyn',
+  domain: 'tryzavelyn.com',
+  currency: 'USD',
+  enabled_presentment_currencies: [ 'USD' ]
+}
+Theme info: {
+  id: 187597717689,
+  name: '[Draft] Zavelyn 2.0 (Elixir Redesign)',
+  created_at: '2026-10-26T09:48:50-06:00',
+  updated_at: '2026-10-26T10:03:16-06:00',
+  role: 'unpublished',
+  theme_store_id: null,
+  previewable: true,
+  processing: false,
+  admin_graphql_api_id: 'gid://shopify/Theme/187597717689'
+}
 
 Last progress: 1s ago
+
+
+---
+
+### Turn 91
+* **Thời gian:** `2026-10-26T16:24:02Z` | **Step Index:** `8549`
+
+#### 👤 User Request:
+```text
+làm tiếp
+```
+
+#### 🛠️ Các công cụ đã thực thi (13):
+- `view_file` (7), `write_to_file` (3), `run_command` (3)
+
+---
+
+### Turn 92
+* **Thời gian:** `2026-10-26T16:31:55Z` | **Step Index:** `8523`
+
+#### 👤 User Request:
+```text
+DỰ ÁN NHÓM 2: UNIVERSAL PRODUCT PAGE SYSTEM CHO ZAVELYN
+A. Ngôn ngữ giao tiếp
+Bắt buộc trao đổi với tôi hoàn toàn bằng tiếng Việt trong tất cả các giai đoạn phân tích, lập kế hoạch, viết code, báo cáo lỗi và hướng dẫn kiểm tra.
+Các thuật ngữ kỹ thuật, tên file, Shopify Liquid, API, CSS class và tên biến có thể giữ nguyên bằng tiếng Anh.
+Tất cả nội dung hiển thị với khách hàng trên website Mỹ phải sử dụng tiếng Anh tự nhiên, chuyên nghiệp.
+B. Mục tiêu
+Website: [https://tryzavelyn.com/](https://tryzavelyn.com/)
+Draft Theme: [Draft] Zavelyn 2.0 (Elixir Redesign)
+Theme ID: 187597717689
+Live Theme ID: 186607567033
+Tôi đã cung cấp ảnh chụp so sánh Product Detail Page của Zavelyn và Kitty Collective.
+Hãy sử dụng ảnh tham khảo để hiểu chính xác thứ tự nội dung, bố cục khu vực mua hàng, bundle offer, trust badges, payment icons và cách trình bày nội dung của Kitty Collective.
+Mục tiêu là chuẩn hóa TOÀN BỘ trang chi tiết sản phẩm trên Zavelyn theo một hệ thống thiết kế thống nhất, lấy cảm hứng từ cấu trúc chuyển đổi của Kitty Collective nhưng giữ nhận diện thương hiệu Zavelyn.
+Không sao chép nguyên văn nội dung, hình ảnh, thương hiệu hoặc mã nguồn của website tham khảo.
+C. Nguyên tắc bảo vệ website
+Chỉ chỉnh sửa Draft Theme ID 187597717689.
+Không chỉnh sửa Live Theme ID 186607567033.
+Không publish theme.
+Không thay đổi sản phẩm, giá, tồn kho, đơn hàng, thanh toán, domain hoặc dữ liệu khách hàng.
+Không cài app mới hoặc phát sinh chi phí khi chưa được tôi đồng ý.
+Không xóa hoặc vô hiệu hóa chức năng đang hoạt động mà chưa phân tích tác động.
+Trước khi chỉnh sửa, kiểm tra trạng thái code hiện tại và tạo phương án rollback.
+Không tuyên bố đã kiểm thử nế
+<truncated 10760 bytes>
+hất hai sản phẩm khác loại để kiểm tra khả năng tái sử dụng template.
+Bước 4: Chỉ sau khi tôi duyệt kết quả, mới mở rộng và xử lý các template đặc biệt.
+H. Giai đoạn 5: QA và nghiệm thu
+Kiểm tra:
+Tên, ảnh, giá và compare-at price.
+Variant selection.
+Bundle selection.
+Add to Cart.
+Buy Now.
+Cart drawer và cart page.
+Payment icons.
+FAQ accordion.
+Ticker.
+Mobile sticky Add to Cart nếu được triển khai.
+Customer reviews.
+Nội dung giao hàng và chính sách.
+Desktop, mobile và các kích thước màn hình trung gian.
+Console errors, Liquid errors và các vấn đề responsive.
+Tương thích với chức năng của theme gốc.
+Không thực hiện đơn hàng thật hoặc thanh toán thật.
+Phân biệt rõ PASS, FAIL và NEEDS VERIFICATION. Không tuyên bố đã kiểm tra thành công các luồng mà môi trường hiện tại không cho phép kiểm thử.
+I. Điều kiện kết thúc
+Sau khi hoàn thành PDP mẫu, hãy báo cáo bằng tiếng Việt:
+Những file đã thay đổi.
+Những chức năng đã hoàn thành.
+Các lỗi còn tồn tại.
+Các dữ liệu hoặc chính sách cần tôi xác nhận.
+Những phần cần kiểm tra thủ công trong Shopify Preview.
+Cách kiểm tra PDP của các sản phẩm khác.
+Các rủi ro khi áp dụng template cho toàn bộ catalog.
+Không publish theme. Không chỉnh sửa Live Theme. Chờ tôi duyệt PDP mẫu trước khi triển khai trên diện rộng.
+Bắt đầu bằng Giai đoạn 1: audit cấu trúc hiện tại và đề xuất kiến trúc. Chưa chỉnh sửa code cho đến khi tôi duyệt kế hoạch.
+```
+
+#### 🛠️ Các công cụ đã thực thi (22):
+- `write_to_file` (6), `run_command` (6), `manage_task` (3), `view_file` (6), `grep_search` (1)
+
+#### 🤖 Assistant Response:
+Created At: 2026-10-26T23:34:40+07:00
+Completed At: 2026-10-26T23:34:41+07:00
+Task: ba009709-9c7b-4366-a57b-5a4a187c37c3/task-8551
+Status: DONE
+Log: C:\Users\Admin\.gemini\antigravity-ide\brain\ba009709-9c7b-4366-a57b-5a4a187c37c3\.system_generated\tasks\task-8551.log
+Log output:
+<truncated 35 lines>
+gineered Without Compromise' }}</h2>
+      <p class="willa-section-subtitle">{{ section.sett
+
+=== sections/willa-steps.liquid (3972 bytes) ===
+<section class="willa-steps-section">
+  <div class="willa-container">
+    <div class="willa-section-header">
+      <span class="willa-pill">{{ section.settings.pill_text | default: 'HOW IT WORKS' }}</span>
+      <h2 class="willa-section-title willa-serif">{{ section.settings.heading | default: 'Simplicity in 3 Easy Steps' }}</h2>
+      <p class="willa-section-subtitle">{{ section.settings.subtitle
+
+=== snippets/trustpilot-stars.liquid (1396 bytes) ===
+{%- assign tp_w = width | default: 96 -%}
+{%- assign tp_h = height | default: 18 -%}
+<span class="trustpilot-stars-wrap {{ class }}" style="display:inline-flex;align-items:center;vertical-align:middle;line-height:0;">
+  <svg class="trustpilot-stars-svg" width="{{ tp_w }}" height="{{ tp_h }}" viewBox="0 0 104 20" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="5 stars on Trust
+
+Last progress: 4s ago
+
+
+---
+
+### Turn 93
+* **Thời gian:** `2026-10-26T16:41:08Z` | **Step Index:** `8572`
+
+#### 👤 User Request:
+```text
+Tôi phê duyệt kế hoạch kiến trúc Universal Product Page System sau Giai đoạn 1, với các quyết định và điều kiện sau.
+
+### 1. Các quyết định đã chốt
+
+- Chính sách hoàn tiền mặc định: 60-Day Money-Back Guarantee, với điều kiện phải khớp chính sách thực tế của cửa hàng.
+- Rating trong Buy Box: tạm thời ẩn cho đến khi có nguồn đánh giá xác thực. Không hiển thị điểm 4.9/5, số lượng review hoặc logo Trustpilot giả lập.
+- Sản phẩm mẫu đầu tiên: Diesel Injector Removal Kit.
+- Phạm vi: chỉ áp dụng cho Draft Theme ID 187597717689.
+
+### 2. Bắt đầu triển khai
+
+Thực hiện các bước:
+1. Tạo các section và snippet mới với tiền tố zavelyn-pdp-*.
+2. Bổ sung CSS chuyên biệt cho PDP, tái sử dụng design system Elixir khi phù hợp.
+3. Tạo Universal Product Page cho templates/product.json trên Draft.
+4. Kiểm tra sản phẩm Diesel Injector Removal Kit trước khi mở rộng sang sản phẩm khác.
+
+### 3. Yêu cầu bắt buộc
+
+- Không chỉnh sửa Live Theme ID 186607567033.
+- Không publish theme.
+- Không tự thay đổi dữ liệu sản phẩm, giá, tồn kho, chính sách hoặc cài đặt Shopify.
+- Không tự nhân giá để tạo compare-at price hoặc discount giả.
+- Gallery phải lấy media thực tế từ sản phẩm Shopify.
+- Payment icons phải lấy từ shop.enabled_payment_types.
+- Không hard-code nội dung dành riêng cho một sản phẩm vào template dùng chung.
+
+Đối với sản phẩm có Bundle và Color trong các Shopify variants, hãy bảo đảm lựa chọn bundle, màu sắc, giá, tồn kho, variant ID, Add to Cart và Buy Now đồng bộ chính xác. Không giả lập bundle chỉ bằng giao diện.
+
+Đối với sản phẩm single-variant, sử dụng product form và quantity selector thông thường nếu không có bundle được cấu hình.
+
+Trước khi sửa templates/product.json, hãy kiểm tra cách backup và rollback, xác nhận đúng Draft Theme ID và giữ nguyên các template tùy biến riêng của 14 sản phẩm ngoài phạm vi.
+
+### 4. Nghiệm thu
+
+Sau khi hoàn thiện Diesel Injector Removal Kit, hãy kiểm tra:
+- Desktop và mobile.
+- Gallery và thumbnail.
+- Giá, compare-at price và phần trăm tiết kiệm.
+- Add to Cart và cart drawer.
+- Buy Now và tính chính xác của variant/số lượng.
+- Payment icons.
+- Accordion, ticker và sticky Add to Cart.
+- Các nội dung giao hàng, hoàn tiền và bảo hành.
+- Lỗi Liquid, JavaScript, CSS và responsive.
+
+Phân biệt rõ chức năng đã kiểm thử thực tế với chức năng chưa xác minh được. Không thực hiện thanh toán thật.
+
+Sau đó gửi báo cáo nghiệm thu bằng tiếng Việt kèm link Preview và chờ tôi duyệt trước khi mở rộng sang ThermoGlove hoặc các sản phẩm khác.
+
+Bắt đầu triển khai trên Draft, không publish và không thay đổi Live Theme.
+```
+
+#### 🛠️ Các công cụ đã thực thi (56):
+- `write_to_file` (3), `run_command` (10), `view_file` (25), `replace_file_content` (8), `grep_search` (3), `browser_subagent` (6), `manage_task` (1)
+
+#### 🤖 Assistant Response:
+Created At: 2026-10-26T23:59:39+07:00
+Completed At: 2026-10-26T23:59:40+07:00
+Task: ba009709-9c7b-4366-a57b-5a4a187c37c3/task-8674
+Status: DONE
+Log: C:\Users\Admin\.gemini\antigravity-ide\brain\ba009709-9c7b-4366-a57b-5a4a187c37c3\.system_generated\tasks\task-8674.log
+Log output:
+<truncated 6 lines>
+oaded sections/zavelyn-pdp-ticker.liquid
+Uploading sections/zavelyn-pdp-storytelling.liquid to Draft Theme 187597717689...
+✔ Uploaded sections/zavelyn-pdp-storytelling.liquid
+Uploading sections/zavelyn-pdp-comparison.liquid to Draft Theme 187597717689...
+✔ Uploaded sections/zavelyn-pdp-comparison.liquid
+Uploading sections/zavelyn-pdp-shipping.liquid to Draft Theme 187597717689...
+✔ Uploaded sections/zavelyn-pdp-shipping.liquid
+Uploading sections/zavelyn-pdp-faq.liquid to Draft Theme 187597717689...
+✔ Uploaded sections/zavelyn-pdp-faq.liquid
+Uploading templates/product.json to Draft Theme 187597717689...
+✔ Uploaded templates/product.json
+
+======================================================
+🎉 UNIVERSAL PRODUCT PAGE SYSTEM DEPLOYED TO DRAFT!
+Draft Theme ID: 187597717689
+Test PDP Link: https://dsdujr-vn.myshopify.com/products/sakerplus®-universal-diesel-injector-removal-kit-clearance-sale?preview_theme_id=187597717689
+======================================================
+
+Last progress: 6s ago
 
 
 ---
