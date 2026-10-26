@@ -1,0 +1,238 @@
+{
+  "wrapper": "div#shopify-section-zavelyn-handpan-master",
+  "sections": {
+    "hero": {
+      "type": "zhp-pdp-hero",
+      "settings": {
+        "main_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_1.jpg?v=1792907902",
+        "badge_sale": "50% OFF FLASH SALE",
+        "title": "Zavelyn Handpan™ Master (12-Tone 432Hz D-Minor Kurd)",
+        "short_name": "Zavelyn Handpan™ Master",
+        "subtitle": "Concert 22-Inch Handcrafted Nitrided Steel • D-Minor Kurd Scale (12 Notes) • 432 Hz Healing Frequency • Includes Tripod Stand & Heavy-Duty Travel Backpack",
+        "price": "599.00",
+        "compare_at": "1199.00",
+        "rating_score": "4.9 \/ 5.0",
+        "rating_count": "840+ Concert Artists & Practitioners",
+        "promo_text": "<strong>SPECIAL OFFER:<\/strong> 50% OFF applied automatically. Includes Free Foldable Tripod Stand, Heavy-Duty Travel Backpack, Mallets & Braided Edge Wrap!",
+        "tier1_desc": "22-Inch 12-Tone Handpan + Tripod Stand + Padded Backpack + Mallets + Braided Rope",
+        "thumb_1_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_1.jpg?v=1792907902",
+        "thumb_2_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_2.jpg?v=1792907902",
+        "thumb_3_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_4.jpg?v=1792907902",
+        "thumb_4_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_3.png?v=1792907902",
+        "thumb_5_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_5.jpg?v=1792907902",
+        "thumb_6_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_6.jpg?v=1792907902",
+        "guarantee_1": "90-Day Sound",
+        "guarantee_2": "Fast Tracked US",
+        "guarantee_3": "432 Hz Calibrated"
+      }
+    },
+    "banner": {
+      "type": "zhp-pdp-banner",
+      "settings": {
+        "banner_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_4.jpg?v=1792907902",
+        "badge_text": "NATURAL RESONANCE",
+        "heading": "Tuned to 432 Hz: The Frequency of Natural Healing",
+        "text": "",
+        "point_1": "Expansive D-Minor Kurd harmonic scale that melts daily anxiety within 5 minutes",
+        "point_2": "Nitrided steel acoustic chamber providing warm, crystal cathedral sustain",
+        "point_3": "Loved by professional sound therapists, yoga studios, and concert performers worldwide"
+      }
+    },
+    "experience": {
+      "type": "zhp-pdp-experience",
+      "settings": {
+        "feature_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_2.jpg?v=1792907902",
+        "pill_text": "CONCERT MASTER",
+        "title": "12 Acoustic Tone Fields: Infinite Melodic Expression",
+        "description": ""
+      }
+    },
+    "included": {
+      "type": "zhp-pdp-included",
+      "settings": {
+        "included_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_6.jpg?v=1792907902",
+        "pill_text": "COMPLETE MASTER KIT",
+        "title": "Everything You Need for Studio & Stage Performance",
+        "description": ""
+      }
+    },
+    "specs": {
+      "type": "zhp-pdp-specs",
+      "settings": {
+        "title": "Technical Specifications",
+        "spec_diameter": "22 Inches (55 cm) Concert Large",
+        "spec_material": "Hand-Hammered Nitrided Carbon-Titanium Steel",
+        "spec_tuning": "D-Minor Kurd (12 Tone Fields: D3 \/ A3, Bb3, C4, D4, E4, F4, G4, A4, C5, D5, E5)",
+        "spec_frequency": "432 Hz Pure Natural Biological Resonance",
+        "spec_tones": "12 Acoustic Tone Fields (Ding + 11 Dimples)",
+        "spec_weight": "9.2 lbs (4.2 kg) Concert Stage Stability",
+        "spec_finish": "High-Temperature Nitrogen Hardened Antique Bronze Coating"
+      }
+    },
+    "shipping": {
+      "type": "zhp-pdp-shipping",
+      "settings": {
+        "title": "Fast US Delivery & Tracked Shipping"
+      }
+    },
+    "reviews": {
+      "type": "zhp-pdp-reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review",
+          "settings": {
+            "author": "Julian Vane",
+            "title": "Pure cathedral acoustics — this is an authentic master instrument",
+            "text": "I have played high-end European pantams for over a decade. The sustain, dynamic touch sensitivity, and warm harmonic blooming of this 22-inch D-Kurd are utterly world-class.",
+            "meta": "Zavelyn Handpan™ Master (432Hz 12 Notes) • Vienna, Austria"
+          }
+        },
+        "rev_2": {
+          "type": "review",
+          "settings": {
+            "author": "Dr. Maya Lin",
+            "title": "The centerpiece of my sound bath therapy center",
+            "text": "Clients frequently tear up during sessions. The 432 Hz frequency resonates deeply into the solar plexus. The included aluminum tripod stand is sturdy and positions the drum perfectly.",
+            "meta": "Zavelyn Handpan™ Master (432Hz 12 Notes) • San Diego, CA"
+          }
+        },
+        "rev_3": {
+          "type": "review",
+          "settings": {
+            "author": "David Sterling",
+            "title": "Worth every single penny and more",
+            "text": "50% off for a genuine 22-inch 12-tone nitrided steel handpan is unbelievable value. Tested with a strobe acoustic tuner — every single dimple and octave harmonic is calibrated to 432 Hz spot on.",
+            "meta": "Zavelyn Handpan™ Master (432Hz 12 Notes) • Boulder, CO"
+          }
+        },
+        "rev_4": {
+          "type": "review",
+          "settings": {
+            "author": "Seraphina Moon",
+            "title": "Hypnotic soundscapes that stop time",
+            "text": "Playing with bare hands is pure joy. The central Ding produces a thunderous bass note, and the 11 outer tone fields allow for soaring ambient journeys. Arrived in a heavy-duty reinforced travel bag.",
+            "meta": "Zavelyn Handpan™ Master (432Hz 12 Notes) • Sedona, AZ"
+          }
+        },
+        "rev_5": {
+          "type": "review",
+          "settings": {
+            "author": "Marcus Thorne",
+            "title": "Outstanding craftsmanship and protective braided rope",
+            "text": "The nitrogen-hardened steel finish has an antique bronze iridescence that looks like fine museum art. The braided rope wrap gives it a rugged, artisanal touch.",
+            "meta": "Zavelyn Handpan™ Master (432Hz 12 Notes) • Seattle, WA"
+          }
+        },
+        "rev_6": {
+          "type": "review",
+          "settings": {
+            "author": "Elena Rostova",
+            "title": "Complete package made starting seamless",
+            "text": "Having the tripod stand, travel backpack, mallets, and care cloth all included in the box is fantastic. No need to hunt for accessories.",
+            "meta": "Zavelyn Handpan™ Master (432Hz 12 Notes) • Chicago, IL"
+          }
+        },
+        "rev_7": {
+          "type": "review",
+          "settings": {
+            "author": "Gabriel Santos",
+            "title": "Deep resonance that calms my busy mind",
+            "text": "After intense corporate work days, sitting at this handpan for 15 minutes completely resets my nervous system. Best acoustic purchase I've ever made.",
+            "meta": "Zavelyn Handpan™ Master (432Hz 12 Notes) • Austin, TX"
+          }
+        },
+        "rev_8": {
+          "type": "review",
+          "settings": {
+            "author": "Rachel Hoffman",
+            "title": "Fast delivery & bulletproof packaging",
+            "text": "Delivered within 3 days in thick molded foam. Zero scratches, tuned to absolute perfection out of the box.",
+            "meta": "Zavelyn Handpan™ Master (432Hz 12 Notes) • Nashville, TN"
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3",
+        "rev_4",
+        "rev_5",
+        "rev_6",
+        "rev_7",
+        "rev_8"
+      ],
+      "settings": {
+        "title": "Acclaimed by Master Sound Practitioners",
+        "rating_summary": "840+ Verified Concert & Studio Reviews"
+      }
+    },
+    "faq": {
+      "type": "zhp-pdp-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between a Steel Tongue Drum and a true Handpan?",
+            "answer": "While tongue drums use laser-cut steel tongues, a true Handpan (Pantam) features hand-hammered resonant dimple tone fields shaped over an acoustic hemisphere. The Zavelyn Handpan™ Master offers a larger 22-inch acoustic volume, deeper cathedral sustain, and an expansive dynamic range played predominantly with hand touches."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What scale is this Handpan tuned to?",
+            "answer": "The Zavelyn Handpan™ Master is tuned in the world-renowned D-Minor Kurd scale across 12 tone fields: Central Ding (D3) surrounded by A3, Bb3, C4, D4, E4, F4, G4, A4, C5, D5, E5. This scale is celebrated globally for its deeply emotional, hypnotic, and meditative tonal quality."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Why is 432 Hz tuning superior for relaxation?",
+            "answer": "Standard commercial instruments are tuned to 440 Hz, which can induce subtle acoustic tension. 432 Hz is mathematically aligned with natural harmonic ratios and golden spirals, scientifically shown to promote alpha brainwaves, reduce heart rate, and enhance meditation."
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Does it include the tripod stand and backpack?",
+            "answer": "Yes! The Complete Concert Master Set includes a heavy-duty foldable aluminum tripod stand, a high-density padded travel backpack with dual shoulder straps, solid wooden mallets, braided protective edge rope, visual scale stickers, and a microfiber cleaning cloth."
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your risk-free trial and return policy?",
+            "answer": "We back the Zavelyn Handpan™ Master with our 90-Day Sound Guarantee. If you don't feel a profound sense of musical peace and restorative acoustic delight, return it within 90 days for a full refund."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "settings": {}
+    },
+    "sticky_bar": {
+      "type": "zhp-pdp-sticky-bar",
+      "settings": {
+        "sticky_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_1.jpg?v=1792907902",
+        "title": "Zavelyn Handpan™ Master 22\"",
+        "price": "599.00",
+        "compare_at": "1199.00"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "banner",
+    "experience",
+    "included",
+    "specs",
+    "shipping",
+    "reviews",
+    "faq",
+    "sticky_bar"
+  ]
+}

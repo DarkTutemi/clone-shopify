@@ -1,0 +1,1936 @@
+shopify-section-template--21121800667180__shop_product_details_JbqzwH" class="shopify-section shop-product-section"><link href="//kittycollective.co/cdn/shop/t/14/assets/shop-product-details.css?v=2224478214620041641791286179" rel="stylesheet" type="text/css" media="all" />
+<link href="//kittycollective.co/cdn/shop/t/14/assets/variant-selector.css?v=5130211847511689131791286187" rel="stylesheet" type="text/css" media="all" />
+
+
+<style data-shopify>
+    .shop-product-section {
+        letter-spacing: var(--letter-spacing-body);
+        background-color: #fffaf7;
+        color: #000000;
+        --accent-color: #ef4a65;
+        --dot-size: 8px;
+        --dot-color: #cccccc;
+        --dot-active-color: #000000;
+        --desktop-arrow-bg: #ffffff;
+        --desktop-arrow-border: #e0e0e0;
+        --desktop-arrow-icon: #000000;
+        --desktop-arrow-hover-bg: #f5f5f5;
+        --desktop-arrow-hover-border: #d0d0d0;
+        --arrow-border-radius: 50%;
+        --arrow-opacity: 0.9;
+    }
+    /* Added container class to handle the margin without affecting other sections */
+    .shop-product-info {
+        gap: 4px;
+        color: #000000;
+    }
+    .shop-thumbnail {
+        border: 1px solid #eeeeee;
+    }
+    .shop-thumbnail.active {
+        border-color: #c6fa54;
+    }
+     .shop-thumbnail .thumb-square {
+        position: relative;
+    }
+    .shop-thumbnail .thumbnail-video-icon {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1a1a1a;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+        z-index: 3;
+    }
+    .shop-thumbnail .thumbnail-video-icon svg {
+        width: 8px;
+        height: 8px;
+        display: block;
+    }
+    .shop-indicator-dot {
+        background-color: ;
+    }
+
+    /* Flèches mobiles - version plus spécifique */
+    .shop-product-section .shop-mobile-arrows {
+      display: none !important;
+    }
+
+    @media screen and (max-width: 767px) {
+      .shop-product-section .shop-mobile-arrows {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        z-index: 5;
+      }
+
+      .shop-product-section .shop-mobile-arrow {
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: var(--arrow-border-radius);
+        background-color: var(--desktop-arrow-bg);
+        border: 1px solid var(--desktop-arrow-border);
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        opacity: var(--arrow-opacity);
+        pointer-events: auto;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+    }
+
+    /* Masquer sur desktop */
+    @media screen and (min-width: 768px) {
+      .shop-product-section .shop-mobile-arrows {
+        display: none !important;
+      }
+    }
+
+    /* Dynamic aspect ratio based on setting */
+    
+        /* Default 1:1 square aspect ratio */
+        .shop-image-container.shop-square-container {
+          aspect-ratio: 1 !important;
+        }
+
+        /* Desktop thumbnails only - not mobile */
+        @media screen and (min-width: 768px) {
+          .shop-thumbnail .thumb-square {
+            padding-bottom: 100% !important;
+          }
+          .shop-thumbnails-wrapper.left-column-layout .shop-thumbnail {
+            height: auto;
+            aspect-ratio: 1 !important;
+          }
+          .shop-thumbnails-wrapper.left-column-layout .shop-thumbnails.mobile-2x2-grid .shop-thumbnail {
+            height: auto;
+          }
+        }
+    
+
+    /* Make all thumbnails height auto for natural square appearance */
+    .shop-thumbnail {
+      height: auto;
+    }
+
+    /* Mobile 4-in-row layout for thumbnails using swiper-wrapper style */
+    @media screen and (max-width: 767px) {
+      /* When arrows are overlaid, add padding to avoid overlap */
+      .shop-thumbnails.mobile-2x2-grid {
+        box-sizing: border-box !important;
+        display: flex !important;
+        position: relative !important;
+        transition-property: transform !important;
+        width: 100% !important;
+        z-index: 1 !important;
+        height: auto !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        padding: 0 40px !important;
+        margin: 5px 0px 0px !important;
+        gap: 0 !important;
+      }
+
+      /* When arrows are NOT overlaid (arrows off), remove padding */
+      .shop-product-section[data-show-mobile-arrows="false"] .shop-thumbnails.mobile-2x2-grid {
+        padding: 0 !important;
+      }
+
+      /* Full width image + 4 thumbnails specific spacing */
+      .shop-product-section[data-full-width-image="true"] .shop-thumbnails.mobile-2x2-grid {
+        margin: 5px 0px 0px !important;
+      }
+
+      .shop-thumbnails.mobile-2x2-grid .shop-thumbnail {
+        flex: 0 0 calc(25% - 3px) !important;
+        width: calc(25% - 3px) !important;
+        max-width: calc(25% - 3px) !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        height: auto !important;
+        position: relative !important;
+        border-radius: 4px !important;
+        overflow: hidden !important;
+      }
+
+      .shop-thumbnails.mobile-2x2-grid .shop-thumbnail:not(:last-child) {
+        margin-right: 4px !important;
+      }
+
+      .shop-thumbnails.mobile-2x2-grid .thumb-square {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        position: relative;
+        box-sizing: border-box;
+        overflow: hidden;
+        border-radius: 4px;
+        background: #f8f8f8;
+        z-index: 2 !important;
+      }
+
+      .shop-thumbnails.mobile-2x2-grid .thumb-square img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 4px;
+      }
+    }
+
+    /* Thumbnail section padding option */
+    
+
+    /* Hide thumbnails on mobile */
+    
+
+    /* Left column thumbnails on desktop */
+    
+
+    /* Portrait image adaptation */
+    
+    .shop-indicator-dot.active {
+        background-color: ;
+    }
+
+    .shop-product-title {
+        color: ;
+    }
+    .shop-product-price {
+        color:  !important;
+    }
+    .shop-compare-price {
+        color:  !important;
+    }
+    .shop-save-price {
+        background-color:  !important;
+        color:  !important;
+    }
+    .shop-product-description {
+        color: ;
+    }
+    .shop-read-more, .shop-read-less {
+        color: #ef4a65;
+    }
+    .shop-custom-content {
+        color: ;
+    }
+
+         /* Style for the add to cart button */
+     .shop-add-to-cart-button {
+         background-color: 
+                              
+                             !important;
+         color: 
+                  
+                 !important;
+         border: 2px solid  !important;
+     }
+
+    /* Add to cart button from blocks */
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    @media (min-width: 768px) {
+        .shop-carousel-container {
+            max-width: %;
+        }
+    }
+
+    
+
+    
+
+    /* Tablet and mobile specific styles */
+    @media (max-width: 799px) {
+        .shop-product-info {
+            gap: 6px;
+        }
+    }
+    @media (max-width: 767px) {
+        .shop-product-info {
+            gap: 6px;
+        }
+    }
+
+    /* Added CSS for block-level styling */
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+</style>
+<div
+  class="shop-product-section   scroll-trigger animate--fade-up"
+  
+  data-show-mobile-arrows="false"
+  
+>
+  <div class="shop-product-inner-container">
+    
+      <div class="shop-product-layout">
+        
+          
+
+<div class="shop-carousel-container   scroll-trigger animate--fade-up" style="animation-delay: 0.1s;">
+  <div class="shop-product-carousel product-gallery">
+    <div class="shop-main-image-wrapper">
+    
+        <!-- Product Benefits (Left Position) -->
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        <div class="shop-image-container shop-square-container">
+          
+            
+                <div class="shop-image-zoom-wrapper  active" data-media-id="39376673341484" data-image-gallery-type="product">
+                  <img
+                    class="shop-main-image active"
+                    src="//kittycollective.co/cdn/shop/files/wingmate-hero-offer-guarantee-v2_530x.png?v=1793027086"
+                    srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-hero-offer-guarantee-v2_530x.png?v=1793027086 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-hero-offer-guarantee-v2_1060x.png?v=1793027086 2x"
+                    data-srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-hero-offer-guarantee-v2_530x.png?v=1793027086 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-hero-offer-guarantee-v2_1060x.png?v=1793027086 2x"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="eager"
+                    fetchpriority="high"
+                    data-src="//kittycollective.co/cdn/shop/files/wingmate-hero-offer-guarantee-v2_530x.png?v=1793027086"
+                    data-zoom-src="//kittycollective.co/cdn/shop/files/wingmate-hero-offer-guarantee-v2_1200x.png?v=1793027086"
+                    data-media-id="39376673341484"
+                    data-image-gallery-type="product"
+                    width="1254" height="1254"
+                  >
+                  
+                </div>
+              
+          
+            
+                <div class="shop-image-zoom-wrapper " data-media-id="38918044287020" data-image-gallery-type="product">
+                  <img
+                    class="shop-main-image "
+                    src="//kittycollective.co/cdn/shop/files/wingmate-01_530x.png?v=1790939544"
+                    srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-01_530x.png?v=1790939544 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-01_1060x.png?v=1790939544 2x"
+                    data-srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-01_530x.png?v=1790939544 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-01_1060x.png?v=1790939544 2x"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    
+                    data-src="//kittycollective.co/cdn/shop/files/wingmate-01_530x.png?v=1790939544"
+                    data-zoom-src="//kittycollective.co/cdn/shop/files/wingmate-01_1200x.png?v=1790939544"
+                    data-media-id="38918044287020"
+                    data-image-gallery-type="product"
+                    width="2048" height="2048"
+                  >
+                  
+                </div>
+              
+          
+            
+                <div class="shop-image-zoom-wrapper " data-media-id="38918044254252" data-image-gallery-type="product">
+                  <img
+                    class="shop-main-image "
+                    src="//kittycollective.co/cdn/shop/files/wingmate-02_530x.png?v=1790939544"
+                    srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-02_530x.png?v=1790939544 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-02_1060x.png?v=1790939544 2x"
+                    data-srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-02_530x.png?v=1790939544 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-02_1060x.png?v=1790939544 2x"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    
+                    data-src="//kittycollective.co/cdn/shop/files/wingmate-02_530x.png?v=1790939544"
+                    data-zoom-src="//kittycollective.co/cdn/shop/files/wingmate-02_1200x.png?v=1790939544"
+                    data-media-id="38918044254252"
+                    data-image-gallery-type="product"
+                    width="2048" height="2048"
+                  >
+                  
+                </div>
+              
+          
+            
+                <div class="shop-image-zoom-wrapper " data-media-id="38918044188716" data-image-gallery-type="product">
+                  <img
+                    class="shop-main-image "
+                    src="//kittycollective.co/cdn/shop/files/wingmate-03_530x.png?v=1790939544"
+                    srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-03_530x.png?v=1790939544 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-03_1060x.png?v=1790939544 2x"
+                    data-srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-03_530x.png?v=1790939544 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-03_1060x.png?v=1790939544 2x"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    
+                    data-src="//kittycollective.co/cdn/shop/files/wingmate-03_530x.png?v=1790939544"
+                    data-zoom-src="//kittycollective.co/cdn/shop/files/wingmate-03_1200x.png?v=1790939544"
+                    data-media-id="38918044188716"
+                    data-image-gallery-type="product"
+                    width="2048" height="2048"
+                  >
+                  
+                </div>
+              
+          
+            
+                <div class="shop-image-zoom-wrapper " data-media-id="38918044155948" data-image-gallery-type="product">
+                  <img
+                    class="shop-main-image "
+                    src="//kittycollective.co/cdn/shop/files/wingmate-04_530x.png?v=1790939544"
+                    srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-04_530x.png?v=1790939544 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-04_1060x.png?v=1790939544 2x"
+                    data-srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-04_530x.png?v=1790939544 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-04_1060x.png?v=1790939544 2x"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    
+                    data-src="//kittycollective.co/cdn/shop/files/wingmate-04_530x.png?v=1790939544"
+                    data-zoom-src="//kittycollective.co/cdn/shop/files/wingmate-04_1200x.png?v=1790939544"
+                    data-media-id="38918044155948"
+                    data-image-gallery-type="product"
+                    width="2048" height="2048"
+                  >
+                  
+                </div>
+              
+          
+            
+                <div class="shop-image-zoom-wrapper " data-media-id="38918044123180" data-image-gallery-type="product">
+                  <img
+                    class="shop-main-image "
+                    src="//kittycollective.co/cdn/shop/files/wingmate-05_530x.png?v=1790939543"
+                    srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-05_530x.png?v=1790939543 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-05_1060x.png?v=1790939543 2x"
+                    data-srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-05_530x.png?v=1790939543 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-05_1060x.png?v=1790939543 2x"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    
+                    data-src="//kittycollective.co/cdn/shop/files/wingmate-05_530x.png?v=1790939543"
+                    data-zoom-src="//kittycollective.co/cdn/shop/files/wingmate-05_1200x.png?v=1790939543"
+                    data-media-id="38918044123180"
+                    data-image-gallery-type="product"
+                    width="2048" height="2048"
+                  >
+                  
+                </div>
+              
+          
+            
+                <div class="shop-image-zoom-wrapper " data-media-id="38918044057644" data-image-gallery-type="product">
+                  <img
+                    class="shop-main-image "
+                    src="//kittycollective.co/cdn/shop/files/wingmate-06_530x.png?v=1790939541"
+                    srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-06_530x.png?v=1790939541 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-06_1060x.png?v=1790939541 2x"
+                    data-srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-06_530x.png?v=1790939541 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-06_1060x.png?v=1790939541 2x"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    
+                    data-src="//kittycollective.co/cdn/shop/files/wingmate-06_530x.png?v=1790939541"
+                    data-zoom-src="//kittycollective.co/cdn/shop/files/wingmate-06_1200x.png?v=1790939541"
+                    data-media-id="38918044057644"
+                    data-image-gallery-type="product"
+                    width="2048" height="2048"
+                  >
+                  
+                </div>
+              
+          
+            
+                <div class="shop-image-zoom-wrapper " data-media-id="38918044221484" data-image-gallery-type="product">
+                  <img
+                    class="shop-main-image "
+                    src="//kittycollective.co/cdn/shop/files/wingmate-07_530x.png?v=1790939543"
+                    srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-07_530x.png?v=1790939543 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-07_1060x.png?v=1790939543 2x"
+                    data-srcset="
+                      //kittycollective.co/cdn/shop/files/wingmate-07_530x.png?v=1790939543 1x,
+                      //kittycollective.co/cdn/shop/files/wingmate-07_1060x.png?v=1790939543 2x"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    
+                    data-src="//kittycollective.co/cdn/shop/files/wingmate-07_530x.png?v=1790939543"
+                    data-zoom-src="//kittycollective.co/cdn/shop/files/wingmate-07_1200x.png?v=1790939543"
+                    data-media-id="38918044221484"
+                    data-image-gallery-type="product"
+                    width="2048" height="2048"
+                  >
+                  
+                </div>
+              
+          
+
+        <!-- Mobile navigation arrows (overlaid on image) -->
+        
+        
+
+        
+        <!-- Desktop navigation arrows (overlaid on image) -->
+        
+        
+      </div>
+      
+         
+    
+         
+    
+         
+    
+         
+    
+         
+    
+         
+    
+         
+    
+         
+    
+         
+    
+    </div>
+
+    
+
+    
+      <div class="shop-thumbnails-outer">
+        <div class="shop-thumbnails-wrapper shop-match-image-width">
+          <!-- Mobile arrows at start of thumbnails (when placement is below and thumbnails are visible) -->
+          
+
+          <div class="shop-thumbnails toggle-product-variants mobile-2x2-grid" id="thumbnail-container">
+            
+              <div
+                class="shop-thumbnail page-fade-in active  "
+                style="animation-delay: 0.3s;"
+                data-target="shop-image1"
+                data-index="0"
+                data-media-id="39376673341484"
+              >
+                <div class="thumb-square">
+                  <img
+                    src="//kittycollective.co/cdn/shop/files/wingmate-hero-offer-guarantee-v2_200x@2x.png?v=1793027086"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    data-media-id="39376673341484" width="" height=""
+                  >
+
+                  
+                </div>
+              </div>
+            
+              <div
+                class="shop-thumbnail page-fade-in   "
+                style="animation-delay: 0.4s;"
+                data-target="shop-image2"
+                data-index="1"
+                data-media-id="38918044287020"
+              >
+                <div class="thumb-square">
+                  <img
+                    src="//kittycollective.co/cdn/shop/files/wingmate-01_200x@2x.png?v=1790939544"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    data-media-id="38918044287020" width="" height=""
+                  >
+
+                  
+                </div>
+              </div>
+            
+              <div
+                class="shop-thumbnail page-fade-in   "
+                style="animation-delay: 0.5s;"
+                data-target="shop-image3"
+                data-index="2"
+                data-media-id="38918044254252"
+              >
+                <div class="thumb-square">
+                  <img
+                    src="//kittycollective.co/cdn/shop/files/wingmate-02_200x@2x.png?v=1790939544"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    data-media-id="38918044254252" width="" height=""
+                  >
+
+                  
+                </div>
+              </div>
+            
+              <div
+                class="shop-thumbnail page-fade-in   "
+                style="animation-delay: 0.6s;"
+                data-target="shop-image4"
+                data-index="3"
+                data-media-id="38918044188716"
+              >
+                <div class="thumb-square">
+                  <img
+                    src="//kittycollective.co/cdn/shop/files/wingmate-03_200x@2x.png?v=1790939544"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    data-media-id="38918044188716" width="" height=""
+                  >
+
+                  
+                </div>
+              </div>
+            
+              <div
+                class="shop-thumbnail page-fade-in   "
+                style="animation-delay: 0.7s;"
+                data-target="shop-image5"
+                data-index="4"
+                data-media-id="38918044155948"
+              >
+                <div class="thumb-square">
+                  <img
+                    src="//kittycollective.co/cdn/shop/files/wingmate-04_200x@2x.png?v=1790939544"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    data-media-id="38918044155948" width="" height=""
+                  >
+
+                  
+                </div>
+              </div>
+            
+              <div
+                class="shop-thumbnail page-fade-in   "
+                style="animation-delay: 0.8s;"
+                data-target="shop-image6"
+                data-index="5"
+                data-media-id="38918044123180"
+              >
+                <div class="thumb-square">
+                  <img
+                    src="//kittycollective.co/cdn/shop/files/wingmate-05_200x@2x.png?v=1790939543"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    data-media-id="38918044123180" width="" height=""
+                  >
+
+                  
+                </div>
+              </div>
+            
+              <div
+                class="shop-thumbnail page-fade-in   "
+                style="animation-delay: 0.9s;"
+                data-target="shop-image7"
+                data-index="6"
+                data-media-id="38918044057644"
+              >
+                <div class="thumb-square">
+                  <img
+                    src="//kittycollective.co/cdn/shop/files/wingmate-06_200x@2x.png?v=1790939541"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    data-media-id="38918044057644" width="" height=""
+                  >
+
+                  
+                </div>
+              </div>
+            
+              <div
+                class="shop-thumbnail page-fade-in   "
+                style="animation-delay: 1.0s;"
+                data-target="shop-image8"
+                data-index="7"
+                data-media-id="38918044221484"
+              >
+                <div class="thumb-square">
+                  <img
+                    src="//kittycollective.co/cdn/shop/files/wingmate-07_200x@2x.png?v=1790939543"
+                    alt="Wingmate - Interactive Flying Bird Cat Toy"
+                    loading="lazy"
+                    data-media-id="38918044221484" width="" height=""
+                  >
+
+                  
+                </div>
+              </div>
+            
+          </div>
+
+          <!-- Mobile arrows at end of thumbnails (when placement is below and thumbnails are visible) -->
+          
+        </div>
+
+        <div class="shop-thumbnail-indicators" id="thumbnail-indicators"></div>
+      </div>
+    
+
+    <!-- Navigation dots (shown when thumbnails are hidden) -->
+    
+
+    <!-- Navigation dots for mobile when thumbnails are hidden on mobile -->
+    
+
+    <!-- Mobile navigation arrows (below dots when thumbnails are hidden) -->
+    
+    
+    
+    
+
+    <!-- Desktop navigation arrows (below image) - LEGACY FALLBACK -->
+    
+    
+
+    <!-- Desktop navigation arrows (below thumbnails/dots) -->
+    
+    
+
+  </div>
+</div>
+
+<style>
+  /* Main product image border radius */
+  .shop-main-image,
+  .shop-main-image img,
+  .shop-image-zoom-wrapper,
+  .shop-video {
+    border-radius: 0px !important;
+  }
+
+  /* Thumbnail border radius */
+  .shop-thumbnail,
+  .shop-thumbnail img,
+  .shop-thumbnail .thumb-square {
+    border-radius: 0px !important;
+  }
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+    
+  }
+  
+
+  /* Load-in Animation */
+  .page-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+
+        
+
+        <!-- Product Information Column -->
+        
+          <div class="shop-product-info">
+            
+  
+      
+      
+      <!-- Font Debug: No custom font -->
+      <h1
+        style="
+          font-size: 28px !important;
+          margin-top: 0px !important;
+          margin-bottom: 0px !important;
+          color: #17433c !important;
+          line-height: 1.2 !important;
+          letter-spacing: var(--letter-spacing-heading) !important;
+          padding: 2px 0 !important;
+          width: 100% !important;
+          display: block !important;
+          
+        "
+        class="shop-product-title product-title-title_4EWLUd"
+        
+        data-font-size="28"
+        data-mobile-font-size="24"
+        data-custom-font="none"
+        data-dynamic-variant-option="none"
+        data-original-title="Wingmate - Interactive Flying Bird Cat Toy"
+      >
+        
+          Wingmate - Interactive Flying Bird Cat Toy
+        
+      </h1>
+      <!-- Responsive title sizing is handled by shop-product-details.js -->
+
+      
+
+    
+
+  
+      <div class="custom-text-block-container-custom_text_aKQmkQ">
+        <div class="custom-text-block-custom_text_aKQmkQ" >
+          <div class="custom-text-wrapper">
+            <div class="custom-text-content">
+              
+                <div class="custom-text-main">
+                  
+                  <div class="custom-text-main-text-content">
+                    
+
+                    
+                      <p><strong>WINGMATE · INTERACTIVE FLYING BIRD CAT TOY</strong></p>
+                    
+
+                    
+                  </div>
+                  
+                </div>
+              
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .custom-text-block-container-custom_text_aKQmkQ {
+          width: 100%;
+          display: block;
+          
+        }
+
+        .custom-text-block-custom_text_aKQmkQ {
+          margin-top: -4px;
+          margin-bottom: 16px;
+          text-align: left;
+          
+            width: 100%;
+          
+          
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-wrapper {
+          
+            width: 100%;
+          
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-with-divider {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          gap: 12px;
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .divider-line {
+          flex: 1;
+          height: 1px;
+          min-height: 1px;
+          min-width: 20px;
+          background-color: #e0e0e0;
+          border: none;
+          margin: 0;
+          display: block;
+          
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 14px;
+          font-weight: var(--font-weight-regular)
+          ;
+          
+            width: 100%;
+            
+              justify-content: flex-start;
+            
+          
+          flex-shrink: 0;
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-icon {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #333333;
+          width: 20px;
+          height: 20px;
+          margin-left: 0px;
+          margin-right: 8px;
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-icon svg {
+          width: 100%;
+          height: 100%;
+          fill: currentColor;
+          stroke: currentColor;
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-after-icon {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #17433c;
+          width: 20px;
+          height: 20px;
+          margin-left: 8px;
+          margin-right: 0px;
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-after-icon svg {
+          width: 100%;
+          height: 100%;
+          fill: currentColor;
+          stroke: currentColor;
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-content {
+          color: #17433c;
+          margin: 0;
+          width: 100%;
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-content a,
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main-text-content a {
+          color: #0066cc;
+          text-decoration: underline;
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-content a:hover,
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main-text-content a:hover {
+          opacity: 0.8;
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-content strong,
+        .custom-text-block-custom_text_aKQmkQ .custom-text-content b,
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main-text-content strong,
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main-text-content b {
+          font-weight: 700 !important;
+        }
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main-text-content {
+          
+            text-align: left;
+            
+              width: auto;
+            
+          
+          font-weight: var(--font-weight-regular)
+          ;
+        }
+
+        /* Ensure paragraph tags inherit the text alignment and font weight */
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main-text-content p {
+          text-align: inherit;
+          font-weight: inherit;
+        }
+
+        /* Ensure strong tags within the custom text also respect the font weight setting */
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main-text-content strong,
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main-text-content b {
+          font-weight: var(--font-weight-semibold)
+          ;
+        }
+
+        
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main-text-content p {
+          margin-top: 0;
+          margin-bottom: px;
+        }
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main-text-content p:last-child {
+          margin-bottom: 0;
+        }
+        
+
+        .custom-text-block-custom_text_aKQmkQ .custom-text-description {
+          font-size: 10px;
+          margin-top: 4px;
+          color: #666666;
+          opacity: 0.8;
+          font-weight: var(--font-weight-regular)
+          ;
+          text-align: left;
+        }
+
+        /* Accent Text Styles */
+        
+
+        /* Ensure strong tags within the description also work properly */
+        .custom-text-block-custom_text_aKQmkQ .custom-text-description strong,
+        .custom-text-block-custom_text_aKQmkQ .custom-text-description b {
+          font-weight: var(--font-weight-semibold)
+          ;
+        }
+
+        
+        .custom-text-block-custom_text_aKQmkQ .custom-text-description p {
+          margin-top: 0;
+          margin-bottom: px;
+        }
+        .custom-text-block-custom_text_aKQmkQ .custom-text-description p:last-child {
+          margin-bottom: 0;
+        }
+        
+
+        /* Special handling for center alignment with divider */
+        
+      </style>
+
+      <style>
+        /* Ensure strong and bold tags always display as bold */
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main-text-content strong,
+        .custom-text-block-custom_text_aKQmkQ .custom-text-main-text-content b,
+        .custom-text-block-custom_text_aKQmkQ .custom-text-description strong,
+        .custom-text-block-custom_text_aKQmkQ .custom-text-description b {
+          font-weight: 700 !important;
+        }
+
+        /* Override font weight inheritance for non-bold elements only */
+        .custom-text-block-custom_text_aKQmkQ *:not(strong):not(b) {
+          font-weight: inherit;
+        }
+
+        /* Ensure all text elements respect the custom font weight (except strong/b tags) */
+        .custom-text-block-custom_text_aKQmkQ span:not(strong):not(b),
+        .custom-text-block-custom_text_aKQmkQ div:not(.custom-text-icon):not(strong):not(b),
+        .custom-text-block-custom_text_aKQmkQ p:not(strong):not(b),
+        .custom-text-block-custom_text_aKQmkQ h1:not(strong):not(b),
+        .custom-text-block-custom_text_aKQmkQ h2:not(strong):not(b),
+        .custom-text-block-custom_text_aKQmkQ h3:not(strong):not(b),
+        .custom-text-block-custom_text_aKQmkQ h4:not(strong):not(b),
+        .custom-text-block-custom_text_aKQmkQ h5:not(strong):not(b),
+        .custom-text-block-custom_text_aKQmkQ h6:not(strong):not(b) {
+          font-weight: var(--font-weight-regular)
+          ;
+        }
+      </style>
+
+    
+
+  
+
+<div class="kc-base-price">
+  <span class="kc-base-price__current">$54.99</span>
+  
+    <s>$71.77</s>
+    
+    <span class="kc-base-price__save">SAVE 23%</span>
+  
+</div>
+
+
+    
+
+  
+      
+
+<div
+  class="product-divider-container"
+  style="
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    
+      justify-content: center !important;
+    
+    clear: both !important;
+  "
+  
+>
+  <hr
+    class="product-divider-line"
+    style="
+      width: 100% !important;
+      max-width: 100% !important;
+      border: none !important;
+      border-top: 1px solid #e0e0e0 !important;
+      margin: 0 !important;
+      display: block !important;
+      padding: 0 !important;
+      background: none !important;
+      height: 0 !important;
+      box-sizing: border-box !important;
+    "
+  >
+</div>
+
+    
+
+  
+      <div class="custom-text-block-container-custom_text_FH6PeU">
+        <div class="custom-text-block-custom_text_FH6PeU" >
+          <div class="custom-text-wrapper">
+            <div class="custom-text-content">
+              
+                <div class="custom-text-main">
+                  
+                  <div class="custom-text-main-text-content">
+                    
+
+                    
+                      <p><strong>Stop wasting your nights on wand marathons and your money on toys she ignores. Give her a hunt that finally takes over.</strong></p>
+                    
+
+                    
+                  </div>
+                  
+                </div>
+              
+
+              
+                <div class="custom-text-description">
+                  <p>🐾 Moves like prey—not another dead toy<br/>😴 Burns through the energy behind 3am zoomies<br/>🛋️ Takes the hunt off your furniture<br/>🧍 Keeps playing after your arm gives out<br/>🌙 Finish the hunt. Reclaim your night.<br/>💚 If she ignores it, get every cent back.</p>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .custom-text-block-container-custom_text_FH6PeU {
+          width: 100%;
+          display: block;
+          
+        }
+
+        .custom-text-block-custom_text_FH6PeU {
+          margin-top: -4px;
+          margin-bottom: 8px;
+          text-align: left;
+          
+            width: 100%;
+          
+          
+        }
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-wrapper {
+          
+            width: 100%;
+          
+        }
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-with-divider {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          gap: 12px;
+        }
+
+        .custom-text-block-custom_text_FH6PeU .divider-line {
+          flex: 1;
+          height: 1px;
+          min-height: 1px;
+          min-width: 20px;
+          background-color: #e0e0e0;
+          border: none;
+          margin: 0;
+          display: block;
+          
+        }
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-main {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 15px;
+          font-weight: var(--font-weight-regular)
+          ;
+          
+            width: 100%;
+            
+              justify-content: flex-start;
+            
+          
+          flex-shrink: 0;
+        }
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-icon {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #333333;
+          width: 20px;
+          height: 20px;
+          margin-left: 0px;
+          margin-right: 8px;
+        }
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-icon svg {
+          width: 100%;
+          height: 100%;
+          fill: currentColor;
+          stroke: currentColor;
+        }
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-after-icon {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #333333;
+          width: 20px;
+          height: 20px;
+          margin-left: 8px;
+          margin-right: 0px;
+        }
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-after-icon svg {
+          width: 100%;
+          height: 100%;
+          fill: currentColor;
+          stroke: currentColor;
+        }
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-content {
+          color: #17433c;
+          margin: 0;
+          width: 100%;
+        }
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-content a,
+        .custom-text-block-custom_text_FH6PeU .custom-text-main-text-content a {
+          color: #0066cc;
+          text-decoration: underline;
+        }
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-content a:hover,
+        .custom-text-block-custom_text_FH6PeU .custom-text-main-text-content a:hover {
+          opacity: 0.8;
+        }
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-content strong,
+        .custom-text-block-custom_text_FH6PeU .custom-text-content b,
+        .custom-text-block-custom_text_FH6PeU .custom-text-main-text-content strong,
+        .custom-text-block-custom_text_FH6PeU .custom-text-main-text-content b {
+          font-weight: 700 !important;
+        }
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-main-text-content {
+          
+            text-align: left;
+            
+              width: auto;
+            
+          
+          font-weight: var(--font-weight-regular)
+          ;
+        }
+
+        /* Ensure paragraph tags inherit the text alignment and font weight */
+        .custom-text-block-custom_text_FH6PeU .custom-text-main-text-content p {
+          text-align: inherit;
+          font-weight: inherit;
+        }
+
+        /* Ensure strong tags within the custom text also respect the font weight setting */
+        .custom-text-block-custom_text_FH6PeU .custom-text-main-text-content strong,
+        .custom-text-block-custom_text_FH6PeU .custom-text-main-text-content b {
+          font-weight: var(--font-weight-semibold)
+          ;
+        }
+
+        
+        .custom-text-block-custom_text_FH6PeU .custom-text-main-text-content p {
+          margin-top: 0;
+          margin-bottom: px;
+        }
+        .custom-text-block-custom_text_FH6PeU .custom-text-main-text-content p:last-child {
+          margin-bottom: 0;
+        }
+        
+
+        .custom-text-block-custom_text_FH6PeU .custom-text-description {
+          font-size: 15px;
+          margin-top: 12px;
+          color: #17433c;
+          opacity: 1;
+          font-weight: var(--font-weight-regular)
+          ;
+          text-align: left;
+        }
+
+        /* Accent Text Styles */
+        
+
+        /* Ensure strong tags within the description also work properly */
+        .custom-text-block-custom_text_FH6PeU .custom-text-description strong,
+        .custom-text-block-custom_text_FH6PeU .custom-text-description b {
+          font-weight: var(--font-weight-semibold)
+          ;
+        }
+
+        
+        .custom-text-block-custom_text_FH6PeU .custom-text-description p {
+          margin-top: 0;
+          margin-bottom: px;
+        }
+        .custom-text-block-custom_text_FH6PeU .custom-text-description p:last-child {
+          margin-bottom: 0;
+        }
+        
+
+        /* Special handling for center alignment with divider */
+        
+      </style>
+
+      <style>
+        /* Ensure strong and bold tags always display as bold */
+        .custom-text-block-custom_text_FH6PeU .custom-text-main-text-content strong,
+        .custom-text-block-custom_text_FH6PeU .custom-text-main-text-content b,
+        .custom-text-block-custom_text_FH6PeU .custom-text-description strong,
+        .custom-text-block-custom_text_FH6PeU .custom-text-description b {
+          font-weight: 700 !important;
+        }
+
+        /* Override font weight inheritance for non-bold elements only */
+        .custom-text-block-custom_text_FH6PeU *:not(strong):not(b) {
+          font-weight: inherit;
+        }
+
+        /* Ensure all text elements respect the custom font weight (except strong/b tags) */
+        .custom-text-block-custom_text_FH6PeU span:not(strong):not(b),
+        .custom-text-block-custom_text_FH6PeU div:not(.custom-text-icon):not(strong):not(b),
+        .custom-text-block-custom_text_FH6PeU p:not(strong):not(b),
+        .custom-text-block-custom_text_FH6PeU h1:not(strong):not(b),
+        .custom-text-block-custom_text_FH6PeU h2:not(strong):not(b),
+        .custom-text-block-custom_text_FH6PeU h3:not(strong):not(b),
+        .custom-text-block-custom_text_FH6PeU h4:not(strong):not(b),
+        .custom-text-block-custom_text_FH6PeU h5:not(strong):not(b),
+        .custom-text-block-custom_text_FH6PeU h6:not(strong):not(b) {
+          font-weight: var(--font-weight-regular)
+          ;
+        }
+      </style>
+
+    
+
+  
+
+
+
+  
+  
+  
+  
+
+<product-form class="product-form kc-wingmate-bundles" data-section-id="template--21121800667180__shop_product_details_JbqzwH">
+  <form method="post" action="/cart/add" id="kc-wingmate-form-template--21121800667180__shop_product_details_JbqzwH" accept-charset="UTF-8" class="kc-wingmate-form" enctype="multipart/form-data" data-type="add-to-cart-form"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
+    <fieldset class="kc-offers">
+      <legend class="visually-hidden">Choose your Wingmate offer</legend>
+      
+        
+        
+        
+          
+          
+          <label class="kc-offer">
+            <input class="kc-offer__input" type="radio" name="id" value="46306407022636"  >
+            <span class="kc-offer__card">
+              
+              
+              <span class="kc-offer__body">
+                <span class="kc-offer__radio" aria-hidden="true"></span>
+                <span class="kc-offer__copy"><strong>Buy 1</strong><small>Her first Wingmate</small></span>
+                <span class="kc-offer__prices"><strong>$54.99</strong><s>$71.77</s></span>
+              </span>
+            </span>
+          </label>
+        
+      
+        
+        
+        
+          
+          
+          <label class="kc-offer">
+            <input class="kc-offer__input" type="radio" name="id" value="46306407055404" checked >
+            <span class="kc-offer__card">
+              <span class="kc-offer__badge">MOST POPULAR</span>
+              
+              <span class="kc-offer__body">
+                <span class="kc-offer__radio" aria-hidden="true"></span>
+                <span class="kc-offer__copy"><strong>Buy 1, get 2 free!</strong><small>Get The Whole Flock — all 3 birds</small></span>
+                <span class="kc-offer__prices"><strong>$54.99</strong><s>$216.00</s></span>
+              </span>
+            </span>
+          </label>
+        
+      
+        
+        
+        
+          
+          
+          <label class="kc-offer">
+            <input class="kc-offer__input" type="radio" name="id" value="46306407088172"  >
+            <span class="kc-offer__card">
+              
+              <span class="kc-offer__badge">BEST VALUE</span>
+              <span class="kc-offer__body">
+                <span class="kc-offer__radio" aria-hidden="true"></span>
+                <span class="kc-offer__copy"><strong>Buy 2, get 4 free!</strong><small>For multi-cat homes &amp; backups</small></span>
+                <span class="kc-offer__prices"><strong>$113.00</strong><s>$428.00</s></span>
+              </span>
+            </span>
+          </label>
+        
+      
+    </fieldset><p class="kc-order-limit"><span aria-hidden="true">✦</span><span>Buy 1, get 2 FREE — available for the next 12 orders</span></p>
+    <input type="hidden" name="quantity" value="1">
+    <div class="product-form__error-message-wrapper" role="alert" hidden><span class="product-form__error-message"></span></div>
+    <button type="submit" name="add" class="kc-claim-button shop-add-to-cart-button product-form__submit" >
+      <span class="button-text">CLAIM OFFER</span>
+      
+
+<div class="loading__spinner hidden">
+  <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+    <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+
+    </button>
+  <input type="hidden" name="product-id" value="8579456041004" /><input type="hidden" name="section-id" value="template--21121800667180__shop_product_details_JbqzwH" /></form>
+</product-form>
+
+
+  <style>
+    .kc-order-limit{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;margin:14px 0 12px;border:1px solid #edc6a0;border-radius:8px;background:#fff1e2;color:#6e3516;font-size:14px;font-weight:650;line-height:1.4;text-align:center}
+    .kc-order-limit>span:first-child{color:#b75a24;font-size:17px;flex-shrink:0}
+    .kc-order-limit[hidden]{display:none}
+    @media(max-width:600px){.kc-order-limit{padding:10px 12px;font-size:13px}}
+  </style>
+  <script>(()=>{const note=document.querySelector('.kc-order-limit');if(!note)return;const expiry=Date.parse('2026-11-01T00:00:00+11:00');let timer;const check=()=>{if(Date.now()>=expiry){note.hidden=true;clearInterval(timer);}};check();if(!note.hidden)timer=setInterval(check,60000);})();</script>
+
+    
+
+  
+      <div
+        class="payment-icons-wrapper"
+        style="width: 100%; text-align: center; margin-top: 4px; margin-bottom: 4px;"
+        
+      >
+        <div
+  class="payment-icons-container payment-icons-payment_icons_9FKQxe"
+  id="payment-icons-payment_icons_9FKQxe"
+  style="
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  "
+>
+  <div
+    class="payment-icons-wrapper"
+    style="
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    "
+  ><div class="payment-icon"><svg
+                class="icon icon--full-color"
+                viewBox="0 0 38 24"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                width="38"
+                height="24"
+                aria-labelledby="pi-mastercard"
+              >
+                <title id="pi-mastercard">Mastercard</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><circle fill="#EB001B" cx="15" cy="12" r="7"></circle><circle fill="#F79E1B" cx="23" cy="12" r="7"></circle><path fill="#FF5F00" d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.2-3 3.3-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z"></path>
+              </svg></div><div class="payment-icon"><svg
+                class="icon icon--full-color"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-labelledby="pi-american_express"
+                viewBox="0 0 38 24"
+                width="38"
+                height="24"
+              >
+                <title id="pi-american_express">American Express</title><path fill="#000" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3Z" opacity=".07"></path><path fill="#006FCF" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32Z"></path><path fill="#FFF" d="M22.012 19.936v-8.421L37 11.528v2.326l-1.732 1.852L37 17.573v2.375h-2.766l-1.47-1.622-1.46 1.628-9.292-.02Z"></path><path fill="#006FCF" d="M23.013 19.012v-6.57h5.572v1.513h-3.768v1.028h3.678v1.488h-3.678v1.01h3.768v1.531h-5.572Z"></path><path fill="#006FCF" d="m28.557 19.012 3.083-3.289-3.083-3.282h2.386l1.884 2.083 1.89-2.082H37v.051l-3.017 3.23L37 18.92v.093h-2.307l-1.917-2.103-1.898 2.104h-2.321Z"></path><path fill="#FFF" d="M22.71 4.04h3.614l1.269 2.881V4.04h4.46l.77 2.159.771-2.159H37v8.421H19l3.71-8.421Z"></path><path fill="#006FCF" d="m23.395 4.955-2.916 6.566h2l.55-1.315h2.98l.55 1.315h2.05l-2.904-6.566h-2.31Zm.25 3.777.875-2.09.873 2.09h-1.748Z"></path><path fill="#006FCF" d="M28.581 11.52V4.953l2.811.01L32.84 9l1.456-4.046H37v6.565l-1.74.016v-4.51l-1.644 4.494h-1.59L30.35 7.01v4.51h-1.768Z"></path>
+              </svg></div><div class="payment-icon"><svg
+                class="icon icon--full-color"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                x="0"
+                y="0"
+                width="38"
+                height="24"
+                viewBox="0 0 165.521 105.965"
+                xml:space="preserve"
+                aria-labelledby="pi-apple_pay"
+              >
+                <title id="pi-apple_pay">Apple Pay</title><path fill="#000" d="M150.698 0H14.823c-.566 0-1.133 0-1.698.003-.477.004-.953.009-1.43.022-1.039.028-2.087.09-3.113.274a10.51 10.51 0 0 0-2.958.975 9.932 9.932 0 0 0-4.35 4.35 10.463 10.463 0 0 0-.975 2.96C.113 9.611.052 10.658.024 11.696a70.22 70.22 0 0 0-.022 1.43C0 13.69 0 14.256 0 14.823v76.318c0 .567 0 1.132.002 1.699.003.476.009.953.022 1.43.028 1.036.09 2.084.275 3.11a10.46 10.46 0 0 0 .974 2.96 9.897 9.897 0 0 0 1.83 2.52 9.874 9.874 0 0 0 2.52 1.83c.947.483 1.917.79 2.96.977 1.025.183 2.073.245 3.112.273.477.011.953.017 1.43.02.565.004 1.132.004 1.698.004h135.875c.565 0 1.132 0 1.697-.004.476-.002.952-.009 1.431-.02 1.037-.028 2.085-.09 3.113-.273a10.478 10.478 0 0 0 2.958-.977 9.955 9.955 0 0 0 4.35-4.35c.483-.947.789-1.917.974-2.96.186-1.026.246-2.074.274-3.11.013-.477.02-.954.022-1.43.004-.567.004-1.132.004-1.699V14.824c0-.567 0-1.133-.004-1.699a63.067 63.067 0 0 0-.022-1.429c-.028-1.038-.088-2.085-.274-3.112a10.4 10.4 0 0 0-.974-2.96 9.94 9.94 0 0 0-4.35-4.35A10.52 10.52 0 0 0 156.939.3c-1.028-.185-2.076-.246-3.113-.274a71.417 71.417 0 0 0-1.431-.022C151.83 0 151.263 0 150.698 0z"></path><path fill="#FFF" d="M150.698 3.532l1.672.003c.452.003.905.008 1.36.02.793.022 1.719.065 2.583.22.75.135 1.38.34 1.984.648a6.392 6.392 0 0 1 2.804 2.807c.306.6.51 1.226.645 1.983.154.854.197 1.783.218 2.58.013.45.019.9.02 1.36.005.557.005 1.113.005 1.671v76.318c0 .558 0 1.114-.004 1.682-.002.45-.008.9-.02 1.35-.022.796-.065 1.725-.221 2.589a6.855 6.855 0 0 1-.645 1.975 6.397 6.397 0 0 1-2.808 2.807c-.6.306-1.228.511-1.971.645-.881.157-1.847.2-2.574.22-.457.01-.912.017-1.379.019-.555.004-1.113.004-1.669.004H14.801c-.55 0-1.1 0-1.66-.004a74.993 74.993 0 0 1-1.35-.018c-.744-.02-1.71-.064-2.584-.22a6.938 6.938 0 0 1-1.986-.65 6.337 6.337 0 0 1-1.622-1.18 6.355 6.355 0 0 1-1.178-1.623 6.935 6.935 0 0 1-.646-1.985c-.156-.863-.2-1.788-.22-2.578a66.088 66.088 0 0 1-.02-1.355l-.003-1.327V14.474l.002-1.325a66.7 66.7 0 0 1 .02-1.357c.022-.792.065-1.717.222-2.587a6.924 6.924 0 0 1 .646-1.981c.304-.598.7-1.144 1.18-1.623a6.386 6.386 0 0 1 1.624-1.18 6.96 6.96 0 0 1 1.98-.646c.865-.155 1.792-.198 2.586-.22.452-.012.905-.017 1.354-.02l1.677-.003h135.875"></path><g><g><path fill="#000" d="M43.508 35.77c1.404-1.755 2.356-4.112 2.105-6.52-2.054.102-4.56 1.355-6.012 3.112-1.303 1.504-2.456 3.959-2.156 6.266 2.306.2 4.61-1.152 6.063-2.858"></path><path fill="#000" d="M45.587 39.079c-3.35-.2-6.196 1.9-7.795 1.9-1.6 0-4.049-1.8-6.698-1.751-3.447.05-6.645 2-8.395 5.1-3.598 6.2-.95 15.4 2.55 20.45 1.699 2.5 3.747 5.25 6.445 5.151 2.55-.1 3.549-1.65 6.647-1.65 3.097 0 3.997 1.65 6.696 1.6 2.798-.05 4.548-2.5 6.247-5 1.95-2.85 2.747-5.6 2.797-5.75-.05-.05-5.396-2.101-5.446-8.251-.05-5.15 4.198-7.6 4.398-7.751-2.399-3.548-6.147-3.948-7.447-4.048"></path></g><g><path fill="#000" d="M78.973 32.11c7.278 0 12.347 5.017 12.347 12.321 0 7.33-5.173 12.373-12.529 12.373h-8.058V69.62h-5.822V32.11h14.062zm-8.24 19.807h6.68c5.07 0 7.954-2.729 7.954-7.46 0-4.73-2.885-7.434-7.928-7.434h-6.706v14.894z"></path><path fill="#000" d="M92.764 61.847c0-4.809 3.665-7.564 10.423-7.98l7.252-.442v-2.08c0-3.04-2.001-4.704-5.562-4.704-2.938 0-5.07 1.507-5.51 3.82h-5.252c.157-4.86 4.731-8.395 10.918-8.395 6.654 0 10.995 3.483 10.995 8.89v18.663h-5.38v-4.497h-.13c-1.534 2.937-4.914 4.782-8.579 4.782-5.406 0-9.175-3.222-9.175-8.057zm17.675-2.417v-2.106l-6.472.416c-3.64.234-5.536 1.585-5.536 3.95 0 2.288 1.975 3.77 5.068 3.77 3.95 0 6.94-2.522 6.94-6.03z"></path><path fill="#000" d="M120.975 79.652v-4.496c.364.051 1.247.103 1.715.103 2.573 0 4.029-1.09 4.913-3.899l.52-1.663-9.852-27.293h6.082l6.863 22.146h.13l6.862-22.146h5.927l-10.216 28.67c-2.34 6.577-5.017 8.735-10.683 8.735-.442 0-1.872-.052-2.261-.157z"></path></g></g>
+              </svg></div><div class="payment-icon"><svg
+                class="icon icon--full-color"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                viewBox="0 0 38 24"
+                width="38"
+                height="24"
+                aria-labelledby="pi-google_pay"
+              >
+                <title id="pi-google_pay">Google Pay</title><path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000" opacity=".07"></path><path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" fill="#FFF"></path><path d="M18.093 11.976v3.2h-1.018v-7.9h2.691a2.447 2.447 0 0 1 1.747.692 2.28 2.28 0 0 1 .11 3.224l-.11.116c-.47.447-1.098.69-1.747.674l-1.673-.006zm0-3.732v2.788h1.698c.377.012.741-.135 1.005-.404a1.391 1.391 0 0 0-1.005-2.354l-1.698-.03zm6.484 1.348c.65-.03 1.286.188 1.778.613.445.43.682 1.03.65 1.649v3.334h-.969v-.766h-.049a1.93 1.93 0 0 1-1.673.931 2.17 2.17 0 0 1-1.496-.533 1.667 1.667 0 0 1-.613-1.324 1.606 1.606 0 0 1 .613-1.336 2.746 2.746 0 0 1 1.698-.515c.517-.02 1.03.093 1.49.331v-.208a1.134 1.134 0 0 0-.417-.901 1.416 1.416 0 0 0-.98-.368 1.545 1.545 0 0 0-1.319.717l-.895-.564a2.488 2.488 0 0 1 2.182-1.06zM23.29 13.52a.79.79 0 0 0 .337.662c.223.176.5.269.785.263.429-.001.84-.17 1.146-.472.305-.286.478-.685.478-1.103a2.047 2.047 0 0 0-1.324-.374 1.716 1.716 0 0 0-1.03.294.883.883 0 0 0-.392.73zm9.286-3.75l-3.39 7.79h-1.048l1.281-2.728-2.224-5.062h1.103l1.612 3.885 1.569-3.885h1.097z" fill="#5F6368"></path><path d="M13.986 11.284c0-.308-.024-.616-.073-.92h-4.29v1.747h2.451a2.096 2.096 0 0 1-.9 1.373v1.134h1.464a4.433 4.433 0 0 0 1.348-3.334z" fill="#4285F4"></path><path d="M9.629 15.721a4.352 4.352 0 0 0 3.01-1.097l-1.466-1.14a2.752 2.752 0 0 1-4.094-1.44H5.577v1.17a4.53 4.53 0 0 0 4.052 2.507z" fill="#34A853"></path><path d="M7.079 12.05a2.709 2.709 0 0 1 0-1.735v-1.17H5.577a4.505 4.505 0 0 0 0 4.075l1.502-1.17z" fill="#FBBC04"></path><path d="M9.629 8.44a2.452 2.452 0 0 1 1.74.68l1.3-1.293a4.37 4.37 0 0 0-3.065-1.183 4.53 4.53 0 0 0-4.027 2.5l1.502 1.171a2.715 2.715 0 0 1 2.55-1.875z" fill="#EA4335"></path>
+              </svg></div><div class="payment-icon"><svg
+                class="icon icon--full-color"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                viewBox="0 0 38 24"
+                aria-labelledby="pi-shopify_pay"
+              >
+                <title id="pi-shopify_pay">Shop Pay</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000"></path><path d="M35.889 0C37.05 0 38 .982 38 2.182v19.636c0 1.2-.95 2.182-2.111 2.182H2.11C.95 24 0 23.018 0 21.818V2.182C0 .982.95 0 2.111 0H35.89z" fill="#5A31F4"></path><path d="M9.35 11.368c-1.017-.223-1.47-.31-1.47-.705 0-.372.306-.558.92-.558.54 0 .934.238 1.225.704a.079.079 0 00.104.03l1.146-.584a.082.082 0 00.032-.114c-.475-.831-1.353-1.286-2.51-1.286-1.52 0-2.464.755-2.464 1.956 0 1.275 1.15 1.597 2.17 1.82 1.02.222 1.474.31 1.474.705 0 .396-.332.582-.993.582-.612 0-1.065-.282-1.34-.83a.08.08 0 00-.107-.035l-1.143.57a.083.083 0 00-.036.111c.454.92 1.384 1.437 2.627 1.437 1.583 0 2.539-.742 2.539-1.98s-1.155-1.598-2.173-1.82v-.003zM15.49 8.855c-.65 0-1.224.232-1.636.646a.04.04 0 01-.069-.03v-2.64a.08.08 0 00-.08-.081H12.27a.08.08 0 00-.08.082v8.194a.08.08 0 00.08.082h1.433a.08.08 0 00.081-.082v-3.594c0-.695.528-1.227 1.239-1.227.71 0 1.226.521 1.226 1.227v3.594a.08.08 0 00.081.082h1.433a.08.08 0 00.081-.082v-3.594c0-1.51-.981-2.577-2.355-2.577zM20.753 8.62c-.778 0-1.507.24-2.03.588a.082.082 0 00-.027.109l.632 1.088a.08.08 0 00.11.03 2.5 2.5 0 011.318-.366c1.25 0 2.17.891 2.17 2.068 0 1.003-.736 1.745-1.669 1.745-.76 0-1.288-.446-1.288-1.077 0-.361.152-.657.548-.866a.08.08 0 00.032-.113l-.596-1.018a.08.08 0 00-.098-.035c-.799.299-1.359 1.018-1.359 1.984 0 1.46 1.152 2.55 2.76 2.55 1.877 0 3.227-1.313 3.227-3.195 0-2.018-1.57-3.492-3.73-3.492zM28.675 8.843c-.724 0-1.373.27-1.845.746-.026.027-.069.007-.069-.029v-.572a.08.08 0 00-.08-.082h-1.397a.08.08 0 00-.08.082v8.182a.08.08 0 00.08.081h1.433a.08.08 0 00.081-.081v-2.683c0-.036.043-.054.069-.03a2.6 2.6 0 001.808.7c1.682 0 2.993-1.373 2.993-3.157s-1.313-3.157-2.993-3.157zm-.271 4.929c-.956 0-1.681-.768-1.681-1.783s.723-1.783 1.681-1.783c.958 0 1.68.755 1.68 1.783 0 1.027-.713 1.783-1.681 1.783h.001z" fill="#fff"></path>
+              </svg></div><div class="payment-icon"><svg
+                class="icon icon--full-color"
+                viewBox="0 0 38 24"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                width="38"
+                height="24"
+                aria-labelledby="pi-discover"
+              >
+                <title id="pi-discover">Discover</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><path d="M3.57 7.16H2v5.5h1.57c.83 0 1.43-.2 1.96-.63.63-.52 1-1.38 1-2.12 0-.75-.34-1.58-1-2.12-.53-.4-1.11-.63-1.96-.63zm1.26 4.14c-.34.3-.77.44-1.47.44h-.29V8.1h.29c.69 0 1.11.12 1.47.44.37.32.59.78.59 1.37 0 .6-.22 1.06-.59 1.39zm2.19-4.14h1.07v5.5H7.02v-5.5zm3.69 2.11c-.64-.24-.83-.4-.83-.69 0-.35.34-.61.8-.61.32 0 .59.13.86.45l.56-.73c-.46-.4-1.01-.61-1.62-.61-.97 0-1.72.68-1.72 1.58 0 .76.35 1.15 1.35 1.51.42.15.63.25.74.31.21.14.32.34.32.57 0 .45-.35.78-.83.78-.51 0-.92-.26-1.17-.73l-.69.67c.49.73 1.09 1.05 1.9 1.05 1.11 0 1.9-.74 1.9-1.81.02-.89-.35-1.29-1.57-1.74zm1.92.65c0 1.62 1.27 2.87 2.9 2.87.46 0 .86-.09 1.34-.32v-1.26c-.43.43-.81.6-1.29.6-1.08 0-1.85-.78-1.85-1.9 0-1.06.79-1.89 1.8-1.89.51 0 .9.18 1.34.62V7.38c-.47-.24-.86-.34-1.32-.34-1.61 0-2.92 1.28-2.92 2.88zm12.76.94l-1.47-3.7h-1.17l2.33 5.64h.58l2.37-5.64h-1.16l-1.48 3.7zm3.13 1.8h3.04v-.93h-1.97v-1.48h1.9v-.93h-1.9V8.1h1.97v-.94h-3.04v5.5zm7.29-3.87c0-1.03-.71-1.62-1.95-1.62h-1.59v5.5h1.07v-2.21h.14l1.48 2.21h1.32l-1.73-2.32c.81-.17 1.26-.72 1.26-1.56zm-2.16.91h-.31V8.03h.33c.67 0 1.03.28 1.03.82 0 .55-.36.85-1.05.85z" fill="#231F20"></path><path d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z" fill="url(#pi-discover_paint0_linear)"></path><defs><linearGradient id="pi-discover_paint0_linear" x1="21.657" y1="12.275" x2="19.632" y2="9.104" gradientUnits="userSpaceOnUse"><stop stop-color="#F89F20"></stop><stop offset=".25" stop-color="#F79A20"></stop><stop offset=".533" stop-color="#F68D20"></stop><stop offset=".62" stop-color="#F58720"></stop><stop offset=".723" stop-color="#F48120"></stop><stop offset="1" stop-color="#F37521"></stop></linearGradient></defs>
+              </svg></div><div class="payment-icon"><svg
+                class="icon icon--full-color"
+                viewBox="0 0 38 24"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                width="38"
+                height="24"
+                aria-labelledby="pi-visa"
+              >
+                <title id="pi-visa">Visa</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><path d="M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z" fill="#142688"></path>
+              </svg></div></div>
+</div>
+
+<style>
+  #payment-icons-payment_icons_9FKQxe.payment-icons-container {
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  #payment-icons-payment_icons_9FKQxe .payment-icons-wrapper {
+    margin: 0 auto;
+    gap: 6px !important;
+  }
+
+  #payment-icons-payment_icons_9FKQxe .payment-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: 28px !important;
+  }
+
+  #payment-icons-payment_icons_9FKQxe .payment-icon svg {
+    max-height: 100%;
+    width: auto;
+    min-width: 30px;
+    display: block;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: 28px !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    #payment-icons-payment_icons_9FKQxe .payment-icons-wrapper {
+      gap: 3px !important;
+    }
+
+    #payment-icons-payment_icons_9FKQxe .payment-icon {
+      height: 22.4px !important;
+    }
+
+    #payment-icons-payment_icons_9FKQxe .payment-icon svg {
+      height: 22.4px !important;
+    }
+  }
+</style>
+
+      </div>
+
+    
+
+  <!-- 
+  TRUST CHIPS — Guarantee + Shipping (+ Social proof on desktop)
+  Placement: Product page → Product information → Add block → Custom Liquid → paste everything below.
+  Full column width. Two chips on mobile, three on desktop (750px+).
+  Colors live in the CSS variables below.
+-->
+
+<div class="kc-trust" role="note" aria-label="Guarantee, shipping and reviews">
+  <div class="kc-trust__chip">
+    <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true" focusable="false">
+      <circle cx="7.2" cy="8.6" r="2.1"/>
+      <circle cx="12" cy="6.8" r="2.1"/>
+      <circle cx="16.8" cy="8.6" r="2.1"/>
+      <path d="M12 11.2c-2.9 0-5.4 2.2-5.4 4.6 0 1.5 1.2 2.4 2.6 2.4 1 0 1.8-.4 2.8-.4s1.8.4 2.8.4c1.4 0 2.6-.9 2.6-2.4 0-2.4-2.5-4.6-5.4-4.6z"/>
+    </svg>
+    <span class="kc-trust__text">
+      <strong class="kc-trust__title">60-Night Guarantee</strong>
+      <span class="kc-trust__sub">If she ignores it, you don&rsquo;t pay</span>
+    </span>
+  </div>
+
+  <div class="kc-trust__chip">
+    <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true" focusable="false">
+      <path d="M3 5h11v10H3zM14 8h3.6L21 11.2V15h-7z"/>
+      <circle cx="7" cy="17.2" r="1.9"/>
+      <circle cx="16.8" cy="17.2" r="1.9"/>
+    </svg>
+    <span class="kc-trust__text">
+      <strong class="kc-trust__title">
+Free tracked shipping</strong>
+      <span class="kc-trust__sub">
+Estimated delivery to Australia: 3–8 business days.</span>
+    </span>
+  </div>
+
+  <div class="kc-trust__chip kc-trust__chip--desktop">
+    <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true" focusable="false">
+      <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.4l-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/>
+    </svg>
+    <span class="kc-trust__text">
+      <strong class="kc-trust__title">USB Rechargeable</strong>
+      <span class="kc-trust__sub">Ready for another play session</span>
+    </span>
+  </div>
+</div>
+
+<style>
+  .kc-trust{
+    --kc-green:#1B3A2D;
+    --kc-cream:#F7F1E8;
+    --kc-muted:#6E7D71;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:10px;
+    width:100%;
+  }
+  .kc-trust__chip{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    background:var(--kc-cream);
+    border:1px solid rgba(27,58,45,.14);
+    border-radius:12px;
+    padding:9px 12px;
+    min-width:0;
+  }
+  .kc-trust__chip--desktop{display:none;}
+  .kc-trust__icon{
+    flex:0 0 auto;
+    width:17px;
+    height:17px;
+    fill:var(--kc-green);
+  }
+  .kc-trust__text{
+    display:flex;
+    flex-direction:column;
+    gap:1px;
+    min-width:0;
+  }
+  .kc-trust__title{
+    font-size:12.5px;
+    font-weight:700;
+    line-height:1.2;
+    color:var(--kc-green);
+    white-space:nowrap;
+  }
+  .kc-trust__sub{
+    font-size:11px;
+    line-height:1.25;
+    color:var(--kc-muted);
+  }
+  @media screen and (min-width:750px){
+    .kc-trust{grid-template-columns:1fr 1fr 1fr;}
+    .kc-trust__chip--desktop{display:flex;}
+  }
+  @media screen and (max-width:749px){
+    .kc-trust{gap:6px;}
+    .kc-trust__chip{padding:8px 10px;gap:7px;border-radius:11px;}
+    .kc-trust__icon{width:15px;height:15px;}
+    .kc-trust__title{font-size:11.5px;}
+    .kc-trust__sub{font-size:10.5px;}
+  }
+</style>
+    
+
+  
+
+<div class="kc-faq">
+  <details class="kc-faq__item">
+    <summary class="kc-faq__q">What if she ignores it like every other toy?</summary>
+    <div class="kc-faq__a">
+      <p>That basket of dead toys? We built for it. These move like actual prey &mdash; erratic, unpredictable, woken by her touch &mdash; which flips the hunting switch ordinary toys never reach. And if she truly isn&rsquo;t interested after 60 nights, you get every cent back. Her boredom is our risk, not yours.</p>
+    </div>
+  </details>
+
+  <details class="kc-faq__item">
+    <summary class="kc-faq__q">How does it work?</summary>
+    <div class="kc-faq__a">
+      <p>Set up Wingmate using the included instructions, then let your cat follow, chase and bat at the moving bird. Start with a short supervised session so they can investigate at their own pace.</p>
+    </div>
+  </details>
+
+  <details class="kc-faq__item">
+    <summary class="kc-faq__q">Should I supervise play?</summary>
+    <div class="kc-faq__a">
+      <p>Supervise play and inspect Wingmate, its mount and cord before each session. Stop using it if anything is damaged, and put it away after play.</p>
+    </div>
+  </details>
+
+  <details class="kc-faq__item">
+    <summary class="kc-faq__q">Will it survive my cat?</summary>
+    <div class="kc-faq__a">
+      <p>It&rsquo;s built for exactly the cat you&rsquo;re worried about. And if she somehow wins &mdash; chewed cord, ripped feather, anything &mdash; send us a photo and we&rsquo;ll ship a free replacement. No return, no forms, no arguing.</p>
+    </div>
+  </details>
+
+  <details class="kc-faq__item">
+    <summary class="kc-faq__q">Shipping, Delivery &amp; Returns</summary>
+    <div class="kc-faq__a"><p>
+Free tracked shipping to Australia. Estimated delivery: 3–8 business days. We’ll email your tracking details once your order ships. Delivery times are estimates and may vary.</p><p>Your purchase is backed by the 60-Night Play Guarantee. If you&rsquo;re unhappy for any reason, contact us for a refund.</p></div>
+  </details>
+</div>
+
+<style>
+  .kc-faq{
+    --kc-green:#1B3A2D;
+    --kc-cream:#F7F1E8;
+    --kc-muted:#5C6B60;
+
+    margin-top:14px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .kc-faq__item{
+    background:var(--kc-cream);
+    border:1px solid rgba(27,58,45,.14);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .kc-faq__q{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:13px 15px;
+    font-size:14.5px;
+    font-weight:700;
+    line-height:1.3;
+    color:var(--kc-green);
+    -webkit-tap-highlight-color:transparent;
+  }
+  .kc-faq__q::-webkit-details-marker{display:none;}
+  .kc-faq__q::after{
+    content:"";
+    flex:0 0 auto;
+    width:10px;
+    height:10px;
+    border-right:2px solid var(--kc-green);
+    border-bottom:2px solid var(--kc-green);
+    transform:rotate(45deg);
+    transition:transform .18s ease;
+    margin-right:2px;
+  }
+  .kc-faq__item[open] .kc-faq__q::after{
+    transform:rotate(-135deg);
+  }
+  .kc-faq__a{
+    padding:0 15px 13px;
+  }
+  .kc-faq__a p{
+    margin:0 0 8px;
+    font-size:13.5px;
+    line-height:1.55;
+    color:var(--kc-muted);
+  }
+  .kc-faq__a p:last-child{margin-bottom:0;}
+  .kc-faq__a strong{color:var(--kc-green);}
+  .kc-faq__list{line-height:1.95;}
+  @media screen and (max-width:749px){
+    .kc-faq{gap:7px;}
+    .kc-faq__q{padding:12px 13px;font-size:14px;}
+    .kc-faq__a{padding:0 13px 12px;}
+    .kc-faq__a p{font-size:13px;}
+  }
+</style>
+    
+
+
+          </div>
+        
+      </div>
+    
+  </div>
+</div>
+
+
+
+<script>
+  var parser = new DOMParser();
+  var originPrice = '$54.99';
+  const currency = window.Shopify?.currency?.active ?? 'USD';
+
+  const formId = 'product-form-template--21121800667180__shop_product_details_JbqzwH';
+  const form = document.getElementById(formId);
+
+  function formatMoney(newMoney) {
+    const originPriceNumber = originPrice.replace(/[^0-9.,]/g, '');
+    return `${originPrice.replace(originPriceNumber, newMoney)} ${currency}`;
+  }
+  function formatMoneyWithoutSuffix(newMoney) {
+    const originPriceNumber = originPrice.replace(/[^0-9.,]/g, '');
+    return `${originPrice.replace(originPriceNumber, newMoney)}`;
+  }
+
+  if (window.innerWidth <= 767 && document.querySelector('.shop-mobile-arrows')) {
+    const prevBtn = document.querySelector('.shop-mobile-arrow-prev');
+    const nextBtn = document.querySelector('.shop-mobile-arrow-next');
+
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', () => {
+        // Logique pour image précédente
+        navigateToImage('prev');
+      });
+
+      nextBtn.addEventListener('click', () => {
+        // Logique pour image suivante
+        navigateToImage('next');
+      });
+    }
+  }
+
+  const quantityElems = form.querySelectorAll('input[type="hidden"][name="quantity"]');
+  const addQuantityElem = (quantityVal) => {
+    const curForm = document.getElementById(formId);
+    const quantityElem = document.createElement('input');
+    quantityElem.setAttribute('type', 'hidden');
+    quantityElem.setAttribute('name', 'quantity');
+    quantityElem.setAttribute('value', quantityVal);
+    curForm.appendChild(quantityElem);
+  };
+</script>
+<script src="//kittycollective.co/cdn/shop/t/14/assets/product-info.js?v=42461272330115463901791286164" defer></script>
+<script src="//kittycollective.co/cdn/shop/t/14/assets/variant-selector.js?v=121105791468055008541791286187" defer></script>
+<script src="//kittycollective.co/cdn/shop/t/14/assets/product-form.js?v=29116916729992679731791286164" defer></script>
+<script src="//kittycollective.co/cdn/shop/t/14/assets/shop-product-details.js?v=137528182942843011411791286179" defer></script>
+<script src="//kittycollective.co/cdn/shop/t/14/assets/product-gallery.js?v=37737232763765483071791286164" defer></script>
+
+
+<style> #shopify-section-template--21121800667180__shop_product_details_JbqzwH .button-icon {color: #17433c !important;} #shopify-section-template--21121800667180__shop_product_details_JbqzwH .imgr-rating-text {margin-left: 8px;} </style></section><section id="

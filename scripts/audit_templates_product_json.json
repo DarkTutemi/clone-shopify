@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "main": {
+      "type": "willa-main-product",
+      "blocks": {
+        "acc_desc": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Product Overview & Features",
+            "use_product_description": true,
+            "open_default": true
+          }
+        },
+        "acc_shipping": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Fast US Tracked Shipping",
+            "use_product_description": false,
+            "content": "All orders are packaged and dispatched from regional US warehouses within 24–48 hours. Live door-to-door tracking provided via email. Free express delivery on orders over $49.",
+            "open_default": false
+          }
+        },
+        "acc_warranty": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "90-Day Money-Back Guarantee",
+            "use_product_description": false,
+            "content": "Every Zavelyn product comes backed by our unconditional 90-Day 100% Satisfaction Guarantee. If you are not completely satisfied, simply contact support@tryzavelyn.com for a full refund or exchange.",
+            "open_default": false
+          }
+        }
+      },
+      "block_order": [
+        "acc_desc",
+        "acc_shipping",
+        "acc_warranty"
+      ],
+      "settings": {
+        "show_breadcrumbs": true,
+        "badge_text": "SPECIAL OFFER",
+        "rating_text": "4.9 \/ 5.0 (1,240+ Verified Reviews)",
+        "enable_sticky_atc": true
+      }
+    },
+    "facts": {
+      "type": "willa-facts",
+      "settings": {
+        "heading": "Engineered for Performance & Long-Lasting Durability",
+        "subtitle": "Discover why homesteaders, craftsmen, and makers trust Zavelyn for their daily tasks."
+      }
+    },
+    "steps": {
+      "type": "willa-steps",
+      "settings": {
+        "heading": "Simple Setup. Immediate Results.",
+        "subtitle": "Designed for effortless plug-and-play operation straight out of the box."
+      }
+    },
+    "comparison": {
+      "type": "willa-comparison",
+      "settings": {
+        "heading": "The Zavelyn Difference"
+      }
+    },
+    "faq": {
+      "type": "willa-faq",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know about setup, warranties, and shipping."
+      }
+    },
+    "reviews": {
+      "type": "willa-reviews",
+      "settings": {
+        "heading": "What Verified Customers Are Saying",
+        "subtitle": "Real feedback from craftsmen, farmers, and homeowners across North America."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "facts",
+    "steps",
+    "comparison",
+    "faq",
+    "reviews"
+  ]
+}
