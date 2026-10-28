@@ -1,0 +1,62 @@
+[
+  {
+    "selection": "Buy 1 × 60ml",
+    "expectedPrice": "$39.99",
+    "displayedPrice": "$39.99",
+    "checkoutPrice": "$39.99",
+    "variantId": 67980643598521,
+    "fulfillmentProperty": "SHIP 1 × 60ML BOTTLES",
+    "noAdminModal": "YES (No Modal)",
+    "status": "PASS"
+  },
+  {
+    "selection": "Buy 2 × 60ml",
+    "expectedPrice": "$79.98",
+    "displayedPrice": "$79.98",
+    "checkoutPrice": "$79.98",
+    "variantId": 67980643664057,
+    "fulfillmentProperty": "SHIP 2 × 60ML BOTTLES",
+    "noAdminModal": "YES (No Modal)",
+    "status": "PASS"
+  },
+  {
+    "selection": "Buy 3 × 60ml",
+    "expectedPrice": "$95.99",
+    "displayedPrice": "$95.99",
+    "checkoutPrice": "$95.99",
+    "variantId": 67980643729593,
+    "fulfillmentProperty": "SHIP 3 × 60ML BOTTLES",
+    "noAdminModal": "YES (No Modal)",
+    "status": "PASS"
+  },
+  {
+    "selection": "Buy 1 × 120ml",
+    "expectedPrice": "$49.99",
+    "displayedPrice": "$49.99",
+    "checkoutPrice": "$49.99",
+    "variantId": 68036047831225,
+    "fulfillmentProperty": "SHIP 1 × 120ML BOTTLES",
+    "noAdminModal": "YES (No Modal)",
+    "status": "PASS"
+  },
+  {
+    "selection": "Buy 2 × 120ml",
+    "expectedPrice": "$99.98",
+    "displayedPrice": "$99.98",
+    "checkoutPrice": "$99.98",
+    "variantId": 68036048453817,
+    "fulfillmentProperty": "SHIP 2 × 120ML BOTTLES",
+    "noAdminModal": "YES (No Modal)",
+    "status": "PASS"
+  },
+  {
+    "selection": "Buy 3 × 120ml",
+    "expectedPrice": "$125.99",
+    "displayedPrice": "$125.99",
+    "checkoutPrice": "$125.99",
+    "variantId": 68036048715961,
+    "fulfillmentProperty": "SHIP 3 × 120ML BOTTLES",
+    "noAdminModal": "YES (No Modal)",
+    "status": "PASS"
+  }
+]

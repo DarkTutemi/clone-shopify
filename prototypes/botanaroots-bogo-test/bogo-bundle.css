@@ -1,0 +1,824 @@
+/**
+ * ZAVELYN BOTANAROOTS — BOGO OFFER A/B TEST BUNDLE STYLES
+ * Architecture: Isolated CSS scope under .zv-botana-bogo-container
+ * Color Palette:
+ *  - Primary Forest Green: #17433C
+ *  - Selected Pale-Green BG: #F1F8F4
+ *  - Dark Green Border: #17433C
+ *  - Lime CTA Accent: #C6FA54
+ *  - Warm Peach / Beige Pill: #FEF3E7 (text #C2410C)
+ *  - Warm Cream: #FFFAF7
+ */
+
+.zv-botana-bogo-container {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #17433C;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 6px 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.zv-botana-bogo-container * {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1. BUNDLE SECTION HEADER
+   ========================================================================== */
+.zv-bundle-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 0 2px;
+  gap: 8px;
+  width: 100%;
+}
+
+.zv-bundle-header-title-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.zv-bundle-header-label {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: #17433C;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.zv-bundle-header-guarantee-wrap {
+  flex-shrink: 0;
+}
+
+.zv-bundle-header-guarantee {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #15803D;
+  background: #F0FDF4;
+  padding: 3.5px 9px;
+  border-radius: 6px;
+  border: 1px solid #DCFCE7;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   2. BUNDLE OFFER CARDS (VERTICAL HIERARCHY: BUY 4 -> BUY 2 -> BUY 1)
+   ========================================================================== */
+.zv-bundle-cards-group {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-bottom: 16px;
+}
+
+.zv-bundle-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  user-select: none;
+}
+
+.zv-bundle-card:hover {
+  border-color: #9CA3AF;
+  box-shadow: 0 4px 12px rgba(23, 67, 60, 0.06);
+}
+
+/* Selected State */
+.zv-bundle-card.selected {
+  border-color: #17433C;
+  background: #F1F8F4;
+  box-shadow: 0 4px 16px rgba(23, 67, 60, 0.12);
+}
+
+/* HERO CARD 1: BUY 4 GET 4 FREE (BEST VALUE) */
+.zv-bundle-card.zv-card-buy4get4.selected {
+  border: 2px solid #17433C;
+  background: #F1F8F4;
+}
+
+/* Banners on Cards */
+.zv-card-banner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+}
+
+.zv-banner-best-value {
+  background: #17433C;
+  color: #FFFFFF;
+}
+
+.zv-banner-best-value .zv-highlight-lime {
+  color: #C6FA54;
+}
+
+.zv-banner-most-popular {
+  background: #FEF3E7;
+  color: #C2410C;
+  border-bottom: 1px solid #FDBA74;
+}
+
+/* Card Content Body */
+.zv-card-content {
+  padding: 12px 14px;
+}
+
+.zv-card-main-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Radio Button Simulation */
+.zv-card-radio {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zv-radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #D1D5DB;
+  background: #FFFFFF;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.zv-bundle-card.selected .zv-radio-circle {
+  border-color: #17433C;
+  background: #17433C;
+}
+
+.zv-bundle-card.selected .zv-radio-circle::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Product Cluster Image in Card */
+.zv-card-img-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 105px;
+  height: 86px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.zv-card-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Text Information */
+.zv-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.zv-card-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.zv-card-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #17433C;
+  line-height: 1.2;
+}
+
+.zv-card-free-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: #15803D;
+  background: #DCFCE7;
+  padding: 1.5px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.zv-card-bottles {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 2px;
+}
+
+.zv-card-breakdown {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #4B5563;
+}
+
+/* Pricing Section */
+.zv-card-pricing {
+  flex-shrink: 0;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.zv-card-total-price {
+  font-size: 18px;
+  font-weight: 900;
+  color: #17433C;
+  line-height: 1.1;
+  letter-spacing: -0.3px;
+}
+
+.zv-card-unit-price {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2.5px 7px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.zv-unit-pill-warm {
+  background: #FEF3E7;
+  color: #C2410C;
+  border: 1px solid #FFEDD5;
+}
+
+/* Card Badges Row */
+.zv-card-badges-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(23, 67, 60, 0.12);
+}
+
+.zv-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2.5px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.zv-badge-free-shipping {
+  background: #E0E7FF;
+  color: #3730A3;
+}
+
+.zv-badge-shipping-fee {
+  background: #F3F4F6;
+  color: #4B5563;
+}
+
+.zv-badge-free-bottles {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+/* ==========================================================================
+   3. ENLARGED SIZE UPSELL SECTION (60ml -> 120ml)
+   ========================================================================== */
+.zv-size-upsell-section {
+  background: #FFFFFF;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
+  transition: all 0.22s ease;
+}
+
+.zv-size-upsell-section:hover {
+  border-color: #D1D5DB;
+}
+
+.zv-upsell-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 2px;
+}
+
+.zv-upsell-title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #17433C;
+  text-transform: uppercase;
+}
+
+.zv-upsell-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  background: #FEF3E7;
+  color: #C2410C;
+  padding: 2.5px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: 1px solid #FFEDD5;
+}
+
+.zv-upsell-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFAF7;
+  border: 1.5px dashed #FDBA74;
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zv-upsell-card:hover {
+  background: #FFF7ED;
+  border-color: #FB923C;
+}
+
+.zv-upsell-card.active {
+  background: #F0FDF4;
+  border: 1.5px solid #16A34A;
+}
+
+/* Checkbox Style */
+.zv-upsell-checkbox-wrap {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zv-upsell-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.zv-custom-check {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #D1D5DB;
+  border-radius: 5px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: transparent;
+}
+
+.zv-upsell-card.active .zv-custom-check {
+  background: #17433C;
+  border-color: #17433C;
+  color: #FFFFFF;
+}
+
+.zv-upsell-img-wrap {
+  flex-shrink: 0;
+  width: 68px;
+  height: 68px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #FED7AA;
+}
+
+.zv-upsell-card.active .zv-upsell-img-wrap {
+  border-color: #BBF7D0;
+}
+
+.zv-upsell-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.zv-upsell-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.zv-upsell-main-title {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #17433C;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.zv-upsell-desc {
+  font-size: 12px;
+  color: #4B5563;
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+
+.zv-upsell-deal {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #C2410C;
+}
+
+.zv-upsell-card.active .zv-upsell-deal {
+  color: #15803D;
+}
+
+.zv-upsell-pricing {
+  flex-shrink: 0;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.zv-upsell-delta {
+  font-size: 15px;
+  font-weight: 800;
+  color: #17433C;
+}
+
+.zv-upsell-card.active .zv-upsell-delta {
+  color: #15803D;
+}
+
+.zv-upsell-per-bottle {
+  font-size: 10.5px;
+  color: #6B7280;
+}
+
+/* ==========================================================================
+   4. DYNAMIC ORDER SUMMARY BOX
+   ========================================================================== */
+.zv-summary-box {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.zv-summary-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.zv-summary-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6B7280;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.zv-summary-package-val {
+  font-size: 15px;
+  font-weight: 800;
+  color: #17433C;
+  line-height: 1.2;
+}
+
+.zv-summary-right {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.zv-summary-total-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+.zv-summary-total-val {
+  font-size: 20px;
+  font-weight: 900;
+  color: #17433C;
+  line-height: 1;
+}
+
+.zv-summary-unit-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.zv-summary-shipping {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #15803D;
+}
+
+/* ==========================================================================
+   5. TWO DISTINCT CALL TO ACTION BUTTONS
+   ========================================================================== */
+.zv-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* PRIMARY CTA: CLAIM OFFER (LIME BACKGROUND) */
+.zv-cta-primary {
+  width: 100%;
+  background: #C6FA54;
+  color: #17433C;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(198, 250, 84, 0.45);
+}
+
+.zv-cta-primary:hover {
+  background: #B6F535;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(198, 250, 84, 0.55);
+}
+
+.zv-cta-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(198, 250, 84, 0.3);
+}
+
+/* SECONDARY CTA: BUY NOW (DARK FOREST GREEN) */
+.zv-cta-secondary {
+  width: 100%;
+  background: #17433C;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(23, 67, 60, 0.2);
+}
+
+.zv-cta-secondary:hover {
+  background: #0F2F2A;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(23, 67, 60, 0.3);
+}
+
+.zv-cta-secondary:active {
+  transform: translateY(1px);
+}
+
+/* ==========================================================================
+   6. OFFICIAL SHOPIFY PAYMENT ICONS ROW
+   ========================================================================== */
+.zv-payment-icons-wrapper {
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+.zv-payment-icons-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.zv-payment-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  padding: 3px 6px;
+  height: 24px;
+}
+
+.zv-pay-svg {
+  height: 16px;
+  width: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   7. INTERACTIVE PAYLOAD & SIMULATION MODAL
+   ========================================================================== */
+.zv-payload-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.zv-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.zv-modal-dialog {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 14px;
+  max-width: 480px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.zv-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #E5E7EB;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.zv-modal-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #17433C;
+}
+
+.zv-modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #6B7280;
+  line-height: 1;
+}
+
+.zv-payload-box {
+  background: #0F172A;
+  color: #E2E8F0;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  overflow-x: auto;
+  margin: 10px 0;
+}
+
+.zv-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.zv-modal-btn {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.zv-modal-btn-primary {
+  background: #17433C;
+  color: #FFFFFF;
+  border: none;
+}
+
+/* ==========================================================================
+   8. MOBILE RESPONSIVE TWEAKS (390px & 375px)
+   ========================================================================== */
+@media (max-width: 420px) {
+  .zv-bundle-card-content {
+    padding: 10px;
+  }
+  .zv-card-main-row {
+    gap: 9px;
+  }
+  .zv-card-img-wrap {
+    width: 88px;
+    height: 76px;
+  }
+  .zv-card-title {
+    font-size: 15px;
+  }
+  .zv-card-bottles {
+    font-size: 12.5px;
+  }
+  .zv-card-total-price {
+    font-size: 16.5px;
+  }
+  .zv-card-unit-price {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+  .zv-upsell-card {
+    padding: 8px 10px;
+    gap: 9px;
+  }
+  .zv-upsell-img-wrap {
+    width: 58px;
+    height: 58px;
+  }
+  .zv-upsell-main-title {
+    font-size: 13.5px;
+  }
+  .zv-summary-package-val {
+    font-size: 14px;
+  }
+  .zv-summary-total-val {
+    font-size: 18px;
+  }
+  .zv-cta-primary {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+  .zv-cta-secondary {
+    padding: 13px 16px;
+    font-size: 14px;
+  }
+}

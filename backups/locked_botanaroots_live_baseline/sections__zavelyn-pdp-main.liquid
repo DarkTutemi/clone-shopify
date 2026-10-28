@@ -385,8 +385,13 @@
       <!-- LEFT COLUMN: PRODUCT GALLERY -->
       <div class="zv-pdp-gallery-col">
         <div class="zv-pdp-gallery-inner">
+          {%- assign is_botanaroots = false -%}
+          {%- if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
+            {%- assign is_botanaroots = true -%}
+          {%- endif -%}
+
           {%- assign gallery_blocks = section.blocks | where: "type", "gallery_image" -%}
-          {%- if gallery_blocks.size > 0 -%}
+          {%- if is_botanaroots and gallery_blocks.size > 0 -%}
             {%- assign first_gallery_block = gallery_blocks.first -%}
             {%- assign main_img_src = first_gallery_block.settings.image | image_url: width: 1200 -%}
             {%- if main_img_src == blank -%}
@@ -449,7 +454,7 @@
 
             {% if product.images.size > 1 %}
               <div class="zv-pdp-thumbs-row" id="zvThumbnails">
-                {% for image in product.images limit: 8 %}
+                {% for image in product.images %}
                   <button 
                     type="button" 
                     class="zv-thumb-btn {% if forloop.first %}active{% endif %}" 
@@ -535,6 +540,159 @@
                 img_buy1: section.settings.botana_img_buy1,
                 img_upsell: section.settings.botana_img_upsell
             -%}
+          {%- elsif product.handle == 'zavelyn-vfit-red-light-intimate-wellness-device' -%}
+            <!-- vfit-buybox-injected: vFit Dedicated Starter Kit + Quantity Stepper -->
+            <style>
+              .zv-buy1-container {
+                background: #FFFFFF;
+                border: 2px solid #234E3E;
+                border-radius: 14px;
+                padding: 16px 18px;
+                margin-bottom: 20px;
+                box-shadow: 0 4px 16px rgba(35, 78, 62, 0.06);
+              }
+              .zv-buy1-card {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 14px;
+              }
+              .zv-buy1-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+              }
+              .zv-buy1-radio-dot {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 6px solid #234E3E;
+                background: #FFFFFF;
+                flex-shrink: 0;
+              }
+              .zv-buy1-content {
+                display: flex;
+                flex-direction: column;
+              }
+              .zv-buy1-title {
+                font-size: 15px;
+                font-weight: 800;
+                color: #183324;
+              }
+              .zv-buy1-sub {
+                font-size: 12.5px;
+                color: #667085;
+                margin-top: 2px;
+              }
+              .zv-buy1-price-col {
+                text-align: right;
+                flex-shrink: 0;
+              }
+              .zv-buy1-price {
+                font-size: 18px;
+                font-weight: 900;
+                color: #183324;
+                display: block;
+              }
+              .zv-buy1-compare {
+                font-size: 13px;
+                color: #98A2B3;
+                text-decoration: line-through;
+              }
+              .zv-qty-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 14px;
+                padding-top: 12px;
+                border-top: 1px dashed #E2D9D3;
+              }
+              .zv-qty-label-group {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              }
+              .zv-qty-title {
+                font-size: 13.5px;
+                font-weight: 800;
+                color: #183324;
+              }
+              .zv-qty-note {
+                font-size: 11.5px;
+                color: #667085;
+              }
+              .zv-qty-stepper {
+                display: flex;
+                align-items: center;
+                background: #F8F5F2;
+                border: 1.5px solid #D8CFC8;
+                border-radius: 9999px;
+                padding: 3px;
+              }
+              .zv-qty-btn {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                border: none;
+                background: #FFFFFF;
+                color: #183324;
+                font-size: 17px;
+                font-weight: 800;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.18s ease;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+                line-height: 1;
+              }
+              .zv-qty-btn:hover:not(:disabled) {
+                background: #234E3E;
+                color: #FFFFFF;
+              }
+              .zv-qty-btn:disabled {
+                opacity: 0.4;
+                cursor: not-allowed;
+              }
+              .zv-qty-num {
+                font-size: 15px;
+                font-weight: 800;
+                color: #183324;
+                min-width: 36px;
+                text-align: center;
+              }
+            </style>
+
+            <div class="zv-buy1-container">
+              <div class="zv-buy1-card">
+                <div class="zv-buy1-left">
+                  <div class="zv-buy1-radio-dot"></div>
+                  <div class="zv-buy1-content">
+                    <div class="zv-buy1-title">Buy 1 (Essential Starter Kit - Save 67%)</div>
+                    <div class="zv-buy1-sub">Single vFit Intimate Wellness Device + Photonic Primer Gel</div>
+                  </div>
+                </div>
+                <div class="zv-buy1-price-col">
+                  <span class="zv-buy1-price" id="zvBuy1Price">{{ current_variant.price | money }}</span>
+                  {% if current_variant.compare_at_price > current_variant.price %}
+                    <s class="zv-buy1-compare" id="zvBuy1Compare">{{ current_variant.compare_at_price | money }}</s>
+                  {% endif %}
+                </div>
+              </div>
+
+              <!-- Quantity Stepper under Buy 1 -->
+              <div class="zv-qty-wrap">
+                <div class="zv-qty-label-group">
+                  <span class="zv-qty-title">Quantity:</span>
+                  <span class="zv-qty-note">(Unit Price: {{ current_variant.price | money }})</span>
+                </div>
+                <div class="zv-qty-stepper">
+                  <button type="button" class="zv-qty-btn" id="vfitQtyMinus" aria-label="Decrease quantity" disabled>−</button>
+                  <span class="zv-qty-num" id="vfitQtyDisplay">1</span>
+                  <button type="button" class="zv-qty-btn" id="vfitQtyPlus" aria-label="Increase quantity">+</button>
+                </div>
+              </div>
+            </div>
           {%- else -%}
             <!-- Color / Style Swatches (if multi-variant with attribute options) -->
           {% for option in product.options_with_values %}
@@ -654,17 +812,19 @@
               </label>
             {% endif %}
           </fieldset>
+        {%- endif -%}
 
+        {%- unless product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
           <!-- Urgency Bar -->
           <p class="kc-order-limit" id="zvUrgencyBar">
             <span aria-hidden="true">✦</span>
-            <span>{{ section.settings.urgency_text }}</span>
+            <span>{{ section.settings.urgency_text | default: 'Limited Restock Batch • Free Tracked US Shipping' }}</span>
           </p>
 
           <!-- CTA BUTTONS -->
           <div class="zv-cta-group">
             <button type="button" class="kc-claim-button" id="zvClaimOfferBtn">
-              <span class="button-text">{{ section.settings.cta_text }} ➔</span>
+              <span class="button-text">{{ section.settings.cta_text | default: 'CLAIM OFFER' }} ➔</span>
               <div class="loading__spinner hidden" id="zvBtnSpinner">
                 <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
                   <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
@@ -677,62 +837,18 @@
             </button>
           </div>
 
-          <!-- Payment Icons -->
-          <div class="zv-payment-icons-row" role="region" aria-label="Accepted payment methods">
-            <!-- Visa -->
-            <svg class="zv-pay-icon" viewBox="0 0 38 24" width="38" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000"/>
-              <path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" fill="#fff"/>
-              <path d="M15.8 15.6l1.6-9.7h2.6l-1.6 9.7h-2.6zM27.6 6.1c-.5-.2-1.3-.4-2.3-.4-2.5 0-4.3 1.3-4.3 3.2 0 1.4 1.3 2.2 2.2 2.7.9.5 1.3.8 1.3 1.2 0 .6-.8.9-1.5.9-1 0-1.5-.1-2.3-.5l-.3-.2-.3 2c.6.3 1.7.5 2.8.5 2.7 0 4.4-1.3 4.4-3.3 0-1.1-.7-2-2.2-2.7-.9-.5-1.5-.8-1.5-1.3 0-.4.5-.9 1.5-.9.8 0 1.5.2 1.9.4l.2.1.4-2.1zM34.8 6.1h-2c-.6 0-1.1.2-1.3.8l-3.8 8.7h2.8l.6-1.5h3.4l.3 1.5h2.5l-2.5-9.5zm-3 6.1l1.4-3.8.8 3.8h-2.2zM12.4 6.1l-2.5 6.6-.3-1.4c-.5-1.7-2-3.5-3.7-4.4l2.4 8.9h2.8l4.2-9.7h-2.9z" fill="#1434CB"/>
-            </svg>
-            <!-- Mastercard -->
-            <svg class="zv-pay-icon" viewBox="0 0 38 24" width="38" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000"/>
-              <path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"/>
-              <circle fill="#EB001B" cx="15" cy="12" r="7"/>
-              <circle fill="#F79E1B" cx="23" cy="12" r="7"/>
-              <path fill="#FF5F00" d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.2-3 3.3-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z"/>
-            </svg>
-            <!-- Amex -->
-            <svg class="zv-pay-icon" viewBox="0 0 38 24" width="38" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill="#000" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3Z" opacity=".07"/>
-              <path fill="#006FCF" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32Z"/>
-              <path fill="#FFF" d="M22.012 19.936v-8.421L37 11.528v2.326l-1.732 1.852L37 17.573v2.375h-2.766l-1.47-1.622-1.46 1.628-9.292-.02Z"/>
-              <path fill="#006FCF" d="M23.013 19.012v-6.57h5.572v1.513h-3.768v1.028h3.678v1.488h-3.678v1.01h3.768v1.531h-5.572Z"/>
-            </svg>
-            <!-- Apple Pay -->
-            <svg class="zv-pay-icon" viewBox="0 0 38 24" width="38" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill="#000" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3Z" opacity=".07"/>
-              <path fill="#FFF" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32Z"/>
-              <path fill="#000" d="M12.9 8.2c.3-.4.5-.9.4-1.5-.5 0-1 .3-1.3.7-.3.3-.5.9-.4 1.4.6 0 1.1-.2 1.3-.6m.5.7c-.7 0-1.4.4-1.7.4-.4 0-1-.4-1.5-.4-.8 0-1.5.5-1.9 1.2-.8 1.4-.2 3.5.6 4.7.4.6.9 1.2 1.5 1.2.6 0 .8-.4 1.5-.4.7 0 .9.4 1.5.4.6 0 1-.6 1.4-1.2.5-.7.7-1.4.7-1.4-.1 0-1.3-.5-1.3-1.9 0-1.2 1-1.7 1-1.7-.6-.8-1.5-.9-1.8-.9m5.5-1.6h-2.1v9.2h1.3v-3.4h.8c1.7 0 2.8-1.2 2.8-2.9 0-1.8-1.1-2.9-2.8-2.9zm0 4.6h-.8V8.6h.8c1 0 1.6.7 1.6 1.7 0 1.1-.6 1.8-1.6 1.8m5.8 4.6v-1.1c-.4.8-1.2 1.2-2.1 1.2-1.3 0-2.2-.8-2.2-2 0-1.2 1-2 2.6-2.1l1.6-.1v-.5c0-.7-.5-1.1-1.4-1.1-.7 0-1.3.3-1.5.7l-1-.5c.4-.9 1.4-1.4 2.6-1.4 1.6 0 2.6.9 2.6 2.2v4.6h-1.2zm-.1-2.9l-1.3.1c-.8.1-1.3.4-1.3 1.1 0 .6.5 1 1.2 1 .9 0 1.4-.6 1.4-1.3v-.9m4.8 4.4l2.4-6.9h1.4l-3.2 8.5c-.5 1.4-1.2 1.9-2.4 1.9-.3 0-.6 0-.8-.1v-1.1c.2 0 .4.1.7.1.6 0 1-.3 1.2-.9l.2-.5-2.2-7h1.4l1.3 4.9z"/>
-            </svg>
-            <!-- Google Pay -->
-            <svg class="zv-pay-icon" viewBox="0 0 38 24" width="38" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000" opacity=".07"/>
-              <path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" fill="#FFF"/>
-              <path d="M18.093 11.976v3.2h-1.018v-7.9h2.691a2.447 2.447 0 0 1 1.747.692 2.28 2.28 0 0 1 .11 3.224l-.11.116c-.47.447-1.098.69-1.747.674l-1.673-.006zm0-3.732v2.788h1.698c.377.012.741-.135 1.005-.404a1.391 1.391 0 0 0-1.005-2.354l-1.698-.03zm6.484 1.348c.65-.03 1.286.188 1.778.613.445.43.682 1.03.65 1.649v3.334h-.969v-.766h-.049a1.93 1.93 0 0 1-1.673.931 2.17 2.17 0 0 1-1.496-.533 1.667 1.667 0 0 1-.613-1.324 1.606 1.606 0 0 1 .613-1.336 2.746 2.746 0 0 1 1.698-.515c.517-.02 1.03.093 1.49.331v-.208a1.134 1.134 0 0 0-.417-.901 1.416 1.416 0 0 0-.98-.368 1.545 1.545 0 0 0-1.319.717l-.895-.564a2.488 2.488 0 0 1 2.182-1.06z" fill="#5F6368"/>
-              <path d="M13.986 11.284c0-.308-.024-.616-.073-.92h-4.29v1.747h2.451a2.096 2.096 0 0 1-.9 1.373v1.134h1.464a4.433 4.433 0 0 0 1.348-3.334z" fill="#4285F4"/>
-              <path d="M9.629 15.721a4.352 4.352 0 0 0 3.01-1.097l-1.466-1.14a2.752 2.752 0 0 1-4.094-1.44H5.577v1.17a4.53 4.53 0 0 0 4.052 2.507z" fill="#34A853"/>
-              <path d="M7.079 12.05a2.709 2.709 0 0 1 0-1.735v-1.17H5.577a4.505 4.505 0 0 0 0 4.075l1.502-1.17z" fill="#FBBC04"/>
-              <path d="M9.629 8.44a2.452 2.452 0 0 1 1.74.68l1.3-1.293a4.37 4.37 0 0 0-3.065-1.183 4.53 4.53 0 0 0-4.027 2.5l1.502 1.171a2.715 2.715 0 0 1 2.55-1.875z" fill="#EA4335"/>
-            </svg>
-            <!-- Shop Pay -->
-            <svg class="zv-pay-icon" viewBox="0 0 38 24" width="38" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000"/>
-              <path d="M35.889 0C37.05 0 38 .982 38 2.182v19.636c0 1.2-.95 2.182-2.111 2.182H2.11C.95 24 0 23.018 0 21.818V2.182C0 .982.95 0 2.111 0H35.89z" fill="#5A31F4"/>
-              <path d="M9.35 11.368c-1.017-.223-1.47-.31-1.47-.705 0-.372.306-.558.92-.558.54 0 .934.238 1.225.704a.079.079 0 00.104.03l1.146-.584a.082.082 0 00.032-.114c-.475-.831-1.353-1.286-2.51-1.286-1.52 0-2.464.755-2.464 1.956 0 1.275 1.15 1.597 2.17 1.82 1.02.222 1.474.31 1.474.705 0 .396-.332.582-.993.582-.612 0-1.065-.282-1.34-.83a.08.08 0 00-.107-.035l-1.143.57a.083.083 0 00-.036.111c.454.92 1.384 1.437 2.627 1.437 1.583 0 2.539-.742 2.539-1.98s-1.155-1.598-2.173-1.82v-.003z" fill="#fff"/>
-            </svg>
-            <!-- Discover -->
-            <svg class="zv-pay-icon" viewBox="0 0 38 24" width="38" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000"/>
-              <path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"/>
-              <path d="M3.57 7.16H2v5.5h1.57c.83 0 1.43-.2 1.96-.63.63-.52 1-1.38 1-2.12 0-.75-.34-1.58-1-2.12-.53-.4-1.11-.63-1.96-.63zm1.26 4.14c-.34.3-.77.44-1.47.44h-.29V8.1h.29c.69 0 1.11.12 1.47.44.37.32.59.78.59 1.37 0 .6-.22 1.06-.59 1.39zm2.19-4.14h1.07v5.5H7.02v-5.5z" fill="#231F20"/>
-              <circle cx="20.16" cy="9.86" r="2.93" fill="#F89F20"/>
-            </svg>
+          <!-- SHOPIFY OFFICIAL PAYMENT BADGES -->
+          <div class="zv-payment-icons-wrapper" role="region" aria-label="Accepted payment methods">
+            <div class="zv-payment-icons-row">
+              {% assign payment_types = 'visa,master,american_express,apple_pay,google_pay,shopify_pay,discover' | split: ',' %}
+              {% for type in payment_types %}
+                <span class="zv-payment-icon" title="{{ type | replace: '_', ' ' | capitalize }}">
+                  {{ type | payment_type_svg_tag: class: 'zv-pay-svg' }}
+                </span>
+              {% endfor %}
+            </div>
           </div>
-
-          
-          {%- endif -%}
+        {%- endunless -%}
           <!-- TRUST CHIPS (.kc-trust) -->
           {%- if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
             {%- assign trust_blocks = section.blocks | where: "type", "trust_card" -%}
@@ -930,6 +1046,10 @@
     </div>
   </div>
 </div>
+
+{%- if product.handle == 'zavelyn-vfit-red-light-intimate-wellness-device' -%}
+  {%- render 'vfit-selfcare-upsell' -%}
+{%- endif -%}
 
 <!-- STICKY ADD TO CART BAR -->
 {% if section.settings.enable_sticky_atc %}
@@ -1395,18 +1515,36 @@
 }
 
 /* PAYMENT ICONS */
+.zv-payment-icons-wrapper {
+  margin: 14px 0 10px;
+  width: 100%;
+}
 .zv-payment-icons-row {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 12px 0 10px;
+  margin: 0;
 }
+.zv-payment-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.zv-payment-icon svg,
+.zv-payment-icon .zv-pay-svg,
 .zv-pay-icon {
+  width: 38px;
   height: 24px;
-  width: auto;
   display: block;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease;
+}
+.zv-payment-icon:hover svg,
+.zv-payment-icon:hover .zv-pay-svg {
+  transform: translateY(-1px);
 }
 
 /* TRUST CHIPS (.kc-trust) */
@@ -1751,6 +1889,22 @@
 .zv-botana-faq .kc-faq__a p {
   margin: 0 !important;
 }
+
+/* VFIT PDP FAQ ACCORDION STYLES */
+.zv-vfit-faq-item[open] {
+  border-color: #a50034 !important;
+  box-shadow: 0 4px 14px rgba(165, 0, 52, 0.08) !important;
+}
+.zv-vfit-faq-item[open] .zv-vfit-faq-arrow {
+  transform: rotate(-135deg) !important;
+}
+.zv-vfit-faq-summary::-webkit-details-marker {
+  display: none !important;
+}
+.zv-vfit-faq-summary:hover {
+  background: #fff9f9;
+}
+
 </style>
 
 <script>
@@ -1880,6 +2034,13 @@
     const spinner = document.getElementById('zvBtnSpinner');
     if (claimBtn) claimBtn.classList.add('loading');
     if (spinner) spinner.classList.remove('hidden');
+
+    // On vFit, sync activeQty with vFit quantity stepper if present
+    const vfitQtyDisp = document.getElementById('vfitQtyDisplay');
+    if (vfitQtyDisp) {
+      const q = parseInt(vfitQtyDisp.innerText, 10);
+      if (!isNaN(q) && q >= 1) activeQty = q;
+    }
 
     try {
       const res = await fetch('/cart/add.js', {

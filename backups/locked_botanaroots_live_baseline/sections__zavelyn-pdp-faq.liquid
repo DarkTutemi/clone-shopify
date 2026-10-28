@@ -111,20 +111,20 @@
 }
 {% endschema %}
 
+{%- include 'zavelyn-pdp-data' -%}
 {%- if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
   {%- comment -%}BotanaRoots renders interactive accordion at position 2 in description fallback{%- endcomment -%}
-{%- elsif section.settings.enable_section != false -%}
+{%- elsif zv_faq_count > 0 and section.settings.enable_section != false -%}
 <section class="zv-body-section zv-bg-white" id="zv-extended-faq">
   <div class="zv-container">
     <div class="zv-section-header">
       <span class="zv-badge">{{ section.settings.badge_text | default: 'GOT QUESTIONS?' }}</span>
       <h2 class="zv-section-title">{{ section.settings.heading | default: 'Frequently Asked Questions' }}</h2>
-      <p class="zv-section-subtitle">{{ section.settings.subheading | default: 'Everything you need to know about Zavelyn BotanaRoots.' }}</p>
+      <p class="zv-section-subtitle">{{ zv_vp_title | default: product.title }} Questions & Answers</p>
     </div>
 
     <div class="zv-faq-accordion" role="region" aria-label="Extended FAQ Accordion">
-      {%- assign ext_blocks = section.blocks | where: "type", "faq_item" -%}
-      {%- if ext_blocks.size > 0 -%}
+      {%- if zv_faq_count > 0 -%}
         {%- for block in ext_blocks -%}
           <details class="zv-faq-item-details" {% if block.settings.default_open %}open{% endif %} {{ block.shopify_attributes }}>
             <summary class="zv-faq-question-btn">
