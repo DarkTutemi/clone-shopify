@@ -1,0 +1,136 @@
+{
+  "timestamp": "2026-10-28T20:49:05.287Z",
+  "combinations": [
+    {
+      "combo": "buy4get4 60ml",
+      "expectedVariant": "68035793158329",
+      "actualVariant": "68035793158329",
+      "expectedPrice": 159.96,
+      "actualPrice": 159.96,
+      "itemCount": 1,
+      "properties": {
+        "Offer": "BUY 4 GET 4 FREE",
+        "Formula": "Pure Raw",
+        "Bottle Size": "60ml",
+        "Bottles to Ship": "8",
+        "Paid Bottles": "4",
+        "Free Bottles": "4",
+        "Manual Fulfillment": "SHIP 8 × 60ml BOTTLES (4 Paid + 4 Free)"
+      },
+      "timing": 974,
+      "passed": true
+    },
+    {
+      "combo": "buy4get4 120ml",
+      "expectedVariant": "68035795058873",
+      "actualVariant": "68035795058873",
+      "expectedPrice": 239.96,
+      "actualPrice": 239.96,
+      "itemCount": 1,
+      "properties": {
+        "Offer": "BUY 4 GET 4 FREE",
+        "Formula": "Pure Raw",
+        "Bottle Size": "120ml",
+        "Bottles to Ship": "8",
+        "Paid Bottles": "4",
+        "Free Bottles": "4",
+        "Manual Fulfillment": "SHIP 8 × 120ml BOTTLES (4 Paid + 4 Free)"
+      },
+      "timing": 1194,
+      "passed": true
+    },
+    {
+      "combo": "buy2get2 60ml",
+      "expectedVariant": "68035795091641",
+      "actualVariant": "68035795091641",
+      "expectedPrice": 79.98,
+      "actualPrice": 79.98,
+      "itemCount": 1,
+      "properties": {
+        "Offer": "BUY 2 GET 2 FREE",
+        "Formula": "Pure Raw",
+        "Bottle Size": "60ml",
+        "Bottles to Ship": "4",
+        "Paid Bottles": "2",
+        "Free Bottles": "2",
+        "Manual Fulfillment": "SHIP 4 × 60ml BOTTLES (2 Paid + 2 Free)"
+      },
+      "timing": 1087,
+      "passed": true
+    },
+    {
+      "combo": "buy2get2 120ml",
+      "expectedVariant": "68035795124409",
+      "actualVariant": "68035795124409",
+      "expectedPrice": 119.98,
+      "actualPrice": 119.98,
+      "itemCount": 1,
+      "properties": {
+        "Offer": "BUY 2 GET 2 FREE",
+        "Formula": "Pure Raw",
+        "Bottle Size": "120ml",
+        "Bottles to Ship": "4",
+        "Paid Bottles": "2",
+        "Free Bottles": "2",
+        "Manual Fulfillment": "SHIP 4 × 120ml BOTTLES (2 Paid + 2 Free)"
+      },
+      "timing": 1409,
+      "passed": true
+    },
+    {
+      "combo": "buy1 60ml",
+      "expectedVariant": "68035795157177",
+      "actualVariant": "68035795157177",
+      "expectedPrice": 39.99,
+      "actualPrice": 39.99,
+      "itemCount": 1,
+      "properties": {
+        "Offer": "BUY 1",
+        "Formula": "Pure Raw",
+        "Bottle Size": "60ml",
+        "Bottles to Ship": "1",
+        "Paid Bottles": "1",
+        "Free Bottles": "0",
+        "Manual Fulfillment": "SHIP 1 × 60ml BOTTLES (1 Paid + 0 Free)"
+      },
+      "timing": 1309,
+      "passed": true
+    },
+    {
+      "combo": "buy1 120ml",
+      "expectedVariant": "68035795189945",
+      "actualVariant": "68035795189945",
+      "expectedPrice": 49.99,
+      "actualPrice": 49.99,
+      "itemCount": 1,
+      "properties": {
+        "Offer": "BUY 1",
+        "Formula": "Pure Raw",
+        "Bottle Size": "120ml",
+        "Bottles to Ship": "1",
+        "Paid Bottles": "1",
+        "Free Bottles": "0",
+        "Manual Fulfillment": "SHIP 1 × 120ml BOTTLES (1 Paid + 0 Free)"
+      },
+      "timing": 1089,
+      "passed": true
+    }
+  ],
+  "doubleClickPassed": true,
+  "preservePassed": true,
+  "timingStats": {
+    "samples": 6,
+    "addJs": {
+      "median": 626,
+      "p95": 794
+    },
+    "cartJs": {
+      "median": 1063,
+      "p95": 1175
+    },
+    "totalPerception": {
+      "median": 1142,
+      "p95": 1409
+    }
+  }
+}
