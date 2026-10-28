@@ -1,0 +1,209 @@
+{%- liquid
+  if group != blank
+    assign b = group.settings
+  endif
+-%}
+{%- unless b.show == false -%}
+<section
+  class="senzio-purity-section"
+  data-senzio-purity
+  aria-labelledby="senzio-purity-title"
+  {% if group %}{{ group.shopify_attributes }}{% endif %}
+>
+  <div class="senzio-purity-inner">
+
+    <header class="senzio-purity-header">
+
+      <div class="senzio-purity-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <path class="spm-stem" d="M32 54V25"></path>
+
+          <path
+            class="spm-leaf spm-leaf-left"
+            d="M31 37C20 36 13 29 12 18C24 18 31 24 34 35"
+          ></path>
+
+          <path
+            class="spm-leaf spm-leaf-right"
+            d="M32 29C35 17 43 10 54 9C53 22 45 29 32 31"
+          ></path>
+        </svg>
+      </div>
+
+      <span class="senzio-purity-eyebrow">
+        {{ b.eyebrow | default: 'Pure Botanical Standards' }}
+      </span>
+
+      <h2 id="senzio-purity-title">
+        {{ b.title | default: 'Ingredients Come First' }}
+      </h2>
+
+      <p class="senzio-purity-description">
+        {{ b.description | default: 'Pure herbs for swelling and circulation.' }}
+      </p>
+
+      <div
+        class="senzio-purity-title-line"
+        aria-hidden="true"
+      ></div>
+
+    </header>
+
+    <!-- DESKTOP / TABLET ICON GRID -->
+    <div class="senzio-purity-grid senzio-purity-desktop-icons">
+
+      <article class="senzio-purity-item">
+        <div class="senzio-purity-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle class="spi-ring" cx="60" cy="60" r="51"></circle>
+            <path class="spi-main" d="M60 24C48 40 38 54 38 69a22 22 0 0 0 44 0c0-15-10-29-22-45Z"></path>
+            <path class="spi-detail" d="M60 48v35M46 65h28M50 55l20 20M70 55 50 75"></path>
+          </svg>
+        </div>
+
+        <p class="senzio-purity-label">
+          <span>{{ b.label_1a | default: 'Cold-Pressed' }}</span>
+          <span>{{ b.label_1b | default: 'Oils' }}</span>
+        </p>
+      </article>
+
+      <article class="senzio-purity-item">
+        <div class="senzio-purity-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle class="spi-ring" cx="60" cy="60" r="51"></circle>
+            <path class="spi-main" d="M74 29 88 43 47 84 33 70 74 29Z"></path>
+            <path class="spi-detail" d="m83 20 17 17M24 80l16 16M38 76l7 7"></path>
+            <path class="spi-ban" d="M25 25 95 95"></path>
+          </svg>
+        </div>
+
+        <p class="senzio-purity-label">
+          <span>{{ b.label_2a | default: 'No' }}</span>
+          <span>{{ b.label_2b | default: 'Fillers' }}</span>
+        </p>
+      </article>
+
+      <article class="senzio-purity-item">
+        <div class="senzio-purity-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle class="spi-ring" cx="60" cy="60" r="51"></circle>
+            <path class="spi-main" d="M60 28C48 43 41 55 41 68a19 19 0 0 0 38 0c0-13-7-25-19-40Z"></path>
+            <path class="spi-detail" d="M60 52c-7 9-10 15-10 21a10 10 0 0 0 20 0c0-6-3-12-10-21Z"></path>
+            <path class="spi-ban" d="M94 26 26 94"></path>
+          </svg>
+        </div>
+
+        <p class="senzio-purity-label">
+          <span>{{ b.label_3a | default: 'No' }}</span>
+          <span>{{ b.label_3b | default: 'Heating' }}</span>
+        </p>
+      </article>
+
+      <article class="senzio-purity-item">
+        <div class="senzio-purity-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle class="spi-ring" cx="60" cy="60" r="51"></circle>
+            <path class="spi-main" d="M60 24C45 43 35 57 35 73a25 25 0 0 0 50 0c0-16-10-30-25-49Z"></path>
+
+            <g class="spi-detail">
+              <path d="m48 58 10-6 10 6v12l-10 6-10-6V58Z"></path>
+              <path d="m66 74 9-5 9 5v10l-9 5-9-5V74Z"></path>
+              <path d="m36 74 9-5 9 5v10l-9 5-9-5V74Z"></path>
+            </g>
+          </svg>
+        </div>
+
+        <p class="senzio-purity-label">
+          <span>{{ b.label_4a | default: 'Hormone' }}</span>
+          <span>{{ b.label_4b | default: 'Safe' }}</span>
+        </p>
+      </article>
+
+      <article class="senzio-purity-item">
+        <div class="senzio-purity-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle class="spi-ring" cx="60" cy="60" r="51"></circle>
+            <circle class="spi-inner-ring" cx="60" cy="60" r="36"></circle>
+            <path class="spi-main" d="M60 78C45 77 37 67 38 55C50 56 58 64 60 78Z"></path>
+            <path class="spi-main" d="M60 78C75 77 83 67 82 55C70 56 62 64 60 78Z"></path>
+            <path class="spi-detail" d="M60 78V42"></path>
+            <path class="spi-ban" d="M26 26 94 94"></path>
+          </svg>
+        </div>
+
+        <p class="senzio-purity-label">
+          <span>{{ b.label_5a | default: 'Paraben' }}</span>
+          <span>{{ b.label_5b | default: 'Free' }}</span>
+        </p>
+      </article>
+
+      <article class="senzio-purity-item">
+        <div class="senzio-purity-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle class="spi-ring" cx="60" cy="60" r="51"></circle>
+            <circle class="spi-inner-ring" cx="60" cy="60" r="37"></circle>
+
+            <text
+              class="spi-text"
+              x="60"
+              y="64"
+              text-anchor="middle"
+            >
+              100%
+            </text>
+
+            <path class="spi-main" d="M60 83C48 82 42 75 43 67C52 68 58 73 60 83Z"></path>
+            <path class="spi-main" d="M60 83C72 82 78 75 77 67C68 68 62 73 60 83Z"></path>
+          </svg>
+        </div>
+
+        <p class="senzio-purity-label">
+          <span>{{ b.label_6a | default: 'Fully' }}</span>
+          <span>{{ b.label_6b | default: 'Natural' }}</span>
+        </p>
+      </article>
+
+      <article class="senzio-purity-item">
+        <div class="senzio-purity-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle
+              class="spi-ring spi-ring-dashed"
+              cx="60"
+              cy="60"
+              r="51"
+            ></circle>
+
+            <circle class="spi-inner-ring" cx="60" cy="60" r="39"></circle>
+            <path class="spi-main" d="M59 83C42 81 34 68 36 51C51 53 59 65 59 83Z"></path>
+            <path class="spi-main" d="M61 83C78 81 86 68 84 51C69 53 61 65 61 83Z"></path>
+            <path class="spi-detail" d="M60 84V41"></path>
+          </svg>
+        </div>
+
+        <p class="senzio-purity-label">
+          <span>{{ b.label_7a | default: 'Non' }}</span>
+          <span>{{ b.label_7b | default: 'GMO' }}</span>
+        </p>
+      </article>
+
+      <article class="senzio-purity-item">
+        <div class="senzio-purity-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle class="spi-ring" cx="60" cy="60" r="51"></circle>
+            <path class="spi-main" d="M49 48h22v35H49V48Z"></path>
+            <path class="spi-detail" d="M53 48V37h14v11M45 31h30M65 31v-9M45 31 31 42M29 42l8 7"></path>
+            <path class="spi-ban" d="M25 25 95 95"></path>
+          </svg>
+        </div>
+
+        <p class="senzio-purity-label">
+          <span>{{ b.label_8a | default: 'Pesticide' }}</span>
+          <span>{{ b.label_8b | default: 'Free' }}</span>
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+{%- endunless -%}

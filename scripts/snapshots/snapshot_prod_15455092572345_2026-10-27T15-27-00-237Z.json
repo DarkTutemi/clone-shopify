@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15455092572345",
+  "title": "Zavelyn Yeoman Sweep",
+  "handle": "the-yeoman-sweep",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67918044954809",
+        "title": "21 in",
+        "price": "229.99",
+        "sku": "YEOMAN-SWEEP-21"
+      }
+    ]
+  }
+}

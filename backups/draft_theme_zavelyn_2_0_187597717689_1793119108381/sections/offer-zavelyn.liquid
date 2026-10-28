@@ -1,0 +1,4279 @@
+{%- liquid
+  if request.page_type == 'product' and product != blank
+    assign offer_product = product
+  elsif section.settings.product != blank
+    assign offer_product = section.settings.product
+  else
+    assign offer_product = all_products['zavelyn-rehabilitation-glove']
+  endif
+  if offer_product == blank
+    assign offer_product = collections.all.products.first
+  endif
+  assign product = offer_product
+  assign current_variant = product.selected_or_first_available_variant
+  assign s = section.settings
+  assign brand = s.brand_name | default: 'Zavelyn'
+  assign cta_label = s.cta_label | default: 'BUY NOW'
+  assign sec_gallery = section.blocks | where: 'type', 'sec_gallery' | first
+  assign sec_hero = section.blocks | where: 'type', 'sec_hero' | first
+  assign hs = sec_hero.settings
+  assign sec_marquee = section.blocks | where: 'type', 'sec_marquee' | first
+  assign sec_story = section.blocks | where: 'type', 'sec_story' | first
+  assign sec_reps = section.blocks | where: 'type', 'sec_reps' | first
+  assign sec_train = section.blocks | where: 'type', 'sec_train' | first
+  assign sec_features = section.blocks | where: 'type', 'sec_features' | first
+  assign sec_journey = section.blocks | where: 'type', 'sec_journey' | first
+  assign sec_routine = section.blocks | where: 'type', 'sec_routine' | first
+  assign sec_howto = section.blocks | where: 'type', 'sec_howto' | first
+  assign sec_practice = section.blocks | where: 'type', 'sec_practice' | first
+  assign sec_benefits = section.blocks | where: 'type', 'sec_benefits' | first
+  assign sec_realistic = section.blocks | where: 'type', 'sec_realistic' | first
+  assign sec_stats = section.blocks | where: 'type', 'sec_stats' | first
+  assign sec_compare = section.blocks | where: 'type', 'sec_compare' | first
+  assign sec_timeline = section.blocks | where: 'type', 'sec_timeline' | first
+  assign sec_reviews = section.blocks | where: 'type', 'sec_reviews' | first
+  assign sec_faq = section.blocks | where: 'type', 'sec_faq' | first
+  assign sec_footer = section.blocks | where: 'type', 'sec_footer' | first
+
+  assign side_option = blank
+  assign size_option = blank
+  if product != blank
+    for opt in product.options_with_values
+      assign oname = opt.name | downcase
+      if oname contains 'side' or oname contains 'hand'
+        assign side_option = opt
+      elsif oname contains 'size'
+        assign size_option = opt
+      endif
+    endfor
+  endif
+
+  assign pack1_variant = current_variant
+  assign rg_unit = 8900
+  assign rg_pair_before = rg_unit | times: 2
+  assign rg_pair = rg_pair_before | times: 85 | divided_by: 100
+  assign rg_compare = pack1_variant.compare_at_price | default: 18000
+  if rg_compare <= rg_unit
+    assign rg_compare = 18000
+  endif
+  assign rg_save = rg_compare | minus: rg_unit
+  if product.variants.size > 0
+    assign pack1_variant = product.variants.first
+  endif
+  # Buy 2 uses same variant id x2 quantity when no dedicated pack variant
+  assign sticky_copy = 'Zavelyn Rehabilitation Glove'
+  if sec_footer and sec_footer.settings.sticky_copy != blank
+    assign sticky_copy = sec_footer.settings.sticky_copy
+  endif
+-%}
+{% render 'offer-seo', product: product, section: section %}
+{{ 'offer-zavelyn.css' | asset_url | stylesheet_tag }}
+
+<script type="application/json" id="RgVariantMap">
+[
+{%- for v in product.variants -%}
+  {"id":{{ v.id }},"available":{{ v.available | json }},"price":{{ v.price | json }},"compare":{{ v.compare_at_price | default: 0 | json }},"option1":{{ v.option1 | json }},"option2":{{ v.option2 | json }},"option3":{{ v.option3 | json }},"title":{{ v.title | json }},"money":{{ v.price | money_without_trailing_zeros | json }},"compare_money":{{ v.compare_at_price | money_without_trailing_zeros | json }}}{% unless forloop.last %},{% endunless %}
+{%- endfor -%}
+]
+</script>
+
+<div class="offer-page offer-page--zavelyn" id="OfferTop">
+  <div class="offer-ticker">
+    <p class="offer-ticker__line">📦 {{ s.ticker_text | default: 'FREE Worldwide Shipping —' }} <span>{{ s.ticker_highlight | default: 'This Week Only!' }}</span></p>
+  </div>
+  {% render 'offer-header', brand: brand, product: product %}
+
+  {%- comment -%} ===== HERO + BUY BOX ===== {%- endcomment -%}
+  <section class="offer-hero">
+    <div class="offer-hero__grid">
+      <div class="offer-hero__left">
+        <div class="offer-media" data-offer-gallery>
+          <div class="offer-media__stage">
+            {%- if sec_gallery and sec_gallery.settings.image_1 != blank -%}
+              {%- assign main_src = sec_gallery.settings.image_1 | image_url: width: 1200 -%}
+            {%- elsif sec_gallery and sec_gallery.settings.fallback_1 != blank -%}
+              {%- assign main_src = sec_gallery.settings.fallback_1 | asset_url -%}
+            {%- else -%}
+              {%- assign main_src = 'zavelyn-gallery-1.png' | asset_url -%}
+            {%- endif -%}
+            <button type="button" class="offer-media__zoom" data-offer-zoom aria-label="Open gallery">
+              <img data-offer-main src="{{ main_src }}" alt="{{ product.title | escape }}" width="1200" height="1200" fetchpriority="high">
+            </button>
+            <video class="offer-media__video" data-offer-main-video hidden playsinline controls preload="metadata"></video>
+            <iframe class="offer-media__video" data-offer-main-frame hidden title="Product video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <button type="button" class="offer-media__nav offer-media__nav--prev" data-offer-prev aria-label="Previous">❮</button>
+            <button type="button" class="offer-media__nav offer-media__nav--next" data-offer-next aria-label="Next">❯</button>
+          </div>
+          <div class="offer-thumbs" role="list" {% if sec_gallery %}{{ sec_gallery.shopify_attributes }}{% endif %}>
+            {%- if sec_gallery -%}
+              {% render 'offer-group-slots', group: sec_gallery, mode: 'gallery', count: 7 %}
+            {%- else -%}
+              {%- assign galleries = 'zavelyn-gallery-1.png,zavelyn-gallery-2.png,zavelyn-gallery-3.png,zavelyn-gallery-4.png,zavelyn-gallery-5.png,zavelyn-gallery-6.png,zavelyn-gallery-7.png' | split: ',' -%}
+              {%- for file in galleries -%}
+                <button type="button" class="{% if forloop.first %}is-active{% endif %}" data-offer-thumb data-index="{{ forloop.index0 }}" data-src="{{ file | asset_url }}" aria-label="Image {{ forloop.index }}">
+                  <img src="{{ file | asset_url }}" alt="" width="60" height="60" {% if forloop.first %}loading="eager"{% else %}loading="lazy"{% endif %} decoding="async">
+                </button>
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-hero__right">
+        <a class="rg-rating-bar" href="#REVIEW">
+          <span class="rg-rating-bar__stars" aria-hidden="true">★★★★★</span>
+          <span><strong>{{ hs.rating_score | default: '4.8/5' }}</strong> • {{ hs.rating_note | default: 'Trusted by stroke survivors and caregivers' }}</span>
+        </a>
+        <h1 class="offer-title">{{ product.title | default: 'Zavelyn | Rehabilitation Glove' }}</h1>
+
+        <div class="rg-perks" {% if sec_hero %}{{ sec_hero.shopify_attributes }}{% endif %}>
+          <div class="rg-perk">{%- assign perk_1_fb = hs.perk_1_fallback | default: 'zavelyn-icon-hand.png' -%}{% render 'offer-img', image: hs.perk_1_icon, fallback: perk_1_fb, alt: '', width: 40, height: 40, loading: 'eager' %}<span>{{ hs.perk_1 | default: 'Guided hand opening & closing' }}</span></div>
+          <div class="rg-perk">{%- assign perk_2_fb = hs.perk_2_fallback | default: 'zavelyn-icon-home.png' -%}{% render 'offer-img', image: hs.perk_2_icon, fallback: perk_2_fb, alt: '', width: 40, height: 40, loading: 'eager' %}<span>{{ hs.perk_2 | default: 'Use It Alone or With a Helper' }}</span></div>
+          <div class="rg-perk">{%- assign perk_3_fb = hs.perk_3_fallback | default: 'zavelyn-icon-muscle.png' -%}{% render 'offer-img', image: hs.perk_3_icon, fallback: perk_3_fb, alt: '', width: 40, height: 40, loading: 'eager' %}<span>{{ hs.perk_3 | default: '300+ Assisted reps in 20 Minutes' }}</span></div>
+          <div class="rg-perk">{%- assign perk_4_fb = hs.perk_4_fallback | default: 'zavelyn-icon-brain.png' -%}{% render 'offer-img', image: hs.perk_4_icon, fallback: perk_4_fb, alt: '', width: 40, height: 40, loading: 'eager' %}<span>{{ hs.perk_4 | default: '3 Therapy Modes for Every Stage of Recovery' }}</span></div>
+        </div>
+
+        <div class="rg-trial-divider" aria-hidden="true"><span>{{ hs.trial_label | default: '30-Day At-Home Trial' }}</span></div>
+
+        <div class="rg-countdown" data-rg-countdown data-minutes="{{ hs.countdown_minutes | default: 10 }}">
+          <span>{{ hs.countdown_text | default: 'CAREGIVER OFFER — 50% OFF ENDS IN' }} ⏳ <strong data-rg-countdown-label>10:00</strong>!</span>
+        </div>
+
+        {% form 'product', product, id: 'OfferAddForm', class: 'offer-buy-form' %}
+          <input type="hidden" name="id" id="OfferVariantId" value="{{ pack1_variant.id }}">
+          <input type="hidden" name="quantity" id="OfferQuantity" value="1">
+
+          <div class="rg-packs" id="OfferPackages" data-rg-packs data-discount-code="ZAVELYN15">
+            <div class="rg-pack is-active" data-rg-pack="1">
+              <div class="rg-pack__main">
+                <span class="rg-pack__radio" aria-hidden="true"></span>
+                {%- assign pack_1_fb = hs.pack_1_fallback | default: 'zavelyn-bundle-1.png' -%}
+                {% render 'offer-img', image: hs.pack_1_image, fallback: pack_1_fb, alt: 'Buy 1 One Hand', class: 'rg-pack__img', width: 88, height: 88, loading: 'eager' %}
+                <div class="rg-pack__info">
+                  <div class="rg-pack__title-row">
+                    <p class="rg-pack__title">{{ hs.pack_1_title | default: 'Buy 1' }}</p>
+                    <span class="rg-pack__pill">{{ hs.pack_1_pill | default: 'ONE HAND' }}</span>
+                  </div>
+                  <span class="rg-pack__save">SAVE {{ rg_save | money_without_trailing_zeros }}</span>
+                </div>
+                <div class="rg-pack__prices">
+                  <span class="rg-pack__price" data-rg-pack1-price>{{ rg_unit | money_without_trailing_zeros }}</span>
+                  <span class="rg-pack__compare" data-rg-pack1-compare>{{ rg_compare | money_without_trailing_zeros }}</span>
+                </div>
+              </div>
+              <div class="rg-pack__opts">
+                {% if side_option != blank %}
+                  <label>Side of Hand &amp;
+                    <select data-rg-side aria-label="Side of Hand">
+                      {% for value in side_option.values %}
+                        <option value="{{ value | escape }}" {% if pack1_variant.option1 == value or pack1_variant.option2 == value %}selected{% endif %}>{{ value }}</option>
+                      {% endfor %}
+                    </select>
+                  </label>
+                {% endif %}
+                {% if size_option != blank %}
+                  <label>Size (Required)
+                    <select data-rg-size aria-label="Size">
+                      {% for value in size_option.values %}
+                        <option value="{{ value | escape }}" {% if pack1_variant.option1 == value or pack1_variant.option2 == value %}selected{% endif %}>{{ value }}</option>
+                      {% endfor %}
+                    </select>
+                  </label>
+                {% endif %}
+              </div>
+              <div class="rg-pack__bonus">{{ hs.bonus_label | default: '+ FREE 30-Day Recovery Guide' }}</div>
+            </div>
+
+            <div class="rg-pack" data-rg-pack="2">
+              <span class="rg-pack__badge">{{ hs.pack_2_badge | default: 'BEST VALUE' }}</span>
+              <div class="rg-pack__main">
+                <span class="rg-pack__radio" aria-hidden="true"></span>
+                {%- assign pack_2_fb = hs.pack_2_fallback | default: 'zavelyn-bundle-2.png' -%}
+                {% render 'offer-img', image: hs.pack_2_image, fallback: pack_2_fb, alt: 'Buy 2 Both Hands', class: 'rg-pack__img', width: 88, height: 88, loading: 'lazy' %}
+                <div class="rg-pack__info">
+                  <div class="rg-pack__title-row">
+                    <p class="rg-pack__title">{{ hs.pack_2_title | default: 'Buy 2' }}</p>
+                    <span class="rg-pack__pill">{{ hs.pack_2_pill | default: '2 GLOVES' }}</span>
+                  </div>
+                  <span class="rg-pack__save">{{ hs.pack_2_save | default: 'Extra 15%' }}</span>
+                </div>
+                <div class="rg-pack__prices">
+                  <span class="rg-pack__price" data-rg-pack2-price>{{ rg_pair | money_without_trailing_zeros }}</span>
+                  <span class="rg-pack__compare">{{ rg_pair_before | money_without_trailing_zeros }}</span>
+                </div>
+              </div>
+              <div class="rg-pack__opts rg-pack__opts--pair">
+                <div class="rg-pack__hand">
+                  <p class="rg-pack__hand-label">Glove 1</p>
+                  <div class="rg-pack__hand-grid">
+                    {% if side_option != blank %}
+                      <label>Side of Hand
+                        <select data-rg-side-a aria-label="Glove 1 side">
+                          {% for value in side_option.values %}
+                            <option value="{{ value | escape }}" {% if pack1_variant.option1 == value or pack1_variant.option2 == value %}selected{% endif %}>{{ value }}</option>
+                          {% endfor %}
+                        </select>
+                      </label>
+                    {% endif %}
+                    {% if size_option != blank %}
+                      <label>Size
+                        <select data-rg-size-a aria-label="Glove 1 size">
+                          {% for value in size_option.values %}
+                            <option value="{{ value | escape }}" {% if pack1_variant.option1 == value or pack1_variant.option2 == value %}selected{% endif %}>{{ value }}</option>
+                          {% endfor %}
+                        </select>
+                      </label>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="rg-pack__hand">
+                  <p class="rg-pack__hand-label">Glove 2</p>
+                  <div class="rg-pack__hand-grid">
+                    {% if side_option != blank %}
+                      <label>Side of Hand
+                        <select data-rg-side-b aria-label="Glove 2 side">
+                          {% for value in side_option.values %}
+                            <option value="{{ value | escape }}" {% if pack1_variant.option1 == value or pack1_variant.option2 == value %}selected{% endif %}>{{ value }}</option>
+                          {% endfor %}
+                        </select>
+                      </label>
+                    {% endif %}
+                    {% if size_option != blank %}
+                      <label>Size
+                        <select data-rg-size-b aria-label="Glove 2 size">
+                          {% for value in size_option.values %}
+                            <option value="{{ value | escape }}" {% if pack1_variant.option1 == value or pack1_variant.option2 == value %}selected{% endif %}>{{ value }}</option>
+                          {% endfor %}
+                        </select>
+                      </label>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              <div class="rg-pack__bonus">{{ hs.bonus_label | default: '+ FREE 30-Day Recovery Guide' }}</div>
+            </div>
+          </div>
+
+          <button class="offer-cta rg-atc" type="submit" name="add" data-offer-checkout data-rg-cta {% unless pack1_variant.available %}disabled{% endunless %}>
+            <span class="offer-cta__label">{{ cta_label }}</span>
+            <span class="offer-cta__sep" aria-hidden="true">—</span>
+            <span class="offer-cta__price" data-rg-cta-price>{{ rg_unit | money_without_trailing_zeros }}</span>
+          </button>
+        {% endform %}
+
+        <div class="rg-pay" aria-label="Payment methods">
+          {%- assign rg_payment_types = 'visa,master,american_express,apple_pay,google_pay,paypal,shopify_pay' | split: ',' -%}
+          {%- for type in rg_payment_types -%}
+            <img
+              src="{{ type | payment_type_img_url }}"
+              alt="{{ type | replace: '_', ' ' | capitalize }}"
+              width="38"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            >
+          {%- endfor -%}
+        </div>
+
+        <div class="rg-trust">
+          <div class="rg-trust__item"><span aria-hidden="true">{{ hs.trust_1_icon | default: '🚚' }}</span><span>{{ hs.trust_1 | default: 'Free Shipping' }}</span></div>
+          <div class="rg-trust__item"><span aria-hidden="true">{{ hs.trust_2_icon | default: '💙' }}</span><span>{{ hs.trust_2 | default: '30-Day Guarantee' }}</span></div>
+          <div class="rg-trust__item"><span aria-hidden="true">{{ hs.trust_3_icon | default: '💬' }}</span><span>{{ hs.trust_3 | default: '24/7 Chat Support' }}</span></div>
+        </div>
+
+        <button type="button" class="rg-size-btn" data-rg-size-open>{{ hs.size_btn | default: 'Find Your Correct Size' }}</button>
+        <a class="rg-watch-btn" href="#howto" data-rg-watch-open>{{ hs.watch_btn | default: 'Click To Watch How To Use Zavelyn' }}</a>
+
+        <div class="rg-replica" role="note">
+          <strong>{{ hs.replica_title | default: 'Watch Out For Cheap Replicas' }}</strong>
+          <span>{{ hs.replica_text | default: 'Only our brand guarantees the high quality product used by thousands for pain relief.' }}</span>
+        </div>
+
+        <div class="offer-faq device-accordion" data-offer-accordion>
+          {%- for i in (1..5) -%}
+            {%- capture qk -%}buy_q_{{ i }}{%- endcapture -%}
+            {%- capture ak -%}buy_a_{{ i }}{%- endcapture -%}
+            {%- assign qv = hs[qk] -%}
+            {%- assign av = hs[ak] -%}
+            {%- if qv != blank -%}
+              <div class="offer-faq__item">
+                <button type="button" class="offer-faq__trigger" aria-expanded="false">{{ qv }}</button>
+                <div class="offer-faq__panel" hidden><div class="offer-faq__body">
+                  {{ av }}
+                  {%- if i == 2 -%}
+                    <p><button type="button" class="rg-size-btn" data-rg-size-open style="margin:0">{{ hs.size_chart_label | default: 'Open Size Chart' }}</button></p>
+                  {%- endif -%}
+                </div></div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rg-marquee pause-on-hover" aria-hidden="true" {% if sec_marquee %}{{ sec_marquee.shopify_attributes }}{% endif %}>
+    <div class="rg-marquee__track">
+      {%- capture rg_marquee_group -%}
+        <div class="rg-marquee__group">
+          <div class="rg-marquee__item">
+            <span class="rg-marquee__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            </span>
+            <span>{{ sec_marquee.settings.item_1 | default: 'PREMIUM QUALITY' }}</span>
+          </div>
+          <div class="rg-marquee__item">
+            <span class="rg-marquee__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm-6 0H5V6h9v2zm-9 11.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+            </span>
+            <span>{{ sec_marquee.settings.item_2 | default: 'FAST SHIPPING' }}</span>
+          </div>
+          <div class="rg-marquee__item">
+            <span class="rg-marquee__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </span>
+            <span>{{ sec_marquee.settings.item_3 | default: 'SATISFACTION GUARANTEED' }}</span>
+          </div>
+        </div>
+      {%- endcapture -%}
+      {{ rg_marquee_group }}{{ rg_marquee_group }}{{ rg_marquee_group }}{{ rg_marquee_group }}
+    </div>
+  </div>
+
+  <section class="offer-sec offer-sec--iwt-story" {% if sec_story %}{{ sec_story.shopify_attributes }}{% endif %}>
+    <div class="rg-iwt rg-iwt--rev rg-iwt--story">
+      <div class="rg-iwt__media">
+        {%- assign story_fb = sec_story.settings.fallback | default: 'zavelyn-iwt-therapy.gif' -%}
+        {%- assign story_alt = sec_story.settings.image_alt | default: 'Zavelyn guided hand therapy' -%}
+        {% render 'zavelyn-media', image: sec_story.settings.image, fallback: story_fb, video: sec_story.settings.video, video_url: sec_story.settings.video_url, source: sec_story.settings.video_source, alt: story_alt, width: 900, height: 900, loading: 'lazy' %}
+      </div>
+      <div class="rg-iwt__copy">
+        <h2>{{ sec_story.settings.heading | default: 'When Therapy Ends, Your Hand Still Needs Daily Movement' }}</h2>
+        <p>{{ sec_story.settings.p1 }}</p>
+        <p>{{ sec_story.settings.p2 }}</p>
+        <p>{{ sec_story.settings.p3 }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--iwt-blue" {% if sec_reps %}{{ sec_reps.shopify_attributes }}{% endif %}>
+    <div class="rg-iwt rg-iwt--story rg-iwt--on-blue">
+      <div class="rg-iwt__media">
+        {%- assign reps_fb = sec_reps.settings.fallback | default: 'zavelyn-iwt-300.png' -%}
+        {%- assign reps_alt = sec_reps.settings.image_alt | default: 'Up to 300 guided reps' -%}
+        {% render 'zavelyn-media', image: sec_reps.settings.image, fallback: reps_fb, video: sec_reps.settings.video, video_url: sec_reps.settings.video_url, source: sec_reps.settings.video_source, alt: reps_alt, width: 900, height: 900, loading: 'lazy' %}
+      </div>
+      <div class="rg-iwt__copy">
+        <h2>{{ sec_reps.settings.heading | default: 'Support Real Hand Movement — Up To 300 Guided Reps Per Session' }}</h2>
+        <p>{{ sec_reps.settings.p1 }}</p>
+        <p>{{ sec_reps.settings.p2 }}</p>
+        <p>{{ sec_reps.settings.p3 }}</p>
+        <p>{{ sec_reps.settings.p4 }}</p>
+        <a class="rg-iwt__cta rg-iwt__cta--light" href="#OfferPackages">{{ sec_reps.settings.cta | default: 'Start Your Recovery now →' }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--train" aria-label="How Zavelyn Trains Your Hand" {% if sec_train %}{{ sec_train.shopify_attributes }}{% endif %}>
+    <div class="offer-head rg-train-head">
+      <h2>{{ sec_train.settings.heading | default: 'How Zavelyn Trains' }} <span>{{ sec_train.settings.accent | default: 'Your Hand' }}</span></h2>
+    </div>
+    <div class="rg-train">
+      {%- for i in (1..3) -%}
+        {%- capture tk -%}card_{{ i }}_title{%- endcapture -%}
+        {%- capture pk -%}card_{{ i }}_text{%- endcapture -%}
+        {%- capture ik -%}card_{{ i }}_image{%- endcapture -%}
+        {%- capture fk -%}card_{{ i }}_fallback{%- endcapture -%}
+        {%- capture vk -%}card_{{ i }}_video{%- endcapture -%}
+        {%- capture vuk -%}card_{{ i }}_video_url{%- endcapture -%}
+        {%- capture vsk -%}card_{{ i }}_video_source{%- endcapture -%}
+        {%- assign card_title = sec_train.settings[tk] -%}
+        {%- assign card_text = sec_train.settings[pk] -%}
+        {%- assign card_img = sec_train.settings[ik] -%}
+        {%- assign card_fb = sec_train.settings[fk] -%}
+        {%- assign card_video = sec_train.settings[vk] -%}
+        {%- assign card_video_url = sec_train.settings[vuk] -%}
+        {%- assign card_video_source = sec_train.settings[vsk] -%}
+        {%- if card_fb == blank -%}
+          {%- case i -%}
+            {%- when 1 -%}{%- assign card_fb = 'zavelyn-train-open.gif' -%}
+            {%- when 2 -%}{%- assign card_fb = 'zavelyn-train-close.gif' -%}
+            {%- else -%}{%- assign card_fb = 'zavelyn-train-finger.gif' -%}
+          {%- endcase -%}
+        {%- endif -%}
+        <article class="rg-train-card">
+          <div class="rg-train-card__media">
+            {% render 'zavelyn-media', image: card_img, fallback: card_fb, video: card_video, video_url: card_video_url, source: card_video_source, alt: card_title, width: 600, height: 600, loading: 'lazy' %}
+          </div>
+          <div class="rg-train-card__body">
+            <h3>{{ card_title }}</h3>
+            <p>{{ card_text }}</p>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </section>
+
+  {%- capture rg_feature_check -%}
+    <span class="rg-features__check" aria-hidden="true"><svg viewBox="0 0 123 101" focusable="false"><path fill="currentColor" d="M4.43 63.63c-2.87-2.76-4.35-6.42-4.43-10.11-.07-3.69 1.26-7.41 4.02-10.28 2.75-2.87 6.42-4.35 10.11-4.43 3.69-.08 7.41 1.26 10.28 4.01l24.79 23.85L98.54 3.99l1.77 1.35c.14-.18.3-.34.48-.47 2.94-2.54 6.62-3.69 10.22-3.5l.18.02c3.62.24 7.16 1.85 9.78 4.77 2.66 2.97 3.86 6.73 3.66 10.41l-.02.18c-.24 3.56-1.79 7.04-4.61 9.63l-59.22 72.09c-.11.14-.24.26-.37.37-2.77 2.44-6.28 3.63-9.76 3.57-3.51-.06-7.02-1.4-9.74-4.02L4.43 63.63z"/></svg></span>
+  {%- endcapture -%}
+  <section class="offer-sec offer-sec--features" aria-label="Guided finger movement features" {% if sec_features %}{{ sec_features.shopify_attributes }}{% endif %}>
+    <div class="rg-features">
+      <h2 class="rg-features__title">{{ sec_features.settings.heading | default: 'Guided finger movement to support stroke and nerve recovery' }}</h2>
+      <ul class="rg-features__list">
+        {%- for i in (1..6) -%}
+          {%- capture fk -%}feature_{{ i }}{%- endcapture -%}
+          {%- assign label = sec_features.settings[fk] -%}
+          {%- if label != blank -%}
+            <li class="rg-features__item">{{ rg_feature_check }}{{ label }}</li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+
+  {%- capture rg_star -%}
+    <svg class="rg-journey__star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11.52 3.46c.15-.46.8-.46.95 0l1.66 5.1c.07.21.26.35.48.35h5.36c.48 0 .69.62.29.9l-4.34 3.15c-.17.13-.25.35-.18.56l1.66 5.1c.15.46-.38.84-.77.56l-4.34-3.15a.5.5 0 0 0-.59 0l-4.34 3.15c-.39.28-.92-.1-.77-.56l1.66-5.1a.5.5 0 0 0-.18-.56L3.73 9.81c-.39-.28-.19-.9.29-.9h5.36c.22 0 .41-.14.48-.35l1.66-5.1z"/></svg>
+  {%- endcapture -%}
+  {%- capture rg_stars5 -%}
+    <span class="rg-journey__stars" aria-label="5 out of 5 stars">{{ rg_star }}{{ rg_star }}{{ rg_star }}{{ rg_star }}{{ rg_star }}</span>
+  {%- endcapture -%}
+  {%- capture rg_verified -%}
+    <span class="rg-journey__verified">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M12 2.1a1.2 1.2 0 0 1 .85.34l1.2 1.2c.2.2.47.3.74.3h1.7a1.2 1.2 0 0 1 1.2 1.2v1.7c0 .27.1.54.3.74l1.2 1.2a1.2 1.2 0 0 1 0 1.7l-1.2 1.2a1.05 1.05 0 0 0-.3.74v1.7a1.2 1.2 0 0 1-1.2 1.2h-1.7a1.05 1.05 0 0 0-.74.3l-1.2 1.2a1.2 1.2 0 0 1-1.7 0l-1.2-1.2a1.05 1.05 0 0 0-.74-.3H6.85a1.2 1.2 0 0 1-1.2-1.2v-1.7a1.05 1.05 0 0 0-.3-.74l-1.2-1.2a1.2 1.2 0 0 1 0-1.7l1.2-1.2c.2-.2.3-.47.3-.74V5.14a1.2 1.2 0 0 1 1.2-1.2h1.7c.27 0 .54-.1.74-.3l1.2-1.2A1.2 1.2 0 0 1 12 2.1zm3.4 7.05a.75.75 0 0 0-1.06-1.06l-3.47 3.47-1.47-1.47a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l4-4z"/></svg>
+      Verified Buyer
+    </span>
+  {%- endcapture -%}
+  <section class="offer-sec offer-sec--journey" aria-label="Real Recovery Journey" {% if sec_journey %}{{ sec_journey.shopify_attributes }}{% endif %}>
+    <div class="rg-journey">
+      <div class="rg-journey__badge">
+        <span class="rg-journey__badge-stars" aria-hidden="true">{{ rg_star }}{{ rg_star }}{{ rg_star }}{{ rg_star }}{{ rg_star }}</span>
+        <p><strong>Rated {{ sec_journey.settings.score | default: '4.8/5' }}</strong> based on <em><strong>{{ sec_journey.settings.score_count | default: '15k+' }}</strong></em> <strong>{{ sec_journey.settings.score_label | default: 'Total Ratings' }}</strong></p>
+      </div>
+      <div class="rg-journey__head">
+        <h2>{{ sec_journey.settings.heading | default: 'Real Recovery Journey' }}</h2>
+        <p>{{ sec_journey.settings.subtext | default: 'Real people sharing their experience with Zavelyn and their path back to everyday life.' }}</p>
+      </div>
+      <div class="rg-journey__track" data-rg-journey-track>
+        {%- for i in (1..3) -%}
+          {%- capture nk -%}card_{{ i }}_name{%- endcapture -%}
+          {%- capture pk -%}card_{{ i }}_text{%- endcapture -%}
+          {%- capture ik -%}card_{{ i }}_image{%- endcapture -%}
+          {%- capture fk -%}card_{{ i }}_fallback{%- endcapture -%}
+          {%- capture vk -%}card_{{ i }}_video{%- endcapture -%}
+          {%- capture vuk -%}card_{{ i }}_video_url{%- endcapture -%}
+          {%- capture vsk -%}card_{{ i }}_video_source{%- endcapture -%}
+          {%- assign card_name = sec_journey.settings[nk] -%}
+          {%- assign card_text = sec_journey.settings[pk] -%}
+          {%- assign card_img = sec_journey.settings[ik] -%}
+          {%- assign card_fb = sec_journey.settings[fk] -%}
+          {%- assign card_video = sec_journey.settings[vk] -%}
+          {%- assign card_video_url = sec_journey.settings[vuk] -%}
+          {%- assign card_video_source = sec_journey.settings[vsk] -%}
+          {%- if card_fb == blank -%}
+            {%- case i -%}
+              {%- when 1 -%}{%- assign card_fb = 'zavelyn-review-jenny.jpg' -%}
+              {%- when 2 -%}{%- assign card_fb = 'zavelyn-review-peter.jpg' -%}
+              {%- else -%}{%- assign card_fb = 'zavelyn-review-laura.jpg' -%}
+            {%- endcase -%}
+          {%- endif -%}
+          {%- if card_name != blank -%}
+            <article class="rg-journey-card">
+              <div class="rg-journey-card__media">
+                {% render 'zavelyn-media', image: card_img, fallback: card_fb, video: card_video, video_url: card_video_url, source: card_video_source, alt: card_name, width: 720, height: 600, loading: 'lazy' %}
+              </div>
+              <div class="rg-journey-card__body">
+                {{ rg_stars5 }}
+                <div class="rg-journey-card__meta">
+                  <span class="rg-journey-card__name">{{ card_name }}</span>
+                  {{ rg_verified }}
+                </div>
+                <p>{{ card_text }}</p>
+              </div>
+            </article>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <div class="rg-journey__nav">
+        <button type="button" class="rg-journey__nav-btn" data-rg-journey-prev aria-label="Previous reviews">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button type="button" class="rg-journey__nav-btn rg-journey__nav-btn--next" data-rg-journey-next aria-label="Next reviews">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--iwt-blue" {% if sec_routine %}{{ sec_routine.shopify_attributes }}{% endif %}>
+    <div class="rg-iwt rg-iwt--rev rg-iwt--story rg-iwt--on-blue">
+      <div class="rg-iwt__media">
+        {%- assign routine_fb = sec_routine.settings.fallback | default: 'zavelyn-iwt-modes.png' -%}
+        {%- assign routine_alt = sec_routine.settings.image_alt | default: 'Doctor with Zavelyn therapy glove' -%}
+        {% render 'zavelyn-media', image: sec_routine.settings.image, fallback: routine_fb, video: sec_routine.settings.video, video_url: sec_routine.settings.video_url, source: sec_routine.settings.video_source, alt: routine_alt, width: 900, height: 900, loading: 'lazy' %}
+      </div>
+      <div class="rg-iwt__copy">
+        <h2>{{ sec_routine.settings.heading | default: 'Your Daily Hand Routine Starts Here' }}</h2>
+        <p>{{ sec_routine.settings.p1 }}</p>
+        <p>{{ sec_routine.settings.p2 }}</p>
+        <p>{{ sec_routine.settings.p3 }}</p>
+        <p>{{ sec_routine.settings.p4 }}</p>
+        <a class="rg-iwt__cta rg-iwt__cta--light" href="#OfferPackages">{{ sec_routine.settings.cta | default: 'Start Your Recovery now →' }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--howto" id="howto" aria-label="How to Use Zavelyn" {% if sec_howto %}{{ sec_howto.shopify_attributes }}{% endif %}>
+    <div class="rg-howto">
+      <div class="rg-howto__head">
+        <h2>{{ sec_howto.settings.heading | default: 'How to Use Zavelyn' }}</h2>
+        <p>{{ sec_howto.settings.subtext | default: 'Simple steps to start your daily hand training safely at home' }}</p>
+      </div>
+      <div class="rg-howto-steps" data-rg-howto-track>
+        {%- for i in (1..6) -%}
+          {%- capture tk -%}step_{{ i }}_title{%- endcapture -%}
+          {%- capture ik -%}step_{{ i }}_image{%- endcapture -%}
+          {%- capture fk -%}step_{{ i }}_fallback{%- endcapture -%}
+          {%- capture vk -%}step_{{ i }}_video{%- endcapture -%}
+          {%- capture vuk -%}step_{{ i }}_video_url{%- endcapture -%}
+          {%- capture vsk -%}step_{{ i }}_video_source{%- endcapture -%}
+          {%- assign step_title = sec_howto.settings[tk] -%}
+          {%- assign step_img = sec_howto.settings[ik] -%}
+          {%- assign step_fb = sec_howto.settings[fk] -%}
+          {%- assign step_video = sec_howto.settings[vk] -%}
+          {%- assign step_video_url = sec_howto.settings[vuk] -%}
+          {%- assign step_video_source = sec_howto.settings[vsk] -%}
+          {%- if step_fb == blank -%}
+            {%- assign step_fb = 'zavelyn-howto-' | append: i | append: '.jpg' -%}
+          {%- endif -%}
+          {%- if step_title != blank -%}
+            <article class="rg-step">
+              <div class="rg-step__media">{% render 'zavelyn-media', image: step_img, fallback: step_fb, video: step_video, video_url: step_video_url, source: step_video_source, alt: step_title, width: 480, height: 480, loading: 'lazy' %}</div>
+              <div class="rg-step__body"><span class="rg-step__num" aria-hidden="true">{{ i }}</span><h3>{{ step_title }}</h3></div>
+            </article>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <div class="rg-howto__nav">
+        <button type="button" class="rg-howto__nav-btn" data-rg-howto-prev aria-label="Previous steps">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button type="button" class="rg-howto__nav-btn" data-rg-howto-next aria-label="Next steps">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+      <div class="rg-howto-collage">
+        {%- assign steps_fb = sec_howto.settings.collage_fallback | default: 'zavelyn-steps.jpg' -%}
+        {%- assign steps_alt = sec_howto.settings.collage_alt | default: 'How to use Zavelyn: six simple steps' -%}
+        {% render 'zavelyn-media', image: sec_howto.settings.collage_image, fallback: steps_fb, video: sec_howto.settings.collage_video, video_url: sec_howto.settings.collage_video_url, source: sec_howto.settings.collage_video_source, alt: steps_alt, width: 800, height: 1400, loading: 'lazy' %}
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--iwt-blue" {% if sec_practice %}{{ sec_practice.shopify_attributes }}{% endif %}>
+    <div class="rg-iwt rg-iwt--story rg-iwt--on-blue">
+      <div class="rg-iwt__media">
+        {%- assign practice_fb = sec_practice.settings.fallback | default: 'zavelyn-before-after.gif' -%}
+        {%- assign practice_alt = sec_practice.settings.image_alt | default: 'From this to this — Zavelyn guided hand practice' -%}
+        {% render 'zavelyn-media', image: sec_practice.settings.image, fallback: practice_fb, video: sec_practice.settings.video, video_url: sec_practice.settings.video_url, source: sec_practice.settings.video_source, alt: practice_alt, width: 900, height: 900, loading: 'lazy' %}
+      </div>
+      <div class="rg-iwt__copy">
+        <h2>{{ sec_practice.settings.heading | default: 'From Inactive Hand' }}<br>{{ sec_practice.settings.heading_2 | default: 'To Daily Practice' }}</h2>
+        <p>{{ sec_practice.settings.p1 }}</p>
+        <p>{{ sec_practice.settings.p2 }}</p>
+        <a class="rg-iwt__cta rg-iwt__cta--light" href="#OfferPackages">{{ sec_practice.settings.cta | default: 'Start Your Recovery now →' }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--benefits" aria-label="What Can Happen When The Hand Stays Inactive?" {% if sec_benefits %}{{ sec_benefits.shopify_attributes }}{% endif %}>
+    <div class="rg-benefits">
+      <h2 class="rg-benefits__title">{{ sec_benefits.settings.heading | default: 'What Can Happen' }}<br><span>{{ sec_benefits.settings.accent | default: 'When The Hand Stays Inactive?' }}</span></h2>
+      <div class="rg-benefits__grid">
+        <article class="rg-benefit">
+          <div class="rg-benefit__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 1 0 9.95 11h-2.02A8 8 0 1 1 12 4V2zm1 5v5.2l3.4 2-1 1.6L11 12.5V7h2zm3.5-3.7 1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1zM19 8h3v2h-3V8z"/></svg>
+          </div>
+          <h3>{{ sec_benefits.settings.card_1_title | default: 'Slower Recovery' }}</h3>
+          <p>{{ sec_benefits.settings.card_1_text | default: 'Without regular guided movement, the brain receives less stimulation to rebuild motor pathways.' }}</p>
+        </article>
+        <article class="rg-benefit">
+          <div class="rg-benefit__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M7.5 2A1.5 1.5 0 0 0 6 3.5V11H4.5A1.5 1.5 0 0 0 3 12.5v4A6.5 6.5 0 0 0 9.5 23h4.2a7 7 0 0 0 5.6-2.8l2.5-3.3a2.2 2.2 0 0 0-.5-3.1 2.2 2.2 0 0 0-2.7.2l-1.1 1V7.5a1.5 1.5 0 0 0-2.9-.4 1.5 1.5 0 0 0-2.9.4 1.5 1.5 0 0 0-2.9.4V3.5A1.5 1.5 0 0 0 7.5 2z"/></svg>
+          </div>
+          <h3>{{ sec_benefits.settings.card_2_title | default: 'More Stiffness' }}</h3>
+          <p>{{ sec_benefits.settings.card_2_text | default: 'When the hand is not moved regularly, fingers can feel tighter and harder to open over time.' }}</p>
+        </article>
+        <article class="rg-benefit">
+          <div class="rg-benefit__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M3 3h2v18H3V3zm4 10h2v8H7v-8zm4-4h2v12h-2V9zm4 6h2v6h-2v-6zm3.2-7.8 1.4-1.4L22 8.2l-1.4 1.4-2.2-2.2-2.8 2.8-1.4-1.4 4.2-4.2z"/></svg>
+          </div>
+          <h3>{{ sec_benefits.settings.card_3_title | default: 'Harder Daily Tasks' }}</h3>
+          <p>{{ sec_benefits.settings.card_3_text | default: 'Cups, forks, buttons, clothing, and basic routines can stay difficult when the hand is not practiced consistently.' }}</p>
+        </article>
+        <article class="rg-benefit">
+          <div class="rg-benefit__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 1 0 .01 20.01A10 10 0 0 0 12 2zm-3.5 7.2a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zm7 0a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zM12 18.2c-2.4 0-4.5-1.3-5.5-3.2h2.2c.7 1 1.9 1.6 3.3 1.6s2.6-.6 3.3-1.6h2.2c-1 1.9-3.1 3.2-5.5 3.2z"/></svg>
+          </div>
+          <h3>{{ sec_benefits.settings.card_4_title | default: 'Less Confidence Using The Hand' }}</h3>
+          <p>{{ sec_benefits.settings.card_4_text | default: 'Many people stop trying to use the affected hand because every failed attempt feels frustrating.' }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--realistic" aria-label="Built For Realistic Home Recovery" {% if sec_realistic %}{{ sec_realistic.shopify_attributes }}{% endif %}>
+    <div class="rg-realistic">
+      <h2 class="rg-realistic__title">{{ sec_realistic.settings.heading | default: 'Built For Realistic Home Recovery' }}<br><span>{{ sec_realistic.settings.accent | default: 'Not Miracle Claims' }}</span></h2>
+      <div class="rg-realistic__row">
+        <div class="rg-realistic__media">
+          {%- assign realistic_fb = sec_realistic.settings.fallback | default: 'zavelyn-realistic.png' -%}
+          {%- assign realistic_alt = sec_realistic.settings.image_alt | default: 'Customers using Zavelyn at home' -%}
+          {% render 'zavelyn-media', image: sec_realistic.settings.image, fallback: realistic_fb, video: sec_realistic.settings.video, video_url: sec_realistic.settings.video_url, source: sec_realistic.settings.video_source, alt: realistic_alt, width: 1080, height: 1080, loading: 'lazy' %}
+        </div>
+        <div class="rg-realistic__copy">
+          <p>{{ sec_realistic.settings.p1 }}</p>
+          <p>{{ sec_realistic.settings.p2 }}</p>
+          <p>{{ sec_realistic.settings.p3 }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--stats" {% if sec_stats %}{{ sec_stats.shopify_attributes }}{% endif %}>
+    <div class="rg-stats">
+      <div class="rg-stats__intro">
+        <h2 class="rg-stats__title">{{ sec_stats.settings.heading | default: 'Our Impact' }} <span>{{ sec_stats.settings.accent | default: 'Statistics' }}</span></h2>
+        <p class="rg-stats__subtitle">{{ sec_stats.settings.subtext | default: 'We have the data to prove our product works' }}</p>
+      </div>
+      <div class="rg-stats__content">
+        <div class="rg-stats__list">
+          <article class="rg-stat">
+            <div class="rg-stat__num">{{ sec_stats.settings.stat_1_value | default: '86k+' }}</div>
+            <p>{{ sec_stats.settings.stat_1_text | default: 'Patients have used Zavelyn to support daily hand rehabilitation.' }}</p>
+          </article>
+          <article class="rg-stat">
+            <div class="rg-stat__num">{{ sec_stats.settings.stat_2_value | default: '78%' }}</div>
+            <p>{{ sec_stats.settings.stat_2_text | default: 'Reported Less Hand Stiffness' }}</p>
+          </article>
+          <article class="rg-stat">
+            <div class="rg-stat__num">{{ sec_stats.settings.stat_3_value | default: '3/4' }}</div>
+            <p>{{ sec_stats.settings.stat_3_text | default: 'Reported Improved Hand Mobility' }}</p>
+          </article>
+        </div>
+        <div class="rg-stats__disclaimer">
+          <span class="rg-stats__disclaimer-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 416.979 416.979" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M356.004,61.156c-81.37-81.47-213.377-81.551-294.848-0.182c-81.47,81.371-81.552,213.379-0.181,294.85c81.369,81.47,213.378,81.551,294.849,0.181C437.293,274.636,437.375,142.626,356.004,61.156z M237.6,340.786c0,3.217-2.607,5.822-5.822,5.822h-46.576c-3.215,0-5.822-2.605-5.822-5.822V167.885c0-3.217,2.607-5.822,5.822-5.822h46.576c3.215,0,5.822,2.604,5.822,5.822V340.786z M208.49,137.901c-18.618,0-33.766-15.146-33.766-33.765c0-18.617,15.147-33.766,33.766-33.766c18.619,0,33.766,15.148,33.766,33.766C242.256,122.755,227.107,137.901,208.49,137.901z"/>
+            </svg>
+          </span>
+          <p>{{ sec_stats.settings.disclaimer | default: '* Based on internal studies and customer feedback surveys.' }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--compare" {% if sec_compare %}{{ sec_compare.shopify_attributes }}{% endif %}>
+    {%- capture rg_icon_yes -%}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="24" height="24" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z" fill="currentColor"/></svg>
+    {%- endcapture -%}
+    {%- capture rg_icon_no -%}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="24" height="24" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm36.44,132.88a8,8,0,0,1,0,11.31,8.17,8.17,0,0,1-11.31,0L128,143.31l-25.13,24.88a8.17,8.17,0,0,1-11.31,0,8,8,0,0,1,0-11.31L116.69,132,91.56,107.13a8,8,0,0,1,11.31-11.32L128,120.69l25.13-24.88a8,8,0,0,1,11.31,11.32L139.31,132Z" fill="currentColor"/></svg>
+    {%- endcapture -%}
+    <div class="rg-compare">
+      <div class="rg-compare__intro">
+        <h2 class="rg-compare__title">{{ sec_compare.settings.heading | default: 'What Makes Zavelyn' }}<span>{{ sec_compare.settings.accent | default: 'the Better Choice' }}</span></h2>
+      </div>
+      <div class="rg-compare__table-wrap">
+        <table class="rg-compare__table">
+          <thead>
+            <tr>
+              <th class="rg-compare__feature-h" scope="col"></th>
+              <th class="rg-compare__col rg-compare__col--hi" scope="col"><span>{{ sec_compare.settings.col_us | default: 'Zavelyn' }}</span></th>
+              <th class="rg-compare__col" scope="col"><span>{{ sec_compare.settings.col_them | default: 'Others' }}</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for i in (1..6) -%}
+              {%- capture lk -%}row_{{ i }}_label{%- endcapture -%}
+              {%- capture uk -%}row_{{ i }}_us{%- endcapture -%}
+              {%- capture tk -%}row_{{ i }}_them{%- endcapture -%}
+              {%- assign row_label = sec_compare.settings[lk] -%}
+              {%- if row_label != blank -%}
+                <tr>
+                  <th scope="row">{{ row_label }}</th>
+                  <td class="rg-compare__col rg-compare__col--hi">
+                    {%- if sec_compare.settings[uk] -%}
+                      <span class="rg-compare__yes" aria-label="Yes">{{ rg_icon_yes }}</span>
+                    {%- else -%}
+                      <span class="rg-compare__no" aria-label="No">{{ rg_icon_no }}</span>
+                    {%- endif -%}
+                  </td>
+                  <td class="rg-compare__col">
+                    {%- if sec_compare.settings[tk] -%}
+                      <span class="rg-compare__yes" aria-label="Yes">{{ rg_icon_yes }}</span>
+                    {%- else -%}
+                      <span class="rg-compare__no" aria-label="No">{{ rg_icon_no }}</span>
+                    {%- endif -%}
+                  </td>
+                </tr>
+              {%- endif -%}
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--timeline" {% if sec_timeline %}{{ sec_timeline.shopify_attributes }}{% endif %}>
+    <div class="rg-timeline">
+      <div class="rg-timeline__content">
+        <header class="rg-timeline__header">
+          <h2 class="rg-timeline__title">{{ sec_timeline.settings.heading | default: 'Your 60-Day Hand' }} <span>{{ sec_timeline.settings.accent | default: 'Recovery Timeline' }}</span></h2>
+        </header>
+        <ol class="rg-timeline__list">
+          {%- for i in (1..4) -%}
+            {%- capture dk -%}phase_{{ i }}_days{%- endcapture -%}
+            {%- capture hk -%}phase_{{ i }}_title{%- endcapture -%}
+            {%- capture bk -%}phase_{{ i }}_items{%- endcapture -%}
+            {%- assign phase_days = sec_timeline.settings[dk] -%}
+            {%- assign phase_title = sec_timeline.settings[hk] -%}
+            {%- assign phase_items = sec_timeline.settings[bk] -%}
+            {%- if phase_title != blank -%}
+              <li class="rg-phase">
+                <span class="rg-phase__dot" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" fill="currentColor"/></svg>
+                </span>
+                <span class="rg-phase__days">{{ phase_days }}</span>
+                <h3>{{ phase_title }}</h3>
+                <ul>
+                  {%- assign phase_lines = phase_items | newline_to_br | split: '<br />' -%}
+                  {%- for line in phase_lines -%}
+                    {%- assign line_text = line | strip -%}
+                    {%- if line_text != blank -%}<li>{{ line_text }}</li>{%- endif -%}
+                  {%- endfor -%}
+                </ul>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ol>
+      </div>
+      <div class="rg-timeline__media">
+        {%- assign timeline_fb = sec_timeline.settings.fallback | default: 'zavelyn-timeline.png' -%}
+        {%- assign timeline_alt = sec_timeline.settings.image_alt | default: 'Customer smiling during hand recovery journey' -%}
+        {% render 'zavelyn-media', image: sec_timeline.settings.image, fallback: timeline_fb, video: sec_timeline.settings.video, video_url: sec_timeline.settings.video_url, source: sec_timeline.settings.video_source, alt: timeline_alt, width: 870, height: 870, loading: 'lazy' %}
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--reviews" id="REVIEW" {% if sec_reviews %}{{ sec_reviews.shopify_attributes }}{% endif %}>
+    <div class="offer-head rg-reviews__head">
+      <h2>{{ sec_reviews.settings.heading | default: 'Customer Reviews' }}</h2>
+      <p>{{ sec_reviews.settings.subtext | default: 'Overall rating: 4.8 / 5 from 351 reviews.' }}</p>
+    </div>
+    <div class="rg-reviews-track" data-rg-reviews-track>
+      {%- assign review_blocks = section.blocks | where: 'type', 'review' -%}
+      {%- if review_blocks.size > 0 -%}
+        {%- for block in review_blocks -%}
+          {%- for slot in (1..2) -%}
+            {%- liquid
+              if slot == 1
+                assign sfx = ''
+              else
+                assign sfx = '_2'
+              endif
+              assign k_name = 'name' | append: sfx
+              assign k_text = 'text' | append: sfx
+              assign k_item = 'item' | append: sfx
+              assign k_stars = 'stars' | append: sfx
+              assign k_verified = 'verified' | append: sfx
+              assign k_image = 'image' | append: sfx
+              assign k_image_url = 'image_url' | append: sfx
+              assign k_video = 'video' | append: sfx
+              assign k_video_url = 'video_url' | append: sfx
+              assign k_video_source = 'video_source' | append: sfx
+              assign review_name = block.settings[k_name]
+              assign review_text = block.settings[k_text]
+              assign review_item = block.settings[k_item]
+              assign review_image = block.settings[k_image]
+              assign review_image_url = block.settings[k_image_url]
+              assign review_video = block.settings[k_video]
+              assign review_video_url = block.settings[k_video_url]
+              assign review_source = block.settings[k_video_source]
+              assign star_count = block.settings[k_stars] | default: 5
+            -%}
+            {%- if review_name != blank or review_text != blank or review_image != blank or review_image_url != blank or review_video != blank or review_video_url != blank -%}
+              {%- liquid
+                assign photo = review_image_url
+                if review_image != blank
+                  if review_image.src contains '.gif'
+                    assign photo = review_image.src
+                  else
+                    assign photo = review_image | image_url: width: 720
+                  endif
+                endif
+                if review_name == blank
+                  assign review_name = 'Customer'
+                endif
+              -%}
+              {%- capture clip -%}{%- render 'zavelyn-video-src', video: review_video, video_url: review_video_url, source: review_source -%}{%- endcapture -%}
+              {%- assign clip = clip | strip -%}
+              <article class="rg-review-card" {% if slot == 1 %}{{ block.shopify_attributes }}{% endif %}>
+                <button type="button" class="rg-review-card__media" data-rg-review-open data-title="{{ review_name | escape }}" {% if photo != blank %}data-image="{{ photo | escape }}"{% endif %} {% if clip != blank %}data-video="{{ clip | escape }}"{% endif %} aria-label="{% if clip != blank %}Play video review by {{ review_name | escape }}{% else %}View review photo by {{ review_name | escape }}{% endif %}">
+                  {%- if photo != blank -%}
+                    <img src="{{ photo | escape }}" alt="Review by {{ review_name | escape }}" width="720" height="1280" loading="lazy">
+                  {%- endif -%}
+                  {%- if clip != blank -%}
+                    <span class="rg-review-card__play" aria-hidden="true"><svg viewBox="0 0 64 64" width="56" height="56" focusable="false"><circle cx="32" cy="32" r="30" fill="rgba(255,255,255,.92)"/><path d="M26 20v24l20-12z" fill="#111"/></svg></span>
+                  {%- endif -%}
+                </button>
+                <div class="rg-review-card__body">
+                  <div class="rg-review-card__who">
+                    <strong>{{ review_name }}</strong>
+                    {%- if block.settings[k_verified] -%}
+                      <span class="rg-review-card__verified"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Verified</span>
+                    {%- endif -%}
+                  </div>
+                  <div class="rg-review-card__stars" aria-label="{{ star_count }} out of 5">{% for s in (1..star_count) %}★{% endfor %}</div>
+                  {%- if review_text != blank -%}<p>{{ review_text | newline_to_br }}</p>{%- endif -%}
+                  {%- if review_item != blank -%}
+                    <p class="rg-review-card__item"><span>Item type:</span> {{ review_item }}</p>
+                  {%- endif -%}
+                </div>
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endfor -%}
+      {%- else -%}
+        {% render 'zavelyn-loox-reviews' %}
+      {%- endif -%}
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--faq" id="faq" {% if sec_faq %}{{ sec_faq.shopify_attributes }}{% endif %}>
+    <div class="offer-head rg-faq__head"><h2>{{ sec_faq.settings.heading | default: 'Frequently Asked Questions' }}</h2></div>
+    <div class="rg-faq" data-offer-accordion>
+      {%- if sec_faq and sec_faq.settings.q_1 != blank -%}
+        <div class="rg-faq__col offer-faq">
+          {%- for i in (1..6) -%}
+            {%- capture qk -%}q_{{ i }}{%- endcapture -%}
+            {%- capture ak -%}a_{{ i }}{%- endcapture -%}
+            {%- assign qv = sec_faq.settings[qk] -%}
+            {%- assign av = sec_faq.settings[ak] -%}
+            {%- if qv != blank -%}
+              <div class="offer-faq__item">
+                <button type="button" class="offer-faq__trigger" aria-expanded="false">{{ qv }}</button>
+                <div class="offer-faq__panel" hidden><div class="offer-faq__body">{{ av }}</div></div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        <div class="rg-faq__col offer-faq">
+          {%- for i in (7..12) -%}
+            {%- capture qk -%}q_{{ i }}{%- endcapture -%}
+            {%- capture ak -%}a_{{ i }}{%- endcapture -%}
+            {%- assign qv = sec_faq.settings[qk] -%}
+            {%- assign av = sec_faq.settings[ak] -%}
+            {%- if qv != blank -%}
+              <div class="offer-faq__item">
+                <button type="button" class="offer-faq__trigger" aria-expanded="false">{{ qv }}</button>
+                <div class="offer-faq__panel" hidden><div class="offer-faq__body">{{ av }}</div></div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+
+  <footer class="offer-foot">
+    <div class="offer-foot__inner">
+      <div class="offer-foot__logo">{{ brand }}</div>
+      <p class="offer-foot__line">© {{ 'now' | date: '%Y' }} {{ brand }}®. All Rights Reserved.</p>
+      <p class="offer-foot__line"><a href="/pages/privacy-policy">Privacy Policy</a> - <a href="/pages/terms-of-service">Terms of Service</a></p>
+      <p class="offer-foot__line">{% if sec_footer and sec_footer.settings.email != blank %}{{ sec_footer.settings.email }}{% else %}support@zavelyn.com{% endif %}</p>
+    </div>
+  </footer>
+
+  <button type="button" class="offer-top" data-offer-top aria-label="Back to top" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="offer-sticky" data-offer-sticky aria-hidden="true" inert>
+    <div class="offer-sticky__inner">
+      <div class="offer-sticky__copy">{{ sticky_copy }}</div>
+      <a class="offer-sticky__cta" href="#OfferTop" data-offer-checkout data-rg-cta tabindex="-1">
+        <span class="offer-cta__label">{{ cta_label }}</span>
+        <span class="offer-cta__sep" aria-hidden="true">—</span>
+        <span class="offer-cta__price" data-rg-cta-price>{{ pack1_variant.price | money_without_trailing_zeros }}</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="rg-modal" id="RgSizeModal" hidden data-rg-size-modal>
+  <div class="rg-modal__dialog" role="dialog" aria-modal="true" aria-label="Size chart">
+    <button type="button" class="rg-modal__close" data-rg-modal-close aria-label="Close">×</button>
+    {%- assign chart_fb = hs.size_chart_fallback | default: 'zavelyn-size-chart.png' -%}
+    {% render 'offer-img', image: hs.size_chart_image, fallback: chart_fb, alt: 'Zavelyn size chart', width: 1200, height: 1200, loading: 'lazy' %}
+  </div>
+</div>
+
+<div class="rg-modal" id="RgWatchModal" hidden data-rg-watch-modal>
+  <div class="rg-modal__dialog" role="dialog" aria-modal="true" aria-label="How to use Zavelyn">
+    <button type="button" class="rg-modal__close" data-rg-modal-close aria-label="Close">×</button>
+    {%- capture watch_src -%}{%- render 'zavelyn-video-src', video: hs.watch_file, video_url: hs.watch_video, source: hs.watch_source -%}{%- endcapture -%}
+    {%- assign watch_src = watch_src | strip -%}
+    {%- if watch_src == blank -%}
+      {%- assign watch_src = 'https://cdn.shopify.com/videos/c/o/v/f95bbb1ef6fe45e5be0776964abbbe10.mp4' -%}
+    {%- endif -%}
+    {%- if watch_src contains '.mp4' or watch_src contains '.webm' or watch_src contains '.mov' or watch_src contains '.m4v' -%}
+      <video controls playsinline preload="none" data-rg-watch-video src="{{ watch_src | escape }}"></video>
+    {%- else -%}
+      <iframe data-rg-watch-frame src="{{ watch_src | escape }}" title="How to use Zavelyn" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    {%- endif -%}
+  </div>
+</div>
+
+<div class="rg-modal" id="RgReviewModal" hidden data-rg-review-modal>
+  <div class="rg-modal__dialog rg-modal__dialog--review" role="dialog" aria-modal="true" aria-label="Customer review">
+    <button type="button" class="rg-modal__close" data-rg-modal-close aria-label="Close">×</button>
+    <div class="rg-review-stage" data-rg-review-stage></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var main = document.querySelector('[data-offer-main]');
+  var stageVideo = document.querySelector('[data-offer-main-video]');
+  var stageFrame = document.querySelector('[data-offer-main-frame]');
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll('[data-offer-thumb]'));
+  var sources = thumbs.map(function (t) { return t.dataset.src; });
+  var index = 0;
+  function isFileVideo(url) {
+    return /\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(url || '');
+  }
+  function hideStageMedia() {
+    if (stageVideo) {
+      stageVideo.pause();
+      stageVideo.hidden = true;
+      stageVideo.removeAttribute('src');
+    }
+    if (stageFrame) {
+      stageFrame.hidden = true;
+      stageFrame.removeAttribute('src');
+    }
+  }
+  function setSlide(i) {
+    if (!main || !sources.length) return;
+    index = (i + sources.length) % sources.length;
+    var clip = thumbs[index].dataset.video || '';
+    if (clip && isFileVideo(clip) && stageVideo) {
+      if (stageFrame) {
+        stageFrame.hidden = true;
+        stageFrame.removeAttribute('src');
+      }
+      main.hidden = true;
+      stageVideo.hidden = false;
+      if (stageVideo.getAttribute('src') !== clip) stageVideo.src = clip;
+    } else if (clip && stageFrame) {
+      if (stageVideo) {
+        stageVideo.pause();
+        stageVideo.hidden = true;
+        stageVideo.removeAttribute('src');
+      }
+      main.hidden = true;
+      stageFrame.hidden = false;
+      if (stageFrame.getAttribute('src') !== clip) stageFrame.src = clip;
+    } else {
+      hideStageMedia();
+      main.hidden = false;
+      main.src = sources[index];
+    }
+    thumbs.forEach(function (t, n) { t.classList.toggle('is-active', n === index); });
+  }
+  thumbs.forEach(function (thumb) {
+    thumb.addEventListener('click', function () { setSlide(Number(thumb.dataset.index)); });
+  });
+  var prev = document.querySelector('[data-offer-prev]');
+  var next = document.querySelector('[data-offer-next]');
+  if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); setSlide(index - 1); });
+  if (next) next.addEventListener('click', function (e) { e.stopPropagation(); setSlide(index + 1); });
+
+  var fancyboxLoading = null;
+  function loadFancybox(cb) {
+    if (window.Fancybox) { cb(); return; }
+    if (fancyboxLoading) { fancyboxLoading.then(cb); return; }
+    fancyboxLoading = new Promise(function (resolve) {
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css';
+      document.head.appendChild(css);
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js';
+      s.onload = function () { resolve(); };
+      s.onerror = function () { resolve(); };
+      document.body.appendChild(s);
+    });
+    fancyboxLoading.then(cb);
+  }
+  var zoom = document.querySelector('[data-offer-zoom]');
+  if (zoom) {
+    zoom.addEventListener('click', function () {
+      if (!sources.length) return;
+      loadFancybox(function () {
+        if (!window.Fancybox) return;
+        window.Fancybox.show(thumbs.map(function (thumb) {
+          if (thumb.dataset.video && isFileVideo(thumb.dataset.video)) {
+            return { src: thumb.dataset.video, type: 'html5video' };
+          }
+          if (thumb.dataset.video) {
+            return { src: thumb.dataset.video, type: 'iframe' };
+          }
+          return { src: thumb.dataset.src, type: 'image' };
+        }), { startIndex: index });
+      });
+    });
+  }
+
+  document.querySelectorAll('[data-offer-accordion]').forEach(function (accordion, aIdx) {
+    var items = Array.prototype.slice.call(accordion.querySelectorAll('.offer-faq__item'));
+    items.forEach(function (item, i) {
+      var trigger = item.querySelector('.offer-faq__trigger');
+      var panel = item.querySelector('.offer-faq__panel');
+      if (!trigger || !panel) return;
+      var panelId = 'rg-faq-' + aIdx + '-' + i;
+      panel.id = panelId;
+      trigger.setAttribute('aria-controls', panelId);
+      panel.setAttribute('role', 'region');
+      trigger.setAttribute('aria-expanded', 'false');
+      panel.setAttribute('hidden', '');
+      trigger.addEventListener('click', function () {
+        var willOpen = !item.classList.contains('is-open');
+        items.forEach(function (other) {
+          var open = other === item && willOpen;
+          other.classList.toggle('is-open', open);
+          var btn = other.querySelector('.offer-faq__trigger');
+          var p = other.querySelector('.offer-faq__panel');
+          if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (p) { if (open) p.removeAttribute('hidden'); else p.setAttribute('hidden', ''); }
+        });
+      });
+    });
+  });
+
+  /* Journey + howto carousels */
+  function bindRgCarousel(trackSel, prevSel, nextSel, cardSel, gap) {
+    var track = document.querySelector(trackSel);
+    if (!track) return;
+    var prev = document.querySelector(prevSel);
+    var next = document.querySelector(nextSel);
+    function step() {
+      var card = track.querySelector(cardSel);
+      return card ? card.getBoundingClientRect().width + gap : 240;
+    }
+    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+  }
+  bindRgCarousel('[data-rg-journey-track]', '[data-rg-journey-prev]', '[data-rg-journey-next]', '.rg-journey-card', 16);
+  bindRgCarousel('[data-rg-howto-track]', '[data-rg-howto-prev]', '[data-rg-howto-next]', '.rg-step', 10);
+
+  /* Size / watch modals */
+  function openModal(el) {
+    if (!el) return;
+    el.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeModal(el) {
+    if (!el) return;
+    el.hidden = true;
+    document.documentElement.style.overflow = '';
+    var vid = el.querySelector('video');
+    if (vid) { vid.pause(); }
+    var frame = el.querySelector('iframe');
+    if (frame) {
+      var frameSrc = frame.getAttribute('src');
+      frame.removeAttribute('src');
+      if (frameSrc) frame.setAttribute('src', frameSrc);
+    }
+    var stage = el.querySelector('[data-rg-review-stage]');
+    if (stage) stage.replaceChildren();
+  }
+  var sizeModal = document.querySelector('[data-rg-size-modal]');
+  var watchModal = document.querySelector('[data-rg-watch-modal]');
+  document.querySelectorAll('[data-rg-size-open]').forEach(function (btn) {
+    btn.addEventListener('click', function () { openModal(sizeModal); });
+  });
+  document.querySelectorAll('[data-rg-watch-open]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal(watchModal);
+      var vid = watchModal && watchModal.querySelector('video');
+      if (vid) { try { vid.play(); } catch (e2) {} }
+    });
+  });
+  document.querySelectorAll('[data-rg-modal-close]').forEach(function (btn) {
+    btn.addEventListener('click', function () { closeModal(btn.closest('.rg-modal')); });
+  });
+  var reviewModal = document.querySelector('[data-rg-review-modal]');
+  document.querySelectorAll('[data-rg-review-open]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (!reviewModal) return;
+      var stage = reviewModal.querySelector('[data-rg-review-stage]');
+      if (!stage) return;
+      var video = btn.getAttribute('data-video');
+      var image = btn.getAttribute('data-image');
+      var title = btn.getAttribute('data-title') || 'Review';
+      stage.replaceChildren();
+      if (video) {
+        var fileVideo = /\.(mp4|webm|mov|m4v)(\?|$)/i.test(video);
+        if (fileVideo) {
+          var vid = document.createElement('video');
+          vid.src = video;
+          vid.controls = true;
+          vid.autoplay = true;
+          vid.playsInline = true;
+          vid.setAttribute('playsinline', '');
+          stage.appendChild(vid);
+        } else {
+          var frame = document.createElement('iframe');
+          var join = video.indexOf('?') === -1 ? '?' : '&';
+          frame.src = video + join + 'autoplay=true&preload=auto';
+          frame.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+          frame.allowFullscreen = true;
+          frame.title = title;
+          stage.appendChild(frame);
+        }
+      } else if (image) {
+        var img = document.createElement('img');
+        img.src = image;
+        img.alt = title;
+        stage.appendChild(img);
+      }
+      openModal(reviewModal);
+    });
+  });
+  [sizeModal, watchModal, reviewModal].forEach(function (modal) {
+    if (!modal) return;
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal(modal);
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeModal(sizeModal); closeModal(watchModal); closeModal(reviewModal); }
+  });
+
+
+  /* Countdown 10-min loop like source caregiver offer */
+  (function () {
+    var root = document.querySelector('[data-rg-countdown]');
+    if (!root) return;
+    var label = root.querySelector('[data-rg-countdown-label]');
+    var minutes = Number(root.getAttribute('data-minutes') || 10);
+    var end = Date.now() + minutes * 60 * 1000;
+    function tick() {
+      var left = Math.max(0, end - Date.now());
+      if (left <= 0) { end = Date.now() + minutes * 60 * 1000; left = end - Date.now(); }
+      var total = Math.floor(left / 1000);
+      var m = Math.floor(total / 60);
+      var s = total % 60;
+      if (label) label.textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  /* Variant + packs */
+  var variantInput = document.getElementById('OfferVariantId');
+  var qtyInput = document.getElementById('OfferQuantity');
+  var buyForm = document.getElementById('OfferAddForm');
+  var packsRoot = document.querySelector('[data-rg-packs]');
+  var ctaPriceEls = Array.prototype.slice.call(document.querySelectorAll('[data-rg-cta-price]'));
+  var variants = [];
+  try {
+    var mapEl = document.getElementById('RgVariantMap');
+    if (mapEl) variants = JSON.parse(mapEl.textContent || '[]');
+  } catch (e) { variants = []; }
+  var activePack = 1;
+
+  function findVariant(side, size) {
+    if (!variants.length) return null;
+    var match = variants.find(function (v) {
+      var opts = [v.option1, v.option2, v.option3].filter(Boolean);
+      var sideOk = !side || opts.indexOf(side) !== -1;
+      var sizeOk = !size || opts.indexOf(size) !== -1;
+      return sideOk && sizeOk;
+    });
+    return match || variants[0];
+  }
+
+  function packPriceLabel() {
+    var sel = activePack === 2 ? '[data-rg-pack2-price]' : '[data-rg-pack1-price]';
+    var node = document.querySelector(sel);
+    return node ? node.textContent.trim() : '';
+  }
+
+  function gloveVariant(sideAttr, sizeAttr) {
+    var sideEl = document.querySelector(sideAttr);
+    var sizeEl = document.querySelector(sizeAttr);
+    return findVariant(sideEl ? sideEl.value : null, sizeEl ? sizeEl.value : null);
+  }
+
+  function syncFromOptions() {
+    var v = activePack === 2 ? gloveVariant('[data-rg-side-a]', '[data-rg-size-a]') : gloveVariant('[data-rg-side]', '[data-rg-size]');
+    if (!v) return;
+    if (variantInput) variantInput.value = String(v.id);
+    if (qtyInput) qtyInput.value = activePack === 2 ? '2' : '1';
+    var price = packPriceLabel();
+    if (price) ctaPriceEls.forEach(function (el) { el.textContent = price; });
+  }
+
+  if (packsRoot) {
+    packsRoot.querySelectorAll('[data-rg-pack]').forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        if (e.target && (e.target.tagName === 'SELECT' || e.target.closest('select'))) return;
+        activePack = Number(card.getAttribute('data-rg-pack') || '1');
+        packsRoot.querySelectorAll('[data-rg-pack]').forEach(function (c) {
+          c.classList.toggle('is-active', c === card);
+        });
+        syncFromOptions();
+      });
+    });
+  }
+  document.querySelectorAll('[data-rg-side], [data-rg-size], [data-rg-side-a], [data-rg-size-a], [data-rg-side-b], [data-rg-size-b]').forEach(function (el) {
+    el.addEventListener('change', syncFromOptions);
+  });
+  syncFromOptions();
+
+  var checkoutBtns = Array.prototype.slice.call(document.querySelectorAll('[data-offer-checkout]'));
+  var checkoutBusy = false;
+  function goToCheckout(trigger) {
+    var first = activePack === 2 ? gloveVariant('[data-rg-side-a]', '[data-rg-size-a]') : gloveVariant('[data-rg-side]', '[data-rg-size]');
+    var second = activePack === 2 ? gloveVariant('[data-rg-side-b]', '[data-rg-size-b]') : null;
+    if (checkoutBusy || !first) return;
+    var bundleId = 'rg_' + Date.now().toString(36);
+    var packLabel = activePack === 2 ? 'Buy 2 · Extra 15%' : 'Buy 1 · ONE HAND';
+    var props = {
+      _bundle: 'zavelyn-pack',
+      _bundle_id: bundleId,
+      _pack: String(activePack),
+      Offer: packLabel
+    };
+    var items;
+    if (activePack === 2 && second) {
+      if (String(first.id) === String(second.id)) {
+        items = [{ id: first.id, quantity: 2, properties: props }];
+      } else {
+        items = [
+          { id: first.id, quantity: 1, properties: props },
+          { id: second.id, quantity: 1, properties: props }
+        ];
+      }
+    } else {
+      items = [{ id: first.id, quantity: 1, properties: props }];
+    }
+    var discountCode = activePack === 2 && packsRoot ? (packsRoot.getAttribute('data-discount-code') || '') : '';
+    checkoutBusy = true;
+    checkoutBtns.forEach(function (btn) { btn.classList.add('is-loading'); });
+    if (trigger && trigger.classList) trigger.classList.add('is-loading');
+    if (variantInput) variantInput.value = String(first.id);
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({ items: items })
+    })
+      .then(function (res) { if (!res.ok) throw new Error('add_failed'); return res.json(); })
+      .then(function () {
+        if (!discountCode) return null;
+        return fetch('/discount/' + encodeURIComponent(discountCode), {
+          credentials: 'same-origin',
+          redirect: 'follow'
+        }).catch(function () { return null; });
+      })
+      .then(function () { return fetch('/cart.js', { credentials: 'same-origin' }).then(function (r) { return r.ok ? r.json() : null; }); })
+      .then(function (cart) {
+        checkoutBusy = false;
+        checkoutBtns.forEach(function (btn) { btn.classList.remove('is-loading'); });
+        if (trigger && trigger.classList) trigger.classList.remove('is-loading');
+        if (cart) {
+          document.dispatchEvent(new CustomEvent('zavelyn:offer-cart:open', { detail: { cart: cart } }));
+          return;
+        }
+        window.location.href = '/checkout';
+      })
+      .catch(function () {
+        checkoutBusy = false;
+        checkoutBtns.forEach(function (btn) { btn.classList.remove('is-loading'); });
+        if (trigger && trigger.classList) trigger.classList.remove('is-loading');
+        if (buyForm) buyForm.submit();
+      });
+  }
+  if (buyForm) buyForm.addEventListener('submit', function (e) { e.preventDefault(); goToCheckout(e.submitter); });
+  checkoutBtns.forEach(function (btn) {
+    if (btn.closest('#OfferAddForm')) return;
+    btn.addEventListener('click', function (e) { e.preventDefault(); goToCheckout(btn); });
+  });
+
+  var sticky = document.querySelector('[data-offer-sticky]');
+  var stickyCta = sticky ? sticky.querySelector('[data-offer-checkout]') : null;
+  var hero = document.querySelector('.offer-hero');
+  if (sticky && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      var on = !entries[0].isIntersecting;
+      sticky.classList.toggle('is-on', on);
+      sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
+      if (on) sticky.removeAttribute('inert');
+      else sticky.setAttribute('inert', '');
+      if (stickyCta) stickyCta.tabIndex = on ? 0 : -1;
+      document.documentElement.classList.toggle('offer-sticky-on', on);
+    }, { threshold: 0.05 }).observe(hero);
+  }
+
+  var topBtn = document.querySelector('[data-offer-top]');
+  if (topBtn) {
+    function syncTopBtn() {
+      var show = window.scrollY > 480;
+      topBtn.hidden = !show;
+      topBtn.classList.toggle('is-on', show);
+    }
+    window.addEventListener('scroll', syncTopBtn, { passive: true });
+    syncTopBtn();
+    topBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Offer Zavelyn landing",
+  "tag": "section",
+  "class": "section-offer-zavelyn",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand",
+      "default": "Zavelyn"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text",
+      "label": "Ticker",
+      "default": "FREE Worldwide Shipping —"
+    },
+    {
+      "type": "text",
+      "id": "ticker_highlight",
+      "label": "Ticker highlight",
+      "default": "This Week Only!"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA",
+      "default": "BUY NOW"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sec_gallery",
+      "name": "0. Gallery",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "text",
+          "id": "fallback_1",
+          "label": "Fallback 1",
+          "default": "zavelyn-gallery-1.png"
+        },
+        {
+          "type": "select",
+          "id": "video_source_1",
+          "label": "Video 1 source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video_1",
+          "label": "Video 1",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source_1 == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url_1",
+          "label": "Video 1 URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source_1 == 'url' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "text",
+          "id": "fallback_2",
+          "label": "Fallback 2",
+          "default": "zavelyn-gallery-2.png"
+        },
+        {
+          "type": "select",
+          "id": "video_source_2",
+          "label": "Video 2 source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video_2",
+          "label": "Video 2",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source_2 == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url_2",
+          "label": "Video 2 URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source_2 == 'url' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "text",
+          "id": "fallback_3",
+          "label": "Fallback 3",
+          "default": "zavelyn-gallery-3.png"
+        },
+        {
+          "type": "select",
+          "id": "video_source_3",
+          "label": "Video 3 source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video_3",
+          "label": "Video 3",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source_3 == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url_3",
+          "label": "Video 3 URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source_3 == 'url' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "text",
+          "id": "fallback_4",
+          "label": "Fallback 4",
+          "default": "zavelyn-gallery-4.png"
+        },
+        {
+          "type": "select",
+          "id": "video_source_4",
+          "label": "Video 4 source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video_4",
+          "label": "Video 4",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source_4 == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url_4",
+          "label": "Video 4 URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source_4 == 'url' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "text",
+          "id": "fallback_5",
+          "label": "Fallback 5",
+          "default": "zavelyn-gallery-5.png"
+        },
+        {
+          "type": "select",
+          "id": "video_source_5",
+          "label": "Video 5 source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video_5",
+          "label": "Video 5",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source_5 == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url_5",
+          "label": "Video 5 URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source_5 == 'url' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "text",
+          "id": "fallback_6",
+          "label": "Fallback 6",
+          "default": "zavelyn-gallery-6.png"
+        },
+        {
+          "type": "select",
+          "id": "video_source_6",
+          "label": "Video 6 source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video_6",
+          "label": "Video 6",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source_6 == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url_6",
+          "label": "Video 6 URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source_6 == 'url' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_7",
+          "label": "Image 7"
+        },
+        {
+          "type": "text",
+          "id": "fallback_7",
+          "label": "Fallback 7",
+          "default": "zavelyn-gallery-7.png"
+        },
+        {
+          "type": "select",
+          "id": "video_source_7",
+          "label": "Video 7 source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video_7",
+          "label": "Video 7",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source_7 == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url_7",
+          "label": "Video 7 URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source_7 == 'url' }}"
+        }
+      ]
+    },
+    {
+      "type": "sec_hero",
+      "name": "1. Hero / Buy box",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Rating"
+        },
+        {
+          "type": "text",
+          "id": "rating_score",
+          "label": "Score",
+          "default": "4.8/5"
+        },
+        {
+          "type": "text",
+          "id": "rating_note",
+          "label": "Note",
+          "default": "Trusted by stroke survivors and caregivers"
+        },
+        {
+          "type": "header",
+          "content": "Perks"
+        },
+        {
+          "type": "text",
+          "id": "perk_1",
+          "label": "Perk 1",
+          "default": "Guided hand opening & closing"
+        },
+        {
+          "type": "image_picker",
+          "id": "perk_1_icon",
+          "label": "Perk 1 icon"
+        },
+        {
+          "type": "text",
+          "id": "perk_1_fallback",
+          "label": "Perk 1 fallback",
+          "default": "zavelyn-icon-hand.png"
+        },
+        {
+          "type": "text",
+          "id": "perk_2",
+          "label": "Perk 2",
+          "default": "Use It Alone or With a Helper"
+        },
+        {
+          "type": "image_picker",
+          "id": "perk_2_icon",
+          "label": "Perk 2 icon"
+        },
+        {
+          "type": "text",
+          "id": "perk_2_fallback",
+          "label": "Perk 2 fallback",
+          "default": "zavelyn-icon-home.png"
+        },
+        {
+          "type": "text",
+          "id": "perk_3",
+          "label": "Perk 3",
+          "default": "300+ Assisted reps in 20 Minutes"
+        },
+        {
+          "type": "image_picker",
+          "id": "perk_3_icon",
+          "label": "Perk 3 icon"
+        },
+        {
+          "type": "text",
+          "id": "perk_3_fallback",
+          "label": "Perk 3 fallback",
+          "default": "zavelyn-icon-muscle.png"
+        },
+        {
+          "type": "text",
+          "id": "perk_4",
+          "label": "Perk 4",
+          "default": "3 Therapy Modes for Every Stage of Recovery"
+        },
+        {
+          "type": "image_picker",
+          "id": "perk_4_icon",
+          "label": "Perk 4 icon"
+        },
+        {
+          "type": "text",
+          "id": "perk_4_fallback",
+          "label": "Perk 4 fallback",
+          "default": "zavelyn-icon-brain.png"
+        },
+        {
+          "type": "header",
+          "content": "Offer"
+        },
+        {
+          "type": "text",
+          "id": "trial_label",
+          "label": "Trial label",
+          "default": "30-Day At-Home Trial"
+        },
+        {
+          "type": "text",
+          "id": "countdown_text",
+          "label": "Countdown text",
+          "default": "CAREGIVER OFFER — 50% OFF ENDS IN"
+        },
+        {
+          "type": "range",
+          "id": "countdown_minutes",
+          "label": "Countdown minutes",
+          "min": 1,
+          "max": 60,
+          "step": 1,
+          "unit": "min",
+          "default": 10
+        },
+        {
+          "type": "header",
+          "content": "Buy 1"
+        },
+        {
+          "type": "text",
+          "id": "pack_1_title",
+          "label": "Title",
+          "default": "Buy 1"
+        },
+        {
+          "type": "text",
+          "id": "pack_1_pill",
+          "label": "Pill",
+          "default": "ONE HAND"
+        },
+        {
+          "type": "text",
+          "id": "pack_1_save",
+          "label": "Save label",
+          "default": "SAVE $91"
+        },
+        {
+          "type": "image_picker",
+          "id": "pack_1_image",
+          "label": "Package image",
+          "info": "Ảnh Buy 1. Upload ảnh mới để thay ảnh sách hiện tại."
+        },
+        {
+          "type": "text",
+          "id": "pack_1_fallback",
+          "label": "Fallback filename",
+          "info": "Chỉ dùng khi chưa upload ảnh.",
+          "default": "zavelyn-bundle-1.png"
+        },
+        {
+          "type": "header",
+          "content": "Buy 2"
+        },
+        {
+          "type": "text",
+          "id": "pack_2_badge",
+          "label": "Badge",
+          "default": "BEST VALUE"
+        },
+        {
+          "type": "text",
+          "id": "pack_2_title",
+          "label": "Title",
+          "default": "Buy 2"
+        },
+        {
+          "type": "text",
+          "id": "pack_2_pill",
+          "label": "Pill",
+          "default": "2 GLOVES"
+        },
+        {
+          "type": "text",
+          "id": "pack_2_save",
+          "label": "Save label",
+          "default": "Extra 15%"
+        },
+        {
+          "type": "text",
+          "id": "pack_2_price",
+          "label": "Price",
+          "default": "$151.30"
+        },
+        {
+          "type": "text",
+          "id": "pack_2_compare",
+          "label": "Compare price",
+          "default": "$178"
+        },
+        {
+          "type": "image_picker",
+          "id": "pack_2_image",
+          "label": "Package image",
+          "info": "Ảnh Buy 2. Upload ảnh mới để thay ảnh găng hiện tại."
+        },
+        {
+          "type": "text",
+          "id": "pack_2_fallback",
+          "label": "Fallback filename",
+          "info": "Chỉ dùng khi chưa upload ảnh.",
+          "default": "zavelyn-bundle-2.png"
+        },
+        {
+          "type": "text",
+          "id": "bonus_label",
+          "label": "Bonus bar",
+          "default": "+ FREE 30-Day Recovery Guide"
+        },
+        {
+          "type": "header",
+          "content": "Trust and buttons"
+        },
+        {
+          "type": "text",
+          "id": "trust_1_icon",
+          "label": "Trust 1 icon",
+          "default": "🚚"
+        },
+        {
+          "type": "text",
+          "id": "trust_1",
+          "label": "Trust 1",
+          "default": "Free Shipping"
+        },
+        {
+          "type": "text",
+          "id": "trust_2_icon",
+          "label": "Trust 2 icon",
+          "default": "💙"
+        },
+        {
+          "type": "text",
+          "id": "trust_2",
+          "label": "Trust 2",
+          "default": "30-Day Guarantee"
+        },
+        {
+          "type": "text",
+          "id": "trust_3_icon",
+          "label": "Trust 3 icon",
+          "default": "💬"
+        },
+        {
+          "type": "text",
+          "id": "trust_3",
+          "label": "Trust 3",
+          "default": "24/7 Chat Support"
+        },
+        {
+          "type": "text",
+          "id": "size_btn",
+          "label": "Size button",
+          "default": "Find Your Correct Size"
+        },
+        {
+          "type": "text",
+          "id": "watch_btn",
+          "label": "Watch button",
+          "default": "Click To Watch How To Use Zavelyn"
+        },
+        {
+          "type": "select",
+          "id": "watch_source",
+          "label": "Watch video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "watch_file",
+          "label": "Watch video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.watch_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "watch_video",
+          "label": "Watch video URL",
+          "default": "https://cdn.shopify.com/videos/c/o/v/f95bbb1ef6fe45e5be0776964abbbe10.mp4",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.watch_source == 'url' }}"
+        },
+        {
+          "type": "text",
+          "id": "replica_title",
+          "label": "Replica title",
+          "default": "Watch Out For Cheap Replicas"
+        },
+        {
+          "type": "text",
+          "id": "replica_text",
+          "label": "Replica text",
+          "default": "Only our brand guarantees the high quality product used by thousands for pain relief."
+        },
+        {
+          "type": "text",
+          "id": "size_chart_label",
+          "label": "Size chart button",
+          "default": "Open Size Chart"
+        },
+        {
+          "type": "image_picker",
+          "id": "size_chart_image",
+          "label": "Size chart image"
+        },
+        {
+          "type": "text",
+          "id": "size_chart_fallback",
+          "label": "Size chart fallback",
+          "default": "zavelyn-size-chart.png"
+        },
+        {
+          "type": "header",
+          "content": "Buy box FAQ 1"
+        },
+        {
+          "type": "text",
+          "id": "buy_q_1",
+          "label": "Question",
+          "default": "How It Works"
+        },
+        {
+          "type": "richtext",
+          "id": "buy_a_1",
+          "label": "Answer",
+          "default": "<p>🖐 <strong>Zavelyn supports your hand with tension-assisted motion</strong> → helping your fingers open and close smoothly.</p><p>🧠 <strong>This controlled movement reactivates the connection between your brain and hand</strong> → helping rebuild coordination and strength safely from home.</p><p>⚙️ <strong>Using the smart display, you can easily adjust therapy modules and intensity</strong> → so every session is personalized for your recovery.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Buy box FAQ 2"
+        },
+        {
+          "type": "text",
+          "id": "buy_q_2",
+          "label": "Question",
+          "default": "Find Your Correct Size"
+        },
+        {
+          "type": "richtext",
+          "id": "buy_a_2",
+          "label": "Answer",
+          "default": "<p><strong>Zavelyn Glove Size Guide</strong></p><p>Choose your size based on <strong>hand width, hand length, and finger circumference</strong>.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Buy box FAQ 3"
+        },
+        {
+          "type": "text",
+          "id": "buy_q_3",
+          "label": "Question",
+          "default": "Works For These Conditions"
+        },
+        {
+          "type": "richtext",
+          "id": "buy_a_3",
+          "label": "Answer",
+          "default": "<p><strong>Zavelyn can support hand mobility and recovery for:</strong></p><ul><li>Stroke (Hemiparesis / Hemiplegia)</li><li>Brachial plexus injuries</li><li>Multiple sclerosis (MS)</li><li>Parkinson’s-related hand stiffness</li><li>Nerve damage / neuropathy in the hand</li><li>Post-surgery recovery (hand, wrist, fingers)</li><li>Hand paralysis after injury or trauma</li><li>Cerebral palsy (adult hand mobility)</li><li>Spasticity and muscle stiffness in the hand</li><li>Tendon or nerve compression issues</li><li>Weak grip strength in older adults</li><li>Early recovery after fractures (once cleared by a doctor)</li><li>General hand weakness or loss of coordination</li><li>Individuals with pacemakers*</li></ul><p>* Zavelyn does not use electrical stimulation. Patients with implanted medical devices should consult their physician before use.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Buy box FAQ 4"
+        },
+        {
+          "type": "text",
+          "id": "buy_q_4",
+          "label": "Question",
+          "default": "Our Guarantee"
+        },
+        {
+          "type": "richtext",
+          "id": "buy_a_4",
+          "label": "Answer",
+          "default": "<p>If you're not 100% satisfied <strong>within the first 30 days</strong>, just send it back to us and we'll give you a full refund.</p><p>No need to worry about the return shipping — <strong>we've got you covered!</strong></p><p>Contact support at <a href=\"mailto:support@zavelyn.com\">support@zavelyn.com</a>.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Buy box FAQ 5"
+        },
+        {
+          "type": "text",
+          "id": "buy_q_5",
+          "label": "Question",
+          "default": "Shipping Info"
+        },
+        {
+          "type": "richtext",
+          "id": "buy_a_5",
+          "label": "Answer",
+          "default": "<p>We offer fast and reliable shipping on all orders. You can expect to receive it within <strong>7–14 business days based on your location</strong>.</p><p>Please contact our customer service team if you have any questions about your shipment.</p>"
+        }
+      ]
+    },
+    {
+      "type": "sec_marquee",
+      "name": "2. Marquee",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "item_1",
+          "label": "Item 1",
+          "default": "PREMIUM QUALITY"
+        },
+        {
+          "type": "text",
+          "id": "item_2",
+          "label": "Item 2",
+          "default": "FAST SHIPPING"
+        },
+        {
+          "type": "text",
+          "id": "item_3",
+          "label": "Item 3",
+          "default": "SATISFACTION GUARANTEED"
+        }
+      ]
+    },
+    {
+      "type": "sec_story",
+      "name": "3. After therapy",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "When Therapy Ends, Your Hand Still Needs Daily Movement"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p1",
+          "label": "Paragraph 1",
+          "default": "After a stroke, your <strong>hand may feel stiff, heavy, weak, or slow</strong> to respond."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p2",
+          "label": "Paragraph 2",
+          "default": "Simple tasks like <strong>holding a cup</strong>, opening your fingers, <strong>gripping a fork</strong>, or <strong>getting dressed</strong> can suddenly feel frustrating."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p3",
+          "label": "Paragraph 3",
+          "default": "Zavelyn helps support <strong>gentle, guided hand opening and closing at home</strong> — so your affected hand gets a simple <strong>daily routine</strong> instead of staying inactive."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback",
+          "default": "zavelyn-iwt-therapy.gif"
+        },
+        {
+          "type": "select",
+          "id": "video_source",
+          "label": "Video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source == 'url' }}"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt",
+          "default": "Zavelyn guided hand therapy"
+        }
+      ]
+    },
+    {
+      "type": "sec_reps",
+      "name": "4. 300 reps",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Support Real Hand Movement — Up To 300 Guided Reps Per Session"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p1",
+          "label": "Paragraph 1",
+          "default": "Zavelyn uses gentle <strong>air-pressure assistance</strong> to guide your fingers through <strong>opening and closing movements</strong>."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p2",
+          "label": "Paragraph 2",
+          "default": "In just <strong>20 minutes, your hand can complete up to 300 assisted repetitions</strong> — helping you keep the affected hand active with gentle movement you can adjust."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p3",
+          "label": "Paragraph 3",
+          "default": "These repeated movements <strong>support mobility, coordination</strong>, and daily hand practice at home."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p4",
+          "label": "Paragraph 4",
+          "default": "Use the control panel to <strong>choose a comfortable intensity level</strong> and follow a routine that <strong>fits into your day.</strong>"
+        },
+        {
+          "type": "text",
+          "id": "cta",
+          "label": "Button",
+          "default": "Start Your Recovery now →"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback",
+          "default": "zavelyn-iwt-300.png"
+        },
+        {
+          "type": "select",
+          "id": "video_source",
+          "label": "Video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source == 'url' }}"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt",
+          "default": "Up to 300 guided reps"
+        }
+      ]
+    },
+    {
+      "type": "sec_train",
+      "name": "5. How it trains",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "How Zavelyn Trains"
+        },
+        {
+          "type": "text",
+          "id": "accent",
+          "label": "Accent",
+          "default": "Your Hand"
+        },
+        {
+          "type": "header",
+          "content": "Card 1"
+        },
+        {
+          "type": "text",
+          "id": "card_1_title",
+          "label": "Title",
+          "default": "1. Hand Opening"
+        },
+        {
+          "type": "textarea",
+          "id": "card_1_text",
+          "label": "Text",
+          "default": "Zavelyn gently opens your fingers through guided air pressure, helping reduce stiffness and maintain joint mobility during rehabilitation."
+        },
+        {
+          "type": "image_picker",
+          "id": "card_1_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "card_1_fallback",
+          "label": "Fallback",
+          "default": "zavelyn-train-open.gif"
+        },
+        {
+          "type": "select",
+          "id": "card_1_video_source",
+          "label": "Card 1 video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "card_1_video",
+          "label": "Card 1 video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.card_1_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "card_1_video_url",
+          "label": "Card 1 video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.card_1_video_source == 'url' }}"
+        },
+        {
+          "type": "header",
+          "content": "Card 2"
+        },
+        {
+          "type": "text",
+          "id": "card_2_title",
+          "label": "Title",
+          "default": "2. Hand Closing"
+        },
+        {
+          "type": "textarea",
+          "id": "card_2_text",
+          "label": "Text",
+          "default": "The glove assists your hand in closing and gripping motions, supporting muscle activation and improving coordination over time."
+        },
+        {
+          "type": "image_picker",
+          "id": "card_2_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "card_2_fallback",
+          "label": "Fallback",
+          "default": "zavelyn-train-close.gif"
+        },
+        {
+          "type": "select",
+          "id": "card_2_video_source",
+          "label": "Card 2 video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "card_2_video",
+          "label": "Card 2 video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.card_2_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "card_2_video_url",
+          "label": "Card 2 video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.card_2_video_source == 'url' }}"
+        },
+        {
+          "type": "header",
+          "content": "Card 3"
+        },
+        {
+          "type": "text",
+          "id": "card_3_title",
+          "label": "Title",
+          "default": "3. Finger Activation"
+        },
+        {
+          "type": "textarea",
+          "id": "card_3_text",
+          "label": "Text",
+          "default": "Each finger moves individually and repeatedly, helping stimulate muscle memory and strengthen the brain-to-hand connection."
+        },
+        {
+          "type": "image_picker",
+          "id": "card_3_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "card_3_fallback",
+          "label": "Fallback",
+          "default": "zavelyn-train-finger.gif"
+        },
+        {
+          "type": "select",
+          "id": "card_3_video_source",
+          "label": "Card 3 video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "card_3_video",
+          "label": "Card 3 video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.card_3_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "card_3_video_url",
+          "label": "Card 3 video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.card_3_video_source == 'url' }}"
+        }
+      ]
+    },
+    {
+      "type": "sec_features",
+      "name": "6. Feature strip",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Guided finger movement to support stroke and nerve recovery"
+        },
+        {
+          "type": "text",
+          "id": "feature_1",
+          "label": "Feature 1",
+          "default": "Gentle Motion"
+        },
+        {
+          "type": "text",
+          "id": "feature_2",
+          "label": "Feature 2",
+          "default": "Daily Therapy"
+        },
+        {
+          "type": "text",
+          "id": "feature_3",
+          "label": "Feature 3",
+          "default": "Easy to Use"
+        },
+        {
+          "type": "text",
+          "id": "feature_4",
+          "label": "Feature 4",
+          "default": "Adjustable Levels"
+        },
+        {
+          "type": "text",
+          "id": "feature_5",
+          "label": "Feature 5",
+          "default": "Neuro Support"
+        },
+        {
+          "type": "text",
+          "id": "feature_6",
+          "label": "Feature 6",
+          "default": "Home Therapy"
+        }
+      ]
+    },
+    {
+      "type": "sec_journey",
+      "name": "7. Recovery journey",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "score",
+          "label": "Score",
+          "default": "4.8/5"
+        },
+        {
+          "type": "text",
+          "id": "score_count",
+          "label": "Review count",
+          "default": "15k+"
+        },
+        {
+          "type": "text",
+          "id": "score_label",
+          "label": "Score label",
+          "default": "Total Ratings"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Real Recovery Journey"
+        },
+        {
+          "type": "textarea",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "Real people sharing their experience with Zavelyn and their path back to everyday life."
+        },
+        {
+          "type": "header",
+          "content": "Card 1"
+        },
+        {
+          "type": "text",
+          "id": "card_1_name",
+          "label": "Name",
+          "default": "Jenny F, 65"
+        },
+        {
+          "type": "textarea",
+          "id": "card_1_text",
+          "label": "Text",
+          "default": "After my stroke, my left hand felt stiff, heavy, and hard to control. Zavelyn gave me a simple way to keep it moving at home without guessing what to do. After using it consistently, I started noticing small improvements in how my fingers responded — and that gave me hope again."
+        },
+        {
+          "type": "image_picker",
+          "id": "card_1_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "card_1_fallback",
+          "label": "Fallback",
+          "default": "zavelyn-review-jenny.jpg"
+        },
+        {
+          "type": "select",
+          "id": "card_1_video_source",
+          "label": "Card 1 video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "card_1_video",
+          "label": "Card 1 video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.card_1_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "card_1_video_url",
+          "label": "Card 1 video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.card_1_video_source == 'url' }}"
+        },
+        {
+          "type": "header",
+          "content": "Card 2"
+        },
+        {
+          "type": "text",
+          "id": "card_2_name",
+          "label": "Name",
+          "default": "Peter R, 76"
+        },
+        {
+          "type": "textarea",
+          "id": "card_2_text",
+          "label": "Text",
+          "default": "I use Zavelyn while watching TV, which makes it easier to stay consistent. It doesn’t replace therapy, but it helps me keep my hand active every day. For me, that routine was the biggest win."
+        },
+        {
+          "type": "image_picker",
+          "id": "card_2_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "card_2_fallback",
+          "label": "Fallback",
+          "default": "zavelyn-review-peter.jpg"
+        },
+        {
+          "type": "select",
+          "id": "card_2_video_source",
+          "label": "Card 2 video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "card_2_video",
+          "label": "Card 2 video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.card_2_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "card_2_video_url",
+          "label": "Card 2 video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.card_2_video_source == 'url' }}"
+        },
+        {
+          "type": "header",
+          "content": "Card 3"
+        },
+        {
+          "type": "text",
+          "id": "card_3_name",
+          "label": "Name",
+          "default": "Laura S, 53"
+        },
+        {
+          "type": "textarea",
+          "id": "card_3_text",
+          "label": "Text",
+          "default": "I bought Zavelyn because I wanted something simple I could use at home. My hand still has a long way to go, but it feels good to practice daily movement again and feel like I’m doing something useful for my recovery. 🙌 I can only recommend it!❤️"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_3_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "card_3_fallback",
+          "label": "Fallback",
+          "default": "zavelyn-review-laura.jpg"
+        },
+        {
+          "type": "select",
+          "id": "card_3_video_source",
+          "label": "Card 3 video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "card_3_video",
+          "label": "Card 3 video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.card_3_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "card_3_video_url",
+          "label": "Card 3 video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.card_3_video_source == 'url' }}"
+        }
+      ]
+    },
+    {
+      "type": "sec_routine",
+      "name": "8. Daily routine",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Your Daily Hand Routine Starts Here"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p1",
+          "label": "Paragraph 1",
+          "default": "Put on the glove, connect the control unit, and <strong>choose one of three guided modes</strong>."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p2",
+          "label": "Paragraph 2",
+          "default": "<strong>Repeated Mode</strong> gently opens and closes your hand in repeated assisted movements — helping you complete up to 300 guided reps in one session."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p3",
+          "label": "Paragraph 3",
+          "default": "<strong>Mirror Mode</strong> lets your stronger hand guide the movement of your affected hand, helping both sides work together during practice."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p4",
+          "label": "Paragraph 4",
+          "default": "<strong>Strength Mode</strong> lets you adjust how slowly, quickly, gently, or strongly the glove opens and closes your hand — so the movement matches your comfort level."
+        },
+        {
+          "type": "text",
+          "id": "cta",
+          "label": "Button",
+          "default": "Start Your Recovery now →"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback",
+          "default": "zavelyn-iwt-modes.png"
+        },
+        {
+          "type": "select",
+          "id": "video_source",
+          "label": "Video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source == 'url' }}"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt",
+          "default": "Doctor with Zavelyn therapy glove"
+        }
+      ]
+    },
+    {
+      "type": "sec_howto",
+      "name": "9. How to use",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "How to Use Zavelyn"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "Simple steps to start your daily hand training safely at home"
+        },
+        {
+          "type": "header",
+          "content": "Step 1"
+        },
+        {
+          "type": "text",
+          "id": "step_1_title",
+          "label": "Title",
+          "default": "Place Your Hand Inside"
+        },
+        {
+          "type": "image_picker",
+          "id": "step_1_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "step_1_fallback",
+          "label": "Fallback",
+          "default": "zavelyn-howto-1.jpg"
+        },
+        {
+          "type": "select",
+          "id": "step_1_video_source",
+          "label": "Step 1 video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "step_1_video",
+          "label": "Step 1 video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.step_1_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "step_1_video_url",
+          "label": "Step 1 video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.step_1_video_source == 'url' }}"
+        },
+        {
+          "type": "header",
+          "content": "Step 2"
+        },
+        {
+          "type": "text",
+          "id": "step_2_title",
+          "label": "Title",
+          "default": "Secure the straps gently"
+        },
+        {
+          "type": "image_picker",
+          "id": "step_2_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "step_2_fallback",
+          "label": "Fallback",
+          "default": "zavelyn-howto-2.jpg"
+        },
+        {
+          "type": "select",
+          "id": "step_2_video_source",
+          "label": "Step 2 video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "step_2_video",
+          "label": "Step 2 video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.step_2_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "step_2_video_url",
+          "label": "Step 2 video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.step_2_video_source == 'url' }}"
+        },
+        {
+          "type": "header",
+          "content": "Step 3"
+        },
+        {
+          "type": "text",
+          "id": "step_3_title",
+          "label": "Title",
+          "default": "connect the control unit"
+        },
+        {
+          "type": "image_picker",
+          "id": "step_3_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "step_3_fallback",
+          "label": "Fallback",
+          "default": "zavelyn-howto-3.jpg"
+        },
+        {
+          "type": "select",
+          "id": "step_3_video_source",
+          "label": "Step 3 video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "step_3_video",
+          "label": "Step 3 video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.step_3_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "step_3_video_url",
+          "label": "Step 3 video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.step_3_video_source == 'url' }}"
+        },
+        {
+          "type": "header",
+          "content": "Step 4"
+        },
+        {
+          "type": "text",
+          "id": "step_4_title",
+          "label": "Title",
+          "default": "Select a comfortable level"
+        },
+        {
+          "type": "image_picker",
+          "id": "step_4_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "step_4_fallback",
+          "label": "Fallback",
+          "default": "zavelyn-howto-4.jpg"
+        },
+        {
+          "type": "select",
+          "id": "step_4_video_source",
+          "label": "Step 4 video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "step_4_video",
+          "label": "Step 4 video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.step_4_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "step_4_video_url",
+          "label": "Step 4 video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.step_4_video_source == 'url' }}"
+        },
+        {
+          "type": "header",
+          "content": "Step 5"
+        },
+        {
+          "type": "text",
+          "id": "step_5_title",
+          "label": "Title",
+          "default": "Relax and follow the motion"
+        },
+        {
+          "type": "image_picker",
+          "id": "step_5_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "step_5_fallback",
+          "label": "Fallback",
+          "default": "zavelyn-howto-5.jpg"
+        },
+        {
+          "type": "select",
+          "id": "step_5_video_source",
+          "label": "Step 5 video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "step_5_video",
+          "label": "Step 5 video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.step_5_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "step_5_video_url",
+          "label": "Step 5 video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.step_5_video_source == 'url' }}"
+        },
+        {
+          "type": "header",
+          "content": "Step 6"
+        },
+        {
+          "type": "text",
+          "id": "step_6_title",
+          "label": "Title",
+          "default": "Practive everyday movement"
+        },
+        {
+          "type": "image_picker",
+          "id": "step_6_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "step_6_fallback",
+          "label": "Fallback",
+          "default": "zavelyn-howto-6.jpg"
+        },
+        {
+          "type": "select",
+          "id": "step_6_video_source",
+          "label": "Step 6 video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "step_6_video",
+          "label": "Step 6 video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.step_6_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "step_6_video_url",
+          "label": "Step 6 video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.step_6_video_source == 'url' }}"
+        },
+        {
+          "type": "header",
+          "content": "Mobile collage"
+        },
+        {
+          "type": "image_picker",
+          "id": "collage_image",
+          "label": "Collage image"
+        },
+        {
+          "type": "text",
+          "id": "collage_fallback",
+          "label": "Collage fallback",
+          "default": "zavelyn-steps.jpg"
+        },
+        {
+          "type": "select",
+          "id": "collage_video_source",
+          "label": "Collage video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "collage_video",
+          "label": "Collage video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.collage_video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "collage_video_url",
+          "label": "Collage video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.collage_video_source == 'url' }}"
+        },
+        {
+          "type": "text",
+          "id": "collage_alt",
+          "label": "Collage alt",
+          "default": "How to use Zavelyn: six simple steps"
+        }
+      ]
+    },
+    {
+      "type": "sec_practice",
+      "name": "10. Daily practice",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading line 1",
+          "default": "From Inactive Hand"
+        },
+        {
+          "type": "text",
+          "id": "heading_2",
+          "label": "Heading line 2",
+          "default": "To Daily Practice"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p1",
+          "label": "Paragraph 1",
+          "default": "Zavelyn helps your affected hand <strong>move through guided, assisted motion</strong> — making it easier to practice regularly <strong>at home</strong>."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p2",
+          "label": "Paragraph 2",
+          "default": "Because recovery is not just about one big breakthrough. It is about <strong>giving your hand something useful to do</strong> every day."
+        },
+        {
+          "type": "text",
+          "id": "cta",
+          "label": "Button",
+          "default": "Start Your Recovery now →"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback",
+          "default": "zavelyn-before-after.gif"
+        },
+        {
+          "type": "select",
+          "id": "video_source",
+          "label": "Video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source == 'url' }}"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt",
+          "default": "From this to this — Zavelyn guided hand practice"
+        }
+      ]
+    },
+    {
+      "type": "sec_benefits",
+      "name": "11. Inactive hand",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "What Can Happen"
+        },
+        {
+          "type": "text",
+          "id": "accent",
+          "label": "Accent",
+          "default": "When The Hand Stays Inactive?"
+        },
+        {
+          "type": "text",
+          "id": "card_1_title",
+          "label": "Card 1 title",
+          "default": "Slower Recovery"
+        },
+        {
+          "type": "textarea",
+          "id": "card_1_text",
+          "label": "Card 1 text",
+          "default": "Without regular guided movement, the brain receives less stimulation to rebuild motor pathways."
+        },
+        {
+          "type": "text",
+          "id": "card_2_title",
+          "label": "Card 2 title",
+          "default": "More Stiffness"
+        },
+        {
+          "type": "textarea",
+          "id": "card_2_text",
+          "label": "Card 2 text",
+          "default": "When the hand is not moved regularly, fingers can feel tighter and harder to open over time."
+        },
+        {
+          "type": "text",
+          "id": "card_3_title",
+          "label": "Card 3 title",
+          "default": "Harder Daily Tasks"
+        },
+        {
+          "type": "textarea",
+          "id": "card_3_text",
+          "label": "Card 3 text",
+          "default": "Cups, forks, buttons, clothing, and basic routines can stay difficult when the hand is not practiced consistently."
+        },
+        {
+          "type": "text",
+          "id": "card_4_title",
+          "label": "Card 4 title",
+          "default": "Less Confidence Using The Hand"
+        },
+        {
+          "type": "textarea",
+          "id": "card_4_text",
+          "label": "Card 4 text",
+          "default": "Many people stop trying to use the affected hand because every failed attempt feels frustrating."
+        }
+      ]
+    },
+    {
+      "type": "sec_realistic",
+      "name": "12. Realistic recovery",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Built For Realistic Home Recovery"
+        },
+        {
+          "type": "text",
+          "id": "accent",
+          "label": "Accent",
+          "default": "Not Miracle Claims"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p1",
+          "label": "Paragraph 1",
+          "default": "We know many rehab devices make <strong>big promises</strong> and end up unused."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p2",
+          "label": "Paragraph 2",
+          "default": "Zavelyn is different because it focuses on one simple job: <strong>helping your hand complete guided opening and closing movements</strong> at home, with <strong>less effort and more consistency</strong>."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p3",
+          "label": "Paragraph 3",
+          "default": "Use it alongside your normal rehab routine, follow the quick-start guide, and give your hand a simple <strong>daily practice structure</strong>."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback",
+          "default": "zavelyn-realistic.png"
+        },
+        {
+          "type": "select",
+          "id": "video_source",
+          "label": "Video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source == 'url' }}"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt",
+          "default": "Customers using Zavelyn at home"
+        }
+      ]
+    },
+    {
+      "type": "sec_stats",
+      "name": "13. Statistics",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Our Impact"
+        },
+        {
+          "type": "text",
+          "id": "accent",
+          "label": "Accent",
+          "default": "Statistics"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "We have the data to prove our product works"
+        },
+        {
+          "type": "text",
+          "id": "stat_1_value",
+          "label": "Stat 1 value",
+          "default": "86k+"
+        },
+        {
+          "type": "textarea",
+          "id": "stat_1_text",
+          "label": "Stat 1 text",
+          "default": "Patients have used Zavelyn to support daily hand rehabilitation."
+        },
+        {
+          "type": "text",
+          "id": "stat_2_value",
+          "label": "Stat 2 value",
+          "default": "78%"
+        },
+        {
+          "type": "textarea",
+          "id": "stat_2_text",
+          "label": "Stat 2 text",
+          "default": "Reported Less Hand Stiffness"
+        },
+        {
+          "type": "text",
+          "id": "stat_3_value",
+          "label": "Stat 3 value",
+          "default": "3/4"
+        },
+        {
+          "type": "textarea",
+          "id": "stat_3_text",
+          "label": "Stat 3 text",
+          "default": "Reported Improved Hand Mobility"
+        },
+        {
+          "type": "text",
+          "id": "disclaimer",
+          "label": "Disclaimer",
+          "default": "* Based on internal studies and customer feedback surveys."
+        }
+      ]
+    },
+    {
+      "type": "sec_compare",
+      "name": "14. Comparison",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "What Makes Zavelyn"
+        },
+        {
+          "type": "text",
+          "id": "accent",
+          "label": "Accent",
+          "default": "the Better Choice"
+        },
+        {
+          "type": "text",
+          "id": "col_us",
+          "label": "Our column",
+          "default": "Zavelyn"
+        },
+        {
+          "type": "text",
+          "id": "col_them",
+          "label": "Other column",
+          "default": "Others"
+        },
+        {
+          "type": "header",
+          "content": "Row 1"
+        },
+        {
+          "type": "text",
+          "id": "row_1_label",
+          "label": "Label",
+          "default": "Clinical tech"
+        },
+        {
+          "type": "checkbox",
+          "id": "row_1_us",
+          "label": "Zavelyn has this",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "row_1_them",
+          "label": "Others have this",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Row 2"
+        },
+        {
+          "type": "text",
+          "id": "row_2_label",
+          "label": "Label",
+          "default": "Guided movement"
+        },
+        {
+          "type": "checkbox",
+          "id": "row_2_us",
+          "label": "Zavelyn has this",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "row_2_them",
+          "label": "Others have this",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Row 3"
+        },
+        {
+          "type": "text",
+          "id": "row_3_label",
+          "label": "Label",
+          "default": "One-time cost"
+        },
+        {
+          "type": "checkbox",
+          "id": "row_3_us",
+          "label": "Zavelyn has this",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "row_3_them",
+          "label": "Others have this",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Row 4"
+        },
+        {
+          "type": "text",
+          "id": "row_4_label",
+          "label": "Label",
+          "default": "24/7 support"
+        },
+        {
+          "type": "checkbox",
+          "id": "row_4_us",
+          "label": "Zavelyn has this",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "row_4_them",
+          "label": "Others have this",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Row 5"
+        },
+        {
+          "type": "text",
+          "id": "row_5_label",
+          "label": "Label",
+          "default": "Individual finger safety control"
+        },
+        {
+          "type": "checkbox",
+          "id": "row_5_us",
+          "label": "Zavelyn has this",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "row_5_them",
+          "label": "Others have this",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Row 6"
+        },
+        {
+          "type": "text",
+          "id": "row_6_label",
+          "label": "Label",
+          "default": "Clinically-tested mechanism"
+        },
+        {
+          "type": "checkbox",
+          "id": "row_6_us",
+          "label": "Zavelyn has this",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "row_6_them",
+          "label": "Others have this",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "sec_timeline",
+      "name": "15. 60-day timeline",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Your 60-Day Hand"
+        },
+        {
+          "type": "text",
+          "id": "accent",
+          "label": "Accent",
+          "default": "Recovery Timeline"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Portrait"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback",
+          "default": "zavelyn-timeline.png"
+        },
+        {
+          "type": "select",
+          "id": "video_source",
+          "label": "Video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source == 'url' }}"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt",
+          "default": "Customer smiling during hand recovery journey"
+        },
+        {
+          "type": "header",
+          "content": "Phase 1"
+        },
+        {
+          "type": "text",
+          "id": "phase_1_days",
+          "label": "Days",
+          "default": "Days 1–14"
+        },
+        {
+          "type": "text",
+          "id": "phase_1_title",
+          "label": "Title",
+          "default": "NEUROMUSCULAR ACTIVATION"
+        },
+        {
+          "type": "textarea",
+          "id": "phase_1_items",
+          "label": "Bullets, one per line",
+          "default": "5–10% increase in passive range\nSlightly less stiffness\nImproved hand awareness"
+        },
+        {
+          "type": "header",
+          "content": "Phase 2"
+        },
+        {
+          "type": "text",
+          "id": "phase_2_days",
+          "label": "Days",
+          "default": "Days 14–28"
+        },
+        {
+          "type": "text",
+          "id": "phase_2_title",
+          "label": "Title",
+          "default": "CONSISTENCY PHASE"
+        },
+        {
+          "type": "textarea",
+          "id": "phase_2_items",
+          "label": "Bullets, one per line",
+          "default": "10–15% better assisted opening\nLess resistance during movement\nLonger session tolerance"
+        },
+        {
+          "type": "header",
+          "content": "Phase 3"
+        },
+        {
+          "type": "text",
+          "id": "phase_3_days",
+          "label": "Days",
+          "default": "Days 28–42"
+        },
+        {
+          "type": "text",
+          "id": "phase_3_title",
+          "label": "Title",
+          "default": "EARLY COORDINATION SUPPORT"
+        },
+        {
+          "type": "textarea",
+          "id": "phase_3_items",
+          "label": "Bullets, one per line",
+          "default": "Smoother finger extension\nSmall voluntary activation gains\nReduced tightness post-session"
+        },
+        {
+          "type": "header",
+          "content": "Phase 4"
+        },
+        {
+          "type": "text",
+          "id": "phase_4_days",
+          "label": "Days",
+          "default": "Days 42–60"
+        },
+        {
+          "type": "text",
+          "id": "phase_4_title",
+          "label": "Title",
+          "default": "FUNCTIONAL SUPPORT"
+        },
+        {
+          "type": "textarea",
+          "id": "phase_4_items",
+          "label": "Bullets, one per line",
+          "default": "15–25% assisted range improvement\nBetter grip stabilization\nLess morning stiffness\nMore daily-use confidence"
+        }
+      ]
+    },
+    {
+      "type": "sec_reviews",
+      "name": "17. Customer reviews",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Each Review block holds two cards. Upload a photo or video, or paste a URL. Add another Review block for more cards."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Customer Reviews"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "Overall rating: 4.8 / 5 from 351 reviews."
+        }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Review cards",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Card 1"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review"
+        },
+        {
+          "type": "text",
+          "id": "item",
+          "label": "Item type",
+          "info": "Example: Right Hand / Large. Leave blank to hide."
+        },
+        {
+          "type": "range",
+          "id": "stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Photo URL",
+          "info": "Used when no photo is uploaded."
+        },
+        {
+          "type": "select",
+          "id": "video_source",
+          "label": "Video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source == 'url' }}"
+        },
+        {
+          "type": "header",
+          "content": "Card 2"
+        },
+        {
+          "type": "text",
+          "id": "name_2",
+          "label": "Name"
+        },
+        {
+          "type": "textarea",
+          "id": "text_2",
+          "label": "Review"
+        },
+        {
+          "type": "text",
+          "id": "item_2",
+          "label": "Item type"
+        },
+        {
+          "type": "range",
+          "id": "stars_2",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "checkbox",
+          "id": "verified_2",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "image_url_2",
+          "label": "Photo URL",
+          "info": "Used when no photo is uploaded."
+        },
+        {
+          "type": "select",
+          "id": "video_source_2",
+          "label": "Video source",
+          "options": [
+            {
+              "value": "file",
+              "label": "Upload file"
+            },
+            {
+              "value": "url",
+              "label": "URL"
+            }
+          ],
+          "default": "file"
+        },
+        {
+          "type": "video",
+          "id": "video_2",
+          "label": "Video",
+          "info": "Shown when source is Upload file.",
+          "visible_if": "{{ block.settings.video_source_2 == 'file' }}"
+        },
+        {
+          "type": "text",
+          "id": "video_url_2",
+          "label": "Video URL",
+          "info": "YouTube, Vimeo, MP4, or an embed link.",
+          "visible_if": "{{ block.settings.video_source_2 == 'url' }}"
+        }
+      ]
+    },
+    {
+      "type": "sec_faq",
+      "name": "18. FAQ",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Frequently Asked Questions"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 1"
+        },
+        {
+          "type": "text",
+          "id": "q_1",
+          "label": "Question",
+          "default": "Does insurance cover this?"
+        },
+        {
+          "type": "richtext",
+          "id": "a_1",
+          "label": "Answer",
+          "default": "<p>Zavelyn is usually a self-pay device — but some private insurers may cover it after individual review.</p>"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 2"
+        },
+        {
+          "type": "text",
+          "id": "q_2",
+          "label": "Question",
+          "default": "Why was it created?"
+        },
+        {
+          "type": "richtext",
+          "id": "a_2",
+          "label": "Answer",
+          "default": "<p>Zavelyn was developed to solve a major problem: Most patients stop progressing once therapy sessions end. You need guided movement every day — not once a week. Zavelyn brings clinic-level hand therapy into the home.</p>"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 3"
+        },
+        {
+          "type": "text",
+          "id": "q_3",
+          "label": "Question",
+          "default": "How long does it last?"
+        },
+        {
+          "type": "richtext",
+          "id": "a_3",
+          "label": "Answer",
+          "default": "<p>With normal daily use, Zavelyn is built to last years. The tension system, control module, and tubing are designed for repeated cycles and long-term rehabilitation routines.</p>"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 4"
+        },
+        {
+          "type": "text",
+          "id": "q_4",
+          "label": "Question",
+          "default": "Will it help my condition?"
+        },
+        {
+          "type": "richtext",
+          "id": "a_4",
+          "label": "Answer",
+          "default": "<p>Yes — that's exactly what it's designed for. Zavelyn helps with opening/closing stiff fingers, reducing spasticity, improving grip and fine motor control, and rebuilding the brain–hand signal pathway.</p>"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 5"
+        },
+        {
+          "type": "text",
+          "id": "q_5",
+          "label": "Question",
+          "default": "Why is it better than alternatives?"
+        },
+        {
+          "type": "richtext",
+          "id": "a_5",
+          "label": "Answer",
+          "default": "<p>Alternatives = passive tools. Zavelyn = active assisted therapy. Alternatives only strengthen muscles you can already use. Zavelyn rebuilds movement even when the hand is weak, stiff, or not responsive.</p>"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 6"
+        },
+        {
+          "type": "text",
+          "id": "q_6",
+          "label": "Question",
+          "default": "What are your return policies?"
+        },
+        {
+          "type": "richtext",
+          "id": "a_6",
+          "label": "Answer",
+          "default": "<p>If you're not completely satisfied within the first 30 days, simply return it to us and we'll give you a full refund. You don't have to worry about returning it—we'll take care of that for you!</p>"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 7"
+        },
+        {
+          "type": "text",
+          "id": "q_7",
+          "label": "Question",
+          "default": "Is it easy to use?"
+        },
+        {
+          "type": "richtext",
+          "id": "a_7",
+          "label": "Answer",
+          "default": "<p>Very easy. Designed for seniors, stroke patients, and users with limited mobility. Large buttons, clear display, simple instructions. If you can press one button, you can use it.</p>"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 8"
+        },
+        {
+          "type": "text",
+          "id": "q_8",
+          "label": "Question",
+          "default": "When will I see results?"
+        },
+        {
+          "type": "richtext",
+          "id": "a_8",
+          "label": "Answer",
+          "default": "<p>Most users feel a difference within 1–3 weeks: reduced stiffness, improved finger mobility, and better control. Longer-term improvements typically appear after 4–8 weeks of daily use.</p>"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 9"
+        },
+        {
+          "type": "text",
+          "id": "q_9",
+          "label": "Question",
+          "default": "Do you include extras?"
+        },
+        {
+          "type": "richtext",
+          "id": "a_9",
+          "label": "Answer",
+          "default": "<p>Yes. Every order includes: Free digital rehab guide, Free protection case, and Priority Support Access. Occasionally we add limited-time bonuses during promotions.</p>"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 10"
+        },
+        {
+          "type": "text",
+          "id": "q_10",
+          "label": "Question",
+          "default": "What makes Zavelyn different?"
+        },
+        {
+          "type": "richtext",
+          "id": "a_10",
+          "label": "Answer",
+          "default": "<p>Most devices rely on self-movement. Zavelyn assists the entire movement, trains each finger individually, uses structured rehab programs via display, supports neuro-muscular reactivation, and mimics clinic-grade equipment at home.</p>"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 11"
+        },
+        {
+          "type": "text",
+          "id": "q_11",
+          "label": "Question",
+          "default": "Can I use Zavelyn if my hand cannot move at all?"
+        },
+        {
+          "type": "richtext",
+          "id": "a_11",
+          "label": "Answer",
+          "default": "<p>Yes. Even if your fingers cannot move voluntarily, the assisted motion can help maintain joint mobility and provide sensory feedback to the brain.</p>"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 12"
+        },
+        {
+          "type": "text",
+          "id": "q_12",
+          "label": "Question",
+          "default": "How do I get in touch?"
+        },
+        {
+          "type": "richtext",
+          "id": "a_12",
+          "label": "Answer",
+          "default": "<p>You can reach us here: <a href=\"/pages/contact\">Contact</a></p><p>or by email: support@zavelyn.com</p>"
+        }
+      ]
+    },
+    {
+      "type": "sec_footer",
+      "name": "19. Footer",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Support email",
+          "default": "support@zavelyn.com"
+        },
+        {
+          "type": "text",
+          "id": "sticky_copy",
+          "label": "Sticky copy",
+          "default": "Zavelyn Rehabilitation Glove"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offer Zavelyn landing",
+      "blocks": [
+        {
+          "type": "sec_gallery"
+        },
+        {
+          "type": "sec_hero"
+        },
+        {
+          "type": "sec_marquee"
+        },
+        {
+          "type": "sec_story"
+        },
+        {
+          "type": "sec_reps"
+        },
+        {
+          "type": "sec_train"
+        },
+        {
+          "type": "sec_features"
+        },
+        {
+          "type": "sec_journey"
+        },
+        {
+          "type": "sec_routine"
+        },
+        {
+          "type": "sec_howto"
+        },
+        {
+          "type": "sec_practice"
+        },
+        {
+          "type": "sec_benefits"
+        },
+        {
+          "type": "sec_realistic"
+        },
+        {
+          "type": "sec_stats"
+        },
+        {
+          "type": "sec_compare"
+        },
+        {
+          "type": "sec_timeline"
+        },
+        {
+          "type": "sec_reviews"
+        },
+        {
+          "type": "sec_faq"
+        },
+        {
+          "type": "sec_footer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

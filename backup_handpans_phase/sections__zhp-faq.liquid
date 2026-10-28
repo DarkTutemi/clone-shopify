@@ -1,0 +1,137 @@
+
+{{ 'zhp-collection.css' | asset_url | stylesheet_tag }}
+{{ 'zhp-collection.js' | asset_url | script_tag }}
+<div class="zhp-wrapper">
+  <section class="zhp-faq-section" id="zhp-faq">
+    <div class="zhp-container">
+      <div class="zhp-section-header">
+        <span class="zhp-tag">{{ section.settings.tag | default: 'COMMON QUESTIONS' }}</span>
+        <h2 class="zhp-section-title">{{ section.settings.title | default: 'Frequently Asked Questions' }}</h2>
+        <p class="zhp-section-subtitle">{{ section.settings.subtitle | default: 'Everything you need to know about shipping, playing ease, and our 100% Happiness Guarantee.' }}</p>
+      </div>
+
+      <div class="zhp-faq-accordion">
+        {% for block in section.blocks %}
+          <div class="zhp-faq-item" {{ block.shopify_attributes }}>
+            <button type="button" class="zhp-faq-question">
+              <span>{{ block.settings.question }}</span>
+              <span class="zhp-faq-icon">+</span>
+            </button>
+            <div class="zhp-faq-answer">
+              {{ block.settings.answer }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Trust Bottom Guarantee Card -->
+      <div class="zhp-guarantee-card">
+        <div class="zhp-guarantee-icon">🛡️</div>
+        <div class="zhp-guarantee-text">
+          <h3>{{ section.settings.guarantee_title | default: '100% Risk-Free Happiness Guarantee' }}</h3>
+          <p>{{ section.settings.guarantee_desc | default: 'Over 72,000+ drummers love Zavelyn. If it does not bring you peace and joy, our friendly support team is here to make it right with easy 30-day returns and dedicated lifetime customer care.' }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "10. FAQ & Bảo hành",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Nhãn danh mục",
+      "default": "COMMON QUESTIONS"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tiêu đề",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Mô tả phụ",
+      "default": "Everything you need to know about shipping, playing ease, and our 100% Happiness Guarantee."
+    },
+    {
+      "type": "text",
+      "id": "guarantee_title",
+      "label": "Tiêu đề cam kết",
+      "default": "100% Risk-Free Happiness Guarantee"
+    },
+    {
+      "type": "textarea",
+      "id": "guarantee_desc",
+      "label": "Mô tả cam kết",
+      "default": "Over 72,000+ drummers love Zavelyn. If it does not bring you peace and joy, our friendly support team is here to make it right with easy 30-day returns and dedicated lifetime customer care."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Câu hỏi",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Câu hỏi",
+          "default": "How long does shipping take?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Câu trả lời",
+          "default": "<p>We provide FREE tracked shipping on all orders. US delivery: 4-9 days, UK/EU: 7-12 days.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "10. FAQ & Bảo hành",
+      "blocks": [
+        {
+          "type": "faq",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>We provide <strong>FREE tracked shipping</strong> on all orders. Orders are processed within 1-3 business days. Estimated delivery times once dispatched: USA: 4-9 business days | UK: 7-12 business days | Australia & Europe: 7-12 business days | Canada: 7-18 business days.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Can literally anyone play a Zavelyn Drum?",
+            "answer": "<p><strong>Yes, 100%!</strong> Zavelyn Drums are purposefully engineered with harmonic scales and clear numbered tone indicators. You do not need to read sheet music or have any musical background. Included in your box is a songbook with 20+ familiar songs using simple numbers, allowing anyone from young children to seniors to play captivating melodies within 5 minutes.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "What is your 30-Day Happiness Guarantee?",
+            "answer": "<p>We want you to experience genuine peace of mind. If for any reason you are not completely delighted with your Zavelyn Drum within 30 days of delivery, simply email our 24/7 support team. You can return your complete package for a hassle-free, full refund.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "What comes included with my order?",
+            "answer": "<p>Every Zavelyn Drum ships as a complete all-in-one set: your selected drum (Mini, Plus, or Pro), a custom-fitted anti-shock padded travel bag/backpack, 2 precision bamboo mallets with soft acoustic tips, fingertip picks for fingerstyle playing, tone stickers, and our full tutorial songbook.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Why is the 432 Hz frequency so special?",
+            "answer": "<p>Unlike standard concert tuning (440 Hz), 432 Hz is known as the natural harmonic frequency of nature. Its acoustic wavelength produces warmer, softer tones that resonate with biological rhythms, promoting deep nervous system relaxation, stress reduction, and mental clarity.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

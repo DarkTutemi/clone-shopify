@@ -1,0 +1,50 @@
+{
+  "id": "gid://shopify/Product/15454964187321",
+  "title": "Zavelyn Livestock Grooming Scratch Brush",
+  "handle": "sakerplus®-livestock-massage-grooming-scratch-brush",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914680074425",
+        "title": "Yellow & Blue (17.2 in / 44 cm, Includes Two Types of Screws) / 1 set",
+        "price": "49.99",
+        "sku": "HW130958-C645-X86591"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914680107193",
+        "title": "Blue & Red (17.2 in / 44 cm, Includes Two Types of Screws) / 1 set",
+        "price": "49.99",
+        "sku": "HW130958-C1198-X86591"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914680139961",
+        "title": "Black (17.2 in / 44 cm, Includes Two Types of Screws) / 1 set",
+        "price": "49.99",
+        "sku": "HW130958-C001-X86591"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914680172729",
+        "title": "Yellow & Blue (17.2 in / 44 cm, Includes Two Types of Screws) / 2 sets",
+        "price": "79.99",
+        "sku": "HW130958-Z43526"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914680205497",
+        "title": "Blue & Red (17.2 in / 44 cm, Includes Two Types of Screws) / 2 sets",
+        "price": "79.99",
+        "sku": "HW130958-Z43527"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914680238265",
+        "title": "Black (17.2 in / 44 cm, Includes Two Types of Screws) / 2 sets",
+        "price": "79.99",
+        "sku": "HW130958-Z43528"
+      }
+    ]
+  }
+}

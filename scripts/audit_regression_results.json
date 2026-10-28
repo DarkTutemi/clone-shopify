@@ -1,0 +1,78 @@
+[
+  {
+    "page": "pdp_thermoglove_fixed",
+    "mobile": {
+      "docWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "announcementText": "",
+      "verifiedTagCount": 0,
+      "hasModuloText": false
+    },
+    "desktop": {
+      "docWidth": 1425,
+      "scrollWidth": 1425,
+      "overflow": false,
+      "announcementText": ""
+    },
+    "mobileShot": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\ba009709-9c7b-4366-a57b-5a4a187c37c3\\verify_pdp_thermoglove_fixed_mobile_390.png",
+    "desktopShot": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\ba009709-9c7b-4366-a57b-5a4a187c37c3\\verify_pdp_thermoglove_fixed_desktop_1440.png"
+  },
+  {
+    "page": "pdp_custom_funnel_fixed",
+    "mobile": {
+      "docWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "announcementText": "",
+      "verifiedTagCount": 0,
+      "hasModuloText": false
+    },
+    "desktop": {
+      "docWidth": 1425,
+      "scrollWidth": 1425,
+      "overflow": false,
+      "announcementText": ""
+    },
+    "mobileShot": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\ba009709-9c7b-4366-a57b-5a4a187c37c3\\verify_pdp_custom_funnel_fixed_mobile_390.png",
+    "desktopShot": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\ba009709-9c7b-4366-a57b-5a4a187c37c3\\verify_pdp_custom_funnel_fixed_desktop_1440.png"
+  },
+  {
+    "page": "collection_all_fixed",
+    "mobile": {
+      "docWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "announcementText": "",
+      "verifiedTagCount": 24,
+      "hasModuloText": false
+    },
+    "desktop": {
+      "docWidth": 1425,
+      "scrollWidth": 1425,
+      "overflow": false,
+      "announcementText": ""
+    },
+    "mobileShot": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\ba009709-9c7b-4366-a57b-5a4a187c37c3\\verify_collection_all_fixed_mobile_390.png",
+    "desktopShot": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\ba009709-9c7b-4366-a57b-5a4a187c37c3\\verify_collection_all_fixed_desktop_1440.png"
+  },
+  {
+    "page": "homepage_fixed",
+    "mobile": {
+      "docWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "announcementText": "",
+      "verifiedTagCount": 0,
+      "hasModuloText": false
+    },
+    "desktop": {
+      "docWidth": 1425,
+      "scrollWidth": 1425,
+      "overflow": false,
+      "announcementText": ""
+    },
+    "mobileShot": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\ba009709-9c7b-4366-a57b-5a4a187c37c3\\verify_homepage_fixed_mobile_390.png",
+    "desktopShot": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\ba009709-9c7b-4366-a57b-5a4a187c37c3\\verify_homepage_fixed_desktop_1440.png"
+  }
+]

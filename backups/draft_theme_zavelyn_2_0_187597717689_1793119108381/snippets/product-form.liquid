@@ -1,0 +1,36 @@
+{%- comment -%}
+  {% render 'product-form', product: product, section: section %}
+{%- endcomment -%}
+{%- assign product_form_id = 'product-form-' | append: section.id -%}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+<zavelyn-product-form class="product__form" data-update-url="true">
+  {% form 'product', product, id: product_form_id, novalidate: 'novalidate', data-product-form: '' %}
+    {% render 'variant-picker', product: product, section: section %}
+
+    <input type="hidden" name="id" value="{{ current_variant.id }}" {% if current_variant.available == false %}disabled{% endif %}>
+
+    {%- assign quantity_id = 'Quantity-' | append: section.id -%}
+    <div class="product__quantity">
+      <label class="field__label" for="{{ quantity_id }}">{{ 'products.product.quantity' | t }}</label>
+      {% render 'quantity-selector', id: quantity_id, value: 1, min: 1 %}
+    </div>
+
+    <button
+      type="submit"
+      name="add"
+      class="button button--primary button--full"
+      {% if current_variant.available == false %}disabled aria-disabled="true"{% endif %}
+    >
+      <span data-add-label>
+        {%- if current_variant.available -%}
+          {{ 'products.product.add_to_cart' | t }}
+        {%- else -%}
+          {{ 'products.product.sold_out' | t }}
+        {%- endif -%}
+      </span>
+    </button>
+
+    <div data-product-availability class="field__error" role="status"></div>
+  {% endform %}
+</zavelyn-product-form>

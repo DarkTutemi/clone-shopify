@@ -1,0 +1,215 @@
+{%- liquid
+  if group != blank
+    assign b = group.settings
+  endif
+  if b.pair_1 != blank
+    assign pair_1 = b.pair_1 | image_url: width: 600
+  endif
+  if b.pair_2 != blank
+    assign pair_2 = b.pair_2 | image_url: width: 600
+  endif
+  if b.r8_photo != blank
+    assign r8_photo = b.r8_photo | image_url: width: 800
+  endif
+-%}
+{%- unless b.show == false -%}
+<section class="mb-ry" aria-label="Customer reviews" {% if group %}{{ group.shopify_attributes }}{% endif %}>
+  <div class="mb-ry__inner">
+    <div class="mb-ry__head">
+      <div class="mb-ry__score">
+        <div class="mb-ry__avgline">
+          <span class="mb-ry__avg">{{ b.average | default: '4.9' }}</span>
+          <span class="mb-ry-stars" aria-label="Rated 4.9 out of 5">
+            <i class="mb-ry-star is-on"></i><i class="mb-ry-star is-on"></i><i class="mb-ry-star is-on"></i><i class="mb-ry-star is-on"></i><i class="mb-ry-star is-part"></i>
+          </span>
+          <span class="mb-ry__count"><b>{{ b.total | default: '1,529' }}</b> reviews</span>
+        </div>
+        <table class="mb-ry__rates" aria-label="Rate list">
+          <tr><th class="mb-ry__rate-name">5<i class="mb-ry-star is-on"></i></th><th><span class="mb-ry__track"><span class="mb-ry__fill" style="width:99.2%"></span></span></th><th class="mb-ry__rate-count">{{ b.star_5 | default: '1,517' }}</th></tr>
+          <tr><th class="mb-ry__rate-name">4<i class="mb-ry-star is-on"></i></th><th><span class="mb-ry__track"><span class="mb-ry__fill" style="width:0.8%"></span></span></th><th class="mb-ry__rate-count">{{ b.star_4 | default: '12' }}</th></tr>
+          <tr><th class="mb-ry__rate-name">3<i class="mb-ry-star is-on"></i></th><th><span class="mb-ry__track"><span class="mb-ry__fill" style="width:0%"></span></span></th><th class="mb-ry__rate-count">{{ b.star_3 | default: '0' }}</th></tr>
+          <tr><th class="mb-ry__rate-name">2<i class="mb-ry-star is-on"></i></th><th><span class="mb-ry__track"><span class="mb-ry__fill" style="width:0%"></span></span></th><th class="mb-ry__rate-count">{{ b.star_2 | default: '0' }}</th></tr>
+          <tr><th class="mb-ry__rate-name">1<i class="mb-ry-star is-on"></i></th><th><span class="mb-ry__track"><span class="mb-ry__fill" style="width:0%"></span></span></th><th class="mb-ry__rate-count">{{ b.star_1 | default: '0' }}</th></tr>
+        </table>
+      </div>
+      <div class="mb-ry__side">
+        <div class="mb-ry__photos">
+          <h3>{{ b.photos_title | default: 'Customer Photos' }}</h3>
+          <ul class="mb-ry__thumbs">
+            <li><img src="{% if b.photo_1 != blank %}{{ b.photo_1 | image_url: width: 300 }}{% else %}{{ 'mb-ry-p1.jpg' | asset_url }}{% endif %}" alt="Customer photo" width="300" height="400" loading="lazy"></li>
+            <li><img src="{% if b.photo_2 != blank %}{{ b.photo_2 | image_url: width: 300 }}{% else %}{{ 'mb-ry-p2.jpg' | asset_url }}{% endif %}" alt="Customer photo" width="300" height="400" loading="lazy"></li>
+            <li><img src="{% if b.photo_3 != blank %}{{ b.photo_3 | image_url: width: 300 }}{% else %}{{ 'mb-ry-p3.jpg' | asset_url }}{% endif %}" alt="Customer photo" width="300" height="400" loading="lazy"></li>
+            <li><img src="{% if b.photo_4 != blank %}{{ b.photo_4 | image_url: width: 300 }}{% else %}{{ 'mb-ry-p4.jpg' | asset_url }}{% endif %}" alt="Customer photo" width="300" height="666" loading="lazy"></li>
+            <li>
+              <img src="{% if b.photo_5 != blank %}{{ b.photo_5 | image_url: width: 300 }}{% else %}{{ 'mb-ry-p5.jpg' | asset_url }}{% endif %}" alt="Customer photo" width="300" height="400" loading="lazy">
+              <span class="mb-ry__more">{{ b.more_label | default: '+10' }}</span>
+            </li>
+          </ul>
+        </div>
+        <button type="button" class="mb-ry__write">{{ b.write_label | default: 'Write a review' }}</button>
+      </div>
+    </div>
+
+    <div class="mb-ry__tools">
+      <p class="mb-ry__showing">{{ b.showing | default: 'Showing 1 - 10 of 1,529 reviews' }}</p>
+      <div class="mb-ry__filters">
+        <select id="mb-ry-filter" aria-label="Filter reviews">
+          <option>All</option>
+          <option>Excellent</option>
+          <option>Good</option>
+          <option>Images</option>
+        </select>
+        <select id="mb-ry-sort" aria-label="Sort by reviews">
+          <option>Latest</option>
+          <option>Oldest</option>
+          <option>Images</option>
+          <option>Most likes</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mb-ry__cols">
+      <div class="mb-ry__col">
+        {%- liquid
+  assign card_letter = b.r1_letter | default: 'l'
+  assign card_color = b.r1_color | default: '#25c5a3'
+  assign card_name = b.r1_name | default: 'Lynne W.'
+  assign card_date = b.r1_date | default: 'last month'
+  assign card_stars = b.r1_stars | default: 4
+  assign card_title = b.r1_title | default: 'Anazing'
+  assign card_short = b.r1_short | default: 'I have suffered for 4 months with this, spent hundreds of pounds on various creams and insoles all highly recommended- n'
+  assign card_full = b.r1_full | default: 'I have suffered for 4 months with this, spent hundreds of pounds on various creams and insoles all highly recommended- nothing helped much. Thought why not try this when it came up on FB - it’s brilliant I can walk for a reasonable time where before after Q10mons I was limping. Suggest you try and use 3 times a day can’t recommend it enough.'
+  assign card_up = b.r1_up | default: 9
+  assign card_down = b.r1_down | default: 1
+-%}
+{% render 'offer-balm-ryviu-card', letter: card_letter, color: card_color, name: card_name, date: card_date, stars: card_stars, title: card_title, short: card_short, full: card_full, up: card_up, down: card_down %}
+        {%- liquid
+  assign card_letter = b.r2_letter | default: 's'
+  assign card_color = b.r2_color | default: '#2ea2db'
+  assign card_name = b.r2_name | default: 'Shirley C.'
+  assign card_date = b.r2_date | default: '5 months ago'
+  assign card_stars = b.r2_stars | default: 5
+  assign card_title = b.r2_title | default: 'This balm works'
+  assign card_short = b.r2_short | default: 'I order the balm but use it once the other night my ankle hurt feet did to I rub it on my feet and it helps a lot the pa'
+  assign card_full = b.r2_full | default: 'I order the balm but use it once the other night my ankle hurt feet did to I rub it on my feet and it helps a lot the pain went away thank I order more'
+  assign card_up = b.r2_up | default: 13
+  assign card_down = b.r2_down | default: 3
+-%}
+{% render 'offer-balm-ryviu-card', letter: card_letter, color: card_color, name: card_name, date: card_date, stars: card_stars, title: card_title, short: card_short, full: card_full, up: card_up, down: card_down %}
+        {%- liquid
+  assign card_letter = b.r3_letter | default: 'd'
+  assign card_color = b.r3_color | default: '#ea5644'
+  assign card_name = b.r3_name | default: 'Denise S.'
+  assign card_date = b.r3_date | default: '10 months ago'
+  assign card_stars = b.r3_stars | default: 5
+  assign card_title = b.r3_title | default: 'Instant Relief'
+  assign card_short = b.r3_short | default: 'I bought a look a like and got no relief. The advertisement of Senzio look like an ointment not the cream that the look'
+  assign card_full = b.r3_full | default: 'I bought a look a like and got no relief. The advertisement of Senzio look like an ointment not the cream that the look alike had. I decided to order this time from Senzio store. I am so glad I did. I got instant relief. I recently had a hip replacement and developed complications from my circulation. Getting the right product has brought me hope and improved quality in my daily living. It’s the real deal'
+  assign card_up = b.r3_up | default: 15
+  assign card_down = b.r3_down | default: 16
+-%}
+{% render 'offer-balm-ryviu-card', letter: card_letter, color: card_color, name: card_name, date: card_date, stars: card_stars, title: card_title, short: card_short, full: card_full, up: card_up, down: card_down %}
+      </div>
+      <div class="mb-ry__col">
+        {%- liquid
+  assign card_letter = b.r4_letter | default: 'l'
+  assign card_color = b.r4_color | default: '#25c5a3'
+  assign card_name = b.r4_name | default: 'Lauren'
+  assign card_date = b.r4_date | default: '2 months ago'
+  assign card_stars = b.r4_stars | default: 5
+  assign card_title = b.r4_title | default: 'Life saver!'
+  assign card_short = b.r4_short | default: 'I have been suffering from systemic fasciitis from head to toe for the past couple years. I use the Senzio miracle balm'
+  assign card_full = b.r4_full | default: 'I have been suffering from systemic fasciitis from head to toe for the past couple years. I use the Senzio miracle balm as a part of my routine to release the facial tension and discomfort. This is the only product that has helped provide noticeable results in a short period of time. I actually use it head to toe & with each application I am feeling my facia become more pliable, and I am actually feeling muscles stretch in my body that have been locked and immovable for decades. I highly recommend this product not just for the use of planter fasciitis, but for any area of your body where you’re suffering from fascial issues. I use this alongside mineral baths, Kenzieology taping & myofascial massage. This combined treatment plan has helped my muscles release after two decades of being completely frozen. I was slowly being crushed by my own bodies fascia network. Thanks to Senzio’s miracle balm I am feeling my muscles move and stretch in ways I never thought possible. The more I use it, the better I feel. I highly recommend this product. It really works. I rarely write products review reviews but this product gave me back part of my life. I thought I would never have again, so I felt the very least I could do was write them a review and help them reach more customers. Help more people find the relief that I am finding as a result for their product. Thank you, Senzio!  Your product is truly a “miracle balm”'
+  assign card_up = b.r4_up | default: 7
+  assign card_down = b.r4_down | default: 3
+-%}
+{% render 'offer-balm-ryviu-card', letter: card_letter, color: card_color, name: card_name, date: card_date, stars: card_stars, title: card_title, short: card_short, full: card_full, up: card_up, down: card_down %}
+        {%- liquid
+  assign card_letter = b.r5_letter | default: 's'
+  assign card_color = b.r5_color | default: '#2ea2db'
+  assign card_name = b.r5_name | default: 'Sharon'
+  assign card_date = b.r5_date | default: '9 months ago'
+  assign card_stars = b.r5_stars | default: 5
+  assign card_title = b.r5_title | default: 'The best ever'
+  assign card_short = b.r5_short | default: 'I tell all my friends and they love it'
+  assign card_full = b.r5_full | default: ''
+  assign card_up = b.r5_up | default: 9
+  assign card_down = b.r5_down | default: 9
+-%}
+{% render 'offer-balm-ryviu-card', letter: card_letter, color: card_color, name: card_name, date: card_date, stars: card_stars, title: card_title, short: card_short, full: card_full, up: card_up, down: card_down %}
+        {%- liquid
+  assign card_letter = b.r6_letter | default: 'd'
+  assign card_color = b.r6_color | default: '#ea5644'
+  assign card_name = b.r6_name | default: 'Denise S.'
+  assign card_date = b.r6_date | default: '10 months ago'
+  assign card_stars = b.r6_stars | default: 5
+  assign card_title = b.r6_title | default: 'Finally, relieg'
+  assign card_short = b.r6_short | default: 'In June I had a hip replacement. The swelling was not expected. The discoloration of my feet and ankle was horrifying. I'
+  assign card_full = b.r6_full | default: 'In June I had a hip replacement. The swelling was not expected. The discoloration of my feet and ankle was horrifying. I have spent a lot of money for rehab, creams and ointments. I got some relief but not meeting expectations. I bought the fake miracle balm which did absolutely nothing. The ingredients moisturized my skin. I bought this product and got immediate results. Swelling and pain gone for about four hours or more. My only complaint is the size. I am tall and big. I have four jars. I hope they will last at least a month with my applying the ointment day and night.'
+  assign card_up = b.r6_up | default: 41
+  assign card_down = b.r6_down | default: 7
+-%}
+{% render 'offer-balm-ryviu-card', letter: card_letter, color: card_color, name: card_name, date: card_date, stars: card_stars, title: card_title, short: card_short, full: card_full, up: card_up, down: card_down %}
+      </div>
+      <div class="mb-ry__col">
+        {%- liquid
+  assign card_letter = b.r7_letter | default: 'a'
+  assign card_color = b.r7_color | default: '#e8c23f'
+  assign card_name = b.r7_name | default: 'AU'
+  assign card_date = b.r7_date | default: '4 months ago'
+  assign card_stars = b.r7_stars | default: 5
+  assign card_title = b.r7_title | default: 'Miracle Balm'
+  assign card_short = b.r7_short | default: 'It is really a miracle balm. I don’t have anymore feet pain after 1 week of use. Smell is good😊'
+  assign card_full = b.r7_full | default: ''
+  assign card_up = b.r7_up | default: 16
+  assign card_down = b.r7_down | default: 2
+-%}
+{% render 'offer-balm-ryviu-card', letter: card_letter, color: card_color, name: card_name, date: card_date, stars: card_stars, title: card_title, short: card_short, full: card_full, up: card_up, down: card_down %}
+        {%- liquid
+  assign card_letter = b.r8_letter | default: 'c'
+  assign card_color = b.r8_color | default: '#ffb954'
+  assign card_name = b.r8_name | default: 'Cheryl'
+  assign card_date = b.r8_date | default: '4 months ago'
+  assign card_stars = b.r8_stars | default: 5
+  assign card_title = b.r8_title | default: 'This product is great !!!!'
+  assign card_short = b.r8_short | default: 'I had tight skin. I use Senzio it not only loosened my skin. It made the skin feel softer and smoother, and I put it on'
+  assign card_full = b.r8_full | default: 'I had tight skin. I use Senzio it not only loosened my skin. It made the skin feel softer and smoother, and I put it on my shoulders because my neck was hurting and instantly it relieved my shoulder pain. It’s a miracle. As you can see in my picture, I have my supply you better hurry up and get yours before they run out. !!!!'
+  assign card_up = b.r8_up | default: 9
+  assign card_down = b.r8_down | default: 6
+-%}
+{% render 'offer-balm-ryviu-card', letter: card_letter, color: card_color, name: card_name, date: card_date, stars: card_stars, title: card_title, short: card_short, full: card_full, up: card_up, down: card_down, photo: 'mb-ry-c3.jpg', photo_url: r8_photo, photo_w: 500, photo_h: 667 %}
+      </div>
+      <div class="mb-ry__col">
+        {%- liquid
+  assign card_letter = b.r9_letter | default: 'j'
+  assign card_color = b.r9_color | default: '#0ec994'
+  assign card_name = b.r9_name | default: 'Joan D.'
+  assign card_date = b.r9_date | default: '4 months ago'
+  assign card_stars = b.r9_stars | default: 5
+  assign card_title = b.r9_title | default: 'Mrs Joan davies'
+  assign card_short = b.r9_short | default: 'Tried it with little hope but it worked thank you'
+  assign card_full = b.r9_full | default: ''
+  assign card_up = b.r9_up | default: 9
+  assign card_down = b.r9_down | default: 6
+-%}
+{% render 'offer-balm-ryviu-card', letter: card_letter, color: card_color, name: card_name, date: card_date, stars: card_stars, title: card_title, short: card_short, full: card_full, up: card_up, down: card_down %}
+        {%- liquid
+  assign card_letter = b.r10_letter | default: 'c'
+  assign card_color = b.r10_color | default: '#ffb954'
+  assign card_name = b.r10_name | default: 'Cheryl. L.'
+  assign card_date = b.r10_date | default: '4 months ago'
+  assign card_stars = b.r10_stars | default: 5
+  assign card_title = b.r10_title | default: 'Great quality'
+  assign card_short = b.r10_short | default: 'I started using Senzio on my legs. I have lymphedema. It helped to relieve some of the pain that I had in my legs, and i'
+  assign card_full = b.r10_full | default: 'I started using Senzio on my legs. I have lymphedema. It helped to relieve some of the pain that I had in my legs, and it helped to reduce some of the swelling.'
+  assign card_up = b.r10_up | default: 15
+  assign card_down = b.r10_down | default: 5
+-%}
+{% render 'offer-balm-ryviu-card', letter: card_letter, color: card_color, name: card_name, date: card_date, stars: card_stars, title: card_title, short: card_short, full: card_full, up: card_up, down: card_down, pair: true, pair_1: pair_1, pair_2: pair_2 %}
+      </div>
+    </div>
+  </div>
+</section>
+{%- endunless -%}
+{{ 'zavelyn-balm-ryviu.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'zavelyn-balm-ryviu.js' | asset_url }}" defer></script>

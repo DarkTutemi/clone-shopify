@@ -1,0 +1,98 @@
+{
+  "sections/zavelyn-pdp-main.liquid": {
+    "length": 48237,
+    "hasMetafieldCondition": false,
+    "hasHandleCondition": true,
+    "hasTagCondition": false,
+    "hasDescriptionFallbackLogic": false,
+    "firstLines": "{% schema %}\n{\n  \"name\": \"Zavelyn PDP Main V2\",\n  \"settings\": [\n    {\n      \"type\": \"text\",\n      \"id\": \"eyebrow_text\",\n      \"label\": \"Eyebrow Subtitle\",\n      \"default\": \"ZAVELYN INNOVATIONS · INDUSTRIAL GRADE\"\n    },\n    {\n      \"type\": \"text\",\n      \"id\": \"urgency_text\",\n      \"label\": \"Urgency Alert Text\",\n      \"default\": \"High US Demand · Limited Units Remaining at Clearance Pricing\"\n    },\n    {\n      \"type\": \"text\",\n      \"id\": \"cta_text\",\n      \"label\": \"Primary CTA Button Text\",\n      \"default\": \"CLAIM OFFER\"\n    },\n    {\n      \"type\": \"checkbox\",\n      \"id\": \"enable_sticky_atc\",\n      \"label\": \"Enable Sticky Add to Cart Bar\",\n      \"default\": true\n    }\n  ],\n  \"presets\": ["
+  },
+  "sections/zavelyn-pdp-ticker.liquid": {
+    "length": 1130,
+    "hasMetafieldCondition": false,
+    "hasHandleCondition": false,
+    "hasTagCondition": false,
+    "hasDescriptionFallbackLogic": false,
+    "firstLines": "{% schema %}\n{\n  \"name\": \"Zavelyn PDP Ticker\",\n  \"settings\": [],\n  \"presets\": [{ \"name\": \"Zavelyn PDP Ticker\" }]\n}\n{% endschema %}\n\n<div class=\"zv-ticker-wrap\">\n  <div class=\"zv-ticker-track\">\n    <div class=\"zv-ticker-item\"><span>⚡</span> 24–48H DISPATCH FROM US FULFILLMENT HUBS</div>\n    <div class=\"zv-ticker-item\"><span>🛡️</span> 60-DAY RISK-FREE MONEY-BACK GUARANTEE</div>\n    <div class=\"zv-ticker-item\"><span>🛠️</span> INDUSTRIAL-GRADE HEAVY-DUTY MATERIALS</div>\n    <div class=\"zv-ticker-item\"><span>🔒</span> 256-BIT ENCRYPTED SAFE CHECKOUT</div>\n    <div class=\"zv-ticker-item\"><span>💬</span> DEDICATED US CONCIERGE CUSTOMER SUPPORT</div>\n\n    <div class=\"zv-ticker-item\"><span>⚡</span> 24–48H DISPATCH FROM US FULFILLMENT HUBS</div>\n    <div class=\"zv-ticker-item\"><span>🛡️</span> 60-DAY RISK-FREE MONEY-BACK GUARANTEE</div>\n    <div class=\"zv-ticker-item\"><span>🛠️</span> INDUSTRIAL-GRADE HEAVY-DUTY MATERIALS</div>\n    <div class=\"zv-ticker-item\"><span>🔒</span> 256-BIT ENCRYPTED SAFE CHECKOUT</div>\n    <div class=\"zv-ticker-item\"><span>💬</span> DEDICATED US CONCIERGE CUSTOMER SUPPORT</div>\n  </div>\n</div>\n"
+  },
+  "sections/zavelyn-pdp-value-prop.liquid": {
+    "length": 1340,
+    "hasMetafieldCondition": false,
+    "hasHandleCondition": false,
+    "hasTagCondition": false,
+    "hasDescriptionFallbackLogic": false,
+    "firstLines": "{% schema %}\n{\n  \"name\": \"Zavelyn Value Prop\",\n  \"settings\": [],\n  \"presets\": [{ \"name\": \"Zavelyn Value Prop\" }]\n}\n{% endschema %}\n\n{%- include 'zavelyn-pdp-data' -%}\n\n{%- if zv_vp_title != blank -%}\n<section class=\"zv-body-section zv-bg-warm\" id=\"zv-value-prop\">\n  <div class=\"zv-container\">\n    <div class=\"zv-value-prop-card\">\n      <div class=\"zv-value-prop-content\">\n        <span class=\"zv-badge zv-badge-lime\">{{ zv_vp_badge | default: 'OFFICIAL INNOVATION' }}</span>\n        <h2>{{ zv_vp_title }}</h2>\n        <p>{{ zv_vp_sub }}</p>\n        <div class=\"zv-value-prop-highlights\">\n          {%- if zv_vp_b0 != blank -%}\n            <div class=\"zv-vp-highlight-item\"><span class=\"zv-vp-check\">✓</span> {{ zv_vp_b0 }}</div>\n          {%- endif -%}\n          {%- if zv_vp_b1 != blank -%}\n            <div class=\"zv-vp-highlight-item\"><span class=\"zv-vp-check\">✓</span> {{ zv_vp_b1 }}</div>\n          {%- endif -%}\n          {%- if zv_vp_b2 != blank -%}\n            <div class=\"zv-vp-highlight-item\"><span class=\"zv-vp-check\">✓</span> {{ zv_vp_b2 }}</div>\n          {%- endif -%}\n        </div>\n      </div>"
+  },
+  "sections/zavelyn-pdp-features.liquid": {
+    "length": 1465,
+    "hasMetafieldCondition": false,
+    "hasHandleCondition": false,
+    "hasTagCondition": false,
+    "hasDescriptionFallbackLogic": false,
+    "firstLines": "{% schema %}\n{\n  \"name\": \"Zavelyn Features\",\n  \"settings\": [],\n  \"presets\": [{ \"name\": \"Zavelyn Features\" }]\n}\n{% endschema %}\n\n{%- include 'zavelyn-pdp-data' -%}\n\n{%- if zv_kf_count > 0 -%}\n<section class=\"zv-body-section zv-bg-white\" id=\"zv-features\">\n  <div class=\"zv-container\">\n    <div class=\"zv-section-header\">\n      <span class=\"zv-badge\">CORE CAPABILITIES</span>\n      <h2 class=\"zv-section-title\">Engineered Without Compromise</h2>\n      <p class=\"zv-section-subtitle\">Every detail is designed to solve real problems with industrial durability and effortless usability.</p>\n    </div>\n\n    <div class=\"zv-features-grid\">\n      {%- if zv_kf_0_title != blank -%}\n      <div class=\"zv-feature-card\">\n        <div class=\"zv-feature-icon-box\">{{ zv_kf_0_icon | default: '⚡' }}</div>\n        <h3>{{ zv_kf_0_title }}</h3>\n        <p>{{ zv_kf_0_desc }}</p>\n      </div>\n      {%- endif -%}\n\n      {%- if zv_kf_1_title != blank -%}\n      <div class=\"zv-feature-card\">"
+  },
+  "sections/zavelyn-pdp-storytelling.liquid": {
+    "length": 2307,
+    "hasMetafieldCondition": false,
+    "hasHandleCondition": false,
+    "hasTagCondition": false,
+    "hasDescriptionFallbackLogic": false,
+    "firstLines": "{% schema %}\n{\n  \"name\": \"Zavelyn Storytelling\",\n  \"settings\": [],\n  \"presets\": [{ \"name\": \"Zavelyn Storytelling\" }]\n}\n{% endschema %}\n\n{%- include 'zavelyn-pdp-data' -%}\n\n{%- if zv_st_count > 0 -%}\n<section class=\"zv-body-section zv-bg-subtle\" id=\"zv-storytelling\">\n  <div class=\"zv-container\">\n    <div class=\"zv-section-header\">\n      <span class=\"zv-badge\">DEEP DIVE</span>\n      <h2 class=\"zv-section-title\">Designed for Real-World Performance</h2>\n      <p class=\"zv-section-subtitle\">Explore the technical engineering that puts {{ product.title }} in a league of its own.</p>\n    </div>\n\n    {%- for i in (0..4) -%}\n      {%- case i -%}\n        {%- when 0 -%}\n          {%- assign st_b = zv_st_0_badge -%}{%- assign st_t = zv_st_0_title -%}{%- assign st_d = zv_st_0_desc -%}{%- assign st_img = zv_st_0_img -%}\n        {%- when 1 -%}\n          {%- assign st_b = zv_st_1_badge -%}{%- assign st_t = zv_st_1_title -%}{%- assign st_d = zv_st_1_desc -%}{%- assign st_img = zv_st_1_img -%}\n        {%- when 2 -%}\n          {%- assign st_b = zv_st_2_badge -%}{%- assign st_t = zv_st_2_title -%}{%- assign st_d = zv_st_2_desc -%}{%- assign st_img = zv_st_2_img -%}\n        {%- when 3 -%}\n          {%- assign st_b = zv_st_3_badge -%}{%- assign st_t = zv_st_3_title -%}{%- assign st_d = zv_st_3_desc -%}{%- assign st_img = zv_st_3_img -%}\n        {%- when 4 -%}"
+  },
+  "sections/zavelyn-pdp-steps.liquid": {
+    "length": 1959,
+    "hasMetafieldCondition": false,
+    "hasHandleCondition": false,
+    "hasTagCondition": false,
+    "hasDescriptionFallbackLogic": false,
+    "firstLines": "{% schema %}\n{\n  \"name\": \"Zavelyn How It Works\",\n  \"settings\": [],\n  \"presets\": [{ \"name\": \"Zavelyn How It Works\" }]\n}\n{% endschema %}\n\n{%- include 'zavelyn-pdp-data' -%}\n\n{%- if zv_hw_count > 0 -%}\n<section class=\"zv-body-section zv-bg-white\" id=\"zv-how-it-works\">\n  <div class=\"zv-container\">\n    <div class=\"zv-section-header\">\n      <span class=\"zv-badge\">SIMPLE OPERATION</span>\n      <h2 class=\"zv-section-title\">{{ zv_hw_title | default: 'How It Works' }}</h2>\n      <p class=\"zv-section-subtitle\">{{ zv_hw_sub | default: 'Intuitively designed for instant setup and effortless daily use.' }}</p>\n    </div>\n\n    <div class=\"zv-steps-grid\">\n      {%- for i in (0..5) -%}\n        {%- case i -%}\n          {%- when 0 -%}\n            {%- assign hw_tag = zv_hw_0_tag -%}{%- assign hw_title = zv_hw_0_title -%}{%- assign hw_desc = zv_hw_0_desc -%}\n          {%- when 1 -%}\n            {%- assign hw_tag = zv_hw_1_tag -%}{%- assign hw_title = zv_hw_1_title -%}{%- assign hw_desc = zv_hw_1_desc -%}\n          {%- when 2 -%}\n            {%- assign hw_tag = zv_hw_2_tag -%}{%- assign hw_title = zv_hw_2_title -%}{%- assign hw_desc = zv_hw_2_desc -%}\n          {%- when 3 -%}\n            {%- assign hw_tag = zv_hw_3_tag -%}{%- assign hw_title = zv_hw_3_title -%}{%- assign hw_desc = zv_hw_3_desc -%}"
+  },
+  "sections/zavelyn-pdp-comparison.liquid": {
+    "length": 2739,
+    "hasMetafieldCondition": false,
+    "hasHandleCondition": false,
+    "hasTagCondition": false,
+    "hasDescriptionFallbackLogic": false,
+    "firstLines": "{% schema %}\n{\n  \"name\": \"Zavelyn Comparison\",\n  \"settings\": [],\n  \"presets\": [{ \"name\": \"Zavelyn Comparison\" }]\n}\n{% endschema %}\n\n{%- include 'zavelyn-pdp-data' -%}\n\n{%- if zv_cp_count > 0 -%}\n<section class=\"zv-body-section zv-bg-warm\" id=\"zv-comparison\">\n  <div class=\"zv-container\">\n    <div class=\"zv-section-header\">\n      <span class=\"zv-badge\">THE ZAVELYN ADVANTAGE</span>\n      <h2 class=\"zv-section-title\">{{ zv_cp_title | default: 'How We Compare' }}</h2>\n      <p class=\"zv-section-subtitle\">{{ zv_cp_sub | default: 'See why thousands of customers choose Zavelyn over traditional alternatives.' }}</p>\n    </div>\n\n    <div class=\"zv-comp-table-wrap\">\n      <table class=\"zv-comp-table\">\n        <thead>\n          <tr>\n            <th style=\"width: 40%; background: #FFFFFF; color: #17433C;\">Feature / Capability</th>\n            <th class=\"zv-target-col\" style=\"width: 32%;\">{{ zv_cp_target | default: 'Zavelyn' }}</th>\n            <th class=\"zv-comp-col\" style=\"width: 28%;\">{{ zv_cp_comp | default: 'Traditional Alternative' }}</th>\n          </tr>\n        </thead>\n        <tbody>\n          {%- for i in (0..7) -%}"
+  },
+  "sections/zavelyn-pdp-specs.liquid": {
+    "length": 2161,
+    "hasMetafieldCondition": false,
+    "hasHandleCondition": false,
+    "hasTagCondition": false,
+    "hasDescriptionFallbackLogic": false,
+    "firstLines": "{% schema %}\n{\n  \"name\": \"Zavelyn Specs\",\n  \"settings\": [],\n  \"presets\": [{ \"name\": \"Zavelyn Specs\" }]\n}\n{% endschema %}\n\n{%- include 'zavelyn-pdp-data' -%}\n\n{%- if zv_sp_count > 0 -%}\n<section class=\"zv-body-section zv-bg-white\" id=\"zv-specs\">\n  <div class=\"zv-container\">\n    <div class=\"zv-section-header\">\n      <span class=\"zv-badge\">TECHNICAL DATA</span>\n      <h2 class=\"zv-section-title\">Product Specifications</h2>\n      <p class=\"zv-section-subtitle\">Verified dimensions, materials, and engineering tolerances.</p>\n    </div>\n\n    <div class=\"zv-specs-card\">\n      <div class=\"zv-specs-table\">\n        {%- for i in (0..11) -%}\n          {%- case i -%}\n            {%- when 0 -%}{%- assign sp_l = zv_sp_0_label -%}{%- assign sp_v = zv_sp_0_val -%}\n            {%- when 1 -%}{%- assign sp_l = zv_sp_1_label -%}{%- assign sp_v = zv_sp_1_val -%}\n            {%- when 2 -%}{%- assign sp_l = zv_sp_2_label -%}{%- assign sp_v = zv_sp_2_val -%}\n            {%- when 3 -%}{%- assign sp_l = zv_sp_3_label -%}{%- assign sp_v = zv_sp_3_val -%}\n            {%- when 4 -%}{%- assign sp_l = zv_sp_4_label -%}{%- assign sp_v = zv_sp_4_val -%}\n            {%- when 5 -%}{%- assign sp_l = zv_sp_5_label -%}{%- assign sp_v = zv_sp_5_val -%}\n            {%- when 6 -%}{%- assign sp_l = zv_sp_6_label -%}{%- assign sp_v = zv_sp_6_val -%}"
+  },
+  "sections/zavelyn-pdp-included.liquid": {
+    "length": 1926,
+    "hasMetafieldCondition": false,
+    "hasHandleCondition": false,
+    "hasTagCondition": false,
+    "hasDescriptionFallbackLogic": false,
+    "firstLines": "{% schema %}\n{\n  \"name\": \"Zavelyn Whats Included\",\n  \"settings\": [],\n  \"presets\": [{ \"name\": \"Zavelyn Whats Included\" }]\n}\n{% endschema %}\n\n{%- include 'zavelyn-pdp-data' -%}\n\n{%- if zv_wi_count > 0 -%}\n<section class=\"zv-body-section zv-bg-subtle\" id=\"zv-included\">\n  <div class=\"zv-container\">\n    <div class=\"zv-included-card\">\n      <div class=\"zv-included-content\">\n        <span class=\"zv-badge\">COMPLETE PACKAGE</span>\n        <h2 style=\"font-size: 32px; font-weight: 800; color: #17433C; margin: 0 0 16px;\">{{ zv_wi_title | default: \"What's in the Box\" }}</h2>\n        <p style=\"font-size: 15px; color: #556860; margin: 0 0 28px;\">Everything you need to begin immediately, backed by our comprehensive warranty and dedicated customer support.</p>\n        \n        <ul class=\"zv-included-list\">\n          {%- for i in (0..7) -%}\n            {%- case i -%}\n              {%- when 0 -%}{%- assign inc_item = zv_wi_0_item -%}\n              {%- when 1 -%}{%- assign inc_item = zv_wi_1_item -%}\n              {%- when 2 -%}{%- assign inc_item = zv_wi_2_item -%}\n              {%- when 3 -%}{%- assign inc_item = zv_wi_3_item -%}\n              {%- when 4 -%}{%- assign inc_item = zv_wi_4_item -%}\n              {%- when 5 -%}{%- assign inc_item = zv_wi_5_item -%}\n              {%- when 6 -%}{%- assign inc_item = zv_wi_6_item -%}\n              {%- when 7 -%}{%- assign inc_item = zv_wi_7_item -%}"
+  },
+  "sections/zavelyn-pdp-faq.liquid": {
+    "length": 1708,
+    "hasMetafieldCondition": false,
+    "hasHandleCondition": false,
+    "hasTagCondition": false,
+    "hasDescriptionFallbackLogic": false,
+    "firstLines": "{% schema %}\n{\n  \"name\": \"Zavelyn Extended FAQ\",\n  \"settings\": [],\n  \"presets\": [{ \"name\": \"Zavelyn Extended FAQ\" }]\n}\n{% endschema %}\n\n{%- include 'zavelyn-pdp-data' -%}\n\n{%- if zv_faq_count > 0 -%}\n<section class=\"zv-body-section zv-bg-white\" id=\"zv-extended-faq\">\n  <div class=\"zv-container\">\n    <div class=\"zv-section-header\">\n      <span class=\"zv-badge\">GOT QUESTIONS?</span>\n      <h2 class=\"zv-section-title\">{{ zv_faq_title | default: 'Frequently Asked Questions' }}</h2>\n      <p class=\"zv-section-subtitle\">Everything you need to know about {{ product.title }}.</p>\n    </div>\n\n    <div class=\"zv-faq-accordion\">\n      {%- for i in (0..5) -%}\n        {%- case i -%}\n          {%- when 0 -%}{%- assign fq_q = zv_faq_0_q -%}{%- assign fq_a = zv_faq_0_a -%}\n          {%- when 1 -%}{%- assign fq_q = zv_faq_1_q -%}{%- assign fq_a = zv_faq_1_a -%}\n          {%- when 2 -%}{%- assign fq_q = zv_faq_2_q -%}{%- assign fq_a = zv_faq_2_a -%}\n          {%- when 3 -%}{%- assign fq_q = zv_faq_3_q -%}{%- assign fq_a = zv_faq_3_a -%}\n          {%- when 4 -%}{%- assign fq_q = zv_faq_4_q -%}{%- assign fq_a = zv_faq_4_a -%}\n          {%- when 5 -%}{%- assign fq_q = zv_faq_5_q -%}{%- assign fq_a = zv_faq_5_a -%}\n        {%- endcase -%}\n"
+  },
+  "sections/zavelyn-pdp-description-fallback.liquid": {
+    "length": 710,
+    "hasMetafieldCondition": false,
+    "hasHandleCondition": false,
+    "hasTagCondition": false,
+    "hasDescriptionFallbackLogic": false,
+    "firstLines": "{% schema %}\n{\n  \"name\": \"Zavelyn PDP Fallback\",\n  \"settings\": [],\n  \"presets\": [{ \"name\": \"Zavelyn PDP Fallback\" }]\n}\n{% endschema %}\n\n{%- include 'zavelyn-pdp-data' -%}\n\n{%- unless zv_data_found -%}\n  {%- if product.description != blank -%}\n    <section class=\"zv-body-section zv-bg-white\" id=\"zv-product-description\">\n      <div class=\"zv-container zv-fallback-description-container\">\n        <div class=\"zv-section-header\">\n          <span class=\"zv-badge\">PRODUCT OVERVIEW</span>\n          <h2 class=\"zv-section-title\">Product Details</h2>\n        </div>\n        <div class=\"zv-rte-content\">\n          {{ product.description }}\n        </div>\n      </div>\n    </section>\n  {%- endif -%}\n{%- endunless -%}\n"
+  },
+  "sections/zavelyn-pdp-shipping.liquid": {
+    "length": 7884,
+    "hasMetafieldCondition": false,
+    "hasHandleCondition": false,
+    "hasTagCondition": false,
+    "hasDescriptionFallbackLogic": false,
+    "firstLines": "{% schema %}\n{\n  \"name\": \"Doorstep Delivery & Track\",\n  \"settings\": [\n    {\n      \"type\": \"text\",\n      \"id\": \"badge_text\",\n      \"label\": \"Badge Text\",\n      \"default\": \"FAST & INSURED TRACKED US DELIVERY\"\n    },\n    {\n      \"type\": \"text\",\n      \"id\": \"heading\",\n      \"label\": \"Heading\",\n      \"default\": \"Doorstep Delivery Guarantee & Real-Time Tracking\"\n    },\n    {\n      \"type\": \"textarea\",\n      \"id\": \"subheading\",\n      \"label\": \"Description\",\n      \"default\": \"Every Zavelyn order is cushioned in heavy-duty protective packaging, inspected for quality, and dispatched from regional US warehouses within 24–48 business hours. We partner directly with USPS, FedEx, and DHL Express to guarantee rapid, dependable doorstep transit.\"\n    },\n    {\n      \"type\": \"header\",\n      \"content\": \"Section Images\"\n    },\n    {\n      \"type\": \"image_picker\",\n      \"id\": \"shipping_img_1\",\n      \"label\": \"Image 1 (Packaging / Inspection)\""
+  }
+}

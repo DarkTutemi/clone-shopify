@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454949540025",
+  "title": "Zavelyn Titanium Pocket Pry Bar",
+  "handle": "sakerplus®-titanium-alloy-multifunction-pocket-pry-bar",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914383098041",
+        "title": "Default Title",
+        "price": "62.99",
+        "sku": "GJ132966-E099"
+      }
+    ]
+  }
+}

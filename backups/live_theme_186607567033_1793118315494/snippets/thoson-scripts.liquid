@@ -1,0 +1,155 @@
+
+<!-- Thoson Interactive Engine -->
+<div class="thx-sticky-atc-bar" id="thxStickyBar">
+  <img src="https://cdn.shopify.com/s/files/1/0916/9852/8593/files/Untitled_design_1.png?v=1775435140" alt="Thoson MagTrack">
+  <div>
+    <div class="thx-sticky-title">Zavelyn® MagTrack™</div>
+    <div>
+      <span class="thx-sticky-price" id="thxStickyPrice">$69</span>
+      <span class="thx-sticky-compare" id="thxStickyCompare">$139</span>
+      <span style="font-size:11px; background:#2956e6; color:#fff; padding:2px 6px; border-radius:10px; margin-left:4px; font-weight:700;" id="thxStickyDiscount">SAVE 50%</span>
+    </div>
+  </div>
+  <select class="thx-sticky-select" id="thxStickySelect">
+    <option value="67925383741625">Rookie · 32 pcs ($69)</option>
+    <option value="67925383774393">Pro · 68 pcs ($119)</option>
+    <option value="67925383807161">Master · 145 pcs ($159)</option>
+  </select>
+  <button class="thx-sticky-btn" id="thxStickyBtn">Add to cart</button>
+</div>
+
+<script>
+(function() {
+  const VARIANTS_DATA = {
+    "67925383741625": { price: "$69", compare: "$139", discount: "SAVE 50%", title: "Rookie" },
+    "67925383774393": { price: "$119", compare: "$169", discount: "SAVE 30%", title: "PRO" },
+    "67925383807161": { price: "$159", compare: "$299", discount: "SAVE 47%", title: "Master" }
+  };
+
+  let currentVariantId = "67925383741625";
+
+  function updateVariantUI(variantId) {
+    currentVariantId = variantId;
+    const v = VARIANTS_DATA[variantId];
+    if (!v) return;
+
+    // 1. Update Hero Price
+    const heroPrice = document.querySelector('.price-item--sale, .price__sale .price-item, .price-item--regular');
+    const heroCompare = document.querySelector('.price-item--compare, .price__sale s');
+    const badge = document.querySelector('.price-badge, .save-badge, [class*="badge"]');
+
+    document.querySelectorAll('.price-item--sale, .price__sale .price-item').forEach(el => el.textContent = v.price);
+    document.querySelectorAll('.price-item--compare, .price__sale s, .price-item--regular').forEach(el => el.textContent = v.compare);
+    document.querySelectorAll('.price__badge-sale, [class*="discount-badge"]').forEach(el => el.textContent = v.discount);
+
+    // 2. Update Hidden Form Inputs
+    document.querySelectorAll('input[name="id"]').forEach(input => {
+      input.value = variantId;
+    });
+
+    // 3. Update Sticky Bar
+    const stickyPrice = document.getElementById('thxStickyPrice');
+    const stickyCompare = document.getElementById('thxStickyCompare');
+    const stickyDiscount = document.getElementById('thxStickyDiscount');
+    const stickySelect = document.getElementById('thxStickySelect');
+    if (stickyPrice) stickyPrice.textContent = v.price;
+    if (stickyCompare) stickyCompare.textContent = v.compare;
+    if (stickyDiscount) stickyDiscount.textContent = v.discount;
+    if (stickySelect && stickySelect.value !== variantId) stickySelect.value = variantId;
+  }
+
+  // Listen to Radio Button Changes in Hero
+  document.querySelectorAll('.quantity-breaks-container input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+      const val = this.value;
+      let targetId = "67925383741625";
+      if (val === 'PRO' || val.includes('Pro') || val.includes('68')) targetId = "67925383774393";
+      else if (val === 'Master' || val.includes('145')) targetId = "67925383807161";
+      updateVariantUI(targetId);
+    });
+  });
+
+  // Listen to Sticky Bar Dropdown Changes
+  const stickySelect = document.getElementById('thxStickySelect');
+  if (stickySelect) {
+    stickySelect.addEventListener('change', function() {
+      const targetId = this.value;
+      updateVariantUI(targetId);
+      // Sync radio in hero
+      const radios = document.querySelectorAll('.quantity-breaks-container input[type="radio"]');
+      radios.forEach(r => {
+        if (targetId === "67925383741625" && (r.value === 'Rookie' || r.value.includes('32'))) r.checked = true;
+        if (targetId === "67925383774393" && (r.value === 'PRO' || r.value.includes('68'))) r.checked = true;
+        if (targetId === "67925383807161" && (r.value === 'Master' || r.value.includes('145'))) r.checked = true;
+      });
+    });
+  }
+
+  // AJAX Add to Cart Handler
+  function addToCart(variantId) {
+    const btns = document.querySelectorAll('button[name="add"], .product-form__submit, #thxStickyBtn');
+    btns.forEach(b => {
+      b.disabled = true;
+      b.dataset.origText = b.textContent;
+      b.textContent = 'ADDING...';
+    });
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: Number(variantId), quantity: 1 })
+    })
+    .then(res => res.json())
+    .then(data => {
+      btns.forEach(b => { b.textContent = 'ADDED ✓'; });
+      setTimeout(() => { window.location.href = '/cart'; }, 500);
+    })
+    .catch(err => {
+      console.error('Cart add error:', err);
+      window.location.href = '/cart/add?id=' + variantId + '&quantity=1';
+    });
+  }
+
+  // Intercept Form Submit & Clicks
+  document.addEventListener('submit', function(e) {
+    const form = e.target.closest('form');
+    if (form && form.action.includes('/cart/add')) {
+      e.preventDefault();
+      addToCart(currentVariantId);
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('button[name="add"], .product-form__submit, #thxStickyBtn');
+    if (btn) {
+      e.preventDefault();
+      addToCart(currentVariantId);
+    }
+  });
+
+  // Sticky ATC Scroll Watcher
+  const stickyBar = document.getElementById('thxStickyBar');
+  const heroBtn = document.querySelector('button[name="add"], .product-form__submit');
+  if (stickyBar && heroBtn) {
+    window.addEventListener('scroll', () => {
+      const rect = heroBtn.getBoundingClientRect();
+      if (rect.bottom < 0) {
+        stickyBar.classList.add('is-visible');
+      } else {
+        stickyBar.classList.remove('is-visible');
+      }
+    });
+  }
+
+  // FAQs Accordion handler
+  document.querySelectorAll('details.accordion-item, .collapsible-trigger, .accordion__title').forEach(el => {
+    el.addEventListener('click', function(e) {
+      const details = this.closest('details');
+      if (details) {
+        // native toggle
+      }
+    });
+  });
+
+})();
+</script>

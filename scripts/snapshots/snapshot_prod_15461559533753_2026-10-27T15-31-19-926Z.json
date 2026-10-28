@@ -1,0 +1,68 @@
+{
+  "id": "gid://shopify/Product/15461559533753",
+  "title": "Zavelyn ThermoGlove",
+  "handle": "zavelyn-thermoglove-smart-thermostatic-heated-fingerless-gloves",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67980707037369",
+        "title": "Buy 1 Pair (Standard Warmth Starter Kit) / Stealth Black",
+        "price": "26.77",
+        "sku": "ZAV-GLOVE-1PK-BLK"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980707070137",
+        "title": "Buy 1 Pair (Standard Warmth Starter Kit) / Heather Gray",
+        "price": "26.77",
+        "sku": "ZAV-GLOVE-1PK-GRY"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980707102905",
+        "title": "Buy 1 Pair (Standard Warmth Starter Kit) / Blush Pink",
+        "price": "26.77",
+        "sku": "ZAV-GLOVE-1PK-PNK"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980707135673",
+        "title": "Buy 2 Pairs (Couple / Backup Pack - Save 45%) / Stealth Black",
+        "price": "44.99",
+        "sku": "ZAV-GLOVE-2PK-BLK"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980707168441",
+        "title": "Buy 2 Pairs (Couple / Backup Pack - Save 45%) / Heather Gray",
+        "price": "44.99",
+        "sku": "ZAV-GLOVE-2PK-GRY"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980707201209",
+        "title": "Buy 2 Pairs (Couple / Backup Pack - Save 45%) / Blush Pink",
+        "price": "44.99",
+        "sku": "ZAV-GLOVE-2PK-PNK"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980707233977",
+        "title": "Buy 3 Pairs (Family Winter Gift Pack - Buy 2 Get 1 FREE) / Stealth Black",
+        "price": "59.99",
+        "sku": "ZAV-GLOVE-2PK-BLK"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980707266745",
+        "title": "Buy 3 Pairs (Family Winter Gift Pack - Buy 2 Get 1 FREE) / Heather Gray",
+        "price": "59.99",
+        "sku": "ZAV-GLOVE-2PK-GRY"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980707299513",
+        "title": "Buy 3 Pairs (Family Winter Gift Pack - Buy 2 Get 1 FREE) / Blush Pink",
+        "price": "59.99",
+        "sku": "ZAV-GLOVE-2PK-PNK"
+      }
+    ]
+  }
+}

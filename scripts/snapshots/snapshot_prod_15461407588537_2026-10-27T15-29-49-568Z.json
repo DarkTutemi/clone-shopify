@@ -1,0 +1,74 @@
+{
+  "id": "gid://shopify/Product/15461407588537",
+  "title": "Zavelyn SculptComfort",
+  "handle": "zavelyn-sculptcomfort-wirefree-breast-shapewear-bra",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67979690934457",
+        "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Nude Tan",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979690967225",
+        "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Rich Brown",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979690999993",
+        "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Classic Black",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979691032761",
+        "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Pure White",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979691065529",
+        "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Blush Pink",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979691098297",
+        "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Ruby Red",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979691131065",
+        "title": "Buy 2 (Everyday Duo Set - Save 55%) / Nude Tan",
+        "price": "99.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979691163833",
+        "title": "Buy 2 (Everyday Duo Set - Save 55%) / Rich Brown",
+        "price": "99.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979691196601",
+        "title": "Buy 2 (Everyday Duo Set - Save 55%) / Classic Black",
+        "price": "99.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979691229369",
+        "title": "Buy 2 (Everyday Duo Set - Save 55%) / Pure White",
+        "price": "99.99",
+        "sku": null
+      }
+    ]
+  }
+}

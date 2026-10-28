@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454954422457",
+  "title": "Zavelyn Hydraulic Pipe Crimper Kit",
+  "handle": "sakerplus®-cordless-hydraulic-pipe-crimping-tool-kit",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914494214329",
+        "title": "Default Title",
+        "price": "779.99",
+        "sku": "GJ113731-X86884"
+      }
+    ]
+  }
+}

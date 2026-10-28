@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "zavelyn-track-order",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

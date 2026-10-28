@@ -1,0 +1,50 @@
+{
+  "id": "gid://shopify/Product/15461545935033",
+  "title": "Zavelyn BotanaRoots",
+  "handle": "zavelyn-botanaroots-organic-batana-hair-growth-oil",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67980643598521",
+        "title": "Buy 1 (1x 60ml Bottle - 30-Day Starter Supply) / 100% Pure Raw Honduran Batana (60ml)",
+        "price": "39.00",
+        "sku": "ZAV-BOTANA-1PK-PURE"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980643631289",
+        "title": "Buy 1 (1x 60ml Bottle - 30-Day Starter Supply) / Batana + Rosemary Scalp Infusion (60ml)",
+        "price": "39.00",
+        "sku": "ZAV-BOTANA-1PK-ROSE"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980643664057",
+        "title": "Buy 2 (2x 60ml Bottles - 60-Day Intensive Growth Course - Save 45%) / 100% Pure Raw Honduran Batana (60ml)",
+        "price": "69.00",
+        "sku": "ZAV-BOTANA-2PK-PURE"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980643696825",
+        "title": "Buy 2 (2x 60ml Bottles - 60-Day Intensive Growth Course - Save 45%) / Batana + Rosemary Scalp Infusion (60ml)",
+        "price": "69.00",
+        "sku": "ZAV-BOTANA-2PK-ROSE"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980643729593",
+        "title": "Buy 3 (3x 60ml Bottles - 90-Day Full Hair Restoration - Buy 2 Get 1 FREE) / 100% Pure Raw Honduran Batana (60ml)",
+        "price": "89.00",
+        "sku": "ZAV-BOTANA-2PK-PURE"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980643762361",
+        "title": "Buy 3 (3x 60ml Bottles - 90-Day Full Hair Restoration - Buy 2 Get 1 FREE) / Batana + Rosemary Scalp Infusion (60ml)",
+        "price": "89.00",
+        "sku": "ZAV-BOTANA-2PK-ROSE"
+      }
+    ]
+  }
+}

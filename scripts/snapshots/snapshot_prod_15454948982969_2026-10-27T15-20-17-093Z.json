@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454948982969",
+  "title": "Zavelyn Flame Effect Space Heater",
+  "handle": "sakerplus®-1500w-flame-effect-oscillating-space-heater",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914368352441",
+        "title": "Default Title",
+        "price": "114.99",
+        "sku": "HA129393-X87701"
+      }
+    ]
+  }
+}

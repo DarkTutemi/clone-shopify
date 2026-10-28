@@ -1,0 +1,74 @@
+{
+  "current": {
+    "color_background": "#F7F4EF",
+    "color_surface": "#FFFFFF",
+    "color_text": "#1A1A1A",
+    "color_text_muted": "#5C5C5C",
+    "color_accent": "#0B3D2E",
+    "color_accent_contrast": "#F7F4EF",
+    "color_border": "#D9D2C5",
+    "color_sale": "#8B2E2E",
+    "color_success": "#1F6B4A",
+    "color_error": "#9B1C1C",
+    "font_heading": "assistant_n4",
+    "font_body": "assistant_n4",
+    "font_size_base": 16,
+    "heading_scale": 120,
+    "page_width": 1280,
+    "section_spacing": 64,
+    "product_card_image_ratio": "4 \/ 5",
+    "cart_type": "drawer",
+    "cart_show_notes": true,
+    "cart_show_free_shipping": true,
+    "cart_free_shipping_threshold": 10000,
+    "predictive_search_enabled": true,
+    "predictive_search_limit": 6,
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement": true,
+          "text": "Complimentary shipping on orders over $100",
+          "link": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer_menu_1": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Shop",
+              "menu": "footer"
+            }
+          },
+          "footer_text_1": {
+            "type": "text",
+            "settings": {
+              "heading": "About",
+              "text": "<p>Refined essentials designed for everyday luxury. Crafted with intention, made to last.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "footer_menu_1",
+          "footer_text_1"
+        ],
+        "settings": {
+          "show_newsletter": true,
+          "newsletter_heading": "Stay in the know",
+          "newsletter_text": "New arrivals, private sales, and editorial notes.",
+          "show_social": true,
+          "show_payment_icons": true
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

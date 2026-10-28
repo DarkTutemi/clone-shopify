@@ -1,0 +1,43 @@
+{%- comment -%}
+  Image, with an optional Shopify video or URL in front of it.
+  Params: image, fallback, video, video_url, source, alt, class, width, height, loading
+  source: "file" uses the upload, "url" uses the link. An empty upload still uses the URL.
+{%- endcomment -%}
+{%- liquid
+  assign alt_text = alt | default: ''
+  assign loading_attr = loading | default: 'lazy'
+  assign img_width = width | default: 900
+-%}
+{%- capture vid_src -%}{%- render 'zavelyn-video-src', video: video, video_url: video_url, source: source -%}{%- endcapture -%}
+{%- assign vid_src = vid_src | strip -%}
+{%- liquid
+  assign is_file = false
+  if vid_src contains '.mp4' or vid_src contains '.webm' or vid_src contains '.mov' or vid_src contains '.m4v'
+    assign is_file = true
+  endif
+-%}
+{%- if vid_src != blank and is_file -%}
+  <video
+    {% if class != blank %}class="{{ class }}"{% endif %}
+    controls
+    playsinline
+    preload="metadata"
+    {% if image != blank %}
+      poster="{{ image | image_url: width: img_width }}"
+    {% elsif fallback != blank %}
+      poster="{{ fallback | asset_url }}"
+    {% endif %}
+    src="{{ vid_src | escape }}"
+  ></video>
+{%- elsif vid_src != blank -%}
+  <iframe
+    {% if class != blank %}class="{{ class }}"{% endif %}
+    src="{{ vid_src | escape }}"
+    title="{{ alt_text | escape }}"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
+{%- else -%}
+  {% render 'offer-img', image: image, fallback: fallback, alt: alt_text, class: class, width: img_width, height: height, loading: loading_attr %}
+{%- endif -%}

@@ -1,0 +1,292 @@
+{
+  "collection": {
+    "desktop_1440": {
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "overflow": false,
+      "counts": {
+        "cards": 5,
+        "compareRows": 5,
+        "benefits": 4,
+        "accs": 4,
+        "faqs": 7
+      },
+      "cardImages": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1.jpg?v=1792907902",
+          "naturalWidth": 960,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/PandaDrumPro_White.webp?v=1792868508",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/PandaDrum_Plus_White.webp?v=1792868520",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/Mini_white.webp?v=1792868532",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1_a84698cf-6387-4a5b-98b7-e0c78526960a.jpg?v=1792908838",
+          "naturalWidth": 800,
+          "loaded": true
+        }
+      ]
+    },
+    "laptop_1280": {
+      "scrollWidth": 1265,
+      "clientWidth": 1265,
+      "overflow": false,
+      "counts": {
+        "cards": 5,
+        "compareRows": 5,
+        "benefits": 4,
+        "accs": 4,
+        "faqs": 7
+      },
+      "cardImages": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1.jpg?v=1792907902",
+          "naturalWidth": 960,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/PandaDrumPro_White.webp?v=1792868508",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/PandaDrum_Plus_White.webp?v=1792868520",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/Mini_white.webp?v=1792868532",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1_a84698cf-6387-4a5b-98b7-e0c78526960a.jpg?v=1792908838",
+          "naturalWidth": 800,
+          "loaded": true
+        }
+      ]
+    },
+    "tablet_768": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "overflow": false,
+      "counts": {
+        "cards": 5,
+        "compareRows": 5,
+        "benefits": 4,
+        "accs": 4,
+        "faqs": 7
+      },
+      "cardImages": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1.jpg?v=1792907902",
+          "naturalWidth": 960,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/PandaDrumPro_White.webp?v=1792868508",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/PandaDrum_Plus_White.webp?v=1792868520",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/Mini_white.webp?v=1792868532",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1_a84698cf-6387-4a5b-98b7-e0c78526960a.jpg?v=1792908838",
+          "naturalWidth": 800,
+          "loaded": true
+        }
+      ]
+    },
+    "mobile_390": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflow": false,
+      "counts": {
+        "cards": 5,
+        "compareRows": 5,
+        "benefits": 4,
+        "accs": 4,
+        "faqs": 7
+      },
+      "cardImages": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1.jpg?v=1792907902",
+          "naturalWidth": 960,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/PandaDrumPro_White.webp?v=1792868508",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/PandaDrum_Plus_White.webp?v=1792868520",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/Mini_white.webp?v=1792868532",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1_a84698cf-6387-4a5b-98b7-e0c78526960a.jpg?v=1792908838",
+          "naturalWidth": 800,
+          "loaded": true
+        }
+      ]
+    },
+    "mobile_375": {
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": false,
+      "counts": {
+        "cards": 5,
+        "compareRows": 5,
+        "benefits": 4,
+        "accs": 4,
+        "faqs": 7
+      },
+      "cardImages": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1.jpg?v=1792907902",
+          "naturalWidth": 960,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/PandaDrumPro_White.webp?v=1792868508",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/PandaDrum_Plus_White.webp?v=1792868520",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/Mini_white.webp?v=1792868532",
+          "naturalWidth": 1000,
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1_a84698cf-6387-4a5b-98b7-e0c78526960a.jpg?v=1792908838",
+          "naturalWidth": 800,
+          "loaded": true
+        }
+      ]
+    }
+  },
+  "product_master": {
+    "desktop_1440": {
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "overflow": false,
+      "buyBox": true,
+      "bannerImgWidth": 610,
+      "steps": 3,
+      "specs": 7,
+      "doorstep": true
+    },
+    "laptop_1280": {
+      "scrollWidth": 1265,
+      "clientWidth": 1265,
+      "overflow": false,
+      "buyBox": true,
+      "bannerImgWidth": 530,
+      "steps": 3,
+      "specs": 7,
+      "doorstep": true
+    },
+    "tablet_768": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "overflow": false,
+      "buyBox": true,
+      "bannerImgWidth": 668,
+      "steps": 3,
+      "specs": 7,
+      "doorstep": true
+    },
+    "mobile_390": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflow": false,
+      "buyBox": true,
+      "bannerImgWidth": 306,
+      "steps": 3,
+      "specs": 7,
+      "doorstep": true
+    },
+    "mobile_375": {
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": false,
+      "buyBox": true,
+      "bannerImgWidth": 291,
+      "steps": 3,
+      "specs": 7,
+      "doorstep": true
+    }
+  },
+  "all_drums": {
+    "drum_pro": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflow": false,
+      "buyBox": true,
+      "doorstep": true
+    },
+    "drum_plus": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflow": false,
+      "buyBox": true,
+      "doorstep": true
+    },
+    "drum_mini": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflow": false,
+      "buyBox": true,
+      "doorstep": true
+    },
+    "rain_drum": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflow": false,
+      "buyBox": true,
+      "doorstep": true
+    }
+  },
+  "atc_test": {
+    "atcResult": {
+      "clicked": true,
+      "id": "zvClaimOfferBtn",
+      "className": "kc-claim-button loading"
+    },
+    "cartDrawerStatus": {
+      "hasDrawer": true,
+      "isOpen": true
+    }
+  }
+}

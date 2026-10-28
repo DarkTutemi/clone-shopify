@@ -1,0 +1,26 @@
+{
+  "id": "gid://shopify/Product/15454949343417",
+  "title": "Zavelyn Portable Welding Machine",
+  "handle": "sakerplus®-portable-welding-machine-clearance",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914377658553",
+        "title": "1 * Sakerplus Portable Welding Machine",
+        "price": "67.99",
+        "sku": "GJ76085-X54891"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914377691321",
+        "title": "1 * Sakerplus Portable Welding Machine+40 welding rods",
+        "price": "81.99",
+        "sku": "GJ76085-X56726"
+      }
+    ]
+  }
+}

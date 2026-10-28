@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454963859641",
+  "title": "Zavelyn Cordless Garden Tiller",
+  "handle": "saker®-cordless-electric-garden-tiller-cultivator",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914673258681",
+        "title": "Electric Garden Tiller Cultivator",
+        "price": "83.99",
+        "sku": "GJ88858-X70586"
+      }
+    ]
+  }
+}

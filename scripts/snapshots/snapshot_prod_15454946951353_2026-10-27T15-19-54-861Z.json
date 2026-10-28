@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/15454946951353",
+  "title": "Zavelyn Fence Post Repair Kit",
+  "handle": "sakerplus-fence-post-repair-kit",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67973153980601",
+        "title": "Buy 2",
+        "price": "72.99",
+        "sku": "ZAV-FENCE-02"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67973154013369",
+        "title": "Buy 4",
+        "price": "138.68",
+        "sku": "ZAV-FENCE-04"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67973154046137",
+        "title": "Buy 6",
+        "price": "186.12",
+        "sku": "ZAV-FENCE-06"
+      }
+    ]
+  }
+}

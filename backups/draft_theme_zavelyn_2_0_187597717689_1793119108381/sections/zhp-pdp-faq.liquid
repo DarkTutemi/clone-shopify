@@ -1,0 +1,288 @@
+{% comment %}
+  Zavelyn Elixir V2 — Modern Interactive Accordion FAQ for Product Pages
+  Design Tokens: Primary #17433C, Accent #C6FA54, Warm Bg #FFFAF7, Border #E8EDE9
+{% endcomment %}
+
+<section class="wf-section wf-faq-section" id="pdp-faq">
+  <div class="wf-container">
+    <div class="wf-center-header">
+      <span class="wf-sub-pill">{{ section.settings.pill_text | default: 'QUESTIONS & ANSWERS' }}</span>
+      <h2 class="wf-sec-title">{{ section.settings.title | default: 'Frequently Asked Questions' }}</h2>
+      <p class="wf-sec-desc">{{ section.settings.description | default: 'Everything you need to know about playing, caring for, and enjoying your Zavelyn Drum.' }}</p>
+    </div>
+
+    <div class="wf-faq-accordion">
+      {%- for block in section.blocks -%}
+        <div class="wf-faq-item {% if forloop.first %}active{% endif %}" {{ block.shopify_attributes }}>
+          <button type="button" class="wf-faq-question" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+            <span>{{ block.settings.question }}</span>
+            <span class="wf-faq-arrow" aria-hidden="true">+</span>
+          </button>
+          <div class="wf-faq-answer">
+            <p>{{ block.settings.answer }}</p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<style>
+/* ==========================================================================
+   ZAVELYN ELIXIR V2 — PDP FAQ ACCORDION STYLES
+   ========================================================================== */
+.wf-faq-section {
+  padding: 80px 0;
+  background-color: var(--zv-bg-warm, #FFFAF7);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--zv-text, #222222);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wf-faq-section .wf-container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.wf-faq-section .wf-center-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.wf-faq-section .wf-sub-pill {
+  display: inline-block;
+  background-color: rgba(23, 67, 60, 0.08);
+  color: #17433C;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
+}
+
+.wf-faq-section .wf-sec-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #17433C;
+  line-height: 1.25;
+  margin: 0 0 14px;
+  letter-spacing: -0.5px;
+}
+
+.wf-faq-section .wf-sec-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #556B64;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.wf-faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wf-faq-item {
+  background: #FFFFFF;
+  border: 1px solid #E8EDE9;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(23, 67, 60, 0.02);
+}
+
+.wf-faq-item:hover {
+  border-color: #17433C;
+  box-shadow: 0 6px 18px rgba(23, 67, 60, 0.05);
+}
+
+.wf-faq-item.active {
+  border-color: #17433C;
+  box-shadow: 0 8px 24px rgba(23, 67, 60, 0.08);
+  background: #FFFFFF;
+}
+
+.wf-faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 22px 24px;
+  font-family: inherit;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #17433C;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  line-height: 1.45;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.wf-faq-question:hover {
+  color: #0F2D28;
+}
+
+.wf-faq-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(23, 67, 60, 0.08);
+  color: #17433C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.wf-faq-item.active .wf-faq-arrow {
+  transform: rotate(45deg);
+  background: #17433C;
+  color: #C6FA54;
+}
+
+.wf-faq-answer {
+  display: none;
+  padding: 0 24px 22px;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #333333;
+  border-top: 1px solid rgba(23, 67, 60, 0.08);
+  margin-top: -2px;
+  padding-top: 18px;
+  box-sizing: border-box;
+}
+
+.wf-faq-answer p {
+  margin: 0;
+  color: #333333;
+  line-height: 1.7;
+}
+
+.wf-faq-item.active .wf-faq-answer {
+  display: block;
+  animation: wfFaqFade 0.25s ease-out;
+}
+
+@keyframes wfFaqFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .wf-faq-section {
+    padding: 56px 0;
+  }
+  .wf-faq-section .wf-container {
+    padding: 0 16px;
+  }
+  .wf-faq-section .wf-sec-title {
+    font-size: 27px;
+  }
+  .wf-faq-section .wf-sec-desc {
+    font-size: 14.5px;
+  }
+  .wf-faq-question {
+    padding: 18px 18px;
+    font-size: 15.5px;
+  }
+  .wf-faq-answer {
+    padding: 0 18px 18px;
+    font-size: 14.5px;
+    padding-top: 14px;
+  }
+  .wf-faq-arrow {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+  }
+}
+</style>
+
+<script>
+(function() {
+  function toggleWfFaq(btn) {
+    if (!btn) return;
+    var item = btn.closest('.wf-faq-item');
+    if (!item) return;
+    var accordion = item.closest('.wf-faq-accordion');
+    var isCurrentlyActive = item.classList.contains('active');
+
+    if (accordion) {
+      var allItems = accordion.querySelectorAll('.wf-faq-item');
+      for (var i = 0; i < allItems.length; i++) {
+        allItems[i].classList.remove('active');
+        var questionBtn = allItems[i].querySelector('.wf-faq-question');
+        if (questionBtn) questionBtn.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    if (!isCurrentlyActive) {
+      item.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // Expose globally
+  window.toggleWfFaq = toggleWfFaq;
+
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.wf-faq-question');
+    if (btn) {
+      e.preventDefault();
+      toggleWfFaq(btn);
+    }
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Zavelyn Drum PDP FAQ",
+  "settings": [
+    { "type": "text", "id": "pill_text", "label": "Pill Subtitle", "default": "QUESTIONS & ANSWERS" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Frequently Asked Questions" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Everything you need to know about playing, caring for, and enjoying your Zavelyn Drum." }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zavelyn Drum PDP FAQ"
+    }
+  ]
+}
+{% endschema %}

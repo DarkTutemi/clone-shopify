@@ -1,0 +1,39 @@
+{
+  "productId": "15454952882361",
+  "name": "Kids Basketball Hoop Set",
+  "status": "PASS",
+  "handleUnchanged": true,
+  "snapshot": "scripts\\snapshot_prod_15454952882361_2026-10-27T14-51-40-418Z.json",
+  "adminBefore": {
+    "title": "Zavelyn Kids Basketball Hoop Set",
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  "adminAfter": {
+    "id": "gid://shopify/Product/15454952882361",
+    "title": "Zavelyn Kids Basketball Hoop Set",
+    "handle": "sakerplus®-kids-indoor-outdoor-basketball-hoop-set",
+    "seo": {
+      "title": "Indoor & Outdoor Basketball Hoop Set for Kids | Zavelyn",
+      "description": "Encourage active indoor and outdoor play with an adjustable-height arcade basketball hoop set. Includes stand, backboard, 4 inflatable balls, and air pump."
+    }
+  },
+  "storefrontQA": {
+    "httpStatus": 200,
+    "renderedTitle": "Indoor &amp; Outdoor Basketball Hoop Set for Kids | Zavelyn",
+    "renderedMeta": "Encourage active indoor and outdoor play with an adjustable-height arcade basketball hoop set. Includes stand, backboard, 4 inflatable balls, and air pump.",
+    "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-kids-indoor-outdoor-basketball-hoop-set",
+    "cartMatch": {
+      "variantId": "67914458464441",
+      "productId": 15454952882361,
+      "price": "79.99",
+      "ok": true
+    }
+  },
+  "screenshots": {
+    "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454952882361_desktop_1440.png",
+    "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454952882361_mobile_390.png"
+  }
+}

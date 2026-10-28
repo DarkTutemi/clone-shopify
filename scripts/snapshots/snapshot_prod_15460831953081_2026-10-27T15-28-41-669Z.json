@@ -1,0 +1,38 @@
+{
+  "id": "gid://shopify/Product/15460831953081",
+  "title": "Zavelyn Cordless Turbo Leaf Blower",
+  "handle": "saker-cordless-turbo-leaf-blower",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67974079348921",
+        "title": "Portable Blower with 1 Battery",
+        "price": "75.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67974079381689",
+        "title": "Portable Blower with 2 Batteries + Toolbox",
+        "price": "95.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67974079414457",
+        "title": "Maxpower Blower Kit – 2 Batteries + 2 Power Nozzles",
+        "price": "91.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67974079447225",
+        "title": "Maxpower Blower Kit – 2 Batteries + 2 Power Nozzles + Toolbox",
+        "price": "105.99",
+        "sku": null
+      }
+    ]
+  }
+}

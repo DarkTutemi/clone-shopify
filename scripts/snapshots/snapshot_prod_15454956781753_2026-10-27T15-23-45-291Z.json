@@ -1,0 +1,26 @@
+{
+  "id": "gid://shopify/Product/15454956781753",
+  "title": "Zavelyn Automatic Chicken Coop Door",
+  "handle": "sakerplus®-battery-powered-automatic-chicken-coop-door",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914542809273",
+        "title": "1st Gen Battery-Powered",
+        "price": "69.99",
+        "sku": "CP46844-X88084"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914542842041",
+        "title": "2nd Gen Upgraded Battery-Powered",
+        "price": "70.99",
+        "sku": "CP46844-X88105"
+      }
+    ]
+  }
+}

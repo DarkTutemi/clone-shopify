@@ -1,0 +1,168 @@
+{
+  "timestamp": "2026-10-27T06:53:48.598Z",
+  "draft_theme_id": "187597717689",
+  "files": [
+    {
+      "key": "templates/collection.zavelyn-handpans.json",
+      "localFile": "templates__collection.zavelyn-handpans.json",
+      "sizeBytes": 22477,
+      "sha256": "5cece12c08e10d56219be526794875f64d8643ff8e4b2a87a2b02d8b2f8a31f9"
+    },
+    {
+      "key": "sections/zavelyn-handpans-collection.liquid",
+      "localFile": "sections__zavelyn-handpans-collection.liquid",
+      "sizeBytes": 72049,
+      "sha256": "111260336add8bf14f09b594496d5de9671c8355b916a0e40ceaba155fa4d906"
+    },
+    {
+      "key": "sections/zhp-marquee.liquid",
+      "localFile": "sections__zhp-marquee.liquid",
+      "sizeBytes": 3137,
+      "sha256": "acd32b4c6854f7e66169d47ed394374591ebb94292a32bef758b27b0c0e4e0c1"
+    },
+    {
+      "key": "sections/zhp-hero.liquid",
+      "localFile": "sections__zhp-hero.liquid",
+      "sizeBytes": 5228,
+      "sha256": "b7a93a0823ea9f2062b924bb0aa0a6e229dfdd0ca500708c3e7fa9a4cbff08ac"
+    },
+    {
+      "key": "sections/zhp-bestsellers.liquid",
+      "localFile": "sections__zhp-bestsellers.liquid",
+      "sizeBytes": 17320,
+      "sha256": "6b73596af3889ec68508d88eecd9aa689c83d095b1a753ce95d61ba10ac95536"
+    },
+    {
+      "key": "sections/zhp-model-tabs.liquid",
+      "localFile": "sections__zhp-model-tabs.liquid",
+      "sizeBytes": 10871,
+      "sha256": "90ab9f4ddb2945f6f0a11fb73cd30584d1ade76374a07bede994c62848102a59"
+    },
+    {
+      "key": "sections/zhp-what-you-get.liquid",
+      "localFile": "sections__zhp-what-you-get.liquid",
+      "sizeBytes": 4535,
+      "sha256": "b13c873fe1002434773ef88a1a4e97494bd1ab6a80c99f7d2f0e8b828c01a377"
+    },
+    {
+      "key": "sections/zhp-endorsements.liquid",
+      "localFile": "sections__zhp-endorsements.liquid",
+      "sizeBytes": 6822,
+      "sha256": "7b25efe0ad0da0bf7a43d8cbc1bd0ca9b14c5bd8e573b8fd390c1fb6a01e4b1a"
+    },
+    {
+      "key": "sections/zhp-comparison.liquid",
+      "localFile": "sections__zhp-comparison.liquid",
+      "sizeBytes": 5641,
+      "sha256": "3efe419123294e900aa415adbd36fc580b0acb802cf96d384ab642a29ae08f5b"
+    },
+    {
+      "key": "sections/zhp-buyers-guide.liquid",
+      "localFile": "sections__zhp-buyers-guide.liquid",
+      "sizeBytes": 7710,
+      "sha256": "e76ffb3279572a9a3f010b0e81152c859dc9315b8a53cd374d963e2b54c3fe2a"
+    },
+    {
+      "key": "sections/zhp-reviews.liquid",
+      "localFile": "sections__zhp-reviews.liquid",
+      "sizeBytes": 4882,
+      "sha256": "81941ab54762667253799dfba391ce0e2fc07ace7218d19188fe434b37f3fbdf"
+    },
+    {
+      "key": "sections/zhp-faq.liquid",
+      "localFile": "sections__zhp-faq.liquid",
+      "sizeBytes": 5723,
+      "sha256": "5d1d8813e98684011db40a1ffb51294d6ad51b2f2d3eaf43ce6867fe7c6a0f94"
+    },
+    {
+      "key": "assets/zhp-collection.css",
+      "localFile": "assets__zhp-collection.css",
+      "sizeBytes": 19843,
+      "sha256": "18a8323adf3266b8f25fdef473d534a9596fe7bb7c442eaf9a40214db4a0ac1c"
+    },
+    {
+      "key": "assets/zhp-collection.js",
+      "localFile": "assets__zhp-collection.js",
+      "sizeBytes": 2856,
+      "sha256": "2907845c24df21934d16ac4d91cf40098b16b7cac8545a55c23a5109e3ffd505"
+    },
+    {
+      "key": "assets/zhp-pdp.css",
+      "localFile": "assets__zhp-pdp.css",
+      "sizeBytes": 18861,
+      "sha256": "21751251bb065ce68f13464e37620f7110051dab1ffb229f384d4313355e5f24"
+    },
+    {
+      "key": "assets/zhp-pdp.js",
+      "localFile": "assets__zhp-pdp.js",
+      "sizeBytes": 4744,
+      "sha256": "f063e4eb0953d8917f6fff8f8a842b14ec7708f3521d57fb367a0f0237bc7f00"
+    },
+    {
+      "key": "templates/product.zavelyn-handpan-master.json",
+      "localFile": "templates__product.zavelyn-handpan-master.json",
+      "sizeBytes": 9284,
+      "sha256": "a50321cba52d4d914ccf903ea4f8b1efced1103c68bdf81b4d768faa4f5577d9"
+    },
+    {
+      "key": "templates/product.zavelyn-drum-pro.json",
+      "localFile": "templates__product.zavelyn-drum-pro.json",
+      "sizeBytes": 9650,
+      "sha256": "821feb5fb3641638dc43cb71ab99f63ecc960fbed6aab95d1487d94cc7af8918"
+    },
+    {
+      "key": "templates/product.zavelyn-drum-plus.json",
+      "localFile": "templates__product.zavelyn-drum-plus.json",
+      "sizeBytes": 8828,
+      "sha256": "4264841912920cba51d72e9a9e6e4a175abee6e06732c8fd43f540df2292fabe"
+    },
+    {
+      "key": "templates/product.zavelyn-drum-mini.json",
+      "localFile": "templates__product.zavelyn-drum-mini.json",
+      "sizeBytes": 8865,
+      "sha256": "addc49579633daa56b684ae1eb5875dac1c2542566c3d7991ecd1d101d687a71"
+    },
+    {
+      "key": "templates/product.zavelyn-rain-drum.json",
+      "localFile": "templates__product.zavelyn-rain-drum.json",
+      "sizeBytes": 8304,
+      "sha256": "81d5ba72d57811d6862cf3a676564cd4ded3b3817c671b5e34b6fe0d281122f0"
+    },
+    {
+      "key": "sections/zhp-pdp-banner.liquid",
+      "localFile": "sections__zhp-pdp-banner.liquid",
+      "sizeBytes": 2880,
+      "sha256": "085bf4b03fe03b0b289834a505c56b3040d426f38ce555b030f4b28eb4be19be"
+    },
+    {
+      "key": "sections/zhp-pdp-experience.liquid",
+      "localFile": "sections__zhp-pdp-experience.liquid",
+      "sizeBytes": 2580,
+      "sha256": "daef3cd339bc7976cc43c4267a70edce83bbe5379ea20d0e9bda2da7ee93b121"
+    },
+    {
+      "key": "sections/zhp-pdp-included.liquid",
+      "localFile": "sections__zhp-pdp-included.liquid",
+      "sizeBytes": 2271,
+      "sha256": "4a949ad31f4c8ae380ad413948a466ddc868f068f6bedf965891f2ee37d62eac"
+    },
+    {
+      "key": "sections/zhp-pdp-specs.liquid",
+      "localFile": "sections__zhp-pdp-specs.liquid",
+      "sizeBytes": 2875,
+      "sha256": "8abd55e9a597af7b16f570c55ef173291ba846f500f26e2706dedc90103764be"
+    },
+    {
+      "key": "sections/zhp-pdp-reviews.liquid",
+      "localFile": "sections__zhp-pdp-reviews.liquid",
+      "sizeBytes": 2519,
+      "sha256": "c7a1b028130940c8c67f1cb8884867e25e757e0a3beae60513fa81b8956d33af"
+    },
+    {
+      "key": "sections/zhp-pdp-faq.liquid",
+      "localFile": "sections__zhp-pdp-faq.liquid",
+      "sizeBytes": 1685,
+      "sha256": "16ab7123fc8e90e57a32525347880f426d8870402bd786275a8d57e22dc57979"
+    }
+  ]
+}

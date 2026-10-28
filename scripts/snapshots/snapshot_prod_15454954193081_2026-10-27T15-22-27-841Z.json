@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/15454954193081",
+  "title": "Zavelyn Tactical MOLLE Vest",
+  "handle": "sakerplus®-tactical-molle-utility-vest",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914489102521",
+        "title": "Black",
+        "price": "54.99",
+        "sku": "LB132757-C001"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914489135289",
+        "title": "Khaki",
+        "price": "54.99",
+        "sku": "LB132757-C011"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914489168057",
+        "title": "Olive Green",
+        "price": "54.99",
+        "sku": "LB132757-C053"
+      }
+    ]
+  }
+}

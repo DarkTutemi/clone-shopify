@@ -37,6 +37,13 @@ ali_images/
 ali_images2/
 fence_gifs/
 scratch_colors/
+backups/**/assets/*.jpg
+backups/**/assets/*.jpeg
+backups/**/assets/*.png
+backups/**/assets/*.webp
+backups/**/assets/*.gif
+backups/**/assets/*.mp4
+backups/**/assets/*.avif
 
 # Large scraped raw HTML dumps
 *.html

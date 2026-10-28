@@ -1,0 +1,114 @@
+{%- comment -%}
+  Render slotted images/items from a group block.
+  Expects: group, mode (gallery|press|perk), optional count (default 7, max 12)
+{%- endcomment -%}
+{%- liquid
+  assign g = group
+  assign n = count | default: 7 | plus: 0
+  if n > 12
+    assign n = 12
+  endif
+-%}
+{%- if mode == 'gallery' -%}
+  {%- for i in (1..12) -%}
+    {%- if i > n -%}{%- break -%}{%- endif -%}
+    {%- liquid
+      case i
+        when 1
+          assign slot_img = g.settings.image_1
+          assign slot_fb = g.settings.fallback_1
+          assign slot_video = g.settings.video_1
+          assign slot_video_url = g.settings.video_url_1
+          assign slot_source = g.settings.video_source_1
+        when 2
+          assign slot_img = g.settings.image_2
+          assign slot_fb = g.settings.fallback_2
+          assign slot_video = g.settings.video_2
+          assign slot_video_url = g.settings.video_url_2
+          assign slot_source = g.settings.video_source_2
+        when 3
+          assign slot_img = g.settings.image_3
+          assign slot_fb = g.settings.fallback_3
+          assign slot_video = g.settings.video_3
+          assign slot_video_url = g.settings.video_url_3
+          assign slot_source = g.settings.video_source_3
+        when 4
+          assign slot_img = g.settings.image_4
+          assign slot_fb = g.settings.fallback_4
+          assign slot_video = g.settings.video_4
+          assign slot_video_url = g.settings.video_url_4
+          assign slot_source = g.settings.video_source_4
+        when 5
+          assign slot_img = g.settings.image_5
+          assign slot_fb = g.settings.fallback_5
+          assign slot_video = g.settings.video_5
+          assign slot_video_url = g.settings.video_url_5
+          assign slot_source = g.settings.video_source_5
+        when 6
+          assign slot_img = g.settings.image_6
+          assign slot_fb = g.settings.fallback_6
+          assign slot_video = g.settings.video_6
+          assign slot_video_url = g.settings.video_url_6
+          assign slot_source = g.settings.video_source_6
+        when 7
+          assign slot_img = g.settings.image_7
+          assign slot_fb = g.settings.fallback_7
+          assign slot_video = g.settings.video_7
+          assign slot_video_url = g.settings.video_url_7
+          assign slot_source = g.settings.video_source_7
+        when 8
+          assign slot_img = g.settings.image_8
+          assign slot_fb = g.settings.fallback_8
+          assign slot_video = g.settings.video_8
+          assign slot_video_url = g.settings.video_url_8
+          assign slot_source = g.settings.video_source_8
+        when 9
+          assign slot_img = g.settings.image_9
+          assign slot_fb = g.settings.fallback_9
+          assign slot_video = g.settings.video_9
+          assign slot_video_url = g.settings.video_url_9
+          assign slot_source = g.settings.video_source_9
+        when 10
+          assign slot_img = g.settings.image_10
+          assign slot_fb = g.settings.fallback_10
+          assign slot_video = g.settings.video_10
+          assign slot_video_url = g.settings.video_url_10
+          assign slot_source = g.settings.video_source_10
+        when 11
+          assign slot_img = g.settings.image_11
+          assign slot_fb = g.settings.fallback_11
+          assign slot_video = g.settings.video_11
+          assign slot_video_url = g.settings.video_url_11
+          assign slot_source = g.settings.video_source_11
+        when 12
+          assign slot_img = g.settings.image_12
+          assign slot_fb = g.settings.fallback_12
+          assign slot_video = g.settings.video_12
+          assign slot_video_url = g.settings.video_url_12
+          assign slot_source = g.settings.video_source_12
+      endcase
+    -%}
+    {%- capture vid_src -%}{%- render 'zavelyn-video-src', video: slot_video, video_url: slot_video_url, source: slot_source -%}{%- endcapture -%}
+    {%- assign vid_src = vid_src | strip -%}
+    {%- if slot_img != blank -%}
+      {%- assign thumb_src = slot_img | image_url: width: 240 -%}
+      {%- assign full_src = slot_img | image_url: width: 1200 -%}
+    {%- elsif slot_fb != blank -%}
+      {%- assign thumb_src = slot_fb | asset_url -%}
+      {%- assign full_src = thumb_src -%}
+    {%- else -%}
+      {%- continue -%}
+    {%- endif -%}
+    <button
+      type="button"
+      class="{% if forloop.first %}is-active{% endif %}"
+      data-offer-thumb
+      data-index="{{ forloop.index0 }}"
+      data-src="{{ full_src }}"
+      {% if vid_src != blank %}data-video="{{ vid_src | escape }}"{% endif %}
+      aria-label="{% if vid_src != blank %}Video{% else %}Image{% endif %} {{ forloop.index }}"
+    >
+      <img src="{{ thumb_src }}" alt="" width="60" height="60" loading="lazy">
+    </button>
+  {%- endfor -%}
+{%- endif -%}

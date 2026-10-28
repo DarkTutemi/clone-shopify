@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454960255161",
+  "title": "Zavelyn Red Light Therapy Panel",
+  "handle": "sakerplus®-adjustable-red-light-therapy-panel",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914601169081",
+        "title": "Default Title",
+        "price": "165.99",
+        "sku": "HA132313-X15101"
+      }
+    ]
+  }
+}

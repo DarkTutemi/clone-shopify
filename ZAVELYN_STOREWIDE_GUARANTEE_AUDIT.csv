@@ -1,0 +1,10 @@
+File_Path,Match_Count,Sample_Terms,Standard_Policy
+"sections\zavelyn-pdp-shipping.liquid","2","60-day","30-Day Return Policy (Unused/Unworn in original packaging)"
+"sections\zhp-faq.liquid","2","60-day","30-Day Return Policy (Unused/Unworn in original packaging)"
+"sections\zhp-hero.liquid","1","60-day","30-Day Return Policy (Unused/Unworn in original packaging)"
+"sections\zhp-marquee.liquid","2","60-day","30-Day Return Policy (Unused/Unworn in original packaging)"
+"templates\product.zavelyn-drum-mini.json","2","90-day, risk-free trial","30-Day Return Policy (Unused/Unworn in original packaging)"
+"templates\product.zavelyn-drum-plus.json","2","90-day, risk-free trial","30-Day Return Policy (Unused/Unworn in original packaging)"
+"templates\product.zavelyn-drum-pro.json","2","90-day, risk-free trial","30-Day Return Policy (Unused/Unworn in original packaging)"
+"templates\product.zavelyn-handpan-master.json","2","risk-free trial, 90-day","30-Day Return Policy (Unused/Unworn in original packaging)"
+"templates\product.zavelyn-rain-drum.json","1","90-day","30-Day Return Policy (Unused/Unworn in original packaging)"

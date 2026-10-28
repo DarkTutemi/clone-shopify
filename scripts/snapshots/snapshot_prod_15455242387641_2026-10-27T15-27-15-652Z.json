@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15455242387641",
+  "title": "Zavelyn Steam Pro",
+  "handle": "srefalsteam",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67920836853945",
+        "title": "Default Title",
+        "price": "89.99",
+        "sku": "SREFALSTEAM-PROMO"
+      }
+    ]
+  }
+}

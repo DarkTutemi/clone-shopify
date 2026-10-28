@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/15455481102521",
+  "title": "Zavelyn MagTrack",
+  "handle": "thoson-magtrack",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67925383741625",
+        "title": "Rookie",
+        "price": "69.00",
+        "sku": "MAGTRACK-32"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67925383774393",
+        "title": "PRO",
+        "price": "119.00",
+        "sku": "MAGTRACK-68"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67925383807161",
+        "title": "Master",
+        "price": "159.00",
+        "sku": "MAGTRACK-141"
+      }
+    ]
+  }
+}

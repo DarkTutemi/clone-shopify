@@ -1,0 +1,13 @@
+{
+  "name": "Footer group",
+  "type": "footer",
+  "sections": {
+    "willa-footer": {
+      "type": "willa-footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "willa-footer"
+  ]
+}

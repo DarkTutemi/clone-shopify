@@ -1,0 +1,662 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<div class="saker-ultrasonic-funnel">
+  <!-- Top Trust & Promo Banner -->
+  <div class="suf-top-bar">
+    <div class="suf-container flex-between">
+      <span>🔒 100% Encrypted & Secure Checkout</span>
+      <span>⭐ 100,000+ Happy Customers</span>
+      <span class="desktop-only">⚡ New & Improved 2026 Model</span>
+    </div>
+  </div>
+
+  <div class="suf-container suf-main-layout">
+    <!-- Left Column: Product Showcase & Visual Proof -->
+    <div class="suf-visual-column">
+      <div class="suf-badge-pill">🔥 EXCLUSIVE ONLINE DEAL | 50% OFF</div>
+      <h1 class="suf-title">Saker® 40kHz Cordless Ultrasonic Precision Cutter Kit</h1>
+      <p class="suf-subtitle">The revolutionary 40,000 Hz micro-vibration cutting system. Slices through 3D prints, acrylic, resin, and dense materials like butter with zero burn marks or cracking.</p>
+
+      <div class="suf-gallery">
+        <div class="suf-main-image-wrap">
+          <img id="suf-main-img" src="https://cdn.myshopage.com/db25d099-77fd-4ea4-8503-2f77737c8100/w1280.jpg" alt="Saker 40kHz Ultrasonic Precision Cutter" referrerpolicy="no-referrer">
+        </div>
+        <div class="suf-thumbnails">
+          <img class="suf-thumb active" src="https://cdn.myshopage.com/db25d099-77fd-4ea4-8503-2f77737c8100/w1280.jpg" onclick="switchSufImg(this.src)" referrerpolicy="no-referrer">
+          <img class="suf-thumb" src="https://cdn.myshopage.com/24dd62ec-c890-4ed9-6912-962119825500/w450.png" onclick="switchSufImg(this.src)" referrerpolicy="no-referrer">
+          <img class="suf-thumb" src="https://cdn.myshopage.com/7b4e2e96-606c-4ab1-07ee-b7f9654d2200.jpg" onclick="switchSufImg(this.src)" referrerpolicy="no-referrer">
+          <img class="suf-thumb" src="https://cdn.myshopage.com/066aa7cc-33b7-4d5c-6434-02d3bfc4fa00.jpg" onclick="switchSufImg(this.src)" referrerpolicy="no-referrer">
+          <img class="suf-thumb" src="https://cdn.myshopage.com/09d31e6e-8ed3-4c5f-3f60-7a8e1a78b100.jpg" onclick="switchSufImg(this.src)" referrerpolicy="no-referrer">
+        </div>
+      </div>
+
+      <!-- Key Benefits Bullet Points -->
+      <div class="suf-key-points">
+        <div class="suf-point-item">
+          <span class="suf-point-icon">⚡</span>
+          <div>
+            <strong>40,000 Vibrations / Second:</strong> Micro-sonic blade movement cuts cutting resistance by 80%, leaving microscopic clean margins.
+          </div>
+        </div>
+        <div class="suf-point-item">
+          <span class="suf-point-icon">🔋</span>
+          <div>
+            <strong>True Cordless Lithium Freedom:</strong> High-density 2600mAh battery delivers up to 2 hours of continuous detailed crafting.
+          </div>
+        </div>
+        <div class="suf-point-item">
+          <span class="suf-point-icon">🛡️</span>
+          <div>
+            <strong>Zero Cracking, Melting or Burrs:</strong> Ideal for delicate scale models, 3D resin supports, acrylic cases, and leather crafts.
+          </div>
+        </div>
+        <div class="suf-point-item">
+          <span class="suf-point-icon">🔪</span>
+          <div>
+            <strong>50 Surgical Steel Blades Included:</strong> 5 interchangeable blade geometries for carve, scoop, chisel, trim, and slice work.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Bundle Selector & Order Box -->
+    <div class="suf-order-column">
+      <div class="suf-order-card">
+        <div class="suf-step-header">
+          <span class="suf-step-num">Step 1</span>
+          <h3>Choose Your Bundle Option</h3>
+        </div>
+
+        <div class="suf-bundle-list">
+          <!-- Bundle 1: YO9 Wireless (Best Seller) -->
+          <div class="suf-bundle-box active" id="bundle-box-1" onclick="selectBundle('67916361629881', '169.99', '339.99', 'bundle-box-1', 'https://cdn.myshopage.com/db25d099-77fd-4ea4-8503-2f77737c8100/w1280.jpg')">
+            <div class="suf-sales-tag">BEST SELLER • 50% OFF</div>
+            <div class="suf-bundle-body">
+              <div class="suf-bundle-radio">
+                <input type="radio" name="suf_bundle" id="radio-bundle-1" checked>
+              </div>
+              <div class="suf-bundle-img">
+                <img src="https://cdn.myshopage.com/9a19e94b-6d20-4697-5296-3efd65593c00/w400.png" alt="YO9 Wireless Version" referrerpolicy="no-referrer">
+              </div>
+              <div class="suf-bundle-info">
+                <h4>YO9 - Wireless Lithium Battery Version</h4>
+                <div class="suf-bundle-includes">
+                  <span>✔ Storage Organizer Bag × 1</span><br>
+                  <span>✔ 50 PCS Interchangeable Blades (5 Styles)</span><br>
+                  <span>✔ High-Speed USB-C Cable × 1</span>
+                </div>
+                <div class="suf-price-row">
+                  <span class="suf-old-price">$339.99</span>
+                  <span class="suf-sale-price">$169.99</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bundle 2: Y10-PRO Wired Version -->
+          <div class="suf-bundle-box" id="bundle-box-2" onclick="selectBundle('67916361662649', '149.99', '299.99', 'bundle-box-2', 'https://cdn.myshopage.com/24dd62ec-c890-4ed9-6912-962119825500/w450.png')">
+            <div class="suf-sales-tag secondary">STUDIO HIGH-POWER • 50% OFF</div>
+            <div class="suf-bundle-body">
+              <div class="suf-bundle-radio">
+                <input type="radio" name="suf_bundle" id="radio-bundle-2">
+              </div>
+              <div class="suf-bundle-img">
+                <img src="https://cdn.myshopage.com/4266894c-2269-40ae-ab6d-9556c89aa600/w400.png" alt="Y10-PRO Wired Version" referrerpolicy="no-referrer">
+              </div>
+              <div class="suf-bundle-info">
+                <h4>Y10-PRO - Wired Version (Plug-In Studio Use)</h4>
+                <div class="suf-bundle-includes">
+                  <span>✔ 50 PCS Blades (6 Styles) × 1</span><br>
+                  <span>✔ Cut-Resistant Finger Sleeves × 4</span><br>
+                  <span>✔ Magnetic Pad & Power Adapter × 1</span>
+                </div>
+                <div class="suf-price-row">
+                  <span class="suf-old-price">$299.99</span>
+                  <span class="suf-sale-price">$149.99</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quantity Selector -->
+        <div class="suf-qty-row">
+          <label for="suf-qty">Quantity:</label>
+          <div class="suf-qty-control">
+            <button type="button" onclick="adjustQty(-1)">-</button>
+            <input type="number" id="suf-qty" value="1" min="1" max="10" readonly>
+            <button type="button" onclick="adjustQty(1)">+</button>
+          </div>
+        </div>
+
+        <!-- Summary & CTA Button -->
+        <div class="suf-cta-wrap">
+          <div class="suf-total-row">
+            <span>Total Today:</span>
+            <span id="suf-total-display">$169.99</span>
+          </div>
+          <button type="button" id="suf-checkout-btn" class="suf-checkout-btn" onclick="submitFunnelOrder()">
+            <span class="suf-btn-lock">🔒</span>
+            <span class="suf-btn-text">COMPLETE SECURE ORDER (50% OFF)</span>
+            <span class="suf-btn-arrow">➔</span>
+          </button>
+          <p class="suf-guarantee-note">🛡️ 30-Day 100% Satisfaction Money-Back Guarantee | Fast Insured Shipping</p>
+        </div>
+
+        <!-- Trust Payment Icons -->
+        <div class="suf-trust-icons">
+          <img src="https://cdn.myshopage.com/32c690d7-b984-40d7-d6a0-62fe13714000.png" alt="Guaranteed Safe Checkout" referrerpolicy="no-referrer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Real Customer Reviews Section -->
+  <div class="suf-reviews-section">
+    <div class="suf-container">
+      <div class="suf-section-title">
+        <h2>What Real Makers & Crafters Are Saying</h2>
+        <div class="suf-stars-row">
+          ⭐⭐⭐⭐⭐ <span class="suf-rating-score">4.9 / 5.0 Rating (2,840+ Verified Reviews)</span>
+        </div>
+      </div>
+
+      <div class="suf-reviews-grid">
+        <div class="suf-review-card">
+          <div class="suf-review-header">
+            <strong>Ethan Walker</strong>
+            <span class="suf-verified-badge">✔ Verified Buyer</span>
+          </div>
+          <div class="suf-stars">⭐⭐⭐⭐⭐</div>
+          <p class="suf-review-headline">Clean Cuts with Minimal Effort</p>
+          <p class="suf-review-text">"I recently used the Cordless Ultrasonic Cutter and Grinder for trimming plastic parts and fine detailing on a model project, and it made the whole process incredibly smooth. The ultrasonic cutting power delivers clean, precise edges without cracking or fraying materials. It’s lightweight, easy to control, and perfect for detailed DIY work. A fantastic tool for makers and hobbyists!"</p>
+        </div>
+
+        <div class="suf-review-card">
+          <div class="suf-review-header">
+            <strong>Olivia Carter</strong>
+            <span class="suf-verified-badge">✔ Verified Buyer</span>
+          </div>
+          <div class="suf-stars">⭐⭐⭐⭐⭐</div>
+          <p class="suf-review-headline">A Game-Changer for DIY Crafting</p>
+          <p class="suf-review-text">"I bought the Cordless Ultrasonic Cutter and Grinder for craft and home DIY projects, and it quickly became one of my go-to tools. Whether I'm cutting foam, shaping small wood pieces, or refining edges on leather, it performs consistently and accurately. The cordless design makes it super convenient to use anywhere. Highly recommended for creative projects!"</p>
+        </div>
+
+        <div class="suf-review-card">
+          <div class="suf-review-header">
+            <strong>Daniel Brooks</strong>
+            <span class="suf-verified-badge">✔ Verified Buyer</span>
+          </div>
+          <div class="suf-stars">⭐⭐⭐⭐⭐</div>
+          <p class="suf-review-headline">Compact Power with Professional Precision</p>
+          <p class="suf-review-text">"From model building to small repair jobs, the Cordless Ultrasonic Cutter and Grinder handles everything with impressive precision. It easily reaches tight spots and delivers smooth, controlled cuts without damaging surrounding material. The compact size makes it easy to store, but the performance feels professional-grade. Definitely worth having in any toolbox!"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .saker-ultrasonic-funnel {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.5;
+    padding-bottom: 60px;
+  }
+  .suf-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .suf-top-bar {
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 0;
+    text-align: center;
+  }
+  .flex-between {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .suf-main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    padding-top: 24px;
+    padding-bottom: 36px;
+  }
+  @media (max-width: 900px) {
+    .suf-main-layout {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .desktop-only {
+      display: none;
+    }
+  }
+  .suf-badge-pill {
+    display: inline-block;
+    background-color: #fee2e2;
+    color: #dc2626;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  .suf-title {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #0f172a;
+    margin: 0 0 12px;
+  }
+  .suf-subtitle {
+    font-size: 15px;
+    color: #475569;
+    margin: 0 0 20px;
+    line-height: 1.6;
+  }
+  .suf-main-image-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  }
+  .suf-main-image-wrap img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    display: block;
+  }
+  .suf-thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .suf-thumb {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .suf-thumb.active, .suf-thumb:hover {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 1px #2563eb;
+  }
+  .suf-key-points {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .suf-point-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  .suf-point-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  /* Right Order Box */
+  .suf-order-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.07);
+    position: sticky;
+    top: 80px;
+  }
+  .suf-step-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 12px;
+  }
+  .suf-step-num {
+    background: #2563eb;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .suf-step-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .suf-bundle-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .suf-bundle-box {
+    border: 2px solid #cbd5e1;
+    background: #ffffff;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    padding-top: 24px;
+  }
+  .suf-bundle-box.active {
+    border-color: #2563eb;
+    background-color: #f0f7ff;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.12);
+  }
+  .suf-sales-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #dc2626;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .suf-sales-tag.secondary {
+    background: #0284c7;
+  }
+  .suf-bundle-body {
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .suf-bundle-radio input {
+    width: 18px;
+    height: 18px;
+    accent-color: #2563eb;
+    cursor: pointer;
+  }
+  .suf-bundle-img img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+  .suf-bundle-info {
+    flex: 1;
+  }
+  .suf-bundle-info h4 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .suf-bundle-includes {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .suf-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .suf-old-price {
+    font-size: 13px;
+    color: #94a3b8;
+    text-decoration: line-through;
+  }
+  .suf-sale-price {
+    font-size: 18px;
+    font-weight: 800;
+    color: #dc2626;
+  }
+  .suf-qty-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 18px 0;
+    padding-top: 14px;
+    border-top: 1px dashed #e2e8f0;
+  }
+  .suf-qty-row label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .suf-qty-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .suf-qty-control button {
+    width: 32px;
+    height: 32px;
+    background: #f8fafc;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .suf-qty-control button:hover {
+    background: #e2e8f0;
+  }
+  .suf-qty-control input {
+    width: 40px;
+    height: 32px;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .suf-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  #suf-total-display {
+    font-size: 24px;
+    font-weight: 900;
+    color: #dc2626;
+  }
+  .suf-checkout-btn {
+    width: 100%;
+    background: #16a34a;
+    color: #ffffff;
+    border: none;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 800;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.4);
+    transition: all 0.2s ease;
+  }
+  .suf-checkout-btn:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(22, 163, 74, 0.5);
+  }
+  .suf-guarantee-note {
+    font-size: 12px;
+    color: #64748b;
+    text-align: center;
+    margin: 10px 0 0;
+  }
+  .suf-trust-icons {
+    margin-top: 16px;
+    text-align: center;
+  }
+  .suf-trust-icons img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Reviews Grid */
+  .suf-reviews-section {
+    margin-top: 40px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 36px;
+  }
+  .suf-section-title {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .suf-section-title h2 {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 8px;
+  }
+  .suf-rating-score {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+  }
+  .suf-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 800px) {
+    .suf-reviews-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .suf-review-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  }
+  .suf-review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .suf-verified-badge {
+    color: #16a34a;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .suf-review-headline {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 6px 0;
+  }
+  .suf-review-text {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0;
+  }
+</style>
+
+<script>
+  let currentVariantId = '67916361629881';
+  let currentUnitPrice = 169.99;
+  let currentQty = 1;
+
+  function switchSufImg(src) {
+    document.getElementById('suf-main-img').src = src;
+    document.querySelectorAll('.suf-thumb').forEach(t => {
+      t.classList.toggle('active', t.src === src);
+    });
+  }
+
+  function selectBundle(variantId, price, oldPrice, boxId, imgSrc) {
+    currentVariantId = variantId;
+    currentUnitPrice = parseFloat(price);
+
+    document.querySelectorAll('.suf-bundle-box').forEach(b => b.classList.remove('active'));
+    document.getElementById(boxId).classList.add('active');
+
+    if (boxId === 'bundle-box-1') {
+      document.getElementById('radio-bundle-1').checked = true;
+    } else {
+      document.getElementById('radio-bundle-2').checked = true;
+    }
+
+    if (imgSrc) switchSufImg(imgSrc);
+    updateTotalDisplay();
+  }
+
+  function adjustQty(delta) {
+    currentQty = Math.max(1, Math.min(10, currentQty + delta));
+    document.getElementById('suf-qty').value = currentQty;
+    updateTotalDisplay();
+  }
+
+  function updateTotalDisplay() {
+    const total = (currentUnitPrice * currentQty).toFixed(2);
+    document.getElementById('suf-total-display').innerText = '$' + total;
+  }
+
+  async function submitFunnelOrder() {
+    const btn = document.getElementById('suf-checkout-btn');
+    btn.disabled = true;
+    btn.innerHTML = '<span>Processing...</span>';
+
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{
+            id: currentVariantId,
+            quantity: currentQty
+          }]
+        })
+      });
+
+      if (res.ok) {
+        window.location.href = '/checkout';
+      } else {
+        window.location.href = `/cart/${currentVariantId}:${currentQty}`;
+      }
+    } catch (e) {
+      window.location.href = `/cart/${currentVariantId}:${currentQty}`;
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Ultrasonic Funnel",
+  "settings": []
+}
+{% endschema %}

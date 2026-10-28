@@ -1,0 +1,50 @@
+{
+  "id": "gid://shopify/Product/15461471060153",
+  "title": "Zavelyn AirClear",
+  "handle": "zavelyn-airclear-plugin-negative-ion-air-purifier",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67980091719865",
+        "title": "Buy 1 (Single Room Purifier - Standard) / Glacier White (US Plug)",
+        "price": "39.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980091752633",
+        "title": "Buy 1 (Single Room Purifier - Standard) / Midnight Black (US Plug)",
+        "price": "39.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980091785401",
+        "title": "Buy 3 (Whole House Starter Pack - Save 55%) / Glacier White (US Plug)",
+        "price": "79.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980091818169",
+        "title": "Buy 3 (Whole House Starter Pack - Save 55%) / Midnight Black (US Plug)",
+        "price": "79.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980091850937",
+        "title": "Buy 6 (Complete Home Master Set - Buy 3 Get 3 FREE) / Glacier White (US Plug)",
+        "price": "119.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980091883705",
+        "title": "Buy 6 (Complete Home Master Set - Buy 3 Get 3 FREE) / Midnight Black (US Plug)",
+        "price": "119.99",
+        "sku": null
+      }
+    ]
+  }
+}

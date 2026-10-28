@@ -1,0 +1,237 @@
+{
+  "wrapper": "div#shopify-section-zavelyn-rain-drum",
+  "sections": {
+    "hero": {
+      "type": "zhp-pdp-hero",
+      "settings": {
+        "main_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_1_a84698cf-6387-4a5b-98b7-e0c78526960a.jpg?v=1792908838",
+        "badge_sale": "50% OFF FLASH SALE",
+        "title": "Zavelyn Rain Drum™ (3-Inch 6-Tone Outdoor Pocket Drum)",
+        "short_name": "Zavelyn Rain Drum™",
+        "subtitle": "Pocket 3-Inch Outdoor Garden & Raindrop Resonator • 6 Pentatonic Chime Notes • Rustproof Baked Enamel • Includes Wooden Mallet & Pouch",
+        "price": "59.00",
+        "compare_at": "118.00",
+        "rating_score": "4.9 \/ 5.0",
+        "rating_count": "1,120+ Happy Gardeners & Meditators",
+        "promo_text": "<strong>SPECIAL OFFER:<\/strong> 50% OFF applied automatically. Includes Free Wooden Mallet & Protective Velvet Travel Pouch!",
+        "tier1_desc": "3-Inch 6-Tone Rain Drum + Solid Wooden Mallet + Number Decals + Velvet Pouch",
+        "thumb_1_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_1_a84698cf-6387-4a5b-98b7-e0c78526960a.jpg?v=1792908838",
+        "thumb_2_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_2_c81b3459-2d36-4b1d-ade1-ba96bc332636.jpg?v=1792908838",
+        "thumb_3_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_3.jpg?v=1792908838",
+        "thumb_4_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_4_d3b28ef2-27a4-4509-876b-987a31f4e90d.jpg?v=1792908838",
+        "thumb_5_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_5.png?v=1792908838",
+        "guarantee_1": "90-Day Sound",
+        "guarantee_2": "Fast Tracked US",
+        "guarantee_3": "Weatherproof Coating"
+      }
+    },
+    "banner": {
+      "type": "zhp-pdp-banner",
+      "settings": {
+        "banner_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_3.jpg?v=1792908838",
+        "badge_text": "NATURAL AMBIANCE",
+        "heading": "Let Nature Play: Raindrops Create Ambient Garden Melodies",
+        "text": "",
+        "point_1": "Specially tuned tongues ring with delicate chimes when hit by raindrops",
+        "point_2": "Pocket 3-inch size fits anywhere on patios, balconies, rocks, or desks",
+        "point_3": "Baked electrostatic enamel completely repels water, rust, and UV sun"
+      }
+    },
+    "experience": {
+      "type": "zhp-pdp-experience",
+      "settings": {
+        "feature_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_2_c81b3459-2d36-4b1d-ade1-ba96bc332636.jpg?v=1792908838",
+        "pill_text": "EFFORTLESS DELIGHT",
+        "title": "6 Pentatonic Notes: Always Harmonic, Never Out of Tune",
+        "description": ""
+      }
+    },
+    "included": {
+      "type": "zhp-pdp-included",
+      "settings": {
+        "included_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_4_d3b28ef2-27a4-4509-876b-987a31f4e90d.jpg?v=1792908838",
+        "pill_text": "COMPLETE MINI SET",
+        "title": "Everything You Need for Pocket Peace & Garden Ambiance",
+        "description": ""
+      }
+    },
+    "specs": {
+      "type": "zhp-pdp-specs",
+      "settings": {
+        "title": "Technical Specifications",
+        "spec_diameter": "3 Inches (8 cm) Pocket Ultra-Portable",
+        "spec_material": "Electrostatic Powder-Coated Alloy Steel",
+        "spec_tuning": "Harmonic Pentatonic Scale (6 Chime Notes)",
+        "spec_frequency": "Acoustic Natural Bell Resonance",
+        "spec_tones": "6 Laser-Cut Tongues",
+        "spec_weight": "115 grams (Ultra Lightweight)",
+        "spec_finish": "All-Weather Rustproof Baked Texture Enamel"
+      }
+    },
+    "shipping": {
+      "type": "zhp-pdp-shipping",
+      "settings": {
+        "title": "Fast US Delivery & Tracked Shipping"
+      }
+    },
+    "reviews": {
+      "type": "zhp-pdp-reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review",
+          "settings": {
+            "author": "Emily Watson",
+            "title": "Placed in my flower garden — sounds like fairy chimes!",
+            "text": "Whenever it rains, the water droplets tap the tongues and create the most soothing, ethereal music across our porch. Absolutely enchanting.",
+            "meta": "Zavelyn Rain Drum™ (Green) • Portland, OR"
+          }
+        },
+        "rev_2": {
+          "type": "review",
+          "settings": {
+            "author": "Marcus Vance",
+            "title": "My 4-year-old and I play duets every morning",
+            "text": "It fits right in the palm of your hand. The 6 notes harmonize naturally so no matter what note my son taps, it sounds lovely and peaceful.",
+            "meta": "Zavelyn Rain Drum™ (Black) • Denver, CO"
+          }
+        },
+        "rev_3": {
+          "type": "review",
+          "settings": {
+            "author": "Chloe Martin",
+            "title": "Keeps me grounded at my work desk",
+            "text": "Instead of fidgeting on my phone during stressful Zoom calls, a couple taps on this little drum instantly calms my mind. Great matte finish.",
+            "meta": "Zavelyn Rain Drum™ (Purple) • Seattle, WA"
+          }
+        },
+        "rev_4": {
+          "type": "review",
+          "settings": {
+            "author": "David Henderson",
+            "title": "Bought 3 for our family garden rockery",
+            "text": "Left them outside all summer through torrential rainstorms. Zero rust, color is as vibrant as day one. High build quality.",
+            "meta": "3x Zavelyn Rain Drum™ Trio (Gold, Navy, Green) • Austin, TX"
+          }
+        },
+        "rev_5": {
+          "type": "review",
+          "settings": {
+            "author": "Sophie Dubois",
+            "title": "Pure acoustic tranquility in pocket size",
+            "text": "The wooden mallet produces such clear, singing bell tones. It slips easily into my handbag for outdoor meditation walks.",
+            "meta": "Zavelyn Rain Drum™ (Navy) • Boston, MA"
+          }
+        },
+        "rev_6": {
+          "type": "review",
+          "settings": {
+            "author": "Liam O'Connor",
+            "title": "50% off is fantastic value",
+            "text": "At $59 this is the cutest and highest-quality mindfulness tool I own. Packaged with care and arrived in 3 days.",
+            "meta": "Zavelyn Rain Drum™ (Gold) • Chicago, IL"
+          }
+        },
+        "rev_7": {
+          "type": "review",
+          "settings": {
+            "author": "Tara Jenkins",
+            "title": "Yoga students love the gentle chime notes",
+            "text": "I use this to signal transitions during restorative yoga sessions. Soft, resonant, and never harsh or jarring.",
+            "meta": "Zavelyn Rain Drum™ (Green) • Miami, FL"
+          }
+        },
+        "rev_8": {
+          "type": "review",
+          "settings": {
+            "author": "Benjamin Lee",
+            "title": "Super fun gift for music lovers",
+            "text": "Gifted one to my sister and she immediately ordered two more. Everyone who visits taps it and smiles.",
+            "meta": "Zavelyn Rain Drum™ (Black) • San Francisco, CA"
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3",
+        "rev_4",
+        "rev_5",
+        "rev_6",
+        "rev_7",
+        "rev_8"
+      ],
+      "settings": {
+        "title": "Loved by Over 1,100 Gardeners & Families",
+        "rating_summary": "1,120+ Verified Customer Reviews"
+      }
+    },
+    "faq": {
+      "type": "zhp-pdp-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I leave the Zavelyn Rain Drum™ outside in the rain?",
+            "answer": "Yes! The drum is coated with an electrostatic baked outdoor powder finish designed specifically to withstand rain, humidity, UV sunlight, and temperature shifts without rusting or tarnishing."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Does rain actually play the drum on its own?",
+            "answer": "Yes! When placed in an open garden, patio, or beneath rain gutters, falling raindrops strike the curved alloy tongues to trigger soft, natural chime melodies automatically."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "What scale are the 6 notes tuned to?",
+            "answer": "The Zavelyn Rain Drum™ is tuned to a pure Pentatonic harmony scale across 6 numbered tongues. The pentatonic layout contains no dissonant intervals, meaning every sequence of notes naturally sounds sweet and relaxing."
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "What is included with the drum?",
+            "answer": "Every Zavelyn Rain Drum™ includes the 3-inch 6-tone steel drum, a solid wooden mallet with a soft rubber resonator tip, pre-applied numbered decals, and a protective pouch."
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "We offer a 90-Day Money-Back Guarantee. If the Rain Drum doesn't bring peace and joy to your home or garden, return it for a 100% full refund with no hassle."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "settings": {}
+    },
+    "sticky_bar": {
+      "type": "zhp-pdp-sticky-bar",
+      "settings": {
+        "sticky_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/img_1_a84698cf-6387-4a5b-98b7-e0c78526960a.jpg?v=1792908838",
+        "title": "Zavelyn Rain Drum™ 3\"",
+        "price": "59.00",
+        "compare_at": "118.00"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "banner",
+    "experience",
+    "included",
+    "specs",
+    "shipping",
+    "reviews",
+    "faq",
+    "sticky_bar"
+  ]
+}

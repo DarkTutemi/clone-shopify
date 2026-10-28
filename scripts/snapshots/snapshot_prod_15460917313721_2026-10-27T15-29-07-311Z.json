@@ -1,0 +1,26 @@
+{
+  "id": "gid://shopify/Product/15460917313721",
+  "title": "Zavelyn Mesh Nebulizer",
+  "handle": "zavelyn-portable-ultrasonic-mesh-nebulizer",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67974980927673",
+        "title": "Buy 1 + Get 1 FREE (+ Free eBook)",
+        "price": "49.95",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67974980960441",
+        "title": "Buy 2 + Get 2 FREE (Best Family Bundle)",
+        "price": "99.90",
+        "sku": null
+      }
+    ]
+  }
+}

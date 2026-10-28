@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454957633721",
+  "title": "Zavelyn 360° Magnetic Work Light",
+  "handle": "sakerplus®-360-app-controlled-magnetic-work-light",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914557325497",
+        "title": "Default Title",
+        "price": "164.99",
+        "sku": "LT132442-E001"
+      }
+    ]
+  }
+}

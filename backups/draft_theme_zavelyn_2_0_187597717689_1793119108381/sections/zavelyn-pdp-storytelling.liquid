@@ -1,0 +1,54 @@
+{% schema %}
+{
+  "name": "Zavelyn Storytelling",
+  "settings": [],
+  "presets": [{ "name": "Zavelyn Storytelling" }]
+}
+{% endschema %}
+
+{%- include 'zavelyn-pdp-data' -%}
+
+{%- if zv_st_count > 0 -%}
+<section class="zv-body-section zv-bg-subtle" id="zv-storytelling">
+  <div class="zv-container">
+    <div class="zv-section-header">
+      <span class="zv-badge">DEEP DIVE</span>
+      <h2 class="zv-section-title">Designed for Real-World Performance</h2>
+      <p class="zv-section-subtitle">Explore the technical engineering that puts {{ product.title }} in a league of its own.</p>
+    </div>
+
+    {%- for i in (0..4) -%}
+      {%- case i -%}
+        {%- when 0 -%}
+          {%- assign st_b = zv_st_0_badge -%}{%- assign st_t = zv_st_0_title -%}{%- assign st_d = zv_st_0_desc -%}{%- assign st_img = zv_st_0_img -%}
+        {%- when 1 -%}
+          {%- assign st_b = zv_st_1_badge -%}{%- assign st_t = zv_st_1_title -%}{%- assign st_d = zv_st_1_desc -%}{%- assign st_img = zv_st_1_img -%}
+        {%- when 2 -%}
+          {%- assign st_b = zv_st_2_badge -%}{%- assign st_t = zv_st_2_title -%}{%- assign st_d = zv_st_2_desc -%}{%- assign st_img = zv_st_2_img -%}
+        {%- when 3 -%}
+          {%- assign st_b = zv_st_3_badge -%}{%- assign st_t = zv_st_3_title -%}{%- assign st_d = zv_st_3_desc -%}{%- assign st_img = zv_st_3_img -%}
+        {%- when 4 -%}
+          {%- assign st_b = zv_st_4_badge -%}{%- assign st_t = zv_st_4_title -%}{%- assign st_d = zv_st_4_desc -%}{%- assign st_img = zv_st_4_img -%}
+      {%- endcase -%}
+
+      {%- if st_t != blank -%}
+        {%- assign is_even = forloop.index | modulo: 2 -%}
+        <div class="zv-story-row {% if is_even == 0 %}zv-reverse{% endif %}">
+          <div class="zv-story-media">
+            {%- if st_img != blank -%}
+              <img src="{{ st_img }}" alt="{{ st_t }}" loading="lazy">
+            {%- else -%}
+              <img src="{{ product.featured_image | img_url: '800x' }}" alt="{{ st_t }}" loading="lazy">
+            {%- endif -%}
+          </div>
+          <div class="zv-story-content">
+            <span class="zv-badge">{{ st_b | default: 'INNOVATION' }}</span>
+            <h3>{{ st_t }}</h3>
+            <p>{{ st_d }}</p>
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}

@@ -1,0 +1,1648 @@
+
+  /* =========================================================
+     LIVE-SAFE GLOBAL RESET
+     Scoped only to the Senzio FAQ section
+  ========================================================= */
+
+  #senzio-faq-live,
+  #senzio-faq-live *,
+  #senzio-faq-live *::before,
+  #senzio-faq-live *::after {
+    box-sizing: border-box !important;
+    font-family: var(--k-sans), Arial, sans-serif !important;
+  }
+
+
+  /* =========================================================
+     SECTION
+  ========================================================= */
+
+  #senzio-faq-live {
+
+    --sfl-green: #016a4c;
+    --sfl-green-bright: #07805f;
+    --sfl-green-dark: #004d39;
+    --sfl-green-deep: #003b2c;
+
+    --sfl-green-soft: #edf8f4;
+    --sfl-green-soft-two: #f8fcfa;
+
+    --sfl-green-line: rgba(1, 106, 76, 0.18);
+
+    --sfl-heading: #0b261d;
+    --sfl-text: #1a2923;
+    --sfl-body: #32473c;
+
+    --sfl-white: #ffffff;
+
+    position: relative !important;
+
+    isolation: isolate !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    padding:
+      clamp(34px, 5vw, 70px)
+      clamp(12px, 3vw, 28px)
+      !important;
+
+    overflow: hidden !important;
+
+    background:
+      radial-gradient(
+        circle at 8% 10%,
+        rgba(1, 106, 76, 0.065),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 92% 88%,
+        rgba(1, 106, 76, 0.045),
+        transparent 28%
+      ),
+      #ffffff
+      !important;
+
+    color: var(--sfl-text) !important;
+
+    text-align: initial !important;
+  }
+
+
+  /* =========================================================
+     DECORATIVE BACKGROUND
+  ========================================================= */
+
+  #senzio-faq-live::before,
+  #senzio-faq-live::after {
+
+    content: "" !important;
+
+    position: absolute !important;
+
+    z-index: -1 !important;
+
+    width: 220px !important;
+    height: 220px !important;
+
+    border:
+      1px solid rgba(1, 106, 76, 0.05)
+      !important;
+
+    border-radius: 50% !important;
+
+    pointer-events: none !important;
+  }
+
+
+  #senzio-faq-live::before {
+
+    top: -135px !important;
+    left: -110px !important;
+  }
+
+
+  #senzio-faq-live::after {
+
+    right: -110px !important;
+    bottom: -140px !important;
+  }
+
+
+  /* =========================================================
+     CONTAINER
+  ========================================================= */
+
+  #senzio-faq-live .sfl-container {
+
+    width: 100% !important;
+
+    max-width: 1180px !important;
+
+    margin: 0 auto !important;
+
+    padding: 0 !important;
+  }
+
+
+  /* =========================================================
+     HEADER
+  ========================================================= */
+
+  #senzio-faq-live .sfl-header {
+
+    width: min(720px, 100%) !important;
+
+    margin:
+      0 auto
+      clamp(26px, 4vw, 42px)
+      !important;
+
+    padding: 0 !important;
+
+    text-align: center !important;
+  }
+
+
+  /* =========================================================
+     HEADER ICON
+  ========================================================= */
+
+  #senzio-faq-live .sfl-title-icon {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    width: 68px !important;
+
+    height: 54px !important;
+
+    margin: 0 auto 6px !important;
+
+    padding: 0 !important;
+
+    color: var(--sfl-green) !important;
+  }
+
+
+  #senzio-faq-live .sfl-title-icon svg {
+
+    display: block !important;
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  #senzio-faq-live .sfl-title-icon path,
+  #senzio-faq-live .sfl-title-icon circle {
+
+    vector-effect:
+      non-scaling-stroke
+      !important;
+  }
+
+
+  #senzio-faq-live .sfl-icon-stem,
+  #senzio-faq-live .sfl-icon-leaf {
+
+    fill: none !important;
+
+    stroke: currentColor !important;
+
+    stroke-width: 2.3 !important;
+
+    stroke-linecap: round !important;
+
+    stroke-linejoin: round !important;
+  }
+
+
+  #senzio-faq-live .sfl-icon-orbit {
+
+    fill: none !important;
+
+    stroke:
+      rgba(1, 106, 76, 0.28)
+      !important;
+
+    stroke-width: 1.2 !important;
+
+    stroke-dasharray: 5 7 !important;
+  }
+
+
+  #senzio-faq-live .sfl-icon-dot {
+
+    fill: var(--sfl-green) !important;
+  }
+
+
+  /* =========================================================
+     EYEBROW
+  ========================================================= */
+
+  #senzio-faq-live .sfl-eyebrow {
+
+    display: block !important;
+
+    margin: 0 0 6px !important;
+
+    padding: 0 !important;
+
+    color: var(--sfl-green) !important;
+
+    font-size:
+      clamp(9px, 0.9vw, 11px)
+      !important;
+
+    font-weight: 900 !important;
+
+    line-height: 1.2 !important;
+
+    letter-spacing: 0.15em !important;
+
+    text-align: center !important;
+
+    text-transform: uppercase !important;
+  }
+
+
+  /* =========================================================
+     TITLE
+  ========================================================= */
+
+  #senzio-faq-live h2,
+  #senzio-faq-live #senzio-faq-live-title {
+
+    display: block !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    color: var(--sfl-heading) !important;
+
+    font-size:
+      clamp(30px, 4.6vw, 52px)
+      !important;
+
+    font-weight: 900 !important;
+
+    line-height: 1.06 !important;
+
+    letter-spacing: -0.05em !important;
+
+    text-align: center !important;
+
+    text-transform: none !important;
+  }
+
+
+  /* =========================================================
+     TITLE LINE
+  ========================================================= */
+
+  #senzio-faq-live .sfl-title-line {
+
+    position: relative !important;
+
+    display: block !important;
+
+    width: 145px !important;
+
+    height: 10px !important;
+
+    margin:
+      12px auto 0
+      !important;
+
+    padding: 0 !important;
+
+    overflow: hidden !important;
+  }
+
+
+  #senzio-faq-live .sfl-title-line::before {
+
+    content: "" !important;
+
+    position: absolute !important;
+
+    top: 4px !important;
+
+    left: 0 !important;
+
+    width: 100% !important;
+
+    height: 2px !important;
+
+    border-radius: 999px !important;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(1, 106, 76, 0.45),
+        var(--sfl-green),
+        rgba(1, 106, 76, 0.45),
+        transparent
+      )
+      !important;
+  }
+
+
+  #senzio-faq-live .sfl-title-line span {
+
+    position: absolute !important;
+
+    top: 0 !important;
+
+    left: -25% !important;
+
+    display: block !important;
+
+    width: 28% !important;
+
+    height: 10px !important;
+
+    background:
+      radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.95),
+        rgba(1, 106, 76, 0.45) 38%,
+        transparent 74%
+      )
+      !important;
+  }
+
+
+  /* =========================================================
+     FAQ GRID
+  ========================================================= */
+
+  #senzio-faq-live .sfl-grid {
+
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      )
+      !important;
+
+    align-items: start !important;
+
+    column-gap:
+      clamp(20px, 4vw, 54px)
+      !important;
+
+    row-gap: 11px !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    list-style: none !important;
+  }
+
+
+  /* =========================================================
+     FAQ CARD
+  ========================================================= */
+
+  #senzio-faq-live .sfl-item {
+
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    border:
+      1px solid
+      var(--sfl-green-line)
+      !important;
+
+    border-radius: 14px !important;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.98),
+        rgba(248, 252, 250, 0.98)
+      )
+      !important;
+
+    box-shadow:
+      0 6px 19px
+      rgba(15, 66, 49, 0.05)
+      !important;
+
+    transition:
+      border-color 220ms ease,
+      box-shadow 220ms ease,
+      transform 220ms ease
+      !important;
+  }
+
+
+  #senzio-faq-live .sfl-item:hover {
+
+    transform:
+      translateY(-1px)
+      !important;
+
+    border-color:
+      rgba(1, 106, 76, 0.3)
+      !important;
+
+    box-shadow:
+      0 10px 26px
+      rgba(15, 66, 49, 0.075)
+      !important;
+  }
+
+
+  #senzio-faq-live .sfl-item.is-open {
+
+    border-color:
+      rgba(1, 106, 76, 0.38)
+      !important;
+
+    box-shadow:
+      0 11px 29px
+      rgba(15, 66, 49, 0.09)
+      !important;
+  }
+
+
+  /* =========================================================
+     LIVE-SAFE BUTTON RESET
+  ========================================================= */
+
+  #senzio-faq-live button.sfl-question,
+  #senzio-faq-live .sfl-question {
+
+    -webkit-appearance: none !important;
+
+    appearance: none !important;
+
+    position: relative !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      38px
+      !important;
+
+    align-items: center !important;
+
+    justify-content: stretch !important;
+
+    gap: 20px !important;
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    min-height: 72px !important;
+
+    margin: 0 !important;
+
+    padding:
+      16px
+      20px
+      16px
+      24px
+      !important;
+
+    border: 0 !important;
+
+    border-radius: 0 !important;
+
+    background: transparent !important;
+
+    background-color:
+      transparent
+      !important;
+
+    background-image:
+      none
+      !important;
+
+    color:
+      var(--sfl-heading)
+      !important;
+
+    box-shadow: none !important;
+
+    font-family:
+      var(--k-sans),
+      Arial,
+      sans-serif
+      !important;
+
+    font-size:
+      clamp(
+        14.5px,
+        1.35vw,
+        17px
+      )
+      !important;
+
+    font-weight: 800 !important;
+
+    line-height: 1.35 !important;
+
+    letter-spacing:
+      normal
+      !important;
+
+    text-align:
+      left
+      !important;
+
+    text-decoration:
+      none
+      !important;
+
+    text-transform:
+      none
+      !important;
+
+    cursor: pointer !important;
+
+    transition:
+      color 200ms ease,
+      background-color 200ms ease
+      !important;
+  }
+
+
+  #senzio-faq-live .sfl-question::before,
+  #senzio-faq-live .sfl-question::after {
+
+    display: none !important;
+
+    content: none !important;
+  }
+
+
+  /* =========================================================
+     QUESTION TEXT
+  ========================================================= */
+
+  #senzio-faq-live .sfl-question-text {
+
+    display: block !important;
+
+    width: auto !important;
+
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    padding:
+      0 4px 0 0
+      !important;
+
+    overflow: hidden !important;
+
+    text-overflow:
+      ellipsis
+      !important;
+
+    white-space:
+      nowrap
+      !important;
+
+    color: inherit !important;
+
+    font: inherit !important;
+
+    text-align: left !important;
+
+    text-transform: none !important;
+  }
+
+
+  #senzio-faq-live .sfl-question:hover,
+  #senzio-faq-live .sfl-question:focus-visible {
+
+    color:
+      var(--sfl-green-dark)
+      !important;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(1, 106, 76, 0.025),
+        rgba(1, 106, 76, 0.06)
+      )
+      !important;
+  }
+
+
+  #senzio-faq-live .sfl-question:focus-visible {
+
+    outline:
+      2px solid
+      rgba(1, 106, 76, 0.45)
+      !important;
+
+    outline-offset:
+      -4px
+      !important;
+  }
+
+
+  /* =========================================================
+     TOGGLE
+  ========================================================= */
+
+  #senzio-faq-live .sfl-toggle {
+
+    display:
+      inline-flex
+      !important;
+
+    align-items:
+      center
+      !important;
+
+    justify-content:
+      center
+      !important;
+
+    width: 38px !important;
+
+    height: 38px !important;
+
+    min-width: 38px !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.7)
+      !important;
+
+    border-radius:
+      50%
+      !important;
+
+    background:
+      linear-gradient(
+        145deg,
+        var(--sfl-green-bright),
+        var(--sfl-green-dark)
+      )
+      !important;
+
+    box-shadow:
+      0 5px 13px
+      rgba(1, 106, 76, 0.2)
+      !important;
+
+    transition:
+      transform 220ms ease,
+      background 220ms ease,
+      box-shadow 220ms ease
+      !important;
+  }
+
+
+  #senzio-faq-live
+  .sfl-question:hover
+  .sfl-toggle {
+
+    transform:
+      scale(1.04)
+      !important;
+
+    box-shadow:
+      0 6px 16px
+      rgba(1, 106, 76, 0.24)
+      !important;
+  }
+
+
+  #senzio-faq-live .sfl-toggle svg {
+
+    display: block !important;
+
+    width: 18px !important;
+
+    height: 18px !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    overflow:
+      visible
+      !important;
+  }
+
+
+  #senzio-faq-live .sfl-toggle path {
+
+    fill: none !important;
+
+    stroke:
+      currentColor
+      !important;
+
+    stroke-width:
+      2.2
+      !important;
+
+    stroke-linecap:
+      round
+      !important;
+
+    transform-box:
+      fill-box
+      !important;
+
+    transform-origin:
+      center
+      !important;
+
+    transition:
+      transform 240ms ease,
+      opacity 240ms ease
+      !important;
+  }
+
+
+  /* OPEN ICON */
+
+  #senzio-faq-live
+  .sfl-item.is-open
+  .sfl-plus-vertical {
+
+    opacity: 0 !important;
+
+    transform:
+      rotate(90deg)
+      !important;
+  }
+
+
+  #senzio-faq-live
+  .sfl-item.is-open
+  .sfl-toggle {
+
+    background:
+      var(--sfl-green)
+      !important;
+  }
+
+
+  /* =========================================================
+     ANSWER
+  ========================================================= */
+
+  #senzio-faq-live .sfl-answer {
+
+    display: grid !important;
+
+    grid-template-rows:
+      0fr
+      !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    transition:
+      grid-template-rows
+      300ms ease
+      !important;
+  }
+
+
+  #senzio-faq-live
+  .sfl-item.is-open
+  .sfl-answer {
+
+    grid-template-rows:
+      1fr
+      !important;
+  }
+
+
+  #senzio-faq-live
+  .sfl-answer-inner {
+
+    min-height: 0 !important;
+
+    overflow: hidden !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+  }
+
+
+  #senzio-faq-live
+  .sfl-answer-inner p {
+
+    margin: 0 !important;
+
+    padding:
+      0
+      24px
+      20px
+      !important;
+
+    color:
+      var(--sfl-text)
+      !important;
+
+    font-family:
+      var(--k-sans),
+      Arial,
+      sans-serif
+      !important;
+
+    font-size:
+      clamp(
+        13px,
+        1.1vw,
+        15px
+      )
+      !important;
+
+    font-weight:
+      600
+      !important;
+
+    line-height:
+      1.65
+      !important;
+
+    letter-spacing:
+      normal
+      !important;
+
+    text-align:
+      left
+      !important;
+
+    text-transform:
+      none
+      !important;
+  }
+
+
+  /* =========================================================
+     ANSWER LINKS
+  ========================================================= */
+
+  #senzio-faq-live
+  .sfl-answer-inner a {
+
+    color:
+      var(--sfl-green-dark)
+      !important;
+
+    font-weight:
+      800
+      !important;
+
+    text-decoration:
+      none
+      !important;
+  }
+
+
+  #senzio-faq-live
+  .sfl-answer-inner a:hover {
+
+    text-decoration:
+      underline
+      !important;
+  }
+
+
+  /* =========================================================
+     TABLET
+  ========================================================= */
+
+  @media screen and (max-width: 900px) {
+
+    #senzio-faq-live .sfl-grid {
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        !important;
+
+      gap: 12px !important;
+    }
+
+  }
+
+
+  /* =========================================================
+     MOBILE
+  ========================================================= */
+
+  @media screen and (max-width: 600px) {
+
+    #senzio-faq-live {
+
+      padding:
+        28px
+        8px
+        32px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-header {
+
+      margin-bottom:
+        24px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-title-icon {
+
+      width:
+        60px
+        !important;
+
+      height:
+        48px
+        !important;
+
+      margin-bottom:
+        5px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-eyebrow {
+
+      margin-bottom:
+        6px
+        !important;
+
+      font-size:
+        8px
+        !important;
+
+      letter-spacing:
+        0.14em
+        !important;
+    }
+
+
+    #senzio-faq-live h2,
+    #senzio-faq-live
+    #senzio-faq-live-title {
+
+      font-size:
+        clamp(
+          28px,
+          8.8vw,
+          38px
+        )
+        !important;
+
+      line-height:
+        1.08
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-title-line {
+
+      width:
+        112px
+        !important;
+
+      margin-top:
+        10px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-grid {
+
+      gap:
+        12px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-item {
+
+      width:
+        100%
+        !important;
+
+      border-radius:
+        13px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-item:hover {
+
+      transform:
+        none
+        !important;
+    }
+
+
+    #senzio-faq-live
+    button.sfl-question,
+
+    #senzio-faq-live
+    .sfl-question {
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        38px
+        !important;
+
+      gap:
+        20px
+        !important;
+
+      min-height:
+        72px
+        !important;
+
+      padding:
+        16px
+        18px
+        16px
+        24px
+        !important;
+
+      font-size:
+        15.5px
+        !important;
+
+      font-weight:
+        800
+        !important;
+
+      line-height:
+        1.4
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-question-text {
+
+      padding-right:
+        2px
+        !important;
+
+      overflow:
+        visible
+        !important;
+
+      text-overflow:
+        clip
+        !important;
+
+      white-space:
+        normal
+        !important;
+
+      overflow-wrap:
+        break-word
+        !important;
+
+      word-break:
+        normal
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-toggle {
+
+      width:
+        38px
+        !important;
+
+      height:
+        38px
+        !important;
+
+      min-width:
+        38px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-toggle svg {
+
+      width:
+        18px
+        !important;
+
+      height:
+        18px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-answer-inner p {
+
+      padding:
+        2px
+        24px
+        20px
+        !important;
+
+      font-size:
+        13.5px
+        !important;
+
+      font-weight:
+        600
+        !important;
+
+      line-height:
+        1.6
+        !important;
+    }
+
+  }
+
+
+  /* =========================================================
+     SMALL MOBILE
+  ========================================================= */
+
+  @media screen and (max-width: 390px) {
+
+    #senzio-faq-live {
+
+      padding-right:
+        6px
+        !important;
+
+      padding-left:
+        6px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    button.sfl-question,
+
+    #senzio-faq-live
+    .sfl-question {
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        36px
+        !important;
+
+      gap:
+        16px
+        !important;
+
+      min-height:
+        70px
+        !important;
+
+      padding:
+        15px
+        16px
+        15px
+        22px
+        !important;
+
+      font-size:
+        14.5px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-toggle {
+
+      width:
+        36px
+        !important;
+
+      height:
+        36px
+        !important;
+
+      min-width:
+        36px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-toggle svg {
+
+      width:
+        17px
+        !important;
+
+      height:
+        17px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-answer-inner p {
+
+      padding:
+        0
+        22px
+        18px
+        !important;
+
+      font-size:
+        12.5px
+        !important;
+    }
+
+  }
+
+
+  /* =========================================================
+     VERY SMALL MOBILE
+  ========================================================= */
+
+  @media screen and (max-width: 350px) {
+
+    #senzio-faq-live
+    button.sfl-question,
+
+    #senzio-faq-live
+    .sfl-question {
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        34px
+        !important;
+
+      gap:
+        14px
+        !important;
+
+      min-height:
+        68px
+        !important;
+
+      padding:
+        14px
+        14px
+        14px
+        20px
+        !important;
+
+      font-size:
+        14px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-toggle {
+
+      width:
+        34px
+        !important;
+
+      height:
+        34px
+        !important;
+
+      min-width:
+        34px
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-answer-inner p {
+
+      padding-right:
+        18px
+        !important;
+
+      padding-bottom:
+        16px
+        !important;
+
+      padding-left:
+        20px
+        !important;
+
+      font-size:
+        12px
+        !important;
+    }
+
+  }
+
+
+  /* =========================================================
+     ANIMATION
+  ========================================================= */
+
+  #senzio-faq-live
+  .sfl-icon-draw,
+
+  #senzio-faq-live
+  .sfl-icon-orbit {
+
+    stroke-dasharray:
+      150
+      !important;
+
+    stroke-dashoffset:
+      150
+      !important;
+
+    opacity:
+      0.25
+      !important;
+  }
+
+
+  #senzio-faq-live
+  .sfl-icon-dot {
+
+    opacity:
+      0
+      !important;
+
+    transform:
+      scale(0.6)
+      !important;
+
+    transform-box:
+      fill-box
+      !important;
+
+    transform-origin:
+      center
+      !important;
+  }
+
+
+  #senzio-faq-live.sfl-visible
+  .sfl-icon-draw,
+
+  #senzio-faq-live.sfl-visible
+  .sfl-icon-orbit {
+
+    animation:
+      sflDrawOnce
+      1.05s
+      ease
+      forwards
+      !important;
+  }
+
+
+  #senzio-faq-live.sfl-visible
+  .sfl-icon-leaf--left {
+
+    animation-delay:
+      120ms
+      !important;
+  }
+
+
+  #senzio-faq-live.sfl-visible
+  .sfl-icon-leaf--right {
+
+    animation-delay:
+      240ms
+      !important;
+  }
+
+
+  #senzio-faq-live.sfl-visible
+  .sfl-icon-dot {
+
+    animation:
+      sflDotOnce
+      0.55s
+      ease
+      forwards
+      !important;
+  }
+
+
+  #senzio-faq-live.sfl-visible
+  .sfl-icon-dot--one {
+
+    animation-delay:
+      420ms
+      !important;
+  }
+
+
+  #senzio-faq-live.sfl-visible
+  .sfl-icon-dot--two {
+
+    animation-delay:
+      560ms
+      !important;
+  }
+
+
+  #senzio-faq-live.sfl-visible
+  .sfl-title-line span {
+
+    animation:
+      sflLineOnce
+      1.3s
+      ease
+      380ms
+      forwards
+      !important;
+  }
+
+
+  /* =========================================================
+     KEYFRAMES
+  ========================================================= */
+
+  @keyframes sflDrawOnce {
+
+    from {
+
+      stroke-dashoffset:
+        150;
+
+      opacity:
+        0.25;
+    }
+
+    to {
+
+      stroke-dashoffset:
+        0;
+
+      opacity:
+        1;
+    }
+
+  }
+
+
+  @keyframes sflDotOnce {
+
+    from {
+
+      opacity:
+        0;
+
+      transform:
+        scale(0.6);
+    }
+
+
+    65% {
+
+      opacity:
+        1;
+
+      transform:
+        scale(1.25);
+    }
+
+
+    to {
+
+      opacity:
+        1;
+
+      transform:
+        scale(1);
+    }
+
+  }
+
+
+  @keyframes sflLineOnce {
+
+    from {
+
+      left:
+        -28%;
+
+      opacity:
+        0;
+    }
+
+
+    20% {
+
+      opacity:
+        1;
+    }
+
+
+    to {
+
+      left:
+        100%;
+
+      opacity:
+        0;
+    }
+
+  }
+
+
+  /* =========================================================
+     REDUCED MOTION
+  ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    #senzio-faq-live *,
+    #senzio-faq-live *::before,
+    #senzio-faq-live *::after {
+
+      animation:
+        none
+        !important;
+
+      transition:
+        none
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-icon-draw,
+
+    #senzio-faq-live
+    .sfl-icon-orbit {
+
+      stroke-dashoffset:
+        0
+        !important;
+
+      opacity:
+        1
+        !important;
+    }
+
+
+    #senzio-faq-live
+    .sfl-icon-dot {
+
+      opacity:
+        1
+        !important;
+
+      transform:
+        none
+        !important;
+    }
+
+  }
+
+
+.offer-page--balm #senzio-faq-live h2 {
+  font-family: var(--k-sans), Arial, sans-serif !important;
+  font-weight: 900 !important;
+  color: var(--sfl-heading) !important;
+  letter-spacing: -0.05em !important;
+}

@@ -1,0 +1,27 @@
+{
+  "productId": "15454948556985",
+  "timestamp": "2026-10-27T14:27:02.917Z",
+  "snapshotFile": "scripts\\snapshot_prod_15454948556985_2026-10-27T14-27-00-175Z.json",
+  "before": {
+    "title": "Zavelyn Shelf & Drawer Liner",
+    "handle": "sakerplus®-tearable-shelf-liner-and-drawer-liner",
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  "after": {
+    "id": "gid://shopify/Product/15454948556985",
+    "title": "Zavelyn Tearable Shelf & Drawer Liner",
+    "handle": "zavelyn-shelf-drawer-liner",
+    "seo": {
+      "title": "Tearable Shelf & Drawer Mat Liner for Kitchen | Zavelyn",
+      "description": "Protect shelves, cabinets, and drawers from spills, moisture, and scratches with textured EVA liners. Perforated design pulls apart by hand for a custom fit."
+    }
+  },
+  "redirect": {
+    "path": "/products/sakerplus®-tearable-shelf-liner-and-drawer-liner",
+    "target": "/products/zavelyn-shelf-drawer-liner",
+    "id": "gid://shopify/UrlRedirect/604052357305"
+  }
+}

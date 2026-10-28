@@ -1,0 +1,462 @@
+{
+  "totalFallback": 64,
+  "emptyDesc": [],
+  "shortDesc": [
+    {
+      "id": 15420985966777,
+      "title": "Zavelyn Foot Sleeve",
+      "handle": "zavelyn-foot-sleeves-bogo-free",
+      "length": 76
+    }
+  ],
+  "fallbackProducts": [
+    {
+      "id": 15420985966777,
+      "title": "Zavelyn Foot Sleeve",
+      "handle": "zavelyn-foot-sleeves-bogo-free",
+      "body_length": 76,
+      "status": "draft"
+    },
+    {
+      "id": 15454946951353,
+      "title": "Zavelyn Fence Post Repair Kit",
+      "handle": "sakerplus-fence-post-repair-kit",
+      "body_length": 18149,
+      "status": "active"
+    },
+    {
+      "id": 15454947901625,
+      "title": "Zavelyn Sensory Floor Mats",
+      "handle": "sakerplus®-tpu-sensory-textured-floor-mats",
+      "body_length": 2397,
+      "status": "active"
+    },
+    {
+      "id": 15454948163769,
+      "title": "Zavelyn Non-Slip Drawer Liner",
+      "handle": "sakerplus®-tearable-non-slip-drawer-liner",
+      "body_length": 2668,
+      "status": "active"
+    },
+    {
+      "id": 15454948556985,
+      "title": "Zavelyn Shelf & Drawer Liner",
+      "handle": "sakerplus®-tearable-shelf-liner-and-drawer-liner",
+      "body_length": 2499,
+      "status": "active"
+    },
+    {
+      "id": 15454948786361,
+      "title": "Zavelyn UV Bed Vacuum Cleaner",
+      "handle": "saker®-powerful-uv-bed-vacuum-cleaner-clearance-sale",
+      "body_length": 2656,
+      "status": "active"
+    },
+    {
+      "id": 15454948982969,
+      "title": "Zavelyn Flame Effect Space Heater",
+      "handle": "sakerplus®-1500w-flame-effect-oscillating-space-heater",
+      "body_length": 2922,
+      "status": "active"
+    },
+    {
+      "id": 15454949343417,
+      "title": "Zavelyn Portable Welding Machine",
+      "handle": "sakerplus®-portable-welding-machine-clearance",
+      "body_length": 4652,
+      "status": "active"
+    },
+    {
+      "id": 15454949540025,
+      "title": "Zavelyn Titanium Pocket Pry Bar",
+      "handle": "sakerplus®-titanium-alloy-multifunction-pocket-pry-bar",
+      "body_length": 2962,
+      "status": "active"
+    },
+    {
+      "id": 15454949998777,
+      "title": "Zavelyn Steam Disinfection Cleaner",
+      "handle": "sakerplus®-steam-disinfection-cleaner-clearance",
+      "body_length": 2820,
+      "status": "active"
+    },
+    {
+      "id": 15454950490297,
+      "title": "Zavelyn Squishy Egg Night Light",
+      "handle": "sakerplus®-squishy-egg-multicolor-tap-night-light",
+      "body_length": 4359,
+      "status": "active"
+    },
+    {
+      "id": 15454950850745,
+      "title": "Zavelyn Bathroom Exhaust Fan",
+      "handle": "sakerplus®-bathroom-exhaust-fan-with-led-light",
+      "body_length": 2456,
+      "status": "active"
+    },
+    {
+      "id": 15454951211193,
+      "title": "Zavelyn Solar Street Lights",
+      "handle": "sakerplus®-solar-street-lights-clearance-sale",
+      "body_length": 3966,
+      "status": "active"
+    },
+    {
+      "id": 15454951473337,
+      "title": "Zavelyn RAV4 USB Charging Hub",
+      "handle": "sakerplus®-toyota-rav4-led-usb-charging-hub",
+      "body_length": 2521,
+      "status": "active"
+    },
+    {
+      "id": 15454951801017,
+      "title": "Zavelyn Camping Fan with Light",
+      "handle": "sakerplus-camping-fan-with-light-battery-1",
+      "body_length": 3461,
+      "status": "active"
+    },
+    {
+      "id": 15454951997625,
+      "title": "Zavelyn Home Sauna Generator",
+      "handle": "sakerplus®-portable-home-sauna-steam-generator",
+      "body_length": 2456,
+      "status": "active"
+    },
+    {
+      "id": 15454952292537,
+      "title": "Zavelyn Electric Wall Chaser",
+      "handle": "sakerplus®-laser-guided-electric-wall-chaser",
+      "body_length": 3400,
+      "status": "active"
+    },
+    {
+      "id": 15454952882361,
+      "title": "Zavelyn Kids Basketball Hoop Set",
+      "handle": "sakerplus®-kids-indoor-outdoor-basketball-hoop-set",
+      "body_length": 1979,
+      "status": "active"
+    },
+    {
+      "id": 15454953177273,
+      "title": "Zavelyn Clamp-On Desk Shelf",
+      "handle": "sakerplus®-three-tier-clamp-on-desk-shelf-organizer",
+      "body_length": 3245,
+      "status": "active"
+    },
+    {
+      "id": 15454953504953,
+      "title": "Zavelyn Thermal Imaging Camera",
+      "handle": "sakerplus®-high-precision-infrared-thermal-imaging-camera",
+      "body_length": 3380,
+      "status": "active"
+    },
+    {
+      "id": 15454953898169,
+      "title": "Zavelyn UV Mattress Vacuum",
+      "handle": "sakerplus®-cordless-handheld-uv-mattress-vacuum-cleaner",
+      "body_length": 2994,
+      "status": "active"
+    },
+    {
+      "id": 15454954193081,
+      "title": "Zavelyn Tactical MOLLE Vest",
+      "handle": "sakerplus®-tactical-molle-utility-vest",
+      "body_length": 3164,
+      "status": "active"
+    },
+    {
+      "id": 15454954422457,
+      "title": "Zavelyn Hydraulic Pipe Crimper Kit",
+      "handle": "sakerplus®-cordless-hydraulic-pipe-crimping-tool-kit",
+      "body_length": 2658,
+      "status": "active"
+    },
+    {
+      "id": 15454954750137,
+      "title": "Zavelyn Smart Hygrometer Clock",
+      "handle": "sakerplus®-smart-thermometer-hygrometer-clock",
+      "body_length": 2782,
+      "status": "active"
+    },
+    {
+      "id": 15454955045049,
+      "title": "Zavelyn Half Moon LED Lash Lamp",
+      "handle": "sakerplus®-dimmable-half-moon-led-lash-lamp",
+      "body_length": 2360,
+      "status": "active"
+    },
+    {
+      "id": 15454955372729,
+      "title": "Zavelyn 3-in-1 Gypsum Board Cutter",
+      "handle": "sakerplus®-3-in-1-gypsum-board-cutting-tool",
+      "body_length": 4168,
+      "status": "active"
+    },
+    {
+      "id": 15454955765945,
+      "title": "Zavelyn Rotating Galaxy Projector",
+      "handle": "sakerplus®-rotating-galaxy-projector-with-adjustable-focus",
+      "body_length": 3242,
+      "status": "active"
+    },
+    {
+      "id": 15454956028089,
+      "title": "Zavelyn Retractable LED Fill Light",
+      "handle": "sakerplus®-rechargeable-retractable-led-fill-light-stick",
+      "body_length": 2538,
+      "status": "active"
+    },
+    {
+      "id": 15454956355769,
+      "title": "Zavelyn Mini Heat Press Machine",
+      "handle": "sakerplus®-portable-digital-mini-heat-press-machine",
+      "body_length": 2865,
+      "status": "active"
+    },
+    {
+      "id": 15454957142201,
+      "title": "Zavelyn Infrared Sauna Blanket",
+      "handle": "sakerplus®-portable-infrared-sauna-blanket-for-home",
+      "body_length": 3686,
+      "status": "active"
+    },
+    {
+      "id": 15454957633721,
+      "title": "Zavelyn 360° Magnetic Work Light",
+      "handle": "sakerplus®-360-app-controlled-magnetic-work-light",
+      "body_length": 2707,
+      "status": "active"
+    },
+    {
+      "id": 15454958158009,
+      "title": "Zavelyn 50FT LED String Lights",
+      "handle": "sakerplus®-50ft-industrial-led-construction-string-lights",
+      "body_length": 2857,
+      "status": "active"
+    },
+    {
+      "id": 15454958420153,
+      "title": "Zavelyn Cable Lug Crimper",
+      "handle": "sakerplus®-hydraulic-battery-cable-lug-crimping-tool",
+      "body_length": 3306,
+      "status": "active"
+    },
+    {
+      "id": 15454958878905,
+      "title": "Zavelyn Panoramic Dash Camera",
+      "handle": "sakerplus®-panoramic-dash-camera-with-night-vision",
+      "body_length": 2404,
+      "status": "active"
+    },
+    {
+      "id": 15454959403193,
+      "title": "Zavelyn Downspout Catch Basin",
+      "handle": "sakerplus®-low-profile-downspout-catch-basin",
+      "body_length": 3015,
+      "status": "active"
+    },
+    {
+      "id": 15454959894713,
+      "title": "Zavelyn Wheel Alignment Kit",
+      "handle": "sakerplus®-stainless-steel-wheel-alignment-kit",
+      "body_length": 3665,
+      "status": "active"
+    },
+    {
+      "id": 15454960255161,
+      "title": "Zavelyn Red Light Therapy Panel",
+      "handle": "sakerplus®-adjustable-red-light-therapy-panel",
+      "body_length": 2883,
+      "status": "active"
+    },
+    {
+      "id": 15454960517305,
+      "title": "Zavelyn Rotating Goose Target Game",
+      "handle": "sakerplus®-electronic-rotating-goose-target-game",
+      "body_length": 2590,
+      "status": "active"
+    },
+    {
+      "id": 15454960910521,
+      "title": "Zavelyn Self-Leveling Laser Level",
+      "handle": "sakerplus®-self-leveling-laser-level-with-tripod",
+      "body_length": 2786,
+      "status": "active"
+    },
+    {
+      "id": 15454961238201,
+      "title": "Zavelyn Kids Metal Detector",
+      "handle": "sakerplus®-kids-metal-detector-with-lcd-display",
+      "body_length": 2229,
+      "status": "active"
+    },
+    {
+      "id": 15454961565881,
+      "title": "Zavelyn Workbench Tail Vise Clamp",
+      "handle": "sakerplus®-adjustable-workbench-tail-vise-clamp",
+      "body_length": 2285,
+      "status": "active"
+    },
+    {
+      "id": 15454961860793,
+      "title": "Zavelyn Heated Knee Massager",
+      "handle": "sakerplus®-cordless-heated-knee-massage-device",
+      "body_length": 4116,
+      "status": "active"
+    },
+    {
+      "id": 15454962286777,
+      "title": "Zavelyn Solar Motion Security Light",
+      "handle": "sakerplus®-outdoor-solar-motion-sensor-security-light",
+      "body_length": 2333,
+      "status": "active"
+    },
+    {
+      "id": 15454962778297,
+      "title": "Zavelyn 5-in-1 Magnetic Charging Station",
+      "handle": "sakerplus®-5-in-1-magnetic-wireless-charging-station",
+      "body_length": 2954,
+      "status": "active"
+    },
+    {
+      "id": 15454963073209,
+      "title": "Zavelyn Rolling Nut & Ball Picker",
+      "handle": "sakerplus®-rolling-nut-and-ball-picker",
+      "body_length": 2454,
+      "status": "active"
+    },
+    {
+      "id": 15454963433657,
+      "title": "Zavelyn Oil Spray Bottle",
+      "handle": "sakerplus®-ultra-fine-cooking-oil-spray-bottle",
+      "body_length": 2438,
+      "status": "active"
+    },
+    {
+      "id": 15454963859641,
+      "title": "Zavelyn Cordless Garden Tiller",
+      "handle": "saker®-cordless-electric-garden-tiller-cultivator",
+      "body_length": 2186,
+      "status": "active"
+    },
+    {
+      "id": 15454964187321,
+      "title": "Zavelyn Livestock Grooming Scratch Brush",
+      "handle": "sakerplus®-livestock-massage-grooming-scratch-brush",
+      "body_length": 1936,
+      "status": "active"
+    },
+    {
+      "id": 15454964744377,
+      "title": "Zavelyn Flexible-Neck Work Flashlight",
+      "handle": "sakerplus®-outdoor-flexible-neck-work-flashlight",
+      "body_length": 4908,
+      "status": "active"
+    },
+    {
+      "id": 15455032115385,
+      "title": "Zavelyn Ultrasonic Precision Cutter",
+      "handle": "saker-cordless-ultrasonic-cutter-and-grinder",
+      "body_length": 2906,
+      "status": "unlisted"
+    },
+    {
+      "id": 15455040241849,
+      "title": "Zavelyn Advanced Nose Cleaner",
+      "handle": "navage-advanced-nose-cleaner",
+      "body_length": 3550,
+      "status": "active"
+    },
+    {
+      "id": 15455040340153,
+      "title": "Zavelyn Nose Cleaner Starter Bundle",
+      "handle": "navage-starter-bundle",
+      "body_length": 642,
+      "status": "active"
+    },
+    {
+      "id": 15460831953081,
+      "title": "Zavelyn Cordless Turbo Leaf Blower",
+      "handle": "saker-cordless-turbo-leaf-blower",
+      "body_length": 18105,
+      "status": "active"
+    },
+    {
+      "id": 15460917313721,
+      "title": "Zavelyn Mesh Nebulizer",
+      "handle": "zavelyn-portable-ultrasonic-mesh-nebulizer",
+      "body_length": 15934,
+      "status": "active"
+    },
+    {
+      "id": 15460954276025,
+      "title": "Zavelyn CozyHeat",
+      "handle": "zavelyn-cozyheat-heated-wearable-blanket-sweater",
+      "body_length": 14802,
+      "status": "active"
+    },
+    {
+      "id": 15460988944569,
+      "title": "Zavelyn Automatic Dough Mixer",
+      "handle": "zavelyn-automatic-dough-mixer-with-ferment-function",
+      "body_length": 17933,
+      "status": "active"
+    },
+    {
+      "id": 15461356011705,
+      "title": "Zavelyn vFit",
+      "handle": "zavelyn-vfit-red-light-intimate-wellness-device",
+      "body_length": 13562,
+      "status": "active"
+    },
+    {
+      "id": 15461407588537,
+      "title": "Zavelyn SculptComfort",
+      "handle": "zavelyn-sculptcomfort-wirefree-breast-shapewear-bra",
+      "body_length": 17219,
+      "status": "active"
+    },
+    {
+      "id": 15461446713529,
+      "title": "Zavelyn SuperTots",
+      "handle": "zavelyn-supertots-fresh-food-fruit-feeder-pacifier",
+      "body_length": 15972,
+      "status": "active"
+    },
+    {
+      "id": 15461501927609,
+      "title": "Zavelyn FlawlessBlend",
+      "handle": "zavelyn-flawlessblend-color-changing-foundation-stick",
+      "body_length": 17413,
+      "status": "active"
+    },
+    {
+      "id": 15461507956921,
+      "title": "Zavelyn PureFlow",
+      "handle": "zavelyn-pureflow-wireless-stainless-steel-pet-water-fountain",
+      "body_length": 16062,
+      "status": "active"
+    },
+    {
+      "id": 15461521064121,
+      "title": "Zavelyn GravityGlider",
+      "handle": "zavelyn-gravityglider-indestructible-stunt-rc-jet",
+      "body_length": 14651,
+      "status": "active"
+    },
+    {
+      "id": 15461535416505,
+      "title": "Zavelyn MegaLifters",
+      "handle": "zavelyn-megalifters-heavy-duty-alloy-rc-construction-fleet",
+      "body_length": 13262,
+      "status": "active"
+    },
+    {
+      "id": 15461545935033,
+      "title": "Zavelyn BotanaRoots",
+      "handle": "zavelyn-botanaroots-organic-batana-hair-growth-oil",
+      "body_length": 13482,
+      "status": "active"
+    }
+  ]
+}

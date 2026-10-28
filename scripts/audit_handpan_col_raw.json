@@ -1,0 +1,49 @@
+{
+  "handpanCol": {
+    "id": 510448337081,
+    "handle": "zavelyn-handpans",
+    "title": "Zavelyn Handpans",
+    "updated_at": "2026-10-26T00:07:33-06:00",
+    "body_html": "\n          <p>Immerse yourself in acoustic tranquility with handcrafted <strong>Zavelyn Steel Tongue Handpan Drums</strong>. Tuned with surgical precision to <strong>432 Hz</strong> natural harmonic frequencies, our instruments promote deep relaxation, mindfulness, yoga, sound therapy, and joyful musical exploration for all ages.</p>\n        ",
+    "published_at": "2026-10-24T13:02:38-06:00",
+    "sort_order": "most-relevant",
+    "template_suffix": "zavelyn-handpans",
+    "published_scope": "web",
+    "admin_graphql_api_id": "gid://shopify/Collection/510448337081",
+    "image": {
+      "created_at": "2026-10-24T13:02:39-06:00",
+      "alt": "Zavelyn Handpans Collection",
+      "width": 1000,
+      "height": 1000,
+      "src": "https://cdn.shopify.com/s/files/1/0826/2483/9865/collections/PandaDrumPro_White.webp?v=1792868559"
+    }
+  },
+  "matchingAssets": [
+    "assets/grater_drum_coarse.png",
+    "assets/grater_drum_fine.png",
+    "assets/grater_drum_slice.png",
+    "assets/grater_drum_waffle.png",
+    "assets/zhp-collection.css",
+    "assets/zhp-collection.js",
+    "sections/featured-collection.liquid",
+    "sections/main-collection.liquid",
+    "sections/main-list-collections.liquid",
+    "sections/willa-collections-grid.liquid",
+    "sections/willa-featured-collection.liquid",
+    "sections/willa-main-collection.liquid",
+    "sections/zavelyn-drum-mini-funnel.liquid",
+    "sections/zavelyn-drum-plus-funnel.liquid",
+    "sections/zavelyn-drum-pro-funnel.liquid",
+    "sections/zavelyn-handpans-collection.liquid",
+    "snippets/card-collection.liquid",
+    "templates/collection.json",
+    "templates/collection.zavelyn-handpans.json",
+    "templates/list-collections.json",
+    "templates/page.zavelyn-handpans.json",
+    "templates/product.zavelyn-drum-mini.json",
+    "templates/product.zavelyn-drum-plus.json",
+    "templates/product.zavelyn-drum-pro.json",
+    "templates/product.zavelyn-handpan-master.json",
+    "templates/product.zavelyn-rain-drum.json"
+  ]
+}

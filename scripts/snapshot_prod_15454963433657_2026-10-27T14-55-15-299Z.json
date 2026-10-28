@@ -1,0 +1,62 @@
+{
+  "id": "gid://shopify/Product/15454963433657",
+  "title": "Zavelyn Oil Spray Bottle",
+  "handle": "sakerplus®-ultra-fine-cooking-oil-spray-bottle",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914666836153",
+        "title": "White（1 pc）",
+        "price": "16.99",
+        "sku": "KG131398-C005"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914666868921",
+        "title": "Orange（1 pc）",
+        "price": "16.99",
+        "sku": "KG131398-C003"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914666901689",
+        "title": "Green（1 pc）",
+        "price": "16.99",
+        "sku": "KG131398-C004"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914666934457",
+        "title": "White（2 pcs）",
+        "price": "29.99",
+        "sku": "KG131398-Z43632"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914666967225",
+        "title": "Orange（2 pcs）",
+        "price": "29.99",
+        "sku": "KG131398-Z43633"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914666999993",
+        "title": "Green（2 pcs）",
+        "price": "29.99",
+        "sku": "KG131398-Z43634"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914667032761",
+        "title": "Dual-Ended Measured Seasoning Jar – White (2 pcs)",
+        "price": "29.99",
+        "sku": "KG133360-Z45253"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914667065529",
+        "title": "3 Oil Spray Bottles (White + Yellow + Green) + 2 Dual-Ended Seasoning Jars (White)",
+        "price": "69.99",
+        "sku": "KG131398-Z45260"
+      }
+    ]
+  }
+}

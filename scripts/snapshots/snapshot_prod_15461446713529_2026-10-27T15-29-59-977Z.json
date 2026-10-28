@@ -1,0 +1,74 @@
+{
+  "id": "gid://shopify/Product/15461446713529",
+  "title": "Zavelyn SuperTots",
+  "handle": "zavelyn-supertots-fresh-food-fruit-feeder-pacifier",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67979946426553",
+        "title": "Buy 1 (Single Feeder Pacifier - Standard Starter Kit) / Sky Blue (Includes S, M, L Teats)",
+        "price": "16.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979946459321",
+        "title": "Buy 1 (Single Feeder Pacifier - Standard Starter Kit) / Blush Pink (Includes S, M, L Teats)",
+        "price": "16.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979946492089",
+        "title": "Buy 1 (Single Feeder Pacifier - Standard Starter Kit) / Sunny Yellow (Includes S, M, L Teats)",
+        "price": "16.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979946524857",
+        "title": "Buy 1 (Single Feeder Pacifier - Standard Starter Kit) / Mint Green (Includes S, M, L Teats)",
+        "price": "16.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979946557625",
+        "title": "Buy 2 (Duo Pack - Save 45% + Extra Teething Nipple) / Sky Blue (Includes S, M, L Teats)",
+        "price": "26.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979946590393",
+        "title": "Buy 2 (Duo Pack - Save 45% + Extra Teething Nipple) / Blush Pink (Includes S, M, L Teats)",
+        "price": "26.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979946623161",
+        "title": "Buy 2 (Duo Pack - Save 45% + Extra Teething Nipple) / Sunny Yellow (Includes S, M, L Teats)",
+        "price": "26.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979946655929",
+        "title": "Buy 2 (Duo Pack - Save 45% + Extra Teething Nipple) / Mint Green (Includes S, M, L Teats)",
+        "price": "26.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979946688697",
+        "title": "Buy 3 (Complete Family & Daycare Set - Buy 2 Get 1 FREE) / Sky Blue (Includes S, M, L Teats)",
+        "price": "34.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979946721465",
+        "title": "Buy 3 (Complete Family & Daycare Set - Buy 2 Get 1 FREE) / Blush Pink (Includes S, M, L Teats)",
+        "price": "34.99",
+        "sku": null
+      }
+    ]
+  }
+}

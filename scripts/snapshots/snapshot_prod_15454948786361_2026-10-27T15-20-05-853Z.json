@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454948786361",
+  "title": "Zavelyn UV Bed Vacuum Cleaner",
+  "handle": "saker®-powerful-uv-bed-vacuum-cleaner-clearance-sale",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914364879033",
+        "title": "Default Title",
+        "price": "44.99",
+        "sku": "CP103850-X70850"
+      }
+    ]
+  }
+}

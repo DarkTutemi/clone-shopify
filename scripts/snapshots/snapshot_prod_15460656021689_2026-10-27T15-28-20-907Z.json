@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15460656021689",
+  "title": "Zavelyn Handpan Master",
+  "handle": "zavelyn-handpan-master",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67971900375225",
+        "title": "432Hz (12 Notes)",
+        "price": "599.00",
+        "sku": "ZAV-HP-MST-432-12"
+      }
+    ]
+  }
+}

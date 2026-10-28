@@ -1,0 +1,32 @@
+[
+  {
+    "id": "gid://shopify/UrlRedirect/601548685497",
+    "path": "/products/regrip",
+    "target": "/products/zavelyn-rehabilitation-glove"
+  },
+  {
+    "id": "gid://shopify/UrlRedirect/601548849337",
+    "path": "/products/zavelyn",
+    "target": "/products/zavelyn-rehabilitation-glove"
+  },
+  {
+    "id": "gid://shopify/UrlRedirect/603439530169",
+    "path": "/products/sakerplus-livestock-heating-lamp",
+    "target": "/products/livestock-heating-lamp"
+  },
+  {
+    "id": "gid://shopify/UrlRedirect/603753578681",
+    "path": "/collections/handpans",
+    "target": "/collections/zavelyn-handpans"
+  },
+  {
+    "id": "gid://shopify/UrlRedirect/603753611449",
+    "path": "/collections/fence-farm",
+    "target": "/collections/fence-and-farm"
+  },
+  {
+    "id": "gid://shopify/UrlRedirect/604040429753",
+    "path": "/products/sakerplus%c2%ae-portable-infrared-sauna-blanket-for-home",
+    "target": "/products/portable-infrared"
+  }
+]

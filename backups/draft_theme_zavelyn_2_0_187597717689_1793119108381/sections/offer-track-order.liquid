@@ -1,0 +1,63 @@
+{%- liquid
+  assign brand = section.settings.brand_name | default: 'Zavelyn'
+  assign heading = section.settings.heading | default: 'Track your order'
+  assign subcopy = section.settings.subcopy | default: 'Enter your order number or tracking number to see the latest shipping updates.'
+-%}
+{{ 'zavelyn-offer.css' | asset_url | stylesheet_tag }}
+
+<div class="offer-page offer-page--track" id="OfferTop">
+  {% render 'offer-header', brand: brand %}
+
+  <section class="offer-track">
+    <div class="offer-track__intro">
+      <h1 class="offer-track__title">{{ heading }}</h1>
+      {%- if subcopy != blank -%}
+        <p class="offer-track__copy">{{ subcopy }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="offer-track__widget">
+      <track123-tracking-widget
+        shopifyDomain="{{ shop.permanent_domain }}"
+        locale="{{ request.locale.iso_code | default: 'en' }}"
+      ></track123-tracking-widget>
+    </div>
+
+    <ul class="offer-track__trust" role="list">
+      <li>Real-time carrier updates</li>
+      <li>Order email &amp; tracking number supported</li>
+      <li>Need help? Contact support anytime</li>
+    </ul>
+  </section>
+</div>
+
+<script src="https://shp.track123.com/tracking-page/build/widget.min.js" defer></script>
+
+{% schema %}
+{
+  "name": "Offer track order",
+  "tag": "section",
+  "class": "section-offer-track-order",
+  "settings": [
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand name",
+      "default": "Zavelyn"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Track your order"
+    },
+    {
+      "type": "textarea",
+      "id": "subcopy",
+      "label": "Supporting text",
+      "default": "Enter your order number or tracking number to see the latest shipping updates."
+    }
+  ],
+  "presets": [{ "name": "Offer track order" }]
+}
+{% endschema %}

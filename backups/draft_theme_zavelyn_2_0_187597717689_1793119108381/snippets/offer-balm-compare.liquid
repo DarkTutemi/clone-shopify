@@ -1,0 +1,63 @@
+{%- liquid
+  if group != blank
+    assign b = group.settings
+  endif
+  if b.image != blank
+    assign vs_src = b.image | image_url: width: 1600
+  else
+    assign vs_src = 'mb-vs-a.png' | asset_url
+  endif
+-%}
+{%- unless b.show == false -%}
+<div class="senzio-results-title" {% if group %}{{ group.shopify_attributes }}{% endif %}>
+  <span class="senzio-results-eyebrow">{{ b.eyebrow | default: 'Better Formula · Better Support' }}</span>
+  <h2>{{ brand }} {{ b.title | default: 'Miracle Balm vs. Typical Alternatives' }}</h2>
+  <span class="senzio-results-line" aria-hidden="true"></span>
+</div>
+
+<picture class="senzio-results-photo">
+  <source media="(max-width: 767px)" srcset="{{ vs_src }}">
+  <source media="(max-width: 1024px)" srcset="{{ 'mb-vs-b.png' | asset_url }}">
+  <img src="{{ vs_src }}" alt="{{ b.alt | default: 'Miracle Balm compared with orthotic insoles, foot creams, ice packs, massage rollers, compression sleeves, and oral pain relievers' }}" width="1200" height="675" loading="lazy">
+</picture>
+
+{% capture sc_check %}
+<span class="sc-icon sc-icon--check" aria-hidden="true"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="11.5"></circle><path d="M9.4 14.2L12.4 17.2L18.8 10.8"></path></svg></span>
+{% endcapture %}
+{% capture sc_cross %}
+<span class="sc-icon sc-icon--cross" aria-hidden="true"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="11.5"></circle><path d="M10.2 10.2L17.8 17.8M17.8 10.2L10.2 17.8"></path></svg></span>
+{% endcapture %}
+
+<section class="senzio-comparison" data-senzio-comparison aria-label="Comparison between {{ brand }} Miracle Balm and typical alternatives for plantar fasciitis and foot pain support">
+  <div class="sc-table">
+    <div class="sc-header">
+      <div class="sc-header-cell sc-header-cell--senzio"><strong>{{ brand }} {{ b.col_good | default: 'Miracle Balm' }}</strong></div>
+      <div class="sc-header-cell sc-header-cell--other"><strong>{{ b.col_bad | default: 'Typical Alternatives' }}</strong></div>
+    </div>
+    <div class="sc-row">
+      <div class="sc-cell sc-cell--good">{{ sc_check }}<strong>{{ b.good_1 | default: 'Applied directly to the heel' }}</strong></div>
+      <div class="sc-cell sc-cell--bad">{{ sc_cross }}<strong>{{ b.bad_1 | default: 'Indirect support or surface-level application' }}</strong></div>
+    </div>
+    <div class="sc-row">
+      <div class="sc-cell sc-cell--good">{{ sc_check }}<strong>{{ b.good_2 | default: 'Botanical anti-inflammatory support' }}</strong></div>
+      <div class="sc-cell sc-cell--bad">{{ sc_cross }}<strong>{{ b.bad_2 | default: 'Surface sensation or pressure support only' }}</strong></div>
+    </div>
+    <div class="sc-row">
+      <div class="sc-cell sc-cell--good">{{ sc_check }}<strong>{{ b.good_3 | default: 'Helps address the heel pain cycle' }}</strong></div>
+      <div class="sc-cell sc-cell--bad">{{ sc_cross }}<strong>{{ b.bad_3 | default: 'Not designed to address the pain cycle' }}</strong></div>
+    </div>
+    <div class="sc-row">
+      <div class="sc-cell sc-cell--good">{{ sc_check }}<strong>{{ b.good_4 | default: 'Traditionally circulation-supporting herbs' }}</strong></div>
+      <div class="sc-cell sc-cell--bad">{{ sc_cross }}<strong>{{ b.bad_4 | default: 'No circulation-supporting ingredients' }}</strong></div>
+    </div>
+    <div class="sc-row">
+      <div class="sc-cell sc-cell--good">{{ sc_check }}<strong>{{ b.good_5 | default: 'No device required' }}</strong></div>
+      <div class="sc-cell sc-cell--bad">{{ sc_cross }}<strong>{{ b.bad_5 | default: 'May require continuous wear' }}</strong></div>
+    </div>
+    <div class="sc-row">
+      <div class="sc-cell sc-cell--good">{{ sc_check }}<strong>{{ b.good_6 | default: 'Works while walking or sleeping' }}</strong></div>
+      <div class="sc-cell sc-cell--bad">{{ sc_cross }}<strong>{{ b.bad_6 | default: 'Relief may be short-lived or only work when worn' }}</strong></div>
+    </div>
+  </div>
+</section>
+{%- endunless -%}

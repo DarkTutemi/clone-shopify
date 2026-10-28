@@ -1,0 +1,87 @@
+{
+  "layout": "offer",
+  "sections": {
+    "main": {
+      "type": "offer-balm",
+      "settings": {
+        "product": "miracle-balm",
+        "brand_name": "Zavelyn",
+        "cta_label": "Add to cart",
+        "sticky_copy": "Miracle Balm",
+        "email": "support@zavelyn.com"
+      },
+      "blocks": {
+        "sec_gallery": {
+          "type": "sec_gallery",
+          "settings": {}
+        },
+        "sec_buybox": {
+          "type": "sec_buybox",
+          "settings": {}
+        },
+        "sec_people": {
+          "type": "sec_people",
+          "settings": {}
+        },
+        "sec_purity": {
+          "type": "sec_purity",
+          "settings": {}
+        },
+        "sec_explorer": {
+          "type": "sec_explorer",
+          "settings": {}
+        },
+        "sec_herbs": {
+          "type": "sec_herbs",
+          "settings": {}
+        },
+        "sec_compare": {
+          "type": "sec_compare",
+          "settings": {}
+        },
+        "sec_science": {
+          "type": "sec_science",
+          "settings": {}
+        },
+        "sec_reviews": {
+          "type": "sec_reviews",
+          "settings": {}
+        },
+        "sec_howto": {
+          "type": "sec_howto",
+          "settings": {}
+        },
+        "sec_timeline": {
+          "type": "sec_timeline",
+          "settings": {}
+        },
+        "sec_faq": {
+          "type": "sec_faq",
+          "settings": {}
+        },
+        "sec_ryviu": {
+          "type": "sec_ryviu",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "sec_gallery",
+        "sec_buybox",
+        "sec_people",
+        "sec_purity",
+        "sec_explorer",
+        "sec_herbs",
+        "sec_compare",
+        "sec_science",
+        "sec_reviews",
+        "sec_howto",
+        "sec_timeline",
+        "sec_faq",
+        "sec_ryviu"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

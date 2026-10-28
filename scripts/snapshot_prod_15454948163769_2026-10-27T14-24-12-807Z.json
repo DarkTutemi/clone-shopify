@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/15454948163769",
+  "title": "Zavelyn Non-Slip Drawer Liner",
+  "handle": "sakerplus®-tearable-non-slip-drawer-liner",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914352656569",
+        "title": "1 pc-Brown",
+        "price": "36.99",
+        "sku": "HW130038-C007"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914352689337",
+        "title": "2 pcs-Brown",
+        "price": "66.99",
+        "sku": "HW130038-Z45123"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914352722105",
+        "title": "5 pcs-Brown",
+        "price": "159.99",
+        "sku": "HW130038-Z45124"
+      }
+    ]
+  }
+}

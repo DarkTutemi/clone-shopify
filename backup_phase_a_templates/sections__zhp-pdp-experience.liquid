@@ -1,0 +1,58 @@
+{%- assign f_src = section.settings.feature_image | image_url: width: 1000 -%}
+{%- if f_src == blank -%}
+  {%- assign f_src = section.settings.feature_image_url -%}
+{%- endif -%}
+
+<section class="wf-section wf-steps-section">
+  <div class="wf-container">
+    <div class="wf-center-header">
+      <span class="wf-sub-pill">{{ section.settings.pill_text | default: 'EFFORTLESS PLAY' }}</span>
+      <h2 class="wf-sec-title">{{ section.settings.title | default: 'Zero Musical Training Required' }}</h2>
+      <p class="wf-sec-desc">{{ section.settings.description | default: 'Designed with an intuitive numbered note layout. If you can count from 1 to 8, you can play beautiful meditative songs right out of the box.' }}</p>
+    </div>
+
+    <div class="wf-steps-grid">
+      <div class="wf-step-card">
+        <div class="wf-step-num">1</div>
+        <h3 class="wf-step-title">Follow Numbered Notes</h3>
+        <p class="wf-step-desc">Open the included songbook. Every melody corresponds to simple numbers laser-engraved onto each tongue.</p>
+      </div>
+
+      <div class="wf-step-card">
+        <div class="wf-step-num">2</div>
+        <h3 class="wf-step-title">Instantly Harmonious</h3>
+        <p class="wf-step-desc">The scale is mathematically tuned so any combination of notes produces deep, soothing harmonics.</p>
+      </div>
+
+      <div class="wf-step-card">
+        <div class="wf-step-num">3</div>
+        <h3 class="wf-step-title">Play Within 5 Minutes</h3>
+        <p class="wf-step-desc">From your very first session, create peaceful ambient soundscapes that quiet your mind and soothe your surroundings.</p>
+      </div>
+    </div>
+
+    {%- if f_src != blank -%}
+      <div style="margin-top: 36px; text-align: center;">
+        <img src="{{ f_src }}" alt="{{ section.settings.title }}" style="max-width: 100%; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.06);" loading="lazy" />
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zavelyn Zero Experience",
+  "settings": [
+    { "type": "image_picker", "id": "feature_image", "label": "Feature Demonstration Image" },
+    { "type": "text", "id": "feature_image_url", "label": "Fallback Feature Image URL" },
+    { "type": "text", "id": "pill_text", "label": "Pill Subtitle", "default": "EFFORTLESS PLAY" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Zero Musical Training Required" },
+    { "type": "textarea", "id": "description", "label": "Description" }
+  ],
+  "presets": [
+    {
+      "name": "Zavelyn Zero Experience"
+    }
+  ]
+}
+{% endschema %}

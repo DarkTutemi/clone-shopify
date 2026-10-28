@@ -1,0 +1,7 @@
+<!-- TEST PAYMENT ICONS -->
+<div id="test-payment-container">
+  {% assign default_types = 'visa,master,american_express,discover,paypal,apple_pay,google_pay,shopify_pay' | split: ',' %}
+  {% for type in default_types %}
+    <span class="test-icon-{{ type }}">{{ type | payment_type_svg_tag }}</span>
+  {% endfor %}
+</div>

@@ -1,0 +1,399 @@
+{
+  "sections": {
+    "hero": {
+      "type": "willa-hero",
+      "blocks": {
+        "trust_1": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "🛡️",
+            "highlight": "90-Day",
+            "text": "Risk-Free Trial"
+          }
+        },
+        "trust_2": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "🚚",
+            "highlight": "Free Shipping",
+            "text": "Over $49"
+          }
+        },
+        "trust_3": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "🇺🇸",
+            "highlight": "Fast US",
+            "text": "Warehouse Dispatch"
+          }
+        }
+      },
+      "block_order": [
+        "trust_1",
+        "trust_2",
+        "trust_3"
+      ],
+      "settings": {
+        "pill_1": "★ 2026 ZAVELYN® COLLECTION",
+        "pill_2": "IN STOCK & READY TO SHIP",
+        "heading": "Engineered for Heavy Duty. Built for Everyday Reliability.",
+        "desc": "Stop fighting broken equipment and low-grade tools. Zavelyn® brings you industrial-grade farm repair kits, precision ultrasonic tools, and durable homestead solutions trusted by over 100,000+ customers.",
+        "btn_primary_text": "EXPLORE BEST SELLERS ➔",
+        "btn_primary_link": "\/collections\/best-sellers",
+        "btn_secondary_text": "FARM & FENCE REPAIR",
+        "btn_secondary_link": "\/collections\/fence-and-farm"
+      }
+    },
+    "facts": {
+      "type": "willa-facts",
+      "blocks": {
+        "fact_1": {
+          "type": "fact_card",
+          "settings": {
+            "icon": "🛡️",
+            "title": "Industrial Durability",
+            "text": "Built with heavy-duty alloys and reinforced polymers engineered for tough workshop and outdoor conditions."
+          }
+        },
+        "fact_2": {
+          "type": "fact_card",
+          "settings": {
+            "icon": "⚡",
+            "title": "Precision Performance",
+            "text": "Engineered to cut labor time in half with automated thermostats, ultrasonic vibrations, and laser guides."
+          }
+        },
+        "fact_3": {
+          "type": "fact_card",
+          "settings": {
+            "icon": "🔒",
+            "title": "Certified Safety",
+            "text": "Zero exposed flames or dangerous hot spots. Rigorously tested for maximum peace of mind on your homestead."
+          }
+        },
+        "fact_4": {
+          "type": "fact_card",
+          "settings": {
+            "icon": "🚚",
+            "title": "Free US Delivery",
+            "text": "Fast dispatch from US regional hubs. Enjoy free express tracked shipping on all orders over $49."
+          }
+        }
+      },
+      "block_order": [
+        "fact_1",
+        "fact_2",
+        "fact_3",
+        "fact_4"
+      ],
+      "settings": {
+        "pill_text": "THE ZAVELYN® ADVANTAGE",
+        "heading": "Engineered Without Compromise"
+      }
+    },
+    "featured_offer": {
+      "type": "willa-featured-product",
+      "blocks": {
+        "bundle_best": {
+          "type": "bundle_card",
+          "settings": {
+            "badge": "BEST SELLER • 50% OFF",
+            "is_best_seller": true,
+            "title": "2 Pack (Light + US Switch Cord)",
+            "subtitle": "Includes 2x Smart Lamps + 2x Switch Cords • Free Shipping",
+            "variant_id": "67930179436729",
+            "price": "89.99",
+            "compare_price": "179.99",
+            "image_url": "https:\/\/cdn.myshopage.com\/4574c936-7435-4b05-2934-ed1e12887e00.png"
+          }
+        },
+        "bundle_starter": {
+          "type": "bundle_card",
+          "settings": {
+            "badge": "STARTER • 50% OFF",
+            "is_best_seller": false,
+            "title": "1 Pack (Light + US Switch Cord)",
+            "subtitle": "Includes 1x Smart Lamp + 1x Switch Cord",
+            "variant_id": "67930179403961",
+            "price": "49.99",
+            "compare_price": "99.99",
+            "image_url": "https:\/\/cdn.myshopage.com\/54872b77-422f-45a5-7cfb-756212792b00.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "bundle_best",
+        "bundle_starter"
+      ],
+      "settings": {
+        "pill_text": "FEATURED HOMESTEAD INNOVATION",
+        "heading": "Zavelyn® Intelligent Livestock Heating Lamp",
+        "subtitle": "Auto-regulating smart thermostat, 100% sealed fireproof shell, and gentle ambient warmth. The safer way to protect baby chicks, ducks, and small livestock all season."
+      }
+    },
+    "categories": {
+      "type": "willa-collections-grid",
+      "blocks": {
+        "cat_fence": {
+          "type": "category_card",
+          "settings": {
+            "title": "Fence & Farm Repair",
+            "description": "Reinforce posts, regulate livestock heat, and automate coop care.",
+            "link": "\/collections\/fence-and-farm",
+            "image_url": "https:\/\/cdn.myshopage.com\/54872b77-422f-45a5-7cfb-756212792b00.jpg",
+            "cta_text": "Shop Category →"
+          }
+        },
+        "cat_tools": {
+          "type": "category_card",
+          "settings": {
+            "title": "Power & Precision Tools",
+            "description": "40kHz ultrasonic cutters, digital levels, and hydraulic crimpers.",
+            "link": "\/collections\/power-tools",
+            "image_url": "https:\/\/cdn.myshopage.com\/db25d099-77fd-4ea4-8503-2f77737c8100\/w1280.jpg",
+            "cta_text": "Shop Category →"
+          }
+        },
+        "cat_garden": {
+          "type": "category_card",
+          "settings": {
+            "title": "Lawn, Garden & Outdoor",
+            "description": "Yard sweepers, solar motion lights, and downspout drainage.",
+            "link": "\/collections\/garden-and-outdoor",
+            "image_url": "https:\/\/cdn.myshopage.com\/898406ff-0448-41a5-2440-fd49b2375e00\/w1000.jpg",
+            "cta_text": "Shop Category →"
+          }
+        },
+        "cat_home": {
+          "type": "category_card",
+          "settings": {
+            "title": "Home & Workshop",
+            "description": "Steam sanitizers, modular storage, and heavy-duty utility tools.",
+            "link": "\/collections\/home-and-workshop",
+            "image_url": "https:\/\/cdn.myshopage.com\/8f765e2e-fcbd-4199-ab9b-433d4da5c000.jpg",
+            "cta_text": "Shop Category →"
+          }
+        }
+      },
+      "block_order": [
+        "cat_fence",
+        "cat_tools",
+        "cat_garden",
+        "cat_home"
+      ],
+      "settings": {
+        "pill_text": "CURATED ESSENTIALS",
+        "heading": "Explore by Category"
+      }
+    },
+    "best_sellers": {
+      "type": "willa-featured-collection",
+      "settings": {
+        "pill_text": "TOP RATED ZAVELYN® HARDWARE",
+        "heading": "Popular Zavelyn® Best Sellers",
+        "subtitle": "Real customer favorites engineered for reliability, durability, and time-saving efficiency.",
+        "collection": "best-sellers",
+        "products_to_show": 8
+      }
+    },
+    "steps": {
+      "type": "willa-steps",
+      "blocks": {
+        "step_1": {
+          "type": "step_card",
+          "settings": {
+            "step_number": "01",
+            "title": "Select Your Solution",
+            "text": "Choose from our specialized toolkits engineered specifically for fence repair, livestock care, or precision crafting."
+          }
+        },
+        "step_2": {
+          "type": "step_card",
+          "settings": {
+            "step_number": "02",
+            "title": "Quick Plug-and-Play Setup",
+            "text": "All kits include standard US cords, mounting hardware, or screw bases. Ready to run right out of the box with zero guesswork."
+          }
+        },
+        "step_3": {
+          "type": "step_card",
+          "settings": {
+            "step_number": "03",
+            "title": "Total Peace of Mind",
+            "text": "Every product is backed by our 90-Day Money-Back Guarantee and dedicated customer care team ready to help 7 days a week."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "settings": {
+        "pill_text": "HOW IT WORKS",
+        "heading": "Simplicity in 3 Easy Steps"
+      }
+    },
+    "comparison": {
+      "type": "willa-comparison",
+      "blocks": {
+        "comp_1": {
+          "type": "comparison_row",
+          "settings": {
+            "title": "Safety Standards",
+            "brand_val": "100% Certified (Sealed & tested)",
+            "competitor_val": "High risk & fragile parts"
+          }
+        },
+        "comp_2": {
+          "type": "comparison_row",
+          "settings": {
+            "title": "Auto-Regulation Tech",
+            "brand_val": "Smart Digital Microchips",
+            "competitor_val": "Manual guesswork"
+          }
+        },
+        "comp_3": {
+          "type": "comparison_row",
+          "settings": {
+            "title": "Build Durability",
+            "brand_val": "Heavy-duty reinforced alloys",
+            "competitor_val": "Cheap thin plastic"
+          }
+        },
+        "comp_4": {
+          "type": "comparison_row",
+          "settings": {
+            "title": "Risk-Free Guarantee",
+            "brand_val": "90-Day Money-Back Trial",
+            "competitor_val": "14-day restrictive terms"
+          }
+        },
+        "comp_5": {
+          "type": "comparison_row",
+          "settings": {
+            "title": "Customer Support",
+            "brand_val": "Dedicated US support 7 days\/wk",
+            "competitor_val": "Automated bot replies"
+          }
+        }
+      },
+      "block_order": [
+        "comp_1",
+        "comp_2",
+        "comp_3",
+        "comp_4",
+        "comp_5"
+      ],
+      "settings": {
+        "pill_text": "HEAD-TO-HEAD COMPARISON",
+        "heading": "Why Zavelyn® Outperforms the Rest"
+      }
+    },
+    "reviews": {
+      "type": "willa-reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review_card",
+          "settings": {
+            "author": "Debra W.",
+            "verified": true,
+            "stars": "★★★★★",
+            "title": "Total game changer for our poultry barn!",
+            "review": "Threw out my old red heat lamp the same day the Zavelyn® heating lamp arrived. It stays completely cool to the touch and baby chicks sleep soundly.",
+            "purchased_product": "Zavelyn® Intelligent Livestock Heating Lamp"
+          }
+        },
+        "rev_2": {
+          "type": "review_card",
+          "settings": {
+            "author": "Robert M.",
+            "verified": true,
+            "stars": "★★★★★",
+            "title": "Repaired 6 rotted posts in an afternoon",
+            "review": "The Fence Post Repair Kit saved me thousands compared to replacing the whole fence line. Heavy steel, solid welds, drove straight into the ground.",
+            "purchased_product": "Zavelyn® Fence Post Repair Kit"
+          }
+        },
+        "rev_3": {
+          "type": "review_card",
+          "settings": {
+            "author": "Ethan Walker",
+            "verified": true,
+            "stars": "★★★★★",
+            "title": "Unbelievable precision for model crafting",
+            "review": "The 40kHz Ultrasonic Precision Cutter slices through 3D print supports, dense acrylic, and resin without cracking or melting margins.",
+            "purchased_product": "Zavelyn® 40kHz Ultrasonic Precision Cutter Kit"
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3"
+      ],
+      "settings": {
+        "pill_text": "REAL EXPERIENCES",
+        "heading": "Trusted by Hardworking Makers & Farmers"
+      }
+    },
+    "faq": {
+      "type": "willa-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How fast is shipping, and where do orders ship from?",
+            "answer": "All orders are packed and dispatched directly from our regional US fulfillment centers. Standard delivery takes 3–5 business days. You will receive an automated tracking number via email the moment your package leaves our warehouse.",
+            "open_default": true
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the 90-Day Risk-Free Money-Back Guarantee?",
+            "answer": "We stand 100% behind the craftsmanship and durability of every tool we make. If you are not thoroughly satisfied with the performance of your purchase for any reason within 90 days of delivery, simply email us at support@tryzavelyn.com for a hassle-free refund.",
+            "open_default": false
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are replacement parts or blades available for your tools?",
+            "answer": "Yes! We stock replacement blade packs, switch cords, extension accessories, and adapters for all our core tools. You can order them directly on our store or reach out to customer support anytime.",
+            "open_default": false
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is checkout secure? What payment methods do you accept?",
+            "answer": "All transactions are 100% encrypted with bank-level 256-bit SSL security. We accept all major credit and debit cards (Visa, MasterCard, American Express, Discover), PayPal, Apple Pay, Google Pay, and Shop Pay.",
+            "open_default": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
+      "settings": {
+        "pill_text": "GOT QUESTIONS?",
+        "heading": "Frequently Asked Questions"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "facts",
+    "featured_offer",
+    "categories",
+    "best_sellers",
+    "steps",
+    "comparison",
+    "reviews",
+    "faq"
+  ]
+}

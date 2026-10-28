@@ -1,0 +1,457 @@
+{
+  "layout": "offer",
+  "sections": {
+    "main": {
+      "type": "offer-zavelyn",
+      "settings": {
+        "product": "zavelyn-rehabilitation-glove",
+        "brand_name": "Zavelyn",
+        "ticker_text": "FREE Worldwide Shipping —",
+        "ticker_highlight": "This Week Only!",
+        "cta_label": "BUY NOW"
+      },
+      "blocks": {
+        "sec_gallery": {
+          "type": "sec_gallery",
+          "settings": {
+            "fallback_1": "zavelyn-gallery-1.png",
+            "fallback_2": "zavelyn-gallery-2.png",
+            "fallback_3": "zavelyn-gallery-3.png",
+            "fallback_4": "zavelyn-gallery-4.png",
+            "fallback_5": "zavelyn-gallery-5.png",
+            "fallback_6": "zavelyn-gallery-6.png",
+            "fallback_7": "zavelyn-gallery-7.png"
+          }
+        },
+        "sec_hero": {
+          "type": "sec_hero",
+          "settings": {}
+        },
+        "sec_marquee": {
+          "type": "sec_marquee",
+          "settings": {}
+        },
+        "sec_story": {
+          "type": "sec_story",
+          "settings": {}
+        },
+        "sec_reps": {
+          "type": "sec_reps",
+          "settings": {}
+        },
+        "sec_train": {
+          "type": "sec_train",
+          "settings": {}
+        },
+        "sec_features": {
+          "type": "sec_features",
+          "settings": {}
+        },
+        "sec_journey": {
+          "type": "sec_journey",
+          "settings": {}
+        },
+        "sec_routine": {
+          "type": "sec_routine",
+          "settings": {}
+        },
+        "sec_howto": {
+          "type": "sec_howto",
+          "settings": {}
+        },
+        "sec_practice": {
+          "type": "sec_practice",
+          "settings": {}
+        },
+        "sec_benefits": {
+          "type": "sec_benefits",
+          "settings": {}
+        },
+        "sec_realistic": {
+          "type": "sec_realistic",
+          "settings": {}
+        },
+        "sec_stats": {
+          "type": "sec_stats",
+          "settings": {}
+        },
+        "sec_compare": {
+          "type": "sec_compare",
+          "settings": {}
+        },
+        "sec_timeline": {
+          "type": "sec_timeline",
+          "settings": {}
+        },
+        "sec_reviews": {
+          "type": "sec_reviews",
+          "settings": {}
+        },
+        "sec_faq": {
+          "type": "sec_faq",
+          "settings": {}
+        },
+        "sec_footer": {
+          "type": "sec_footer",
+          "settings": {
+            "email": "support@zavelyn.com",
+            "sticky_copy": "Zavelyn Rehabilitation Glove"
+          }
+        },
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "name": "Kevin F.",
+            "text": "I really love this glove I've spent months at Occupational therapy and I would never get this type of training its a process but I definitely believe.\nKevin F",
+            "stars": 5,
+            "verified": true,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2026\/5\/7\/rIDcvoZcI_DFyv2cD14_orig.jpg",
+            "item": "Right Hand \/ Large",
+            "video_url": "https:\/\/iframe.videodelivery.net\/b61f4a4fa0a509831e4cc27ce61a5455",
+            "name_2": "Patrick L.",
+            "text_2": "I ordered this for my dad mainly to keep his hand moving. It’s easy for him to use and doesn’t require much effort.\nIt won’t replace therapy, but it’s a good way to stay consistent at home.",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2026\/3\/24\/GulG8YbD2X_r6e-154UI_orig.jpg",
+            "video_url_2": "https:\/\/iframe.videodelivery.net\/6e940d8b12f1b5df701f39def9b4d4c8"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "name": "Daniela R.",
+            "text": "Bought this for my mother. She didn’t have the strength or motivation to move her hand regularly on her own. This helps her keep it active without pressure.\nIt’s simple, and she actually uses it — which is the most important part.",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2026\/3\/24\/RsouYKND0_u9Ef3ysKq_orig.jpg",
+            "video_url": "https:\/\/iframe.videodelivery.net\/ef3d3e09dd7596eee2c001eaaa4a7a0a",
+            "name_2": "Sabine K.",
+            "text_2": "I got this for my husband after his stroke because I was worried his hand would just stay closed over time. He wasn’t very consistent with exercises, but this made it easier for him to do something every day.\nAfter a while, his hand felt less tight and he even started using it a bit more again. That alone made a difference for us.",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2026\/3\/24\/VQQ_hDNXwu_XAch5_g1t_orig.jpg",
+            "video_url_2": "https:\/\/iframe.videodelivery.net\/2161df20d3171ca7c89c3396dc9d73af"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "name": "Monika E.",
+            "text": "Easy to use, no pain, just movement 🙌\nExactly what I needed.",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2026\/3\/24\/N52h7lj2S.jpg",
+            "name_2": "Leo E.",
+            "text_2": "There was a point where I stopped using my hand as much because it felt too difficult. This helped me get back into daily movement. It gave me a bit of confidence again.",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2026\/3\/24\/l3byDeeWE.jpg"
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "name": "Julia T.",
+            "text": "Good for keeping the hand active without overthinking it.",
+            "stars": 4,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2026\/3\/24\/EfSSRo-ByX.jpg",
+            "name_2": "Andreas M.",
+            "text_2": "Recovery is slow, and anyone who had a stroke knows that. This doesn’t magically fix everything, but it helps you keep moving daily. That alone made a difference for me, especially with stiffness.",
+            "stars_2": 4,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2026\/3\/24\/AXpbgLMtc.jpg"
+          }
+        },
+        "review_5": {
+          "type": "review",
+          "settings": {
+            "name": "Sandra L.",
+            "text": "Didn’t think I’d use it every day… but I do now 😅\nIt’s become part of my routine and my hand feels more flexible.",
+            "stars": 4,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2026\/3\/24\/ItXPF27IL.jpg",
+            "name_2": "Markus F.",
+            "text_2": "What I like most is the routine. I just put it on and let it do the movement. It’s helped me stay consistent, which I struggled with before.",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2026\/3\/24\/LxA6Ag72A_1bSqrqGFs_orig.jpg",
+            "video_url_2": "https:\/\/iframe.videodelivery.net\/37921216b8b7abc7bac75093a6027053"
+          }
+        },
+        "review_6": {
+          "type": "review",
+          "settings": {
+            "name": "Daniel R.",
+            "text": "Not a miracle, but it helps keep my hand from getting worse.",
+            "stars": 4,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2026\/3\/24\/c9nsDx3UXL_NLsyLPO5l_orig.jpg",
+            "video_url": "https:\/\/iframe.videodelivery.net\/5f4e6f07e6e64711565bdcc6ba4f74da",
+            "name_2": "Peter H.",
+            "text_2": "I use it every evening while watching TV 👍\nIt’s easy and doesn’t feel like “exercise”, but my hand definitely feels less stiff.",
+            "stars_2": 4,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2026\/3\/24\/p04wTbG22_wQjQLSOci_orig.jpg",
+            "video_url_2": "https:\/\/iframe.videodelivery.net\/b43671dd32d9b14d13bac8baeef475fa"
+          }
+        },
+        "review_7": {
+          "type": "review",
+          "settings": {
+            "name": "Martin K.",
+            "text": "I didn’t expect much at first. But after using it daily, my hand started to open more naturally. It’s not perfect yet, but I can feel progress — and that gave me hope again.",
+            "stars": 4,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2026\/3\/24\/yYnMm3a0G_bycXZE-hO_orig.jpg",
+            "video_url": "https:\/\/iframe.videodelivery.net\/eb1a6fb68a39f7d71eaba3f8d244cae3",
+            "name_2": "B O.",
+            "text_2": "The product arrived earlier than expected. It works well, and I plan to buy another one for my other hand.",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/Gv8x9TEO4O.jpg"
+          }
+        },
+        "review_8": {
+          "type": "review",
+          "settings": {
+            "name": "Shopper",
+            "text": "This. Very good.",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/Hn4eDgYd6X.jpg",
+            "name_2": "Ç A.",
+            "text_2": "Arrived perfectly complete and quickly.",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/2-hjA0Ely8.jpg"
+          }
+        },
+        "review_9": {
+          "type": "review",
+          "settings": {
+            "name": "I R.",
+            "text": "",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/ImRTj95pgG.jpg",
+            "name_2": "J A.",
+            "text_2": "I already tried it and it works perfectly. I fully recommend it. Very good product.",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/a6x-iYe2mM.jpg"
+          }
+        },
+        "review_10": {
+          "type": "review",
+          "settings": {
+            "name": "J A.",
+            "text": "",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/MO3gtY4xJy.jpg",
+            "name_2": "R A.",
+            "text_2": "",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/m5N69IbQ2V.jpg"
+          }
+        },
+        "review_11": {
+          "type": "review",
+          "settings": {
+            "name": "U D.",
+            "text": "",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/vKtyjyEPRj.jpg",
+            "name_2": "Shopper",
+            "text_2": "",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/TovV9TSNoA.jpg"
+          }
+        },
+        "review_12": {
+          "type": "review",
+          "settings": {
+            "name": "A A.",
+            "text": "",
+            "stars": 4,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/gBELMaEHwp.jpg",
+            "name_2": "S N.",
+            "text_2": "I recommend it if it works. Fast shipping.",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/qLDoLnGhAG.jpg"
+          }
+        },
+        "review_13": {
+          "type": "review",
+          "settings": {
+            "name": "J R.",
+            "text": "It fulfills its function, everything came as in the photo.",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/IuwE1ckZ96.jpg",
+            "name_2": "B Z.",
+            "text_2": "Very good",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/sgIpEwkUlq.jpg"
+          }
+        },
+        "review_14": {
+          "type": "review",
+          "settings": {
+            "name": "A V.",
+            "text": "",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/6Dq0bkl54R.jpg",
+            "name_2": "Shopper",
+            "text_2": "",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/RVn5qB9GSl.jpg"
+          }
+        },
+        "review_15": {
+          "type": "review",
+          "settings": {
+            "name": "Shopper",
+            "text": "",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/dtzfv9MBwh.jpg",
+            "name_2": "Shopper",
+            "text_2": "Great product, excellent.  \n The supplier sent it well packaged and well protected. \n The product arrived in good condition.",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/xEndmMozVd.jpg"
+          }
+        },
+        "review_16": {
+          "type": "review",
+          "settings": {
+            "name": "M A.",
+            "text": "",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/kCGrWJbTYl.jpg",
+            "name_2": "I R.",
+            "text_2": "",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/CmHJ9gHVpC.jpg"
+          }
+        },
+        "review_17": {
+          "type": "review",
+          "settings": {
+            "name": "L",
+            "text": "Very good training massage for my son. Very fast delivery and perfectly professionally packaged. I am very satisfied and my son is too, thank you very much!⭐⭐⭐⭐⭐",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/VR0KKDI-Af.jpg",
+            "name_2": "L",
+            "text_2": "",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/f6xr-JFxMn.jpg"
+          }
+        },
+        "review_18": {
+          "type": "review",
+          "settings": {
+            "name": "R N.",
+            "text": "just as we expected",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/4nWjxG_AEG.jpg",
+            "name_2": "م د.",
+            "text_2": "",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/sof22PorFu.jpg"
+          }
+        },
+        "review_19": {
+          "type": "review",
+          "settings": {
+            "name": "S A.",
+            "text": "Excellent and works well with great packaging.",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/LOKvs5xXZL.jpg",
+            "name_2": "Shopper",
+            "text_2": "",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/kSmdxzDs3c.jpg"
+          }
+        },
+        "review_20": {
+          "type": "review",
+          "settings": {
+            "name": "G R.",
+            "text": "It arrived in Turkey extremely quickly and securely in a sturdy package. You can buy it without hesitation, thank you.",
+            "stars": 5,
+            "verified": false,
+            "image_url": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/cokfwcGNOw.jpg",
+            "name_2": "G R.",
+            "text_2": "better than expected",
+            "stars_2": 5,
+            "verified_2": false,
+            "image_url_2": "https:\/\/images.loox.io\/uploads\/2025\/12\/3\/RX1dlZ3a0x.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "sec_gallery",
+        "sec_hero",
+        "sec_marquee",
+        "sec_story",
+        "sec_reps",
+        "sec_train",
+        "sec_features",
+        "sec_journey",
+        "sec_routine",
+        "sec_howto",
+        "sec_practice",
+        "sec_benefits",
+        "sec_realistic",
+        "sec_stats",
+        "sec_compare",
+        "sec_timeline",
+        "sec_reviews",
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4",
+        "review_5",
+        "review_6",
+        "review_7",
+        "review_8",
+        "review_9",
+        "review_10",
+        "review_11",
+        "review_12",
+        "review_13",
+        "review_14",
+        "review_15",
+        "review_16",
+        "review_17",
+        "review_18",
+        "review_19",
+        "review_20",
+        "sec_faq",
+        "sec_footer"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

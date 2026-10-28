@@ -1,0 +1,2946 @@
+{%- liquid
+  if request.page_type == 'product' and product != blank
+    assign offer_product = product
+  elsif section.settings.product != blank
+    assign offer_product = section.settings.product
+  else
+    assign offer_product = all_products['v1-device']
+  endif
+  if offer_product == blank
+    assign offer_product = collections.all.products.first
+  endif
+  assign product = offer_product
+  assign current_variant = product.selected_or_first_available_variant
+  assign s = section.settings
+  assign brand = s.brand_name | default: 'Zavelyn'
+  assign cta_label = s.cta_label | default: 'Add to cart'
+  assign sec_gallery = section.blocks | where: 'type', 'sec_gallery' | first
+  assign sec_hero = section.blocks | where: 'type', 'sec_hero' | first
+  assign sec_heal = section.blocks | where: 'type', 'sec_heal' | first
+  assign sec_features = section.blocks | where: 'type', 'sec_features' | first
+  assign sec_reset = section.blocks | where: 'type', 'sec_reset' | first
+  assign sec_howto = section.blocks | where: 'type', 'sec_howto' | first
+  assign sec_reviews_slider = section.blocks | where: 'type', 'sec_reviews_slider' | first
+  assign sec_stats = section.blocks | where: 'type', 'sec_stats' | first
+  assign sec_relief = section.blocks | where: 'type', 'sec_relief' | first
+  assign sec_compare = section.blocks | where: 'type', 'sec_compare' | first
+  assign sec_faq = section.blocks | where: 'type', 'sec_faq' | first
+  assign sec_loox = section.blocks | where: 'type', 'sec_loox' | first
+  assign sec_footer = section.blocks | where: 'type', 'sec_footer' | first
+  assign pack_1 = product.variants[0] | default: current_variant
+  assign pack_2 = product.variants[1]
+  assign pack_3 = product.variants[2]
+-%}
+{% render 'offer-seo', product: product, section: section %}
+{{ 'zavelyn-device.css' | asset_url | stylesheet_tag }}
+
+<div class="offer-page offer-page--device" id="OfferTop">
+  <div class="offer-ticker">
+    <p class="offer-ticker__line">⚡ {{ s.ticker_text | default: 'LIMITED OFFER.' }} <span>{{ s.ticker_highlight | default: 'DEVICE + 3 FREE BONUSES' }}</span></p>
+  </div>
+  {% render 'offer-header', brand: brand, product: product %}
+
+  {%- comment -%} ===== 1. HERO + BUY BOX ===== {%- endcomment -%}
+  <section class="offer-hero">
+    <div class="offer-hero__grid">
+      <div class="offer-hero__left">
+        <div class="offer-media" data-offer-gallery>
+          <div class="offer-media__stage">
+            {%- if sec_gallery and sec_gallery.settings.image_1 != blank -%}
+              {%- assign main_src = sec_gallery.settings.image_1 | image_url: width: 1200 -%}
+            {%- elsif sec_gallery and sec_gallery.settings.fallback_1 != blank -%}
+              {%- assign main_src = sec_gallery.settings.fallback_1 | asset_url -%}
+            {%- else -%}
+              {%- assign main_src = 'pen-gallery-1.jpg' | asset_url -%}
+            {%- endif -%}
+            <button type="button" class="offer-media__zoom" data-offer-zoom aria-label="Open gallery">
+              <img data-offer-main src="{{ main_src }}" alt="{{ product.title | escape }}" width="1200" height="1200" fetchpriority="high">
+            </button>
+            <button type="button" class="offer-media__nav offer-media__nav--prev" data-offer-prev aria-label="Previous">❮</button>
+            <button type="button" class="offer-media__nav offer-media__nav--next" data-offer-next aria-label="Next">❯</button>
+          </div>
+          <div class="offer-thumbs" role="list" {% if sec_gallery %}{{ sec_gallery.shopify_attributes }}{% endif %}>
+            {%- if sec_gallery -%}
+              {% render 'offer-group-slots', group: sec_gallery, mode: 'gallery', count: 7 %}
+            {%- else -%}
+              {%- assign galleries = 'pen-gallery-1.jpg,pen-gallery-2.jpg,pen-gallery-3.jpg,pen-gallery-4.jpg,pen-gallery-5.jpg,pen-gallery-6.jpg,pen-gallery-7.jpg' | split: ',' -%}
+              {%- for file in galleries -%}
+                {%- assign thumb_file = file | replace: '.jpg', '-thumb.jpg' -%}
+                <button type="button" class="{% if forloop.first %}is-active{% endif %}" data-offer-thumb data-index="{{ forloop.index0 }}" data-src="{{ file | asset_url }}" aria-label="Image {{ forloop.index }}">
+                  <img src="{{ thumb_file | asset_url }}" alt="" width="60" height="60" {% if forloop.first %}loading="eager"{% else %}loading="lazy"{% endif %} decoding="async">
+                </button>
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-hero__right">
+        <a class="offer-stars" href="#REVIEW">
+          <img src="{{ 'offer-stars-47.png' | asset_url }}" alt="4.6 out of 5 stars" width="141" height="26" loading="eager">
+          <span>rated <strong>4.6/5</strong> by <strong>50,000+</strong> customers</span>
+        </a>
+        <h1 class="offer-title">{{ product.title }}</h1>
+
+        <div class="device-bonuses" {% if sec_hero %}{{ sec_hero.shopify_attributes }}{% endif %}>
+          <p class="device-bonuses__label">{{ sec_hero.settings.bonus_label | default: 'Buy now and receive 3 bonuses:' }}</p>
+          <ul class="device-bonuses__list">
+            <li><span class="device-check" aria-hidden="true">✓</span><span>{{ sec_hero.settings.bonus_1 | default: 'FREE How to Use Acupuncture eBook ($10 Value)' }}</span></li>
+            <li><span class="device-check" aria-hidden="true">✓</span><span>{{ sec_hero.settings.bonus_2 | default: 'FREE 3x Extra Healing Pen Cap ($15 Value)' }}</span></li>
+            <li><span class="device-check" aria-hidden="true">✓</span><span>{{ sec_hero.settings.bonus_3 | default: 'FREE Healing Body Point Map ($5 Value)' }}</span></li>
+          </ul>
+        </div>
+
+        <div class="device-perks-4">
+          <div class="device-perk">{%- assign _oi_fallback_1_1 = sec_hero.settings.perk_1_fallback | default: 'pen-icon-natural.svg' -%}{% render 'offer-img', image: sec_hero.settings.perk_1_icon, fallback: _oi_fallback_1_1, width: 48, height: 48, alt: '' %}<span>{{ sec_hero.settings.perk_1 | default: 'Natural Pain Relief' }}</span></div>
+          <div class="device-perk">{%- assign _oi_fallback_2_1 = sec_hero.settings.perk_2_fallback | default: 'pen-icon-ergo.svg' -%}{% render 'offer-img', image: sec_hero.settings.perk_2_icon, fallback: _oi_fallback_2_1, width: 48, height: 48, alt: '' %}<span>{{ sec_hero.settings.perk_2 | default: 'Ergonomic Design' }}</span></div>
+          <div class="device-perk">{%- assign _oi_fallback_3_1 = sec_hero.settings.perk_3_fallback | default: 'pen-icon-easy.svg' -%}{% render 'offer-img', image: sec_hero.settings.perk_3_icon, fallback: _oi_fallback_3_1, width: 48, height: 48, alt: '' %}<span>{{ sec_hero.settings.perk_3 | default: 'Easy To Use' }}</span></div>
+          <div class="device-perk">{%- assign _oi_fallback_4_1 = sec_hero.settings.perk_4_fallback | default: 'pen-icon-warranty.svg' -%}{% render 'offer-img', image: sec_hero.settings.perk_4_icon, fallback: _oi_fallback_4_1, width: 48, height: 48, alt: '' %}<span>{{ sec_hero.settings.perk_4 | default: '1-Year Warranty' }}</span></div>
+        </div>
+
+        {%- assign default_pack = pack_1 -%}
+        {%- if s.packages_reversed and pack_3 != blank -%}
+          {%- assign default_pack = pack_3 -%}
+        {%- endif -%}
+
+        {% form 'product', product, id: 'OfferAddForm', class: 'offer-buy-form' %}
+          <input type="hidden" name="id" id="OfferVariantId" value="{{ default_pack.id }}">
+          <input type="hidden" name="quantity" value="1">
+
+          <div class="offer-bundles" data-device-packs id="OfferPackages">
+            <div class="offer-bundles__head">
+              <p class="offer-bundles__label">{{ s.packs_title | default: 'Choose your package' }}</p>
+            </div>
+            <div class="offer-bundles__list{% if s.packages_reversed %} offer-bundles__list--rev{% endif %}" role="radiogroup" aria-label="Choose package">
+              <div class="offer-bundle{% unless s.packages_reversed %} is-active{% endunless %}">
+                <label class="offer-bundle__pick">
+                  <input
+                    type="radio"
+                    name="device_pack"
+                    value="{{ pack_1.id }}"
+                    data-pack="1"
+                    data-cta-price="{{ pack_1.price | money_without_trailing_zeros }}"
+                    {% unless s.packages_reversed %}checked{% endunless %}
+                  >
+                  <span class="offer-bundle__radio" aria-hidden="true"></span>
+                  <span class="offer-bundle__body">
+                    <span class="offer-bundle__content">
+                      <span class="offer-bundle__title">{{ s.pack_1_title | default: 'Buy 1' }}</span>
+                      <span class="offer-bundle__meta-row">
+                        <span class="offer-bundle__meta">{{ s.pack_1_save | default: 'Save 46$' }}</span>
+                        <span class="offer-bundle__ship">{{ s.pack_1_ship | default: '$4.95 ship' }}</span>
+                      </span>
+                    </span>
+                    <span class="offer-bundle__price-col">
+                      <span class="offer-bundle__price">{{ pack_1.price | money_without_trailing_zeros }}</span>
+                      {% if pack_1.compare_at_price > pack_1.price %}
+                        <span class="offer-bundle__compare">{{ pack_1.compare_at_price | money_without_trailing_zeros }}</span>
+                      {% endif %}
+                    </span>
+                  </span>
+                </label>
+              </div>
+              {% if pack_2 != blank %}
+              <div class="offer-bundle offer-bundle--featured">
+                <label class="offer-bundle__pick">
+                  <input
+                    type="radio"
+                    name="device_pack"
+                    value="{{ pack_2.id }}"
+                    data-pack="2"
+                    data-cta-price="{{ pack_2.price | money_without_trailing_zeros }}"
+                  >
+                  <span class="offer-bundle__radio" aria-hidden="true"></span>
+                  <span class="offer-bundle__body">
+                    <span class="offer-bundle__content">
+                      <span class="offer-bundle__title">{{ s.pack_2_title | default: 'Buy 2' }}</span>
+                      <span class="offer-bundle__meta-row">
+                        <span class="offer-bundle__meta">{{ s.pack_2_save | default: 'Save 92$' }}</span>
+                        {% if s.pack_2_ship != blank %}
+                          <span class="offer-bundle__ship">{{ s.pack_2_ship }}</span>
+                        {% endif %}
+                      </span>
+                    </span>
+                    <span class="offer-bundle__price-col">
+                      <span class="offer-bundle__price">{{ pack_2.price | money_without_trailing_zeros }}</span>
+                      {% if pack_2.compare_at_price > pack_2.price %}
+                        <span class="offer-bundle__compare">{{ pack_2.compare_at_price | money_without_trailing_zeros }}</span>
+                      {% endif %}
+                    </span>
+                  </span>
+                </label>
+              </div>
+              {% endif %}
+              {% if pack_3 != blank %}
+              <div class="offer-bundle offer-bundle--value{% if s.packages_reversed %} is-active{% endif %}">
+                <label class="offer-bundle__pick">
+                  <input
+                    type="radio"
+                    name="device_pack"
+                    value="{{ pack_3.id }}"
+                    data-pack="3"
+                    data-cta-price="{{ pack_3.price | money_without_trailing_zeros }}"
+                    {% if s.packages_reversed %}checked{% endif %}
+                  >
+                  <span class="offer-bundle__radio" aria-hidden="true"></span>
+                  <span class="offer-bundle__body">
+                    <span class="offer-bundle__content">
+                      <span class="offer-bundle__title">{{ s.pack_3_title | default: 'Buy 3' }}</span>
+                      <span class="offer-bundle__meta-row">
+                        <span class="offer-bundle__meta">{{ s.pack_3_save | default: 'Extra 10% OFF' }}</span>
+                        <span class="offer-bundle__ship offer-bundle__ship--free">{{ s.pack_3_ship | default: 'Free ship' }}</span>
+                      </span>
+                    </span>
+                    <span class="offer-bundle__price-col">
+                      <span class="offer-bundle__price">{{ pack_3.price | money_without_trailing_zeros }}</span>
+                      {% if pack_3.compare_at_price > pack_3.price %}
+                        <span class="offer-bundle__compare">{{ pack_3.compare_at_price | money_without_trailing_zeros }}</span>
+                      {% endif %}
+                    </span>
+                  </span>
+                </label>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <button class="offer-cta device-atc" type="submit" name="add" data-offer-checkout data-device-cta {% unless default_pack.available %}disabled{% endunless %}>
+            <span class="offer-cta__label device-atc__label">{{ cta_label }}</span>
+            <span class="offer-cta__sep device-atc__sep" aria-hidden="true">—</span>
+            <span class="offer-cta__price device-atc__price" data-device-cta-price data-offer-cta-price>{{ default_pack.price | money_without_trailing_zeros }}</span>
+          </button>
+        {% endform %}
+
+        <div class="offer-faq device-accordion" data-offer-accordion>
+          <div class="offer-faq__item">
+            <button type="button" class="offer-faq__trigger" aria-expanded="false">Everything in your box</button>
+            <div class="offer-faq__panel" hidden><div class="offer-faq__body">
+              <ul class="device-accordion-list">
+                <li><strong>{{ brand }} V1 Device</strong></li>
+                <li><strong>Protective carrying case</strong></li>
+                <li><strong>How to Use Acupuncture eBook</strong> — $10 value</li>
+                <li><strong>3x Extra attachment heads</strong> — $15 value</li>
+                <li><strong>Healing Body Point Map</strong> — $5 value</li>
+              </ul>
+              <p class="device-accordion-bonus"><strong>$30 in bonuses — FREE today</strong></p>
+            </div></div>
+          </div>
+          <div class="offer-faq__item">
+            <button type="button" class="offer-faq__trigger" aria-expanded="false">How to get relief in 5 min</button>
+            <div class="offer-faq__panel" hidden><div class="offer-faq__body">
+              <ol class="device-accordion-steps">
+                <li><strong>Turn on</strong> and set a comfortable intensity.</li>
+                <li><strong>Hold the tip</strong> on the sore spot (or glide for larger areas).</li>
+                <li><strong>Use 5–10 minutes</strong> — many feel a light tingle as tension eases.</li>
+              </ol>
+              <p><a class="device-accordion-link" href="#howto">See full step-by-step guide ↓</a></p>
+            </div></div>
+          </div>
+          <div class="offer-faq__item">
+            <button type="button" class="offer-faq__trigger" aria-expanded="false">Common questions</button>
+            <div class="offer-faq__panel" hidden><div class="offer-faq__body">
+              <p><strong>How soon will I feel it?</strong><br>Many notice relief within minutes on a targeted area. Results vary — consistent use helps most.</p>
+              <p><strong>What if I don’t love it?</strong><br>You’re covered by our <strong>30-day money-back guarantee</strong>. Contact us within 30 days for a full refund.</p>
+              <p><strong>Is it safe for daily use?</strong><br>Yes — non-invasive and adjustable. Not recommended with a pacemaker or implanted electronic devices; ask your doctor if unsure.</p>
+            </div></div>
+          </div>
+        </div>
+
+        {%- comment -%} Laura quote inside buy-box (Solvora placement) {%- endcomment -%}
+        <div class="device-inline-quote">
+          <img src="{{ 'pen-laura.jpg' | asset_url }}" alt="Laura M." width="50" height="50" loading="lazy">
+          <div>
+            <p class="device-inline-quote__text">“I was skeptical at first, but after a few sessions, I could feel real relief in my lower back. It’s now part of my daily self-care routine, and I love how simple it is to use.”</p>
+            <p class="device-inline-quote__meta"><strong>Laura M.</strong> <span aria-hidden="true">★★★★★</span> — Verified Buyer</p>
+          </div>
+        </div>
+
+        <div class="device-shipnote" data-device-shipnote>
+          <div class="device-shipnote__from">
+            <span class="device-flag" data-device-flag aria-hidden="true"></span>
+            <span data-device-ship-label>Shipping to</span>
+            <strong data-device-ship-place>{{ localization.country.name | default: 'your country' }}</strong>
+          </div>
+          <div class="device-shipnote__eta">Order will arrive by <strong data-device-arrive-by>…</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 2-3. Press to heal + premium checklist (2-col) ===== {%- endcomment -%}
+  <section class="offer-sec device-sec-heal">
+    <div class="device-heal">
+      <h2 class="device-heal__title" {% if sec_heal %}{{ sec_heal.shopify_attributes }}{% endif %}>{{ sec_heal.settings.heading | default: 'Press the pen against body parts you want to heal!' }}</h2>
+      <div class="device-heal__grid">
+        <div class="device-heal__media">
+          {%- assign _oi_fallback_5_1 = sec_heal.settings.fallback | default: 'pen-heal.webp' -%}{% render 'offer-img', image: sec_heal.settings.image, fallback: _oi_fallback_5_1, alt: 'How to use acupuncture pen', width: 500, height: 500, loading: 'lazy' %}
+        </div>
+        <div class="device-premium-box">
+          <div class="device-premium-box__inset" aria-hidden="true"></div>
+          <ul class="device-premium-box__list">
+            <li>
+              <span class="device-premium-box__check" aria-hidden="true">✓</span>
+              <span><strong>Full-Body Pain Relief</strong> – Unlike medications, acupuncture has no side effects. It's perfect for arthritis, sciatica, sports injuries, muscle, joint, back pain, plantar fasciitis, and more.</span>
+            </li>
+            <li>
+              <span class="device-premium-box__check" aria-hidden="true">✓</span>
+              <span><strong>Boost Your Health</strong> – Acupuncture promotes healthy blood circulation and firmer skin. It also reduces stress and anxiety as your body begins to heal.</span>
+            </li>
+            <li>
+              <span class="device-premium-box__check" aria-hidden="true">✓</span>
+              <span><strong>9 Intensity Levels</strong> – Suitable for any treatment you need. You decide what level suits you best.</span>
+            </li>
+            <li>
+              <span class="device-premium-box__check" aria-hidden="true">✓</span>
+              <span><strong>Pain-Free Acupuncture</strong> – Get the same quality acupuncture treatment without the discomfort of needles.</span>
+            </li>
+            <li>
+              <span class="device-premium-box__check" aria-hidden="true">✓</span>
+              <span><strong>Easy to Use</strong> – Press the pen on the painful areas, and hold. It releases electric pulses to stimulate acupuncture points. That results in pain relief and healing.</span>
+            </li>
+            <li>
+              <span class="device-premium-box__check" aria-hidden="true">✓</span>
+              <span><strong>Package Includes</strong> – Comes with {{ brand }} V1 Device, protective carrying case and 3 extra bonuses.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 4. Icon grid / image-with-text (Solvora: dark bg + white icons) ===== {%- endcomment -%}
+  <section class="offer-sec device-sec-itg">
+    <div class="offer-row">
+      <div class="offer-head device-itg-head"><h2>{{ brand }} V1 Device</h2></div>
+      <div class="device-itg">
+        <div class="device-itg__col">
+          <article class="device-icon-card">
+            <img src="{{ 'pen-icon-pain.webp' | asset_url }}" alt="Targeted Pain Relief" width="176" height="176" loading="lazy" decoding="async">
+            <h3>Targeted Pain Relief</h3>
+            <p>Precise electrical pulses focus on specific areas to help ease tension and discomfort exactly where you need it.</p>
+          </article>
+          <article class="device-icon-card">
+            <img src="{{ 'pen-icon-circ.webp' | asset_url }}" alt="Improved Circulation" width="176" height="176" loading="lazy" decoding="async">
+            <h3>Improved Circulation</h3>
+            <p>Activates local blood flow to support recovery, reduce tension buildup, and enhance overall comfort.</p>
+          </article>
+        </div>
+        <div class="device-itg__center">
+          {%- assign _oi_fallback_6_1 = sec_features.settings.fallback | default: 'pen-gloves.jpg' -%}{% render 'offer-img', image: sec_features.settings.image, fallback: _oi_fallback_6_1, alt: 'V1 Device', width: 900, height: 800, loading: 'lazy' %}
+        </div>
+        <div class="device-itg__col">
+          <article class="device-icon-card">
+            <img src="{{ 'pen-icon-relax.webp' | asset_url }}" alt="Deep Muscle Relaxation" width="176" height="176" loading="lazy" decoding="async">
+            <h3>Deep Muscle Relaxation</h3>
+            <p>Gentle stimulation helps release tight muscles, reduce stiffness, and support a more relaxed body.</p>
+          </article>
+          <article class="device-icon-card">
+            <img src="{{ 'pen-icon-intensity.webp' | asset_url }}" alt="Adjustable Intensity Control" width="176" height="176" loading="lazy" decoding="async">
+            <h3>Adjustable Intensity Control</h3>
+            <p>Customize each session with multiple intensity levels for a comfortable and personalized experience.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 5. Daily reset ===== {%- endcomment -%}
+  <section class="offer-sec offer-sec--mint">
+    <div class="offer-row">
+      <div class="offer-head"><h2>Your Daily Reset, <span class="offer-blue">Simplified</span></h2></div>
+      <div class="device-reset">
+        <p>Daily tension doesn't disappear on its own, it builds up over time through movement, posture, and constant activity.</p>
+        <p>The <strong>{{ brand }} V1</strong> gives you a simple way to step out of that cycle and take control. <strong>Designed for everyday use</strong>, it fits seamlessly into your routine without effort.</p>
+        <p>In just a few minutes, you create a <strong>targeted moment of relief</strong> that helps your body release tension and reset. No appointments, no waiting, <strong>no complicated setup</strong>.</p>
+        <p>Use it whenever you need – during a break, after a long day, or as part of your evening routine. It becomes a <strong>natural habit</strong> that supports how your body feels day after day.</p>
+        <p>With consistent use, you'll notice a greater sense of <strong>ease</strong>, improved <strong>comfort</strong>, and a more balanced daily rhythm.</p>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 6. How to use (2-col: master image + step cards) ===== {%- endcomment -%}
+  <section class="offer-sec device-sec-howto" id="howto">
+    <div class="device-howto">
+      <div class="device-howto__head">
+        <h2 class="device-howto__title" {% if sec_howto %}{{ sec_howto.shopify_attributes }}{% endif %}>{{ sec_howto.settings.heading | default: 'How To Use' }} {{ brand }} V1 Device</h2>
+        <p class="device-howto__eyebrow">Step-by-Step Guide</p>
+      </div>
+      <div class="device-howto__grid">
+        <div class="device-howto__media">
+          {%- assign _oi_fallback_7_1 = sec_howto.settings.fallback | default: 'pen-howto.jpg' -%}{% render 'offer-img', image: sec_howto.settings.image, fallback: _oi_fallback_7_1, alt: 'How to use V1', width: 1000, height: 1000, loading: 'lazy' %}
+        </div>
+        <div class="device-howto__steps">
+          <article class="device-step">
+            <div class="device-step__thumb">
+              {%- assign _oi_fallback_8_1 = sec_howto.settings.step_1_fallback | default: 'pen-step-1.jpg' -%}{%- assign _oi_alt_8_2 = sec_howto.settings.step_1_title | default: 'Choose & attach head' -%}{% render 'offer-img', image: sec_howto.settings.step_1_image, fallback: _oi_fallback_8_1, alt: _oi_alt_8_2, width: 320, height: 400, loading: 'lazy' %}
+            </div>
+            <div class="device-step__copy">
+              <span class="device-step__num">1</span>
+              <h3>{{ sec_howto.settings.step_1_title | default: 'Choose & Attach Head' }}</h3>
+              <p>Select the right attachment for your needs and simply screw it on securely before use.</p>
+            </div>
+          </article>
+          <article class="device-step">
+            <div class="device-step__thumb">
+              {%- assign _oi_fallback_9_1 = sec_howto.settings.step_2_fallback | default: 'pen-step-2.jpg' -%}{%- assign _oi_alt_9_2 = sec_howto.settings.step_2_title | default: 'Adjust intensity' -%}{% render 'offer-img', image: sec_howto.settings.step_2_image, fallback: _oi_fallback_9_1, alt: _oi_alt_9_2, width: 320, height: 400, loading: 'lazy' %}
+            </div>
+            <div class="device-step__copy">
+              <span class="device-step__num">2</span>
+              <h3>{{ sec_howto.settings.step_2_title | default: 'Adjust Intensity (1–9)' }}</h3>
+              <p>Turn on the device and choose your preferred intensity level. Start low and adjust to what feels most comfortable.</p>
+            </div>
+          </article>
+          <article class="device-step">
+            <div class="device-step__thumb">
+              {%- assign _oi_fallback_10_1 = sec_howto.settings.step_3_fallback | default: 'pen-step-3.jpg' -%}{%- assign _oi_alt_10_2 = sec_howto.settings.step_3_title | default: 'Apply to target area' -%}{% render 'offer-img', image: sec_howto.settings.step_3_image, fallback: _oi_fallback_10_1, alt: _oi_alt_10_2, width: 320, height: 400, loading: 'lazy' %}
+            </div>
+            <div class="device-step__copy">
+              <span class="device-step__num">3</span>
+              <h3>{{ sec_howto.settings.step_3_title | default: 'Apply to the Target Area' }}</h3>
+              <p>Gently place the device on the desired point and hold or move it slowly to target the area effectively.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 7. Real reviews (Solvora TRS slider style) ===== {%- endcomment -%}
+  <section class="offer-sec device-sec-reviews">
+    <div class="device-reviews">
+      <div class="device-reviews__head">
+        <span class="device-reviews__eyebrow">Real people</span>
+        <h2 class="device-reviews__title">Real Reviews</h2>
+        <p class="device-reviews__intro">See how {{ brand }} V1 fits into everyday routines to support comfort and help you feel better.</p>
+      </div>
+      <div class="device-reviews__slider" tabindex="0" aria-label="Customer reviews">
+        <div class="device-reviews__track">
+          {%- if sec_reviews_slider and sec_reviews_slider.settings.item_1_title != blank -%}
+            {%- for i in (1..6) -%}
+              {%- capture tk -%}item_{{ i }}_title{%- endcapture -%}
+              {%- capture bk -%}item_{{ i }}_text{%- endcapture -%}
+              {%- capture nk -%}item_{{ i }}_name{%- endcapture -%}
+              {%- assign rt = sec_reviews_slider.settings[tk] -%}
+              {%- if rt != blank -%}
+                <article class="device-review-card">
+                  <h3 class="device-review-card__title">{{ rt }}</h3>
+                  <p class="device-review-card__body">{{ sec_reviews_slider.settings[bk] }}</p>
+                  <div class="device-review-card__foot">
+                    <div class="device-review-card__stars" aria-label="5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    <div class="device-review-card__name">{{ sec_reviews_slider.settings[nk] }}</div>
+                  </div>
+                </article>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- else -%}
+
+          <article class="device-review-card">
+            <h3 class="device-review-card__title">“I noticed a difference from the first use”</h3>
+            <p class="device-review-card__body">I wasn’t sure what to expect at first, but after trying it on my shoulder, I felt a noticeable difference right away. The sensation is gentle but you can feel it working. I’ve been using it in the evenings after long days, and it really helps me relax before bed. It’s simple, quick, and has honestly become part of my daily routine.</p>
+            <div class="device-review-card__foot">
+              <div class="device-review-card__stars" aria-label="5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div class="device-review-card__name">Daniel R.</div>
+              <div class="device-review-card__verified"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#1857b2" d="M12 2.5l2.09 1.55 2.54-.4 1.2 2.28 2.28 1.2-.4 2.54L21.5 12l-1.55 2.09.4 2.54-2.28 1.2-1.2 2.28-2.54-.4L12 21.5l-2.09-1.55-2.54.4-1.2-2.28-2.28-1.2.4-2.54L2.5 12l1.55-2.09-.4-2.54 2.28-1.2 1.2-2.28 2.54.4L12 2.5zm-1.2 12.1l5.3-5.3-1.4-1.4-3.9 3.9-1.8-1.8-1.4 1.4 3.2 3.2z"/></svg><span>Verified</span></div>
+            </div>
+          </article>
+          <article class="device-review-card">
+            <h3 class="device-review-card__title">“Perfect after long work days”</h3>
+            <p class="device-review-card__body">I spend most of my day sitting, and I often get stiffness in my lower back and neck. Since using the {{ brand }} V1, I’ve noticed that I can release that tension much faster. I usually use it for a few minutes while watching TV, and it helps me unwind without any effort. It only takes a few minutes, but it makes a big difference at the end of the day.</p>
+            <div class="device-review-card__foot">
+              <div class="device-review-card__stars" aria-label="5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div class="device-review-card__name">Anthony K.</div>
+              <div class="device-review-card__verified"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#1857b2" d="M12 2.5l2.09 1.55 2.54-.4 1.2 2.28 2.28 1.2-.4 2.54L21.5 12l-1.55 2.09.4 2.54-2.28 1.2-1.2 2.28-2.54-.4L12 21.5l-2.09-1.55-2.54.4-1.2-2.28-2.28-1.2.4-2.54L2.5 12l1.55-2.09-.4-2.54 2.28-1.2 1.2-2.28 2.54.4L12 2.5zm-1.2 12.1l5.3-5.3-1.4-1.4-3.9 3.9-1.8-1.8-1.4 1.4 3.2 3.2z"/></svg><span>Verified</span></div>
+            </div>
+          </article>
+          <article class="device-review-card">
+            <h3 class="device-review-card__title">“I finally found something I actually use daily”</h3>
+            <p class="device-review-card__body">I’ve tried different things before, but nothing really stuck. This is different because it’s so easy to use. I keep it nearby and use it on my neck, hands, and shoulders whenever I feel discomfort. After a few weeks, I’ve noticed I feel more relaxed throughout the day. It’s small, practical, and surprisingly effective.</p>
+            <div class="device-review-card__foot">
+              <div class="device-review-card__stars" aria-label="5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div class="device-review-card__name">Michelle T.</div>
+              <div class="device-review-card__verified"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#1857b2" d="M12 2.5l2.09 1.55 2.54-.4 1.2 2.28 2.28 1.2-.4 2.54L21.5 12l-1.55 2.09.4 2.54-2.28 1.2-1.2 2.28-2.54-.4L12 21.5l-2.09-1.55-2.54.4-1.2-2.28-2.28-1.2.4-2.54L2.5 12l1.55-2.09-.4-2.54 2.28-1.2 1.2-2.28 2.54.4L12 2.5zm-1.2 12.1l5.3-5.3-1.4-1.4-3.9 3.9-1.8-1.8-1.4 1.4 3.2 3.2z"/></svg><span>Verified</span></div>
+            </div>
+          </article>
+          <article class="device-review-card">
+            <h3 class="device-review-card__title">“A great alternative to constant appointments”</h3>
+            <p class="device-review-card__body">I used to rely on regular appointments whenever I felt tension building up, which was time-consuming and expensive. Now I just use this at home whenever I need it. I like that I can target specific areas and adjust the intensity to what feels right. It gives me more control and saves me a lot of time.</p>
+            <div class="device-review-card__foot">
+              <div class="device-review-card__stars" aria-label="5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div class="device-review-card__name">Laura M.</div>
+              <div class="device-review-card__verified"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#1857b2" d="M12 2.5l2.09 1.55 2.54-.4 1.2 2.28 2.28 1.2-.4 2.54L21.5 12l-1.55 2.09.4 2.54-2.28 1.2-1.2 2.28-2.54-.4L12 21.5l-2.09-1.55-2.54.4-1.2-2.28-2.28-1.2.4-2.54L2.5 12l1.55-2.09-.4-2.54 2.28-1.2 1.2-2.28 2.54.4L12 2.5zm-1.2 12.1l5.3-5.3-1.4-1.4-3.9 3.9-1.8-1.8-1.4 1.4 3.2 3.2z"/></svg><span>Verified</span></div>
+            </div>
+          </article>
+          <article class="device-review-card">
+            <h3 class="device-review-card__title">“It’s become part of my daily routine”</h3>
+            <p class="device-review-card__body">What I like most is how easy it is to stay consistent. I don’t need to plan anything - I just use it for a few minutes during the day or in the evening. Over time, I’ve noticed my body feels less tense and more balanced. It’s one of those small habits that actually makes a difference.</p>
+            <div class="device-review-card__foot">
+              <div class="device-review-card__stars" aria-label="5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div class="device-review-card__name">Kevin S.</div>
+              <div class="device-review-card__verified"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#1857b2" d="M12 2.5l2.09 1.55 2.54-.4 1.2 2.28 2.28 1.2-.4 2.54L21.5 12l-1.55 2.09.4 2.54-2.28 1.2-1.2 2.28-2.54-.4L12 21.5l-2.09-1.55-2.54.4-1.2-2.28-2.28-1.2.4-2.54L2.5 12l1.55-2.09-.4-2.54 2.28-1.2 1.2-2.28 2.54.4L12 2.5zm-1.2 12.1l5.3-5.3-1.4-1.4-3.9 3.9-1.8-1.8-1.4 1.4 3.2 3.2z"/></svg><span>Verified</span></div>
+            </div>
+          </article>
+          <article class="device-review-card">
+            <h3 class="device-review-card__title">“Very comfortable and easy to adjust”</h3>
+            <p class="device-review-card__body">At first I thought it might feel uncomfortable, but it’s actually very gentle. I like that I can adjust the intensity depending on how I feel that day. I use it on different areas and it always feels controlled and easy to manage. It’s a simple device, but it does exactly what I need it to do.</p>
+            <div class="device-review-card__foot">
+              <div class="device-review-card__stars" aria-label="5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div class="device-review-card__name">Natalie P.</div>
+              <div class="device-review-card__verified"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#1857b2" d="M12 2.5l2.09 1.55 2.54-.4 1.2 2.28 2.28 1.2-.4 2.54L21.5 12l-1.55 2.09.4 2.54-2.28 1.2-1.2 2.28-2.54-.4L12 21.5l-2.09-1.55-2.54.4-1.2-2.28-2.28-1.2.4-2.54L2.5 12l1.55-2.09-.4-2.54 2.28-1.2 1.2-2.28 2.54.4L12 2.5zm-1.2 12.1l5.3-5.3-1.4-1.4-3.9 3.9-1.8-1.8-1.4 1.4 3.2 3.2z"/></svg><span>Verified</span></div>
+            </div>
+          </article>
+        {%- endif -%}
+</div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 8. Stats counters (dark band like Solvora) ===== {%- endcomment -%}
+  <section class="offer-sec device-sec-stats">
+    <div class="offer-row">
+      <div class="offer-head device-stats-head"><p>Loved By 50,000+ Customers</p><h2>Dont take it from us</h2></div>
+      <div class="device-stats">
+        <div class="device-stats__media" {% if sec_stats %}{{ sec_stats.shopify_attributes }}{% endif %}>{%- assign _oi_fallback_11_1 = sec_stats.settings.fallback | default: 'pen-stats.jpg' -%}{% render 'offer-img', image: sec_stats.settings.image, fallback: _oi_fallback_11_1, alt: 'Customer using V1', width: 1200, height: 1200, loading: 'lazy' %}</div>
+        <div class="device-stats__list" data-device-stats>
+          <article class="device-stat"><div class="device-stat__num" data-count-to="96" data-suffix="%">0%</div><h3>Targeted Tension Relief</h3><p>Focused stimulation helps release built-up tension exactly where you need it, providing fast and noticeable comfort.</p></article>
+          <article class="device-stat"><div class="device-stat__num" data-count-to="94" data-suffix="%">0%</div><h3>Supports Healthy Circulation</h3><p>Applying pressure to key points helps stimulate blood flow and support your body’s natural circulation.</p></article>
+          <article class="device-stat"><div class="device-stat__num" data-count-to="89" data-suffix="%">0%</div><h3>Relieves Muscle Tightness</h3><p>Helps release tension in overworked areas like the neck, shoulders, and feet.</p></article>
+          <article class="device-stat"><div class="device-stat__num" data-count-to="98" data-suffix="%">0%</div><h3>Enhances Daily Comfort</h3><p>Regular use helps you feel more relaxed, balanced, and comfortable throughout the day.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 9. Effortless relief ===== {%- endcomment -%}
+  <section class="offer-sec offer-sec--mint">
+    <div class="offer-row">
+      <div class="offer-head">
+        <p>Easy To Use</p>
+        <h2>Effortless Relief In <span class="offer-blue">Minutes</span></h2>
+        <p style="text-transform:none;letter-spacing:0;font-weight:400;font-size:16px;color:#555;margin-top:10px;">With {{ brand }} V1, you’re just seconds away from targeted comfort. Select your intensity, apply the device, and let it do the work.</p>
+      </div>
+      <div class="device-hotspot">
+        <div class="device-hotspot__media" {% if sec_relief %}{{ sec_relief.shopify_attributes }}{% endif %}>{%- assign _oi_fallback_12_1 = sec_relief.settings.fallback | default: 'pen-hotspot.jpg' -%}{% render 'offer-img', image: sec_relief.settings.image, fallback: _oi_fallback_12_1, alt: 'Effortless relief', width: 1200, height: 900, loading: 'lazy' %}</div>
+        <div class="device-hotspot__copy">
+          <h3>Simple to use, yet highly precise.</h3>
+          <p>{{ brand }} V1 gives you full control over your experience with interchangeable heads and adjustable intensity levels. Whether you’re targeting a specific point or a larger area, the device adapts to your needs in seconds. Designed for everyday use, it fits naturally into your routine - at home, at work, or while relaxing. No complicated setup, just a straightforward way to support your comfort whenever you need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 10. Us vs Them (Solvora black + teal column) ===== {%- endcomment -%}
+  <section class="offer-sec device-sec-vs">
+    <div class="device-vs">
+      <h2 class="device-vs__title">{{ brand }}™ Vs. Other Brands</h2>
+      <div class="device-vs-table" role="table" aria-label="{{ brand }} vs other brands">
+        <div class="device-vs-table__row device-vs-table__row--head" role="row">
+          <div class="device-vs-table__corner" role="columnheader"></div>
+          <div class="device-vs-table__brand device-vs-table__brand--us" role="columnheader">
+            {%- assign _oi_fallback_13_1 = sec_compare.settings.us_fallback | default: 'pen-vs-us.jpg' -%}{% render 'offer-img', image: sec_compare.settings.us_image, fallback: _oi_fallback_13_1, alt: brand, width: 120, height: 120, loading: 'lazy' %}
+            <span>{{ brand | upcase }}™</span>
+          </div>
+          <div class="device-vs-table__brand device-vs-table__brand--them" role="columnheader">
+            {%- assign _oi_fallback_14_1 = sec_compare.settings.them_fallback | default: 'pen-vs-them.jpg' -%}{% render 'offer-img', image: sec_compare.settings.them_image, fallback: _oi_fallback_14_1, alt: 'Other brands', width: 120, height: 120, loading: 'lazy' %}
+            <span>Other Brands</span>
+          </div>
+        </div>
+        <div class="device-vs-table__row" role="row">
+          <div class="device-vs-table__feat" role="rowheader">Engineered for Precision Targeting</div>
+          <div class="device-vs-table__cell device-vs-table__cell--us" role="cell"><span class="device-vs-check" aria-label="Yes">✓</span></div>
+          <div class="device-vs-table__cell device-vs-table__cell--them" role="cell"><span class="device-vs-x" aria-label="No">✕</span></div>
+        </div>
+        <div class="device-vs-table__row" role="row">
+          <div class="device-vs-table__feat" role="rowheader">Advanced Multi-Head System</div>
+          <div class="device-vs-table__cell device-vs-table__cell--us" role="cell"><span class="device-vs-check" aria-label="Yes">✓</span></div>
+          <div class="device-vs-table__cell device-vs-table__cell--them" role="cell"><span class="device-vs-x" aria-label="No">✕</span></div>
+        </div>
+        <div class="device-vs-table__row" role="row">
+          <div class="device-vs-table__feat" role="rowheader">Smooth & Controlled Stimulation</div>
+          <div class="device-vs-table__cell device-vs-table__cell--us" role="cell"><span class="device-vs-check" aria-label="Yes">✓</span></div>
+          <div class="device-vs-table__cell device-vs-table__cell--them" role="cell"><span class="device-vs-x" aria-label="No">✕</span></div>
+        </div>
+        <div class="device-vs-table__row" role="row">
+          <div class="device-vs-table__feat" role="rowheader">Easy to Use Anytime, Anywhere</div>
+          <div class="device-vs-table__cell device-vs-table__cell--us" role="cell"><span class="device-vs-check" aria-label="Yes">✓</span></div>
+          <div class="device-vs-table__cell device-vs-table__cell--them" role="cell"><span class="device-vs-x" aria-label="No">✕</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 11. FAQ ===== {%- endcomment -%}
+  <section class="offer-sec offer-sec--tech" id="faq">
+    <div class="offer-row">
+      <div class="offer-head"><p>You got questions</p><h2>we got <span class="offer-blue">answers</span></h2>
+        <p style="text-transform:none;letter-spacing:0;font-weight:400;font-size:16px;color:#555;margin-top:10px;">Find answers to common questions about our products and services.</p>
+      </div>
+      <div class="device-faq-grid">
+        <div class="device-faq-media" {% if sec_faq %}{{ sec_faq.shopify_attributes }}{% endif %}>{%- assign _oi_fallback_15_1 = sec_faq.settings.fallback | default: 'pen-faq-side.jpg' -%}{% render 'offer-img', image: sec_faq.settings.image, fallback: _oi_fallback_15_1, alt: 'V1 Device', width: 900, height: 1100, loading: 'lazy' %}</div>
+        <div class="device-faq-shell">
+          <div class="offer-faq" data-offer-accordion>
+            {%- if sec_faq and sec_faq.settings.q_1 != blank -%}
+              {%- for i in (1..6) -%}
+                {%- capture qk -%}q_{{ i }}{%- endcapture -%}
+                {%- capture ak -%}a_{{ i }}{%- endcapture -%}
+                {%- assign qv = sec_faq.settings[qk] -%}
+                {%- assign av = sec_faq.settings[ak] -%}
+                {%- if qv != blank -%}
+                  <div class="offer-faq__item">
+                    <button type="button" class="offer-faq__trigger" aria-expanded="false">{{ qv }}</button>
+                    <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>{{ av | newline_to_br }}</p></div></div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- else -%}
+              <div class="offer-faq__item"><button type="button" class="offer-faq__trigger" aria-expanded="false">How fast does shipping take?</button><div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>We process orders within 1–2 business days.</p></div></div></div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 12. Customer reviews (Loox masonry + Zavelyn scoreboard head) ===== {%- endcomment -%}
+  <section class="offer-sec device-sec-loox" id="REVIEW">
+    <div class="device-loox">
+      <div class="device-loox__head">
+        <h2 {% if sec_loox %}{{ sec_loox.shopify_attributes }}{% endif %}>{{ sec_loox.settings.heading | default: 'What Customers Say About' }} {{ brand }} V1</h2>
+      </div>
+      <div class="offer-ratings device-loox__ratings">
+        <div class="offer-score">
+          <div class="offer-score__value"><strong>4.7</strong> out of 5</div>
+          <img class="offer-score__stars" src="{{ 'offer-stars-47.png' | asset_url }}" alt="4.7 out of 5 stars" width="108" height="23" loading="lazy">
+          <p class="offer-score__note">Based on reviews from 50,000+ customers</p>
+        </div>
+        <div class="offer-bars">
+          <div class="offer-bar"><span>Comfort</span><div class="offer-bar__track"><div class="offer-bar__fill" style="width:96%"></div></div><span>4.8/5</span></div>
+          <div class="offer-bar"><span>Support</span><div class="offer-bar__track"><div class="offer-bar__fill" style="width:94%"></div></div><span>4.7/5</span></div>
+          <div class="offer-bar"><span>Quality</span><div class="offer-bar__track"><div class="offer-bar__fill" style="width:94%"></div></div><span>4.7/5</span></div>
+          <div class="offer-bar"><span>Value for Money</span><div class="offer-bar__track"><div class="offer-bar__fill" style="width:92%"></div></div><span>4.6/5</span></div>
+        </div>
+      </div>
+      <div class="device-loox__grid">
+        {%- if sec_loox and sec_loox.settings.item_1_name != blank -%}
+          {%- for i in (1..12) -%}
+            {%- capture nk -%}item_{{ i }}_name{%- endcapture -%}
+            {%- capture dk -%}item_{{ i }}_date{%- endcapture -%}
+            {%- capture tk -%}item_{{ i }}_text{%- endcapture -%}
+            {%- capture ik -%}item_{{ i }}_image{%- endcapture -%}
+            {%- capture fk -%}item_{{ i }}_fallback{%- endcapture -%}
+            {%- capture vk -%}item_{{ i }}_verified{%- endcapture -%}
+            {%- capture sk -%}item_{{ i }}_stars{%- endcapture -%}
+            {%- assign rn = sec_loox.settings[nk] -%}
+            {%- if rn != blank -%}
+              {%- assign rdate = sec_loox.settings[dk] -%}
+              {%- assign rtx = sec_loox.settings[tk] -%}
+              {%- assign rimg = sec_loox.settings[ik] -%}
+              {%- assign rfb = sec_loox.settings[fk] | default: 'pen-loox-1.jpg' -%}
+              {%- assign rstars = sec_loox.settings[sk] | default: 5 -%}
+              <article class="device-loox-card">
+                <div class="device-loox-card__media">
+                  {%- if rimg != blank -%}
+                    {{ rimg | image_url: width: 960 | image_tag: alt: rn, width: 480, height: 640, loading: 'lazy' }}
+                  {%- else -%}
+                    <img src="{{ rfb | asset_url }}" alt="Review by {{ rn | escape }}" width="480" height="640" loading="lazy">
+                  {%- endif -%}
+                </div>
+                <div class="device-loox-card__meta">
+                  <div class="device-loox-card__who">
+                    <strong>{{ rn }}</strong>
+                    {%- if sec_loox.settings[vk] -%}
+                      <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+                    {%- endif -%}
+                  </div>
+                  <time class="device-loox-card__date">{{ rdate }}</time>
+                  <div class="device-loox-card__stars" aria-label="{{ rstars }} out of 5">
+                    {%- for s in (1..5) -%}<span class="{% if s <= rstars %}is-on{% else %}is-off{% endif %}">★</span>{%- endfor -%}
+                  </div>
+                  <p class="device-loox-card__body">{{ rtx }}</p>
+                </div>
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+        <article class="device-loox-card">
+          <div class="device-loox-card__media">
+            <img src="{{ 'pen-loox-1.jpg' | asset_url }}" alt="Review by William D." width="480" height="640" loading="lazy">
+            <span class="device-loox-card__play" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="56" height="56"><circle cx="32" cy="32" r="30" fill="rgba(255,255,255,.92)"/><path d="M26 20l22 12-22 12V20z" fill="#111"/></svg>
+            </span>
+          </div>
+          <div class="device-loox-card__meta">
+            <div class="device-loox-card__who">
+              <strong>William D.</strong>
+              <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            </div>
+            <time class="device-loox-card__date">8/8/2026</time>
+            <div class="device-loox-card__stars" aria-label="5 out of 5"><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span></div>
+            <p class="device-loox-card__body">I was told by my doctor that surgery might be the only option for my carpal tunnel, and that thought honestly terrified me. Tingling, and pain in my wrist were affecting everything I did. I came across this device and decided to give it a try before going down the surgery route. I’m so glad I did. Within the first week, I noticed less stiffness in my hand, and after a few weeks of consistent use the pain had reduced drastically. The gentle pulses really do reach deep into the wrist area, and I finally feel like I have control over my condition.</p>
+          </div>
+        </article>
+        <article class="device-loox-card">
+          <div class="device-loox-card__media">
+            <img src="{{ 'pen-loox-2.jpg' | asset_url }}" alt="Review by Michael S." width="480" height="640" loading="lazy">
+          </div>
+          <div class="device-loox-card__meta">
+            <div class="device-loox-card__who">
+              <strong>Michael S.</strong>
+              <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            </div>
+            <time class="device-loox-card__date">8/5/2026</time>
+            <div class="device-loox-card__stars" aria-label="5 out of 5"><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span></div>
+            <p class="device-loox-card__body">I bought this mainly because of the constant tension I feel in my shoulders and upper arms from working at a desk all day. Using it on my arm muscles feels almost like a deep tissue massage but without the effort. The pulses go straight into the sore spots and loosen everything up.</p>
+          </div>
+        </article>
+        <article class="device-loox-card">
+          <div class="device-loox-card__media">
+            <img src="{{ 'pen-loox-3.jpg' | asset_url }}" alt="Review by Matthew F." width="480" height="640" loading="lazy">
+          </div>
+          <div class="device-loox-card__meta">
+            <div class="device-loox-card__who">
+              <strong>Matthew F.</strong>
+              <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            </div>
+            <time class="device-loox-card__date">8/3/2026</time>
+            <div class="device-loox-card__stars" aria-label="5 out of 5"><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span></div>
+            <p class="device-loox-card__body">When I first took this device out of the box, I was impressed by how solid and well-made it feels. It’s not bulky or awkward to hold, it fits perfectly in my hand and is super lightweight, so I can easily use it for a longer session without my hand getting tired.</p>
+          </div>
+        </article>
+        <article class="device-loox-card">
+          <div class="device-loox-card__media">
+            <img src="{{ 'pen-loox-4.jpg' | asset_url }}" alt="Review by Sophie L." width="480" height="640" loading="lazy">
+          </div>
+          <div class="device-loox-card__meta">
+            <div class="device-loox-card__who">
+              <strong>Sophie L.</strong>
+              <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            </div>
+            <time class="device-loox-card__date">8/1/2026</time>
+            <div class="device-loox-card__stars" aria-label="4 out of 5"><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-off">★</span></div>
+            <p class="device-loox-card__body">What I love most about this device is that it isn’t just a “one setting fits all” kind of tool. The different heads make it feel like I have several therapy devices in one. For example, I use the round head for quick muscle relaxation, the flat one for larger areas like my back, and the pointed tip when I need to target specific pain spots. It’s so easy to switch them out, and I can really customize my sessions depending on what my body needs that day.</p>
+          </div>
+        </article>
+        <article class="device-loox-card">
+          <div class="device-loox-card__media">
+            <img src="{{ 'pen-loox-5.jpg' | asset_url }}" alt="Review by Samuel C." width="480" height="640" loading="lazy">
+          </div>
+          <div class="device-loox-card__meta">
+            <div class="device-loox-card__who">
+              <strong>Samuel C.</strong>
+              <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            </div>
+            <time class="device-loox-card__date">7/27/2026</time>
+            <div class="device-loox-card__stars" aria-label="5 out of 5"><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span></div>
+            <p class="device-loox-card__body">It helps me manage muscle soreness without relying on extra medication all the time. After workouts or long days, I use it to relax the muscles, and it does seem to speed up recovery a bit. It’s nice having something simple I can use at home whenever I need it.</p>
+          </div>
+        </article>
+        <article class="device-loox-card">
+          <div class="device-loox-card__media">
+            <img src="{{ 'pen-loox-6.jpg' | asset_url }}" alt="Review by Erica D." width="480" height="640" loading="lazy">
+          </div>
+          <div class="device-loox-card__meta">
+            <div class="device-loox-card__who">
+              <strong>Erica D.</strong>
+              <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            </div>
+            <time class="device-loox-card__date">7/25/2026</time>
+            <div class="device-loox-card__stars" aria-label="5 out of 5"><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span></div>
+            <p class="device-loox-card__body">I’ve been dealing with shoulder stiffness and arm pain for years, and it only seemed to get worse as I got older. Lifting my arm above my head used to be a challenge, and it was frustrating not being able to do simple things without discomfort. After using this device for a few weeks, I can honestly say the difference is noticeable.</p>
+          </div>
+        </article>
+        <article class="device-loox-card">
+          <div class="device-loox-card__media">
+            <img src="{{ 'pen-loox-7.jpg' | asset_url }}" alt="Review by Rachel P." width="480" height="640" loading="lazy">
+          </div>
+          <div class="device-loox-card__meta">
+            <div class="device-loox-card__who">
+              <strong>Rachel P.</strong>
+              <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            </div>
+            <time class="device-loox-card__date">7/19/2026</time>
+            <div class="device-loox-card__stars" aria-label="4 out of 5"><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-off">★</span></div>
+            <p class="device-loox-card__body">One of the things I appreciate most about this device is how simple it is to control. The digital display makes it so clear which level I’m on, and adjusting the intensity is just a matter of pressing a button. I usually start on a lower setting and then increase it once my muscles are warmed up. Having that flexibility is amazing because some days I just want gentle relaxation, and other days I need stronger pulses to really work out the stiffness.</p>
+          </div>
+        </article>
+        <article class="device-loox-card">
+          <div class="device-loox-card__media">
+            <img src="{{ 'pen-loox-8.jpg' | asset_url }}" alt="Review by Olivia M." width="480" height="640" loading="lazy">
+          </div>
+          <div class="device-loox-card__meta">
+            <div class="device-loox-card__who">
+              <strong>Olivia M.</strong>
+              <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            </div>
+            <time class="device-loox-card__date">7/15/2026</time>
+            <div class="device-loox-card__stars" aria-label="5 out of 5"><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span></div>
+            <p class="device-loox-card__body">I actually ended up buying two of these so both my partner and I could use them, and honestly it’s been worth every penny. What’s great is that each of us prefers different attachments. I like using the flat roller on larger areas like my thighs and back, while he prefers the round tip for pinpointing sore spots. Its really good</p>
+          </div>
+        </article>
+        <article class="device-loox-card">
+          <div class="device-loox-card__media">
+            <img src="{{ 'pen-loox-9.jpg' | asset_url }}" alt="Review by Kevin A." width="480" height="640" loading="lazy">
+          </div>
+          <div class="device-loox-card__meta">
+            <div class="device-loox-card__who">
+              <strong>Kevin A.</strong>
+              <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            </div>
+            <time class="device-loox-card__date">7/11/2026</time>
+            <div class="device-loox-card__stars" aria-label="5 out of 5"><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span></div>
+            <p class="device-loox-card__body">I spend hours every day typing on a computer, and over time I developed wrist pain that was starting to feel like carpal tunnel. Some days my hand would even go numb. I decided to give this device a try because I needed something I could use at home without paying for constant therapy sessions. Using it on my wrist has been a huge relief.</p>
+          </div>
+        </article>
+        <article class="device-loox-card">
+          <div class="device-loox-card__media">
+            <img src="{{ 'pen-loox-10.jpg' | asset_url }}" alt="Review by Daniel K." width="480" height="640" loading="lazy">
+          </div>
+          <div class="device-loox-card__meta">
+            <div class="device-loox-card__who">
+              <strong>Daniel K.</strong>
+              <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            </div>
+            <time class="device-loox-card__date">7/8/2026</time>
+            <div class="device-loox-card__stars" aria-label="5 out of 5"><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span></div>
+            <p class="device-loox-card__body">My knees have been giving me trouble for years, especially after long walks or climbing stairs. I wasn’t sure if this little device could really make a difference, but I was willing to try anything before resorting to stronger medication. To my surprise, it actually works. Using it on my knees for just a few minutes a day has eased the stiffness and reduced the ache that used to follow me around constantly.</p>
+          </div>
+        </article>
+        <article class="device-loox-card">
+          <div class="device-loox-card__media">
+            <img src="{{ 'pen-loox-11.jpg' | asset_url }}" alt="Review by Robert J." width="480" height="640" loading="lazy">
+          </div>
+          <div class="device-loox-card__meta">
+            <div class="device-loox-card__who">
+              <strong>Robert J.</strong>
+              <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            </div>
+            <time class="device-loox-card__date">7/4/2026</time>
+            <div class="device-loox-card__stars" aria-label="4 out of 5"><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-off">★</span></div>
+            <p class="device-loox-card__body">At my age, joint pain has become part of everyday life. I’ve tried all sorts of creams, pills, and even regular therapy visits, but nothing ever seemed to last. What I like about this device is how simple it is to use — just turn it on, pick the intensity level, and apply it exactly where I feel the pain. I use it on my knees and lower back most often, and within minutes I notice the soreness calming down.</p>
+          </div>
+        </article>
+        <article class="device-loox-card">
+          <div class="device-loox-card__media">
+            <img src="{{ 'pen-loox-12.jpg' | asset_url }}" alt="Review by Catherine K." width="480" height="640" loading="lazy">
+          </div>
+          <div class="device-loox-card__meta">
+            <div class="device-loox-card__who">
+              <strong>Catherine K.</strong>
+              <span class="device-loox-card__verified"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            </div>
+            <time class="device-loox-card__date">6/30/2026</time>
+            <div class="device-loox-card__stars" aria-label="5 out of 5"><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span><span class="is-on">★</span></div>
+            <p class="device-loox-card__body">After using it for just a few minutes, the tightness in my neck softened and I actually fell asleep faster than I have in weeks. Now I keep it on my nightstand and use it every evening while winding down. I also had a small question about the settings and their support replied immediately with a clear and friendly answer. Thank you!</p>
+          </div>
+        </article>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+
+  <footer class="offer-foot">
+    <div class="offer-foot__inner">
+      <div class="offer-foot__logo">{{ brand }}</div>
+      <p class="offer-foot__line">© {{ 'now' | date: '%Y' }} {{ brand }}®. All Rights Reserved.</p>
+      <p class="offer-foot__line"><a href="/pages/privacy-policy">Privacy Policy</a> - <a href="/pages/terms-of-service">Terms of Service</a></p>
+      <p class="offer-foot__line">support@zavelyn.com</p>
+    </div>
+  </footer>
+
+  <button type="button" class="offer-top" data-offer-top aria-label="Back to top" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="offer-sticky" data-offer-sticky aria-hidden="true" inert>
+    <div class="offer-sticky__inner">
+      <div class="offer-sticky__copy">{{ brand }} V1 + 3 Bonuses FREE</div>
+      <a class="offer-sticky__cta" href="#OfferTop" data-offer-checkout data-device-cta tabindex="-1">
+        <span class="offer-cta__label device-atc__label">{{ cta_label }}</span>
+        <span class="offer-cta__sep device-atc__sep" aria-hidden="true">—</span>
+        <span class="offer-cta__price device-atc__price" data-device-cta-price data-offer-cta-price>{{ default_pack.price | money_without_trailing_zeros }}</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var main = document.querySelector('[data-offer-main]');
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll('[data-offer-thumb]'));
+  var sources = thumbs.map(function (t) { return t.dataset.src; });
+  var index = 0;
+  function setSlide(i) {
+    if (!main || !sources.length) return;
+    index = (i + sources.length) % sources.length;
+    main.src = sources[index];
+    thumbs.forEach(function (t, n) { t.classList.toggle('is-active', n === index); });
+  }
+  thumbs.forEach(function (thumb) {
+    thumb.addEventListener('click', function () { setSlide(Number(thumb.dataset.index)); });
+  });
+  var prev = document.querySelector('[data-offer-prev]');
+  var next = document.querySelector('[data-offer-next]');
+  if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); setSlide(index - 1); });
+  if (next) next.addEventListener('click', function (e) { e.stopPropagation(); setSlide(index + 1); });
+
+  var fancyboxLoading = null;
+  function loadFancybox(cb) {
+    if (window.Fancybox) { cb(); return; }
+    if (fancyboxLoading) { fancyboxLoading.then(cb); return; }
+    fancyboxLoading = new Promise(function (resolve) {
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css';
+      document.head.appendChild(css);
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js';
+      s.onload = function () { resolve(); };
+      s.onerror = function () { resolve(); };
+      document.body.appendChild(s);
+    });
+    fancyboxLoading.then(cb);
+  }
+  var zoom = document.querySelector('[data-offer-zoom]');
+  if (zoom) {
+    zoom.addEventListener('click', function () {
+      if (!sources.length) return;
+      loadFancybox(function () {
+        if (!window.Fancybox) return;
+        window.Fancybox.show(
+          sources.map(function (src) { return { src: src, type: 'image' }; }),
+          { startIndex: index }
+        );
+      });
+    });
+  }
+
+  /* Ship note — destination + ETA from visitor IP (Shopify geo) */
+  (function syncDeviceShipFromIp() {
+    var root = document.querySelector('[data-device-shipnote]');
+    if (!root) return;
+    var flagEl = root.querySelector('[data-device-flag]');
+    var labelEl = root.querySelector('[data-device-ship-label]');
+    var placeEl = root.querySelector('[data-device-ship-place]');
+    var arriveEl = root.querySelector('[data-device-arrive-by]');
+
+    function flagEmoji(code) {
+      if (!code || code.length !== 2) return '';
+      var cc = code.toUpperCase();
+      return String.fromCodePoint(127397 + cc.charCodeAt(0), 127397 + cc.charCodeAt(1));
+    }
+
+    function formatArriveBy(businessDays) {
+      var d = new Date();
+      var left = Math.max(1, businessDays || 7);
+      while (left > 0) {
+        d.setDate(d.getDate() + 1);
+        var day = d.getDay();
+        if (day !== 0 && day !== 6) left--;
+      }
+      var weekdays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      var n = d.getDate();
+      var suf = (n % 10 === 1 && n !== 11) ? 'st' : (n % 10 === 2 && n !== 12) ? 'nd' : (n % 10 === 3 && n !== 13) ? 'rd' : 'th';
+      return weekdays[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + n + suf;
+    }
+
+    function applyShip(code, name) {
+      var iso = (code || '').toUpperCase();
+      var country = name || 'your country';
+      var isUs = iso === 'US' || iso === 'USA' || /united states/i.test(country);
+      if (labelEl) labelEl.textContent = isUs ? 'Ships From' : 'Shipping to';
+      if (placeEl) placeEl.textContent = isUs ? 'Texas' : country;
+      if (flagEl) {
+        if (isUs) {
+          flagEl.textContent = '';
+          flagEl.classList.add('device-flag--us');
+          flagEl.classList.remove('device-flag--emoji');
+        } else {
+          flagEl.textContent = flagEmoji(iso) || '🌍';
+          flagEl.classList.add('device-flag--emoji');
+          flagEl.classList.remove('device-flag--us');
+        }
+      }
+      if (arriveEl) arriveEl.textContent = formatArriveBy(isUs ? 7 : 12);
+    }
+
+    /* Fallback from Shopify localization until geo resolves */
+    applyShip(
+      {{ localization.country.iso_code | default: '' | json }},
+      {{ localization.country.name | default: 'your country' | json }}
+    );
+
+    fetch('/browsing_context_suggestions.json', {
+      credentials: 'same-origin',
+      headers: { Accept: 'application/json' }
+    })
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (data) {
+        var detected = data && data.detected_values && data.detected_values.country;
+        if (!detected) return;
+        applyShip(detected.handle || detected.code || '', detected.name || detected.handle || '');
+      })
+      .catch(function () {});
+  })();
+
+  document.querySelectorAll('[data-offer-accordion]').forEach(function (accordion, aIdx) {
+    var items = Array.prototype.slice.call(accordion.querySelectorAll('.offer-faq__item'));
+    items.forEach(function (item, i) {
+      var trigger = item.querySelector('.offer-faq__trigger');
+      var panel = item.querySelector('.offer-faq__panel');
+      if (!trigger || !panel) return;
+      var panelId = 'device-faq-' + aIdx + '-' + i;
+      panel.id = panelId;
+      trigger.setAttribute('aria-controls', panelId);
+      panel.setAttribute('role', 'region');
+      var startOpen = item.classList.contains('is-open');
+      trigger.setAttribute('aria-expanded', startOpen ? 'true' : 'false');
+      if (startOpen) panel.removeAttribute('hidden');
+      else panel.setAttribute('hidden', '');
+      trigger.addEventListener('click', function () {
+        var willOpen = !item.classList.contains('is-open');
+        items.forEach(function (other) {
+          var open = other === item && willOpen;
+          other.classList.toggle('is-open', open);
+          var btn = other.querySelector('.offer-faq__trigger');
+          var p = other.querySelector('.offer-faq__panel');
+          if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (p) { if (open) p.removeAttribute('hidden'); else p.setAttribute('hidden', ''); }
+        });
+      });
+    });
+  });
+
+  var variantInput = document.getElementById('OfferVariantId');
+  var buyForm = document.getElementById('OfferAddForm');
+  var packsRoot = document.querySelector('[data-device-packs]');
+  var ctaPriceEls = Array.prototype.slice.call(document.querySelectorAll('[data-device-cta-price]'));
+
+  function syncCtaPrice(input) {
+    if (!input) input = packsRoot && packsRoot.querySelector('input[name="device_pack"]:checked');
+    var price = input ? (input.getAttribute('data-cta-price') || '') : '';
+    ctaPriceEls.forEach(function (el) { el.textContent = price; });
+  }
+
+  if (packsRoot) {
+    packsRoot.addEventListener('change', function (e) {
+      var input = e.target;
+      if (!input || input.name !== 'device_pack') return;
+      if (variantInput) variantInput.value = input.value;
+      packsRoot.querySelectorAll('.offer-bundle').forEach(function (pack) {
+        pack.classList.toggle('is-active', pack.contains(input) && input.checked);
+      });
+      syncCtaPrice(input);
+    });
+    var initialPack = packsRoot.querySelector('input[name="device_pack"]:checked');
+    if (initialPack) syncCtaPrice(initialPack);
+  }
+  syncCtaPrice();
+  function selectedVariantId() {
+    if (packsRoot) {
+      var checked = packsRoot.querySelector('input[name="device_pack"]:checked');
+      if (checked) return Number(checked.value);
+    }
+    return variantInput ? Number(variantInput.value) : 0;
+  }
+  var checkoutBtns = Array.prototype.slice.call(document.querySelectorAll('[data-offer-checkout]'));
+  var checkoutBusy = false;
+  function goToCheckout(trigger) {
+    var vid = selectedVariantId();
+    if (checkoutBusy || !vid) return;
+    var checked = packsRoot ? packsRoot.querySelector('input[name="device_pack"]:checked') : null;
+    var packNum = checked ? (checked.getAttribute('data-pack') || '1') : '1';
+    var packLabel = 'Buy ' + packNum;
+    var packCard = checked && checked.closest('.offer-bundle');
+    var nameEl = packCard && packCard.querySelector('.offer-bundle__title');
+    var metaEl = packCard && packCard.querySelector('.offer-bundle__meta');
+    var shipEl = packCard && packCard.querySelector('.offer-bundle__ship');
+    if (nameEl) packLabel = nameEl.textContent.trim();
+    var units = Math.max(1, Number(packNum) || 1);
+    var contentsLabel = units === 1 ? '1 × V1 Device + 3 bonuses' : (units + ' × V1 Device + bonuses');
+    var metaLabel = metaEl ? metaEl.textContent.trim() : '';
+    var shipLabel = shipEl ? shipEl.textContent.trim() : '';
+    var lineProperties = {
+      _bundle: 'device-pack',
+      _bundle_id: 'dev_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 8),
+      _pack: String(packNum),
+      _cart_qty: '1',
+      Offer: packLabel,
+      'You get': contentsLabel
+    };
+    if (metaLabel) lineProperties.Deal = metaLabel;
+    if (shipLabel) lineProperties.Shipping = shipLabel;
+    var packageNote = [packLabel, contentsLabel, metaLabel, shipLabel].filter(Boolean).join(' · ');
+    checkoutBusy = true;
+    checkoutBtns.forEach(function (btn) { btn.classList.add('is-loading'); });
+    if (trigger && trigger.classList) trigger.classList.add('is-loading');
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({
+        items: [{
+          id: vid,
+          quantity: 1,
+          properties: lineProperties
+        }]
+      })
+    })
+      .then(function (res) { if (!res.ok) throw new Error('add_failed'); return res.json(); })
+      .then(function () {
+        return fetch('/cart.js', { credentials: 'same-origin' }).then(function (r) {
+          return r.ok ? r.json() : null;
+        });
+      })
+      .then(function (cart) {
+        checkoutBusy = false;
+        checkoutBtns.forEach(function (btn) { btn.classList.remove('is-loading'); });
+        if (trigger && trigger.classList) trigger.classList.remove('is-loading');
+        if (cart) {
+          document.dispatchEvent(new CustomEvent('zavelyn:offer-cart:open', { detail: { cart: cart } }));
+          return;
+        }
+        window.location.href = '/checkout';
+      })
+      .catch(function () {
+        checkoutBusy = false;
+        checkoutBtns.forEach(function (btn) { btn.classList.remove('is-loading'); });
+        if (trigger && trigger.classList) trigger.classList.remove('is-loading');
+        if (buyForm) buyForm.submit();
+      });
+  }
+  if (buyForm) buyForm.addEventListener('submit', function (e) { e.preventDefault(); goToCheckout(e.submitter); });
+  checkoutBtns.forEach(function (btn) {
+    if (btn.closest('#OfferAddForm')) return;
+    btn.addEventListener('click', function (e) { e.preventDefault(); goToCheckout(btn); });
+  });
+
+  /* Stats: show final values (no scroll count-up) */
+  (function () {
+    var root = document.querySelector('[data-device-stats]');
+    if (!root) return;
+    Array.prototype.slice.call(root.querySelectorAll('[data-count-to]')).forEach(function (el) {
+      var to = Number(el.getAttribute('data-count-to') || 0);
+      var suffix = el.getAttribute('data-suffix') || '';
+      el.textContent = to + suffix;
+    });
+  })();
+
+  var sticky = document.querySelector('[data-offer-sticky]');
+  var stickyCta = sticky ? sticky.querySelector('[data-offer-checkout]') : null;
+  var hero = document.querySelector('.offer-hero');
+  if (sticky && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      var on = !entries[0].isIntersecting;
+      sticky.classList.toggle('is-on', on);
+      sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
+      if (on) sticky.removeAttribute('inert');
+      else sticky.setAttribute('inert', '');
+      if (stickyCta) stickyCta.tabIndex = on ? 0 : -1;
+      document.documentElement.classList.toggle('offer-sticky-on', on);
+    }, { threshold: 0.05 }).observe(hero);
+  }
+
+  var topBtn = document.querySelector('[data-offer-top]');
+  if (topBtn) {
+    function syncTopBtn() {
+      var show = window.scrollY > 480;
+      topBtn.hidden = !show;
+      topBtn.classList.toggle('is-on', show);
+    }
+    window.addEventListener('scroll', syncTopBtn, { passive: true });
+    syncTopBtn();
+    topBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Offer device landing",
+  "tag": "section",
+  "class": "section-offer-device",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand",
+      "default": "Zavelyn"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text",
+      "label": "Ticker",
+      "default": "LIMITED OFFER."
+    },
+    {
+      "type": "text",
+      "id": "ticker_highlight",
+      "label": "Ticker highlight",
+      "default": "DEVICE + 3 FREE BONUSES"
+    },
+    {
+      "type": "text",
+      "id": "reviews_count_label",
+      "label": "Reviews label",
+      "default": "rated 4.6/5 by 50,000+ customers"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA",
+      "default": "Add to cart"
+    },
+    {
+      "type": "header",
+      "content": "Packages"
+    },
+    {
+      "type": "checkbox",
+      "id": "packages_reversed",
+      "label": "Reverse package order (Buy 3 first)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "packs_title",
+      "label": "Packages title",
+      "default": "Choose your package"
+    },
+    {
+      "type": "text",
+      "id": "pack_1_title",
+      "label": "Buy 1 title",
+      "default": "Buy 1"
+    },
+    {
+      "type": "text",
+      "id": "pack_1_save",
+      "label": "Buy 1 save badge",
+      "default": "Save 46$"
+    },
+    {
+      "type": "text",
+      "id": "pack_1_ship",
+      "label": "Buy 1 shipping",
+      "default": "$4.95 ship"
+    },
+    {
+      "type": "text",
+      "id": "pack_2_title",
+      "label": "Buy 2 title",
+      "default": "Buy 2"
+    },
+    {
+      "type": "text",
+      "id": "pack_2_save",
+      "label": "Buy 2 save badge",
+      "default": "Save 92$"
+    },
+    {
+      "type": "text",
+      "id": "pack_2_ship",
+      "label": "Buy 2 shipping (leave empty to hide)"
+    },
+    {
+      "type": "text",
+      "id": "pack_3_title",
+      "label": "Buy 3 title",
+      "default": "Buy 3"
+    },
+    {
+      "type": "text",
+      "id": "pack_3_save",
+      "label": "Buy 3 save badge",
+      "default": "Extra 10% OFF"
+    },
+    {
+      "type": "text",
+      "id": "pack_3_ship",
+      "label": "Buy 3 shipping",
+      "default": "Free ship"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offer device landing",
+      "blocks": [
+        {
+          "type": "sec_gallery"
+        },
+        {
+          "type": "sec_hero"
+        },
+        {
+          "type": "sec_heal"
+        },
+        {
+          "type": "sec_features"
+        },
+        {
+          "type": "sec_reset"
+        },
+        {
+          "type": "sec_howto"
+        },
+        {
+          "type": "sec_reviews_slider"
+        },
+        {
+          "type": "sec_stats"
+        },
+        {
+          "type": "sec_relief"
+        },
+        {
+          "type": "sec_compare"
+        },
+        {
+          "type": "sec_faq"
+        },
+        {
+          "type": "sec_loox"
+        },
+        {
+          "type": "sec_footer"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sec_gallery",
+      "name": "0. Gallery",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Gallery images"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "text",
+          "id": "fallback_1",
+          "label": "Fallback asset 1",
+          "default": "pen-gallery-1.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "text",
+          "id": "fallback_2",
+          "label": "Fallback asset 2",
+          "default": "pen-gallery-2.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "text",
+          "id": "fallback_3",
+          "label": "Fallback asset 3",
+          "default": "pen-gallery-3.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "text",
+          "id": "fallback_4",
+          "label": "Fallback asset 4",
+          "default": "pen-gallery-4.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "text",
+          "id": "fallback_5",
+          "label": "Fallback asset 5",
+          "default": "pen-gallery-5.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "text",
+          "id": "fallback_6",
+          "label": "Fallback asset 6",
+          "default": "pen-gallery-6.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_7",
+          "label": "Image 7"
+        },
+        {
+          "type": "text",
+          "id": "fallback_7",
+          "label": "Fallback asset 7",
+          "default": "pen-gallery-7.jpg"
+        }
+      ]
+    },
+    {
+      "type": "sec_hero",
+      "name": "1. Hero / Buy box",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "bonus_label",
+          "label": "Bonuses label",
+          "default": "Buy now and receive 3 bonuses:"
+        },
+        {
+          "type": "text",
+          "id": "bonus_1",
+          "label": "Bonus 1",
+          "default": "FREE How to Use Acupuncture eBook ($10 Value)"
+        },
+        {
+          "type": "text",
+          "id": "bonus_2",
+          "label": "Bonus 2",
+          "default": "FREE 3x Extra Healing Pen Cap ($15 Value)"
+        },
+        {
+          "type": "text",
+          "id": "bonus_3",
+          "label": "Bonus 3",
+          "default": "FREE Healing Body Point Map ($5 Value)"
+        },
+        {
+          "type": "text",
+          "id": "perk_1",
+          "label": "Perk 1",
+          "default": "Natural Pain Relief"
+        },
+        {
+          "type": "text",
+          "id": "perk_2",
+          "label": "Perk 2",
+          "default": "Ergonomic Design"
+        },
+        {
+          "type": "text",
+          "id": "perk_3",
+          "label": "Perk 3",
+          "default": "Easy To Use"
+        },
+        {
+          "type": "text",
+          "id": "perk_4",
+          "label": "Perk 4",
+          "default": "1-Year Warranty"
+        },
+        {
+          "type": "image_picker",
+          "id": "perk_1_icon",
+          "label": "Perk 1 icon"
+        },
+        {
+          "type": "text",
+          "id": "perk_1_fallback",
+          "label": "Perk 1 fallback",
+          "default": "pen-icon-natural.svg"
+        },
+        {
+          "type": "image_picker",
+          "id": "perk_2_icon",
+          "label": "Perk 2 icon"
+        },
+        {
+          "type": "text",
+          "id": "perk_2_fallback",
+          "label": "Perk 2 fallback",
+          "default": "pen-icon-ergo.svg"
+        },
+        {
+          "type": "image_picker",
+          "id": "perk_3_icon",
+          "label": "Perk 3 icon"
+        },
+        {
+          "type": "text",
+          "id": "perk_3_fallback",
+          "label": "Perk 3 fallback",
+          "default": "pen-icon-easy.svg"
+        },
+        {
+          "type": "image_picker",
+          "id": "perk_4_icon",
+          "label": "Perk 4 icon"
+        },
+        {
+          "type": "text",
+          "id": "perk_4_fallback",
+          "label": "Perk 4 fallback",
+          "default": "pen-icon-warranty.svg"
+        },
+        {
+          "type": "textarea",
+          "id": "quote_text",
+          "label": "Inline quote"
+        },
+        {
+          "type": "text",
+          "id": "quote_name",
+          "label": "Quote name",
+          "default": "Laura M."
+        },
+        {
+          "type": "image_picker",
+          "id": "quote_image",
+          "label": "Quote photo"
+        },
+        {
+          "type": "text",
+          "id": "quote_fallback",
+          "label": "Quote fallback",
+          "default": "pen-laura.jpg"
+        }
+      ]
+    },
+    {
+      "type": "sec_heal",
+      "name": "2. Press to heal",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Press the pen against body parts you want to heal!"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback",
+          "default": "pen-heal.webp"
+        },
+        {
+          "type": "textarea",
+          "id": "check_1",
+          "label": "Checklist 1"
+        },
+        {
+          "type": "textarea",
+          "id": "check_2",
+          "label": "Checklist 2"
+        },
+        {
+          "type": "textarea",
+          "id": "check_3",
+          "label": "Checklist 3"
+        },
+        {
+          "type": "textarea",
+          "id": "check_4",
+          "label": "Checklist 4"
+        },
+        {
+          "type": "textarea",
+          "id": "check_5",
+          "label": "Checklist 5"
+        },
+        {
+          "type": "textarea",
+          "id": "check_6",
+          "label": "Checklist 6"
+        }
+      ]
+    },
+    {
+      "type": "sec_features",
+      "name": "3. Feature icons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "V1 Device"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Center image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Center fallback",
+          "default": "pen-gloves.jpg"
+        },
+        {
+          "type": "text",
+          "id": "card_1_title",
+          "label": "Card 1 title",
+          "default": "Targeted Pain Relief"
+        },
+        {
+          "type": "textarea",
+          "id": "card_1_text",
+          "label": "Card 1 text"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_1_image",
+          "label": "Card 1 icon"
+        },
+        {
+          "type": "text",
+          "id": "card_1_fallback",
+          "label": "Card 1 fallback",
+          "default": "pen-icon-pain.webp"
+        },
+        {
+          "type": "text",
+          "id": "card_2_title",
+          "label": "Card 2 title",
+          "default": "Improved Circulation"
+        },
+        {
+          "type": "textarea",
+          "id": "card_2_text",
+          "label": "Card 2 text"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_2_image",
+          "label": "Card 2 icon"
+        },
+        {
+          "type": "text",
+          "id": "card_2_fallback",
+          "label": "Card 2 fallback",
+          "default": "pen-icon-circ.webp"
+        },
+        {
+          "type": "text",
+          "id": "card_3_title",
+          "label": "Card 3 title",
+          "default": "Deep Muscle Relaxation"
+        },
+        {
+          "type": "textarea",
+          "id": "card_3_text",
+          "label": "Card 3 text"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_3_image",
+          "label": "Card 3 icon"
+        },
+        {
+          "type": "text",
+          "id": "card_3_fallback",
+          "label": "Card 3 fallback",
+          "default": "pen-icon-relax.webp"
+        },
+        {
+          "type": "text",
+          "id": "card_4_title",
+          "label": "Card 4 title",
+          "default": "Adjustable Intensity Control"
+        },
+        {
+          "type": "textarea",
+          "id": "card_4_text",
+          "label": "Card 4 text"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_4_image",
+          "label": "Card 4 icon"
+        },
+        {
+          "type": "text",
+          "id": "card_4_fallback",
+          "label": "Card 4 fallback",
+          "default": "pen-icon-intensity.webp"
+        }
+      ]
+    },
+    {
+      "type": "sec_reset",
+      "name": "4. Daily reset",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Your Daily Reset, Simplified"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body"
+        }
+      ]
+    },
+    {
+      "type": "sec_howto",
+      "name": "5. How to use",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "How To Use V1 Device"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Step-by-Step Guide"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Main image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Main fallback",
+          "default": "pen-howto.jpg"
+        },
+        {
+          "type": "text",
+          "id": "step_1_title",
+          "label": "Step 1 title",
+          "default": "Choose & Attach Head"
+        },
+        {
+          "type": "textarea",
+          "id": "step_1_text",
+          "label": "Step 1 text"
+        },
+        {
+          "type": "image_picker",
+          "id": "step_1_image",
+          "label": "Step 1 image"
+        },
+        {
+          "type": "text",
+          "id": "step_1_fallback",
+          "label": "Step 1 fallback",
+          "default": "pen-step-1.jpg"
+        },
+        {
+          "type": "text",
+          "id": "step_2_title",
+          "label": "Step 2 title",
+          "default": "Adjust Intensity (1–9)"
+        },
+        {
+          "type": "textarea",
+          "id": "step_2_text",
+          "label": "Step 2 text"
+        },
+        {
+          "type": "image_picker",
+          "id": "step_2_image",
+          "label": "Step 2 image"
+        },
+        {
+          "type": "text",
+          "id": "step_2_fallback",
+          "label": "Step 2 fallback",
+          "default": "pen-step-2.jpg"
+        },
+        {
+          "type": "text",
+          "id": "step_3_title",
+          "label": "Step 3 title",
+          "default": "Apply to the Target Area"
+        },
+        {
+          "type": "textarea",
+          "id": "step_3_text",
+          "label": "Step 3 text"
+        },
+        {
+          "type": "image_picker",
+          "id": "step_3_image",
+          "label": "Step 3 image"
+        },
+        {
+          "type": "text",
+          "id": "step_3_fallback",
+          "label": "Step 3 fallback",
+          "default": "pen-step-3.jpg"
+        }
+      ]
+    },
+    {
+      "type": "sec_reviews_slider",
+      "name": "6. Reviews slider",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Real people"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Real Reviews"
+        },
+        {
+          "type": "textarea",
+          "id": "intro",
+          "label": "Intro",
+          "default": "See how the device fits into everyday routines."
+        },
+        {
+          "type": "header",
+          "content": "Slide 1"
+        },
+        {
+          "type": "text",
+          "id": "item_1_title",
+          "label": "Title",
+          "default": "“I noticed a difference from the first use”"
+        },
+        {
+          "type": "textarea",
+          "id": "item_1_text",
+          "label": "Text",
+          "default": "I wasn’t sure what to expect at first, but after trying it on my shoulder, I felt a noticeable difference right away."
+        },
+        {
+          "type": "text",
+          "id": "item_1_name",
+          "label": "Name",
+          "default": "Daniel R."
+        },
+        {
+          "type": "header",
+          "content": "Slide 2"
+        },
+        {
+          "type": "text",
+          "id": "item_2_title",
+          "label": "Title",
+          "default": "“Perfect after long work days”"
+        },
+        {
+          "type": "textarea",
+          "id": "item_2_text",
+          "label": "Text",
+          "default": "I spend most of my day sitting, and I often get stiffness in my lower back and neck."
+        },
+        {
+          "type": "text",
+          "id": "item_2_name",
+          "label": "Name",
+          "default": "Anthony K."
+        },
+        {
+          "type": "header",
+          "content": "Slide 3"
+        },
+        {
+          "type": "text",
+          "id": "item_3_title",
+          "label": "Title",
+          "default": "“I finally found something I actually use daily”"
+        },
+        {
+          "type": "textarea",
+          "id": "item_3_text",
+          "label": "Text",
+          "default": "I’ve tried different things before, but nothing really stuck. This is different because it’s so easy to use."
+        },
+        {
+          "type": "text",
+          "id": "item_3_name",
+          "label": "Name",
+          "default": "Michelle T."
+        },
+        {
+          "type": "header",
+          "content": "Slide 4"
+        },
+        {
+          "type": "text",
+          "id": "item_4_title",
+          "label": "Title",
+          "default": "“A great alternative to constant appointments”"
+        },
+        {
+          "type": "textarea",
+          "id": "item_4_text",
+          "label": "Text",
+          "default": "I used to rely on regular appointments whenever I felt tension building up."
+        },
+        {
+          "type": "text",
+          "id": "item_4_name",
+          "label": "Name",
+          "default": "Laura M."
+        },
+        {
+          "type": "header",
+          "content": "Slide 5"
+        },
+        {
+          "type": "text",
+          "id": "item_5_title",
+          "label": "Title",
+          "default": "“It’s become part of my daily routine”"
+        },
+        {
+          "type": "textarea",
+          "id": "item_5_text",
+          "label": "Text",
+          "default": "What I like most is how easy it is to stay consistent."
+        },
+        {
+          "type": "text",
+          "id": "item_5_name",
+          "label": "Name",
+          "default": "Kevin S."
+        },
+        {
+          "type": "header",
+          "content": "Slide 6"
+        },
+        {
+          "type": "text",
+          "id": "item_6_title",
+          "label": "Title",
+          "default": "“Very comfortable and easy to adjust”"
+        },
+        {
+          "type": "textarea",
+          "id": "item_6_text",
+          "label": "Text",
+          "default": "At first I thought it might feel uncomfortable, but it’s actually very gentle."
+        },
+        {
+          "type": "text",
+          "id": "item_6_name",
+          "label": "Name",
+          "default": "Natalie P."
+        }
+      ]
+    },
+    {
+      "type": "sec_stats",
+      "name": "7. Stats",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Loved By 50,000+ Customers"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Dont take it from us"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback",
+          "default": "pen-stats.jpg"
+        },
+        {
+          "type": "text",
+          "id": "stat_1_value",
+          "label": "Stat 1 value",
+          "default": "96"
+        },
+        {
+          "type": "text",
+          "id": "stat_1_title",
+          "label": "Stat 1 title",
+          "default": "Targeted Tension Relief"
+        },
+        {
+          "type": "textarea",
+          "id": "stat_1_text",
+          "label": "Stat 1 text"
+        },
+        {
+          "type": "text",
+          "id": "stat_2_value",
+          "label": "Stat 2 value",
+          "default": "94"
+        },
+        {
+          "type": "text",
+          "id": "stat_2_title",
+          "label": "Stat 2 title",
+          "default": "Supports Healthy Circulation"
+        },
+        {
+          "type": "textarea",
+          "id": "stat_2_text",
+          "label": "Stat 2 text"
+        },
+        {
+          "type": "text",
+          "id": "stat_3_value",
+          "label": "Stat 3 value",
+          "default": "89"
+        },
+        {
+          "type": "text",
+          "id": "stat_3_title",
+          "label": "Stat 3 title",
+          "default": "Relieves Muscle Tightness"
+        },
+        {
+          "type": "textarea",
+          "id": "stat_3_text",
+          "label": "Stat 3 text"
+        },
+        {
+          "type": "text",
+          "id": "stat_4_value",
+          "label": "Stat 4 value",
+          "default": "98"
+        },
+        {
+          "type": "text",
+          "id": "stat_4_title",
+          "label": "Stat 4 title",
+          "default": "Enhances Daily Comfort"
+        },
+        {
+          "type": "textarea",
+          "id": "stat_4_text",
+          "label": "Stat 4 text"
+        }
+      ]
+    },
+    {
+      "type": "sec_relief",
+      "name": "8. Effortless relief",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Easy To Use"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Effortless Relief In Minutes"
+        },
+        {
+          "type": "textarea",
+          "id": "subtext",
+          "label": "Subtext"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card title",
+          "default": "Simple to use, yet highly precise."
+        },
+        {
+          "type": "textarea",
+          "id": "card_text",
+          "label": "Card text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback",
+          "default": "pen-hotspot.jpg"
+        }
+      ]
+    },
+    {
+      "type": "sec_compare",
+      "name": "9. Compare vs others",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Vs. Other Brands"
+        },
+        {
+          "type": "image_picker",
+          "id": "us_image",
+          "label": "Us image"
+        },
+        {
+          "type": "text",
+          "id": "us_fallback",
+          "label": "Us fallback",
+          "default": "pen-vs-us.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "them_image",
+          "label": "Them image"
+        },
+        {
+          "type": "text",
+          "id": "them_fallback",
+          "label": "Them fallback",
+          "default": "pen-vs-them.jpg"
+        },
+        {
+          "type": "text",
+          "id": "row_1",
+          "label": "Row 1",
+          "default": "Engineered for Precision Targeting"
+        },
+        {
+          "type": "text",
+          "id": "row_2",
+          "label": "Row 2",
+          "default": "Advanced Multi-Head System"
+        },
+        {
+          "type": "text",
+          "id": "row_3",
+          "label": "Row 3",
+          "default": "Smooth & Controlled Stimulation"
+        },
+        {
+          "type": "text",
+          "id": "row_4",
+          "label": "Row 4",
+          "default": "Easy to Use Anytime, Anywhere"
+        }
+      ]
+    },
+    {
+      "type": "sec_faq",
+      "name": "10. FAQ",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "You got questions"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "we got answers"
+        },
+        {
+          "type": "textarea",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "Find answers to common questions about our products and services."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Side image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Side fallback",
+          "default": "pen-faq-side.jpg"
+        },
+        {
+          "type": "header",
+          "content": "FAQ 1"
+        },
+        {
+          "type": "text",
+          "id": "q_1",
+          "label": "Question",
+          "default": "How fast does shipping take?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_1",
+          "label": "Answer",
+          "default": "We process orders within 1–2 business days. Delivery typically takes 6-8 business days depending on your location."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 2"
+        },
+        {
+          "type": "text",
+          "id": "q_2",
+          "label": "Question",
+          "default": "What if I don't love it?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_2",
+          "label": "Answer",
+          "default": "We offer a 30-day money-back guarantee. Contact us within 30 days for a full refund."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 3"
+        },
+        {
+          "type": "text",
+          "id": "q_3",
+          "label": "Question",
+          "default": "How long does it take to feel the effects?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_3",
+          "label": "Answer",
+          "default": "Many users report feeling a noticeable difference within the first few minutes of use."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 4"
+        },
+        {
+          "type": "text",
+          "id": "q_4",
+          "label": "Question",
+          "default": "Do I need to use a conductive gel?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_4",
+          "label": "Answer",
+          "default": "Using a conductive gel is not required, but recommended for optimal performance."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 5"
+        },
+        {
+          "type": "text",
+          "id": "q_5",
+          "label": "Question",
+          "default": "Can I use the device if I have a pacemaker?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_5",
+          "label": "Answer",
+          "default": "We do not recommend using the device if you have a pacemaker or implanted electronic medical devices."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 6"
+        },
+        {
+          "type": "text",
+          "id": "q_6",
+          "label": "Question",
+          "default": "How long should I use it every day?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_6",
+          "label": "Answer",
+          "default": "Most users use the device for about 5–10 minutes per area."
+        }
+      ]
+    },
+    {
+      "type": "sec_loox",
+      "name": "11. Photo reviews",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "What Customers Say About"
+        },
+        {
+          "type": "text",
+          "id": "score_value",
+          "label": "Score value",
+          "default": "4.7"
+        },
+        {
+          "type": "text",
+          "id": "score_note",
+          "label": "Score note",
+          "default": "Based on reviews from 50,000+ customers"
+        },
+        {
+          "type": "header",
+          "content": "Review 1"
+        },
+        {
+          "type": "text",
+          "id": "item_1_name",
+          "label": "Name",
+          "default": "William D."
+        },
+        {
+          "type": "text",
+          "id": "item_1_date",
+          "label": "Date",
+          "default": "8/8/2026"
+        },
+        {
+          "type": "textarea",
+          "id": "item_1_text",
+          "label": "Text",
+          "default": "I was told by my doctor that surgery might be the only option for my carpal tunnel."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_1_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_1_fallback",
+          "label": "Fallback asset",
+          "default": "pen-loox-1.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_1_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_1_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 2"
+        },
+        {
+          "type": "text",
+          "id": "item_2_name",
+          "label": "Name",
+          "default": "Michael S."
+        },
+        {
+          "type": "text",
+          "id": "item_2_date",
+          "label": "Date",
+          "default": "8/5/2026"
+        },
+        {
+          "type": "textarea",
+          "id": "item_2_text",
+          "label": "Text",
+          "default": "I bought this mainly because of the constant tension in my shoulders from desk work."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_2_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_2_fallback",
+          "label": "Fallback asset",
+          "default": "pen-loox-2.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_2_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_2_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 3"
+        },
+        {
+          "type": "text",
+          "id": "item_3_name",
+          "label": "Name",
+          "default": "Matthew F."
+        },
+        {
+          "type": "text",
+          "id": "item_3_date",
+          "label": "Date",
+          "default": "8/3/2026"
+        },
+        {
+          "type": "textarea",
+          "id": "item_3_text",
+          "label": "Text",
+          "default": "When I first took this device out of the box, I was impressed by how solid it feels."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_3_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_3_fallback",
+          "label": "Fallback asset",
+          "default": "pen-loox-3.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_3_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_3_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 4"
+        },
+        {
+          "type": "text",
+          "id": "item_4_name",
+          "label": "Name",
+          "default": "Sophie L."
+        },
+        {
+          "type": "text",
+          "id": "item_4_date",
+          "label": "Date",
+          "default": "8/1/2026"
+        },
+        {
+          "type": "textarea",
+          "id": "item_4_text",
+          "label": "Text",
+          "default": "What I love most is that it isn’t a one-setting-fits-all tool."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_4_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_4_fallback",
+          "label": "Fallback asset",
+          "default": "pen-loox-4.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_4_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_4_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 5"
+        },
+        {
+          "type": "text",
+          "id": "item_5_name",
+          "label": "Name",
+          "default": "Samuel C."
+        },
+        {
+          "type": "text",
+          "id": "item_5_date",
+          "label": "Date",
+          "default": "7/27/2026"
+        },
+        {
+          "type": "textarea",
+          "id": "item_5_text",
+          "label": "Text",
+          "default": "It helps me manage muscle soreness without relying on extra medication."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_5_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_5_fallback",
+          "label": "Fallback asset",
+          "default": "pen-loox-5.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_5_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_5_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 6"
+        },
+        {
+          "type": "text",
+          "id": "item_6_name",
+          "label": "Name",
+          "default": "Erica D."
+        },
+        {
+          "type": "text",
+          "id": "item_6_date",
+          "label": "Date",
+          "default": "7/25/2026"
+        },
+        {
+          "type": "textarea",
+          "id": "item_6_text",
+          "label": "Text",
+          "default": "I’ve been dealing with shoulder stiffness and arm pain for years."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_6_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_6_fallback",
+          "label": "Fallback asset",
+          "default": "pen-loox-6.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_6_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_6_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 7"
+        },
+        {
+          "type": "text",
+          "id": "item_7_name",
+          "label": "Name",
+          "default": "Rachel P."
+        },
+        {
+          "type": "text",
+          "id": "item_7_date",
+          "label": "Date",
+          "default": "7/19/2026"
+        },
+        {
+          "type": "textarea",
+          "id": "item_7_text",
+          "label": "Text",
+          "default": "One of the things I appreciate most is how simple it is to control."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_7_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_7_fallback",
+          "label": "Fallback asset",
+          "default": "pen-loox-7.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_7_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_7_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 8"
+        },
+        {
+          "type": "text",
+          "id": "item_8_name",
+          "label": "Name",
+          "default": "Olivia M."
+        },
+        {
+          "type": "text",
+          "id": "item_8_date",
+          "label": "Date",
+          "default": "7/15/2026"
+        },
+        {
+          "type": "textarea",
+          "id": "item_8_text",
+          "label": "Text",
+          "default": "I ended up buying two so both my partner and I could use them."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_8_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_8_fallback",
+          "label": "Fallback asset",
+          "default": "pen-loox-8.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_8_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_8_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 9"
+        },
+        {
+          "type": "text",
+          "id": "item_9_name",
+          "label": "Name",
+          "default": "Kevin A."
+        },
+        {
+          "type": "text",
+          "id": "item_9_date",
+          "label": "Date",
+          "default": "7/11/2026"
+        },
+        {
+          "type": "textarea",
+          "id": "item_9_text",
+          "label": "Text",
+          "default": "I spend hours typing and developed wrist pain that felt like carpal tunnel."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_9_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_9_fallback",
+          "label": "Fallback asset",
+          "default": "pen-loox-9.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_9_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_9_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 10"
+        },
+        {
+          "type": "text",
+          "id": "item_10_name",
+          "label": "Name",
+          "default": "Daniel K."
+        },
+        {
+          "type": "text",
+          "id": "item_10_date",
+          "label": "Date",
+          "default": "7/8/2026"
+        },
+        {
+          "type": "textarea",
+          "id": "item_10_text",
+          "label": "Text",
+          "default": "My knees have been giving me trouble for years, especially after long walks."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_10_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_10_fallback",
+          "label": "Fallback asset",
+          "default": "pen-loox-10.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_10_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_10_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 11"
+        },
+        {
+          "type": "text",
+          "id": "item_11_name",
+          "label": "Name",
+          "default": "Robert J."
+        },
+        {
+          "type": "text",
+          "id": "item_11_date",
+          "label": "Date",
+          "default": "7/4/2026"
+        },
+        {
+          "type": "textarea",
+          "id": "item_11_text",
+          "label": "Text",
+          "default": "At my age, joint pain has become part of everyday life."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_11_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_11_fallback",
+          "label": "Fallback asset",
+          "default": "pen-loox-11.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_11_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_11_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 12"
+        },
+        {
+          "type": "text",
+          "id": "item_12_name",
+          "label": "Name",
+          "default": "Catherine K."
+        },
+        {
+          "type": "text",
+          "id": "item_12_date",
+          "label": "Date",
+          "default": "6/30/2026"
+        },
+        {
+          "type": "textarea",
+          "id": "item_12_text",
+          "label": "Text",
+          "default": "After a few minutes, the tightness in my neck softened."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_12_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_12_fallback",
+          "label": "Fallback asset",
+          "default": "pen-loox-12.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_12_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_12_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        }
+      ]
+    },
+    {
+      "type": "sec_footer",
+      "name": "12. Footer / sticky",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "rights",
+          "label": "Rights line",
+          "default": "All Rights Reserved."
+        },
+        {
+          "type": "text",
+          "id": "privacy_label",
+          "label": "Privacy label",
+          "default": "Privacy Policy"
+        },
+        {
+          "type": "text",
+          "id": "terms_label",
+          "label": "Terms label",
+          "default": "Terms of Service"
+        },
+        {
+          "type": "url",
+          "id": "privacy_url",
+          "label": "Privacy URL"
+        },
+        {
+          "type": "url",
+          "id": "terms_url",
+          "label": "Terms URL"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Support email",
+          "default": "support@zavelyn.com"
+        },
+        {
+          "type": "text",
+          "id": "sticky_copy",
+          "label": "Sticky copy",
+          "default": "V1 + 3 Bonuses FREE"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20
+}
+{% endschema %}

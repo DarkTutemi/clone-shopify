@@ -1,0 +1,547 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap" rel="stylesheet">
+{{ 'willafarm-theme.css' | asset_url | stylesheet_tag }}
+
+<!-- Announcement Bar -->
+<div class="willa-announcement-bar">
+  <div class="willa-container willa-announcement-inner">
+    <span class="desktop-only">{{ section.settings.announcement_desktop | default: '★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TRIAL ★' }}</span>
+    <span class="mobile-only">{{ section.settings.announcement_mobile | default: '★ FREE US SHIPPING OVER $49 · 90-DAY TRIAL ★' }}</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="willa-header-wrap" id="willaHeader">
+  <div class="willa-container willa-header-inner">
+    <!-- Mobile Hamburger Toggle -->
+    <button type="button" class="willa-menu-btn" onclick="toggleWillaDrawer()" aria-label="Open menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+
+    <!-- Desktop Nav Links (Left) -->
+    <nav class="willa-desktop-nav desktop-only">
+      {% assign nav_count = 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'nav_link' and block.settings.show_desktop %}
+          {% assign nav_count = nav_count | plus: 1 %}
+          <a href="{{ block.settings.link }}" {{ block.shopify_attributes }}>{{ block.settings.title }}</a>
+        {% endif %}
+      {% endfor %}
+      {% if nav_count == 0 %}
+        <a href="/">Home</a>
+        <a href="/collections/best-sellers">Best Sellers</a>
+        <a href="/collections/fence-and-farm">Fence &amp; Farm</a>
+        <a href="/collections/power-tools">Power Tools</a>
+        <a href="/collections/garden-and-outdoor">Garden &amp; Outdoor</a>
+        <a href="/pages/track-order">Track Order</a>
+      {% endif %}
+    </nav>
+
+    <!-- Brand Logo (Center) -->
+    <div class="willa-logo-wrap">
+      <a href="/" class="willa-logo-link">
+        <span class="willa-logo-icon">🌿</span>
+        <span class="willa-logo-text">{{ section.settings.logo_text | default: 'ZAVELYN' }}<sup class="willa-reg">®</sup></span>
+      </a>
+    </div>
+
+    <!-- Right Icons: Search & Cart -->
+    <div class="willa-header-actions">
+      <a href="/search" class="willa-action-icon desktop-only" aria-label="Search">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </a>
+      <button type="button" class="willa-cart-btn" onclick="openWillaCart()" aria-label="Cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span class="willa-cart-count" id="willaCartCount">{{ cart.item_count }}</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="willa-drawer-overlay" id="willaDrawerOverlay" onclick="toggleWillaDrawer()"></div>
+<div class="willa-nav-drawer" id="willaNavDrawer">
+  <div class="willa-drawer-header">
+    <div class="willa-drawer-logo">
+      <span>🌿</span>
+      <strong>{{ section.settings.logo_text | default: 'ZAVELYN' }}<sup class="willa-reg">®</sup></strong>
+    </div>
+    <button type="button" class="willa-drawer-close" onclick="toggleWillaDrawer()" aria-label="Close menu">&times;</button>
+  </div>
+
+  <div class="willa-drawer-body">
+    <ul class="willa-drawer-menu">
+      {% assign drawer_count = 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'nav_link' and block.settings.show_mobile %}
+          {% assign drawer_count = drawer_count | plus: 1 %}
+          <li {{ block.shopify_attributes }}>
+            <a href="{{ block.settings.link }}">
+              {% if block.settings.icon != blank %}<span class="menu-icon">{{ block.settings.icon }}</span>{% endif %}
+              {{ block.settings.title }}
+              {% if block.settings.badge != blank %}<span class="hot-badge">{{ block.settings.badge }}</span>{% endif %}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+      {% if drawer_count == 0 %}
+        <li><a href="/"><span class="menu-icon">🏠</span> Home</a></li>
+        <li><a href="/collections/best-sellers"><span class="menu-icon">🌟</span> Best Sellers <span class="hot-badge">HOT</span></a></li>
+        <li><a href="/collections/fence-and-farm"><span class="menu-icon">🌾</span> Fence &amp; Farm Repair</a></li>
+        <li><a href="/collections/power-tools"><span class="menu-icon">⚡</span> Power &amp; Precision Tools</a></li>
+        <li><a href="/collections/garden-and-outdoor"><span class="menu-icon">🌿</span> Lawn, Garden &amp; Outdoor</a></li>
+        <li><a href="/collections/home-and-workshop"><span class="menu-icon">🛠️</span> Home &amp; Workshop Solutions</a></li>
+        <li><a href="/collections/all-products"><span class="menu-icon">🔍</span> Shop All Products</a></li>
+        <li class="divider"></li>
+        <li><a href="/pages/track-order"><span class="menu-icon">📦</span> Track Order</a></li>
+        <li><a href="/policies/shipping-policy"><span class="menu-icon">🚚</span> Shipping &amp; Delivery</a></li>
+        <li><a href="/policies/refund-policy"><span class="menu-icon">🛡️</span> 90-Day Money-Back Guarantee</a></li>
+      {% endif %}
+    </ul>
+
+    <div class="willa-drawer-promo">
+      <div class="promo-tag">{{ section.settings.promo_tag | default: 'LIMITED SPECIAL' }}</div>
+      <h4>{{ section.settings.promo_title | default: 'Spring Tool & Repair Sale' }}</h4>
+      <p>{{ section.settings.promo_desc | default: 'Save up to 50% OFF on our best-selling Zavelyn farm & workshop innovations.' }}</p>
+      <a href="{{ section.settings.promo_btn_link | default: '/collections/best-sellers' }}" class="willa-btn-primary" style="padding: 10px 18px; font-size: 13px;">{{ section.settings.promo_btn_text | default: 'SHOP 50% OFF NOW' }}</a>
+    </div>
+  </div>
+
+  <div class="willa-drawer-footer">
+    <p>Need help? Contact support: <br><strong>support@tryzavelyn.com</strong></p>
+  </div>
+</div>
+
+<style>
+  .willa-announcement-bar {
+    background-color: #3b2b2f;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 0;
+    text-align: center;
+  }
+  .willa-announcement-inner {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+  }
+  .mobile-only { display: none !important; }
+  @media (max-width: 991px) {
+    .desktop-only { display: none !important; }
+    .mobile-only { display: inline-block !important; }
+    .willa-menu-btn { display: flex !important; }
+  }
+  @media (max-width: 640px) {
+    .willa-announcement-bar { font-size: 11px; padding: 6px 12px; height: 28px; line-height: 16px; box-sizing: border-box; }
+    .willa-announcement-inner { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  }
+
+  .willa-header-wrap {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #faf7f4;
+    border-bottom: 1px solid #e7e4df;
+    z-index: 1000;
+    transition: box-shadow 0.25s ease;
+  }
+  .willa-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  @media (max-width: 640px) {
+    .willa-header-inner { height: 54px; }
+    .willa-logo-text { font-size: 20px !important; }
+  }
+
+  .willa-menu-btn {
+    background: none;
+    border: none;
+    color: #231f20;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (min-width: 992px) {
+    .willa-menu-btn { display: none; }
+  }
+
+  .willa-desktop-nav {
+    display: flex;
+    gap: clamp(12px, 1.4vw, 20px);
+    align-items: center;
+    white-space: nowrap;
+  }
+  .willa-desktop-nav a {
+    color: #231f20;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .willa-desktop-nav a:hover {
+    color: #8a2c13;
+  }
+
+  .willa-logo-wrap {
+    display: flex;
+    align-items: center;
+  }
+  .willa-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: #231f20;
+  }
+  .willa-logo-icon { font-size: 20px; }
+  .willa-logo-text {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #231f20;
+  }
+  .willa-reg {
+    font-size: 11px;
+    vertical-align: super;
+    line-height: 0;
+    color: #8a2c13;
+    font-weight: 700;
+    margin-left: 1px;
+  }
+
+  .willa-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .willa-action-icon, .willa-cart-btn {
+    background: none;
+    border: none;
+    color: #231f20;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+  }
+  .willa-action-icon:hover, .willa-cart-btn:hover {
+    color: #8a2c13;
+  }
+  .willa-cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #8a2c13;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Drawer Overlay & Menu */
+  .willa-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(35, 31, 32, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .willa-drawer-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .willa-nav-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 85vw;
+    background-color: #faf7f4;
+    z-index: 2000;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+  }
+  .willa-nav-drawer.active {
+    transform: translateX(0);
+  }
+  .willa-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid #e7e4df;
+  }
+  .willa-drawer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+  }
+  .willa-drawer-close {
+    background: none;
+    border: none;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    color: #59514f;
+    padding: 4px 8px;
+  }
+  .willa-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 20px;
+  }
+  .willa-drawer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .willa-drawer-menu li {
+    margin-bottom: 6px;
+  }
+  .willa-drawer-menu li.divider {
+    height: 1px;
+    background-color: #e7e4df;
+    margin: 14px 0;
+  }
+  .willa-drawer-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: #231f20;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .willa-drawer-menu a:hover {
+    background-color: #ede8e1;
+    color: #8a2c13;
+  }
+  .menu-icon { font-size: 16px; }
+  .hot-badge {
+    margin-left: auto;
+    background-color: #8a2c13;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 8px;
+  }
+  .willa-drawer-promo {
+    background-color: #ffffff;
+    border: 1px solid #e7e4df;
+    border-radius: 14px;
+    padding: 16px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(59, 43, 47, 0.05);
+  }
+  .promo-tag {
+    display: inline-block;
+    background-color: #f7ede8;
+    color: #8a2c13;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  .willa-drawer-promo h4 {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .willa-drawer-promo p {
+    font-size: 12px;
+    color: #59514f;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+  }
+  .willa-drawer-footer {
+    padding: 16px 20px;
+    border-top: 1px solid #e7e4df;
+    background-color: #faf7f4;
+    font-size: 12px;
+    color: #59514f;
+  }
+  .willa-drawer-footer p { margin: 0; }
+  .willa-drawer-footer strong { color: #231f20; }
+</style>
+
+<script>
+  function toggleWillaDrawer() {
+    const drawer = document.getElementById('willaNavDrawer');
+    const overlay = document.getElementById('willaDrawerOverlay');
+    if (drawer && overlay) {
+      const isOpen = drawer.classList.contains('active');
+      if (isOpen) {
+        drawer.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      } else {
+        drawer.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  }
+
+  function openWillaCart() {
+    if (typeof window.willaOpenCartDrawer === 'function') {
+      window.willaOpenCartDrawer();
+    } else {
+      window.location.href = '/cart';
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    const header = document.getElementById('willaHeader');
+    if (!header) return;
+    if (window.scrollY > 40) {
+      header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+    } else {
+      header.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Willa Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Brand Logo Name",
+      "default": "ZAVELYN"
+    },
+    {
+      "type": "text",
+      "id": "announcement_desktop",
+      "label": "Announcement Bar Text (Desktop)",
+      "default": "★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TRIAL ★"
+    },
+    {
+      "type": "text",
+      "id": "announcement_mobile",
+      "label": "Announcement Bar Text (Mobile)",
+      "default": "★ FREE US SHIPPING OVER $49 · 90-DAY TRIAL ★"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Drawer Promo"
+    },
+    {
+      "type": "text",
+      "id": "promo_tag",
+      "label": "Promo Tag",
+      "default": "LIMITED SPECIAL"
+    },
+    {
+      "type": "text",
+      "id": "promo_title",
+      "label": "Promo Title",
+      "default": "Spring Tool & Repair Sale"
+    },
+    {
+      "type": "textarea",
+      "id": "promo_desc",
+      "label": "Promo Description",
+      "default": "Save up to 50% OFF on our best-selling Zavelyn farm & workshop innovations."
+    },
+    {
+      "type": "text",
+      "id": "promo_btn_text",
+      "label": "Promo Button Text",
+      "default": "SHOP 50% OFF NOW"
+    },
+    {
+      "type": "url",
+      "id": "promo_btn_link",
+      "label": "Promo Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "nav_link",
+      "name": "Navigation Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Link Title",
+          "default": "Best Sellers"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link Target URL"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Emoji Icon",
+          "default": "🌟"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Hot Badge (Optional)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_desktop",
+          "label": "Show on Desktop Navbar",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_mobile",
+          "label": "Show in Mobile Drawer",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Willa Header"
+    }
+  ]
+}
+{% endschema %}

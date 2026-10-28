@@ -1,0 +1,133 @@
+{
+  "name": "Header group",
+  "type": "header",
+  "sections": {
+    "willa-header": {
+      "type": "willa-header",
+      "blocks": {
+        "nav_home": {
+          "type": "nav_link",
+          "settings": {
+            "title": "Home",
+            "link": "\/",
+            "icon": "🏠",
+            "show_desktop": true,
+            "show_mobile": true
+          }
+        },
+        "nav_best": {
+          "type": "nav_link",
+          "settings": {
+            "title": "Best Sellers",
+            "link": "\/collections\/best-sellers",
+            "icon": "🌟",
+            "badge": "HOT",
+            "show_desktop": true,
+            "show_mobile": true
+          }
+        },
+        "nav_all": {
+          "type": "nav_link",
+          "settings": {
+            "title": "All Products",
+            "link": "\/collections\/all-products",
+            "icon": "🛍️",
+            "show_desktop": true,
+            "show_mobile": true
+          }
+        },
+        "nav_deals": {
+          "type": "nav_link",
+          "settings": {
+            "title": "Deals of the Day",
+            "link": "\/collections\/deals-of-the-day",
+            "icon": "⚡",
+            "badge": "SALE",
+            "show_desktop": true,
+            "show_mobile": true
+          }
+        },
+        "nav_handpans": {
+          "type": "nav_link",
+          "settings": {
+            "title": "Handpans",
+            "link": "\/collections\/zavelyn-handpans",
+            "icon": "🎵",
+            "show_desktop": true,
+            "show_mobile": true
+          }
+        },
+        "nav_power": {
+          "type": "nav_link",
+          "settings": {
+            "title": "Power & Tools",
+            "link": "\/collections\/power-tools",
+            "icon": "⚡",
+            "show_desktop": true,
+            "show_mobile": true
+          }
+        },
+        "nav_fence": {
+          "type": "nav_link",
+          "settings": {
+            "title": "Fence & Farm",
+            "link": "\/collections\/fence-and-farm",
+            "icon": "🌾",
+            "show_desktop": true,
+            "show_mobile": true
+          }
+        },
+        "nav_garden": {
+          "type": "nav_link",
+          "settings": {
+            "title": "Garden & Outdoor",
+            "link": "\/collections\/garden-and-outdoor",
+            "icon": "🌿",
+            "show_desktop": false,
+            "show_mobile": true
+          }
+        },
+        "nav_workshop": {
+          "type": "nav_link",
+          "settings": {
+            "title": "Home & Workshop",
+            "link": "\/collections\/home-and-workshop",
+            "icon": "🛠️",
+            "show_desktop": false,
+            "show_mobile": true
+          }
+        },
+        "nav_track": {
+          "type": "nav_link",
+          "settings": {
+            "title": "Track Order",
+            "link": "\/pages\/track-order",
+            "icon": "📦",
+            "show_desktop": true,
+            "show_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "nav_home",
+        "nav_best",
+        "nav_all",
+        "nav_deals",
+        "nav_handpans",
+        "nav_power",
+        "nav_fence",
+        "nav_garden",
+        "nav_workshop",
+        "nav_track"
+      ],
+      "settings": {
+        "logo_text": "ZAVELYN",
+        "announcement_desktop": "★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 60-DAY RISK-FREE TRIAL ★",
+        "announcement_mobile": "★ FREE US SHIPPING OVER $49 · 60-DAY RISK-FREE TRIAL ★"
+      }
+    }
+  },
+  "order": [
+    "willa-header"
+  ]
+}

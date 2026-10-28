@@ -1,0 +1,508 @@
+/* ==========================================================================
+   ZAVELYN ELIXIR V2 — HANDPANS & DRUMS PRODUCT PAGE BODY STYLES
+   Tokens: Primary #17433C, Accent #C6FA54, Warm Bg #FFFAF7, Card #FFFFFF
+   Applied to: zhp-pdp-banner, zhp-pdp-experience, zhp-pdp-included, zhp-pdp-specs, zhp-pdp-faq
+   ========================================================================== */
+
+:root {
+  --zv-primary: #17433C;
+  --zv-primary-hover: #0F2D28;
+  --zv-primary-light: rgba(23, 67, 60, 0.08);
+  --zv-accent: #C6FA54;
+  --zv-bg-warm: #FFFAF7;
+  --zv-card-bg: #FFFFFF;
+  --zv-text: #222222;
+  --zv-text-muted: #556B64;
+  --zv-border: #E8EDE9;
+  --zv-radius-md: 14px;
+  --zv-radius-lg: 16px;
+  --zv-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+.wf-section {
+  padding: 64px 0;
+  background-color: var(--zv-bg-warm);
+  font-family: var(--zv-font);
+  color: var(--zv-text);
+  line-height: 1.6;
+  width: 100%;
+  overflow-x: clip;
+}
+
+.willa-drawer-overlay,
+.willa-cart-drawer,
+.willa-cart-drawer-overlay,
+.willa-footer-wrap,
+.willa-payment-icons,
+.willa-container,
+#PBarNextFrameWrapper,
+#PBarNextFrame {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.wf-section:nth-child(even) {
+  background-color: #FFFFFF;
+}
+
+.wf-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wf-center-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 40px;
+}
+
+.wf-sub-pill {
+  display: inline-block;
+  background: var(--zv-primary-light);
+  color: var(--zv-primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.wf-sec-title {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 800;
+  color: var(--zv-primary);
+  line-height: 1.25;
+  margin: 0 0 14px;
+  letter-spacing: -0.5px;
+}
+
+.wf-sec-desc {
+  font-size: 16px;
+  color: var(--zv-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   BANNER SECTION (NATURAL RESONANCE)
+   -------------------------------------------------------------------------- */
+.wf-banner-card {
+  background: #FFFFFF;
+  border: 1px solid var(--zv-border);
+  border-radius: var(--zv-radius-lg);
+  padding: 48px;
+  box-shadow: 0 8px 30px rgba(23, 67, 60, 0.05);
+}
+
+.wf-banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.wf-banner-media {
+  position: relative;
+  width: 100%;
+  border-radius: var(--zv-radius-md);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(23, 67, 60, 0.08);
+  border: 1px solid var(--zv-border);
+  aspect-ratio: 1 / 1;
+  background: #F8F9F8;
+}
+
+.wf-banner-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.wf-banner-title {
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 800;
+  color: var(--zv-primary);
+  line-height: 1.25;
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+}
+
+.wf-banner-desc {
+  font-size: 15.5px;
+  color: var(--zv-text);
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+
+.wf-banner-points {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wf-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--zv-text);
+  line-height: 1.45;
+}
+
+.wf-point-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--zv-primary-light);
+  color: var(--zv-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   EXPERIENCE / STEPS SECTION (1-2-3 NUMBERED PLAY)
+   -------------------------------------------------------------------------- */
+.wf-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.wf-step-card {
+  background: #FFFFFF;
+  border: 1px solid var(--zv-border);
+  border-radius: var(--zv-radius-lg);
+  padding: 32px 24px;
+  box-shadow: 0 4px 16px rgba(23, 67, 60, 0.04);
+  transition: transform 0.25s ease;
+}
+
+.wf-step-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(23, 67, 60, 0.2);
+}
+
+.wf-step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--zv-primary);
+  color: var(--zv-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.wf-step-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--zv-primary);
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.wf-step-desc {
+  font-size: 14.5px;
+  color: var(--zv-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   INCLUDED PACKAGE SECTION
+   -------------------------------------------------------------------------- */
+.wf-feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.wf-feature-media {
+  position: relative;
+  width: 100%;
+  border-radius: var(--zv-radius-md);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(23, 67, 60, 0.08);
+  border: 1px solid var(--zv-border);
+}
+
+.wf-feature-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.wf-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wf-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--zv-text);
+  line-height: 1.5;
+}
+
+.wf-feature-list li::before {
+  content: '✓';
+  color: var(--zv-primary);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SPECIFICATIONS SECTION
+   -------------------------------------------------------------------------- */
+.wf-specs-card {
+  background: #FFFFFF;
+  border: 1px solid var(--zv-border);
+  border-radius: var(--zv-radius-lg);
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(23, 67, 60, 0.04);
+}
+
+.wf-specs-card .wf-sec-title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.wf-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.wf-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: var(--zv-bg-warm);
+  border: 1px solid var(--zv-border);
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.wf-spec-key {
+  font-weight: 700;
+  color: var(--zv-primary);
+}
+
+.wf-spec-val {
+  color: var(--zv-text);
+  text-align: right;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .wf-banner-grid,
+  .wf-feature-row {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .wf-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .wf-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .wf-banner-card {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wf-section {
+    padding: 48px 0;
+  }
+  .wf-banner-card {
+    padding: 24px 16px;
+  }
+  .wf-specs-card {
+    padding: 24px 16px;
+  }
+  .wf-spec-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .wf-spec-val {
+    text-align: left;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   PDP FAQ ACCORDION
+   -------------------------------------------------------------------------- */
+.wf-faq-section {
+  padding: 80px 0;
+  background-color: var(--zv-bg-warm, #FFFAF7);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wf-faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.wf-faq-item {
+  background: #FFFFFF;
+  border: 1px solid #E8EDE9;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(23, 67, 60, 0.02);
+}
+
+.wf-faq-item:hover {
+  border-color: #17433C;
+  box-shadow: 0 6px 18px rgba(23, 67, 60, 0.05);
+}
+
+.wf-faq-item.active {
+  border-color: #17433C;
+  box-shadow: 0 8px 24px rgba(23, 67, 60, 0.08);
+  background: #FFFFFF;
+}
+
+.wf-faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 22px 24px;
+  font-family: inherit;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #17433C;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  line-height: 1.45;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.wf-faq-question:hover {
+  color: #0F2D28;
+}
+
+.wf-faq-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(23, 67, 60, 0.08);
+  color: #17433C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.wf-faq-item.active .wf-faq-arrow {
+  transform: rotate(45deg);
+  background: #17433C;
+  color: #C6FA54;
+}
+
+.wf-faq-answer {
+  display: none;
+  padding: 0 24px 22px;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #333333;
+  border-top: 1px solid rgba(23, 67, 60, 0.08);
+  margin-top: -2px;
+  padding-top: 18px;
+  box-sizing: border-box;
+}
+
+.wf-faq-answer p {
+  margin: 0;
+  color: #333333;
+  line-height: 1.7;
+}
+
+.wf-faq-item.active .wf-faq-answer {
+  display: block;
+  animation: wfFaqFade 0.25s ease-out;
+}
+
+@keyframes wfFaqFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .wf-faq-section {
+    padding: 56px 0;
+  }
+  .wf-faq-question {
+    padding: 18px 18px;
+    font-size: 15.5px;
+  }
+  .wf-faq-answer {
+    padding: 0 18px 18px;
+    font-size: 14.5px;
+    padding-top: 14px;
+  }
+  .wf-faq-arrow {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+  }
+}
+

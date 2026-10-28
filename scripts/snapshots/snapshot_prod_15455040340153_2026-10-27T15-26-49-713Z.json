@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15455040340153",
+  "title": "Zavelyn Nose Cleaner Starter Bundle",
+  "handle": "navage-starter-bundle",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67916568035513",
+        "title": "Default Title",
+        "price": "99.95",
+        "sku": "BNDL-80030"
+      }
+    ]
+  }
+}

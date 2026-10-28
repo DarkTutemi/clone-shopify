@@ -1,0 +1,420 @@
+[
+  {
+    "productId": "15454948982969",
+    "gid": "gid://shopify/Product/15454948982969",
+    "currentLive": {
+      "title": "Zavelyn Flame Effect Space Heater",
+      "handle": "sakerplus®-1500w-flame-effect-oscillating-space-heater",
+      "status": "ACTIVE",
+      "variantsCount": 1,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67914368352441",
+          "title": "Default Title",
+          "price": "114.99",
+          "sku": "HA129393-X87701"
+        }
+      ],
+      "sourceDescriptionSnippet": "FEATURES Fast heating and three modes: Enjoy fast, consistent warmth with 1500W PTC heating technology. Choose from three operating modes—High Heat, Low Heat, and Fan Only—to suit changing indoor temperatures. The compact tower design fits comfortably into bedrooms, living rooms, and home offices wi"
+    },
+    "proposedMetadata": {
+      "title": "Zavelyn Flame Effect Space Heater",
+      "seoTitle": "1500W Flame Effect Oscillating Space Heater | Zavelyn",
+      "metaDescription": "Warm indoor spaces quickly with a 1500W ceramic oscillating space heater featuring a realistic 3D flame display, remote control, and tip-over safety.",
+      "handlePolicy": "KEEP CURRENT HANDLE UNCHANGED"
+    },
+    "metrics": {
+      "titleLength": 33,
+      "seoTitleLength": 53,
+      "metaDescLength": 149
+    },
+    "factChecking": {
+      "trademarkFree": true,
+      "noInvalidGuarantee": true,
+      "noMedicalClaims": true,
+      "statusIsActive": true
+    },
+    "adsRisk": "ADS TRAFFIC UNKNOWN"
+  },
+  {
+    "productId": "15454949998777",
+    "gid": "gid://shopify/Product/15454949998777",
+    "currentLive": {
+      "title": "Zavelyn Steam Disinfection Cleaner",
+      "handle": "sakerplus®-steam-disinfection-cleaner-clearance",
+      "status": "ACTIVE",
+      "variantsCount": 3,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67914393780409",
+          "title": "1 Set Steam Cleaner (with 1 Fiber Cloth)",
+          "price": "28.99",
+          "sku": "CP97052-X65102"
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67914393813177",
+          "title": "1 Set Steam Cleaner + 5 Fiber Cloths",
+          "price": "43.99",
+          "sku": "CP97052-X65103"
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67914393845945",
+          "title": "1 Set Steam Cleaner + 13 Fiber Cloths",
+          "price": "45.99",
+          "sku": "CP97052-X65105"
+        }
+      ],
+      "sourceDescriptionSnippet": "FEATURES Multipurpose: The cleaner is a versatile cleaning tool designed to meet your daily household cleaning and disinfection needs. It is suitable for sinks, stoves, countertops, refrigerators, kitchens, floors, living rooms, windows, toilets, tiles, shower curtains, bathrooms, pet toilets, cat l"
+    },
+    "proposedMetadata": {
+      "title": "Zavelyn Handheld Steam Cleaner",
+      "seoTitle": "Handheld Steam Cleaner for Home Sanitizing | Zavelyn",
+      "metaDescription": "Sanitize kitchen tiles, grout lines, and car upholstery with pressurized high-temperature steam. Cleans grime thoroughly without harsh chemicals.",
+      "handlePolicy": "KEEP CURRENT HANDLE UNCHANGED"
+    },
+    "metrics": {
+      "titleLength": 30,
+      "seoTitleLength": 52,
+      "metaDescLength": 145
+    },
+    "factChecking": {
+      "trademarkFree": true,
+      "noInvalidGuarantee": true,
+      "noMedicalClaims": true,
+      "statusIsActive": true
+    },
+    "adsRisk": "ADS TRAFFIC UNKNOWN"
+  },
+  {
+    "productId": "15454950850745",
+    "gid": "gid://shopify/Product/15454950850745",
+    "currentLive": {
+      "title": "Zavelyn Bathroom Exhaust Fan",
+      "handle": "sakerplus®-bathroom-exhaust-fan-with-led-light",
+      "status": "ACTIVE",
+      "variantsCount": 4,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67914412097721",
+          "title": "Panel Size 10 in (3-Color LED)",
+          "price": "79.99",
+          "sku": "HA132486-X88398"
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67914412130489",
+          "title": "Panel Size 12 in (3-Color LED)",
+          "price": "89.99",
+          "sku": "HA132486-X88402"
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67914412163257",
+          "title": "Panel Size 10 in (Single Color LED)",
+          "price": "79.99",
+          "sku": "HA132486-X87948"
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67914412196025",
+          "title": "Panel Size 12 in (Single Color LED)",
+          "price": "89.99",
+          "sku": "HA132486-X87949"
+        }
+      ],
+      "sourceDescriptionSnippet": "FEATURES 2-in-1 ventilation and lighting: Combines a ceiling exhaust fan with a built-in 10W LED light, providing ventilation and illumination in one unit. The integrated design helps ventilate indoor spaces while delivering overhead lighting, making it a practical solution for bathrooms and other s"
+    },
+    "proposedMetadata": {
+      "title": "Zavelyn Bathroom Exhaust Fan with Light",
+      "seoTitle": "Quiet Bathroom Exhaust Fan with LED Light | Zavelyn",
+      "metaDescription": "Ventilate moisture and illuminate bathrooms quietly with this integrated ceiling exhaust fan. Features energy-efficient LED lighting and low-noise motor.",
+      "handlePolicy": "KEEP CURRENT HANDLE UNCHANGED"
+    },
+    "metrics": {
+      "titleLength": 39,
+      "seoTitleLength": 51,
+      "metaDescLength": 153
+    },
+    "factChecking": {
+      "trademarkFree": true,
+      "noInvalidGuarantee": true,
+      "noMedicalClaims": true,
+      "statusIsActive": true
+    },
+    "adsRisk": "ADS TRAFFIC UNKNOWN"
+  },
+  {
+    "productId": "15454951211193",
+    "gid": "gid://shopify/Product/15454951211193",
+    "currentLive": {
+      "title": "Zavelyn Solar Street Lights",
+      "handle": "sakerplus®-solar-street-lights-clearance-sale",
+      "status": "ACTIVE",
+      "variantsCount": 1,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67914420289721",
+          "title": "2 Pack",
+          "price": "55.99",
+          "sku": "CP93509-X63718"
+        }
+      ],
+      "sourceDescriptionSnippet": "FEATURES Heavy duty & durable: Engineered for long-lasting outdoor use, this solar sensor light is waterproof, heat-resistant, and cold-resistant, making it reliable in rain, snow, wind, and frost. Whether it’s the scorching heat of summer or the freezing chill of winter, this light stands strong an"
+    },
+    "proposedMetadata": {
+      "title": "Zavelyn Outdoor Solar Street Lights",
+      "seoTitle": "Outdoor Solar Street Lights with Motion Sensor | Zavelyn",
+      "metaDescription": "Illuminate driveways, yards, and perimeter walls with ultra-bright commercial solar street lights. IP65 waterproof housing with dusk-to-dawn sensors.",
+      "handlePolicy": "KEEP CURRENT HANDLE UNCHANGED"
+    },
+    "metrics": {
+      "titleLength": 35,
+      "seoTitleLength": 56,
+      "metaDescLength": 149
+    },
+    "factChecking": {
+      "trademarkFree": true,
+      "noInvalidGuarantee": true,
+      "noMedicalClaims": true,
+      "statusIsActive": true
+    },
+    "adsRisk": "ADS TRAFFIC UNKNOWN"
+  },
+  {
+    "productId": "15454951801017",
+    "gid": "gid://shopify/Product/15454951801017",
+    "currentLive": {
+      "title": "Zavelyn Camping Fan with Light",
+      "handle": "sakerplus-camping-fan-with-light-battery-1",
+      "status": "ACTIVE",
+      "variantsCount": 2,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67914433626297",
+          "title": "Orange",
+          "price": "125.99",
+          "sku": "EC98268-C012"
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67914433659065",
+          "title": "Green",
+          "price": "125.99",
+          "sku": "EC98268-C004"
+        }
+      ],
+      "sourceDescriptionSnippet": "FEATURES: Upgraded camping fan with foldable tripod: It is a versatile camping fan featuring a durable, foldable tripod stand. Use it as a standing fan, portable fan, desk fan, or personal fan—an essential camping accessory, travel essential, and camping gear must have for tent camping, car camping,"
+    },
+    "proposedMetadata": {
+      "title": "Zavelyn Portable Camping Fan with Light",
+      "seoTitle": "Rechargeable Camping Fan with LED Lantern | Zavelyn",
+      "metaDescription": "Stay cool in tents and off-grid campsites with a rechargeable hanging fan equipped with an adjustable LED ring light and long-lasting power bank output.",
+      "handlePolicy": "KEEP CURRENT HANDLE UNCHANGED"
+    },
+    "metrics": {
+      "titleLength": 39,
+      "seoTitleLength": 51,
+      "metaDescLength": 152
+    },
+    "factChecking": {
+      "trademarkFree": true,
+      "noInvalidGuarantee": true,
+      "noMedicalClaims": true,
+      "statusIsActive": true
+    },
+    "adsRisk": "ADS TRAFFIC UNKNOWN"
+  },
+  {
+    "productId": "15454954193081",
+    "gid": "gid://shopify/Product/15454954193081",
+    "currentLive": {
+      "title": "Zavelyn Tactical MOLLE Vest",
+      "handle": "sakerplus®-tactical-molle-utility-vest",
+      "status": "ACTIVE",
+      "variantsCount": 3,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67914489102521",
+          "title": "Black",
+          "price": "54.99",
+          "sku": "LB132757-C001"
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67914489135289",
+          "title": "Khaki",
+          "price": "54.99",
+          "sku": "LB132757-C011"
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67914489168057",
+          "title": "Olive Green",
+          "price": "54.99",
+          "sku": "LB132757-C053"
+        }
+      ],
+      "sourceDescriptionSnippet": "FEATURES Water-Resistant Oxford Fabric: Made from heavy-duty Oxford cloth that helps resist wear and moisture in demanding outdoor environments. MOLLE Modular Webbing: Multiple webbing rows provide flexible attachment points for pouches, tools, and other tactical accessories. Adjustable Fit with Qui"
+    },
+    "proposedMetadata": {
+      "title": "Zavelyn Tactical MOLLE Utility Vest",
+      "seoTitle": "Adjustable Tactical MOLLE Utility Vest | Zavelyn",
+      "metaDescription": "Organize field gear, radios, and pouches securely with a breathable nylon tactical vest featuring reinforced MOLLE webbing and quick-release buckles.",
+      "handlePolicy": "KEEP CURRENT HANDLE UNCHANGED"
+    },
+    "metrics": {
+      "titleLength": 35,
+      "seoTitleLength": 48,
+      "metaDescLength": 149
+    },
+    "factChecking": {
+      "trademarkFree": true,
+      "noInvalidGuarantee": true,
+      "noMedicalClaims": true,
+      "statusIsActive": true
+    },
+    "adsRisk": "ADS TRAFFIC UNKNOWN"
+  },
+  {
+    "productId": "15454954750137",
+    "gid": "gid://shopify/Product/15454954750137",
+    "currentLive": {
+      "title": "Zavelyn Smart Hygrometer Clock",
+      "handle": "sakerplus®-smart-thermometer-hygrometer-clock",
+      "status": "ACTIVE",
+      "variantsCount": 1,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67914502176953",
+          "title": "Default Title",
+          "price": "50.99",
+          "sku": "HB121850-E001"
+        }
+      ],
+      "sourceDescriptionSnippet": "FEATURES Retro pixel display with animated expressions: Bring nostalgic charm to your workspace with a pixel art screen. Adorable animated characters react to temperature and humidity changes, turning environmental monitoring into a fun, engaging experience for gamers and retro enthusiasts. Smart he"
+    },
+    "proposedMetadata": {
+      "title": "Zavelyn Smart Hygrometer Thermometer Clock",
+      "seoTitle": "Smart Digital Thermometer & Hygrometer Clock | Zavelyn",
+      "metaDescription": "Monitor indoor humidity, room temperature, and exact time with a sleek LCD desk hygrometer clock equipped with high-accuracy environmental sensors.",
+      "handlePolicy": "KEEP CURRENT HANDLE UNCHANGED"
+    },
+    "metrics": {
+      "titleLength": 42,
+      "seoTitleLength": 54,
+      "metaDescLength": 147
+    },
+    "factChecking": {
+      "trademarkFree": true,
+      "noInvalidGuarantee": true,
+      "noMedicalClaims": true,
+      "statusIsActive": true
+    },
+    "adsRisk": "ADS TRAFFIC UNKNOWN"
+  },
+  {
+    "productId": "15454955372729",
+    "gid": "gid://shopify/Product/15454955372729",
+    "currentLive": {
+      "title": "Zavelyn 3-in-1 Gypsum Board Cutter",
+      "handle": "sakerplus®-3-in-1-gypsum-board-cutting-tool",
+      "status": "ACTIVE",
+      "variantsCount": 1,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67914518364345",
+          "title": "Default Title",
+          "price": "49.99",
+          "sku": "CP14318-E037"
+        }
+      ],
+      "sourceDescriptionSnippet": "FEATURES 3-in-1 multifunctional design: Combines measuring, marking, and cutting into one convenient tool, making drywall installation, woodworking, and home improvement projects faster and easier. Precise measuring and cutting: Features a built-in 5-meter tape measure and secure locking mechanism f"
+    },
+    "proposedMetadata": {
+      "title": "Zavelyn 3-in-1 Drywall Board Cutter",
+      "seoTitle": "3-in-1 Drywall & Gypsum Board Cutting Tool | Zavelyn",
+      "metaDescription": "Measure, mark, and slice sheetrock effortlessly in one pass. Combines a retractable tape measure, locking guide, and sharp utility scoring blade.",
+      "handlePolicy": "KEEP CURRENT HANDLE UNCHANGED"
+    },
+    "metrics": {
+      "titleLength": 35,
+      "seoTitleLength": 52,
+      "metaDescLength": 145
+    },
+    "factChecking": {
+      "trademarkFree": true,
+      "noInvalidGuarantee": true,
+      "noMedicalClaims": true,
+      "statusIsActive": true
+    },
+    "adsRisk": "ADS TRAFFIC UNKNOWN"
+  },
+  {
+    "productId": "15454956355769",
+    "gid": "gid://shopify/Product/15454956355769",
+    "currentLive": {
+      "title": "Zavelyn Mini Heat Press Machine",
+      "handle": "sakerplus®-portable-digital-mini-heat-press-machine",
+      "status": "ACTIVE",
+      "variantsCount": 1,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67914534518969",
+          "title": "Default Title",
+          "price": "149.99",
+          "sku": "GJ132614-X65160"
+        }
+      ],
+      "sourceDescriptionSnippet": "FEATURES Fast and even heating: Designed for quick, even heating, this portable heat press helps deliver consistent results for heat transfer vinyl and sublimation projects. Its heat-resistant construction supports convenient handling during use. Automatic shutoff and safety base: The heat press aut"
+    },
+    "proposedMetadata": {
+      "title": "Zavelyn Digital Mini Heat Press Machine",
+      "seoTitle": "Digital Mini Heat Press Machine for T-Shirts | Zavelyn",
+      "metaDescription": "Transfer custom iron-on vinyl graphics onto shirts, tote bags, and hats with a compact digital heat press featuring precise temperature controls.",
+      "handlePolicy": "KEEP CURRENT HANDLE UNCHANGED"
+    },
+    "metrics": {
+      "titleLength": 39,
+      "seoTitleLength": 54,
+      "metaDescLength": 145
+    },
+    "factChecking": {
+      "trademarkFree": true,
+      "noInvalidGuarantee": true,
+      "noMedicalClaims": true,
+      "statusIsActive": true
+    },
+    "adsRisk": "ADS TRAFFIC UNKNOWN"
+  },
+  {
+    "productId": "15454958158009",
+    "gid": "gid://shopify/Product/15454958158009",
+    "currentLive": {
+      "title": "Zavelyn 50FT LED String Lights",
+      "handle": "sakerplus®-50ft-industrial-led-construction-string-lights",
+      "status": "ACTIVE",
+      "variantsCount": 1,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/67914565845177",
+          "title": "Default Title",
+          "price": "119.99",
+          "sku": "LT132367-X15101"
+        }
+      ],
+      "sourceDescriptionSnippet": "FEATURES Bright and energy-efficient: Five 10W LED lamp heads provide 6000K cool white lighting for clear visibility across your workspace. The PC diffuser covers help soften the light and reduce glare. Waterproof and impact-resistant: Featuring an IP65 waterproof rating and IK08 impact protection, "
+    },
+    "proposedMetadata": {
+      "title": "Zavelyn 50FT LED Jobsite String Lights",
+      "seoTitle": "50FT Commercial LED Jobsite Construction Lights | Zavelyn",
+      "metaDescription": "Illuminate job sites and outdoor events with heavy-duty commercial string lights. Includes shatter-resistant LED cages and linkable waterproof plugs.",
+      "handlePolicy": "KEEP CURRENT HANDLE UNCHANGED"
+    },
+    "metrics": {
+      "titleLength": 38,
+      "seoTitleLength": 57,
+      "metaDescLength": 149
+    },
+    "factChecking": {
+      "trademarkFree": true,
+      "noInvalidGuarantee": true,
+      "noMedicalClaims": true,
+      "statusIsActive": true
+    },
+    "adsRisk": "ADS TRAFFIC UNKNOWN"
+  }
+]

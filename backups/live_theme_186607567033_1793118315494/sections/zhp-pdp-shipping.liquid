@@ -1,0 +1,36 @@
+{%- assign ship1_src = section.settings.shipping_img_1 | image_url: width: 600 -%}
+{%- if ship1_src == blank -%}{%- assign ship1_src = section.settings.shipping_img_1_url -%}{%- endif -%}
+{%- assign ship2_src = section.settings.shipping_img_2 | image_url: width: 600 -%}
+{%- if ship2_src == blank -%}{%- assign ship2_src = section.settings.shipping_img_2_url -%}{%- endif -%}
+
+<section class="wf-section wf-shipping-section">
+  <div class="wf-container">
+    <div class="wf-shipping-card">
+      <h2 class="wf-sec-title">{{ section.settings.title | default: 'Fast US Delivery & Tracked Shipping' }}</h2>
+      <p class="wf-sec-desc">{{ section.settings.description | default: 'All Zavelyn Drums are acoustically inspected, foam-cushioned in protective cartons, and dispatched from our US logistics centers with real-time tracking within 24 hours.' }}</p>
+      <div class="wf-shipping-images">
+        <img src="{{ ship1_src | default: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/5555.webp?v=1792856415' }}" alt="Order Quality Inspection and Safe Packing" loading="lazy" />
+        <img src="{{ ship2_src | default: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/44444.webp?v=1792856415' }}" alt="Express Courier Handover and Real-Time Tracking" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zavelyn Shipping Proof",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Fast US Delivery & Tracked Shipping" },
+    { "type": "textarea", "id": "description", "label": "Description" },
+    { "type": "image_picker", "id": "shipping_img_1", "label": "Shipping Image 1" },
+    { "type": "text", "id": "shipping_img_1_url", "label": "Fallback Shipping Image 1 URL" },
+    { "type": "image_picker", "id": "shipping_img_2", "label": "Shipping Image 2" },
+    { "type": "text", "id": "shipping_img_2_url", "label": "Fallback Shipping Image 2 URL" }
+  ],
+  "presets": [
+    {
+      "name": "Zavelyn Shipping Proof"
+    }
+  ]
+}
+{% endschema %}

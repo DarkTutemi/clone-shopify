@@ -1,0 +1,223 @@
+
+{{ 'zhp-collection.css' | asset_url | stylesheet_tag }}
+{{ 'zhp-collection.js' | asset_url | script_tag }}
+<div class="zhp-wrapper">
+  <section class="zhp-model-tabs-section">
+    <div class="zhp-container">
+      <div class="zhp-section-header">
+        <span class="zhp-tag">{{ section.settings.tag | default: 'EXPLORE BY MODEL' }}</span>
+        <h2 class="zhp-section-title">{{ section.settings.title | default: 'Easy to Learn and Soothing to Play' }}</h2>
+        <p class="zhp-section-subtitle">{{ section.settings.subtitle | default: 'Click each model to explore unique tones, technical dimensions, and ideal musical journeys.' }}</p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="zhp-tabs-nav" role="tablist">
+        <button type="button" class="zhp-tab-btn active" data-tab="tab-pro" role="tab">
+          <span class="zhp-tab-name">Zavelyn Drum™ Pro</span>
+          <span class="zhp-tab-badge">15 Tones • 13"</span>
+        </button>
+        <button type="button" class="zhp-tab-btn" data-tab="tab-plus" role="tab">
+          <span class="zhp-tab-name">Zavelyn Drum™ Plus</span>
+          <span class="zhp-tab-badge">11 Tones • 11"</span>
+        </button>
+        <button type="button" class="zhp-tab-btn" data-tab="tab-mini" role="tab">
+          <span class="zhp-tab-name">Zavelyn Drum™ Mini</span>
+          <span class="zhp-tab-badge">8 Tones • 6"</span>
+        </button>
+      </div>
+
+      <!-- Tab Content Panels -->
+      <div class="zhp-tabs-content">
+        <!-- Panel Pro -->
+        <div class="zhp-tab-panel active" id="tab-pro" role="tabpanel">
+          <div class="zhp-tab-grid">
+            <div class="zhp-tab-image-col">
+              {% if section.settings.image_pro != blank %}
+                {{ section.settings.image_pro | image_url: width: 800 | image_tag: loading: 'lazy', alt: 'Zavelyn Drum Pro Specs' }}
+              {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/details.webp?v=1792868508" alt="Zavelyn Drum Pro Specs" loading="lazy">
+              {% endif %}
+            </div>
+            <div class="zhp-tab-info-col">
+              <h3>The Masterpiece: Zavelyn Drum™ Pro (15 Tones)</h3>
+              <p class="zhp-tab-desc">Designed for deep relaxation and rich acoustic depth. Its expansive 15 notes offer a serene sanctuary for both beginner meditators and seasoned music creators.</p>
+              <div class="zhp-specs-list">
+                <div class="zhp-spec-item">
+                  <strong>Full Musical Range:</strong>
+                  <span>D-Major, 15 notes, 13" diameter, 6 lbs - capable of playing complex songs and deep, multi-layered melodies.</span>
+                </div>
+                <div class="zhp-spec-item">
+                  <strong>432 Hz Healing Resonance:</strong>
+                  <span>Tuned to the earth's natural resonance frequency, proven to reduce stress and heart rate.</span>
+                </div>
+                <div class="zhp-spec-item">
+                  <strong>Conversation Starter:</strong>
+                  <span>Doubles as an exquisite artisanal art piece with handcrafted woolen braid around the perimeter.</span>
+                </div>
+                <div class="zhp-spec-item">
+                  <strong>Lifetime Serenity Guarantee:</strong>
+                  <span>Crafted from certified titanium-alloy steel engineered to never go out of tune.</span>
+                </div>
+              </div>
+              <a href="/products/zavelyn-drum-pro" class="zhp-btn zhp-btn-primary">EXPLORE PRO 15-TONE</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel Plus -->
+        <div class="zhp-tab-panel" id="tab-plus" role="tabpanel">
+          <div class="zhp-tab-grid">
+            <div class="zhp-tab-image-col">
+              {% if section.settings.image_plus != blank %}
+                {{ section.settings.image_plus | image_url: width: 800 | image_tag: loading: 'lazy', alt: 'Zavelyn Drum Plus Specs' }}
+              {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/78.jpg?v=1792868520" alt="Zavelyn Drum Plus Specs" loading="lazy">
+              {% endif %}
+            </div>
+            <div class="zhp-tab-info-col">
+              <h3>The All-Rounder: Zavelyn Drum™ Plus (11 Tones)</h3>
+              <p class="zhp-tab-desc">A versatile, heartwarming instrument that brings people together. With its easy playability and rich harmonic tones, it is the most popular choice for households worldwide.</p>
+              <div class="zhp-specs-list">
+                <div class="zhp-spec-item">
+                  <strong>Tunes for Everyone:</strong>
+                  <span>D-Major, 11 tones, 11" diameter, 3 lbs - great for family evenings, solo unwinding, and acoustic jams.</span>
+                </div>
+                <div class="zhp-spec-item">
+                  <strong>Your Daily Peace Sanctuary:</strong>
+                  <span>Soothing sound vibrations settle the mind, relieve tension, and promote restorative rest.</span>
+                </div>
+                <div class="zhp-spec-item">
+                  <strong>Travel-Ready Music:</strong>
+                  <span>Includes a padded shoulder bag so you can bring tranquil music into nature, camping, and yoga classes.</span>
+                </div>
+                <div class="zhp-spec-item">
+                  <strong>Robust and Weatherproof:</strong>
+                  <span>Electroplated protective coating prevents rust and wear for years of reliable joy.</span>
+                </div>
+              </div>
+              <a href="/products/zavelyn-drum-plus" class="zhp-btn zhp-btn-primary">EXPLORE PLUS 11-TONE</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel Mini -->
+        <div class="zhp-tab-panel" id="tab-mini" role="tabpanel">
+          <div class="zhp-tab-grid">
+            <div class="zhp-tab-image-col">
+              {% if section.settings.image_mini != blank %}
+                {{ section.settings.image_mini | image_url: width: 800 | image_tag: loading: 'lazy', alt: 'Zavelyn Drum Mini Specs' }}
+              {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/1Box_Drum_8_new.jpg?v=1792868532" alt="Zavelyn Drum Mini Specs" loading="lazy">
+              {% endif %}
+            </div>
+            <div class="zhp-tab-info-col">
+              <h3>The Joyful Start: Zavelyn Drum™ Mini (8 Tones)</h3>
+              <p class="zhp-tab-desc">A delightful first step into musical creativity. Sized and pitched for smaller hands and casual desk play, producing sweet bell-like notes with effortless ease.</p>
+              <div class="zhp-specs-list">
+                <div class="zhp-spec-item">
+                  <strong>Child-Friendly Tuning:</strong>
+                  <span>C-Major pentatonic scale, 6" diameter, 1.5 lbs - zero wrong notes so anyone plays beautifully right away.</span>
+                </div>
+                <div class="zhp-spec-item">
+                  <strong>Easy Learn, Instant Joy:</strong>
+                  <span>Includes color-coded songbook with popular tunes like Twinkle Twinkle, Happy Birthday, and Ode to Joy.</span>
+                </div>
+                <div class="zhp-spec-item">
+                  <strong>Durable & Drop-Proof:</strong>
+                  <span>Solid alloy steel designed to handle active play without warping or detuning.</span>
+                </div>
+                <div class="zhp-spec-item">
+                  <strong>Screen-Free Calming Break:</strong>
+                  <span>A mindful, tactile alternative to digital screens that cultivates focus, rhythm, and peace.</span>
+                </div>
+              </div>
+              <a href="/products/zavelyn-drum-mini" class="zhp-btn zhp-btn-primary">EXPLORE MINI 8-TONE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Pillars Feature Cards -->
+      <div class="zhp-pillars-grid">
+        <div class="zhp-pillar-card">
+          <div class="zhp-pillar-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0772/9528/8652/files/m_editation.svg?v=1693327629" alt="Stress Relief" loading="lazy">
+          </div>
+          <h4>Built for Deep Relaxation</h4>
+          <p>432 Hz frequencies synchronize brainwaves into the alpha state, melting away daily tension within minutes.</p>
+        </div>
+        <div class="zhp-pillar-card">
+          <div class="zhp-pillar-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0772/9528/8652/files/creativity_color.svg?v=1693327715" alt="Creativity" loading="lazy">
+          </div>
+          <h4>For All Ages & Skill Levels</h4>
+          <p>No prior musical education required. Numbered tongues and guided songbooks make playing completely foolproof.</p>
+        </div>
+        <div class="zhp-pillar-card">
+          <div class="zhp-pillar-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0566/1209/4037/files/gift.svg?v=1698733901" alt="Gift" loading="lazy">
+          </div>
+          <h4>A Meaningful, Lasting Gift</h4>
+          <p>In a world of fast tech, give a timeless gift that inspires calm, connection, and mindful creative expression.</p>
+        </div>
+        <div class="zhp-pillar-card">
+          <div class="zhp-pillar-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0566/1209/4037/files/Happy_customers.avif?v=1715926939" alt="Happy Customers" loading="lazy">
+          </div>
+          <h4>Over 72,000+ Happy Drummers</h4>
+          <p>Cherished by yoga teachers, sound therapists, families, and wellness lovers across 70+ countries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "04. Chi tiết từng Model",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Nhãn danh mục",
+      "default": "EXPLORE BY MODEL"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tiêu đề",
+      "default": "Easy to Learn and Soothing to Play"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Mô tả phụ",
+      "default": "Click each model to explore unique tones, technical dimensions, and ideal musical journeys."
+    },
+    {
+      "type": "header",
+      "content": "Thay thế ảnh thông số Model (Nếu dính logo)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_pro",
+      "label": "Ảnh thông số Model Pro 15-Tone"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_plus",
+      "label": "Ảnh thông số Model Plus 11-Tone"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mini",
+      "label": "Ảnh thông số Model Mini 8-Tone"
+    }
+  ],
+  "presets": [
+    {
+      "name": "04. Chi tiết từng Model"
+    }
+  ]
+}
+{% endschema %}

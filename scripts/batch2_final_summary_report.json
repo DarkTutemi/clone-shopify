@@ -1,0 +1,392 @@
+[
+  {
+    "productId": "15454949540025",
+    "name": "Titanium Pocket Pry Bar",
+    "status": "PASS",
+    "handleUnchanged": true,
+    "snapshot": "scripts\\snapshot_prod_15454949540025_2026-10-27T14-50-38-840Z.json",
+    "adminBefore": {
+      "title": "Zavelyn Titanium Pocket Pry Bar",
+      "seo": {
+        "title": null,
+        "description": null
+      }
+    },
+    "adminAfter": {
+      "id": "gid://shopify/Product/15454949540025",
+      "title": "Zavelyn Titanium Pocket Pry Bar",
+      "handle": "sakerplus®-titanium-alloy-multifunction-pocket-pry-bar",
+      "seo": {
+        "title": "Titanium Multifunction Pocket Pry Bar EDC Tool | Zavelyn",
+        "description": "Carry a dependable EDC pocket tool crafted from lightweight titanium alloy. Features bottle opener, pry wedge, measurement scale, and pocket clip."
+      }
+    },
+    "storefrontQA": {
+      "httpStatus": 200,
+      "renderedTitle": "Titanium Multifunction Pocket Pry Bar EDC Tool | Zavelyn",
+      "renderedMeta": "Carry a dependable EDC pocket tool crafted from lightweight titanium alloy. Features bottle opener, pry wedge, measurement scale, and pocket clip.",
+      "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-titanium-alloy-multifunction-pocket-pry-bar",
+      "cartMatch": {
+        "variantId": "67914383098041",
+        "productId": 15454949540025,
+        "price": "62.99",
+        "ok": true
+      }
+    },
+    "screenshots": {
+      "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454949540025_desktop_1440.png",
+      "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454949540025_mobile_390.png"
+    }
+  },
+  {
+    "productId": "15454950490297",
+    "name": "Squishy Egg Silicone Night Light",
+    "status": "PASS",
+    "handleUnchanged": true,
+    "snapshot": "scripts\\snapshot_prod_15454950490297_2026-10-27T14-51-09-844Z.json",
+    "adminBefore": {
+      "title": "Zavelyn Squishy Egg Night Light",
+      "seo": {
+        "title": null,
+        "description": null
+      }
+    },
+    "adminAfter": {
+      "id": "gid://shopify/Product/15454950490297",
+      "title": "Zavelyn Squishy Egg Silicone Night Light",
+      "handle": "sakerplus®-squishy-egg-multicolor-tap-night-light",
+      "seo": {
+        "title": "Squishy Egg Silicone Tap Night Light for Kids | Zavelyn",
+        "description": "Soothe bedrooms and nurseries with a soft silicone egg lamp. Features touch sensor color changes, warm night glow, and rechargeable USB convenience."
+      }
+    },
+    "storefrontQA": {
+      "httpStatus": 200,
+      "renderedTitle": "Squishy Egg Silicone Tap Night Light for Kids | Zavelyn",
+      "renderedMeta": "Soothe bedrooms and nurseries with a soft silicone egg lamp. Features touch sensor color changes, warm night glow, and rechargeable USB convenience.",
+      "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-squishy-egg-multicolor-tap-night-light",
+      "cartMatch": {
+        "variantId": "67914403283129",
+        "productId": 15454950490297,
+        "price": "53.99",
+        "ok": true
+      }
+    },
+    "screenshots": {
+      "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454950490297_desktop_1440.png",
+      "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454950490297_mobile_390.png"
+    }
+  },
+  {
+    "productId": "15454952882361",
+    "name": "Kids Basketball Hoop Set",
+    "status": "PASS",
+    "handleUnchanged": true,
+    "snapshot": "scripts\\snapshot_prod_15454952882361_2026-10-27T14-51-40-418Z.json",
+    "adminBefore": {
+      "title": "Zavelyn Kids Basketball Hoop Set",
+      "seo": {
+        "title": null,
+        "description": null
+      }
+    },
+    "adminAfter": {
+      "id": "gid://shopify/Product/15454952882361",
+      "title": "Zavelyn Kids Basketball Hoop Set",
+      "handle": "sakerplus®-kids-indoor-outdoor-basketball-hoop-set",
+      "seo": {
+        "title": "Indoor & Outdoor Basketball Hoop Set for Kids | Zavelyn",
+        "description": "Encourage active indoor and outdoor play with an adjustable-height arcade basketball hoop set. Includes stand, backboard, 4 inflatable balls, and air pump."
+      }
+    },
+    "storefrontQA": {
+      "httpStatus": 200,
+      "renderedTitle": "Indoor &amp; Outdoor Basketball Hoop Set for Kids | Zavelyn",
+      "renderedMeta": "Encourage active indoor and outdoor play with an adjustable-height arcade basketball hoop set. Includes stand, backboard, 4 inflatable balls, and air pump.",
+      "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-kids-indoor-outdoor-basketball-hoop-set",
+      "cartMatch": {
+        "variantId": "67914458464441",
+        "productId": 15454952882361,
+        "price": "79.99",
+        "ok": true
+      }
+    },
+    "screenshots": {
+      "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454952882361_desktop_1440.png",
+      "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454952882361_mobile_390.png"
+    }
+  },
+  {
+    "productId": "15454953177273",
+    "name": "Clamp-On Desk Shelf Organizer",
+    "status": "PASS",
+    "handleUnchanged": true,
+    "snapshot": "scripts\\snapshot_prod_15454953177273_2026-10-27T14-52-11-151Z.json",
+    "adminBefore": {
+      "title": "Zavelyn Clamp-On Desk Shelf",
+      "seo": {
+        "title": null,
+        "description": null
+      }
+    },
+    "adminAfter": {
+      "id": "gid://shopify/Product/15454953177273",
+      "title": "Zavelyn Clamp-On Desk Shelf Organizer",
+      "handle": "sakerplus®-three-tier-clamp-on-desk-shelf-organizer",
+      "seo": {
+        "title": "Clamp-On Multi-Tier Desk Shelf Organizer | Zavelyn",
+        "description": "Expand usable desktop surface without drilling using heavy-duty C-clamp shelves. Ideal for organizing monitors, stationery, speakers, and office essentials."
+      }
+    },
+    "storefrontQA": {
+      "httpStatus": 200,
+      "renderedTitle": "Clamp-On Multi-Tier Desk Shelf Organizer | Zavelyn",
+      "renderedMeta": "Expand usable desktop surface without drilling using heavy-duty C-clamp shelves. Ideal for organizing monitors, stationery, speakers, and office essentials.",
+      "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-three-tier-clamp-on-desk-shelf-organizer",
+      "cartMatch": {
+        "variantId": "67914465214649",
+        "productId": 15454953177273,
+        "price": "50.99",
+        "ok": true
+      }
+    },
+    "screenshots": {
+      "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454953177273_desktop_1440.png",
+      "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454953177273_mobile_390.png"
+    }
+  },
+  {
+    "productId": "15454955765945",
+    "name": "Rotating Galaxy Star Projector",
+    "status": "PASS",
+    "handleUnchanged": true,
+    "snapshot": "scripts\\snapshot_prod_15454955765945_2026-10-27T14-52-42-088Z.json",
+    "adminBefore": {
+      "title": "Zavelyn Rotating Galaxy Projector",
+      "seo": {
+        "title": null,
+        "description": null
+      }
+    },
+    "adminAfter": {
+      "id": "gid://shopify/Product/15454955765945",
+      "title": "Zavelyn Rotating Galaxy Star Projector",
+      "handle": "sakerplus®-rotating-galaxy-projector-with-adjustable-focus",
+      "seo": {
+        "title": "Rotating Galaxy Star Projector for Bedrooms | Zavelyn",
+        "description": "Transform ceilings into a celestial planetarium with an adjustable-focus galaxy projector featuring interchangeable discs and quiet 30 dB gentle rotation."
+      }
+    },
+    "storefrontQA": {
+      "httpStatus": 200,
+      "renderedTitle": "Rotating Galaxy Star Projector for Bedrooms | Zavelyn",
+      "renderedMeta": "Transform ceilings into a celestial planetarium with an adjustable-focus galaxy projector featuring interchangeable discs and quiet 30 dB gentle rotation.",
+      "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-rotating-galaxy-projector-with-adjustable-focus",
+      "cartMatch": {
+        "variantId": "67914524688569",
+        "productId": 15454955765945,
+        "price": "52.99",
+        "ok": true
+      }
+    },
+    "screenshots": {
+      "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454955765945_desktop_1440.png",
+      "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454955765945_mobile_390.png"
+    }
+  },
+  {
+    "productId": "15454959403193",
+    "name": "Low-Profile Downspout Catch Basin",
+    "status": "PASS",
+    "handleUnchanged": true,
+    "snapshot": "scripts\\snapshot_prod_15454959403193_2026-10-27T14-53-11-820Z.json",
+    "adminBefore": {
+      "title": "Zavelyn Downspout Catch Basin",
+      "seo": {
+        "title": null,
+        "description": null
+      }
+    },
+    "adminAfter": {
+      "id": "gid://shopify/Product/15454959403193",
+      "title": "Zavelyn Low-Profile Downspout Catch Basin",
+      "handle": "sakerplus®-low-profile-downspout-catch-basin",
+      "seo": {
+        "title": "Low-Profile Downspout Drainage Catch Basin | Zavelyn",
+        "description": "Divert rainwater away from your home foundation with a low-profile gutter downspout basin equipped with a debris grate and extendable discharge pipe."
+      }
+    },
+    "storefrontQA": {
+      "httpStatus": 200,
+      "renderedTitle": "Low-Profile Downspout Drainage Catch Basin | Zavelyn",
+      "renderedMeta": "Divert rainwater away from your home foundation with a low-profile gutter downspout basin equipped with a debris grate and extendable discharge pipe.",
+      "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-low-profile-downspout-catch-basin",
+      "cartMatch": {
+        "variantId": "67914587603129",
+        "productId": 15454959403193,
+        "price": "69.99",
+        "ok": true
+      }
+    },
+    "screenshots": {
+      "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454959403193_desktop_1440.png",
+      "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454959403193_mobile_390.png"
+    }
+  },
+  {
+    "productId": "15454960517305",
+    "name": "Rotating Goose Target Game",
+    "status": "PASS",
+    "handleUnchanged": true,
+    "snapshot": "scripts\\snapshot_prod_15454960517305_2026-10-27T14-53-42-750Z.json",
+    "adminBefore": {
+      "title": "Zavelyn Rotating Goose Target Game",
+      "seo": {
+        "title": null,
+        "description": null
+      }
+    },
+    "adminAfter": {
+      "id": "gid://shopify/Product/15454960517305",
+      "title": "Zavelyn Rotating Goose Target Game",
+      "handle": "sakerplus®-electronic-rotating-goose-target-game",
+      "seo": {
+        "title": "Electronic Rotating Goose Target Shooting Game | Zavelyn",
+        "description": "Bring exciting arcade target practice home with an electronic rotating goose shooting game featuring soft foam ball poppers and digital score display."
+      }
+    },
+    "storefrontQA": {
+      "httpStatus": 200,
+      "renderedTitle": "Electronic Rotating Goose Target Shooting Game | Zavelyn",
+      "renderedMeta": "Bring exciting arcade target practice home with an electronic rotating goose shooting game featuring soft foam ball poppers and digital score display.",
+      "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-electronic-rotating-goose-target-game",
+      "cartMatch": {
+        "variantId": "67914604150969",
+        "productId": 15454960517305,
+        "price": "52.99",
+        "ok": true
+      }
+    },
+    "screenshots": {
+      "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454960517305_desktop_1440.png",
+      "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454960517305_mobile_390.png"
+    }
+  },
+  {
+    "productId": "15454961565881",
+    "name": "Workbench Tail Vise Clamp",
+    "status": "PASS",
+    "handleUnchanged": true,
+    "snapshot": "scripts\\snapshot_prod_15454961565881_2026-10-27T14-54-13-682Z.json",
+    "adminBefore": {
+      "title": "Zavelyn Workbench Tail Vise Clamp",
+      "seo": {
+        "title": null,
+        "description": null
+      }
+    },
+    "adminAfter": {
+      "id": "gid://shopify/Product/15454961565881",
+      "title": "Zavelyn Workbench Tail Vise Clamp",
+      "handle": "sakerplus®-adjustable-workbench-tail-vise-clamp",
+      "seo": {
+        "title": "Heavy-Duty Workbench Tail Vise Woodworking Clamp | Zavelyn",
+        "description": "Secure wooden workpieces firmly on dog-hole workbenches using an aluminum alloy tail vise screw clamp engineered for smooth tightening and stable clamping."
+      }
+    },
+    "storefrontQA": {
+      "httpStatus": 200,
+      "renderedTitle": "Heavy-Duty Workbench Tail Vise Woodworking Clamp | Zavelyn",
+      "renderedMeta": "Secure wooden workpieces firmly on dog-hole workbenches using an aluminum alloy tail vise screw clamp engineered for smooth tightening and stable clamping.",
+      "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-adjustable-workbench-tail-vise-clamp",
+      "cartMatch": {
+        "variantId": "67914626367673",
+        "productId": 15454961565881,
+        "price": "49.99",
+        "ok": true
+      }
+    },
+    "screenshots": {
+      "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454961565881_desktop_1440.png",
+      "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454961565881_mobile_390.png"
+    }
+  },
+  {
+    "productId": "15454963073209",
+    "name": "Rolling Nut & Fruit Harvester",
+    "status": "PASS",
+    "handleUnchanged": true,
+    "snapshot": "scripts\\snapshot_prod_15454963073209_2026-10-27T14-54-44-803Z.json",
+    "adminBefore": {
+      "title": "Zavelyn Rolling Nut & Ball Picker",
+      "seo": {
+        "title": null,
+        "description": null
+      }
+    },
+    "adminAfter": {
+      "id": "gid://shopify/Product/15454963073209",
+      "title": "Zavelyn Rolling Nut & Fruit Harvester",
+      "handle": "sakerplus®-rolling-nut-and-ball-picker",
+      "seo": {
+        "title": "Rolling Nut & Fruit Harvester Gathering Tool | Zavelyn",
+        "description": "Gather pecans, walnuts, acorns, and tennis balls without bending your back using a rolling wire collection drum with an adjustable telescoping handle."
+      }
+    },
+    "storefrontQA": {
+      "httpStatus": 200,
+      "renderedTitle": "Rolling Nut &amp; Fruit Harvester Gathering Tool | Zavelyn",
+      "renderedMeta": "Gather pecans, walnuts, acorns, and tennis balls without bending your back using a rolling wire collection drum with an adjustable telescoping handle.",
+      "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-rolling-nut-and-ball-picker",
+      "cartMatch": {
+        "variantId": "67914660315321",
+        "productId": 15454963073209,
+        "price": "93.99",
+        "ok": true
+      }
+    },
+    "screenshots": {
+      "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454963073209_desktop_1440.png",
+      "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454963073209_mobile_390.png"
+    }
+  },
+  {
+    "productId": "15454963433657",
+    "name": "Ultra-Fine Cooking Oil Sprayer",
+    "status": "PASS",
+    "handleUnchanged": true,
+    "snapshot": "scripts\\snapshot_prod_15454963433657_2026-10-27T14-55-15-299Z.json",
+    "adminBefore": {
+      "title": "Zavelyn Oil Spray Bottle",
+      "seo": {
+        "title": null,
+        "description": null
+      }
+    },
+    "adminAfter": {
+      "id": "gid://shopify/Product/15454963433657",
+      "title": "Zavelyn Ultra-Fine Cooking Oil Sprayer",
+      "handle": "sakerplus®-ultra-fine-cooking-oil-spray-bottle",
+      "seo": {
+        "title": "Ultra-Fine Cooking Oil Sprayer Bottle for Cooking | Zavelyn",
+        "description": "Misty-spray olive oil evenly onto salads, air fryer baskets, and grilling pans. Features an easy one-press spray pump and clear bottle with measurement marks."
+      }
+    },
+    "storefrontQA": {
+      "httpStatus": 200,
+      "renderedTitle": "Ultra-Fine Cooking Oil Sprayer Bottle for Cooking | Zavelyn",
+      "renderedMeta": "Misty-spray olive oil evenly onto salads, air fryer baskets, and grilling pans. Features an easy one-press spray pump and clear bottle with measurement marks.",
+      "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-ultra-fine-cooking-oil-spray-bottle",
+      "cartMatch": {
+        "variantId": "67914666836153",
+        "productId": 15454963433657,
+        "price": "16.99",
+        "ok": true
+      }
+    },
+    "screenshots": {
+      "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454963433657_desktop_1440.png",
+      "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454963433657_mobile_390.png"
+    }
+  }
+]

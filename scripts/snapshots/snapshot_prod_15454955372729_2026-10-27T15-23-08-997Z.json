@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454955372729",
+  "title": "Zavelyn 3-in-1 Gypsum Board Cutter",
+  "handle": "sakerplus®-3-in-1-gypsum-board-cutting-tool",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914518364345",
+        "title": "Default Title",
+        "price": "49.99",
+        "sku": "CP14318-E037"
+      }
+    ]
+  }
+}

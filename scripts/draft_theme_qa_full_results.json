@@ -1,0 +1,194 @@
+{
+  "policyConsistency": {
+    "status": "PASS",
+    "checks": [
+      {
+        "path": "/",
+        "httpStatus": 200,
+        "has30DayMessaging": true,
+        "prohibitedMatches": []
+      },
+      {
+        "path": "/products/zavelyn-sensory-floor-mats",
+        "httpStatus": 200,
+        "has30DayMessaging": true,
+        "prohibitedMatches": []
+      },
+      {
+        "path": "/products/zavelyn-handpan-master",
+        "httpStatus": 200,
+        "has30DayMessaging": true,
+        "prohibitedMatches": []
+      },
+      {
+        "path": "/products/zavelyn-drum-plus",
+        "httpStatus": 200,
+        "has30DayMessaging": true,
+        "prohibitedMatches": []
+      },
+      {
+        "path": "/products/zavelyn-rain-drum",
+        "httpStatus": 200,
+        "has30DayMessaging": true,
+        "prohibitedMatches": []
+      },
+      {
+        "path": "/collections/zavelyn-handpans",
+        "httpStatus": 200,
+        "has30DayMessaging": true,
+        "prohibitedMatches": []
+      }
+    ]
+  },
+  "productPageQA": {
+    "status": "PASS",
+    "checks": [
+      {
+        "type": "Universal PDP",
+        "path": "/products/zavelyn-sensory-floor-mats",
+        "httpStatus": 200,
+        "hasTitle": true,
+        "hasPrice": true,
+        "hasFaq": true,
+        "hasStickyAtc": true,
+        "status": "PASS"
+      },
+      {
+        "type": "Custom Handpan Master PDP",
+        "path": "/products/zavelyn-handpan-master",
+        "httpStatus": 200,
+        "hasTitle": true,
+        "hasPrice": true,
+        "hasFaq": true,
+        "hasStickyAtc": true,
+        "status": "PASS"
+      },
+      {
+        "type": "Custom Rain Drum PDP",
+        "path": "/products/zavelyn-rain-drum",
+        "httpStatus": 200,
+        "hasTitle": true,
+        "hasPrice": true,
+        "hasFaq": true,
+        "hasStickyAtc": true,
+        "status": "PASS"
+      },
+      {
+        "type": "Custom Drum Plus PDP",
+        "path": "/products/zavelyn-drum-plus",
+        "httpStatus": 200,
+        "hasTitle": true,
+        "hasPrice": true,
+        "hasFaq": true,
+        "hasStickyAtc": true,
+        "status": "PASS"
+      },
+      {
+        "type": "Multi-Variant PDP (15 Var)",
+        "path": "/products/zavelyn-cozyheat-heated-wearable-blanket-sweater",
+        "httpStatus": 200,
+        "hasTitle": true,
+        "hasPrice": true,
+        "hasFaq": true,
+        "hasStickyAtc": true,
+        "status": "PASS"
+      },
+      {
+        "type": "Multi-Variant PDP (18 Var)",
+        "path": "/products/zavelyn-sculptcomfort-wirefree-breast-shapewear-bra",
+        "httpStatus": 200,
+        "hasTitle": true,
+        "hasPrice": true,
+        "hasFaq": true,
+        "hasStickyAtc": true,
+        "status": "PASS"
+      },
+      {
+        "type": "Special Funnel PDP",
+        "path": "/products/sakerplus-camping-fan-with-light-battery-1",
+        "httpStatus": 200,
+        "hasTitle": true,
+        "hasPrice": true,
+        "hasFaq": true,
+        "hasStickyAtc": true,
+        "status": "PASS"
+      }
+    ]
+  },
+  "collectionHomepageQA": {
+    "status": "PASS",
+    "checks": [
+      {
+        "name": "Homepage",
+        "path": "/",
+        "httpStatus": 200,
+        "hasGrid": true,
+        "hasImages": true,
+        "status": "PASS"
+      },
+      {
+        "name": "Handpans Collection",
+        "path": "/collections/zavelyn-handpans",
+        "httpStatus": 200,
+        "hasGrid": true,
+        "hasImages": true,
+        "status": "PASS"
+      },
+      {
+        "name": "Fence & Farm Collection",
+        "path": "/collections/fence-and-farm",
+        "httpStatus": 200,
+        "hasGrid": true,
+        "hasImages": true,
+        "status": "PASS"
+      }
+    ]
+  },
+  "cartCheckoutQA": {
+    "status": "PASS",
+    "checks": [
+      {
+        "action": "Ajax Add to Cart",
+        "status": "PASS",
+        "variantId": 67914347086009
+      },
+      {
+        "action": "Cart Read & Quantity",
+        "status": "PASS",
+        "itemCount": 1
+      },
+      {
+        "action": "Free Shipping Threshold ($49 Logic)",
+        "status": "PASS",
+        "threshold": "$49.00",
+        "calculationValid": true
+      },
+      {
+        "action": "Checkout Handoff Link",
+        "status": "PASS",
+        "target": "/checkout"
+      }
+    ]
+  },
+  "responsivePerformance": {
+    "status": "PASS",
+    "checks": [
+      {
+        "name": "Shopify Core Analytics & Trekkie",
+        "active": true
+      },
+      {
+        "name": "Shopify Web Pixels API Sandbox",
+        "active": true
+      },
+      {
+        "name": "Customer Events / Meta Pixel Handler",
+        "active": true
+      },
+      {
+        "name": "Modern CSS Grid / Flexbox Architecture",
+        "active": true
+      }
+    ]
+  }
+}

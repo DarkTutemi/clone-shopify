@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/15454952882361",
+  "title": "Zavelyn Kids Basketball Hoop Set",
+  "handle": "sakerplus®-kids-indoor-outdoor-basketball-hoop-set",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914458464441",
+        "title": "Extra Large - 2 Basketballs",
+        "price": "79.99",
+        "sku": "OS124131-X88444"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914458497209",
+        "title": "1.22M - Pump & 2 Basketballs (Color Box)",
+        "price": "53.99",
+        "sku": "OS124131-X80849"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914458529977",
+        "title": "1.22M - Pump & 4 Basketballs (Color Box)",
+        "price": "55.99",
+        "sku": "OS124131-X80850"
+      }
+    ]
+  }
+}

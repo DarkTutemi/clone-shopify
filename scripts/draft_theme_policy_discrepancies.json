@@ -1,0 +1,497 @@
+[
+  {
+    "key": "config/settings_data.json",
+    "line": 31,
+    "content": "\"text\": \"FREE US SHIPPING OVER $49 · 60-DAY RISK-FREE TRIAL\","
+  },
+  {
+    "key": "sections/fence-post-advertorial.liquid",
+    "line": 333,
+    "content": "</table></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---"
+  },
+  {
+    "key": "sections/header-group.json",
+    "line": 125,
+    "content": "\"announcement_desktop\": \"★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 60-DAY RISK-FREE TRIAL ★\","
+  },
+  {
+    "key": "sections/heating-lamp-funnel.liquid",
+    "line": 227,
+    "content": "<span class=\"wf-tb-text\">90-Day Money-Back Guarantee</span>"
+  },
+  {
+    "key": "sections/heating-lamp-funnel.liquid",
+    "line": 557,
+    "content": "<h3>90-Day Money-Back Guarantee</h3>"
+  },
+  {
+    "key": "sections/heating-lamp-funnel.liquid",
+    "line": 558,
+    "content": "<p>Try Zavelyn risk-free in your coop or brooder. If you or your flock aren't 100% satisfied, get a prompt full refund.</p>"
+  },
+  {
+    "key": "sections/heating-lamp-funnel.liquid",
+    "line": 692,
+    "content": "<p>Every order comes with our 90-Day 100% Satisfaction Money-Back Guarantee. If for any reason you or your flock are not thrilled with its performance, simply c"
+  },
+  {
+    "key": "sections/heating-lamp-funnel.liquid",
+    "line": 757,
+    "content": "<strong>90-Day Money-Back</strong>"
+  },
+  {
+    "key": "sections/offer-balm.liquid",
+    "line": 316,
+    "content": "<p class=\"gp-subscription-title\">{{ bb.trust_3_title | default: '60-Day Guarantee' }}</p>"
+  },
+  {
+    "key": "sections/offer-balm.liquid",
+    "line": 837,
+    "content": "\"default\": \"60-Day Guarantee\""
+  },
+  {
+    "key": "sections/offer-balm.liquid",
+    "line": 2967,
+    "content": "\"default\": \"Eligible orders are protected by our 60-day money-back guarantee. Contact support within the guarantee period for assistance.\""
+  },
+  {
+    "key": "sections/offer-cdf.liquid",
+    "line": 117,
+    "content": "<div><strong>Try it risk-free for 30 days</strong> If you don't notice less foot dragging, better stability or safer walking, we'll refund you in full.</div>"
+  },
+  {
+    "key": "sections/offer-cdf.liquid",
+    "line": 1821,
+    "content": "\"label\": \"Risk-free note\","
+  },
+  {
+    "key": "sections/offer-cdf.liquid",
+    "line": 2333,
+    "content": "\"default\": \"We offer a 30-day risk-free guarantee.\""
+  },
+  {
+    "key": "sections/offer-regrip.liquid",
+    "line": 712,
+    "content": "<h2 class=\"rg-timeline__title\">Your 60-Day Hand <span>Recovery Timeline</span></h2>"
+  },
+  {
+    "key": "sections/offer-zavelyn.liquid",
+    "line": 732,
+    "content": "<h2 class=\"rg-timeline__title\">{{ sec_timeline.settings.heading | default: 'Your 60-Day Hand' }} <span>{{ sec_timeline.settings.accent | default: 'Recovery Time"
+  },
+  {
+    "key": "sections/offer-zavelyn.liquid",
+    "line": 3657,
+    "content": "\"name\": \"15. 60-day timeline\","
+  },
+  {
+    "key": "sections/offer-zavelyn.liquid",
+    "line": 3664,
+    "content": "\"default\": \"Your 60-Day Hand\""
+  },
+  {
+    "key": "sections/srefalsteam-funnel.liquid",
+    "line": 154,
+    "content": "<span class=\"wf-trust-text\"><strong>90-Day</strong> Risk-Free Trial</span>"
+  },
+  {
+    "key": "sections/srefalsteam-funnel.liquid",
+    "line": 640,
+    "content": "<p>We provide a 90-day risk-free money-back guarantee. If you are not completely satisfied with the cleaning power, contact our 24/7 US support team for an imme"
+  },
+  {
+    "key": "sections/thoson-magtrack-funnel.liquid",
+    "line": 62,
+    "content": "<span><strong>90-Day</strong> Risk-Free Trial</span>"
+  },
+  {
+    "key": "sections/thoson-magtrack-funnel.liquid",
+    "line": 228,
+    "content": "<strong>90-Day Money-Back</strong>"
+  },
+  {
+    "key": "sections/thoson-magtrack-funnel.liquid",
+    "line": 688,
+    "content": "<p>Every order is covered by our 90-Day 100% Satisfaction Money-Back Guarantee. If your child doesn't absolutely love building with MagTrack, or if any piece is"
+  },
+  {
+    "key": "sections/thoson-magtrack-funnel.liquid",
+    "line": 753,
+    "content": "<strong>90-Day Money-Back</strong>"
+  },
+  {
+    "key": "sections/willa-cart-drawer.liquid",
+    "line": 79,
+    "content": "<span>🛡️ 90-Day Money-Back Guarantee</span>"
+  },
+  {
+    "key": "sections/willa-comparison.liquid",
+    "line": 43,
+    "content": "<td><strong>Risk-Free Guarantee</strong></td>"
+  },
+  {
+    "key": "sections/willa-comparison.liquid",
+    "line": 44,
+    "content": "<td class=\"col-brand\"><span class=\"check-icon\">✓</span> 90-Day Money-Back Trial</td>"
+  },
+  {
+    "key": "sections/willa-faq.liquid",
+    "line": 36,
+    "content": "<span>What is the 90-Day Risk-Free Money-Back Guarantee?</span>"
+  },
+  {
+    "key": "sections/willa-featured-product.liquid",
+    "line": 125,
+    "content": "<span>🛡️ 90-Day Money-Back Guarantee</span>"
+  },
+  {
+    "key": "sections/willa-header.liquid",
+    "line": 9,
+    "content": "<span class=\"desktop-only\">{{ section.settings.announcement_desktop | default: '★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TR"
+  },
+  {
+    "key": "sections/willa-header.liquid",
+    "line": 99,
+    "content": "<li><a href=\"/policies/refund-policy\"><span class=\"menu-icon\">🛡️</span> 90-Day Money-Back Guarantee</a></li>"
+  },
+  {
+    "key": "sections/willa-header.liquid",
+    "line": 457,
+    "content": "\"default\": \"★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TRIAL ★\""
+  },
+  {
+    "key": "sections/willa-header.liquid",
+    "line": 463,
+    "content": "\"default\": \"★ FREE US SHIPPING OVER $49 · 90-DAY TRIAL ★\""
+  },
+  {
+    "key": "sections/willa-hero.liquid",
+    "line": 48,
+    "content": "<span>🛡️</span> <strong>90-Day</strong> Risk-Free Trial"
+  },
+  {
+    "key": "sections/willa-hero.liquid",
+    "line": 365,
+    "content": "\"default\": \"90-Day\""
+  },
+  {
+    "key": "sections/willa-hero.liquid",
+    "line": 371,
+    "content": "\"default\": \"Risk-Free Trial\""
+  },
+  {
+    "key": "sections/willa-main-collection.liquid",
+    "line": 35,
+    "content": "<span>30-Day Risk-Free Guarantee</span>"
+  },
+  {
+    "key": "sections/willa-main-product.liquid",
+    "line": 476,
+    "content": "<span>🛡️</span> <strong>90-Day Money-Back Guarantee</strong>"
+  },
+  {
+    "key": "sections/willa-main-product.liquid",
+    "line": 541,
+    "content": "<p>We offer an unconditional 90-day money-back guarantee. If you are not completely satisfied, email support@tryzavelyn.com for an immediate exchange or refund."
+  },
+  {
+    "key": "sections/willa-reviews.liquid",
+    "line": 58,
+    "content": "<strong>90-Day Money-Back</strong>"
+  },
+  {
+    "key": "sections/willa-reviews.liquid",
+    "line": 275,
+    "content": "<h4 class=\"review-title\">\"Fast dispatch, real-time tracking, 90-day peace of mind\"</h4>"
+  },
+  {
+    "key": "sections/willa-reviews.liquid",
+    "line": 276,
+    "content": "<p class=\"review-body\">You can order with complete confidence. Arrived in pristine condition via FedEx with tracking at every stage. The 90-day guarantee gave m"
+  },
+  {
+    "key": "sections/willa-steps.liquid",
+    "line": 32,
+    "content": "<p>Every product is backed by our 90-Day Money-Back Guarantee and dedicated customer care team ready to help 7 days a week.</p>"
+  },
+  {
+    "key": "sections/yeoman-sweep-funnel.liquid",
+    "line": 148,
+    "content": "<span class=\"wf-trust-text\"><strong>60-Day Clean Sweep</strong> Guarantee</span>"
+  },
+  {
+    "key": "sections/yeoman-sweep-funnel.liquid",
+    "line": 507,
+    "content": "<p class=\"wf-rev-body\">Had a quick question about adjusting the height knob and Zavelyn support replied in under 30 minutes with a helpful diagram. Great compan"
+  },
+  {
+    "key": "sections/yeoman-sweep-funnel.liquid",
+    "line": 570,
+    "content": "<p>We provide an ironclad 60-Day Clean Sweep Money-Back Guarantee. Tell us within 60 days of delivery and we refund you in full. You can test it on your actual "
+  },
+  {
+    "key": "sections/zavelyn-comparison-elixir.liquid",
+    "line": 41,
+    "content": "<td><strong>Risk-Free Guarantee</strong></td>"
+  },
+  {
+    "key": "sections/zavelyn-comparison-elixir.liquid",
+    "line": 42,
+    "content": "<td class=\"zv-brand-col\"><span class=\"zv-check-icon\">✔</span> 60-Day 100% Money-Back Trial</td>"
+  },
+  {
+    "key": "sections/zavelyn-drum-mini-funnel.liquid",
+    "line": 219,
+    "content": "<span class=\"wf-trust-text\"><strong>90-Day Sound</strong> Guarantee</span>"
+  },
+  {
+    "key": "sections/zavelyn-drum-mini-funnel.liquid",
+    "line": 393,
+    "content": "<span class=\"wf-spec-val\">90-Day Money Back + 2-Year Tonal Guarantee</span>"
+  },
+  {
+    "key": "sections/zavelyn-drum-mini-funnel.liquid",
+    "line": 619,
+    "content": "<p>We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for a 100% f"
+  },
+  {
+    "key": "sections/zavelyn-drum-plus-funnel.liquid",
+    "line": 227,
+    "content": "<span class=\"wf-trust-text\"><strong>90-Day Sound</strong> Guarantee</span>"
+  },
+  {
+    "key": "sections/zavelyn-drum-plus-funnel.liquid",
+    "line": 401,
+    "content": "<span class=\"wf-spec-val\">90-Day Money Back + 2-Year Tonal Guarantee</span>"
+  },
+  {
+    "key": "sections/zavelyn-drum-plus-funnel.liquid",
+    "line": 627,
+    "content": "<p>We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for a 100% f"
+  },
+  {
+    "key": "sections/zavelyn-drum-pro-funnel.liquid",
+    "line": 227,
+    "content": "<span class=\"wf-trust-text\"><strong>90-Day Sound</strong> Guarantee</span>"
+  },
+  {
+    "key": "sections/zavelyn-drum-pro-funnel.liquid",
+    "line": 401,
+    "content": "<span class=\"wf-spec-val\">90-Day Money Back + 2-Year Tonal Guarantee</span>"
+  },
+  {
+    "key": "sections/zavelyn-drum-pro-funnel.liquid",
+    "line": 627,
+    "content": "<p>We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for a 100% f"
+  },
+  {
+    "key": "sections/zavelyn-faq-elixir.liquid",
+    "line": 28,
+    "content": "<span>What is the 60-Day Risk-Free Guarantee?</span>"
+  },
+  {
+    "key": "sections/zavelyn-handpans-collection.liquid",
+    "line": 899,
+    "content": "<h3>100% Risk-Free Happiness Guarantee</h3>"
+  },
+  {
+    "key": "sections/zavelyn-hero-elixir.liquid",
+    "line": 39,
+    "content": "<span>🛡️ 60-Night Risk-Free Trial</span>"
+  },
+  {
+    "key": "sections/zavelyn-pain-solution.liquid",
+    "line": 21,
+    "content": "<button type=\"button\" class=\"zv-tab-btn\" data-tab=\"4\">60-Day Guarantee</button>"
+  },
+  {
+    "key": "sections/zavelyn-pain-solution.liquid",
+    "line": 35,
+    "content": "<p><strong>Put us to the test completely risk-free.</strong> Try any Zavelyn product on your homestead, jobsite, or home for a full 60 days. If it doesn't outpe"
+  },
+  {
+    "key": "sections/zavelyn-pdp-main.liquid",
+    "line": 137,
+    "content": "<div class=\"zv-bullet-item\"><span class=\"zv-bullet-icon\">💚</span><span><strong>60-Day Money-Back Guarantee</strong> — 100% risk-free trial</span></div>"
+  },
+  {
+    "key": "sections/zavelyn-pdp-main.liquid",
+    "line": 148,
+    "content": "<div class=\"zv-bullet-item\"><span class=\"zv-bullet-icon\">💚</span><span><strong>60-Day Money-Back Guarantee</strong> — if she won't budge, get every cent back</"
+  },
+  {
+    "key": "sections/zavelyn-pdp-main.liquid",
+    "line": 158,
+    "content": "<div class=\"zv-bullet-item\"><span class=\"zv-bullet-icon\">💚</span><span><strong>60-Day Money-Back Guarantee</strong> — zero risk to try in your home or shop</sp"
+  },
+  {
+    "key": "sections/zavelyn-pdp-main.liquid",
+    "line": 365,
+    "content": "<strong class=\"kc-trust__title\">60-Day Guarantee</strong>"
+  },
+  {
+    "key": "sections/zavelyn-pdp-main.liquid",
+    "line": 424,
+    "content": "<summary class=\"kc-faq__q\">How does the 60-Day Money-Back Guarantee work?</summary>"
+  },
+  {
+    "key": "sections/zavelyn-pdp-main.liquid",
+    "line": 426,
+    "content": "<p>Try {{ product.title }} completely risk-free. If you are not completely satisfied with the performance or quality within 60 days of receiving your order, sim"
+  },
+  {
+    "key": "sections/zavelyn-pdp-shipping.liquid",
+    "line": 135,
+    "content": "\"default\": \"Risk-free 60-day money-back guarantee with zero hassle.\""
+  },
+  {
+    "key": "sections/zavelyn-pdp-shipping.liquid",
+    "line": 225,
+    "content": "<p class=\"zv-trust-card-desc\">{{ section.settings.card4_desc | default: 'Risk-free 60-day money-back guarantee with zero hassle.' }}</p>"
+  },
+  {
+    "key": "sections/zavelyn-pdp-ticker.liquid",
+    "line": 12,
+    "content": "<div class=\"zv-ticker-item\"><span>🛡️</span> 60-DAY RISK-FREE MONEY-BACK GUARANTEE</div>"
+  },
+  {
+    "key": "sections/zavelyn-pdp-ticker.liquid",
+    "line": 18,
+    "content": "<div class=\"zv-ticker-item\"><span>🛡️</span> 60-DAY RISK-FREE MONEY-BACK GUARANTEE</div>"
+  },
+  {
+    "key": "sections/zavelyn-ticker.liquid",
+    "line": 12,
+    "content": "<div class=\"zv-ticker-item\"><span>🛡️</span> 60-DAY MONEY-BACK GUARANTEE</div>"
+  },
+  {
+    "key": "sections/zavelyn-ticker.liquid",
+    "line": 19,
+    "content": "<div class=\"zv-ticker-item\"><span>🛡️</span> 60-DAY MONEY-BACK GUARANTEE</div>"
+  },
+  {
+    "key": "sections/zhp-faq.liquid",
+    "line": 86,
+    "content": "<!-- Q6: 60-Day Guarantee & Returns -->"
+  },
+  {
+    "key": "sections/zhp-faq.liquid",
+    "line": 89,
+    "content": "<span>How does the 60-Day Money-Back Guarantee work?</span>"
+  },
+  {
+    "key": "sections/zhp-hero.liquid",
+    "line": 28,
+    "content": "<span>60-Day Money-Back Guarantee</span>"
+  },
+  {
+    "key": "sections/zhp-marquee.liquid",
+    "line": 7,
+    "content": "<div class=\"zhp-marquee-item\">🛡️ <span>60-DAY MONEY-BACK GUARANTEE</span></div>"
+  },
+  {
+    "key": "sections/zhp-marquee.liquid",
+    "line": 18,
+    "content": "<div class=\"zhp-marquee-item\">🛡️ <span>60-DAY MONEY-BACK GUARANTEE</span></div>"
+  },
+  {
+    "key": "sections/zhp-pdp-hero.liquid",
+    "line": 223,
+    "content": "<span class=\"wf-trust-text\"><strong>{{ section.settings.guarantee_1 | default: '90-Day Sound' }}</strong> Guarantee</span>"
+  },
+  {
+    "key": "sections/zhp-pdp-hero.liquid",
+    "line": 350,
+    "content": "{ \"type\": \"text\", \"id\": \"guarantee_1\", \"label\": \"Trust Badge 1 Title\", \"default\": \"90-Day Sound\" },"
+  },
+  {
+    "key": "snippets/offer-balm-faq.liquid",
+    "line": 740,
+    "content": "{% if b.a_15 != blank %}{{ b.a_15 }}{% else %}Eligible orders are protected by our 60-day"
+  },
+  {
+    "key": "snippets/offer-header.liquid",
+    "line": 403,
+    "content": "<p class=\"offer-minicart__note\">Taxes &amp; shipping calculated at checkout · Risk-free for 30 days</p>"
+  },
+  {
+    "key": "snippets/srefalsteam-sections.liquid",
+    "line": 2976,
+    "content": "<p>Our 30-Day Risk-Free Guarantee</p>"
+  },
+  {
+    "key": "snippets/srefalsteam-sections.liquid",
+    "line": 2994,
+    "content": "<p>Try it risk-free with our 30-day money-back guarantee. If you're not completely satisfied, simply return it for a full refund—no questions asked.</p>"
+  },
+  {
+    "key": "templates/page.cdf.json",
+    "line": 26,
+    "content": "\"risk_text\": \"Try it risk-free for 30 days. If you don't notice less foot dragging, better stability or safer walking, we'll refund you in full.\""
+  },
+  {
+    "key": "templates/page.cdf.json",
+    "line": 127,
+    "content": "\"a_8\": \"We offer a 30-day risk-free guarantee.\""
+  },
+  {
+    "key": "templates/page.news-sakerplus-livestock-heating-lamp.liquid",
+    "line": 341,
+    "content": "</div></div></div></div></div> <div class=\"flex flex-row items-center gap-1 my-2\" data-v-d28882c4><div class=\"w-5 h-5\" data-v-d28882c4><svg viewBox=\"0 0 24 24\" "
+  },
+  {
+    "key": "templates/page.sinusitis-sufferer.liquid",
+    "line": 693,
+    "content": "<div class=\"ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr\">Try Naväge risk-free for 30 days. If you’re not completely satisfied, get you"
+  },
+  {
+    "key": "templates/page.sinusitis-sufferer.liquid",
+    "line": 2853,
+    "content": "<div class=\"ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr\">Try Naväge risk-free for 30 days. If you’re not completely satisfied, get you"
+  },
+  {
+    "key": "templates/page.zavelyn-handpans.json",
+    "line": 460,
+    "content": "\"guarantee_title\": \"100% Risk-Free Happiness Guarantee\","
+  },
+  {
+    "key": "templates/product.cdf.json",
+    "line": 26,
+    "content": "\"risk_text\": \"Try it risk-free for 30 days. If you don't notice less foot dragging, better stability or safer walking, we'll refund you in full.\""
+  },
+  {
+    "key": "templates/product.cdf.json",
+    "line": 127,
+    "content": "\"a_8\": \"We offer a 30-day risk-free guarantee.\""
+  },
+  {
+    "key": "templates/product.zavelyn-drum-mini.json",
+    "line": 77,
+    "content": "\"answer\": \"We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for "
+  },
+  {
+    "key": "templates/product.zavelyn-drum-plus.json",
+    "line": 77,
+    "content": "\"answer\": \"We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for "
+  },
+  {
+    "key": "templates/product.zavelyn-drum-pro.json",
+    "line": 86,
+    "content": "\"answer\": \"We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for "
+  },
+  {
+    "key": "templates/product.zavelyn-handpan-master.json",
+    "line": 85,
+    "content": "\"question\": \"What is your risk-free trial and return policy?\","
+  },
+  {
+    "key": "templates/product.zavelyn-handpan-master.json",
+    "line": 86,
+    "content": "\"answer\": \"We back the Zavelyn Handpan™ Master with our 90-Day Sound Guarantee. If you don't feel a profound sense of musical peace and restorative acoustic del"
+  },
+  {
+    "key": "templates/product.zavelyn-rain-drum.json",
+    "line": 86,
+    "content": "\"answer\": \"We offer a 90-Day Money-Back Guarantee. If the Rain Drum doesn't bring peace and joy to your home or garden, return it for a 100% full refund with no"
+  }
+]

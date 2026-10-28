@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454951473337",
+  "title": "Zavelyn RAV4 USB Charging Hub",
+  "handle": "sakerplus®-toyota-rav4-led-usb-charging-hub",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914427269305",
+        "title": "Default Title",
+        "price": "95.99",
+        "sku": "EC128015-X84097"
+      }
+    ]
+  }
+}

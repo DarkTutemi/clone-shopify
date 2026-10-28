@@ -1,0 +1,134 @@
+
+{{ 'zhp-collection.css' | asset_url | stylesheet_tag }}
+<div class="zhp-wrapper">
+  <section class="zhp-comparison-section" id="zhp-comparison">
+    <div class="zhp-container">
+      <div class="zhp-section-header">
+        <span class="zhp-tag">{{ section.settings.tag | default: 'SIDE BY SIDE' }}</span>
+        <h2 class="zhp-section-title">{{ section.settings.title | default: 'Which Zavelyn Drum™ Should You Choose?' }}</h2>
+        <p class="zhp-section-subtitle">{{ section.settings.subtitle | default: 'Compare all technical specifications, tone character, and included items across our 3 models.' }}</p>
+      </div>
+
+      <div class="zhp-table-responsive">
+        <table class="zhp-comparison-table">
+          <thead>
+            <tr>
+              <th class="zhp-col-feature">Feature / Spec</th>
+              <th class="zhp-col-model">
+                <div class="zhp-tbl-header-card">
+                  <span class="zhp-tbl-badge zhp-badge-blue">KIDS & GIFTS</span>
+                  <h4>Mini</h4>
+                  <div class="zhp-tbl-tones">8 Tones • 6"</div>
+                  <div class="zhp-tbl-price">$109.95</div>
+                </div>
+              </th>
+              <th class="zhp-col-model zhp-tbl-col-popular">
+                <div class="zhp-tbl-header-card">
+                  <span class="zhp-tbl-badge zhp-badge-green">MOST POPULAR</span>
+                  <h4>Plus</h4>
+                  <div class="zhp-tbl-tones">11 Tones • 11"</div>
+                  <div class="zhp-tbl-price">$159.95</div>
+                </div>
+              </th>
+              <th class="zhp-col-model zhp-tbl-col-best">
+                <div class="zhp-tbl-header-card">
+                  <span class="zhp-tbl-badge zhp-badge-gold">BEST VALUE</span>
+                  <h4>Pro</h4>
+                  <div class="zhp-tbl-tones">15 Tones • 13"</div>
+                  <div class="zhp-tbl-price">$259.95</div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="zhp-cell-feature">Recommended Age</td>
+              <td>All Ages / 3+</td>
+              <td class="zhp-tbl-col-popular">4+ to Adult</td>
+              <td class="zhp-tbl-col-best">12+ to Adult & Pros</td>
+            </tr>
+            <tr>
+              <td class="zhp-cell-feature">Musical Scale</td>
+              <td>Pentatonic C-Major</td>
+              <td class="zhp-tbl-col-popular">D-Major (11 Notes)</td>
+              <td class="zhp-tbl-col-best">D-Major Chromatic (15 Notes)</td>
+            </tr>
+            <tr>
+              <td class="zhp-cell-feature">Tuning & Frequency</td>
+              <td>Precision 432 Hz</td>
+              <td class="zhp-tbl-col-popular">Natural 432 Hz Healing</td>
+              <td class="zhp-tbl-col-best">432 Hz Deep Acoustic Chamber</td>
+            </tr>
+            <tr>
+              <td class="zhp-cell-feature">Learning Curve</td>
+              <td>Extremely Easy (No fail)</td>
+              <td class="zhp-tbl-col-popular">Very Easy (Play in 5 mins)</td>
+              <td class="zhp-tbl-col-best">Easy to Advanced</td>
+            </tr>
+            <tr>
+              <td class="zhp-cell-feature">Sound Profile</td>
+              <td>Sweet, joyful bell-like tones</td>
+              <td class="zhp-tbl-col-popular">Warm, rich relaxing tones</td>
+              <td class="zhp-tbl-col-best">Very deep, therapeutic resonance</td>
+            </tr>
+            <tr>
+              <td class="zhp-cell-feature">Included Gear</td>
+              <td>Bag, 2 Mallets, Songbook</td>
+              <td class="zhp-tbl-col-popular">Padded Shoulder Bag, Mallets, Picks, Book</td>
+              <td class="zhp-tbl-col-best">Heavy-duty Backpack, Mallets, Picks, Book, Wool Wrap</td>
+            </tr>
+            <tr>
+              <td class="zhp-cell-feature">Best For</td>
+              <td>Children, gifts, desk relaxation</td>
+              <td class="zhp-tbl-col-popular">Family fun, versatile everyday use</td>
+              <td class="zhp-tbl-col-best">Sound baths, yoga, meditation, recording</td>
+            </tr>
+            <tr>
+              <td class="zhp-cell-feature">Warranty</td>
+              <td>2-Year Warranty</td>
+              <td class="zhp-tbl-col-popular">3-Year Warranty</td>
+              <td class="zhp-tbl-col-best">Lifetime Serenity Guarantee</td>
+            </tr>
+            <tr class="zhp-tbl-actions-row">
+              <td class="zhp-cell-feature">Select Model</td>
+              <td><a href="/products/zavelyn-drum-mini" class="zhp-btn zhp-btn-sm zhp-btn-outline">Order Mini</a></td>
+              <td class="zhp-tbl-col-popular"><a href="/products/zavelyn-drum-plus" class="zhp-btn zhp-btn-sm zhp-btn-primary">Order Plus</a></td>
+              <td class="zhp-tbl-col-best"><a href="/products/zavelyn-drum-pro" class="zhp-btn zhp-btn-sm zhp-btn-gold">Order Pro</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "07. Bảng so sánh",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Nhãn danh mục",
+      "default": "SIDE BY SIDE"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tiêu đề",
+      "default": "Which Zavelyn Drum™ Should You Choose?"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Mô tả phụ",
+      "default": "Compare all technical specifications, tone character, and included items across our 3 models."
+    }
+  ],
+  "presets": [
+    {
+      "name": "07. Bảng so sánh"
+    }
+  ]
+}
+{% endschema %}

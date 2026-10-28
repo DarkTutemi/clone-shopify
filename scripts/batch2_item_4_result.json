@@ -1,0 +1,39 @@
+{
+  "productId": "15454953177273",
+  "name": "Clamp-On Desk Shelf Organizer",
+  "status": "PASS",
+  "handleUnchanged": true,
+  "snapshot": "scripts\\snapshot_prod_15454953177273_2026-10-27T14-52-11-151Z.json",
+  "adminBefore": {
+    "title": "Zavelyn Clamp-On Desk Shelf",
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  "adminAfter": {
+    "id": "gid://shopify/Product/15454953177273",
+    "title": "Zavelyn Clamp-On Desk Shelf Organizer",
+    "handle": "sakerplus®-three-tier-clamp-on-desk-shelf-organizer",
+    "seo": {
+      "title": "Clamp-On Multi-Tier Desk Shelf Organizer | Zavelyn",
+      "description": "Expand usable desktop surface without drilling using heavy-duty C-clamp shelves. Ideal for organizing monitors, stationery, speakers, and office essentials."
+    }
+  },
+  "storefrontQA": {
+    "httpStatus": 200,
+    "renderedTitle": "Clamp-On Multi-Tier Desk Shelf Organizer | Zavelyn",
+    "renderedMeta": "Expand usable desktop surface without drilling using heavy-duty C-clamp shelves. Ideal for organizing monitors, stationery, speakers, and office essentials.",
+    "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-three-tier-clamp-on-desk-shelf-organizer",
+    "cartMatch": {
+      "variantId": "67914465214649",
+      "productId": 15454953177273,
+      "price": "50.99",
+      "ok": true
+    }
+  },
+  "screenshots": {
+    "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454953177273_desktop_1440.png",
+    "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454953177273_mobile_390.png"
+  }
+}

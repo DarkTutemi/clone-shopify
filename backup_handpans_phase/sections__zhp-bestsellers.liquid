@@ -1,0 +1,415 @@
+{{ 'zhp-collection.css' | asset_url | stylesheet_tag }}
+{{ 'zhp-collection.js' | asset_url | script_tag }}
+<div class="zhp-wrapper">
+  <section class="zhp-bestsellers" id="zhp-bestsellers">
+    <div class="zhp-container">
+      <div class="zhp-section-header">
+        <span class="zhp-tag">{{ section.settings.tag | default: 'OUR COLLECTION' }}</span>
+        <h2 class="zhp-section-title">{{ section.settings.title | default: "Zavelyn Drums™ You'll Love" }}</h2>
+        <p class="zhp-section-subtitle">{{ section.settings.subtitle | default: "Save up to 48% today. Every instrument includes a complete starter kit, padded bag, bamboo mallets, and tutorial songbook." }}</p>
+      </div>
+
+      <div class="zhp-product-grid">
+        <!-- Product 0: Master 22 Inch 12 Notes -->
+        <div class="zhp-product-card zhp-card-master" style="border: 2px solid #8A2C13;">
+          <div class="zhp-card-badge" style="background-color: #8A2C13; color: #FFFFFF;">FLAGSHIP CONCERT • SAVE 50%</div>
+          <div class="zhp-card-media">
+            <a href="/products/zavelyn-handpan-master">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1.jpg?v=1792907902" alt="Zavelyn Handpan Master 22 Inch 12 Notes" class="zhp-card-img" loading="lazy">
+            </a>
+          </div>
+          <div class="zhp-card-content">
+            <div class="zhp-card-rating">
+              <span class="zhp-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</span>
+              <span class="zhp-review-count">(840 reviews)</span>
+            </div>
+            <h3 class="zhp-card-title"><a href="/products/zavelyn-handpan-master">Zavelyn Handpan™ Master</a></h3>
+            <div class="zhp-card-meta">Concert series • 22" • 12 Notes (D-Minor Kurd)</div>
+            <ul class="zhp-card-features">
+              <li>✓ Authentic 22" hand-hammered nitrided steel concert handpan</li>
+              <li>✓ 12 harmonic tone fields tuned to pure 432 Hz biological healing</li>
+              <li>✓ Includes heavy-duty tripod stand & padded travel backpack</li>
+            </ul>
+
+            <!-- Audio Player -->
+            <div class="zhp-audio-player" data-audio-src="https://cdn.shopify.com/s/files/1/0566/1209/4037/files/Pro_Sound_Bar_v2.mp3">
+              <button type="button" class="zhp-audio-btn" aria-label="Play sound preview">
+                <svg class="zhp-icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="zhp-icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              </button>
+              <div class="zhp-audio-info">
+                <span class="zhp-audio-label">Hear it in action: <strong>Master (12 Notes Kurd)</strong></span>
+                <div class="zhp-audio-bar"><div class="zhp-audio-progress"></div></div>
+              </div>
+            </div>
+
+            <div class="zhp-card-package">
+              <div class="zhp-package-title">What's Included:</div>
+              <div class="zhp-package-tags">
+                <span>Master 22"</span>
+                <span>FREE Tripod Stand</span>
+                <span>FREE Travel Backpack</span>
+                <span>FREE Mallets</span>
+                <span>Braided Edge Rope</span>
+              </div>
+            </div>
+
+            <div class="zhp-card-pricing">
+              <span class="zhp-price-current">$599.00</span>
+              <span class="zhp-price-compare">$1,199.00</span>
+              <span class="zhp-price-save" style="background:#fee2e2; color:#b91c1c;">Save $600.00</span>
+            </div>
+
+            <a href="/products/zavelyn-handpan-master" class="zhp-btn zhp-btn-block zhp-btn-cart" style="background:#8A2C13; color:#fff;">ORDER MASTER 22"</a>
+            <div class="zhp-card-guarantee">🛡️ 90-Day Money Back • Lifetime Tuning Warranty</div>
+          </div>
+        </div>
+
+
+        {% for block in section.blocks %}
+          <div class="zhp-product-card {% if block.settings.badge_type == 'gold' %}zhp-card-featured{% elsif block.settings.badge_type == 'green' %}zhp-card-popular{% endif %}" {{ block.shopify_attributes }}>
+            {% if block.settings.badge_text != blank %}
+              <div class="zhp-card-badge {% if block.settings.badge_type == 'gold' %}zhp-badge-gold{% elsif block.settings.badge_type == 'green' %}zhp-badge-green{% else %}zhp-badge-blue{% endif %}">
+                {{ block.settings.badge_text }}
+              </div>
+            {% endif %}
+
+            <div class="zhp-card-media">
+              <a href="{{ block.settings.product_url | default: '#' }}">
+                {% if block.settings.image != blank %}
+                  {{ block.settings.image | image_url: width: 600 | image_tag: class: 'zhp-card-img', loading: 'lazy', alt: block.settings.title }}
+                {% elsif block.settings.fallback_image != blank %}
+                  <img src="{{ block.settings.fallback_image }}" alt="{{ block.settings.title }}" class="zhp-card-img" loading="lazy">
+                {% endif %}
+              </a>
+            </div>
+
+            <div class="zhp-card-content">
+              <div class="zhp-card-rating">
+                <span class="zhp-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</span>
+                <span class="zhp-review-count">{{ block.settings.reviews_count | default: '(500+ reviews)' }}</span>
+              </div>
+              <h3 class="zhp-card-title"><a href="{{ block.settings.product_url | default: '#' }}">{{ block.settings.title }}</a></h3>
+              <div class="zhp-card-meta">{{ block.settings.meta }}</div>
+
+              <ul class="zhp-card-features">
+                {% if block.settings.feature_1 != blank %}<li>{{ block.settings.feature_1 }}</li>{% endif %}
+                {% if block.settings.feature_2 != blank %}<li>{{ block.settings.feature_2 }}</li>{% endif %}
+                {% if block.settings.feature_3 != blank %}<li>{{ block.settings.feature_3 }}</li>{% endif %}
+              </ul>
+
+              {% if block.settings.audio_url != blank %}
+                <div class="zhp-audio-player" data-audio-src="{{ block.settings.audio_url }}">
+                  <button type="button" class="zhp-audio-btn" aria-label="Play sound preview">
+                    <svg class="zhp-icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    <svg class="zhp-icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                  </button>
+                  <div class="zhp-audio-info">
+                    <span class="zhp-audio-label">{{ block.settings.audio_label | default: 'Hear it in action:' }}</span>
+                    <div class="zhp-audio-bar"><div class="zhp-audio-progress"></div></div>
+                  </div>
+                </div>
+              {% endif %}
+
+              <div class="zhp-card-package">
+                <div class="zhp-package-title">{{ block.settings.package_title | default: "What's Included:" }}</div>
+                <div class="zhp-package-tags">
+                  {% if block.settings.tag_1 != blank %}<span>{{ block.settings.tag_1 }}</span>{% endif %}
+                  {% if block.settings.tag_2 != blank %}<span>{{ block.settings.tag_2 }}</span>{% endif %}
+                  {% if block.settings.tag_3 != blank %}<span>{{ block.settings.tag_3 }}</span>{% endif %}
+                  {% if block.settings.tag_4 != blank %}<span>{{ block.settings.tag_4 }}</span>{% endif %}
+                  {% if block.settings.tag_5 != blank %}<span>{{ block.settings.tag_5 }}</span>{% endif %}
+                </div>
+              </div>
+
+              <div class="zhp-card-pricing">
+                <span class="zhp-price-current">{{ block.settings.price }}</span>
+                {% if block.settings.compare_price != blank %}
+                  <span class="zhp-price-compare">{{ block.settings.compare_price }}</span>
+                {% endif %}
+                {% if block.settings.save_text != blank %}
+                  <span class="zhp-price-save">{{ block.settings.save_text }}</span>
+                {% endif %}
+              </div>
+
+              <a href="{{ block.settings.product_url | default: '#' }}" class="zhp-btn zhp-btn-block zhp-btn-cart">{{ block.settings.btn_text | default: 'SELECT COLOR & ORDER' }}</a>
+              {% if block.settings.guarantee_text != blank %}
+                <div class="zhp-card-guarantee">{{ block.settings.guarantee_text }}</div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+              <!-- Product: Rain Drum 3 Inch -->
+        <div class="zhp-product-card zhp-card-rain" style="border: 1px solid #73C09C;">
+          <div class="zhp-card-badge zhp-badge-green">NEW ARRIVAL • SAVE 50%</div>
+          <div class="zhp-card-media">
+            <a href="/products/zavelyn-rain-drum">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_1_a84698cf-6387-4a5b-98b7-e0c78526960a.jpg?v=1792908838" alt="Zavelyn Rain Drum 3 Inch 6 Tones" class="zhp-card-img" loading="lazy">
+            </a>
+          </div>
+          <div class="zhp-card-content">
+            <div class="zhp-card-rating">
+              <span class="zhp-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</span>
+              <span class="zhp-review-count">(1,120 reviews)</span>
+            </div>
+            <h3 class="zhp-card-title"><a href="/products/zavelyn-rain-drum">Zavelyn Rain Drum™</a></h3>
+            <div class="zhp-card-meta">Pocket series • 3" • 6 Tones (Pentatonic)</div>
+            <ul class="zhp-card-features">
+              <li>✓ Natural raindrop resonator for garden, patio & desk</li>
+              <li>✓ Ultra-portable 115g pocket size with 6 chime tongues</li>
+              <li>✓ All-weather rustproof baked enamel (5 vibrant colors)</li>
+            </ul>
+
+            <!-- Audio Player -->
+            <div class="zhp-audio-player" data-audio-src="https://cdn.shopify.com/s/files/1/0566/1209/4037/files/Mini_Sound_Bar_v2.mp3">
+              <button type="button" class="zhp-audio-btn" aria-label="Play sound preview">
+                <svg class="zhp-icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="zhp-icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              </button>
+              <div class="zhp-audio-info">
+                <span class="zhp-audio-label">Hear it in action: <strong>Rain Drum (6 Tones)</strong></span>
+                <div class="zhp-audio-bar"><div class="zhp-audio-progress"></div></div>
+              </div>
+            </div>
+
+            <div class="zhp-card-package">
+              <div class="zhp-package-title">What's Included:</div>
+              <div class="zhp-package-tags">
+                <span>Rain Drum 3"</span>
+                <span>FREE Wooden Mallet</span>
+                <span>FREE Velvet Pouch</span>
+                <span>5 Colors Available</span>
+              </div>
+            </div>
+
+            <div class="zhp-card-pricing">
+              <span class="zhp-price-current">$59.00</span>
+              <span class="zhp-price-compare">$118.00</span>
+              <span class="zhp-price-save">Save $59.00</span>
+            </div>
+
+            <a href="/products/zavelyn-rain-drum" class="zhp-btn zhp-btn-block zhp-btn-cart">SELECT COLOR & ORDER</a>
+            <div class="zhp-card-guarantee">🛡️ 90-Day Money Back • Weatherproof Guarantee</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+{% schema %}
+{
+  "name": "03. Bộ 3 Sản phẩm",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Nhãn danh mục",
+      "default": "OUR COLLECTION"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tiêu đề",
+      "default": "Zavelyn Drums™ You'll Love"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Mô tả phụ",
+      "default": "Save up to 48% today. Every instrument includes a complete starter kit, padded bag, bamboo mallets, and tutorial songbook."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Sản phẩm",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Ảnh sản phẩm (Chọn ảnh bạn đã fix)"
+        },
+        {
+          "type": "text",
+          "id": "fallback_image",
+          "label": "URL ảnh dự phòng"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Huy hiệu (Badge)",
+          "default": "BEST VALUE • SAVE 48%"
+        },
+        {
+          "type": "select",
+          "id": "badge_type",
+          "label": "Màu huy hiệu",
+          "options": [
+            {
+              "value": "gold",
+              "label": "Vàng cam (Gold)"
+            },
+            {
+              "value": "green",
+              "label": "Xanh lá (Green)"
+            },
+            {
+              "value": "blue",
+              "label": "Xanh dương (Blue)"
+            }
+          ],
+          "default": "gold"
+        },
+        {
+          "type": "text",
+          "id": "rating",
+          "label": "Sao đánh giá",
+          "default": "★★★★★"
+        },
+        {
+          "type": "text",
+          "id": "reviews_count",
+          "label": "Số lượng đánh giá",
+          "default": "(571 reviews)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tên sản phẩm",
+          "default": "Zavelyn Drum™ Pro"
+        },
+        {
+          "type": "url",
+          "id": "product_url",
+          "label": "Link sản phẩm"
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Dòng phụ",
+          "default": "Rich sound • 15\" • 15 Tones (D-Major)"
+        },
+        {
+          "type": "header",
+          "content": "3 Tính năng nổi bật"
+        },
+        {
+          "type": "text",
+          "id": "feature_1",
+          "label": "Tính năng 1",
+          "default": "✓ Broadest 15-note chromatic range for infinite melodies"
+        },
+        {
+          "type": "text",
+          "id": "feature_2",
+          "label": "Tính năng 2",
+          "default": "✓ Deep resonant chamber with acoustic warmth"
+        },
+        {
+          "type": "text",
+          "id": "feature_3",
+          "label": "Tính năng 3",
+          "default": "✓ Handcrafted alloy steel with woolen edge wrap"
+        },
+        {
+          "type": "header",
+          "content": "Âm thanh nghe thử (Audio)"
+        },
+        {
+          "type": "text",
+          "id": "audio_url",
+          "label": "URL file audio MP3",
+          "default": "https://cdn.shopify.com/s/files/1/0566/1209/4037/files/Pro_Sound_Bar_v2.mp3"
+        },
+        {
+          "type": "text",
+          "id": "audio_label",
+          "label": "Nhãn thanh nghe thử",
+          "default": "Hear it in action: Pro (15 Tones)"
+        },
+        {
+          "type": "header",
+          "content": "Phụ kiện đi kèm trong hộp"
+        },
+        {
+          "type": "text",
+          "id": "package_title",
+          "label": "Tiêu đề phụ kiện",
+          "default": "What's Included:"
+        },
+        {
+          "type": "text",
+          "id": "tag_1",
+          "label": "Phụ kiện 1",
+          "default": "Zavelyn Pro 15\""
+        },
+        {
+          "type": "text",
+          "id": "tag_2",
+          "label": "Phụ kiện 2",
+          "default": "FREE Travel Backpack"
+        },
+        {
+          "type": "text",
+          "id": "tag_3",
+          "label": "Phụ kiện 3",
+          "default": "FREE Bamboo Mallets"
+        },
+        {
+          "type": "text",
+          "id": "tag_4",
+          "label": "Phụ kiện 4",
+          "default": "FREE Songbook (20+ songs)"
+        },
+        {
+          "type": "text",
+          "id": "tag_5",
+          "label": "Phụ kiện 5",
+          "default": "Braided Wool Wrap"
+        },
+        {
+          "type": "header",
+          "content": "Giá và Nút đặt hàng"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Giá bán",
+          "default": "$259.95"
+        },
+        {
+          "type": "text",
+          "id": "compare_price",
+          "label": "Giá gốc",
+          "default": "$499.95"
+        },
+        {
+          "type": "text",
+          "id": "save_text",
+          "label": "Tiết kiệm",
+          "default": "Save $240.00"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Nút bấm",
+          "default": "SELECT COLOR & ORDER"
+        },
+        {
+          "type": "text",
+          "id": "guarantee_text",
+          "label": "Cam kết chân thẻ",
+          "default": "🛡️ 30-Day Money Back • Lifetime Serenity Warranty"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "03. Bộ 3 Sản phẩm"
+    }
+  ]
+}
+{% endschema %}

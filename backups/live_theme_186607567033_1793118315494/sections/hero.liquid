@@ -1,0 +1,103 @@
+<section class="hero section--flush" {% if section.settings.image == blank %}style="background: var(--color-accent); min-height: 70vh;"{% endif %}>
+  {%- if section.settings.image != blank -%}
+    <div class="hero__media">
+      {{
+        section.settings.image
+        | image_url: width: 2400
+        | image_tag:
+          widths: '750, 1100, 1500, 1780, 2000, 2400',
+          sizes: '100vw',
+          loading: 'eager',
+          fetchpriority: 'high',
+          alt: section.settings.image.alt | default: section.settings.heading | escape
+      }}
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+  {%- endif -%}
+
+  <div class="hero__content page-width">
+    <p class="hero__brand">{{ section.settings.brand | default: shop.name }}</p>
+    {%- if section.settings.heading != blank -%}
+      <h1 class="hero__heading">{{ section.settings.heading }}</h1>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <p class="hero__text">{{ section.settings.text }}</p>
+    {%- endif -%}
+    <div class="hero__actions">
+      {%- if section.settings.button_label != blank -%}
+        {% render 'button',
+          label: section.settings.button_label,
+          link: section.settings.button_link,
+          style: 'primary'
+        %}
+      {%- endif -%}
+      {%- if section.settings.button_label_2 != blank -%}
+        {% render 'button',
+          label: section.settings.button_label_2,
+          link: section.settings.button_link_2,
+          style: 'secondary'
+        %}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "section-hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "brand",
+      "label": "Brand",
+      "default": "Zavelyn"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Quiet luxury for daily rituals"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Elevated essentials, considered materials, and a modern wardrobe built to last."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Primary button label",
+      "default": "Shop new"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Secondary button label",
+      "default": "Explore"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Secondary button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

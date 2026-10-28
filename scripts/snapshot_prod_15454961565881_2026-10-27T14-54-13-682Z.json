@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454961565881",
+  "title": "Zavelyn Workbench Tail Vise Clamp",
+  "handle": "sakerplus®-adjustable-workbench-tail-vise-clamp",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914626367673",
+        "title": "Default Title",
+        "price": "49.99",
+        "sku": "GJ132086-X87547"
+      }
+    ]
+  }
+}

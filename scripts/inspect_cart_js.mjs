@@ -1,0 +1,43 @@
+import fs from 'fs';
+
+const CLIENT_ID = '172e9e29abd0fe12f671d8441479c7c2';
+const CLIENT_SECRET = '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';
+const SHOP = 'dsdujr-vn.myshopify.com';
+const DRAFT_THEME_ID = '187597717689';
+
+async function getAccessToken() {
+  const tRes = await fetch(`https://${SHOP}/admin/oauth/access_token`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ client_id: CLIENT_ID, client_secret: CLIENT_SECRET, grant_type: 'client_credentials' })
+  });
+  const data = await tRes.json();
+  return data.access_token;
+}
+
+async function fetchAsset(token, key) {
+  const res = await fetch(`https://${SHOP}/admin/api/2024-10/themes/${DRAFT_THEME_ID}/assets.json?asset[key]=${encodeURIComponent(key)}`, {
+    headers: { 'X-Shopify-Access-Token': token }
+  });
+  if (!res.ok) return null;
+  const data = await res.json();
+  return data.asset?.value || null;
+}
+
+async function run() {
+  const token = await getAccessToken();
+  const cartJs = await fetchAsset(token, 'assets/zavelyn-cart.js');
+  if (cartJs) {
+    console.log('--- zavelyn-cart.js sample (first 1500 chars) ---');
+    console.log(cartJs.slice(0, 1500));
+  } else {
+    console.log('zavelyn-cart.js not found, checking snippets/free-shipping-bar.liquid...');
+  }
+  const freeShipping = await fetchAsset(token, 'snippets/free-shipping-bar.liquid');
+  if (freeShipping) {
+    console.log('--- snippets/free-shipping-bar.liquid ---');
+    console.log(freeShipping);
+  }
+}
+
+run();

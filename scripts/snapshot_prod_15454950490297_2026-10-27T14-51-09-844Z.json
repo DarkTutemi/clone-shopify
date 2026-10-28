@@ -1,0 +1,26 @@
+{
+  "id": "gid://shopify/Product/15454950490297",
+  "title": "Zavelyn Squishy Egg Night Light",
+  "handle": "sakerplus®-squishy-egg-multicolor-tap-night-light",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914403283129",
+        "title": "Handle Base",
+        "price": "53.99",
+        "sku": "LT111107-X88463"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914403315897",
+        "title": "Flat Base",
+        "price": "62.99",
+        "sku": "LT111107-E001"
+      }
+    ]
+  }
+}

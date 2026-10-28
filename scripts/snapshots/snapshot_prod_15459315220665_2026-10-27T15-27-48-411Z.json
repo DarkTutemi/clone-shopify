@@ -1,0 +1,44 @@
+{
+  "id": "gid://shopify/Product/15459315220665",
+  "title": "Zavelyn Drum Pro",
+  "handle": "zavelyn-drum-pro",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67959036838073",
+        "title": "Green",
+        "price": "259.95",
+        "sku": "ZAV-PRO-13-GRE"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959036870841",
+        "title": "Black",
+        "price": "259.95",
+        "sku": "ZAV-PRO-13-BLA"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959036903609",
+        "title": "Navy",
+        "price": "259.95",
+        "sku": "ZAV-PRO-13-NAV"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959036936377",
+        "title": "Purple",
+        "price": "259.95",
+        "sku": "ZAV-PRO-13-PUR"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959036969145",
+        "title": "Gold",
+        "price": "259.95",
+        "sku": "ZAV-PRO-13-GOL"
+      }
+    ]
+  }
+}

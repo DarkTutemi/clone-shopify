@@ -1,0 +1,235 @@
+{
+  "wrapper": "div#shopify-section-zavelyn-drum-pro",
+  "sections": {
+    "banner": {
+      "type": "zhp-pdp-banner",
+      "settings": {
+        "banner_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PandaDrumPro_White_1a_LFs.webp?v=1716783328",
+        "badge_text": "NATURAL RESONANCE",
+        "heading": "Tuned to 432 Hz: The Frequency of Natural Healing",
+        "text": "",
+        "point_1": "Harmonic resonance that melts daily stress within 5 minutes",
+        "point_2": "Zero discordant frequencies — impossible to play an out-of-tune note",
+        "point_3": "Used by sound healers, yoga instructors, and therapists worldwide"
+      }
+    },
+    "experience": {
+      "type": "zhp-pdp-experience",
+      "settings": {
+        "feature_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PandaDrumPro_White_Th_Pts.webp?v=1716961111",
+        "pill_text": "EFFORTLESS PLAY",
+        "title": "Zero Musical Training Required",
+        "description": ""
+      }
+    },
+    "included": {
+      "type": "zhp-pdp-included",
+      "settings": {
+        "included_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/UnpackingPro.webp?v=1751703134",
+        "pill_text": "COMPLETE PACKAGE",
+        "title": "Everything You Need to Begin Immediately",
+        "description": ""
+      }
+    },
+    "specs": {
+      "type": "zhp-pdp-specs",
+      "settings": {
+        "title": "Technical Specifications",
+        "spec_diameter": "13 Inches (33 cm) Pro Studio",
+        "spec_material": "Tempered Carbon-Titanium Surgical Alloy Steel",
+        "spec_tuning": "Master D-Major Harmonic Scale (15 Notes)",
+        "spec_frequency": "432 Hz Natural Biological Resonance",
+        "spec_tones": "15 Acoustic Tongues (2 Complete Octaves)",
+        "spec_weight": "7.8 lbs (3.5 kg) Balanced Studio Resonance",
+        "spec_finish": "Baked Electrostatic Pearlescent Protective Coating"
+      }
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "zhp-pdp-reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review",
+          "settings": {
+            "author": "Elena Rodriguez",
+            "title": "My yoga students fall into deep meditation within minutes",
+            "text": "I introduce sound baths at the end of every restorative yoga class. The 432 Hz frequency creates such a profound, soothing sustain. The 15 notes allow for endless melodies.",
+            "meta": "Zavelyn Drum™ Pro (Green) • Boulder, CO"
+          }
+        },
+        "rev_2": {
+          "type": "review",
+          "settings": {
+            "author": "Marcus Bennett",
+            "title": "Zero musical background, playing songs on day one!",
+            "text": "I have never played an instrument in my 42 years. The numbered songbook made it so easy. After 20 minutes, I was playing Hallelujah.",
+            "meta": "Zavelyn Drum™ Pro (Black) • Austin, TX"
+          }
+        },
+        "rev_3": {
+          "type": "review",
+          "settings": {
+            "author": "Claire Lansing",
+            "title": "Incredible build quality and deep, rich bass notes",
+            "text": "The drum is substantial, heavy, and notes ring with cathedral-like sustain. The travel backpack is high quality too. 10\/10 purchase.",
+            "meta": "Zavelyn Drum™ Pro (Navy) • Seattle, WA"
+          }
+        },
+        "rev_4": {
+          "type": "review",
+          "settings": {
+            "author": "Dr. David Klein",
+            "title": "Used in our clinic for sensory anxiety reduction",
+            "text": "As an occupational therapist, acoustic tactile vibration is remarkable for sensory regulation. Patients love playing with both mallets and finger picks.",
+            "meta": "2x Zavelyn Drum™ Pro Duet Pack • Chicago, IL"
+          }
+        },
+        "rev_5": {
+          "type": "review",
+          "settings": {
+            "author": "Sarah Jenkins",
+            "title": "The Sandstone color is gorgeous in our living room",
+            "text": "It looks like sculptural art on our coffee table. Whenever guests come over, everyone naturally sits down and starts playing.",
+            "meta": "Zavelyn Drum™ Pro (Gold) • Portland, OR"
+          }
+        },
+        "rev_6": {
+          "type": "review",
+          "settings": {
+            "author": "Robert Taylor",
+            "title": "Tuning is spot on accurate at 432 Hz",
+            "text": "Checked every single one of the 15 notes with an acoustic tuner app. Every note was calibrated within ±2 cents. Superb craftsmanship.",
+            "meta": "Zavelyn Drum™ Pro (Green) • Nashville, TN"
+          }
+        },
+        "rev_7": {
+          "type": "review",
+          "settings": {
+            "author": "Angela Morales",
+            "title": "Gifted to my husband — he is obsessed",
+            "text": "He sits on the porch every evening playing ambient melodies. His blood pressure has literally decreased. Best gift ever!",
+            "meta": "Zavelyn Drum™ Pro (Black) • San Diego, CA"
+          }
+        },
+        "rev_8": {
+          "type": "review",
+          "settings": {
+            "author": "James Henderson",
+            "title": "Arrived in 3 days in bulletproof packaging",
+            "text": "Shipping was lightning fast. Thick foam molds protected the instrument completely. Everything arrived in mint condition.",
+            "meta": "Zavelyn Drum™ Pro (Navy) • Atlanta, GA"
+          }
+        },
+        "rev_9": {
+          "type": "review",
+          "settings": {
+            "author": "Karen Lewis",
+            "title": "The 15-note range makes all the difference",
+            "text": "I previously owned an 8-note drum, but felt limited. The Zavelyn Pro gives you the full two octaves for real compositions.",
+            "meta": "Zavelyn Drum™ Pro (Purple) • Miami, FL"
+          }
+        },
+        "rev_10": {
+          "type": "review",
+          "settings": {
+            "author": "Thomas Wright",
+            "title": "Pure acoustic bliss",
+            "text": "Whenever life feels chaotic, 5 minutes with this drum resets my nervous system. I cannot recommend it enough for inner calm.",
+            "meta": "Zavelyn Drum™ Pro (Gold) • Philadelphia, PA"
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3",
+        "rev_4",
+        "rev_5",
+        "rev_6",
+        "rev_7",
+        "rev_8",
+        "rev_9",
+        "rev_10"
+      ],
+      "settings": {
+        "pill_text": "PRACTITIONER EXPERIENCES",
+        "title": "Loved By Thousands of Sound Seekers",
+        "rating_summary": "1,680+ Verified Practitioner Reviews"
+      }
+    },
+    "faq": {
+      "type": "zhp-pdp-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I need any prior musical experience to play?",
+            "answer": "None whatsoever! Zavelyn Drums are designed to be completely intuitive. Because every note is tuned to natural harmonic scales, there are zero discordant or 'bad' notes. You can play purely by intuition, or follow the numbered songbook."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What does 432 Hz tuning mean?",
+            "answer": "Standard modern music is tuned to 440 Hz, which can sound tense. 432 Hz is the natural harmonic frequency historically used by classical masters. Scientific studies indicate 432 Hz produces calmer emotional responses, lower heart rates, and enhanced meditation states."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Should I play with the mallets or my hands?",
+            "answer": "Both! The included weighted bamboo mallets produce a bright, loud, crystal-clear bell resonance with minimum effort. Playing with your hands or the silicone finger picks creates a softer, warmer, and more intimate tone ideal for quiet meditation."
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Will the drum ever go out of tune?",
+            "answer": "No. The acoustic tongues are laser-cut from high-grade tempered alloy steel and heat-treated. Unless subjected to severe physical deformation, the instrument will maintain its pitch calibration for decades."
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for a 100% full refund with no questions asked."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "settings": {
+        "pill_text": "QUESTIONS & ANSWERS",
+        "title": "Frequently Asked Questions",
+        "description": ""
+      }
+    },
+    "main": {
+      "type": "zavelyn-pdp-main",
+      "settings": {
+        "eyebrow_text": "ZAVELYN INNOVATIONS · MEDITATION & SOUND THERAPY",
+        "urgency_text": "High US Demand · Limited Handcrafted Batches Remaining",
+        "cta_text": "CLAIM OFFER",
+        "enable_sticky_atc": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "banner",
+    "experience",
+    "included",
+    "specs",
+    "shipping",
+    "reviews",
+    "faq"
+  ]
+}

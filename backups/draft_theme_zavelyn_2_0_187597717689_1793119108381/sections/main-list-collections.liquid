@@ -1,0 +1,53 @@
+<section class="section">
+  <div class="page-width">
+    <header class="section__header">
+      <h1>{{ section.settings.title | default: 'Collections' }}</h1>
+    </header>
+
+    <div class="product-grid product-grid--3">
+      {%- for collection in collections -%}
+        {%- unless collection.handle == 'frontpage' -%}
+          <article class="product-card">
+            <a class="product-card__media" href="{{ collection.url }}">
+              {%- if collection.featured_image -%}
+                {{
+                  collection.featured_image
+                  | image_url: width: 900
+                  | image_tag:
+                    widths: '320, 480, 640, 900',
+                    sizes: '(min-width: 900px) 33vw, 50vw',
+                    loading: 'lazy',
+                    alt: collection.title | escape
+                }}
+              {%- else -%}
+                {{ 'collection-1' | placeholder_svg_tag }}
+              {%- endif -%}
+            </a>
+            <div class="product-card__info">
+              <a class="product-card__title" href="{{ collection.url }}">{{ collection.title }}</a>
+              <p class="product-card__vendor">
+                {{ 'collections.general.items_with_count' | t: count: collection.products_count }}
+              </p>
+            </div>
+          </article>
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collections list",
+  "tag": "section",
+  "class": "section-main-list-collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Collections"
+    }
+  ]
+}
+{% endschema %}

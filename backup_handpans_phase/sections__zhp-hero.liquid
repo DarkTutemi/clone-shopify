@@ -1,0 +1,118 @@
+
+{{ 'zhp-collection.css' | asset_url | stylesheet_tag }}
+<div class="zhp-wrapper">
+  <section class="zhp-hero">
+    <div class="zhp-hero-bg">
+      <picture>
+        {% if section.settings.image_mobile != blank %}
+          <source media="(max-width: 767px)" srcset="{{ section.settings.image_mobile | image_url: width: 800 }}">
+        {% else %}
+          <source media="(max-width: 767px)" srcset="https://cdn.shopify.com/s/files/1/0566/1209/4037/files/heromobile1.avif?v=1716727985">
+        {% endif %}
+
+        {% if section.settings.image_desktop != blank %}
+          {{ section.settings.image_desktop | image_url: width: 2000 | image_tag: class: 'zhp-hero-img', loading: 'eager', alt: 'Zavelyn Handpans' }}
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0566/1209/4037/files/herdesktop3.avif?v=1716727145" alt="Zavelyn Handpans - Escape to Calmness" class="zhp-hero-img">
+        {% endif %}
+      </picture>
+      <div class="zhp-hero-overlay"></div>
+    </div>
+    <div class="zhp-container zhp-hero-content">
+      <div class="zhp-hero-badge">
+        <span class="zhp-stars">{% render 'trustpilot-stars', width: 92, height: 17 %}</span>
+        <span>{{ section.settings.badge_text | default: 'Rated 4.92/5 by 72,000+ Happy Drummers' }}</span>
+      </div>
+      <h1 class="zhp-hero-title">{{ section.settings.title | default: 'Escape to Calmness' }}</h1>
+      <p class="zhp-hero-subtitle">
+        {{ section.settings.subtitle | default: 'Feel the stress melt away with every note. Handcrafted steel tongue drums tuned to pure 432 Hz healing frequencies, bringing tranquility, mindfulness, and joy into your everyday life.' }}
+      </p>
+      <div class="zhp-hero-trust-pills">
+        <span class="zhp-trust-pill"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Free Worldwide Shipping</span>
+        <span class="zhp-trust-pill"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> 30-Day Money Back Guarantee</span>
+        <span class="zhp-trust-pill"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> No Musical Experience Needed</span>
+      </div>
+      <div class="zhp-hero-actions">
+        <a href="{{ section.settings.btn1_link | default: '#zhp-bestsellers' }}" class="zhp-btn zhp-btn-primary">{{ section.settings.btn1_text | default: 'EXPLORE ZAVELYN DRUMS' }}</a>
+        <a href="{{ section.settings.btn2_link | default: '#zhp-buyers-guide' }}" class="zhp-btn zhp-btn-outline">{{ section.settings.btn2_text | default: 'WHY 432 HZ MATTERS' }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press Mentions Bar -->
+  <section class="zhp-press-bar">
+    <div class="zhp-container zhp-press-inner">
+      <span class="zhp-press-label">FEATURED IN LEADING WELLNESS & MUSIC PUBLICATIONS</span>
+      <div class="zhp-press-logos">
+        <img src="https://cdn.shopify.com/s/files/1/0566/1209/4037/files/wsj.webp?v=1691487451" alt="WSJ" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/0566/1209/4037/files/cnbc.webp?v=1691487451" alt="CNBC" loading="lazy">
+        <div class="zhp-press-text-logo">FORBES</div>
+        <div class="zhp-press-text-logo">YOGA JOURNAL</div>
+        <div class="zhp-press-text-logo">MINDBODYGREEN</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "02. Hero Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Ảnh nền Hero Desktop (Thay thế ảnh cũ)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Ảnh nền Hero Mobile (Thay thế ảnh cũ)"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Huy hiệu đánh giá",
+      "default": "Rated 4.92/5 by 72,000+ Happy Drummers"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tiêu đề chính",
+      "default": "Escape to Calmness"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Mô tả phụ",
+      "default": "Feel the stress melt away with every note. Handcrafted steel tongue drums tuned to pure 432 Hz healing frequencies, bringing tranquility, mindfulness, and joy into your everyday life."
+    },
+    {
+      "type": "text",
+      "id": "btn1_text",
+      "label": "Nút chính Text",
+      "default": "EXPLORE ZAVELYN DRUMS"
+    },
+    {
+      "type": "url",
+      "id": "btn1_link",
+      "label": "Nút chính Link"
+    },
+    {
+      "type": "text",
+      "id": "btn2_text",
+      "label": "Nút phụ Text",
+      "default": "WHY 432 HZ MATTERS"
+    },
+    {
+      "type": "url",
+      "id": "btn2_link",
+      "label": "Nút phụ Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "02. Hero Banner"
+    }
+  ]
+}
+{% endschema %}

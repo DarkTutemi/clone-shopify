@@ -1,0 +1,74 @@
+{
+  "id": "gid://shopify/Product/15461507956921",
+  "title": "Zavelyn PureFlow",
+  "handle": "zavelyn-pureflow-wireless-stainless-steel-pet-water-fountain",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67980362318009",
+        "title": "Buy 1 (Single Pet Fountain - Standard Kit) / Wireless Battery Pro (7L Large Tank)",
+        "price": "69.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980362350777",
+        "title": "Buy 1 (Single Pet Fountain - Standard Kit) / Wireless Battery Pro (4L Standard Tank)",
+        "price": "69.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980362383545",
+        "title": "Buy 1 (Single Pet Fountain - Standard Kit) / Plug-In Power (7L Large Tank)",
+        "price": "69.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980362416313",
+        "title": "Buy 1 (Single Pet Fountain - Standard Kit) / Plug-In Power (4L Standard Tank)",
+        "price": "69.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980362449081",
+        "title": "Buy 2 (Two-Room Hydration Set - Save 45%) / Wireless Battery Pro (7L Large Tank)",
+        "price": "119.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980362481849",
+        "title": "Buy 2 (Two-Room Hydration Set - Save 45%) / Wireless Battery Pro (4L Standard Tank)",
+        "price": "119.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980362514617",
+        "title": "Buy 2 (Two-Room Hydration Set - Save 45%) / Plug-In Power (7L Large Tank)",
+        "price": "119.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980362547385",
+        "title": "Buy 2 (Two-Room Hydration Set - Save 45%) / Plug-In Power (4L Standard Tank)",
+        "price": "119.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980362580153",
+        "title": "Buy 3 (Multi-Pet Complete Estate Set - Buy 2 Get 1 FREE) / Wireless Battery Pro (7L Large Tank)",
+        "price": "149.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980362612921",
+        "title": "Buy 3 (Multi-Pet Complete Estate Set - Buy 2 Get 1 FREE) / Wireless Battery Pro (4L Standard Tank)",
+        "price": "149.99",
+        "sku": null
+      }
+    ]
+  }
+}

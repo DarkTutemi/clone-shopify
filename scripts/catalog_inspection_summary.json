@@ -1,0 +1,1387 @@
+[
+  {
+    "index": 1,
+    "id": "15416491933881",
+    "status": "DRAFT",
+    "title": "Zavelyn Foot Sleeves",
+    "handle": "zavelyn-foot-sleeves",
+    "productType": "Foot Support",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bogo",
+      "compression",
+      "foot sleeves",
+      "offer",
+      "recovery sale"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 2,
+    "id": "15420277653689",
+    "status": "DRAFT",
+    "title": "Zavelyn V1 Device",
+    "handle": "v1-device",
+    "productType": "Device",
+    "vendor": "Zavelyn",
+    "tags": [],
+    "descSnippet": ""
+  },
+  {
+    "index": 3,
+    "id": "15420647702713",
+    "status": "DRAFT",
+    "title": "Zavelyn Foot Drop AFO Brace",
+    "handle": "cdf",
+    "productType": "Pain Relief",
+    "vendor": "Zavelyn",
+    "tags": [
+      "afo",
+      "brace",
+      "foot drop"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 4,
+    "id": "15420985966777",
+    "status": "DRAFT",
+    "title": "Zavelyn Foot Sleeve",
+    "handle": "zavelyn-foot-sleeves-bogo-free",
+    "productType": "Pain Relief",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bogo-free",
+      "hidden"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 5,
+    "id": "15424286589113",
+    "status": "DRAFT",
+    "title": "Zavelyn Rehabilitation Glove",
+    "handle": "zavelyn-rehabilitation-glove",
+    "productType": "Rehabilitation",
+    "vendor": "Zavelyn",
+    "tags": [
+      "hand therapy",
+      "regrip",
+      "rehabilitation",
+      "stroke recovery"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 6,
+    "id": "15424429457593",
+    "status": "DRAFT",
+    "title": "Zavelyn Miracle Balm",
+    "handle": "miracle-balm",
+    "productType": "Balm",
+    "vendor": "Zavelyn",
+    "tags": [
+      "arch pain",
+      "heel pain",
+      "miracle balm",
+      "plantar fasciitis"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 7,
+    "id": "15454946951353",
+    "status": "ACTIVE",
+    "title": "Zavelyn Fence Post Repair Kit",
+    "handle": "sakerplus-fence-post-repair-kit",
+    "productType": "Outdoor Tools",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "fence-post-repair-kit",
+      "hardware",
+      "outdoor-tools"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 8,
+    "id": "15454947901625",
+    "status": "ACTIVE",
+    "title": "Zavelyn Sensory Floor Mats",
+    "handle": "sakerplus®-tpu-sensory-textured-floor-mats",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "gifts/others"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 9,
+    "id": "15454948163769",
+    "status": "ACTIVE",
+    "title": "Zavelyn Non-Slip Drawer Liner",
+    "handle": "sakerplus®-tearable-non-slip-drawer-liner",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "home & garden",
+      "household supplies",
+      "storage & organization"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 10,
+    "id": "15454948556985",
+    "status": "ACTIVE",
+    "title": "Zavelyn Shelf & Drawer Liner",
+    "handle": "sakerplus®-tearable-shelf-liner-and-drawer-liner",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "home & garden",
+      "household supplies",
+      "storage & organization"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 11,
+    "id": "15454948786361",
+    "status": "ACTIVE",
+    "title": "Zavelyn UV Bed Vacuum Cleaner",
+    "handle": "saker®-powerful-uv-bed-vacuum-cleaner-clearance-sale",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "home cleaning",
+      "home improvement"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 12,
+    "id": "15454948982969",
+    "status": "ACTIVE",
+    "title": "Zavelyn Flame Effect Space Heater",
+    "handle": "sakerplus®-1500w-flame-effect-oscillating-space-heater",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "appliances",
+      "bestseller",
+      "Heating Cooling & Air Quality",
+      "home & garden"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 13,
+    "id": "15454949343417",
+    "status": "ACTIVE",
+    "title": "Zavelyn Portable Welding Machine",
+    "handle": "sakerplus®-portable-welding-machine-clearance",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "all products",
+      "bestseller",
+      "hand tools",
+      "home improvement",
+      "other hand tools",
+      "power tools",
+      "tools"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 14,
+    "id": "15454949540025",
+    "status": "ACTIVE",
+    "title": "Zavelyn Titanium Pocket Pry Bar",
+    "handle": "sakerplus®-titanium-alloy-multifunction-pocket-pry-bar",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "hand tools",
+      "multi-tools",
+      "tools"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 15,
+    "id": "15454949998777",
+    "status": "ACTIVE",
+    "title": "Zavelyn Steam Disinfection Cleaner",
+    "handle": "sakerplus®-steam-disinfection-cleaner-clearance",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "cleaning",
+      "home & garden",
+      "home cleaning",
+      "home improvement",
+      "household supplies"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 16,
+    "id": "15454950490297",
+    "status": "ACTIVE",
+    "title": "Zavelyn Squishy Egg Night Light",
+    "handle": "sakerplus®-squishy-egg-multicolor-tap-night-light",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "toys"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 17,
+    "id": "15454950850745",
+    "status": "ACTIVE",
+    "title": "Zavelyn Bathroom Exhaust Fan",
+    "handle": "sakerplus®-bathroom-exhaust-fan-with-led-light",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bathroom accessories",
+      "bestseller",
+      "home & garden",
+      "kitchen & bath"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 18,
+    "id": "15454951211193",
+    "status": "ACTIVE",
+    "title": "Zavelyn Solar Street Lights",
+    "handle": "sakerplus®-solar-street-lights-clearance-sale",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "home & garden"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 19,
+    "id": "15454951473337",
+    "status": "ACTIVE",
+    "title": "Zavelyn RAV4 USB Charging Hub",
+    "handle": "sakerplus®-toyota-rav4-led-usb-charging-hub",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "auto accessories",
+      "automotive",
+      "bestseller"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 20,
+    "id": "15454951801017",
+    "status": "ACTIVE",
+    "title": "Zavelyn Camping Fan with Light",
+    "handle": "sakerplus-camping-fan-with-light-battery-1",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 21,
+    "id": "15454951997625",
+    "status": "ACTIVE",
+    "title": "Zavelyn Home Sauna Generator",
+    "handle": "sakerplus®-portable-home-sauna-steam-generator",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "appliances",
+      "bestseller",
+      "home & garden",
+      "household appliances"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 22,
+    "id": "15454952292537",
+    "status": "ACTIVE",
+    "title": "Zavelyn Electric Wall Chaser",
+    "handle": "sakerplus®-laser-guided-electric-wall-chaser",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "power tools",
+      "saws",
+      "tools"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 23,
+    "id": "15454952620217",
+    "status": "ACTIVE",
+    "title": "Zavelyn Diesel Injector Removal Kit",
+    "handle": "sakerplus®-universal-diesel-injector-removal-kit-clearance-sale",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "automotive",
+      "bestseller"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 24,
+    "id": "15454952882361",
+    "status": "ACTIVE",
+    "title": "Zavelyn Kids Basketball Hoop Set",
+    "handle": "sakerplus®-kids-indoor-outdoor-basketball-hoop-set",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "gifts/others"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 25,
+    "id": "15454953177273",
+    "status": "ACTIVE",
+    "title": "Zavelyn Clamp-On Desk Shelf",
+    "handle": "sakerplus®-three-tier-clamp-on-desk-shelf-organizer",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "home & garden",
+      "household supplies",
+      "storage & organization"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 26,
+    "id": "15454953504953",
+    "status": "ACTIVE",
+    "title": "Zavelyn Thermal Imaging Camera",
+    "handle": "sakerplus®-high-precision-infrared-thermal-imaging-camera",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "hand  tools",
+      "measuring tools",
+      "tools"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 27,
+    "id": "15454953898169",
+    "status": "ACTIVE",
+    "title": "Zavelyn UV Mattress Vacuum",
+    "handle": "sakerplus®-cordless-handheld-uv-mattress-vacuum-cleaner",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "cleaning",
+      "household supplies"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 28,
+    "id": "15454954193081",
+    "status": "ACTIVE",
+    "title": "Zavelyn Tactical MOLLE Vest",
+    "handle": "sakerplus®-tactical-molle-utility-vest",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "hardware",
+      "personal safety equipment",
+      "tools"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 29,
+    "id": "15454954422457",
+    "status": "ACTIVE",
+    "title": "Zavelyn Hydraulic Pipe Crimper Kit",
+    "handle": "sakerplus®-cordless-hydraulic-pipe-crimping-tool-kit",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "power tools",
+      "tools"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 30,
+    "id": "15454954750137",
+    "status": "ACTIVE",
+    "title": "Zavelyn Smart Hygrometer Clock",
+    "handle": "sakerplus®-smart-thermometer-hygrometer-clock",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "appliances",
+      "bestseller",
+      "home & garden"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 31,
+    "id": "15454955045049",
+    "status": "ACTIVE",
+    "title": "Zavelyn Half Moon LED Lash Lamp",
+    "handle": "sakerplus®-dimmable-half-moon-led-lash-lamp",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "Decor & Furniture",
+      "lighting"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 32,
+    "id": "15454955372729",
+    "status": "ACTIVE",
+    "title": "Zavelyn 3-in-1 Gypsum Board Cutter",
+    "handle": "sakerplus®-3-in-1-gypsum-board-cutting-tool",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "cuttingtools",
+      "hand tools",
+      "tools"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 33,
+    "id": "15454955765945",
+    "status": "ACTIVE",
+    "title": "Zavelyn Rotating Galaxy Projector",
+    "handle": "sakerplus®-rotating-galaxy-projector-with-adjustable-focus",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "electronics",
+      "Projectors"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 34,
+    "id": "15454956028089",
+    "status": "ACTIVE",
+    "title": "Zavelyn Retractable LED Fill Light",
+    "handle": "sakerplus®-rechargeable-retractable-led-fill-light-stick",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "decor & furniture",
+      "home & garden",
+      "lighting"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 35,
+    "id": "15454956355769",
+    "status": "ACTIVE",
+    "title": "Zavelyn Mini Heat Press Machine",
+    "handle": "sakerplus®-portable-digital-mini-heat-press-machine",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "appliances",
+      "bestseller",
+      "home & garden",
+      "household appliances"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 36,
+    "id": "15454956781753",
+    "status": "ACTIVE",
+    "title": "Zavelyn Automatic Chicken Coop Door",
+    "handle": "sakerplus®-battery-powered-automatic-chicken-coop-door",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "home & garden",
+      "lawn & garden",
+      "outdoor living"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 37,
+    "id": "15454957142201",
+    "status": "ACTIVE",
+    "title": "Zavelyn Infrared Sauna Blanket",
+    "handle": "portable-infrared",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "health & beauty",
+      "health care"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 38,
+    "id": "15454957633721",
+    "status": "ACTIVE",
+    "title": "Zavelyn 360° Magnetic Work Light",
+    "handle": "sakerplus®-360-app-controlled-magnetic-work-light",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "flashlights & work lights",
+      "tools",
+      "work lights"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 39,
+    "id": "15454958158009",
+    "status": "ACTIVE",
+    "title": "Zavelyn 50FT LED String Lights",
+    "handle": "sakerplus®-50ft-industrial-led-construction-string-lights",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "flashlights & work lights",
+      "tools",
+      "work lights"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 40,
+    "id": "15454958420153",
+    "status": "ACTIVE",
+    "title": "Zavelyn Cable Lug Crimper",
+    "handle": "sakerplus®-hydraulic-battery-cable-lug-crimping-tool",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "hand tools",
+      "pliers",
+      "tools"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 41,
+    "id": "15454958878905",
+    "status": "ACTIVE",
+    "title": "Zavelyn Panoramic Dash Camera",
+    "handle": "sakerplus®-panoramic-dash-camera-with-night-vision",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "auto accessories",
+      "automotive",
+      "bestseller"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 42,
+    "id": "15454959403193",
+    "status": "ACTIVE",
+    "title": "Zavelyn Downspout Catch Basin",
+    "handle": "sakerplus®-low-profile-downspout-catch-basin",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "garden gear",
+      "garden hand tools",
+      "gardening"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 43,
+    "id": "15454959894713",
+    "status": "ACTIVE",
+    "title": "Zavelyn Wheel Alignment Kit",
+    "handle": "sakerplus®-stainless-steel-wheel-alignment-kit",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "auto repair",
+      "automotive",
+      "bestseller"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 44,
+    "id": "15454960255161",
+    "status": "ACTIVE",
+    "title": "Zavelyn Red Light Therapy Panel",
+    "handle": "sakerplus®-adjustable-red-light-therapy-panel",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "health & beauty",
+      "health care",
+      "home & garden"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 45,
+    "id": "15454960517305",
+    "status": "ACTIVE",
+    "title": "Zavelyn Rotating Goose Target Game",
+    "handle": "sakerplus®-electronic-rotating-goose-target-game",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "toys"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 46,
+    "id": "15454960910521",
+    "status": "ACTIVE",
+    "title": "Zavelyn Self-Leveling Laser Level",
+    "handle": "sakerplus®-self-leveling-laser-level-with-tripod",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "hand tools",
+      "measuring tools",
+      "tools"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 47,
+    "id": "15454961238201",
+    "status": "ACTIVE",
+    "title": "Zavelyn Kids Metal Detector",
+    "handle": "sakerplus®-kids-metal-detector-with-lcd-display",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "gifts"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 48,
+    "id": "15454961565881",
+    "status": "ACTIVE",
+    "title": "Zavelyn Workbench Tail Vise Clamp",
+    "handle": "sakerplus®-adjustable-workbench-tail-vise-clamp",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "hand tools",
+      "home improvement"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 49,
+    "id": "15454961860793",
+    "status": "ACTIVE",
+    "title": "Zavelyn Heated Knee Massager",
+    "handle": "sakerplus®-cordless-heated-knee-massage-device",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "health & beauty",
+      "health care",
+      "home & garden"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 50,
+    "id": "15454962286777",
+    "status": "ACTIVE",
+    "title": "Zavelyn Solar Motion Security Light",
+    "handle": "sakerplus®-outdoor-solar-motion-sensor-security-light",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "flashlights & work lights",
+      "tools",
+      "work lights"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 51,
+    "id": "15454962778297",
+    "status": "ACTIVE",
+    "title": "Zavelyn 5-in-1 Magnetic Charging Station",
+    "handle": "sakerplus®-5-in-1-magnetic-wireless-charging-station",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "Chargers & Power Banks",
+      "electronics"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 52,
+    "id": "15454963073209",
+    "status": "ACTIVE",
+    "title": "Zavelyn Rolling Nut & Ball Picker",
+    "handle": "sakerplus®-rolling-nut-and-ball-picker",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "gardening tools",
+      "home & garden",
+      "lawn & garden"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 53,
+    "id": "15454963433657",
+    "status": "ACTIVE",
+    "title": "Zavelyn Oil Spray Bottle",
+    "handle": "sakerplus®-ultra-fine-cooking-oil-spray-bottle",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "home & garden",
+      "kitchen & bath",
+      "kitchenware"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 54,
+    "id": "15454963859641",
+    "status": "ACTIVE",
+    "title": "Zavelyn Cordless Garden Tiller",
+    "handle": "saker®-cordless-electric-garden-tiller-cultivator",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "123",
+      "bestseller",
+      "electric tools",
+      "gardening",
+      "home & garden"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 55,
+    "id": "15454964187321",
+    "status": "ACTIVE",
+    "title": "Zavelyn Livestock Grooming Scratch Brush",
+    "handle": "sakerplus®-livestock-massage-grooming-scratch-brush",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "pet supplies"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 56,
+    "id": "15454964744377",
+    "status": "ACTIVE",
+    "title": "Zavelyn Flexible-Neck Work Flashlight",
+    "handle": "sakerplus®-outdoor-flexible-neck-work-flashlight",
+    "productType": "Tools & Home Improvement",
+    "vendor": "Zavelyn",
+    "tags": [
+      "bestseller",
+      "power tools & accessories",
+      "tools"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 57,
+    "id": "15455032115385",
+    "status": "UNLISTED",
+    "title": "Zavelyn Ultrasonic Precision Cutter",
+    "handle": "saker-cordless-ultrasonic-cutter-and-grinder",
+    "productType": "Power Tools",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Best Sellers",
+      "Featured",
+      "New Arrivals",
+      "Power Tools",
+      "Precision Tools",
+      "Ultrasonic Cutter"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 58,
+    "id": "15455040241849",
+    "status": "ACTIVE",
+    "title": "Zavelyn Advanced Nose Cleaner",
+    "handle": "navage-advanced-nose-cleaner",
+    "productType": "Nose Cleaners",
+    "vendor": "Zavelyn",
+    "tags": [
+      "featured",
+      "health",
+      "navage",
+      "sinusitis"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 59,
+    "id": "15455040340153",
+    "status": "ACTIVE",
+    "title": "Zavelyn Nose Cleaner Starter Bundle",
+    "handle": "navage-starter-bundle",
+    "productType": "Nose Cleaners",
+    "vendor": "Zavelyn",
+    "tags": [
+      "featured",
+      "health",
+      "navage",
+      "sinusitis"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 60,
+    "id": "15455092572345",
+    "status": "ACTIVE",
+    "title": "Zavelyn Yeoman Sweep",
+    "handle": "the-yeoman-sweep",
+    "productType": "Lawn Sweeper",
+    "vendor": "Zavelyn",
+    "tags": [
+      "fall",
+      "lawn sweeper",
+      "leaf cleanup",
+      "yard",
+      "yeoman"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 61,
+    "id": "15455242387641",
+    "status": "ACTIVE",
+    "title": "Zavelyn Steam Pro",
+    "handle": "srefalsteam",
+    "productType": "Steam Cleaner",
+    "vendor": "Zavelyn",
+    "tags": [
+      "cleaning",
+      "home",
+      "srefalsteam",
+      "steam cleaner"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 62,
+    "id": "15455481102521",
+    "status": "ACTIVE",
+    "title": "Zavelyn MagTrack",
+    "handle": "thoson-magtrack",
+    "productType": "Magnetic Train Track Set",
+    "vendor": "Zavelyn",
+    "tags": [
+      "age:3-5",
+      "age:5+",
+      "cat:building",
+      "cat:stem",
+      "season:bfcm",
+      "season:fall",
+      "season:gifts",
+      "season:holiday",
+      "season:winter"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 63,
+    "id": "15455757336761",
+    "status": "ACTIVE",
+    "title": "Zavelyn Livestock Heating Lamp",
+    "handle": "livestock-heating-lamp",
+    "productType": "Livestock Heating Lamp",
+    "vendor": "Zavelyn",
+    "tags": [
+      "brooder",
+      "chicken coop",
+      "farm",
+      "heat lamp",
+      "heating lamp",
+      "livestock",
+      "pet care"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 64,
+    "id": "15459315220665",
+    "status": "ACTIVE",
+    "title": "Zavelyn Drum Pro",
+    "handle": "zavelyn-drum-pro",
+    "productType": "Handpan & Steel Tongue Drum",
+    "vendor": "Zavelyn",
+    "tags": [
+      "15 Tone",
+      "432Hz",
+      "D-Major",
+      "Handpan",
+      "Meditation",
+      "Sound Healing",
+      "Steel Tongue Drum",
+      "Zavelyn Drum Pro"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 65,
+    "id": "15459315581113",
+    "status": "ACTIVE",
+    "title": "Zavelyn Drum Plus",
+    "handle": "zavelyn-drum-plus",
+    "productType": "Handpan & Steel Tongue Drum",
+    "vendor": "Zavelyn",
+    "tags": [
+      "11 Tone",
+      "432Hz",
+      "D-Major",
+      "Handpan",
+      "Meditation",
+      "Most Popular",
+      "Steel Tongue Drum",
+      "Zavelyn Drum Plus"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 66,
+    "id": "15459318890681",
+    "status": "ACTIVE",
+    "title": "Zavelyn Drum Mini",
+    "handle": "zavelyn-drum-mini",
+    "productType": "Handpan & Steel Tongue Drum",
+    "vendor": "Zavelyn",
+    "tags": [
+      "432Hz",
+      "8 Tone",
+      "Beginner",
+      "Compact",
+      "Handpan",
+      "Kids",
+      "Pentatonic",
+      "Steel Tongue Drum",
+      "Zavelyn Drum Mini"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 67,
+    "id": "15460656021689",
+    "status": "ACTIVE",
+    "title": "Zavelyn Handpan Master",
+    "handle": "zavelyn-handpan-master",
+    "productType": "Handpan & Steel Tongue Drum",
+    "vendor": "Zavelyn",
+    "tags": [
+      "12 Tone",
+      "22-Inch",
+      "432Hz",
+      "Concert Handpan",
+      "D-Minor Kurd",
+      "Handpan",
+      "Master Series",
+      "Meditation",
+      "Sound Healing"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 68,
+    "id": "15460701831353",
+    "status": "ACTIVE",
+    "title": "Zavelyn Rain Drum",
+    "handle": "zavelyn-rain-drum",
+    "productType": "Handpan & Steel Tongue Drum",
+    "vendor": "Zavelyn",
+    "tags": [
+      "3-Inch",
+      "6 Tone",
+      "Garden Drum",
+      "Meditation",
+      "Outdoor",
+      "Pocket Drum",
+      "Rain Drum",
+      "Steel Tongue Drum",
+      "Zavelyn Rain Drum"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 69,
+    "id": "15460831953081",
+    "status": "ACTIVE",
+    "title": "Zavelyn Cordless Turbo Leaf Blower",
+    "handle": "saker-cordless-turbo-leaf-blower",
+    "productType": "Power Tools",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Best Seller",
+      "Cleaning Tools",
+      "Cordless Leaf Blower",
+      "New Arrival",
+      "Outdoor",
+      "Power Tools"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 70,
+    "id": "15460886315193",
+    "status": "ACTIVE",
+    "title": "Zavelyn 5-in-1 Rotary Cheese Grater",
+    "handle": "zavelyn-5-in-1-rotary-cheese-grater-shredder",
+    "productType": "Kitchen Tools",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Best Sellers",
+      "Cheese Grater",
+      "Clearance",
+      "Kitchen Tools",
+      "Rotary Shredder"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 71,
+    "id": "15460917313721",
+    "status": "ACTIVE",
+    "title": "Zavelyn Mesh Nebulizer",
+    "handle": "zavelyn-portable-ultrasonic-mesh-nebulizer",
+    "productType": "Respiratory Care",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Best Sellers",
+      "Clearance",
+      "Flu Season",
+      "Kids Care",
+      "Nebulizer",
+      "Respiratory Health",
+      "Ultrasonic Mesh"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 72,
+    "id": "15460954276025",
+    "status": "ACTIVE",
+    "title": "Zavelyn CozyHeat",
+    "handle": "zavelyn-cozyheat-heated-wearable-blanket-sweater",
+    "productType": "Wearable Heated Blankets",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Best Sellers",
+      "Clearance",
+      "Heated Blanket",
+      "Heated Shawl",
+      "USB Heated",
+      "Wearable Throw",
+      "Winter Warmth"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 73,
+    "id": "15460988944569",
+    "status": "ACTIVE",
+    "title": "Zavelyn Automatic Dough Mixer",
+    "handle": "zavelyn-automatic-dough-mixer-with-ferment-function",
+    "productType": "Kitchen Appliances",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Appliances",
+      "Baking",
+      "Best Seller",
+      "Dough Mixer",
+      "Fermenter",
+      "Kitchen",
+      "New 2026"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 74,
+    "id": "15461356011705",
+    "status": "ACTIVE",
+    "title": "Zavelyn vFit",
+    "handle": "zavelyn-vfit-red-light-intimate-wellness-device",
+    "productType": "Health & Wellness",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Best Seller",
+      "Intimate Wellness",
+      "New 2026",
+      "OB-GYN Recommended",
+      "Pelvic Floor",
+      "Red Light Therapy",
+      "vFit",
+      "Women Health"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 75,
+    "id": "15461407588537",
+    "status": "ACTIVE",
+    "title": "Zavelyn SculptComfort",
+    "handle": "zavelyn-sculptcomfort-wirefree-breast-shapewear-bra",
+    "productType": "Shapewear & Intimates",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Best Seller",
+      "Bra",
+      "Breast Lift",
+      "Comfort Bra",
+      "New 2026",
+      "Push-Up Bra",
+      "Shapewear",
+      "Wire-Free Bra"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 76,
+    "id": "15461446713529",
+    "status": "ACTIVE",
+    "title": "Zavelyn SuperTots",
+    "handle": "zavelyn-supertots-fresh-food-fruit-feeder-pacifier",
+    "productType": "Baby & Toddler Feeding",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Baby",
+      "Best Seller",
+      "BPA Free",
+      "Food Feeder",
+      "Fruit Feeder",
+      "New 2026",
+      "Pacifier",
+      "Silicone Teether",
+      "Teething Toy"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 77,
+    "id": "15461471060153",
+    "status": "ACTIVE",
+    "title": "Zavelyn AirClear",
+    "handle": "zavelyn-airclear-plugin-negative-ion-air-purifier",
+    "productType": "Home Health & Air Quality",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Air Purifier",
+      "Allergy Relief",
+      "Best Seller",
+      "Dust Cleaner",
+      "Filterless",
+      "Ionizer",
+      "Negative Ion",
+      "New 2026",
+      "Odor Eliminator"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 78,
+    "id": "15461501927609",
+    "status": "ACTIVE",
+    "title": "Zavelyn FlawlessBlend",
+    "handle": "zavelyn-flawlessblend-color-changing-foundation-stick",
+    "productType": "Beauty & Cosmetics",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Anti-Aging",
+      "Best Seller",
+      "Color Changing Foundation",
+      "Foundation",
+      "Foundation Stick",
+      "Korean Beauty",
+      "Mature Skin",
+      "New 2026",
+      "Skincare Makeup"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 79,
+    "id": "15461507956921",
+    "status": "ACTIVE",
+    "title": "Zavelyn PureFlow",
+    "handle": "zavelyn-pureflow-wireless-stainless-steel-pet-water-fountain",
+    "productType": "Pet Supplies & Accessories",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Best Seller",
+      "Cat Water Fountain",
+      "Dog Water Fountain",
+      "New 2026",
+      "Pet Fountain",
+      "Pet Hydration",
+      "Stainless Steel Fountain",
+      "Wireless Pet Bowl"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 80,
+    "id": "15461521064121",
+    "status": "ACTIVE",
+    "title": "Zavelyn GravityGlider",
+    "handle": "zavelyn-gravityglider-indestructible-stunt-rc-jet",
+    "productType": "RC Toys & Hobbies",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Best Seller",
+      "EPP Foam Aircraft",
+      "Indestructible Toy",
+      "Kids Gift",
+      "New 2026",
+      "RC Airplane",
+      "Remote Control Plane",
+      "Stunt Jet"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 81,
+    "id": "15461535416505",
+    "status": "ACTIVE",
+    "title": "Zavelyn MegaLifters",
+    "handle": "zavelyn-megalifters-heavy-duty-alloy-rc-construction-fleet",
+    "productType": "RC Toys & Hobbies",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Alloy Metal Toy",
+      "Best Seller",
+      "Bulldozer",
+      "Dump Truck",
+      "Kids Gift",
+      "New 2026",
+      "RC Construction",
+      "Remote Control Excavator",
+      "STEM Toy"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 82,
+    "id": "15461545935033",
+    "status": "ACTIVE",
+    "title": "Zavelyn BotanaRoots",
+    "handle": "zavelyn-botanaroots-organic-batana-hair-growth-oil",
+    "productType": "Hair Growth Oil & Scalp Treatment",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Alopecia",
+      "Batana Oil",
+      "Best Seller",
+      "Hair Growth",
+      "Hair Treatment",
+      "Scalp Care",
+      "Thinning Hair",
+      "Zavelyn"
+    ],
+    "descSnippet": ""
+  },
+  {
+    "index": 83,
+    "id": "15461559533753",
+    "status": "ACTIVE",
+    "title": "Zavelyn ThermoGlove",
+    "handle": "zavelyn-thermoglove-smart-thermostatic-heated-fingerless-gloves",
+    "productType": "Heated Winter Apparel & Therapeutic Gloves",
+    "vendor": "Zavelyn",
+    "tags": [
+      "Arthritis Relief",
+      "Best Seller",
+      "Cold Hands",
+      "Heated Gloves",
+      "Raynauds",
+      "Thermostatic",
+      "Winter Apparel",
+      "Zavelyn"
+    ],
+    "descSnippet": ""
+  }
+]

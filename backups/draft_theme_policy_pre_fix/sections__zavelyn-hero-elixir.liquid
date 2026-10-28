@@ -1,0 +1,63 @@
+{% schema %}
+{
+  "name": "Zavelyn Elixir Hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow Text", "default": "★ 2026 ZAVELYN INNOVATIONS · TRUSTED BY 50,000+ HOMES" },
+    { "type": "text", "id": "heading", "label": "Main Heading", "default": "Engineered for Heavy Duty.<br><span>Built for Everyday Reliability.</span>" },
+    { "type": "textarea", "id": "subhead", "label": "Subheadline", "default": "Stop settling for cheap gear that fails when you need it most. Zavelyn crafts industrial-grade smart gadgets, repair kits, and wellness tools designed to outlast and outperform." },
+    { "type": "text", "id": "primary_cta_text", "label": "Primary Button Text", "default": "SHOP BEST SELLERS →" },
+    { "type": "url", "id": "primary_cta_link", "label": "Primary Button Link" },
+    { "type": "text", "id": "secondary_cta_text", "label": "Secondary Button Text", "default": "EXPLORE ALL INNOVATIONS" },
+    { "type": "url", "id": "secondary_cta_link", "label": "Secondary Button Link" }
+  ],
+  "presets": [{ "name": "Zavelyn Elixir Hero" }]
+}
+{% endschema %}
+
+<section class="zv-hero-elixir">
+  <div class="zv-hero-container">
+    <div class="zv-hero-content">
+      <div class="zv-hero-eyebrow">{{ section.settings.eyebrow }}</div>
+      <h1 class="zv-hero-heading">{{ section.settings.heading }}</h1>
+      <p class="zv-hero-subhead">{{ section.settings.subhead }}</p>
+      
+      <div class="zv-hero-actions">
+        {% assign p_link = section.settings.primary_cta_link %}
+        {% if p_link == blank %}{% assign p_link = '/collections/best-sellers' %}{% endif %}
+        <a href="{{ p_link }}" class="zv-btn-lime">
+          {{ section.settings.primary_cta_text }}
+        </a>
+
+        {% assign s_link = section.settings.secondary_cta_link %}
+        {% if s_link == blank %}{% assign s_link = '/collections/all-products' %}{% endif %}
+        <a href="{{ s_link }}" class="zv-btn-ghost">
+          {{ section.settings.secondary_cta_text }}
+        </a>
+      </div>
+
+      <div class="zv-hero-trust">
+        <span>🛡️ 60-Night Risk-Free Trial</span>
+        <span>·</span>
+        <span>⚡ 24-48h US Dispatch</span>
+        <span>·</span>
+        <span>⭐ 4.9/5 (12,400+ Reviews)</span>
+      </div>
+    </div>
+
+    <div class="zv-hero-visual">
+      <div class="zv-hero-card">
+        <img 
+          src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-thermoglove-black.jpg?v=1792936861" 
+          alt="Zavelyn Featured Innovation" 
+          class="zv-hero-img" 
+          fetchpriority="high"
+          loading="eager"
+        >
+        <div class="zv-hero-floating-badge">
+          <span>🔥</span>
+          <span>Featured: Zavelyn ThermoGlove</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

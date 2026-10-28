@@ -1,0 +1,72 @@
+<section class="section">
+  <div class="page-width page-width--narrow">
+    {%- if section.settings.title != blank -%}
+      <h1>{{ section.settings.title }}</h1>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <p class="section__subheader" style="margin-block: 0.75rem 1.5rem;">{{ section.settings.text }}</p>
+    {%- endif -%}
+
+    {% form 'contact', class: 'product__form' %}
+      {%- if form.posted_successfully? -%}
+        <p role="status">{{ 'templates.contact.form.post_success' | t }}</p>
+      {%- endif -%}
+
+      {%- if form.errors -%}
+        <div class="field__error" role="alert">
+          <p>{{ 'templates.contact.form.error_heading' | t }}</p>
+          {{ form.errors | default_errors }}
+        </div>
+      {%- endif -%}
+
+      <div class="field">
+        <label class="field__label" for="ContactName-{{ section.id }}">{{ 'templates.contact.form.name' | t }}</label>
+        <input class="field__input" type="text" name="contact[name]" id="ContactName-{{ section.id }}" autocomplete="name" required>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ContactEmail-{{ section.id }}">{{ 'templates.contact.form.email' | t }}</label>
+        <input class="field__input" type="email" name="contact[email]" id="ContactEmail-{{ section.id }}" autocomplete="email" required>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ContactPhone-{{ section.id }}">{{ 'templates.contact.form.phone' | t }}</label>
+        <input class="field__input" type="tel" name="contact[phone]" id="ContactPhone-{{ section.id }}" autocomplete="tel">
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ContactComment-{{ section.id }}">{{ 'templates.contact.form.comment' | t }}</label>
+        <textarea class="field__textarea" name="contact[body]" id="ContactComment-{{ section.id }}" required></textarea>
+      </div>
+
+      <button type="submit" class="button button--primary button--full">{{ 'templates.contact.form.send' | t }}</button>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact form",
+  "tag": "section",
+  "class": "section-contact-form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Contact"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Questions about an order, fit, or collaboration? Send a note."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact form"
+    }
+  ]
+}
+{% endschema %}

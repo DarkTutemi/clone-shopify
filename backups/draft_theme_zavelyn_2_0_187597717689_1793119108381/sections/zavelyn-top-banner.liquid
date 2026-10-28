@@ -1,0 +1,37 @@
+{% schema %}
+{
+  "name": "Zavelyn Top Banner",
+  "settings": [
+    { "type": "text", "id": "badge_text", "label": "Badge Text", "default": "FLASH SALE" },
+    { "type": "text", "id": "main_text", "label": "Main Offer Text", "default": "BUY 1, GET 2ND AT 50% OFF · FREE US DELIVERY OVER $49" },
+    { "type": "text", "id": "timer_end", "label": "Timer Label", "default": "Ends Tonight at 11:59PM" }
+  ],
+  "presets": [{ "name": "Zavelyn Top Banner" }]
+}
+{% endschema %}
+
+<div class="zv-countdown-banner" id="zvCountdownBanner">
+  <span class="zv-banner-tag">{{ section.settings.badge_text }}</span>
+  <span>{{ section.settings.main_text }}</span>
+  <span class="zv-timer-box">
+    <span>⏳</span>
+    <span id="zvTimerClock">04:22:15</span>
+  </span>
+</div>
+
+<script>
+  (function() {
+    function updateClock() {
+      const now = new Date();
+      const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+      const diff = Math.max(0, Math.floor((midnight - now) / 1000));
+      const h = String(Math.floor(diff / 3600)).padStart(2, '0');
+      const m = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
+      const s = String(diff % 60).padStart(2, '0');
+      const el = document.getElementById('zvTimerClock');
+      if (el) el.textContent = h + ':' + m + ':' + s;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  })();
+</script>

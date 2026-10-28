@@ -1,0 +1,283 @@
+{
+  "layout": "offer",
+  "sections": {
+    "offer": {
+      "type": "offer-cdf",
+      "blocks": {
+        "sec_gallery": {
+          "type": "sec_gallery",
+          "settings": {
+            "fallback_1": "cdf-gallery-1.jpg",
+            "fallback_2": "cdf-gallery-2.jpg",
+            "fallback_3": "cdf-gallery-3.jpg",
+            "fallback_4": "cdf-gallery-4.jpg",
+            "fallback_5": "cdf-gallery-5.jpg",
+            "fallback_6": "cdf-gallery-6.jpg",
+            "fallback_7": "cdf-gallery-7.jpg",
+            "fallback_8": "cdf-gallery-8.jpg",
+            "fallback_9": "cdf-gallery-9.jpg",
+            "fallback_10": "cdf-gallery-10.jpg"
+          }
+        },
+        "sec_hero": {
+          "type": "sec_hero",
+          "settings": {
+            "lead": "Naturally support your foot, reduce tripping risk, improve walking stability and regain confident movement without surgery or medications instantly.",
+            "risk_text": "Try it with our 30-day money-back guarantee. If you don't notice less foot dragging, better stability or safer walking, we'll refund you in full."
+          }
+        },
+        "sec_intro": {
+          "type": "sec_intro",
+          "settings": {
+            "badge": "Secure support for every step",
+            "heading": "Stop toe dragging & walk with confidence again instantly",
+            "body": "Foot drop, nerve weakness, or neurological conditions can make it difficult to lift the front of your foot while walking.\n\nThis causes your toes to drag, increases your risk of tripping, and forces you to overcompensate with your hips and knees leading to tiring, unstable steps and constant fear of falling.\n\nWearing a supportive foot drop brace helps keep your foot in a natural lifted position while you walk, improving step clearance and stability.",
+            "fallback": "cdf-intro-bg.png"
+          }
+        },
+        "sec_results": {
+          "type": "sec_results",
+          "settings": {
+            "heading": "Walk Freely Again. Real Results"
+          }
+        },
+        "sec_lift": {
+          "type": "sec_lift",
+          "settings": {
+            "heading": "From uncertain steps to supported foot lift",
+            "body": "You try to walk normally, but your foot doesn’t lift enough. Your toes catch the ground, your steps feel uneven, and every walk requires extra focus.\n\nOver time, this can make you slow down, avoid longer walks, or feel anxious about stumbling.\n\nThis brace helps hold your foot in a gently lifted position while you walk, guiding it through a safer and more natural step motion.",
+            "fallback": "cdf-iwt-1.jpg"
+          }
+        },
+        "sec_strain": {
+          "type": "sec_strain",
+          "settings": {
+            "heading": "Reduce knee, hip, and back strain linked to foot drop",
+            "body": "Over time, these altered movements can place extra stress on your knees, hips, and lower back, making walking feel more tiring and uncomfortable.\n\nBy helping keep your foot supported in a lifted position, it encourages a steadier, more natural walking motion.",
+            "fallback": "cdf-strain.jpg"
+          }
+        },
+        "sec_trusted": {
+          "type": "sec_trusted",
+          "settings": {
+            "heading": "Trusted by 45,000+ for safer walking",
+            "quote": "“I used to be terrified of tripping, constantly watching the ground to make sure my toes didn't catch. This brace is lightweight and lifts my foot instantly, so I can walk naturally without thinking about every step. I feel steady and safe again, and I’m finally walking outdoors without the fear of falling. It’s not just a brace, it gave me my independence back.”",
+            "meta": "Reviewed by Michael R. · Written on 15.01.26",
+            "fallback": "cdf-trusted-poster.jpg"
+          }
+        },
+        "sec_falls": {
+          "type": "sec_falls",
+          "settings": {
+            "heading": "Reduce the risk of falls on stairs and uneven surfaces",
+            "body": "By lifting the foot and keeping the toes elevated with every step, this brace prevents the toe dragging that often leads to trips on stairs and uneven ground.\n\nThis improves foot clearance, stability, and balance significantly reducing the risk of sudden falls.",
+            "fallback": "cdf-falls.jpg"
+          }
+        },
+        "sec_easy": {
+          "type": "sec_easy",
+          "settings": {
+            "heading": "Very easy to use",
+            "subtext": "No tools. No straps to wrestle. No help needed. The brace goes on in under a minute, and it works with any shoes you already own.",
+            "card_1_title": "Slide it on & lock it",
+            "card_1_text": "Slip your foot into the brace. The soft shell hugs your ankle and holds it at the right angle. Snap the rear lock closed and you're secure.",
+            "card_1_fallback": "cdf-easy-1.jpg",
+            "card_2_title": "Pull on your favorite shoes",
+            "card_2_text": "The slim, low-profile design hides under any regular shoe. Pull on your sneakers, boots, or walking shoes and go about your day.",
+            "card_2_fallback": "cdf-easy-2.jpg"
+          }
+        },
+        "sec_doctors": {
+          "type": "sec_doctors",
+          "settings": {
+            "heading": "Endorsed by doctors and physical therapists",
+            "body": "Medical professionals recommend this brace because it effectively restores natural foot lift, improves walking stability, and helps prevent the tripping risks and joint strain often associated with foot drop.",
+            "fallback": "cdf-doctor.jpg"
+          }
+        },
+        "sec_guarantee": {
+          "type": "sec_guarantee",
+          "settings": {
+            "eyebrow": "Better Mobility | Better Life",
+            "heading": "Free size swaps & returns up to 30 Days",
+            "text": "We’re so confident this brace will transform your mobility, we want you to prove it to yourself.\nIf you don’t feel an immediate difference in your stability and confidence within 30 days, simply send it back for a full refund.",
+            "cta_label": "Get right now",
+            "fallback": "cdf-intro-bg.png"
+          }
+        },
+        "sec_faq": {
+          "type": "sec_faq",
+          "settings": {
+            "heading": "Got questions? We've got answers.",
+            "q_1": "How does this brace help with foot drop?",
+            "a_1": "The brace attaches to your shoe and ankle to mechanically lift the front of your foot while you walk. This prevents your toes from dragging on the ground, which significantly improves clearance and reduces the risk of tripping on stairs or uneven surfaces.",
+            "q_2": "What type of shoes can I wear this with?",
+            "a_2": "This brace is designed to work with lace-up shoes, sneakers, or boots. It uses the shoe’s laces as an anchor point to lift the foot.",
+            "q_3": "Is it difficult to put on?",
+            "a_3": "Not at all. The design is simple and user-friendly, often allowing for one-handed application.",
+            "q_4": "Can I wear it all day?",
+            "a_4": "Yes. The brace is made from lightweight, breathable materials designed for extended wear.",
+            "q_5": "Will this work for severe foot drop?",
+            "a_5": "This brace is ideal for mild to moderate foot drop. For rigid deformities, consult a doctor.",
+            "q_6": "Does it come in different sizes?",
+            "a_6": "Yes. Please refer to our size chart above to choose the correct size.",
+            "q_7": "Can I wear it on either foot?",
+            "a_7": "These braces are designed specifically for the Left or Right foot.",
+            "q_8": "What if it doesn't work for me?",
+            "a_8": "We offer a standard 30-day money-back guarantee."
+          }
+        },
+        "sec_reviews": {
+          "type": "sec_reviews",
+          "settings": {
+            "heading": "Customer Reviews",
+            "score_prefix": "Overall rating",
+            "score_value": "5.0",
+            "score_count": "3,398",
+            "score_suffix": "verified reviews",
+            "item_1_name": "Alan U.",
+            "item_1_date": "",
+            "item_1_text": "Very easy to use and very comfortable. It is also very supportive.",
+            "item_1_fallback": "cdf-loox-1.jpg",
+            "item_1_verified": true,
+            "item_1_stars": 5,
+            "item_2_name": "Raymond C.",
+            "item_2_date": "",
+            "item_2_text": "👌🫶👍",
+            "item_2_fallback": "cdf-loox-2.jpg",
+            "item_2_verified": true,
+            "item_2_stars": 5,
+            "item_3_name": "Sam B.",
+            "item_3_date": "",
+            "item_3_text": "It works great. I've had $750 braces that didn't work as well as this one.",
+            "item_3_fallback": "cdf-loox-3.jpg",
+            "item_3_verified": true,
+            "item_3_stars": 5,
+            "item_4_name": "Steve R.",
+            "item_4_date": "",
+            "item_4_text": "I was truly skeptical of this afo when I first got it. But man, I love this thing. I wear it golfing, I'll wear it to work. I'll wear it to parties. Makes me forget I have a disability. I've bought 2 of them already.",
+            "item_4_fallback": "cdf-loox-4.jpg",
+            "item_4_verified": false,
+            "item_4_stars": 5,
+            "item_5_name": "Patricia M.",
+            "item_5_date": "",
+            "item_5_text": "Not gonna lie, I wish it came in more colors, but the black is discreet enough.",
+            "item_5_fallback": "cdf-loox-5.jpg",
+            "item_5_verified": true,
+            "item_5_stars": 5,
+            "item_6_name": "John S.",
+            "item_6_date": "",
+            "item_6_text": "It works well but you definitely need sturdy lace-up shoes. Tried it with some flimsy canvas shoes and it pulled too much on the tongue. With good sneakers, it's 10\/10.",
+            "item_6_fallback": "cdf-loox-6.jpg",
+            "item_6_verified": true,
+            "item_6_stars": 5,
+            "item_7_name": "Jennifer L.",
+            "item_7_date": "",
+            "item_7_text": "It takes a little getting used to at first, maybe the first two days, but once you figure out the tension, it works perfectly.",
+            "item_7_fallback": "cdf-loox-7.jpg",
+            "item_7_verified": true,
+            "item_7_stars": 5,
+            "item_8_name": "Richard A.",
+            "item_8_date": "",
+            "item_8_text": "I can walk the dog without staring at the ground the whole time. That peace of mind is worth every penny.",
+            "item_8_fallback": "cdf-loox-8.jpg",
+            "item_8_verified": true,
+            "item_8_stars": 5,
+            "item_9_name": "Elizabeth D.",
+            "item_9_date": "",
+            "item_9_text": "Game changer.",
+            "item_9_fallback": "cdf-loox-9.jpg",
+            "item_9_verified": true,
+            "item_9_stars": 5,
+            "item_10_name": "Linda K.",
+            "item_10_date": "",
+            "item_10_text": "Shipping was fast, package looked good. The brace itself is well made.",
+            "item_10_fallback": "cdf-loox-10.jpg",
+            "item_10_verified": true,
+            "item_10_stars": 5,
+            "item_11_name": "Robert P.",
+            "item_11_date": "",
+            "item_11_text": "Finally I can wear my normal sneakers again! The hard braces require you to buy shoes two sizes too big, but this fits right into my Hokas.",
+            "item_11_fallback": "cdf-loox-11.jpg",
+            "item_11_verified": true,
+            "item_11_stars": 5,
+            "item_12_name": "Sarah J.",
+            "item_12_date": "",
+            "item_12_text": "This brace has honestly changed my daily walks. I used to catch my toe on the sidewalk cracks constantly, but now I feel so much safer.",
+            "item_12_fallback": "cdf-loox-12.jpg",
+            "item_12_verified": true,
+            "item_12_stars": 5
+          }
+        },
+        "sec_trust": {
+          "type": "sec_trust",
+          "settings": {
+            "icon_1_glyph": "🚚",
+            "icon_1_title": "Free Ship on Buy 2",
+            "icon_1_text": "$4.95 shipping on Buy 1",
+            "icon_2_glyph": "↺",
+            "icon_2_title": "30 Days Guarantee",
+            "icon_2_text": "Didn't like it? return it",
+            "icon_3_glyph": "🔒",
+            "icon_3_title": "Secure Payment",
+            "icon_3_text": "Secure and trusted credit card provider",
+            "icon_4_glyph": "♥",
+            "icon_4_title": "Happy Customers",
+            "icon_4_text": "Thousands of happy customers worldwide"
+          }
+        },
+        "sec_footer": {
+          "type": "sec_footer",
+          "settings": {
+            "rights": "All Rights Reserved.",
+            "privacy_label": "Privacy Policy",
+            "terms_label": "Terms of Service",
+            "email": "support@zavelyn.com",
+            "sticky_copy": "Zavelyn Foot Drop AFO Brace — 50% OFF",
+            "sticky_cta": "Add to cart"
+          }
+        }
+      },
+      "block_order": [
+        "sec_gallery",
+        "sec_hero",
+        "sec_intro",
+        "sec_results",
+        "sec_lift",
+        "sec_strain",
+        "sec_trusted",
+        "sec_falls",
+        "sec_easy",
+        "sec_doctors",
+        "sec_guarantee",
+        "sec_faq",
+        "sec_reviews",
+        "sec_trust",
+        "sec_footer"
+      ],
+      "settings": {
+        "product": "cdf",
+        "brand_name": "Zavelyn",
+        "ticker_text": "RECOVERY SALE STARTS NOW.",
+        "ticker_highlight": "BUY 2 · EXTRA 10% OFF!",
+        "reviews_count_label": "4.9 | 3,269 reviews",
+        "cta_label": "Add to cart",
+        "packages_reversed": true,
+        "bundles_label": "Choose your package",
+        "bundle_1_title": "Buy 1",
+        "bundle_1_meta": "1 brace",
+        "bundle_1_badge": "$4.95 ship",
+        "bundle_1_qty": 1,
+        "bundle_2_title": "Buy 2",
+        "bundle_2_meta": "Choose Left & Right · Extra 10% OFF",
+        "bundle_2_badge": "Free ship",
+        "bundle_2_qty": 2,
+        "bundle_2_discount": 10,
+        "bundle_2_discount_code": "CDF10"
+      }
+    }
+  },
+  "order": [
+    "offer"
+  ]
+}

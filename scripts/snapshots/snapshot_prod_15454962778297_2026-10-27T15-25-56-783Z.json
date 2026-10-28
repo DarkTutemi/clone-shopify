@@ -1,0 +1,26 @@
+{
+  "id": "gid://shopify/Product/15454962778297",
+  "title": "Zavelyn 5-in-1 Magnetic Charging Station",
+  "handle": "sakerplus®-5-in-1-magnetic-wireless-charging-station",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914653565113",
+        "title": "Beige",
+        "price": "95.99",
+        "sku": "HA131694-C010"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914653597881",
+        "title": "Black",
+        "price": "95.99",
+        "sku": "HA131694-C006"
+      }
+    ]
+  }
+}

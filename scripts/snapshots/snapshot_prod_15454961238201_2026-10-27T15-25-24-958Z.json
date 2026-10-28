@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/15454961238201",
+  "title": "Zavelyn Kids Metal Detector",
+  "handle": "sakerplus®-kids-metal-detector-with-lcd-display",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914620141753",
+        "title": "Orange",
+        "price": "69.99",
+        "sku": "HB132178-C012"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914620174521",
+        "title": "Green",
+        "price": "69.99",
+        "sku": "HB132178-C1144"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914620207289",
+        "title": "Red",
+        "price": "69.99",
+        "sku": "HB132178-C002"
+      }
+    ]
+  }
+}

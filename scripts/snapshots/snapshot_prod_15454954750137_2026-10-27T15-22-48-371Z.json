@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454954750137",
+  "title": "Zavelyn Smart Hygrometer Clock",
+  "handle": "sakerplus®-smart-thermometer-hygrometer-clock",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914502176953",
+        "title": "Default Title",
+        "price": "50.99",
+        "sku": "HB121850-E001"
+      }
+    ]
+  }
+}

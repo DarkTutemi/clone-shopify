@@ -1,0 +1,109 @@
+{
+  "wrapper": "div#shopify-section-zavelyn-drum-plus",
+  "sections": {
+    "banner": {
+      "type": "zhp-pdp-banner",
+      "settings": {
+        "banner_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PDWHITEBG_LIFESTYLE.webp?v=1716736589",
+        "heading": "Tuned to 432 Hz: The Frequency of Natural Healing"
+      }
+    },
+    "experience": {
+      "type": "zhp-pdp-experience",
+      "settings": {
+        "feature_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PDwhit_lfstl.webp?v=1716736589",
+        "title": "Zero Musical Training Required"
+      }
+    },
+    "included": {
+      "type": "zhp-pdp-included",
+      "settings": {
+        "included_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/plusinside.webp?v=1751703631",
+        "title": "Everything You Need to Begin Immediately"
+      }
+    },
+    "specs": {
+      "type": "zhp-pdp-specs",
+      "settings": {
+        "title": "Technical Specifications",
+        "spec_diameter": "10 Inches (25.4 cm) Medium Plus",
+        "spec_material": "Tempered Carbon-Titanium Surgical Alloy Steel",
+        "spec_tuning": "D-Major Harmonic Scale (11 Notes)",
+        "spec_frequency": "432 Hz Natural Biological Resonance",
+        "spec_tones": "11 Acoustic Tongues",
+        "spec_weight": "3.3 lbs (1.5 kg) Balanced Resonance",
+        "spec_finish": "Baked Electrostatic Pearlescent Protective Coating"
+      }
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {}
+    },
+    "faq": {
+      "type": "zhp-pdp-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I need any prior musical experience to play?",
+            "answer": "None whatsoever! Zavelyn Drums are designed to be completely intuitive. Because every note is tuned to natural harmonic scales, there are zero discordant or 'bad' notes. You can play purely by intuition, or follow the numbered songbook."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What does 432 Hz tuning mean?",
+            "answer": "Standard modern music is tuned to 440 Hz, which can sound tense. 432 Hz is the natural harmonic frequency historically used by classical masters. Scientific studies indicate 432 Hz produces calmer emotional responses, lower heart rates, and enhanced meditation states."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Should I play with the mallets or my hands?",
+            "answer": "Both! The included weighted bamboo mallets produce a bright, loud, crystal-clear bell resonance with minimum effort. Playing with your hands or the silicone finger picks creates a softer, warmer, and more intimate tone ideal for quiet meditation."
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Will the drum ever go out of tune?",
+            "answer": "No. The acoustic tongues are laser-cut from high-grade tempered alloy steel and heat-treated. Unless subjected to severe physical deformation, the instrument will maintain its pitch calibration for decades."
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for a 100% full refund with no questions asked."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "settings": {}
+    },
+    "main": {
+      "type": "zavelyn-pdp-main",
+      "settings": {
+        "eyebrow_text": "ZAVELYN INNOVATIONS · MEDITATION & SOUND THERAPY",
+        "urgency_text": "High US Demand · Limited Handcrafted Batches Remaining",
+        "cta_text": "CLAIM OFFER",
+        "enable_sticky_atc": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "banner",
+    "experience",
+    "included",
+    "specs",
+    "shipping",
+    "faq"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "gid://shopify/Product/15454950850745",
+  "title": "Zavelyn Bathroom Exhaust Fan",
+  "handle": "sakerplus®-bathroom-exhaust-fan-with-led-light",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914412097721",
+        "title": "Panel Size 10 in (3-Color LED)",
+        "price": "79.99",
+        "sku": "HA132486-X88398"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914412130489",
+        "title": "Panel Size 12 in (3-Color LED)",
+        "price": "89.99",
+        "sku": "HA132486-X88402"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914412163257",
+        "title": "Panel Size 10 in (Single Color LED)",
+        "price": "79.99",
+        "sku": "HA132486-X87948"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914412196025",
+        "title": "Panel Size 12 in (Single Color LED)",
+        "price": "89.99",
+        "sku": "HA132486-X87949"
+      }
+    ]
+  }
+}

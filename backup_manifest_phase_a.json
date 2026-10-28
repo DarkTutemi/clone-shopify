@@ -1,0 +1,192 @@
+{
+  "timestamp": "2026-10-27T06:12:51.134Z",
+  "themeId": "187597717689",
+  "shop": "dsdujr-vn.myshopify.com",
+  "assets": {
+    "templates/product.json": {
+      "size": 1480,
+      "sha256": "c1577ce7a3527febe789d87ed9096377d465406cd79843a4d7b2a6b3a370086a",
+      "savedTo": "templates__product.json"
+    },
+    "templates/product.srefalsteam.json": {
+      "size": 178,
+      "sha256": "e1bf4873143b2e87e576a3ae0ac5480762a06394ebe16f613a9afff99c7769eb",
+      "savedTo": "templates__product.srefalsteam.json"
+    },
+    "templates/product.thoson-magtrack.json": {
+      "size": 186,
+      "sha256": "9c5c00a681ddde28192bec81db4fa7e91974d45c598b0200c8944aba42b3d1e2",
+      "savedTo": "templates__product.thoson-magtrack.json"
+    },
+    "templates/product.yeoman-sweep.json": {
+      "size": 180,
+      "sha256": "8cf3923307d3fbcb2fb1debb4044948130cce86656d8b21b62886189c6035dec",
+      "savedTo": "templates__product.yeoman-sweep.json"
+    },
+    "templates/product.sakerplus-livestock-heating-lamp.json": {
+      "size": 16598,
+      "sha256": "c439c8aed2ec157a9b8dc8ff11cbd72878879efd12a7e742e6db01aff1b1556f",
+      "savedTo": "templates__product.sakerplus-livestock-heating-lamp.json"
+    },
+    "templates/product.zavelyn-drum-pro.json": {
+      "size": 11616,
+      "sha256": "662bf1152ca5943d5572b3f73e4f81f39d5f8406bad24205498de838bfa15e24",
+      "savedTo": "templates__product.zavelyn-drum-pro.json"
+    },
+    "templates/product.zavelyn-drum-plus.json": {
+      "size": 10421,
+      "sha256": "4995e8db03eaa9e8f4a8618d20ffb4419de0fd788112f1f8aec4a4d547431eb1",
+      "savedTo": "templates__product.zavelyn-drum-plus.json"
+    },
+    "templates/product.zavelyn-drum-mini.json": {
+      "size": 10473,
+      "sha256": "e3b5ebae7089c2189824dce2da2084be3b463c642c9d593118f1b0753b757b62",
+      "savedTo": "templates__product.zavelyn-drum-mini.json"
+    },
+    "templates/product.zavelyn-handpan-master.json": {
+      "size": 11124,
+      "sha256": "aa244166f7d590b378262745fed8be1b14404237798d971619ba649e7cc4a333",
+      "savedTo": "templates__product.zavelyn-handpan-master.json"
+    },
+    "templates/product.zavelyn-rain-drum.json": {
+      "size": 10149,
+      "sha256": "3bf1489aaafa25fdcd4a51a65775768cf142a76771c2eb0b50775e6629de4766",
+      "savedTo": "templates__product.zavelyn-rain-drum.json"
+    },
+    "templates/product.zavelyn-foot-sleeves.json": {
+      "size": 25864,
+      "sha256": "16d771f9ba77ff476c635ee4326c5875b90c4812a11eaadd77bff62c02259e17",
+      "savedTo": "templates__product.zavelyn-foot-sleeves.json"
+    },
+    "templates/product.device.json": {
+      "size": 10787,
+      "sha256": "143837f765849d7ae486fdb7739449d8229992552b139f4a1e5ddd45efd578c5",
+      "savedTo": "templates__product.device.json"
+    },
+    "templates/product.cdf.json": {
+      "size": 14179,
+      "sha256": "2fd474d64eeb8652ad3832c04bb56ea96e53e77d8fcd273ad9a92a31ec1fbf0d",
+      "savedTo": "templates__product.cdf.json"
+    },
+    "templates/product.zavelyn.json": {
+      "size": 17417,
+      "sha256": "10b89e0b6d5ca23e35d6224d67759552c1be242693fabb159348f6123afab058",
+      "savedTo": "templates__product.zavelyn.json"
+    },
+    "templates/product.balm.json": {
+      "size": 1877,
+      "sha256": "9b7695820f1ce566d1306f6cd37cfa363de404e5a7c76bf3a62460fcbf073d4c",
+      "savedTo": "templates__product.balm.json"
+    },
+    "templates/product.regrip.json": {
+      "size": 1682,
+      "sha256": "47ab999aa3ed28dac60cadb23a8cea848ee866fe59bd40fecc4e65d70188425a",
+      "savedTo": "templates__product.regrip.json"
+    },
+    "templates/product.willa.json": {
+      "size": 130,
+      "sha256": "2631fbcbe5d21334586e598689970f2b908ba3efe591c8935428ea544da06520",
+      "savedTo": "templates__product.willa.json"
+    },
+    "sections/srefalsteam-funnel.liquid": {
+      "size": 58429,
+      "sha256": "3b10c1701b5037489c91c1b2530cdb4ae4853ff62e793fc18a3783afc4d16233",
+      "savedTo": "sections__srefalsteam-funnel.liquid"
+    },
+    "sections/thoson-magtrack-funnel.liquid": {
+      "size": 90321,
+      "sha256": "be6a084a6bc4acb647a2f0025925860d6f6570a51628945c3dd6800e9f376a08",
+      "savedTo": "sections__thoson-magtrack-funnel.liquid"
+    },
+    "sections/yeoman-sweep-funnel.liquid": {
+      "size": 53838,
+      "sha256": "7ed4900f416344a00152964c3a94039ab7dadc8dee6ec90a801604116d06ac23",
+      "savedTo": "sections__yeoman-sweep-funnel.liquid"
+    },
+    "sections/heating-lamp-funnel.liquid": {
+      "size": 99757,
+      "sha256": "37dd5c19ddd0e3280bc9b56b678d661c4526ae1c9548c04022784c4468f1e02b",
+      "savedTo": "sections__heating-lamp-funnel.liquid"
+    },
+    "sections/zhp-pdp-hero.liquid": {
+      "size": 24006,
+      "sha256": "e6d77c8b3c9bcb8798d610c05ac4809eddd36e33ba7c0f66add0ef7fe5cfdf69",
+      "savedTo": "sections__zhp-pdp-hero.liquid"
+    },
+    "sections/zhp-pdp-banner.liquid": {
+      "size": 2870,
+      "sha256": "085bf4b03fe03b0b289834a505c56b3040d426f38ce555b030f4b28eb4be19be",
+      "savedTo": "sections__zhp-pdp-banner.liquid"
+    },
+    "sections/zhp-pdp-experience.liquid": {
+      "size": 2580,
+      "sha256": "daef3cd339bc7976cc43c4267a70edce83bbe5379ea20d0e9bda2da7ee93b121",
+      "savedTo": "sections__zhp-pdp-experience.liquid"
+    },
+    "sections/zhp-pdp-included.liquid": {
+      "size": 2269,
+      "sha256": "4a949ad31f4c8ae380ad413948a466ddc868f068f6bedf965891f2ee37d62eac",
+      "savedTo": "sections__zhp-pdp-included.liquid"
+    },
+    "sections/zhp-pdp-specs.liquid": {
+      "size": 2875,
+      "sha256": "8abd55e9a597af7b16f570c55ef173291ba846f500f26e2706dedc90103764be",
+      "savedTo": "sections__zhp-pdp-specs.liquid"
+    },
+    "sections/zhp-pdp-reviews.liquid": {
+      "size": 2517,
+      "sha256": "c7a1b028130940c8c67f1cb8884867e25e757e0a3beae60513fa81b8956d33af",
+      "savedTo": "sections__zhp-pdp-reviews.liquid"
+    },
+    "sections/zhp-pdp-faq.liquid": {
+      "size": 1685,
+      "sha256": "16ab7123fc8e90e57a32525347880f426d8870402bd786275a8d57e22dc57979",
+      "savedTo": "sections__zhp-pdp-faq.liquid"
+    },
+    "sections/zhp-pdp-sticky-bar.liquid": {
+      "size": 1901,
+      "sha256": "b0bb7ad43c0a7f2d3dd851375745f9764fca46a562274b0241479e45d09c816c",
+      "savedTo": "sections__zhp-pdp-sticky-bar.liquid"
+    },
+    "sections/offer-balm.liquid": {
+      "size": 119446,
+      "sha256": "f6a609a49d153f349477bb203bc513ddd01124fcb907f767e23c08622e7420a8",
+      "savedTo": "sections__offer-balm.liquid"
+    },
+    "sections/offer-cdf.liquid": {
+      "size": 126365,
+      "sha256": "bb6ef0106486af0e8e13c3fc35bd96b419f95f077cb2b76fbc8dffdc8294345c",
+      "savedTo": "sections__offer-cdf.liquid"
+    },
+    "sections/offer-device.liquid": {
+      "size": 124063,
+      "sha256": "dbec1bcf31c9e2e1c4762328a99068241736e476867e6e5ee6c212d5ccd80e22",
+      "savedTo": "sections__offer-device.liquid"
+    },
+    "sections/offer-zavelyn.liquid": {
+      "size": 158397,
+      "sha256": "56ffaea2d51c08b3c08635ec7fb1b1b9d52297567454a1e3a56bcc434a1fc621",
+      "savedTo": "sections__offer-zavelyn.liquid"
+    },
+    "sections/offer-landing.liquid": {
+      "size": 169924,
+      "sha256": "5b5f89072e29c379509a9f2caa459d859604ee8c6630c0be6c690061b3ffd03e",
+      "savedTo": "sections__offer-landing.liquid"
+    },
+    "sections/zavelyn-pdp-main.liquid": {
+      "size": 48907,
+      "sha256": "f9c57f231b199415578072b0b50f900fe99757df8682df8fa75f83aad4559f5c",
+      "savedTo": "sections__zavelyn-pdp-main.liquid"
+    },
+    "sections/zavelyn-pdp-shipping.liquid": {
+      "size": 7884,
+      "sha256": "234f3e0a45387d9b61c39f0d4ecdae9fb78ce98ec3b98c09abaffb2dd498fb42",
+      "savedTo": "sections__zavelyn-pdp-shipping.liquid"
+    },
+    "snippets/zavelyn-pdp-data.liquid": {
+      "size": 34767,
+      "sha256": "50fa9622373d093bebef785ee1f2319473ed4e8c87b1aa188f6fecc1eee6d90d",
+      "savedTo": "snippets__zavelyn-pdp-data.liquid"
+    }
+  }
+}

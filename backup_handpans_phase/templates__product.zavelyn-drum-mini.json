@@ -1,0 +1,221 @@
+{
+  "wrapper": "div#shopify-section-zavelyn-drum-mini",
+  "sections": {
+    "banner": {
+      "type": "zhp-pdp-banner",
+      "settings": {
+        "banner_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/products\/8-tone_6-inch_steel_tongue_panda_drum_help_by_a_little_girl.jpg?v=1716782465",
+        "heading": "Tuned to 432 Hz: The Frequency of Natural Healing"
+      }
+    },
+    "experience": {
+      "type": "zhp-pdp-experience",
+      "settings": {
+        "feature_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/products\/panda-drum-6-inch-steel-tongue-drum.jpg?v=1716782465",
+        "title": "Zero Musical Training Required"
+      }
+    },
+    "included": {
+      "type": "zhp-pdp-included",
+      "settings": {
+        "included_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/products\/1Box_Drum_8_new.jpg?v=1716782465",
+        "title": "Everything You Need to Begin Immediately"
+      }
+    },
+    "specs": {
+      "type": "zhp-pdp-specs",
+      "settings": {
+        "title": "Technical Specifications",
+        "spec_diameter": "6 Inches (15.2 cm) Pocket Mini",
+        "spec_material": "Tempered Carbon-Titanium Surgical Alloy Steel",
+        "spec_tuning": "Pentatonic C-Major Scale (8 Notes)",
+        "spec_frequency": "432 Hz Natural Biological Resonance",
+        "spec_tones": "8 Acoustic Tongues",
+        "spec_weight": "1.3 lbs (0.6 kg) Ultra Portable",
+        "spec_finish": "Baked Electrostatic Pearlescent Protective Coating"
+      }
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "zhp-pdp-reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review",
+          "settings": {
+            "author": "Kimberly Green",
+            "title": "My 3-year-old son loves this so much",
+            "text": "He used to throw tantrums before naptime. Now he sits with his mini drum and taps softly until he is calm. It is indestructible and sounds so peaceful.",
+            "meta": "Zavelyn Drum™ Mini (Blue) • Atlanta, GA"
+          }
+        },
+        "rev_2": {
+          "type": "review",
+          "settings": {
+            "author": "Daniel Howard",
+            "title": "Pocket sound bowl for hiking and backpacking",
+            "text": "Weighs barely a pound. Fits in my daypack side pocket. Sitting at mountain summits playing acoustic notes into the valley is pure magic.",
+            "meta": "Zavelyn Drum™ Mini (Black) • Salt Lake City, UT"
+          }
+        },
+        "rev_3": {
+          "type": "review",
+          "settings": {
+            "author": "Stephanie Lopez",
+            "title": "Impossible to play a bad note",
+            "text": "The pentatonic tuning means every note blends harmoniously. You cannot make a mistake. It is genuinely fun and soothing for anyone.",
+            "meta": "Zavelyn Drum™ Mini (Pink) • Tampa, FL"
+          }
+        },
+        "rev_4": {
+          "type": "review",
+          "settings": {
+            "author": "Jonathan Wood",
+            "title": "Surprising volume and resonance for 6 inches",
+            "text": "Expected it to sound like a toy, but it rings with genuine bell clarity and sustain. The mini rubber mallets work wonders.",
+            "meta": "Zavelyn Drum™ Mini (White) • Nashville, TN"
+          }
+        },
+        "rev_5": {
+          "type": "review",
+          "settings": {
+            "author": "Rachel Morris",
+            "title": "Great screen-free gift for grandchildren",
+            "text": "Gave one to each of my granddaughters. They spent hours playing songs together instead of staring at iPads. A grandparent win!",
+            "meta": "2x Zavelyn Drum™ Mini Explorer Pack • Chicago, IL"
+          }
+        },
+        "rev_6": {
+          "type": "review",
+          "settings": {
+            "author": "Ethan Turner",
+            "title": "Lovely desk accessory for stress relief",
+            "text": "I keep it right under my computer monitor. During long Zoom calls or stressful emails, a soft tap restores immediate tranquility.",
+            "meta": "Zavelyn Drum™ Mini (Sandstone) • Austin, TX"
+          }
+        },
+        "rev_7": {
+          "type": "review",
+          "settings": {
+            "author": "Megan Brooks",
+            "title": "Cute, durable and beautifully tuned",
+            "text": "The red paint is thick and flawless. Has survived multiple drops onto carpet without a scratch or going out of tune.",
+            "meta": "Zavelyn Drum™ Mini (Red) • Denver, CO"
+          }
+        },
+        "rev_8": {
+          "type": "review",
+          "settings": {
+            "author": "Anthony Lee",
+            "title": "Perfect introductory instrument",
+            "text": "Builds hand-eye coordination and auditory sensitivity in young kids. Numbered booklet is very well laid out.",
+            "meta": "Zavelyn Drum™ Mini (White) • Seattle, WA"
+          }
+        },
+        "rev_9": {
+          "type": "review",
+          "settings": {
+            "author": "Heather Cox",
+            "title": "Sweet and gentle lullabies",
+            "text": "I play Twinkle Twinkle Little Star on this every evening in our baby nursery. Instantly settles our newborn.",
+            "meta": "Zavelyn Drum™ Mini (Pink Tan) • Charlotte, NC"
+          }
+        },
+        "rev_10": {
+          "type": "review",
+          "settings": {
+            "author": "William Bailey",
+            "title": "Exceeded all expectations",
+            "text": "Compact, affordable, beautifully packaged, and sounds genuinely healing. Couldn’t be happier with this purchase.",
+            "meta": "Zavelyn Drum™ Mini (Blue) • Portland, OR"
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3",
+        "rev_4",
+        "rev_5",
+        "rev_6",
+        "rev_7",
+        "rev_8",
+        "rev_9",
+        "rev_10"
+      ],
+      "settings": {
+        "title": "Loved By Thousands of Sound Seekers",
+        "rating_summary": "950+ Verified Practitioner Reviews"
+      }
+    },
+    "faq": {
+      "type": "zhp-pdp-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I need any prior musical experience to play?",
+            "answer": "None whatsoever! Zavelyn Drums are designed to be completely intuitive. Because every note is tuned to natural harmonic scales, there are zero discordant or 'bad' notes. You can play purely by intuition, or follow the numbered songbook."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What does 432 Hz tuning mean?",
+            "answer": "Standard modern music is tuned to 440 Hz, which can sound tense. 432 Hz is the natural harmonic frequency historically used by classical masters. Scientific studies indicate 432 Hz produces calmer emotional responses, lower heart rates, and enhanced meditation states."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Should I play with the mallets or my hands?",
+            "answer": "Both! The included weighted bamboo mallets produce a bright, loud, crystal-clear bell resonance with minimum effort. Playing with your hands or the silicone finger picks creates a softer, warmer, and more intimate tone ideal for quiet meditation."
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Will the drum ever go out of tune?",
+            "answer": "No. The acoustic tongues are laser-cut from high-grade tempered alloy steel and heat-treated. Unless subjected to severe physical deformation, the instrument will maintain its pitch calibration for decades."
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for a 100% full refund with no questions asked."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "settings": {}
+    },
+    "main": {
+      "type": "zavelyn-pdp-main",
+      "settings": {
+        "eyebrow_text": "ZAVELYN INNOVATIONS · MEDITATION & SOUND THERAPY",
+        "urgency_text": "High US Demand · Limited Handcrafted Batches Remaining",
+        "cta_text": "CLAIM OFFER",
+        "enable_sticky_atc": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "banner",
+    "experience",
+    "included",
+    "specs",
+    "shipping",
+    "reviews",
+    "faq"
+  ]
+}

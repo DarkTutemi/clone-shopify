@@ -1,0 +1,185 @@
+{%- liquid
+  if group != blank
+    assign b = group.settings
+  endif
+-%}
+{%- unless b.show == false -%}
+<section
+  class="senzio-plantar-reviews" id="reviews"
+  data-ser-reviews
+  aria-labelledby="ser-reviews-title"
+  {% if group %}{{ group.shopify_attributes }}{% endif %}
+>
+  <div class="ser-shell">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="ser-header">
+
+      <div class="ser-verified-label">
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+          ></circle>
+
+          <path
+            d="m7.5 12.1 2.8 2.8 6.2-6.3"
+          ></path>
+        </svg>
+
+        <span>{{ b.kicker | default: 'Verified Customer Reviews' }}</span>
+      </div>
+
+      <h2 id="ser-reviews-title">
+        {{ b.title | default: 'Trusted by 16,000+ Customers' }}
+      </h2>
+
+      <p class="ser-header-description">
+        {{ b.description | default: 'Real customer experiences with heel pain, arch soreness, first-step stiffness, foot tension, and difficult walking.' }}
+      </p>
+
+      <div
+        class="ser-rating-summary"
+        aria-label="Rated 4.8 out of 5 from more than 16,000 verified customer reviews"
+      >
+        <span
+          class="ser-summary-stars"
+          aria-hidden="true"
+        >
+          <i>★</i>
+          <i>★</i>
+          <i>★</i>
+          <i>★</i>
+          <i>★</i>
+        </span>
+
+        <strong>{{ b.score | default: '4.8 / 5.0' }}</strong>
+
+        <span
+          class="ser-rating-divider"
+          aria-hidden="true"
+        ></span>
+
+        <span>{{ b.count_label | default: '16,000+ verified reviews' }}</span>
+      </div>
+
+    </header>
+
+    <!-- =====================================================
+         CAROUSEL
+    ====================================================== -->
+
+    <div
+      class="ser-carousel"
+      data-ser-carousel
+    >
+
+      <!-- PREVIOUS -->
+
+      <button
+        class="ser-arrow ser-arrow--previous"
+        type="button"
+        aria-label="View previous customer reviews"
+        data-ser-previous
+      >
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="m15 5-7 7 7 7"></path>
+        </svg>
+      </button>
+
+      <!-- REVIEW TRACK -->
+
+      <div
+        class="ser-track"
+        data-ser-track
+        role="region"
+        tabindex="0"
+        aria-label="Customer reviews specifically about plantar fasciitis, heel pain, arch soreness, foot stiffness, and easier walking"
+      ></div>
+
+      <!-- NEXT -->
+
+      <button
+        class="ser-arrow ser-arrow--next"
+        type="button"
+        aria-label="View next customer reviews"
+        data-ser-next
+      >
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="m9 5 7 7-7 7"></path>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- PAGINATION -->
+
+    <div
+      class="ser-pagination"
+      data-ser-pagination
+      aria-label="Customer review navigation"
+    ></div>
+
+  </div>
+</section>
+{%- endunless -%}
+
+{%- if group != blank -%}
+<script>
+  window.MB_REVIEW_DATA = [
+    {%- for i in (1..16) -%}
+      {%- liquid
+        assign nk = 'name_' | append: i
+        assign dk = 'date_' | append: i
+        assign sk = 'stars_' | append: i
+        assign tk = 'title_' | append: i
+        assign xk = 'text_' | append: i
+        assign ik = 'image_' | append: i
+      -%}
+      {
+        "name": {{ b[nk] | json }},
+        "date": {{ b[dk] | json }},
+        "stars": {{ b[sk] | json }},
+        "title": {{ b[tk] | json }},
+        "text": {{ b[xk] | json }},
+        "image": {% if b[ik] != blank %}{{ b[ik] | image_url: width: 240 | json }}{% else %}""{% endif %}
+      }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ];
+</script>
+{%- endif -%}
+<script>
+  window.MB_REVIEW_ASSETS = {
+    "images_9.jpg": {{ 'mb-rv-01.jpg' | asset_url | json }},
+    "images_4.jpg": {{ 'mb-rv-02.jpg' | asset_url | json }},
+    "images_10.jpg": {{ 'mb-rv-03.jpg' | asset_url | json }},
+    "images_8.jpg": {{ 'mb-rv-04.jpg' | asset_url | json }},
+    "images_1.jpg": {{ 'mb-rv-05.jpg' | asset_url | json }},
+    "images_7.jpg": {{ 'mb-rv-06.jpg' | asset_url | json }},
+    "images_2.jpg": {{ 'mb-rv-07.jpg' | asset_url | json }},
+    "images_6.jpg": {{ 'mb-rv-08.jpg' | asset_url | json }},
+    "images_14.jpg": {{ 'mb-rv-09.jpg' | asset_url | json }},
+    "images_17.jpg": {{ 'mb-rv-10.jpg' | asset_url | json }},
+    "images_11.jpg": {{ 'mb-rv-11.jpg' | asset_url | json }},
+    "images_16.jpg": {{ 'mb-rv-12.jpg' | asset_url | json }},
+    "images_13.jpg": {{ 'mb-rv-13.jpg' | asset_url | json }},
+    "images_12.jpg": {{ 'mb-rv-14.jpg' | asset_url | json }},
+    "images_15.jpg": {{ 'mb-rv-15.jpg' | asset_url | json }},
+    "images_3.jpg": {{ 'mb-rv-16.jpg' | asset_url | json }}
+  };
+</script>
+{{ 'zavelyn-balm-reviews.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'zavelyn-balm-reviews.js' | asset_url }}" defer></script>

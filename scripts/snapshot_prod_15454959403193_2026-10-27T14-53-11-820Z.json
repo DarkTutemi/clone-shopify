@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454959403193",
+  "title": "Zavelyn Downspout Catch Basin",
+  "handle": "sakerplus®-low-profile-downspout-catch-basin",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914587603129",
+        "title": "Default Title",
+        "price": "69.99",
+        "sku": "HB132291-E037"
+      }
+    ]
+  }
+}

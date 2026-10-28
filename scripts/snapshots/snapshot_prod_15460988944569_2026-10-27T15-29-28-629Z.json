@@ -1,0 +1,50 @@
+{
+  "id": "gid://shopify/Product/15460988944569",
+  "title": "Zavelyn Automatic Dough Mixer",
+  "handle": "zavelyn-automatic-dough-mixer-with-ferment-function",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67975848067257",
+        "title": "Buy 1 (Single Kitchen Master - Save 50%) / Classic Red",
+        "price": "169.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975848100025",
+        "title": "Buy 1 (Single Kitchen Master - Save 50%) / Modern White",
+        "price": "169.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975848132793",
+        "title": "Buy 2 (Double Baker Set - Save 55%) / Classic Red",
+        "price": "299.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975848165561",
+        "title": "Buy 2 (Double Baker Set - Save 55%) / Modern White",
+        "price": "299.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975848231097",
+        "title": "Buy 3 (The Ultimate Bakery Bundle - Save 60%) / Classic Red",
+        "price": "399.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975848263865",
+        "title": "Buy 3 (The Ultimate Bakery Bundle - Save 60%) / Modern White",
+        "price": "399.99",
+        "sku": null
+      }
+    ]
+  }
+}

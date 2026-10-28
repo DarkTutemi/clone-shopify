@@ -1,0 +1,68 @@
+{
+  "id": "gid://shopify/Product/15461521064121",
+  "title": "Zavelyn GravityGlider",
+  "handle": "zavelyn-gravityglider-indestructible-stunt-rc-jet",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67980435554489",
+        "title": "Buy 1 (Single Jet Fighter - Ready to Fly Kit) / Cosmic Blue (with 2.4GHz Controller)",
+        "price": "49.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980435587257",
+        "title": "Buy 1 (Single Jet Fighter - Ready to Fly Kit) / Candy Red (with 2.4GHz Controller)",
+        "price": "49.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980435620025",
+        "title": "Buy 1 (Single Jet Fighter - Ready to Fly Kit) / Lemon Yellow (with 2.4GHz Controller)",
+        "price": "49.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980435652793",
+        "title": "Buy 2 (Dogfight Duo Set - Save 45% + Extra Propellers) / Cosmic Blue (with 2.4GHz Controller)",
+        "price": "79.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980435685561",
+        "title": "Buy 2 (Dogfight Duo Set - Save 45% + Extra Propellers) / Candy Red (with 2.4GHz Controller)",
+        "price": "79.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980435718329",
+        "title": "Buy 2 (Dogfight Duo Set - Save 45% + Extra Propellers) / Lemon Yellow (with 2.4GHz Controller)",
+        "price": "79.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980435751097",
+        "title": "Buy 3 (Squadron Air Wing - Buy 2 Get 1 FREE) / Cosmic Blue (with 2.4GHz Controller)",
+        "price": "99.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980435783865",
+        "title": "Buy 3 (Squadron Air Wing - Buy 2 Get 1 FREE) / Candy Red (with 2.4GHz Controller)",
+        "price": "99.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980435816633",
+        "title": "Buy 3 (Squadron Air Wing - Buy 2 Get 1 FREE) / Lemon Yellow (with 2.4GHz Controller)",
+        "price": "99.99",
+        "sku": null
+      }
+    ]
+  }
+}

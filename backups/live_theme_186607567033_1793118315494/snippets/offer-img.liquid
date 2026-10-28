@@ -1,0 +1,37 @@
+{%- comment -%}
+  image_picker with theme-asset fallback.
+  Params: image, fallback, alt, class, width, height, loading, fetchpriority
+{%- endcomment -%}
+{%- liquid
+  assign alt_text = alt | default: ''
+  assign loading_attr = loading | default: 'lazy'
+  assign img_width = width | default: 1200
+-%}
+{%- if image != blank -%}
+  {%- if image.src contains '.gif' -%}
+    <img
+      src="{{ image.src }}"
+      {% if class != blank %}class="{{ class }}"{% endif %}
+      alt="{{ alt_text | escape }}"
+      width="{{ img_width }}"
+      height="{{ height | default: img_width }}"
+      loading="{{ loading_attr }}"
+      decoding="async"
+    >
+  {%- elsif class != blank -%}
+    {{ image | image_url: width: img_width | image_tag: class: class, alt: alt_text, loading: loading_attr, widths: '240,480,720,960,1200', sizes: sizes, width: img_width, height: height }}
+  {%- else -%}
+    {{ image | image_url: width: img_width | image_tag: alt: alt_text, loading: loading_attr, widths: '240,480,720,960,1200', sizes: sizes, width: img_width, height: height }}
+  {%- endif -%}
+{%- elsif fallback != blank -%}
+  <img
+    src="{{ fallback | asset_url }}"
+    {% if class != blank %}class="{{ class }}"{% endif %}
+    alt="{{ alt_text | escape }}"
+    {% if img_width != blank %}width="{{ img_width }}"{% endif %}
+    {% if height != blank %}height="{{ height }}"{% endif %}
+    loading="{{ loading_attr }}"
+    decoding="async"
+    {% if fetchpriority != blank %}fetchpriority="{{ fetchpriority }}"{% endif %}
+  >
+{%- endif -%}

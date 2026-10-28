@@ -1,0 +1,39 @@
+{
+  "productId": "15454955765945",
+  "name": "Rotating Galaxy Star Projector",
+  "status": "PASS",
+  "handleUnchanged": true,
+  "snapshot": "scripts\\snapshot_prod_15454955765945_2026-10-27T14-52-42-088Z.json",
+  "adminBefore": {
+    "title": "Zavelyn Rotating Galaxy Projector",
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  "adminAfter": {
+    "id": "gid://shopify/Product/15454955765945",
+    "title": "Zavelyn Rotating Galaxy Star Projector",
+    "handle": "sakerplus®-rotating-galaxy-projector-with-adjustable-focus",
+    "seo": {
+      "title": "Rotating Galaxy Star Projector for Bedrooms | Zavelyn",
+      "description": "Transform ceilings into a celestial planetarium with an adjustable-focus galaxy projector featuring interchangeable discs and quiet 30 dB gentle rotation."
+    }
+  },
+  "storefrontQA": {
+    "httpStatus": 200,
+    "renderedTitle": "Rotating Galaxy Star Projector for Bedrooms | Zavelyn",
+    "renderedMeta": "Transform ceilings into a celestial planetarium with an adjustable-focus galaxy projector featuring interchangeable discs and quiet 30 dB gentle rotation.",
+    "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-rotating-galaxy-projector-with-adjustable-focus",
+    "cartMatch": {
+      "variantId": "67914524688569",
+      "productId": 15454955765945,
+      "price": "52.99",
+      "ok": true
+    }
+  },
+  "screenshots": {
+    "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454955765945_desktop_1440.png",
+    "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454955765945_mobile_390.png"
+  }
+}

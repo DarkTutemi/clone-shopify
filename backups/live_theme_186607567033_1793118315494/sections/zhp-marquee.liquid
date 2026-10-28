@@ -1,0 +1,83 @@
+
+{{ 'zhp-collection.css' | asset_url | stylesheet_tag }}
+<div class="zhp-wrapper">
+  <div class="zhp-marquee-bar" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+    <div class="zhp-marquee-track">
+      <div class="zhp-marquee-item">{{ section.settings.text_1 | default: '🚚 FREE EXPRESS WORLDWIDE SHIPPING' }}</div>
+      <div class="zhp-marquee-item">•</div>
+      <div class="zhp-marquee-item">{{ section.settings.text_2 | default: '✨ 432 HZ NATURAL HEALING FREQUENCY' }}</div>
+      <div class="zhp-marquee-item">•</div>
+      <div class="zhp-marquee-item">{{ section.settings.text_3 | default: '🛡️ 30-DAY 100% HAPPINESS GUARANTEE' }}</div>
+      <div class="zhp-marquee-item">•</div>
+      <div class="zhp-marquee-item">{{ section.settings.text_4 | default: '🎁 COMPLETE STARTER KIT INCLUDED WITH EVERY DRUM' }}</div>
+      <div class="zhp-marquee-item">•</div>
+      <div class="zhp-marquee-item">{{ section.settings.text_5 | default: '⭐ OVER 72,000+ HAPPY DRUMMERS WORLDWIDE' }}</div>
+      <div class="zhp-marquee-item">•</div>
+      <div class="zhp-marquee-item">{{ section.settings.text_1 | default: '🚚 FREE EXPRESS WORLDWIDE SHIPPING' }}</div>
+      <div class="zhp-marquee-item">•</div>
+      <div class="zhp-marquee-item">{{ section.settings.text_2 | default: '✨ 432 HZ NATURAL HEALING FREQUENCY' }}</div>
+      <div class="zhp-marquee-item">•</div>
+      <div class="zhp-marquee-item">{{ section.settings.text_3 | default: '🛡️ 30-DAY 100% HAPPINESS GUARANTEE' }}</div>
+      <div class="zhp-marquee-item">•</div>
+      <div class="zhp-marquee-item">{{ section.settings.text_4 | default: '🎁 COMPLETE STARTER KIT INCLUDED WITH EVERY DRUM' }}</div>
+      <div class="zhp-marquee-item">•</div>
+      <div class="zhp-marquee-item">{{ section.settings.text_5 | default: '⭐ OVER 72,000+ HAPPY DRUMMERS WORLDWIDE' }}</div>
+      <div class="zhp-marquee-item">•</div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "01. Thanh thông báo",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Màu nền",
+      "default": "#2C4236"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Màu chữ",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Nội dung 1",
+      "default": "🚚 FREE EXPRESS WORLDWIDE SHIPPING"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Nội dung 2",
+      "default": "✨ 432 HZ NATURAL HEALING FREQUENCY"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Nội dung 3",
+      "default": "🛡️ 30-DAY 100% HAPPINESS GUARANTEE"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Nội dung 4",
+      "default": "🎁 COMPLETE STARTER KIT INCLUDED WITH EVERY DRUM"
+    },
+    {
+      "type": "text",
+      "id": "text_5",
+      "label": "Nội dung 5",
+      "default": "⭐ OVER 72,000+ HAPPY DRUMMERS WORLDWIDE"
+    }
+  ],
+  "presets": [
+    {
+      "name": "01. Thanh thông báo"
+    }
+  ]
+}
+{% endschema %}

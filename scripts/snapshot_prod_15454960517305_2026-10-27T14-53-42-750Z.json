@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454960517305",
+  "title": "Zavelyn Rotating Goose Target Game",
+  "handle": "sakerplus®-electronic-rotating-goose-target-game",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914604150969",
+        "title": "Default Title",
+        "price": "52.99",
+        "sku": "TY132184-X47172"
+      }
+    ]
+  }
+}

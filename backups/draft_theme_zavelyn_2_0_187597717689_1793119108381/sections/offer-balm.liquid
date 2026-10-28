@@ -1,0 +1,3837 @@
+{%- liquid
+  if request.page_type == 'product' and product != blank
+    assign offer_product = product
+  elsif section.settings.product != blank
+    assign offer_product = section.settings.product
+  else
+    assign offer_product = all_products['miracle-balm']
+  endif
+  if offer_product == blank
+    assign offer_product = collections.all.products.first
+  endif
+  assign product = offer_product
+  assign current_variant = product.selected_or_first_available_variant
+  assign s = section.settings
+  assign brand = s.brand_name | default: 'Zavelyn'
+  assign cta_label = s.cta_label | default: 'Add to cart'
+  assign unit = current_variant.price
+  assign compare_unit = current_variant.compare_at_price | default: 0
+  if compare_unit <= unit
+    assign compare_unit = unit | times: 2
+  endif
+  assign qty_1 = s.bundle_1_qty | default: 1
+  assign qty_2 = s.bundle_2_qty | default: 2
+  assign qty_3 = s.bundle_3_qty | default: 3
+  assign default_qty = s.default_qty | default: 2
+  assign p2 = unit | times: qty_2
+  assign c2 = compare_unit | times: qty_2
+  assign p3_list = unit | times: qty_3
+  assign pack_off = s.bundle_3_discount | default: 10
+  assign pack_keep = 100 | minus: pack_off
+  assign p3 = p3_list | times: pack_keep | divided_by: 100
+  assign sec_gallery = section.blocks | where: 'type', 'sec_gallery' | first
+  assign sec_buybox = section.blocks | where: 'type', 'sec_buybox' | first
+  assign sec_people = section.blocks | where: 'type', 'sec_people' | first
+  assign sec_purity = section.blocks | where: 'type', 'sec_purity' | first
+  assign sec_explorer = section.blocks | where: 'type', 'sec_explorer' | first
+  assign sec_herbs = section.blocks | where: 'type', 'sec_herbs' | first
+  assign sec_compare = section.blocks | where: 'type', 'sec_compare' | first
+  assign sec_science = section.blocks | where: 'type', 'sec_science' | first
+  assign sec_reviews = section.blocks | where: 'type', 'sec_reviews' | first
+  assign sec_howto = section.blocks | where: 'type', 'sec_howto' | first
+  assign sec_timeline = section.blocks | where: 'type', 'sec_timeline' | first
+  assign sec_faq = section.blocks | where: 'type', 'sec_faq' | first
+  assign sec_ryviu = section.blocks | where: 'type', 'sec_ryviu' | first
+  if sec_buybox != blank
+    assign bb = sec_buybox.settings
+  endif
+  if sec_herbs != blank
+    assign herbs = sec_herbs.settings
+  endif
+  if sec_howto != blank
+    assign howto = sec_howto.settings
+  endif
+-%}
+{% render 'offer-seo', product: product, section: section %}
+{{ 'zavelyn-balm.css' | asset_url | stylesheet_tag }}
+
+<div class="offer-page offer-page--balm" id="OfferTop">
+  <div class="offer-ticker">
+    <p class="offer-ticker__line">{{ s.ticker_text | default: 'SUMMER SALE : 50% Off! —' }} <span>{{ s.ticker_highlight | default: 'Free Shipping $50+' }}</span></p>
+  </div>
+  {% render 'offer-header', brand: brand, product: product %}
+
+  <section class="offer-hero">
+    <div class="offer-hero__grid">
+      <div class="offer-hero__left">
+        <div class="offer-media" data-offer-gallery>
+          <div class="offer-media__stage" {% if sec_gallery %}{{ sec_gallery.shopify_attributes }}{% endif %}>
+            {%- liquid
+              assign g_file = 'mb-g1.png'
+              assign g_picked = nil
+              if sec_gallery != blank
+                if sec_gallery.settings.fallback_1 != blank
+                  assign g_file = sec_gallery.settings.fallback_1
+                endif
+                assign g_picked = sec_gallery.settings.image_1
+              endif
+              if g_picked != blank
+                assign g_src = g_picked | image_url: width: 1200
+              else
+                assign g_src = g_file | asset_url
+              endif
+            -%}
+            <button type="button" class="offer-media__zoom" data-offer-zoom aria-label="Product image">
+              <img data-offer-main src="{{ g_src }}" alt="{{ brand }} Miracle Balm" width="1200" height="1200" fetchpriority="high">
+            </button>
+            <button type="button" class="offer-media__nav offer-media__nav--prev" data-offer-prev aria-label="Previous">❮</button>
+            <button type="button" class="offer-media__nav offer-media__nav--next" data-offer-next aria-label="Next">❯</button>
+          </div>
+          <div class="offer-thumbs" role="list">
+            {%- for i in (1..6) -%}
+              {%- liquid
+                assign fk = 'fallback_' | append: i
+                assign ik = 'image_' | append: i
+                assign file = 'mb-g' | append: i | append: '.png'
+                assign picked = nil
+                if sec_gallery != blank
+                  if sec_gallery.settings[fk] != blank
+                    assign file = sec_gallery.settings[fk]
+                  endif
+                  assign picked = sec_gallery.settings[ik]
+                endif
+                if picked != blank
+                  assign src = picked | image_url: width: 1200
+                else
+                  assign src = file | asset_url
+                endif
+              -%}
+              <button type="button" class="{% if forloop.first %}is-active{% endif %}" data-offer-thumb data-index="{{ forloop.index0 }}" data-src="{{ src }}" aria-label="Image {{ forloop.index }}">
+                <img src="{{ src }}" alt="" width="72" height="72" {% if forloop.first %}loading="eager"{% else %}loading="lazy"{% endif %}>
+              </button>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <div class="senzio-benefit-icons" data-senzio-benefit-icons aria-label="Product benefits">
+          <div class="senzio-benefit-grid">
+            <article class="senzio-benefit-item">
+              <div class="senzio-benefit-icon senzio-leaf-icon" aria-hidden="true">
+                <span class="senzio-icon-halo"></span>
+                <svg class="senzio-svg" viewBox="0 0 64 64" role="presentation">
+                  <path class="senzio-svg-path senzio-leaf-outline" d="M18 42C19 26 29 17 47 15C47 33 38 44 22 46"></path>
+                  <path class="senzio-svg-path senzio-leaf-stem" d="M20 45C27 36 35 29 45 20"></path>
+                  <path class="senzio-svg-path senzio-leaf-veins" d="M28 36L27 27M35 30L36 22"></path>
+                  <circle class="senzio-svg-spark senzio-svg-spark--one" cx="47" cy="15" r="2"></circle>
+                </svg>
+              </div>
+              <h3><span>{{ bb.benefit_1a | default: 'Natural' }}</span><span>{{ bb.benefit_1b | default: 'Ingredients' }}</span></h3>
+            </article>
+            <article class="senzio-benefit-item">
+              <div class="senzio-benefit-icon senzio-shield-icon" aria-hidden="true">
+                <span class="senzio-icon-halo"></span>
+                <svg class="senzio-svg" viewBox="0 0 64 64" role="presentation">
+                  <path class="senzio-svg-path senzio-shield-outline" d="M32 10L49 17V30C49 42 42 50 32 55C22 50 15 42 15 30V17L32 10Z"></path>
+                  <path class="senzio-svg-path senzio-shield-inner" d="M32 16L43 21V30C43 38 39 44 32 48C25 44 21 38 21 30V21L32 16Z"></path>
+                  <path class="senzio-svg-path senzio-check" d="M24 31L30 37L41 24"></path>
+                </svg>
+              </div>
+              <h3><span>{{ bb.benefit_2a | default: 'Daily' }}</span><span>{{ bb.benefit_2b | default: 'Wellness' }}</span></h3>
+            </article>
+            <article class="senzio-benefit-item">
+              <div class="senzio-benefit-icon senzio-users-icon" aria-hidden="true">
+                <span class="senzio-icon-halo"></span>
+                <svg class="senzio-svg senzio-users-svg" viewBox="0 0 64 64" role="presentation">
+                  <g class="senzio-person senzio-person--primary">
+                    <circle class="senzio-svg-path senzio-human-head senzio-human-head--primary" cx="23" cy="21" r="7"></circle>
+                    <path class="senzio-svg-path senzio-human-body senzio-human-body--primary" d="M10 49C11.5 39.5 16.5 34 23 34C29.5 34 34.5 39.5 36 49"></path>
+                    <path class="senzio-svg-path senzio-human-shoulder senzio-human-shoulder--primary" d="M16 37C18 40 20 42 23 42C26 42 29 40 31 37"></path>
+                  </g>
+                  <g class="senzio-person senzio-person--secondary">
+                    <circle class="senzio-svg-path senzio-human-head senzio-human-head--secondary" cx="44" cy="24" r="5.5"></circle>
+                    <path class="senzio-svg-path senzio-human-body senzio-human-body--secondary" d="M36 47C37.5 39.5 40.5 35.5 44.5 35.5C50.5 35.5 54 40 55 47"></path>
+                    <path class="senzio-svg-path senzio-human-shoulder senzio-human-shoulder--secondary" d="M40 38C41 40 42.5 41 44.5 41C47 41 49 39.5 50 38"></path>
+                  </g>
+                  <path class="senzio-svg-path senzio-human-connection" d="M31 26C34 23 37 22 39 23"></path>
+                  <circle class="senzio-human-heart" cx="34" cy="31" r="2.2"></circle>
+                </svg>
+              </div>
+              <h3><span>{{ bb.benefit_3a | default: 'Made for' }}</span><span>{{ bb.benefit_3b | default: 'Everyone' }}</span></h3>
+            </article>
+            <article class="senzio-benefit-item">
+              <div class="senzio-benefit-icon senzio-target-icon" aria-hidden="true">
+                <span class="senzio-icon-halo"></span>
+                <svg class="senzio-svg" viewBox="0 0 64 64" role="presentation">
+                  <circle class="senzio-svg-path senzio-target-ring senzio-ring-one" cx="31" cy="33" r="20"></circle>
+                  <circle class="senzio-svg-path senzio-target-ring senzio-ring-two" cx="31" cy="33" r="12"></circle>
+                  <circle class="senzio-target-dot" cx="31" cy="33" r="4"></circle>
+                  <path class="senzio-svg-path senzio-target-lines" d="M31 8V16M31 50V58M6 33H14M48 33H56"></path>
+                  <path class="senzio-svg-path senzio-arrow" d="M43 21L54 10M47 10H54V17"></path>
+                </svg>
+              </div>
+              <h3><span>{{ bb.benefit_4a | default: 'Targeted' }}</span><span>{{ bb.benefit_4b | default: 'Relief' }}</span></h3>
+            </article>
+          </div>
+        </div>
+
+        <section class="gp-senzio-compact-proof" aria-label="14 day relief">
+          <div class="gp-senzio-compact-proof__inner">
+            <div class="gp-senzio-compact-proof__headline">
+              <span class="gp-senzio-compact-proof__text">{{ bb.proof_before | default: '7 years of Heel Pain' }}</span>
+              <span class="gp-senzio-compact-proof__animated" aria-hidden="true">
+                <span class="gp-senzio-compact-proof__animated-track">
+                  <span class="gp-senzio-compact-proof__animated-item">{{ bb.proof_word_1 | default: 'improved' }}</span>
+                  <span class="gp-senzio-compact-proof__animated-item">{{ bb.proof_word_2 | default: 'started easing' }}</span>
+                  <span class="gp-senzio-compact-proof__animated-item">{{ bb.proof_word_3 | default: 'felt lighter' }}</span>
+                </span>
+              </span>
+              <span class="gp-senzio-compact-proof__text">{{ bb.proof_after | default: 'in just' }} <strong>{{ bb.proof_strong | default: '14 DAYS' }}</strong></span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="offer-hero__right">
+        <div class="gp-trustpilot-inline" role="group" aria-label="Rated 4.8 out of 5 based on 16,032 verified reviews">
+          <span class="gp-trustpilot-inline__brand" aria-label="Trustpilot">
+            <svg class="gp-trustpilot-inline__brand-svg" viewBox="0 0 224 48" role="img" aria-label="Trustpilot" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.8 2.6 29.2 14l12.3 1.4-9.1 8.2 2.6 12.1-11.2-6.4-11.2 6.4 2.6-12.1-9.1-8.2L18.4 14 23.8 2.6Z" fill="#00B67A"></path>
+              <path d="m32.4 23.6-8.6 5.7 11.2 6.4-2.6-12.1Z" fill="#005128" opacity=".55"></path>
+              <text x="51" y="33" fill="#191919" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" letter-spacing="-1.2">Trustpilot</text>
+            </svg>
+          </span>
+          <span class="gp-trustpilot-inline__stars" aria-label="Five green Trustpilot stars">
+            {%- for i in (1..5) -%}
+              <span class="gp-trustpilot-star">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="1" fill="#00B67A"></rect><path d="m12 4 2.25 4.56 5.03.73-3.64 3.55.86 5.01L12 15.49l-4.5 2.36.86-5.01-3.64-3.55 5.03-.73L12 4Z" fill="#fff"></path></svg>
+              </span>
+            {%- endfor -%}
+          </span>
+          <strong class="gp-trustpilot-inline__score">{{ bb.score | default: '4.8' }}</strong>
+          <span class="gp-trustpilot-inline__excellent">{{ bb.score_label | default: 'Excellent' }}</span>
+          <span class="gp-trustpilot-inline__separator" aria-hidden="true"></span>
+          <span class="gp-trustpilot-inline__reviews">
+            <svg class="gp-trustpilot-inline__verified" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m7.5 12.1 2.8 2.8 6.2-6.3"></path></svg>
+            <span><strong>{{ bb.review_count | default: '16,032' }}</strong> verified reviews</span>
+          </span>
+        </div>
+
+        <h1 class="offer-title">{{ brand }} {{ bb.product_title | default: 'Miracle Balm™' }}</h1>
+        <p class="mb-price">{{ unit | money_without_trailing_zeros }}</p>
+
+        <div class="senzio-proof-list" role="list">
+          <div class="senzio-proof-item" role="listitem">
+            <span class="senzio-check-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle class="senzio-check-circle" cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2"></circle><path class="senzio-check-mark" d="M14.5 24.5L21 31L34 17.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            <div class="senzio-proof-text"><strong>{{ bb.bullet_1 | default: 'Stop Plantar Fasciitis Pain in 60 Days — Or You Don’t Pay' }}</strong></div>
+          </div>
+          <div class="senzio-proof-item" role="listitem">
+            <span class="senzio-check-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle class="senzio-check-circle" cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2"></circle><path class="senzio-check-mark" d="M14.5 24.5L21 31L34 17.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            <div class="senzio-proof-text"><strong>{{ bb.bullet_2 | default: '91% of Customers Reported Less Heel Pain, Less Burning, and Lighter-Feeling Feet' }}</strong></div>
+          </div>
+          <div class="senzio-proof-item" role="listitem">
+            <span class="senzio-check-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle class="senzio-check-circle" cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2"></circle><path class="senzio-check-mark" d="M14.5 24.5L21 31L34 17.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            <div class="senzio-proof-text"><strong>{{ bb.bullet_3 | default: 'Herbal Powerhouse: Made with Potent Asian Medicinal Herbs' }}</strong></div>
+          </div>
+          <div class="senzio-proof-item" role="listitem">
+            <span class="senzio-check-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle class="senzio-check-circle" cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2"></circle><path class="senzio-check-mark" d="M14.5 24.5L21 31L34 17.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            <div class="senzio-proof-text"><strong>{{ bb.bullet_4 | default: 'For Heel Pain / Plantar Fascia Strain / Arch Pain / Burning Soles / Achilles Tightness' }}</strong></div>
+          </div>
+        </div>
+
+        {% form 'product', product, id: 'OfferAddForm', class: 'offer-buy-form' %}
+          <input type="hidden" name="id" id="OfferVariantId" value="{{ current_variant.id }}">
+          <input type="hidden" name="quantity" id="OfferQuantity" value="{{ default_qty }}">
+
+          <p class="mb-deals-label">{{ s.deals_label | default: 'EXCLUSIVE DEALS' }}</p>
+          <div class="mb-packs" data-mb-packs id="MbDeals" {% if sec_buybox %}{{ sec_buybox.shopify_attributes }}{% endif %}>
+            <button type="button" class="mb-pack{% if default_qty == qty_1 %} is-active{% endif %}" data-qty="{{ qty_1 }}" aria-pressed="{% if default_qty == qty_1 %}true{% else %}false{% endif %}">
+              <span class="mb-pack__radio" aria-hidden="true"></span>
+              <span><span class="mb-pack__name">{{ s.bundle_1_title | default: 'Buy 1' }}</span></span>
+              <span class="mb-pack__prices">
+                <span class="mb-pack__now">{{ unit | money_without_trailing_zeros }}</span>
+                <span class="mb-pack__was">{{ compare_unit | money_without_trailing_zeros }}</span>
+              </span>
+            </button>
+            <button type="button" class="mb-pack{% if default_qty == qty_2 %} is-active{% endif %}" data-qty="{{ qty_2 }}" aria-pressed="{% if default_qty == qty_2 %}true{% else %}false{% endif %}">
+              <span class="mb-pack__radio" aria-hidden="true"></span>
+              <span><span class="mb-pack__name">{{ s.bundle_2_title | default: 'Buy 2' }}</span></span>
+              <span class="mb-pack__prices">
+                <span class="mb-pack__now">{{ p2 | money_without_trailing_zeros }}</span>
+                <span class="mb-pack__was">{{ c2 | money_without_trailing_zeros }}</span>
+              </span>
+            </button>
+            <button type="button" class="mb-pack{% if default_qty == qty_3 %} is-active{% endif %}" data-qty="{{ qty_3 }}" data-discount="{{ s.bundle_3_code | default: 'BALM3EXTRA10' }}" aria-pressed="{% if default_qty == qty_3 %}true{% else %}false{% endif %}">
+              <span class="mb-pack__radio" aria-hidden="true"></span>
+              <span>
+                <span class="mb-pack__name">{{ s.bundle_3_title | default: 'Buy 3' }}</span>
+                <span class="mb-pack__save">{{ s.bundle_3_badge | default: 'Extra 10%' }}</span>
+                <span class="mb-pack__sub">{{ s.bundle_3_sub | default: 'Free Shipping' }}</span>
+              </span>
+              <span class="mb-pack__prices">
+                <span class="mb-pack__now">{{ p3 | money_without_trailing_zeros }}</span>
+                <span class="mb-pack__was">{{ p3_list | money_without_trailing_zeros }}</span>
+              </span>
+            </button>
+          </div>
+
+          <button type="submit" class="offer-cta" data-mb-atc>
+            <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M233.21,56.31A12,12,0,0,0,224,52H66L60.53,21.85A12,12,0,0,0,48.73,12H24a12,12,0,0,0,0,24H38.71L63.62,173a28,28,0,0,0,4.07,10.21A32,32,0,1,0,123,196h34a32,32,0,1,0,31-24H91.17a4,4,0,0,1-3.93-3.28L84.92,156H196.1a28,28,0,0,0,27.55-23l12.16-66.86A12,12,0,0,0,233.21,56.31ZM100,204a8,8,0,1,1-8-8A8,8,0,0,1,100,204Zm88,8a8,8,0,1,1,8-8A8,8,0,0,1,188,212Zm12-83.28A4,4,0,0,1,196.1,132H80.56L70.38,76H209.62Z"></path></svg>
+            {{ cta_label }}
+          </button>
+        {% endform %}
+
+        <div class="gp-subscription-trust">
+          <div class="gp-subscription-grid">
+            <div class="gp-subscription-item">
+              <div class="gp-subscription-icon-wrap" aria-hidden="true">
+                <svg class="gp-subscription-svg gp-refill-svg" viewBox="0 0 24 24">
+                  <polyline class="gp-icon-draw" points="23 4 23 10 17 10"></polyline>
+                  <polyline class="gp-icon-draw" points="1 20 1 14 7 14"></polyline>
+                  <path class="gp-icon-draw" d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                </svg>
+              </div>
+              <p class="gp-subscription-title">{{ bb.trust_1_title | default: 'Auto-Refill' }}</p>
+              <p class="gp-subscription-subtitle">{{ bb.trust_1_sub | default: 'Ships every month' }}</p>
+            </div>
+            <div class="gp-subscription-item">
+              <div class="gp-subscription-icon-wrap" aria-hidden="true">
+                <svg class="gp-subscription-svg" viewBox="0 0 24 24">
+                  <rect class="gp-icon-draw" x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line class="gp-icon-draw" x1="16" y1="2" x2="16" y2="6"></line>
+                  <line class="gp-icon-draw" x1="8" y1="2" x2="8" y2="6"></line>
+                  <line class="gp-icon-draw" x1="3" y1="10" x2="21" y2="10"></line>
+                  <path class="gp-calendar-check" d="M9 16l2 2 4-4"></path>
+                </svg>
+              </div>
+              <p class="gp-subscription-title">{{ bb.trust_2_title | default: 'Skip or Cancel' }}</p>
+              <p class="gp-subscription-subtitle">{{ bb.trust_2_sub | default: 'Anytime, no fees' }}</p>
+            </div>
+            <div class="gp-subscription-item">
+              <div class="gp-subscription-icon-wrap" aria-hidden="true">
+                <svg class="gp-subscription-svg gp-shield-svg" viewBox="0 0 24 24">
+                  <path class="gp-icon-draw" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline class="gp-shield-check" points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </div>
+              <p class="gp-subscription-title">{{ bb.trust_3_title | default: '30-Day Money-Back Guarantee' }}</p>
+              <p class="gp-subscription-subtitle">{{ bb.trust_3_sub | default: 'Money-back promise' }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="senzio-official-store-alert" role="alert">
+          <div class="senzio-official-store-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="presentation">
+              <path class="senzio-alert-triangle" d="M24 5L44 40H4L24 5Z"></path>
+              <path class="senzio-alert-line" d="M24 17V28"></path>
+              <circle class="senzio-alert-dot" cx="24" cy="34" r="2"></circle>
+            </svg>
+          </div>
+          <div class="senzio-official-store-content">
+            <strong>{{ bb.alert_title | default: 'Beware of Counterfeit Products' }}</strong>
+            <span>{{ bb.alert_text | default: 'The only official store is' }} <a href="{{ shop.url }}">{{ shop.domain }}</a></span>
+          </div>
+        </div>
+
+        <div class="mb-faq" data-mb-acc>
+          <div class="mb-faq__item">
+            <button type="button" class="mb-faq__trigger" aria-expanded="false">{{ bb.faq_1_q | default: 'How To Use For Maximum Relief' }}</button>
+            <div class="mb-faq__panel" hidden>
+              {%- if bb.faq_1_a != blank -%}{{ bb.faq_1_a }}{%- else -%}
+              <ul>
+                <li>Apply to the <strong>heel and arch of the foot</strong> and massage thoroughly until fully absorbed.</li>
+                <li>Use <strong>2–3 times daily</strong> — especially <strong>morning and evening</strong>.</li>
+                <li>Many customers feel <strong>reduced tension shortly after applying</strong>.</li>
+                <li>This balm helps calm <strong>inflammation in the plantar fascia</strong>.</li>
+                <li>Each application builds on the last — helping the <strong>tissue recover over time</strong>.</li>
+                <li>For best results, use consistently for at least <strong>60–90 days</strong>.</li>
+              </ul>
+              {%- endif -%}
+            </div>
+          </div>
+          <div class="mb-faq__item">
+            <button type="button" class="mb-faq__trigger" aria-expanded="false">{{ bb.faq_2_q | default: 'Why Consistent Use Works Better' }}</button>
+            <div class="mb-faq__panel" hidden>
+              {%- if bb.faq_2_a != blank -%}{{ bb.faq_2_a }}{%- else -%}
+              <ul>
+                <li>Plantar fasciitis worsens with <strong>repeated strain</strong>.</li>
+                <li>You may feel early relief, but full recovery requires <strong>consistent use</strong>.</li>
+                <li><strong>One application won’t repair ongoing irritation.</strong></li>
+                <li>Daily use helps prevent <strong>re-aggravation</strong> and supports <strong>healing</strong>.</li>
+                <li>Most customers notice improvement within weeks, with stronger results after <strong>4–8 weeks</strong>, continuing through <strong>60–90 days</strong>.</li>
+              </ul>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mb-people">
+    {% render 'offer-balm-people', brand: brand, group: sec_people %}
+  </div>
+
+  <section class="mb-sec" id="ingredients">
+    {% render 'offer-balm-purity', group: sec_purity %}
+  </section>
+  {% render 'offer-balm-explorer', group: sec_explorer %}
+
+  {%- unless sec_herbs and sec_herbs.settings.show == false -%}
+  <section class="mb-sec senzio-herbs" style="padding-top:0">
+    <div class="senzio-asian-herbs-title" {% if sec_herbs %}{{ sec_herbs.shopify_attributes }}{% endif %}>
+      <span class="senzio-asian-herbs-eyebrow">{{ herbs.eyebrow | default: 'Traditional Botanical Wisdom' }}</span>
+      <h2>{{ herbs.title | default: 'Why Asian Herbs Are So Powerful' }}</h2>
+      <span class="senzio-asian-herbs-line" aria-hidden="true"></span>
+    </div>
+    {%- liquid
+      if herbs.image != blank
+        assign herbs_src = herbs.image | image_url: width: 1672
+      else
+        assign herbs_src = 'mb-herbs.png' | asset_url
+      endif
+    -%}
+    <img class="senzio-asian-herbs-photo" src="{{ herbs_src }}" alt="{{ herbs.alt | default: 'Resilient, potent, and time-tested Asian herbs' }}" width="1672" height="941" loading="lazy">
+  </section>
+  {%- endunless -%}
+
+  <section class="mb-sec senzio-results">
+    {% render 'offer-balm-compare', brand: brand, group: sec_compare %}
+  </section>
+
+  {% render 'offer-balm-proof', group: sec_science %}
+
+  {% render 'offer-balm-reviews-carousel', group: sec_reviews %}
+
+  {%- unless sec_howto and sec_howto.settings.show == false -%}
+  <section class="mb-howto" aria-label="How to use for plantar and heel pain" {% if sec_howto %}{{ sec_howto.shopify_attributes }}{% endif %}>
+    {%- liquid
+      if howto.image != blank
+        assign howto_src = howto.image | image_url: width: 1672
+      else
+        assign howto_src = 'mb-rev-mark.png' | asset_url
+      endif
+    -%}
+    <img src="{{ howto_src }}" alt="{{ howto.alt | default: 'How to use for plantar and heel pain: scoop a small amount, apply to the heel and arch, massage gently, and use daily' }}" width="1672" height="941" loading="lazy">
+  </section>
+  {%- endunless -%}
+
+  {% render 'offer-balm-timeline', group: sec_timeline %}
+
+  {% render 'offer-balm-faq', group: sec_faq %}
+
+  {% render 'offer-balm-ryviu', group: sec_ryviu %}
+
+  <footer class="offer-foot">
+    <div class="offer-foot__inner">
+      <div class="offer-foot__logo">{{ brand }}</div>
+      <p class="offer-foot__line">© {{ 'now' | date: '%Y' }} {{ brand }}®. All Rights Reserved.</p>
+      <p class="offer-foot__line"><a href="/pages/privacy-policy">Privacy Policy</a> - <a href="/pages/terms-of-service">Terms of Service</a></p>
+      <p class="offer-foot__line">{{ s.email | default: 'support@zavelyn.com' }}</p>
+    </div>
+  </footer>
+
+  <div class="offer-sticky" data-offer-sticky aria-hidden="true" inert>
+    <div class="offer-sticky__inner">
+      <div class="offer-sticky__copy">{{ s.sticky_copy | default: 'Miracle Balm' }}</div>
+      <button type="button" class="offer-sticky__cta" data-mb-atc>{{ cta_label }}</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="{{ 'zavelyn-balm.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Offer Miracle Balm",
+  "tag": "section",
+  "class": "section-offer-balm",
+  "max_blocks": 16,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Edit each part of the page from the blocks below. Package prices follow the product price. Buy 3 applies the extra discount in the cart."
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand",
+      "default": "Zavelyn"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text",
+      "label": "Ticker",
+      "default": "SUMMER SALE : 50% Off! —"
+    },
+    {
+      "type": "text",
+      "id": "ticker_highlight",
+      "label": "Ticker highlight",
+      "default": "Free Shipping $50+"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Add to cart label",
+      "default": "Add to cart"
+    },
+    {
+      "type": "text",
+      "id": "sticky_copy",
+      "label": "Sticky bar title",
+      "default": "Miracle Balm"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Support email",
+      "default": "support@zavelyn.com"
+    },
+    {
+      "type": "header",
+      "content": "Packages"
+    },
+    {
+      "type": "text",
+      "id": "deals_label",
+      "label": "Deals label",
+      "default": "EXCLUSIVE DEALS"
+    },
+    {
+      "type": "number",
+      "id": "default_qty",
+      "label": "Selected package quantity",
+      "default": 2
+    },
+    {
+      "type": "text",
+      "id": "bundle_1_title",
+      "label": "Package 1 title",
+      "default": "Buy 1"
+    },
+    {
+      "type": "number",
+      "id": "bundle_1_qty",
+      "label": "Package 1 quantity",
+      "default": 1
+    },
+    {
+      "type": "text",
+      "id": "bundle_2_title",
+      "label": "Package 2 title",
+      "default": "Buy 2"
+    },
+    {
+      "type": "number",
+      "id": "bundle_2_qty",
+      "label": "Package 2 quantity",
+      "default": 2
+    },
+    {
+      "type": "text",
+      "id": "bundle_3_title",
+      "label": "Package 3 title",
+      "default": "Buy 3"
+    },
+    {
+      "type": "number",
+      "id": "bundle_3_qty",
+      "label": "Package 3 quantity",
+      "default": 3
+    },
+    {
+      "type": "text",
+      "id": "bundle_3_badge",
+      "label": "Package 3 badge",
+      "default": "Extra 10%"
+    },
+    {
+      "type": "text",
+      "id": "bundle_3_sub",
+      "label": "Package 3 subtitle",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "number",
+      "id": "bundle_3_discount",
+      "label": "Package 3 extra discount %",
+      "default": 10
+    },
+    {
+      "type": "text",
+      "id": "bundle_3_code",
+      "label": "Package 3 discount code",
+      "default": "BALM3EXTRA10"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sec_gallery",
+      "name": "0. Gallery",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Product photos"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "text",
+          "id": "fallback_1",
+          "label": "Fallback file 1",
+          "default": "mb-g1.png"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "text",
+          "id": "fallback_2",
+          "label": "Fallback file 2",
+          "default": "mb-g2.png"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "text",
+          "id": "fallback_3",
+          "label": "Fallback file 3",
+          "default": "mb-g3.png"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "text",
+          "id": "fallback_4",
+          "label": "Fallback file 4",
+          "default": "mb-g4.png"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "text",
+          "id": "fallback_5",
+          "label": "Fallback file 5",
+          "default": "mb-g5.png"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "text",
+          "id": "fallback_6",
+          "label": "Fallback file 6",
+          "default": "mb-g6.png"
+        }
+      ]
+    },
+    {
+      "type": "sec_buybox",
+      "name": "1. Buy box",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Benefit icons"
+        },
+        {
+          "type": "text",
+          "id": "benefit_1a",
+          "label": "Benefit 1 line 1",
+          "default": "Natural"
+        },
+        {
+          "type": "text",
+          "id": "benefit_1b",
+          "label": "Benefit 1 line 2",
+          "default": "Ingredients"
+        },
+        {
+          "type": "text",
+          "id": "benefit_2a",
+          "label": "Benefit 2 line 1",
+          "default": "Daily"
+        },
+        {
+          "type": "text",
+          "id": "benefit_2b",
+          "label": "Benefit 2 line 2",
+          "default": "Wellness"
+        },
+        {
+          "type": "text",
+          "id": "benefit_3a",
+          "label": "Benefit 3 line 1",
+          "default": "Made for"
+        },
+        {
+          "type": "text",
+          "id": "benefit_3b",
+          "label": "Benefit 3 line 2",
+          "default": "Everyone"
+        },
+        {
+          "type": "text",
+          "id": "benefit_4a",
+          "label": "Benefit 4 line 1",
+          "default": "Targeted"
+        },
+        {
+          "type": "text",
+          "id": "benefit_4b",
+          "label": "Benefit 4 line 2",
+          "default": "Relief"
+        },
+        {
+          "type": "header",
+          "content": "14 day line"
+        },
+        {
+          "type": "text",
+          "id": "proof_before",
+          "label": "Line before the rotating words",
+          "default": "7 years of Heel Pain"
+        },
+        {
+          "type": "text",
+          "id": "proof_word_1",
+          "label": "Rotating word 1",
+          "default": "improved"
+        },
+        {
+          "type": "text",
+          "id": "proof_word_2",
+          "label": "Rotating word 2",
+          "default": "started easing"
+        },
+        {
+          "type": "text",
+          "id": "proof_word_3",
+          "label": "Rotating word 3",
+          "default": "felt lighter"
+        },
+        {
+          "type": "text",
+          "id": "proof_after",
+          "label": "Line after the rotating words",
+          "default": "in just"
+        },
+        {
+          "type": "text",
+          "id": "proof_strong",
+          "label": "Highlighted days",
+          "default": "14 DAYS"
+        },
+        {
+          "type": "header",
+          "content": "Rating"
+        },
+        {
+          "type": "text",
+          "id": "score",
+          "label": "Score",
+          "default": "4.8"
+        },
+        {
+          "type": "text",
+          "id": "score_label",
+          "label": "Score label",
+          "default": "Excellent"
+        },
+        {
+          "type": "text",
+          "id": "review_count",
+          "label": "Review count",
+          "default": "16,032"
+        },
+        {
+          "type": "text",
+          "id": "product_title",
+          "label": "Product title after the brand",
+          "default": "Miracle Balm™"
+        },
+        {
+          "type": "header",
+          "content": "Proof points"
+        },
+        {
+          "type": "textarea",
+          "id": "bullet_1",
+          "label": "Point 1",
+          "default": "Stop Plantar Fasciitis Pain in 60 Days — Or You Don’t Pay"
+        },
+        {
+          "type": "textarea",
+          "id": "bullet_2",
+          "label": "Point 2",
+          "default": "91% of Customers Reported Less Heel Pain, Less Burning, and Lighter-Feeling Feet"
+        },
+        {
+          "type": "textarea",
+          "id": "bullet_3",
+          "label": "Point 3",
+          "default": "Herbal Powerhouse: Made with Potent Asian Medicinal Herbs"
+        },
+        {
+          "type": "textarea",
+          "id": "bullet_4",
+          "label": "Point 4",
+          "default": "For Heel Pain / Plantar Fascia Strain / Arch Pain / Burning Soles / Achilles Tightness"
+        },
+        {
+          "type": "header",
+          "content": "Trust row"
+        },
+        {
+          "type": "text",
+          "id": "trust_1_title",
+          "label": "Trust 1 title",
+          "default": "Auto-Refill"
+        },
+        {
+          "type": "text",
+          "id": "trust_1_sub",
+          "label": "Trust 1 subtitle",
+          "default": "Ships every month"
+        },
+        {
+          "type": "text",
+          "id": "trust_2_title",
+          "label": "Trust 2 title",
+          "default": "Skip or Cancel"
+        },
+        {
+          "type": "text",
+          "id": "trust_2_sub",
+          "label": "Trust 2 subtitle",
+          "default": "Anytime, no fees"
+        },
+        {
+          "type": "text",
+          "id": "trust_3_title",
+          "label": "Trust 3 title",
+          "default": "30-Day Money-Back Guarantee"
+        },
+        {
+          "type": "text",
+          "id": "trust_3_sub",
+          "label": "Trust 3 subtitle",
+          "default": "Money-back promise"
+        },
+        {
+          "type": "header",
+          "content": "Official store warning"
+        },
+        {
+          "type": "text",
+          "id": "alert_title",
+          "label": "Warning title",
+          "default": "Beware of Counterfeit Products"
+        },
+        {
+          "type": "text",
+          "id": "alert_text",
+          "label": "Warning text before the store link",
+          "default": "The only official store is"
+        },
+        {
+          "type": "header",
+          "content": "Buy box questions"
+        },
+        {
+          "type": "text",
+          "id": "faq_1_q",
+          "label": "Question 1",
+          "default": "How To Use For Maximum Relief"
+        },
+        {
+          "type": "textarea",
+          "id": "faq_1_a",
+          "label": "Answer 1 (HTML allowed)",
+          "default": "<ul><li>Apply to the <strong>heel and arch of the foot</strong> and massage thoroughly until fully absorbed.</li><li>Use <strong>2–3 times daily</strong> — especially <strong>morning and evening</strong>.</li><li>Many customers feel <strong>reduced tension shortly after applying</strong>.</li><li>This balm helps calm <strong>inflammation in the plantar fascia</strong>.</li><li>Each application builds on the last — helping the <strong>tissue recover over time</strong>.</li><li>For best results, use consistently for at least <strong>60–90 days</strong>.</li></ul>"
+        },
+        {
+          "type": "text",
+          "id": "faq_2_q",
+          "label": "Question 2",
+          "default": "Why Consistent Use Works Better"
+        },
+        {
+          "type": "textarea",
+          "id": "faq_2_a",
+          "label": "Answer 2 (HTML allowed)",
+          "default": "<ul><li>Plantar fasciitis worsens with <strong>repeated strain</strong>.</li><li>You may feel early relief, but full recovery requires <strong>consistent use</strong>.</li><li><strong>One application won’t repair ongoing irritation.</strong></li><li>Daily use helps prevent <strong>re-aggravation</strong> and supports <strong>healing</strong>.</li><li>Most customers notice improvement within weeks, with stronger results after <strong>4–8 weeks</strong>, continuing through <strong>60–90 days</strong>.</li></ul>"
+        }
+      ]
+    },
+    {
+      "type": "sec_people",
+      "name": "2. Trusted gallery",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show",
+          "label": "Show this section",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Real People · Real Comfort"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Trusted by Thousands"
+        },
+        {
+          "type": "text",
+          "id": "heading_accent",
+          "label": "Heading second line",
+          "default": "for Everyday Relief"
+        },
+        {
+          "type": "header",
+          "content": "Customer photos"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Photo 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Photo 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Photo 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Photo 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Photo 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_6",
+          "label": "Photo 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_7",
+          "label": "Photo 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_8",
+          "label": "Photo 8"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_9",
+          "label": "Photo 9"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_10",
+          "label": "Photo 10"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_11",
+          "label": "Photo 11"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_12",
+          "label": "Photo 12"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_13",
+          "label": "Photo 13"
+        }
+      ]
+    },
+    {
+      "type": "sec_purity",
+      "name": "3. Ingredients",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show",
+          "label": "Show this section",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Pure Botanical Standards"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Ingredients Come First"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Pure herbs for swelling and circulation."
+        },
+        {
+          "type": "text",
+          "id": "label_1a",
+          "label": "Icon 1 line 1",
+          "default": "Cold-Pressed"
+        },
+        {
+          "type": "text",
+          "id": "label_1b",
+          "label": "Icon 1 line 2",
+          "default": "Oils"
+        },
+        {
+          "type": "text",
+          "id": "label_2a",
+          "label": "Icon 2 line 1",
+          "default": "No"
+        },
+        {
+          "type": "text",
+          "id": "label_2b",
+          "label": "Icon 2 line 2",
+          "default": "Fillers"
+        },
+        {
+          "type": "text",
+          "id": "label_3a",
+          "label": "Icon 3 line 1",
+          "default": "No"
+        },
+        {
+          "type": "text",
+          "id": "label_3b",
+          "label": "Icon 3 line 2",
+          "default": "Heating"
+        },
+        {
+          "type": "text",
+          "id": "label_4a",
+          "label": "Icon 4 line 1",
+          "default": "Hormone"
+        },
+        {
+          "type": "text",
+          "id": "label_4b",
+          "label": "Icon 4 line 2",
+          "default": "Safe"
+        },
+        {
+          "type": "text",
+          "id": "label_5a",
+          "label": "Icon 5 line 1",
+          "default": "Paraben"
+        },
+        {
+          "type": "text",
+          "id": "label_5b",
+          "label": "Icon 5 line 2",
+          "default": "Free"
+        },
+        {
+          "type": "text",
+          "id": "label_6a",
+          "label": "Icon 6 line 1",
+          "default": "Fully"
+        },
+        {
+          "type": "text",
+          "id": "label_6b",
+          "label": "Icon 6 line 2",
+          "default": "Natural"
+        },
+        {
+          "type": "text",
+          "id": "label_7a",
+          "label": "Icon 7 line 1",
+          "default": "Non"
+        },
+        {
+          "type": "text",
+          "id": "label_7b",
+          "label": "Icon 7 line 2",
+          "default": "GMO"
+        },
+        {
+          "type": "text",
+          "id": "label_8a",
+          "label": "Icon 8 line 1",
+          "default": "Pesticide"
+        },
+        {
+          "type": "text",
+          "id": "label_8b",
+          "label": "Icon 8 line 2",
+          "default": "Free"
+        }
+      ]
+    },
+    {
+      "type": "sec_explorer",
+      "name": "4. Ingredient explorer",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show",
+          "label": "Show this section",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "kicker",
+          "label": "Card eyebrow",
+          "default": "Plantar & heel comfort ingredient"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Center product image"
+        },
+        {
+          "type": "text",
+          "id": "product_alt",
+          "label": "Center image alt",
+          "default": "Zavelyn Miracle Balm for plantar fasciitis, heel pain, and arch soreness"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 1"
+        },
+        {
+          "type": "text",
+          "id": "name_1",
+          "label": "Name",
+          "default": "Comfrey"
+        },
+        {
+          "type": "text",
+          "id": "jobs_1",
+          "label": "Role",
+          "default": "Heel and tissue comfort"
+        },
+        {
+          "type": "textarea",
+          "id": "description_1",
+          "label": "Description",
+          "default": "Helps soothe overworked heel, arch, and sole tissues affected by daily strain."
+        },
+        {
+          "type": "text",
+          "id": "tags_1",
+          "label": "Tags, separated by commas",
+          "default": "Heel Tissue, Arch Comfort, Daily Strain"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 2"
+        },
+        {
+          "type": "text",
+          "id": "name_2",
+          "label": "Name",
+          "default": "Fenghuang"
+        },
+        {
+          "type": "text",
+          "id": "jobs_2",
+          "label": "Role",
+          "default": "Deep foot tension comfort"
+        },
+        {
+          "type": "textarea",
+          "id": "description_2",
+          "label": "Description",
+          "default": "Helps ease deep foot tension and supports more comfortable standing and walking."
+        },
+        {
+          "type": "text",
+          "id": "tags_2",
+          "label": "Tags, separated by commas",
+          "default": "Deep Tension, Standing Comfort, Walking Support"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 3"
+        },
+        {
+          "type": "text",
+          "id": "name_3",
+          "label": "Name",
+          "default": "Angelica Sinensis"
+        },
+        {
+          "type": "text",
+          "id": "jobs_3",
+          "label": "Role",
+          "default": "Foot circulation support"
+        },
+        {
+          "type": "textarea",
+          "id": "description_3",
+          "label": "Description",
+          "default": "Supports healthy circulation through the heels, arches, soles, and feet."
+        },
+        {
+          "type": "text",
+          "id": "tags_3",
+          "label": "Tags, separated by commas",
+          "default": "Foot Circulation, Heels & Arches, Sole Comfort"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 4"
+        },
+        {
+          "type": "text",
+          "id": "name_4",
+          "label": "Name",
+          "default": "Radix Angelicae Dahuricae"
+        },
+        {
+          "type": "text",
+          "id": "jobs_4",
+          "label": "Role",
+          "default": "Heel-pressure comfort"
+        },
+        {
+          "type": "textarea",
+          "id": "description_4",
+          "label": "Description",
+          "default": "Helps calm pressure and discomfort concentrated around the heel and plantar area."
+        },
+        {
+          "type": "text",
+          "id": "tags_4",
+          "label": "Tags, separated by commas",
+          "default": "Heel Pressure, Plantar Area, Tenderness"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 5"
+        },
+        {
+          "type": "text",
+          "id": "name_5",
+          "label": "Name",
+          "default": "Frankincense"
+        },
+        {
+          "type": "text",
+          "id": "jobs_5",
+          "label": "Role",
+          "default": "Flexible walking support"
+        },
+        {
+          "type": "textarea",
+          "id": "description_5",
+          "label": "Description",
+          "default": "Helps calm persistent heel and plantar discomfort while supporting easier movement."
+        },
+        {
+          "type": "text",
+          "id": "tags_5",
+          "label": "Tags, separated by commas",
+          "default": "Persistent Comfort, Flexible Walking, Easier Movement"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 6"
+        },
+        {
+          "type": "text",
+          "id": "name_6",
+          "label": "Name",
+          "default": "Myrrh"
+        },
+        {
+          "type": "text",
+          "id": "jobs_6",
+          "label": "Role",
+          "default": "Tender-foot comfort"
+        },
+        {
+          "type": "textarea",
+          "id": "description_6",
+          "label": "Description",
+          "default": "Supports circulation and comfort in tender, tight, and overworked feet."
+        },
+        {
+          "type": "text",
+          "id": "tags_6",
+          "label": "Tags, separated by commas",
+          "default": "Tender Feet, Tight Areas, Circulation"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_6",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 7"
+        },
+        {
+          "type": "text",
+          "id": "name_7",
+          "label": "Name",
+          "default": "Peppermint Oil"
+        },
+        {
+          "type": "text",
+          "id": "jobs_7",
+          "label": "Role",
+          "default": "Fast cooling comfort"
+        },
+        {
+          "type": "textarea",
+          "id": "description_7",
+          "label": "Description",
+          "default": "Provides fast cooling comfort for hot, sore, and aching heels and soles."
+        },
+        {
+          "type": "text",
+          "id": "tags_7",
+          "label": "Tags, separated by commas",
+          "default": "Fast Cooling, Sore Heels, Aching Soles"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_7",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 8"
+        },
+        {
+          "type": "text",
+          "id": "name_8",
+          "label": "Name",
+          "default": "Sesame Oil"
+        },
+        {
+          "type": "text",
+          "id": "jobs_8",
+          "label": "Role",
+          "default": "Smooth foot application"
+        },
+        {
+          "type": "textarea",
+          "id": "description_8",
+          "label": "Description",
+          "default": "Helps the herbal ingredients spread smoothly across the heels, arches, and soles."
+        },
+        {
+          "type": "text",
+          "id": "tags_8",
+          "label": "Tags, separated by commas",
+          "default": "Smooth Coverage, Heels & Arches, Soles"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_8",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 9"
+        },
+        {
+          "type": "text",
+          "id": "name_9",
+          "label": "Name",
+          "default": "Beeswax"
+        },
+        {
+          "type": "text",
+          "id": "jobs_9",
+          "label": "Role",
+          "default": "Longer-lasting comfort"
+        },
+        {
+          "type": "textarea",
+          "id": "description_9",
+          "label": "Description",
+          "default": "Keeps the balm on the skin longer for extended heel, arch, and foot comfort."
+        },
+        {
+          "type": "text",
+          "id": "tags_9",
+          "label": "Tags, separated by commas",
+          "default": "Longer Contact, Lasting Comfort, Foot Care"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_9",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "sec_herbs",
+      "name": "5. Asian herbs",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show",
+          "label": "Show this section",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Traditional Botanical Wisdom"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Why Asian Herbs Are So Powerful"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Banner image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Image alt",
+          "default": "Resilient, potent, and time-tested Asian herbs"
+        }
+      ]
+    },
+    {
+      "type": "sec_compare",
+      "name": "6. Comparison",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show",
+          "label": "Show this section",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Better Formula · Better Support"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Miracle Balm vs. Typical Alternatives"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Comparison image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Image alt",
+          "default": "Miracle Balm compared with orthotic insoles, foot creams, ice packs, massage rollers, compression sleeves, and oral pain relievers"
+        },
+        {
+          "type": "text",
+          "id": "col_good",
+          "label": "Left column heading",
+          "default": "Miracle Balm"
+        },
+        {
+          "type": "text",
+          "id": "col_bad",
+          "label": "Right column heading",
+          "default": "Typical Alternatives"
+        },
+        {
+          "type": "text",
+          "id": "good_1",
+          "label": "Row 1 left",
+          "default": "Applied directly to the heel"
+        },
+        {
+          "type": "text",
+          "id": "bad_1",
+          "label": "Row 1 right",
+          "default": "Indirect support or surface-level application"
+        },
+        {
+          "type": "text",
+          "id": "good_2",
+          "label": "Row 2 left",
+          "default": "Botanical anti-inflammatory support"
+        },
+        {
+          "type": "text",
+          "id": "bad_2",
+          "label": "Row 2 right",
+          "default": "Surface sensation or pressure support only"
+        },
+        {
+          "type": "text",
+          "id": "good_3",
+          "label": "Row 3 left",
+          "default": "Helps address the heel pain cycle"
+        },
+        {
+          "type": "text",
+          "id": "bad_3",
+          "label": "Row 3 right",
+          "default": "Not designed to address the pain cycle"
+        },
+        {
+          "type": "text",
+          "id": "good_4",
+          "label": "Row 4 left",
+          "default": "Traditionally circulation-supporting herbs"
+        },
+        {
+          "type": "text",
+          "id": "bad_4",
+          "label": "Row 4 right",
+          "default": "No circulation-supporting ingredients"
+        },
+        {
+          "type": "text",
+          "id": "good_5",
+          "label": "Row 5 left",
+          "default": "No device required"
+        },
+        {
+          "type": "text",
+          "id": "bad_5",
+          "label": "Row 5 right",
+          "default": "May require continuous wear"
+        },
+        {
+          "type": "text",
+          "id": "good_6",
+          "label": "Row 6 left",
+          "default": "Works while walking or sleeping"
+        },
+        {
+          "type": "text",
+          "id": "bad_6",
+          "label": "Row 6 right",
+          "default": "Relief may be short-lived or only work when worn"
+        }
+      ]
+    },
+    {
+      "type": "sec_science",
+      "name": "7. Science and proof",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show",
+          "label": "Show this section",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "background",
+          "label": "Background image"
+        },
+        {
+          "type": "header",
+          "content": "The Science"
+        },
+        {
+          "type": "text",
+          "id": "science_title",
+          "label": "Heading",
+          "default": "The Science"
+        },
+        {
+          "type": "textarea",
+          "id": "science_lead",
+          "label": "Description",
+          "default": "Botanical research supporting blood flow, vein comfort, circulation health, and relief from heavy, tired legs."
+        },
+        {
+          "type": "header",
+          "content": "Science card 1"
+        },
+        {
+          "type": "text",
+          "id": "c1_metric",
+          "label": "Metric",
+          "default": "40%"
+        },
+        {
+          "type": "text",
+          "id": "c1_note",
+          "label": "Metric label",
+          "default": "Increase"
+        },
+        {
+          "type": "number",
+          "id": "c1_percent",
+          "label": "Ring percent",
+          "default": 40
+        },
+        {
+          "type": "text",
+          "id": "c1_kicker",
+          "label": "Label",
+          "default": "Localized Circulation"
+        },
+        {
+          "type": "text",
+          "id": "c1_title",
+          "label": "Heading",
+          "default": "Localized Blood Flow"
+        },
+        {
+          "type": "textarea",
+          "id": "c1_body",
+          "label": "Body",
+          "default": "40% increase in localized blood flow within minutes, driven by Angelica Sinensis combined with sesame oil, helping support circulation in the targeted area."
+        },
+        {
+          "type": "header",
+          "content": "Science card 2"
+        },
+        {
+          "type": "text",
+          "id": "c2_metric",
+          "label": "Metric",
+          "default": "184%"
+        },
+        {
+          "type": "text",
+          "id": "c2_note",
+          "label": "Metric label",
+          "default": "Improvement"
+        },
+        {
+          "type": "number",
+          "id": "c2_percent",
+          "label": "Ring percent",
+          "default": 100
+        },
+        {
+          "type": "text",
+          "id": "c2_kicker",
+          "label": "Label",
+          "default": "Tissue Comfort"
+        },
+        {
+          "type": "text",
+          "id": "c2_title",
+          "label": "Heading",
+          "default": "Tissue Comfort Markers"
+        },
+        {
+          "type": "textarea",
+          "id": "c2_body",
+          "label": "Body",
+          "default": "184% improvement in tissue comfort markers, linked to Comfrey’s naturally occurring allantoin, which is traditionally associated with soothing support."
+        },
+        {
+          "type": "header",
+          "content": "Science card 3"
+        },
+        {
+          "type": "text",
+          "id": "c3_metric",
+          "label": "Metric",
+          "default": "55%"
+        },
+        {
+          "type": "text",
+          "id": "c3_note",
+          "label": "Metric label",
+          "default": "Reduction"
+        },
+        {
+          "type": "number",
+          "id": "c3_percent",
+          "label": "Ring percent",
+          "default": 55
+        },
+        {
+          "type": "text",
+          "id": "c3_kicker",
+          "label": "Label",
+          "default": "Inflammatory Signals"
+        },
+        {
+          "type": "text",
+          "id": "c3_title",
+          "label": "Heading",
+          "default": "Reduced Inflammatory Signals"
+        },
+        {
+          "type": "textarea",
+          "id": "c3_body",
+          "label": "Body",
+          "default": "55% reduction in inflammatory discomfort signals, associated with botanicals like Frankincense and Myrrh, helping calm ongoing irritation."
+        },
+        {
+          "type": "header",
+          "content": "Science card 4"
+        },
+        {
+          "type": "text",
+          "id": "c4_metric",
+          "label": "Metric",
+          "default": "30%"
+        },
+        {
+          "type": "text",
+          "id": "c4_note",
+          "label": "Metric label",
+          "default": "Support"
+        },
+        {
+          "type": "number",
+          "id": "c4_percent",
+          "label": "Ring percent",
+          "default": 30
+        },
+        {
+          "type": "text",
+          "id": "c4_kicker",
+          "label": "Label",
+          "default": "Microcirculation"
+        },
+        {
+          "type": "text",
+          "id": "c4_title",
+          "label": "Heading",
+          "default": "Microcirculation Support"
+        },
+        {
+          "type": "textarea",
+          "id": "c4_body",
+          "label": "Body",
+          "default": "30% enhanced microcirculation support, from herbs such as Fenghuang and Radix Angelicae Dahuricae, helping support comfort and local circulation."
+        },
+        {
+          "type": "header",
+          "content": "The Proof"
+        },
+        {
+          "type": "text",
+          "id": "proof_title",
+          "label": "Heading",
+          "default": "The Proof"
+        },
+        {
+          "type": "textarea",
+          "id": "proof_lead",
+          "label": "Description",
+          "default": "Real customer-style results for plantar fasciitis, heel pain, sore arches, morning discomfort, and everyday walking comfort."
+        },
+        {
+          "type": "image_picker",
+          "id": "proof_1",
+          "label": "Proof image 1"
+        },
+        {
+          "type": "text",
+          "id": "proof_alt_1",
+          "label": "Proof image 1 alt",
+          "default": "Zavelyn Miracle Balm proof image focused on plantar fasciitis and heel pain"
+        },
+        {
+          "type": "image_picker",
+          "id": "proof_2",
+          "label": "Proof image 2"
+        },
+        {
+          "type": "text",
+          "id": "proof_alt_2",
+          "label": "Proof image 2 alt",
+          "default": "Zavelyn Miracle Balm plantar fasciitis proof image for heel and arch discomfort"
+        },
+        {
+          "type": "image_picker",
+          "id": "proof_3",
+          "label": "Proof image 3"
+        },
+        {
+          "type": "text",
+          "id": "proof_alt_3",
+          "label": "Proof image 3 alt",
+          "default": "Zavelyn Miracle Balm proof image showing improved comfort for sore heels and feet"
+        },
+        {
+          "type": "image_picker",
+          "id": "proof_4",
+          "label": "Proof image 4"
+        },
+        {
+          "type": "text",
+          "id": "proof_alt_4",
+          "label": "Proof image 4 alt",
+          "default": "Zavelyn Miracle Balm proof image focused on plantar fasciitis and heel pain"
+        }
+      ]
+    },
+    {
+      "type": "sec_reviews",
+      "name": "8. Review carousel",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show",
+          "label": "Show this section",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "kicker",
+          "label": "Eyebrow",
+          "default": "Verified Customer Reviews"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Trusted by 16,000+ Customers"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Real customer experiences with heel pain, arch soreness, first-step stiffness, foot tension, and difficult walking."
+        },
+        {
+          "type": "text",
+          "id": "score",
+          "label": "Score",
+          "default": "4.8 / 5.0"
+        },
+        {
+          "type": "text",
+          "id": "count_label",
+          "label": "Count label",
+          "default": "16,000+ verified reviews"
+        },
+        {
+          "type": "header",
+          "content": "Review 1"
+        },
+        {
+          "type": "text",
+          "id": "name_1",
+          "label": "Name",
+          "default": "Michael T******"
+        },
+        {
+          "type": "text",
+          "id": "date_1",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_1",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title_1",
+          "label": "Title",
+          "default": "My First Steps Hurt Much Less"
+        },
+        {
+          "type": "textarea",
+          "id": "text_1",
+          "label": "Review",
+          "default": "The worst pain used to hit the moment I stepped out of bed. After using the balm every day on my heel and arch, those first morning steps feel far less sharp and much easier."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 2"
+        },
+        {
+          "type": "text",
+          "id": "name_2",
+          "label": "Name",
+          "default": "Robert H******"
+        },
+        {
+          "type": "text",
+          "id": "date_2",
+          "label": "Date",
+          "default": "3 days ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_2",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title_2",
+          "label": "Title",
+          "default": "Takes the Edge Off Heel Pain"
+        },
+        {
+          "type": "textarea",
+          "id": "text_2",
+          "label": "Review",
+          "default": "Standing for long hours made the bottom of my heel feel bruised and tight. Massaging this balm in morning and night helps calm that sore pressure and makes walking more manageable."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 3"
+        },
+        {
+          "type": "text",
+          "id": "name_3",
+          "label": "Name",
+          "default": "David P******"
+        },
+        {
+          "type": "text",
+          "id": "date_3",
+          "label": "Date",
+          "default": "5 days ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_3",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title_3",
+          "label": "Title",
+          "default": "My Arch Feels Less Tight"
+        },
+        {
+          "type": "textarea",
+          "id": "text_3",
+          "label": "Review",
+          "default": "I had a constant pulling feeling through my arch that made each step uncomfortable. Daily use has helped loosen the area and made my foot feel more relaxed."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 4"
+        },
+        {
+          "type": "text",
+          "id": "name_4",
+          "label": "Name",
+          "default": "James W******"
+        },
+        {
+          "type": "text",
+          "id": "date_4",
+          "label": "Date",
+          "default": "1 week ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_4",
+          "label": "Stars",
+          "default": 4
+        },
+        {
+          "type": "text",
+          "id": "title_4",
+          "label": "Title",
+          "default": "Helps After Being on My Feet"
+        },
+        {
+          "type": "textarea",
+          "id": "text_4",
+          "label": "Review",
+          "default": "By afternoon my heel used to feel hot, sore, and overworked. Applying the balm after work helps settle that pain and gives my foot a more comfortable evening."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 5"
+        },
+        {
+          "type": "text",
+          "id": "name_5",
+          "label": "Name",
+          "default": "Richard M******"
+        },
+        {
+          "type": "text",
+          "id": "date_5",
+          "label": "Date",
+          "default": "2 weeks ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_5",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title_5",
+          "label": "Title",
+          "default": "Walking Feels More Natural Again"
+        },
+        {
+          "type": "textarea",
+          "id": "text_5",
+          "label": "Review",
+          "default": "Plantar pain made me change how I walked just to protect my heel. With regular use, the heel and arch feel less tender and I can walk with a more normal stride."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 6"
+        },
+        {
+          "type": "text",
+          "id": "name_6",
+          "label": "Name",
+          "default": "Thomas B******"
+        },
+        {
+          "type": "text",
+          "id": "date_6",
+          "label": "Date",
+          "default": "3 weeks ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_6",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title_6",
+          "label": "Title",
+          "default": "Great for That Deep Heel Ache"
+        },
+        {
+          "type": "textarea",
+          "id": "text_6",
+          "label": "Review",
+          "default": "The ache at the bottom of my heel used to linger all day. This balm gives soothing comfort and helps the soreness settle faster, especially after walking."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_6",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 7"
+        },
+        {
+          "type": "text",
+          "id": "name_7",
+          "label": "Name",
+          "default": "Daniel K******"
+        },
+        {
+          "type": "text",
+          "id": "date_7",
+          "label": "Date",
+          "default": "1 month ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_7",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title_7",
+          "label": "Title",
+          "default": "A Better Morning Routine"
+        },
+        {
+          "type": "textarea",
+          "id": "text_7",
+          "label": "Review",
+          "default": "I used to brace myself before taking my first steps in the morning. Massaging this into my heel and arch every day has made the foot feel looser and easier to move."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_7",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 8"
+        },
+        {
+          "type": "text",
+          "id": "name_8",
+          "label": "Name",
+          "default": "George A******"
+        },
+        {
+          "type": "text",
+          "id": "date_8",
+          "label": "Date",
+          "default": "2 months ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_8",
+          "label": "Stars",
+          "default": 4
+        },
+        {
+          "type": "text",
+          "id": "title_8",
+          "label": "Title",
+          "default": "The Pain Is Easier to Manage"
+        },
+        {
+          "type": "textarea",
+          "id": "text_8",
+          "label": "Review",
+          "default": "My heel pain used to flare up after errands or long walks. Several weeks of consistent use have helped reduce the tightness and made those flare-ups easier to manage."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_8",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 9"
+        },
+        {
+          "type": "text",
+          "id": "name_9",
+          "label": "Name",
+          "default": "Sarah J******"
+        },
+        {
+          "type": "text",
+          "id": "date_9",
+          "label": "Date",
+          "default": "2 days ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_9",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title_9",
+          "label": "Title",
+          "default": "Less Stabbing Pain in My Heel"
+        },
+        {
+          "type": "textarea",
+          "id": "text_9",
+          "label": "Review",
+          "default": "I had a sharp stabbing feeling under my heel whenever I stood after resting. The balm helps calm that spot and makes each step feel much less intimidating."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_9",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 10"
+        },
+        {
+          "type": "text",
+          "id": "name_10",
+          "label": "Name",
+          "default": "Linda C******"
+        },
+        {
+          "type": "text",
+          "id": "date_10",
+          "label": "Date",
+          "default": "4 days ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_10",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title_10",
+          "label": "Title",
+          "default": "My Foot Feels More Relaxed"
+        },
+        {
+          "type": "textarea",
+          "id": "text_10",
+          "label": "Review",
+          "default": "The bottom of my foot often felt tight from the heel into the arch. Since using the balm consistently, that tension settles faster and walking feels smoother."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_10",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 11"
+        },
+        {
+          "type": "text",
+          "id": "name_11",
+          "label": "Name",
+          "default": "Carolyn B******"
+        },
+        {
+          "type": "text",
+          "id": "date_11",
+          "label": "Date",
+          "default": "6 days ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_11",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title_11",
+          "label": "Title",
+          "default": "A Big Help for Flare-Ups"
+        },
+        {
+          "type": "textarea",
+          "id": "text_11",
+          "label": "Review",
+          "default": "My plantar flare-ups made it painful to stand in the kitchen or walk through the store. Gentle massage with this balm helps calm the area and makes daily movement easier."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_11",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 12"
+        },
+        {
+          "type": "text",
+          "id": "name_12",
+          "label": "Name",
+          "default": "Patricia M******"
+        },
+        {
+          "type": "text",
+          "id": "date_12",
+          "label": "Date",
+          "default": "1 week ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_12",
+          "label": "Stars",
+          "default": 4
+        },
+        {
+          "type": "text",
+          "id": "title_12",
+          "label": "Title",
+          "default": "Comfort After Long Days"
+        },
+        {
+          "type": "textarea",
+          "id": "text_12",
+          "label": "Review",
+          "default": "Standing too long left my heel and arch feeling sore and tired. Applying the balm afterward helps release the tension and gives me a more comfortable evening."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_12",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 13"
+        },
+        {
+          "type": "text",
+          "id": "name_13",
+          "label": "Name",
+          "default": "Barbara Y******"
+        },
+        {
+          "type": "text",
+          "id": "date_13",
+          "label": "Date",
+          "default": "2 weeks ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_13",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title_13",
+          "label": "Title",
+          "default": "Less Pulling Through My Arch"
+        },
+        {
+          "type": "textarea",
+          "id": "text_13",
+          "label": "Review",
+          "default": "I felt a pulling sensation through the arch whenever I walked barefoot. Consistent use has helped that area feel more flexible and less irritated."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_13",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 14"
+        },
+        {
+          "type": "text",
+          "id": "name_14",
+          "label": "Name",
+          "default": "Susan H******"
+        },
+        {
+          "type": "text",
+          "id": "date_14",
+          "label": "Date",
+          "default": "1 month ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_14",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title_14",
+          "label": "Title",
+          "default": "Long Walks Feel Possible Again"
+        },
+        {
+          "type": "textarea",
+          "id": "text_14",
+          "label": "Review",
+          "default": "I avoided longer walks because my heel would start throbbing halfway through. Regular use has helped calm the soreness and made it easier to stay active."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_14",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 15"
+        },
+        {
+          "type": "text",
+          "id": "name_15",
+          "label": "Name",
+          "default": "Margaret W******"
+        },
+        {
+          "type": "text",
+          "id": "date_15",
+          "label": "Date",
+          "default": "2 months ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_15",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title_15",
+          "label": "Title",
+          "default": "My Heel Feels Looser"
+        },
+        {
+          "type": "textarea",
+          "id": "text_15",
+          "label": "Review",
+          "default": "By evening, my heel and arch often felt stiff and overworked. The balm eases that tight feeling and helps my foot feel more relaxed before bed."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_15",
+          "label": "Photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 16"
+        },
+        {
+          "type": "text",
+          "id": "name_16",
+          "label": "Name",
+          "default": "Dorothy G******"
+        },
+        {
+          "type": "text",
+          "id": "date_16",
+          "label": "Date",
+          "default": "3 months ago"
+        },
+        {
+          "type": "number",
+          "id": "stars_16",
+          "label": "Stars",
+          "default": 4
+        },
+        {
+          "type": "text",
+          "id": "title_16",
+          "label": "Title",
+          "default": "Helps Keep Heel Pain Under Control"
+        },
+        {
+          "type": "textarea",
+          "id": "text_16",
+          "label": "Review",
+          "default": "My heel pain caused soreness, tightness, and discomfort with nearly every step. The soothing sensation and regular massage help keep the pain under control throughout the day."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_16",
+          "label": "Photo"
+        }
+      ]
+    },
+    {
+      "type": "sec_howto",
+      "name": "9. How to use",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show",
+          "label": "Show this section",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "How to use image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Image alt",
+          "default": "How to use for plantar and heel pain: scoop a small amount, apply to the heel and arch, massage gently, and use daily"
+        }
+      ]
+    },
+    {
+      "type": "sec_timeline",
+      "name": "10. Relief timeline",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show",
+          "label": "Show this section",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "kicker",
+          "label": "Eyebrow",
+          "default": "The Relief Timeline"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "What Consistent Daily Care May Feel Like"
+        },
+        {
+          "type": "textarea",
+          "id": "lead",
+          "label": "Description",
+          "default": "Follow the changes customers commonly describe as heel and plantar discomfort becomes easier to manage with consistent use."
+        },
+        {
+          "type": "header",
+          "content": "Stage 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "s1_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "s1_alt",
+          "label": "Photo alt",
+          "default": "Day 1 plantar and heel pain relief timeline"
+        },
+        {
+          "type": "text",
+          "id": "s1_badge",
+          "label": "Photo badge",
+          "default": "Day 1"
+        },
+        {
+          "type": "text",
+          "id": "s1_label",
+          "label": "Label",
+          "default": "The First Change"
+        },
+        {
+          "type": "text",
+          "id": "s1_title",
+          "label": "Heading",
+          "default": "Day 1"
+        },
+        {
+          "type": "textarea",
+          "id": "s1_lead",
+          "label": "Lead",
+          "default": "The first steps after rest may begin to feel less sharp and less guarded."
+        },
+        {
+          "type": "text",
+          "id": "s1_p1",
+          "label": "Point 1",
+          "default": "The heel feels less aggressive."
+        },
+        {
+          "type": "text",
+          "id": "s1_p2",
+          "label": "Point 2",
+          "default": "The arch loosens more quickly."
+        },
+        {
+          "type": "text",
+          "id": "s1_p3",
+          "label": "Point 3",
+          "default": "Burning or throbbing starts to settle."
+        },
+        {
+          "type": "text",
+          "id": "s1_result",
+          "label": "Result",
+          "default": "You notice the first difference."
+        },
+        {
+          "type": "header",
+          "content": "Stage 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "s2_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "s2_alt",
+          "label": "Photo alt",
+          "default": "Week 1 plantar and heel pain relief timeline"
+        },
+        {
+          "type": "text",
+          "id": "s2_badge",
+          "label": "Photo badge",
+          "default": "Week 1"
+        },
+        {
+          "type": "text",
+          "id": "s2_label",
+          "label": "Label",
+          "default": "Daily Comfort Builds"
+        },
+        {
+          "type": "text",
+          "id": "s2_title",
+          "label": "Heading",
+          "default": "Week 1"
+        },
+        {
+          "type": "textarea",
+          "id": "s2_lead",
+          "label": "Lead",
+          "default": "You may get through more of the day without constantly thinking about your heel."
+        },
+        {
+          "type": "text",
+          "id": "s2_p1",
+          "label": "Point 1",
+          "default": "Less morning stiffness."
+        },
+        {
+          "type": "text",
+          "id": "s2_p2",
+          "label": "Point 2",
+          "default": "Less limping through the day."
+        },
+        {
+          "type": "text",
+          "id": "s2_p3",
+          "label": "Point 3",
+          "default": "Less end-of-day throbbing."
+        },
+        {
+          "type": "text",
+          "id": "s2_result",
+          "label": "Result",
+          "default": "Walking feels more natural."
+        },
+        {
+          "type": "header",
+          "content": "Stage 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "s3_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "s3_alt",
+          "label": "Photo alt",
+          "default": "Weeks 2 to 4 plantar and heel pain relief timeline"
+        },
+        {
+          "type": "text",
+          "id": "s3_badge",
+          "label": "Photo badge",
+          "default": "Weeks 2–4"
+        },
+        {
+          "type": "text",
+          "id": "s3_label",
+          "label": "Label",
+          "default": "Movement Feels Natural"
+        },
+        {
+          "type": "text",
+          "id": "s3_title",
+          "label": "Heading",
+          "default": "Weeks 2–4"
+        },
+        {
+          "type": "textarea",
+          "id": "s3_lead",
+          "label": "Lead",
+          "default": "You may step more normally without bracing, hesitation, or constantly protecting the heel."
+        },
+        {
+          "type": "text",
+          "id": "s3_p1",
+          "label": "Point 1",
+          "default": "Standing longer feels manageable."
+        },
+        {
+          "type": "text",
+          "id": "s3_p2",
+          "label": "Point 2",
+          "default": "Longer walks feel possible again."
+        },
+        {
+          "type": "text",
+          "id": "s3_p3",
+          "label": "Point 3",
+          "default": "Your heel stops controlling your routine."
+        },
+        {
+          "type": "text",
+          "id": "s3_result",
+          "label": "Result",
+          "default": "Your feet stop controlling your day."
+        }
+      ]
+    },
+    {
+      "type": "sec_faq",
+      "name": "11. FAQ",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show",
+          "label": "Show this section",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Help Center"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Questions? We Can Help."
+        },
+        {
+          "type": "text",
+          "id": "q_1",
+          "label": "Question 1",
+          "default": "How should I store the balm?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_1",
+          "label": "Answer 1",
+          "default": "Keep the balm tightly closed and store it in a cool, dry place away from direct sunlight, excessive heat, and moisture. Always follow any storage instructions printed on the product label."
+        },
+        {
+          "type": "text",
+          "id": "q_2",
+          "label": "Question 2",
+          "default": "How do I apply it?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_2",
+          "label": "Answer 2",
+          "default": "Apply a small amount to clean, intact skin and massage gently until evenly distributed. Use only as directed on the product label."
+        },
+        {
+          "type": "text",
+          "id": "q_3",
+          "label": "Question 3",
+          "default": "How often should I use it?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_3",
+          "label": "Answer 3",
+          "default": "Follow the directions on the product label. Many customers include it in their morning and evening routines."
+        },
+        {
+          "type": "text",
+          "id": "q_4",
+          "label": "Question 4",
+          "default": "Should I wash my hands?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_4",
+          "label": "Answer 4",
+          "default": "Yes, unless you are applying the balm to your hands. Avoid touching your eyes, mouth, and other sensitive areas after application."
+        },
+        {
+          "type": "text",
+          "id": "q_5",
+          "label": "Question 5",
+          "default": "Can I use it on wounds?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_5",
+          "label": "Answer 5",
+          "default": "No. Apply the balm only to clean, intact skin. Do not apply it to open wounds, broken skin, or irritated areas."
+        },
+        {
+          "type": "text",
+          "id": "q_6",
+          "label": "Question 6",
+          "default": "Is it suitable for sensitive skin?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_6",
+          "label": "Answer 6",
+          "default": "Skin responses vary. Perform a small patch test first and discontinue use if redness, burning, or irritation occurs."
+        },
+        {
+          "type": "text",
+          "id": "q_7",
+          "label": "Question 7",
+          "default": "Is it safe for everyone?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_7",
+          "label": "Answer 7",
+          "default": "It is for external use only. Consult a healthcare professional before use on young children or if you have allergies or a medical condition."
+        },
+        {
+          "type": "text",
+          "id": "q_8",
+          "label": "Question 8",
+          "default": "Can I use it while pregnant?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_8",
+          "label": "Answer 8",
+          "default": "Consult your healthcare provider before using herbal topical products during pregnancy or while breastfeeding."
+        },
+        {
+          "type": "text",
+          "id": "q_9",
+          "label": "Question 9",
+          "default": "What does it feel like?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_9",
+          "label": "Answer 9",
+          "default": "The peppermint oil may create a refreshing cooling or warming sensation. Stop using it if the sensation becomes uncomfortable."
+        },
+        {
+          "type": "text",
+          "id": "q_10",
+          "label": "Question 10",
+          "default": "How quickly does it work?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_10",
+          "label": "Answer 10",
+          "default": "Results vary by person and area of use. Some customers notice a soothing sensation shortly after application."
+        },
+        {
+          "type": "text",
+          "id": "q_11",
+          "label": "Question 11",
+          "default": "What ingredients are included?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_11",
+          "label": "Answer 11",
+          "default": "The formula includes comfrey, Angelica Sinensis, Angelica Dahurica, frankincense, myrrh, sesame oil, peppermint oil, beeswax, and Feng Huang."
+        },
+        {
+          "type": "text",
+          "id": "q_12",
+          "label": "Question 12",
+          "default": "How does a topical balm work?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_12",
+          "label": "Answer 12",
+          "default": "It is applied directly to the skin, where the oils, massage, and botanical ingredients provide localized cosmetic and soothing effects."
+        },
+        {
+          "type": "text",
+          "id": "q_13",
+          "label": "Question 13",
+          "default": "How much is in each jar?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_13",
+          "label": "Answer 13",
+          "default": "Each jar contains 1 ounce or approximately 30 grams of concentrated balm. How long it lasts depends on the area and frequency of use."
+        },
+        {
+          "type": "text",
+          "id": "q_14",
+          "label": "Question 14",
+          "default": "When will my order arrive?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_14",
+          "label": "Answer 14",
+          "default": "Delivery time depends on your destination and selected shipping method. Tracking information is sent after your order ships."
+        },
+        {
+          "type": "text",
+          "id": "q_15",
+          "label": "Question 15",
+          "default": "What is the refund policy?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_15",
+          "label": "Answer 15",
+          "default": "Eligible orders are protected by our 30-Day Money-Back Guarantee. Contact support within the guarantee period for assistance."
+        },
+        {
+          "type": "text",
+          "id": "q_16",
+          "label": "Question 16",
+          "default": "How can I contact support?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_16",
+          "label": "Answer 16",
+          "default": "Email <a href=\"mailto:support@zavelyn.com\"> support@zavelyn.com </a> for product, order, shipping, or refund assistance."
+        }
+      ]
+    },
+    {
+      "type": "sec_ryviu",
+      "name": "12. Customer reviews",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show",
+          "label": "Show this section",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "average",
+          "label": "Average score",
+          "default": "4.9"
+        },
+        {
+          "type": "text",
+          "id": "total",
+          "label": "Total reviews",
+          "default": "1,529"
+        },
+        {
+          "type": "text",
+          "id": "star_5",
+          "label": "5 star count",
+          "default": "1,517"
+        },
+        {
+          "type": "text",
+          "id": "star_4",
+          "label": "4 star count",
+          "default": "12"
+        },
+        {
+          "type": "text",
+          "id": "star_3",
+          "label": "3 star count",
+          "default": "0"
+        },
+        {
+          "type": "text",
+          "id": "star_2",
+          "label": "2 star count",
+          "default": "0"
+        },
+        {
+          "type": "text",
+          "id": "star_1",
+          "label": "1 star count",
+          "default": "0"
+        },
+        {
+          "type": "text",
+          "id": "showing",
+          "label": "Showing line",
+          "default": "Showing 1 - 10 of 1,529 reviews"
+        },
+        {
+          "type": "text",
+          "id": "photos_title",
+          "label": "Photos heading",
+          "default": "Customer Photos"
+        },
+        {
+          "type": "text",
+          "id": "more_label",
+          "label": "Extra photos label",
+          "default": "+10"
+        },
+        {
+          "type": "text",
+          "id": "write_label",
+          "label": "Write button",
+          "default": "Write a review"
+        },
+        {
+          "type": "header",
+          "content": "Customer photos"
+        },
+        {
+          "type": "image_picker",
+          "id": "photo_1",
+          "label": "Thumb 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "photo_2",
+          "label": "Thumb 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "photo_3",
+          "label": "Thumb 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "photo_4",
+          "label": "Thumb 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "photo_5",
+          "label": "Thumb 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "pair_1",
+          "label": "Paired photo left"
+        },
+        {
+          "type": "image_picker",
+          "id": "pair_2",
+          "label": "Paired photo right"
+        },
+        {
+          "type": "header",
+          "content": "Review 1"
+        },
+        {
+          "type": "text",
+          "id": "r1_letter",
+          "label": "Avatar letter",
+          "default": "l"
+        },
+        {
+          "type": "text",
+          "id": "r1_color",
+          "label": "Avatar color",
+          "default": "#25c5a3"
+        },
+        {
+          "type": "text",
+          "id": "r1_name",
+          "label": "Name",
+          "default": "Lynne W."
+        },
+        {
+          "type": "text",
+          "id": "r1_date",
+          "label": "Date",
+          "default": "last month"
+        },
+        {
+          "type": "number",
+          "id": "r1_stars",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "r1_title",
+          "label": "Title",
+          "default": "Anazing"
+        },
+        {
+          "type": "textarea",
+          "id": "r1_short",
+          "label": "Short text",
+          "default": "I have suffered for 4 months with this, spent hundreds of pounds on various creams and insoles all highly recommended- n"
+        },
+        {
+          "type": "textarea",
+          "id": "r1_full",
+          "label": "Full text",
+          "default": "I have suffered for 4 months with this, spent hundreds of pounds on various creams and insoles all highly recommended- nothing helped much. Thought why not try this when it came up on FB - it’s brilliant I can walk for a reasonable time where before after Q10mons I was limping. Suggest you try and use 3 times a day can’t recommend it enough."
+        },
+        {
+          "type": "number",
+          "id": "r1_up",
+          "label": "Helpful votes",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "r1_down",
+          "label": "Not helpful votes",
+          "default": 0
+        },
+        {
+          "type": "image_picker",
+          "id": "r1_photo",
+          "label": "Review photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 2"
+        },
+        {
+          "type": "text",
+          "id": "r2_letter",
+          "label": "Avatar letter",
+          "default": "s"
+        },
+        {
+          "type": "text",
+          "id": "r2_color",
+          "label": "Avatar color",
+          "default": "#2ea2db"
+        },
+        {
+          "type": "text",
+          "id": "r2_name",
+          "label": "Name",
+          "default": "Shirley C."
+        },
+        {
+          "type": "text",
+          "id": "r2_date",
+          "label": "Date",
+          "default": "5 months ago"
+        },
+        {
+          "type": "number",
+          "id": "r2_stars",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "r2_title",
+          "label": "Title",
+          "default": "This balm works"
+        },
+        {
+          "type": "textarea",
+          "id": "r2_short",
+          "label": "Short text",
+          "default": "I order the balm but use it once the other night my ankle hurt feet did to I rub it on my feet and it helps a lot the pa"
+        },
+        {
+          "type": "textarea",
+          "id": "r2_full",
+          "label": "Full text",
+          "default": "I order the balm but use it once the other night my ankle hurt feet did to I rub it on my feet and it helps a lot the pain went away thank I order more"
+        },
+        {
+          "type": "number",
+          "id": "r2_up",
+          "label": "Helpful votes",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "r2_down",
+          "label": "Not helpful votes",
+          "default": 0
+        },
+        {
+          "type": "image_picker",
+          "id": "r2_photo",
+          "label": "Review photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 3"
+        },
+        {
+          "type": "text",
+          "id": "r3_letter",
+          "label": "Avatar letter",
+          "default": "d"
+        },
+        {
+          "type": "text",
+          "id": "r3_color",
+          "label": "Avatar color",
+          "default": "#ea5644"
+        },
+        {
+          "type": "text",
+          "id": "r3_name",
+          "label": "Name",
+          "default": "Denise S."
+        },
+        {
+          "type": "text",
+          "id": "r3_date",
+          "label": "Date",
+          "default": "10 months ago"
+        },
+        {
+          "type": "number",
+          "id": "r3_stars",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "r3_title",
+          "label": "Title",
+          "default": "Instant Relief"
+        },
+        {
+          "type": "textarea",
+          "id": "r3_short",
+          "label": "Short text",
+          "default": "I bought a look a like and got no relief. The advertisement of Senzio look like an ointment not the cream that the look"
+        },
+        {
+          "type": "textarea",
+          "id": "r3_full",
+          "label": "Full text",
+          "default": "I bought a look a like and got no relief. The advertisement of Senzio look like an ointment not the cream that the look alike had. I decided to order this time from Senzio store. I am so glad I did. I got instant relief. I recently had a hip replacement and developed complications from my circulation. Getting the right product has brought me hope and improved quality in my daily living. It’s the real deal"
+        },
+        {
+          "type": "number",
+          "id": "r3_up",
+          "label": "Helpful votes",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "r3_down",
+          "label": "Not helpful votes",
+          "default": 0
+        },
+        {
+          "type": "image_picker",
+          "id": "r3_photo",
+          "label": "Review photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 4"
+        },
+        {
+          "type": "text",
+          "id": "r4_letter",
+          "label": "Avatar letter",
+          "default": "l"
+        },
+        {
+          "type": "text",
+          "id": "r4_color",
+          "label": "Avatar color",
+          "default": "#25c5a3"
+        },
+        {
+          "type": "text",
+          "id": "r4_name",
+          "label": "Name",
+          "default": "Lauren"
+        },
+        {
+          "type": "text",
+          "id": "r4_date",
+          "label": "Date",
+          "default": "2 months ago"
+        },
+        {
+          "type": "number",
+          "id": "r4_stars",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "r4_title",
+          "label": "Title",
+          "default": "Life saver!"
+        },
+        {
+          "type": "textarea",
+          "id": "r4_short",
+          "label": "Short text",
+          "default": "I have been suffering from systemic fasciitis from head to toe for the past couple years. I use the Senzio miracle balm"
+        },
+        {
+          "type": "textarea",
+          "id": "r4_full",
+          "label": "Full text",
+          "default": "I have been suffering from systemic fasciitis from head to toe for the past couple years. I use the Senzio miracle balm as a part of my routine to release the facial tension and discomfort. This is the only product that has helped provide noticeable results in a short period of time. I actually use it head to toe & with each application I am feeling my facia become more pliable, and I am actually feeling muscles stretch in my body that have been locked and immovable for decades. I highly recommend this product not just for the use of planter fasciitis, but for any area of your body where you’re suffering from fascial issues. I use this alongside mineral baths, Kenzieology taping & myofascial massage. This combined treatment plan has helped my muscles release after two decades of being completely frozen. I was slowly being crushed by my own bodies fascia network. Thanks to Senzio’s miracle balm I am feeling my muscles move and stretch in ways I never thought possible. The more I use it, the better I feel. I highly recommend this product. It really works. I rarely write products review reviews but this product gave me back part of my life. I thought I would never have again, so I felt the very least I could do was write them a review and help them reach more customers. Help more people find the relief that I am finding as a result for their product. Thank you, Senzio!  Your product is truly a “miracle balm”"
+        },
+        {
+          "type": "number",
+          "id": "r4_up",
+          "label": "Helpful votes",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "r4_down",
+          "label": "Not helpful votes",
+          "default": 0
+        },
+        {
+          "type": "image_picker",
+          "id": "r4_photo",
+          "label": "Review photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 5"
+        },
+        {
+          "type": "text",
+          "id": "r5_letter",
+          "label": "Avatar letter",
+          "default": "s"
+        },
+        {
+          "type": "text",
+          "id": "r5_color",
+          "label": "Avatar color",
+          "default": "#2ea2db"
+        },
+        {
+          "type": "text",
+          "id": "r5_name",
+          "label": "Name",
+          "default": "Sharon"
+        },
+        {
+          "type": "text",
+          "id": "r5_date",
+          "label": "Date",
+          "default": "9 months ago"
+        },
+        {
+          "type": "number",
+          "id": "r5_stars",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "r5_title",
+          "label": "Title",
+          "default": "The best ever"
+        },
+        {
+          "type": "textarea",
+          "id": "r5_short",
+          "label": "Short text",
+          "default": "I tell all my friends and they love it"
+        },
+        {
+          "type": "textarea",
+          "id": "r5_full",
+          "label": "Full text"
+        },
+        {
+          "type": "number",
+          "id": "r5_up",
+          "label": "Helpful votes",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "r5_down",
+          "label": "Not helpful votes",
+          "default": 0
+        },
+        {
+          "type": "image_picker",
+          "id": "r5_photo",
+          "label": "Review photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 6"
+        },
+        {
+          "type": "text",
+          "id": "r6_letter",
+          "label": "Avatar letter",
+          "default": "d"
+        },
+        {
+          "type": "text",
+          "id": "r6_color",
+          "label": "Avatar color",
+          "default": "#ea5644"
+        },
+        {
+          "type": "text",
+          "id": "r6_name",
+          "label": "Name",
+          "default": "Denise S."
+        },
+        {
+          "type": "text",
+          "id": "r6_date",
+          "label": "Date",
+          "default": "10 months ago"
+        },
+        {
+          "type": "number",
+          "id": "r6_stars",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "r6_title",
+          "label": "Title",
+          "default": "Finally, relieg"
+        },
+        {
+          "type": "textarea",
+          "id": "r6_short",
+          "label": "Short text",
+          "default": "In June I had a hip replacement. The swelling was not expected. The discoloration of my feet and ankle was horrifying. I"
+        },
+        {
+          "type": "textarea",
+          "id": "r6_full",
+          "label": "Full text",
+          "default": "In June I had a hip replacement. The swelling was not expected. The discoloration of my feet and ankle was horrifying. I have spent a lot of money for rehab, creams and ointments. I got some relief but not meeting expectations. I bought the fake miracle balm which did absolutely nothing. The ingredients moisturized my skin. I bought this product and got immediate results. Swelling and pain gone for about four hours or more. My only complaint is the size. I am tall and big. I have four jars. I hope they will last at least a month with my applying the ointment day and night."
+        },
+        {
+          "type": "number",
+          "id": "r6_up",
+          "label": "Helpful votes",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "r6_down",
+          "label": "Not helpful votes",
+          "default": 0
+        },
+        {
+          "type": "image_picker",
+          "id": "r6_photo",
+          "label": "Review photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 7"
+        },
+        {
+          "type": "text",
+          "id": "r7_letter",
+          "label": "Avatar letter",
+          "default": "a"
+        },
+        {
+          "type": "text",
+          "id": "r7_color",
+          "label": "Avatar color",
+          "default": "#e8c23f"
+        },
+        {
+          "type": "text",
+          "id": "r7_name",
+          "label": "Name",
+          "default": "AU"
+        },
+        {
+          "type": "text",
+          "id": "r7_date",
+          "label": "Date",
+          "default": "4 months ago"
+        },
+        {
+          "type": "number",
+          "id": "r7_stars",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "r7_title",
+          "label": "Title",
+          "default": "Miracle Balm"
+        },
+        {
+          "type": "textarea",
+          "id": "r7_short",
+          "label": "Short text",
+          "default": "It is really a miracle balm. I don’t have anymore feet pain after 1 week of use. Smell is good😊"
+        },
+        {
+          "type": "textarea",
+          "id": "r7_full",
+          "label": "Full text"
+        },
+        {
+          "type": "number",
+          "id": "r7_up",
+          "label": "Helpful votes",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "r7_down",
+          "label": "Not helpful votes",
+          "default": 0
+        },
+        {
+          "type": "image_picker",
+          "id": "r7_photo",
+          "label": "Review photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 8"
+        },
+        {
+          "type": "text",
+          "id": "r8_letter",
+          "label": "Avatar letter",
+          "default": "c"
+        },
+        {
+          "type": "text",
+          "id": "r8_color",
+          "label": "Avatar color",
+          "default": "#ffb954"
+        },
+        {
+          "type": "text",
+          "id": "r8_name",
+          "label": "Name",
+          "default": "Cheryl"
+        },
+        {
+          "type": "text",
+          "id": "r8_date",
+          "label": "Date",
+          "default": "4 months ago"
+        },
+        {
+          "type": "number",
+          "id": "r8_stars",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "r8_title",
+          "label": "Title",
+          "default": "This product is great !!!!"
+        },
+        {
+          "type": "textarea",
+          "id": "r8_short",
+          "label": "Short text",
+          "default": "I had tight skin. I use Senzio it not only loosened my skin. It made the skin feel softer and smoother, and I put it on"
+        },
+        {
+          "type": "textarea",
+          "id": "r8_full",
+          "label": "Full text",
+          "default": "I had tight skin. I use Senzio it not only loosened my skin. It made the skin feel softer and smoother, and I put it on my shoulders because my neck was hurting and instantly it relieved my shoulder pain. It’s a miracle. As you can see in my picture, I have my supply you better hurry up and get yours before they run out. !!!!"
+        },
+        {
+          "type": "number",
+          "id": "r8_up",
+          "label": "Helpful votes",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "r8_down",
+          "label": "Not helpful votes",
+          "default": 0
+        },
+        {
+          "type": "image_picker",
+          "id": "r8_photo",
+          "label": "Review photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 9"
+        },
+        {
+          "type": "text",
+          "id": "r9_letter",
+          "label": "Avatar letter",
+          "default": "j"
+        },
+        {
+          "type": "text",
+          "id": "r9_color",
+          "label": "Avatar color",
+          "default": "#0ec994"
+        },
+        {
+          "type": "text",
+          "id": "r9_name",
+          "label": "Name",
+          "default": "Joan D."
+        },
+        {
+          "type": "text",
+          "id": "r9_date",
+          "label": "Date",
+          "default": "4 months ago"
+        },
+        {
+          "type": "number",
+          "id": "r9_stars",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "r9_title",
+          "label": "Title",
+          "default": "Mrs Joan davies"
+        },
+        {
+          "type": "textarea",
+          "id": "r9_short",
+          "label": "Short text",
+          "default": "Tried it with little hope but it worked thank you"
+        },
+        {
+          "type": "textarea",
+          "id": "r9_full",
+          "label": "Full text"
+        },
+        {
+          "type": "number",
+          "id": "r9_up",
+          "label": "Helpful votes",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "r9_down",
+          "label": "Not helpful votes",
+          "default": 0
+        },
+        {
+          "type": "image_picker",
+          "id": "r9_photo",
+          "label": "Review photo"
+        },
+        {
+          "type": "header",
+          "content": "Review 10"
+        },
+        {
+          "type": "text",
+          "id": "r10_letter",
+          "label": "Avatar letter",
+          "default": "c"
+        },
+        {
+          "type": "text",
+          "id": "r10_color",
+          "label": "Avatar color",
+          "default": "#ffb954"
+        },
+        {
+          "type": "text",
+          "id": "r10_name",
+          "label": "Name",
+          "default": "Cheryl. L."
+        },
+        {
+          "type": "text",
+          "id": "r10_date",
+          "label": "Date",
+          "default": "4 months ago"
+        },
+        {
+          "type": "number",
+          "id": "r10_stars",
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "r10_title",
+          "label": "Title",
+          "default": "Great quality"
+        },
+        {
+          "type": "textarea",
+          "id": "r10_short",
+          "label": "Short text",
+          "default": "I started using Senzio on my legs. I have lymphedema. It helped to relieve some of the pain that I had in my legs, and i"
+        },
+        {
+          "type": "textarea",
+          "id": "r10_full",
+          "label": "Full text",
+          "default": "I started using Senzio on my legs. I have lymphedema. It helped to relieve some of the pain that I had in my legs, and it helped to reduce some of the swelling."
+        },
+        {
+          "type": "number",
+          "id": "r10_up",
+          "label": "Helpful votes",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "r10_down",
+          "label": "Not helpful votes",
+          "default": 0
+        },
+        {
+          "type": "image_picker",
+          "id": "r10_photo",
+          "label": "Review photo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offer Miracle Balm",
+      "blocks": [
+        {
+          "type": "sec_gallery"
+        },
+        {
+          "type": "sec_buybox"
+        },
+        {
+          "type": "sec_people"
+        },
+        {
+          "type": "sec_purity"
+        },
+        {
+          "type": "sec_explorer"
+        },
+        {
+          "type": "sec_herbs"
+        },
+        {
+          "type": "sec_compare"
+        },
+        {
+          "type": "sec_science"
+        },
+        {
+          "type": "sec_reviews"
+        },
+        {
+          "type": "sec_howto"
+        },
+        {
+          "type": "sec_timeline"
+        },
+        {
+          "type": "sec_faq"
+        },
+        {
+          "type": "sec_ryviu"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

@@ -1,0 +1,105 @@
+{%- comment -%}
+  Products for a menu link: the linked collection, else child products and collections.
+  {% render 'menu-products', link: link, limit: 6 %}
+{%- endcomment -%}
+{%- liquid
+  assign menu_limit = limit | default: 6 | plus: 0
+  assign shown = 0
+  assign seen = '|'
+  assign menu_collection = nil
+
+  if link.type == 'catalog_link'
+    assign menu_collection = collections.all
+  elsif link.type == 'collection_link'
+    assign menu_collection = link.object
+  endif
+-%}
+
+{%- if menu_collection != blank and menu_collection.products_count > 0 -%}
+  {%- for product in menu_collection.products limit: menu_limit -%}
+    {%- render 'menu-product', product: product -%}
+  {%- endfor -%}
+{%- else -%}
+  {%- liquid
+    assign collection_children = 0
+    for child in link.links
+      if child.type == 'collection_link' or child.type == 'catalog_link'
+        assign collection_children = collection_children | plus: 1
+      endif
+    endfor
+    assign per_child = menu_limit
+    if collection_children > 1
+      assign per_child = menu_limit | divided_by: collection_children
+      if per_child < 2
+        assign per_child = 2
+      endif
+    endif
+  -%}
+
+  {%- for child in link.links -%}
+    {%- if shown >= menu_limit -%}{%- break -%}{%- endif -%}
+
+    {%- if child.type == 'product_link' and child.object != blank -%}
+      {%- assign token = '|' | append: child.object.handle | append: '|' -%}
+      {%- unless seen contains token -%}
+        {%- render 'menu-product', product: child.object -%}
+        {%- assign seen = seen | append: child.object.handle | append: '|' -%}
+        {%- assign shown = shown | plus: 1 -%}
+      {%- endunless -%}
+    {%- elsif child.type == 'collection_link' or child.type == 'catalog_link' -%}
+      {%- liquid
+        assign child_collection = child.object
+        if child.type == 'catalog_link'
+          assign child_collection = collections.all
+        endif
+        assign remaining = menu_limit | minus: shown
+        assign child_limit = per_child
+        if remaining < child_limit
+          assign child_limit = remaining
+        endif
+      -%}
+      {%- if child_collection != blank and child_limit > 0 -%}
+        {%- for product in child_collection.products limit: child_limit -%}
+          {%- if shown >= menu_limit -%}{%- break -%}{%- endif -%}
+          {%- assign token = '|' | append: product.handle | append: '|' -%}
+          {%- unless seen contains token -%}
+            {%- render 'menu-product', product: product -%}
+            {%- assign seen = seen | append: product.handle | append: '|' -%}
+            {%- assign shown = shown | plus: 1 -%}
+          {%- endunless -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- elsif child.links != blank -%}
+      {%- for grandchild in child.links -%}
+        {%- if shown >= menu_limit -%}{%- break -%}{%- endif -%}
+        {%- if grandchild.type == 'product_link' and grandchild.object != blank -%}
+          {%- assign token = '|' | append: grandchild.object.handle | append: '|' -%}
+          {%- unless seen contains token -%}
+            {%- render 'menu-product', product: grandchild.object -%}
+            {%- assign seen = seen | append: grandchild.object.handle | append: '|' -%}
+            {%- assign shown = shown | plus: 1 -%}
+          {%- endunless -%}
+        {%- elsif grandchild.type == 'collection_link' or grandchild.type == 'catalog_link' -%}
+          {%- liquid
+            assign grand_collection = grandchild.object
+            if grandchild.type == 'catalog_link'
+              assign grand_collection = collections.all
+            endif
+            assign remaining = menu_limit | minus: shown
+          -%}
+          {%- if grand_collection != blank and remaining > 0 -%}
+            {%- for product in grand_collection.products limit: remaining -%}
+              {%- assign token = '|' | append: product.handle | append: '|' -%}
+              {%- unless seen contains token -%}
+                {%- render 'menu-product', product: product -%}
+                {%- assign seen = seen | append: product.handle | append: '|' -%}
+                {%- assign shown = shown | plus: 1 -%}
+              {%- endunless -%}
+              {%- if shown >= menu_limit -%}{%- break -%}{%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454960910521",
+  "title": "Zavelyn Self-Leveling Laser Level",
+  "handle": "sakerplus®-self-leveling-laser-level-with-tripod",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914613457081",
+        "title": "Default Title",
+        "price": "96.99",
+        "sku": "GJ126393-X82633"
+      }
+    ]
+  }
+}

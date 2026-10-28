@@ -1,0 +1,12 @@
+{
+  "wrapper": "div#shopify-section-yeoman-sweep",
+  "sections": {
+    "main": {
+      "type": "yeoman-sweep-funnel",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "top_banner": {
+      "type": "zavelyn-top-banner",
+      "settings": {
+        "badge_text": "FLASH SALE",
+        "main_text": "BUY 1, GET 2ND AT 50% OFF · FREE US EXPRESS SHIPPING OVER $49",
+        "timer_end": "Ends Tonight at 11:59PM"
+      }
+    },
+    "hero": {
+      "type": "zavelyn-hero-elixir",
+      "settings": {
+        "eyebrow": "★ 2026 ZAVELYN INNOVATIONS · TRUSTED BY 50,000+ HOMES",
+        "heading": "Engineered for Heavy Duty.<br><span>Built for Everyday Reliability.<\/span>",
+        "subhead": "Stop settling for cheap gear that fails when you need it most. Zavelyn crafts industrial-grade smart gadgets, repair kits, and wellness tools designed to outlast and outperform.",
+        "primary_cta_text": "SHOP BEST SELLERS →",
+        "secondary_cta_text": "EXPLORE ALL INNOVATIONS"
+      }
+    },
+    "ticker": {
+      "type": "zavelyn-ticker",
+      "settings": {}
+    },
+    "categories": {
+      "type": "zavelyn-categories",
+      "settings": {}
+    },
+    "bestsellers": {
+      "type": "zavelyn-bestsellers",
+      "settings": {
+        "heading": "Popular Zavelyn Best Sellers",
+        "subhead": "Real customer favorites engineered for reliability, durability, and time-saving efficiency.",
+        "collection": "best-sellers"
+      }
+    },
+    "pain_solution": {
+      "type": "zavelyn-pain-solution",
+      "settings": {
+        "heading": "Stop Buying Tools That Break.<br><span>Let Zavelyn Take Over.<\/span>",
+        "subhead": "You don't need another brittle gadget lying dead in your workshop. You need heavy-duty precision engineered to handle real-world tasks effortlessly."
+      }
+    },
+    "comparison": {
+      "type": "zavelyn-comparison-elixir",
+      "settings": {}
+    },
+    "faq": {
+      "type": "zavelyn-faq-elixir",
+      "settings": {}
+    }
+  },
+  "order": [
+    "top_banner",
+    "hero",
+    "ticker",
+    "categories",
+    "bestsellers",
+    "pain_solution",
+    "comparison",
+    "faq"
+  ]
+}

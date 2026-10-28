@@ -1,0 +1,38 @@
+{
+  "id": "gid://shopify/Product/15460886315193",
+  "title": "Zavelyn 5-in-1 Rotary Cheese Grater",
+  "handle": "zavelyn-5-in-1-rotary-cheese-grater-shredder",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67974491996345",
+        "title": "White (1 pc)",
+        "price": "55.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67974492029113",
+        "title": "Green (1 pc)",
+        "price": "55.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67974492061881",
+        "title": "White (2 pcs) - Best Seller",
+        "price": "96.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67974492094649",
+        "title": "Green (2 pcs) - Hot Sale",
+        "price": "96.99",
+        "sku": null
+      }
+    ]
+  }
+}

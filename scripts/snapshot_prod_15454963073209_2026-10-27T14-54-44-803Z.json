@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454963073209",
+  "title": "Zavelyn Rolling Nut & Ball Picker",
+  "handle": "sakerplus®-rolling-nut-and-ball-picker",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914660315321",
+        "title": "Default Title",
+        "price": "93.99",
+        "sku": "GJ127036-X87329"
+      }
+    ]
+  }
+}

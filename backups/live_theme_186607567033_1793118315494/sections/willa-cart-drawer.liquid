@@ -1,0 +1,523 @@
+<!-- Willa Style Slide-Out Cart Drawer -->
+<div class="willa-cart-drawer-overlay" id="willaCartOverlay" onclick="closeWillaCart()"></div>
+
+<div class="willa-cart-drawer" id="willaCartDrawer">
+  <div class="willa-cart-drawer-header">
+    <div class="willa-cart-title">
+      <span>🛒</span> Your Cart (<span id="willaDrawerCount">{{ cart.item_count }}</span>)
+    </div>
+    <button type="button" class="willa-cart-close" onclick="closeWillaCart()" aria-label="Close cart">&times;</button>
+  </div>
+
+  <!-- Free Shipping Progress Bar -->
+  <div class="willa-shipping-bar-wrap">
+    <div class="shipping-bar-text" id="willaShippingText">
+      {% assign threshold = 4900 %}
+      {% if cart.total_price >= threshold %}
+        🎉 You unlocked <strong>FREE US SHIPPING</strong>!
+      {% else %}
+        Add <strong>{{ threshold | minus: cart.total_price | money }}</strong> more to unlock <strong>FREE SHIPPING</strong>!
+      {% endif %}
+    </div>
+    <div class="shipping-progress-bg">
+      {% assign percent = cart.total_price | times: 100 | divided_by: threshold %}
+      {% if percent > 100 %}{% assign percent = 100 %}{% endif %}
+      <div class="shipping-progress-fill" id="willaShippingFill" style="width: {{ percent }}%;"></div>
+    </div>
+  </div>
+
+  <!-- Cart Items List -->
+  <div class="willa-cart-drawer-body" id="willaCartItemsBody">
+    {% if cart.item_count > 0 %}
+      {% for item in cart.items %}
+        <div class="willa-cart-item" data-line-key="{{ item.key }}">
+          <div class="cart-item-img">
+            <img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}">
+          </div>
+          <div class="cart-item-details">
+            <div class="cart-item-title-row">
+              <h4>{{ item.product.title }}</h4>
+              <button type="button" class="cart-remove-btn" onclick="willaUpdateLineItem('{{ item.key }}', 0)">&times;</button>
+            </div>
+            {% unless item.product.has_only_default_variant %}
+              <div class="cart-item-variant">{{ item.variant.title }}</div>
+            {% endunless %}
+            <div class="cart-item-bottom-row">
+              <div class="cart-qty-ctrl">
+                <button type="button" onclick="willaUpdateLineItem('{{ item.key }}', {{ item.quantity | minus: 1 }})">-</button>
+                <span>{{ item.quantity }}</span>
+                <button type="button" onclick="willaUpdateLineItem('{{ item.key }}', {{ item.quantity | plus: 1 }})">+</button>
+              </div>
+              <div class="cart-item-price">{{ item.final_line_price | money }}</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="willa-empty-cart">
+        <div class="empty-icon">🛒</div>
+        <h3>Your cart is empty</h3>
+        <p>Explore our best-selling smart innovations, wellness gear, and daily essentials.</p>
+        <a href="/collections/best-sellers" class="willa-btn-primary" onclick="closeWillaCart()">
+          START SHOPPING ➔
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Cart Footer / Checkout -->
+  <div class="willa-cart-drawer-footer" id="willaCartFooter" {% if cart.item_count == 0 %}style="display: none;"{% endif %}>
+    <div class="willa-cart-subtotal-row">
+      <span>Subtotal</span>
+      <span class="subtotal-val" id="willaDrawerSubtotal">{{ cart.total_price | money }}</span>
+    </div>
+    <p class="shipping-subtext">Taxes and shipping calculated at checkout.</p>
+    <a href="/checkout" class="willa-checkout-btn">
+      🔒 PROCEED TO CHECKOUT ➔
+    </a>
+    <div class="cart-guarantee-badges">
+      <span>🛡️ 90-Day Money-Back Guarantee</span>
+      <span>🔒 100% Encrypted</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .willa-cart-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(35, 31, 32, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 999998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .willa-cart-drawer-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .willa-cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 90%;
+    max-width: 420px;
+    height: 100%;
+    background-color: #faf7f4;
+    z-index: 999999;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 480px) {
+    .willa-cart-drawer {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .willa-cart-drawer-body {
+      padding: 14px 16px !important;
+    }
+  }
+  .willa-cart-drawer.active {
+    transform: translateX(0);
+  }
+
+  .willa-cart-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid #e7e4df;
+    background-color: #ffffff;
+  }
+  .willa-cart-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: #231f20;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .willa-cart-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #231f20;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  /* Free Shipping Bar */
+  .willa-shipping-bar-wrap {
+    background-color: #fbeee9;
+    padding: 12px 20px;
+    border-bottom: 1px solid #e7e4df;
+    font-size: 12px;
+    color: #231f20;
+    text-align: center;
+  }
+  .shipping-bar-text strong {
+    color: #8a2c13;
+  }
+  .shipping-progress-bg {
+    width: 100%;
+    height: 6px;
+    background: #e7e4df;
+    border-radius: 9999px;
+    margin-top: 8px;
+    overflow: hidden;
+  }
+  .shipping-progress-fill {
+    height: 100%;
+    background: #8a2c13;
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+  }
+
+  /* Items */
+  .willa-cart-drawer-body {
+    padding: 16px 20px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .willa-cart-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e7e4df;
+  }
+  .cart-item-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e7e4df;
+    background: #ffffff;
+    flex-shrink: 0;
+  }
+  .cart-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .cart-item-details {
+    flex: 1;
+  }
+  .cart-item-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .cart-item-title-row h4 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: #231f20;
+    line-height: 1.3;
+  }
+  .cart-remove-btn {
+    background: none;
+    border: none;
+    color: #8e847f;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 4px;
+  }
+  .cart-remove-btn:hover {
+    color: #8a2c13;
+  }
+  .cart-item-variant {
+    font-size: 11px;
+    color: #645a55;
+    margin-bottom: 8px;
+  }
+  .cart-item-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cart-qty-ctrl {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e7e4df;
+    border-radius: 6px;
+    background: #ffffff;
+    overflow: hidden;
+  }
+  .cart-qty-ctrl button {
+    background: #faf7f4;
+    border: none;
+    width: 26px;
+    height: 26px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #231f20;
+  }
+  .cart-qty-ctrl span {
+    width: 28px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .cart-item-price {
+    font-size: 14px;
+    font-weight: 800;
+    color: #8a2c13;
+  }
+
+  /* Empty Cart */
+  .willa-empty-cart {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .empty-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+  .willa-empty-cart h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    color: #231f20;
+  }
+  .willa-empty-cart p {
+    font-size: 13px;
+    color: #59514f;
+    margin: 0 0 20px 0;
+  }
+
+  /* Footer */
+  .willa-cart-drawer-footer {
+    padding: 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #e7e4df;
+  }
+  .willa-cart-subtotal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 16px;
+    font-weight: 800;
+    color: #231f20;
+    margin-bottom: 4px;
+  }
+  .subtotal-val {
+    font-size: 20px;
+    color: #8a2c13;
+  }
+  .shipping-subtext {
+    font-size: 11px;
+    color: #8e847f;
+    margin: 0 0 14px 0;
+  }
+  .willa-checkout-btn {
+    display: block;
+    width: 100%;
+    background-color: #8a2c13;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 20px;
+    border-radius: 9999px;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 14px rgba(138, 44, 19, 0.3);
+    box-sizing: border-box;
+    transition: all 0.2s;
+  }
+  .willa-checkout-btn:hover {
+    background-color: #71230e;
+    transform: translateY(-2px);
+  }
+  .cart-guarantee-badges {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #645a55;
+    margin-top: 12px;
+  }
+</style>
+
+<script>
+  window.willaOpenCartDrawer = function() {
+    const drawer = document.getElementById('willaCartDrawer');
+    const overlay = document.getElementById('willaCartOverlay');
+    if (drawer) drawer.classList.add('active');
+    if (overlay) overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  window.openWillaCart = window.willaOpenCartDrawer;
+
+  window.closeWillaCart = function() {
+    const drawer = document.getElementById('willaCartDrawer');
+    const overlay = document.getElementById('willaCartOverlay');
+    if (drawer) drawer.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  window.willaQuickAddToCart = async function(variantId, btn) {
+    let originalText = 'Add to cart';
+    if (btn) {
+      originalText = btn.innerText;
+      btn.disabled = true;
+      btn.innerText = 'ADDING...';
+    }
+
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{ id: variantId, quantity: 1 }]
+        })
+      });
+
+      if (res.ok) {
+        await window.willaRefreshCart();
+        window.willaOpenCartDrawer();
+        if (btn) {
+          btn.disabled = false;
+          btn.innerText = originalText;
+        }
+      } else {
+        window.location.href = '/cart/' + variantId + ':1';
+      }
+    } catch (e) {
+      window.location.href = '/cart/' + variantId + ':1';
+    }
+  };
+
+  window.willaRefreshCart = async function() {
+    try {
+      const res = await fetch('/cart.js');
+      const cart = await res.json();
+      
+      // Update count
+      const headerCount = document.getElementById('willaCartCount');
+      if (headerCount) headerCount.innerText = cart.item_count;
+      const drawerCount = document.getElementById('willaDrawerCount');
+      if (drawerCount) drawerCount.innerText = cart.item_count;
+
+      // Update free shipping bar ($49 = 4900 cents)
+      const threshold = 4900;
+      const textElem = document.getElementById('willaShippingText');
+      const fillElem = document.getElementById('willaShippingFill');
+      const percent = Math.min(100, Math.round((cart.total_price / threshold) * 100));
+      if (fillElem) fillElem.style.width = percent + '%';
+
+      if (textElem) {
+        if (cart.total_price >= threshold) {
+          textElem.innerHTML = '🎉 You unlocked <strong>FREE US SHIPPING</strong>!';
+        } else {
+          const remaining = ((threshold - cart.total_price) / 100).toFixed(2);
+          textElem.innerHTML = 'Add <strong>$' + remaining + '</strong> more to unlock <strong>FREE SHIPPING</strong>!';
+        }
+      }
+
+      // Update Subtotal & Footer
+      const subtotalElem = document.getElementById('willaDrawerSubtotal');
+      if (subtotalElem) subtotalElem.innerText = '$' + (cart.total_price / 100).toFixed(2);
+      const footerElem = document.getElementById('willaCartFooter');
+      if (footerElem) footerElem.style.display = cart.item_count > 0 ? 'block' : 'none';
+
+      // Re-render items
+      const bodyElem = document.getElementById('willaCartItemsBody');
+      if (bodyElem) {
+        if (cart.item_count === 0) {
+          bodyElem.innerHTML = `
+            <div class="willa-empty-cart">
+              <div class="empty-icon">🛒</div>
+              <h3>Your cart is empty</h3>
+              <p>Explore our best-selling smart innovations, wellness gear, and daily essentials.</p>
+              <a href="/collections/best-sellers" class="willa-btn-primary" onclick="closeWillaCart()">
+                START SHOPPING ➔
+              </a>
+            </div>`;
+        } else {
+          let html = '';
+          cart.items.forEach(item => {
+            const itemPrice = '$' + (item.final_line_price / 100).toFixed(2);
+            const variantText = item.variant_title ? `<div class="cart-item-variant">${item.variant_title}</div>` : '';
+            html += `
+              <div class="willa-cart-item" data-line-key="${item.key}">
+                <div class="cart-item-img">
+                  <img src="${item.featured_image?.url || item.image}" alt="${item.title}">
+                </div>
+                <div class="cart-item-details">
+                  <div class="cart-item-title-row">
+                    <h4>${item.product_title}</h4>
+                    <button type="button" class="cart-remove-btn" onclick="willaUpdateLineItem('${item.key}', 0)">&times;</button>
+                  </div>
+                  ${variantText}
+                  <div class="cart-item-bottom-row">
+                    <div class="cart-qty-ctrl">
+                      <button type="button" onclick="willaUpdateLineItem('${item.key}', ${item.quantity - 1})">-</button>
+                      <span>${item.quantity}</span>
+                      <button type="button" onclick="willaUpdateLineItem('${item.key}', ${item.quantity + 1})">+</button>
+                    </div>
+                    <div class="cart-item-price">${itemPrice}</div>
+                  </div>
+                </div>
+              </div>`;
+          });
+          bodyElem.innerHTML = html;
+        }
+      }
+    } catch (e) {
+      console.error('Cart refresh error:', e);
+    }
+  };
+
+  window.willaUpdateLineItem = async function(key, qty) {
+    try {
+      await fetch('/cart/change.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: key, quantity: qty })
+      });
+      await window.willaRefreshCart();
+    } catch (e) {
+      console.error('Update line item error:', e);
+    }
+  };
+
+  // Intercept any cart links/buttons across the store to open slide-out drawer
+  function initWillaCartInterceptors() {
+    document.querySelectorAll('a[href="/cart"], a[href="' + (window.Sakerplus?.routes?.cart_url || '/cart') + '"], .header__icon--cart, .cart-icon-bubble').forEach(el => {
+      if (!el.dataset.willaCartBound) {
+        el.dataset.willaCartBound = 'true';
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (typeof window.willaOpenCartDrawer === 'function') {
+            window.willaOpenCartDrawer();
+          }
+        });
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWillaCartInterceptors);
+  } else {
+    initWillaCartInterceptors();
+  }
+  window.willaCartGlobalListener = true;
+
+</script>
+
+{% schema %}
+{
+  "name": "Willa Cart Drawer",
+  "settings": []
+}
+{% endschema %}

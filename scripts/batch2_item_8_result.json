@@ -1,0 +1,39 @@
+{
+  "productId": "15454961565881",
+  "name": "Workbench Tail Vise Clamp",
+  "status": "PASS",
+  "handleUnchanged": true,
+  "snapshot": "scripts\\snapshot_prod_15454961565881_2026-10-27T14-54-13-682Z.json",
+  "adminBefore": {
+    "title": "Zavelyn Workbench Tail Vise Clamp",
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  "adminAfter": {
+    "id": "gid://shopify/Product/15454961565881",
+    "title": "Zavelyn Workbench Tail Vise Clamp",
+    "handle": "sakerplus®-adjustable-workbench-tail-vise-clamp",
+    "seo": {
+      "title": "Heavy-Duty Workbench Tail Vise Woodworking Clamp | Zavelyn",
+      "description": "Secure wooden workpieces firmly on dog-hole workbenches using an aluminum alloy tail vise screw clamp engineered for smooth tightening and stable clamping."
+    }
+  },
+  "storefrontQA": {
+    "httpStatus": 200,
+    "renderedTitle": "Heavy-Duty Workbench Tail Vise Woodworking Clamp | Zavelyn",
+    "renderedMeta": "Secure wooden workpieces firmly on dog-hole workbenches using an aluminum alloy tail vise screw clamp engineered for smooth tightening and stable clamping.",
+    "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-adjustable-workbench-tail-vise-clamp",
+    "cartMatch": {
+      "variantId": "67914626367673",
+      "productId": 15454961565881,
+      "price": "49.99",
+      "ok": true
+    }
+  },
+  "screenshots": {
+    "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454961565881_desktop_1440.png",
+    "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454961565881_mobile_390.png"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "gid://shopify/Product/15461356011705",
+  "title": "Zavelyn vFit",
+  "handle": "zavelyn-vfit-red-light-intimate-wellness-device",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67979120574649",
+        "title": "Buy 1 (Essential Starter Kit - Save 45%) / Classic Edition",
+        "price": "249.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979120607417",
+        "title": "Buy 1 (Essential Starter Kit - Save 45%) / Plus Pro Medical Edition",
+        "price": "299.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979120640185",
+        "title": "Buy 2 (Complete Rejuvenation Set - Save 50%) / Classic Edition",
+        "price": "449.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979120672953",
+        "title": "Buy 2 (Complete Rejuvenation Set - Save 50%) / Plus Pro Medical Edition",
+        "price": "549.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979120705721",
+        "title": "Buy 3 (The Ultimate VIP Longevity Bundle - Save 60%) / Classic Edition",
+        "price": "599.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67979120738489",
+        "title": "Buy 3 (The Ultimate VIP Longevity Bundle - Save 60%) / Plus Pro Medical Edition",
+        "price": "699.99",
+        "sku": null
+      }
+    ]
+  }
+}

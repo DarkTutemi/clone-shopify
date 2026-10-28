@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454953504953",
+  "title": "Zavelyn Thermal Imaging Camera",
+  "handle": "sakerplus®-high-precision-infrared-thermal-imaging-camera",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914471342265",
+        "title": "Default Title",
+        "price": "209.99",
+        "sku": "HA130826-X86520"
+      }
+    ]
+  }
+}

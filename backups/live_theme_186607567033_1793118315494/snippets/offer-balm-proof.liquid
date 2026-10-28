@@ -1,0 +1,407 @@
+{%- liquid
+  if group != blank
+    assign b = group.settings
+  endif
+  if b.background != blank
+    assign science_bg = b.background | image_url: width: 2000
+  else
+    assign science_bg = 'mb-proof-mark.png' | asset_url
+  endif
+-%}
+{%- unless b.show == false -%}
+<section class="mb-proof-science" style="background-image:url({{ science_bg }})" {% if group %}{{ group.shopify_attributes }}{% endif %}>
+  <div class="mb-proof-science__grid">
+<section
+  class="senzio-science senzio-vein-science"
+  data-senzio-science
+  aria-labelledby="senzio-science-title"
+>
+  <div class="ss-inner">
+
+    <header class="ss-header">
+
+      <div class="ss-header-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <path
+            class="ss-draw ss-draw--stem"
+            d="M32 55V25"
+          ></path>
+
+          <path
+            class="ss-draw ss-draw--leaf-one"
+            d="M31 39C20 38 13 31 12 20C24 20 31 26 34 37"
+          ></path>
+
+          <path
+            class="ss-draw ss-draw--leaf-two"
+            d="M32 31C35 19 43 12 54 11C53 24 45 31 32 33"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="ss-header-copy">
+        <h2 id="senzio-science-title">
+          {{ b.science_title | default: 'The Science' }}
+        </h2>
+
+        <p>
+          {{ b.science_lead | default: 'Botanical research supporting blood flow, vein comfort, circulation health, and relief from heavy, tired legs.' }}
+        </p>
+      </div>
+
+    </header>
+
+    <div class="ss-grid">
+
+      <!-- CARD 01 -->
+      <article class="ss-card">
+
+        <div
+          class="ss-metric"
+          data-primary-percent="{{ b.c1_percent | default: 40 }}"
+          aria-label="40 percent increase"
+        >
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle
+              class="ss-ring-track"
+              cx="60"
+              cy="60"
+              r="44"
+            ></circle>
+
+            <circle
+              class="ss-ring-progress"
+              cx="60"
+              cy="60"
+              r="44"
+            ></circle>
+          </svg>
+
+          <span class="ss-metric-copy">
+            <strong>{{ b.c1_metric | default: '40%' }}</strong>
+            <small>{{ b.c1_note | default: 'Increase' }}</small>
+          </span>
+        </div>
+
+        <div class="ss-card-copy">
+          <span class="ss-label">
+            {{ b.c1_kicker | default: 'Localized Circulation' }}
+          </span>
+
+          <h3>
+            {{ b.c1_title | default: 'Localized Blood Flow' }}
+          </h3>
+
+          <p>
+            <strong>
+              {{ b.c1_body | default: '40% increase in localized blood flow within minutes, driven by Angelica Sinensis combined with sesame oil, helping support circulation in the targeted area.' }}
+            </strong>
+          </p>
+        </div>
+
+      </article>
+
+      <!-- CARD 02 -->
+      <article class="ss-card">
+
+        <div
+          class="ss-metric ss-metric--double"
+          data-primary-percent="100"
+          data-secondary-percent="84"
+          aria-label="184 percent improvement"
+        >
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+
+            <circle
+              class="ss-outer-track"
+              cx="60"
+              cy="60"
+              r="53"
+            ></circle>
+
+            <circle
+              class="ss-outer-progress"
+              cx="60"
+              cy="60"
+              r="53"
+            ></circle>
+
+            <circle
+              class="ss-ring-track"
+              cx="60"
+              cy="60"
+              r="42"
+            ></circle>
+
+            <circle
+              class="ss-ring-progress"
+              cx="60"
+              cy="60"
+              r="42"
+            ></circle>
+
+          </svg>
+
+          <span class="ss-metric-copy">
+            <strong>{{ b.c2_metric | default: '184%' }}</strong>
+            <small>{{ b.c2_note | default: 'Improvement' }}</small>
+          </span>
+        </div>
+
+        <div class="ss-card-copy">
+          <span class="ss-label">
+            {{ b.c2_kicker | default: 'Tissue Comfort' }}
+          </span>
+
+          <h3>
+            {{ b.c2_title | default: 'Tissue Comfort Markers' }}
+          </h3>
+
+          <p>
+            <strong>
+              {{ b.c2_body | default: '184% improvement in tissue comfort markers, linked to Comfrey’s naturally occurring allantoin, which is traditionally associated with soothing support.' }}
+            </strong>
+          </p>
+        </div>
+
+      </article>
+
+      <!-- CARD 03 -->
+      <article class="ss-card">
+
+        <div
+          class="ss-metric"
+          data-primary-percent="{{ b.c3_percent | default: 55 }}"
+          aria-label="55 percent reduction"
+        >
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle
+              class="ss-ring-track"
+              cx="60"
+              cy="60"
+              r="44"
+            ></circle>
+
+            <circle
+              class="ss-ring-progress"
+              cx="60"
+              cy="60"
+              r="44"
+            ></circle>
+          </svg>
+
+          <span class="ss-metric-copy">
+            <strong>{{ b.c3_metric | default: '55%' }}</strong>
+            <small>{{ b.c3_note | default: 'Reduction' }}</small>
+          </span>
+        </div>
+
+        <div class="ss-card-copy">
+          <span class="ss-label">
+            {{ b.c3_kicker | default: 'Inflammatory Signals' }}
+          </span>
+
+          <h3>
+            {{ b.c3_title | default: 'Reduced Inflammatory Signals' }}
+          </h3>
+
+          <p>
+            <strong>
+              {{ b.c3_body | default: '55% reduction in inflammatory discomfort signals, associated with botanicals like Frankincense and Myrrh, helping calm ongoing irritation.' }}
+            </strong>
+          </p>
+        </div>
+
+      </article>
+
+      <!-- CARD 04 -->
+      <article class="ss-card">
+
+        <div
+          class="ss-metric"
+          data-primary-percent="{{ b.c4_percent | default: 30 }}"
+          aria-label="30 percent enhanced microcirculation support"
+        >
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle
+              class="ss-ring-track"
+              cx="60"
+              cy="60"
+              r="44"
+            ></circle>
+
+            <circle
+              class="ss-ring-progress"
+              cx="60"
+              cy="60"
+              r="44"
+            ></circle>
+          </svg>
+
+          <span class="ss-metric-copy">
+            <strong>{{ b.c4_metric | default: '30%' }}</strong>
+            <small>{{ b.c4_note | default: 'Support' }}</small>
+          </span>
+        </div>
+
+        <div class="ss-card-copy">
+          <span class="ss-label">
+            {{ b.c4_kicker | default: 'Microcirculation' }}
+          </span>
+
+          <h3>
+            {{ b.c4_title | default: 'Microcirculation Support' }}
+          </h3>
+
+          <p>
+            <strong>
+              {{ b.c4_body | default: '30% enhanced microcirculation support, from herbs such as Fenghuang and Radix Angelicae Dahuricae, helping support comfort and local circulation.' }}
+            </strong>
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<section
+  class="senzio-proof senzio-plantar-fasciitis-proof"
+  data-senzio-proof
+  aria-labelledby="senzio-proof-title"
+>
+  <div class="sp-inner">
+
+    <!-- HEADER -->
+    <header class="sp-header">
+
+      <div class="sp-header-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <circle
+            class="sp-draw sp-draw--circle"
+            cx="32"
+            cy="32"
+            r="23"
+          ></circle>
+
+          <path
+            class="sp-draw sp-draw--check"
+            d="M18 33L28 43L47 22"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="sp-header-copy">
+        <h2 id="senzio-proof-title">
+          {{ b.proof_title | default: 'The Proof' }}
+        </h2>
+
+        <p>
+          {{ b.proof_lead | default: 'Real customer-style results for plantar fasciitis, heel pain, sore arches, morning discomfort, and everyday walking comfort.' }}
+        </p>
+      </div>
+
+    </header>
+
+    <!-- SCROLLABLE IMAGE AREA ONLY -->
+    <div class="sp-image-shell" data-sp-gallery>
+
+      <figure class="sp-image-card">
+
+        <button
+          class="sp-nav sp-nav--prev"
+          type="button"
+          aria-label="Previous plantar fasciitis proof image"
+          data-sp-prev
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 5L8 12L15 19"></path>
+          </svg>
+        </button>
+
+        <div
+          class="sp-scroll"
+          data-sp-scroll
+          aria-label="Scrollable Zavelyn Miracle Balm plantar fasciitis proof images"
+        >
+
+          <!-- PLANTAR FASCIITIS IMAGE 01 -->
+          <article class="sp-slide">
+            <img
+              class="sp-image"
+              width="1200" height="1200"
+              src="{% if b.proof_1 != blank %}{{ b.proof_1 | image_url: width: 1200 }}{% else %}{{ 'mb-proof-1.png' | asset_url }}{% endif %}"
+              alt="{{ b.proof_alt_1 | default: 'Zavelyn Miracle Balm proof image focused on plantar fasciitis and heel pain' }}"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            >
+          </article>
+
+          <!-- PLANTAR FASCIITIS IMAGE 02 -->
+          <article class="sp-slide">
+            <img
+              class="sp-image"
+              width="1200" height="1200"
+              src="{% if b.proof_2 != blank %}{{ b.proof_2 | image_url: width: 1200 }}{% else %}{{ 'mb-proof-2.png' | asset_url }}{% endif %}"
+              alt="{{ b.proof_alt_2 | default: 'Zavelyn Miracle Balm plantar fasciitis proof image for heel and arch discomfort' }}"
+              loading="lazy"
+              decoding="async"
+              fetchpriority="low"
+            >
+          </article>
+
+          <!-- PLANTAR FASCIITIS IMAGE 03 -->
+          <article class="sp-slide">
+            <img
+              class="sp-image"
+              width="1200" height="1200"
+              src="{% if b.proof_3 != blank %}{{ b.proof_3 | image_url: width: 1200 }}{% else %}{{ 'mb-proof-3.png' | asset_url }}{% endif %}"
+              alt="{{ b.proof_alt_3 | default: 'Zavelyn Miracle Balm proof image showing improved comfort for sore heels and feet' }}"
+              loading="lazy"
+              decoding="async"
+              fetchpriority="low"
+            >
+          </article>
+              <!-- PLANTAR FASCIITIS IMAGE 04 -->
+          <article class="sp-slide">
+            <img
+              class="sp-image"
+              width="1200" height="1200"
+              src="{% if b.proof_4 != blank %}{{ b.proof_4 | image_url: width: 1200 }}{% else %}{{ 'mb-proof-4.png' | asset_url }}{% endif %}"
+              alt="{{ b.proof_alt_4 | default: 'Zavelyn Miracle Balm proof image focused on plantar fasciitis and heel pain' }}"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            >
+          </article>
+
+        </div>
+
+        <button
+          class="sp-nav sp-nav--next"
+          type="button"
+          aria-label="Next plantar fasciitis proof image"
+          data-sp-next
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 5L16 12L9 19"></path>
+          </svg>
+        </button>
+
+      </figure>
+
+    </div>
+
+  </div>
+</section>
+
+  </div>
+</section>
+{%- endunless -%}
+{{ 'zavelyn-balm-science.css' | asset_url | stylesheet_tag }}
+{{ 'zavelyn-balm-proof.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'zavelyn-balm-science.js' | asset_url }}" defer></script>
+<script src="{{ 'zavelyn-balm-proof.js' | asset_url }}" defer></script>

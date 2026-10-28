@@ -1,0 +1,61 @@
+{
+  "layout": "offer",
+  "sections": {
+    "main": {
+      "type": "offer-regrip",
+      "blocks": {
+        "sec_gallery": {
+          "type": "sec_gallery",
+          "settings": {
+            "image_1": "shopify:\/\/shop_images\/du_1.png",
+            "fallback_1": "rg-gallery-1.png",
+            "fallback_2": "rg-gallery-2.png",
+            "fallback_3": "rg-gallery-3.png",
+            "fallback_4": "rg-gallery-4.png",
+            "fallback_5": "rg-gallery-5.png",
+            "fallback_6": "rg-gallery-6.png",
+            "fallback_7": "rg-gallery-7.png"
+          }
+        },
+        "sec_hero": {
+          "type": "sec_hero",
+          "settings": {
+            "perk_1": "Guided hand opening & closing",
+            "perk_2": "Use It Alone or With a Helper",
+            "perk_3": "300+ Assisted reps in 20 Minutes",
+            "perk_4": "3 Therapy Modes for Every Stage of Recovery"
+          }
+        },
+        "sec_faq": {
+          "type": "sec_faq",
+          "settings": {
+            "heading": "Frequently Asked Questions"
+          }
+        },
+        "sec_footer": {
+          "type": "sec_footer",
+          "settings": {
+            "email": "support@zavelyn.com",
+            "sticky_copy": "ReGrip™ Rehabilitation Glove"
+          }
+        }
+      },
+      "block_order": [
+        "sec_gallery",
+        "sec_hero",
+        "sec_faq",
+        "sec_footer"
+      ],
+      "settings": {
+        "product": "zavelyn-rehabilitation-glove",
+        "brand_name": "Zavelyn",
+        "ticker_text": "FREE Worldwide Shipping —",
+        "ticker_highlight": "This Week Only!",
+        "cta_label": "BUY NOW"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

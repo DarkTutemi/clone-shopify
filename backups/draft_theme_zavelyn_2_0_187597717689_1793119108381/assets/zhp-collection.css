@@ -1,0 +1,1174 @@
+/* ==========================================================================
+   ZAVELYN ELIXIR V2 — HANDPANS COLLECTION DESIGN SYSTEM
+   Theme: Zavelyn 2.0 (Elixir Redesign)
+   Target: /collections/zavelyn-handpans
+   Tokens: Primary #17433C, Accent #C6FA54, Warm Bg #FFFAF7, Card #FFFFFF
+   ========================================================================== */
+
+:root {
+  --zv-primary: #17433C;
+  --zv-primary-hover: #0F2D28;
+  --zv-primary-light: rgba(23, 67, 60, 0.08);
+  --zv-accent: #C6FA54;
+  --zv-accent-hover: #b5ee3f;
+  --zv-bg-warm: #FFFAF7;
+  --zv-card-bg: #FFFFFF;
+  --zv-text: #222222;
+  --zv-text-muted: #556B64;
+  --zv-border: #E8EDE9;
+  --zv-border-light: #F0F4F1;
+  --zv-radius-sm: 8px;
+  --zv-radius-md: 14px;
+  --zv-radius-lg: 16px;
+  --zv-radius-full: 9999px;
+  --zv-shadow-sm: 0 2px 8px rgba(23, 67, 60, 0.04);
+  --zv-shadow-md: 0 8px 24px rgba(23, 67, 60, 0.06);
+  --zv-shadow-lg: 0 16px 40px rgba(23, 67, 60, 0.08);
+  --zv-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --zv-container: 1320px;
+}
+
+/* Global Scope for Handpan Collection */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+.zhp-wrapper {
+  font-family: var(--zv-font);
+  color: var(--zv-text);
+  background-color: var(--zv-bg-warm);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+  max-width: 100%;
+  width: 100%;
+}
+
+.zhp-wrapper * {
+  box-sizing: border-box;
+}
+
+.willa-drawer-overlay,
+.willa-cart-drawer,
+.willa-cart-drawer-overlay,
+.willa-footer-wrap,
+.willa-payment-icons,
+.willa-container,
+#PBarNextFrameWrapper,
+#PBarNextFrame {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.zhp-container {
+  max-width: var(--zv-container);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   TOP ANNOUNCEMENT / MARQUEE BAR
+   -------------------------------------------------------------------------- */
+.zhp-marquee-bar {
+  background-color: var(--zv-primary);
+  color: #FFFFFF;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 12px 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  width: 100%;
+  max-width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.zhp-marquee-track {
+  display: inline-flex;
+  align-items: center;
+  animation: zhpMarqueeAnim 35s linear infinite;
+}
+
+.zhp-marquee-item {
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.zhp-marquee-sep {
+  opacity: 0.4;
+  padding: 0 8px;
+}
+
+@keyframes zhpMarqueeAnim {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 1 — HERO BANNER
+   -------------------------------------------------------------------------- */
+.zhp-hero-section {
+  position: relative;
+  background-color: #0E2924;
+  color: #FFFFFF;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.zhp-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.zhp-hero-content {
+  z-index: 2;
+}
+
+.zhp-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(198, 250, 84, 0.15);
+  color: var(--zv-accent);
+  border: 1px solid rgba(198, 250, 84, 0.3);
+  padding: 6px 16px;
+  border-radius: var(--zv-radius-full);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.zhp-hero-title {
+  font-size: clamp(34px, 4.2vw, 50px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin: 0 0 20px;
+  letter-spacing: -0.5px;
+}
+
+.zhp-hero-subtitle {
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 32px;
+  max-width: 620px;
+}
+
+.zhp-hero-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.zhp-hero-badge-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: var(--zv-radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.zhp-hero-badge-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--zv-accent);
+}
+
+.zhp-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.zhp-btn-elixir {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--zv-accent);
+  color: var(--zv-primary);
+  font-size: 16px;
+  font-weight: 800;
+  padding: 16px 36px;
+  border-radius: var(--zv-radius-md);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 2px solid var(--zv-accent);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(198, 250, 84, 0.25);
+}
+
+.zhp-btn-elixir:hover {
+  background-color: var(--zv-accent-hover);
+  border-color: var(--zv-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(198, 250, 84, 0.35);
+}
+
+.zhp-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: var(--zv-radius-md);
+  text-decoration: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.zhp-btn-ghost:hover {
+  border-color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.zhp-hero-media {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zhp-hero-img-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  overflow: hidden;
+  background: radial-gradient(circle, rgba(23,67,60,0.6) 0%, rgba(14,41,36,0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.zhp-hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.zhp-hero-img-wrap:hover img {
+  transform: scale(1.03);
+}
+
+.zhp-hero-corner-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(14, 41, 36, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(198, 250, 84, 0.4);
+  padding: 10px 18px;
+  border-radius: var(--zv-radius-md);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.zhp-hero-corner-badge span {
+  color: var(--zv-accent);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION HEADERS (SHARED)
+   -------------------------------------------------------------------------- */
+.zhp-sec-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 48px;
+}
+
+.zhp-sec-tag {
+  display: inline-block;
+  background: var(--zv-primary-light);
+  color: var(--zv-primary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: var(--zv-radius-full);
+  margin-bottom: 12px;
+}
+
+.zhp-sec-title {
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 800;
+  color: var(--zv-primary);
+  line-height: 1.2;
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+}
+
+.zhp-sec-subtitle {
+  font-size: 16px;
+  color: var(--zv-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 2 — SHOP BY MODEL (PRODUCT CARDS GRID)
+   -------------------------------------------------------------------------- */
+.zhp-shop-section {
+  padding: 80px 0;
+  background-color: var(--zv-bg-warm);
+}
+
+.zhp-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.zhp-card {
+  background: var(--zv-card-bg);
+  border: 1px solid var(--zv-border);
+  border-radius: var(--zv-radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--zv-shadow-sm);
+  position: relative;
+}
+
+.zhp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--zv-shadow-lg);
+  border-color: rgba(23, 67, 60, 0.2);
+}
+
+.zhp-card-flagship {
+  border: 2px solid var(--zv-primary);
+}
+
+.zhp-card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  padding: 6px 14px;
+  border-radius: var(--zv-radius-full);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.zhp-badge-flagship {
+  background: var(--zv-primary);
+  color: #FFFFFF;
+}
+
+.zhp-badge-popular {
+  background: var(--zv-accent);
+  color: var(--zv-primary);
+}
+
+.zhp-badge-value {
+  background: #FFF4E5;
+  color: #B25E00;
+  border: 1px solid #FFE2B8;
+}
+
+.zhp-badge-starter {
+  background: #E8F5E9;
+  color: #2E7D32;
+  border: 1px solid #C8E6C9;
+}
+
+.zhp-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #F8F9F8;
+  overflow: hidden;
+}
+
+.zhp-card-media a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.zhp-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.zhp-card:hover .zhp-card-media img {
+  transform: scale(1.05);
+}
+
+.zhp-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.zhp-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--zv-primary);
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.zhp-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.zhp-card-title a:hover {
+  color: var(--zv-primary-hover);
+}
+
+.zhp-card-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--zv-text-muted);
+  margin-bottom: 16px;
+}
+
+.zhp-card-specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zhp-card-specs-list li {
+  font-size: 13.5px;
+  color: var(--zv-text);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.zhp-card-specs-list li span.zhp-check {
+  color: var(--zv-primary);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* Audio Player */
+.zhp-audio-box {
+  background: var(--zv-bg-warm);
+  border: 1px solid var(--zv-border);
+  border-radius: var(--zv-radius-md);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.zhp-audio-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--zv-primary);
+  color: var(--zv-accent);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.zhp-audio-btn:hover {
+  transform: scale(1.08);
+  background: var(--zv-primary-hover);
+}
+
+.zhp-audio-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.zhp-audio-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.zhp-audio-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--zv-primary);
+  display: block;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.zhp-audio-track {
+  height: 4px;
+  background: var(--zv-border);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.zhp-audio-progress {
+  height: 100%;
+  width: 0%;
+  background: var(--zv-primary);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+/* Included chips */
+.zhp-included-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.zhp-included-pill {
+  background: #F4F6F4;
+  color: var(--zv-primary);
+  border: 1px solid var(--zv-border);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--zv-radius-full);
+}
+
+/* Price & CTA */
+.zhp-card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--zv-border-light);
+}
+
+.zhp-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.zhp-price-now {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--zv-primary);
+}
+
+.zhp-price-was {
+  font-size: 15px;
+  color: #8C9993;
+  text-decoration: line-through;
+}
+
+.zhp-price-save-badge {
+  background: #EAF9D7;
+  color: #276B19;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--zv-radius-full);
+  margin-left: auto;
+}
+
+.zhp-card-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background-color: var(--zv-accent);
+  color: var(--zv-primary);
+  font-size: 15px;
+  font-weight: 800;
+  padding: 14px 20px;
+  border-radius: var(--zv-radius-md);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 1.5px solid var(--zv-accent);
+  text-align: center;
+}
+
+.zhp-card-cta:hover {
+  background-color: var(--zv-accent-hover);
+  border-color: var(--zv-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(198, 250, 84, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 3 — COMPARE HANDPANS (TABLE)
+   -------------------------------------------------------------------------- */
+.zhp-compare-section {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.zhp-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--zv-radius-lg);
+  border: 1px solid var(--zv-border);
+  box-shadow: var(--zv-shadow-sm);
+  background: #FFFFFF;
+}
+
+.zhp-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+  min-width: 900px;
+}
+
+.zhp-compare-table th {
+  background-color: #F8FAF8;
+  color: var(--zv-primary);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 20px 18px;
+  border-bottom: 2px solid var(--zv-border);
+  letter-spacing: 0.3px;
+  vertical-align: middle;
+}
+
+.zhp-compare-table td {
+  padding: 18px;
+  border-bottom: 1px solid var(--zv-border);
+  vertical-align: middle;
+  color: var(--zv-text);
+  line-height: 1.45;
+}
+
+.zhp-compare-table tr:last-child td {
+  border-bottom: none;
+}
+
+.zhp-compare-table tr:hover td {
+  background-color: #FAFBF9;
+}
+
+.zhp-table-model-name {
+  font-weight: 800;
+  color: var(--zv-primary);
+  font-size: 15px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.zhp-table-model-sub {
+  font-size: 12px;
+  color: var(--zv-text-muted);
+}
+
+.zhp-table-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--zv-radius-full);
+  background: var(--zv-primary-light);
+  color: var(--zv-primary);
+}
+
+.zhp-table-price {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--zv-primary);
+}
+
+.zhp-table-cta {
+  display: inline-block;
+  background: var(--zv-accent);
+  color: var(--zv-primary);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: var(--zv-radius-full);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.zhp-table-cta:hover {
+  background: var(--zv-accent-hover);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 4 — WHY CHOOSE ZAVELYN HANDPANS (BENEFITS)
+   -------------------------------------------------------------------------- */
+.zhp-benefits-section {
+  padding: 80px 0;
+  background-color: var(--zv-bg-warm);
+}
+
+.zhp-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.zhp-benefit-card {
+  background: #FFFFFF;
+  border: 1px solid var(--zv-border);
+  border-radius: var(--zv-radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--zv-shadow-sm);
+}
+
+.zhp-benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--zv-shadow-md);
+  border-color: rgba(23, 67, 60, 0.25);
+}
+
+.zhp-benefit-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--zv-primary-light);
+  color: var(--zv-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.zhp-benefit-icon-wrap svg {
+  width: 28px;
+  height: 28px;
+}
+
+.zhp-benefit-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--zv-primary);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.zhp-benefit-desc {
+  font-size: 14px;
+  color: var(--zv-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 5 — PRODUCT STORYTELLING (ALTERNATING BLOCKS)
+   -------------------------------------------------------------------------- */
+.zhp-story-section {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.zhp-story-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.zhp-story-row:last-child {
+  margin-bottom: 0;
+}
+
+.zhp-story-row.zhp-reverse {
+  direction: rtl;
+}
+
+.zhp-story-row.zhp-reverse > * {
+  direction: ltr;
+}
+
+.zhp-story-media {
+  position: relative;
+  width: 100%;
+  border-radius: var(--zv-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--zv-shadow-md);
+  border: 1px solid var(--zv-border);
+}
+
+.zhp-story-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.zhp-story-media:hover img {
+  transform: scale(1.02);
+}
+
+.zhp-story-content {
+  padding: 10px;
+}
+
+.zhp-story-pill {
+  display: inline-block;
+  background: var(--zv-primary-light);
+  color: var(--zv-primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: var(--zv-radius-full);
+  margin-bottom: 16px;
+}
+
+.zhp-story-title {
+  font-size: clamp(26px, 2.8vw, 36px);
+  font-weight: 800;
+  color: var(--zv-primary);
+  line-height: 1.25;
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+}
+
+.zhp-story-desc {
+  font-size: 15.5px;
+  color: var(--zv-text);
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+
+.zhp-story-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zhp-story-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--zv-text);
+  line-height: 1.45;
+}
+
+.zhp-story-points li span.zhp-pt-icon {
+  color: var(--zv-primary);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 6 — WHAT'S INCLUDED (ACCESSORIES GRID)
+   -------------------------------------------------------------------------- */
+.zhp-included-section {
+  padding: 80px 0;
+  background-color: var(--zv-bg-warm);
+}
+
+.zhp-acc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.zhp-acc-card {
+  background: #FFFFFF;
+  border: 1px solid var(--zv-border);
+  border-radius: var(--zv-radius-lg);
+  padding: 24px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--zv-shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.zhp-acc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--zv-shadow-md);
+  border-color: rgba(23, 67, 60, 0.2);
+}
+
+.zhp-acc-img-wrap {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #F8F9F8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid var(--zv-border);
+}
+
+.zhp-acc-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+}
+
+.zhp-acc-badge {
+  display: inline-block;
+  background: #EAF9D7;
+  color: #276B19;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--zv-radius-full);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.zhp-acc-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--zv-primary);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.zhp-acc-desc {
+  font-size: 13px;
+  color: var(--zv-text-muted);
+  line-height: 1.5;
+  margin: 0 0 12px;
+  flex: 1;
+}
+
+.zhp-acc-compat {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--zv-primary);
+  background: var(--zv-primary-light);
+  padding: 4px 10px;
+  border-radius: var(--zv-radius-full);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 8 — ACCORDION FAQ
+   -------------------------------------------------------------------------- */
+.zhp-faq-section {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.zhp-faq-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.zhp-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.zhp-faq-item {
+  background: var(--zv-bg-warm);
+  border: 1px solid var(--zv-border);
+  border-radius: var(--zv-radius-md);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.zhp-faq-item.active {
+  border-color: var(--zv-primary);
+  background: #FFFFFF;
+  box-shadow: var(--zv-shadow-sm);
+}
+
+.zhp-faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 20px 24px;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--zv-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.zhp-faq-question:hover {
+  color: var(--zv-primary-hover);
+}
+
+.zhp-faq-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--zv-primary-light);
+  color: var(--zv-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.zhp-faq-item.active .zhp-faq-icon {
+  transform: rotate(45deg);
+  background: var(--zv-primary);
+  color: var(--zv-accent);
+}
+
+.zhp-faq-answer {
+  display: none;
+  padding: 0 24px 22px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--zv-text);
+  border-top: 1px solid rgba(23, 67, 60, 0.08);
+  margin-top: -4px;
+  padding-top: 16px;
+}
+
+.zhp-faq-item.active .zhp-faq-answer {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (DESKTOP, LAPTOP, TABLET, MOBILE)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199px) {
+  .zhp-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .zhp-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .zhp-acc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .zhp-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .zhp-hero-content {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .zhp-hero-media {
+    order: 2;
+  }
+  .zhp-hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .zhp-hero-badges-row {
+    justify-content: center;
+  }
+  .zhp-hero-actions {
+    justify-content: center;
+  }
+  .zhp-story-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .zhp-story-row.zhp-reverse {
+    direction: ltr;
+  }
+}
+
+@media (max-width: 767px) {
+  .zhp-hero-section {
+    padding: 48px 0;
+  }
+  .zhp-products-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .zhp-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .zhp-acc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .zhp-acc-card {
+    padding: 16px 12px;
+  }
+  .zhp-acc-img-wrap {
+    width: 100px;
+    height: 100px;
+  }
+  .zhp-hero-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  .zhp-btn-elixir, .zhp-btn-ghost {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .zhp-acc-grid {
+    grid-template-columns: 1fr;
+  }
+}

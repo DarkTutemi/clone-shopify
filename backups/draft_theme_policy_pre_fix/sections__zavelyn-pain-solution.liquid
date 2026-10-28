@@ -1,0 +1,60 @@
+{% schema %}
+{
+  "name": "Zavelyn Pain & Solution",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Stop Buying Tools That Break.<br><span>Let Zavelyn Take Over.</span>" },
+    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "You don't need another brittle gadget lying dead in your workshop. You need heavy-duty precision engineered to handle real-world tasks effortlessly." }
+  ],
+  "presets": [{ "name": "Zavelyn Pain & Solution" }]
+}
+{% endschema %}
+
+<section class="zv-tabs-section">
+  <div class="zv-tabs-container">
+    <h2 class="zv-tabs-heading">{{ section.settings.heading }}</h2>
+    <p class="zv-tabs-sub">{{ section.settings.subhead }}</p>
+
+    <div class="zv-tabs-nav" id="zvTabsNav">
+      <button type="button" class="zv-tab-btn active" data-tab="1">Built for Abuse</button>
+      <button type="button" class="zv-tab-btn" data-tab="2">Cuts Labor in Half</button>
+      <button type="button" class="zv-tab-btn" data-tab="3">Engineered Safety</button>
+      <button type="button" class="zv-tab-btn" data-tab="4">60-Day Guarantee</button>
+    </div>
+
+    <div class="zv-tabs-content">
+      <div class="zv-tab-panel active" id="zvTabPanel1">
+        <p><strong>Never fight broken equipment again.</strong> Most consumer tools use cheap pot metals and brittle plastic gears that strip under pressure. Every Zavelyn innovation is constructed from aerospace-grade alloy frames, reinforced steel gears, and industrial-grade thermal polymers engineered to withstand drops, harsh weather, and years of relentless daily use.</p>
+      </div>
+      <div class="zv-tab-panel" id="zvTabPanel2">
+        <p><strong>Get hours of your life back.</strong> Whether you are repairing homestead fences, precision-cutting materials, or staying warm during sub-zero outdoor work, Zavelyn cuts labor time in half. Intelligent automated thermostats, high-frequency ultrasonic oscillation, and ergonomic weight distribution mean you finish faster with zero physical strain.</p>
+      </div>
+      <div class="zv-tab-panel" id="zvTabPanel3">
+        <p><strong>Zero compromises on safety.</strong> Forget exposed incandescent filaments, loose heating elements, or sketchy electrical wiring. Zavelyn implements dual-redundant auto-shutoffs, 100% sealed waterproof housings, and certified low-voltage high-efficiency heating tech tested to meet rigorous US safety standards.</p>
+      </div>
+      <div class="zv-tab-panel" id="zvTabPanel4">
+        <p><strong>Put us to the test completely risk-free.</strong> Try any Zavelyn product on your homestead, jobsite, or home for a full 60 days. If it doesn't outperform any tool you've previously owned, contact our Dallas TX support team for a swift, 100% hassle-free refund. No questions asked.</p>
+        <div style="margin-top: 24px; text-align: center;">
+          <a href="/collections/best-sellers" class="zv-btn-lime">EXPERIENCE THE ZAVELYN DIFFERENCE →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    const nav = document.getElementById('zvTabsNav');
+    if (!nav) return;
+    const btns = nav.querySelectorAll('.zv-tab-btn');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const tabNum = btn.getAttribute('data-tab');
+        document.querySelectorAll('.zv-tab-panel').forEach(p => p.classList.remove('active'));
+        const activePanel = document.getElementById('zvTabPanel' + tabNum);
+        if (activePanel) activePanel.classList.add('active');
+      });
+    });
+  })();
+</script>

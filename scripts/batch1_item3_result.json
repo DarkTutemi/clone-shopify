@@ -1,0 +1,58 @@
+{
+  "productId": "15454948556985",
+  "name": "Tearable Shelf & Drawer Liner",
+  "status": "PASS",
+  "mutationResult": {
+    "id": "gid://shopify/Product/15454948556985",
+    "title": "Zavelyn Tearable Shelf & Drawer Liner",
+    "handle": "zavelyn-shelf-drawer-liner",
+    "status": "ACTIVE",
+    "seo": {
+      "title": "Tearable Shelf & Drawer Mat Liner for Kitchen | Zavelyn",
+      "description": "Protect shelves, cabinets, and drawers from spills, moisture, and scratches with textured EVA liners. Perforated design pulls apart by hand for a custom fit."
+    },
+    "variants": {
+      "nodes": [
+        {
+          "id": "gid://shopify/ProductVariant/67914360291513",
+          "title": "White Dotted-1 PC",
+          "price": "20.99"
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67914360324281",
+          "title": "White Dotted-2 PCS",
+          "price": "32.99"
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67914360357049",
+          "title": "White Dotted-5 PCS",
+          "price": "79.99"
+        }
+      ]
+    }
+  },
+  "redirectId": "gid://shopify/UrlRedirect/604052357305",
+  "oldUrl": "https://tryzavelyn.com/products/sakerplus%C2%AE-tearable-shelf-liner-and-drawer-liner",
+  "newUrl": "https://tryzavelyn.com/products/zavelyn-shelf-drawer-liner",
+  "httpQA": {
+    "oldStatus": 301,
+    "locationHeader": "/products/zavelyn-shelf-drawer-liner",
+    "trackStatus": 301,
+    "trackLocation": "/products/zavelyn-shelf-drawer-liner?fbclid=AQ_fbclid_p3_success&utm_campaign=shelf_liner_promo&utm_source=facebook",
+    "trackPreserved": true,
+    "newStatus": 200,
+    "renderedTitle": "Tearable Shelf &amp; Drawer Mat Liner for Kitchen | Zavelyn",
+    "renderedMeta": "Protect shelves, cabinets, and drawers from spills, moisture, and scratches with textured EVA liners. Perforated design pulls apart by hand for a custom fit.",
+    "renderedCanonical": "https://tryzavelyn.com/products/zavelyn-shelf-drawer-liner"
+  },
+  "cartQA": {
+    "variantId": "67914360291513",
+    "productId": 15454948556985,
+    "price": "20.99",
+    "cartOk": true
+  },
+  "screenshots": {
+    "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch1_zavelyn-shelf-drawer-liner_desktop_1440.png",
+    "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch1_zavelyn-shelf-drawer-liner_mobile_390.png"
+  }
+}

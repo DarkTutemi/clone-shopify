@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454955765945",
+  "title": "Zavelyn Rotating Galaxy Projector",
+  "handle": "sakerplus®-rotating-galaxy-projector-with-adjustable-focus",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914524688569",
+        "title": "Default Title",
+        "price": "52.99",
+        "sku": "LT132688-X88160"
+      }
+    ]
+  }
+}

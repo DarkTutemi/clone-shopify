@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454951997625",
+  "title": "Zavelyn Home Sauna Generator",
+  "handle": "sakerplus®-portable-home-sauna-steam-generator",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914438967481",
+        "title": "Default Title",
+        "price": "61.99",
+        "sku": "HA132935-X88405"
+      }
+    ]
+  }
+}

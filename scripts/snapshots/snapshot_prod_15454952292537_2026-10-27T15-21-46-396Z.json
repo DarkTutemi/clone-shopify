@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454952292537",
+  "title": "Zavelyn Electric Wall Chaser",
+  "handle": "sakerplus®-laser-guided-electric-wall-chaser",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914445586617",
+        "title": "Default Title",
+        "price": "288.99",
+        "sku": "GJ132619-X88095"
+      }
+    ]
+  }
+}

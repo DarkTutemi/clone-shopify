@@ -1,0 +1,58 @@
+{
+  "productId": "15454948163769",
+  "name": "Tearable Non-Slip Drawer Liner",
+  "status": "PASS",
+  "mutationResult": {
+    "id": "gid://shopify/Product/15454948163769",
+    "title": "Zavelyn Tearable Non-Slip Drawer Liner",
+    "handle": "zavelyn-tearable-drawer-liner",
+    "status": "ACTIVE",
+    "seo": {
+      "title": "Tearable Non-Slip Drawer Liner for Cabinets | Zavelyn",
+      "description": "Keep kitchen utensils and vanity supplies in place with tearable non-slip drawer liners. Sized with a clear grid for easy hand-tearing without scissors."
+    },
+    "variants": {
+      "nodes": [
+        {
+          "id": "gid://shopify/ProductVariant/67914352656569",
+          "title": "1 pc-Brown",
+          "price": "36.99"
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67914352689337",
+          "title": "2 pcs-Brown",
+          "price": "66.99"
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67914352722105",
+          "title": "5 pcs-Brown",
+          "price": "159.99"
+        }
+      ]
+    }
+  },
+  "redirectId": "gid://shopify/UrlRedirect/604052095161",
+  "oldUrl": "https://tryzavelyn.com/products/sakerplus%C2%AE-tearable-non-slip-drawer-liner",
+  "newUrl": "https://tryzavelyn.com/products/zavelyn-tearable-drawer-liner",
+  "httpQA": {
+    "oldStatus": 301,
+    "locationHeader": "/products/zavelyn-tearable-drawer-liner",
+    "trackStatus": 301,
+    "trackLocation": "/products/zavelyn-tearable-drawer-liner?fbclid=AQ_fbclid_p2_success&utm_campaign=drawer_liner_winter&utm_source=facebook",
+    "trackPreserved": true,
+    "newStatus": 200,
+    "renderedTitle": "Tearable Non-Slip Drawer Liner for Cabinets | Zavelyn",
+    "renderedMeta": "Keep kitchen utensils and vanity supplies in place with tearable non-slip drawer liners. Sized with a clear grid for easy hand-tearing without scissors.",
+    "renderedCanonical": "https://tryzavelyn.com/products/zavelyn-tearable-drawer-liner"
+  },
+  "cartQA": {
+    "variantId": "67914352656569",
+    "productId": 15454948163769,
+    "price": "36.99",
+    "cartOk": true
+  },
+  "screenshots": {
+    "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch1_zavelyn-tearable-drawer-liner_desktop_1440.png",
+    "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch1_zavelyn-tearable-drawer-liner_mobile_390.png"
+  }
+}

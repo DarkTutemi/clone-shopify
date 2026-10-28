@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454947901625",
+  "title": "Zavelyn Sensory Floor Mats",
+  "handle": "sakerplus®-tpu-sensory-textured-floor-mats",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914347086009",
+        "title": "Default Title",
+        "price": "79.99",
+        "sku": "CP133222-X88665"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+/*!
+ * Zavelyn Theme — Modern Shopify Online Store 2.0
+ * Base, layout, and component styles load as separate assets for caching.
+ * This file holds cross-cutting utilities and page-specific polish.
+ */
+
+/* Ensure sticky header offset for in-page anchors */
+:target {
+  scroll-margin-block-start: calc(var(--header-height) + 1rem);
+}
+
+/* Reduced-motion: disable product card image swap motion */
+@media (prefers-reduced-motion: reduce) {
+  .product-card__media img {
+    transition: none;
+  }
+
+  .product-card:hover .product-card__media img,
+  .product-card:focus-within .product-card__media img {
+    transform: none;
+  }
+}
+
+/* Print */
+@media print {
+  .header-wrapper,
+  .announcement-bar,
+  .cart-drawer,
+  .mobile-menu,
+  .search-modal,
+  .footer,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}

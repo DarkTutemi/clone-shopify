@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15455040241849",
+  "title": "Zavelyn Advanced Nose Cleaner",
+  "handle": "navage-advanced-nose-cleaner",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67916567937209",
+        "title": "Default Title",
+        "price": "114.99",
+        "sku": "BNDL-80060"
+      }
+    ]
+  }
+}

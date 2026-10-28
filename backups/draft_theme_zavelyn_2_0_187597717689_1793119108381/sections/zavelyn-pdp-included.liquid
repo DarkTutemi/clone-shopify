@@ -1,0 +1,51 @@
+{% schema %}
+{
+  "name": "Zavelyn Whats Included",
+  "settings": [],
+  "presets": [{ "name": "Zavelyn Whats Included" }]
+}
+{% endschema %}
+
+{%- include 'zavelyn-pdp-data' -%}
+
+{%- if zv_wi_count > 0 -%}
+<section class="zv-body-section zv-bg-subtle" id="zv-included">
+  <div class="zv-container">
+    <div class="zv-included-card">
+      <div class="zv-included-content">
+        <span class="zv-badge">COMPLETE PACKAGE</span>
+        <h2 style="font-size: 32px; font-weight: 800; color: #17433C; margin: 0 0 16px;">{{ zv_wi_title | default: "What's in the Box" }}</h2>
+        <p style="font-size: 15px; color: #556860; margin: 0 0 28px;">Everything you need to begin immediately, backed by our comprehensive warranty and dedicated customer support.</p>
+        
+        <ul class="zv-included-list">
+          {%- for i in (0..7) -%}
+            {%- case i -%}
+              {%- when 0 -%}{%- assign inc_item = zv_wi_0_item -%}
+              {%- when 1 -%}{%- assign inc_item = zv_wi_1_item -%}
+              {%- when 2 -%}{%- assign inc_item = zv_wi_2_item -%}
+              {%- when 3 -%}{%- assign inc_item = zv_wi_3_item -%}
+              {%- when 4 -%}{%- assign inc_item = zv_wi_4_item -%}
+              {%- when 5 -%}{%- assign inc_item = zv_wi_5_item -%}
+              {%- when 6 -%}{%- assign inc_item = zv_wi_6_item -%}
+              {%- when 7 -%}{%- assign inc_item = zv_wi_7_item -%}
+            {%- endcase -%}
+
+            {%- if inc_item != blank -%}
+            <li class="zv-included-item">
+              <span class="zv-inc-check">✓</span>
+              <span>{{ inc_item }}</span>
+            </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      {%- if zv_wi_img != blank -%}
+      <div class="zv-included-media">
+        <img src="{{ zv_wi_img }}" alt="{{ zv_wi_title }}" loading="lazy">
+      </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}

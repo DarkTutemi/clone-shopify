@@ -1,0 +1,35 @@
+{%- if settings.cart_show_free_shipping -%}
+  {%- liquid
+    assign threshold = settings.cart_free_shipping_threshold
+    assign remaining = threshold | minus: cart.total_price
+    if remaining < 0
+      assign remaining = 0
+    endif
+    if threshold > 0
+      assign progress = cart.total_price | times: 100.0 | divided_by: threshold
+      if progress > 100
+        assign progress = 100
+      endif
+    else
+      assign progress = 100
+    endif
+  -%}
+  <div
+    class="free-shipping"
+    data-free-shipping
+    data-remaining-message="Spend __AMOUNT__ more for free shipping"
+    data-qualified-message="{{ 'cart.general.free_shipping.qualified' | t }}"
+  >
+    <p class="free-shipping__message" data-free-shipping-message>
+      {%- if remaining == 0 -%}
+        {{ 'cart.general.free_shipping.qualified' | t }}
+      {%- else -%}
+        {%- assign remaining_money = remaining | money -%}
+        {{ 'cart.general.free_shipping.remaining_html' | t: amount: remaining_money }}
+      {%- endif -%}
+    </p>
+    <div class="free-shipping__track" role="presentation">
+      <div class="free-shipping__progress" data-free-shipping-progress style="width: {{ progress }}%;"></div>
+    </div>
+  </div>
+{%- endif -%}

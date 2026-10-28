@@ -1,0 +1,46 @@
+{
+  "auditTimestamp": "2026-10-27T16:13:02.406Z",
+  "totalCatalogProducts": 83,
+  "activeProductsCount": 76,
+  "draftProductsCount": 6,
+  "unlistedProductsCount": 1,
+  "verifiedCount": 76,
+  "needsReviewCount": 0,
+  "failedCount": 0,
+  "redirectsAudit": {
+    "totalStoreRedirects": 9,
+    "batch1Tests": [
+      {
+        "oldHandle": "sakerplus®-tpu-sensory-textured-floor-mats",
+        "newHandle": "zavelyn-sensory-floor-mats",
+        "httpStatus": 301,
+        "isRedirect": true,
+        "targetLocation": "/products/zavelyn-sensory-floor-mats?fbclid=QA_TOKEN_999&utm_medium=cpc&utm_source=qa_independent",
+        "preservesQuery": true,
+        "targetHttp": 200
+      },
+      {
+        "oldHandle": "sakerplus®-tearable-non-slip-drawer-liner",
+        "newHandle": "zavelyn-tearable-drawer-liner",
+        "httpStatus": 301,
+        "isRedirect": true,
+        "targetLocation": "/products/zavelyn-tearable-drawer-liner?fbclid=QA_TOKEN_999&utm_medium=cpc&utm_source=qa_independent",
+        "preservesQuery": true,
+        "targetHttp": 200
+      },
+      {
+        "oldHandle": "sakerplus®-tearable-shelf-liner-and-drawer-liner",
+        "newHandle": "zavelyn-shelf-drawer-liner",
+        "httpStatus": 301,
+        "isRedirect": true,
+        "targetLocation": "/products/zavelyn-shelf-drawer-liner?fbclid=QA_TOKEN_999&utm_medium=cpc&utm_source=qa_independent",
+        "preservesQuery": true,
+        "targetHttp": 200
+      }
+    ]
+  },
+  "themeGuaranteeAudit": {
+    "filesWithNonStandardTerms": 9,
+    "storeRefundPolicySnippet": "We have a 30-day return policy, which means you have 30 days after receiving your item to request a return. To be eligible for a return, your item must be in the same condition that you received it, u"
+  }
+}

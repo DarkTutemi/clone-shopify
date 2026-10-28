@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454956028089",
+  "title": "Zavelyn Retractable LED Fill Light",
+  "handle": "sakerplus®-rechargeable-retractable-led-fill-light-stick",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914528981177",
+        "title": "Default Title",
+        "price": "67.99",
+        "sku": "GJ132385-E001"
+      }
+    ]
+  }
+}

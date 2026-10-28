@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/15454955045049",
+  "title": "Zavelyn Half Moon LED Lash Lamp",
+  "handle": "sakerplus®-dimmable-half-moon-led-lash-lamp",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914511155385",
+        "title": "Black",
+        "price": "84.99",
+        "sku": "LT132595-C001-X15101"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914511188153",
+        "title": "White",
+        "price": "84.99",
+        "sku": "LT132595-C005-X15101"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914511220921",
+        "title": "Pink",
+        "price": "84.99",
+        "sku": "LT132595-C009-X15101"
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "productId": "15454947901625",
+    "titleMatch": true,
+    "handleMatch": true,
+    "seoTitleMatch": true,
+    "seoDescMatch": true,
+    "statusMatch": true,
+    "isIdenticalToBackup": true,
+    "liveData": {
+      "title": "Zavelyn Sensory Floor Mats",
+      "handle": "sakerplus®-tpu-sensory-textured-floor-mats",
+      "seoTitle": null,
+      "seoDescription": null,
+      "status": "ACTIVE",
+      "updatedAt": "2026-10-26T18:06:28Z"
+    },
+    "backupData": {
+      "title": "Zavelyn Sensory Floor Mats",
+      "handle": "sakerplus®-tpu-sensory-textured-floor-mats",
+      "seoTitle": null,
+      "seoDescription": null,
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "productId": "15454948163769",
+    "titleMatch": true,
+    "handleMatch": true,
+    "seoTitleMatch": true,
+    "seoDescMatch": true,
+    "statusMatch": true,
+    "isIdenticalToBackup": true,
+    "liveData": {
+      "title": "Zavelyn Non-Slip Drawer Liner",
+      "handle": "sakerplus®-tearable-non-slip-drawer-liner",
+      "seoTitle": null,
+      "seoDescription": null,
+      "status": "ACTIVE",
+      "updatedAt": "2026-10-26T18:06:31Z"
+    },
+    "backupData": {
+      "title": "Zavelyn Non-Slip Drawer Liner",
+      "handle": "sakerplus®-tearable-non-slip-drawer-liner",
+      "seoTitle": null,
+      "seoDescription": null,
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "productId": "15454948556985",
+    "titleMatch": true,
+    "handleMatch": true,
+    "seoTitleMatch": true,
+    "seoDescMatch": true,
+    "statusMatch": true,
+    "isIdenticalToBackup": true,
+    "liveData": {
+      "title": "Zavelyn Shelf & Drawer Liner",
+      "handle": "sakerplus®-tearable-shelf-liner-and-drawer-liner",
+      "seoTitle": null,
+      "seoDescription": null,
+      "status": "ACTIVE",
+      "updatedAt": "2026-10-26T18:06:32Z"
+    },
+    "backupData": {
+      "title": "Zavelyn Shelf & Drawer Liner",
+      "handle": "sakerplus®-tearable-shelf-liner-and-drawer-liner",
+      "seoTitle": null,
+      "seoDescription": null,
+      "status": "ACTIVE"
+    }
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454958420153",
+  "title": "Zavelyn Cable Lug Crimper",
+  "handle": "sakerplus®-hydraulic-battery-cable-lug-crimping-tool",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914568892601",
+        "title": "Default Title",
+        "price": "104.99",
+        "sku": "GJ113731-X87496"
+      }
+    ]
+  }
+}

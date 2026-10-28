@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454952620217",
+  "title": "Zavelyn Diesel Injector Removal Kit",
+  "handle": "sakerplus®-universal-diesel-injector-removal-kit-clearance-sale",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914452992185",
+        "title": "Default Title",
+        "price": "72.99",
+        "sku": "GJ116630-E037"
+      }
+    ]
+  }
+}

@@ -1,0 +1,599 @@
+<section class="willa-featured-offer-section">
+  <div class="willa-container">
+    <div class="willa-section-header">
+      <span class="willa-pill">{{ section.settings.pill_text | default: 'FEATURED HOMESTEAD INNOVATION' }}</span>
+      <h2 class="willa-section-title willa-serif">{{ section.settings.heading | default: 'Zavelyn Intelligent Livestock Heating Lamp' }}</h2>
+      <p class="willa-section-subtitle">{{ section.settings.subtitle | default: 'Auto-regulating smart thermostat, 100% sealed fireproof shell, and gentle ambient warmth. The safer way to protect baby chicks, ducks, and small livestock all season.' }}</p>
+    </div>
+
+    <div class="willa-offer-layout">
+      <!-- Gallery Column -->
+      <div class="willa-offer-gallery">
+        <div class="willa-offer-main-img-wrap">
+          <img id="willaOfferMainImg" src="{{ section.settings.main_image_url | default: 'https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg' }}" alt="{{ section.settings.heading | escape }}" loading="lazy">
+        </div>
+        <div class="willa-offer-thumbs">
+          <img class="willa-offer-thumb active" src="{{ section.settings.thumb_1_url | default: 'https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg' }}" onclick="switchWillaOfferImg(this.src)">
+          <img class="willa-offer-thumb" src="{{ section.settings.thumb_2_url | default: 'https://cdn.myshopage.com/4574c936-7435-4b05-2934-ed1e12887e00.png' }}" onclick="switchWillaOfferImg(this.src)">
+          <img class="willa-offer-thumb" src="{{ section.settings.thumb_3_url | default: 'https://cdn.myshopage.com/8dfe030d-f1ec-4a8a-02a4-753863454400/w1000.jpg' }}" onclick="switchWillaOfferImg(this.src)">
+          <img class="willa-offer-thumb" src="{{ section.settings.thumb_4_url | default: 'https://cdn.myshopage.com/898406ff-0448-41a5-2440-fd49b2375e00/w1000.jpg' }}" onclick="switchWillaOfferImg(this.src)">
+        </div>
+      </div>
+
+      <!-- Offer Selector Column -->
+      <div class="willa-offer-box">
+        <div class="willa-offer-box-header">
+          <div class="willa-stars">{% render 'trustpilot-stars', width: 92, height: 17 %}</div>
+          <span class="rating-note">{{ section.settings.rating_text | default: '4.9/5 (1,480+ Reviews)' }}</span>
+          <span class="stock-alert">{{ section.settings.stock_alert | default: '● Only 57 Units Remaining' }}</span>
+        </div>
+
+        <h3 class="willa-offer-box-title">{{ section.settings.bundle_box_title | default: 'Choose Your Package Bundle' }}</h3>
+        <p class="willa-offer-box-desc">{{ section.settings.bundle_box_desc | default: 'Select your bundle below to unlock 50% discount and free express US delivery.' }}</p>
+
+        <!-- Bundles List -->
+        <div class="willa-bundle-options">
+          {% if section.blocks.size > 0 %}
+            {% for block in section.blocks %}
+              <div class="willa-bundle-card {% if forloop.first or block.settings.is_best_seller %}active{% endif %}" id="willaBundle{{ forloop.index }}" onclick="selectWillaBundle('{{ block.settings.variant_id }}', '{{ block.settings.price }}', '{{ block.settings.compare_price }}', 'willaBundle{{ forloop.index }}', '{{ block.settings.image_url }}')" {{ block.shopify_attributes }}>
+                {% if block.settings.badge != blank %}
+                  <div class="bundle-badge {% unless block.settings.is_best_seller %}secondary{% endunless %}">{{ block.settings.badge }}</div>
+                {% endif %}
+                <div class="bundle-card-inner">
+                  <input type="radio" name="willa_offer_bundle" id="radioBundle{{ forloop.index }}" {% if forloop.first or block.settings.is_best_seller %}checked{% endif %}>
+                  <div class="bundle-info">
+                    <h4>{{ block.settings.title }}</h4>
+                    <p>{{ block.settings.subtitle }}</p>
+                  </div>
+                  <div class="bundle-pricing">
+                    {% if block.settings.compare_price != blank %}<span class="price-old">${{ block.settings.compare_price }}</span>{% endif %}
+                    <span class="price-current">${{ block.settings.price }}</span>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          {% else %}
+            <!-- Bundle 1: 3 Pack (Best Value) -->
+            <div class="willa-bundle-card active" id="willaBundle3" onclick="selectWillaBundle('67953654300857', '119.99', '269.94', 'willaBundle3', 'https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-3pack-bundle.jpg?v=1792853189')">
+              <div class="bundle-badge">BEST VALUE • EXTRA 10% OFF • FREE SHIPPING</div>
+              <div class="bundle-card-inner">
+                <input type="radio" name="willa_offer_bundle" id="radioBundle3" checked>
+                <div class="bundle-info">
+                  <h4>3 Pack (Light + US Switch Cord)</h4>
+                  <p>Includes 3x Smart Lamps + 3x Switch Cords • Only $39.99/set</p>
+                </div>
+                <div class="bundle-pricing">
+                  <span class="price-old">$269.94</span>
+                  <span class="price-current">$119.99</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bundle 2: 2 Pack -->
+            <div class="willa-bundle-card" id="willaBundle2" onclick="selectWillaBundle('67930179436729', '89.99', '179.98', 'willaBundle2', 'https://cdn.myshopage.com/4574c936-7435-4b05-2934-ed1e12887e00.png')">
+              <div class="bundle-badge secondary">FREE SHIPPING</div>
+              <div class="bundle-card-inner">
+                <input type="radio" name="willa_offer_bundle" id="radioBundle2">
+                <div class="bundle-info">
+                  <h4>2 Pack (Light + US Switch Cord)</h4>
+                  <p>Includes 2x Smart Lamps + 2x Switch Cords • Free Shipping</p>
+                </div>
+                <div class="bundle-pricing">
+                  <span class="price-old">$179.98</span>
+                  <span class="price-current">$89.99</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bundle 3: 1 Pack -->
+            <div class="willa-bundle-card" id="willaBundle1" onclick="selectWillaBundle('67930179403961', '49.99', '89.98', 'willaBundle1', 'https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg')">
+              <div class="bundle-badge secondary">STARTER PACK</div>
+              <div class="bundle-card-inner">
+                <input type="radio" name="willa_offer_bundle" id="radioBundle1">
+                <div class="bundle-info">
+                  <h4>1 Pack (Light + US Switch Cord)</h4>
+                  <p>Includes 1x Smart Lamp + 1x Switch Cord</p>
+                </div>
+                <div class="bundle-pricing">
+                  <span class="price-old">$89.98</span>
+                  <span class="price-current">$49.99</span>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Quantity & Instant Checkout -->
+        <div class="willa-offer-cta-section">
+          <div class="willa-offer-total">
+            <span>Total Today:</span>
+            <strong id="willaOfferTotal">$119.99</strong>
+          </div>
+          <button type="button" id="willaOfferAtcBtn" class="willa-btn-primary" onclick="submitWillaOfferOrder()">
+            {{ section.settings.cta_btn_text | default: 'ADD TO CART • CLAIM 50% OFF ➔' }}
+          </button>
+          <button type="button" id="willaOfferShopNowBtn" class="willa-offer-shopnow" onclick="submitWillaOfferDirectCheckout()">
+            SHOP NOW ➔
+          </button>
+          <a href="{{ section.settings.details_link_url | default: '/products/sakerplus-livestock-heating-lamp' }}" class="willa-view-details-link">
+            {{ section.settings.details_link_text | default: 'View Complete Product Details & Specifications →' }}
+          </a>
+        </div>
+
+        <!-- Trust Row -->
+        <div class="willa-offer-trust">
+          <span>🛡️ 30-Day Money-Back Guarantee</span>
+          <span>⚡ Fast Tracked Shipping</span>
+          <span>🔒 100% Encrypted Checkout</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .willa-featured-offer-section {
+    background-color: #faf7f4;
+    padding: 60px 0;
+    border-bottom: 1px solid #e7e4df;
+  }
+  .willa-offer-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  .willa-offer-gallery {
+    flex: 1 1 50%;
+  }
+  .willa-offer-main-img-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e7e4df;
+    box-shadow: 0 8px 30px rgba(59, 43, 47, 0.08);
+    margin-bottom: 14px;
+  }
+  .willa-offer-main-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.25s ease;
+  }
+  .willa-offer-thumbs {
+    display: flex;
+    gap: 10px;
+  }
+  .willa-offer-thumb {
+    width: 76px;
+    height: 76px;
+    border-radius: 12px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background: #ffffff;
+    transition: border-color 0.2s;
+  }
+  .willa-offer-thumb.active {
+    border-color: #8a2c13;
+  }
+
+  .willa-offer-box {
+    flex: 1 1 50%;
+    background: #ffffff;
+    border: 1px solid #e7e4df;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 12px 36px rgba(59, 43, 47, 0.07);
+  }
+  .willa-offer-box-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .rating-note {
+    font-size: 13px;
+    color: #59514f;
+    font-weight: 600;
+  }
+  .stock-alert {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 700;
+    color: #b7381b;
+    background: #fbf0ee;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  .willa-offer-box-title {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #231f20;
+  }
+  .willa-offer-box-desc {
+    font-size: 14px;
+    color: #59514f;
+    margin: 0 0 20px 0;
+  }
+
+  .willa-bundle-options {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .willa-bundle-card {
+    position: relative;
+    border: 2px solid #e7e4df;
+    border-radius: 16px;
+    padding: 16px 18px;
+    cursor: pointer;
+    background-color: #faf7f4;
+    transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+  }
+  .willa-bundle-card.active {
+    border-color: #8a2c13;
+    background-color: #fffbf9;
+    box-shadow: 0 4px 16px rgba(138, 44, 19, 0.1);
+  }
+  .bundle-badge {
+    position: absolute;
+    top: -11px;
+    right: 18px;
+    background: #8a2c13;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+  }
+  .bundle-badge.secondary {
+    background: #59514f;
+  }
+  .bundle-card-inner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .bundle-card-inner input[type="radio"] {
+    accent-color: #8a2c13;
+    width: 18px;
+    height: 18px;
+  }
+  .bundle-info {
+    flex: 1;
+  }
+  .bundle-info h4 {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #231f20;
+  }
+  .bundle-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #59514f;
+  }
+  .bundle-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .price-old {
+    font-size: 12px;
+    text-decoration: line-through;
+    color: #8c827a;
+  }
+  .price-current {
+    font-size: 18px;
+    font-weight: 800;
+    color: #8a2c13;
+  }
+
+  .willa-offer-cta-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .willa-offer-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #231f20;
+    padding: 0 4px;
+  }
+  .willa-offer-total strong {
+    font-size: 22px;
+    color: #8a2c13;
+    font-weight: 900;
+  }
+  .willa-view-details-link {
+    text-align: center;
+    font-size: 13px;
+    color: #59514f;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.15s;
+  }
+  .willa-view-details-link:hover {
+    color: #8a2c13;
+  }
+  .willa-offer-trust {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #59514f;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid #e7e4df;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 991px) {
+    .willa-offer-layout {
+      flex-direction: column;
+      gap: 24px;
+    }
+    .willa-offer-box {
+      padding: 20px;
+      border-radius: 18px;
+    }
+  }
+</style>
+
+<script>
+  let willaCurrentVariantId = '67930179436729';
+
+  function switchWillaOfferImg(src) {
+    const main = document.getElementById('willaOfferMainImg');
+    if (main && src) {
+      main.style.opacity = '0.5';
+      setTimeout(() => {
+        main.src = src;
+        main.style.opacity = '1';
+      }, 150);
+    }
+    document.querySelectorAll('.willa-offer-thumb').forEach(t => {
+      if (t.src === src) t.classList.add('active');
+      else t.classList.remove('active');
+    });
+  }
+
+  function selectWillaBundle(variantId, price, oldPrice, cardId, imgUrl) {
+    willaCurrentVariantId = variantId;
+    document.querySelectorAll('.willa-bundle-card').forEach(c => c.classList.remove('active'));
+    const card = document.getElementById(cardId);
+    if (card) {
+      card.classList.add('active');
+      const radio = card.querySelector('input[type="radio"]');
+      if (radio) radio.checked = true;
+    }
+    const total = document.getElementById('willaOfferTotal');
+    if (total) total.innerText = '$' + price;
+    if (imgUrl) switchWillaOfferImg(imgUrl);
+  }
+
+  async function submitWillaOfferOrder() {
+    const btn = document.getElementById('willaOfferAtcBtn');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerText = 'ADDING TO CART...';
+    }
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{ id: willaCurrentVariantId, quantity: 1 }]
+        })
+      });
+
+      if (res.ok) {
+        if (typeof window.willaOpenCartDrawer === 'function') {
+          await window.willaRefreshCart();
+          window.willaOpenCartDrawer();
+          btn.disabled = false;
+          btn.innerText = 'CLAIM 50% OFF OFFER ➔';
+        } else {
+          window.location.href = '/checkout';
+        }
+      } else {
+        window.location.href = '/cart/' + willaCurrentVariantId + ':1';
+      }
+    } catch (e) {
+      window.location.href = '/cart/' + willaCurrentVariantId + ':1';
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Willa Featured Offer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "pill_text",
+      "label": "Badge Pill Text",
+      "default": "FEATURED HOMESTEAD INNOVATION"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Zavelyn Intelligent Livestock Heating Lamp"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Auto-regulating smart thermostat, 100% sealed fireproof shell, and gentle ambient warmth. The safer way to protect baby chicks, ducks, and small livestock all season."
+    },
+    {
+      "type": "header",
+      "content": "Ratings & Urgency"
+    },
+    {
+      "type": "text",
+      "id": "rating_stars",
+      "label": "Stars Rating",
+      "default": "★★★★★"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating Text",
+      "default": "4.9/5 (1,480+ Reviews)"
+    },
+    {
+      "type": "text",
+      "id": "stock_alert",
+      "label": "Stock Alert Badge",
+      "default": "● Only 57 Units Remaining"
+    },
+    {
+      "type": "header",
+      "content": "Bundle Box Headers"
+    },
+    {
+      "type": "text",
+      "id": "bundle_box_title",
+      "label": "Bundle Box Title",
+      "default": "Choose Your Package Bundle"
+    },
+    {
+      "type": "textarea",
+      "id": "bundle_box_desc",
+      "label": "Bundle Box Description",
+      "default": "Select your bundle below to unlock 50% discount and free express US delivery."
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_text",
+      "label": "ATC Button Text",
+      "default": "CLAIM 50% OFF OFFER ➔"
+    },
+    {
+      "type": "text",
+      "id": "details_link_text",
+      "label": "Details Link Text",
+      "default": "View Complete Product Details & Specifications →"
+    },
+    {
+      "type": "url",
+      "id": "details_link_url",
+      "label": "Details Link URL"
+    },
+    {
+      "type": "header",
+      "content": "Product Media"
+    },
+    {
+      "type": "text",
+      "id": "main_image_url",
+      "label": "Main Image URL",
+      "default": "https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg"
+    },
+    {
+      "type": "text",
+      "id": "thumb_1_url",
+      "label": "Thumbnail 1 URL",
+      "default": "https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg"
+    },
+    {
+      "type": "text",
+      "id": "thumb_2_url",
+      "label": "Thumbnail 2 URL",
+      "default": "https://cdn.myshopage.com/4574c936-7435-4b05-2934-ed1e12887e00.png"
+    },
+    {
+      "type": "text",
+      "id": "thumb_3_url",
+      "label": "Thumbnail 3 URL",
+      "default": "https://cdn.myshopage.com/8dfe030d-f1ec-4a8a-02a4-753863454400/w1000.jpg"
+    },
+    {
+      "type": "text",
+      "id": "thumb_4_url",
+      "label": "Thumbnail 4 URL",
+      "default": "https://cdn.myshopage.com/898406ff-0448-41a5-2440-fd49b2375e00/w1000.jpg"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bundle_card",
+      "name": "Package Bundle Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge Text",
+          "default": "BEST SELLER • 50% OFF"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_best_seller",
+          "label": "Highlight as Best Seller",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Bundle Title",
+          "default": "2 Pack (Light + US Switch Cord)"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Bundle Subtitle",
+          "default": "Includes 2x Smart Lamps + 2x Switch Cords • Free Shipping"
+        },
+        {
+          "type": "text",
+          "id": "variant_id",
+          "label": "Shopify Variant ID",
+          "default": "67930179436729"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Active Price ($)",
+          "default": "89.99"
+        },
+        {
+          "type": "text",
+          "id": "compare_price",
+          "label": "Compare At Price ($)",
+          "default": "179.99"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Bundle Preview Image URL",
+          "default": "https://cdn.myshopage.com/4574c936-7435-4b05-2934-ed1e12887e00.png"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Willa Featured Offer"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .willa-stars, .review-stars { display: inline-flex; align-items: center; line-height: 0; }
+</style>
+
+<style>
+  .willa-stars, .review-stars { display: inline-flex; align-items: center; line-height: 0; }
+</style>

@@ -1,0 +1,1343 @@
+{
+  "totalProducts": 63,
+  "batchCount": 7,
+  "batches": [
+    [
+      {
+        "productId": "15454946951353",
+        "gid": "gid://shopify/Product/15454946951353",
+        "currentLiveTitle": "Zavelyn Fence Post Repair Kit",
+        "currentHandle": "sakerplus-fence-post-repair-kit",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Fence Post Repair Kit",
+        "proposedSeoTitle": "Heavy-Duty Steel Fence Post Repair Kit | Zavelyn",
+        "proposedMetaDesc": "Reinforce rotted or broken wooden fence posts without digging out concrete. Built with heavy-duty steel anchors and weather-resistant hardware.",
+        "titleCharCount": 29,
+        "seoTitleCharCount": 48,
+        "metaDescCharCount": 143,
+        "adsRisk": "HIGH (DIRTY SAKERPLUS HANDLE / CAMPAIGN)",
+        "variantsCount": 3,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67973153980601",
+          "title": "Buy 2",
+          "price": "72.99",
+          "sku": "ZAV-FENCE-02"
+        }
+      },
+      {
+        "productId": "15454948786361",
+        "gid": "gid://shopify/Product/15454948786361",
+        "currentLiveTitle": "Zavelyn UV Bed Vacuum Cleaner",
+        "currentHandle": "saker®-powerful-uv-bed-vacuum-cleaner-clearance-sale",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn UV Bed Vacuum Cleaner",
+        "proposedSeoTitle": "UV Bed Vacuum Cleaner for Mattress & Fabric | Zavelyn",
+        "proposedMetaDesc": "Eliminate embedded dust and allergens with a handheld UV mattress vacuum featuring high-frequency vibration pads and strong suction for deep cleaning.",
+        "titleCharCount": 29,
+        "seoTitleCharCount": 53,
+        "metaDescCharCount": 150,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914364879033",
+          "title": "Default Title",
+          "price": "44.99",
+          "sku": "CP103850-X70850"
+        }
+      },
+      {
+        "productId": "15454948982969",
+        "gid": "gid://shopify/Product/15454948982969",
+        "currentLiveTitle": "Zavelyn Flame Effect Space Heater",
+        "currentHandle": "sakerplus®-1500w-flame-effect-oscillating-space-heater",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Flame Effect Space Heater",
+        "proposedSeoTitle": "1500W Flame Effect Oscillating Space Heater | Zavelyn",
+        "proposedMetaDesc": "Warm indoor rooms with a 1500W PTC oscillating tower heater featuring a decorative 3D flame effect, remote control, and built-in tip-over shutoff.",
+        "titleCharCount": 33,
+        "seoTitleCharCount": 53,
+        "metaDescCharCount": 146,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914368352441",
+          "title": "Default Title",
+          "price": "114.99",
+          "sku": "HA129393-X87701"
+        }
+      },
+      {
+        "productId": "15454949343417",
+        "gid": "gid://shopify/Product/15454949343417",
+        "currentLiveTitle": "Zavelyn Portable Welding Machine",
+        "currentHandle": "sakerplus®-portable-welding-machine-clearance",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Portable Inverter Welding Machine",
+        "proposedSeoTitle": "Portable Inverter Welding Machine for DIY Repair | Zavelyn",
+        "proposedMetaDesc": "Handle home metal repairs effortlessly using a handheld digital welding gun. Features IGBT inverter technology, current adjustment, and thermal protection.",
+        "titleCharCount": 41,
+        "seoTitleCharCount": 58,
+        "metaDescCharCount": 155,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 2,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914377658553",
+          "title": "1 * Sakerplus Portable Welding Machine",
+          "price": "67.99",
+          "sku": "GJ76085-X54891"
+        }
+      },
+      {
+        "productId": "15454949998777",
+        "gid": "gid://shopify/Product/15454949998777",
+        "currentLiveTitle": "Zavelyn Steam Disinfection Cleaner",
+        "currentHandle": "sakerplus®-steam-disinfection-cleaner-clearance",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Handheld Steam Cleaner",
+        "proposedSeoTitle": "Handheld Steam Cleaner for Home & Auto | Zavelyn",
+        "proposedMetaDesc": "Clean kitchen tiles, grout lines, and car upholstery with 1050W pressurized high-temperature steam. Loosens grime and dirt across sealed home surfaces.",
+        "titleCharCount": 30,
+        "seoTitleCharCount": 48,
+        "metaDescCharCount": 151,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 3,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914393780409",
+          "title": "1 Set Steam Cleaner (with 1 Fiber Cloth)",
+          "price": "28.99",
+          "sku": "CP97052-X65102"
+        }
+      },
+      {
+        "productId": "15454950850745",
+        "gid": "gid://shopify/Product/15454950850745",
+        "currentLiveTitle": "Zavelyn Bathroom Exhaust Fan",
+        "currentHandle": "sakerplus®-bathroom-exhaust-fan-with-led-light",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Bathroom Exhaust Fan with Light",
+        "proposedSeoTitle": "Quiet Bathroom Exhaust Fan with LED Light | Zavelyn",
+        "proposedMetaDesc": "Ventilate moisture and illuminate bathrooms quietly with this integrated ceiling exhaust fan. Features energy-efficient LED lighting and low-noise motor.",
+        "titleCharCount": 39,
+        "seoTitleCharCount": 51,
+        "metaDescCharCount": 153,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 4,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914412097721",
+          "title": "Panel Size 10 in (3-Color LED)",
+          "price": "79.99",
+          "sku": "HA132486-X88398"
+        }
+      },
+      {
+        "productId": "15454951211193",
+        "gid": "gid://shopify/Product/15454951211193",
+        "currentLiveTitle": "Zavelyn Solar Street Lights",
+        "currentHandle": "sakerplus®-solar-street-lights-clearance-sale",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Outdoor Solar Street Lights",
+        "proposedSeoTitle": "Outdoor Solar Street Light with Motion Sensor | Zavelyn",
+        "proposedMetaDesc": "Illuminate yards and driveways with outdoor solar street lights featuring 220° wide-angle LED coverage, dusk-to-dawn sensors, and motion-activated modes.",
+        "titleCharCount": 35,
+        "seoTitleCharCount": 55,
+        "metaDescCharCount": 153,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914420289721",
+          "title": "2 Pack",
+          "price": "55.99",
+          "sku": "CP93509-X63718"
+        }
+      },
+      {
+        "productId": "15454951473337",
+        "gid": "gid://shopify/Product/15454951473337",
+        "currentLiveTitle": "Zavelyn RAV4 USB Charging Hub",
+        "currentHandle": "sakerplus®-toyota-rav4-led-usb-charging-hub",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn RAV4 Center Console USB Hub",
+        "proposedSeoTitle": "RAV4 Center Console LED USB Charging Hub | Zavelyn",
+        "proposedMetaDesc": "Upgrade your Toyota RAV4 dashboard with a flush-fit USB hub featuring multi-port fast charging, integrated ambient LED lighting, and clean cable routing.",
+        "titleCharCount": 35,
+        "seoTitleCharCount": 50,
+        "metaDescCharCount": 153,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914427269305",
+          "title": "Default Title",
+          "price": "95.99",
+          "sku": "EC128015-X84097"
+        }
+      },
+      {
+        "productId": "15454951801017",
+        "gid": "gid://shopify/Product/15454951801017",
+        "currentLiveTitle": "Zavelyn Camping Fan with Light",
+        "currentHandle": "sakerplus-camping-fan-with-light-battery-1",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Portable Camping Fan with Light",
+        "proposedSeoTitle": "Rechargeable Camping Fan with LED Lantern | Zavelyn",
+        "proposedMetaDesc": "Stay cool in tents and off-grid campsites with a rechargeable hanging fan equipped with an adjustable LED ring light and long-lasting power bank output.",
+        "titleCharCount": 39,
+        "seoTitleCharCount": 51,
+        "metaDescCharCount": 152,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 2,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914433626297",
+          "title": "Orange",
+          "price": "125.99",
+          "sku": "EC98268-C012"
+        }
+      },
+      {
+        "productId": "15454951997625",
+        "gid": "gid://shopify/Product/15454951997625",
+        "currentLiveTitle": "Zavelyn Home Sauna Generator",
+        "currentHandle": "sakerplus®-portable-home-sauna-steam-generator",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Home Sauna Steam Generator",
+        "proposedSeoTitle": "Portable Home Sauna Steam Generator Pot | Zavelyn",
+        "proposedMetaDesc": "Infuse your home sauna tent with steady therapeutic steam using a digital sauna boiler pot. Features timer settings, remote control, and auto shut-off.",
+        "titleCharCount": 34,
+        "seoTitleCharCount": 49,
+        "metaDescCharCount": 151,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914438967481",
+          "title": "Default Title",
+          "price": "61.99",
+          "sku": "HA132935-X88405"
+        }
+      }
+    ],
+    [
+      {
+        "productId": "15454952292537",
+        "gid": "gid://shopify/Product/15454952292537",
+        "currentLiveTitle": "Zavelyn Electric Wall Chaser",
+        "currentHandle": "sakerplus®-laser-guided-electric-wall-chaser",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Laser Wall Chaser Groove Cutter",
+        "proposedSeoTitle": "Laser-Guided Electric Wall Chaser Cutter | Zavelyn",
+        "proposedMetaDesc": "Cut clean conduit grooves into brick, concrete, and masonry walls with a laser-guided electric chaser. Features dust-extraction adapter and depth control.",
+        "titleCharCount": 39,
+        "seoTitleCharCount": 50,
+        "metaDescCharCount": 154,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914445586617",
+          "title": "Default Title",
+          "price": "288.99",
+          "sku": "GJ132619-X88095"
+        }
+      },
+      {
+        "productId": "15454952620217",
+        "gid": "gid://shopify/Product/15454952620217",
+        "currentLiveTitle": "Zavelyn Diesel Injector Removal Kit",
+        "currentHandle": "sakerplus®-universal-diesel-injector-removal-kit-clearance-sale",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Diesel Injector Removal Kit",
+        "proposedSeoTitle": "Diesel Injector Removal Tool Kit with Adapters | Zavelyn",
+        "proposedMetaDesc": "Explore a diesel injector removal kit designed for specialized repair work. Compare the included adapters, tool specifications, and compatibility before you.",
+        "titleCharCount": 35,
+        "seoTitleCharCount": 56,
+        "metaDescCharCount": 157,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914452992185",
+          "title": "Default Title",
+          "price": "72.99",
+          "sku": "GJ116630-E037"
+        }
+      },
+      {
+        "productId": "15454953504953",
+        "gid": "gid://shopify/Product/15454953504953",
+        "currentLiveTitle": "Zavelyn Thermal Imaging Camera",
+        "currentHandle": "sakerplus®-high-precision-infrared-thermal-imaging-camera",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Handheld Thermal Imaging Camera",
+        "proposedSeoTitle": "Handheld Infrared Thermal Imaging Camera | Zavelyn",
+        "proposedMetaDesc": "Detect HVAC drafts, electrical hotspots, and plumbing leaks instantly with a high-resolution thermal imaging camera with full-color display modes.",
+        "titleCharCount": 39,
+        "seoTitleCharCount": 50,
+        "metaDescCharCount": 146,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914471342265",
+          "title": "Default Title",
+          "price": "209.99",
+          "sku": "HA130826-X86520"
+        }
+      },
+      {
+        "productId": "15454953898169",
+        "gid": "gid://shopify/Product/15454953898169",
+        "currentLiveTitle": "Zavelyn UV Mattress Vacuum",
+        "currentHandle": "sakerplus®-cordless-handheld-uv-mattress-vacuum-cleaner",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Cordless UV Mattress Vacuum",
+        "proposedSeoTitle": "Cordless Handheld UV Mattress Vacuum Cleaner | Zavelyn",
+        "proposedMetaDesc": "Keep bedding, pillows, and sofas fresh with a cordless UV mattress cleaner delivering high-frequency tapping and multi-stage cyclonic HEPA filtration.",
+        "titleCharCount": 35,
+        "seoTitleCharCount": 54,
+        "metaDescCharCount": 150,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 2,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914479567033",
+          "title": "Green",
+          "price": "46.99",
+          "sku": "HA132563-C004"
+        }
+      },
+      {
+        "productId": "15454954193081",
+        "gid": "gid://shopify/Product/15454954193081",
+        "currentLiveTitle": "Zavelyn Tactical MOLLE Vest",
+        "currentHandle": "sakerplus®-tactical-molle-utility-vest",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Tactical MOLLE Utility Vest",
+        "proposedSeoTitle": "Tactical MOLLE Utility Vest with Modular Webbing | Zavelyn",
+        "proposedMetaDesc": "Organize gear and pouches with an adjustable tactical vest crafted from water-resistant Oxford fabric. Features modular MOLLE webbing and breathable mesh.",
+        "titleCharCount": 35,
+        "seoTitleCharCount": 58,
+        "metaDescCharCount": 154,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 3,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914489102521",
+          "title": "Black",
+          "price": "54.99",
+          "sku": "LB132757-C001"
+        }
+      },
+      {
+        "productId": "15454954422457",
+        "gid": "gid://shopify/Product/15454954422457",
+        "currentLiveTitle": "Zavelyn Hydraulic Pipe Crimper Kit",
+        "currentHandle": "sakerplus®-cordless-hydraulic-pipe-crimping-tool-kit",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Hydraulic Pipe Crimping Tool Kit",
+        "proposedSeoTitle": "Hydraulic Pipe Crimping Tool Kit with Dies | Zavelyn",
+        "proposedMetaDesc": "Crimp copper, PEX, and stainless plumbing pipes securely with a heavy-duty hydraulic crimper tool kit supplied with quick-change hardening dies.",
+        "titleCharCount": 40,
+        "seoTitleCharCount": 52,
+        "metaDescCharCount": 144,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914494214329",
+          "title": "Default Title",
+          "price": "779.99",
+          "sku": "GJ113731-X86884"
+        }
+      },
+      {
+        "productId": "15454954750137",
+        "gid": "gid://shopify/Product/15454954750137",
+        "currentLiveTitle": "Zavelyn Smart Hygrometer Clock",
+        "currentHandle": "sakerplus®-smart-thermometer-hygrometer-clock",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Smart Hygrometer Thermometer Clock",
+        "proposedSeoTitle": "Retro Pixel Thermometer & Hygrometer Desk Clock | Zavelyn",
+        "proposedMetaDesc": "Track indoor temperature and humidity on an animated retro pixel display clock. Features 30-second reading updates, mechanical joystick, and USB battery.",
+        "titleCharCount": 42,
+        "seoTitleCharCount": 57,
+        "metaDescCharCount": 153,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914502176953",
+          "title": "Default Title",
+          "price": "50.99",
+          "sku": "HB121850-E001"
+        }
+      },
+      {
+        "productId": "15454955045049",
+        "gid": "gid://shopify/Product/15454955045049",
+        "currentLiveTitle": "Zavelyn Half Moon LED Lash Lamp",
+        "currentHandle": "sakerplus®-dimmable-half-moon-led-lash-lamp",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Half Moon LED Lash Lamp",
+        "proposedSeoTitle": "Dimmable Half Moon LED Lash & Esthetician Lamp | Zavelyn",
+        "proposedMetaDesc": "Eliminate shadows during lash extensions and skincare sessions with an arch-shaped half moon LED esthetician lamp with adjustable color temperature.",
+        "titleCharCount": 31,
+        "seoTitleCharCount": 56,
+        "metaDescCharCount": 148,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 3,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914511155385",
+          "title": "Black",
+          "price": "84.99",
+          "sku": "LT132595-C001-X15101"
+        }
+      },
+      {
+        "productId": "15454955372729",
+        "gid": "gid://shopify/Product/15454955372729",
+        "currentLiveTitle": "Zavelyn 3-in-1 Gypsum Board Cutter",
+        "currentHandle": "sakerplus®-3-in-1-gypsum-board-cutting-tool",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn 3-in-1 Drywall Board Cutter",
+        "proposedSeoTitle": "3-in-1 Drywall & Gypsum Board Cutting Tool | Zavelyn",
+        "proposedMetaDesc": "Measure, mark, and slice sheetrock effortlessly in one pass. Combines a retractable tape measure, locking guide, and sharp utility scoring blade.",
+        "titleCharCount": 35,
+        "seoTitleCharCount": 52,
+        "metaDescCharCount": 145,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914518364345",
+          "title": "Default Title",
+          "price": "49.99",
+          "sku": "CP14318-E037"
+        }
+      },
+      {
+        "productId": "15454956028089",
+        "gid": "gid://shopify/Product/15454956028089",
+        "currentLiveTitle": "Zavelyn Retractable LED Fill Light",
+        "currentHandle": "sakerplus®-rechargeable-retractable-led-fill-light-stick",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Retractable LED Fill Light Stick",
+        "proposedSeoTitle": "Retractable Handheld LED Fill Light Wand | Zavelyn",
+        "proposedMetaDesc": "Enhance live streaming and portrait photography with a handheld rechargeable LED light wand offering adjustable brightness, hue, and tripod mounting.",
+        "titleCharCount": 40,
+        "seoTitleCharCount": 50,
+        "metaDescCharCount": 149,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914528981177",
+          "title": "Default Title",
+          "price": "67.99",
+          "sku": "GJ132385-E001"
+        }
+      }
+    ],
+    [
+      {
+        "productId": "15454956355769",
+        "gid": "gid://shopify/Product/15454956355769",
+        "currentLiveTitle": "Zavelyn Mini Heat Press Machine",
+        "currentHandle": "sakerplus®-portable-digital-mini-heat-press-machine",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Digital Mini Heat Press Machine",
+        "proposedSeoTitle": "Digital Mini Heat Press Machine for T-Shirts | Zavelyn",
+        "proposedMetaDesc": "Transfer custom iron-on vinyl graphics onto shirts, tote bags, and hats with a compact digital heat press featuring precise temperature controls.",
+        "titleCharCount": 39,
+        "seoTitleCharCount": 54,
+        "metaDescCharCount": 145,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914534518969",
+          "title": "Default Title",
+          "price": "149.99",
+          "sku": "GJ132614-X65160"
+        }
+      },
+      {
+        "productId": "15454956781753",
+        "gid": "gid://shopify/Product/15454956781753",
+        "currentLiveTitle": "Zavelyn Automatic Chicken Coop Door",
+        "currentHandle": "sakerplus®-battery-powered-automatic-chicken-coop-door",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Automatic Chicken Coop Door",
+        "proposedSeoTitle": "Automatic Chicken Coop Door with Timer Control | Zavelyn",
+        "proposedMetaDesc": "Make daily chicken coop routines easier with an automatic door featuring timer-controlled operation. Explore its setup, power requirements, and safety features.",
+        "titleCharCount": 35,
+        "seoTitleCharCount": 56,
+        "metaDescCharCount": 160,
+        "adsRisk": "HIGH (DIRTY SAKERPLUS HANDLE / CAMPAIGN)",
+        "variantsCount": 2,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914542809273",
+          "title": "1st Gen Battery-Powered",
+          "price": "69.99",
+          "sku": "CP46844-X88084"
+        }
+      },
+      {
+        "productId": "15454957142201",
+        "gid": "gid://shopify/Product/15454957142201",
+        "currentLiveTitle": "Zavelyn Infrared Sauna Blanket",
+        "currentHandle": "portable-infrared",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Infrared Sauna Blanket",
+        "proposedSeoTitle": "Infrared Sauna Blanket for Home Relaxation | Zavelyn",
+        "proposedMetaDesc": "Unwind with gentle thermal body warming at home. Explore the Zavelyn infrared sauna blanket featuring multi-zone heat settings and waterproof Oxford lining.",
+        "titleCharCount": 30,
+        "seoTitleCharCount": 52,
+        "metaDescCharCount": 156,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914549100729",
+          "title": "Oxford cloth+Arm Hole",
+          "price": "187.99",
+          "sku": "HA132518-X88013"
+        }
+      },
+      {
+        "productId": "15454957633721",
+        "gid": "gid://shopify/Product/15454957633721",
+        "currentLiveTitle": "Zavelyn 360° Magnetic Work Light",
+        "currentHandle": "sakerplus®-360-app-controlled-magnetic-work-light",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn 360 Magnetic Work Light",
+        "proposedSeoTitle": "360 Swivel Magnetic Work Light with App Control | Zavelyn",
+        "proposedMetaDesc": "Light up engine bays and tight job sites hands-free with a magnetic base floodlight featuring 360-degree rotation and smartphone app brightness control.",
+        "titleCharCount": 31,
+        "seoTitleCharCount": 57,
+        "metaDescCharCount": 152,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914557325497",
+          "title": "Default Title",
+          "price": "164.99",
+          "sku": "LT132442-E001"
+        }
+      },
+      {
+        "productId": "15454958158009",
+        "gid": "gid://shopify/Product/15454958158009",
+        "currentLiveTitle": "Zavelyn 50FT LED String Lights",
+        "currentHandle": "sakerplus®-50ft-industrial-led-construction-string-lights",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn 50FT LED Jobsite String Lights",
+        "proposedSeoTitle": "50FT Linkable LED Jobsite Construction Lights | Zavelyn",
+        "proposedMetaDesc": "Light up workspaces with a 50ft linkable construction string light set featuring five IP65-rated 10W LED heads, protective cages, and hanging carabiners.",
+        "titleCharCount": 38,
+        "seoTitleCharCount": 55,
+        "metaDescCharCount": 153,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914565845177",
+          "title": "Default Title",
+          "price": "119.99",
+          "sku": "LT132367-X15101"
+        }
+      },
+      {
+        "productId": "15454958420153",
+        "gid": "gid://shopify/Product/15454958420153",
+        "currentLiveTitle": "Zavelyn Cable Lug Crimper",
+        "currentHandle": "sakerplus®-hydraulic-battery-cable-lug-crimping-tool",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Hydraulic Cable Lug Crimper",
+        "proposedSeoTitle": "Hydraulic Battery Cable Lug Crimping Tool | Zavelyn",
+        "proposedMetaDesc": "Create secure electrical connections on heavy battery cables with an 8-ton hydraulic crimping tool featuring rotating head and interchangeable metric dies.",
+        "titleCharCount": 35,
+        "seoTitleCharCount": 51,
+        "metaDescCharCount": 155,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914568892601",
+          "title": "Default Title",
+          "price": "104.99",
+          "sku": "GJ113731-X87496"
+        }
+      },
+      {
+        "productId": "15454958878905",
+        "gid": "gid://shopify/Product/15454958878905",
+        "currentLiveTitle": "Zavelyn Panoramic Dash Camera",
+        "currentHandle": "sakerplus®-panoramic-dash-camera-with-night-vision",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Panoramic Dual Dash Camera",
+        "proposedSeoTitle": "Panoramic Dual Dash Camera with Night Vision | Zavelyn",
+        "proposedMetaDesc": "Record road evidence in crystal-clear detail with a wide-angle dual dash camera featuring infrared night vision, loop recording, and G-sensor lock.",
+        "titleCharCount": 34,
+        "seoTitleCharCount": 54,
+        "metaDescCharCount": 147,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 2,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914578591929",
+          "title": "5 Lenses (No Memory Card or WiFi)",
+          "price": "86.99",
+          "sku": "AM132152-X87597"
+        }
+      },
+      {
+        "productId": "15454959894713",
+        "gid": "gid://shopify/Product/15454959894713",
+        "currentLiveTitle": "Zavelyn Wheel Alignment Kit",
+        "currentHandle": "sakerplus®-stainless-steel-wheel-alignment-kit",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Wheel Alignment Tool Kit",
+        "proposedSeoTitle": "Stainless Steel Wheel Alignment Toe-In Gauge Tool | Zavelyn",
+        "proposedMetaDesc": "Check and calibrate automotive toe alignment at home using heavy-duty stainless steel alignment plates with dual tape measure slots for accurate reads.",
+        "titleCharCount": 32,
+        "seoTitleCharCount": 59,
+        "metaDescCharCount": 151,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914596286649",
+          "title": "Default Title",
+          "price": "63.99",
+          "sku": "AM132311-C001"
+        }
+      },
+      {
+        "productId": "15454960255161",
+        "gid": "gid://shopify/Product/15454960255161",
+        "currentLiveTitle": "Zavelyn Red Light Therapy Panel",
+        "currentHandle": "sakerplus®-adjustable-red-light-therapy-panel",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Red Light Therapy Panel",
+        "proposedSeoTitle": "Targeted Red Light Therapy Body Panel | Zavelyn",
+        "proposedMetaDesc": "Support skin radiance and soothe muscle stiffness with a dual-wavelength 660nm red and 850nm near-infrared LED panel equipped with an adjustable tabletop stand.",
+        "titleCharCount": 31,
+        "seoTitleCharCount": 47,
+        "metaDescCharCount": 160,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914601169081",
+          "title": "Default Title",
+          "price": "165.99",
+          "sku": "HA132313-X15101"
+        }
+      },
+      {
+        "productId": "15454960910521",
+        "gid": "gid://shopify/Product/15454960910521",
+        "currentLiveTitle": "Zavelyn Self-Leveling Laser Level",
+        "currentHandle": "sakerplus®-self-leveling-laser-level-with-tripod",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Self-Leveling Cross Laser Level",
+        "proposedSeoTitle": "Self-Leveling Cross Line Laser Level with Tripod | Zavelyn",
+        "proposedMetaDesc": "Align pictures, tiles, and drywall accurately with a high-visibility green beam self-leveling laser level equipped with an adjustable mini tripod.",
+        "titleCharCount": 39,
+        "seoTitleCharCount": 58,
+        "metaDescCharCount": 146,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914613457081",
+          "title": "Default Title",
+          "price": "96.99",
+          "sku": "GJ126393-X82633"
+        }
+      }
+    ],
+    [
+      {
+        "productId": "15454961238201",
+        "gid": "gid://shopify/Product/15454961238201",
+        "currentLiveTitle": "Zavelyn Kids Metal Detector",
+        "currentHandle": "sakerplus®-kids-metal-detector-with-lcd-display",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Lightweight Kids Metal Detector",
+        "proposedSeoTitle": "Kids Metal Detector with Backlit LCD Screen | Zavelyn",
+        "proposedMetaDesc": "Spark outdoor exploration with a lightweight metal detector for children. Features adjustable stem length, waterproof search coil, and backlit LCD screen.",
+        "titleCharCount": 39,
+        "seoTitleCharCount": 53,
+        "metaDescCharCount": 154,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 3,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914620141753",
+          "title": "Orange",
+          "price": "69.99",
+          "sku": "HB132178-C012"
+        }
+      },
+      {
+        "productId": "15454961860793",
+        "gid": "gid://shopify/Product/15454961860793",
+        "currentLiveTitle": "Zavelyn Heated Knee Massager",
+        "currentHandle": "sakerplus®-cordless-heated-knee-massage-device",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Cordless Heated Knee Massager",
+        "proposedSeoTitle": "Cordless Heated Knee Massager with Vibration | Zavelyn",
+        "proposedMetaDesc": "Soothe stiff joints and tired knees with a cordless wrap combining soothing adjustable heat and targeted multi-mode vibration therapy.",
+        "titleCharCount": 37,
+        "seoTitleCharCount": 54,
+        "metaDescCharCount": 134,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914634166457",
+          "title": "Default Title",
+          "price": "166.99",
+          "sku": "HA131177-C001"
+        }
+      },
+      {
+        "productId": "15454962286777",
+        "gid": "gid://shopify/Product/15454962286777",
+        "currentLiveTitle": "Zavelyn Solar Motion Security Light",
+        "currentHandle": "sakerplus®-outdoor-solar-motion-sensor-security-light",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Solar Motion Sensor Security Light",
+        "proposedSeoTitle": "Solar Motion Sensor Security Light for Outdoors | Zavelyn",
+        "proposedMetaDesc": "Protect yards, garages, and entryways with solar security floodlights featuring wide-angle motion detection, weatherproofing, and solar recharging.",
+        "titleCharCount": 42,
+        "seoTitleCharCount": 57,
+        "metaDescCharCount": 147,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 5,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914642456761",
+          "title": "Ground Stake - 1 PC",
+          "price": "39.99",
+          "sku": "LT129414-X85381"
+        }
+      },
+      {
+        "productId": "15454962778297",
+        "gid": "gid://shopify/Product/15454962778297",
+        "currentLiveTitle": "Zavelyn 5-in-1 Magnetic Charging Station",
+        "currentHandle": "sakerplus®-5-in-1-magnetic-wireless-charging-station",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn 5-in-1 Magnetic Wireless Charger",
+        "proposedSeoTitle": "5-in-1 Magnetic Wireless Charging Station Stand | Zavelyn",
+        "proposedMetaDesc": "Power your smartphone, smartwatch, and earbuds simultaneously from one sleek magnetic charging stand. Features built-in desk night light and fast charge.",
+        "titleCharCount": 40,
+        "seoTitleCharCount": 57,
+        "metaDescCharCount": 153,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 2,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914653565113",
+          "title": "Beige",
+          "price": "95.99",
+          "sku": "HA131694-C010"
+        }
+      },
+      {
+        "productId": "15454963859641",
+        "gid": "gid://shopify/Product/15454963859641",
+        "currentLiveTitle": "Zavelyn Cordless Garden Tiller",
+        "currentHandle": "saker®-cordless-electric-garden-tiller-cultivator",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Cordless Electric Garden Tiller",
+        "proposedSeoTitle": "Cordless Electric Garden Tiller & Cultivator | Zavelyn",
+        "proposedMetaDesc": "Cultivate garden soil and aerate flower beds effortlessly with a battery-powered handheld tiller equipped with durable steel tines and safety switch.",
+        "titleCharCount": 39,
+        "seoTitleCharCount": 54,
+        "metaDescCharCount": 149,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914673258681",
+          "title": "Electric Garden Tiller Cultivator",
+          "price": "83.99",
+          "sku": "GJ88858-X70586"
+        }
+      },
+      {
+        "productId": "15454964187321",
+        "gid": "gid://shopify/Product/15454964187321",
+        "currentLiveTitle": "Zavelyn Livestock Grooming Scratch Brush",
+        "currentHandle": "sakerplus®-livestock-massage-grooming-scratch-brush",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Livestock Grooming Scratch Brush",
+        "proposedSeoTitle": "Livestock Grooming & Scratching Brush for Cattle | Zavelyn",
+        "proposedMetaDesc": "Provide cattle, horses, and goats with comforting relief from pests and shedding. Mountable heavy-duty textured bristles fit securely on barn posts.",
+        "titleCharCount": 40,
+        "seoTitleCharCount": 58,
+        "metaDescCharCount": 148,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 6,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914680074425",
+          "title": "Yellow & Blue (17.2 in / 44 cm, Includes Two Types of Screws) / 1 set",
+          "price": "49.99",
+          "sku": "HW130958-C645-X86591"
+        }
+      },
+      {
+        "productId": "15454964744377",
+        "gid": "gid://shopify/Product/15454964744377",
+        "currentLiveTitle": "Zavelyn Flexible-Neck Work Flashlight",
+        "currentHandle": "sakerplus®-outdoor-flexible-neck-work-flashlight",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Flexible Neck Work Flashlight",
+        "proposedSeoTitle": "Flexible Gooseneck Magnetic Work Flashlight | Zavelyn",
+        "proposedMetaDesc": "Position bright LED light precisely inside dark engine bays and machinery with a magnetic base flexible gooseneck inspection flashlight.",
+        "titleCharCount": 37,
+        "seoTitleCharCount": 53,
+        "metaDescCharCount": 136,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 4,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67914693607609",
+          "title": "1 Pack + 4 Free Batteries",
+          "price": "19.99",
+          "sku": "OS123113-X87631"
+        }
+      },
+      {
+        "productId": "15455040241849",
+        "gid": "gid://shopify/Product/15455040241849",
+        "currentLiveTitle": "Zavelyn Advanced Nose Cleaner",
+        "currentHandle": "navage-advanced-nose-cleaner",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Powered Nasal Care Cleaner",
+        "proposedSeoTitle": "Powered Nasal Care Cleaner with Gentle Suction | Zavelyn",
+        "proposedMetaDesc": "Flush out dust, pollen, and sinus congestion using powered gentle saline irrigation. Designed for comfortable, mess-free daily respiratory maintenance.",
+        "titleCharCount": 34,
+        "seoTitleCharCount": 56,
+        "metaDescCharCount": 151,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67916567937209",
+          "title": "Default Title",
+          "price": "114.99",
+          "sku": "BNDL-80060"
+        }
+      },
+      {
+        "productId": "15455040340153",
+        "gid": "gid://shopify/Product/15455040340153",
+        "currentLiveTitle": "Zavelyn Nose Cleaner Starter Bundle",
+        "currentHandle": "navage-starter-bundle",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Nasal Cleaner Starter Bundle",
+        "proposedSeoTitle": "Nasal Cleaner Complete Starter Kit with Pods | Zavelyn",
+        "proposedMetaDesc": "Get everything needed for daily sinus relief with the complete nasal cleaner kit, including the powered irrigation device and pre-measured saline pods.",
+        "titleCharCount": 36,
+        "seoTitleCharCount": 54,
+        "metaDescCharCount": 151,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67916568035513",
+          "title": "Default Title",
+          "price": "99.95",
+          "sku": "BNDL-80030"
+        }
+      },
+      {
+        "productId": "15455092572345",
+        "gid": "gid://shopify/Product/15455092572345",
+        "currentLiveTitle": "Zavelyn Yeoman Sweep",
+        "currentHandle": "the-yeoman-sweep",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Yeoman Lawn Sweeper",
+        "proposedSeoTitle": "Yeoman Heavy-Duty Push Lawn Sweeper | Zavelyn",
+        "proposedMetaDesc": "Clear fallen leaves, grass clippings, and lawn thatch without raking. Heavy-duty rotating brushes collect yard debris directly into a large rear hopper.",
+        "titleCharCount": 27,
+        "seoTitleCharCount": 45,
+        "metaDescCharCount": 152,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67918044954809",
+          "title": "21 in",
+          "price": "229.99",
+          "sku": "YEOMAN-SWEEP-21"
+        }
+      }
+    ],
+    [
+      {
+        "productId": "15455242387641",
+        "gid": "gid://shopify/Product/15455242387641",
+        "currentLiveTitle": "Zavelyn Steam Pro",
+        "currentHandle": "srefalsteam",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn SrefalSteam Thermal Steam Cleaner",
+        "proposedSeoTitle": "SrefalSteam Multi-Surface Steam Cleaning System | Zavelyn",
+        "proposedMetaDesc": "Deep clean floors, tile grout, and car interiors with concentrated pressurized steam. Includes multi-attachment nozzles for natural sanitizing power.",
+        "titleCharCount": 41,
+        "seoTitleCharCount": 57,
+        "metaDescCharCount": 149,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67920836853945",
+          "title": "Default Title",
+          "price": "89.99",
+          "sku": "SREFALSTEAM-PROMO"
+        }
+      },
+      {
+        "productId": "15455481102521",
+        "gid": "gid://shopify/Product/15455481102521",
+        "currentLiveTitle": "Zavelyn MagTrack",
+        "currentHandle": "thoson-magtrack",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn MagTrack Anti-Gravity Train Set",
+        "proposedSeoTitle": "MagTrack Anti-Gravity Glow Electric Train Track | Zavelyn",
+        "proposedMetaDesc": "Delight children with an anti-gravity flexible track system where magnetic train cars zoom through vertical loops, curves, and glowing room courses.",
+        "titleCharCount": 39,
+        "seoTitleCharCount": 57,
+        "metaDescCharCount": 148,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 3,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67925383741625",
+          "title": "Rookie",
+          "price": "69.00",
+          "sku": "MAGTRACK-32"
+        }
+      },
+      {
+        "productId": "15455757336761",
+        "gid": "gid://shopify/Product/15455757336761",
+        "currentLiveTitle": "Zavelyn Livestock Heating Lamp",
+        "currentHandle": "livestock-heating-lamp",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Livestock Infrared Heating Lamp",
+        "proposedSeoTitle": "Livestock Infrared Heating Lamp for Barns | Zavelyn",
+        "proposedMetaDesc": "Keep newborn calves, piglets, and brooding chicks comfortably warm in winter barns using a heavy-duty waterproof aluminum infrared heat lamp fixture.",
+        "titleCharCount": 39,
+        "seoTitleCharCount": 51,
+        "metaDescCharCount": 149,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 3,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67930179403961",
+          "title": "1 Pack",
+          "price": "49.99",
+          "sku": "PT131318-1PACK"
+        }
+      },
+      {
+        "productId": "15459315220665",
+        "gid": "gid://shopify/Product/15459315220665",
+        "currentLiveTitle": "Zavelyn Drum Pro",
+        "currentHandle": "zavelyn-drum-pro",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Drum Pro (15\" 15-Tone D-Major)",
+        "proposedSeoTitle": "Drum Pro 15\" 15-Tone D-Major Steel Tongue Drum | Zavelyn",
+        "proposedMetaDesc": "Experience soothing acoustic soundscapes with the 15-inch 15-tone D-Major steel tongue drum. Tuned to 432Hz harmonic frequency for meditation and balance.",
+        "titleCharCount": 38,
+        "seoTitleCharCount": 56,
+        "metaDescCharCount": 154,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 5,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67959036838073",
+          "title": "Green",
+          "price": "259.95",
+          "sku": "ZAV-PRO-13-GRE"
+        }
+      },
+      {
+        "productId": "15459315581113",
+        "gid": "gid://shopify/Product/15459315581113",
+        "currentLiveTitle": "Zavelyn Drum Plus",
+        "currentHandle": "zavelyn-drum-plus",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Drum Plus (11\" 11-Tone D-Major)",
+        "proposedSeoTitle": "Drum Plus 11\" 11-Tone Harmonic Steel Tongue Drum | Zavelyn",
+        "proposedMetaDesc": "Immerse in restorative sound healing with the compact 11-inch 11-tone steel tongue drum. Includes custom rubber mallets, travel bag, and songbook.",
+        "titleCharCount": 39,
+        "seoTitleCharCount": 58,
+        "metaDescCharCount": 146,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 8,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67959037427897",
+          "title": "White",
+          "price": "159.95",
+          "sku": "ZAV-PLS-WHT"
+        }
+      },
+      {
+        "productId": "15459318890681",
+        "gid": "gid://shopify/Product/15459318890681",
+        "currentLiveTitle": "Zavelyn Drum Mini",
+        "currentHandle": "zavelyn-drum-mini",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Drum Mini (6\" 8-Tone C-Key)",
+        "proposedSeoTitle": "Drum Mini 6\" 8-Tone Pocket Steel Tongue Drum | Zavelyn",
+        "proposedMetaDesc": "Play beautiful chime-like melodies anywhere with a pocket-sized 6-inch 8-tone steel tongue drum. Tuned in C-key for joyful acoustic exploration.",
+        "titleCharCount": 35,
+        "seoTitleCharCount": 54,
+        "metaDescCharCount": 144,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 7,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67959041032377",
+          "title": "White",
+          "price": "109.95",
+          "sku": "ZAV-MIN-WHT"
+        }
+      },
+      {
+        "productId": "15460656021689",
+        "gid": "gid://shopify/Product/15460656021689",
+        "currentLiveTitle": "Zavelyn Handpan Master",
+        "currentHandle": "zavelyn-handpan-master",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Handpan Master (22\" 12-Tone D-Kurd)",
+        "proposedSeoTitle": "Handpan Master 22\" 12-Tone D-Kurdish Drum | Zavelyn",
+        "proposedMetaDesc": "Play rich, resonant concert sound with the handcrafted 22-inch 12-tone D-Kurdish handpan drum. Made of nitrided steel with exceptional acoustic sustain.",
+        "titleCharCount": 43,
+        "seoTitleCharCount": 51,
+        "metaDescCharCount": 152,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 1,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67971900375225",
+          "title": "432Hz (12 Notes)",
+          "price": "599.00",
+          "sku": "ZAV-HP-MST-432-12"
+        }
+      },
+      {
+        "productId": "15460701831353",
+        "gid": "gid://shopify/Product/15460701831353",
+        "currentLiveTitle": "Zavelyn Rain Drum",
+        "currentHandle": "zavelyn-rain-drum",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Rain Drum (3\" 6-Tone Outdoor)",
+        "proposedSeoTitle": "Rain Drum 3\" 6-Tone Outdoor Garden Chime Drum | Zavelyn",
+        "proposedMetaDesc": "Capture soothing raindrops into gentle musical tones with a compact 3-inch 6-tone steel rain drum crafted for outdoor patios, balconies, and gardens.",
+        "titleCharCount": 37,
+        "seoTitleCharCount": 55,
+        "metaDescCharCount": 149,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 5,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67972414472377",
+          "title": "Green",
+          "price": "59.00",
+          "sku": "ZAV-RAIN-3-GRE"
+        }
+      },
+      {
+        "productId": "15460831953081",
+        "gid": "gid://shopify/Product/15460831953081",
+        "currentLiveTitle": "Zavelyn Cordless Turbo Leaf Blower",
+        "currentHandle": "saker-cordless-turbo-leaf-blower",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Cordless Turbo Leaf Blower",
+        "proposedSeoTitle": "Cordless Turbo Jet Leaf Blower with Battery | Zavelyn",
+        "proposedMetaDesc": "Clear driveways, decks, and lawns quickly with a lightweight cordless turbo jet blower delivering powerful high-velocity airflow for outdoor debris.",
+        "titleCharCount": 34,
+        "seoTitleCharCount": 53,
+        "metaDescCharCount": 148,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 4,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67974079348921",
+          "title": "Portable Blower with 1 Battery",
+          "price": "75.99",
+          "sku": null
+        }
+      },
+      {
+        "productId": "15460886315193",
+        "gid": "gid://shopify/Product/15460886315193",
+        "currentLiveTitle": "Zavelyn 5-in-1 Rotary Cheese Grater",
+        "currentHandle": "zavelyn-5-in-1-rotary-cheese-grater-shredder",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Rotary Cheese Grater & Slicer",
+        "proposedSeoTitle": "5-in-1 Rotary Cheese Grater & Veggie Slicer | Zavelyn",
+        "proposedMetaDesc": "Shred cheese, grate nuts, and slice vegetables in seconds without hand strain using a rotary mandoline drum grater with strong suction base.",
+        "titleCharCount": 37,
+        "seoTitleCharCount": 53,
+        "metaDescCharCount": 140,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 4,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67974491996345",
+          "title": "White (1 pc)",
+          "price": "55.99",
+          "sku": null
+        }
+      }
+    ],
+    [
+      {
+        "productId": "15460917313721",
+        "gid": "gid://shopify/Product/15460917313721",
+        "currentLiveTitle": "Zavelyn Mesh Nebulizer",
+        "currentHandle": "zavelyn-portable-ultrasonic-mesh-nebulizer",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Portable Mesh Nebulizer",
+        "proposedSeoTitle": "Portable Ultrasonic Mesh Nebulizer for Inhalation | Zavelyn",
+        "proposedMetaDesc": "Deliver fine saline mist quietly for easy inhalation at home or while traveling. Compact battery or USB-powered handheld ultrasonic mesh inhaler.",
+        "titleCharCount": 31,
+        "seoTitleCharCount": 59,
+        "metaDescCharCount": 145,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 2,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67974980927673",
+          "title": "Buy 1 + Get 1 FREE (+ Free eBook)",
+          "price": "49.95",
+          "sku": null
+        }
+      },
+      {
+        "productId": "15460954276025",
+        "gid": "gid://shopify/Product/15460954276025",
+        "currentLiveTitle": "Zavelyn CozyHeat",
+        "currentHandle": "zavelyn-cozyheat-heated-wearable-blanket-sweater",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn CozyHeat Wearable Heated Blanket",
+        "proposedSeoTitle": "CozyHeat Wearable Heated Hoodie Blanket | Zavelyn",
+        "proposedMetaDesc": "Wrap yourself in soothing warmth with an oversized plush hoodie blanket featuring integrated USB thermal heating pads and plush fleece sherpa lining.",
+        "titleCharCount": 40,
+        "seoTitleCharCount": 49,
+        "metaDescCharCount": 149,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 10,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67975472840889",
+          "title": "Buy 1 (A Little Comfort) / Warm Brown",
+          "price": "59.99",
+          "sku": null
+        }
+      },
+      {
+        "productId": "15460988944569",
+        "gid": "gid://shopify/Product/15460988944569",
+        "currentLiveTitle": "Zavelyn Automatic Dough Mixer",
+        "currentHandle": "zavelyn-automatic-dough-mixer-with-ferment-function",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn Automatic Dough Mixer & Fermenter",
+        "proposedSeoTitle": "Automatic Dough Mixer with Fermentation Function | Zavelyn",
+        "proposedMetaDesc": "Knead and proof smooth bread and pizza dough hands-free with an automatic electric countertop dough maker with microcomputer temperature proofing.",
+        "titleCharCount": 41,
+        "seoTitleCharCount": 58,
+        "metaDescCharCount": 146,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 6,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67975848067257",
+          "title": "Buy 1 (Single Kitchen Master - Save 50%) / Classic Red",
+          "price": "169.99",
+          "sku": null
+        }
+      },
+      {
+        "productId": "15461356011705",
+        "gid": "gid://shopify/Product/15461356011705",
+        "currentLiveTitle": "Zavelyn vFit",
+        "currentHandle": "zavelyn-vfit-red-light-intimate-wellness-device",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn vFit Red Light Wellness Device",
+        "proposedSeoTitle": "vFit Red Light Intimate Wellness Care Device | Zavelyn",
+        "proposedMetaDesc": "Promote pelvic muscle comfort and intimate wellness at home with red light and gentle sonic vibration therapy designed for supportive women care.",
+        "titleCharCount": 38,
+        "seoTitleCharCount": 54,
+        "metaDescCharCount": 145,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 6,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67979120574649",
+          "title": "Buy 1 (Essential Starter Kit - Save 45%) / Classic Edition",
+          "price": "249.99",
+          "sku": null
+        }
+      },
+      {
+        "productId": "15461407588537",
+        "gid": "gid://shopify/Product/15461407588537",
+        "currentLiveTitle": "Zavelyn SculptComfort",
+        "currentHandle": "zavelyn-sculptcomfort-wirefree-breast-shapewear-bra",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn SculptComfort Wirefree Shapewear Bra",
+        "proposedSeoTitle": "SculptComfort Wirefree Breathable Shapewear Bra | Zavelyn",
+        "proposedMetaDesc": "Enjoy flattering posture support and seamless all-day comfort with a wireless lift shapewear bra featuring wide smoothing back bands and breathable cups.",
+        "titleCharCount": 44,
+        "seoTitleCharCount": 57,
+        "metaDescCharCount": 153,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 10,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67979690934457",
+          "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Nude Tan",
+          "price": "59.99",
+          "sku": null
+        }
+      },
+      {
+        "productId": "15461446713529",
+        "gid": "gid://shopify/Product/15461446713529",
+        "currentLiveTitle": "Zavelyn SuperTots",
+        "currentHandle": "zavelyn-supertots-fresh-food-fruit-feeder-pacifier",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn SuperTots Fresh Food Feeder Pacifier",
+        "proposedSeoTitle": "SuperTots Silicone Fresh Food & Fruit Feeder | Zavelyn",
+        "proposedMetaDesc": "Introduce fresh fruits and vegetables to teething babies safely. Features soft chewable food-grade silicone pouches with easy-grip toddler handles.",
+        "titleCharCount": 44,
+        "seoTitleCharCount": 54,
+        "metaDescCharCount": 147,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 10,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67979946426553",
+          "title": "Buy 1 (Single Feeder Pacifier - Standard Starter Kit) / Sky Blue (Includes S, M, L Teats)",
+          "price": "16.99",
+          "sku": null
+        }
+      },
+      {
+        "productId": "15461471060153",
+        "gid": "gid://shopify/Product/15461471060153",
+        "currentLiveTitle": "Zavelyn AirClear",
+        "currentHandle": "zavelyn-airclear-plugin-negative-ion-air-purifier",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn AirClear Plug-In Air Purifier",
+        "proposedSeoTitle": "AirClear Plug-In Negative Ion Room Air Purifier | Zavelyn",
+        "proposedMetaDesc": "Freshen indoor air quietly in bathrooms, kitchens, and pet spaces. Emits negative ions to neutralize airborne dust and lingering odors with no filters.",
+        "titleCharCount": 37,
+        "seoTitleCharCount": 57,
+        "metaDescCharCount": 151,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 6,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67980091719865",
+          "title": "Buy 1 (Single Room Purifier - Standard) / Glacier White (US Plug)",
+          "price": "39.99",
+          "sku": null
+        }
+      },
+      {
+        "productId": "15461501927609",
+        "gid": "gid://shopify/Product/15461501927609",
+        "currentLiveTitle": "Zavelyn FlawlessBlend",
+        "currentHandle": "zavelyn-flawlessblend-color-changing-foundation-stick",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn FlawlessBlend Foundation Stick",
+        "proposedSeoTitle": "FlawlessBlend Color-Changing Foundation Stick | Zavelyn",
+        "proposedMetaDesc": "Achieve smooth, natural skin coverage with a self-adjusting cream foundation stick that blends to match your unique skin tone with a radiant matte finish.",
+        "titleCharCount": 38,
+        "seoTitleCharCount": 55,
+        "metaDescCharCount": 154,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 9,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67980319523001",
+          "title": "Buy 1 (Single Foundation Stick - Try Risk-Free) / #201 Light Ivory (Fair to Light)",
+          "price": "39.99",
+          "sku": null
+        }
+      },
+      {
+        "productId": "15461507956921",
+        "gid": "gid://shopify/Product/15461507956921",
+        "currentLiveTitle": "Zavelyn PureFlow",
+        "currentHandle": "zavelyn-pureflow-wireless-stainless-steel-pet-water-fountain",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn PureFlow Wireless Pet Water Fountain",
+        "proposedSeoTitle": "PureFlow Stainless Steel Wireless Pet Fountain | Zavelyn",
+        "proposedMetaDesc": "Encourage cats and dogs to drink more fresh filtered water with a cordless stainless steel fountain featuring motion activation and multi-layer filters.",
+        "titleCharCount": 44,
+        "seoTitleCharCount": 56,
+        "metaDescCharCount": 152,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 10,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67980362318009",
+          "title": "Buy 1 (Single Pet Fountain - Standard Kit) / Wireless Battery Pro (7L Large Tank)",
+          "price": "69.99",
+          "sku": null
+        }
+      },
+      {
+        "productId": "15461521064121",
+        "gid": "gid://shopify/Product/15461521064121",
+        "currentLiveTitle": "Zavelyn GravityGlider",
+        "currentHandle": "zavelyn-gravityglider-indestructible-stunt-rc-jet",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn GravityGlider Stunt RC Jet",
+        "proposedSeoTitle": "GravityGlider Durable Stunt RC Jet Airplane | Zavelyn",
+        "proposedMetaDesc": "Perform 360-degree aerial flips and stable outdoor glides with a durable EPP foam stunt jet airplane featuring gyro stabilization and remote control.",
+        "titleCharCount": 34,
+        "seoTitleCharCount": 53,
+        "metaDescCharCount": 149,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 9,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67980435554489",
+          "title": "Buy 1 (Single Jet Fighter - Ready to Fly Kit) / Cosmic Blue (with 2.4GHz Controller)",
+          "price": "49.99",
+          "sku": null
+        }
+      }
+    ],
+    [
+      {
+        "productId": "15461535416505",
+        "gid": "gid://shopify/Product/15461535416505",
+        "currentLiveTitle": "Zavelyn MegaLifters",
+        "currentHandle": "zavelyn-megalifters-heavy-duty-alloy-rc-construction-fleet",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn MegaLifters Alloy RC Excavator",
+        "proposedSeoTitle": "MegaLifters Heavy-Duty Alloy RC Excavator Toy | Zavelyn",
+        "proposedMetaDesc": "Command realistic construction excavation with an alloy metal RC excavator featuring functional digging arm, rubber treads, and responsive 2.4GHz control.",
+        "titleCharCount": 38,
+        "seoTitleCharCount": 55,
+        "metaDescCharCount": 154,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 10,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67980571181241",
+          "title": "Buy 1 (Single Construction Vehicle - Standard Starter Kit) / Heavy-Duty RC Excavator (Alloy Metal Bucket)",
+          "price": "59.99",
+          "sku": null
+        }
+      },
+      {
+        "productId": "15461545935033",
+        "gid": "gid://shopify/Product/15461545935033",
+        "currentLiveTitle": "Zavelyn BotanaRoots",
+        "currentHandle": "zavelyn-botanaroots-organic-batana-hair-growth-oil",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn BotanaRoots Batana Hair Growth Oil",
+        "proposedSeoTitle": "BotanaRoots Pure Batana Oil for Hair & Scalp | Zavelyn",
+        "proposedMetaDesc": "Revitalize dull hair and soothe dry scalp with pure Honduran batana oil rich in essential fatty acids. Deeply conditions strands for noticeable softness.",
+        "titleCharCount": 42,
+        "seoTitleCharCount": 54,
+        "metaDescCharCount": 153,
+        "adsRisk": "ADS TRAFFIC UNKNOWN",
+        "variantsCount": 6,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67980643598521",
+          "title": "Buy 1 (1x 60ml Bottle - 30-Day Starter Supply) / 100% Pure Raw Honduran Batana (60ml)",
+          "price": "39.00",
+          "sku": "ZAV-BOTANA-1PK-PURE"
+        }
+      },
+      {
+        "productId": "15461559533753",
+        "gid": "gid://shopify/Product/15461559533753",
+        "currentLiveTitle": "Zavelyn ThermoGlove",
+        "currentHandle": "zavelyn-thermoglove-smart-thermostatic-heated-fingerless-gloves",
+        "status": "ACTIVE",
+        "proposedTitle": "Zavelyn ThermoGlove Heated Fingerless Gloves",
+        "proposedSeoTitle": "ThermoGlove Heated Fingerless Gloves for Cold Hands | Zavelyn",
+        "proposedMetaDesc": "Keep your hands warm while leaving your fingers free. Discover Zavelyn ThermoGlove heated gloves with adjustable heat settings for comfortable everyday use.",
+        "titleCharCount": 44,
+        "seoTitleCharCount": 61,
+        "metaDescCharCount": 156,
+        "adsRisk": "HIGH (KNOWN AD CAMPAIGN / FUNNEL)",
+        "variantsCount": 9,
+        "primaryVariant": {
+          "id": "gid://shopify/ProductVariant/67980707037369",
+          "title": "Buy 1 Pair (Standard Warmth Starter Kit) / Stealth Black",
+          "price": "26.77",
+          "sku": "ZAV-GLOVE-1PK-BLK"
+        }
+      }
+    ]
+  ]
+}

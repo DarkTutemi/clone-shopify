@@ -1,0 +1,244 @@
+{
+  "wrapper": "div#shopify-section-zavelyn-drum-plus",
+  "sections": {
+    "hero": {
+      "type": "zhp-pdp-hero",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/tr-ng-tr-ng-n-n-trong-su-t.png",
+        "main_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PandaDrum_Plus_White.webp?v=1716735931",
+        "title": "Zavelyn Drum™ Plus (11-Tone Steel Tongue Handpan Drum)",
+        "short_name": "Zavelyn Drum™ Plus",
+        "subtitle": "Most Versatile 11-Tone D-Major Scale • 432 Hz Harmonic Healing • Compact 10\" Diameter • Complete Travel Kit",
+        "price": "159.95",
+        "compare_at": "299.95",
+        "rating_score": "4.9 \/ 5.0",
+        "rating_count": "1,420+ Verified Practitioners",
+        "tier1_desc": "11-Tone Drum + Travel Bag + Mallets + Beginner Songbook + Picks",
+        "thumb_1_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PandaDrum_Plus_White.webp?v=1716735931",
+        "thumb_2_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PDwhit_lfstl.webp?v=1716736589",
+        "thumb_3_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/78.jpg?v=1716736589",
+        "thumb_4_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PDWHITEBG_LIFESTYLE.webp?v=1716736589",
+        "thumb_5_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/plusinside.webp?v=1751703631",
+        "thumb_6_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/Plus_black1000x1000.webp?v=1751703631"
+      }
+    },
+    "banner": {
+      "type": "zhp-pdp-banner",
+      "settings": {
+        "banner_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PDWHITEBG_LIFESTYLE.webp?v=1716736589",
+        "heading": "Tuned to 432 Hz: The Frequency of Natural Healing"
+      }
+    },
+    "experience": {
+      "type": "zhp-pdp-experience",
+      "settings": {
+        "feature_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PDwhit_lfstl.webp?v=1716736589",
+        "title": "Zero Musical Training Required"
+      }
+    },
+    "included": {
+      "type": "zhp-pdp-included",
+      "settings": {
+        "included_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/plusinside.webp?v=1751703631",
+        "title": "Everything You Need to Begin Immediately"
+      }
+    },
+    "specs": {
+      "type": "zhp-pdp-specs",
+      "settings": {
+        "title": "Technical Specifications",
+        "spec_diameter": "10 Inches (25.4 cm) Medium Plus",
+        "spec_material": "Tempered Carbon-Titanium Surgical Alloy Steel",
+        "spec_tuning": "D-Major Harmonic Scale (11 Notes)",
+        "spec_frequency": "432 Hz Natural Biological Resonance",
+        "spec_tones": "11 Acoustic Tongues",
+        "spec_weight": "3.3 lbs (1.5 kg) Balanced Resonance",
+        "spec_finish": "Baked Electrostatic Pearlescent Protective Coating"
+      }
+    },
+    "shipping": {
+      "type": "zhp-pdp-shipping",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "zhp-pdp-reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review",
+          "settings": {
+            "author": "Jessica Warren",
+            "title": "The sweet spot for size and sound",
+            "text": "The 10-inch 11-tone drum is so comfortable on my lap. The notes ring clearly without echoing into noise. My kids love playing it before bedtime.",
+            "meta": "Zavelyn Drum™ Plus (Emerald Green) • Denver, CO"
+          }
+        },
+        "rev_2": {
+          "type": "review",
+          "settings": {
+            "author": "Brian Miller",
+            "title": "Helps tremendously with ADHD focus",
+            "text": "I keep this on my work desk. Whenever my focus wanes, I tap a simple 3-note melody. The gentle tone resets my concentration instantly.",
+            "meta": "Zavelyn Drum™ Plus (Black) • New York, NY"
+          }
+        },
+        "rev_3": {
+          "type": "review",
+          "settings": {
+            "author": "Laura Hayes",
+            "title": "Beautiful melodic sound, so easy to play",
+            "text": "Bought this after seeing a video online. Even without reading music, my 6-year-old daughter and I can play duets together. Highly recommend!",
+            "meta": "Zavelyn Drum™ Plus (Pink) • Minneapolis, MN"
+          }
+        },
+        "rev_4": {
+          "type": "review",
+          "settings": {
+            "author": "Greg Simmons",
+            "title": "Superior tuning compared to generic brands",
+            "text": "I previously tried a cheap brand and half the tongues sounded dead. This Zavelyn Plus is tuned flawlessly. Warm, resonant, and singing tones.",
+            "meta": "Zavelyn Drum™ Plus (Blue) • Seattle, WA"
+          }
+        },
+        "rev_5": {
+          "type": "review",
+          "settings": {
+            "author": "Amy Davis",
+            "title": "The carry bag is sturdy and convenient",
+            "text": "Take it with me to the beach on weekends. Sits firmly in its zippered case and mallets slot in securely. Great build quality.",
+            "meta": "Zavelyn Drum™ Plus (Sandstone) • Sarasota, FL"
+          }
+        },
+        "rev_6": {
+          "type": "review",
+          "settings": {
+            "author": "Michael Chang",
+            "title": "Wonderful instrument for mind-body balance",
+            "text": "I practice Qigong and meditation. The vibrations of this drum resonate straight through the chest. A truly therapeutic tool.",
+            "meta": "Zavelyn Drum™ Plus (White) • San Francisco, CA"
+          }
+        },
+        "rev_7": {
+          "type": "review",
+          "settings": {
+            "author": "Nancy Larson",
+            "title": "Delighted with the Red finish",
+            "text": "The red baked enamel finish is vibrant and flawless. Looks very elegant and produces such a soothing chime.",
+            "meta": "Zavelyn Drum™ Plus (Red) • Dallas, TX"
+          }
+        },
+        "rev_8": {
+          "type": "review",
+          "settings": {
+            "author": "Paul Robinson",
+            "title": "Ordered 2 for our school music room",
+            "text": "Students take turns playing. The numbered tabs make teaching rhythm intuitive. No broken strings or fragile parts to worry about.",
+            "meta": "2x Zavelyn Drum™ Plus Duet Pack • Boston, MA"
+          }
+        },
+        "rev_9": {
+          "type": "review",
+          "settings": {
+            "author": "Tina Campbell",
+            "title": "My favorite purchase of the year",
+            "text": "Unwinding with this drum after a 12-hour nursing shift is heavenly. It replaces endless screen scrolling with acoustic peace.",
+            "meta": "Zavelyn Drum™ Plus (Pink Tan) • Phoenix, AZ"
+          }
+        },
+        "rev_10": {
+          "type": "review",
+          "settings": {
+            "author": "Steven Hall",
+            "title": "Fast shipping and great customer care",
+            "text": "Ordered on Monday and received it by Thursday. Everything arrived safe and sounds divine.",
+            "meta": "Zavelyn Drum™ Plus (Black) • Charlotte, NC"
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3",
+        "rev_4",
+        "rev_5",
+        "rev_6",
+        "rev_7",
+        "rev_8",
+        "rev_9",
+        "rev_10"
+      ],
+      "settings": {
+        "title": "Loved By Thousands of Sound Seekers",
+        "rating_summary": "1,420+ Verified Practitioner Reviews"
+      }
+    },
+    "faq": {
+      "type": "zhp-pdp-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I need any prior musical experience to play?",
+            "answer": "None whatsoever! Zavelyn Drums are designed to be completely intuitive. Because every note is tuned to natural harmonic scales, there are zero discordant or 'bad' notes. You can play purely by intuition, or follow the numbered songbook."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What does 432 Hz tuning mean?",
+            "answer": "Standard modern music is tuned to 440 Hz, which can sound tense. 432 Hz is the natural harmonic frequency historically used by classical masters. Scientific studies indicate 432 Hz produces calmer emotional responses, lower heart rates, and enhanced meditation states."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Should I play with the mallets or my hands?",
+            "answer": "Both! The included weighted bamboo mallets produce a bright, loud, crystal-clear bell resonance with minimum effort. Playing with your hands or the silicone finger picks creates a softer, warmer, and more intimate tone ideal for quiet meditation."
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Will the drum ever go out of tune?",
+            "answer": "No. The acoustic tongues are laser-cut from high-grade tempered alloy steel and heat-treated. Unless subjected to severe physical deformation, the instrument will maintain its pitch calibration for decades."
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for a 100% full refund with no questions asked."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "settings": {}
+    },
+    "sticky_bar": {
+      "type": "zhp-pdp-sticky-bar",
+      "settings": {
+        "sticky_image": "shopify:\/\/shop_images\/tr-ng-tr-ng-n-n-trong-su-t.png",
+        "sticky_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PandaDrum_Plus_White.webp?v=1716735931",
+        "title": "Zavelyn Drum™ Plus",
+        "price": "159.95",
+        "compare_at": "299.95"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "banner",
+    "experience",
+    "included",
+    "specs",
+    "shipping",
+    "reviews",
+    "faq",
+    "sticky_bar"
+  ]
+}

@@ -1,0 +1,1310 @@
+{%- liquid
+  if request.page_type == 'product' and product != blank
+    assign offer_product = product
+  elsif section.settings.product != blank
+    assign offer_product = section.settings.product
+  else
+    assign offer_product = all_products['regrip']
+  endif
+  if offer_product == blank
+    assign offer_product = collections.all.products.first
+  endif
+  assign product = offer_product
+  assign current_variant = product.selected_or_first_available_variant
+  assign s = section.settings
+  assign brand = s.brand_name | default: 'Zavelyn'
+  assign cta_label = s.cta_label | default: 'BUY NOW'
+  assign sec_gallery = section.blocks | where: 'type', 'sec_gallery' | first
+  assign sec_hero = section.blocks | where: 'type', 'sec_hero' | first
+  assign sec_faq = section.blocks | where: 'type', 'sec_faq' | first
+  assign sec_footer = section.blocks | where: 'type', 'sec_footer' | first
+
+  assign side_option = blank
+  assign size_option = blank
+  if product != blank
+    for opt in product.options_with_values
+      assign oname = opt.name | downcase
+      if oname contains 'side' or oname contains 'hand'
+        assign side_option = opt
+      elsif oname contains 'size'
+        assign size_option = opt
+      endif
+    endfor
+  endif
+
+  assign pack1_variant = current_variant
+  assign pack2_variant = blank
+  assign pack2_price = 0
+  assign pack2_compare = 0
+  if product.variants.size > 0
+    assign pack1_variant = product.variants.first
+  endif
+  # Buy 2 uses same variant id x2 quantity when no dedicated pack variant
+  assign sticky_copy = 'ReGrip™ Rehabilitation Glove'
+  if sec_footer and sec_footer.settings.sticky_copy != blank
+    assign sticky_copy = sec_footer.settings.sticky_copy
+  endif
+-%}
+{% render 'offer-seo', product: product, section: section %}
+{{ 'zavelyn-regrip.css' | asset_url | stylesheet_tag }}
+
+<script type="application/json" id="RgVariantMap">
+[
+{%- for v in product.variants -%}
+  {"id":{{ v.id }},"available":{{ v.available | json }},"price":{{ v.price | json }},"compare":{{ v.compare_at_price | default: 0 | json }},"option1":{{ v.option1 | json }},"option2":{{ v.option2 | json }},"option3":{{ v.option3 | json }},"title":{{ v.title | json }},"money":{{ v.price | money_without_trailing_zeros | json }},"compare_money":{{ v.compare_at_price | money_without_trailing_zeros | json }}}{% unless forloop.last %},{% endunless %}
+{%- endfor -%}
+]
+</script>
+
+<div class="offer-page offer-page--regrip" id="OfferTop">
+  <div class="offer-ticker">
+    <p class="offer-ticker__line">📦 {{ s.ticker_text | default: 'FREE Worldwide Shipping —' }} <span>{{ s.ticker_highlight | default: 'This Week Only!' }}</span></p>
+  </div>
+  {% render 'offer-header', brand: brand, product: product %}
+
+  {%- comment -%} ===== HERO + BUY BOX ===== {%- endcomment -%}
+  <section class="offer-hero">
+    <div class="offer-hero__grid">
+      <div class="offer-hero__left">
+        <div class="offer-media" data-offer-gallery>
+          <div class="offer-media__stage">
+            {%- if sec_gallery and sec_gallery.settings.image_1 != blank -%}
+              {%- assign main_src = sec_gallery.settings.image_1 | image_url: width: 1200 -%}
+            {%- elsif sec_gallery and sec_gallery.settings.fallback_1 != blank -%}
+              {%- assign main_src = sec_gallery.settings.fallback_1 | asset_url -%}
+            {%- else -%}
+              {%- assign main_src = 'rg-gallery-1.png' | asset_url -%}
+            {%- endif -%}
+            <button type="button" class="offer-media__zoom" data-offer-zoom aria-label="Open gallery">
+              <img data-offer-main src="{{ main_src }}" alt="{{ product.title | escape }}" width="1200" height="1200" fetchpriority="high">
+            </button>
+            <button type="button" class="offer-media__nav offer-media__nav--prev" data-offer-prev aria-label="Previous">❮</button>
+            <button type="button" class="offer-media__nav offer-media__nav--next" data-offer-next aria-label="Next">❯</button>
+          </div>
+          <div class="offer-thumbs" role="list">
+            {%- assign galleries = 'rg-gallery-1.png,rg-gallery-2.png,rg-gallery-3.png,rg-gallery-4.png,rg-gallery-5.png,rg-gallery-6.png,rg-gallery-7.png' | split: ',' -%}
+            {%- for file in galleries -%}
+              <button type="button" class="{% if forloop.first %}is-active{% endif %}" data-offer-thumb data-index="{{ forloop.index0 }}" data-src="{{ file | asset_url }}" aria-label="Image {{ forloop.index }}">
+                <img src="{{ file | asset_url }}" alt="" width="60" height="60" {% if forloop.first %}loading="eager"{% else %}loading="lazy"{% endif %} decoding="async">
+              </button>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-hero__right">
+        <a class="rg-rating-bar" href="#REVIEW">
+          <span class="rg-rating-bar__stars" aria-hidden="true">★★★★★</span>
+          <span><strong>4.8/5</strong> • Trusted by stroke survivors and caregivers</span>
+        </a>
+        <h1 class="offer-title">{{ product.title | default: 'ReGrip™ | Rehabilitation Glove' }}</h1>
+
+        <div class="rg-perks" {% if sec_hero %}{{ sec_hero.shopify_attributes }}{% endif %}>
+          <div class="rg-perk"><img src="{{ 'rg-icon-hand.png' | asset_url }}" alt="" width="40" height="40" loading="eager"><span>{{ sec_hero.settings.perk_1 | default: 'Guided hand opening & closing' }}</span></div>
+          <div class="rg-perk"><img src="{{ 'rg-icon-home.png' | asset_url }}" alt="" width="40" height="40" loading="eager"><span>{{ sec_hero.settings.perk_2 | default: 'Use It Alone or With a Helper' }}</span></div>
+          <div class="rg-perk"><img src="{{ 'rg-icon-muscle.png' | asset_url }}" alt="" width="40" height="40" loading="eager"><span>{{ sec_hero.settings.perk_3 | default: '300+ Assisted reps in 20 Minutes' }}</span></div>
+          <div class="rg-perk"><img src="{{ 'rg-icon-brain.png' | asset_url }}" alt="" width="40" height="40" loading="eager"><span>{{ sec_hero.settings.perk_4 | default: '3 Therapy Modes for Every Stage of Recovery' }}</span></div>
+        </div>
+
+        <div class="rg-trial-divider" aria-hidden="true"><span>30-Day At-Home Trial</span></div>
+
+        <div class="rg-countdown" data-rg-countdown data-minutes="10">
+          <span>CAREGIVER OFFER — 50% OFF ENDS IN ⏳ <strong data-rg-countdown-label>10:00</strong>!</span>
+        </div>
+
+        {% form 'product', product, id: 'OfferAddForm', class: 'offer-buy-form' %}
+          <input type="hidden" name="id" id="OfferVariantId" value="{{ pack1_variant.id }}">
+          <input type="hidden" name="quantity" id="OfferQuantity" value="1">
+
+          <div class="rg-packs" data-rg-packs>
+            <div class="rg-pack is-active" data-rg-pack="1">
+              <div class="rg-pack__main">
+                <span class="rg-pack__radio" aria-hidden="true"></span>
+                <img class="rg-pack__img" src="{{ 'rg-bundle-1.png' | asset_url }}" alt="Buy 1 One Hand" width="88" height="88" loading="eager">
+                <div class="rg-pack__info">
+                  <div class="rg-pack__title-row">
+                    <p class="rg-pack__title">Buy 1</p>
+                    <span class="rg-pack__pill">ONE HAND</span>
+                  </div>
+                  <span class="rg-pack__save">SAVE $90.05</span>
+                </div>
+                <div class="rg-pack__prices">
+                  <span class="rg-pack__price" data-rg-pack1-price>{{ pack1_variant.price | money_without_trailing_zeros }}</span>
+                  {% if pack1_variant.compare_at_price > pack1_variant.price %}
+                    <span class="rg-pack__compare" data-rg-pack1-compare>{{ pack1_variant.compare_at_price | money_without_trailing_zeros }}</span>
+                  {% else %}
+                    <span class="rg-pack__compare" data-rg-pack1-compare>$180.00</span>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="rg-pack__opts">
+                {% if side_option != blank %}
+                  <label>Side of Hand &amp;
+                    <select data-rg-side aria-label="Side of Hand">
+                      {% for value in side_option.values %}
+                        <option value="{{ value | escape }}" {% if pack1_variant.option1 == value or pack1_variant.option2 == value %}selected{% endif %}>{{ value }}</option>
+                      {% endfor %}
+                    </select>
+                  </label>
+                {% endif %}
+                {% if size_option != blank %}
+                  <label>Size (Required)
+                    <select data-rg-size aria-label="Size">
+                      {% for value in size_option.values %}
+                        <option value="{{ value | escape }}" {% if pack1_variant.option1 == value or pack1_variant.option2 == value %}selected{% endif %}>{{ value }}</option>
+                      {% endfor %}
+                    </select>
+                  </label>
+                {% endif %}
+              </div>
+              <div class="rg-pack__bonus">+ FREE 30-Day Recovery Guide</div>
+            </div>
+
+            <div class="rg-pack" data-rg-pack="2">
+              <span class="rg-pack__badge">BEST VALUE</span>
+              <div class="rg-pack__main">
+                <span class="rg-pack__radio" aria-hidden="true"></span>
+                <img class="rg-pack__img" src="{{ 'rg-bundle-2.png' | asset_url }}" alt="Buy 2 Both Hands" width="88" height="88" loading="lazy">
+                <div class="rg-pack__info">
+                  <div class="rg-pack__title-row">
+                    <p class="rg-pack__title">Buy 2</p>
+                    <span class="rg-pack__pill">BOTH HANDS</span>
+                  </div>
+                  <span class="rg-pack__save">SAVE $180.10</span>
+                </div>
+                <div class="rg-pack__prices">
+                  <span class="rg-pack__price" data-rg-pack2-price>$179.90</span>
+                  <span class="rg-pack__compare">$360.00</span>
+                </div>
+              </div>
+              <div class="rg-pack__opts">
+                {% if side_option != blank %}
+                  <label>Side of Hand &amp;
+                    <select data-rg-side-2 aria-label="Side of Hand pack 2" disabled>
+                      {% for value in side_option.values %}
+                        <option value="{{ value | escape }}">{{ value }}</option>
+                      {% endfor %}
+                    </select>
+                  </label>
+                {% endif %}
+                {% if size_option != blank %}
+                  <label>Size (Required)
+                    <select data-rg-size-2 aria-label="Size pack 2" disabled>
+                      {% for value in size_option.values %}
+                        <option value="{{ value | escape }}">{{ value }}</option>
+                      {% endfor %}
+                    </select>
+                  </label>
+                {% endif %}
+              </div>
+              <div class="rg-pack__bonus">+ FREE 30-Day Recovery Guide</div>
+            </div>
+          </div>
+
+          <label class="rg-upsell">
+            <input type="checkbox" data-rg-upsell>
+            <img src="{{ 'rg-upsell-heat.png' | asset_url }}" alt="Heat Therapy Wrist Band" width="72" height="72" loading="lazy">
+            <span class="rg-upsell__body">
+              <span class="rg-upsell__title">Heat Therapy Wrist Band</span>
+              <span class="rg-upsell__meta">Save $42.05! <strong>$17.95</strong> <s>$60.00</s></span>
+            </span>
+          </label>
+
+          <button class="offer-cta rg-atc" type="submit" name="add" data-offer-checkout data-rg-cta {% unless pack1_variant.available %}disabled{% endunless %}>
+            <span class="offer-cta__label">{{ cta_label }}</span>
+            <span class="offer-cta__sep" aria-hidden="true">—</span>
+            <span class="offer-cta__price" data-rg-cta-price>{{ pack1_variant.price | money_without_trailing_zeros }}</span>
+          </button>
+        {% endform %}
+
+        <div class="rg-pay" aria-label="Payment methods">
+          {%- assign rg_payment_types = 'visa,master,american_express,apple_pay,google_pay,paypal,shopify_pay' | split: ',' -%}
+          {%- for type in rg_payment_types -%}
+            <img
+              src="{{ type | payment_type_img_url }}"
+              alt="{{ type | replace: '_', ' ' | capitalize }}"
+              width="38"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            >
+          {%- endfor -%}
+        </div>
+
+        <div class="rg-trust">
+          <div class="rg-trust__item"><span aria-hidden="true">🚚</span><span>Free Shipping</span></div>
+          <div class="rg-trust__item"><span aria-hidden="true">💙</span><span>30-Day Guarantee</span></div>
+          <div class="rg-trust__item"><span aria-hidden="true">💬</span><span>24/7 Chat Support</span></div>
+        </div>
+
+        <button type="button" class="rg-size-btn" data-rg-size-open>Find Your Correct Size</button>
+        <a class="rg-watch-btn" href="#howto" data-rg-watch-open>Click To Watch How To Use ReGrip™</a>
+
+        <div class="rg-replica" role="note">
+          <strong>Watch Out For Cheap Replicas</strong>
+          <span>Only our brand guarantees the high quality product used by thousands for pain relief.</span>
+        </div>
+
+        <div class="offer-faq device-accordion" data-offer-accordion>
+          <div class="offer-faq__item">
+            <button type="button" class="offer-faq__trigger" aria-expanded="false">How It Works</button>
+            <div class="offer-faq__panel" hidden><div class="offer-faq__body">
+              <p>🖐 <strong>ReGrip™ supports your hand with tension-assisted motion</strong> → helping your fingers open and close smoothly.</p>
+              <p>🧠 <strong>This controlled movement reactivates the connection between your brain and hand</strong> → helping rebuild coordination and strength safely from home.</p>
+              <p>⚙️ <strong>Using the smart display, you can easily adjust therapy modules and intensity</strong> → so every session is personalized for your recovery.</p>
+            </div></div>
+          </div>
+          <div class="offer-faq__item">
+            <button type="button" class="offer-faq__trigger" aria-expanded="false">Find Your Correct Size</button>
+            <div class="offer-faq__panel" hidden><div class="offer-faq__body">
+              <p><strong>ReGrip™ Glove Size Guide</strong></p>
+              <p>Choose your size based on <strong>hand width, hand length, and finger circumference</strong>.</p>
+              <p><button type="button" class="rg-size-btn" data-rg-size-open style="margin:0">Open Size Chart</button></p>
+            </div></div>
+          </div>
+          <div class="offer-faq__item">
+            <button type="button" class="offer-faq__trigger" aria-expanded="false">Works For These Conditions</button>
+            <div class="offer-faq__panel" hidden><div class="offer-faq__body">
+              <p><strong>ReGrip™ can support hand mobility and recovery for:</strong></p>
+              <ul>
+                <li>Stroke (Hemiparesis / Hemiplegia)</li>
+                <li>Brachial plexus injuries</li>
+                <li>Multiple sclerosis (MS)</li>
+                <li>Parkinson’s-related hand stiffness</li>
+                <li>Nerve damage / neuropathy in the hand</li>
+                <li>Post-surgery recovery (hand, wrist, fingers)</li>
+                <li>Hand paralysis after injury or trauma</li>
+                <li>Cerebral palsy (adult hand mobility)</li>
+                <li>Spasticity and muscle stiffness in the hand</li>
+                <li>Tendon or nerve compression issues</li>
+                <li>Weak grip strength in older adults</li>
+                <li>Early recovery after fractures (once cleared by a doctor)</li>
+                <li>General hand weakness or loss of coordination</li>
+                <li>Individuals with pacemakers*</li>
+              </ul>
+              <p><small>* ReGrip™ does not use electrical stimulation. Patients with implanted medical devices should consult their physician before use.</small></p>
+            </div></div>
+          </div>
+          <div class="offer-faq__item">
+            <button type="button" class="offer-faq__trigger" aria-expanded="false">Our Guarantee</button>
+            <div class="offer-faq__panel" hidden><div class="offer-faq__body">
+              <p>If you're not 100% satisfied <strong>within the first 30 days</strong>, just send it back to us and we'll give you a full refund.</p>
+              <p>No need to worry about the return shipping — <strong>we've got you covered!</strong></p>
+              <p>Contact support at <a href="mailto:support@zavelyn.com">support@zavelyn.com</a>.</p>
+            </div></div>
+          </div>
+          <div class="offer-faq__item">
+            <button type="button" class="offer-faq__trigger" aria-expanded="false">Shipping Info</button>
+            <div class="offer-faq__panel" hidden><div class="offer-faq__body">
+              <p>We offer fast and reliable shipping on all orders. You can expect to receive it within <strong>7–14 business days based on your location</strong>.</p>
+              <p>Please contact our customer service team if you have any questions about your shipment.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rg-marquee pause-on-hover" aria-hidden="true">
+    <div class="rg-marquee__track">
+      {%- capture rg_marquee_group -%}
+        <div class="rg-marquee__group">
+          <div class="rg-marquee__item">
+            <span class="rg-marquee__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            </span>
+            <span>PREMIUM QUALITY</span>
+          </div>
+          <div class="rg-marquee__item">
+            <span class="rg-marquee__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm-6 0H5V6h9v2zm-9 11.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+            </span>
+            <span>FAST SHIPPING</span>
+          </div>
+          <div class="rg-marquee__item">
+            <span class="rg-marquee__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </span>
+            <span>SATISFACTION GUARANTEED</span>
+          </div>
+        </div>
+      {%- endcapture -%}
+      {{ rg_marquee_group }}{{ rg_marquee_group }}{{ rg_marquee_group }}{{ rg_marquee_group }}
+    </div>
+  </div>
+
+  <section class="offer-sec offer-sec--iwt-story">
+    <div class="rg-iwt rg-iwt--rev rg-iwt--story">
+      <div class="rg-iwt__media">
+        <img src="{{ 'rg-iwt-therapy.gif' | asset_url }}" alt="ReGrip guided hand therapy" width="900" height="900" loading="lazy">
+      </div>
+      <div class="rg-iwt__copy">
+        <h2>When Therapy Ends, Your Hand Still Needs Daily Movement</h2>
+        <p>After a stroke, your <strong>hand may feel stiff, heavy, weak, or slow</strong> to respond.</p>
+        <p>Simple tasks like <strong>holding a cup</strong>, opening your fingers, <strong>gripping a fork</strong>, or <strong>getting dressed</strong> can suddenly feel frustrating.</p>
+        <p>ReGrip™ helps support <strong>gentle, guided hand opening and closing at home</strong> — so your affected hand gets a simple <strong>daily routine</strong> instead of staying inactive.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--iwt-blue">
+    <div class="rg-iwt rg-iwt--story rg-iwt--on-blue">
+      <div class="rg-iwt__media">
+        <img src="{{ 'rg-iwt-300.png' | asset_url }}" alt="Up to 300 guided reps" width="900" height="900" loading="lazy">
+      </div>
+      <div class="rg-iwt__copy">
+        <h2>Support Real Hand Movement — Up To 300 Guided Reps Per Session</h2>
+        <p>ReGrip™ uses gentle <strong>air-pressure assistance</strong> to guide your fingers through <strong>opening and closing movements</strong>.</p>
+        <p>In just <strong>20 minutes, your hand can complete up to 300 assisted repetitions</strong> — helping you keep the affected hand active with gentle movement you can adjust.</p>
+        <p>These repeated movements <strong>support mobility, coordination</strong>, and daily hand practice at home.</p>
+        <p>Use the control panel to <strong>choose a comfortable intensity level</strong> and follow a routine that <strong>fits into your day.</strong></p>
+        <a class="rg-iwt__cta rg-iwt__cta--light" href="#OfferTop" data-offer-checkout>Start Your Recovery now →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--train" aria-label="How ReGrip™ Trains Your Hand">
+    <div class="offer-head rg-train-head">
+      <h2>How ReGrip™ Trains <span>Your Hand</span></h2>
+    </div>
+    <div class="rg-train">
+      <article class="rg-train-card">
+        <div class="rg-train-card__media">
+          <img src="{{ 'rg-train-open.gif' | asset_url }}" alt="1. Hand Opening" width="600" height="600" loading="lazy">
+        </div>
+        <div class="rg-train-card__body">
+          <h3>1. Hand Opening</h3>
+          <p>ReGrip™ gently opens your fingers through guided air pressure, helping reduce stiffness and maintain joint mobility during rehabilitation.</p>
+        </div>
+      </article>
+      <article class="rg-train-card">
+        <div class="rg-train-card__media">
+          <img src="{{ 'rg-train-close.gif' | asset_url }}" alt="2. Hand Closing" width="600" height="600" loading="lazy">
+        </div>
+        <div class="rg-train-card__body">
+          <h3>2. Hand Closing</h3>
+          <p>The glove assists your hand in closing and gripping motions, supporting muscle activation and improving coordination over time.</p>
+        </div>
+      </article>
+      <article class="rg-train-card">
+        <div class="rg-train-card__media">
+          <img src="{{ 'rg-train-finger.gif' | asset_url }}" alt="3. Finger Activation" width="600" height="600" loading="lazy">
+        </div>
+        <div class="rg-train-card__body">
+          <h3>3. Finger Activation</h3>
+          <p>Each finger moves individually and repeatedly, helping stimulate muscle memory and strengthen the brain-to-hand connection.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  {%- capture rg_feature_check -%}
+    <span class="rg-features__check" aria-hidden="true"><svg viewBox="0 0 123 101" focusable="false"><path fill="currentColor" d="M4.43 63.63c-2.87-2.76-4.35-6.42-4.43-10.11-.07-3.69 1.26-7.41 4.02-10.28 2.75-2.87 6.42-4.35 10.11-4.43 3.69-.08 7.41 1.26 10.28 4.01l24.79 23.85L98.54 3.99l1.77 1.35c.14-.18.3-.34.48-.47 2.94-2.54 6.62-3.69 10.22-3.5l.18.02c3.62.24 7.16 1.85 9.78 4.77 2.66 2.97 3.86 6.73 3.66 10.41l-.02.18c-.24 3.56-1.79 7.04-4.61 9.63l-59.22 72.09c-.11.14-.24.26-.37.37-2.77 2.44-6.28 3.63-9.76 3.57-3.51-.06-7.02-1.4-9.74-4.02L4.43 63.63z"/></svg></span>
+  {%- endcapture -%}
+  <section class="offer-sec offer-sec--features" aria-label="Guided finger movement features">
+    <div class="rg-features">
+      <h2 class="rg-features__title">Guided finger movement to support stroke and nerve recovery</h2>
+      <ul class="rg-features__list">
+        {%- assign rg_feature_labels = 'Gentle Motion|Daily Therapy|Easy to Use|Adjustable Levels|Neuro Support|Home Therapy' | split: '|' -%}
+        {%- for label in rg_feature_labels -%}
+          <li class="rg-features__item">{{ rg_feature_check }}{{ label }}</li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+
+  {%- capture rg_star -%}
+    <svg class="rg-journey__star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11.52 3.46c.15-.46.8-.46.95 0l1.66 5.1c.07.21.26.35.48.35h5.36c.48 0 .69.62.29.9l-4.34 3.15c-.17.13-.25.35-.18.56l1.66 5.1c.15.46-.38.84-.77.56l-4.34-3.15a.5.5 0 0 0-.59 0l-4.34 3.15c-.39.28-.92-.1-.77-.56l1.66-5.1a.5.5 0 0 0-.18-.56L3.73 9.81c-.39-.28-.19-.9.29-.9h5.36c.22 0 .41-.14.48-.35l1.66-5.1z"/></svg>
+  {%- endcapture -%}
+  {%- capture rg_stars5 -%}
+    <span class="rg-journey__stars" aria-label="5 out of 5 stars">{{ rg_star }}{{ rg_star }}{{ rg_star }}{{ rg_star }}{{ rg_star }}</span>
+  {%- endcapture -%}
+  {%- capture rg_verified -%}
+    <span class="rg-journey__verified">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M12 2.1a1.2 1.2 0 0 1 .85.34l1.2 1.2c.2.2.47.3.74.3h1.7a1.2 1.2 0 0 1 1.2 1.2v1.7c0 .27.1.54.3.74l1.2 1.2a1.2 1.2 0 0 1 0 1.7l-1.2 1.2a1.05 1.05 0 0 0-.3.74v1.7a1.2 1.2 0 0 1-1.2 1.2h-1.7a1.05 1.05 0 0 0-.74.3l-1.2 1.2a1.2 1.2 0 0 1-1.7 0l-1.2-1.2a1.05 1.05 0 0 0-.74-.3H6.85a1.2 1.2 0 0 1-1.2-1.2v-1.7a1.05 1.05 0 0 0-.3-.74l-1.2-1.2a1.2 1.2 0 0 1 0-1.7l1.2-1.2c.2-.2.3-.47.3-.74V5.14a1.2 1.2 0 0 1 1.2-1.2h1.7c.27 0 .54-.1.74-.3l1.2-1.2A1.2 1.2 0 0 1 12 2.1zm3.4 7.05a.75.75 0 0 0-1.06-1.06l-3.47 3.47-1.47-1.47a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l4-4z"/></svg>
+      Verified Buyer
+    </span>
+  {%- endcapture -%}
+  <section class="offer-sec offer-sec--journey" aria-label="Real Recovery Journey">
+    <div class="rg-journey">
+      <div class="rg-journey__badge">
+        <span class="rg-journey__badge-stars" aria-hidden="true">{{ rg_star }}{{ rg_star }}{{ rg_star }}{{ rg_star }}{{ rg_star }}</span>
+        <p><strong>Rated 4.8/5</strong> based on <em><strong>15k+</strong></em> <strong>Total Ratings</strong></p>
+      </div>
+      <div class="rg-journey__head">
+        <h2>Real Recovery Journey</h2>
+        <p>Real people sharing their experience with ReGrip™ and their path back to everyday life.</p>
+      </div>
+      <div class="rg-journey__track" data-rg-journey-track>
+        <article class="rg-journey-card">
+          <div class="rg-journey-card__media">
+            <img src="{{ 'rg-review-jenny.jpg' | asset_url }}" alt="Review by Jenny F" width="720" height="600" loading="lazy">
+          </div>
+          <div class="rg-journey-card__body">
+            {{ rg_stars5 }}
+            <div class="rg-journey-card__meta">
+              <span class="rg-journey-card__name">Jenny F, 65</span>
+              {{ rg_verified }}
+            </div>
+            <p>After my stroke, my left hand felt stiff, heavy, and hard to control. ReGrip™ gave me a simple way to keep it moving at home without guessing what to do. After using it consistently, I started noticing small improvements in how my fingers responded — and that gave me hope again.</p>
+          </div>
+        </article>
+        <article class="rg-journey-card">
+          <div class="rg-journey-card__media">
+            <img src="{{ 'rg-review-peter.jpg' | asset_url }}" alt="Review by Peter R" width="720" height="600" loading="lazy">
+          </div>
+          <div class="rg-journey-card__body">
+            {{ rg_stars5 }}
+            <div class="rg-journey-card__meta">
+              <span class="rg-journey-card__name">Peter R, 76</span>
+              {{ rg_verified }}
+            </div>
+            <p>I use ReGrip™ while watching TV, which makes it easier to stay consistent. It doesn’t replace therapy, but it helps me keep my hand active every day. For me, that routine was the biggest win.</p>
+          </div>
+        </article>
+        <article class="rg-journey-card">
+          <div class="rg-journey-card__media">
+            <img src="{{ 'rg-review-laura.jpg' | asset_url }}" alt="Review by Laura S" width="720" height="600" loading="lazy">
+          </div>
+          <div class="rg-journey-card__body">
+            {{ rg_stars5 }}
+            <div class="rg-journey-card__meta">
+              <span class="rg-journey-card__name">Laura S, 53</span>
+              {{ rg_verified }}
+            </div>
+            <p>I bought ReGrip™ because I wanted something simple I could use at home. My hand still has a long way to go, but it feels good to practice daily movement again and feel like I’m doing something useful for my recovery. 🙌 I can only recommend it!❤️</p>
+          </div>
+        </article>
+      </div>
+      <div class="rg-journey__nav">
+        <button type="button" class="rg-journey__nav-btn" data-rg-journey-prev aria-label="Previous reviews">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button type="button" class="rg-journey__nav-btn rg-journey__nav-btn--next" data-rg-journey-next aria-label="Next reviews">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--iwt-blue">
+    <div class="rg-iwt rg-iwt--rev rg-iwt--story rg-iwt--on-blue">
+      <div class="rg-iwt__media">
+        <img src="{{ 'rg-iwt-modes.png' | asset_url }}" alt="Doctor with ReGrip therapy glove" width="900" height="900" loading="lazy">
+      </div>
+      <div class="rg-iwt__copy">
+        <h2>Your Daily Hand Routine Starts Here</h2>
+        <p>Put on the glove, connect the control unit, and <strong>choose one of three guided modes</strong>.</p>
+        <p><strong>Repeated Mode</strong> gently opens and closes your hand in repeated assisted movements — helping you complete up to 300 guided reps in one session.</p>
+        <p><strong>Mirror Mode</strong> lets your stronger hand guide the movement of your affected hand, helping both sides work together during practice.</p>
+        <p><strong>Strength Mode</strong> lets you adjust how slowly, quickly, gently, or strongly the glove opens and closes your hand — so the movement matches your comfort level.</p>
+        <a class="rg-iwt__cta rg-iwt__cta--light" href="#OfferTop" data-offer-checkout>Start Your Recovery now →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--howto" id="howto" aria-label="How to Use ReGrip™">
+    <div class="rg-howto">
+      <div class="rg-howto__head">
+        <h2>How to Use ReGrip™</h2>
+        <p>Simple steps to start your daily hand training safely at home</p>
+      </div>
+      <div class="rg-howto-steps" data-rg-howto-track>
+        <article class="rg-step">
+          <div class="rg-step__media"><img src="{{ 'rg-howto-1.jpg' | asset_url }}" alt="Place Your Hand Inside" width="480" height="480" loading="lazy"></div>
+          <div class="rg-step__body"><span class="rg-step__num" aria-hidden="true">1</span><h3>Place Your Hand Inside</h3></div>
+        </article>
+        <article class="rg-step">
+          <div class="rg-step__media"><img src="{{ 'rg-howto-2.jpg' | asset_url }}" alt="Secure the straps gently" width="480" height="480" loading="lazy"></div>
+          <div class="rg-step__body"><span class="rg-step__num" aria-hidden="true">2</span><h3>Secure the straps gently</h3></div>
+        </article>
+        <article class="rg-step">
+          <div class="rg-step__media"><img src="{{ 'rg-howto-3.jpg' | asset_url }}" alt="connect the control unit" width="480" height="480" loading="lazy"></div>
+          <div class="rg-step__body"><span class="rg-step__num" aria-hidden="true">3</span><h3>connect the control unit</h3></div>
+        </article>
+        <article class="rg-step">
+          <div class="rg-step__media"><img src="{{ 'rg-howto-4.jpg' | asset_url }}" alt="Select a comfortable level" width="480" height="480" loading="lazy"></div>
+          <div class="rg-step__body"><span class="rg-step__num" aria-hidden="true">4</span><h3>Select a comfortable level</h3></div>
+        </article>
+        <article class="rg-step">
+          <div class="rg-step__media"><img src="{{ 'rg-howto-5.jpg' | asset_url }}" alt="Relax and follow the motion" width="480" height="480" loading="lazy"></div>
+          <div class="rg-step__body"><span class="rg-step__num" aria-hidden="true">5</span><h3>Relax and follow the motion</h3></div>
+        </article>
+        <article class="rg-step">
+          <div class="rg-step__media"><img src="{{ 'rg-howto-6.jpg' | asset_url }}" alt="Practive everyday movement" width="480" height="480" loading="lazy"></div>
+          <div class="rg-step__body"><span class="rg-step__num" aria-hidden="true">6</span><h3>Practive everyday movement</h3></div>
+        </article>
+      </div>
+      <div class="rg-howto__nav">
+        <button type="button" class="rg-howto__nav-btn" data-rg-howto-prev aria-label="Previous steps">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button type="button" class="rg-howto__nav-btn" data-rg-howto-next aria-label="Next steps">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+      <div class="rg-howto-collage">
+        <img src="{{ 'rg-steps.jpg' | asset_url }}" alt="How to use ReGrip: six simple steps" width="800" height="1400" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--iwt-blue">
+    <div class="rg-iwt rg-iwt--story rg-iwt--on-blue">
+      <div class="rg-iwt__media">
+        <img src="{{ 'rg-before-after.gif' | asset_url }}" alt="From this to this — ReGrip guided hand practice" width="900" height="900" loading="lazy">
+      </div>
+      <div class="rg-iwt__copy">
+        <h2>From Inactive Hand<br>To Daily Practice</h2>
+        <p>ReGrip™ helps your affected hand <strong>move through guided, assisted motion</strong> — making it easier to practice regularly <strong>at home</strong>.</p>
+        <p>Because recovery is not just about one big breakthrough. It is about <strong>giving your hand something useful to do</strong> every day.</p>
+        <a class="rg-iwt__cta rg-iwt__cta--light" href="#OfferTop" data-offer-checkout>Start Your Recovery now →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--benefits" aria-label="What Can Happen When The Hand Stays Inactive?">
+    <div class="rg-benefits">
+      <h2 class="rg-benefits__title">What Can Happen<br><span>When The Hand Stays Inactive?</span></h2>
+      <div class="rg-benefits__grid">
+        <article class="rg-benefit">
+          <div class="rg-benefit__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 1 0 9.95 11h-2.02A8 8 0 1 1 12 4V2zm1 5v5.2l3.4 2-1 1.6L11 12.5V7h2zm3.5-3.7 1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1zM19 8h3v2h-3V8z"/></svg>
+          </div>
+          <h3>Slower Recovery</h3>
+          <p>Without regular guided movement, the brain receives less stimulation to rebuild motor pathways.</p>
+        </article>
+        <article class="rg-benefit">
+          <div class="rg-benefit__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M7.5 2A1.5 1.5 0 0 0 6 3.5V11H4.5A1.5 1.5 0 0 0 3 12.5v4A6.5 6.5 0 0 0 9.5 23h4.2a7 7 0 0 0 5.6-2.8l2.5-3.3a2.2 2.2 0 0 0-.5-3.1 2.2 2.2 0 0 0-2.7.2l-1.1 1V7.5a1.5 1.5 0 0 0-2.9-.4 1.5 1.5 0 0 0-2.9.4 1.5 1.5 0 0 0-2.9.4V3.5A1.5 1.5 0 0 0 7.5 2z"/></svg>
+          </div>
+          <h3>More Stiffness</h3>
+          <p>When the hand is not moved regularly, fingers can feel tighter and harder to open over time.</p>
+        </article>
+        <article class="rg-benefit">
+          <div class="rg-benefit__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M3 3h2v18H3V3zm4 10h2v8H7v-8zm4-4h2v12h-2V9zm4 6h2v6h-2v-6zm3.2-7.8 1.4-1.4L22 8.2l-1.4 1.4-2.2-2.2-2.8 2.8-1.4-1.4 4.2-4.2z"/></svg>
+          </div>
+          <h3>Harder Daily Tasks</h3>
+          <p>Cups, forks, buttons, clothing, and basic routines can stay difficult when the hand is not practiced consistently.</p>
+        </article>
+        <article class="rg-benefit">
+          <div class="rg-benefit__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 1 0 .01 20.01A10 10 0 0 0 12 2zm-3.5 7.2a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zm7 0a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zM12 18.2c-2.4 0-4.5-1.3-5.5-3.2h2.2c.7 1 1.9 1.6 3.3 1.6s2.6-.6 3.3-1.6h2.2c-1 1.9-3.1 3.2-5.5 3.2z"/></svg>
+          </div>
+          <h3>Less Confidence Using The Hand</h3>
+          <p>Many people stop trying to use the affected hand because every failed attempt feels frustrating.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--realistic" aria-label="Built For Realistic Home Recovery">
+    <div class="rg-realistic">
+      <h2 class="rg-realistic__title">Built For Realistic Home Recovery<br><span>Not Miracle Claims</span></h2>
+      <div class="rg-realistic__row">
+        <div class="rg-realistic__media">
+          <img src="{{ 'rg-realistic.png' | asset_url }}" alt="Customers using ReGrip at home" width="1080" height="1080" loading="lazy">
+        </div>
+        <div class="rg-realistic__copy">
+          <p>We know many rehab devices make <strong>big promises</strong> and end up unused.</p>
+          <p>ReGrip™ is different because it focuses on one simple job: <strong>helping your hand complete guided opening and closing movements</strong> at home, with <strong>less effort and more consistency</strong>.</p>
+          <p>Use it alongside your normal rehab routine, follow the quick-start guide, and give your hand a simple <strong>daily practice structure</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--stats">
+    <div class="rg-stats">
+      <div class="rg-stats__intro">
+        <h2 class="rg-stats__title">Our Impact <span>Statistics</span></h2>
+        <p class="rg-stats__subtitle">We have the data to prove our product works</p>
+      </div>
+      <div class="rg-stats__content">
+        <div class="rg-stats__list">
+          <article class="rg-stat">
+            <div class="rg-stat__num">86k+</div>
+            <p>Patients have used ReGrip™ to support daily hand rehabilitation.</p>
+          </article>
+          <article class="rg-stat">
+            <div class="rg-stat__num">78%</div>
+            <p>Reported Less Hand Stiffness</p>
+          </article>
+          <article class="rg-stat">
+            <div class="rg-stat__num">3/4</div>
+            <p>Reported Improved Hand Mobility</p>
+          </article>
+        </div>
+        <div class="rg-stats__disclaimer">
+          <span class="rg-stats__disclaimer-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 416.979 416.979" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M356.004,61.156c-81.37-81.47-213.377-81.551-294.848-0.182c-81.47,81.371-81.552,213.379-0.181,294.85c81.369,81.47,213.378,81.551,294.849,0.181C437.293,274.636,437.375,142.626,356.004,61.156z M237.6,340.786c0,3.217-2.607,5.822-5.822,5.822h-46.576c-3.215,0-5.822-2.605-5.822-5.822V167.885c0-3.217,2.607-5.822,5.822-5.822h46.576c3.215,0,5.822,2.604,5.822,5.822V340.786z M208.49,137.901c-18.618,0-33.766-15.146-33.766-33.765c0-18.617,15.147-33.766,33.766-33.766c18.619,0,33.766,15.148,33.766,33.766C242.256,122.755,227.107,137.901,208.49,137.901z"/>
+            </svg>
+          </span>
+          <p>* Based on internal studies and customer feedback surveys.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--compare">
+    {%- capture rg_icon_yes -%}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="24" height="24" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z" fill="currentColor"/></svg>
+    {%- endcapture -%}
+    {%- capture rg_icon_no -%}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="24" height="24" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm36.44,132.88a8,8,0,0,1,0,11.31,8.17,8.17,0,0,1-11.31,0L128,143.31l-25.13,24.88a8.17,8.17,0,0,1-11.31,0,8,8,0,0,1,0-11.31L116.69,132,91.56,107.13a8,8,0,0,1,11.31-11.32L128,120.69l25.13-24.88a8,8,0,0,1,11.31,11.32L139.31,132Z" fill="currentColor"/></svg>
+    {%- endcapture -%}
+    <div class="rg-compare">
+      <div class="rg-compare__intro">
+        <h2 class="rg-compare__title">What Makes ReGrip™<span>the Better Choice</span></h2>
+      </div>
+      <div class="rg-compare__table-wrap">
+        <table class="rg-compare__table">
+          <thead>
+            <tr>
+              <th class="rg-compare__feature-h" scope="col"></th>
+              <th class="rg-compare__col rg-compare__col--hi" scope="col"><span>ReGrip™</span></th>
+              <th class="rg-compare__col" scope="col"><span>Others</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Clinical tech</th>
+              <td class="rg-compare__col rg-compare__col--hi"><span class="rg-compare__yes" aria-label="Yes">{{ rg_icon_yes }}</span></td>
+              <td class="rg-compare__col"><span class="rg-compare__no" aria-label="No">{{ rg_icon_no }}</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Guided movement</th>
+              <td class="rg-compare__col rg-compare__col--hi"><span class="rg-compare__yes" aria-label="Yes">{{ rg_icon_yes }}</span></td>
+              <td class="rg-compare__col"><span class="rg-compare__no" aria-label="No">{{ rg_icon_no }}</span></td>
+            </tr>
+            <tr>
+              <th scope="row">One-time cost</th>
+              <td class="rg-compare__col rg-compare__col--hi"><span class="rg-compare__yes" aria-label="Yes">{{ rg_icon_yes }}</span></td>
+              <td class="rg-compare__col"><span class="rg-compare__no" aria-label="No">{{ rg_icon_no }}</span></td>
+            </tr>
+            <tr>
+              <th scope="row">24/7 support</th>
+              <td class="rg-compare__col rg-compare__col--hi"><span class="rg-compare__yes" aria-label="Yes">{{ rg_icon_yes }}</span></td>
+              <td class="rg-compare__col"><span class="rg-compare__yes" aria-label="Yes">{{ rg_icon_yes }}</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Individual finger safety control</th>
+              <td class="rg-compare__col rg-compare__col--hi"><span class="rg-compare__yes" aria-label="Yes">{{ rg_icon_yes }}</span></td>
+              <td class="rg-compare__col"><span class="rg-compare__no" aria-label="No">{{ rg_icon_no }}</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Clinically-tested mechanism</th>
+              <td class="rg-compare__col rg-compare__col--hi"><span class="rg-compare__yes" aria-label="Yes">{{ rg_icon_yes }}</span></td>
+              <td class="rg-compare__col"><span class="rg-compare__no" aria-label="No">{{ rg_icon_no }}</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--timeline">
+    <div class="rg-timeline">
+      <div class="rg-timeline__content">
+        <header class="rg-timeline__header">
+          <h2 class="rg-timeline__title">Your 60-Day Hand <span>Recovery Timeline</span></h2>
+        </header>
+        <ol class="rg-timeline__list">
+          <li class="rg-phase">
+            <span class="rg-phase__dot" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" fill="currentColor"/></svg>
+            </span>
+            <span class="rg-phase__days">Days 1–14</span>
+            <h3>NEUROMUSCULAR ACTIVATION</h3>
+            <ul>
+              <li>5–10% increase in passive range</li>
+              <li>Slightly less stiffness</li>
+              <li>Improved hand awareness</li>
+            </ul>
+          </li>
+          <li class="rg-phase">
+            <span class="rg-phase__dot" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" fill="currentColor"/></svg>
+            </span>
+            <span class="rg-phase__days">Days 14–28</span>
+            <h3>CONSISTENCY PHASE</h3>
+            <ul>
+              <li>10–15% better assisted opening</li>
+              <li>Less resistance during movement</li>
+              <li>Longer session tolerance</li>
+            </ul>
+          </li>
+          <li class="rg-phase">
+            <span class="rg-phase__dot" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" fill="currentColor"/></svg>
+            </span>
+            <span class="rg-phase__days">Days 28–42</span>
+            <h3>EARLY COORDINATION SUPPORT</h3>
+            <ul>
+              <li>Smoother finger extension</li>
+              <li>Small voluntary activation gains</li>
+              <li>Reduced tightness post-session</li>
+            </ul>
+          </li>
+          <li class="rg-phase">
+            <span class="rg-phase__dot" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" fill="currentColor"/></svg>
+            </span>
+            <span class="rg-phase__days">Days 42–60</span>
+            <h3>FUNCTIONAL SUPPORT</h3>
+            <ul>
+              <li>15–25% assisted range improvement</li>
+              <li>Better grip stabilization</li>
+              <li>Less morning stiffness</li>
+              <li>More daily-use confidence</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <div class="rg-timeline__media">
+        <img src="{{ 'rg-timeline.png' | asset_url }}" alt="Customer smiling during hand recovery journey" width="870" height="870" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--guarantee">
+    <div class="rg-guarantee">
+      <div class="rg-guarantee__icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="80" height="80" fill="none">
+          <path d="M20 6C20 6 19.1843 6 19.0001 6C16.2681 6 13.8871 4.93485 11.9999 3C10.1128 4.93478 7.73199 6 5.00009 6C4.81589 6 4.00009 6 4.00009 6C4.00009 6 4 8 4 9.16611C4 14.8596 7.3994 19.6436 12 21C16.6006 19.6436 20 14.8596 20 9.16611C20 8 20 6 20 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 class="rg-guarantee__title"><span>30 Day</span> Guarantee</h2>
+      <p class="rg-guarantee__text">We stand behind ReGrip™ with full confidence. If you’re not completely satisfied, you have 30 days to request a full refund — no questions asked.</p>
+      <a class="rg-guarantee__cta" href="#OfferTop" data-offer-checkout>START YOUR RECOVERY NOW →</a>
+      <div class="rg-guarantee__badges">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/></svg>
+          100% Satisfaction
+        </span>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/></svg>
+          Fast Shipping
+        </span>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/></svg>
+          Easy Returns
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--reviews" id="REVIEW">
+    <div class="offer-head rg-reviews__head">
+      <h2>Customer Reviews</h2>
+      <p>Overall rating: 4.8 / 5 from 351 reviews.</p>
+    </div>
+    <div class="rg-reviews-track" data-rg-reviews-track>
+      {% render 'regrip-loox-reviews' %}
+    </div>
+  </section>
+
+  <section class="offer-sec offer-sec--faq" id="faq">
+    <div class="offer-head rg-faq__head"><h2>Frequently Asked Questions</h2></div>
+    <div class="rg-faq" data-offer-accordion>
+      <div class="rg-faq__col offer-faq">
+        <div class="offer-faq__item">
+          <button type="button" class="offer-faq__trigger" aria-expanded="false">Does insurance cover this?</button>
+          <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>ReGrip™ is usually a self-pay device — but some private insurers may cover it after individual review.</p></div></div>
+        </div>
+        <div class="offer-faq__item">
+          <button type="button" class="offer-faq__trigger" aria-expanded="false">Why was it created?</button>
+          <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>ReGrip™ was developed to solve a major problem: Most patients stop progressing once therapy sessions end. You need guided movement every day — not once a week. ReGrip™ brings clinic-level hand therapy into the home.</p></div></div>
+        </div>
+        <div class="offer-faq__item">
+          <button type="button" class="offer-faq__trigger" aria-expanded="false">How long does it last?</button>
+          <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>With normal daily use, ReGrip™ is built to last years. The tension system, control module, and tubing are designed for repeated cycles and long-term rehabilitation routines.</p></div></div>
+        </div>
+        <div class="offer-faq__item">
+          <button type="button" class="offer-faq__trigger" aria-expanded="false">Will it help my condition?</button>
+          <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>Yes — that's exactly what it's designed for. ReGrip™ helps with opening/closing stiff fingers, reducing spasticity, improving grip and fine motor control, and rebuilding the brain–hand signal pathway.</p></div></div>
+        </div>
+        <div class="offer-faq__item">
+          <button type="button" class="offer-faq__trigger" aria-expanded="false">Why is it better than alternatives?</button>
+          <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>Alternatives = passive tools. ReGrip™ = active assisted therapy. Alternatives only strengthen muscles you can already use. ReGrip™ rebuilds movement even when the hand is weak, stiff, or not responsive.</p></div></div>
+        </div>
+        <div class="offer-faq__item">
+          <button type="button" class="offer-faq__trigger" aria-expanded="false">What are your return policies?</button>
+          <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>If you're not completely satisfied within the first 30 days, simply return it to us and we'll give you a full refund. You don't have to worry about returning it—we'll take care of that for you!</p></div></div>
+        </div>
+      </div>
+
+      <div class="rg-faq__col offer-faq">
+        <div class="offer-faq__item">
+          <button type="button" class="offer-faq__trigger" aria-expanded="false">Is it easy to use?</button>
+          <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>Very easy. Designed for seniors, stroke patients, and users with limited mobility. Large buttons, clear display, simple instructions. If you can press one button, you can use it.</p></div></div>
+        </div>
+        <div class="offer-faq__item">
+          <button type="button" class="offer-faq__trigger" aria-expanded="false">When will I see results?</button>
+          <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>Most users feel a difference within 1–3 weeks: reduced stiffness, improved finger mobility, and better control. Longer-term improvements typically appear after 4–8 weeks of daily use.</p></div></div>
+        </div>
+        <div class="offer-faq__item">
+          <button type="button" class="offer-faq__trigger" aria-expanded="false">Do you include extras?</button>
+          <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>Yes. Every order includes: Free digital rehab guide, Free protection case, and Priority Support Access. Occasionally we add limited-time bonuses during promotions.</p></div></div>
+        </div>
+        <div class="offer-faq__item">
+          <button type="button" class="offer-faq__trigger" aria-expanded="false">What makes ReGrip™ different?</button>
+          <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>Most devices rely on self-movement. ReGrip™ assists the entire movement, trains each finger individually, uses structured rehab programs via display, supports neuro-muscular reactivation, and mimics clinic-grade equipment at home.</p></div></div>
+        </div>
+        <div class="offer-faq__item">
+          <button type="button" class="offer-faq__trigger" aria-expanded="false">Can I use ReGrip™ if my hand cannot move at all?</button>
+          <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>Yes. Even if your fingers cannot move voluntarily, the assisted motion can help maintain joint mobility and provide sensory feedback to the brain.</p></div></div>
+        </div>
+        <div class="offer-faq__item">
+          <button type="button" class="offer-faq__trigger" aria-expanded="false">How do I get in touch?</button>
+          <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>You can reach us here: <a href="/pages/contact">Contact</a></p><p>or by email: support@zavelyn.com</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="offer-foot">
+    <div class="offer-foot__inner">
+      <div class="offer-foot__logo">{{ brand }}</div>
+      <p class="offer-foot__line">© {{ 'now' | date: '%Y' }} {{ brand }}®. All Rights Reserved.</p>
+      <p class="offer-foot__line"><a href="/pages/privacy-policy">Privacy Policy</a> - <a href="/pages/terms-of-service">Terms of Service</a></p>
+      <p class="offer-foot__line">{% if sec_footer and sec_footer.settings.email != blank %}{{ sec_footer.settings.email }}{% else %}support@zavelyn.com{% endif %}</p>
+    </div>
+  </footer>
+
+  <button type="button" class="offer-top" data-offer-top aria-label="Back to top" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="offer-sticky" data-offer-sticky aria-hidden="true" inert>
+    <div class="offer-sticky__inner">
+      <div class="offer-sticky__copy">{{ sticky_copy }}</div>
+      <a class="offer-sticky__cta" href="#OfferTop" data-offer-checkout data-rg-cta tabindex="-1">
+        <span class="offer-cta__label">{{ cta_label }}</span>
+        <span class="offer-cta__sep" aria-hidden="true">—</span>
+        <span class="offer-cta__price" data-rg-cta-price>{{ pack1_variant.price | money_without_trailing_zeros }}</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="rg-modal" id="RgSizeModal" hidden data-rg-size-modal>
+  <div class="rg-modal__dialog" role="dialog" aria-modal="true" aria-label="Size chart">
+    <button type="button" class="rg-modal__close" data-rg-modal-close aria-label="Close">×</button>
+    <img src="{{ 'rg-size-chart.png' | asset_url }}" alt="ReGrip size chart" width="1200" height="1200">
+  </div>
+</div>
+
+<div class="rg-modal" id="RgWatchModal" hidden data-rg-watch-modal>
+  <div class="rg-modal__dialog" role="dialog" aria-modal="true" aria-label="How to use ReGrip">
+    <button type="button" class="rg-modal__close" data-rg-modal-close aria-label="Close">×</button>
+    <video controls playsinline preload="none" data-rg-watch-video>
+      <source src="https://cdn.shopify.com/videos/c/o/v/f95bbb1ef6fe45e5be0776964abbbe10.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<div class="rg-modal" id="RgReviewModal" hidden data-rg-review-modal>
+  <div class="rg-modal__dialog rg-modal__dialog--review" role="dialog" aria-modal="true" aria-label="Customer review">
+    <button type="button" class="rg-modal__close" data-rg-modal-close aria-label="Close">×</button>
+    <div class="rg-review-stage" data-rg-review-stage></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var main = document.querySelector('[data-offer-main]');
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll('[data-offer-thumb]'));
+  var sources = thumbs.map(function (t) { return t.dataset.src; });
+  var index = 0;
+  function setSlide(i) {
+    if (!main || !sources.length) return;
+    index = (i + sources.length) % sources.length;
+    main.src = sources[index];
+    thumbs.forEach(function (t, n) { t.classList.toggle('is-active', n === index); });
+  }
+  thumbs.forEach(function (thumb) {
+    thumb.addEventListener('click', function () { setSlide(Number(thumb.dataset.index)); });
+  });
+  var prev = document.querySelector('[data-offer-prev]');
+  var next = document.querySelector('[data-offer-next]');
+  if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); setSlide(index - 1); });
+  if (next) next.addEventListener('click', function (e) { e.stopPropagation(); setSlide(index + 1); });
+
+  var fancyboxLoading = null;
+  function loadFancybox(cb) {
+    if (window.Fancybox) { cb(); return; }
+    if (fancyboxLoading) { fancyboxLoading.then(cb); return; }
+    fancyboxLoading = new Promise(function (resolve) {
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css';
+      document.head.appendChild(css);
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js';
+      s.onload = function () { resolve(); };
+      s.onerror = function () { resolve(); };
+      document.body.appendChild(s);
+    });
+    fancyboxLoading.then(cb);
+  }
+  var zoom = document.querySelector('[data-offer-zoom]');
+  if (zoom) {
+    zoom.addEventListener('click', function () {
+      if (!sources.length) return;
+      loadFancybox(function () {
+        if (!window.Fancybox) return;
+        window.Fancybox.show(sources.map(function (src) { return { src: src, type: 'image' }; }), { startIndex: index });
+      });
+    });
+  }
+
+  document.querySelectorAll('[data-offer-accordion]').forEach(function (accordion, aIdx) {
+    var items = Array.prototype.slice.call(accordion.querySelectorAll('.offer-faq__item'));
+    items.forEach(function (item, i) {
+      var trigger = item.querySelector('.offer-faq__trigger');
+      var panel = item.querySelector('.offer-faq__panel');
+      if (!trigger || !panel) return;
+      var panelId = 'rg-faq-' + aIdx + '-' + i;
+      panel.id = panelId;
+      trigger.setAttribute('aria-controls', panelId);
+      panel.setAttribute('role', 'region');
+      trigger.setAttribute('aria-expanded', 'false');
+      panel.setAttribute('hidden', '');
+      trigger.addEventListener('click', function () {
+        var willOpen = !item.classList.contains('is-open');
+        items.forEach(function (other) {
+          var open = other === item && willOpen;
+          other.classList.toggle('is-open', open);
+          var btn = other.querySelector('.offer-faq__trigger');
+          var p = other.querySelector('.offer-faq__panel');
+          if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (p) { if (open) p.removeAttribute('hidden'); else p.setAttribute('hidden', ''); }
+        });
+      });
+    });
+  });
+
+  /* Journey + howto carousels */
+  function bindRgCarousel(trackSel, prevSel, nextSel, cardSel, gap) {
+    var track = document.querySelector(trackSel);
+    if (!track) return;
+    var prev = document.querySelector(prevSel);
+    var next = document.querySelector(nextSel);
+    function step() {
+      var card = track.querySelector(cardSel);
+      return card ? card.getBoundingClientRect().width + gap : 240;
+    }
+    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+  }
+  bindRgCarousel('[data-rg-journey-track]', '[data-rg-journey-prev]', '[data-rg-journey-next]', '.rg-journey-card', 16);
+  bindRgCarousel('[data-rg-howto-track]', '[data-rg-howto-prev]', '[data-rg-howto-next]', '.rg-step', 10);
+
+  /* Size / watch modals */
+  function openModal(el) {
+    if (!el) return;
+    el.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeModal(el) {
+    if (!el) return;
+    el.hidden = true;
+    document.documentElement.style.overflow = '';
+    var vid = el.querySelector('video');
+    if (vid) { vid.pause(); }
+    var stage = el.querySelector('[data-rg-review-stage]');
+    if (stage) stage.replaceChildren();
+  }
+  var sizeModal = document.querySelector('[data-rg-size-modal]');
+  var watchModal = document.querySelector('[data-rg-watch-modal]');
+  document.querySelectorAll('[data-rg-size-open]').forEach(function (btn) {
+    btn.addEventListener('click', function () { openModal(sizeModal); });
+  });
+  document.querySelectorAll('[data-rg-watch-open]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal(watchModal);
+      var vid = watchModal && watchModal.querySelector('video');
+      if (vid) { try { vid.play(); } catch (e2) {} }
+    });
+  });
+  document.querySelectorAll('[data-rg-modal-close]').forEach(function (btn) {
+    btn.addEventListener('click', function () { closeModal(btn.closest('.rg-modal')); });
+  });
+  var reviewModal = document.querySelector('[data-rg-review-modal]');
+  document.querySelectorAll('[data-rg-review-open]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (!reviewModal) return;
+      var stage = reviewModal.querySelector('[data-rg-review-stage]');
+      if (!stage) return;
+      var video = btn.getAttribute('data-video');
+      var image = btn.getAttribute('data-image');
+      var title = btn.getAttribute('data-title') || 'Review';
+      stage.replaceChildren();
+      if (video) {
+        var frame = document.createElement('iframe');
+        frame.src = video + '?autoplay=true&preload=auto';
+        frame.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+        frame.allowFullscreen = true;
+        frame.title = title;
+        stage.appendChild(frame);
+      } else if (image) {
+        var img = document.createElement('img');
+        img.src = image;
+        img.alt = title;
+        stage.appendChild(img);
+      }
+      openModal(reviewModal);
+    });
+  });
+  [sizeModal, watchModal, reviewModal].forEach(function (modal) {
+    if (!modal) return;
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal(modal);
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeModal(sizeModal); closeModal(watchModal); closeModal(reviewModal); }
+  });
+
+
+  /* Countdown 10-min loop like source caregiver offer */
+  (function () {
+    var root = document.querySelector('[data-rg-countdown]');
+    if (!root) return;
+    var label = root.querySelector('[data-rg-countdown-label]');
+    var minutes = Number(root.getAttribute('data-minutes') || 10);
+    var end = Date.now() + minutes * 60 * 1000;
+    function tick() {
+      var left = Math.max(0, end - Date.now());
+      if (left <= 0) { end = Date.now() + minutes * 60 * 1000; left = end - Date.now(); }
+      var total = Math.floor(left / 1000);
+      var m = Math.floor(total / 60);
+      var s = total % 60;
+      if (label) label.textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  /* Variant + packs */
+  var variantInput = document.getElementById('OfferVariantId');
+  var qtyInput = document.getElementById('OfferQuantity');
+  var buyForm = document.getElementById('OfferAddForm');
+  var packsRoot = document.querySelector('[data-rg-packs]');
+  var ctaPriceEls = Array.prototype.slice.call(document.querySelectorAll('[data-rg-cta-price]'));
+  var variants = [];
+  try {
+    var mapEl = document.getElementById('RgVariantMap');
+    if (mapEl) variants = JSON.parse(mapEl.textContent || '[]');
+  } catch (e) { variants = []; }
+  var activePack = 1;
+
+  function findVariant(side, size) {
+    if (!variants.length) return null;
+    var match = variants.find(function (v) {
+      var opts = [v.option1, v.option2, v.option3].filter(Boolean);
+      var sideOk = !side || opts.indexOf(side) !== -1;
+      var sizeOk = !size || opts.indexOf(size) !== -1;
+      return sideOk && sizeOk;
+    });
+    return match || variants[0];
+  }
+
+  function moneyTwice(moneyStr) {
+    // naive display for pack 2 when no dedicated price — keep label from markup if parse fails
+    return moneyStr;
+  }
+
+  function syncFromOptions() {
+    var sideEl = document.querySelector('[data-rg-side]');
+    var sizeEl = document.querySelector('[data-rg-size]');
+    var side = sideEl ? sideEl.value : null;
+    var size = sizeEl ? sizeEl.value : null;
+    var v = findVariant(side, size);
+    if (!v) return;
+    if (variantInput) variantInput.value = String(v.id);
+    if (qtyInput) qtyInput.value = activePack === 2 ? '2' : '1';
+    var price = v.money;
+    if (activePack === 2) {
+      // show approximate 2x on CTA when using qty 2
+      var pack2Label = document.querySelector('[data-rg-pack2-price]');
+      price = pack2Label ? pack2Label.textContent.trim() : v.money;
+    }
+    ctaPriceEls.forEach(function (el) { el.textContent = price; });
+    var p1 = document.querySelector('[data-rg-pack1-price]');
+    var p1c = document.querySelector('[data-rg-pack1-compare]');
+    if (p1) p1.textContent = v.money;
+    if (p1c && v.compare_money) p1c.textContent = v.compare_money;
+  }
+
+  if (packsRoot) {
+    packsRoot.querySelectorAll('[data-rg-pack]').forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        if (e.target && (e.target.tagName === 'SELECT' || e.target.closest('select'))) return;
+        activePack = Number(card.getAttribute('data-rg-pack') || '1');
+        packsRoot.querySelectorAll('[data-rg-pack]').forEach(function (c) {
+          c.classList.toggle('is-active', c === card);
+        });
+        syncFromOptions();
+      });
+    });
+  }
+  document.querySelectorAll('[data-rg-side], [data-rg-size]').forEach(function (el) {
+    el.addEventListener('change', syncFromOptions);
+  });
+  syncFromOptions();
+
+  var checkoutBtns = Array.prototype.slice.call(document.querySelectorAll('[data-offer-checkout]'));
+  var checkoutBusy = false;
+  function goToCheckout(trigger) {
+    var vid = variantInput ? Number(variantInput.value) : 0;
+    if (checkoutBusy || !vid) return;
+    var qty = qtyInput ? Number(qtyInput.value || 1) : 1;
+    var packLabel = activePack === 2 ? 'Buy 2 · BOTH HANDS' : 'Buy 1 · ONE HAND';
+    checkoutBusy = true;
+    checkoutBtns.forEach(function (btn) { btn.classList.add('is-loading'); });
+    if (trigger && trigger.classList) trigger.classList.add('is-loading');
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({
+        items: [{
+          id: vid,
+          quantity: qty,
+          properties: {
+            _bundle: 'regrip-pack',
+            _bundle_id: 'rg_' + Date.now().toString(36),
+            _pack: String(activePack),
+            Offer: packLabel
+          }
+        }]
+      })
+    })
+      .then(function (res) { if (!res.ok) throw new Error('add_failed'); return res.json(); })
+      .then(function () { return fetch('/cart.js', { credentials: 'same-origin' }).then(function (r) { return r.ok ? r.json() : null; }); })
+      .then(function (cart) {
+        checkoutBusy = false;
+        checkoutBtns.forEach(function (btn) { btn.classList.remove('is-loading'); });
+        if (trigger && trigger.classList) trigger.classList.remove('is-loading');
+        if (cart) {
+          document.dispatchEvent(new CustomEvent('zavelyn:offer-cart:open', { detail: { cart: cart } }));
+          return;
+        }
+        window.location.href = '/checkout';
+      })
+      .catch(function () {
+        checkoutBusy = false;
+        checkoutBtns.forEach(function (btn) { btn.classList.remove('is-loading'); });
+        if (trigger && trigger.classList) trigger.classList.remove('is-loading');
+        if (buyForm) buyForm.submit();
+      });
+  }
+  if (buyForm) buyForm.addEventListener('submit', function (e) { e.preventDefault(); goToCheckout(e.submitter); });
+  checkoutBtns.forEach(function (btn) {
+    if (btn.closest('#OfferAddForm')) return;
+    btn.addEventListener('click', function (e) { e.preventDefault(); goToCheckout(btn); });
+  });
+
+  var sticky = document.querySelector('[data-offer-sticky]');
+  var stickyCta = sticky ? sticky.querySelector('[data-offer-checkout]') : null;
+  var hero = document.querySelector('.offer-hero');
+  if (sticky && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      var on = !entries[0].isIntersecting;
+      sticky.classList.toggle('is-on', on);
+      sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
+      if (on) sticky.removeAttribute('inert');
+      else sticky.setAttribute('inert', '');
+      if (stickyCta) stickyCta.tabIndex = on ? 0 : -1;
+      document.documentElement.classList.toggle('offer-sticky-on', on);
+    }, { threshold: 0.05 }).observe(hero);
+  }
+
+  var topBtn = document.querySelector('[data-offer-top]');
+  if (topBtn) {
+    function syncTopBtn() {
+      var show = window.scrollY > 480;
+      topBtn.hidden = !show;
+      topBtn.classList.toggle('is-on', show);
+    }
+    window.addEventListener('scroll', syncTopBtn, { passive: true });
+    syncTopBtn();
+    topBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Offer ReGrip landing",
+  "tag": "section",
+  "class": "section-offer-regrip",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+    { "type": "text", "id": "brand_name", "label": "Brand", "default": "Zavelyn" },
+    { "type": "text", "id": "ticker_text", "label": "Ticker", "default": "FREE Worldwide Shipping —" },
+    { "type": "text", "id": "ticker_highlight", "label": "Ticker highlight", "default": "This Week Only!" },
+    { "type": "text", "id": "cta_label", "label": "CTA", "default": "BUY NOW" }
+  ],
+  "blocks": [
+    {
+      "type": "sec_gallery",
+      "name": "Gallery",
+      "limit": 1,
+      "settings": [
+        { "type": "image_picker", "id": "image_1", "label": "Image 1" },
+        { "type": "text", "id": "fallback_1", "label": "Fallback 1", "default": "rg-gallery-1.png" },
+        { "type": "text", "id": "fallback_2", "label": "Fallback 2", "default": "rg-gallery-2.png" },
+        { "type": "text", "id": "fallback_3", "label": "Fallback 3", "default": "rg-gallery-3.png" },
+        { "type": "text", "id": "fallback_4", "label": "Fallback 4", "default": "rg-gallery-4.png" },
+        { "type": "text", "id": "fallback_5", "label": "Fallback 5", "default": "rg-gallery-5.png" },
+        { "type": "text", "id": "fallback_6", "label": "Fallback 6", "default": "rg-gallery-6.png" },
+        { "type": "text", "id": "fallback_7", "label": "Fallback 7", "default": "rg-gallery-7.png" }
+      ]
+    },
+    {
+      "type": "sec_hero",
+      "name": "Hero perks",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "perk_1", "label": "Perk 1", "default": "Guided hand opening & closing" },
+        { "type": "text", "id": "perk_2", "label": "Perk 2", "default": "Use It Alone or With a Helper" },
+        { "type": "text", "id": "perk_3", "label": "Perk 3", "default": "300+ Assisted reps in 20 Minutes" },
+        { "type": "text", "id": "perk_4", "label": "Perk 4", "default": "3 Therapy Modes for Every Stage of Recovery" }
+      ]
+    },
+    {
+      "type": "sec_faq",
+      "name": "FAQ note",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently Asked Questions" }
+      ]
+    },
+    {
+      "type": "sec_footer",
+      "name": "Footer",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "email", "label": "Support email", "default": "support@zavelyn.com" },
+        { "type": "text", "id": "sticky_copy", "label": "Sticky copy", "default": "ReGrip™ Rehabilitation Glove" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offer ReGrip landing",
+      "blocks": [
+        { "type": "sec_gallery" },
+        { "type": "sec_hero" },
+        { "type": "sec_faq" },
+        { "type": "sec_footer" }
+      ]
+    }
+  ]
+}
+{% endschema %}

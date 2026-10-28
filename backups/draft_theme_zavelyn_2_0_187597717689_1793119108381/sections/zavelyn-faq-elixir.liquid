@@ -1,0 +1,63 @@
+{% schema %}
+{
+  "name": "Zavelyn Elixir FAQ",
+  "settings": [],
+  "presets": [{ "name": "Zavelyn Elixir FAQ" }]
+}
+{% endschema %}
+
+<section class="zv-faq-section">
+  <div class="zv-section-header">
+    <h2>Everything You're Wondering</h2>
+    <p>Straightforward answers to common questions about shipping, warranties, and orders.</p>
+  </div>
+
+  <div class="zv-faq-wrap">
+    <div class="zv-faq-item">
+      <button type="button" class="zv-faq-question" onclick="toggleZvFaq(this)">
+        <span>How fast will my order arrive?</span>
+        <span class="zv-faq-toggle">+</span>
+      </button>
+      <div class="zv-faq-answer">
+        <p>All orders are processed and verified within 24–48 hours from our US distribution centers. Standard tracked shipping takes 3–5 business days within the United States. You will receive real-time carrier tracking updates via email and SMS as soon as your parcel ships.</p>
+      </div>
+    </div>
+
+    <div class="zv-faq-item">
+      <button type="button" class="zv-faq-question" onclick="toggleZvFaq(this)">
+        <span>What is the 30-Day Money-Back Guarantee?</span>
+        <span class="zv-faq-toggle">+</span>
+      </button>
+      <div class="zv-faq-answer">
+        <p>We believe in our products completely. If you are not 100% thrilled with your purchase for any reason within 60 days of delivery, simply reach out to our concierge support team at support@tryzavelyn.com. We will arrange a prepaid return and process a full refund to your original payment method.</p>
+      </div>
+    </div>
+
+    <div class="zv-faq-item">
+      <button type="button" class="zv-faq-question" onclick="toggleZvFaq(this)">
+        <span>Do you offer warranty coverage on hardware tools?</span>
+        <span class="zv-faq-toggle">+</span>
+      </button>
+      <div class="zv-faq-answer">
+        <p>Yes. Every Zavelyn hardware tool and smart device comes with an automatic 1-Year Comprehensive Manufacturer Warranty covering parts, motors, heating filaments, and workmanship defects.</p>
+      </div>
+    </div>
+
+    <div class="zv-faq-item">
+      <button type="button" class="zv-faq-question" onclick="toggleZvFaq(this)">
+        <span>Can I track my shipment in real time?</span>
+        <span class="zv-faq-toggle">+</span>
+      </button>
+      <div class="zv-faq-answer">
+        <p>Yes! Simply visit our <a href="/pages/track-order" style="color:var(--zv-text-dark);font-weight:bold;">Track Order Page</a> and enter your tracking number or order confirmation email to see live carrier milestones from USPS, FedEx, UPS, or DHL.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleZvFaq(btn) {
+    const item = btn.closest('.zv-faq-item');
+    if (item) item.classList.toggle('open');
+  }
+</script>

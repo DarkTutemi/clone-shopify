@@ -1,0 +1,106 @@
+{%- liquid
+  assign recommend_product = product
+  if recommend_product == blank
+    assign recommend_product = section.settings.product
+  endif
+-%}
+
+{%- if recommend_product != blank -%}
+  <product-recommendations
+    class="related-products section"
+    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ recommend_product.id }}&limit={{ section.settings.products_to_show }}"
+    data-lazy-section
+  >
+    {%- if recommendations.performed and recommendations.products_count > 0 -%}
+      <div class="page-width">
+        {%- if section.settings.title != blank -%}
+          <div class="section__header">
+            <h2>{{ section.settings.title }}</h2>
+          </div>
+        {%- endif -%}
+        <div class="product-grid product-grid--{{ section.settings.columns }}">
+          {%- for recommendation in recommendations.products -%}
+            {% render 'product-card', product: recommendation %}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </product-recommendations>
+
+  <script type="module">
+    class ProductRecommendations extends HTMLElement {
+      connectedCallback() {
+        const url = this.dataset.url;
+        if (!url || this.dataset.loaded) return;
+
+        const load = () => {
+          fetch(url)
+            .then((r) => r.text())
+            .then((html) => {
+              const doc = new DOMParser().parseFromString(html, 'text/html');
+              const next = doc.querySelector('product-recommendations');
+              if (next?.innerHTML.trim()) {
+                this.innerHTML = next.innerHTML;
+                this.dataset.loaded = 'true';
+              }
+            })
+            .catch(() => {});
+        };
+
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver(
+            (entries, obs) => {
+              if (!entries[0].isIntersecting) return;
+              obs.disconnect();
+              load();
+            },
+            { rootMargin: '0px 0px 200px 0px' }
+          );
+          observer.observe(this);
+        } else {
+          load();
+        }
+      }
+    }
+
+    if (!customElements.get('product-recommendations')) {
+      customElements.define('product-recommendations', ProductRecommendations);
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Related products",
+  "tag": "section",
+  "class": "section-related-products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "You may also like"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "label": "Products to show",
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "4"
+    }
+  ]
+}
+{% endschema %}

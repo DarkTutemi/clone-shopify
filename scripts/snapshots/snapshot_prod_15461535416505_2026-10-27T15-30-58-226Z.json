@@ -1,0 +1,74 @@
+{
+  "id": "gid://shopify/Product/15461535416505",
+  "title": "Zavelyn MegaLifters",
+  "handle": "zavelyn-megalifters-heavy-duty-alloy-rc-construction-fleet",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67980571181241",
+        "title": "Buy 1 (Single Construction Vehicle - Standard Starter Kit) / Heavy-Duty RC Excavator (Alloy Metal Bucket)",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980571214009",
+        "title": "Buy 1 (Single Construction Vehicle - Standard Starter Kit) / Hydraulic RC Dump Truck (Electric Bed)",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980571246777",
+        "title": "Buy 1 (Single Construction Vehicle - Standard Starter Kit) / All-Terrain RC Bulldozer (Alloy Metal Blade)",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980571279545",
+        "title": "Buy 1 (Single Construction Vehicle - Standard Starter Kit) / Front-End RC Wheel Loader (Lifting Arm)",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980571312313",
+        "title": "Buy 2 (Site Foreman Duo - Save 45% + Extra Batteries) / Heavy-Duty RC Excavator (Alloy Metal Bucket)",
+        "price": "99.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980571345081",
+        "title": "Buy 2 (Site Foreman Duo - Save 45% + Extra Batteries) / Hydraulic RC Dump Truck (Electric Bed)",
+        "price": "99.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980571377849",
+        "title": "Buy 2 (Site Foreman Duo - Save 45% + Extra Batteries) / All-Terrain RC Bulldozer (Alloy Metal Blade)",
+        "price": "99.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980571410617",
+        "title": "Buy 2 (Site Foreman Duo - Save 45% + Extra Batteries) / Front-End RC Wheel Loader (Lifting Arm)",
+        "price": "99.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980571443385",
+        "title": "Buy 3 (Mega Construction Crew - Buy 2 Get 1 FREE) / Heavy-Duty RC Excavator (Alloy Metal Bucket)",
+        "price": "129.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980571476153",
+        "title": "Buy 3 (Mega Construction Crew - Buy 2 Get 1 FREE) / Hydraulic RC Dump Truck (Electric Bed)",
+        "price": "129.99",
+        "sku": null
+      }
+    ]
+  }
+}

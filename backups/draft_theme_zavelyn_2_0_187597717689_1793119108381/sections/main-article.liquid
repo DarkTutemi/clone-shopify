@@ -1,0 +1,45 @@
+{% render 'breadcrumbs' %}
+
+<article class="section">
+  <div class="page-width page-width--narrow">
+    <header class="section__header">
+      <h1>{{ article.title }}</h1>
+      <p class="section__subheader">
+        {{ article.published_at | date: '%B %d, %Y' }}
+        {%- if article.author != blank %} · {{ article.author }}{% endif -%}
+      </p>
+    </header>
+
+    {%- if article.image -%}
+      <div style="margin-block-end: 2rem; border-radius: var(--radius-lg); overflow: hidden;">
+        {{
+          article.image
+          | image_url: width: 1400
+          | image_tag:
+            widths: '750, 1100, 1400',
+            sizes: 'min(100vw - 2rem, 42rem)',
+            loading: 'eager',
+            fetchpriority: 'high',
+            alt: article.image.alt | default: article.title | escape
+        }}
+      </div>
+    {%- endif -%}
+
+    <div class="rte">
+      {{ article.content }}
+    </div>
+  </div>
+</article>
+
+<script type="application/ld+json">
+  {{ article | structured_data }}
+</script>
+
+{% schema %}
+{
+  "name": "Article",
+  "tag": "section",
+  "class": "section-main-article",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,60 @@
+<section class="section">
+  <div class="page-width">
+    <p><a href="{{ routes.account_url }}">{{ 'customer.account.return' | t }}</a></p>
+    <h1 style="margin-block: 1rem;">{{ 'customer.order.title' | t: name: order.name }}</h1>
+    <p class="section__subheader">{{ 'customer.order.date_html' | t: date: order.created_at | date: format: 'date' }}</p>
+
+    <div style="overflow-x: auto; margin-block: 2rem;">
+      <table>
+        <thead>
+          <tr>
+            <th>{{ 'customer.order.product' | t }}</th>
+            <th>{{ 'customer.order.sku' | t }}</th>
+            <th>{{ 'customer.order.price' | t }}</th>
+            <th>{{ 'customer.order.quantity' | t }}</th>
+            <th>{{ 'customer.order.total' | t }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for line_item in order.line_items -%}
+            <tr>
+              <td>
+                {{ line_item.title }}
+                {%- unless line_item.variant.title == 'Default Title' -%}
+                  <br><small>{{ line_item.variant.title }}</small>
+                {%- endunless -%}
+              </td>
+              <td>{{ line_item.sku }}</td>
+              <td>{{ line_item.final_price | money }}</td>
+              <td>{{ line_item.quantity }}</td>
+              <td>{{ line_item.final_line_price | money }}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cart-summary" style="max-width: 22rem; margin-inline-start: auto;">
+      <div class="cart-summary__row">
+        <span>{{ 'customer.order.subtotal' | t }}</span>
+        <span>{{ order.line_items_subtotal_price | money }}</span>
+      </div>
+      {%- for shipping_method in order.shipping_methods -%}
+        <div class="cart-summary__row">
+          <span>{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})</span>
+          <span>{{ shipping_method.price | money }}</span>
+        </div>
+      {%- endfor -%}
+      {%- for tax_line in order.tax_lines -%}
+        <div class="cart-summary__row">
+          <span>{{ 'customer.order.tax' | t }} ({{ tax_line.title }})</span>
+          <span>{{ tax_line.price | money }}</span>
+        </div>
+      {%- endfor -%}
+      <div class="cart-summary__row cart-summary__total">
+        <span>{{ 'customer.order.total' | t }}</span>
+        <span>{{ order.total_price | money }}</span>
+      </div>
+    </div>
+  </div>
+</section>

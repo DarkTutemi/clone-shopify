@@ -1,0 +1,25 @@
+{% schema %}
+{
+  "name": "Zavelyn PDP Fallback",
+  "settings": [],
+  "presets": [{ "name": "Zavelyn PDP Fallback" }]
+}
+{% endschema %}
+
+{%- include 'zavelyn-pdp-data' -%}
+
+{%- unless zv_data_found -%}
+  {%- if product.description != blank -%}
+    <section class="zv-body-section zv-bg-white" id="zv-product-description">
+      <div class="zv-container zv-fallback-description-container">
+        <div class="zv-section-header">
+          <span class="zv-badge">PRODUCT OVERVIEW</span>
+          <h2 class="zv-section-title">Product Details</h2>
+        </div>
+        <div class="zv-rte-content">
+          {{ product.description }}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+{%- endunless -%}

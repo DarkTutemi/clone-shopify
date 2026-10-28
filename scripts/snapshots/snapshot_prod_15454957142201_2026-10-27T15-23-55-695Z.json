@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454957142201",
+  "title": "Zavelyn Infrared Sauna Blanket",
+  "handle": "portable-infrared",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914549100729",
+        "title": "Oxford cloth+Arm Hole",
+        "price": "187.99",
+        "sku": "HA132518-X88013"
+      }
+    ]
+  }
+}

@@ -1,0 +1,2870 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<div class="zavelyn-pdp-wrapper" id="fn-offer">
+  <!-- Top Trust & Guarantee Announcement Bar -->
+  <div class="wf-top-strip">
+    <div class="wf-container wf-strip-inner">
+      <span class="wf-strip-item">🔒 100% Encrypted &amp; Secure Checkout</span>
+      <span class="wf-strip-item" style="display:inline-flex;align-items:center;gap:6px;">{% render 'trustpilot-stars', width: 68, height: 13 %} 4.9/5 Rating by 1,480+ Farmers &amp; Homesteaders</span>
+      <span class="wf-strip-item desktop-only">⚡ 2026 Upgraded Digital Thermostat</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1: Product Intro & Buy Box (Primary Conversion Area) -->
+  <section class="wf-section wf-hero-buybox" style="display: none !important;">
+    <div class="wf-container wf-hero-grid">
+      <!-- Media Gallery Column -->
+      <div class="wf-gallery-col">
+        {% assign custom_gallery_count = 0 %}
+        {% assign first_gallery_img = '' %}
+        {% for block in section.blocks %}
+          {% if block.type == 'gallery_image' %}
+            {% assign custom_gallery_count = custom_gallery_count | plus: 1 %}
+            {% if first_gallery_img == '' %}
+              {% if block.settings.image != blank %}
+                {% assign first_gallery_img = block.settings.image | image_url: width: 1000 %}
+              {% elsif block.settings.image_url != blank %}
+                {% assign first_gallery_img = block.settings.image_url %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+
+        <div class="wf-gallery-main">
+          <button type="button" class="wf-gallery-arrow prev" onclick="skipWfGallery(-1); event.stopPropagation();" aria-label="Previous Image">‹</button>
+          {% assign hero_src = section.settings.main_image_url | default: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-hero-main.png?v=1792853600' %}
+          {% if custom_gallery_count > 0 and first_gallery_img != '' %}
+            {% assign hero_src = first_gallery_img %}
+          {% elsif section.settings.main_image != blank %}
+            {% assign hero_src = section.settings.main_image | image_url: width: 1000 %}
+          {% endif %}
+          <img id="wf-main-img" src="{{ hero_src }}" alt="{{ section.settings.product_title | escape }}" referrerpolicy="no-referrer" onclick="skipWfGallery(1)">
+          <button type="button" class="wf-gallery-arrow next" onclick="skipWfGallery(1); event.stopPropagation();" aria-label="Next Image">›</button>
+          <span class="wf-gallery-badge">50% OFF TODAY</span>
+        </div>
+
+        <div class="wf-thumbnail-strip">
+          {% if custom_gallery_count > 0 %}
+            {% for block in section.blocks %}
+              {% if block.type == 'gallery_image' %}
+                {% assign img_src = '' %}
+                {% if block.settings.image != blank %}
+                  {% assign img_src = block.settings.image | image_url: width: 1000 %}
+                {% elsif block.settings.image_url != blank %}
+                  {% assign img_src = block.settings.image_url %}
+                {% endif %}
+                {% if img_src != '' %}
+                  <img class="wf-thumb {% if forloop.first %}active{% endif %}" src="{{ img_src }}" onclick="switchWfGallery(this.src)" referrerpolicy="no-referrer" alt="{{ block.settings.alt | default: section.settings.product_title | escape }}" {{ block.shopify_attributes }}>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <!-- Fallback Default 6 Slides -->
+            <img class="wf-thumb active" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-hero-main.png?v=1792853600" onclick="switchWfGallery(this.src)" referrerpolicy="no-referrer" alt="Zavelyn Intelligent Heating Lamp">
+            <img class="wf-thumb" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-3pack-bundle.jpg?v=1792853189" onclick="switchWfGallery(this.src)" referrerpolicy="no-referrer" alt="3-Pack Bundle Set">
+            <img class="wf-thumb" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-fireproof-safety.jpg?v=1792853601" onclick="switchWfGallery(this.src)" referrerpolicy="no-referrer" alt="100% Fireproof Safe on Pine Shavings">
+            <img class="wf-thumb" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-smart-thermostat.jpg?v=1792853603" onclick="switchWfGallery(this.src)" referrerpolicy="no-referrer" alt="Smart Digital Thermostat Auto-Cycles Heat">
+            <img class="wf-thumb" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-livestock-warmth.jpg?v=1792853604" onclick="switchWfGallery(this.src)" referrerpolicy="no-referrer" alt="Soft Amber Glow Poultry Brooder">
+            <img class="wf-thumb" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-split-comparison.jpg?v=1792853605" onclick="switchWfGallery(this.src)" referrerpolicy="no-referrer" alt="Safe Brooder vs Dangerous Clamp Fire Hazard">
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Buy Box & Configuration Column -->
+      <div class="wf-buybox-col">
+        <div class="wf-header-group">
+          <div class="wf-review-stars">
+            <span class="wf-stars">{% render 'trustpilot-stars', width: 96, height: 18 %}</span>
+            <span class="wf-review-count">4.9 / 5.0 (1,480+ Reviews)</span>
+          </div>
+          <h1 class="wf-product-title">{{ section.settings.product_title | default: 'Zavelyn Intelligent Livestock Heating Lamp' }}</h1>
+          <p class="wf-product-desc">{{ section.settings.product_subtitle | default: 'Safe, energy-efficient brooder warmth engineered with an intelligent digital thermostat. Keeps baby chicks, ducklings, piglets, and pets comfortably warm without dangerous fire risks or harsh red glare.' }}</p>
+        </div>
+
+        <!-- Bundle Package Selector -->
+        <div class="wf-bundle-selector">
+          <div class="wf-selector-label">
+            <span>Select Your Package</span>
+            <span class="wf-savings-pill">Extra 10% Off Available</span>
+          </div>
+
+          <div class="wf-bundles-container">
+            {% assign bundles_count = 0 %}
+            {% for block in section.blocks %}
+              {% if block.type == 'bundle_package' %}
+                {% assign bundles_count = bundles_count | plus: 1 %}
+                <div class="wf-bundle-card {% if block.settings.is_best_seller or forloop.first %}selected{% endif %}" id="wf-bundle-{{ forloop.index }}" onclick="selectWfBundle('{{ block.settings.variant_id }}', '{{ block.settings.price }}', '{{ block.settings.old_price }}', 'wf-bundle-{{ forloop.index }}', '{{ block.settings.image_url }}')" {{ block.shopify_attributes }}>
+                  {% if block.settings.badge != blank %}
+                    <div class="wf-bundle-badge {% unless block.settings.is_best_seller %}secondary{% endunless %}">{{ block.settings.badge }}</div>
+                  {% endif %}
+                  <div class="wf-bundle-inner">
+                    <div class="wf-radio-circle">
+                      <div class="wf-radio-dot"></div>
+                    </div>
+                    {% if block.settings.image_url != blank %}
+                      <div class="wf-bundle-thumb">
+                        <img src="{{ block.settings.image_url }}" alt="{{ block.settings.title | escape }}" referrerpolicy="no-referrer">
+                      </div>
+                    {% endif %}
+                    <div class="wf-bundle-details">
+                      <div class="wf-bundle-name">{{ block.settings.title }}</div>
+                      <div class="wf-bundle-includes">{{ block.settings.description }}</div>
+                    </div>
+                    <div class="wf-bundle-pricing">
+                      {% if block.settings.old_price != blank %}
+                        <span class="wf-price-compare">${{ block.settings.old_price }}</span>
+                      {% else %}
+                        {% assign auto_comp = block.settings.price | times: 1.8 | round: 2 %}
+                        <span class="wf-price-compare">${{ auto_comp }}</span>
+                      {% endif %}
+                      <span class="wf-price-current">${{ block.settings.price }}</span>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+            {% if bundles_count == 0 %}
+              <!-- Fallback Default Bundles -->
+              <div class="wf-bundle-card selected" id="wf-bundle-3" onclick="selectWfBundle('67953654300857', '119.99', '269.94', 'wf-bundle-3', 'https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-3pack-bundle.jpg?v=1792853189')">
+                <div class="wf-bundle-badge">BEST VALUE • EXTRA 10% OFF • FREE SHIPPING</div>
+                <div class="wf-bundle-inner">
+                  <div class="wf-radio-circle"><div class="wf-radio-dot"></div></div>
+                  <div class="wf-bundle-thumb">
+                    <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-3pack-bundle.jpg?v=1792853189" alt="3 Pack Bundle" referrerpolicy="no-referrer">
+                  </div>
+                  <div class="wf-bundle-details">
+                    <div class="wf-bundle-name">3 Pack (Light + US Switch Cord)</div>
+                    <div class="wf-bundle-includes">
+                      <span>✔ 3x Zavelyn Intelligent Heating Lamps</span><br>
+                      <span>✔ 3x US Heavy-Duty Switch Cords • Only $39.99/set</span><br>
+                      <span>✔ Extra 10% Off • Free Express Shipping</span>
+                    </div>
+                  </div>
+                  <div class="wf-bundle-pricing">
+                    <span class="wf-price-compare">$269.94</span>
+                    <span class="wf-price-current">$119.99</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="wf-bundle-card" id="wf-bundle-2" onclick="selectWfBundle('67930179436729', '89.99', '179.98', 'wf-bundle-2', 'https://cdn.myshopage.com/4574c936-7435-4b05-2934-ed1e12887e00.png')">
+                <div class="wf-bundle-badge secondary">FREE SHIPPING</div>
+                <div class="wf-bundle-inner">
+                  <div class="wf-radio-circle"><div class="wf-radio-dot"></div></div>
+                  <div class="wf-bundle-thumb">
+                    <img src="https://cdn.myshopage.com/4574c936-7435-4b05-2934-ed1e12887e00.png" alt="2 Pack Bundle" referrerpolicy="no-referrer">
+                  </div>
+                  <div class="wf-bundle-details">
+                    <div class="wf-bundle-name">2 Pack (Light + US Switch Cord)</div>
+                    <div class="wf-bundle-includes">
+                      <span>✔ 2x Zavelyn Intelligent Heating Lamps</span><br>
+                      <span>✔ 2x US Heavy-Duty Switch Cords • $44.99/set</span><br>
+                      <span>✔ Free Express Shipping</span>
+                    </div>
+                  </div>
+                  <div class="wf-bundle-pricing">
+                    <span class="wf-price-compare">$179.98</span>
+                    <span class="wf-price-current">$89.99</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="wf-bundle-card" id="wf-bundle-1" onclick="selectWfBundle('67930179403961', '49.99', '89.98', 'wf-bundle-1', 'https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg')">
+                <div class="wf-bundle-badge secondary">STARTER PACK</div>
+                <div class="wf-bundle-inner">
+                  <div class="wf-radio-circle"><div class="wf-radio-dot"></div></div>
+                  <div class="wf-bundle-thumb">
+                    <img src="https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg" alt="1 Pack Bundle" referrerpolicy="no-referrer">
+                  </div>
+                  <div class="wf-bundle-details">
+                    <div class="wf-bundle-name">1 Pack (Light + US Switch Cord)</div>
+                    <div class="wf-bundle-includes">
+                      <span>✔ 1x Zavelyn Intelligent Heating Lamp</span><br>
+                      <span>✔ 1x US Heavy-Duty Switch Cord</span>
+                    </div>
+                  </div>
+                  <div class="wf-bundle-pricing">
+                    <span class="wf-price-compare">$89.98</span>
+                    <span class="wf-price-current">$49.99</span>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Quantity & Instant Checkout CTA -->
+        <div class="wf-purchase-actions">
+          <div class="wf-qty-and-total">
+            <div class="wf-qty-control">
+              <button type="button" class="wf-qty-btn" onclick="adjustWfQty(-1)">-</button>
+              <input type="number" id="wf-qty-input" value="1" min="1" max="10" readonly>
+              <button type="button" class="wf-qty-btn" onclick="adjustWfQty(1)">+</button>
+            </div>
+            <div class="wf-total-block">
+              <span class="wf-total-label">Subtotal:</span>
+              <span id="wf-total-compare" class="wf-total-compare-price" style="text-decoration:line-through;color:#998e87;font-size:15px;margin-right:6px;font-weight:600;">$269.94</span>
+              <span id="wf-total-display" class="wf-total-price">$119.99</span>
+            </div>
+          </div>
+
+          <button type="button" id="wf-main-atc-btn" class="wf-atc-button" onclick="submitWfOrder()">
+            <span class="wf-atc-text">ADD TO CART &bull; CLAIM 50% OFF</span>
+            <span class="wf-atc-arrow">➔</span>
+          </button>
+
+          <button type="button" id="wf-main-shopnow-btn" class="wf-shopnow-button" onclick="submitWfDirectCheckout()">
+            <span class="wf-shopnow-text">SHOP NOW &bull; INSTANT CHECKOUT</span>
+            <span class="wf-shopnow-arrow">⚡</span>
+          </button>
+
+          <!-- Primary Trust Points Under ATC -->
+          <div class="wf-trust-row">
+            <div class="wf-trust-badge-item">
+              <span class="wf-tb-icon">🛡️</span>
+              <span class="wf-tb-text">30-Day Money-Back Guarantee</span>
+            </div>
+            <div class="wf-trust-badge-item">
+              <span class="wf-tb-icon">📦</span>
+              <span class="wf-tb-text">Fast US Tracked Dispatch</span>
+            </div>
+            <div class="wf-trust-badge-item">
+              <span class="wf-tb-icon">🔒</span>
+              <span class="wf-tb-text">Secure 256-Bit SSL Checkout</span>
+            </div>
+          </div>
+
+          <div class="wf-payment-icons">
+            <span class="wf-payment-secure-text">🔒 Guaranteed Safe &amp; Secure Checkout</span>
+            <ul class="wf-payment-list" role="list">
+              {% assign payment_types = shop.enabled_payment_types %}
+              {% if payment_types == empty or payment_types.size == 0 %}
+                {% assign payment_types = 'visa,master,american_express,discover,paypal,apple_pay,google_pay,shopify_pay' | split: ',' %}
+              {% endif %}
+              {% for type in payment_types %}
+                <li class="wf-payment-item">
+                  {{ type | payment_type_svg_tag: class: 'wf-payment-svg' }}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <!-- Key Benefit Checkmarks (Moved below Shopify Payments) -->
+          <div class="wf-benefits-card">
+            <div class="wf-benefits-title">Why Homesteaders Choose Zavelyn:</div>
+            <div class="wf-benefits-list">
+              {% assign key_points_count = 0 %}
+              {% for block in section.blocks %}
+                {% if block.type == 'key_point' %}
+                  {% assign key_points_count = key_points_count | plus: 1 %}
+                  <div class="wf-benefit-item" {{ block.shopify_attributes }}>
+                    <span class="wf-check-icon">✔</span>
+                    <span><strong>{{ block.settings.title }}:</strong> {{ block.settings.text }}</span>
+                  </div>
+                {% endif %}
+              {% endfor %}
+              {% if key_points_count == 0 %}
+                <div class="wf-benefit-item">
+                  <span class="wf-check-icon">✔</span>
+                  <span><strong>Auto-Regulating Digital Thermostat:</strong> Calibrates warmth between 82°F–95°F (28°C–35°C). Auto-shuts off when target temp is reached.</span>
+                </div>
+                <div class="wf-benefit-item">
+                  <span class="wf-check-icon">✔</span>
+                  <span><strong>100% Sealed Fireproof Polymer Shell:</strong> Zero hot glass filaments or 400°F surface hazard. Safe around dry hay and pine shavings.</span>
+                </div>
+                <div class="wf-benefit-item">
+                  <span class="wf-check-icon">✔</span>
+                  <span><strong>Soft Ambient Glow (Zero Stress):</strong> Gentle illumination eliminates nocturnal sleep disruption and aggressive feather pecking.</span>
+                </div>
+                <div class="wf-benefit-item">
+                  <span class="wf-check-icon">✔</span>
+                  <span><strong>Standard E26/E27 Base + Heavy-Duty Cord:</strong> Screws directly into standard household sockets or included US switch cord.</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Main Feature Section (Willa Farm "Here's what's inside" pattern) -->
+  <section class="wf-section wf-feature-grid-section">
+    <div class="wf-container">
+      <div class="wf-section-header">
+        <h2 class="wf-section-heading">{{ section.settings.section2_title | default: 'Designed for Better Everyday Livestock Care' }}</h2>
+        <div class="wf-section-subtitle">{{ section.settings.section2_subtitle | default: 'Practical warmth. Simple controls. Convenient setup.' }}</div>
+      </div>
+
+      <div class="wf-cards-4col">
+        {% assign feat_count = 0 %}
+        {% for block in section.blocks %}
+          {% if block.type == 'feature_card' %}
+            {% assign feat_count = feat_count | plus: 1 %}
+            <article class="wf-card-item" {{ block.shopify_attributes }}>
+              <div class="wf-card-media">
+                <img src="{{ block.settings.image_url }}" alt="{{ block.settings.title | escape }}" referrerpolicy="no-referrer">
+              </div>
+              <div class="wf-card-content">
+                <h3 class="wf-card-title">{{ block.settings.title }}</h3>
+                <p class="wf-card-text">{{ block.settings.text }}</p>
+              </div>
+            </article>
+          {% endif %}
+        {% endfor %}
+        {% if feat_count == 0 %}
+          <article class="wf-card-item">
+            <div class="wf-card-media">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-card-temp.jpg?v=1792853606" alt="Adjustable Temperature" referrerpolicy="no-referrer">
+            </div>
+            <div class="wf-card-content">
+              <h3 class="wf-card-title">Adjustable Temperature</h3>
+              <p class="wf-card-text">Simple push-button adjustment between 82°F–95°F (28°C–35°C) to keep your flock or pets at their ideal comfort level.</p>
+            </div>
+          </article>
+
+          <article class="wf-card-item">
+            <div class="wf-card-media">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-card-monitor.jpg?v=1792853607" alt="Easy Temperature Monitoring" referrerpolicy="no-referrer">
+            </div>
+            <div class="wf-card-content">
+              <h3 class="wf-card-title">Easy Temperature Monitoring</h3>
+              <p class="wf-card-text">Clear digital LED display lets you check current heat levels at a quick glance without disturbing resting animals.</p>
+            </div>
+          </article>
+
+          <article class="wf-card-item">
+            <div class="wf-card-media">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-card-setup.jpg?v=1792853608" alt="Convenient Setup" referrerpolicy="no-referrer">
+            </div>
+            <div class="wf-card-content">
+              <h3 class="wf-card-title">Convenient Setup</h3>
+              <p class="wf-card-text">Standard E26/E27 threaded base screws directly into common fixtures; includes a heavy-duty US switch cord for plug-and-play placement.</p>
+            </div>
+          </article>
+
+          <article class="wf-card-item">
+            <div class="wf-card-media">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-card-versatile.jpg?v=1792853609" alt="Versatile Farm Use" referrerpolicy="no-referrer">
+            </div>
+            <div class="wf-card-content">
+              <h3 class="wf-card-title">Versatile Farm Use</h3>
+              <p class="wf-card-text">Perfect for chick brooders, ducklings, piglets, puppies, reptile enclosures, and outdoor coop warming boxes.</p>
+            </div>
+          </article>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3A: Alternating Storytelling (50/50 split desktop, mobile image first) -->
+  <section class="wf-section wf-split-story-section">
+    <div class="wf-container wf-split-grid">
+      <div class="wf-split-media">
+        <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-split-comparison.jpg?v=1792853605" alt="Reliable Warmth for Your Routine" referrerpolicy="no-referrer">
+      </div>
+      <div class="wf-split-content">
+        <span class="wf-eyebrow-pill">BROODER PEACE OF MIND</span>
+        <h2 class="wf-split-heading">Reliable Warmth for Your Everyday Routine</h2>
+        <p class="wf-split-lead">Traditional heat lamps keep homesteaders on edge with dangerous fire hazards, erratic temperature swings, and blinding red lights that disturb sleep. Zavelyn re-engineers coop warming from the ground up.</p>
+        
+        <div class="wf-story-bullets">
+          <div class="wf-story-bullet-item">
+            <div class="wf-bullet-icon">🛡️</div>
+            <div>
+              <h4>Zero Flashpoint Fire Risk</h4>
+              <p>100% sealed polymer housing stays cool to the touch. No fragile glass that shatters if splashed or brushed by dry straw.</p>
+            </div>
+          </div>
+          <div class="wf-story-bullet-item">
+            <div class="wf-bullet-icon">💨</div>
+            <div>
+              <h4>Gentle Convection Air Circulation</h4>
+              <p>Distributes comfortable, even warmth across your brooder box to eliminate fatal cold spots and chick crowding.</p>
+            </div>
+          </div>
+          <div class="wf-story-bullet-item">
+            <div class="wf-bullet-icon">🌙</div>
+            <div>
+              <h4>Soft Ambient Glow (Stress-Free Flock)</h4>
+              <p>Replaces blinding red glow with soothing ambient light, preserving natural circadian sleep cycles and preventing feather pecking.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3B: Simple Setup (01, 02, 03 Numbered Steps) -->
+  <section class="wf-section wf-steps-section">
+    <div class="wf-container">
+      <div class="wf-section-header">
+        <span class="wf-eyebrow-pill">EASY 3-STEP SETUP</span>
+        <h2 class="wf-section-heading">Simple Setup. Easy Temperature Adjustments.</h2>
+        <div class="wf-section-subtitle">Get your flock set up in less than 2 minutes. No tools, wiring, or contractor required.</div>
+      </div>
+
+      <div class="wf-steps-grid">
+        <div class="wf-step-card">
+          <div class="wf-step-badge">01</div>
+          <div class="wf-step-icon">🔌</div>
+          <h3>Screw &amp; Mount</h3>
+          <p>Screw into any standard E26/E27 household fixture or use the included heavy-duty US toggle switch cord to hang anywhere.</p>
+        </div>
+
+        <div class="wf-step-card">
+          <div class="wf-step-badge">02</div>
+          <div class="wf-step-icon">⚙️</div>
+          <h3>Set Ideal Warmth</h3>
+          <p>Use the digital push-buttons to select your desired target temperature between 82°F–95°F (28°C–35°C) with precision accuracy.</p>
+        </div>
+
+        <div class="wf-step-card">
+          <div class="wf-step-badge">03</div>
+          <div class="wf-step-icon">🌡️</div>
+          <h3>Monitor Real-Time</h3>
+          <p>Rest easy with the crisp LED display showing real-time warmth. The lamp auto-shuts off when warm and restarts when temps drop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- SECTION: Live Video Demonstration (Placed directly before Specs section) -->
+  <section class="wf-section wf-video-demo-section" id="wf-video-demo">
+    <div class="wf-container">
+      <div class="wf-video-card">
+        <div class="wf-video-grid">
+          <div class="wf-video-col">
+            <div class="wf-video-wrapper">
+              <video 
+                id="wf-demo-video"
+                src="{{ section.settings.demo_video_url | default: 'https://cdn.shopify.com/videos/c/o/v/36e6827c74c8462a97206412365d61b5.mp4' }}" 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                controls
+                preload="metadata"
+                poster="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-livestock-warmth.jpg?v=1792853604"
+                class="wf-video-element">
+              </video>
+              <div class="wf-video-tag">
+                <span class="wf-video-pulse"></span>
+                <span>REAL HOMESTEAD DEMO</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="wf-video-content-col">
+            <span class="wf-eyebrow-pill">SEE IT IN ACTION &bull; WINTER COOP DEMO</span>
+            <h2 class="wf-video-title">Instant Winter Warmth for Your Little Ones</h2>
+            <div class="wf-video-desc">
+              <p>
+                When freezing winter chills sweep into your barn or shed, newborn chicks, ducklings, and small livestock are at their most vulnerable. As demonstrated in this real homestead walkthrough, dangerous old-school 250W clamp heat lamps pose severe fire hazards on dry hay and create aggressive nocturnal glare.
+              </p>
+              <p>
+                With the <strong>Zavelyn Intelligent Livestock Heating Lamp</strong>, setting up safe, lifesaving warmth takes under 60 seconds. Simply screw into any standard socket or hang with the included heavy-duty switch cord, dial in your target temperature on the digital LED thermostat, and watch your baby flock gather comfortably under gentle, even warmth.
+              </p>
+            </div>
+            
+            <div class="wf-video-highlights">
+              <div class="wf-video-highlight-item">
+                <span class="wf-vh-icon">❄️</span>
+                <div>
+                  <strong>Freeze-Proof Protection</strong>
+                  <span>Maintains exact brooder warmth even in harsh sub-zero temperatures</span>
+                </div>
+              </div>
+              <div class="wf-video-highlight-item">
+                <span class="wf-vh-icon">⏱️</span>
+                <div>
+                  <strong>Zero-Tool 60s Setup</strong>
+                  <span>Standard E26/E27 screw base with plug-and-play toggle switch cord</span>
+                </div>
+              </div>
+              <div class="wf-video-highlight-item">
+                <span class="wf-vh-icon">🐣</span>
+                <div>
+                  <strong>Gentle Ambient Glow</strong>
+                  <span>Zero blinding red glare, preventing nocturnal stress &amp; feather pecking</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="wf-video-cta-wrap">
+              <a href="#fn-offer" class="wf-video-jump-btn" onclick="document.querySelector('.wf-buybox-col').scrollIntoView({behavior: 'smooth'}); return false;">
+                CLAIM 50% OFF TODAY &bull; SHOP PACKAGES &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 3C: Specifications at a Glance -->
+  <section class="wf-section wf-specs-section">
+    <div class="wf-container">
+      <div class="wf-section-header">
+        <h2 class="wf-section-heading">Product Specifications at a Glance</h2>
+        <div class="wf-section-subtitle">Engineered for commercial-grade durability and complete homesteader safety.</div>
+      </div>
+
+      <div class="wf-specs-grid">
+        <div class="wf-spec-card">
+          <span class="wf-spec-label">Base Type</span>
+          <span class="wf-spec-value">Standard E26 / E27 Screw-In</span>
+        </div>
+        <div class="wf-spec-card">
+          <span class="wf-spec-label">Operating Voltage</span>
+          <span class="wf-spec-value">AC 110V - 220V (Universal)</span>
+        </div>
+        <div class="wf-spec-card">
+          <span class="wf-spec-label">Temperature Range</span>
+          <span class="wf-spec-value">28°C - 35°C (82°F - 95°F)</span>
+        </div>
+        <div class="wf-spec-card">
+          <span class="wf-spec-label">Digital Display</span>
+          <span class="wf-spec-value">High-Definition Real-Time LED</span>
+        </div>
+        <div class="wf-spec-card">
+          <span class="wf-spec-label">Shell Construction</span>
+          <span class="wf-spec-value">Fireproof High-Density Polymer</span>
+        </div>
+        <div class="wf-spec-card">
+          <span class="wf-spec-label">Switch Cord</span>
+          <span class="wf-spec-value">Heavy-Duty US Plug Cord Included</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3D: Trust & Purchase Confidence Badges -->
+  <section class="wf-section wf-trust-cards-section">
+    <div class="wf-container">
+      <div class="wf-trust-cards-grid">
+        <div class="wf-tc-card">
+          <div class="wf-tc-icon">🚀</div>
+          <h3>Fast US Dispatch</h3>
+          <p>Orders are dispatched directly from our domestic warehouse within 24–48 hours with door-to-door tracking.</p>
+        </div>
+        <div class="wf-tc-card">
+          <div class="wf-tc-icon">🛡️</div>
+          <h3>30-Day Money-Back Guarantee</h3>
+          <p>Try Zavelyn risk-free in your coop or brooder. If you or your flock aren't 100% satisfied, get a prompt full refund.</p>
+        </div>
+        <div class="wf-tc-card">
+          <div class="wf-tc-icon">💬</div>
+          <h3>24/7 Dedicated Support</h3>
+          <p>Real farm care and homesteader customer assistance whenever you have setup questions or need help.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Comparison Section (Willa Farm Style Table) -->
+  <section class="wf-section wf-comparison-section">
+    <div class="wf-container">
+      <div class="wf-section-header">
+        <h2 class="wf-section-heading">Zavelyn vs. Traditional 250W Heat Lamps</h2>
+        <div class="wf-section-subtitle">See why modern poultry owners are ditching dangerous old-school red heat lamps.</div>
+      </div>
+
+      <div class="wf-table-card">
+        <table class="wf-comparison-table">
+          <thead>
+            <tr>
+              <th class="wf-col-feat">Key Feature</th>
+              <th class="wf-col-hero">Zavelyn Intelligent Lamp</th>
+              <th class="wf-col-other">Traditional 250W Heat Lamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% assign comp_count = 0 %}
+            {% for block in section.blocks %}
+              {% if block.type == 'comparison_row' %}
+                {% assign comp_count = comp_count | plus: 1 %}
+                <tr {{ block.shopify_attributes }}>
+                  <td class="wf-td-feat">{{ block.settings.feature }}</td>
+                  <td class="wf-td-hero"><span class="wf-chk">✔</span> {{ block.settings.saker_val }}</td>
+                  <td class="wf-td-other"><span class="wf-cross">✖</span> {{ block.settings.generic_val }}</td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+            {% if comp_count == 0 %}
+              <tr>
+                <td class="wf-td-feat">Fire Hazard Safety</td>
+                <td class="wf-td-hero"><span class="wf-chk">✔</span> 100% Fireproof Sealed Polymer</td>
+                <td class="wf-td-other"><span class="wf-cross">✖</span> High Risk (400°F surface burns straw)</td>
+              </tr>
+              <tr>
+                <td class="wf-td-feat">Temperature Control</td>
+                <td class="wf-td-hero"><span class="wf-chk">✔</span> Automatic Smart Thermostat</td>
+                <td class="wf-td-other"><span class="wf-cross">✖</span> None (Runs full blast 24/7)</td>
+              </tr>
+              <tr>
+                <td class="wf-td-feat">Circadian Sleep Health</td>
+                <td class="wf-td-hero"><span class="wf-chk">✔</span> Gentle Low-Lux Ambient Glow</td>
+                <td class="wf-td-other"><span class="wf-cross">✖</span> Blinding Red Glare (Causes pecking)</td>
+              </tr>
+              <tr>
+                <td class="wf-td-feat">Water Splash Durability</td>
+                <td class="wf-td-hero"><span class="wf-chk">✔</span> Splash-Proof Sealed Casing</td>
+                <td class="wf-td-other"><span class="wf-cross">✖</span> Fragile Glass Shatters Instantly</td>
+              </tr>
+              <tr>
+                <td class="wf-td-feat">Electricity Cost</td>
+                <td class="wf-td-hero"><span class="wf-chk">✔</span> Auto-cycles off (Saves up to 60%)</td>
+                <td class="wf-td-other"><span class="wf-cross">✖</span> High 250W continuous draw</td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Frequently Asked Questions (FAQ) (Collapsible Accordion) -->
+  <section class="wf-section wf-faq-section">
+    <div class="wf-container wf-faq-container">
+      <div class="wf-section-header">
+        <h2 class="wf-section-heading">Frequently Asked Questions</h2>
+        <div class="wf-section-subtitle">Everything you need to know about setting up and running your Zavelyn lamp.</div>
+      </div>
+
+      <div class="wf-faq-list">
+        {% assign faq_count = 0 %}
+        {% for block in section.blocks %}
+          {% if block.type == 'faq_item' %}
+            {% assign faq_count = faq_count | plus: 1 %}
+            <details class="wf-faq-item" {{ block.shopify_attributes }}>
+              <summary class="wf-faq-question">
+                <span>{{ block.settings.question }}</span>
+                <span class="wf-faq-chevron">+</span>
+              </summary>
+              <div class="wf-faq-answer">
+                <p>{{ block.settings.answer }}</p>
+              </div>
+            </details>
+          {% endif %}
+        {% endfor %}
+        {% if faq_count == 0 %}
+          <details class="wf-faq-item">
+            <summary class="wf-faq-question">
+              <span>Is this heating lamp safe to use around dry hay and pine shavings?</span>
+              <span class="wf-faq-chevron">+</span>
+            </summary>
+            <div class="wf-faq-answer">
+              <p>Yes, 100%! Unlike traditional glass bulbs that reach 400°F+ on the exterior, the Zavelyn Livestock Lamp features a sealed, fireproof polymer housing that stays cool to the touch. Even if shavings or loose feathers contact the shell, there are no exposed hot filaments or ignition flashpoints.</p>
+            </div>
+          </details>
+
+          <details class="wf-faq-item">
+            <summary class="wf-faq-question">
+              <span>How does the automatic temperature control work?</span>
+              <span class="wf-faq-chevron">+</span>
+            </summary>
+            <div class="wf-faq-answer">
+              <p>The lamp features an integrated digital sensor and microcontroller. Simply set your desired temperature (28°C to 35°C / 82°F to 95°F) using the + and - buttons. The heating element automatically suspends heat once the ambient temperature reaches your target and automatically kicks back on when temps dip.</p>
+            </div>
+          </details>
+
+          <details class="wf-faq-item">
+            <summary class="wf-faq-question">
+              <span>Does it screw into a regular light socket?</span>
+              <span class="wf-faq-chevron">+</span>
+            </summary>
+            <div class="wf-faq-answer">
+              <p>Yes. It uses a standard E26 / E27 threaded screw base. Each package also includes a heavy-duty US standard switch cord with a toggle switch for convenient placement anywhere in your coop, brooder, or barn.</p>
+            </div>
+          </details>
+
+          <details class="wf-faq-item">
+            <summary class="wf-faq-question">
+              <span>What is your return and guarantee policy?</span>
+              <span class="wf-faq-chevron">+</span>
+            </summary>
+            <div class="wf-faq-answer">
+              <p>Every order comes with our 90-Day 100% Satisfaction Money-Back Guarantee. If for any reason you or your flock are not thrilled with its performance, simply contact our support team for a prompt refund.</p>
+            </div>
+          </details>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- SHIPPING & DELIVERY GUARANTEE SECTION (Directly before Customer Reviews) -->
+  <section class="wf-section wf-shipping-section">
+    <div class="wf-container">
+      <div class="wf-shipping-trust-card">
+        <div class="wf-shipping-badge-pill">
+          <span class="wf-shipping-pill-icon">🚚</span>
+          <span>FAST &amp; INSURED WORLDWIDE EXPRESS SHIPPING</span>
+        </div>
+        <h3 class="wf-shipping-card-heading">Doorstep Delivery Guarantee &amp; Real-Time Tracking</h3>
+        
+        <div class="wf-shipping-card-body">
+          <div class="wf-shipping-media-col">
+            <div class="wf-shipping-img-frame top-frame">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/5555.webp?v=1792856415" alt="FedEx Courier Dispatch and Safe Package Handling" loading="lazy">
+              <div class="wf-shipping-img-tag">⚡ Handled with Care &bull; Direct Carrier Dispatch</div>
+            </div>
+            <div class="wf-shipping-img-frame bottom-frame">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/44444.webp?v=1792856415" alt="Express Worldwide Delivery &amp; Tracked Shipping" loading="lazy">
+            </div>
+          </div>
+          
+          <div class="wf-shipping-text-col">
+            <div class="wf-shipping-summary-text">
+              <p>
+                Every Zavelyn order is meticulously inspected, cushioned in heavy-duty protective packaging, and dispatched directly from our regional fulfillment centers within <strong>24–48 business hours</strong>. We partner directly with trusted premier carriers including <strong>FedEx, USPS, and DHL Express</strong> to guarantee rapid, dependable, door-to-door transit across the United States and worldwide.
+              </p>
+              <p>
+                The moment your shipment leaves our facility, you will automatically receive an instant tracking link via email and SMS with live, step-by-step delivery updates. Backed by our <strong>100% In-Transit Protection Guarantee</strong> — if your parcel experiences any transit delay or packaging damage, our dedicated 24/7 support team will arrange an immediate zero-cost replacement without delay.
+              </p>
+            </div>
+            
+            <div class="wf-shipping-features-grid">
+              <div class="wf-shipping-feature-box">
+                <span class="wf-feat-icon">⏱️</span>
+                <div>
+                  <strong>24–48h Dispatch</strong>
+                  <span>Swift domestic fulfillment from regional hubs</span>
+                </div>
+              </div>
+              <div class="wf-shipping-feature-box">
+                <span class="wf-feat-icon">📦</span>
+                <div>
+                  <strong>100% Insured Transit</strong>
+                  <span>Full coverage against lost or transit-damaged items</span>
+                </div>
+              </div>
+              <div class="wf-shipping-feature-box">
+                <span class="wf-feat-icon">🔍</span>
+                <div>
+                  <strong>Live Real-Time Tracking</strong>
+                  <span>Doorstep progress notifications via SMS &amp; email</span>
+                </div>
+              </div>
+              <div class="wf-shipping-feature-box">
+                <span class="wf-feat-icon">🛡️</span>
+                <div>
+                  <strong>90-Day Money-Back</strong>
+                  <span>Total risk-free satisfaction guarantee on all orders</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 6: Customer Reviews (Real Feedback - After FAQ) -->
+  <section class="wf-section wf-reviews-section">
+    <div class="wf-container">
+      <div class="wf-section-header">
+        <h2 class="wf-section-heading">What Homesteaders &amp; Farmers Are Saying</h2>
+        <div class="wf-section-subtitle">
+          <span class="wf-stars">{% render 'trustpilot-stars', width: 96, height: 18 %}</span> 4.9 / 5.0 Rating (1,480+ Verified Homesteader Reviews)
+        </div>
+      </div>
+
+      <div class="wf-reviews-grid">
+        {% assign rev_count = 0 %}
+        {% for block in section.blocks %}
+          {% if block.type == 'review_card' %}
+            {% assign rev_count = rev_count | plus: 1 %}
+            <article class="wf-review-card" {{ block.shopify_attributes }}>
+              <div>
+                <div class="wf-rev-header">
+                  <div class="wf-rev-author-wrap">
+                    <span class="wf-rev-author">{{ block.settings.author }}</span>
+                    <span class="wf-rev-date">{{ block.settings.date | default: 'Verified Buyer' }}</span>
+                  </div>
+                  {% if block.settings.verified %}<span class="wf-rev-verified">✔ Verified Buyer</span>{% endif %}
+                </div>
+                <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+                <h4 class="wf-rev-headline">"{{ block.settings.headline }}"</h4>
+                <p class="wf-rev-body">{{ block.settings.review }}</p>
+              </div>
+              {% if block.settings.photo_url != blank %}
+                <div class="wf-rev-photo">
+                  <img src="{{ block.settings.photo_url }}" alt="{{ block.settings.author }} Review Photo" loading="lazy">
+                </div>
+              {% elsif block.settings.photo != blank %}
+                <div class="wf-rev-photo">
+                  <img src="{{ block.settings.photo | img_url: '600x' }}" alt="{{ block.settings.author }} Review Photo" loading="lazy">
+                </div>
+              {% endif %}
+            </article>
+          {% endif %}
+        {% endfor %}
+        {% if rev_count == 0 %}
+
+          <article class="wf-review-card">
+            <div>
+              <div class="wf-rev-header">
+                <div class="wf-rev-author-wrap">
+                  <span class="wf-rev-author">Kimberly D.</span>
+                  <span class="wf-rev-date">Verified 3 days ago</span>
+                </div>
+                <span class="wf-rev-verified">✔ Verified Buyer</span>
+              </div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+              <h4 class="wf-rev-headline">"First winter season with 100% chick survival rate!"</h4>
+              <p class="wf-rev-body">I installed this heating lamp in our brooder shed for the winter hatch. With it, all 24 chicks are warm, active, and thriving. The digital temperature display makes it effortless to monitor, and I love that it shuts off automatically once the target 90°F warmth is reached.</p>
+            </div>
+            
+            <div class="wf-rev-photo">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-livestock-warmth.jpg?v=1792853604" alt="Kimberly D. Customer Review Photo" loading="lazy">
+            </div>
+          </article>
+          <article class="wf-review-card">
+            <div>
+              <div class="wf-rev-header">
+                <div class="wf-rev-author-wrap">
+                  <span class="wf-rev-author">Marcus V.</span>
+                  <span class="wf-rev-date">Verified 5 days ago</span>
+                </div>
+                <span class="wf-rev-verified">✔ Verified Buyer</span>
+              </div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+              <h4 class="wf-rev-headline">"No more sleepless nights worrying about coop fires"</h4>
+              <p class="wf-rev-body">Had a terrifying scare last winter when an old clamp heat lamp slipped into dry pine shavings. Thank God I caught it in time. Swapped everything to Zavelyn immediately. Cool to the touch exterior, zero fire risk, and the chicks sleep peacefully without pecking.</p>
+            </div>
+            
+            <div class="wf-rev-photo">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-fireproof-safety.jpg?v=1792853601" alt="Marcus V. Customer Review Photo" loading="lazy">
+            </div>
+          </article>
+          <article class="wf-review-card">
+            <div>
+              <div class="wf-rev-header">
+                <div class="wf-rev-author-wrap">
+                  <span class="wf-rev-author">Sarah L.</span>
+                  <span class="wf-rev-date">Verified 1 week ago</span>
+                </div>
+                <span class="wf-rev-verified">✔ Verified Buyer</span>
+              </div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+              <h4 class="wf-rev-headline">"The built-in digital thermostat is worth its weight in gold"</h4>
+              <p class="wf-rev-body">I set it to 32°C (90°F) and go to bed with complete peace of mind. No more getting up at 2 AM in freezing weather to check the brooder. It maintains the heat accurately within 1 degree. Highly recommend the 2-pack or 3-pack!</p>
+            </div>
+            
+            <div class="wf-rev-photo">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-card-temp.jpg?v=1792853606" alt="Sarah L. Customer Review Photo" loading="lazy">
+            </div>
+          </article>
+          <article class="wf-review-card">
+            <div>
+              <div class="wf-rev-header">
+                <div class="wf-rev-author-wrap">
+                  <span class="wf-rev-author">Jason B.</span>
+                  <span class="wf-rev-date">Verified 1 week ago</span>
+                </div>
+                <span class="wf-rev-verified">✔ Verified Buyer</span>
+              </div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+              <h4 class="wf-rev-headline">"Great for ducklings and small animals"</h4>
+              <p class="wf-rev-body">Raised two batches of ducklings under this lamp this year. The gentle ambient light lets them sleep normally without the blinding red glare that causes aggression and cannibalism. Super simple screw-in installation and excellent build quality.</p>
+            </div>
+            
+            <div class="wf-rev-photo">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-card-setup.jpg?v=1792853608" alt="Jason B. Customer Review Photo" loading="lazy">
+            </div>
+          </article>
+          <article class="wf-review-card">
+            <div>
+              <div class="wf-rev-header">
+                <div class="wf-rev-author-wrap">
+                  <span class="wf-rev-author">Tyler R.</span>
+                  <span class="wf-rev-date">Verified 2 weeks ago</span>
+                </div>
+                <span class="wf-rev-verified">✔ Verified Buyer</span>
+              </div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+              <h4 class="wf-rev-headline">"Unbelievable difference in our brooder barn"</h4>
+              <p class="wf-rev-body">Standard heat bulbs keep burning out or get too hot in the center. The Zavelyn spreads an even, gentle thermal cone. The heavy-duty switch cord made hanging it over our pen extremely easy and secure.</p>
+            </div>
+            
+            <div class="wf-rev-photo">
+              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-card-monitor.jpg?v=1792853607" alt="Tyler R. Customer Review Photo" loading="lazy">
+            </div>
+          </article>
+          <article class="wf-review-card">
+            <div>
+              <div class="wf-rev-header">
+                <div class="wf-rev-author-wrap">
+                  <span class="wf-rev-author">Eleanor P.</span>
+                  <span class="wf-rev-date">Verified 2 weeks ago</span>
+                </div>
+                <span class="wf-rev-verified">✔ Verified Buyer</span>
+              </div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+              <h4 class="wf-rev-headline">"Saved our baby chicks during an unexpected frost"</h4>
+              <p class="wf-rev-body">Temperatures dropped to 18°F outside overnight. This lamp held the brooder temperature rock solid. The chicks were huddled contently right under the warmth, not panting and not shivering. An absolute must-have homestead tool.</p>
+            </div>
+            
+          </article>
+          <article class="wf-review-card">
+            <div>
+              <div class="wf-rev-header">
+                <div class="wf-rev-author-wrap">
+                  <span class="wf-rev-author">Brandon K.</span>
+                  <span class="wf-rev-date">Verified 3 weeks ago</span>
+                </div>
+                <span class="wf-rev-verified">✔ Verified Buyer</span>
+              </div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+              <h4 class="wf-rev-headline">"Replaced 4 old red clamp lamps — energy bill dropped noticeably"</h4>
+              <p class="wf-rev-body">Because it only draws power when heating and auto-cycles off, our barn electricity bill dropped by over $40 in the first month alone. Plus, my wife doesn't worry every night about the barn burning down.</p>
+            </div>
+            
+          </article>
+          <article class="wf-review-card">
+            <div>
+              <div class="wf-rev-header">
+                <div class="wf-rev-author-wrap">
+                  <span class="wf-rev-author">Hannah & David M.</span>
+                  <span class="wf-rev-date">Verified 3 weeks ago</span>
+                </div>
+                <span class="wf-rev-verified">✔ Verified Buyer</span>
+              </div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+              <h4 class="wf-rev-headline">"Perfect for our newborn goat kids & nursery pen"</h4>
+              <p class="wf-rev-body">We used this in our kidding stall when our Nigerian Dwarf had triplets in mid-January. It gave them a warm, safe corner to dry off and sleep without being so hot that they couldn't touch it. Sturdy build and very well sealed against dust.</p>
+            </div>
+            
+          </article>
+          <article class="wf-review-card">
+            <div>
+              <div class="wf-rev-header">
+                <div class="wf-rev-author-wrap">
+                  <span class="wf-rev-author">Rachel T.</span>
+                  <span class="wf-rev-date">Verified 1 month ago</span>
+                </div>
+                <span class="wf-rev-verified">✔ Verified Buyer</span>
+              </div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+              <h4 class="wf-rev-headline">"Soft amber glow eliminates pecking completely"</h4>
+              <p class="wf-rev-body">With traditional 250W red heat lamps, our chicks were always hyperactive and picking at each other's wings. Under this gentle soft glow, they settled into a natural sleep cycle within 24 hours. They look healthier and feathering out much better.</p>
+            </div>
+            
+          </article>
+          <article class="wf-review-card">
+            <div>
+              <div class="wf-rev-header">
+                <div class="wf-rev-author-wrap">
+                  <span class="wf-rev-author">Wayne S.</span>
+                  <span class="wf-rev-date">Verified 1 month ago</span>
+                </div>
+                <span class="wf-rev-verified">✔ Verified Buyer</span>
+              </div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+              <h4 class="wf-rev-headline">"Fast FedEx delivery, well packaged, ordered 3 more"</h4>
+              <p class="wf-rev-body">Ordered the 3-Pack with switch cords. FedEx brought them in 3 business days in heavy duty bubble protection. Screwed them right into our fixtures, set the thermostat, and walked away. Outstanding product and service.</p>
+            </div>
+            
+          </article>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY BUY BAR (Mobile CRO) -->
+  <div class="wf-sticky-buy-bar" id="wf-sticky-bar" style="display: none !important;">
+    <div class="wf-sticky-content">
+      <div class="wf-sticky-thumb">
+        <img id="wf-sticky-img" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-3pack-bundle.jpg?v=1792853189" alt="Zavelyn Livestock Lamp" referrerpolicy="no-referrer">
+      </div>
+      <div class="wf-sticky-meta">
+        <div class="wf-sticky-title">Zavelyn Livestock Lamp</div>
+        <div class="wf-sticky-price" id="wf-sticky-price-val">$119.99 (3 Pack)</div>
+      </div>
+    </div>
+    <button type="button" class="wf-sticky-btn" onclick="document.querySelector('#fn-offer').scrollIntoView({behavior:'smooth'})">
+      ORDER NOW ➔
+    </button>
+  </div>
+</div>
+
+<style>
+  :root {
+    --wf-ink: #3b2b2f;
+    --wf-muted: #75696c;
+    --wf-border: #e6ded6;
+    --wf-accent: #8a2c13;
+    --wf-accent-hover: #73230e;
+    --wf-accent-light: #fbebe6;
+    --wf-bg-page: #faf7f4;
+    --wf-card-bg: #ffffff;
+    --wf-card-radius: 18px;
+    --wf-font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    --wf-font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .zavelyn-pdp-wrapper {
+    font-family: var(--wf-font-body);
+    color: var(--wf-ink);
+    background-color: var(--wf-bg-page);
+    line-height: 1.5;
+    padding-bottom: 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wf-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Top announcement strip */
+  .wf-top-strip {
+    background: var(--wf-ink);
+    color: #f7f3e6;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 9px 0;
+    letter-spacing: 0.3px;
+  }
+  .wf-strip-inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Section headers */
+  .wf-section {
+    padding: 48px 0;
+  }
+  .wf-section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 36px auto;
+  }
+  .wf-eyebrow-pill {
+    display: inline-block;
+    background: var(--wf-accent-light);
+    color: var(--wf-accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .wf-section-heading {
+    font-family: var(--wf-font-heading);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    line-height: 1.25;
+    margin: 0 0 10px 0;
+  }
+  .wf-section-subtitle {
+    font-size: 15px;
+    color: var(--wf-muted);
+    line-height: 1.5;
+  }
+
+  /* SECTION 1: Hero Buybox */
+  .wf-hero-buybox {
+    padding-top: 24px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--wf-border);
+  }
+  .wf-hero-grid {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  .wf-gallery-col {
+    flex: 1 1 54%;
+    position: sticky;
+    top: 90px;
+  }
+  .wf-buybox-col {
+    flex: 1 1 46%;
+  }
+
+  
+  /* Gallery Arrows & Navigation */
+  .wf-gallery-main {
+    cursor: pointer;
+  }
+  .wf-gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: #231f20;
+    z-index: 4;
+    transition: all 0.2s ease;
+    user-select: none;
+    padding: 0 0 2px 0;
+  }
+  .wf-gallery-arrow:hover {
+    background: #ffffff;
+    color: #8a2c13;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+  .wf-gallery-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+  .wf-gallery-arrow.prev {
+    left: 10px;
+  }
+  .wf-gallery-arrow.next {
+    right: 10px;
+  }
+  .wf-thumb {
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all 0.18s ease;
+  }
+  .wf-thumb:hover {
+    opacity: 0.9;
+  }
+  .wf-thumb.active {
+    border-color: #8a2c13 !important;
+    box-shadow: 0 0 0 1px #8a2c13 !important;
+  }
+
+  .wf-gallery-main {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: var(--wf-card-radius);
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    box-shadow: 0 4px 20px rgba(59, 43, 47, 0.04);
+    margin-bottom: 12px;
+  }
+  .wf-gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.25s ease;
+  }
+  .wf-gallery-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--wf-accent);
+    color: #ffffff;
+    font-family: var(--wf-font-heading);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 5px 12px;
+    border-radius: 6px;
+  }
+
+  .wf-thumbnail-strip {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+  }
+  .wf-thumb {
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    cursor: pointer;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+  .wf-thumb.active {
+    border-color: var(--wf-accent);
+    transform: scale(0.96);
+  }
+
+  .wf-benefits-card {
+    background: #fdfbf9;
+    border: 1px solid var(--wf-border);
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: 16px;
+  }
+  .wf-benefits-title {
+    font-family: var(--wf-font-heading);
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .wf-benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .wf-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #4a3e41;
+    line-height: 1.4;
+  }
+  .wf-check-icon {
+    color: #219662;
+    font-weight: 800;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* Header group in buybox */
+  .wf-review-stars {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .wf-stars {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+  }
+  .wf-review-count {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--wf-muted);
+  }
+  .wf-product-title {
+    font-family: var(--wf-font-heading);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    line-height: 1.25;
+    margin: 0 0 12px 0;
+  }
+  .wf-product-desc {
+    font-size: 14px;
+    color: var(--wf-muted);
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+  }
+
+  /* Bundle selector */
+  .wf-bundle-selector {
+    margin-bottom: 20px;
+  }
+  .wf-selector-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--wf-font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .wf-savings-pill {
+    background: var(--wf-accent-light);
+    color: var(--wf-accent);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 9999px;
+  }
+
+  .wf-bundles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .wf-bundle-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    border-radius: 14px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .wf-bundle-card:hover {
+    border-color: #c9bfb6;
+  }
+  .wf-bundle-card.selected {
+    border: 2px solid var(--wf-accent);
+    background: #fffdfb;
+    box-shadow: 0 4px 16px rgba(138, 44, 19, 0.08);
+  }
+
+  .wf-bundle-badge {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: var(--wf-accent);
+    color: #ffffff;
+    font-family: var(--wf-font-heading);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 9999px;
+  }
+  .wf-bundle-badge.secondary {
+    background: var(--wf-accent-light);
+    color: var(--wf-accent);
+  }
+
+  .wf-bundle-inner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .wf-radio-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #c9bfb6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: border-color 0.2s;
+  }
+  .wf-bundle-card.selected .wf-radio-circle {
+    border-color: var(--wf-accent);
+  }
+  .wf-radio-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: transparent;
+    transition: background 0.2s;
+  }
+  .wf-bundle-card.selected .wf-radio-dot {
+    background: var(--wf-accent);
+  }
+
+  .wf-bundle-thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #faf7f4;
+    flex-shrink: 0;
+  }
+  .wf-bundle-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .wf-bundle-details {
+    flex-grow: 1;
+  }
+  .wf-bundle-name {
+    font-family: var(--wf-font-heading);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--wf-ink);
+    margin-bottom: 2px;
+  }
+  .wf-bundle-includes {
+    font-size: 12px;
+    color: var(--wf-muted);
+    line-height: 1.35;
+  }
+
+  .wf-bundle-pricing {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .wf-price-compare {
+    display: block;
+    font-size: 13px;
+    color: #a89f9d;
+    text-decoration: line-through;
+  }
+  .wf-price-current {
+    font-family: var(--wf-font-heading);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--wf-accent);
+  }
+
+  /* Quantity and CTA */
+  .wf-qty-and-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    background: #f7f3ee;
+    border-radius: 12px;
+  }
+  .wf-qty-control {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .wf-qty-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--wf-ink);
+    transition: background 0.15s;
+  }
+  .wf-qty-btn:hover {
+    background: #f1ede8;
+  }
+  #wf-qty-input {
+    width: 38px;
+    height: 32px;
+    border: none;
+    text-align: center;
+    font-family: var(--wf-font-heading);
+    font-weight: 700;
+    font-size: 14px;
+    background: transparent;
+  }
+  .wf-total-block {
+    text-align: right;
+  }
+  .wf-total-label {
+    font-size: 12px;
+    color: var(--wf-muted);
+    margin-right: 6px;
+  }
+  .wf-total-price {
+    font-family: var(--wf-font-heading);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--wf-ink);
+  }
+
+  .wf-atc-button {
+    width: 100%;
+    background: var(--wf-accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    padding: 16px 24px;
+    font-family: var(--wf-font-heading);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 6px 20px rgba(138, 44, 19, 0.25);
+    transition: all 0.2s ease;
+  }
+  
+  .wf-shopnow-button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 16px 28px;
+    background: #1f1b1c;
+    color: #ffffff;
+    font-family: var(--wf-font-heading);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 14px rgba(31, 27, 28, 0.2);
+    transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .wf-shopnow-button:hover {
+    background: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  }
+  .wf-shopnow-button:active {
+    transform: translateY(0);
+  }
+  .wf-shopnow-arrow {
+    font-size: 16px;
+    transition: transform 0.2s ease;
+  }
+  .wf-shopnow-button:hover .wf-shopnow-arrow {
+    transform: scale(1.2);
+  }
+
+  .wf-atc-button:hover {
+    background: var(--wf-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(138, 44, 19, 0.3);
+  }
+  .wf-atc-button:active {
+    transform: translateY(1px);
+  }
+
+  .wf-trust-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--wf-border);
+    gap: 8px;
+  }
+  .wf-trust-badge-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--wf-muted);
+  }
+  .wf-tb-icon {
+    font-size: 14px;
+  }
+
+  .wf-payment-icons {
+    text-align: center;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--wf-border);
+  }
+  .wf-payment-secure-text {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--wf-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .wf-payment-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .wf-payment-item {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+  }
+  .wf-payment-svg {
+    width: 38px;
+    height: 24px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.15s ease;
+  }
+  .wf-payment-svg:hover {
+    transform: scale(1.08);
+  }
+
+  /* SECTION 2: 4-Column Feature Cards */
+  .wf-feature-grid-section {
+    background: var(--wf-bg-page);
+  }
+  .wf-cards-4col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .wf-card-item {
+    background: var(--wf-card-bg);
+    border: 1px solid var(--wf-border);
+    border-radius: var(--wf-card-radius);
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(59, 43, 47, 0.03);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .wf-card-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(59, 43, 47, 0.08);
+  }
+  .wf-card-media {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    background: #faf7f4;
+  }
+  .wf-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .wf-card-title {
+    font-family: var(--wf-font-heading);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--wf-ink);
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+  .wf-card-text {
+    font-size: 13px;
+    color: var(--wf-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* SECTION 3A: Split Storytelling */
+  .wf-split-story-section {
+    background: #ffffff;
+    border-top: 1px solid var(--wf-border);
+    border-bottom: 1px solid var(--wf-border);
+  }
+  .wf-split-grid {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  .wf-split-content {
+    flex: 1 1 50%;
+  }
+  .wf-split-media {
+    flex: 1 1 50%;
+    border-radius: var(--wf-card-radius);
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(59, 43, 47, 0.08);
+    border: 1px solid var(--wf-border);
+  }
+  .wf-split-media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  .wf-split-heading {
+    font-family: var(--wf-font-heading);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--wf-ink);
+    line-height: 1.25;
+    margin: 0 0 14px 0;
+  }
+  .wf-split-lead {
+    font-size: 15px;
+    color: var(--wf-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .wf-story-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .wf-story-bullet-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .wf-bullet-icon {
+    font-size: 24px;
+    line-height: 1;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+  .wf-story-bullet-item h4 {
+    font-family: var(--wf-font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--wf-ink);
+    margin: 0 0 4px 0;
+  }
+  .wf-story-bullet-item p {
+    font-size: 13px;
+    color: var(--wf-muted);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  /* SECTION 3B: Steps */
+  .wf-steps-section {
+    background: var(--wf-bg-page);
+  }
+  .wf-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .wf-step-card {
+    background: var(--wf-card-bg);
+    border: 1px solid var(--wf-border);
+    border-radius: var(--wf-card-radius);
+    padding: 28px 24px;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(59, 43, 47, 0.03);
+  }
+  .wf-step-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: var(--wf-font-heading);
+    font-size: 24px;
+    font-weight: 800;
+    color: rgba(138, 44, 19, 0.18);
+  }
+  .wf-step-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .wf-step-card h3 {
+    font-family: var(--wf-font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--wf-ink);
+    margin: 0 0 8px 0;
+  }
+  .wf-step-card p {
+    font-size: 13px;
+    color: var(--wf-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* SECTION 3C: Specs Grid */
+  .wf-specs-section {
+    background: #ffffff;
+    border-top: 1px solid var(--wf-border);
+    border-bottom: 1px solid var(--wf-border);
+  }
+  .wf-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .wf-spec-card {
+    background: #faf7f4;
+    border: 1px solid var(--wf-border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .wf-spec-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--wf-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .wf-spec-value {
+    font-family: var(--wf-font-heading);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--wf-ink);
+  }
+
+  /* SECTION 3D: Trust Cards */
+  .wf-trust-cards-section {
+    background: var(--wf-bg-page);
+    padding: 36px 0;
+  }
+  .wf-trust-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .wf-tc-card {
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+  }
+  .wf-tc-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  .wf-tc-card h3 {
+    font-family: var(--wf-font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--wf-ink);
+    margin: 0 0 6px 0;
+  }
+  .wf-tc-card p {
+    font-size: 13px;
+    color: var(--wf-muted);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  /* SECTION 4: Comparison Table */
+  .wf-comparison-section {
+    background: #ffffff;
+    border-top: 1px solid var(--wf-border);
+    border-bottom: 1px solid var(--wf-border);
+  }
+  .wf-table-card {
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    border-radius: var(--wf-card-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(59, 43, 47, 0.04);
+  }
+  .wf-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  .wf-comparison-table th {
+    padding: 18px 20px;
+    font-family: var(--wf-font-heading);
+    font-size: 14px;
+    font-weight: 800;
+  }
+  .wf-col-feat {
+    width: 34%;
+    background: #f7f3ee;
+    color: var(--wf-ink);
+  }
+  .wf-col-hero {
+    width: 36%;
+    background: var(--wf-accent-light);
+    color: var(--wf-accent);
+  }
+  .wf-col-other {
+    width: 30%;
+    background: #f1ede8;
+    color: var(--wf-muted);
+  }
+  .wf-comparison-table td {
+    padding: 16px 20px;
+    font-size: 13px;
+    border-top: 1px solid var(--wf-border);
+  }
+  .wf-td-feat {
+    font-weight: 600;
+    color: var(--wf-ink);
+    background: #fffdfb;
+  }
+  .wf-td-hero {
+    font-weight: 600;
+    color: var(--wf-ink);
+    background: #fffcfb;
+  }
+  .wf-td-other {
+    color: #8c8280;
+    background: #ffffff;
+  }
+  .wf-chk {
+    color: #219662;
+    font-weight: 800;
+    margin-right: 4px;
+  }
+  .wf-cross {
+    color: #dc2626;
+    font-weight: 800;
+    margin-right: 4px;
+  }
+
+  /* SECTION 5: Reviews */
+  .wf-reviews-section {
+    background: var(--wf-bg-page);
+  }
+  .wf-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .wf-review-card {
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    border-radius: var(--wf-card-radius);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(59, 43, 47, 0.03);
+  }
+  .wf-rev-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .wf-rev-author {
+    font-family: var(--wf-font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--wf-ink);
+  }
+  .wf-rev-verified {
+    font-size: 11px;
+    font-weight: 600;
+    color: #219662;
+  }
+  .wf-rev-stars {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+    margin-bottom: 8px;
+  }
+  .wf-rev-headline {
+    font-family: var(--wf-font-heading);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--wf-ink);
+    line-height: 1.35;
+    margin: 0 0 8px 0;
+  }
+  .wf-rev-body {
+    font-size: 13px;
+    color: var(--wf-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* SECTION 6: FAQ Accordion */
+  .wf-faq-section {
+    background: #ffffff;
+    border-top: 1px solid var(--wf-border);
+  }
+  .wf-faq-container {
+    max-width: 800px;
+  }
+  .wf-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .wf-faq-item {
+    background: #ffffff;
+    border: 1px solid var(--wf-border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  .wf-faq-item[open] {
+    border-color: #c9bfb6;
+    box-shadow: 0 4px 16px rgba(59, 43, 47, 0.04);
+  }
+  .wf-faq-question {
+    list-style: none;
+    padding: 18px 22px;
+    font-family: var(--wf-font-heading);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--wf-ink);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .wf-faq-question::-webkit-details-marker {
+    display: none;
+  }
+  .wf-faq-chevron {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--wf-muted);
+    transition: transform 0.2s ease;
+  }
+  .wf-faq-item[open] .wf-faq-chevron {
+    transform: rotate(45deg);
+  }
+  .wf-faq-answer {
+    padding: 0 22px 18px 22px;
+    font-size: 14px;
+    color: var(--wf-muted);
+    line-height: 1.55;
+  }
+  .wf-faq-answer p {
+    margin: 0;
+  }
+
+  /* STICKY BUY BAR (Mobile) */
+  .wf-sticky-buy-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid var(--wf-border);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    padding: 12px 16px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    transform: translateY(110%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .wf-sticky-buy-bar.visible {
+    transform: translateY(0);
+  }
+  .wf-sticky-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+  }
+  .wf-sticky-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #faf7f4;
+    flex-shrink: 0;
+  }
+  .wf-sticky-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .wf-sticky-meta {
+    overflow: hidden;
+  }
+  .wf-sticky-title {
+    font-family: var(--wf-font-heading);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--wf-ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .wf-sticky-price {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--wf-accent);
+  }
+  .wf-sticky-btn {
+    background: var(--wf-accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-family: var(--wf-font-heading);
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+  .desktop-only {
+    display: block;
+  }
+
+  /* RESPONSIVE BREAKPOINTS */
+  @media (max-width: 991px) {
+    .wf-hero-grid {
+      flex-direction: column;
+      gap: 24px;
+    }
+    .wf-gallery-col {
+      position: static;
+      width: 100%;
+    }
+    .wf-buybox-col {
+      width: 100%;
+    }
+    .wf-cards-4col {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .wf-split-grid {
+      flex-direction: column;
+      gap: 24px;
+    }
+    .wf-split-media {
+      order: -1;
+      width: 100%;
+    }
+    .wf-steps-grid {
+      grid-template-columns: 1fr;
+    }
+    .wf-specs-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .wf-trust-cards-grid {
+      grid-template-columns: 1fr;
+    }
+    .wf-reviews-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .desktop-only {
+      display: none !important;
+    }
+    .mobile-only {
+      display: block !important;
+    }
+    .wf-section {
+      padding: 32px 0;
+    }
+    .wf-section-heading {
+      font-size: 24px;
+    }
+    .wf-product-title {
+      font-size: 22px;
+    }
+    .wf-cards-4col {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .wf-specs-grid {
+      grid-template-columns: 1fr;
+    }
+    .wf-reviews-grid {
+      grid-template-columns: 1fr;
+    }
+    .wf-comparison-table th,
+    .wf-comparison-table td {
+      padding: 12px 10px;
+      font-size: 12px;
+    }
+    .wf-trust-row {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+    .wf-trust-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.25;
+      flex: 1 1 0;
+      text-align: left;
+    }
+    .wf-tb-icon {
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+  }
+
+  /* --- SHIPPING & DELIVERY SECTION STYLES --- */
+  .wf-shipping-section {
+    background: #faf7f4;
+    padding: 50px 0 30px 0;
+    border-top: 1px solid var(--wf-border, #e6ded6);
+  }
+  .wf-shipping-trust-card {
+    background: #ffffff;
+    border: 1px solid var(--wf-border, #e6ded6);
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 8px 30px rgba(59, 43, 47, 0.05);
+  }
+  .wf-shipping-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f4ece4;
+    color: #8a2c13;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .wf-shipping-card-heading {
+    font-family: var(--wf-font-heading, inherit);
+    font-size: 26px;
+    font-weight: 800;
+    color: #231f20;
+    margin: 0 0 24px 0;
+    line-height: 1.25;
+  }
+  .wf-shipping-card-body {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .wf-shipping-media-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .wf-shipping-img-frame {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #e7e4df;
+    background: #f7f5f2;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+  .wf-shipping-img-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  .wf-shipping-img-frame.top-frame img {
+    aspect-ratio: 16 / 10;
+  }
+  .wf-shipping-img-frame.bottom-frame img {
+    aspect-ratio: 21 / 9;
+  }
+  .wf-shipping-img-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(31, 27, 28, 0.85);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.3px;
+  }
+  .wf-shipping-summary-text p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: #4a3e3d;
+    margin: 0 0 14px 0;
+  }
+  .wf-shipping-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f0eae4;
+  }
+  .wf-shipping-feature-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #faf7f4;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #eee8e2;
+  }
+  .wf-feat-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+  .wf-shipping-feature-box strong {
+    display: block;
+    font-size: 13px;
+    color: #231f20;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .wf-shipping-feature-box span {
+    font-size: 11.5px;
+    color: #6d6260;
+    line-height: 1.4;
+  }
+
+  /* --- REVIEWS SECTION ENHANCEMENTS --- */
+  .wf-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+  .wf-review-card {
+    background: #ffffff;
+    border: 1px solid #e7e4df;
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 16px rgba(59, 43, 47, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .wf-review-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(59, 43, 47, 0.08);
+  }
+  .wf-rev-author-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .wf-rev-date {
+    font-size: 11px;
+    color: #8c827a;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+  .wf-rev-location {
+    font-size: 11px;
+    color: #a39992;
+    font-weight: 500;
+  }
+  .wf-rev-photo {
+    margin-top: 14px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #eae5e0;
+    background: #f7f5f2;
+    aspect-ratio: 4 / 3;
+    max-height: 190px;
+  }
+  .wf-rev-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .wf-rev-photo:hover img {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 991px) {
+    .wf-shipping-card-body {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .wf-reviews-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+  @media (max-width: 640px) {
+    .wf-shipping-trust-card {
+      padding: 22px 18px;
+    }
+    .wf-shipping-features-grid {
+      grid-template-columns: 1fr;
+    }
+    .wf-reviews-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+
+  /* --- VIDEO DEMONSTRATION SECTION --- */
+  .wf-video-demo-section {
+    background: #faf7f4;
+    padding: 60px 0;
+    border-top: 1px solid var(--wf-border, #e6ded6);
+  }
+  .wf-video-card {
+    background: #ffffff;
+    border: 1px solid var(--wf-border, #e6ded6);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(59, 43, 47, 0.05);
+  }
+  .wf-video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .wf-video-col {
+    position: relative;
+  }
+  .wf-video-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #111;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    aspect-ratio: 1 / 1;
+  }
+  .wf-video-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .wf-video-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(31, 27, 28, 0.88);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+  }
+  .wf-video-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e53935;
+    animation: wfPulse 1.8s infinite;
+  }
+  @keyframes wfPulse {
+    0% { transform: scale(0.95); opacity: 1; box-shadow: 0 0 0 0 rgba(229, 57, 53, 0.7); }
+    70% { transform: scale(1.1); opacity: 0.8; box-shadow: 0 0 0 8px rgba(229, 57, 53, 0); }
+    100% { transform: scale(0.95); opacity: 1; box-shadow: 0 0 0 0 rgba(229, 57, 53, 0); }
+  }
+  .wf-video-title {
+    font-family: var(--wf-font-heading, inherit);
+    font-size: 28px;
+    font-weight: 800;
+    color: #231f20;
+    line-height: 1.25;
+    margin: 12px 0 16px 0;
+  }
+  .wf-video-desc p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: #554a48;
+    margin: 0 0 14px 0;
+  }
+  .wf-video-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0 24px 0;
+    padding-top: 18px;
+    border-top: 1px solid #f0eae4;
+  }
+  .wf-video-highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .wf-vh-icon {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  .wf-video-highlight-item strong {
+    display: block;
+    font-size: 14px;
+    color: #231f20;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .wf-video-highlight-item span {
+    font-size: 12.5px;
+    color: #6d6260;
+    line-height: 1.4;
+  }
+  .wf-video-cta-wrap {
+    margin-top: 8px;
+  }
+  .wf-video-jump-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background: #8a2c13;
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    border-radius: 9999px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(138, 44, 19, 0.25);
+    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  }
+  .wf-video-jump-btn:hover {
+    background: #71230e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(138, 44, 19, 0.35);
+  }
+
+  @media (max-width: 991px) {
+    .wf-video-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .wf-video-card {
+      padding: 24px 20px;
+    }
+  }
+
+</style>
+
+<script>
+  let wfSelectedVariantId = '67953654300857'; // default 3 pack
+  let wfSelectedPrice = 119.99;
+  let wfSelectedOldPrice = 269.94;
+  let wfCurrentQty = 1;
+  let wfCurrentGalleryIndex = 0;
+
+  function normalizeUrl(url) {
+    if (!url) return '';
+    return url.split('?')[0].replace(/^https?:/, '').replace(/^\/\//, '/');
+  }
+
+  function switchWfGallery(src, clickedIndex) {
+    const main = document.getElementById('wf-main-img');
+    const thumbs = Array.from(document.querySelectorAll('.wf-thumb'));
+    
+    if (main && src) {
+      main.style.opacity = '0.35';
+      setTimeout(() => {
+        main.src = src;
+        main.style.opacity = '1';
+      }, 70);
+    }
+
+    const normTarget = normalizeUrl(src);
+
+    thumbs.forEach((t, i) => {
+      const normThumb = normalizeUrl(t.src || t.getAttribute('src'));
+      const isMatch = (clickedIndex !== undefined) 
+        ? (i === clickedIndex) 
+        : (normThumb === normTarget || (normTarget && normThumb && normTarget.includes(normThumb)) || (normTarget && normThumb && normThumb.includes(normTarget)));
+
+      if (isMatch) {
+        t.classList.add('active');
+        wfCurrentGalleryIndex = i;
+        try {
+          t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } catch (e) {}
+      } else {
+        t.classList.remove('active');
+      }
+    });
+  }
+
+  function skipWfGallery(direction) {
+    const thumbs = Array.from(document.querySelectorAll('.wf-thumb'));
+    if (!thumbs || thumbs.length === 0) return;
+    wfCurrentGalleryIndex = (wfCurrentGalleryIndex + direction + thumbs.length) % thumbs.length;
+    const targetThumb = thumbs[wfCurrentGalleryIndex];
+    if (targetThumb) {
+      const src = targetThumb.src || targetThumb.getAttribute('src');
+      switchWfGallery(src, wfCurrentGalleryIndex);
+    }
+  }
+
+  function selectWfBundle(variantId, price, oldPrice, elementId, imgSrc) {
+    wfSelectedVariantId = variantId;
+    wfSelectedPrice = parseFloat(price);
+    wfSelectedOldPrice = oldPrice ? parseFloat(oldPrice) : (wfSelectedPrice * 1.8);
+
+    document.querySelectorAll('.wf-bundle-card').forEach(c => c.classList.remove('selected'));
+    const el = document.getElementById(elementId);
+    if (el) el.classList.add('selected');
+
+    if (imgSrc) {
+      switchWfGallery(imgSrc);
+      const stickyImg = document.getElementById('wf-sticky-img');
+      if (stickyImg) stickyImg.src = imgSrc;
+    }
+
+    let titleText = '$119.99 (3 Pack)';
+    if (variantId === '67930179436729') titleText = '$89.99 (2 Pack)';
+    else if (variantId === '67930179403961') titleText = '$49.99 (1 Pack)';
+    const stickyPriceVal = document.getElementById('wf-sticky-price-val');
+    if (stickyPriceVal) stickyPriceVal.textContent = titleText;
+
+    updateWfTotal();
+  }
+
+  function adjustWfQty(delta) {
+    let input = document.getElementById('wf-qty-input');
+    if (!input) return;
+    let val = parseInt(input.value) || 1;
+    val = Math.max(1, Math.min(10, val + delta));
+    input.value = val;
+    wfCurrentQty = val;
+    updateWfTotal();
+  }
+
+  function updateWfTotal() {
+    const total = (wfSelectedPrice * wfCurrentQty).toFixed(2);
+    const compTotal = (wfSelectedOldPrice * wfCurrentQty).toFixed(2);
+    const disp = document.getElementById('wf-total-display');
+    const compDisp = document.getElementById('wf-total-compare');
+    if (disp) disp.textContent = '$' + total;
+    if (compDisp) compDisp.textContent = '$' + compTotal;
+  }
+
+  async function submitWfDirectCheckout() {
+    const btn = document.getElementById('wf-main-shopnow-btn');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML = '<span>Proceeding to Checkout...</span>';
+    }
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{
+            id: wfSelectedVariantId,
+            quantity: wfCurrentQty
+          }]
+        })
+      });
+      window.location.href = '/checkout';
+    } catch (e) {
+      window.location.href = '/cart/' + wfSelectedVariantId + ':' + wfCurrentQty;
+    }
+  }
+
+  async function submitWfOrder() {
+    const btn = document.getElementById('wf-main-atc-btn');
+    const originalContent = btn ? btn.innerHTML : '';
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML = '<span class="wf-atc-text">ADDING TO CART...</span>';
+    }
+
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{
+            id: wfSelectedVariantId,
+            quantity: wfCurrentQty
+          }]
+        })
+      });
+
+      if (res.ok) {
+        if (typeof window.willaRefreshCart === 'function') {
+          await window.willaRefreshCart();
+        }
+        if (typeof window.willaOpenCartDrawer === 'function') {
+          window.willaOpenCartDrawer();
+        }
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalContent;
+        }
+      } else {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalContent;
+        }
+        window.location.href = '/cart/' + wfSelectedVariantId + ':' + wfCurrentQty;
+      }
+    } catch (e) {
+      console.error(e);
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = originalContent;
+      }
+      window.location.href = '/cart/' + wfSelectedVariantId + ':' + wfCurrentQty;
+    }
+  }
+
+  // Touch swipe & keyboard arrow navigation
+  document.addEventListener('DOMContentLoaded', function() {
+    const mainWrap = document.querySelector('.wf-gallery-main');
+    if (mainWrap) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      mainWrap.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      mainWrap.addEventListener('touchend', function(e) {
+        const touchEndX = e.changedTouches[0].screenX;
+        const touchEndY = e.changedTouches[0].screenY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
+          if (diffX < 0) {
+            skipWfGallery(1); // Swipe left -> Next image
+          } else {
+            skipWfGallery(-1); // Swipe right -> Previous image
+          }
+        }
+      }, { passive: true });
+    }
+
+    // Keyboard navigation (Left / Right keys when viewing page)
+    document.addEventListener('keydown', function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'ArrowRight') skipWfGallery(1);
+      if (e.key === 'ArrowLeft') skipWfGallery(-1);
+    });
+  });
+
+  // Sticky bottom bar trigger on scroll past ATC
+  window.addEventListener('scroll', function() {
+    const atc = document.getElementById('wf-main-atc-btn');
+    const sticky = document.getElementById('wf-sticky-bar');
+    if (!atc || !sticky) return;
+
+    const rect = atc.getBoundingClientRect();
+    if (rect.bottom < 0) {
+      sticky.classList.add('visible');
+    } else {
+      sticky.classList.remove('visible');
+    }
+  }, { passive: true });
+</script>
+
+{% schema %}
+{
+  "name": "Heating Lamp Willa Funnel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "demo_video_url",
+      "label": "Demo Video URL",
+      "default": "https://cdn.shopify.com/videos/c/o/v/36e6827c74c8462a97206412365d61b5.mp4"
+    },
+    {
+      "type": "text",
+      "id": "product_title",
+      "label": "Product Title",
+      "default": "Zavelyn Intelligent Livestock Heating Lamp"
+    },
+    {
+      "type": "textarea",
+      "id": "product_subtitle",
+      "label": "Product Subtitle",
+      "default": "Safe, energy-efficient brooder warmth engineered with an intelligent digital thermostat. Keeps baby chicks, ducklings, piglets, and pets comfortably warm without dangerous fire risks or harsh red glare."
+    },
+    { "type": "image_picker", "id": "main_image", "label": "Main Hero Image" },
+    { "type": "text", "id": "main_image_url",
+      "label": "Main Image URL",
+      "default": "https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg"
+    },
+    {
+      "type": "text",
+      "id": "section2_title",
+      "label": "Section 2 Title",
+      "default": "Designed for Better Everyday Livestock Care"
+    },
+    {
+      "type": "text",
+      "id": "section2_subtitle",
+      "label": "Section 2 Subtitle",
+      "default": "Practical warmth. Simple controls. Convenient setup."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gallery_image",
+      "name": "Gallery Image (Slide)",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Upload / Select Image" },
+        { "type": "text", "id": "image_url", "label": "Or Image URL (CDN)" },
+        { "type": "text", "id": "alt", "label": "Image Alt Text / Label" }
+      ]
+    },
+    {
+      "type": "bundle_package",
+      "name": "Bundle Package",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Bundle Title" },
+        { "type": "text", "id": "badge", "label": "Tag Badge" },
+        { "type": "checkbox", "id": "is_best_seller", "label": "Is Best Seller", "default": false },
+        { "type": "html", "id": "description", "label": "Includes Description" },
+        { "type": "text", "id": "variant_id", "label": "Shopify Variant ID" },
+        { "type": "text", "id": "price", "label": "Sale Price" },
+        { "type": "text", "id": "old_price", "label": "Compare Price" },
+        { "type": "image_picker", "id": "image", "label": "Package Thumbnail Image" },
+        { "type": "text", "id": "image_url", "label": "Or Package Thumbnail URL" }
+      ]
+    },
+    {
+      "type": "key_point",
+      "name": "Hero Key Benefit",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    },
+    {
+      "type": "feature_card",
+      "name": "Section 2 Feature Card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Select Card Image" },
+        { "type": "text", "id": "image_url", "label": "Or Image URL" },
+        { "type": "text", "id": "title", "label": "Feature Title" },
+        { "type": "textarea", "id": "text", "label": "Description" }
+      ]
+    },
+    {
+      "type": "comparison_row",
+      "name": "Comparison Row",
+      "settings": [
+        { "type": "text", "id": "feature", "label": "Feature Name" },
+        { "type": "text", "id": "saker_val", "label": "Zavelyn Value" },
+        { "type": "text", "id": "generic_val", "label": "Traditional Value" }
+      ]
+    },
+    {
+      "type": "review_card",
+      "name": "Review Card",
+      "settings": [
+        { "type": "text", "id": "date", "label": "Review Date", "default": "Verified 3 days ago" },
+        { "type": "text", "id": "photo_url", "label": "Review Photo URL" },
+        { "type": "text", "id": "author", "label": "Author" },
+        { "type": "checkbox", "id": "verified", "label": "Verified Buyer", "default": true },
+        { "type": "text", "id": "stars", "label": "Stars", "default": "★★★★★" },
+        { "type": "text", "id": "headline", "label": "Review Headline" },
+        { "type": "textarea", "id": "review", "label": "Review Text" }
+      ]
+    },
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Heating Lamp Willa Funnel"
+    }
+  ]
+}
+{% endschema %}

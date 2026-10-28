@@ -1,0 +1,42 @@
+{%- comment -%}
+  Resolves a playable video URL.
+  Params: video (Shopify video), video_url (text), source ("file" or "url").
+  File wins unless source is "url". An empty file falls back to the URL.
+{%- endcomment -%}
+{%- liquid
+  assign prefer_url = false
+  if source == 'url'
+    assign prefer_url = true
+  endif
+  assign raw = ''
+  if prefer_url
+    assign raw = video_url | default: ''
+  elsif video != blank
+    assign raw = video.sources.first.url | default: ''
+    for item in video.sources
+      if item.format == 'mp4'
+        assign raw = item.url
+      endif
+    endfor
+  else
+    assign raw = video_url | default: ''
+  endif
+  assign out = raw
+  if raw contains 'youtu.be/'
+    assign yt = raw | split: 'youtu.be/' | last | split: '?' | first | split: '&' | first
+    assign out = 'https://www.youtube.com/embed/' | append: yt
+  elsif raw contains 'watch?v='
+    assign yt = raw | split: 'watch?v=' | last | split: '&' | first
+    assign out = 'https://www.youtube.com/embed/' | append: yt
+  elsif raw contains 'youtube.com/shorts/'
+    assign yt = raw | split: 'youtube.com/shorts/' | last | split: '?' | first
+    assign out = 'https://www.youtube.com/embed/' | append: yt
+  elsif raw contains 'youtube.com/embed/'
+    assign out = raw
+  elsif raw contains 'player.vimeo.com/'
+    assign out = raw
+  elsif raw contains 'vimeo.com/'
+    assign vm = raw | split: 'vimeo.com/' | last | split: '?' | first | split: '/' | first
+    assign out = 'https://player.vimeo.com/video/' | append: vm
+  endif
+-%}{{ out }}

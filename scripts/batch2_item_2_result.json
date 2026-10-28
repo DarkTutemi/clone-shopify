@@ -1,0 +1,39 @@
+{
+  "productId": "15454950490297",
+  "name": "Squishy Egg Silicone Night Light",
+  "status": "PASS",
+  "handleUnchanged": true,
+  "snapshot": "scripts\\snapshot_prod_15454950490297_2026-10-27T14-51-09-844Z.json",
+  "adminBefore": {
+    "title": "Zavelyn Squishy Egg Night Light",
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  "adminAfter": {
+    "id": "gid://shopify/Product/15454950490297",
+    "title": "Zavelyn Squishy Egg Silicone Night Light",
+    "handle": "sakerplus®-squishy-egg-multicolor-tap-night-light",
+    "seo": {
+      "title": "Squishy Egg Silicone Tap Night Light for Kids | Zavelyn",
+      "description": "Soothe bedrooms and nurseries with a soft silicone egg lamp. Features touch sensor color changes, warm night glow, and rechargeable USB convenience."
+    }
+  },
+  "storefrontQA": {
+    "httpStatus": 200,
+    "renderedTitle": "Squishy Egg Silicone Tap Night Light for Kids | Zavelyn",
+    "renderedMeta": "Soothe bedrooms and nurseries with a soft silicone egg lamp. Features touch sensor color changes, warm night glow, and rechargeable USB convenience.",
+    "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-squishy-egg-multicolor-tap-night-light",
+    "cartMatch": {
+      "variantId": "67914403283129",
+      "productId": 15454950490297,
+      "price": "53.99",
+      "ok": true
+    }
+  },
+  "screenshots": {
+    "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454950490297_desktop_1440.png",
+    "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454950490297_mobile_390.png"
+  }
+}

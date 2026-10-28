@@ -1,0 +1,118 @@
+{
+  "wrapper": "div#shopify-section-zavelyn-rain-drum",
+  "sections": {
+    "banner": {
+      "type": "zhp-pdp-banner",
+      "settings": {
+        "banner_image_url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_3.jpg?v=1792908838",
+        "badge_text": "NATURAL AMBIANCE",
+        "heading": "Let Nature Play: Raindrops Create Ambient Garden Melodies",
+        "text": "",
+        "point_1": "Specially tuned tongues ring with delicate chimes when hit by raindrops",
+        "point_2": "Pocket 3-inch size fits anywhere on patios, balconies, rocks, or desks",
+        "point_3": "Baked electrostatic enamel completely repels water, rust, and UV sun"
+      }
+    },
+    "experience": {
+      "type": "zhp-pdp-experience",
+      "settings": {
+        "feature_image_url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_2_c81b3459-2d36-4b1d-ade1-ba96bc332636.jpg?v=1792908838",
+        "pill_text": "EFFORTLESS DELIGHT",
+        "title": "6 Pentatonic Notes: Always Harmonic, Never Out of Tune",
+        "description": ""
+      }
+    },
+    "included": {
+      "type": "zhp-pdp-included",
+      "settings": {
+        "included_image_url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/img_4_d3b28ef2-27a4-4509-876b-987a31f4e90d.jpg?v=1792908838",
+        "pill_text": "COMPLETE MINI SET",
+        "title": "Everything You Need for Pocket Peace & Garden Ambiance",
+        "description": ""
+      }
+    },
+    "specs": {
+      "type": "zhp-pdp-specs",
+      "settings": {
+        "title": "Technical Specifications",
+        "spec_diameter": "3 Inches (8 cm) Pocket Ultra-Portable",
+        "spec_material": "Electrostatic Powder-Coated Alloy Steel",
+        "spec_tuning": "Harmonic Pentatonic Scale (6 Chime Notes)",
+        "spec_frequency": "Acoustic Natural Bell Resonance",
+        "spec_tones": "6 Laser-Cut Tongues",
+        "spec_weight": "115 grams (Ultra Lightweight)",
+        "spec_finish": "All-Weather Rustproof Baked Texture Enamel"
+      }
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {}
+    },
+    "faq": {
+      "type": "zhp-pdp-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I leave the Zavelyn Rain Drum™ outside in the rain?",
+            "answer": "Yes! The drum is coated with an electrostatic baked outdoor powder finish designed specifically to withstand rain, humidity, UV sunlight, and temperature shifts without rusting or tarnishing."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Does rain actually play the drum on its own?",
+            "answer": "Yes! When placed in an open garden, patio, or beneath rain gutters, falling raindrops strike the curved alloy tongues to trigger soft, natural chime melodies automatically."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "What scale are the 6 notes tuned to?",
+            "answer": "The Zavelyn Rain Drum™ is tuned to a pure Pentatonic harmony scale across 6 numbered tongues. The pentatonic layout contains no dissonant intervals, meaning every sequence of notes naturally sounds sweet and relaxing."
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "What is included with the drum?",
+            "answer": "Every Zavelyn Rain Drum™ includes the 3-inch 6-tone steel drum, a solid wooden mallet with a soft rubber resonator tip, pre-applied numbered decals, and a protective pouch."
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "We offer a 90-Day Money-Back Guarantee. If the Rain Drum doesn't bring peace and joy to your home or garden, return it for a 100% full refund with no hassle."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "settings": {}
+    },
+    "main": {
+      "type": "zavelyn-pdp-main",
+      "settings": {
+        "eyebrow_text": "ZAVELYN INNOVATIONS · MEDITATION & SOUND THERAPY",
+        "urgency_text": "High US Demand · Limited Handcrafted Batches Remaining",
+        "cta_text": "CLAIM OFFER",
+        "enable_sticky_atc": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "banner",
+    "experience",
+    "included",
+    "specs",
+    "shipping",
+    "faq"
+  ]
+}

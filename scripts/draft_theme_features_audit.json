@@ -1,0 +1,42 @@
+{
+  "settingsData": {
+    "freeShippingThreshold": "NOT_FOUND",
+    "cartType": "drawer",
+    "rawKeys": [
+      "cart_type",
+      "cart_show_notes",
+      "cart_show_free_shipping",
+      "cart_free_shipping_threshold"
+    ]
+  },
+  "layoutTheme": {
+    "length": 8565,
+    "hasMetaPixel": false,
+    "hasGoogleAnalytics": false,
+    "hasTikTokPixel": false,
+    "hasLoox": false,
+    "hasCartDrawer": true,
+    "hasElixirCss": true
+  },
+  "cartDrawer": {
+    "length": 15725,
+    "hasFreeShippingBar": true,
+    "thresholdValueDetected": "4900",
+    "hasCheckoutForm": true,
+    "hasTermsBadge": true
+  },
+  "header": {
+    "hasWillaHeader": true,
+    "announcementTextInHeader": "\n",
+    "headerGroupContentSnippet": "{\n  \"name\": \"Header group\",\n  \"type\": \"header\",\n  \"sections\": {\n    \"willa-header\": {\n      \"type\": \"willa-header\",\n      \"blocks\": {\n        \"nav_home\": {\n          \"type\": \"nav_link\",\n          \"settings\": {\n            \"title\": \"Home\",\n            \"link\": \"\\/\",\n            \"icon\": \"🏠\",\n         "
+  },
+  "homepage": {},
+  "productTemplates": {
+    "universalTemplateLength": 1480,
+    "pdpMainLength": 48907,
+    "hasStickyAtc": true,
+    "pricingLogicUsesShopifyMoney": true,
+    "hasFakeHardcodedPrice": false
+  },
+  "trackingIntegrations": {}
+}

@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/15455757336761",
+  "title": "Zavelyn Livestock Heating Lamp",
+  "handle": "livestock-heating-lamp",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": "Intelligent Auto-Regulating Livestock Heating Lamp Keep your chickens, chicks, ducks, and small livestock comfortably warm without dangerous fire hazards or harsh red glare. Digital Temperature Setting: Precision LED display from 28°C to 35°C (82°F–95°F). Automatic Heat Regulation: Automatically turns off when target temperature is reached and resumes when temps dip. 100% Safe & Fireproof: Sealed fireproof polymer shell with no exposed filaments or shattered glass. Even Warm Air Convection: Eliminates hot spots and cold corners. Standard E27/E26 Base: Easy screw-in installation with included US standard switch cord."
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67930179403961",
+        "title": "1 Pack",
+        "price": "49.99",
+        "sku": "PT131318-1PACK"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67930179436729",
+        "title": "2 Pack",
+        "price": "89.99",
+        "sku": "PT131318-2PACK"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67953654300857",
+        "title": "3 Pack",
+        "price": "119.99",
+        "sku": "PT131318-3PACK"
+      }
+    ]
+  }
+}

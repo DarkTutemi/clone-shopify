@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#1857b2">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+      <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180, height: 180 }}">
+    {%- else -%}
+      <link rel="icon" href="{{ 'favicon-z.svg' | asset_url }}" type="image/svg+xml">
+      <link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon-z-32.png' | asset_url }}">
+      <link rel="apple-touch-icon" href="{{ 'favicon-z.png' | asset_url }}">
+    {%- endif -%}
+
+    {%- liquid
+      assign brand_name = 'Zavelyn'
+      assign offer_title = page_title
+      if request.page_type == 'page' and page.handle == 'track-order'
+        assign offer_title = 'Track Order – ' | append: brand_name
+      elsif request.page_type == 'index' or offer_title == blank or offer_title == shop.name or offer_title == 'My Store'
+        assign offer_title = 'Zavelyn Foot Sleeve – Buy One Get One FREE'
+      elsif request.page_type == 'product' and product
+        assign offer_title = product.title
+        unless offer_title contains brand_name
+          assign offer_title = offer_title | append: ' – ' | append: brand_name
+        endunless
+      else
+        unless offer_title contains brand_name
+          assign offer_title = offer_title | append: ' – ' | append: brand_name
+        endunless
+      endif
+      assign offer_desc = page_description
+      if offer_desc == blank and product and product.description != blank
+        assign offer_desc = product.description | strip_html | truncate: 155
+      endif
+      if offer_desc == blank
+        assign offer_desc = 'Zavelyn Foot Sleeve — Buy One Get One FREE. All-day arch support with 30-day satisfaction guarantee.'
+      endif
+    -%}
+
+    <title>{{ offer_title | escape }}</title>
+    <meta name="description" content="{{ offer_desc | escape }}">
+
+    {% render 'meta-tags' %}
+
+    {%- comment -%} Critical assets: preload fonts + CSS + LCP gallery {%- endcomment -%}
+    <link rel="preload" href="{{ 'fakt-regular.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ 'fakt-bold.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ 'ivar-soft-regular.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+    {%- if template.suffix == 'device' -%}
+      <link rel="preload" href="{{ 'pen-gallery-1.jpg' | asset_url }}" as="image" fetchpriority="high">
+    {%- elsif template.suffix == 'cdf' -%}
+      <link rel="preload" href="{{ 'cdf-gallery-1.jpg' | asset_url }}" as="image" fetchpriority="high">
+    {%- elsif template.suffix == 'zavelyn' -%}
+      <link rel="preload" href="{{ 'zavelyn-gallery-1.png' | asset_url }}" as="image" fetchpriority="high">
+    {%- elsif template.suffix == 'balm' -%}
+      <link rel="preload" href="{{ 'mb-g1.png' | asset_url }}" as="image" fetchpriority="high">
+    {%- else -%}
+      <link rel="preload" href="{{ 'offer-gallery-1.jpg' | asset_url }}" as="image" fetchpriority="high">
+    {%- endif -%}
+    {{ 'zavelyn-offer.css' | asset_url | stylesheet_tag: preload: true }}
+    {%- if template.suffix == 'device' -%}
+      {{ 'zavelyn-device.css' | asset_url | stylesheet_tag: preload: true }}
+    {%- elsif template.suffix == 'cdf' -%}
+      {{ 'zavelyn-cdf.css' | asset_url | stylesheet_tag: preload: true }}
+    {%- elsif template.suffix == 'zavelyn' -%}
+      {{ 'offer-zavelyn.css' | asset_url | stylesheet_tag: preload: true }}
+    {%- elsif template.suffix == 'balm' -%}
+      {{ 'zavelyn-balm.css' | asset_url | stylesheet_tag: preload: true }}
+    {%- endif -%}
+
+    <style>
+      html, body { margin: 0; background: #fff; color: #303030; }
+      body.template-offer { font-family: Fakt, system-ui, sans-serif; }
+      .offer-skip {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        z-index: 10000;
+        padding: 12px 16px;
+        background: #1857b2;
+        color: #fff;
+        font: 700 14px/1.2 system-ui, sans-serif;
+        text-decoration: none;
+      }
+      .offer-skip:focus {
+        left: 12px;
+        top: 12px;
+      }
+    </style>
+
+    {{ content_for_header }}
+  </head>
+  <body class="template-offer template-{{ template.name }}" data-money-format="{{ shop.money_format | escape }}">
+    <script>
+      window.Shopify = window.Shopify || {};
+      window.Shopify.money_format = {{ shop.money_format | json }};
+    </script>
+    <a class="offer-skip" href="#MainContent">Skip to content</a>
+    <main id="MainContent" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+  </body>
+</html>

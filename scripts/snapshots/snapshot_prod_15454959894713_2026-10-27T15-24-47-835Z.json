@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454959894713",
+  "title": "Zavelyn Wheel Alignment Kit",
+  "handle": "sakerplus®-stainless-steel-wheel-alignment-kit",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914596286649",
+        "title": "Default Title",
+        "price": "63.99",
+        "sku": "AM132311-C001"
+      }
+    ]
+  }
+}

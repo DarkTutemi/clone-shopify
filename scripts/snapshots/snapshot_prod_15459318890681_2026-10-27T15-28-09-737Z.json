@@ -1,0 +1,56 @@
+{
+  "id": "gid://shopify/Product/15459318890681",
+  "title": "Zavelyn Drum Mini",
+  "handle": "zavelyn-drum-mini",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67959041032377",
+        "title": "White",
+        "price": "109.95",
+        "sku": "ZAV-MIN-WHT"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959041065145",
+        "title": "Red",
+        "price": "109.95",
+        "sku": "ZAV-MIN-RED"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959041097913",
+        "title": "Black",
+        "price": "109.95",
+        "sku": "ZAV-MIN-BLK"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959041130681",
+        "title": "Blue",
+        "price": "109.95",
+        "sku": "ZAV-MIN-BLU"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959041163449",
+        "title": "Sandstone",
+        "price": "109.95",
+        "sku": "ZAV-MIN-SND"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959041196217",
+        "title": "Pink",
+        "price": "109.95",
+        "sku": "ZAV-MIN-PNK"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959041228985",
+        "title": "Pink Tan",
+        "price": "109.95",
+        "sku": "ZAV-MIN-PTN"
+      }
+    ]
+  }
+}

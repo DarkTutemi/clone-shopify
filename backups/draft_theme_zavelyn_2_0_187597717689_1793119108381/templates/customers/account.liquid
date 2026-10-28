@@ -1,0 +1,48 @@
+<section class="section">
+  <div class="page-width">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: center; margin-block-end: 2rem;">
+      <h1>{{ 'customer.account.title' | t }}</h1>
+      <a class="button button--secondary" href="{{ routes.account_logout_url }}">{{ 'customer.log_out' | t }}</a>
+    </div>
+
+    <div class="collection-layout collection-layout--with-filters">
+      <aside>
+        <h2>{{ 'customer.account.details' | t }}</h2>
+        <p style="margin-block: 0.75rem;">{{ customer.default_address | format_address }}</p>
+        <a href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
+      </aside>
+
+      <div>
+        <h2>{{ 'customer.orders.title' | t }}</h2>
+        {%- if customer.orders.size == 0 -%}
+          <p style="margin-block-start: 1rem;">{{ 'customer.orders.none' | t }}</p>
+        {%- else -%}
+          <div style="overflow-x: auto; margin-block-start: 1rem;">
+            <table>
+              <thead>
+                <tr>
+                  <th>{{ 'customer.orders.order_number' | t }}</th>
+                  <th>{{ 'customer.orders.date' | t }}</th>
+                  <th>{{ 'customer.orders.payment_status' | t }}</th>
+                  <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+                  <th>{{ 'customer.orders.total' | t }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {%- for order in customer.orders -%}
+                  <tr>
+                    <td><a href="{{ order.customer_url }}">{{ order.name }}</a></td>
+                    <td>{{ order.created_at | date: format: 'date' }}</td>
+                    <td>{{ order.financial_status_label }}</td>
+                    <td>{{ order.fulfillment_status_label }}</td>
+                    <td>{{ order.total_price | money }}</td>
+                  </tr>
+                {%- endfor -%}
+              </tbody>
+            </table>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>

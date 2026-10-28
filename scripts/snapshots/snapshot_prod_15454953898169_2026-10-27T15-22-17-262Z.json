@@ -1,0 +1,26 @@
+{
+  "id": "gid://shopify/Product/15454953898169",
+  "title": "Zavelyn UV Mattress Vacuum",
+  "handle": "sakerplus®-cordless-handheld-uv-mattress-vacuum-cleaner",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914479567033",
+        "title": "Green",
+        "price": "46.99",
+        "sku": "HA132563-C004"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914479599801",
+        "title": "Blue",
+        "price": "46.99",
+        "sku": "HA132563-C008"
+      }
+    ]
+  }
+}

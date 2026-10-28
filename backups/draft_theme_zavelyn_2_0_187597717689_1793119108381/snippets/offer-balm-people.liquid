@@ -1,0 +1,390 @@
+{%- liquid
+  if group != blank
+    assign b = group.settings
+  endif
+-%}
+{%- unless b.show == false -%}
+<section
+  class="senzio-trusted-title"
+  aria-labelledby="senzio-trusted-title-main"
+  {% if group %}{{ group.shopify_attributes }}{% endif %}
+>
+  <!-- =========================================
+       DESKTOP + TABLET VERSION
+       ========================================= -->
+  <div class="senzio-trusted-desktop" aria-hidden="false">
+
+    <!-- Left ornament -->
+    <div class="senzio-desktop-ornament senzio-desktop-ornament--left">
+      <svg viewBox="0 0 300 110" aria-hidden="true">
+        <defs>
+          <linearGradient
+            id="senzioDesktopGreenLeft"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="#003c2b"></stop>
+            <stop offset="18%" stop-color="#00704f"></stop>
+            <stop offset="38%" stop-color="#2bc58e"></stop>
+            <stop offset="52%" stop-color="#eafff7"></stop>
+            <stop offset="66%" stop-color="#46dba4"></stop>
+            <stop offset="84%" stop-color="#05845e"></stop>
+            <stop offset="100%" stop-color="#003c2b"></stop>
+          </linearGradient>
+
+          <linearGradient
+            id="senzioDesktopLineLeft"
+            x1="0%"
+            y1="50%"
+            x2="100%"
+            y2="50%"
+          >
+            <stop offset="0%" stop-color="#00432f"></stop>
+            <stop offset="27%" stop-color="#0f9d6e"></stop>
+            <stop offset="48%" stop-color="#d9fff1"></stop>
+            <stop offset="57%" stop-color="#ffffff"></stop>
+            <stop offset="70%" stop-color="#38d69c"></stop>
+            <stop offset="100%" stop-color="#005b41"></stop>
+          </linearGradient>
+
+          <radialGradient id="senzioDesktopSparkLeft">
+            <stop offset="0%" stop-color="#ffffff"></stop>
+            <stop offset="30%" stop-color="#caffec"></stop>
+            <stop offset="100%" stop-color="#0b9f70"></stop>
+          </radialGradient>
+
+          <filter
+            id="senzioDesktopGlowLeft"
+            x="-80%"
+            y="-80%"
+            width="260%"
+            height="260%"
+          >
+            <feGaussianBlur stdDeviation="3"></feGaussianBlur>
+          </filter>
+        </defs>
+
+        <path
+          class="senzio-desktop-main-line"
+          d="M292 55C242 55 208 53 161 53C112 53 62 58 10 55"
+          fill="none"
+          stroke="url(#senzioDesktopLineLeft)"
+          stroke-width="3"
+          stroke-linecap="round"
+        ></path>
+
+        <path
+          class="senzio-desktop-branch"
+          d="M162 53C137 38 112 23 83 15"
+          fill="none"
+          stroke="url(#senzioDesktopLineLeft)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        ></path>
+
+        <path
+          class="senzio-desktop-branch senzio-desktop-branch--lower"
+          d="M155 54C131 70 107 84 77 94"
+          fill="none"
+          stroke="url(#senzioDesktopLineLeft)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        ></path>
+
+        <g
+          class="senzio-desktop-leaves senzio-desktop-leaves--top"
+          fill="url(#senzioDesktopGreenLeft)"
+        >
+          <path d="M135 40C121 22 104 23 96 29C105 43 120 47 135 40Z"></path>
+          <path d="M116 29C106 14 90 12 82 17C90 31 104 35 116 29Z"></path>
+          <path d="M98 21C90 8 75 6 66 11C74 24 87 27 98 21Z"></path>
+        </g>
+
+        <g
+          class="senzio-desktop-leaves senzio-desktop-leaves--bottom"
+          fill="url(#senzioDesktopGreenLeft)"
+        >
+          <path d="M130 70C117 86 100 87 92 81C102 67 117 63 130 70Z"></path>
+          <path d="M111 82C101 96 85 97 76 91C85 78 99 74 111 82Z"></path>
+          <path d="M93 91C84 103 69 105 60 99C68 87 82 83 93 91Z"></path>
+        </g>
+
+        <path
+          class="senzio-desktop-gem"
+          d="M180 55L191 44L202 55L191 66Z"
+          fill="url(#senzioDesktopGreenLeft)"
+        ></path>
+
+        <circle
+          class="senzio-desktop-spark"
+          cx="42"
+          cy="55"
+          r="4.5"
+          fill="url(#senzioDesktopSparkLeft)"
+        ></circle>
+
+        <circle
+          class="senzio-desktop-spark senzio-desktop-spark--small"
+          cx="18"
+          cy="55"
+          r="2.4"
+          fill="#dffff3"
+        ></circle>
+      </svg>
+    </div>
+
+    <!-- Desktop text -->
+    <div class="senzio-desktop-content">
+      <span class="senzio-desktop-eyebrow">
+        {{ b.eyebrow | default: 'Real People · Real Comfort' }}
+      </span>
+
+      <h2
+        id="senzio-trusted-title-main"
+        class="senzio-desktop-heading"
+      >
+        {{ b.heading | default: 'Trusted by Thousands' }}
+        <span>{{ b.heading_accent | default: 'for Everyday Relief' }}</span>
+      </h2>
+
+      <div class="senzio-desktop-accent" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+
+    <!-- Right ornament -->
+    <div class="senzio-desktop-ornament senzio-desktop-ornament--right">
+      <svg viewBox="0 0 300 110" aria-hidden="true">
+        <defs>
+          <linearGradient
+            id="senzioDesktopGreenRight"
+            x1="100%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="#003c2b"></stop>
+            <stop offset="18%" stop-color="#00704f"></stop>
+            <stop offset="38%" stop-color="#2bc58e"></stop>
+            <stop offset="52%" stop-color="#eafff7"></stop>
+            <stop offset="66%" stop-color="#46dba4"></stop>
+            <stop offset="84%" stop-color="#05845e"></stop>
+            <stop offset="100%" stop-color="#003c2b"></stop>
+          </linearGradient>
+
+          <linearGradient
+            id="senzioDesktopLineRight"
+            x1="100%"
+            y1="50%"
+            x2="0%"
+            y2="50%"
+          >
+            <stop offset="0%" stop-color="#00432f"></stop>
+            <stop offset="27%" stop-color="#0f9d6e"></stop>
+            <stop offset="48%" stop-color="#d9fff1"></stop>
+            <stop offset="57%" stop-color="#ffffff"></stop>
+            <stop offset="70%" stop-color="#38d69c"></stop>
+            <stop offset="100%" stop-color="#005b41"></stop>
+          </linearGradient>
+
+          <radialGradient id="senzioDesktopSparkRight">
+            <stop offset="0%" stop-color="#ffffff"></stop>
+            <stop offset="30%" stop-color="#caffec"></stop>
+            <stop offset="100%" stop-color="#0b9f70"></stop>
+          </radialGradient>
+        </defs>
+
+        <path
+          class="senzio-desktop-main-line"
+          d="M8 55C58 55 92 53 139 53C188 53 238 58 290 55"
+          fill="none"
+          stroke="url(#senzioDesktopLineRight)"
+          stroke-width="3"
+          stroke-linecap="round"
+        ></path>
+
+        <path
+          class="senzio-desktop-branch"
+          d="M138 53C163 38 188 23 217 15"
+          fill="none"
+          stroke="url(#senzioDesktopLineRight)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        ></path>
+
+        <path
+          class="senzio-desktop-branch senzio-desktop-branch--lower"
+          d="M145 54C169 70 193 84 223 94"
+          fill="none"
+          stroke="url(#senzioDesktopLineRight)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        ></path>
+
+        <g
+          class="senzio-desktop-leaves senzio-desktop-leaves--top"
+          fill="url(#senzioDesktopGreenRight)"
+        >
+          <path d="M165 40C179 22 196 23 204 29C195 43 180 47 165 40Z"></path>
+          <path d="M184 29C194 14 210 12 218 17C210 31 196 35 184 29Z"></path>
+          <path d="M202 21C210 8 225 6 234 11C226 24 213 27 202 21Z"></path>
+        </g>
+
+        <g
+          class="senzio-desktop-leaves senzio-desktop-leaves--bottom"
+          fill="url(#senzioDesktopGreenRight)"
+        >
+          <path d="M170 70C183 86 200 87 208 81C198 67 183 63 170 70Z"></path>
+          <path d="M189 82C199 96 215 97 224 91C215 78 201 74 189 82Z"></path>
+          <path d="M207 91C216 103 231 105 240 99C232 87 218 83 207 91Z"></path>
+        </g>
+
+        <path
+          class="senzio-desktop-gem"
+          d="M120 55L109 44L98 55L109 66Z"
+          fill="url(#senzioDesktopGreenRight)"
+        ></path>
+
+        <circle
+          class="senzio-desktop-spark"
+          cx="258"
+          cy="55"
+          r="4.5"
+          fill="url(#senzioDesktopSparkRight)"
+        ></circle>
+
+        <circle
+          class="senzio-desktop-spark senzio-desktop-spark--small"
+          cx="282"
+          cy="55"
+          r="2.4"
+          fill="#dffff3"
+        ></circle>
+      </svg>
+    </div>
+  </div>
+
+  <!-- =========================================
+       MOBILE VERSION
+       ========================================= -->
+  <div class="senzio-trusted-mobile">
+    <div class="senzio-mobile-botanical" aria-hidden="true">
+      <span class="senzio-mobile-halo"></span>
+
+      <svg viewBox="0 0 90 90">
+        <defs>
+          <linearGradient
+            id="senzioMobileGreen"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="#004733"></stop>
+            <stop offset="28%" stop-color="#00825c"></stop>
+            <stop offset="52%" stop-color="#8df1c8"></stop>
+            <stop offset="68%" stop-color="#20b981"></stop>
+            <stop offset="100%" stop-color="#003d2c"></stop>
+          </linearGradient>
+        </defs>
+
+        <path
+          class="senzio-mobile-stem"
+          d="M45 75V36"
+          fill="none"
+          stroke="url(#senzioMobileGreen)"
+          stroke-width="4"
+          stroke-linecap="round"
+        ></path>
+
+        <path
+          class="senzio-mobile-leaf senzio-mobile-leaf--left-top"
+          d="M44 46C28 45 18 36 16 22C31 22 42 30 45 43"
+          fill="url(#senzioMobileGreen)"
+        ></path>
+
+        <path
+          class="senzio-mobile-leaf senzio-mobile-leaf--right-top"
+          d="M46 41C50 25 61 17 76 18C74 33 63 42 47 45"
+          fill="url(#senzioMobileGreen)"
+        ></path>
+
+        <path
+          class="senzio-mobile-leaf senzio-mobile-leaf--left-bottom"
+          d="M44 60C31 60 22 54 19 43C32 42 41 49 45 57"
+          fill="url(#senzioMobileGreen)"
+        ></path>
+
+        <path
+          class="senzio-mobile-leaf senzio-mobile-leaf--right-bottom"
+          d="M46 57C50 46 59 41 70 42C68 54 60 61 46 62"
+          fill="url(#senzioMobileGreen)"
+        ></path>
+
+        <circle
+          class="senzio-mobile-spark"
+          cx="45"
+          cy="17"
+          r="3.5"
+          fill="#dffff3"
+        ></circle>
+      </svg>
+    </div>
+
+    <span class="senzio-mobile-eyebrow">
+      {{ b.eyebrow | default: 'Real People · Real Comfort' }}
+    </span>
+
+    <h2 class="senzio-mobile-heading">
+      {{ b.heading | default: 'Trusted by Thousands' }}
+      <span>{{ b.heading_accent | default: 'for Everyday Relief' }}</span>
+    </h2>
+
+    <div class="senzio-mobile-divider" aria-hidden="true">
+      <span class="senzio-mobile-divider-line"></span>
+
+      <span class="senzio-mobile-divider-gem">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2L22 12L12 22L2 12Z"></path>
+        </svg>
+      </span>
+
+      <span class="senzio-mobile-divider-line"></span>
+    </div>
+  </div>
+</section>
+
+
+<section class="senzio-gallery-marquee" aria-label="Customer gallery">
+  <div class="senzio-gallery-window">
+    <div class="senzio-gallery-track">
+      {%- for pass in (1..2) -%}
+        <div class="senzio-gallery-group"{% if pass == 2 %} aria-hidden="true"{% endif %}>
+          {%- for i in (1..13) -%}
+            {%- assign num = i -%}
+            {%- if i < 10 -%}{%- assign num = i | prepend: '0' -%}{%- endif -%}
+            {%- liquid
+              assign cust = 'mb-cust-' | append: num | append: '.png'
+              assign ik = 'image_' | append: i
+              assign picked = nil
+              if b != blank
+                assign picked = b[ik]
+              endif
+              if picked != blank
+                assign cust_src = picked | image_url: width: 800
+              else
+                assign cust_src = cust | asset_url
+              endif
+            -%}
+            <div class="senzio-gallery-card">
+              <img class="senzio-gallery-image" src="{{ cust_src }}" alt="{% if pass == 1 %}{{ brand }} customer{% endif %}" width="800" height="1000" {% if pass == 1 and i <= 4 %}loading="eager"{% else %}loading="lazy"{% endif %}>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endunless -%}

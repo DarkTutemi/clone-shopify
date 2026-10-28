@@ -1,0 +1,26 @@
+{
+  "id": "gid://shopify/Product/15454951801017",
+  "title": "Zavelyn Camping Fan with Light",
+  "handle": "sakerplus-camping-fan-with-light-battery-1",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914433626297",
+        "title": "Orange",
+        "price": "125.99",
+        "sku": "EC98268-C012"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914433659065",
+        "title": "Green",
+        "price": "125.99",
+        "sku": "EC98268-C004"
+      }
+    ]
+  }
+}

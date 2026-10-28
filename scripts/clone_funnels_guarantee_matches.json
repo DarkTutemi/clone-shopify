@@ -1,0 +1,3296 @@
+[
+  {
+    "file": "Clone-navage\\data\\catalog_harvested.json",
+    "line": 3907,
+    "matched": "/guarantee/i",
+    "snippet": "\"bodyHtml\": \"<ul>\\n<li>Universal part, guaranteed to fit all Naväge Nose Cleaner models.</li>\\n<li>Replacement parts are non-returnable.</li>\\n</ul>\","
+  },
+  {
+    "file": "Clone-navage\\data\\catalog_harvested.json",
+    "line": 4319,
+    "matched": "/guarantee/i",
+    "snippet": "\"bodyHtml\": \"<ul>\\n<li>Universal part, guaranteed to fit all Naväge Nose Cleaner models.</li>\\n<li>Replacement parts are non-returnable.</li>\\n</ul>\","
+  },
+  {
+    "file": "Clone-navage\\data\\navage_home_raw.html",
+    "line": 455,
+    "matched": "/trial/i",
+    "snippet": "<script id=\"shopify-origin-trials\" async=\"async\" integrity=\"sha256-qJbe/jEZBHtr5W/BlA2cKAz3vkXu6vJQyLjgvgCC86g=\" src=\"//cdn.shopify.com/shopifycloud/storefront/"
+  },
+  {
+    "file": "Clone-navage\\data\\navage_home_raw.html",
+    "line": 456,
+    "matched": "/trial/i",
+    "snippet": "<script>(()=>{var d=\"shopify:webmcp_adapter_loaded\",n=Symbol.for(\"shopify.webmcp_adapter_loading\");function s(c,a,{win:r=window,doc:o=document}={}){function p()"
+  },
+  {
+    "file": "Clone-navage\\data\\navage_home_raw.html",
+    "line": 619,
+    "matched": "/trial/i",
+    "snippet": "<meta id=\"easygift-shop\" itemid=\"c2hvcF8kXzE3OTI3ODcyNTM=\" content=\"{&quot;isInstalled&quot;:true,&quot;installedOn&quot;:&quot;2023-11-07T17:28:10.198Z&quot;,&"
+  },
+  {
+    "file": "Clone-navage\\data\\navage_home_raw.html",
+    "line": 674,
+    "matched": "/trial/i",
+    "snippet": "var shopInfo = {\"isInstalled\":true,\"installedOn\":\"2023-11-07T17:28:10.198Z\",\"appVersion\":\"3.0\",\"subscriptionName\":\"Unlimited\",\"cartAnalytics\":true,\"freeTrialEnd"
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 15,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "\"handle\": \"30-day-no-risk-trial\","
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 16,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "\"title\": \"30-Day Money Back Guarantee\","
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 17,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "\"bodyHtml\": \"<p> </p><p data-mce-fragment=\\\"1\\\"><span data-mce-fragment=\\\"1\\\"><strong data-mce-fragment=\\\"1\\\">Your satisfaction is unconditionally guaranteed, n"
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 18,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "\"url\": \"https://navage.com/pages/30-day-no-risk-trial\""
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 47,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "\"bodyHtml\": \"<p> </p>\\n<p data-mce-fragment=\\\"1\\\"><span data-mce-fragment=\\\"1\\\">If you wish to <strong data-mce-fragment=\\\"1\\\">return</strong> your Naväge Nasal"
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 16,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "\"title\": \"30-Day Money Back Guarantee\","
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 17,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "\"bodyHtml\": \"<p> </p><p data-mce-fragment=\\\"1\\\"><span data-mce-fragment=\\\"1\\\"><strong data-mce-fragment=\\\"1\\\">Your satisfaction is unconditionally guaranteed, n"
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 47,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "\"bodyHtml\": \"<p> </p>\\n<p data-mce-fragment=\\\"1\\\"><span data-mce-fragment=\\\"1\\\">If you wish to <strong data-mce-fragment=\\\"1\\\">return</strong> your Naväge Nasal"
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 16,
+    "matched": "/guarantee/i",
+    "snippet": "\"title\": \"30-Day Money Back Guarantee\","
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 17,
+    "matched": "/guarantee/i",
+    "snippet": "\"bodyHtml\": \"<p> </p><p data-mce-fragment=\\\"1\\\"><span data-mce-fragment=\\\"1\\\"><strong data-mce-fragment=\\\"1\\\">Your satisfaction is unconditionally guaranteed, n"
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 47,
+    "matched": "/guarantee/i",
+    "snippet": "\"bodyHtml\": \"<p> </p>\\n<p data-mce-fragment=\\\"1\\\"><span data-mce-fragment=\\\"1\\\">If you wish to <strong data-mce-fragment=\\\"1\\\">return</strong> your Naväge Nasal"
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 15,
+    "matched": "/trial/i",
+    "snippet": "\"handle\": \"30-day-no-risk-trial\","
+  },
+  {
+    "file": "Clone-navage\\data\\pages_harvested.json",
+    "line": 18,
+    "matched": "/trial/i",
+    "snippet": "\"url\": \"https://navage.com/pages/30-day-no-risk-trial\""
+  },
+  {
+    "file": "Clone-navage\\data\\section_featured_products.html",
+    "line": 77,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div class=\"ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr\">Try Naväge risk-free for 30 days. If you’re not completely satisfied, get you"
+  },
+  {
+    "file": "Clone-navage\\data\\section_featured_products.html",
+    "line": 77,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr\">Try Naväge risk-free for 30 days. If you’re not completely satisfied, get you"
+  },
+  {
+    "file": "Clone-navage\\data\\section_featured_products.html",
+    "line": 77,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<div class=\"ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr\">Try Naväge risk-free for 30 days. If you’re not completely satisfied, get you"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 2215,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">I wasn&#39;t "
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 2474,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">Why I&#39;m t"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 2493,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">Why I&#39;m t"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 2594,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div class=\"ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr\">Try Naväge risk-free for 30 days. If you’re not completely satisfied, get you"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 2215,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">I wasn&#39;t "
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 2474,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">Why I&#39;m t"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 2493,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">Why I&#39;m t"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 2594,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr\">Try Naväge risk-free for 30 days. If you’re not completely satisfied, get you"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 2594,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<div class=\"ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr\">Try Naväge risk-free for 30 days. If you’re not completely satisfied, get you"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 2215,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">I wasn&#39;t "
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 2474,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">Why I&#39;m t"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 2493,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">Why I&#39;m t"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 452,
+    "matched": "/trial/i",
+    "snippet": "<script id=\"shopify-origin-trials\" async=\"async\" integrity=\"sha256-qJbe/jEZBHtr5W/BlA2cKAz3vkXu6vJQyLjgvgCC86g=\" src=\"//cdn.shopify.com/shopifycloud/storefront/"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 453,
+    "matched": "/trial/i",
+    "snippet": "<script>(()=>{var d=\"shopify:webmcp_adapter_loaded\",n=Symbol.for(\"shopify.webmcp_adapter_loading\");function s(c,a,{win:r=window,doc:o=document}={}){function p()"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 585,
+    "matched": "/trial/i",
+    "snippet": "<meta id=\"easygift-shop\" itemid=\"c2hvcF8kXzE3OTI3OTYyMDA=\" content=\"{&quot;isInstalled&quot;:true,&quot;installedOn&quot;:&quot;2023-11-07T17:28:10.198Z&quot;,&"
+  },
+  {
+    "file": "Clone-navage\\data\\sinusitis_page.html",
+    "line": 640,
+    "matched": "/trial/i",
+    "snippet": "var shopInfo = {\"isInstalled\":true,\"installedOn\":\"2023-11-07T17:28:10.198Z\",\"appVersion\":\"3.0\",\"subscriptionName\":\"Unlimited\",\"cartAnalytics\":true,\"freeTrialEnd"
+  },
+  {
+    "file": "Clone-navage\\layout\\theme.liquid",
+    "line": 405,
+    "matched": "/guarantee/i",
+    "snippet": "{% render 'navage-floating-guarantee' %}"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 6,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div id=\"navageFloatingGuarantee\" class=\"navage-floating-teaser\" onclick=\"window.location.href='/pages/30-day-no-risk-trial'\">"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 10,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<strong>30-DAY TRIAL</strong>"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 2,
+    "matched": "/guarantee/i",
+    "snippet": "Clone-navage/snippets/navage-floating-guarantee.liquid"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 3,
+    "matched": "/guarantee/i",
+    "snippet": "Floating Guarantee Badge with z-index: 99999 !important to clear Shopify preview bar"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 6,
+    "matched": "/guarantee/i",
+    "snippet": "<div id=\"navageFloatingGuarantee\" class=\"navage-floating-teaser\" onclick=\"window.location.href='/pages/30-day-no-risk-trial'\">"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 17,
+    "matched": "/guarantee/i",
+    "snippet": "#navageFloatingGuarantee {"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 31,
+    "matched": "/guarantee/i",
+    "snippet": "#navageFloatingGuarantee:hover {"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 35,
+    "matched": "/guarantee/i",
+    "snippet": "#navageFloatingGuarantee .navage-teaser-inner {"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 40,
+    "matched": "/guarantee/i",
+    "snippet": "#navageFloatingGuarantee .navage-teaser-icon {"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 43,
+    "matched": "/guarantee/i",
+    "snippet": "#navageFloatingGuarantee .navage-teaser-text {"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 48,
+    "matched": "/guarantee/i",
+    "snippet": "#navageFloatingGuarantee .navage-teaser-text strong {"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 54,
+    "matched": "/guarantee/i",
+    "snippet": "#navageFloatingGuarantee .navage-teaser-text small {"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 6,
+    "matched": "/trial/i",
+    "snippet": "<div id=\"navageFloatingGuarantee\" class=\"navage-floating-teaser\" onclick=\"window.location.href='/pages/30-day-no-risk-trial'\">"
+  },
+  {
+    "file": "Clone-navage\\snippets\\navage-floating-guarantee.liquid",
+    "line": 10,
+    "matched": "/trial/i",
+    "snippet": "<strong>30-DAY TRIAL</strong>"
+  },
+  {
+    "file": "Clone-navage\\theme\\templates\\page.sinusitis-sufferer.liquid",
+    "line": 388,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">I wasn&#39;t "
+  },
+  {
+    "file": "Clone-navage\\theme\\templates\\page.sinusitis-sufferer.liquid",
+    "line": 647,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">Why I&#39;m t"
+  },
+  {
+    "file": "Clone-navage\\theme\\templates\\page.sinusitis-sufferer.liquid",
+    "line": 666,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">Why I&#39;m t"
+  },
+  {
+    "file": "Clone-navage\\theme\\templates\\page.sinusitis-sufferer.liquid",
+    "line": 767,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div class=\"ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr\">Try Naväge risk-free for 30 days. If you’re not completely satisfied, get you"
+  },
+  {
+    "file": "Clone-navage\\theme\\templates\\page.sinusitis-sufferer.liquid",
+    "line": 388,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">I wasn&#39;t "
+  },
+  {
+    "file": "Clone-navage\\theme\\templates\\page.sinusitis-sufferer.liquid",
+    "line": 647,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">Why I&#39;m t"
+  },
+  {
+    "file": "Clone-navage\\theme\\templates\\page.sinusitis-sufferer.liquid",
+    "line": 666,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">Why I&#39;m t"
+  },
+  {
+    "file": "Clone-navage\\theme\\templates\\page.sinusitis-sufferer.liquid",
+    "line": 767,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr\">Try Naväge risk-free for 30 days. If you’re not completely satisfied, get you"
+  },
+  {
+    "file": "Clone-navage\\theme\\templates\\page.sinusitis-sufferer.liquid",
+    "line": 767,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<div class=\"ai-text-module__subheadline-aofe4yxfrm2xou2jmmaigenblocke9c14c7aetykr\">Try Naväge risk-free for 30 days. If you’re not completely satisfied, get you"
+  },
+  {
+    "file": "Clone-navage\\theme\\templates\\page.sinusitis-sufferer.liquid",
+    "line": 388,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">I wasn&#39;t "
+  },
+  {
+    "file": "Clone-navage\\theme\\templates\\page.sinusitis-sufferer.liquid",
+    "line": 647,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">Why I&#39;m t"
+  },
+  {
+    "file": "Clone-navage\\theme\\templates\\page.sinusitis-sufferer.liquid",
+    "line": 666,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"container \"><div class=\"content-box content-box--large content-box--text-left content-box--left text-container\"><h3 class=\"heading h2\">Why I&#39;m t"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 51,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "content=\"&quot;SrefalSteam™ — Deep clean every surface with 120°C steam. No chemicals. Works on carpet, kitchen, bathroom, furniture and more. Free shipping. 30"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 84,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "content=\"&quot;SrefalSteam™ — Deep clean every surface with 120°C steam. No chemicals. Works on carpet, kitchen, bathroom, furniture and more. Free shipping. 30"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 99,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "content=\"&quot;SrefalSteam™ — Deep clean every surface with 120°C steam. No chemicals. Works on carpet, kitchen, bathroom, furniture and more. Free shipping. 30"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 12451,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<p>Our 30-Day Risk-Free Guarantee</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 12469,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<p>Try it risk-free with our 30-day money-back guarantee. If you're not completely satisfied, simply return it for a full refund—no questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 13204,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<p>30-day money back guarantee. Full refund. No questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 12469,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p>Try it risk-free with our 30-day money-back guarantee. If you're not completely satisfied, simply return it for a full refund—no questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 13204,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p>30-day money back guarantee. Full refund. No questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 12451,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<p>Our 30-Day Risk-Free Guarantee</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 12469,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<p>Try it risk-free with our 30-day money-back guarantee. If you're not completely satisfied, simply return it for a full refund—no questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 51,
+    "matched": "/guarantee/i",
+    "snippet": "content=\"&quot;SrefalSteam™ — Deep clean every surface with 120°C steam. No chemicals. Works on carpet, kitchen, bathroom, furniture and more. Free shipping. 30"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 84,
+    "matched": "/guarantee/i",
+    "snippet": "content=\"&quot;SrefalSteam™ — Deep clean every surface with 120°C steam. No chemicals. Works on carpet, kitchen, bathroom, furniture and more. Free shipping. 30"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 99,
+    "matched": "/guarantee/i",
+    "snippet": "content=\"&quot;SrefalSteam™ — Deep clean every surface with 120°C steam. No chemicals. Works on carpet, kitchen, bathroom, furniture and more. Free shipping. 30"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 9599,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 9605,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 9611,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 9617,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 9623,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 9629,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 9635,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 12451,
+    "matched": "/guarantee/i",
+    "snippet": "<p>Our 30-Day Risk-Free Guarantee</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 12469,
+    "matched": "/guarantee/i",
+    "snippet": "<p>Try it risk-free with our 30-day money-back guarantee. If you're not completely satisfied, simply return it for a full refund—no questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 13204,
+    "matched": "/guarantee/i",
+    "snippet": "<p>30-day money back guarantee. Full refund. No questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 1510,
+    "matched": "/trial/i",
+    "snippet": "<script id=\"shopify-origin-trials\" async=\"async\" integrity=\"sha256-qJbe/jEZBHtr5W/BlA2cKAz3vkXu6vJQyLjgvgCC86g=\" src=\"//cdn.shopify.com/shopifycloud/storefront/"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 1511,
+    "matched": "/trial/i",
+    "snippet": "<script>(()=>{var d=\"shopify:webmcp_adapter_loaded\",n=Symbol.for(\"shopify.webmcp_adapter_loading\");function s(c,a,{win:r=window,doc:o=document}={}){function p()"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 2074,
+    "matched": "/trial/i",
+    "snippet": "'free-trial-test-atlas.myshopify.com',"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 2075,
+    "matched": "/trial/i",
+    "snippet": "'testing-free-trial02.myshopify.com',"
+  },
+  {
+    "file": "Clone-srefalsteam\\data\\product.html",
+    "line": 2076,
+    "matched": "/trial/i",
+    "snippet": "'tucker-freetrial-testing.myshopify.com',"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 2976,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<p>Our 30-Day Risk-Free Guarantee</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 2994,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<p>Try it risk-free with our 30-day money-back guarantee. If you're not completely satisfied, simply return it for a full refund—no questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 3729,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<p>30-day money back guarantee. Full refund. No questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 2994,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p>Try it risk-free with our 30-day money-back guarantee. If you're not completely satisfied, simply return it for a full refund—no questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 3729,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p>30-day money back guarantee. Full refund. No questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 2976,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<p>Our 30-Day Risk-Free Guarantee</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 2994,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<p>Try it risk-free with our 30-day money-back guarantee. If you're not completely satisfied, simply return it for a full refund—no questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 124,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 130,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 136,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 142,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 148,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 154,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 160,
+    "matched": "/guarantee/i",
+    "snippet": "<a class=\"slide-template--27870995579206__scrolling_images_UgXcTG\"  role=\"link\" aria-disabled=\"true\"><img src=\"//srefal.com/cdn/shop/files/badge_guarantee.png?v"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 2976,
+    "matched": "/guarantee/i",
+    "snippet": "<p>Our 30-Day Risk-Free Guarantee</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 2994,
+    "matched": "/guarantee/i",
+    "snippet": "<p>Try it risk-free with our 30-day money-back guarantee. If you're not completely satisfied, simply return it for a full refund—no questions asked.</p>"
+  },
+  {
+    "file": "Clone-srefalsteam\\theme\\snippets\\srefalsteam-sections.liquid",
+    "line": 3729,
+    "matched": "/guarantee/i",
+    "snippet": "<p>30-day money back guarantee. Full refund. No questions asked.</p>"
+  },
+  {
+    "file": "Clone-thoson\\data\\product.html",
+    "line": 7793,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"multicolumn-card__info\"><h3>100% Mess-Free Montessori Play</h3><div class=\"rte\"><p>Guaranteed no stains on anything except special paper—supports in"
+  },
+  {
+    "file": "Clone-thoson\\data\\product.html",
+    "line": 91,
+    "matched": "/trial/i",
+    "snippet": "<script>(function () {var userAgent = navigator.userAgent;var platform = navigator.platform;var maxTouchPoints = navigator.maxTouchPoints || 0;var isIOS = /iPad"
+  },
+  {
+    "file": "Clone-thoson\\data\\product.html",
+    "line": 92,
+    "matched": "/trial/i",
+    "snippet": "<script>(()=>{var d=\"shopify:webmcp_adapter_loaded\",n=Symbol.for(\"shopify.webmcp_adapter_loading\");function s(c,a,{win:r=window,doc:o=document}={}){function p()"
+  },
+  {
+    "file": "Clone-thoson\\theme\\snippets\\thoson-sections.liquid",
+    "line": 2809,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"multicolumn-card__info\"><h3>100% Mess-Free Montessori Play</h3><div class=\"rte\"><p>Guaranteed no stains on anything except special paper—supports in"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1025,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": ">60 days to decide"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1040,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "aria-hidden=\"true\" >60 days to decide"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1064,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<img src=\"//fieldandharvestco.com/cdn/shop/files/ysp-gallery-warranty-bar.png?v=1792571239&width=220\" alt=\"A homeowner with the Yeoman Sweep on a finished autum"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1091,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<div class=\"sup-flags\"><span class=\"sup-flag sup-flag--solid\">60-Day Money Back</span><span class=\"sup-flag sup-flag--ship\"><svg viewBox=\"0 0 24 16\" aria-hidden"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1204,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<small>60 days to decide · free shipping both ways</small>"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1357,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<span>60 days to decide</span>"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1459,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<div class=\"sup-narrow sup-guarantee\"><img src=\"//fieldandharvestco.com/cdn/shop/files/ysp-guarantee.png?v=1789377996&width=900\" alt=\"The 60-day clean sweep gua"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1460,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "width=\"900\" height=\"900\" loading=\"lazy\" decoding=\"async\"><h2 class=\"sup-h2\">The 60-day clean sweep guarantee</h2>"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1461,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<p class=\"sup-lede\">Use it for a full fall. If it has not taken the bending out of your yard cleanup, tell us inside 60 days and we will refund you in full. Fre"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1091,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"sup-flags\"><span class=\"sup-flag sup-flag--solid\">60-Day Money Back</span><span class=\"sup-flag sup-flag--ship\"><svg viewBox=\"0 0 24 16\" aria-hidden"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 923,
+    "matched": "/guarantee/i",
+    "snippet": "/* ═══════════════ GUARANTEE ═══════════════ */"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 924,
+    "matched": "/guarantee/i",
+    "snippet": ".sup-guarantee { text-align: center; }"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 925,
+    "matched": "/guarantee/i",
+    "snippet": ".sup-guarantee img {"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1011,
+    "matched": "/guarantee/i",
+    "snippet": "</svg><div class=\"sup-marquee\" role=\"region\" aria-label=\"Guarantee and customer quotes\">"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1064,
+    "matched": "/guarantee/i",
+    "snippet": "<img src=\"//fieldandharvestco.com/cdn/shop/files/ysp-gallery-warranty-bar.png?v=1792571239&width=220\" alt=\"A homeowner with the Yeoman Sweep on a finished autum"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1459,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"sup-narrow sup-guarantee\"><img src=\"//fieldandharvestco.com/cdn/shop/files/ysp-guarantee.png?v=1789377996&width=900\" alt=\"The 60-day clean sweep gua"
+  },
+  {
+    "file": "Clone-yeoman\\data\\product_main_section.html",
+    "line": 1460,
+    "matched": "/guarantee/i",
+    "snippet": "width=\"900\" height=\"900\" loading=\"lazy\" decoding=\"async\"><h2 class=\"sup-h2\">The 60-day clean sweep guarantee</h2>"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 4584,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": ">60 days to decide"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 4599,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "aria-hidden=\"true\" >60 days to decide"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 4623,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<img src=\"//fieldandharvestco.com/cdn/shop/files/ysp-gallery-warranty-bar.png?v=1792571239&width=220\" alt=\"A homeowner with the Yeoman Sweep on a finished autum"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 4650,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<div class=\"sup-flags\"><span class=\"sup-flag sup-flag--solid\">60-Day Money Back</span><span class=\"sup-flag sup-flag--ship\"><svg viewBox=\"0 0 24 16\" aria-hidden"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 4763,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<small>60 days to decide · free shipping both ways</small>"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 4916,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<span>60 days to decide</span>"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 5018,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<div class=\"sup-narrow sup-guarantee\"><img src=\"//fieldandharvestco.com/cdn/shop/files/ysp-guarantee.png?v=1789377996&width=900\" alt=\"The 60-day clean sweep gua"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 5019,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "width=\"900\" height=\"900\" loading=\"lazy\" decoding=\"async\"><h2 class=\"sup-h2\">The 60-day clean sweep guarantee</h2>"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 5020,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<p class=\"sup-lede\">Use it for a full fall. If it has not taken the bending out of your yard cleanup, tell us inside 60 days and we will refund you in full. Fre"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 4650,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"sup-flags\"><span class=\"sup-flag sup-flag--solid\">60-Day Money Back</span><span class=\"sup-flag sup-flag--ship\"><svg viewBox=\"0 0 24 16\" aria-hidden"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 4482,
+    "matched": "/guarantee/i",
+    "snippet": "/* ═══════════════ GUARANTEE ═══════════════ */"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 4483,
+    "matched": "/guarantee/i",
+    "snippet": ".sup-guarantee { text-align: center; }"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 4484,
+    "matched": "/guarantee/i",
+    "snippet": ".sup-guarantee img {"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 4570,
+    "matched": "/guarantee/i",
+    "snippet": "</svg><div class=\"sup-marquee\" role=\"region\" aria-label=\"Guarantee and customer quotes\">"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 4623,
+    "matched": "/guarantee/i",
+    "snippet": "<img src=\"//fieldandharvestco.com/cdn/shop/files/ysp-gallery-warranty-bar.png?v=1792571239&width=220\" alt=\"A homeowner with the Yeoman Sweep on a finished autum"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 5018,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"sup-narrow sup-guarantee\"><img src=\"//fieldandharvestco.com/cdn/shop/files/ysp-guarantee.png?v=1789377996&width=900\" alt=\"The 60-day clean sweep gua"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 5019,
+    "matched": "/guarantee/i",
+    "snippet": "width=\"900\" height=\"900\" loading=\"lazy\" decoding=\"async\"><h2 class=\"sup-h2\">The 60-day clean sweep guarantee</h2>"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 1484,
+    "matched": "/trial/i",
+    "snippet": "<script id=\"shopify-origin-trials\" async=\"async\" integrity=\"sha256-qJbe/jEZBHtr5W/BlA2cKAz3vkXu6vJQyLjgvgCC86g=\" src=\"//cdn.shopify.com/shopifycloud/storefront/"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.html",
+    "line": 1485,
+    "matched": "/trial/i",
+    "snippet": "<script>(()=>{var d=\"shopify:webmcp_adapter_loaded\",n=Symbol.for(\"shopify.webmcp_adapter_loading\");function s(c,a,{win:r=window,doc:o=document}={}){function p()"
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.json",
+    "line": 154,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "\"alt\": \"A homeowner with the Yeoman Sweep on a finished autumn lawn. 2 Year Warranty and 60 Day Guarantee\","
+  },
+  {
+    "file": "Clone-yeoman\\data\\the-yeoman-sweep.json",
+    "line": 154,
+    "matched": "/guarantee/i",
+    "snippet": "\"alt\": \"A homeowner with the Yeoman Sweep on a finished autumn lawn. 2 Year Warranty and 60 Day Guarantee\","
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1160,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": ">60 days to decide"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1175,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "aria-hidden=\"true\" >60 days to decide"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1199,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<img src=\"https://fieldandharvestco.com/cdn/shop/files/ysp-gallery-warranty-bar.png?v=1792571239&width=220\" alt=\"A homeowner with the Yeoman Sweep on a finished"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1226,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<div class=\"sup-flags\"><span class=\"sup-flag sup-flag--solid\">60-Day Money Back</span><span class=\"sup-flag sup-flag--ship\"><svg viewBox=\"0 0 24 16\" aria-hidden"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1309,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<small>60 days to decide · free shipping both ways</small>"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1461,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<span>60 days to decide</span>"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1563,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<div class=\"sup-narrow sup-guarantee\"><img src=\"https://fieldandharvestco.com/cdn/shop/files/ysp-guarantee.png?v=1789377996&width=900\" alt=\"The 60-day clean swe"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1564,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "width=\"900\" height=\"900\" loading=\"lazy\" decoding=\"async\"><h2 class=\"sup-h2\">The 60-day clean sweep guarantee</h2>"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1565,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<p class=\"sup-lede\">Use it for a full fall. If it has not taken the bending out of your yard cleanup, tell us inside 60 days and we will refund you in full. Fre"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 2082,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<p style=\"font-size: 14px; line-height: 1.6; color: #8A7866;\">60-Day Clean Sweep Guarantee. Free shipping both ways. 2-Year limited warranty included on all ord"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1226,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"sup-flags\"><span class=\"sup-flag sup-flag--solid\">60-Day Money Back</span><span class=\"sup-flag sup-flag--ship\"><svg viewBox=\"0 0 24 16\" aria-hidden"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1058,
+    "matched": "/guarantee/i",
+    "snippet": "/* ═══════════════ GUARANTEE ═══════════════ */"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1059,
+    "matched": "/guarantee/i",
+    "snippet": ".sup-guarantee { text-align: center; }"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1060,
+    "matched": "/guarantee/i",
+    "snippet": ".sup-guarantee img {"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1146,
+    "matched": "/guarantee/i",
+    "snippet": "</svg><div class=\"sup-marquee\" role=\"region\" aria-label=\"Guarantee and customer quotes\">"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1199,
+    "matched": "/guarantee/i",
+    "snippet": "<img src=\"https://fieldandharvestco.com/cdn/shop/files/ysp-gallery-warranty-bar.png?v=1792571239&width=220\" alt=\"A homeowner with the Yeoman Sweep on a finished"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1563,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"sup-narrow sup-guarantee\"><img src=\"https://fieldandharvestco.com/cdn/shop/files/ysp-guarantee.png?v=1789377996&width=900\" alt=\"The 60-day clean swe"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 1564,
+    "matched": "/guarantee/i",
+    "snippet": "width=\"900\" height=\"900\" loading=\"lazy\" decoding=\"async\"><h2 class=\"sup-h2\">The 60-day clean sweep guarantee</h2>"
+  },
+  {
+    "file": "Clone-yeoman\\theme\\templates\\product.yeoman-sweep.liquid",
+    "line": 2082,
+    "matched": "/guarantee/i",
+    "snippet": "<p style=\"font-size: 14px; line-height: 1.6; color: #8A7866;\">60-Day Clean Sweep Guarantee. Free shipping both ways. 2-Year limited warranty included on all ord"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1160,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": ">60 days to decide"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1175,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "aria-hidden=\"true\" >60 days to decide"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1199,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<img src=\"https://fieldandharvestco.com/cdn/shop/files/ysp-gallery-warranty-bar.png?v=1792571239&width=220\" alt=\"A homeowner with the Yeoman Sweep on a finished"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1226,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<div class=\"sup-flags\"><span class=\"sup-flag sup-flag--solid\">60-Day Money Back</span><span class=\"sup-flag sup-flag--ship\"><svg viewBox=\"0 0 24 16\" aria-hidden"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1309,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<small>60 days to decide · free shipping both ways</small>"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1461,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<span>60 days to decide</span>"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1563,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<div class=\"sup-narrow sup-guarantee\"><img src=\"https://fieldandharvestco.com/cdn/shop/files/ysp-guarantee.png?v=1789377996&width=900\" alt=\"The 60-day clean swe"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1564,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "width=\"900\" height=\"900\" loading=\"lazy\" decoding=\"async\"><h2 class=\"sup-h2\">The 60-day clean sweep guarantee</h2>"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1565,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<p class=\"sup-lede\">Use it for a full fall. If it has not taken the bending out of your yard cleanup, tell us inside 60 days and we will refund you in full. Fre"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 2082,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<p style=\"font-size: 14px; line-height: 1.6; color: #8A7866;\">60-Day Clean Sweep Guarantee. Free shipping both ways. 2-Year limited warranty included on all ord"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1226,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"sup-flags\"><span class=\"sup-flag sup-flag--solid\">60-Day Money Back</span><span class=\"sup-flag sup-flag--ship\"><svg viewBox=\"0 0 24 16\" aria-hidden"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1058,
+    "matched": "/guarantee/i",
+    "snippet": "/* ═══════════════ GUARANTEE ═══════════════ */"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1059,
+    "matched": "/guarantee/i",
+    "snippet": ".sup-guarantee { text-align: center; }"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1060,
+    "matched": "/guarantee/i",
+    "snippet": ".sup-guarantee img {"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1146,
+    "matched": "/guarantee/i",
+    "snippet": "</svg><div class=\"sup-marquee\" role=\"region\" aria-label=\"Guarantee and customer quotes\">"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1199,
+    "matched": "/guarantee/i",
+    "snippet": "<img src=\"https://fieldandharvestco.com/cdn/shop/files/ysp-gallery-warranty-bar.png?v=1792571239&width=220\" alt=\"A homeowner with the Yeoman Sweep on a finished"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1563,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"sup-narrow sup-guarantee\"><img src=\"https://fieldandharvestco.com/cdn/shop/files/ysp-guarantee.png?v=1789377996&width=900\" alt=\"The 60-day clean swe"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 1564,
+    "matched": "/guarantee/i",
+    "snippet": "width=\"900\" height=\"900\" loading=\"lazy\" decoding=\"async\"><h2 class=\"sup-h2\">The 60-day clean sweep guarantee</h2>"
+  },
+  {
+    "file": "Clone-willafarm\\backup\\templates_product.yeoman-sweep.liquid",
+    "line": 2082,
+    "matched": "/guarantee/i",
+    "snippet": "<p style=\"font-size: 14px; line-height: 1.6; color: #8A7866;\">60-Day Clean Sweep Guarantee. Free shipping both ways. 2-Year limited warranty included on all ord"
+  },
+  {
+    "file": "Clone-willafarm\\backup_header-group.json",
+    "line": 102,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"announcement_desktop\": \"★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TRIAL ★\","
+  },
+  {
+    "file": "Clone-willafarm\\backup_header-group.json",
+    "line": 103,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"announcement_mobile\": \"★ FREE US SHIPPING OVER $49 · 90-DAY TRIAL ★\""
+  },
+  {
+    "file": "Clone-willafarm\\backup_header-group.json",
+    "line": 102,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "\"announcement_desktop\": \"★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TRIAL ★\","
+  },
+  {
+    "file": "Clone-willafarm\\backup_header-group.json",
+    "line": 102,
+    "matched": "/guarantee/i",
+    "snippet": "\"announcement_desktop\": \"★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TRIAL ★\","
+  },
+  {
+    "file": "Clone-willafarm\\backup_header-group.json",
+    "line": 102,
+    "matched": "/trial/i",
+    "snippet": "\"announcement_desktop\": \"★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TRIAL ★\","
+  },
+  {
+    "file": "Clone-willafarm\\backup_header-group.json",
+    "line": 103,
+    "matched": "/trial/i",
+    "snippet": "\"announcement_mobile\": \"★ FREE US SHIPPING OVER $49 · 90-DAY TRIAL ★\""
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_desktop.html",
+    "line": 3586,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div>30-day money-back guarantee.</div>"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_desktop.html",
+    "line": 3586,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div>30-day money-back guarantee.</div>"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_desktop.html",
+    "line": 3581,
+    "matched": "/guarantee/i",
+    "snippet": "<li class=\"wf-footer__contact wf-footer__contact--guarantee\">"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_desktop.html",
+    "line": 3586,
+    "matched": "/guarantee/i",
+    "snippet": "<div>30-day money-back guarantee.</div>"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_desktop.html",
+    "line": 3622,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"wf-footer__fineprint\"><p><strong>Results Disclaimer:</strong> <em>Individual results may vary. Testimonials and reviews are not necessarily represen"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_desktop.html",
+    "line": 89,
+    "matched": "/trial/i",
+    "snippet": "<script id=\"shopify-origin-trials\" async=\"async\" integrity=\"sha256-qJbe/jEZBHtr5W/BlA2cKAz3vkXu6vJQyLjgvgCC86g=\" src=\"//cdn.shopify.com/shopifycloud/storefront/"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_desktop.html",
+    "line": 90,
+    "matched": "/trial/i",
+    "snippet": "<script>(()=>{var d=\"shopify:webmcp_adapter_loaded\",n=Symbol.for(\"shopify.webmcp_adapter_loading\");function s(c,a,{win:r=window,doc:o=document}={}){function p()"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_mobile.html",
+    "line": 3586,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div>30-day money-back guarantee.</div>"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_mobile.html",
+    "line": 3586,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div>30-day money-back guarantee.</div>"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_mobile.html",
+    "line": 3581,
+    "matched": "/guarantee/i",
+    "snippet": "<li class=\"wf-footer__contact wf-footer__contact--guarantee\">"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_mobile.html",
+    "line": 3586,
+    "matched": "/guarantee/i",
+    "snippet": "<div>30-day money-back guarantee.</div>"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_mobile.html",
+    "line": 3622,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"wf-footer__fineprint\"><p><strong>Results Disclaimer:</strong> <em>Individual results may vary. Testimonials and reviews are not necessarily represen"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_mobile.html",
+    "line": 89,
+    "matched": "/trial/i",
+    "snippet": "<script id=\"shopify-origin-trials\" async=\"async\" integrity=\"sha256-qJbe/jEZBHtr5W/BlA2cKAz3vkXu6vJQyLjgvgCC86g=\" src=\"//cdn.shopify.com/shopifycloud/storefront/"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_home_mobile.html",
+    "line": 90,
+    "matched": "/trial/i",
+    "snippet": "<script>(()=>{var d=\"shopify:webmcp_adapter_loaded\",n=Symbol.for(\"shopify.webmcp_adapter_loading\");function s(c,a,{win:r=window,doc:o=document}={}){function p()"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_pdp_mobile.html",
+    "line": 3695,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div class=\"fn-research-body\"><div class=\"fn-richtext\"><p>Adults drinking a chocolate beverage with 500mg of cocoa polyphenols daily reported greater calmness a"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_pdp_mobile.html",
+    "line": 4268,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<div>30-day money-back guarantee.</div>"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_pdp_mobile.html",
+    "line": 4268,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div>30-day money-back guarantee.</div>"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_pdp_mobile.html",
+    "line": 4263,
+    "matched": "/guarantee/i",
+    "snippet": "<li class=\"wf-footer__contact wf-footer__contact--guarantee\">"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_pdp_mobile.html",
+    "line": 4268,
+    "matched": "/guarantee/i",
+    "snippet": "<div>30-day money-back guarantee.</div>"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_pdp_mobile.html",
+    "line": 4304,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"wf-footer__fineprint\"><p><strong>Results Disclaimer:</strong> <em>Individual results may vary. Testimonials and reviews are not necessarily represen"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_pdp_mobile.html",
+    "line": 80,
+    "matched": "/trial/i",
+    "snippet": "<script id=\"shopify-origin-trials\" async=\"async\" integrity=\"sha256-qJbe/jEZBHtr5W/BlA2cKAz3vkXu6vJQyLjgvgCC86g=\" src=\"//cdn.shopify.com/shopifycloud/storefront/"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_pdp_mobile.html",
+    "line": 81,
+    "matched": "/trial/i",
+    "snippet": "<script>(()=>{var d=\"shopify:webmcp_adapter_loaded\",n=Symbol.for(\"shopify.webmcp_adapter_loading\");function s(c,a,{win:r=window,doc:o=document}={}){function p()"
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_pdp_mobile.html",
+    "line": 3670,
+    "matched": "/trial/i",
+    "snippet": "<div class=\"fn-section-subtitle fn-richtext\"><p>The active ingredients aren't just trendy they are scientifically proven. Every functional benefit is backed by "
+  },
+  {
+    "file": "Clone-willafarm\\data\\willafarm_pdp_mobile.html",
+    "line": 3697,
+    "matched": "/trial/i",
+    "snippet": "<div class=\"fn-research-footer\"><p class=\"fn-research-citation\">Randomized controlled trial · 4 days · 18 participants</p>"
+  },
+  {
+    "file": "Clone-willafarm\\data\\zavelyn_catalog_audit.json",
+    "line": 553,
+    "matched": "/trial/i",
+    "snippet": "\"title\": \"Sakerplus® 50FT Industrial LED Construction String Lights\","
+  },
+  {
+    "file": "Clone-willafarm\\data\\zavelyn_catalog_audit.json",
+    "line": 554,
+    "matched": "/trial/i",
+    "snippet": "\"handle\": \"sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-willafarm\\data\\zavelyn_catalog_audit.json",
+    "line": 560,
+    "matched": "/trial/i",
+    "snippet": "\"url\": \"https://tryzavelyn.com/products/sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-willafarm\\scripts\\planned_brand_updates.json",
+    "line": 100,
+    "matched": "/trial/i",
+    "snippet": "\"handle\": \"sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-willafarm\\scripts\\planned_brand_updates.json",
+    "line": 101,
+    "matched": "/trial/i",
+    "snippet": "\"oldTitle\": \"Sakerplus® 50FT Industrial LED Construction String Lights\","
+  },
+  {
+    "file": "Clone-willafarm\\scripts\\planned_brand_updates.json",
+    "line": 102,
+    "matched": "/trial/i",
+    "snippet": "\"newTitle\": \"Zavelyn® 50FT Industrial LED Construction String Lights\","
+  },
+  {
+    "file": "Clone-willafarm\\scripts\\products_brand_audit.json",
+    "line": 52,
+    "matched": "/trial/i",
+    "snippet": "\"handle\": \"sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-willafarm\\scripts\\products_brand_audit.json",
+    "line": 53,
+    "matched": "/trial/i",
+    "snippet": "\"title\": \"Sakerplus® 50FT Industrial LED Construction String Lights\","
+  },
+  {
+    "file": "Clone-willafarm\\scripts\\products_title_preview.json",
+    "line": 52,
+    "matched": "/trial/i",
+    "snippet": "\"handle\": \"sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-willafarm\\scripts\\products_title_preview.json",
+    "line": 53,
+    "matched": "/trial/i",
+    "snippet": "\"oldTitle\": \"Sakerplus® 50FT Industrial LED Construction String Lights\","
+  },
+  {
+    "file": "Clone-willafarm\\scripts\\products_title_preview.json",
+    "line": 54,
+    "matched": "/trial/i",
+    "snippet": "\"newTitle\": \"Zavelyn® 50FT Industrial LED Construction String Lights\""
+  },
+  {
+    "file": "Clone-willafarm\\scripts\\sync_catalog_results.json",
+    "line": 77,
+    "matched": "/trial/i",
+    "snippet": "\"oldTitle\": \"Sakerplus® 50FT Industrial LED Construction String Lights\","
+  },
+  {
+    "file": "Clone-willafarm\\scripts\\sync_catalog_results.json",
+    "line": 78,
+    "matched": "/trial/i",
+    "snippet": "\"newTitle\": \"Zavelyn® 50FT Industrial LED Construction String Lights\","
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 227,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<span class=\"wf-tb-text\">90-Day Money-Back Guarantee</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 557,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<h3>90-Day Money-Back Guarantee</h3>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 692,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p>Every order comes with our 90-Day 100% Satisfaction Money-Back Guarantee. If for any reason you or your flock are not thrilled with its performance, simply c"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 757,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<strong>90-Day Money-Back</strong>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 227,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<span class=\"wf-tb-text\">90-Day Money-Back Guarantee</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 557,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<h3>90-Day Money-Back Guarantee</h3>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 692,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p>Every order comes with our 90-Day 100% Satisfaction Money-Back Guarantee. If for any reason you or your flock are not thrilled with its performance, simply c"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 757,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<strong>90-Day Money-Back</strong>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 558,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<p>Try Zavelyn risk-free in your coop or brooder. If you or your flock aren't 100% satisfied, get a prompt full refund.</p>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 758,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<span>Total risk-free satisfaction guarantee on all orders</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 6,
+    "matched": "/guarantee/i",
+    "snippet": "<!-- Top Trust & Guarantee Announcement Bar -->"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 227,
+    "matched": "/guarantee/i",
+    "snippet": "<span class=\"wf-tb-text\">90-Day Money-Back Guarantee</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 240,
+    "matched": "/guarantee/i",
+    "snippet": "<span class=\"wf-payment-secure-text\">🔒 Guaranteed Safe &amp; Secure Checkout</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 557,
+    "matched": "/guarantee/i",
+    "snippet": "<h3>90-Day Money-Back Guarantee</h3>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 688,
+    "matched": "/guarantee/i",
+    "snippet": "<span>What is your return and guarantee policy?</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 692,
+    "matched": "/guarantee/i",
+    "snippet": "<p>Every order comes with our 90-Day 100% Satisfaction Money-Back Guarantee. If for any reason you or your flock are not thrilled with its performance, simply c"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 701,
+    "matched": "/guarantee/i",
+    "snippet": "<!-- SHIPPING & DELIVERY GUARANTEE SECTION (Directly before Customer Reviews) -->"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 709,
+    "matched": "/guarantee/i",
+    "snippet": "<h3 class=\"wf-shipping-card-heading\">Doorstep Delivery Guarantee &amp; Real-Time Tracking</h3>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 725,
+    "matched": "/guarantee/i",
+    "snippet": "Every Zavelyn order is meticulously inspected, cushioned in heavy-duty protective packaging, and dispatched directly from our regional fulfillment centers withi"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 728,
+    "matched": "/guarantee/i",
+    "snippet": "The moment your shipment leaves our facility, you will automatically receive an instant tracking link via email and SMS with live, step-by-step delivery updates"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\heating-lamp-funnel.liquid",
+    "line": 758,
+    "matched": "/guarantee/i",
+    "snippet": "<span>Total risk-free satisfaction guarantee on all orders</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 62,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<span><strong>90-Day</strong> Risk-Free Trial</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 228,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<strong>90-Day Money-Back</strong>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 688,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p>Every order is covered by our 90-Day 100% Satisfaction Money-Back Guarantee. If your child doesn't absolutely love building with MagTrack, or if any piece is"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 753,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<strong>90-Day Money-Back</strong>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 228,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<strong>90-Day Money-Back</strong>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 688,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p>Every order is covered by our 90-Day 100% Satisfaction Money-Back Guarantee. If your child doesn't absolutely love building with MagTrack, or if any piece is"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 753,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<strong>90-Day Money-Back</strong>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 62,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<span><strong>90-Day</strong> Risk-Free Trial</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 229,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<span>100% Risk-Free Guarantee</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 754,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<span>Total risk-free satisfaction guarantee on all orders</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 59,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"wf-gallery-guarantees\">"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 60,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"wf-gal-guarantee-item\">"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 64,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"wf-gal-guarantee-item\">"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 68,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"wf-gal-guarantee-item\">"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 229,
+    "matched": "/guarantee/i",
+    "snippet": "<span>100% Risk-Free Guarantee</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 253,
+    "matched": "/guarantee/i",
+    "snippet": "<span>GUARANTEED 100% SAFE &amp; SECURE CHECKOUT</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 684,
+    "matched": "/guarantee/i",
+    "snippet": "<span>What is your guarantee and return policy?</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 688,
+    "matched": "/guarantee/i",
+    "snippet": "<p>Every order is covered by our 90-Day 100% Satisfaction Money-Back Guarantee. If your child doesn't absolutely love building with MagTrack, or if any piece is"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 695,
+    "matched": "/guarantee/i",
+    "snippet": "<!-- SECTION 9: DOORSTEP DELIVERY GUARANTEE & REAL-TIME TRACKING -->"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 704,
+    "matched": "/guarantee/i",
+    "snippet": "<h2 class=\"wf-delivery-heading\">Doorstep Delivery Guarantee &amp; Real-Time Tracking</h2>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 724,
+    "matched": "/guarantee/i",
+    "snippet": "<p>Every Zavelyn order is meticulously inspected, cushioned in heavy-duty protective packaging, and dispatched directly from our regional fulfillment centers wi"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 725,
+    "matched": "/guarantee/i",
+    "snippet": "<p>The moment your shipment leaves our facility, you will automatically receive an instant tracking link via email and SMS with live, step-by-step delivery upda"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 754,
+    "matched": "/guarantee/i",
+    "snippet": "<span>Total risk-free satisfaction guarantee on all orders</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 1069,
+    "matched": "/guarantee/i",
+    "snippet": "/* Gallery Guarantees below thumbs */"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 1070,
+    "matched": "/guarantee/i",
+    "snippet": ".wf-gallery-guarantees {"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 1083,
+    "matched": "/guarantee/i",
+    "snippet": ".wf-gal-guarantee-item {"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 2181,
+    "matched": "/guarantee/i",
+    "snippet": "/* SECTION 9: DOORSTEP DELIVERY GUARANTEE                 */"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 2620,
+    "matched": "/guarantee/i",
+    "snippet": ".wf-gallery-guarantees {"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\thoson-magtrack-funnel.liquid",
+    "line": 62,
+    "matched": "/trial/i",
+    "snippet": "<span><strong>90-Day</strong> Risk-Free Trial</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-cart-drawer.liquid",
+    "line": 79,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<span>🛡️ 90-Day Money-Back Guarantee</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-cart-drawer.liquid",
+    "line": 79,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<span>🛡️ 90-Day Money-Back Guarantee</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-cart-drawer.liquid",
+    "line": 78,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"cart-guarantee-badges\">"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-cart-drawer.liquid",
+    "line": 79,
+    "matched": "/guarantee/i",
+    "snippet": "<span>🛡️ 90-Day Money-Back Guarantee</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-cart-drawer.liquid",
+    "line": 342,
+    "matched": "/guarantee/i",
+    "snippet": ".cart-guarantee-badges {"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-comparison.liquid",
+    "line": 44,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<td class=\"col-brand\"><span class=\"check-icon\">✓</span> 90-Day Money-Back Trial</td>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-comparison.liquid",
+    "line": 44,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<td class=\"col-brand\"><span class=\"check-icon\">✓</span> 90-Day Money-Back Trial</td>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-comparison.liquid",
+    "line": 43,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<td><strong>Risk-Free Guarantee</strong></td>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-comparison.liquid",
+    "line": 43,
+    "matched": "/guarantee/i",
+    "snippet": "<td><strong>Risk-Free Guarantee</strong></td>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-comparison.liquid",
+    "line": 44,
+    "matched": "/trial/i",
+    "snippet": "<td class=\"col-brand\"><span class=\"check-icon\">✓</span> 90-Day Money-Back Trial</td>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-facts.liquid",
+    "line": 24,
+    "matched": "/trial/i",
+    "snippet": "<h3>Industrial Durability</h3>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-facts.liquid",
+    "line": 153,
+    "matched": "/trial/i",
+    "snippet": "\"default\": \"Industrial Durability\""
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-faq.liquid",
+    "line": 36,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<span>What is the 90-Day Risk-Free Money-Back Guarantee?</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-faq.liquid",
+    "line": 40,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p>We stand 100% behind the craftsmanship and durability of every tool we make. If you are not thoroughly satisfied with the performance of your purchase for an"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-faq.liquid",
+    "line": 36,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<span>What is the 90-Day Risk-Free Money-Back Guarantee?</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-faq.liquid",
+    "line": 36,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<span>What is the 90-Day Risk-Free Money-Back Guarantee?</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-faq.liquid",
+    "line": 6,
+    "matched": "/guarantee/i",
+    "snippet": "<p class=\"willa-section-subtitle\">{{ section.settings.subtitle | default: 'Everything you need to know about our products, shipping, and guarantees.' }}</p>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-faq.liquid",
+    "line": 36,
+    "matched": "/guarantee/i",
+    "snippet": "<span>What is the 90-Day Risk-Free Money-Back Guarantee?</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-faq.liquid",
+    "line": 145,
+    "matched": "/guarantee/i",
+    "snippet": "\"default\": \"Everything you need to know about our products, shipping, and guarantees.\""
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-featured-product.liquid",
+    "line": 125,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<span>🛡️ 90-Day Money-Back Guarantee</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-featured-product.liquid",
+    "line": 125,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<span>🛡️ 90-Day Money-Back Guarantee</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-featured-product.liquid",
+    "line": 125,
+    "matched": "/guarantee/i",
+    "snippet": "<span>🛡️ 90-Day Money-Back Guarantee</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 9,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<span class=\"desktop-only\">{{ section.settings.announcement_desktop | default: '★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TR"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 10,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<span class=\"mobile-only\">{{ section.settings.announcement_mobile | default: '★ FREE US SHIPPING OVER $49 · 90-DAY TRIAL ★' }}</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 99,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<li><a href=\"/policies/refund-policy\"><span class=\"menu-icon\">🛡️</span> 90-Day Money-Back Guarantee</a></li>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 457,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"default\": \"★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TRIAL ★\""
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 463,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"default\": \"★ FREE US SHIPPING OVER $49 · 90-DAY TRIAL ★\""
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 99,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<li><a href=\"/policies/refund-policy\"><span class=\"menu-icon\">🛡️</span> 90-Day Money-Back Guarantee</a></li>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 9,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<span class=\"desktop-only\">{{ section.settings.announcement_desktop | default: '★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TR"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 457,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "\"default\": \"★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TRIAL ★\""
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 9,
+    "matched": "/guarantee/i",
+    "snippet": "<span class=\"desktop-only\">{{ section.settings.announcement_desktop | default: '★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TR"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 99,
+    "matched": "/guarantee/i",
+    "snippet": "<li><a href=\"/policies/refund-policy\"><span class=\"menu-icon\">🛡️</span> 90-Day Money-Back Guarantee</a></li>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 457,
+    "matched": "/guarantee/i",
+    "snippet": "\"default\": \"★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TRIAL ★\""
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 9,
+    "matched": "/trial/i",
+    "snippet": "<span class=\"desktop-only\">{{ section.settings.announcement_desktop | default: '★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TR"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 10,
+    "matched": "/trial/i",
+    "snippet": "<span class=\"mobile-only\">{{ section.settings.announcement_mobile | default: '★ FREE US SHIPPING OVER $49 · 90-DAY TRIAL ★' }}</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 457,
+    "matched": "/trial/i",
+    "snippet": "\"default\": \"★ FREE US SHIPPING OVER $49 · 100% SATISFACTION GUARANTEED · 90-DAY RISK-FREE TRIAL ★\""
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-header.liquid",
+    "line": 463,
+    "matched": "/trial/i",
+    "snippet": "\"default\": \"★ FREE US SHIPPING OVER $49 · 90-DAY TRIAL ★\""
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 48,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<span>🛡️</span> <strong>90-Day</strong> Risk-Free Trial"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 365,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"default\": \"90-Day\""
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 48,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<span>🛡️</span> <strong>90-Day</strong> Risk-Free Trial"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 371,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "\"default\": \"Risk-Free Trial\""
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 39,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"willa-hero-guarantees\">"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 42,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"guarantee-item\" {{ block.shopify_attributes }}>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 47,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"guarantee-item\">"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 50,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"guarantee-item\">"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 53,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"guarantee-item\">"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 145,
+    "matched": "/guarantee/i",
+    "snippet": ".willa-hero-guarantees {"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 154,
+    "matched": "/guarantee/i",
+    "snippet": ".guarantee-item {"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 234,
+    "matched": "/guarantee/i",
+    "snippet": ".willa-hero-guarantees {"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 353,
+    "matched": "/guarantee/i",
+    "snippet": "\"name\": \"Guarantee / Trust Item\","
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 370,
+    "matched": "/guarantee/i",
+    "snippet": "\"label\": \"Guarantee Description\","
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 15,
+    "matched": "/trial/i",
+    "snippet": "{{ section.settings.desc | default: 'Stop fighting broken equipment and low-grade tools. Zavelyn brings you industrial-grade farm repair kits, precision ultraso"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 48,
+    "matched": "/trial/i",
+    "snippet": "<span>🛡️</span> <strong>90-Day</strong> Risk-Free Trial"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 277,
+    "matched": "/trial/i",
+    "snippet": "\"default\": \"Stop fighting broken equipment and low-grade tools. Zavelyn brings you industrial-grade farm repair kits, precision ultrasonic tools, and durable ho"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-hero.liquid",
+    "line": 371,
+    "matched": "/trial/i",
+    "snippet": "\"default\": \"Risk-Free Trial\""
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-main-product.liquid",
+    "line": 130,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<span>🛡️</span> <strong>90-Day Money-Back Guarantee</strong>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-main-product.liquid",
+    "line": 193,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p>We offer an unconditional 90-day money-back guarantee. If you are not completely satisfied, email support@tryzavelyn.com for an immediate exchange or refund."
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-main-product.liquid",
+    "line": 130,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<span>🛡️</span> <strong>90-Day Money-Back Guarantee</strong>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-main-product.liquid",
+    "line": 193,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p>We offer an unconditional 90-day money-back guarantee. If you are not completely satisfied, email support@tryzavelyn.com for an immediate exchange or refund."
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-main-product.liquid",
+    "line": 127,
+    "matched": "/guarantee/i",
+    "snippet": "<!-- Guarantees Row -->"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-main-product.liquid",
+    "line": 130,
+    "matched": "/guarantee/i",
+    "snippet": "<span>🛡️</span> <strong>90-Day Money-Back Guarantee</strong>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-main-product.liquid",
+    "line": 193,
+    "matched": "/guarantee/i",
+    "snippet": "<p>We offer an unconditional 90-day money-back guarantee. If you are not completely satisfied, email support@tryzavelyn.com for an immediate exchange or refund."
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-main-product.liquid",
+    "line": 154,
+    "matched": "/trial/i",
+    "snippet": "<p>Industrial-grade construction engineered for tough jobs and reliable long-term performance.</p>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-main-product.liquid",
+    "line": 172,
+    "matched": "/trial/i",
+    "snippet": "<p>Industrial-grade construction engineered for tough jobs and reliable long-term performance.</p>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-main-product.liquid",
+    "line": 700,
+    "matched": "/trial/i",
+    "snippet": "\"default\": \"Industrial-grade construction engineered for tough jobs and reliable long-term performance.\""
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-reviews.liquid",
+    "line": 58,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<strong>90-Day Money-Back</strong>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-reviews.liquid",
+    "line": 275,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<h4 class=\"review-title\">\"Fast dispatch, real-time tracking, 90-day peace of mind\"</h4>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-reviews.liquid",
+    "line": 276,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p class=\"review-body\">You can order with complete confidence. Arrived in pristine condition via FedEx with tracking at every stage. The 90-day guarantee gave m"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-reviews.liquid",
+    "line": 58,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<strong>90-Day Money-Back</strong>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-reviews.liquid",
+    "line": 59,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<span>Total risk-free satisfaction guarantee on all orders</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-reviews.liquid",
+    "line": 4,
+    "matched": "/guarantee/i",
+    "snippet": "<!-- SHIPPING & DELIVERY GUARANTEE BANNER (Directly before Customer Reviews) -->"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-reviews.liquid",
+    "line": 10,
+    "matched": "/guarantee/i",
+    "snippet": "<h3 class=\"wf-shipping-card-heading\">Doorstep Delivery Guarantee &amp; Real-Time Tracking</h3>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-reviews.liquid",
+    "line": 26,
+    "matched": "/guarantee/i",
+    "snippet": "Every Zavelyn order is meticulously inspected, cushioned in heavy-duty protective packaging, and dispatched directly from our regional fulfillment centers withi"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-reviews.liquid",
+    "line": 29,
+    "matched": "/guarantee/i",
+    "snippet": "The moment your shipment leaves our facility, you will automatically receive an instant tracking link via email and SMS with live, step-by-step delivery updates"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-reviews.liquid",
+    "line": 59,
+    "matched": "/guarantee/i",
+    "snippet": "<span>Total risk-free satisfaction guarantee on all orders</span>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-reviews.liquid",
+    "line": 276,
+    "matched": "/guarantee/i",
+    "snippet": "<p class=\"review-body\">You can order with complete confidence. Arrived in pristine condition via FedEx with tracking at every stage. The 90-day guarantee gave m"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-steps.liquid",
+    "line": 32,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p>Every product is backed by our 90-Day Money-Back Guarantee and dedicated customer care team ready to help 7 days a week.</p>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-steps.liquid",
+    "line": 32,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p>Every product is backed by our 90-Day Money-Back Guarantee and dedicated customer care team ready to help 7 days a week.</p>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\sections\\willa-steps.liquid",
+    "line": 32,
+    "matched": "/guarantee/i",
+    "snippet": "<p>Every product is backed by our 90-Day Money-Back Guarantee and dedicated customer care team ready to help 7 days a week.</p>"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\templates\\product.json",
+    "line": 26,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"title\": \"90-Day Money-Back Guarantee\","
+  },
+  {
+    "file": "Clone-willafarm\\theme\\templates\\product.json",
+    "line": 27,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"content\": \"Every Zavelyn product comes backed by our unconditional 90-Day 100% Satisfaction Guarantee. If you are not completely satisfied, simply contact supp"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\templates\\product.json",
+    "line": 26,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "\"title\": \"90-Day Money-Back Guarantee\","
+  },
+  {
+    "file": "Clone-willafarm\\theme\\templates\\product.json",
+    "line": 26,
+    "matched": "/guarantee/i",
+    "snippet": "\"title\": \"90-Day Money-Back Guarantee\","
+  },
+  {
+    "file": "Clone-willafarm\\theme\\templates\\product.json",
+    "line": 27,
+    "matched": "/guarantee/i",
+    "snippet": "\"content\": \"Every Zavelyn product comes backed by our unconditional 90-Day 100% Satisfaction Guarantee. If you are not completely satisfied, simply contact supp"
+  },
+  {
+    "file": "Clone-willafarm\\theme\\templates\\product.sakerplus-livestock-heating-lamp.json",
+    "line": 184,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"answer\": \"Every order comes with our 90-Day 100% Satisfaction Money-Back Guarantee. If for any reason you or your flock are not thrilled with its performance, "
+  },
+  {
+    "file": "Clone-willafarm\\theme\\templates\\product.sakerplus-livestock-heating-lamp.json",
+    "line": 184,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "\"answer\": \"Every order comes with our 90-Day 100% Satisfaction Money-Back Guarantee. If for any reason you or your flock are not thrilled with its performance, "
+  },
+  {
+    "file": "Clone-willafarm\\theme\\templates\\product.sakerplus-livestock-heating-lamp.json",
+    "line": 183,
+    "matched": "/guarantee/i",
+    "snippet": "\"question\": \"What is your return and guarantee policy?\","
+  },
+  {
+    "file": "Clone-willafarm\\theme\\templates\\product.sakerplus-livestock-heating-lamp.json",
+    "line": 184,
+    "matched": "/guarantee/i",
+    "snippet": "\"answer\": \"Every order comes with our 90-Day 100% Satisfaction Money-Back Guarantee. If for any reason you or your flock are not thrilled with its performance, "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 15084,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<meta charset=\\\"utf-8\\\"> <b>100% Worry-free in wet "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 42116,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES</span></h2>\\n<ul class=\\\"a-unordered-list a-vertical a-spacing-mini\\\">\\n<li class=\\\"a-spacin"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 42329,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES</span></h2>\\n<ul>\\n<li>\\n<strong>Extremely thin design:</strong> The portable foldable keybo"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 48580,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"body_html\": \"<h3><span>FEATURES</span></h3>\\n<ul class=\\\"a-unordered-list a-vertical a-spacing-mini\\\">\\n<li class=\\\"a-spacing-mini\\\">\\n<p><span class=\\\"a-list-"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 38682,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES<meta charset=\\\"utf-8\\\"></span></h2>\\n<ul>\\n<li data-start=\\\"64\\\" data-end=\\\"196\\\" class=\\\"\\\""
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 38682,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES<meta charset=\\\"utf-8\\\"></span></h2>\\n<ul>\\n<li data-start=\\\"64\\\" data-end=\\\"196\\\" class=\\\"\\\""
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 48580,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "\"body_html\": \"<h3><span>FEATURES</span></h3>\\n<ul class=\\\"a-unordered-list a-vertical a-spacing-mini\\\">\\n<li class=\\\"a-spacing-mini\\\">\\n<p><span class=\\\"a-list-"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 1148,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURS</span></h2>\\n<div style=\\\"text-align: center;\\\">\\n<ul>\\n<li style=\\\"text-align: left;\\\">\\n<strong>Uniq"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 1460,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES</span></h2>\\n<ul>\\n<li>\\n<strong>Expandable vacpack travel backpack:</strong> This backpack "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 4055,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h3 class=\\\"15\\\" align=\\\"justify\\\"><span style=\\\"color: #ff2a00;\\\">FEATURES</span></h3>\\n<ul class=\\\"a-unordered-list a-vertical a-spacing-mini\\\">"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 29387,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p><strong data-start=\\\"21\\\" data-end=\\\"53\\\">Manage"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 33607,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p data-start=\\\"185\\\" data-end=\\\"437\\\"><strong data"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 33650,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p><strong>4k dual dash camera:</strong> Featuring "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 34565,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<article class=\\\"text-token-text-primary w"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 35135,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p><strong>Upgraded aluminum alloy construction</st"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 36636,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<p data-mce-fragment=\\\"1\\\"><span data-mce-fragment=\\\"1\\\" style=\\\"color: #ff8000;\\\"><strong data-mce-fragment=\\\"1\\\">FEATURES:</strong></span></p>\\n"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 38682,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES<meta charset=\\\"utf-8\\\"></span></h2>\\n<ul>\\n<li data-start=\\\"64\\\" data-end=\\\"196\\\" class=\\\"\\\""
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 39750,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES</span></h2>\\n<ul>\\n<li data-start=\\\"14\\\" data-end=\\\"407\\\">\\n<strong data-start=\\\"14\\\" data-e"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 41722,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<p><span style=\\\"color: #ff8000;\\\"><strong>FEATURES</strong></span></p>\\n<ul class=\\\"a-unordered-list a-vertical a-spacing-mini\\\">\\n<li class=\\\"a-"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 43991,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h3 style=\\\"text-align: center;\\\"><span><strong>This is the must have gadget in your car !</strong></span></h3>\\n<p><span><img src=\\\"https://img.c"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 44157,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES</span></h2>\\n<ul>\\n<li>\\n<strong>Perfect Angle Adjustment</strong>: easily adjustable to any"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 44648,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES</span></h2>\\n<ul class=\\\"a-unordered-list a-vertical a-spacing-mini\\\">\\n<li class=\\\"a-spacin"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 44770,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h2 data-mce-fragment=\\\"1\\\">Product Description</h2>\\n<div class=\\\"celwidget aplus-module module-12 aplus-standard\\\" data-csa-c-id=\\\"7ruz51-5z3sbw"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 45446,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h4><span style=\\\"color: rgb(40, 76, 126);\\\"><strong>FEATURE:</strong></span></h4>\\n<ul>\\n<li>💁‍♂️ <strong>Precise Torque:</strong> Offer accurat"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 50564,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<div style=\\\"overflow: hidden; max-width: 100%; padding-bottom: 56.25%; height: auto; position: relative;\\\"><iframe height=\\\"315\\\" width=\\\"500\\\" s"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 51888,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<p><span style=\\\"color: #ff8000;\\\" data-mce-fragment=\\\"1\\\"><strong data-mce-fragment=\\\"1\\\">FEATURES</strong></span></p>\\n<ul>\\n<li>\\n<p><strong>Ef"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 2811,
+    "matched": "/trial/i",
+    "snippet": "\"title\": \"Sakerplus® 50FT Industrial LED Construction String Lights\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 2812,
+    "matched": "/trial/i",
+    "snippet": "\"handle\": \"sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 2813,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li data-path-to-node=\\\"0\\\">\\n<meta charset=\\\"utf-8\\\">\\n<meta charset=\\\"utf-8\\\">\\n"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 4906,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p><meta charset=\\\"utf-8\\\"><strong>High-Torque Perf"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 5678,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<div class=\\\"qMYqUG_convSearchResultHighlightRoot\\\">\\n<div class=\\\"\\\">\\n<section class=\\"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 9305,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<p><span style=\\\"font-size: 24px; color: #e67e23;\\\"><strong>FEATURES</strong></span><br><strong>Auto-stop safety:</strong> Advanced auto-stop sens"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 9360,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p><meta charset=\\\"utf-8\\\"><meta charset=\\\"utf-8\\\">"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 10862,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p><meta charset=\\\"utf-8\\\"><meta charset=\\\"utf-8\\\">"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 14583,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<article dir=\\\"auto\\\" class=\\\"text-token-t"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 17682,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p><strong><span>13-piece versatility:</span></stro"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 19248,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p class=\\\"isSelectedEnd\\\"><strong data-start=\\\"39\\"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 21527,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<style>\\n    img {\\n        display: block;\\n        margin-left: auto;\\n        margin-right: auto;\\n    }\\n</style>\\n<h2><span style=\\\"color: #f"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 22643,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES<meta charset=\\\"utf-8\\\"></span></h2>\\n<ul>\\n<li>\\n<p data-path-to-node=\\\"4,0,0\\\"><b data-path"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 24677,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p><strong>Reversible impact screwdriver set:</stro"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 24959,
+    "matched": "/trial/i",
+    "snippet": "\"title\": \"Sakerplus® High Resolution Industrial Inspection Endoscope Camera\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 24960,
+    "matched": "/trial/i",
+    "snippet": "\"handle\": \"sakerplus®-high-resolution-industrial-inspection-endoscope-camera\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 24961,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<style>\\n    img {\\n        display: block;\\n        margin-left: auto;\\n        margin-right: auto;\\n    }\\n</style>\\n<h2><span style=\\\"color: rg"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 25018,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES<meta charset=\\\"utf-8\\\"></span></h2>\\n<ul>\\n<li data-path-to-node=\\\"1\\\" style=\\\"text-align: c"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 25248,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<style>\\n    img {\\n        display: block;\\n        margin-left: auto;\\n        margin-right: auto;\\n    }\\n</style>\\n<h2><span style=\\\"color: rg"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 27555,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p><strong data-start=\\\"0\\\" data-end=\\\"14\\\">Effortl"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 28948,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li data-path-to-node=\\\"0\\\">\\n<b data-path-to-node=\\\"0\\\" data-index-in-node=\\\"0\\\">"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 30134,
+    "matched": "/trial/i",
+    "snippet": "\"title\": \"Sakerplus® Industrial Floor Gap Suction Tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 30135,
+    "matched": "/trial/i",
+    "snippet": "\"handle\": \"sakerplus®-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 30136,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p><strong>Heavy-duty construction:</strong> Constr"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 31634,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<p data-start=\\\"42\\\" data-end=\\\"206\\\"><strong data-"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 34310,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES</span></h2>\\n<ul>\\n<li class=\\\"a-spacing-mini\\\">\\n<article data-turn=\\\"assistant\\\" data-scro"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 39669,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES</span></h2>\\n<ul>\\n<li data-start=\\\"1572\\\" data-end=\\\"1953\\\">\\n<strong>TRUE 51000RPM</strong"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 41364,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: rgb(255, 128, 0);\\\">FEATURES</span></h2>\\n<ul>\\n<li><span style=\\\"color: rgb(0, 0, 0);\\\"><span><strong>Durable material:<"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 43852,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<p style=\\\"text-align: center;\\\">🧰🔨</p>\\n<p style=\\\"text-align: center;\\\"><span style=\\\"color: rgb(231, 154, 78);\\\"><strong>One wrench, endless "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\catalog_harvested.json",
+    "line": 47436,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<p style=\\\"font-weight: var(--font-heading-weight); text-align: center;\\\" data-mce-style=\\\"font-weight: var(--font-heading-weight); text-align: ce"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 125,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 383,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 581,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 833,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 1380,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 1561,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-high-resolution-industrial-inspection-endoscope-camera\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 1618,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 1820,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 1999,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 2239,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 2347,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 2598,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-high-resolution-industrial-inspection-endoscope-camera\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 2683,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 2929,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 3183,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 3451,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 3948,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 4020,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-high-resolution-industrial-inspection-endoscope-camera\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 4089,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 4195,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-high-resolution-industrial-inspection-endoscope-camera\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 5588,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\collections_harvested.json",
+    "line": 5841,
+    "matched": "/trial/i",
+    "snippet": "\"sakerplus®-50ft-industrial-led-construction-string-lights\""
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_funnel.html",
+    "line": 1510,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "</table></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_funnel.html",
+    "line": 1512,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2025 Copyright All Rights Reserved.</p></div> <!----></div> <!----></div> <!----> <!----> <!----> <!----> <!----> <!----> "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_funnel.html",
+    "line": 1510,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "</table></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_funnel.html",
+    "line": 1512,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2025 Copyright All Rights Reserved.</p></div> <!----></div> <!----></div> <!----> <!----> <!----> <!----> <!----> <!----> "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_funnel.html",
+    "line": 1251,
+    "matched": "/guarantee/i",
+    "snippet": "}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_funnel.html",
+    "line": 1510,
+    "matched": "/guarantee/i",
+    "snippet": "</table></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_funnel.html",
+    "line": 1512,
+    "matched": "/guarantee/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2025 Copyright All Rights Reserved.</p></div> <!----></div> <!----></div> <!----> <!----> <!----> <!----> <!----> <!----> "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 1359,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p><img src=\"https://cdn.myshopage.com/fc4dd2df-f1d8-4b57-bdab-9a14c849df00.png\" alt=\"Feature Icon\" style=\"display: inline-block; vertical-align: middle; margin"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 1371,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "</div> <div class=\"md:flex md:flex-col justify-center gallery2-item-desc gallery2-item-desc-left\" style=\"color:#000000;font-size:16px;\" data-v-7da41dde><p>The <"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 1372,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <div class=\"mx-auto mt-2.5 flex flex-wrap justify-center gap-1 order-9\"><img"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 1359,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p><img src=\"https://cdn.myshopage.com/fc4dd2df-f1d8-4b57-bdab-9a14c849df00.png\" alt=\"Feature Icon\" style=\"display: inline-block; vertical-align: middle; margin"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 1371,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "</div> <div class=\"md:flex md:flex-col justify-center gallery2-item-desc gallery2-item-desc-left\" style=\"color:#000000;font-size:16px;\" data-v-7da41dde><p>The <"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 1372,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <div class=\"mx-auto mt-2.5 flex flex-wrap justify-center gap-1 order-9\"><img"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 60,
+    "matched": "/guarantee/i",
+    "snippet": ".guarantee2{"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 63,
+    "matched": "/guarantee/i",
+    "snippet": ".guarantee2-section{"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 67,
+    "matched": "/guarantee/i",
+    "snippet": ".guarantee2-title, .guarantee2-desc{"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 99,
+    "matched": "/guarantee/i",
+    "snippet": ".guarantee2-image{"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 102,
+    "matched": "/guarantee/i",
+    "snippet": ".guarantee2-title, .guarantee2-desc{"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 1345,
+    "matched": "/guarantee/i",
+    "snippet": "}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 1359,
+    "matched": "/guarantee/i",
+    "snippet": "<p><img src=\"https://cdn.myshopage.com/fc4dd2df-f1d8-4b57-bdab-9a14c849df00.png\" alt=\"Feature Icon\" style=\"display: inline-block; vertical-align: middle; margin"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 1371,
+    "matched": "/guarantee/i",
+    "snippet": "</div> <div class=\"md:flex md:flex-col justify-center gallery2-item-desc gallery2-item-desc-left\" style=\"color:#000000;font-size:16px;\" data-v-7da41dde><p>The <"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_landing_step2.html",
+    "line": 1372,
+    "matched": "/guarantee/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <div class=\"mx-auto mt-2.5 flex flex-wrap justify-center gap-1 order-9\"><img"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_ultrasonic_funnel.html",
+    "line": 1488,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <div class=\"mx-auto mt-2.5 flex flex-wrap justify-center gap-1 order-9\"><img"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_ultrasonic_funnel.html",
+    "line": 1488,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <div class=\"mx-auto mt-2.5 flex flex-wrap justify-center gap-1 order-9\"><img"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_ultrasonic_funnel.html",
+    "line": 1488,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <div class=\"mx-auto mt-2.5 flex flex-wrap justify-center gap-1 order-9\"><img"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_ultrasonic_funnel.html",
+    "line": 1452,
+    "matched": "/guarantee/i",
+    "snippet": "}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\curl_ultrasonic_funnel.html",
+    "line": 1488,
+    "matched": "/guarantee/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <div class=\"mx-auto mt-2.5 flex flex-wrap justify-center gap-1 order-9\"><img"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\extracted_article_body.html",
+    "line": 251,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "</table></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\extracted_article_body.html",
+    "line": 251,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "</table></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\extracted_article_body.html",
+    "line": 251,
+    "matched": "/guarantee/i",
+    "snippet": "</table></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\fence_post_product_page.html",
+    "line": 6936,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "90-Day Return"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\fence_post_product_page.html",
+    "line": 815,
+    "matched": "/trial/i",
+    "snippet": "<script>(function () {var userAgent = navigator.userAgent;var platform = navigator.platform;var maxTouchPoints = navigator.maxTouchPoints || 0;var isIOS = /iPad"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\fence_post_product_page.html",
+    "line": 816,
+    "matched": "/trial/i",
+    "snippet": "<script>(()=>{var d=\"shopify:webmcp_adapter_loaded\",n=Symbol.for(\"shopify.webmcp_adapter_loading\");function s(c,a,{win:r=window,doc:o=document}={}){function p()"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\checkout.html",
+    "line": 1432,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <!----> <img src=\"https://cdn.myshopage.com/c5fa5a60-fe3a-49fa-771d-8b2bf7a2"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\checkout.html",
+    "line": 1432,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <!----> <img src=\"https://cdn.myshopage.com/c5fa5a60-fe3a-49fa-771d-8b2bf7a2"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\checkout.html",
+    "line": 1432,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <!----> <img src=\"https://cdn.myshopage.com/c5fa5a60-fe3a-49fa-771d-8b2bf7a2"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\checkout.html",
+    "line": 1387,
+    "matched": "/guarantee/i",
+    "snippet": "}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\checkout.html",
+    "line": 1432,
+    "matched": "/guarantee/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <!----> <img src=\"https://cdn.myshopage.com/c5fa5a60-fe3a-49fa-771d-8b2bf7a2"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\curl_news.html",
+    "line": 1491,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "</div></div></div></div></div> <div class=\"flex flex-row items-center gap-1 my-2\" data-v-d28882c4><div class=\"w-5 h-5\" data-v-d28882c4><svg viewBox=\"0 0 24 24\" "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\curl_news.html",
+    "line": 1492,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <!----></div> <!----></div> <!----> <!----> <!----> <!----> <!----> <!----> "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\curl_news.html",
+    "line": 1491,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "</div></div></div></div></div> <div class=\"flex flex-row items-center gap-1 my-2\" data-v-d28882c4><div class=\"w-5 h-5\" data-v-d28882c4><svg viewBox=\"0 0 24 24\" "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\curl_news.html",
+    "line": 1492,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <!----></div> <!----></div> <!----> <!----> <!----> <!----> <!----> <!----> "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\curl_news.html",
+    "line": 1244,
+    "matched": "/guarantee/i",
+    "snippet": "}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\curl_news.html",
+    "line": 1491,
+    "matched": "/guarantee/i",
+    "snippet": "</div></div></div></div></div> <div class=\"flex flex-row items-center gap-1 my-2\" data-v-d28882c4><div class=\"w-5 h-5\" data-v-d28882c4><svg viewBox=\"0 0 24 24\" "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\curl_news.html",
+    "line": 1492,
+    "matched": "/guarantee/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <!----></div> <!----></div> <!----> <!----> <!----> <!----> <!----> <!----> "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\extracted_landing_dom.html",
+    "line": 3,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "</div></div></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\extracted_landing_dom.html",
+    "line": 3,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "</div></div></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\extracted_landing_dom.html",
+    "line": 5,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "</div> <div class=\"imgage-section-container w-[140px] lg:w-[196px] mb-2 lg:mb-4 mx-auto\" style=\"--funnel_image_section_after_padding:calc(232 / 232 * 100%);\" da"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\extracted_landing_dom.html",
+    "line": 3,
+    "matched": "/guarantee/i",
+    "snippet": "</div></div></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\extracted_landing_dom.html",
+    "line": 4,
+    "matched": "/guarantee/i",
+    "snippet": "100% Satisfaction Guarantee"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\extracted_landing_dom.html",
+    "line": 5,
+    "matched": "/guarantee/i",
+    "snippet": "</div> <div class=\"imgage-section-container w-[140px] lg:w-[196px] mb-2 lg:mb-4 mx-auto\" style=\"--funnel_image_section_after_padding:calc(232 / 232 * 100%);\" da"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\extracted_news_dom.html",
+    "line": 239,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "</div></div></div></div></div> <div class=\"flex flex-row items-center gap-1 my-2\" data-v-d28882c4><div class=\"w-5 h-5\" data-v-d28882c4><svg viewBox=\"0 0 24 24\" "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\extracted_news_dom.html",
+    "line": 239,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "</div></div></div></div></div> <div class=\"flex flex-row items-center gap-1 my-2\" data-v-d28882c4><div class=\"w-5 h-5\" data-v-d28882c4><svg viewBox=\"0 0 24 24\" "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\extracted_news_dom.html",
+    "line": 239,
+    "matched": "/guarantee/i",
+    "snippet": "</div></div></div></div></div> <div class=\"flex flex-row items-center gap-1 my-2\" data-v-d28882c4><div class=\"w-5 h-5\" data-v-d28882c4><svg viewBox=\"0 0 24 24\" "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\landing.html",
+    "line": 1264,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "</div></div></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\landing.html",
+    "line": 1430,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <!----></div> <!----></div> <!----> <!----> <!----> <!----> <!----> <!----> "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\landing.html",
+    "line": 1264,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "</div></div></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\landing.html",
+    "line": 1266,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "</div> <div class=\"imgage-section-container w-[140px] lg:w-[196px] mb-2 lg:mb-4 mx-auto\" style=\"--funnel_image_section_after_padding:calc(232 / 232 * 100%);\" da"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\landing.html",
+    "line": 1246,
+    "matched": "/guarantee/i",
+    "snippet": "}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\landing.html",
+    "line": 1264,
+    "matched": "/guarantee/i",
+    "snippet": "</div></div></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\landing.html",
+    "line": 1265,
+    "matched": "/guarantee/i",
+    "snippet": "100% Satisfaction Guarantee"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\landing.html",
+    "line": 1266,
+    "matched": "/guarantee/i",
+    "snippet": "</div> <div class=\"imgage-section-container w-[140px] lg:w-[196px] mb-2 lg:mb-4 mx-auto\" style=\"--funnel_image_section_after_padding:calc(232 / 232 * 100%);\" da"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\landing.html",
+    "line": 1430,
+    "matched": "/guarantee/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <!----></div> <!----></div> <!----> <!----> <!----> <!----> <!----> <!----> "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\order.html",
+    "line": 1244,
+    "matched": "/guarantee/i",
+    "snippet": "}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\page.news-sakerplus-livestock-heating-lamp.liquid",
+    "line": 341,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "</div></div></div></div></div> <div class=\"flex flex-row items-center gap-1 my-2\" data-v-d28882c4><div class=\"w-5 h-5\" data-v-d28882c4><svg viewBox=\"0 0 24 24\" "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\page.news-sakerplus-livestock-heating-lamp.liquid",
+    "line": 341,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "</div></div></div></div></div> <div class=\"flex flex-row items-center gap-1 my-2\" data-v-d28882c4><div class=\"w-5 h-5\" data-v-d28882c4><svg viewBox=\"0 0 24 24\" "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\page.news-sakerplus-livestock-heating-lamp.liquid",
+    "line": 341,
+    "matched": "/guarantee/i",
+    "snippet": "</div></div></div></div></div> <div class=\"flex flex-row items-center gap-1 my-2\" data-v-d28882c4><div class=\"w-5 h-5\" data-v-d28882c4><svg viewBox=\"0 0 24 24\" "
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\section.heating-lamp-funnel.liquid",
+    "line": 153,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p class=\"shl-guarantee-note\">🛡️ 90-Day 100% Satisfaction Money-Back Guarantee | Fast Insured Shipping</p>"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\section.heating-lamp-funnel.liquid",
+    "line": 350,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p>Every order comes with our 90-Day 100% Satisfaction Money-Back Guarantee. If for any reason you or your flock are not thrilled with its performance, simply r"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\section.heating-lamp-funnel.liquid",
+    "line": 153,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p class=\"shl-guarantee-note\">🛡️ 90-Day 100% Satisfaction Money-Back Guarantee | Fast Insured Shipping</p>"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\section.heating-lamp-funnel.liquid",
+    "line": 350,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p>Every order comes with our 90-Day 100% Satisfaction Money-Back Guarantee. If for any reason you or your flock are not thrilled with its performance, simply r"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\section.heating-lamp-funnel.liquid",
+    "line": 153,
+    "matched": "/guarantee/i",
+    "snippet": "<p class=\"shl-guarantee-note\">🛡️ 90-Day 100% Satisfaction Money-Back Guarantee | Fast Insured Shipping</p>"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\section.heating-lamp-funnel.liquid",
+    "line": 158,
+    "matched": "/guarantee/i",
+    "snippet": "<img src=\"https://cdn.myshopage.com/32c690d7-b984-40d7-d6a0-62fe13714000.png\" alt=\"Guaranteed Safe Checkout\" referrerpolicy=\"no-referrer\">"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\section.heating-lamp-funnel.liquid",
+    "line": 349,
+    "matched": "/guarantee/i",
+    "snippet": "<summary>What is your return and guarantee policy?</summary>"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\section.heating-lamp-funnel.liquid",
+    "line": 350,
+    "matched": "/guarantee/i",
+    "snippet": "<p>Every order comes with our 90-Day 100% Satisfaction Money-Back Guarantee. If for any reason you or your flock are not thrilled with its performance, simply r"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\heating_lamp\\section.heating-lamp-funnel.liquid",
+    "line": 703,
+    "matched": "/guarantee/i",
+    "snippet": ".shl-guarantee-note {"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\reviews_harvested.json",
+    "line": 1288,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "\"body\": \"100% Risk-Free! I'm a novice cook and chopping vegetables is no longer as scary as holding a kitchen knife!\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\seed_50_products.json",
+    "line": 2864,
+    "matched": "/guarantee/i",
+    "snippet": "\"body_html\": \"<h3 class=\\\"15\\\" align=\\\"justify\\\"><span style=\\\"color: #ff2a00;\\\">FEATURES</span></h3>\\n<ul class=\\\"a-unordered-list a-vertical a-spacing-mini\\\">"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\seed_50_products.json",
+    "line": 1792,
+    "matched": "/trial/i",
+    "snippet": "\"title\": \"Sakerplus® 50FT Industrial LED Construction String Lights\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\seed_50_products.json",
+    "line": 1793,
+    "matched": "/trial/i",
+    "snippet": "\"handle\": \"sakerplus®-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\seed_50_products.json",
+    "line": 1794,
+    "matched": "/trial/i",
+    "snippet": "\"body_html\": \"<h2><span style=\\\"color: #ff8000;\\\">FEATURES</span></h2>\\n<ul>\\n<li data-path-to-node=\\\"0\\\">\\n<meta charset=\\\"utf-8\\\">\\n<meta charset=\\\"utf-8\\\">\\n"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\sitemap_products.json",
+    "line": 356,
+    "matched": "/trial/i",
+    "snippet": "\"https://www.sakerplus.com/products/sakerplus%C2%AE-industrial-floor-gap-suction-tool\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\sitemap_products.json",
+    "line": 435,
+    "matched": "/trial/i",
+    "snippet": "\"https://www.sakerplus.com/products/sakerplus%C2%AE-high-resolution-industrial-inspection-endoscope-camera\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\sitemap_products.json",
+    "line": 790,
+    "matched": "/trial/i",
+    "snippet": "\"https://www.sakerplus.com/products/sakerplus%C2%AE-50ft-industrial-led-construction-string-lights\","
+  },
+  {
+    "file": "Clone-sakerplus\\data\\ultrasonic_body.html",
+    "line": 21,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <div class=\"mx-auto mt-2.5 flex flex-wrap justify-center gap-1 order-9\"><img"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\ultrasonic_body.html",
+    "line": 21,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <div class=\"mx-auto mt-2.5 flex flex-wrap justify-center gap-1 order-9\"><img"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\ultrasonic_body.html",
+    "line": 21,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <div class=\"mx-auto mt-2.5 flex flex-wrap justify-center gap-1 order-9\"><img"
+  },
+  {
+    "file": "Clone-sakerplus\\data\\ultrasonic_body.html",
+    "line": 21,
+    "matched": "/guarantee/i",
+    "snippet": "<p style=\"text-align: center;\">&copy; 2026 Copyright All Rights Reserved.</p></div> <div class=\"mx-auto mt-2.5 flex flex-wrap justify-center gap-1 order-9\"><img"
+  },
+  {
+    "file": "Clone-sakerplus\\theme\\sections\\fence-post-advertorial.liquid",
+    "line": 333,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "</table></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---"
+  },
+  {
+    "file": "Clone-sakerplus\\theme\\sections\\fence-post-advertorial.liquid",
+    "line": 333,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "</table></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---"
+  },
+  {
+    "file": "Clone-sakerplus\\theme\\sections\\fence-post-advertorial.liquid",
+    "line": 333,
+    "matched": "/guarantee/i",
+    "snippet": "</table></div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---"
+  },
+  {
+    "file": "Clone-sakerplus\\theme\\sections\\saker-trust-badges.liquid",
+    "line": 23,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<h4 class=\"trust-title\">30-Day Money Back</h4>"
+  },
+  {
+    "file": "Clone-sakerplus\\theme\\sections\\saker-trust-badges.liquid",
+    "line": 24,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<p class=\"trust-desc\">Hassle-free 30 days return and exchange guarantee</p>"
+  },
+  {
+    "file": "Clone-sakerplus\\theme\\sections\\saker-trust-badges.liquid",
+    "line": 23,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<h4 class=\"trust-title\">30-Day Money Back</h4>"
+  },
+  {
+    "file": "Clone-sakerplus\\theme\\sections\\saker-trust-badges.liquid",
+    "line": 24,
+    "matched": "/guarantee/i",
+    "snippet": "<p class=\"trust-desc\">Hassle-free 30 days return and exchange guarantee</p>"
+  },
+  {
+    "file": "Clone-sakerplus\\theme\\sections\\ultrasonic-cutter-funnel.liquid",
+    "line": 145,
+    "matched": "/30[\\s-]?day/i",
+    "snippet": "<p class=\"suf-guarantee-note\">🛡️ 30-Day 100% Satisfaction Money-Back Guarantee | Fast Insured Shipping</p>"
+  },
+  {
+    "file": "Clone-sakerplus\\theme\\sections\\ultrasonic-cutter-funnel.liquid",
+    "line": 145,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p class=\"suf-guarantee-note\">🛡️ 30-Day 100% Satisfaction Money-Back Guarantee | Fast Insured Shipping</p>"
+  },
+  {
+    "file": "Clone-sakerplus\\theme\\sections\\ultrasonic-cutter-funnel.liquid",
+    "line": 145,
+    "matched": "/guarantee/i",
+    "snippet": "<p class=\"suf-guarantee-note\">🛡️ 30-Day 100% Satisfaction Money-Back Guarantee | Fast Insured Shipping</p>"
+  },
+  {
+    "file": "Clone-sakerplus\\theme\\sections\\ultrasonic-cutter-funnel.liquid",
+    "line": 150,
+    "matched": "/guarantee/i",
+    "snippet": "<img src=\"https://cdn.myshopage.com/32c690d7-b984-40d7-d6a0-62fe13714000.png\" alt=\"Guaranteed Safe Checkout\" referrerpolicy=\"no-referrer\">"
+  },
+  {
+    "file": "Clone-sakerplus\\theme\\sections\\ultrasonic-cutter-funnel.liquid",
+    "line": 512,
+    "matched": "/guarantee/i",
+    "snippet": ".suf-guarantee-note {"
+  }
+]

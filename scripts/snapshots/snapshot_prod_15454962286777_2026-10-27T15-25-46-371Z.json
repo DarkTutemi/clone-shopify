@@ -1,0 +1,44 @@
+{
+  "id": "gid://shopify/Product/15454962286777",
+  "title": "Zavelyn Solar Motion Security Light",
+  "handle": "sakerplus®-outdoor-solar-motion-sensor-security-light",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914642456761",
+        "title": "Ground Stake - 1 PC",
+        "price": "39.99",
+        "sku": "LT129414-X85381"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914642489529",
+        "title": "Wall Mount - 1 PC",
+        "price": "39.99",
+        "sku": "LT129414-X85351"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914642522297",
+        "title": "Flexible Tripod - 1 PC",
+        "price": "46.99",
+        "sku": "LT129414-X85352"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914642555065",
+        "title": "Standing Clamp - 1 PC",
+        "price": "46.99",
+        "sku": "LT129414-X85353"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914642587833",
+        "title": "Magnetic Mount - 1 PC",
+        "price": "49.99",
+        "sku": "LT129414-X85354"
+      }
+    ]
+  }
+}

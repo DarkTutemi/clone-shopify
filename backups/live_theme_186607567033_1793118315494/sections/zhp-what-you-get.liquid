@@ -1,0 +1,131 @@
+
+{{ 'zhp-collection.css' | asset_url | stylesheet_tag }}
+<div class="zhp-wrapper">
+  <section class="zhp-what-you-get">
+    <div class="zhp-container">
+      <div class="zhp-section-header">
+        <span class="zhp-tag">{{ section.settings.tag | default: 'EVERYTHING INCLUDED' }}</span>
+        <h2 class="zhp-section-title">{{ section.settings.title | default: "What You'll Get" }}</h2>
+        <p class="zhp-section-subtitle">{{ section.settings.subtitle | default: 'No hidden extras or surprise add-ons needed. Every Zavelyn Drum ships as a complete all-in-one musical kit.' }}</p>
+      </div>
+
+      <div class="zhp-kit-grid">
+        {% for block in section.blocks %}
+          <div class="zhp-kit-card" {{ block.shopify_attributes }}>
+            <div class="zhp-kit-media">
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy', alt: block.settings.title }}
+              {% elsif block.settings.fallback_image != blank %}
+                <img src="{{ block.settings.fallback_image }}" alt="{{ block.settings.title }}" loading="lazy">
+              {% endif %}
+            </div>
+            <div class="zhp-kit-badge">{{ block.settings.badge | default: 'INCLUDED' }}</div>
+            <h4>{{ block.settings.title }}</h4>
+            <p>{{ block.settings.desc }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "05. Phụ kiện đi kèm",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Nhãn danh mục",
+      "default": "EVERYTHING INCLUDED"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tiêu đề",
+      "default": "What You'll Get"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Mô tả phụ",
+      "default": "No hidden extras or surprise add-ons needed. Every Zavelyn Drum ships as a complete all-in-one musical kit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Phụ kiện đi kèm",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Ảnh phụ kiện (Thay thế nếu dính logo Panda)"
+        },
+        {
+          "type": "text",
+          "id": "fallback_image",
+          "label": "URL ảnh dự phòng"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Huy hiệu",
+          "default": "INCLUDED"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tên phụ kiện",
+          "default": "Anti-Shock Travel Bag"
+        },
+        {
+          "type": "textarea",
+          "id": "desc",
+          "label": "Mô tả",
+          "default": "Thickly padded custom carrying bag with shoulder straps to keep your drum safe at home or on the road."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "05. Phụ kiện đi kèm",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "title": "Anti-Shock Travel Bag",
+            "desc": "Thickly padded custom carrying bag with shoulder straps to keep your drum safe at home or on the road.",
+            "fallback_image": "https://cdn.shopify.com/s/files/1/0772/9528/8652/files/Panda_Drum_bag_15t.avif?v=1693393541"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "2x Bamboo Mallets",
+            "desc": "Acoustically balanced bamboo mallets with soft rubber tips engineered for optimal resonance and pure bell tones.",
+            "fallback_image": "https://cdn.shopify.com/s/files/1/0772/9528/8652/files/mallets15t.avif?v=1693393704"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Handcrafted Zavelyn Drum",
+            "desc": "Master-tuned alloy steel tongue drum with permanent tone markings and laser-cut acoustic tongues.",
+            "fallback_image": "https://cdn.shopify.com/s/files/1/0772/9528/8652/files/drum_15t.avif?v=1693393704"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Tutorial Songbook & Videos",
+            "desc": "Comprehensive step-by-step guidebook containing 20+ songs plus QR codes for free online video lessons.",
+            "fallback_image": "https://cdn.shopify.com/s/files/1/0772/9528/8652/files/book15t.avif?v=1693393704"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

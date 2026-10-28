@@ -1,0 +1,12 @@
+{
+  "wrapper": "div#shopify-section-thoson-magtrack",
+  "sections": {
+    "main": {
+      "type": "thoson-magtrack-funnel",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

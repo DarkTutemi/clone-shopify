@@ -1,0 +1,284 @@
+[
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 135,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "\"default\": \"Risk-free 60-day money-back guarantee with zero hassle.\""
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 225,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<p class=\"zv-trust-card-desc\">{{ section.settings.card4_desc | default: 'Risk-free 60-day money-back guarantee with zero hassle.' }}</p>"
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 129,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "\"default\": \"Money-Back Guarantee\""
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 135,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "\"default\": \"Risk-free 60-day money-back guarantee with zero hassle.\""
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 224,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<h3 class=\"zv-trust-card-title\">{{ section.settings.card4_title | default: 'Money-Back Guarantee' }}</h3>"
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 225,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<p class=\"zv-trust-card-desc\">{{ section.settings.card4_desc | default: 'Risk-free 60-day money-back guarantee with zero hassle.' }}</p>"
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 135,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "\"default\": \"Risk-free 60-day money-back guarantee with zero hassle.\""
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 225,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "<p class=\"zv-trust-card-desc\">{{ section.settings.card4_desc | default: 'Risk-free 60-day money-back guarantee with zero hassle.' }}</p>"
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 15,
+    "matched": "/guarantee/i",
+    "snippet": "\"default\": \"Doorstep Delivery Guarantee & Real-Time Tracking\""
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 21,
+    "matched": "/guarantee/i",
+    "snippet": "\"default\": \"Every Zavelyn order is cushioned in heavy-duty protective packaging, inspected for quality, and dispatched from regional US warehouses within 24–48 "
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 129,
+    "matched": "/guarantee/i",
+    "snippet": "\"default\": \"Money-Back Guarantee\""
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 135,
+    "matched": "/guarantee/i",
+    "snippet": "\"default\": \"Risk-free 60-day money-back guarantee with zero hassle.\""
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 165,
+    "matched": "/guarantee/i",
+    "snippet": "<h2 class=\"zv-delivery-title\">{{ section.settings.heading | default: 'Doorstep Delivery Guarantee &amp; Real-Time Tracking' }}</h2>"
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 167,
+    "matched": "/guarantee/i",
+    "snippet": "{{ section.settings.subheading | default: 'Every Zavelyn order is cushioned in heavy-duty protective packaging, inspected for quality, and dispatched from regio"
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 224,
+    "matched": "/guarantee/i",
+    "snippet": "<h3 class=\"zv-trust-card-title\">{{ section.settings.card4_title | default: 'Money-Back Guarantee' }}</h3>"
+  },
+  {
+    "file": "sections\\zavelyn-pdp-shipping.liquid",
+    "line": 225,
+    "matched": "/guarantee/i",
+    "snippet": "<p class=\"zv-trust-card-desc\">{{ section.settings.card4_desc | default: 'Risk-free 60-day money-back guarantee with zero hassle.' }}</p>"
+  },
+  {
+    "file": "sections\\zhp-faq.liquid",
+    "line": 86,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<!-- Q6: 60-Day Guarantee & Returns -->"
+  },
+  {
+    "file": "sections\\zhp-faq.liquid",
+    "line": 89,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<span>How does the 60-Day Money-Back Guarantee work?</span>"
+  },
+  {
+    "file": "sections\\zhp-faq.liquid",
+    "line": 94,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "We want you to experience acoustic harmony with complete confidence. You have <strong>60 days</strong> from the date of delivery to play and enjoy your instrume"
+  },
+  {
+    "file": "sections\\zhp-faq.liquid",
+    "line": 89,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<span>How does the 60-Day Money-Back Guarantee work?</span>"
+  },
+  {
+    "file": "sections\\zhp-faq.liquid",
+    "line": 86,
+    "matched": "/guarantee/i",
+    "snippet": "<!-- Q6: 60-Day Guarantee & Returns -->"
+  },
+  {
+    "file": "sections\\zhp-faq.liquid",
+    "line": 89,
+    "matched": "/guarantee/i",
+    "snippet": "<span>How does the 60-Day Money-Back Guarantee work?</span>"
+  },
+  {
+    "file": "sections\\zhp-hero.liquid",
+    "line": 28,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<span>60-Day Money-Back Guarantee</span>"
+  },
+  {
+    "file": "sections\\zhp-hero.liquid",
+    "line": 28,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<span>60-Day Money-Back Guarantee</span>"
+  },
+  {
+    "file": "sections\\zhp-hero.liquid",
+    "line": 28,
+    "matched": "/guarantee/i",
+    "snippet": "<span>60-Day Money-Back Guarantee</span>"
+  },
+  {
+    "file": "sections\\zhp-marquee.liquid",
+    "line": 7,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<div class=\"zhp-marquee-item\">🛡️ <span>60-DAY MONEY-BACK GUARANTEE</span></div>"
+  },
+  {
+    "file": "sections\\zhp-marquee.liquid",
+    "line": 18,
+    "matched": "/60[\\s-]?day/i",
+    "snippet": "<div class=\"zhp-marquee-item\">🛡️ <span>60-DAY MONEY-BACK GUARANTEE</span></div>"
+  },
+  {
+    "file": "sections\\zhp-marquee.liquid",
+    "line": 7,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"zhp-marquee-item\">🛡️ <span>60-DAY MONEY-BACK GUARANTEE</span></div>"
+  },
+  {
+    "file": "sections\\zhp-marquee.liquid",
+    "line": 18,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "<div class=\"zhp-marquee-item\">🛡️ <span>60-DAY MONEY-BACK GUARANTEE</span></div>"
+  },
+  {
+    "file": "sections\\zhp-marquee.liquid",
+    "line": 7,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"zhp-marquee-item\">🛡️ <span>60-DAY MONEY-BACK GUARANTEE</span></div>"
+  },
+  {
+    "file": "sections\\zhp-marquee.liquid",
+    "line": 18,
+    "matched": "/guarantee/i",
+    "snippet": "<div class=\"zhp-marquee-item\">🛡️ <span>60-DAY MONEY-BACK GUARANTEE</span></div>"
+  },
+  {
+    "file": "templates\\product.zavelyn-drum-mini.json",
+    "line": 77,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"answer\": \"We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for "
+  },
+  {
+    "file": "templates\\product.zavelyn-drum-mini.json",
+    "line": 77,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "\"answer\": \"We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for "
+  },
+  {
+    "file": "templates\\product.zavelyn-drum-mini.json",
+    "line": 77,
+    "matched": "/trial/i",
+    "snippet": "\"answer\": \"We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for "
+  },
+  {
+    "file": "templates\\product.zavelyn-drum-plus.json",
+    "line": 77,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"answer\": \"We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for "
+  },
+  {
+    "file": "templates\\product.zavelyn-drum-plus.json",
+    "line": 77,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "\"answer\": \"We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for "
+  },
+  {
+    "file": "templates\\product.zavelyn-drum-plus.json",
+    "line": 77,
+    "matched": "/trial/i",
+    "snippet": "\"answer\": \"We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for "
+  },
+  {
+    "file": "templates\\product.zavelyn-drum-pro.json",
+    "line": 86,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"answer\": \"We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for "
+  },
+  {
+    "file": "templates\\product.zavelyn-drum-pro.json",
+    "line": 86,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "\"answer\": \"We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for "
+  },
+  {
+    "file": "templates\\product.zavelyn-drum-pro.json",
+    "line": 86,
+    "matched": "/trial/i",
+    "snippet": "\"answer\": \"We offer a 90-Day Risk-Free Trial. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for "
+  },
+  {
+    "file": "templates\\product.zavelyn-handpan-master.json",
+    "line": 86,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"answer\": \"We back the Zavelyn Handpan™ Master with our 90-Day Sound Guarantee. If you don't feel a profound sense of musical peace and restorative acoustic del"
+  },
+  {
+    "file": "templates\\product.zavelyn-handpan-master.json",
+    "line": 85,
+    "matched": "/risk[\\s-]?free/i",
+    "snippet": "\"question\": \"What is your risk-free trial and return policy?\","
+  },
+  {
+    "file": "templates\\product.zavelyn-handpan-master.json",
+    "line": 86,
+    "matched": "/guarantee/i",
+    "snippet": "\"answer\": \"We back the Zavelyn Handpan™ Master with our 90-Day Sound Guarantee. If you don't feel a profound sense of musical peace and restorative acoustic del"
+  },
+  {
+    "file": "templates\\product.zavelyn-handpan-master.json",
+    "line": 85,
+    "matched": "/trial/i",
+    "snippet": "\"question\": \"What is your risk-free trial and return policy?\","
+  },
+  {
+    "file": "templates\\product.zavelyn-rain-drum.json",
+    "line": 86,
+    "matched": "/90[\\s-]?day/i",
+    "snippet": "\"answer\": \"We offer a 90-Day Money-Back Guarantee. If the Rain Drum doesn't bring peace and joy to your home or garden, return it for a 100% full refund with no"
+  },
+  {
+    "file": "templates\\product.zavelyn-rain-drum.json",
+    "line": 86,
+    "matched": "/money[\\s-]?back/i",
+    "snippet": "\"answer\": \"We offer a 90-Day Money-Back Guarantee. If the Rain Drum doesn't bring peace and joy to your home or garden, return it for a 100% full refund with no"
+  },
+  {
+    "file": "templates\\product.zavelyn-rain-drum.json",
+    "line": 86,
+    "matched": "/guarantee/i",
+    "snippet": "\"answer\": \"We offer a 90-Day Money-Back Guarantee. If the Rain Drum doesn't bring peace and joy to your home or garden, return it for a 100% full refund with no"
+  }
+]

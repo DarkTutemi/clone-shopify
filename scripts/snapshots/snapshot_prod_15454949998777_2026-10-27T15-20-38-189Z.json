@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/15454949998777",
+  "title": "Zavelyn Steam Disinfection Cleaner",
+  "handle": "sakerplus®-steam-disinfection-cleaner-clearance",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914393780409",
+        "title": "1 Set Steam Cleaner (with 1 Fiber Cloth)",
+        "price": "28.99",
+        "sku": "CP97052-X65102"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914393813177",
+        "title": "1 Set Steam Cleaner + 5 Fiber Cloths",
+        "price": "43.99",
+        "sku": "CP97052-X65103"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914393845945",
+        "title": "1 Set Steam Cleaner + 13 Fiber Cloths",
+        "price": "45.99",
+        "sku": "CP97052-X65105"
+      }
+    ]
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "pages": [
+    {
+      "name": "homepage",
+      "url": "https://tryzavelyn.com/?preview_theme_id=187597717689",
+      "desktop": {
+        "title": "Zavelyn Official Store — Heavy Duty Tools & Homestead Essentials",
+        "h1": "Engineered for Heavy Duty.Built for Everyday Reliability.",
+        "docWidth": 1425,
+        "scrollWidth": 1425,
+        "overflow": false,
+        "brokenImgsCount": 0,
+        "brokenImgsSample": []
+      },
+      "mobile": {
+        "docWidth": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "overflowingElements": [
+          {
+            "tag": "DIV",
+            "id": "",
+            "class": "zv-ticker-track",
+            "width": 3770
+          },
+          {
+            "tag": "TABLE",
+            "id": "",
+            "class": "zv-comp-table",
+            "width": 520
+          },
+          {
+            "tag": "THEAD",
+            "id": "",
+            "class": "",
+            "width": 520
+          },
+          {
+            "tag": "TR",
+            "id": "",
+            "class": "",
+            "width": 520
+          },
+          {
+            "tag": "TBODY",
+            "id": "",
+            "class": "",
+            "width": 520
+          }
+        ]
+      },
+      "desktopShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_homepage_desktop_1440.png",
+      "mobileShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_homepage_mobile_390.png"
+    },
+    {
+      "name": "collection_all",
+      "url": "https://tryzavelyn.com/collections/all?preview_theme_id=187597717689",
+      "desktop": {
+        "title": "Products – Zavelyn",
+        "h1": "Products",
+        "docWidth": 1425,
+        "scrollWidth": 1425,
+        "overflow": false,
+        "brokenImgsCount": 0,
+        "brokenImgsSample": []
+      },
+      "mobile": {
+        "docWidth": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "overflowingElements": []
+      },
+      "desktopShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_collection_all_desktop_1440.png",
+      "mobileShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_collection_all_mobile_390.png"
+    },
+    {
+      "name": "pdp_thermoglove",
+      "url": "https://tryzavelyn.com/products/zavelyn-thermoglove-smart-thermostatic-heated-fingerless-gloves?preview_theme_id=187597717689",
+      "desktop": {
+        "title": "Zavelyn ThermoGlove",
+        "h1": "Zavelyn ThermoGlove",
+        "docWidth": 1425,
+        "scrollWidth": 1425,
+        "overflow": false,
+        "brokenImgsCount": 0,
+        "brokenImgsSample": []
+      },
+      "mobile": {
+        "docWidth": 390,
+        "scrollWidth": 678,
+        "overflow": true,
+        "overflowingElements": [
+          {
+            "tag": "DIV",
+            "id": "willaDrawerOverlay",
+            "class": "willa-drawer-overlay",
+            "width": 678
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "class": "zv-pdp-gallery-col",
+            "width": 662
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "class": "zv-pdp-gallery-inner",
+            "width": 662
+          },
+          {
+            "tag": "DIV",
+            "id": "zvMainMediaWrap",
+            "class": "zv-pdp-main-media",
+            "width": 660
+          },
+          {
+            "tag": "IMG",
+            "id": "zvMainImg",
+            "class": "",
+            "width": 660
+          }
+        ]
+      },
+      "desktopShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_pdp_thermoglove_desktop_1440.png",
+      "mobileShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_pdp_thermoglove_mobile_390.png"
+    },
+    {
+      "name": "pdp_fallback",
+      "url": "https://tryzavelyn.com/products/zavelyn-foot-sleeves-bogo-free?preview_theme_id=187597717689",
+      "desktop": {
+        "title": "Zavelyn Official Store — Heavy Duty Tools & Homestead Essentials",
+        "h1": "Engineered for Heavy Duty.Built for Everyday Reliability.",
+        "docWidth": 1425,
+        "scrollWidth": 1425,
+        "overflow": false,
+        "brokenImgsCount": 0,
+        "brokenImgsSample": []
+      },
+      "mobile": {
+        "docWidth": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "overflowingElements": [
+          {
+            "tag": "DIV",
+            "id": "",
+            "class": "zv-ticker-track",
+            "width": 3770
+          },
+          {
+            "tag": "TABLE",
+            "id": "",
+            "class": "zv-comp-table",
+            "width": 520
+          },
+          {
+            "tag": "THEAD",
+            "id": "",
+            "class": "",
+            "width": 520
+          },
+          {
+            "tag": "TR",
+            "id": "",
+            "class": "",
+            "width": 520
+          },
+          {
+            "tag": "TBODY",
+            "id": "",
+            "class": "",
+            "width": 520
+          }
+        ]
+      },
+      "desktopShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_pdp_fallback_desktop_1440.png",
+      "mobileShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_pdp_fallback_mobile_390.png"
+    },
+    {
+      "name": "pdp_custom_funnel",
+      "url": "https://tryzavelyn.com/products/thoson-magtrack?preview_theme_id=187597717689",
+      "desktop": {
+        "title": "Zavelyn MagTrack",
+        "h1": "Zavelyn MagTrack™ Modular Magnetic Train Set",
+        "docWidth": 1425,
+        "scrollWidth": 1425,
+        "overflow": false,
+        "brokenImgsCount": 0,
+        "brokenImgsSample": []
+      },
+      "mobile": {
+        "docWidth": 390,
+        "scrollWidth": 413,
+        "overflow": true,
+        "overflowingElements": [
+          {
+            "tag": "DIV",
+            "id": "willaDrawerOverlay",
+            "class": "willa-drawer-overlay",
+            "width": 413
+          },
+          {
+            "tag": "DIV",
+            "id": "wf-sticky-bar",
+            "class": "wf-sticky-bar",
+            "width": 413
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "class": "wf-container wf-sticky-inner",
+            "width": 413
+          },
+          {
+            "tag": "DIV",
+            "id": "willaCartOverlay",
+            "class": "willa-cart-drawer-overlay",
+            "width": 413
+          },
+          {
+            "tag": "DIV",
+            "id": "willaCartDrawer",
+            "class": "willa-cart-drawer",
+            "width": 413
+          }
+        ]
+      },
+      "desktopShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_pdp_custom_funnel_desktop_1440.png",
+      "mobileShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_pdp_custom_funnel_mobile_390.png"
+    },
+    {
+      "name": "cart_page",
+      "url": "https://tryzavelyn.com/cart?preview_theme_id=187597717689",
+      "desktop": {
+        "title": "Your Shopping Cart – Zavelyn",
+        "h1": "Your cart",
+        "docWidth": 1425,
+        "scrollWidth": 1425,
+        "overflow": false,
+        "brokenImgsCount": 0,
+        "brokenImgsSample": []
+      },
+      "mobile": {
+        "docWidth": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "overflowingElements": []
+      },
+      "desktopShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_cart_page_desktop_1440.png",
+      "mobileShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_cart_page_mobile_390.png"
+    },
+    {
+      "name": "track_order",
+      "url": "https://tryzavelyn.com/pages/track-order?preview_theme_id=187597717689",
+      "desktop": {
+        "title": "Track Order – Zavelyn",
+        "h1": "Track Your Order",
+        "docWidth": 1425,
+        "scrollWidth": 1425,
+        "overflow": false,
+        "brokenImgsCount": 0,
+        "brokenImgsSample": []
+      },
+      "mobile": {
+        "docWidth": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "overflowingElements": []
+      },
+      "desktopShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_track_order_desktop_1440.png",
+      "mobileShot": "C:/Users/Admin/.gemini/antigravity-ide/brain/ba009709-9c7b-4366-a57b-5a4a187c37c3/audit_track_order_mobile_390.png"
+    }
+  ],
+  "consoleErrors": []
+}

@@ -1,0 +1,44 @@
+{%- assign inc_src = section.settings.included_image | image_url: width: 1000 -%}
+{%- if inc_src == blank -%}
+  {%- assign inc_src = section.settings.included_image_url -%}
+{%- endif -%}
+
+<section class="wf-section wf-features-section">
+  <div class="wf-container">
+    <div class="wf-feature-row">
+      <div class="wf-feature-media">
+        <img src="{{ inc_src }}" alt="{{ section.settings.title | default: 'Complete Zavelyn Kit' }}" loading="lazy" />
+      </div>
+      <div class="wf-feature-content">
+        <span class="wf-sub-pill">{{ section.settings.pill_text | default: 'COMPLETE PACKAGE' }}</span>
+        <h2 class="wf-sec-title">{{ section.settings.title | default: 'Everything You Need to Begin Immediately' }}</h2>
+        <p class="wf-sec-desc">{{ section.settings.description | default: 'Every Zavelyn Drum arrives as an all-in-one comprehensive kit — no accessories or extra purchases needed.' }}</p>
+        <ul class="wf-feature-list">
+          <li><strong>Laser-Tuned Steel Tongue Handpan Drum</strong> with precision acoustic tongues calibrated to 432 Hz</li>
+          <li><strong>Padded Protective Travel Backpack</strong> with dual shoulder straps & heavy-duty shock absorption</li>
+          <li><strong>Pair of Acoustic Bamboo Mallets</strong> with weighted rubber tips for effortless, resonant bell tones</li>
+          <li><strong>Full Tutorial Songbook & Number Guide</strong> with 20+ familiar songs and easy visual tabs</li>
+          <li><strong>Silicone Finger Picks Set</strong> for intimate fingerstyle acoustic meditation playing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zavelyn What Is Included",
+  "settings": [
+    { "type": "image_picker", "id": "included_image", "label": "Unpacking / Included Image" },
+    { "type": "text", "id": "included_image_url", "label": "Fallback Included Image URL" },
+    { "type": "text", "id": "pill_text", "label": "Pill Subtitle", "default": "COMPLETE PACKAGE" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Everything You Need to Begin Immediately" },
+    { "type": "textarea", "id": "description", "label": "Description" }
+  ],
+  "presets": [
+    {
+      "name": "Zavelyn What Is Included"
+    }
+  ]
+}
+{% endschema %}

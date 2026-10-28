@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454956355769",
+  "title": "Zavelyn Mini Heat Press Machine",
+  "handle": "sakerplus®-portable-digital-mini-heat-press-machine",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914534518969",
+        "title": "Default Title",
+        "price": "149.99",
+        "sku": "GJ132614-X65160"
+      }
+    ]
+  }
+}

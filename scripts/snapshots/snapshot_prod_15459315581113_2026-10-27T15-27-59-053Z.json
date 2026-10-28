@@ -1,0 +1,62 @@
+{
+  "id": "gid://shopify/Product/15459315581113",
+  "title": "Zavelyn Drum Plus",
+  "handle": "zavelyn-drum-plus",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67959037427897",
+        "title": "White",
+        "price": "159.95",
+        "sku": "ZAV-PLS-WHT"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959037460665",
+        "title": "Black",
+        "price": "159.95",
+        "sku": "ZAV-PLS-BLK"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959037493433",
+        "title": "Emerald Green",
+        "price": "159.95",
+        "sku": "ZAV-PLS-GRN"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959037526201",
+        "title": "Red",
+        "price": "159.95",
+        "sku": "ZAV-PLS-RED"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959037558969",
+        "title": "Blue",
+        "price": "159.95",
+        "sku": "ZAV-PLS-BLU"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959037591737",
+        "title": "Pink",
+        "price": "159.95",
+        "sku": "ZAV-PLS-PNK"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959037624505",
+        "title": "Sandstone",
+        "price": "159.95",
+        "sku": "ZAV-PLS-SND"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67959037657273",
+        "title": "Pink Tan",
+        "price": "159.95",
+        "sku": "ZAV-PLS-PTN"
+      }
+    ]
+  }
+}

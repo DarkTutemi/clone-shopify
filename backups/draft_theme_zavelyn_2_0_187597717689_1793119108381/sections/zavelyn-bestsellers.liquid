@@ -1,0 +1,93 @@
+{% schema %}
+{
+  "name": "Zavelyn Best Sellers",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Popular Zavelyn Best Sellers" },
+    { "type": "textarea", "id": "subhead", "label": "Subheadline", "default": "Real customer favorites engineered for reliability, durability, and time-saving efficiency." },
+    { "type": "collection", "id": "collection", "label": "Collection" }
+  ],
+  "presets": [{ "name": "Zavelyn Best Sellers" }]
+}
+{% endschema %}
+
+{%- assign target_col = collections[section.settings.collection] | default: collections['best-sellers'] | default: collections['all'] -%}
+
+<section class="zv-bestsellers-section">
+  <div class="zv-section-header">
+    <span class="zv-card-badge" style="display:inline-block; margin-bottom:12px;">★ TOP RATED HARDWARE & GADGETS</span>
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.subhead }}</p>
+  </div>
+
+  <div class="zv-products-grid">
+    {% for product in target_col.products limit: 8 %}
+      <div class="zv-product-card">
+        <a href="{{ product.url }}" class="zv-pcard-media">
+          {% if product.featured_image %}
+            <img 
+              src="{{ product.featured_image | image_url: width: 600 }}" 
+              alt="{{ product.title | escape }}" 
+              loading="eager"
+              fetchpriority="high"
+            >
+          {% endif %}
+          {% if product.compare_at_price > product.price %}
+            {% assign savings = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round %}
+            <span class="zv-pcard-badge">SAVE {{ savings }}%</span>
+          {% endif %}
+          <span class="zv-pcard-hot">🔥 BEST SELLER</span>
+        </a>
+
+        <div class="zv-pcard-info">
+          <div class="zv-pcard-stars">
+            <span>★★★★★</span>
+            <span>4.9</span>
+          </div>
+
+          <a href="{{ product.url }}" class="zv-pcard-title">
+            {{ product.title }}
+          </a>
+
+          <div class="zv-pcard-pricing">
+            <span class="zv-price-live">{{ product.price | money }}</span>
+            {% if product.compare_at_price > product.price %}
+              <span class="zv-price-compare">{{ product.compare_at_price | money }}</span>
+            {% endif %}
+          </div>
+
+          <button 
+            type="button" 
+            class="zv-pcard-atc"
+            onclick="addZavelynItem('{{ product.selected_or_first_available_variant.id }}')"
+          >
+            <span>🛍️</span>
+            <span>Add to Cart</span>
+          </button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div style="text-align: center; margin-top: 48px;">
+    <a href="/collections/all-products" class="zv-btn-ghost">
+      VIEW ALL 83 PRODUCTS →
+    </a>
+  </div>
+</section>
+
+<script>
+  function addZavelynItem(variantId) {
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: variantId, quantity: 1 })
+    })
+    .then(r => r.json())
+    .then(item => {
+      window.location.href = '/cart';
+    })
+    .catch(err => {
+      window.location.href = '/cart';
+    });
+  }
+</script>

@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454961860793",
+  "title": "Zavelyn Heated Knee Massager",
+  "handle": "sakerplus®-cordless-heated-knee-massage-device",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914634166457",
+        "title": "Default Title",
+        "price": "166.99",
+        "sku": "HA131177-C001"
+      }
+    ]
+  }
+}

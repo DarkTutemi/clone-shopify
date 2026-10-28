@@ -1,0 +1,63 @@
+{
+  "publishTimestamp": "2026-10-28T05:08:04.136Z",
+  "publishedTheme": {
+    "id": 187597717689,
+    "name": "[Draft] Zavelyn 2.0 (Elixir Redesign)",
+    "created_at": "2026-10-26T09:48:50-06:00",
+    "updated_at": "2026-10-27T23:08:00-06:00",
+    "role": "main",
+    "theme_store_id": null,
+    "previewable": true,
+    "processing": false,
+    "admin_graphql_api_id": "gid://shopify/Theme/187597717689"
+  },
+  "preservedTheme": {
+    "id": 186607567033,
+    "name": "Zavelyn",
+    "created_at": "2026-10-08T01:20:50-06:00",
+    "updated_at": "2026-10-27T23:08:00-06:00",
+    "role": "unpublished",
+    "theme_store_id": null,
+    "previewable": true,
+    "processing": false,
+    "admin_graphql_api_id": "gid://shopify/Theme/186607567033"
+  },
+  "liveVerifications": [
+    {
+      "label": "Live Homepage",
+      "url": "https://tryzavelyn.com/",
+      "status": 200,
+      "htmlLength": 117379,
+      "hasZavelynThemeCode": true,
+      "has30DayGuarantee": true,
+      "prohibitedMatches": []
+    },
+    {
+      "label": "Live Universal PDP",
+      "url": "https://tryzavelyn.com/products/zavelyn-sensory-floor-mats",
+      "status": 200,
+      "htmlLength": 143061,
+      "hasZavelynThemeCode": true,
+      "has30DayGuarantee": true,
+      "prohibitedMatches": []
+    },
+    {
+      "label": "Live Hero Handpan PDP",
+      "url": "https://tryzavelyn.com/products/zavelyn-handpan-master",
+      "status": 200,
+      "htmlLength": 153132,
+      "hasZavelynThemeCode": true,
+      "has30DayGuarantee": true,
+      "prohibitedMatches": []
+    },
+    {
+      "label": "Live Handpans Collection",
+      "url": "https://tryzavelyn.com/collections/zavelyn-handpans",
+      "status": 200,
+      "htmlLength": 141656,
+      "hasZavelynThemeCode": true,
+      "has30DayGuarantee": true,
+      "prohibitedMatches": []
+    }
+  ]
+}

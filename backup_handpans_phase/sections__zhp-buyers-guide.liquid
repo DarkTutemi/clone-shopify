@@ -1,0 +1,172 @@
+
+{{ 'zhp-collection.css' | asset_url | stylesheet_tag }}
+<div class="zhp-wrapper">
+  <section class="zhp-buyers-guide" id="zhp-buyers-guide">
+    <div class="zhp-container">
+      <div class="zhp-section-header">
+        <span class="zhp-tag">{{ section.settings.tag | default: 'ESSENTIAL KNOWLEDGE • 3 MIN READ' }}</span>
+        <h2 class="zhp-section-title">{{ section.settings.title | default: "The Ultimate Zavelyn Drum™ Buyer's Guide" }}</h2>
+        <p class="zhp-section-subtitle">{{ section.settings.subtitle | default: '5 Essential Facts That Make Zavelyn Drums a Top Pick for Wellness, Family, and Musicians.' }}</p>
+      </div>
+
+      <div class="zhp-guide-list">
+        {% for block in section.blocks %}
+          <div class="zhp-guide-item" {{ block.shopify_attributes }}>
+            <div class="zhp-guide-number">{{ block.settings.number }}</div>
+            <div class="zhp-guide-content">
+              <div class="zhp-guide-tags">
+                <span class="zhp-badge-pill">{{ block.settings.tags }}</span>
+              </div>
+              <h3>{{ block.settings.title }}</h3>
+              <p>{{ block.settings.desc }}</p>
+              <div class="zhp-guide-who"><strong>Who it's for:</strong> {{ block.settings.who }}</div>
+            </div>
+            <div class="zhp-guide-media">
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: block.settings.title }}
+              {% elsif block.settings.fallback_image != blank %}
+                <img src="{{ block.settings.fallback_image }}" alt="{{ block.settings.title }}" loading="lazy">
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "08. Cẩm nang người mua",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Nhãn danh mục",
+      "default": "ESSENTIAL KNOWLEDGE • 3 MIN READ"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tiêu đề",
+      "default": "The Ultimate Zavelyn Drum™ Buyer's Guide"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Mô tả phụ",
+      "default": "5 Essential Facts That Make Zavelyn Drums a Top Pick for Wellness, Family, and Musicians."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "fact",
+      "name": "Sự thật thiết yếu",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Ảnh minh họa (Thay thế nếu dính logo)"
+        },
+        {
+          "type": "text",
+          "id": "fallback_image",
+          "label": "URL ảnh dự phòng"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Số thứ tự",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "tags",
+          "label": "Model áp dụng",
+          "default": "Mini • 8 Tones, Plus • 11 Tones"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tiêu đề",
+          "default": "Awakening Inner Creativity"
+        },
+        {
+          "type": "textarea",
+          "id": "desc",
+          "label": "Nội dung",
+          "default": "You don't need a single hour of music lessons. Because our drums are harmonically tuned to pentatonic and diatonic scales, every single note sounds melodic with every other note."
+        },
+        {
+          "type": "text",
+          "id": "who",
+          "label": "Đối tượng phù hợp",
+          "default": "Beginners, revitalized musicians, curious creators, and anyone seeking a joyful hobby."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "08. Cẩm nang người mua",
+      "blocks": [
+        {
+          "type": "fact",
+          "settings": {
+            "number": "01",
+            "tags": "Mini • 8 Tones, Plus • 11 Tones",
+            "title": "Awakening Inner Creativity",
+            "desc": "You don't need a single hour of music lessons. Because our drums are harmonically tuned to pentatonic and diatonic scales, every single note sounds melodic with every other note. Whether you are a first-time musical adventurer or a lifelong learner reigniting an old passion, you can play captivating melodies from your very first tap.",
+            "who": "Beginners, revitalized musicians, curious creators, and anyone seeking a joyful hobby.",
+            "fallback_image": "https://cdn.shopify.com/s/files/1/0566/1209/4037/files/Fena_-_IG_size-8.avif?v=1720589813"
+          }
+        },
+        {
+          "type": "fact",
+          "settings": {
+            "number": "02",
+            "tags": "Plus • 11 Tones, Pro • 15 Tones",
+            "title": "Fun for the Whole Family (Zero Screens Needed)",
+            "desc": "Creating shared household memories has never been this harmonious. Zavelyn Drum Plus and Pro ensure every family member finds their rhythm, fostering meaningful bonding moments that last a lifetime while gently drawing children away from tablet and smartphone screens.",
+            "who": "Families of every size, kids, parents, and grandparents playing together.",
+            "fallback_image": "https://cdn.shopify.com/s/files/1/0566/1209/4037/files/Fena_-_IG_size-9.avif?v=1720589813"
+          }
+        },
+        {
+          "type": "fact",
+          "settings": {
+            "number": "03",
+            "tags": "Plus • 11 Tones, Pro • 15 Tones",
+            "title": "Healing Resonance & Somatic Calming",
+            "desc": "Embark on a sound journey where every note mends, resonates, and harmonizes. Scientific studies show that 432 Hz acoustic vibrations lower cortisol levels, quiet racing thoughts, and trigger natural somatic nervous system restoration. The handcrafted resonance chamber in the Pro 15 Tones delivers unparalleled immersion.",
+            "who": "Sound healing therapists, yoga studios, meditation practitioners, and high-stress professionals.",
+            "fallback_image": "https://cdn.shopify.com/s/files/1/0566/1209/4037/files/Fena_-_IG_size-10.avif?v=1720589813"
+          }
+        },
+        {
+          "type": "fact",
+          "settings": {
+            "number": "04",
+            "tags": "Plus • 11 Tones, Pro • 15 Tones",
+            "title": "Making Music More Magical",
+            "desc": "Elevate every tune, be it a bedtime lullaby, a campfire singalong, or an intricate studio recording. With 11 to 15 harmonic notes, songwriters and melophiles gain an expressive sonic flavor that blends acoustic bell-like purity with meditative sustained reverb.",
+            "who": "Musicians, multi-instrumentalists, songwriters, and melody lovers.",
+            "fallback_image": "https://cdn.shopify.com/s/files/1/0566/1209/4037/files/Fena_-_IG_size-11.avif?v=1720589813"
+          }
+        },
+        {
+          "type": "fact",
+          "settings": {
+            "number": "05",
+            "tags": "Mini • 8 Tones",
+            "title": "Boost Your Child's Cognitive Development",
+            "desc": "Unveil a world of musical wonder with the Zavelyn Drum™ Mini (8 Tones). Engineered for smaller hands, it cultivates hand-eye coordination, bilateral motor skills, and focused concentration while providing an instantly rewarding sensory experience.",
+            "who": "Curious toddlers, young dreamers, and teachers seeking positive sensory tools.",
+            "fallback_image": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/panda-drum-6-inch-steel-tongue-drum.jpg?v=1792868532"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

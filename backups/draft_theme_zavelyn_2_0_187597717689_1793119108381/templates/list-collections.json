@@ -1,0 +1,12 @@
+{
+  "layout": "offer",
+  "sections": {
+    "redirect": {
+      "type": "redirect-home",
+      "settings": {}
+    }
+  },
+  "order": [
+    "redirect"
+  ]
+}

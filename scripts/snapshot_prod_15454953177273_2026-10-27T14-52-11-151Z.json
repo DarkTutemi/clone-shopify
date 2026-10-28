@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454953177273",
+  "title": "Zavelyn Clamp-On Desk Shelf",
+  "handle": "sakerplus®-three-tier-clamp-on-desk-shelf-organizer",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914465214649",
+        "title": "Default Title",
+        "price": "50.99",
+        "sku": "HW132231-X87676"
+      }
+    ]
+  }
+}

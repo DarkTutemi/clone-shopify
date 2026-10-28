@@ -1,0 +1,20 @@
+{
+  "id": "gid://shopify/Product/15454958158009",
+  "title": "Zavelyn 50FT LED String Lights",
+  "handle": "sakerplus®-50ft-industrial-led-construction-string-lights",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914565845177",
+        "title": "Default Title",
+        "price": "119.99",
+        "sku": "LT132367-X15101"
+      }
+    ]
+  }
+}

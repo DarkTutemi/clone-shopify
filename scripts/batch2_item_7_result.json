@@ -1,0 +1,39 @@
+{
+  "productId": "15454960517305",
+  "name": "Rotating Goose Target Game",
+  "status": "PASS",
+  "handleUnchanged": true,
+  "snapshot": "scripts\\snapshot_prod_15454960517305_2026-10-27T14-53-42-750Z.json",
+  "adminBefore": {
+    "title": "Zavelyn Rotating Goose Target Game",
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  "adminAfter": {
+    "id": "gid://shopify/Product/15454960517305",
+    "title": "Zavelyn Rotating Goose Target Game",
+    "handle": "sakerplus®-electronic-rotating-goose-target-game",
+    "seo": {
+      "title": "Electronic Rotating Goose Target Shooting Game | Zavelyn",
+      "description": "Bring exciting arcade target practice home with an electronic rotating goose shooting game featuring soft foam ball poppers and digital score display."
+    }
+  },
+  "storefrontQA": {
+    "httpStatus": 200,
+    "renderedTitle": "Electronic Rotating Goose Target Shooting Game | Zavelyn",
+    "renderedMeta": "Bring exciting arcade target practice home with an electronic rotating goose shooting game featuring soft foam ball poppers and digital score display.",
+    "renderedCanonical": "https://tryzavelyn.com/products/sakerplus%c2%ae-electronic-rotating-goose-target-game",
+    "cartMatch": {
+      "variantId": "67914604150969",
+      "productId": 15454960517305,
+      "price": "52.99",
+      "ok": true
+    }
+  },
+  "screenshots": {
+    "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454960517305_desktop_1440.png",
+    "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch2_15454960517305_mobile_390.png"
+  }
+}

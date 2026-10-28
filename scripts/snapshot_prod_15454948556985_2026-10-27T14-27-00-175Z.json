@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/15454948556985",
+  "title": "Zavelyn Shelf & Drawer Liner",
+  "handle": "sakerplus®-tearable-shelf-liner-and-drawer-liner",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914360291513",
+        "title": "White Dotted-1 PC",
+        "price": "20.99",
+        "sku": "HW130038-X85994"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914360324281",
+        "title": "White Dotted-2 PCS",
+        "price": "32.99",
+        "sku": "HW130038-Z42795"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914360357049",
+        "title": "White Dotted-5 PCS",
+        "price": "79.99",
+        "sku": "HW130038-Z42796"
+      }
+    ]
+  }
+}

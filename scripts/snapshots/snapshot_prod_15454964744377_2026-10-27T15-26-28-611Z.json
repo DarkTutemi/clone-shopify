@@ -1,0 +1,38 @@
+{
+  "id": "gid://shopify/Product/15454964744377",
+  "title": "Zavelyn Flexible-Neck Work Flashlight",
+  "handle": "sakerplus®-outdoor-flexible-neck-work-flashlight",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914693607609",
+        "title": "1 Pack + 4 Free Batteries",
+        "price": "19.99",
+        "sku": "OS123113-X87631"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914693640377",
+        "title": "2 Pack + 8 Free Batteries",
+        "price": "35.99",
+        "sku": "OS123113-Z44350"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914693673145",
+        "title": "3 Pack + 12 Free Batteries",
+        "price": "47.99",
+        "sku": "OS123113-Z44351"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914693705913",
+        "title": "5 Pack + 20 Free Batteries",
+        "price": "69.99",
+        "sku": "OS123113-Z44352"
+      }
+    ]
+  }
+}

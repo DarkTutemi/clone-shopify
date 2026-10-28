@@ -1,0 +1,74 @@
+{
+  "id": "gid://shopify/Product/15460954276025",
+  "title": "Zavelyn CozyHeat",
+  "handle": "zavelyn-cozyheat-heated-wearable-blanket-sweater",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67975472840889",
+        "title": "Buy 1 (A Little Comfort) / Warm Brown",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975472873657",
+        "title": "Buy 1 (A Little Comfort) / Apricot",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975472906425",
+        "title": "Buy 1 (A Little Comfort) / Green",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975472939193",
+        "title": "Buy 1 (A Little Comfort) / Maple Red",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975472971961",
+        "title": "Buy 1 (A Little Comfort) / Purple",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975473004729",
+        "title": "Buy 2 (Share the Warmth - Save 45%) / Warm Brown",
+        "price": "89.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975473037497",
+        "title": "Buy 2 (Share the Warmth - Save 45%) / Apricot",
+        "price": "89.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975473070265",
+        "title": "Buy 2 (Share the Warmth - Save 45%) / Green",
+        "price": "89.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975473103033",
+        "title": "Buy 2 (Share the Warmth - Save 45%) / Maple Red",
+        "price": "89.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67975473135801",
+        "title": "Buy 2 (Share the Warmth - Save 45%) / Purple",
+        "price": "89.99",
+        "sku": null
+      }
+    ]
+  }
+}

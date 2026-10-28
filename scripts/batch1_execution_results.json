@@ -1,0 +1,47 @@
+[
+  {
+    "productId": "15454947901625",
+    "name": "Sensory Textured Floor Mats",
+    "status": "FAIL",
+    "steps": {
+      "snapshot": "scripts/snapshot_prod_15454947901625_2026-10-27T14-20-00-965Z.json",
+      "productUpdate": {
+        "id": "gid://shopify/Product/15454947901625",
+        "title": "Zavelyn Sensory Textured Floor Mats",
+        "handle": "zavelyn-sensory-floor-mats",
+        "seo": {
+          "title": "TPU Sensory Textured Floor Mats for Kids & Adults | Zavelyn",
+          "description": "Engage tactile exploration with interlocking TPU textured floor mats featuring six raised patterns. Easy to assemble, clean, and arrange for kids or adults."
+        }
+      },
+      "redirect": {
+        "status": "MANUALLY_CREATED",
+        "id": "gid://shopify/UrlRedirect/604051898553",
+        "path": "/products/sakerplus®-tpu-sensory-textured-floor-mats",
+        "target": "/products/zavelyn-sensory-floor-mats"
+      },
+      "httpQA": {
+        "oldStatus": 200,
+        "locationHeader": "",
+        "is301": false,
+        "trackingStatus": 200,
+        "trackingLocation": "",
+        "trackingPreserved": false,
+        "newStatus": 404,
+        "renderedTitle": "404 Not Found – Zavelyn",
+        "renderedMeta": "Zavelyn Foot Sleeve — Buy One Get One FREE. All-day arch support with 30-day satisfaction guarantee.",
+        "renderedCanonical": "https://tryzavelyn.com/404"
+      },
+      "cartTest": {
+        "variantId": "67914347086009",
+        "expectedProductId": "15454947901625",
+        "expectedPrice": "79.99",
+        "cartPrice": "NaN"
+      },
+      "screenshots": {
+        "deskPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch1_zavelyn-sensory-floor-mats_desktop_1440.png",
+        "mobPath": "C:\\Users\\Admin\\.gemini\\antigravity-ide\\brain\\d0f634e2-c9dd-4bad-bdb2-3c956abea303\\qa_batch1_zavelyn-sensory-floor-mats_mobile_390.png"
+      }
+    }
+  }
+]

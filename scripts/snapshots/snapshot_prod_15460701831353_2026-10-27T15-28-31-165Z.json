@@ -1,0 +1,44 @@
+{
+  "id": "gid://shopify/Product/15460701831353",
+  "title": "Zavelyn Rain Drum",
+  "handle": "zavelyn-rain-drum",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67972414472377",
+        "title": "Green",
+        "price": "59.00",
+        "sku": "ZAV-RAIN-3-GRE"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67972414505145",
+        "title": "Black",
+        "price": "59.00",
+        "sku": "ZAV-RAIN-3-BLA"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67972414537913",
+        "title": "Navy",
+        "price": "59.00",
+        "sku": "ZAV-RAIN-3-NAV"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67972414570681",
+        "title": "Purple",
+        "price": "59.00",
+        "sku": "ZAV-RAIN-3-PUR"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67972414603449",
+        "title": "Gold",
+        "price": "59.00",
+        "sku": "ZAV-RAIN-3-GOL"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "gid://shopify/Product/15454958878905",
+  "title": "Zavelyn Panoramic Dash Camera",
+  "handle": "sakerplus®-panoramic-dash-camera-with-night-vision",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67914578591929",
+        "title": "5 Lenses (No Memory Card or WiFi)",
+        "price": "86.99",
+        "sku": "AM132152-X87597"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67914578624697",
+        "title": "5 Lenses With WiFi (No Memory Card)",
+        "price": "91.99",
+        "sku": "AM132152-X87598"
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "gid://shopify/Product/15461501927609",
+  "title": "Zavelyn FlawlessBlend",
+  "handle": "zavelyn-flawlessblend-color-changing-foundation-stick",
+  "status": "ACTIVE",
+  "seo": {
+    "title": null,
+    "description": null
+  },
+  "variants": {
+    "nodes": [
+      {
+        "id": "gid://shopify/ProductVariant/67980319523001",
+        "title": "Buy 1 (Single Foundation Stick - Try Risk-Free) / #201 Light Ivory (Fair to Light)",
+        "price": "39.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980319555769",
+        "title": "Buy 1 (Single Foundation Stick - Try Risk-Free) / #202 Natural Radiance (Most Popular)",
+        "price": "39.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980319588537",
+        "title": "Buy 1 (Single Foundation Stick - Try Risk-Free) / #203 Warm Medium (Golden to Tan)",
+        "price": "39.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980319621305",
+        "title": "Buy 2 (Duo Everyday Set - Save 45%) / #201 Light Ivory (Fair to Light)",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980319654073",
+        "title": "Buy 2 (Duo Everyday Set - Save 45%) / #202 Natural Radiance (Most Popular)",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980319686841",
+        "title": "Buy 2 (Duo Everyday Set - Save 45%) / #203 Warm Medium (Golden to Tan)",
+        "price": "59.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980319719609",
+        "title": "Buy 3 (Capsule Beauty Trio - Buy 2 Get 1 FREE) / #201 Light Ivory (Fair to Light)",
+        "price": "79.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980319752377",
+        "title": "Buy 3 (Capsule Beauty Trio - Buy 2 Get 1 FREE) / #202 Natural Radiance (Most Popular)",
+        "price": "79.99",
+        "sku": null
+      },
+      {
+        "id": "gid://shopify/ProductVariant/67980319785145",
+        "title": "Buy 3 (Capsule Beauty Trio - Buy 2 Get 1 FREE) / #203 Warm Medium (Golden to Tan)",
+        "price": "79.99",
+        "sku": null
+      }
+    ]
+  }
+}
