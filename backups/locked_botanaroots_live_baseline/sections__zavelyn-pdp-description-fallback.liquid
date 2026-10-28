@@ -1,0 +1,156 @@
+{% schema %}
+{
+  "name": "Product Details & Body",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "body_image_essence",
+      "name": "Image: Essence Strength",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Select Replacement Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt Text",
+          "default": "Zavelyn BotanaRoots - Essence of Strength"
+        }
+      ]
+    },
+    {
+      "type": "body_image_loved",
+      "name": "Image: Loved Thousands",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Select Replacement Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt Text",
+          "default": "Loved By Thousands"
+        }
+      ]
+    },
+    {
+      "type": "body_image_steps",
+      "name": "Image: Simple Steps",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Select Replacement Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt Text",
+          "default": "Simple Steps Stronger Hair"
+        }
+      ]
+    },
+    {
+      "type": "body_image_revitalize",
+      "name": "Image: Revitalize Banner",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Select Replacement Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt Text",
+          "default": "Revitalize Your Hair, Naturally"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Details & Body",
+      "blocks": [
+        { "type": "body_image_essence" },
+        { "type": "body_image_loved" },
+        { "type": "body_image_steps" },
+        { "type": "body_image_revitalize" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{%- include 'zavelyn-pdp-data' -%}
+
+{%- unless zv_data_found -%}
+  {%- if product.description != blank -%}
+    <section class="zv-body-section zv-bg-white" id="zv-product-description">
+      <div class="zv-container zv-fallback-description-container">
+        <div class="zv-section-header">
+          <span class="zv-badge">PRODUCT OVERVIEW</span>
+          <h2 class="zv-section-title">Product Details</h2>
+        </div>
+        <div class="zv-rte-content">
+          {%- if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
+            {%- if product.description contains '<!-- FAQ Section -->' -%}
+              {%- assign desc_parts = product.description | split: '<!-- FAQ Section -->' -%}
+              {%- assign top_content = desc_parts[0] -%}
+              {%- assign bottom_parts = desc_parts[1] | split: '<!-- Verified Customer Reviews Section -->' -%}
+              {%- assign reviews_content = bottom_parts[1] -%}
+
+              {%- assign rendered_top = top_content -%}
+
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when 'body_image_essence' -%}
+                    {%- if block.settings.image != blank -%}
+                      {%- assign new_src = block.settings.image | image_url: width: 1200 -%}
+                      {%- assign rendered_top = rendered_top | replace: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-botana-asset-3.png?v=1792936261', new_src -%}
+                    {%- endif -%}
+                  {%- when 'body_image_loved' -%}
+                    {%- if block.settings.image != blank -%}
+                      {%- assign new_src = block.settings.image | image_url: width: 1200 -%}
+                      {%- assign rendered_top = rendered_top | replace: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-botana-asset-4.png?v=1792936264', new_src -%}
+                    {%- endif -%}
+                  {%- when 'body_image_steps' -%}
+                    {%- if block.settings.image != blank -%}
+                      {%- assign new_src = block.settings.image | image_url: width: 1200 -%}
+                      {%- assign rendered_top = rendered_top | replace: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-botana-asset-5.png?v=1792936267', new_src -%}
+                    {%- endif -%}
+                  {%- when 'body_image_revitalize' -%}
+                    {%- if block.settings.image != blank -%}
+                      {%- assign new_src = block.settings.image | image_url: width: 1200 -%}
+                      {%- assign rendered_top = rendered_top | replace: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-botana-asset-6.png?v=1792936270', new_src -%}
+                    {%- endif -%}
+                {%- endcase -%}
+              {%- endfor -%}
+
+              {{ rendered_top }}
+
+              {%- render 'botanaroots-faq-accordion' -%}
+
+              {%- if reviews_content != blank -%}
+                <!-- Verified Customer Reviews Section -->
+                {{ reviews_content }}
+              {%- endif -%}
+            {%- else -%}
+              {{ product.description }}
+            {%- endif -%}
+          {%- else -%}
+            {{ product.description }}
+          {%- endif -%}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+{%- endunless -%}

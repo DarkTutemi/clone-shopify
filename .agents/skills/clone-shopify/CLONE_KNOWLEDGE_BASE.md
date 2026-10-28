@@ -125,3 +125,14 @@ Mỗi khi khởi động hoặc hoàn tất một dự án clone:
 * **Status:** SHIP IT (100% READY)
 * **Score:** Passed: 7 | Failed: 0 | Warnings: 2
 * **Execution:** All theme sections, inventory policies, direct checkout buttons, and CDN assets passed flawlessly.
+
+### 📦 Project Evaluation: Zavelyn Storefront ECC Optimization (10/29/2026)
+* **Status:** BLOCKED (NEEDS REVISION)
+* **Themes:** Live 187597717689 | Draft 187720335545
+* **Score:** Passed: 6 | Failed: 2 | Warnings: 2 | Pass Rate: 75.0%
+* **Key Enhancements Verified:**
+  - Official Shopify vector payment icons via `payment_type_svg_tag: class: 'zv-pay-svg'`.
+  - 9-part interactive medical/consumer trial FAQ accordion embedded under "Real Reviews from Over 100,000+ Women".
+  - Branded box packaging image updated to `joylux_triple_tech.png?v=1793206025`.
+  - Self-Care Upsells (Eye Mask & Face Mask) with multi-quantity selector and dynamic total pricing.
+  - Zero-bleed isolation preserved for BotanaRoots hair growth oil (100% clean).

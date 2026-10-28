@@ -1,0 +1,282 @@
+{
+  "allMatch": true,
+  "verdict": "BOTANAROOTS: UNCHANGED — VERIFIED",
+  "comparisons": [
+    {
+      "field": "Product Title",
+      "live": "Zavelyn BotanaRoots Batana Hair Growth Oil",
+      "draft": "Zavelyn BotanaRoots Batana Hair Growth Oil",
+      "match": true
+    },
+    {
+      "field": "Main Image Path",
+      "live": "/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361",
+      "draft": "/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361",
+      "match": true
+    },
+    {
+      "field": "Main Image Alt",
+      "live": "Main Product Jar",
+      "draft": "Main Product Jar",
+      "match": true
+    },
+    {
+      "field": "Gallery Thumbnail Count",
+      "live": 8,
+      "draft": 8,
+      "match": true
+    },
+    {
+      "field": "Gallery Thumbnail Items (1-8)",
+      "live": "[{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361\",\"alt\":\"Main Product Jar\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-2.jpg?v=1792936448\",\"alt\":\"Real Results Real Growth\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-3.png?v=1793191524\",\"alt\":\"Essence of Strength\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-4.png?v=1793193619\",\"alt\":\"Loved By Thousands\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-5.png?v=1792936448\",\"alt\":\"Simple Steps Stronger Hair\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-6.png?v=1793192817\",\"alt\":\"Revitalize Your Hair\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-7.webp?v=1793192821\",\"alt\":\"Botanical Routine\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-8.webp?v=1792936448\",\"alt\":\"Pure Organic Guarantee\"}]",
+      "draft": "[{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361\",\"alt\":\"Main Product Jar\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-2.jpg?v=1792936448\",\"alt\":\"Real Results Real Growth\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-3.png?v=1793191524\",\"alt\":\"Essence of Strength\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-4.png?v=1793193619\",\"alt\":\"Loved By Thousands\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-5.png?v=1792936448\",\"alt\":\"Simple Steps Stronger Hair\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-6.png?v=1793192817\",\"alt\":\"Revitalize Your Hair\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-7.webp?v=1793192821\",\"alt\":\"Botanical Routine\"},{\"src\":\"/cdn/shop/files/zavelyn-botana-asset-8.webp?v=1792936448\",\"alt\":\"Pure Organic Guarantee\"}]",
+      "match": true
+    },
+    {
+      "field": "Bundle Cards Count",
+      "live": 3,
+      "draft": 3,
+      "match": true
+    },
+    {
+      "field": "Bundle Cards Data",
+      "live": "[{\"text\":\"BEST VALUE · FREE SHIPPING · EXTRA 20% OFF Buy 3 3 × 60ml Bottles 90-Day Supply $95.99 $32.00 / bottle FREE SHIPPING EXTRA 20% OFF\",\"isSelected\":true},{\"text\":\"🔥 MOST POPULAR Buy 2 2 × 60ml Bottles 60-Day Supply $79.98 $39.99 / bottle\",\"isSelected\":false},{\"text\":\"Buy 1 1 × 60ml Bottle 30-Day Starter Supply $39.99 $39.99 / bottle SHIPPING +$4.95\",\"isSelected\":false}]",
+      "draft": "[{\"text\":\"BEST VALUE · FREE SHIPPING · EXTRA 20% OFF Buy 3 3 × 60ml Bottles 90-Day Supply $95.99 $32.00 / bottle FREE SHIPPING EXTRA 20% OFF\",\"isSelected\":true},{\"text\":\"🔥 MOST POPULAR Buy 2 2 × 60ml Bottles 60-Day Supply $79.98 $39.99 / bottle\",\"isSelected\":false},{\"text\":\"Buy 1 1 × 60ml Bottle 30-Day Starter Supply $39.99 $39.99 / bottle SHIPPING +$4.95\",\"isSelected\":false}]",
+      "match": true
+    },
+    {
+      "field": "Size Upgrade Section",
+      "live": "{\"exists\":false,\"text\":\"\"}",
+      "draft": "{\"exists\":false,\"text\":\"\"}",
+      "match": true
+    },
+    {
+      "field": "Trust Chips Count",
+      "live": 7,
+      "draft": 7,
+      "match": true
+    },
+    {
+      "field": "Trust Chips Content",
+      "live": "[\"30-Day Returns If you're not satisfied, return within 30 days\",\"Free Tracked Shipping Fast delivery with real-time tracking updates\",\"Safe 256-Bit SSL Encrypted & secure checkout guaranteed\",\"⏱️ 24–48h Dispatch Rapid order processing from regional US fulfillment hubs.\",\"📦 Insured Transit Full protection against lost, stolen, or damaged parcels.\",\"🔍 Tracking Updates Instant carrier tracking notifications via SMS and email.\",\"🛡️ Money-Back Guarantee Standard 30-day return policy for peace of mind.\"]",
+      "draft": "[\"30-Day Returns If you're not satisfied, return within 30 days\",\"Free Tracked Shipping Fast delivery with real-time tracking updates\",\"Safe 256-Bit SSL Encrypted & secure checkout guaranteed\",\"⏱️ 24–48h Dispatch Rapid order processing from regional US fulfillment hubs.\",\"📦 Insured Transit Full protection against lost, stolen, or damaged parcels.\",\"🔍 Tracking Updates Instant carrier tracking notifications via SMS and email.\",\"🛡️ Money-Back Guarantee Standard 30-day return policy for peace of mind.\"]",
+      "match": true
+    },
+    {
+      "field": "FAQ Items Count",
+      "live": 3,
+      "draft": 3,
+      "match": true
+    },
+    {
+      "field": "FAQ Items Content",
+      "live": "[{\"question\":\"How does the 30-Day Return Guarantee work?\",\"answer\":\"\"},{\"question\":\"Shipping, Delivery & Returns\",\"answer\":\"\"},{\"question\":\"Is payment safe and encrypted?\",\"answer\":\"\"}]",
+      "draft": "[{\"question\":\"How does the 30-Day Return Guarantee work?\",\"answer\":\"\"},{\"question\":\"Shipping, Delivery & Returns\",\"answer\":\"\"},{\"question\":\"Is payment safe and encrypted?\",\"answer\":\"\"}]",
+      "match": true
+    },
+    {
+      "field": "Body Images Count",
+      "live": 4,
+      "draft": 4,
+      "match": true
+    },
+    {
+      "field": "Body Images URLs",
+      "live": "[\"/cdn/shop/files/zavelyn-botana-asset-3.png?v=1793191524\",\"/cdn/shop/files/zavelyn-botana-asset-4.png?v=1793193619\",\"/cdn/shop/files/zavelyn-botana-asset-5.png?v=1792936448\",\"/cdn/shop/files/zavelyn-botana-asset-6.png?v=1793192817\"]",
+      "draft": "[\"/cdn/shop/files/zavelyn-botana-asset-3.png?v=1793191524\",\"/cdn/shop/files/zavelyn-botana-asset-4.png?v=1793193619\",\"/cdn/shop/files/zavelyn-botana-asset-5.png?v=1792936448\",\"/cdn/shop/files/zavelyn-botana-asset-6.png?v=1793192817\"]",
+      "match": true
+    },
+    {
+      "field": "Add to Cart Button Text",
+      "live": "",
+      "draft": "",
+      "match": true
+    }
+  ],
+  "liveData": {
+    "title": "Zavelyn BotanaRoots Batana Hair Growth Oil",
+    "mainImg": "/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361",
+    "mainImgAlt": "Main Product Jar",
+    "thumbCount": 8,
+    "thumbs": [
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361",
+        "alt": "Main Product Jar"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-2.jpg?v=1792936448",
+        "alt": "Real Results Real Growth"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-3.png?v=1793191524",
+        "alt": "Essence of Strength"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-4.png?v=1793193619",
+        "alt": "Loved By Thousands"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-5.png?v=1792936448",
+        "alt": "Simple Steps Stronger Hair"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-6.png?v=1793192817",
+        "alt": "Revitalize Your Hair"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-7.webp?v=1793192821",
+        "alt": "Botanical Routine"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-8.webp?v=1792936448",
+        "alt": "Pure Organic Guarantee"
+      }
+    ],
+    "bundleCardsCount": 3,
+    "bundleCards": [
+      {
+        "text": "BEST VALUE · FREE SHIPPING · EXTRA 20% OFF Buy 3 3 × 60ml Bottles 90-Day Supply $95.99 $32.00 / bottle FREE SHIPPING EXTRA 20% OFF",
+        "isSelected": true
+      },
+      {
+        "text": "🔥 MOST POPULAR Buy 2 2 × 60ml Bottles 60-Day Supply $79.98 $39.99 / bottle",
+        "isSelected": false
+      },
+      {
+        "text": "Buy 1 1 × 60ml Bottle 30-Day Starter Supply $39.99 $39.99 / bottle SHIPPING +$4.95",
+        "isSelected": false
+      }
+    ],
+    "upsellInfo": {
+      "exists": false,
+      "text": ""
+    },
+    "trustChipsCount": 7,
+    "trustChips": [
+      "30-Day Returns If you're not satisfied, return within 30 days",
+      "Free Tracked Shipping Fast delivery with real-time tracking updates",
+      "Safe 256-Bit SSL Encrypted & secure checkout guaranteed",
+      "⏱️ 24–48h Dispatch Rapid order processing from regional US fulfillment hubs.",
+      "📦 Insured Transit Full protection against lost, stolen, or damaged parcels.",
+      "🔍 Tracking Updates Instant carrier tracking notifications via SMS and email.",
+      "🛡️ Money-Back Guarantee Standard 30-day return policy for peace of mind."
+    ],
+    "faqCount": 3,
+    "faqAccordion": [
+      {
+        "question": "How does the 30-Day Return Guarantee work?",
+        "answer": ""
+      },
+      {
+        "question": "Shipping, Delivery & Returns",
+        "answer": ""
+      },
+      {
+        "question": "Is payment safe and encrypted?",
+        "answer": ""
+      }
+    ],
+    "bodyImgsCount": 4,
+    "bodyImgs": [
+      "/cdn/shop/files/zavelyn-botana-asset-3.png?v=1793191524",
+      "/cdn/shop/files/zavelyn-botana-asset-4.png?v=1793193619",
+      "/cdn/shop/files/zavelyn-botana-asset-5.png?v=1792936448",
+      "/cdn/shop/files/zavelyn-botana-asset-6.png?v=1793192817"
+    ],
+    "atcBtnText": "",
+    "hasPaymentIcons": false
+  },
+  "draftData": {
+    "title": "Zavelyn BotanaRoots Batana Hair Growth Oil",
+    "mainImg": "/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361",
+    "mainImgAlt": "Main Product Jar",
+    "thumbCount": 8,
+    "thumbs": [
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361",
+        "alt": "Main Product Jar"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-2.jpg?v=1792936448",
+        "alt": "Real Results Real Growth"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-3.png?v=1793191524",
+        "alt": "Essence of Strength"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-4.png?v=1793193619",
+        "alt": "Loved By Thousands"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-5.png?v=1792936448",
+        "alt": "Simple Steps Stronger Hair"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-6.png?v=1793192817",
+        "alt": "Revitalize Your Hair"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-7.webp?v=1793192821",
+        "alt": "Botanical Routine"
+      },
+      {
+        "src": "/cdn/shop/files/zavelyn-botana-asset-8.webp?v=1792936448",
+        "alt": "Pure Organic Guarantee"
+      }
+    ],
+    "bundleCardsCount": 3,
+    "bundleCards": [
+      {
+        "text": "BEST VALUE · FREE SHIPPING · EXTRA 20% OFF Buy 3 3 × 60ml Bottles 90-Day Supply $95.99 $32.00 / bottle FREE SHIPPING EXTRA 20% OFF",
+        "isSelected": true
+      },
+      {
+        "text": "🔥 MOST POPULAR Buy 2 2 × 60ml Bottles 60-Day Supply $79.98 $39.99 / bottle",
+        "isSelected": false
+      },
+      {
+        "text": "Buy 1 1 × 60ml Bottle 30-Day Starter Supply $39.99 $39.99 / bottle SHIPPING +$4.95",
+        "isSelected": false
+      }
+    ],
+    "upsellInfo": {
+      "exists": false,
+      "text": ""
+    },
+    "trustChipsCount": 7,
+    "trustChips": [
+      "30-Day Returns If you're not satisfied, return within 30 days",
+      "Free Tracked Shipping Fast delivery with real-time tracking updates",
+      "Safe 256-Bit SSL Encrypted & secure checkout guaranteed",
+      "⏱️ 24–48h Dispatch Rapid order processing from regional US fulfillment hubs.",
+      "📦 Insured Transit Full protection against lost, stolen, or damaged parcels.",
+      "🔍 Tracking Updates Instant carrier tracking notifications via SMS and email.",
+      "🛡️ Money-Back Guarantee Standard 30-day return policy for peace of mind."
+    ],
+    "faqCount": 3,
+    "faqAccordion": [
+      {
+        "question": "How does the 30-Day Return Guarantee work?",
+        "answer": ""
+      },
+      {
+        "question": "Shipping, Delivery & Returns",
+        "answer": ""
+      },
+      {
+        "question": "Is payment safe and encrypted?",
+        "answer": ""
+      }
+    ],
+    "bodyImgsCount": 4,
+    "bodyImgs": [
+      "/cdn/shop/files/zavelyn-botana-asset-3.png?v=1793191524",
+      "/cdn/shop/files/zavelyn-botana-asset-4.png?v=1793193619",
+      "/cdn/shop/files/zavelyn-botana-asset-5.png?v=1792936448",
+      "/cdn/shop/files/zavelyn-botana-asset-6.png?v=1793192817"
+    ],
+    "atcBtnText": "",
+    "hasPaymentIcons": false
+  }
+}

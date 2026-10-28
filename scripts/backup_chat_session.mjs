@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 
-const DEFAULT_CONVERSATION_ID = 'ba009709-9c7b-4366-a57b-5a4a187c37c3';
+const CURRENT_CONVERSATION_ID = 'd0f634e2-c9dd-4bad-bdb2-3c956abea303';
 const BRAIN_DIR = 'C:/Users/Admin/.gemini/antigravity-ide/brain';
 const REPO_ROOT = 'c:/Users/Admin/Desktop/CLONE SPF';
 const CHAT_HISTORY_DIR = path.join(REPO_ROOT, 'chat_history');
@@ -19,7 +19,8 @@ function maskSecrets(str) {
     .replace(/pk_live_[0-9a-zA-Z]+/g, 'pk_live_REDACTED_SECRET')
     .replace(/pk_test_[0-9a-zA-Z]+/g, 'pk_test_REDACTED_SECRET')
     .replace(/ghp_[0-9a-zA-Z]{36}/g, 'ghp_REDACTED_SECRET')
-    .replace(/github_pat_[0-9a-zA-Z_]{82}/g, 'github_pat_REDACTED_SECRET');
+    .replace(/github_pat_[0-9a-zA-Z_]{82}/g, 'github_pat_REDACTED_SECRET')
+    .replace(/68ca2de27a9e6adb66211c47ebe6ac11/g, 'REDACTED_CLIENT_SECRET');
 }
 
 async function readStdin() {
@@ -46,8 +47,13 @@ async function main() {
   const isHook = process.argv.includes('--hook');
   const stdinData = await readStdin();
 
-  let conversationId = DEFAULT_CONVERSATION_ID;
+  let conversationId = CURRENT_CONVERSATION_ID;
   let transcriptPath = '';
+
+  const idArgIdx = process.argv.indexOf('--conversation-id');
+  if (idArgIdx !== -1 && process.argv[idArgIdx + 1]) {
+    conversationId = process.argv[idArgIdx + 1];
+  }
 
   if (stdinData) {
     try {
@@ -60,9 +66,12 @@ async function main() {
   }
 
   if (!transcriptPath || !fs.existsSync(transcriptPath)) {
-    const candidate = path.join(BRAIN_DIR, conversationId, '.system_generated', 'logs', 'transcript.jsonl');
-    if (fs.existsSync(candidate)) {
-      transcriptPath = candidate;
+    const candidateFull = path.join(BRAIN_DIR, conversationId, '.system_generated', 'logs', 'transcript_full.jsonl');
+    const candidateCompact = path.join(BRAIN_DIR, conversationId, '.system_generated', 'logs', 'transcript.jsonl');
+    if (fs.existsSync(candidateFull)) {
+      transcriptPath = candidateFull;
+    } else if (fs.existsSync(candidateCompact)) {
+      transcriptPath = candidateCompact;
     }
   }
 
@@ -131,7 +140,7 @@ async function main() {
       }
     }
 
-    if (step.source === 'MODEL' && step.type === 'GENERIC' && step.content) {
+    if (step.source === 'MODEL' && (step.type === 'GENERIC' || step.type === 'PLANNER_RESPONSE') && step.content) {
       currentTurn.assistantResponses.push(step.content);
     }
   }
@@ -144,7 +153,8 @@ async function main() {
   let md = `# 💬 CHAT SESSION TRANSCRIPT: ${conversationId}\n\n`;
   md += `> **Dự án:** DarkTutemi/clone-shopify  \n`;
   md += `> **Store:** dsdujr-vn.myshopify.com (Zavelyn)  \n`;
-  md += `> **Theme ID:** 186607567033  \n`;
+  md += `> **Live Theme ID:** 187597717689 (Zavelyn 2.0)  \n`;
+  md += `> **Draft Theme ID:** 187720335545 ([Draft] Zavelyn - Fix Non-Botana Products Isolation)  \n`;
   md += `> **Ngày cập nhật:** ${new Date().toISOString()}  \n`;
   md += `> **Tổng số lượt tương tác (User Turns):** ${turns.length}  \n\n`;
   md += `---\n\n## 📑 MỤC LỤC CÁC ĐOẠN CHAT\n\n`;
@@ -185,38 +195,33 @@ async function main() {
   const mdDest = path.join(CHAT_HISTORY_DIR, `session_${conversationId}_transcript.md`);
   fs.writeFileSync(mdDest, sanitizedMd, 'utf8');
 
+  // Discover all sessions in chat_history
+  const allFiles = fs.readdirSync(CHAT_HISTORY_DIR);
+  const transcriptFiles = allFiles.filter(f => f.startsWith('session_') && f.endsWith('_transcript.md'));
+
   // Update README in chat_history
   let readme = `# 📚 KHO LƯU TRỮ LỊCH SỬ CHAT (AUTOMATIC SESSION BACKUPS)\n\n`;
   readme += `Thư mục này tự động ghi lại toàn bộ lịch sử các đoạn chat, chỉ đạo kỹ thuật, và mã nguồn sinh ra giữa User và Assistant.\n\n`;
   readme += `## 📋 Danh sách các phiên làm việc:\n\n`;
-  readme += `| Phiên (Conversation ID) | Tệp Markdown | Tệp Raw JSONL | Số lượt tương tác | Cập nhật lần cuối |\n`;
-  readme += `| :--- | :--- | :--- | :--- | :--- |\n`;
-  readme += `| \`${conversationId}\` | [Xem Transcript](file:///c:/Users/Admin/Desktop/CLONE%20SPF/chat_history/session_${conversationId}_transcript.md) | [\`session_${conversationId}_full.jsonl\`](file:///c:/Users/Admin/Desktop/CLONE%20SPF/chat_history/session_${conversationId}_full.jsonl) | ${turns.length} turns | ${new Date().toISOString()} |\n\n`;
-  readme += `## ⚙️ Cơ chế tự động sao lưu:\n`;
-  readme += `- Được điều khiển bởi hook \`Stop\` trong file [\`.agents/hooks.json\`](file:///c:/Users/Admin/Desktop/CLONE%20SPF/.agents/hooks.json).\n`;
-  readme += `- Mỗi khi kết thúc một lượt trả lời của Assistant, script [\`scripts/backup_chat_session.mjs\`](file:///c:/Users/Admin/Desktop/CLONE%20SPF/scripts/backup_chat_session.mjs) sẽ tự động đồng bộ transcript mới nhất, commit và push lên GitHub repository \`DarkTutemi/clone-shopify\`.\n`;
+  readme += `| Phiên (Conversation ID) | Tệp Markdown | Tệp Raw JSONL | Trạng thái |\n`;
+  readme += `| :--- | :--- | :--- | :--- |\n`;
+
+  for (const tf of transcriptFiles) {
+    const sId = tf.replace('session_', '').replace('_transcript.md', '');
+    const jsonlFile = `session_${sId}_full.jsonl`;
+    const isCurrent = (sId === conversationId);
+    readme += `| \`${sId}\`${isCurrent ? ' *(Current)*' : ''} | [Xem Transcript](./${tf}) | [\`${jsonlFile}\`](./${jsonlFile}) | Đã lưu trữ an toàn |\n`;
+  }
+
+  readme += `\n## ⚙️ Cơ chế tự động sao lưu:\n`;
+  readme += `- Được điều khiển bởi hook \`Stop\` trong file [\`.agents/hooks.json\`](../.agents/hooks.json) hoặc gọi trực tiếp qua script [\`scripts/backup_chat_session.mjs\`](../scripts/backup_chat_session.mjs).\n`;
+  readme += `- Toàn bộ API secrets, keys, và sensitive tokens được tự động làm sạch (redacted) trước khi lưu trữ và commit lên GitHub repository \`DarkTutemi/clone-shopify\`.\n`;
 
   fs.writeFileSync(path.join(CHAT_HISTORY_DIR, 'README.md'), readme, 'utf8');
 
   console.log(`[Backup] Sanitized Markdown generated: ${mdDest}`);
   console.log(`[Backup] Sanitized Raw JSONL copied: ${rawDest}`);
-
-  // Git Add, Commit, Push
-  try {
-    const status = execSync('git status --porcelain chat_history', { cwd: REPO_ROOT, encoding: 'utf8' });
-    if (status.trim()) {
-      console.log('[Backup] Git changes detected in chat_history. Committing and pushing...');
-      execSync('git add chat_history', { cwd: REPO_ROOT });
-      const commitMsg = `chore(backup): auto-backup chat session ${conversationId.substring(0, 8)} [${turns.length} turns]`;
-      execSync(`git commit -m "${commitMsg}"`, { cwd: REPO_ROOT });
-      execSync('git push origin main', { cwd: REPO_ROOT });
-      console.log('[Backup] Successfully pushed sanitized chat backup to GitHub!');
-    } else {
-      console.log('[Backup] No new changes to push.');
-    }
-  } catch (err) {
-    console.error('[Backup] Git push error:', err.message);
-  }
+  console.log(`[Backup] Total turns processed: ${turns.length}`);
 
   if (isHook) {
     process.stdout.write(JSON.stringify({ decision: 'allow' }));

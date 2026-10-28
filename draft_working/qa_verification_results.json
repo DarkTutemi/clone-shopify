@@ -1,0 +1,194 @@
+{
+  "viewports": {
+    "desktop_1440": {
+      "viewport": 1440,
+      "scrollWidth": 1425,
+      "innerWidth": 1440,
+      "hasHorizontalOverflow": false,
+      "bundleWidth": 580,
+      "buy3Height": 193,
+      "upsellImgWidth": 88,
+      "upsellImgHeight": 66,
+      "trustCardCount": 3,
+      "trustCardsVisible": 3,
+      "trustCardsHeadings": [
+        "30-Day Returns",
+        "Free Tracked Shipping",
+        "Safe 256-Bit SSL"
+      ],
+      "faqCount": 3,
+      "faqOpenOnLoad": 0
+    },
+    "desktop_1280": {
+      "viewport": 1280,
+      "scrollWidth": 1265,
+      "innerWidth": 1280,
+      "hasHorizontalOverflow": false,
+      "bundleWidth": 577,
+      "buy3Height": 193,
+      "upsellImgWidth": 88,
+      "upsellImgHeight": 66,
+      "trustCardCount": 3,
+      "trustCardsVisible": 3,
+      "trustCardsHeadings": [
+        "30-Day Returns",
+        "Free Tracked Shipping",
+        "Safe 256-Bit SSL"
+      ],
+      "faqCount": 3,
+      "faqOpenOnLoad": 0
+    },
+    "tablet_768": {
+      "viewport": 768,
+      "scrollWidth": 753,
+      "innerWidth": 768,
+      "hasHorizontalOverflow": false,
+      "bundleWidth": 580,
+      "buy3Height": 193,
+      "upsellImgWidth": 88,
+      "upsellImgHeight": 66,
+      "trustCardCount": 3,
+      "trustCardsVisible": 3,
+      "trustCardsHeadings": [
+        "30-Day Returns",
+        "Free Tracked Shipping",
+        "Safe 256-Bit SSL"
+      ],
+      "faqCount": 3,
+      "faqOpenOnLoad": 0
+    },
+    "mobile_430": {
+      "viewport": 430,
+      "scrollWidth": 430,
+      "innerWidth": 430,
+      "hasHorizontalOverflow": false,
+      "bundleWidth": 398,
+      "buy3Height": 175,
+      "upsellImgWidth": 75,
+      "upsellImgHeight": 55,
+      "trustCardCount": 3,
+      "trustCardsVisible": 3,
+      "trustCardsHeadings": [
+        "30-Day Returns",
+        "Free Tracked Shipping",
+        "Safe 256-Bit SSL"
+      ],
+      "faqCount": 3,
+      "faqOpenOnLoad": 0
+    },
+    "mobile_390": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "hasHorizontalOverflow": false,
+      "bundleWidth": 360,
+      "buy3Height": 175,
+      "upsellImgWidth": 75,
+      "upsellImgHeight": 55,
+      "trustCardCount": 3,
+      "trustCardsVisible": 3,
+      "trustCardsHeadings": [
+        "30-Day Returns",
+        "Free Tracked Shipping",
+        "Safe 256-Bit SSL"
+      ],
+      "faqCount": 3,
+      "faqOpenOnLoad": 0
+    },
+    "mobile_375": {
+      "viewport": 375,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "hasHorizontalOverflow": false,
+      "bundleWidth": 343,
+      "buy3Height": 159,
+      "upsellImgWidth": 75,
+      "upsellImgHeight": 55,
+      "trustCardCount": 3,
+      "trustCardsVisible": 3,
+      "trustCardsHeadings": [
+        "30-Day Returns",
+        "Free Tracked Shipping",
+        "Safe 256-Bit SSL"
+      ],
+      "faqCount": 3,
+      "faqOpenOnLoad": 0
+    },
+    "mobile_320": {
+      "viewport": 320,
+      "scrollWidth": 335,
+      "innerWidth": 335,
+      "hasHorizontalOverflow": false,
+      "bundleWidth": 319,
+      "buy3Height": 151,
+      "upsellImgWidth": 75,
+      "upsellImgHeight": 55,
+      "trustCardCount": 3,
+      "trustCardsVisible": 3,
+      "trustCardsHeadings": [
+        "30-Day Returns",
+        "Free Tracked Shipping",
+        "Safe 256-Bit SSL"
+      ],
+      "faqCount": 3,
+      "faqOpenOnLoad": 0
+    }
+  },
+  "functionalMatrix": {
+    "Buy 3 - 60ml Standard": {
+      "expected": "$95.99 ($32.00 / bottle)",
+      "actual": "$95.99 ($32.00 / bottle)",
+      "ctaPrice": "$95.99",
+      "packageText": "3 × 60ml",
+      "pass": true
+    },
+    "Buy 3 - 120ml Upgrade": {
+      "expected": "$125.99 ($42.00 / bottle)",
+      "actual": "$125.99 ($42.00 / bottle)",
+      "ctaPrice": "$125.99",
+      "packageText": "3 × 120ml",
+      "pass": true
+    },
+    "Buy 2 - 60ml Standard": {
+      "expected": "$79.98 ($39.99 / bottle)",
+      "actual": "$79.98 ($39.99 / bottle)",
+      "ctaPrice": "$79.98",
+      "packageText": "2 × 60ml",
+      "pass": true
+    },
+    "Buy 2 - 120ml Upgrade": {
+      "expected": "$99.98 ($49.99 / bottle)",
+      "actual": "$99.98 ($49.99 / bottle)",
+      "ctaPrice": "$99.98",
+      "packageText": "2 × 120ml",
+      "pass": true
+    },
+    "Buy 1 - 60ml Standard": {
+      "expected": "$39.99 ($39.99 / bottle)",
+      "actual": "$39.99 ($39.99 / bottle)",
+      "ctaPrice": "$39.99",
+      "packageText": "1 × 60ml",
+      "pass": true
+    },
+    "Buy 1 - 120ml Upgrade": {
+      "expected": "$49.99 ($49.99 / bottle)",
+      "actual": "$49.99 ($49.99 / bottle)",
+      "ctaPrice": "$49.99",
+      "packageText": "1 × 120ml",
+      "pass": true
+    }
+  },
+  "faqTests": {
+    "totalFaqs": 3,
+    "initialOpenCount": 0,
+    "openAfterFirstClick": true,
+    "closedAfterSecondClick": true
+  },
+  "trustCardsTest": {},
+  "regressionTest": {
+    "title": "Zavelyn Yeoman Lawn Sweeper",
+    "hasBotanaBundle": false,
+    "hasStandardPdp": false,
+    "url": "https://tryzavelyn.com/products/the-yeoman-sweep"
+  }
+}

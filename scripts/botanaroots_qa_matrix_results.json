@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-10-28T07:07:42.221Z",
+  "themeId": "187702804665",
+  "results": [
+    {
+      "bundle": 1,
+      "upgraded": false,
+      "expectedTotal": "$39.99",
+      "expectedUnit": "$39.99 / bottle",
+      "label": "Buy 1 / 60ml",
+      "actual": {
+        "packageText": "1 × 60ml",
+        "totalPrice": "$39.99",
+        "unitPrice": "$39.99 / bottle",
+        "ctaPrice": "$39.99",
+        "upsellDelta": "+ $10.00",
+        "shippingText": "Standard shipping calculated at checkout (+$4.95)"
+      },
+      "status": "PASS"
+    },
+    {
+      "bundle": 1,
+      "upgraded": true,
+      "expectedTotal": "$49.99",
+      "expectedUnit": "$49.99 / bottle",
+      "label": "Buy 1 / 120ml",
+      "actual": {
+        "packageText": "1 × 120ml",
+        "totalPrice": "$49.99",
+        "unitPrice": "$49.99 / bottle",
+        "ctaPrice": "$49.99",
+        "upsellDelta": "+ $10.00",
+        "shippingText": "Standard shipping calculated at checkout (+$4.95)"
+      },
+      "status": "PASS"
+    },
+    {
+      "bundle": 2,
+      "upgraded": false,
+      "expectedTotal": "$79.98",
+      "expectedUnit": "$39.99 / bottle",
+      "label": "Buy 2 / 60ml",
+      "actual": {
+        "packageText": "2 × 60ml",
+        "totalPrice": "$79.98",
+        "unitPrice": "$39.99 / bottle",
+        "ctaPrice": "$79.98",
+        "upsellDelta": "+ $20.00",
+        "shippingText": "Free standard shipping included (Order over $49)"
+      },
+      "status": "PASS"
+    },
+    {
+      "bundle": 2,
+      "upgraded": true,
+      "expectedTotal": "$99.98",
+      "expectedUnit": "$49.99 / bottle",
+      "label": "Buy 2 / 120ml",
+      "actual": {
+        "packageText": "2 × 120ml",
+        "totalPrice": "$99.98",
+        "unitPrice": "$49.99 / bottle",
+        "ctaPrice": "$99.98",
+        "upsellDelta": "+ $20.00",
+        "shippingText": "Free standard shipping included (Order over $49)"
+      },
+      "status": "PASS"
+    },
+    {
+      "bundle": 3,
+      "upgraded": false,
+      "expectedTotal": "$95.99",
+      "expectedUnit": "$32.00 / bottle",
+      "label": "Buy 3 / 60ml",
+      "actual": {
+        "packageText": "3 × 60ml",
+        "totalPrice": "$95.99",
+        "unitPrice": "$32.00 / bottle",
+        "ctaPrice": "$95.99",
+        "upsellDelta": "+ $30.00",
+        "shippingText": "Free standard shipping included"
+      },
+      "status": "PASS"
+    },
+    {
+      "bundle": 3,
+      "upgraded": true,
+      "expectedTotal": "$125.99",
+      "expectedUnit": "$42.00 / bottle",
+      "label": "Buy 3 / 120ml",
+      "actual": {
+        "packageText": "3 × 120ml",
+        "totalPrice": "$125.99",
+        "unitPrice": "$42.00 / bottle",
+        "ctaPrice": "$125.99",
+        "upsellDelta": "+ $30.00",
+        "shippingText": "Free standard shipping included"
+      },
+      "status": "PASS"
+    }
+  ],
+  "modalTest": {
+    "modalVisible": true,
+    "message": "You selected Buy 3 × 120ml ($125.99).[Shopify Admin Notice]: The 120ml bottle upgrade requires creating 120ml variants in Shopify Admin before live checkout routing.To proceed with actual checkout today, please select the 60ml Bottles option."
+  },
+  "cartTest": {
+    "drawerActive": true,
+    "drawerCount": "1"
+  }
+}

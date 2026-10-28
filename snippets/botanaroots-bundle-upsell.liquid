@@ -1,0 +1,362 @@
+{% comment %}
+  ZAVELYN BOTANAROOTS — REFINED MOBILE-FIRST DTC BUNDLE & SIZE UPSELL SNIPPET
+  Scoped strictly to: zavelyn-botanaroots-organic-batana-hair-growth-oil
+  Optimized for responsive mobile viewports: 320px, 375px, 390px, 430px & Desktop
+{% endcomment %}
+
+{{ 'botanaroots-bundle.css' | asset_url | stylesheet_tag }}
+
+<div class="zv-botana-bundle-container" id="zvBotanaBundleComponent" data-product-handle="{{ product.handle }}">
+
+  <!-- BUNDLE SECTION HEADER (RESPONSIVE NO-OVERFLOW) -->
+  <div class="zv-bundle-section-header">
+    <div class="zv-bundle-header-title-wrap">
+      <span class="zv-bundle-header-label">{{ section.settings.bundle_header_label | default: 'CHOOSE YOUR QUANTITY:' }}</span>
+    </div>
+    <div class="zv-bundle-header-guarantee-wrap">
+      <span class="zv-bundle-header-guarantee" title="30-Day Return Policy">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+        </svg>
+        <span>{{ section.settings.guarantee_badge_text | default: '30-Day Returns' }}</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- BUNDLE OFFERS (BUY 3 -> BUY 2 -> BUY 1) -->
+  <div class="zv-bundle-cards-group" role="radiogroup" aria-label="Select purchase quantity">
+
+    <!-- CARD 1: BUY 3 (BEST VALUE - DEFAULT SELECTED / HERO CARD) -->
+    <div 
+      class="zv-bundle-card zv-card-buy3 selected" 
+      data-bundle="3" 
+      id="zvCardBuy3"
+      tabindex="0"
+      role="radio"
+      aria-checked="true"
+    >
+      <div class="zv-card-banner zv-banner-best-value">
+        <svg class="zv-icon-crown" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+        </svg>
+        <span>BEST VALUE &middot; FREE SHIPPING &middot; <strong class="zv-highlight-lime">EXTRA 20% OFF</strong></span>
+      </div>
+
+      <div class="zv-card-content">
+        <!-- Main Row: Radio, Image, Text Info, Price -->
+        <div class="zv-card-main-row">
+          <div class="zv-card-radio">
+            <span class="zv-radio-circle"></span>
+          </div>
+
+          <div class="zv-card-img-wrap zv-img-wrap-buy3">
+            {%- if img_buy3 != blank -%}
+              <img 
+                src="{{ img_buy3 | image_url: width: 320 }}" 
+                alt="{{ img_buy3.alt | default: 'Buy 3 Bottles of Zavelyn Batana Oil' | escape }}" 
+                width="115" 
+                height="92" 
+                loading="eager"
+                class="zv-card-img"
+              >
+            {%- else -%}
+              <img 
+                src="{{ 'botana-bundle-buy3.webp' | asset_url }}" 
+                alt="Buy 3 Bottles of Zavelyn Batana Oil" 
+                width="115" 
+                height="92" 
+                loading="eager"
+                class="zv-card-img"
+              >
+            {%- endif -%}
+          </div>
+
+          <div class="zv-card-info">
+            <div class="zv-card-title-row">
+              <h3 class="zv-card-title">Buy 3</h3>
+            </div>
+            <div class="zv-card-bottles" data-default="3 &times; 60ml Bottles" data-upgraded="3 &times; 120ml Bottles">
+              3 &times; 60ml Bottles
+            </div>
+            <div class="zv-card-supply">90-Day Supply</div>
+          </div>
+
+          <div class="zv-card-pricing">
+            <div class="zv-card-total-price" data-price-60="95.99" data-price-120="125.99">$95.99</div>
+            <div class="zv-card-unit-price zv-unit-pill-warm" data-unit-60="32.00" data-unit-120="42.00">$32.00 / bottle</div>
+          </div>
+        </div>
+
+        <!-- Dedicated Benefit Badges Row (Prevents vertical squishing on mobile) -->
+        <div class="zv-card-badges-row">
+          <span class="zv-badge zv-badge-free-shipping">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+              <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            </svg>
+            FREE SHIPPING
+          </span>
+          <span class="zv-badge zv-badge-extra-off">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+              <path d="M7.5 11C9.43 11 11 9.43 11 7.5S9.43 4 7.5 4 4 5.57 4 7.5 5.57 11 7.5 11zm0-5C8.33 6 9 6.67 9 7.5S8.33 9 7.5 9 6 8.33 6 7.5 6.67 6 7.5 6zm9 7c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5zm0 5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM19.07 4.93a1 1 0 0 0-1.41 0L4.93 17.66a1 1 0 1 0 1.41 1.41L19.07 6.34a1 1 0 0 0 0-1.41z"/>
+            </svg>
+            EXTRA 20% OFF
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: BUY 2 (MOST POPULAR) -->
+    <div 
+      class="zv-bundle-card zv-card-buy2" 
+      data-bundle="2" 
+      id="zvCardBuy2"
+      tabindex="0"
+      role="radio"
+      aria-checked="false"
+    >
+      <div class="zv-card-banner zv-banner-most-popular">
+        <span>🔥 MOST POPULAR</span>
+      </div>
+
+      <div class="zv-card-content">
+        <div class="zv-card-main-row">
+          <div class="zv-card-radio">
+            <span class="zv-radio-circle"></span>
+          </div>
+
+          <div class="zv-card-img-wrap zv-img-wrap-buy2">
+            {%- if img_buy2 != blank -%}
+              <img 
+                src="{{ img_buy2 | image_url: width: 280 }}" 
+                alt="{{ img_buy2.alt | default: 'Buy 2 Bottles of Zavelyn Batana Oil' | escape }}" 
+                width="105" 
+                height="88" 
+                loading="lazy"
+                class="zv-card-img"
+              >
+            {%- else -%}
+              <img 
+                src="{{ 'botana-bundle-buy2.webp' | asset_url }}" 
+                alt="Buy 2 Bottles of Zavelyn Batana Oil" 
+                width="105" 
+                height="88" 
+                loading="lazy"
+                class="zv-card-img"
+              >
+            {%- endif -%}
+          </div>
+
+          <div class="zv-card-info">
+            <div class="zv-card-title-row">
+              <h3 class="zv-card-title">Buy 2</h3>
+            </div>
+            <div class="zv-card-bottles" data-default="2 &times; 60ml Bottles" data-upgraded="2 &times; 120ml Bottles">
+              2 &times; 60ml Bottles
+            </div>
+            <div class="zv-card-supply">60-Day Supply</div>
+          </div>
+
+          <div class="zv-card-pricing">
+            <div class="zv-card-total-price" data-price-60="79.98" data-price-120="99.98">$79.98</div>
+            <div class="zv-card-unit-price zv-unit-pill-warm" data-unit-60="39.99" data-unit-120="49.99">$39.99 / bottle</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: BUY 1 (ENTRY LEVEL) -->
+    <div 
+      class="zv-bundle-card zv-card-buy1" 
+      data-bundle="1" 
+      id="zvCardBuy1"
+      tabindex="0"
+      role="radio"
+      aria-checked="false"
+    >
+      <div class="zv-card-content">
+        <div class="zv-card-main-row">
+          <div class="zv-card-radio">
+            <span class="zv-radio-circle"></span>
+          </div>
+
+          <div class="zv-card-img-wrap zv-img-wrap-buy1">
+            {%- if img_buy1 != blank -%}
+              <img 
+                src="{{ img_buy1 | image_url: width: 260 }}" 
+                alt="{{ img_buy1.alt | default: 'Buy 1 Bottle of Zavelyn Batana Oil' | escape }}" 
+                width="95" 
+                height="85" 
+                loading="lazy"
+                class="zv-card-img"
+              >
+            {%- else -%}
+              <img 
+                src="{{ 'botana-bundle-buy1.webp' | asset_url }}" 
+                alt="Buy 1 Bottle of Zavelyn Batana Oil" 
+                width="95" 
+                height="85" 
+                loading="lazy"
+                class="zv-card-img"
+              >
+            {%- endif -%}
+          </div>
+
+          <div class="zv-card-info">
+            <div class="zv-card-title-row">
+              <h3 class="zv-card-title">Buy 1</h3>
+            </div>
+            <div class="zv-card-bottles" data-default="1 &times; 60ml Bottle" data-upgraded="1 &times; 120ml Bottle">
+              1 &times; 60ml Bottle
+            </div>
+            <div class="zv-card-supply">30-Day Starter Supply</div>
+          </div>
+
+          <div class="zv-card-pricing">
+            <div class="zv-card-total-price" data-price-60="39.99" data-price-120="49.99">$39.99</div>
+            <div class="zv-card-unit-price zv-unit-pill-warm" data-unit-60="39.99" data-unit-120="49.99">$39.99 / bottle</div>
+          </div>
+        </div>
+
+        <div class="zv-card-badges-row">
+          <span class="zv-badge zv-badge-shipping-fee">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+              <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            </svg>
+            Shipping +$4.95
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ENLARGED SIZE UPSELL SECTION (60ml -> 120ml) -->
+  <div class="zv-size-upsell-section">
+    <div class="zv-upsell-header">
+      <span class="zv-upsell-title">{{ section.settings.upsell_section_title | default: 'UPGRADE YOUR BOTTLE SIZE' }}</span>
+      <span class="zv-upsell-badge">{{ section.settings.upsell_badge | default: 'SPECIAL OFFER' }}</span>
+    </div>
+
+    <label class="zv-upsell-card" id="zvUpsellCard" for="zvSizeUpgradeCheck">
+      <div class="zv-upsell-checkbox-wrap">
+        <input type="checkbox" id="zvSizeUpgradeCheck" class="zv-upsell-checkbox">
+        <span class="zv-custom-check">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </span>
+      </div>
+
+      <div class="zv-upsell-img-wrap">
+        {%- if img_upsell != blank -%}
+          <img 
+            src="{{ img_upsell | image_url: width: 360 }}" 
+            alt="{{ img_upsell.alt | default: '60ml to 120ml Upgrade' | escape }}" 
+            width="135" 
+            height="90" 
+            loading="lazy"
+            class="zv-upsell-img"
+          >
+        {%- else -%}
+          <img 
+            src="{{ 'botana-bundle-upgrade-size.webp' | asset_url }}" 
+            alt="60ml to 120ml Upgrade" 
+            width="135" 
+            height="90" 
+            loading="lazy"
+            class="zv-upsell-img"
+          >
+        {%- endif -%}
+      </div>
+
+      <div class="zv-upsell-copy">
+        <div class="zv-upsell-main-title">{{ section.settings.upsell_heading | default: 'Double the Size!' }}</div>
+        <div class="zv-upsell-desc">{{ section.settings.upsell_description | default: 'Upgrade each bottle from 60ml to 120ml.' }}</div>
+        <div class="zv-upsell-deal">Just +$10 per bottle</div>
+      </div>
+
+      <div class="zv-upsell-pricing">
+        <div class="zv-upsell-delta" id="zvUpsellDelta">+ $30.00</div>
+        <div class="zv-upsell-per-bottle">($10 per bottle)</div>
+      </div>
+    </label>
+  </div>
+
+  <!-- LIVE PRICE SUMMARY BOX -->
+  <div class="zv-summary-box">
+    <div class="zv-summary-left">
+      <div class="zv-summary-label">YOUR PACKAGE</div>
+      <div class="zv-summary-package-val" id="zvSummaryPackage">3 &times; 60ml</div>
+    </div>
+
+    <div class="zv-summary-right">
+      <div class="zv-summary-label">TOTAL</div>
+      <div class="zv-summary-total-row">
+        <span class="zv-summary-total-val" id="zvSummaryTotal">$95.99</span>
+        <span class="zv-summary-unit-pill zv-unit-pill-warm" id="zvSummaryUnitPill">$32.00 / bottle</span>
+      </div>
+      <div class="zv-summary-shipping" id="zvSummaryShipping">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+          <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+        </svg>
+        <span id="zvShippingText">Free standard shipping included</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALL TO ACTION BUTTON -->
+  <div class="zv-cta-wrapper">
+    <button type="button" class="zv-cta-button" id="zvBotanaCtaBtn">
+      <span class="zv-cta-text">{{ section.settings.cta_text | default: 'CLAIM OFFER' }}</span>
+      <span class="zv-cta-sep">&mdash;</span>
+      <span class="zv-cta-price" id="zvCtaPrice">$95.99</span>
+    </button>
+  </div>
+
+  <!-- SHOPIFY OFFICIAL PAYMENT ICONS ROW (CENTRALIZED BELOW CTA) -->
+  <div class="zv-payment-icons-wrapper" role="region" aria-label="Accepted payment methods">
+    <div class="zv-payment-icons-row">
+      {% assign payment_types = 'visa,master,american_express,paypal,apple_pay,google_pay,shopify_pay' | split: ',' %}
+      {% for type in payment_types %}
+        <span class="zv-payment-icon" title="{{ type | replace: '_', ' ' | capitalize }}">
+          {{ type | payment_type_svg_tag: class: 'zv-pay-svg' }}
+        </span>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- BACKEND DATA & PREVIEW NOTIFICATION MODAL -->
+  <div class="zv-preview-modal" id="zvPreviewModal" style="display: none;">
+    <div class="zv-modal-backdrop" id="zvModalBackdrop"></div>
+    <div class="zv-modal-dialog">
+      <div class="zv-modal-icon">✨</div>
+      <h4 class="zv-modal-title">Admin Configuration Notice</h4>
+      <p class="zv-modal-msg" id="zvModalMsg">
+        You selected the <strong>120ml Bottle Upgrade</strong> ($125.99). In Shopify Admin, 120ml variants are pending creation before live checkout handoff.
+      </p>
+      <div class="zv-modal-actions">
+        <button type="button" class="zv-modal-btn zv-btn-confirm" id="zvModalClose">Understood</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMBEDDED VARIANT MAPPING DATA FOR JS -->
+  <script type="application/json" id="zvBotanaVariantData">
+    {
+      "variants": {
+        "pure": {
+          "1": { "id": "67980643598521", "price": 3900, "sku": "ZAV-BOTANA-1PK-PURE" },
+          "2": { "id": "67980643664057", "price": 6900, "sku": "ZAV-BOTANA-2PK-PURE" },
+          "3": { "id": "67980643729593", "price": 8900, "sku": "ZAV-BOTANA-3PK-PURE" }
+        }
+      },
+      "pricingMatrix": {
+        "1": { "60ml": 39.99, "120ml": 49.99, "unit60": 39.99, "unit120": 49.99, "delta": 10.00 },
+        "2": { "60ml": 79.98, "120ml": 99.98, "unit60": 39.99, "unit120": 49.99, "delta": 20.00 },
+        "3": { "60ml": 95.99, "120ml": 125.99, "unit60": 32.00, "unit120": 42.00, "delta": 30.00 }
+      }
+    }
+  </script>
+
+  <script src="{{ 'botanaroots-bundle.js' | asset_url }}" defer></script>
+</div>

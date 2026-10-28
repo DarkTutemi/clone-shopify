@@ -1,0 +1,38 @@
+[
+  {
+    "handle": "sakerplus®-3-in-1-gypsum-board-cutting-tool",
+    "title": "3-in-1 Drywall & Gypsum Board Cutting Tool | Zavelyn",
+    "mainImg": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361&width=1200",
+    "hasBotanaMain": true,
+    "thumbCount": 8,
+    "botanaThumbsCount": 8,
+    "firstThumb": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361&width=160"
+  },
+  {
+    "handle": "zavelyn-airclear-plugin-negative-ion-air-purifier",
+    "title": "AirClear Plug-In Negative Ion Room Air Purifier | Zavelyn",
+    "mainImg": "https://tryzavelyn.com/cdn/shop/files/clarifion_hero_white.png?v=1792934822",
+    "hasBotanaMain": false,
+    "thumbCount": 8,
+    "botanaThumbsCount": 8,
+    "firstThumb": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361&width=160"
+  },
+  {
+    "handle": "zavelyn-automatic-dough-mixer-with-ferment-function",
+    "title": "Automatic Dough Mixer with Fermentation Function | Zavelyn",
+    "mainImg": "https://tryzavelyn.com/cdn/shop/files/dough_mixer_red_card.jpg?v=1792922475",
+    "hasBotanaMain": false,
+    "thumbCount": 8,
+    "botanaThumbsCount": 8,
+    "firstThumb": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361&width=160"
+  },
+  {
+    "handle": "zavelyn-cozyheat-heated-wearable-blanket-sweater",
+    "title": "CozyHeat Wearable Heated Hoodie Blanket | Zavelyn",
+    "mainImg": "https://tryzavelyn.com/cdn/shop/files/cozyheat_hero_brown.webp?v=1792921124",
+    "hasBotanaMain": false,
+    "thumbCount": 8,
+    "botanaThumbsCount": 8,
+    "firstThumb": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361&width=160"
+  }
+]

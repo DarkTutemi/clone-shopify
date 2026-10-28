@@ -1,0 +1,93 @@
+{
+  "sections": {
+    "main": {
+      "type": "zavelyn-pdp-main",
+      "settings": {
+        "eyebrow_text": "ZAVELYN INNOVATIONS · INDUSTRIAL GRADE",
+        "urgency_text": "High US Demand · Limited Units Remaining at Clearance Pricing",
+        "cta_text": "CLAIM OFFER",
+        "enable_sticky_atc": true,
+        "botana_img_buy3": "shopify:\/\/shop_images\/b1ac7e73-94fa-4026-949e-f07ca0ed6a56.png",
+        "botana_img_buy2": "shopify:\/\/shop_images\/Zavelyn_Batana_Oil_Botanical_Duo.png",
+        "botana_img_buy1": "shopify:\/\/shop_images\/Screenshot_2026-10-28_155240-removebg-preview.png",
+        "botana_img_upsell": "shopify:\/\/shop_images\/a867f031-c378-4948-b172-9ede56b8c973.png"
+      }
+    },
+    "ticker": {
+      "type": "zavelyn-pdp-ticker",
+      "settings": {}
+    },
+    "value_prop": {
+      "type": "zavelyn-pdp-value-prop",
+      "settings": {}
+    },
+    "features": {
+      "type": "zavelyn-pdp-features",
+      "settings": {}
+    },
+    "storytelling": {
+      "type": "zavelyn-pdp-storytelling",
+      "settings": {}
+    },
+    "steps": {
+      "type": "zavelyn-pdp-steps",
+      "settings": {}
+    },
+    "comparison": {
+      "type": "zavelyn-pdp-comparison",
+      "settings": {}
+    },
+    "specs": {
+      "type": "zavelyn-pdp-specs",
+      "settings": {}
+    },
+    "included": {
+      "type": "zavelyn-pdp-included",
+      "settings": {}
+    },
+    "faq": {
+      "type": "zavelyn-pdp-faq",
+      "settings": {}
+    },
+    "description_fallback": {
+      "type": "zavelyn-pdp-description-fallback",
+      "settings": {}
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {
+        "badge_text": "FAST & INSURED TRACKED US DELIVERY",
+        "heading": "Doorstep Delivery Guarantee & Real-Time Tracking",
+        "subheading": "Every Zavelyn order is cushioned in heavy-duty protective packaging, inspected for quality, and dispatched from regional US warehouses within 24–48 business hours. We partner directly with USPS, FedEx, and DHL Express to guarantee rapid, dependable doorstep transit.",
+        "shipping_img_1_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/5555.webp?v=1792856415",
+        "shipping_img_2_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0826\/2483\/9865\/files\/44444.webp?v=1792856415",
+        "card1_icon": "⏱️",
+        "card1_title": "24–48h Dispatch",
+        "card1_desc": "Rapid order processing from regional US fulfillment hubs.",
+        "card2_icon": "📦",
+        "card2_title": "Insured Transit",
+        "card2_desc": "Full protection against lost, stolen, or damaged parcels.",
+        "card3_icon": "🔍",
+        "card3_title": "Tracking Updates",
+        "card3_desc": "Instant carrier tracking notifications via SMS and email.",
+        "card4_icon": "🛡️",
+        "card4_title": "Money-Back Guarantee",
+        "card4_desc": "Standard 30-day return policy for peace of mind."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ticker",
+    "value_prop",
+    "features",
+    "storytelling",
+    "steps",
+    "comparison",
+    "specs",
+    "included",
+    "faq",
+    "description_fallback",
+    "shipping"
+  ]
+}

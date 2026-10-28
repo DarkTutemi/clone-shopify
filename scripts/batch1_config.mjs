@@ -1,4 +1,6 @@
 import fs from 'fs';
+import dns from 'dns';
+dns.setDefaultResultOrder('ipv4first');
 
 const CLIENT_ID = '172e9e29abd0fe12f671d8441479c7c2';
 const CLIENT_SECRET = process.env.SHOPIFY_API_SECRET || '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';

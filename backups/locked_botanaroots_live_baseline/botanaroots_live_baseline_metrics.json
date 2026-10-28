@@ -1,0 +1,75 @@
+{
+  "url": "https://tryzavelyn.com/products/zavelyn-botanaroots-organic-batana-hair-growth-oil",
+  "title": "BotanaRoots Pure Batana Oil for Hair & Scalp | Zavelyn",
+  "mainImg": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361&width=1200",
+  "thumbCount": 8,
+  "thumbs": [
+    "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361&width=160",
+    "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-2.jpg?v=1792936448&width=160",
+    "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-3.png?v=1793191524&width=160",
+    "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-4.png?v=1793193619&width=160",
+    "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-5.png?v=1792936448&width=160",
+    "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-6.png?v=1793192817&width=160",
+    "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-7.webp?v=1793192821&width=160",
+    "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-8.webp?v=1792936448&width=160"
+  ],
+  "bundleCardsCount": 3,
+  "bundleCards": [
+    {
+      "text": "BEST VALUE · FREE SHIPPING · EXTRA 20% OFF\nBuy 3\n3 × 60ml Bottles\n90-Day Supply\n$95.99\n$32.00 / bottle\nFREE SHIPPING\nEXTRA 20% OFF",
+      "selected": true
+    },
+    {
+      "text": "🔥 MOST POPULAR\nBuy 2\n2 × 60ml Bottles\n60-Day Supply\n$79.98\n$39.99 / bottle",
+      "selected": false
+    },
+    {
+      "text": "Buy 1\n1 × 60ml Bottle\n30-Day Starter Supply\n$39.99\n$39.99 / bottle\nSHIPPING +$4.95",
+      "selected": false
+    }
+  ],
+  "upsellSectionExists": false,
+  "faqHeadings": [
+    {
+      "tag": "H3",
+      "text": "Frequently Asked Questions",
+      "section": "shopify-section-template--28263504281785__description_fallback"
+    }
+  ],
+  "faqItemsCount": 6,
+  "faqItems": [
+    "Can I use this on color-treated, bleached, or chemically straightened hair?",
+    "How soon will I see visible results?",
+    "Is it suitable for both men and women?",
+    "How do I apply Zavelyn BotanaRoots for best results?",
+    "Is it 100% pure raw batana oil with no added chemicals?",
+    "How does the 30-Day Return Guarantee work?"
+  ],
+  "bodyImageCount": 4,
+  "bodyImages": [
+    {
+      "src": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-3.png?v=1793191524&width=1200",
+      "alt": "Zavelyn BotanaRoots Application",
+      "width": 900,
+      "height": 900
+    },
+    {
+      "src": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-4.png?v=1793193619&width=1200",
+      "alt": "100% Pure Natural Formula",
+      "width": 440,
+      "height": 440
+    },
+    {
+      "src": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-5.png?v=1792936448&width=1200",
+      "alt": "Nourishes and Restores Follicles",
+      "width": 440,
+      "height": 440
+    },
+    {
+      "src": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-6.png?v=1793192817&width=1200",
+      "alt": "Zavelyn BotanaRoots Before and After",
+      "width": 900,
+      "height": 900
+    }
+  ]
+}

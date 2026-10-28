@@ -1,0 +1,257 @@
+{
+  "config/settings_data.json": {
+    "size": 1404,
+    "updated_at": "2026-10-27T10:45:40-06:00",
+    "type": "text"
+  },
+  "templates/product.json": {
+    "size": 2507,
+    "updated_at": "2026-10-28T02:57:18-06:00",
+    "type": "text"
+  },
+  "sections/zavelyn-pdp-main.liquid": {
+    "size": 50371,
+    "updated_at": "2026-10-28T02:10:38-06:00",
+    "type": "text"
+  },
+  "sections/zavelyn-pdp-ticker.liquid": {
+    "size": 1142,
+    "updated_at": "2026-10-27T10:30:51-06:00",
+    "type": "text"
+  },
+  "sections/zavelyn-pdp-value-prop.liquid": {
+    "size": 1346,
+    "updated_at": "2026-10-26T12:56:44-06:00",
+    "type": "text"
+  },
+  "sections/zavelyn-pdp-features.liquid": {
+    "size": 1473,
+    "updated_at": "2026-10-26T12:29:07-06:00",
+    "type": "text"
+  },
+  "sections/zavelyn-pdp-storytelling.liquid": {
+    "size": 2307,
+    "updated_at": "2026-10-26T12:56:46-06:00",
+    "type": "text"
+  },
+  "sections/zavelyn-pdp-steps.liquid": {
+    "size": 1959,
+    "updated_at": "2026-10-26T12:56:46-06:00",
+    "type": "text"
+  },
+  "sections/zavelyn-pdp-comparison.liquid": {
+    "size": 2743,
+    "updated_at": "2026-10-26T12:56:48-06:00",
+    "type": "text"
+  },
+  "sections/zavelyn-pdp-specs.liquid": {
+    "size": 2161,
+    "updated_at": "2026-10-26T12:56:47-06:00",
+    "type": "text"
+  },
+  "sections/zavelyn-pdp-included.liquid": {
+    "size": 1928,
+    "updated_at": "2026-10-26T12:56:48-06:00",
+    "type": "text"
+  },
+  "sections/zavelyn-pdp-faq.liquid": {
+    "size": 1708,
+    "updated_at": "2026-10-26T12:56:50-06:00",
+    "type": "text"
+  },
+  "sections/zavelyn-pdp-description-fallback.liquid": {
+    "size": 710,
+    "updated_at": "2026-10-26T12:56:51-06:00",
+    "type": "text"
+  },
+  "sections/zavelyn-pdp-shipping.liquid": {
+    "size": 7904,
+    "updated_at": "2026-10-27T10:38:00-06:00",
+    "type": "text"
+  },
+  "snippets/botanaroots-bundle-upsell.liquid": {
+    "size": 13961,
+    "updated_at": "2026-10-28T02:10:37-06:00",
+    "type": "text"
+  },
+  "assets/botanaroots-bundle.css": {
+    "size": 15064,
+    "updated_at": "2026-10-28T02:10:36-06:00",
+    "type": "text"
+  },
+  "assets/botanaroots-bundle.js": {
+    "size": 10430,
+    "updated_at": "2026-10-28T02:10:37-06:00",
+    "type": "text"
+  },
+  "assets/botana-bundle-buy1.webp": {
+    "size": 3242,
+    "updated_at": "2026-10-28T02:10:31-06:00",
+    "type": "binary"
+  },
+  "assets/botana-bundle-buy2.webp": {
+    "size": 4008,
+    "updated_at": "2026-10-28T02:10:32-06:00",
+    "type": "binary"
+  },
+  "assets/botana-bundle-buy3.webp": {
+    "size": 6184,
+    "updated_at": "2026-10-28T02:10:33-06:00",
+    "type": "binary"
+  },
+  "assets/botana-bundle-upgrade-size.webp": {
+    "size": 2508,
+    "updated_at": "2026-10-28T02:10:35-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-1.jpg": {
+    "size": 127113,
+    "updated_at": "2026-10-26T09:53:10-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-10.webp": {
+    "size": 152045,
+    "updated_at": "2026-10-26T09:53:10-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-11.webp": {
+    "size": 437270,
+    "updated_at": "2026-10-26T09:53:10-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-12.webp": {
+    "size": 98895,
+    "updated_at": "2026-10-26T09:53:11-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-13.webp": {
+    "size": 273211,
+    "updated_at": "2026-10-26T09:53:11-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-14.webp": {
+    "size": 79175,
+    "updated_at": "2026-10-26T09:53:12-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-2.jpg": {
+    "size": 157901,
+    "updated_at": "2026-10-26T09:53:12-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-3.png": {
+    "size": 3067190,
+    "updated_at": "2026-10-26T09:53:13-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-4.png": {
+    "size": 1642752,
+    "updated_at": "2026-10-26T09:53:13-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-5.png": {
+    "size": 2697339,
+    "updated_at": "2026-10-26T09:53:14-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-6.png": {
+    "size": 3601619,
+    "updated_at": "2026-10-26T09:53:14-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-7.webp": {
+    "size": 1165751,
+    "updated_at": "2026-10-26T09:53:15-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-8.webp": {
+    "size": 184506,
+    "updated_at": "2026-10-26T09:53:15-06:00",
+    "type": "binary"
+  },
+  "assets/zavelyn-botana-asset-9.webp": {
+    "size": 46212,
+    "updated_at": "2026-10-26T09:53:16-06:00",
+    "type": "binary"
+  },
+  "templates/product.balm.json": {
+    "size": 1877,
+    "updated_at": "2026-10-26T09:54:18-06:00",
+    "type": "text"
+  },
+  "templates/product.cdf.json": {
+    "size": 14239,
+    "updated_at": "2026-10-27T10:45:47-06:00",
+    "type": "text"
+  },
+  "templates/product.device.json": {
+    "size": 10804,
+    "updated_at": "2026-10-26T09:54:18-06:00",
+    "type": "text"
+  },
+  "templates/product.regrip.json": {
+    "size": 1085,
+    "updated_at": "2026-10-26T09:54:18-06:00",
+    "type": "text"
+  },
+  "templates/product.sakerplus-livestock-heating-lamp.json": {
+    "size": 592,
+    "updated_at": "2026-10-27T00:26:14-06:00",
+    "type": "text"
+  },
+  "templates/product.srefalsteam.json": {
+    "size": 569,
+    "updated_at": "2026-10-27T00:18:05-06:00",
+    "type": "text"
+  },
+  "templates/product.thoson-magtrack.json": {
+    "size": 573,
+    "updated_at": "2026-10-27T00:26:12-06:00",
+    "type": "text"
+  },
+  "templates/product.willa.json": {
+    "size": 129,
+    "updated_at": "2026-10-26T09:54:18-06:00",
+    "type": "text"
+  },
+  "templates/product.yeoman-sweep.json": {
+    "size": 570,
+    "updated_at": "2026-10-27T00:26:10-06:00",
+    "type": "text"
+  },
+  "templates/product.zavelyn-drum-mini.json": {
+    "size": 4318,
+    "updated_at": "2026-10-27T10:31:13-06:00",
+    "type": "text"
+  },
+  "templates/product.zavelyn-drum-plus.json": {
+    "size": 4249,
+    "updated_at": "2026-10-27T10:31:15-06:00",
+    "type": "text"
+  },
+  "templates/product.zavelyn-drum-pro.json": {
+    "size": 4886,
+    "updated_at": "2026-10-27T10:31:17-06:00",
+    "type": "text"
+  },
+  "templates/product.zavelyn-foot-sleeves.json": {
+    "size": 25851,
+    "updated_at": "2026-10-26T09:54:19-06:00",
+    "type": "text"
+  },
+  "templates/product.zavelyn-handpan-master.json": {
+    "size": 5091,
+    "updated_at": "2026-10-27T10:45:44-06:00",
+    "type": "text"
+  },
+  "templates/product.zavelyn-rain-drum.json": {
+    "size": 4589,
+    "updated_at": "2026-10-27T10:31:20-06:00",
+    "type": "text"
+  },
+  "templates/product.zavelyn.json": {
+    "size": 17175,
+    "updated_at": "2026-10-26T09:54:19-06:00",
+    "type": "text"
+  }
+}

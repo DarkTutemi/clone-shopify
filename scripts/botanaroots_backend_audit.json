@@ -1,0 +1,385 @@
+{
+  "themes": [
+    {
+      "id": 186521059513,
+      "name": "Horizon",
+      "created_at": "2026-10-06T10:50:51-06:00",
+      "updated_at": "2026-10-06T11:27:25-06:00",
+      "role": "unpublished",
+      "theme_store_id": 2481,
+      "previewable": true,
+      "processing": false,
+      "admin_graphql_api_id": "gid://shopify/Theme/186521059513"
+    },
+    {
+      "id": 186607567033,
+      "name": "Zavelyn (Pre-Publish Backup)",
+      "created_at": "2026-10-08T01:20:50-06:00",
+      "updated_at": "2026-10-27T23:08:42-06:00",
+      "role": "unpublished",
+      "theme_store_id": null,
+      "previewable": true,
+      "processing": false,
+      "admin_graphql_api_id": "gid://shopify/Theme/186607567033"
+    },
+    {
+      "id": 186628800697,
+      "name": "Copy of Zavelyn",
+      "created_at": "2026-10-08T10:49:20-06:00",
+      "updated_at": "2026-10-08T10:49:35-06:00",
+      "role": "unpublished",
+      "theme_store_id": null,
+      "previewable": true,
+      "processing": false,
+      "admin_graphql_api_id": "gid://shopify/Theme/186628800697"
+    },
+    {
+      "id": 187597717689,
+      "name": "Zavelyn 2.0",
+      "created_at": "2026-10-26T09:48:50-06:00",
+      "updated_at": "2026-10-27T23:08:41-06:00",
+      "role": "main",
+      "theme_store_id": null,
+      "previewable": true,
+      "processing": false,
+      "admin_graphql_api_id": "gid://shopify/Theme/187597717689"
+    }
+  ],
+  "product": {
+    "id": "gid://shopify/Product/15461545935033",
+    "title": "Zavelyn BotanaRoots Batana Hair Growth Oil",
+    "handle": "zavelyn-botanaroots-organic-batana-hair-growth-oil",
+    "status": "ACTIVE",
+    "templateSuffix": null,
+    "descriptionHtml": "\n<div class=\"zavelyn-botana-advertorial\" style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #222; line-height: 1.6; max-width: 900px; margin: 0 auto;\">\n\n  <!-- Hero Highlight Banner -->\n  <div style=\"background: linear-gradient(135deg, #1b382b 0%, #2e5a44 100%); color: #fff; padding: 25px 30px; border-radius: 12px; margin-bottom: 35px; box-shadow: 0 8px 24px rgba(27,56,43,0.15);\">\n    <span style=\"background: #e8a838; color: #1b382b; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px;\">HONDURAN MIRACLE OIL</span>\n    <h2 style=\"font-size: 26px; font-weight: 800; margin: 0 0 10px 0; color: #ffffff; line-height: 1.25;\">Wake Up Sleeping Follicles &amp; Regrow Thicker, Fuller Hair Naturally</h2>\n    <p style=\"font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5;\">Wildcrafted 100% pure cold-pressed Batana oil harvested from native American palm nuts. Clinically recognized for revitalizing thinning edges, reversing hormonal shedding, and locking in deep scalp moisture.</p>\n  </div>\n\n  <!-- Key Benefits Grid -->\n  <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 35px;\">\n    <div style=\"background: #f8faf8; border: 1px solid #e1ebe2; border-radius: 10px; padding: 20px;\">\n      <div style=\"font-size: 24px; margin-bottom: 8px;\">🌱</div>\n      <h3 style=\"font-size: 16px; font-weight: 700; margin: 0 0 6px 0; color: #1b382b;\">100% Pure Wildcrafted Batana</h3>\n      <p style=\"font-size: 13px; color: #555; margin: 0;\">Unrefined, zero parabens, sulfates, silicones, or mineral oils. Rich in omega-6 and phytosterols that feed hair bulbs directly.</p>\n    </div>\n    <div style=\"background: #f8faf8; border: 1px solid #e1ebe2; border-radius: 10px; padding: 20px;\">\n      <div style=\"font-size: 24px; margin-bottom: 8px;\">🔬</div>\n      <h3 style=\"font-size: 16px; font-weight: 700; margin: 0 0 6px 0; color: #1b382b;\">Reactivates Dormant Follicles</h3>\n      <p style=\"font-size: 13px; color: #555; margin: 0;\">Stimulates micro-circulation at the root level, helping push stalled follicles back into the active anagen growth phase.</p>\n    </div>\n    <div style=\"background: #f8faf8; border: 1px solid #e1ebe2; border-radius: 10px; padding: 20px;\">\n      <div style=\"font-size: 24px; margin-bottom: 8px;\">🛡️</div>\n      <h3 style=\"font-size: 16px; font-weight: 700; margin: 0 0 6px 0; color: #1b382b;\">Strengthens &amp; Seals Split Ends</h3>\n      <p style=\"font-size: 13px; color: #555; margin: 0;\">Coats brittle hair fibers with natural carotenoids, preventing breakage and restoring glass-like shine from root to tip.</p>\n    </div>\n  </div>\n\n  <!-- Visual Feature Section 1 -->\n  <div style=\"margin-bottom: 40px; text-align: center;\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-botana-asset-3.png?v=1792936261\" alt=\"Zavelyn BotanaRoots Application\" style=\"max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);\">\n  </div>\n\n  <!-- Botanical Science Deep Dive -->\n  <div style=\"background: #fdfaf6; border-left: 4px solid #b37d2b; padding: 24px; border-radius: 0 10px 10px 0; margin-bottom: 40px;\">\n    <h3 style=\"color: #4a3418; font-size: 20px; font-weight: 800; margin-top: 0; margin-bottom: 12px;\">The Secret of the Miskito People: \"Tawira\" (The People of Beautiful Hair)</h3>\n    <p style=\"font-size: 14px; color: #554332; line-height: 1.6; margin-bottom: 12px;\">\n      For generations, the indigenous Miskito communities of Honduras have been renowned for having the longest, thickest, and healthiest dark hair on Earth. Their only secret? <strong>Batana Oil</strong> (Elaeis Oleifera), handcrafted through time-honored artisanal roasting and cold-pressing.\n    </p>\n    <p style=\"font-size: 14px; color: #554332; line-height: 1.6; margin: 0;\">\n      Unlike drugstore serums loaded with drying alcohol and heavy silicones that choke hair follicles, <strong>Zavelyn BotanaRoots™</strong> mimics your scalp's natural sebum, absorbing instantaneously without greasy residue.\n    </p>\n  </div>\n\n  <!-- Infographics Gallery -->\n  <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px;\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-botana-asset-4.png?v=1792936264\" alt=\"100% Pure Natural Formula\" style=\"width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06);\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-botana-asset-5.png?v=1792936267\" alt=\"Nourishes and Restores Follicles\" style=\"width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06);\">\n  </div>\n\n  <!-- 90-Day Hair Restoration Timeline -->\n  <div style=\"background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 28px; margin-bottom: 40px; box-shadow: 0 4px 16px rgba(0,0,0,0.04);\">\n    <h3 style=\"text-align: center; font-size: 22px; font-weight: 800; color: #1b382b; margin-top: 0; margin-bottom: 24px;\">Your 90-Day Hair Transformation Journey</h3>\n    <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;\">\n      <div style=\"border-top: 3px solid #2e5a44; padding-top: 14px;\">\n        <span style=\"font-weight: 800; color: #2e5a44; font-size: 13px; text-transform: uppercase;\">Days 1 – 14</span>\n        <h4 style=\"font-size: 16px; margin: 6px 0; color: #1b382b;\">Scalp Detox &amp; Less Shedding</h4>\n        <p style=\"font-size: 13px; color: #666; margin: 0;\">Dry flaking stops, itchy scalp soothes instantly, and daily shower shedding drops significantly.</p>\n      </div>\n      <div style=\"border-top: 3px solid #b37d2b; padding-top: 14px;\">\n        <span style=\"font-weight: 800; color: #b37d2b; font-size: 13px; text-transform: uppercase;\">Days 15 – 45</span>\n        <h4 style=\"font-size: 16px; margin: 6px 0; color: #1b382b;\">Baby Hairs &amp; Edge Revival</h4>\n        <p style=\"font-size: 13px; color: #666; margin: 0;\">Noticeable vellus hairs sprout along hairline edges, temples, and previously widening hair parts.</p>\n      </div>\n      <div style=\"border-top: 3px solid #1b382b; padding-top: 14px;\">\n        <span style=\"font-weight: 800; color: #1b382b; font-size: 13px; text-transform: uppercase;\">Days 46 – 90</span>\n        <h4 style=\"font-size: 16px; margin: 6px 0; color: #1b382b;\">Full Density &amp; Thicker Shafts</h4>\n        <p style=\"font-size: 13px; color: #666; margin: 0;\">New strands mature into dense, thick terminal hairs. Overall ponytail volume and shine dramatically restored.</p>\n      </div>\n    </div>\n  </div>\n\n  <!-- Before & After Proof -->\n  <div style=\"margin-bottom: 40px; text-align: center;\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-botana-asset-6.png?v=1792936270\" alt=\"Zavelyn BotanaRoots Before and After\" style=\"max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);\">\n  </div>\n\n  <!-- How to Use Guide -->\n  <div style=\"background: #f8faf8; border-radius: 12px; padding: 28px; margin-bottom: 40px;\">\n    <h3 style=\"font-size: 20px; font-weight: 800; color: #1b382b; margin-top: 0; margin-bottom: 20px;\">3 Easy Ways to Incorporate BotanaRoots™ into Your Routine</h3>\n    <div style=\"margin-bottom: 16px;\">\n      <strong style=\"color: #1b382b; font-size: 15px;\">1. Daily Follicle Activation (2 mins):</strong>\n      <p style=\"font-size: 13px; color: #555; margin: 4px 0 0 0;\">Fill dropper 1/2 full. Apply directly to thinning areas (hairline, crown, part). Massage gently in circular motions with fingertips for 2 minutes. Do not rinse.</p>\n    </div>\n    <div style=\"margin-bottom: 16px;\">\n      <strong style=\"color: #1b382b; font-size: 15px;\">2. Deep Nourishing Overnight Hair Mask:</strong>\n      <p style=\"font-size: 13px; color: #555; margin: 4px 0 0 0;\">Apply 1-2 full pipettes across the entire scalp and distribute through mid-lengths to ends. Cover with a satin bonnet or towel overnight. Wash out in the morning with gentle shampoo.</p>\n    </div>\n    <div>\n      <strong style=\"color: #1b382b; font-size: 15px;\">3. Anti-Frizz &amp; Split-End Sealant:</strong>\n      <p style=\"font-size: 13px; color: #555; margin: 4px 0 0 0;\">Rub 2-3 drops between your palms and smooth over dry ends to tame flyaways, lock in hydration, and add a luminous botanical glow.</p>\n    </div>\n  </div>\n\n  <!-- FAQ Section -->\n  <div style=\"margin-bottom: 40px;\">\n    <h3 style=\"font-size: 20px; font-weight: 800; color: #1b382b; margin-bottom: 16px;\">Frequently Asked Questions</h3>\n    <div style=\"border-bottom: 1px solid #e0e0e0; padding: 14px 0;\">\n      <strong style=\"font-size: 15px; color: #222;\">Can I use this on color-treated, bleached, or chemically straightened hair?</strong>\n      <p style=\"font-size: 13px; color: #666; margin: 6px 0 0 0;\">Yes! Zavelyn BotanaRoots™ is 100% natural, sulfate-free, and color-safe. It actually helps repair damage caused by bleaching and hot styling tools.</p>\n    </div>\n    <div style=\"border-bottom: 1px solid #e0e0e0; padding: 14px 0;\">\n      <strong style=\"font-size: 15px; color: #222;\">How soon will I see visible results?</strong>\n      <p style=\"font-size: 13px; color: #666; margin: 6px 0 0 0;\">Most customers report a reduction in shedding within 10-14 days. Visible new baby hair growth and thickening of sparse areas typically appears between 4 to 8 weeks of daily use.</p>\n    </div>\n    <div style=\"border-bottom: 1px solid #e0e0e0; padding: 14px 0;\">\n      <strong style=\"font-size: 15px; color: #222;\">Is it suitable for both men and women?</strong>\n      <p style=\"font-size: 13px; color: #666; margin: 6px 0 0 0;\">Absolutely. BotanaRoots™ is universally effective for all hair types (Type 1 straight to Type 4 coily) and works equally well on receding men's hairlines and thinning women's crowns.</p>\n    </div>\n  </div>\n\n  <!-- Verified Customer Reviews Section -->\n  <div style=\"background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 25px; margin-bottom: 25px;\">\n    <div style=\"display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;\">\n      <div>\n        <h3 style=\"margin: 0; font-size: 18px; font-weight: 800; color: #1b382b;\">Verified Customer Reviews</h3>\n        <div style=\"color: #ffb800; font-size: 15px; margin-top: 4px;\">★★★★★ <span style=\"color: #666; font-size: 13px; font-weight: 600;\">4.95 out of 5 based on 1,480+ reviews</span>\n</div>\n      </div>\n      <span style=\"background: #e8f5e9; color: #2e7d32; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px;\">✓ 100% Verified Purchases</span>\n    </div>\n\n    <!-- Review 1 -->\n    <div style=\"border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;\">\n      <div style=\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;\">\n        <strong style=\"font-size: 14px; color: #222;\">Camilla R. — New York, NY</strong>\n        <span style=\"font-size: 12px; color: #888;\">2 days ago</span>\n      </div>\n      <div style=\"color: #ffb800; font-size: 12px; margin-bottom: 6px;\">★★★★★ <span style=\"color: #2e7d32; font-size: 11px; font-weight: 600;\">Verified Buyer</span>\n</div>\n      <p style=\"font-size: 13px; color: #444; margin: 0; line-height: 1.5;\">\"My postpartum shedding was out of control. I was losing fistfuls of hair in the shower every single day. Within 3 weeks of using Zavelyn BotanaRoots, the shedding stopped dead in its tracks. Now at week 6, my temples are filled with new dark baby hairs! Getting the 3-bottle pack is a no-brainer.\"</p>\n    </div>\n\n    <!-- Review 2 -->\n    <div style=\"border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;\">\n      <div style=\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;\">\n        <strong style=\"font-size: 14px; color: #222;\">Marcus D. — Austin, TX</strong>\n        <span style=\"font-size: 12px; color: #888;\">5 days ago</span>\n      </div>\n      <div style=\"color: #ffb800; font-size: 12px; margin-bottom: 6px;\">★★★★★ <span style=\"color: #2e7d32; font-size: 11px; font-weight: 600;\">Verified Buyer</span>\n</div>\n      <p style=\"font-size: 13px; color: #444; margin: 0; line-height: 1.5;\">\"I was skeptical about Batana oil because minoxidil always irritated my scalp. This pure oil feels amazing, has a warm earthy aroma, and my barber actually asked what I was using because my crown looks noticeably denser. 10/10.\"</p>\n    </div>\n\n    <!-- Review 3 -->\n    <div>\n      <div style=\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;\">\n        <strong style=\"font-size: 14px; color: #222;\">Aaliyah M. — Atlanta, GA</strong>\n        <span style=\"font-size: 12px; color: #888;\">1 week ago</span>\n      </div>\n      <div style=\"color: #ffb800; font-size: 12px; margin-bottom: 6px;\">★★★★★ <span style=\"color: #2e7d32; font-size: 11px; font-weight: 600;\">Verified Buyer</span>\n</div>\n      <p style=\"font-size: 13px; color: #444; margin: 0; line-height: 1.5;\">\"Traction alopecia from tight braids ruined my edges. I've tried caster oil and rice water with zero luck. BotanaRoots with rosemary is the only thing that actually re-sprouted my edges. Thicker, shinier, and healthy again.\"</p>\n    </div>\n  </div>\n\n</div>\n",
+    "vendor": "Zavelyn",
+    "productType": "Hair Growth Oil & Scalp Treatment",
+    "totalInventory": 0,
+    "options": [
+      {
+        "id": "gid://shopify/ProductOption/17937390207161",
+        "name": "Bundle",
+        "values": [
+          "Buy 1 (1x 60ml Bottle - 30-Day Starter Supply)",
+          "Buy 2 (2x 60ml Bottles - 60-Day Intensive Growth Course - Save 45%)",
+          "Buy 3 (3x 60ml Bottles - 90-Day Full Hair Restoration - Buy 2 Get 1 FREE)"
+        ]
+      },
+      {
+        "id": "gid://shopify/ProductOption/17937390239929",
+        "name": "Formula",
+        "values": [
+          "100% Pure Raw Honduran Batana (60ml)",
+          "Batana + Rosemary Scalp Infusion (60ml)"
+        ]
+      }
+    ],
+    "variants": {
+      "nodes": [
+        {
+          "id": "gid://shopify/ProductVariant/67980643598521",
+          "title": "Buy 1 (1x 60ml Bottle - 30-Day Starter Supply) / 100% Pure Raw Honduran Batana (60ml)",
+          "sku": "ZAV-BOTANA-1PK-PURE",
+          "price": "39.00",
+          "compareAtPrice": "80.00",
+          "inventoryQuantity": -2,
+          "selectedOptions": [
+            {
+              "name": "Bundle",
+              "value": "Buy 1 (1x 60ml Bottle - 30-Day Starter Supply)"
+            },
+            {
+              "name": "Formula",
+              "value": "100% Pure Raw Honduran Batana (60ml)"
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67980643631289",
+          "title": "Buy 1 (1x 60ml Bottle - 30-Day Starter Supply) / Batana + Rosemary Scalp Infusion (60ml)",
+          "sku": "ZAV-BOTANA-1PK-ROSE",
+          "price": "39.00",
+          "compareAtPrice": "80.00",
+          "inventoryQuantity": 0,
+          "selectedOptions": [
+            {
+              "name": "Bundle",
+              "value": "Buy 1 (1x 60ml Bottle - 30-Day Starter Supply)"
+            },
+            {
+              "name": "Formula",
+              "value": "Batana + Rosemary Scalp Infusion (60ml)"
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67980643664057",
+          "title": "Buy 2 (2x 60ml Bottles - 60-Day Intensive Growth Course - Save 45%) / 100% Pure Raw Honduran Batana (60ml)",
+          "sku": "ZAV-BOTANA-2PK-PURE",
+          "price": "69.00",
+          "compareAtPrice": "160.00",
+          "inventoryQuantity": 0,
+          "selectedOptions": [
+            {
+              "name": "Bundle",
+              "value": "Buy 2 (2x 60ml Bottles - 60-Day Intensive Growth Course - Save 45%)"
+            },
+            {
+              "name": "Formula",
+              "value": "100% Pure Raw Honduran Batana (60ml)"
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67980643696825",
+          "title": "Buy 2 (2x 60ml Bottles - 60-Day Intensive Growth Course - Save 45%) / Batana + Rosemary Scalp Infusion (60ml)",
+          "sku": "ZAV-BOTANA-2PK-ROSE",
+          "price": "69.00",
+          "compareAtPrice": "160.00",
+          "inventoryQuantity": 0,
+          "selectedOptions": [
+            {
+              "name": "Bundle",
+              "value": "Buy 2 (2x 60ml Bottles - 60-Day Intensive Growth Course - Save 45%)"
+            },
+            {
+              "name": "Formula",
+              "value": "Batana + Rosemary Scalp Infusion (60ml)"
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67980643729593",
+          "title": "Buy 3 (3x 60ml Bottles - 90-Day Full Hair Restoration - Buy 2 Get 1 FREE) / 100% Pure Raw Honduran Batana (60ml)",
+          "sku": "ZAV-BOTANA-2PK-PURE",
+          "price": "89.00",
+          "compareAtPrice": "240.00",
+          "inventoryQuantity": 0,
+          "selectedOptions": [
+            {
+              "name": "Bundle",
+              "value": "Buy 3 (3x 60ml Bottles - 90-Day Full Hair Restoration - Buy 2 Get 1 FREE)"
+            },
+            {
+              "name": "Formula",
+              "value": "100% Pure Raw Honduran Batana (60ml)"
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/ProductVariant/67980643762361",
+          "title": "Buy 3 (3x 60ml Bottles - 90-Day Full Hair Restoration - Buy 2 Get 1 FREE) / Batana + Rosemary Scalp Infusion (60ml)",
+          "sku": "ZAV-BOTANA-2PK-ROSE",
+          "price": "89.00",
+          "compareAtPrice": "240.00",
+          "inventoryQuantity": 0,
+          "selectedOptions": [
+            {
+              "name": "Bundle",
+              "value": "Buy 3 (3x 60ml Bottles - 90-Day Full Hair Restoration - Buy 2 Get 1 FREE)"
+            },
+            {
+              "name": "Formula",
+              "value": "Batana + Rosemary Scalp Infusion (60ml)"
+            }
+          ]
+        }
+      ]
+    },
+    "images": {
+      "nodes": [
+        {
+          "id": "gid://shopify/ProductImage/44265263071417",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-1.jpg?v=1792936448",
+          "altText": "",
+          "width": 1053,
+          "height": 1053
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263104185",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-2.jpg?v=1792936448",
+          "altText": "",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263136953",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-3.png?v=1792936448",
+          "altText": "",
+          "width": 2000,
+          "height": 2000
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263169721",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-4.png?v=1792936448",
+          "altText": "",
+          "width": 2000,
+          "height": 2000
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263202489",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-5.png?v=1792936448",
+          "altText": "",
+          "width": 2000,
+          "height": 2000
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263235257",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-6.png?v=1792936448",
+          "altText": "",
+          "width": 2000,
+          "height": 2000
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263268025",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-7.webp?v=1792936448",
+          "altText": "",
+          "width": 1440,
+          "height": 1552
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263300793",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-8.webp?v=1792936448",
+          "altText": "",
+          "width": 1496,
+          "height": 1624
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263333561",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-9.webp?v=1792936448",
+          "altText": "",
+          "width": 152,
+          "height": 212
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263366329",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-10.webp?v=1792936448",
+          "altText": "",
+          "width": 860,
+          "height": 1572
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263399097",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-11.webp?v=1792936448",
+          "altText": "",
+          "width": 1676,
+          "height": 3560
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263431865",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-12.webp?v=1792936448",
+          "altText": "",
+          "width": 700,
+          "height": 840
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263464633",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-13.webp?v=1792936448",
+          "altText": "",
+          "width": 1364,
+          "height": 1900
+        },
+        {
+          "id": "gid://shopify/ProductImage/44265263497401",
+          "url": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-14.webp?v=1792936448",
+          "altText": "",
+          "width": 700,
+          "height": 720
+        }
+      ]
+    }
+  },
+  "discounts": [
+    {
+      "id": "gid://shopify/DiscountAutomaticNode/1532158542009",
+      "discount": {
+        "__typename": "DiscountAutomaticBxgy",
+        "title": "Zavelyn Foot Sleeves BOGO",
+        "status": "EXPIRED",
+        "summary": "Buy 1 item, get 1 item free"
+      }
+    },
+    {
+      "id": "gid://shopify/DiscountCodeNode/1532216934585",
+      "discount": {
+        "__typename": "DiscountCodeBasic",
+        "title": "CDF Buy 2 Extra 10% OFF",
+        "status": "ACTIVE",
+        "summary": "10% off Zavelyn Foot Drop AFO Brace (8 variants)"
+      }
+    },
+    {
+      "id": "gid://shopify/DiscountAutomaticNode/1532221030585",
+      "discount": {
+        "__typename": "DiscountAutomaticBxgy",
+        "title": "Zavelyn Foot Sleeves Buy 2 Get 1",
+        "status": "EXPIRED",
+        "summary": "Buy 2 items, get 1 item free"
+      }
+    },
+    {
+      "id": "gid://shopify/DiscountAutomaticNode/1532221063353",
+      "discount": {
+        "__typename": "DiscountAutomaticBxgy",
+        "title": "Zavelyn Foot Sleeves Buy 3 Get 3",
+        "status": "EXPIRED",
+        "summary": "Buy 3 items, get 3 items free"
+      }
+    },
+    {
+      "id": "gid://shopify/DiscountCodeNode/1532222177465",
+      "discount": {
+        "__typename": "DiscountCodeBxgy"
+      }
+    },
+    {
+      "id": "gid://shopify/DiscountCodeNode/1532222210233",
+      "discount": {
+        "__typename": "DiscountCodeBxgy"
+      }
+    },
+    {
+      "id": "gid://shopify/DiscountCodeNode/1532526231737",
+      "discount": {
+        "__typename": "DiscountCodeBasic",
+        "title": "ZAVELYN15",
+        "status": "ACTIVE",
+        "summary": "15% off Zavelyn Rehabilitation Glove (10 variants) • Minimum quantity of 2"
+      }
+    },
+    {
+      "id": "gid://shopify/DiscountCodeNode/1532534259897",
+      "discount": {
+        "__typename": "DiscountCodeBasic",
+        "title": "Miracle Balm Buy 3 extra 10%",
+        "status": "ACTIVE",
+        "summary": "10% off Zavelyn Miracle Balm • Minimum quantity of 3"
+      }
+    },
+    {
+      "id": "gid://shopify/DiscountCodeNode/1534501519545",
+      "discount": {
+        "__typename": "DiscountCodeBasic",
+        "title": "Zavelyn 50% OFF Today - Special Offer",
+        "status": "ACTIVE",
+        "summary": "50% off entire order"
+      }
+    },
+    {
+      "id": "gid://shopify/DiscountCodeNode/1534501585081",
+      "discount": {
+        "__typename": "DiscountCodeBasic",
+        "title": "Livestock Lamp Bundle Extra 10% OFF",
+        "status": "ACTIVE",
+        "summary": "10% off entire order"
+      }
+    },
+    {
+      "id": "gid://shopify/DiscountCodeNode/1534501650617",
+      "discount": {
+        "__typename": "DiscountCodeFreeShipping"
+      }
+    }
+  ],
+  "deliveryProfiles": []
+}

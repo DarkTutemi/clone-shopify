@@ -1,0 +1,248 @@
+[
+  {
+    "product": "zavelyn-botanaroots-organic-batana-hair-growth-oil",
+    "isBotana": true,
+    "matchBaseline": true,
+    "metrics": {
+      "title": "Zavelyn BotanaRoots Batana Hair Growth Oil",
+      "mainImgSrc": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361&width=1200",
+      "mainImgAlt": "Main Product Jar",
+      "thumbsCount": 8,
+      "thumbs": [
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-1.jpg?v=1793191361&width=160",
+          "alt": "Main Product Jar"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-2.jpg?v=1792936448&width=160",
+          "alt": "Real Results Real Growth"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-3.png?v=1793191524&width=160",
+          "alt": "Essence of Strength"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-4.png?v=1793193619&width=160",
+          "alt": "Loved By Thousands"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/zavelyn-botana-asset-5.png?v=1792936448&width=160",
+          "alt": "Simple Steps Stronger Hair"
+        }
+      ],
+      "botanaThumbsCount": 8,
+      "isMainBotana": true,
+      "bundleCards": 3,
+      "sizeUpsell": false,
+      "trustCards": 7,
+      "faqItems": 3,
+      "bodyImgsCount": 4
+    },
+    "status": "BOTANAROOTS: UNCHANGED — VERIFIED"
+  },
+  {
+    "product": "sakerplus®-3-in-1-gypsum-board-cutting-tool",
+    "isBotana": false,
+    "isFixed": true,
+    "metrics": {
+      "title": "Zavelyn 3-in-1 Drywall Board Cutter",
+      "mainImgSrc": "https://tryzavelyn.com/cdn/shop/files/logo_ff6ff9ab-a7a7-444c-a984-6562dec0c726.png?v=1792791362&width=1200",
+      "mainImgAlt": "Zavelyn 3-in-1 Drywall Board Cutter",
+      "thumbsCount": 10,
+      "thumbs": [
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/logo_ff6ff9ab-a7a7-444c-a984-6562dec0c726.png?v=1792791362&width=160",
+          "alt": "Zavelyn 3-in-1 Drywall Board Cutter"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/2_18613074-2cae-4392-9700-f0a24dc5bb1a.jpg?v=1792791362&width=160",
+          "alt": "Zavelyn 3-in-1 Drywall Board Cutter"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/3_b4fd449d-14c2-42c7-9bfd-77fbbd42e31e.jpg?v=1792791362&width=160",
+          "alt": "Zavelyn 3-in-1 Drywall Board Cutter"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/4_c416f12d-1da2-42e5-bf21-1f9bda878d2b.jpg?v=1792791362&width=160",
+          "alt": "Zavelyn 3-in-1 Drywall Board Cutter"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/5_75710d30-9919-42ae-b50a-90f9220f1593.jpg?v=1792791362&width=160",
+          "alt": "Zavelyn 3-in-1 Drywall Board Cutter"
+        }
+      ],
+      "botanaThumbsCount": 0,
+      "isMainBotana": false,
+      "bundleCards": 3,
+      "sizeUpsell": false,
+      "trustCards": 7,
+      "faqItems": 3,
+      "bodyImgsCount": 5
+    },
+    "status": "ISOLATION RESTORED — VERIFIED"
+  },
+  {
+    "product": "zavelyn-airclear-plugin-negative-ion-air-purifier",
+    "isBotana": false,
+    "isFixed": true,
+    "metrics": {
+      "title": "Zavelyn AirClear Plug-In Air Purifier",
+      "mainImgSrc": "https://tryzavelyn.com/cdn/shop/files/clarifion_hero_white.png?v=1792934822",
+      "mainImgAlt": "Zavelyn AirClear Plug-In Air Purifier",
+      "thumbsCount": 9,
+      "thumbs": [
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/clarifion_hero_white.png?v=1792934822&width=160",
+          "alt": "Zavelyn AirClear Plug-In Air Purifier"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/clarifion_angle_view.jpg?v=1792934822&width=160",
+          "alt": "Zavelyn AirClear Plug-In Air Purifier"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/clarifion_outlet_plug.jpg?v=1792934822&width=160",
+          "alt": "Zavelyn AirClear Plug-In Air Purifier"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/clarifion_hand_scale.jpg?v=1792934822&width=160",
+          "alt": "Zavelyn AirClear Plug-In Air Purifier"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/clarifion_pack_set.jpg?v=1792934822&width=160",
+          "alt": "Zavelyn AirClear Plug-In Air Purifier"
+        }
+      ],
+      "botanaThumbsCount": 0,
+      "isMainBotana": false,
+      "bundleCards": 3,
+      "sizeUpsell": false,
+      "trustCards": 7,
+      "faqItems": 5,
+      "bodyImgsCount": 4
+    },
+    "status": "ISOLATION RESTORED — VERIFIED"
+  },
+  {
+    "product": "zavelyn-automatic-dough-mixer-with-ferment-function",
+    "isBotana": false,
+    "isFixed": true,
+    "metrics": {
+      "title": "Zavelyn Automatic Dough Mixer & Fermenter",
+      "mainImgSrc": "https://tryzavelyn.com/cdn/shop/files/dough_mixer_red_card.jpg?v=1792922475",
+      "mainImgAlt": "Zavelyn Automatic Dough Mixer 7L - Crimson Red",
+      "thumbsCount": 8,
+      "thumbs": [
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/dough_mixer_red_card.jpg?v=1792922475&width=160",
+          "alt": "Zavelyn Automatic Dough Mixer 7L - Crimson Red"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/dough_mixer_white_card.jpg?v=1792922475&width=160",
+          "alt": "Zavelyn Automatic Dough Mixer 7L - Classic White"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/dough_mixer_hero_banner.jpg?v=1792922475&width=160",
+          "alt": "Zavelyn Automatic Dough Mixer with Ferment Function"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/dough_mixer_intro_compare.jpg?v=1792922475&width=160",
+          "alt": "Conventional Proofing vs Fermentation Chamber"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/dough_mixer_3in1_feature.jpg?v=1792922475&width=160",
+          "alt": "3-in-1 Mixing, Kneading and Fermenting"
+        }
+      ],
+      "botanaThumbsCount": 0,
+      "isMainBotana": false,
+      "bundleCards": 3,
+      "sizeUpsell": false,
+      "trustCards": 7,
+      "faqItems": 3,
+      "bodyImgsCount": 5
+    },
+    "status": "ISOLATION RESTORED — VERIFIED"
+  },
+  {
+    "product": "zavelyn-cozyheat-heated-wearable-blanket-sweater",
+    "isBotana": false,
+    "isFixed": true,
+    "metrics": {
+      "title": "Zavelyn CozyHeat Wearable Heated Blanket",
+      "mainImgSrc": "https://tryzavelyn.com/cdn/shop/files/cozyheat_hero_brown.webp?v=1792921124",
+      "mainImgAlt": "Zavelyn CozyHeat Wearable Heated Blanket",
+      "thumbsCount": 10,
+      "thumbs": [
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/cozyheat_hero_brown.webp?v=1792921124&width=160",
+          "alt": "Zavelyn CozyHeat Wearable Heated Blanket"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/cozyheat_apricot.webp?v=1792921124&width=160",
+          "alt": "Zavelyn CozyHeat Wearable Heated Blanket"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/cozyheat_green.webp?v=1792921124&width=160",
+          "alt": "Zavelyn CozyHeat Wearable Heated Blanket"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/cozyheat_maple_red.webp?v=1792921124&width=160",
+          "alt": "Zavelyn CozyHeat Wearable Heated Blanket"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/cozyheat_purple.webp?v=1792921124&width=160",
+          "alt": "Zavelyn CozyHeat Wearable Heated Blanket"
+        }
+      ],
+      "botanaThumbsCount": 0,
+      "isMainBotana": false,
+      "bundleCards": 3,
+      "sizeUpsell": false,
+      "trustCards": 7,
+      "faqItems": 3,
+      "bodyImgsCount": 6
+    },
+    "status": "ISOLATION RESTORED — VERIFIED"
+  },
+  {
+    "product": "sakerplus®-battery-powered-automatic-chicken-coop-door",
+    "isBotana": false,
+    "isFixed": true,
+    "metrics": {
+      "title": "Zavelyn Automatic Chicken Coop Door",
+      "mainImgSrc": "https://tryzavelyn.com/cdn/shop/files/sakerplus-converted.jpg?v=1792791423&width=1200",
+      "mainImgAlt": "Zavelyn Automatic Chicken Coop Door",
+      "thumbsCount": 12,
+      "thumbs": [
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/sakerplus-converted.jpg?v=1792791423&width=160",
+          "alt": "Zavelyn Automatic Chicken Coop Door"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/81jiC44HWIL._AC_SL1500.jpg?v=1792791423&width=160",
+          "alt": "Zavelyn Automatic Chicken Coop Door"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/81v_2LVQWEL._AC_SL1500.jpg?v=1792791423&width=160",
+          "alt": "Zavelyn Automatic Chicken Coop Door"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/81MuMUpXJFL._AC_SL1500.jpg?v=1792791423&width=160",
+          "alt": "Zavelyn Automatic Chicken Coop Door"
+        },
+        {
+          "src": "https://tryzavelyn.com/cdn/shop/files/71rTzOb6KWL._AC_SL1500.jpg?v=1792791423&width=160",
+          "alt": "Zavelyn Automatic Chicken Coop Door"
+        }
+      ],
+      "botanaThumbsCount": 0,
+      "isMainBotana": false,
+      "bundleCards": 3,
+      "sizeUpsell": false,
+      "trustCards": 7,
+      "faqItems": 5,
+      "bodyImgsCount": 7
+    },
+    "status": "ISOLATION RESTORED — VERIFIED"
+  }
+]

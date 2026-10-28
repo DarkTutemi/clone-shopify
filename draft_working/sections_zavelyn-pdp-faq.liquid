@@ -1,0 +1,294 @@
+{% schema %}
+{
+  "name": "Zavelyn Extended FAQ",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Show Extended FAQ Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "GOT QUESTIONS?"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Section Subheading",
+      "default": "Everything you need to know about Zavelyn BotanaRoots Organic Batana Oil."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How do I apply Zavelyn BotanaRoots for best results?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Warm a few drops between your palms and gently massage into your scalp in circular motions for 3–5 minutes. Leave on for at least 30 minutes, or overnight as an intensive scalp treatment before washing."
+        },
+        {
+          "type": "checkbox",
+          "id": "default_open",
+          "label": "Default Open",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zavelyn Extended FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I apply Zavelyn BotanaRoots for best results?",
+            "answer": "Warm a few drops between your palms and gently massage into your scalp in circular motions for 3–5 minutes. Leave on for at least 30 minutes, or overnight as an intensive scalp treatment before washing.",
+            "default_open": false
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How soon will I see visible results?",
+            "answer": "Most customers report a reduction in shedding within 10-14 days. Visible new baby hair growth and thickening of sparse areas typically appears between 4 to 8 weeks of daily use.",
+            "default_open": false
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use this on color-treated, bleached, or chemically straightened hair?",
+            "answer": "Yes! Zavelyn BotanaRoots™ is 100% natural, sulfate-free, and color-safe. It actually helps repair damage caused by bleaching and hot styling tools.",
+            "default_open": false
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it suitable for both men and women?",
+            "answer": "Absolutely. BotanaRoots™ is universally effective for all hair types (Type 1 straight to Type 4 coily) and works equally well on receding men's hairlines and thinning women's crowns.",
+            "default_open": false
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it 100% pure raw batana oil with no added chemicals?",
+            "answer": "Yes. Our Batana Oil is sustainably wild-harvested in La Mosquitia, Honduras, following centuries-old artisanal roasting methods. It contains zero mineral oils, parabens, sulfates, silicones, or synthetic fragrances.",
+            "default_open": false
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does the 30-Day Return Guarantee work?",
+            "answer": "We want you to experience BotanaRoots completely risk-free. If you are not satisfied with your purchase within 30 days of delivery, simply email our customer support team for an effortless return and refund.",
+            "default_open": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{%- if section.settings.enable_section != false -%}
+<section class="zv-body-section zv-bg-white" id="zv-extended-faq">
+  <div class="zv-container">
+    <div class="zv-section-header">
+      <span class="zv-badge">{{ section.settings.badge_text | default: 'GOT QUESTIONS?' }}</span>
+      <h2 class="zv-section-title">{{ section.settings.heading | default: 'Frequently Asked Questions' }}</h2>
+      <p class="zv-section-subtitle">{{ section.settings.subheading | default: 'Everything you need to know about Zavelyn BotanaRoots.' }}</p>
+    </div>
+
+    <div class="zv-faq-accordion" role="region" aria-label="Extended FAQ Accordion">
+      {%- assign ext_blocks = section.blocks | where: "type", "faq_item" -%}
+      {%- if ext_blocks.size > 0 -%}
+        {%- for block in ext_blocks -%}
+          <details class="zv-faq-item-details" {% if block.settings.default_open %}open{% endif %} {{ block.shopify_attributes }}>
+            <summary class="zv-faq-question-btn">
+              <span>{{ block.settings.question }}</span>
+              <span class="zv-faq-icon-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="zv-faq-answer-panel">
+              <p>{{ block.settings.answer }}</p>
+            </div>
+          </details>
+        {%- endfor -%}
+      {%- else -%}
+        {%- include 'zavelyn-pdp-data' -%}
+        {%- if zv_faq_count > 0 -%}
+          {%- for i in (0..5) -%}
+            {%- case i -%}
+              {%- when 0 -%}{%- assign fq_q = zv_faq_0_q -%}{%- assign fq_a = zv_faq_0_a -%}
+              {%- when 1 -%}{%- assign fq_q = zv_faq_1_q -%}{%- assign fq_a = zv_faq_1_a -%}
+              {%- when 2 -%}{%- assign fq_q = zv_faq_2_q -%}{%- assign fq_a = zv_faq_2_a -%}
+              {%- when 3 -%}{%- assign fq_q = zv_faq_3_q -%}{%- assign fq_a = zv_faq_3_a -%}
+              {%- when 4 -%}{%- assign fq_q = zv_faq_4_q -%}{%- assign fq_a = zv_faq_4_a -%}
+              {%- when 5 -%}{%- assign fq_q = zv_faq_5_q -%}{%- assign fq_a = zv_faq_5_a -%}
+            {%- endcase -%}
+            {%- if fq_q != blank -%}
+              <details class="zv-faq-item-details">
+                <summary class="zv-faq-question-btn">
+                  <span>{{ fq_q }}</span>
+                  <span class="zv-faq-icon-indicator" aria-hidden="true"></span>
+                </summary>
+                <div class="zv-faq-answer-panel">
+                  <p>{{ fq_a }}</p>
+                </div>
+              </details>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          <!-- Fallback BotanaRoots questions -->
+          <details class="zv-faq-item-details">
+            <summary class="zv-faq-question-btn">
+              <span>How do I apply Zavelyn BotanaRoots for best results?</span>
+              <span class="zv-faq-icon-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="zv-faq-answer-panel">
+              <p>Warm a few drops between your palms and gently massage into your scalp in circular motions for 3–5 minutes. Leave on for at least 30 minutes, or overnight as an intensive scalp treatment before washing.</p>
+            </div>
+          </details>
+          <details class="zv-faq-item-details">
+            <summary class="zv-faq-question-btn">
+              <span>How soon will I see visible results?</span>
+              <span class="zv-faq-icon-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="zv-faq-answer-panel">
+              <p>Most customers report a reduction in shedding within 10-14 days. Visible new baby hair growth and thickening of sparse areas typically appears between 4 to 8 weeks of daily use.</p>
+            </div>
+          </details>
+          <details class="zv-faq-item-details">
+            <summary class="zv-faq-question-btn">
+              <span>Can I use this on color-treated, bleached, or chemically straightened hair?</span>
+              <span class="zv-faq-icon-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="zv-faq-answer-panel">
+              <p>Yes! Zavelyn BotanaRoots™ is 100% natural, sulfate-free, and color-safe. It actually helps repair damage caused by bleaching and hot styling tools.</p>
+            </div>
+          </details>
+          <details class="zv-faq-item-details">
+            <summary class="zv-faq-question-btn">
+              <span>Is it suitable for both men and women?</span>
+              <span class="zv-faq-icon-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="zv-faq-answer-panel">
+              <p>Absolutely. BotanaRoots™ is universally effective for all hair types (Type 1 straight to Type 4 coily) and works equally well on receding men's hairlines and thinning women's crowns.</p>
+            </div>
+          </details>
+          <details class="zv-faq-item-details">
+            <summary class="zv-faq-question-btn">
+              <span>Is it 100% pure raw batana oil with no added chemicals?</span>
+              <span class="zv-faq-icon-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="zv-faq-answer-panel">
+              <p>Yes. Our Batana Oil is sustainably wild-harvested in La Mosquitia, Honduras, following centuries-old artisanal roasting methods. It contains zero mineral oils, parabens, sulfates, silicones, or synthetic fragrances.</p>
+            </div>
+          </details>
+          <details class="zv-faq-item-details">
+            <summary class="zv-faq-question-btn">
+              <span>How does the 30-Day Return Guarantee work?</span>
+              <span class="zv-faq-icon-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="zv-faq-answer-panel">
+              <p>We want you to experience BotanaRoots completely risk-free. If you are not satisfied with your purchase within 30 days of delivery, simply email our customer support team for an effortless return and refund.</p>
+            </div>
+          </details>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+.zv-faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.zv-faq-item-details {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.zv-faq-item-details[open] {
+  border-color: #17433C;
+  box-shadow: 0 4px 16px rgba(23, 67, 60, 0.08);
+}
+.zv-faq-question-btn {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #17433C;
+  gap: 16px;
+  user-select: none;
+}
+.zv-faq-question-btn::-webkit-details-marker {
+  display: none;
+}
+.zv-faq-icon-indicator {
+  flex: 0 0 9px;
+  width: 9px;
+  height: 9px;
+  border-right: 2.2px solid #17433C;
+  border-bottom: 2.2px solid #17433C;
+  transform: rotate(45deg);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-right: 4px;
+}
+.zv-faq-item-details[open] .zv-faq-icon-indicator {
+  transform: rotate(-135deg);
+}
+.zv-faq-answer-panel {
+  padding: 0 20px 20px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #4B5563;
+  border-top: 1px solid #F3F4F6;
+  padding-top: 14px;
+}
+.zv-faq-answer-panel p {
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .zv-faq-question-btn {
+    padding: 15px 16px;
+    font-size: 14px;
+  }
+  .zv-faq-answer-panel {
+    padding: 0 16px 16px;
+    font-size: 13.5px;
+    padding-top: 12px;
+  }
+}
+</style>
+{%- endif -%}
