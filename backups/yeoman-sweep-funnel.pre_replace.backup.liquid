@@ -1,0 +1,1769 @@
+{% comment %}
+  Zavelyn The Yeoman Sweep Push Lawn Sweeper Funnel
+  Standardized to Zavelyn Design System
+{% endcomment %}
+
+<div id="fn-offer" class="wf-funnel-container" data-product-handle="{{ product.handle }}">
+  <!-- 1. HERO PRODUCT SECTION -->
+  <section class="wf-section wf-hero-section" style="display: none !important;">
+    <div class="wf-container">
+      <div class="wf-hero-grid">
+        <!-- Gallery Column -->
+        <div class="wf-hero-gallery">
+          <div class="wf-gallery-main">
+            <img id="wfMainImg" 
+                 src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_100130_cc5a08ed-b3ec-4abb-95bc-a45bfdb72b96.png?v=1789293761" 
+                 alt="Zavelyn The Yeoman Sweep Manual Push Lawn Sweeper" 
+                 loading="eager" 
+                 class="wf-main-image" />
+            <div class="wf-badge-sale">50% OFF FLASH SALE</div>
+          </div>
+          <div class="wf-gallery-thumbs" id="wfThumbs">
+            <div class="wf-thumb-item active" onclick="selectWfImage('https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_100130_cc5a08ed-b3ec-4abb-95bc-a45bfdb72b96.png?v=1789293761', this)">
+              <img src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_100130_cc5a08ed-b3ec-4abb-95bc-a45bfdb72b96.png?v=1789293761" alt="Sweeper Overview" />
+            </div>
+            <div class="wf-thumb-item" onclick="selectWfImage('https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_083634_da088230-c66f-464c-8f68-ca03117a3a8d.png?v=1792570981', this)">
+              <img src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_083634_da088230-c66f-464c-8f68-ca03117a3a8d.png?v=1792570981" alt="Easy Hopper Dump" />
+            </div>
+            <div class="wf-thumb-item" onclick="selectWfImage('https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-gallery-brush-macro_e7dfbadb-e74b-4d6a-b91c-69525032dceb.png?v=1792570562', this)">
+              <img src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-gallery-brush-macro_e7dfbadb-e74b-4d6a-b91c-69525032dceb.png?v=1792570562" alt="V-Brush Macro" />
+            </div>
+            <div class="wf-thumb-item" onclick="selectWfImage('https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_102755_d44b5095-5280-481f-83f8-3c36ab1e921a.png?v=1789295464', this)">
+              <img src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_102755_d44b5095-5280-481f-83f8-3c36ab1e921a.png?v=1789295464" alt="Clean Lawn Result" />
+            </div>
+            <div class="wf-thumb-item" onclick="selectWfImage('https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_102755_b739b898-2a79-427a-beb1-a85a19e1dc69.png?v=1789295464', this)">
+              <img src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_102755_b739b898-2a79-427a-beb1-a85a19e1dc69.png?v=1789295464" alt="Pine Straw & Leaves" />
+            </div>
+            <div class="wf-thumb-item" onclick="selectWfImage('https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_102022_03eb4095-9fa0-49f3-9694-fad1622a0020.png?v=1789295464', this)">
+              <img src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_102022_03eb4095-9fa0-49f3-9694-fad1622a0020.png?v=1789295464" alt="Compact Storage" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Buybox Column -->
+        <div class="wf-hero-buybox">
+          <div class="wf-rating-pill">
+            <span class="wf-stars">{% render 'trustpilot-stars', width: 96, height: 18 %}</span>
+            <span class="wf-rating-score">4.9 / 5.0</span>
+            <span class="wf-rating-count">(980+ Verified Reviews)</span>
+          </div>
+
+          <h1 class="wf-product-title">Zavelyn The Yeoman Sweep™ Manual Push Lawn Sweeper</h1>
+          <p class="wf-product-sub">Ends The Raking, Leaf Blowing & Painful Bending • 10 V-Brush Heights • 7 cu ft Quick-Dump Hopper • 100% Manual (Zero Gas or Cords)</p>
+
+          <!-- Price Display -->
+          <div class="wf-price-box">
+            <span class="wf-current-price" id="wfCurrentPrice">$229.99</span>
+            <span class="wf-compare-price" id="wfComparePrice">$459.98</span>
+            <span class="wf-save-badge" id="wfSaveBadge">SAVE 50%</span>
+          </div>
+
+          <!-- Promotion highlight -->
+          <div class="wf-promo-alert">
+            <span class="wf-alert-icon">🔥</span>
+            <span class="wf-alert-text"><strong>LIMITED TIME OFFER:</strong> 50% OFF applied automatically at checkout. In stock for immediate US delivery!</span>
+          </div>
+
+          <!-- Bundle Options -->
+          <div class="wf-bundles-container">
+            <label class="wf-bundle-label">CHOOSE YOUR PACKAGE:</label>
+
+            <!-- Tier 1: 1 Sweeper -->
+            <div class="wf-bundle-card active" data-variant-id="{{ product.variants.first.id | default: '67918044954809' }}" data-qty="1" data-price="229.99" data-compare="459.98" onclick="selectWfBundle(this)">
+              <div class="wf-card-radio"></div>
+              <div class="wf-card-info">
+                <div class="wf-card-title-row">
+                  <span class="wf-card-title">1x The Yeoman Sweep™ (21-Inch)</span>
+                  <span class="wf-card-tag standard">Standard</span>
+                </div>
+                <div class="wf-card-desc">Complete Steel Unit + 7 Cu Ft Hopper + 10-Height V-Brush Assembly</div>
+              </div>
+              <div class="wf-card-pricing">
+                <span class="wf-card-price">$229.99</span>
+                <span class="wf-card-comp">$459.98</span>
+              </div>
+            </div>
+
+            <!-- Tier 2: 2 Sweepers (Most Popular) -->
+            <div class="wf-bundle-card" data-variant-id="{{ product.variants.first.id | default: '67918044954809' }}" data-qty="2" data-price="419.98" data-compare="839.96" onclick="selectWfBundle(this)">
+              <div class="wf-card-radio"></div>
+              <div class="wf-card-info">
+                <div class="wf-card-title-row">
+                  <span class="wf-card-title">2x The Yeoman Sweep™ Dual-Property Pack</span>
+                  <span class="wf-card-tag popular">★ MOST POPULAR</span>
+                </div>
+                <div class="wf-card-desc">1 for Front Lawn + 1 for Back Acreage / Gift for Family (Save Extra $40)</div>
+              </div>
+              <div class="wf-card-pricing">
+                <span class="wf-card-price">$419.98</span>
+                <span class="wf-card-comp">$839.96</span>
+                <span class="wf-unit-note">($209.99/ea)</span>
+              </div>
+            </div>
+
+            <!-- Tier 3: 3 Sweepers (Best Value) -->
+            <div class="wf-bundle-card" data-variant-id="{{ product.variants.first.id | default: '67918044954809' }}" data-qty="3" data-price="599.97" data-compare="1199.94" onclick="selectWfBundle(this)">
+              <div class="wf-card-radio"></div>
+              <div class="wf-card-info">
+                <div class="wf-card-title-row">
+                  <span class="wf-card-title">3x The Yeoman Sweep™ Estate Bundle</span>
+                  <span class="wf-card-tag best-value">★ BEST VALUE</span>
+                </div>
+                <div class="wf-card-desc">Maximum Savings • Commercial & Multi-Acre Property Solution</div>
+              </div>
+              <div class="wf-card-pricing">
+                <span class="wf-card-price">$599.97</span>
+                <span class="wf-card-comp">$1,199.94</span>
+                <span class="wf-unit-note">($199.99/ea)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quantity Selector -->
+          <div class="wf-qty-row">
+            <span class="wf-qty-label">Quantity:</span>
+            <div class="wf-qty-control">
+              <button type="button" class="wf-qty-btn" onclick="adjustWfQty(-1)">−</button>
+              <input type="number" id="wfQtyInput" value="1" min="1" max="10" readonly />
+              <button type="button" class="wf-qty-btn" onclick="adjustWfQty(1)">+</button>
+            </div>
+          </div>
+
+          <!-- ATC & Direct Checkout Buttons -->
+          <div class="wf-actions-group">
+            <button type="button" id="wfAddToCartBtn" class="wf-btn-atc" onclick="submitWfAddToCart()">
+              <span class="wf-btn-icon">🛒</span>
+              <span class="wf-btn-text">ADD TO CART • GET 50% OFF</span>
+            </button>
+
+            <button type="button" id="wfShopNowBtn" class="wf-btn-shopnow" onclick="submitWfDirectCheckout()">
+              <span class="wf-btn-text">⚡ SHOP NOW (1-CLICK CHECKOUT)</span>
+            </button>
+          </div>
+
+          <!-- Trust Sub-bar -->
+          <div class="wf-trust-badges">
+            <div class="wf-trust-item">
+              <span class="wf-trust-icon">🛡️</span>
+              <span class="wf-trust-text"><strong>60-Day Clean Sweep</strong> Guarantee</span>
+            </div>
+            <div class="wf-trust-item">
+              <span class="wf-trust-icon">📦</span>
+              <span class="wf-trust-text"><strong>Fast Free US Shipping</strong> (3-5 Days)</span>
+            </div>
+            <div class="wf-trust-item">
+              <span class="wf-trust-icon">🌱</span>
+              <span class="wf-trust-text"><strong>Zero Gas or Cords</strong> Eco Friendly</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. WHAT ONE PASS ACTUALLY DOES -->
+  <section class="wf-section wf-banner-section">
+    <div class="wf-container">
+      <div class="wf-banner-card">
+        <div class="wf-banner-grid">
+          <div class="wf-banner-media">
+            <img src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_100130_cc5a08ed-b3ec-4abb-95bc-a45bfdb72b96.png?v=1789293761" 
+                 alt="The Yeoman Sweep in Action" 
+                 loading="lazy" 
+                 class="wf-gif-image" />
+          </div>
+          <div class="wf-banner-content">
+            <span class="wf-sub-pill">EFFORTLESS LAWN CARE</span>
+            <h2 class="wf-sec-title">One Walk Now. Not Your Whole Saturday.</h2>
+            <p class="wf-sec-desc">
+              Nobody minds the raking. It is the forty times you bend down after it. <strong>The Yeoman Sweep™</strong> eliminates leaf blowers that blow debris into your neighbor's yard, noisy engines, and tangled extension cords. You simply walk behind it, and the four synchronized rotating V-brushes lift heavy fall debris straight into the 7-cubic-foot hopper.
+            </p>
+            <div class="wf-spec-badges">
+              <div class="wf-spec-badge">
+                <span class="wf-spec-num">7 CU FT</span>
+                <span class="wf-spec-label">Hopper Capacity</span>
+              </div>
+              <div class="wf-spec-badge">
+                <span class="wf-spec-num">10 LEVELS</span>
+                <span class="wf-spec-label">Brush Height Dial</span>
+              </div>
+              <div class="wf-spec-badge">
+                <span class="wf-spec-num">100%</span>
+                <span class="wf-spec-label">Manual (Zero Gas)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT IT PICKS UP (GRID) -->
+  <section class="wf-section wf-debris-section">
+    <div class="wf-container">
+      <div class="wf-center-header">
+        <span class="wf-sub-pill">MULTI-DEBRIS PICKUP</span>
+        <h2 class="wf-sec-title">Clears Your Yard In One Smooth Pass</h2>
+        <p class="wf-sec-desc">Engineered to capture the toughest lawn debris that standard mowers leave behind.</p>
+      </div>
+
+      <div class="wf-debris-grid">
+        <div class="wf-debris-card">
+          <div class="wf-debris-icon">🍂</div>
+          <h3 class="wf-debris-title">Heavy Leaf Fall</h3>
+          <p class="wf-debris-desc">Dry leaves, wet layered autumn foliage, and windblown mulch piles.</p>
+        </div>
+        <div class="wf-debris-card">
+          <div class="wf-debris-icon">🌾</div>
+          <h3 class="wf-debris-title">Grass Clippings</h3>
+          <p class="wf-debris-desc">Gathers thick clumps after mowing to keep your turf healthy and aerated.</p>
+        </div>
+        <div class="wf-debris-card">
+          <div class="wf-debris-icon">🌲</div>
+          <h3 class="wf-debris-title">Pine Needles & Straw</h3>
+          <p class="wf-debris-desc">Lifts stubborn interlocking pine straw from between lawn blades with ease.</p>
+        </div>
+        <div class="wf-debris-card">
+          <div class="wf-debris-icon">🌰</div>
+          <h3 class="wf-debris-title">Acorns & Sweetgum Balls</h3>
+          <p class="wf-debris-desc">Picks up spiky seed pods, magnolia cones, walnuts, and small yard twigs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. KEY FEATURES (3 ROWS) -->
+  <section class="wf-section wf-features-section">
+    <div class="wf-container">
+      <div class="wf-feature-row">
+        <div class="wf-feature-media">
+          <img src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-gallery-brush-macro_e7dfbadb-e74b-4d6a-b91c-69525032dceb.png?v=1792570562" 
+               alt="10 V-Brush Height Settings" 
+               loading="lazy" />
+        </div>
+        <div class="wf-feature-content">
+          <span class="wf-sub-pill">PATENTED ROTATING V-BRUSHES</span>
+          <h3 class="wf-feature-heading">Ten Micro-Indexed Heights Dialed From The Handle</h3>
+          <p class="wf-feature-desc">
+            Different turf types require precise brush contact. Set it low to sweep acorns off hard asphalt driveways, or set it higher to glide across Kentucky Bluegrass and Bermuda turf without scalping or drag.
+          </p>
+          <ul class="wf-feature-bullets">
+            <li>✓ 4 high-tensile polypropylene chevron V-brushes</li>
+            <li>✓ One-touch height adjustment knob right at the wheel side</li>
+            <li>✓ Sweeps deep without tearing up delicate turf roots</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wf-feature-row reverse">
+        <div class="wf-feature-media">
+          <img src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_083634_da088230-c66f-464c-8f68-ca03117a3a8d.png?v=1792570981" 
+               alt="7 Cu Ft Hopper Quick Dump" 
+               loading="lazy" />
+        </div>
+        <div class="wf-feature-content">
+          <span class="wf-sub-pill">ZERO-BENDING DUMP SYSTEM</span>
+          <h3 class="wf-feature-heading">7 Cubic Foot Quick-Dump Hopper — Never Stoop Again</h3>
+          <p class="wf-feature-desc">
+            When the large 7-cubic-foot collection bag fills up, you do not need to detach it or bend down. Simply pull the ergonomic quick-release dump rope or lever from the rear handle to empty straight into compost piles or bags.
+          </p>
+          <ul class="wf-feature-bullets">
+            <li>✓ Holds up to 7 bushels of compressed leaves</li>
+            <li>✓ Tear-resistant ripstop woven fabric mesh</li>
+            <li>✓ Quick-release one-pull dumping mechanism</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wf-feature-row">
+        <div class="wf-feature-media">
+          <img src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_102022_03eb4095-9fa0-49f3-9694-fad1622a0020.png?v=1789295464" 
+               alt="Compact Garage Wall Storage" 
+               loading="lazy" />
+        </div>
+        <div class="wf-feature-content">
+          <span class="wf-sub-pill">COMPACT FOLD-FLAT STORAGE</span>
+          <h3 class="wf-feature-heading">Folds Flat For Shed & Garage Wall Hanging</h3>
+          <p class="wf-feature-desc">
+            When finished, the tubular steel handle folds over the chassis in seconds. Hang it flat against a shed wall or slide it underneath workbenches. Weighing only 28 lbs, anyone can lift and store it with ease.
+          </p>
+          <ul class="wf-feature-bullets">
+            <li>✓ Folds flat to just 12 inches deep</li>
+            <li>✓ Solid semi-pneumatic 10" rubber tread tires (never go flat)</li>
+            <li>✓ Heavy-duty rustproof powder-coated steel frame</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TECHNICAL SPECIFICATIONS -->
+  <section class="wf-section wf-specs-section">
+    <div class="wf-container">
+      <div class="wf-specs-card">
+        <h2 class="wf-sec-title">Technical Specifications</h2>
+        <div class="wf-specs-grid">
+          <div class="wf-spec-row">
+            <span class="wf-spec-key">Sweep Width:</span>
+            <span class="wf-spec-val">21 Inches (Standard Path)</span>
+          </div>
+          <div class="wf-spec-row">
+            <span class="wf-spec-key">Hopper Bag Capacity:</span>
+            <span class="wf-spec-val">7 Cubic Feet (~56 Gallons)</span>
+          </div>
+          <div class="wf-spec-row">
+            <span class="wf-spec-key">Brush Configuration:</span>
+            <span class="wf-spec-val">4 Synchronized Rotating V-Brushes</span>
+          </div>
+          <div class="wf-spec-row">
+            <span class="wf-spec-key">Height Adjustment:</span>
+            <span class="wf-spec-val">10 Indexed Positions (0" to 2.5")</span>
+          </div>
+          <div class="wf-spec-row">
+            <span class="wf-spec-key">Wheel Assembly:</span>
+            <span class="wf-spec-val">10" Semi-Pneumatic All-Terrain Rubber</span>
+          </div>
+          <div class="wf-spec-row">
+            <span class="wf-spec-key">Frame Material:</span>
+            <span class="wf-spec-val">Powder-Coated Tubular Steel</span>
+          </div>
+          <div class="wf-spec-row">
+            <span class="wf-spec-key">Operating Drive:</span>
+            <span class="wf-spec-val">100% Manual Push (Gear-Driven)</span>
+          </div>
+          <div class="wf-spec-row">
+            <span class="wf-spec-key">Product Weight:</span>
+            <span class="wf-spec-val">~28.5 lbs (Easy to Maneuver)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SHIPPING & LOGISTICS PROOF (USER REQUEST #3) -->
+  <section class="wf-section wf-shipping-section">
+    <div class="wf-container">
+      <div class="wf-shipping-card">
+        <h2 class="wf-sec-title">Fast US Delivery & Tracked Shipping</h2>
+        <p class="wf-sec-desc">All sweepers are inspected, boxed in heavy-duty shipping cartons, and dispatched from our US logistics centers with real-time tracking within 24 hours.</p>
+        <div class="wf-shipping-images">
+          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/5555.webp?v=1792856415" alt="Warehouse Packaging Inspection" loading="lazy" />
+          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/44444.webp?v=1792856415" alt="Express Courier Truck Handover" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. VERIFIED CUSTOMER REVIEWS (10 AUTHENTIC REVIEWS) -->
+  <section class="wf-section wf-reviews-section" id="wfReviewsSec">
+    <div class="wf-container">
+      <div class="wf-center-header">
+        <span class="wf-sub-pill">REAL EXPERIENCES</span>
+        <h2 class="wf-sec-title">Loved By Over 9,500+ US Yard Owners</h2>
+        <div class="wf-reviews-summary">
+          <span class="wf-stars-large">{% render 'trustpilot-stars', width: 96, height: 18 %}</span>
+          <span class="wf-rating-big">4.9 / 5.0</span>
+          <span class="wf-total-badge">980+ Verified Reviews</span>
+        </div>
+      </div>
+
+      <div class="wf-reviews-grid">
+        <!-- Review 1 -->
+        <div class="wf-review-card">
+          <div class="wf-rev-header">
+            <div class="wf-rev-avatar">GB</div>
+            <div>
+              <div class="wf-rev-name">George Bennett <span class="wf-rev-verified">✔ Verified Buyer</span></div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+            </div>
+          </div>
+          <div class="wf-rev-title">Saved my back from another painful autumn!</div>
+          <p class="wf-rev-body">I'm 68 and raking three giant oak trees in my yard used to leave my lumbar spine in agony for days. The Yeoman Sweep works just like pushing an easy mower. One pass lifts the thickest dry leaves right into the hopper. Empties into my compost in 5 seconds.</p>
+          <div class="wf-rev-meta">Purchased: 1x The Yeoman Sweep 21" • Raleigh, NC</div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="wf-review-card">
+          <div class="wf-rev-header">
+            <div class="wf-rev-avatar">WT</div>
+            <div>
+              <div class="wf-rev-name">William Turner <span class="wf-rev-verified">✔ Verified Buyer</span></div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+            </div>
+          </div>
+          <div class="wf-rev-title">Actually picks up sweetgum balls and pine needles</div>
+          <p class="wf-rev-body">Our yard is covered in spiky sweetgum balls that jam my lawnmower. Set the brush height to setting 3 and it swept up hundreds of balls on the first pass. Pine straw came up too. Worth every penny.</p>
+          <div class="wf-rev-meta">Purchased: 1x The Yeoman Sweep 21" • Savannah, GA</div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="wf-review-card">
+          <div class="wf-rev-header">
+            <div class="wf-rev-avatar">JH</div>
+            <div>
+              <div class="wf-rev-name">John Harrington <span class="wf-rev-verified">✔ Verified Buyer</span></div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+            </div>
+          </div>
+          <div class="wf-rev-title">No gas, no loud ear protection, no fumes</div>
+          <p class="wf-rev-body">Sold my backpack leaf blower after using this twice. I hated smelling like two-stroke gas exhaust every Sunday morning. With The Yeoman Sweep I can clean my entire lawn at 7 AM without waking the neighbors.</p>
+          <div class="wf-rev-meta">Purchased: 2x The Yeoman Sweep Dual Pack • Knoxville, TN</div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="wf-review-card">
+          <div class="wf-rev-header">
+            <div class="wf-rev-avatar">MS</div>
+            <div>
+              <div class="wf-rev-name">Michael Sullivan <span class="wf-rev-verified">✔ Verified Buyer</span></div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+            </div>
+          </div>
+          <div class="wf-rev-title">Arrived pre-assembled and ready in 15 minutes</div>
+          <p class="wf-rev-body">The core chassis and brushes came assembled right out of the box. All I had to do was attach the lower frame pins and the hopper bag. Sturdy steel construction and heavy rubber wheels that don't slip on grass.</p>
+          <div class="wf-rev-meta">Purchased: 1x The Yeoman Sweep 21" • Harrisburg, PA</div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="wf-review-card">
+          <div class="wf-rev-header">
+            <div class="wf-rev-avatar">RL</div>
+            <div>
+              <div class="wf-rev-name">Richard Larson <span class="wf-rev-verified">✔ Verified Buyer</span></div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+            </div>
+          </div>
+          <div class="wf-rev-title">Takes 20 minutes instead of 3 hours of raking</div>
+          <p class="wf-rev-body">I timed it last weekend: cleared my half-acre front yard in 22 minutes flat. The 7 cubic foot hopper holds a surprising amount of leaves before you need to empty it. Best yard tool purchase in years.</p>
+          <div class="wf-rev-meta">Purchased: 1x The Yeoman Sweep 21" • Indianapolis, IN</div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="wf-review-card">
+          <div class="wf-rev-header">
+            <div class="wf-rev-avatar">CP</div>
+            <div>
+              <div class="wf-rev-name">Charles Palmer <span class="wf-rev-verified">✔ Verified Buyer</span></div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+            </div>
+          </div>
+          <div class="wf-rev-title">Great on driveway acorns and patio debris too</div>
+          <p class="wf-rev-body">Adjusted the dial to setting 6 and swept my concrete driveway. Acorns and small twigs shoot straight back into the basket. Much cleaner than using a leaf blower that just blows everything into the street.</p>
+          <div class="wf-rev-meta">Purchased: 1x The Yeoman Sweep 21" • Richmond, VA</div>
+        </div>
+
+        <!-- Review 7 -->
+        <div class="wf-review-card">
+          <div class="wf-rev-header">
+            <div class="wf-rev-avatar">DA</div>
+            <div>
+              <div class="wf-rev-name">David Anderson <span class="wf-rev-verified">✔ Verified Buyer</span></div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+            </div>
+          </div>
+          <div class="wf-rev-title">Light enough to hang on my garage wall</div>
+          <p class="wf-rev-body">Folds flat in 10 seconds. I put two heavy hooks on the garage wall and it hangs flush out of the way. Doesn't take up any floor space like bulky gas equipment.</p>
+          <div class="wf-rev-meta">Purchased: 2x The Yeoman Sweep Dual Pack • Lexington, KY</div>
+        </div>
+
+        <!-- Review 8 -->
+        <div class="wf-review-card">
+          <div class="wf-rev-header">
+            <div class="wf-rev-avatar">BH</div>
+            <div>
+              <div class="wf-rev-name">Brian Hayes <span class="wf-rev-verified">✔ Verified Buyer</span></div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+            </div>
+          </div>
+          <div class="wf-rev-title">Excellent after mowing and dethatching</div>
+          <p class="wf-rev-body">After dethatching my lawn in the spring, there was dead thatch everywhere. The Yeoman Sweep collected all the loose thatch in two passes. Turf looks like a golf fairway now.</p>
+          <div class="wf-rev-meta">Purchased: 1x The Yeoman Sweep 21" • Des Moines, IA</div>
+        </div>
+
+        <!-- Review 9 -->
+        <div class="wf-review-card">
+          <div class="wf-rev-header">
+            <div class="wf-rev-avatar">TC</div>
+            <div>
+              <div class="wf-rev-name">Thomas Clark <span class="wf-rev-verified">✔ Verified Buyer</span></div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+            </div>
+          </div>
+          <div class="wf-rev-title">Heavy duty steel, not cheap plastic</div>
+          <p class="wf-rev-body">I was worried it might feel flimsy, but the tubular frame is real powder-coated steel. The brushes are stiff and well-anchored into the axle. Solid machine that will last a decade.</p>
+          <div class="wf-rev-meta">Purchased: 1x The Yeoman Sweep 21" • Green Bay, WI</div>
+        </div>
+
+        <!-- Review 10 -->
+        <div class="wf-review-card">
+          <div class="wf-rev-header">
+            <div class="wf-rev-avatar">EC</div>
+            <div>
+              <div class="wf-rev-name">Edward Collins <span class="wf-rev-verified">✔ Verified Buyer</span></div>
+              <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+            </div>
+          </div>
+          <div class="wf-rev-title">Customer support was friendly and fast</div>
+          <p class="wf-rev-body">Had a quick question about adjusting the height knob and Zavelyn support replied in under 30 minutes with a helpful diagram. Great company that stands behind their 30-Day Money-Back Guarantee.</p>
+          <div class="wf-rev-meta">Purchased: 1x The Yeoman Sweep 21" • St. Louis, MO</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ) -->
+  <section class="wf-section wf-faq-section">
+    <div class="wf-container">
+      <div class="wf-center-header">
+        <span class="wf-sub-pill">GOT QUESTIONS?</span>
+        <h2 class="wf-sec-title">Questions We Actually Get</h2>
+        <p class="wf-sec-desc">Honest answers to common questions about operating The Yeoman Sweep™.</p>
+      </div>
+
+      <div class="wf-faq-accordion">
+        <div class="wf-faq-item">
+          <button type="button" class="wf-faq-question" onclick="toggleWfFaq(this)">
+            <span>Is it hard to push?</span>
+            <span class="wf-faq-arrow">+</span>
+          </button>
+          <div class="wf-faq-answer">
+            <p>It takes about what pushing a standard push lawnmower takes, and the V-brush height dial decides most of it. If you set the brushes too low into dense turf, it will require more effort; setting the dial slightly higher allows it to glide smoothly while still gathering leaves and twigs effortlessly.</p>
+          </div>
+        </div>
+
+        <div class="wf-faq-item">
+          <button type="button" class="wf-faq-question" onclick="toggleWfFaq(this)">
+            <span>What will it not pick up?</span>
+            <span class="wf-faq-arrow">+</span>
+          </button>
+          <div class="wf-faq-answer">
+            <p>Wet, matted leaves that are glued to the soil reduce pickup efficiency, so letting them dry makes a huge difference. Loose landscape mulch tends to get thrown rather than gathered. It collects loose surface thatch rather than pulling up roots, and very large pine cones are occasionally rolled over rather than scooped.</p>
+          </div>
+        </div>
+
+        <div class="wf-faq-item">
+          <button type="button" class="wf-faq-question" onclick="toggleWfFaq(this)">
+            <span>Which width should I choose?</span>
+            <span class="wf-faq-arrow">+</span>
+          </button>
+          <div class="wf-faq-answer">
+            <p>The 21-inch width suits the vast majority of suburban lawns (up to 1 acre), easily fitting between garden beds, gates, and trees while keeping total weight under 29 lbs. For multi-acre properties, overlapping passes with the 21" still clears acres in under an hour.</p>
+          </div>
+        </div>
+
+        <div class="wf-faq-item">
+          <button type="button" class="wf-faq-question" onclick="toggleWfFaq(this)">
+            <span>Will it clear my yard in one pass?</span>
+            <span class="wf-faq-arrow">+</span>
+          </button>
+          <div class="wf-faq-answer">
+            <p>On light to medium debris, yes—one pass leaves clean lawn lines. On heavy autumn leaf fall that is several inches deep, overlapping passes (the exact same way you overlap when mowing tall grass) delivers a pristine clean sweep.</p>
+          </div>
+        </div>
+
+        <div class="wf-faq-item">
+          <button type="button" class="wf-faq-question" onclick="toggleWfFaq(this)">
+            <span>What if it does not suit my yard?</span>
+            <span class="wf-faq-arrow">+</span>
+          </button>
+          <div class="wf-faq-answer">
+            <p>We provide an ironclad 30-Day Clean Sweep Guarantee. Tell us within 30 days of delivery and we refund you in full. You can test it on your actual lawn across a full season completely risk-free.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. STICKY BUY BAR -->
+  <div class="wf-sticky-bar" id="wfStickyBar" style="display: none !important;">
+    <div class="wf-sticky-inner">
+      <div class="wf-sticky-prod">
+        <img src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260913_100130_cc5a08ed-b3ec-4abb-95bc-a45bfdb72b96.png?v=1789293761" alt="The Yeoman Sweep Thumb" class="wf-sticky-thumb" />
+        <div class="wf-sticky-info">
+          <span class="wf-sticky-title">Zavelyn The Yeoman Sweep™</span>
+          <span class="wf-sticky-price" id="wfStickyPrice">$229.99 <s class="wf-sticky-comp">$459.98</s></span>
+        </div>
+      </div>
+      <div class="wf-sticky-actions">
+        <select id="wfStickyBundleSelect" class="wf-sticky-select" onchange="syncStickySelect(this.value)">
+          <option value="1">1x The Yeoman Sweep™ ($229.99)</option>
+          <option value="2">2x Dual-Property Pack ($419.98 - POPULAR)</option>
+          <option value="3">3x Estate Bundle ($599.97 - BEST VALUE)</option>
+        </select>
+        <button type="button" class="wf-sticky-atc-btn" onclick="submitWfAddToCart()">
+          ADD TO CART • 50% OFF
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* ZAVELYN UNIFIED DESIGN SYSTEM STYLES */
+:root {
+  --wf-primary: #f26522;
+  --wf-primary-hover: #d85416;
+  --wf-secondary: #008763;
+  --wf-dark: #1a1a1a;
+  --wf-text: #2d3748;
+  --wf-text-muted: #718096;
+  --wf-bg-light: #f7fafc;
+  --wf-border: #e2e8f0;
+  --wf-star: #ffb800;
+  --wf-font: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.wf-funnel-container {
+  font-family: var(--wf-font);
+  color: var(--wf-text);
+  line-height: 1.6;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+.wf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.wf-section {
+  padding: 56px 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+/* TYPOGRAPHY & HEADINGS */
+.wf-center-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 40px;
+}
+
+.wf-sub-pill {
+  display: inline-block;
+  background: #fef3eb;
+  color: var(--wf-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.wf-sec-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--wf-dark);
+  line-height: 1.25;
+  margin: 0 0 12px;
+}
+
+.wf-sec-desc {
+  font-size: 16px;
+  color: var(--wf-text-muted);
+  margin: 0;
+}
+
+/* HERO SECTION */
+.wf-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.wf-hero-gallery {
+  position: sticky;
+  top: 80px;
+}
+
+.wf-gallery-main {
+  position: relative;
+  background: #f8f9fa;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--wf-border);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wf-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.wf-badge-sale {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #e53e3e;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 50px;
+  letter-spacing: 1px;
+}
+
+.wf-gallery-thumbs {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.wf-thumb-item {
+  width: 76px;
+  height: 76px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: #f1f3f5;
+  transition: all 0.2s ease;
+}
+
+.wf-thumb-item.active {
+  border-color: var(--wf-primary);
+  box-shadow: 0 0 0 2px rgba(242,101,34,0.2);
+}
+
+.wf-thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* HERO BUYBOX */
+.wf-rating-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.wf-stars {
+  color: var(--wf-star);
+  font-size: 18px;
+}
+
+.wf-rating-score {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--wf-dark);
+}
+
+.wf-rating-count {
+  font-size: 14px;
+  color: var(--wf-text-muted);
+}
+
+.wf-product-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--wf-dark);
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+.wf-product-sub {
+  font-size: 15px;
+  color: var(--wf-text-muted);
+  margin: 0 0 20px;
+}
+
+.wf-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.wf-current-price {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--wf-primary);
+}
+
+.wf-compare-price {
+  font-size: 22px;
+  color: #a0aec0;
+  text-decoration: line-through;
+}
+
+.wf-save-badge {
+  background: #fed7d7;
+  color: #c53030;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.wf-promo-alert {
+  background: #fffaf0;
+  border: 1px dashed #dd6b20;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #7b341e;
+}
+
+/* BUNDLE CARDS */
+.wf-bundle-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--wf-dark);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.wf-bundles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.wf-bundle-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 2px solid var(--wf-border);
+  border-radius: 12px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.wf-bundle-card:hover {
+  border-color: #cbd5e0;
+}
+
+.wf-bundle-card.active {
+  border-color: var(--wf-primary);
+  background: #fffaf7;
+  box-shadow: 0 4px 12px rgba(242,101,34,0.08);
+}
+
+.wf-card-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cbd5e0;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.wf-bundle-card.active .wf-card-radio {
+  border-color: var(--wf-primary);
+}
+
+.wf-bundle-card.active .wf-card-radio::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background: var(--wf-primary);
+  border-radius: 50%;
+}
+
+.wf-card-info {
+  flex: 1;
+}
+
+.wf-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.wf-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--wf-dark);
+}
+
+.wf-card-tag {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.wf-card-tag.standard {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.wf-card-tag.popular {
+  background: #e6fffa;
+  color: #234e52;
+}
+
+.wf-card-tag.best-value {
+  background: #feebc8;
+  color: #7b341e;
+}
+
+.wf-card-desc {
+  font-size: 12px;
+  color: var(--wf-text-muted);
+}
+
+.wf-card-pricing {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.wf-card-price {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--wf-dark);
+}
+
+.wf-card-comp {
+  display: block;
+  font-size: 13px;
+  color: #a0aec0;
+  text-decoration: line-through;
+}
+
+.wf-unit-note {
+  font-size: 11px;
+  color: var(--wf-secondary);
+  font-weight: 600;
+}
+
+/* QUANTITY SELECTOR */
+.wf-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.wf-qty-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--wf-dark);
+}
+
+.wf-qty-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--wf-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.wf-qty-btn {
+  background: #edf2f7;
+  border: none;
+  width: 38px;
+  height: 38px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--wf-dark);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.wf-qty-btn:hover {
+  background: #e2e8f0;
+}
+
+#wfQtyInput {
+  width: 48px;
+  height: 38px;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--wf-dark);
+}
+
+/* ACTION BUTTONS */
+.wf-actions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.wf-btn-atc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: var(--wf-primary);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 24px;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(242,101,34,0.3);
+  transition: all 0.2s ease;
+}
+
+.wf-btn-atc:hover {
+  background: var(--wf-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(242,101,34,0.4);
+}
+
+.wf-btn-shopnow {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wf-btn-shopnow:hover {
+  background: #2d3748;
+}
+
+.wf-trust-badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--wf-border);
+}
+
+.wf-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.wf-trust-icon {
+  font-size: 20px;
+}
+
+.wf-trust-text {
+  font-size: 12px;
+  color: var(--wf-text-muted);
+}
+
+/* BANNER SECTION */
+.wf-banner-card {
+  background: #1a202c;
+  color: #fff;
+  border-radius: 20px;
+  padding: 48px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.wf-banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.wf-banner-media {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.wf-gif-image {
+  width: 100%;
+  display: block;
+}
+
+.wf-banner-content .wf-sec-title {
+  color: #fff;
+}
+
+.wf-banner-content .wf-sec-desc {
+  color: #cbd5e0;
+  margin-bottom: 24px;
+}
+
+.wf-spec-badges {
+  display: flex;
+  gap: 20px;
+}
+
+.wf-spec-badge {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 14px 20px;
+  text-align: center;
+  flex: 1;
+}
+
+.wf-spec-num {
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--wf-primary);
+}
+
+.wf-spec-label {
+  font-size: 12px;
+  color: #a0aec0;
+  text-transform: uppercase;
+}
+
+/* DEBRIS GRID */
+.wf-debris-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.wf-debris-card {
+  background: var(--wf-bg-light);
+  border: 1px solid var(--wf-border);
+  border-radius: 16px;
+  padding: 30px 24px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.wf-debris-card:hover {
+  transform: translateY(-4px);
+}
+
+.wf-debris-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.wf-debris-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--wf-dark);
+  margin: 0 0 8px;
+}
+
+.wf-debris-desc {
+  font-size: 13px;
+  color: var(--wf-text-muted);
+  margin: 0;
+}
+
+/* FEATURE ROWS */
+.wf-feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.wf-feature-row:last-child {
+  margin-bottom: 0;
+}
+
+.wf-feature-row.reverse {
+  direction: rtl;
+}
+
+.wf-feature-row.reverse .wf-feature-content {
+  direction: ltr;
+}
+
+.wf-feature-row.reverse .wf-feature-media {
+  direction: ltr;
+}
+
+.wf-feature-media {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+}
+
+.wf-feature-media img {
+  width: 100%;
+  display: block;
+}
+
+.wf-feature-heading {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--wf-dark);
+  margin: 0 0 16px;
+  line-height: 1.3;
+}
+
+.wf-feature-desc {
+  font-size: 15px;
+  color: var(--wf-text-muted);
+  margin: 0 0 20px;
+}
+
+.wf-feature-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wf-feature-bullets li {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--wf-dark);
+  margin-bottom: 8px;
+}
+
+/* SPECS SECTION */
+.wf-specs-card {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--wf-bg-light);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid var(--wf-border);
+}
+
+.wf-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 32px;
+  margin-top: 24px;
+}
+
+.wf-spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #edf2f7;
+  font-size: 14px;
+}
+
+.wf-spec-key {
+  font-weight: 600;
+  color: var(--wf-text-muted);
+}
+
+.wf-spec-val {
+  font-weight: 700;
+  color: var(--wf-dark);
+  text-align: right;
+}
+
+/* SHIPPING & REVIEWS */
+.wf-shipping-card {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.wf-shipping-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.wf-shipping-images img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.wf-reviews-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.wf-stars-large {
+  color: var(--wf-star);
+  font-size: 24px;
+}
+
+.wf-rating-big {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--wf-dark);
+}
+
+.wf-total-badge {
+  background: #edf2f7;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--wf-text);
+}
+
+.wf-reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.wf-review-card {
+  background: #fff;
+  border: 1px solid var(--wf-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+}
+
+.wf-rev-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.wf-rev-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #4a5568;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.wf-rev-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--wf-dark);
+}
+
+.wf-rev-verified {
+  font-size: 12px;
+  color: var(--wf-secondary);
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.wf-rev-stars {
+  color: var(--wf-star);
+  font-size: 14px;
+}
+
+.wf-rev-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--wf-dark);
+  margin-bottom: 8px;
+}
+
+.wf-rev-body {
+  font-size: 14px;
+  color: var(--wf-text);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.wf-rev-meta {
+  font-size: 12px;
+  color: var(--wf-text-muted);
+}
+
+/* FAQ ACCORDION */
+.wf-faq-accordion {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wf-faq-item {
+  border: 1px solid var(--wf-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.wf-faq-question {
+  width: 100%;
+  padding: 18px 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--wf-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.wf-faq-arrow {
+  font-size: 20px;
+  font-weight: 400;
+  color: #a0aec0;
+  transition: transform 0.2s;
+}
+
+.wf-faq-item.open .wf-faq-arrow {
+  transform: rotate(45deg);
+}
+
+.wf-faq-answer {
+  display: none;
+  padding: 0 24px 20px;
+  font-size: 14px;
+  color: var(--wf-text);
+  line-height: 1.6;
+}
+
+.wf-faq-item.open .wf-faq-answer {
+  display: block;
+}
+
+/* STICKY BUY BAR */
+.wf-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid var(--wf-border);
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+  padding: 12px 20px;
+  z-index: 999;
+  transform: translateY(120%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wf-sticky-bar.visible {
+  transform: translateY(0);
+}
+
+.wf-sticky-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.wf-sticky-prod {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wf-sticky-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--wf-border);
+}
+
+.wf-sticky-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.wf-sticky-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--wf-dark);
+}
+
+.wf-sticky-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--wf-primary);
+}
+
+.wf-sticky-comp {
+  font-size: 13px;
+  color: #a0aec0;
+  margin-left: 6px;
+}
+
+.wf-sticky-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wf-sticky-select {
+  padding: 10px 14px;
+  border: 1px solid var(--wf-border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--wf-dark);
+  background: #fff;
+  cursor: pointer;
+}
+
+.wf-sticky-atc-btn {
+  background: var(--wf-primary);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.wf-sticky-atc-btn:hover {
+  background: var(--wf-primary-hover);
+}
+
+/* RESPONSIVE DESIGN (MOBILE-FIRST) */
+@media (max-width: 991px) {
+  .wf-hero-grid,
+  .wf-banner-grid,
+  .wf-feature-row,
+  .wf-feature-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .wf-hero-gallery {
+    position: static;
+  }
+  .wf-debris-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wf-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .wf-specs-grid {
+    grid-template-columns: 1fr;
+  }
+  .wf-banner-card {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wf-section {
+    padding: 40px 0;
+  }
+  .wf-sec-title {
+    font-size: 24px;
+  }
+  .wf-product-title {
+    font-size: 22px;
+  }
+  .wf-current-price {
+    font-size: 28px;
+  }
+  .wf-debris-grid,
+  .wf-shipping-images {
+    grid-template-columns: 1fr;
+  }
+  .wf-spec-badges {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .wf-trust-badges {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .wf-trust-item {
+    flex-direction: row;
+    text-align: left;
+  }
+  .wf-sticky-info {
+    display: none;
+  }
+  .wf-sticky-inner {
+    justify-content: space-between;
+  }
+  .wf-sticky-select {
+    max-width: 150px;
+    font-size: 12px;
+  }
+  .wf-sticky-atc-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+  .wf-stars, .wf-stars-large, .wf-rev-stars, .trustpilot-stars-wrap { display: inline-flex; align-items: center; line-height: 0; vertical-align: middle; }
+</style>
+
+<script>
+// DYNAMIC BUYBOX & INTERACTION SCRIPT
+let currentVariantId = "{{ product.variants.first.id | default: '67918044954809' }}";
+let currentQty = 1;
+let currentUnitPrice = 229.99;
+let currentUnitCompare = 459.98;
+
+function selectWfImage(src, thumbEl) {
+  const main = document.getElementById('wfMainImg');
+  if (main) main.src = src;
+  document.querySelectorAll('.wf-thumb-item').forEach(el => el.classList.remove('active'));
+  if (thumbEl) thumbEl.classList.add('active');
+}
+
+function selectWfBundle(cardEl) {
+  document.querySelectorAll('.wf-bundle-card').forEach(c => c.classList.remove('active'));
+  cardEl.classList.add('active');
+
+  const vId = cardEl.getAttribute('data-variant-id');
+  const qty = parseInt(cardEl.getAttribute('data-qty'), 10) || 1;
+  const price = parseFloat(cardEl.getAttribute('data-price')) || 229.99;
+  const compare = parseFloat(cardEl.getAttribute('data-compare')) || 459.98;
+
+  currentVariantId = vId;
+  currentQty = qty;
+
+  const qtyInput = document.getElementById('wfQtyInput');
+  if (qtyInput) qtyInput.value = qty;
+
+  updateWfPricing(price, compare);
+
+  // Sync sticky bar
+  const stickySel = document.getElementById('wfStickyBundleSelect');
+  if (stickySel) stickySel.value = qty.toString();
+}
+
+function updateWfPricing(price, compare) {
+  const curEl = document.getElementById('wfCurrentPrice');
+  const compEl = document.getElementById('wfComparePrice');
+  const stCurEl = document.getElementById('wfStickyPrice');
+
+  if (curEl) curEl.textContent = '$' + price.toFixed(2);
+  if (compEl) compEl.textContent = '$' + compare.toFixed(2);
+  if (stCurEl) stCurEl.innerHTML = '$' + price.toFixed(2) + ' <s class="wf-sticky-comp">$' + compare.toFixed(2) + '</s>';
+}
+
+function adjustWfQty(delta) {
+  const input = document.getElementById('wfQtyInput');
+  if (!input) return;
+  let val = parseInt(input.value, 10) || 1;
+  val = Math.max(1, Math.min(10, val + delta));
+  input.value = val;
+  currentQty = val;
+
+  // Recalculate price dynamically based on unit price
+  const totalPrice = 229.99 * val;
+  const totalCompare = 459.98 * val;
+  updateWfPricing(totalPrice, totalCompare);
+}
+
+function syncStickySelect(val) {
+  const targetCard = document.querySelector('.wf-bundle-card[data-qty="' + val + '"]');
+  if (targetCard) {
+    selectWfBundle(targetCard);
+  }
+}
+
+function toggleWfFaq(btn) {
+  const item = btn.closest('.wf-faq-item');
+  if (item) {
+    item.classList.toggle('open');
+  }
+}
+
+// AJAX ADD TO CART (Connects to Zavelyn Cart Drawer)
+async function submitWfAddToCart() {
+  const btn = document.getElementById('wfAddToCartBtn');
+  const originalText = btn ? btn.innerHTML : '';
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<span>ADDING TO CART...</span>';
+  }
+
+  try {
+    const res = await fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        items: [{
+          id: currentVariantId,
+          quantity: currentQty
+        }]
+      })
+    });
+
+    if (!res.ok) throw new Error('Add to cart failed');
+
+    // Trigger Zavelyn cart drawer
+    if (typeof window.willaRefreshCart === 'function') {
+      await window.willaRefreshCart();
+    }
+    if (typeof window.willaOpenCartDrawer === 'function') {
+      window.willaOpenCartDrawer();
+    } else {
+      window.location.href = '/cart';
+    }
+  } catch (err) {
+    console.error('Cart add error:', err);
+    window.location.href = '/cart/' + currentVariantId + ':' + currentQty;
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = originalText;
+    }
+  }
+}
+
+// 1-CLICK DIRECT CHECKOUT
+function submitWfDirectCheckout() {
+  window.location.href = '/cart/' + currentVariantId + ':' + currentQty;
+}
+
+// STICKY BAR SCROLL TRIGGER
+window.addEventListener('scroll', function() {
+  const buybox = document.querySelector('.wf-hero-buybox');
+  const sticky = document.getElementById('wfStickyBar');
+  if (!buybox || !sticky) return;
+
+  const rect = buybox.getBoundingClientRect();
+  if (rect.bottom < 0) {
+    sticky.classList.add('visible');
+  } else {
+    sticky.classList.remove('visible');
+  }
+});
+</script>

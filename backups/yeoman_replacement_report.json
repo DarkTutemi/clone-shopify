@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-10-28T20:57:43.571Z",
+  "liveThemeId": "187597717689",
+  "replacedCount": 4,
+  "occurrenceReport": {
+    "IMAGE 1 (Banner Action Media)": {
+      "totalInFile": 5,
+      "replacedInBody": 1,
+      "matchedLine": 170
+    },
+    "IMAGE 2 (Feature 1 V-Brush Macro)": {
+      "totalInFile": 3,
+      "replacedInBody": 1,
+      "matchedLine": 240
+    },
+    "IMAGE 3 (Feature 2 Hopper Dump)": {
+      "totalInFile": 3,
+      "replacedInBody": 1,
+      "matchedLine": 260
+    },
+    "IMAGE 4 (Feature 3 Compact Storage)": {
+      "totalInFile": 3,
+      "replacedInBody": 1,
+      "matchedLine": 280
+    }
+  }
+}
