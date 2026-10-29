@@ -1,0 +1,431 @@
+<div class="zv-bins-body-wrapper" id="storage-bins-details">
+  <style>
+    .zv-bins-body-wrapper {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: inherit;
+      color: #17433C;
+      line-height: 1.65;
+    }
+    .zv-bins-section {
+      background: #FFFFFF;
+      border: 1px solid rgba(23, 67, 60, 0.12);
+      border-radius: 16px;
+      padding: 32px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(23, 67, 60, 0.04);
+    }
+    .zv-bins-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #17433C;
+      margin-top: 0;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .zv-bins-section p {
+      font-size: 15.5px;
+      color: #334e48;
+      margin-bottom: 14px;
+    }
+    .zv-bins-section p:last-child {
+      margin-bottom: 0;
+    }
+    .zv-bins-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    @media (max-width: 768px) {
+      .zv-bins-grid {
+        grid-template-columns: 1fr;
+      }
+      .zv-bins-section {
+        padding: 24px 18px;
+      }
+    }
+    .zv-bins-card {
+      background: #F7F9F8;
+      border: 1px solid rgba(23, 67, 60, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .zv-bins-card h3 {
+      font-size: 17px;
+      font-weight: 750;
+      color: #17433C;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .zv-bins-card p {
+      font-size: 14.5px;
+      color: #49635d;
+      margin: 0;
+    }
+    /* Responsive Body Images */
+    .zv-bins-body-img-wrap {
+      margin-top: 24px;
+      text-align: center;
+    }
+    .zv-bins-body-img {
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid rgba(23, 67, 60, 0.12);
+      box-shadow: 0 4px 20px rgba(23, 67, 60, 0.06);
+    }
+    @media (max-width: 768px) {
+      .zv-bins-body-img-wrap {
+        margin-top: 18px;
+      }
+      .zv-bins-body-img {
+        border-radius: 10px;
+      }
+    }
+    /* Steps Layout */
+    .zv-bin-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px;
+      background: #F7F9F8;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .zv-bin-step-num {
+      width: 36px;
+      height: 36px;
+      background: #17433C;
+      color: #C6FA54;
+      font-size: 16px;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .zv-bin-step-content strong {
+      display: block;
+      font-size: 15.5px;
+      color: #17433C;
+      margin-bottom: 4px;
+    }
+    .zv-bin-step-content span {
+      font-size: 14px;
+      color: #49635d;
+      line-height: 1.5;
+    }
+    /* Specs Table */
+    .zv-bins-specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 14.5px;
+    }
+    .zv-bins-specs-table th,
+    .zv-bins-specs-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(23, 67, 60, 0.08);
+      text-align: left;
+    }
+    .zv-bins-specs-table th {
+      color: #17433C;
+      font-weight: 700;
+      width: 35%;
+      background: #F7F9F8;
+    }
+    .zv-bins-specs-table td {
+      color: #334e48;
+    }
+    /* FAQ Accordion */
+    .zv-bins-faq-item {
+      background: #F7F9F8;
+      border: 1px solid rgba(23, 67, 60, 0.08);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+    .zv-bins-faq-item[open] {
+      background: #FFFFFF;
+      border-color: rgba(23, 67, 60, 0.25);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .zv-bins-faq-summary {
+      padding: 16px 20px;
+      cursor: pointer;
+      font-weight: 750;
+      font-size: 15px;
+      color: #17433C;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      user-select: none;
+    }
+    .zv-bins-faq-summary::-webkit-details-marker {
+      display: none;
+    }
+    .zv-bins-faq-summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 400;
+      color: #17433C;
+      transition: transform 0.2s ease;
+    }
+    .zv-bins-faq-item[open] .zv-bins-faq-summary::after {
+      content: '−';
+    }
+    .zv-bins-faq-answer {
+      padding: 0 20px 18px;
+      font-size: 14px;
+      color: #49635d;
+      line-height: 1.6;
+      border-top: 1px solid rgba(23, 67, 60, 0.06);
+      padding-top: 12px;
+    }
+  </style>
+
+  <!-- SECTION 1: FROM CLUTTERED TO ORGANIZED -->
+  <section class="zv-bins-section">
+    <h2><span>🧺</span> 1. From Cluttered to Clean: Reclaim Your Closet Space</h2>
+    <p>
+      Bulky winter blankets, oversized comforters, and seasonal garments often take up valuable closet space and leave bedrooms feeling cluttered. Zavelyn Large Foldable Storage Bins transform chaotic piles into neatly stacked, uniform containers that protect your textiles while keeping your home pristine.
+    </p>
+    <div class="zv-bins-grid">
+      <div class="zv-bins-card">
+        <h3>Streamlined Organization</h3>
+        <p>Replace mismatched plastic bags and floppy cartons with structured, uniform fabric organizers that maximize vertical shelving space.</p>
+      </div>
+      <div class="zv-bins-card">
+        <h3>Instant Room Transformation</h3>
+        <p>Keep bedrooms, guest spaces, and walk-in closets looking tidy, serene, and intentionally designed all year long.</p>
+      </div>
+    </div>
+    <div class="zv-bins-body-img-wrap">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-before-after.png?v=1793290094"
+        alt="From Cluttered to Organized - Zavelyn Storage Bins Before and After"
+        class="zv-bins-body-img"
+        loading="eager"
+        width="800"
+        height="800"
+      >
+    </div>
+  </section>
+
+  <!-- SECTION 2: EXTRA-LARGE 210L CAPACITY -->
+  <section class="zv-bins-section">
+    <h2><span>✨</span> 2. Extra-Large 210L Capacity for Heavy Bedding</h2>
+    <p>
+      Engineered with generous dimensions (19.7" × 19.7" × 27.6" / 50 × 50 × 70 cm), each container provides an expansive 210-liter interior designed specifically for thick king quilts, plush pillows, and seasonal winter coats that normal storage cubes cannot hold.
+    </p>
+    <div class="zv-bins-grid">
+      <div class="zv-bins-card">
+        <h3>Holds Up to 3 Thick Comforters</h3>
+        <p>Deep vertical architecture accommodates oversized down comforters, heavy wool blankets, and mattress toppers without cramming.</p>
+      </div>
+      <div class="zv-bins-card">
+        <h3>Up to 200 Shirts or 30 Puffer Jackets</h3>
+        <p>Effortlessly store entire wardrobe rotations between summer and winter seasons in a single organized location.</p>
+      </div>
+    </div>
+    <div class="zv-bins-body-img-wrap">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-dimensions-capacity.png?v=1793290094"
+        alt="Zavelyn Large Storage Bins Dimensions and 210L Capacity"
+        class="zv-bins-body-img"
+        loading="eager"
+        width="800"
+        height="800"
+      >
+    </div>
+  </section>
+
+  <!-- SECTION 3: REINFORCED HANDLES & DUAL ZIPPERS -->
+  <section class="zv-bins-section">
+    <h2><span>🧵</span> 3. Heavy-Duty Handles & Smooth Dual Metal Zippers</h2>
+    <p>
+      Nothing is more frustrating than a handle tearing off when lifting heavy bedding from high shelves. Zavelyn storage bins feature cross-stitched, double-reinforced webbing handles on both sides that distribute weight evenly for comfortable, confident transport.
+    </p>
+    <div class="zv-bins-grid">
+      <div class="zv-bins-card">
+        <h3>Two-Way Stainless Steel Zippers</h3>
+        <p>Heavy-duty metal dual zippers glide smoothly around the three-sided lid, allowing effortless opening and wide top access.</p>
+      </div>
+      <div class="zv-bins-card">
+        <h3>Cross-Stitched Side Handles</h3>
+        <p>Ergonomic webbing straps are riveted and stitched with high-tensile thread, preventing tearing even when loaded with heavy winter quilts.</p>
+      </div>
+    </div>
+    <div class="zv-bins-body-img-wrap">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-bedding-blankets.png?v=1793290094"
+        alt="Wide Top Opening for Easy Comforter Loading"
+        class="zv-bins-body-img"
+        loading="eager"
+        width="800"
+        height="800"
+      >
+    </div>
+  </section>
+
+  <!-- SECTION 4: FOLDABLE & COLLAPSIBLE SPACE SAVER -->
+  <section class="zv-bins-section">
+    <h2><span>📐</span> 4. Folds Flat in Seconds When Not in Use</h2>
+    <p>
+      Unlike rigid plastic storage tubs that occupy valuable space when empty, Zavelyn fabric bins fold completely flat into a compact, ultra-slim profile. Simply zip down and fold to slip into a drawer, under a bed, or inside luggage until the next seasonal rotation.
+    </p>
+    <div class="zv-bins-grid">
+      <div class="zv-bins-card">
+        <h3>Zero Wasted Space</h3>
+        <p>When unfolded, they stand tall and hold their structure. When not needed, they collapse flat in 5 seconds without bulky frames.</p>
+      </div>
+      <div class="zv-bins-card">
+        <h3>Lightweight Yet Sturdy Fabric</h3>
+        <p>Crafted from premium multi-layer breathable fabric that resists dust, moisture, and odors while maintaining air circulation.</p>
+      </div>
+    </div>
+    <div class="zv-bins-body-img-wrap">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-features-overview.png?v=1793290094"
+        alt="Lightweight Durable and Foldable Storage Bin Features"
+        class="zv-bins-body-img"
+        loading="eager"
+        width="800"
+        height="800"
+      >
+    </div>
+  </section>
+
+  <!-- SECTION 5: VERSATILE HOME & TRAVEL ORGANIZATION -->
+  <section class="zv-bins-section">
+    <h2><span>🏡</span> 5. Multi-Room Organization & Everyday Utility</h2>
+    <p>
+      Zavelyn storage bins adapt seamlessly across your entire living space:
+    </p>
+    <div class="zv-bins-grid">
+      <div class="zv-bins-card">
+        <h3>Bedroom & Walk-In Closets</h3>
+        <p>Neatly store guest blankets, sheets, down comforters, and off-season sweaters on upper wardrobe shelves.</p>
+      </div>
+      <div class="zv-bins-card">
+        <h3>Moving & College Dorms</h3>
+        <p>Lightweight and resilient for moving dorm essentials, packing vehicle trunks, or organizing holiday decorations and kids' plush toys.</p>
+      </div>
+    </div>
+    <div class="zv-bins-body-img-wrap">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-closet-wardrobe.png?v=1793290094"
+        alt="Zavelyn Storage Bins on Bedroom Closet Shelf"
+        class="zv-bins-body-img"
+        loading="eager"
+        width="800"
+        height="800"
+      >
+    </div>
+  </section>
+
+  <!-- SECTION 6: SPECIFICATIONS TABLE -->
+  <section class="zv-bins-section">
+    <h2><span>📋</span> 6. Product Specifications</h2>
+    <table class="zv-bins-specs-table">
+      <tbody>
+        <tr>
+          <th>Product Name</th>
+          <td>Zavelyn Large Foldable Zippered Storage Bins</td>
+        </tr>
+        <tr>
+          <th>Dimensions</th>
+          <td>19.7 in × 19.7 in × 27.6 in (50 cm × 50 cm × 70 cm)</td>
+        </tr>
+        <tr>
+          <th>Capacity Volume</th>
+          <td>Approx. 210 Liters (XXL Storage Capacity)</td>
+        </tr>
+        <tr>
+          <th>Material</th>
+          <td>Breathable Multi-Layer Composite Non-Woven Fabric with Grid Reinforcement</td>
+        </tr>
+        <tr>
+          <th>Closure System</th>
+          <td>Two-Way Heavy-Duty Metal Zippers (#5 Stainless Sliders)</td>
+        </tr>
+        <tr>
+          <th>Handles</th>
+          <td>Dual Cross-Stitched High-Tensile Webbing Carry Handles</td>
+        </tr>
+        <tr>
+          <th>Colorway</th>
+          <td>Classic Charcoal Slate with Contrast Charcoal Seam Piping</td>
+        </tr>
+        <tr>
+          <th>Care Instructions</th>
+          <td>Wipe clean with a damp cloth; air dry completely before storing</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 7: FREQUENTLY ASKED QUESTIONS -->
+  <section class="zv-bins-section">
+    <h2><span>❓</span> 7. Frequently Asked Questions</h2>
+
+    <details class="zv-bins-faq-item">
+      <summary class="zv-bins-faq-summary">How much can one storage bin hold?</summary>
+      <div class="zv-bins-faq-answer">
+        Each bin provides 210L of volume, holding up to 3 king-size down comforters, 30 puffer jackets, or up to 200 folded shirts and seasonal garments.
+      </div>
+    </details>
+
+    <details class="zv-bins-faq-item">
+      <summary class="zv-bins-faq-summary">Are the handles strong enough for heavy comforters?</summary>
+      <div class="zv-bins-faq-answer">
+        Yes! The side handles are crafted from wide high-tensile webbing and cross-stitched directly into the reinforced seams to withstand heavy lifting from high shelves.
+      </div>
+    </details>
+
+    <details class="zv-bins-faq-item">
+      <summary class="zv-bins-faq-summary">Are the bins rigid plastic or soft fabric?</summary>
+      <div class="zv-bins-faq-answer">
+        They are constructed from durable, flexible multi-layer fabric. This allows them to conform smoothly into closets and shelves when packed, and fold completely flat when empty without bulky plastic walls.
+      </div>
+    </details>
+
+    <details class="zv-bins-faq-item">
+      <summary class="zv-bins-faq-summary">Do they protect blankets from dust and moisture?</summary>
+      <div class="zv-bins-faq-answer">
+        Yes. The high-density woven fabric and zippered perimeter block out household dust, lint, and ambient moisture while preserving healthy air circulation to prevent stale odors.
+      </div>
+    </details>
+
+    <details class="zv-bins-faq-item">
+      <summary class="zv-bins-faq-summary">Can I wash the storage bins?</summary>
+      <div class="zv-bins-faq-answer">
+        We recommend spot cleaning with a damp cloth and mild soap, then air drying naturally. Do not place in a washing machine or tumble dryer to maintain the structural composite coating.
+      </div>
+    </details>
+
+    <details class="zv-bins-faq-item">
+      <summary class="zv-bins-faq-summary">What is the return policy for this product?</summary>
+      <div class="zv-bins-faq-answer">
+        All Zavelyn storage organizers are backed by our standard 30-Day Customer Guarantee. If you're not completely satisfied with your home organization setup, return within 30 days under store policy.
+      </div>
+    </details>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Storage Bins Product Body",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,2419 @@
+{% schema %}
+{
+  "name": "Zavelyn PDP Main V2",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product Media Gallery (Group A)"
+    },
+    {
+      "type": "select",
+      "id": "gallery_layout",
+      "label": "Thumbnail Layout",
+      "options": [
+        {
+          "value": "thumbnails_bottom",
+          "label": "Thumbnails Bottom"
+        },
+        {
+          "value": "thumbnails_left",
+          "label": "Thumbnails Left"
+        },
+        {
+          "value": "stacked",
+          "label": "Stacked Images"
+        }
+      ],
+      "default": "thumbnails_bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_zoom",
+      "label": "Enable Click-to-Zoom",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "mobile_thumbnails",
+      "label": "Mobile Gallery Display",
+      "options": [
+        {
+          "value": "dots",
+          "label": "Pagination Dots"
+        },
+        {
+          "value": "thumbnails",
+          "label": "Mini Thumbnails"
+        },
+        {
+          "value": "hidden",
+          "label": "Swipe Only (Hidden)"
+        }
+      ],
+      "default": "thumbnails"
+    },
+    {
+      "type": "header",
+      "content": "Product Information (Group B)"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_text",
+      "label": "Eyebrow Subtitle",
+      "default": "ZAVELYN INNOVATIONS · INDUSTRIAL GRADE"
+    },
+    {
+      "type": "text",
+      "id": "urgency_text",
+      "label": "Urgency Alert Text",
+      "default": "High US Demand · Limited Units Remaining at Clearance Pricing"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating Text",
+      "default": "4.9 / 5.0 · 3,420+ Verified Reviews"
+    },
+    {
+      "type": "header",
+      "content": "BotanaRoots Bundle Custom Images & Layout"
+    },
+    {
+      "type": "text",
+      "id": "bundle_header_label",
+      "label": "Bundle Section Header Label",
+      "default": "CHOOSE YOUR QUANTITY:"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_badge_text",
+      "label": "Guarantee Badge Text",
+      "default": "30-Day Returns"
+    },
+    {
+      "type": "image_picker",
+      "id": "botana_img_buy3",
+      "label": "Buy 3 Card Image",
+      "info": "Custom product image for Buy 3 bundle card (leave empty to use default)"
+    },
+    {
+      "type": "text",
+      "id": "buy3_badge",
+      "label": "Buy 3 Banner Badge Text",
+      "default": "BEST VALUE · FREE SHIPPING · EXTRA 20% OFF"
+    },
+    {
+      "type": "image_picker",
+      "id": "botana_img_buy2",
+      "label": "Buy 2 Card Image",
+      "info": "Custom product image for Buy 2 bundle card (leave empty to use default)"
+    },
+    {
+      "type": "text",
+      "id": "buy2_badge",
+      "label": "Buy 2 Banner Badge Text",
+      "default": "🔥 MOST POPULAR"
+    },
+    {
+      "type": "image_picker",
+      "id": "botana_img_buy1",
+      "label": "Buy 1 Card Image",
+      "info": "Custom product image for Buy 1 bundle card (leave empty to use default)"
+    },
+    {
+      "type": "text",
+      "id": "buy1_badge",
+      "label": "Buy 1 Badge Text",
+      "default": "Shipping +$4.95"
+    },
+    {
+      "type": "header",
+      "content": "Bottle Size Upsell (60ml -> 120ml)"
+    },
+    {
+      "type": "image_picker",
+      "id": "botana_img_upsell",
+      "label": "Size Upsell Image (120ml Upgrade)",
+      "info": "Custom graphic for 120ml bottle size upgrade card (leave empty to use default)"
+    },
+    {
+      "type": "range",
+      "id": "upsell_img_width",
+      "label": "Desktop Upsell Image Width (px)",
+      "min": 60,
+      "max": 140,
+      "step": 2,
+      "default": 88,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "upsell_mobile_img_width",
+      "label": "Mobile Upsell Image Width (px)",
+      "min": 50,
+      "max": 110,
+      "step": 1,
+      "default": 75,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "upsell_img_fit",
+      "label": "Upsell Image Fit",
+      "options": [
+        {
+          "value": "contain",
+          "label": "Contain (Recommended)"
+        },
+        {
+          "value": "cover",
+          "label": "Cover"
+        }
+      ],
+      "default": "contain"
+    },
+    {
+      "type": "text",
+      "id": "upsell_section_title",
+      "label": "Upsell Section Title",
+      "default": "UPGRADE YOUR BOTTLE SIZE"
+    },
+    {
+      "type": "text",
+      "id": "upsell_badge",
+      "label": "Upsell Badge Text",
+      "default": "SPECIAL OFFER"
+    },
+    {
+      "type": "text",
+      "id": "upsell_heading",
+      "label": "Upsell Main Heading",
+      "default": "Double the Size!"
+    },
+    {
+      "type": "text",
+      "id": "upsell_description",
+      "label": "Upsell Description",
+      "default": "Upgrade each bottle from 60ml to 120ml."
+    },
+    {
+      "type": "header",
+      "content": "Call To Action & Checkout"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Primary CTA Button Text",
+      "default": "CLAIM OFFER"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_atc",
+      "label": "Enable Sticky Add to Cart Bar",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gallery_image",
+      "name": "Product Gallery Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Gallery Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt Text"
+        }
+      ]
+    },
+
+    {
+      "type": "trust_card",
+      "name": "Trust Card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Card Icon",
+          "options": [
+            {
+              "value": "return",
+              "label": "30-Day Return / Shield"
+            },
+            {
+              "value": "shipping",
+              "label": "Shipping / Truck"
+            },
+            {
+              "value": "lock",
+              "label": "SSL / Security Lock"
+            },
+            {
+              "value": "star",
+              "label": "Star / Quality Guarantee"
+            }
+          ],
+          "default": "return"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "30-Day Returns"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Supporting Text",
+          "default": "If you're not satisfied, return within 30 days"
+        }
+      ]
+    },
+    {
+      "type": "faq_item",
+      "name": "Short FAQ Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How does the 30-Day Return Guarantee work?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Order Zavelyn BotanaRoots with complete confidence. If you are not satisfied with your results within 30 days of receiving your order, simply reach out to our dedicated support team for an effortless return process."
+        },
+        {
+          "type": "checkbox",
+          "id": "default_open",
+          "label": "Default Open",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zavelyn PDP Main V2",
+      "blocks": [
+        {
+          "type": "trust_card",
+          "settings": {
+            "icon": "return",
+            "title": "30-Day Returns",
+            "subtext": "If you're not satisfied, return within 30 days"
+          }
+        },
+        {
+          "type": "trust_card",
+          "settings": {
+            "icon": "shipping",
+            "title": "Free Tracked Shipping",
+            "subtext": "Fast delivery with real-time tracking updates"
+          }
+        },
+        {
+          "type": "trust_card",
+          "settings": {
+            "icon": "lock",
+            "title": "Safe 256-Bit SSL",
+            "subtext": "Encrypted & secure checkout guaranteed"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does the 30-Day Return Guarantee work?",
+            "answer": "Order Zavelyn BotanaRoots with complete confidence. If you are not satisfied with your results within 30 days of receiving your order, simply reach out to our dedicated support team for an effortless return process.",
+            "default_open": false
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Shipping, Delivery & Returns",
+            "answer": "All orders are dispatched from our US logistics hub within 24–48 hours. Standard tracked delivery takes 3–5 business days. You will receive real-time tracking updates via email as soon as your package leaves the warehouse.",
+            "default_open": false
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is payment safe and encrypted?",
+            "answer": "Yes, 100%. We use bank-grade 256-bit SSL encryption to protect your transaction. Your payment information is processed directly by certified tier-1 merchant gateways and is never stored on our servers.",
+            "default_open": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- if product.handle == 'livestock-heating-lamp' -%}
+  {%- assign default_variant = product.variants | where: 'title', '3 Pack' | first -%}
+  {%- if default_variant -%}
+    {%- assign current_variant = default_variant -%}
+  {%- endif -%}
+{%- elsif product.handle == 'zavelyn-custom-fit-home-dentures' -%}
+  {%- assign default_variant = product.variants | where: 'title', '3 Complete Sets' | first -%}
+  {%- if default_variant -%}
+    {%- assign current_variant = default_variant -%}
+  {%- endif -%}
+{%- elsif product.handle == 'zavelyn-foldable-zippered-storage-bins' -%}
+  {%- assign default_variant = product.variants | where: 'title', '6 Storage Bins' | first -%}
+  {%- if default_variant -%}
+    {%- assign current_variant = default_variant -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign has_compare = false -%}
+{%- if current_variant.compare_at_price > current_variant.price -%}
+  {%- assign has_compare = true -%}
+  {%- assign savings_percent = current_variant.compare_at_price | minus: current_variant.price | times: 100.0 | divided_by: current_variant.compare_at_price | round -%}
+{%- endif -%}
+
+{%- comment -%} Detect Bundle Option Index (e.g. Option named 'Bundle', or containing 'Buy 1') {%- endcomment -%}
+{%- assign bundle_opt_idx = -1 -%}
+{%- for opt in product.options_with_values -%}
+  {%- assign opt_name_down = opt.name | downcase -%}
+  {%- if opt_name_down contains 'bundle' or opt_name_down contains 'package' or opt_name_down contains 'tier' or opt.values.first contains 'Buy 1' or product.handle == 'zavelyn-foldable-zippered-storage-bins' -%}
+    {%- if bundle_opt_idx == -1 -%}
+      {%- assign bundle_opt_idx = forloop.index0 -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<div class="zv-pdp-section-wrap" id="zvPdpSection">
+  <div class="zv-pdp-container">
+    <div class="zv-pdp-layout">
+
+      <!-- LEFT COLUMN: PRODUCT GALLERY -->
+      <div class="zv-pdp-gallery-col">
+        <div class="zv-pdp-gallery-inner">
+          {%- assign is_botanaroots = false -%}
+          {%- if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
+            {%- assign is_botanaroots = true -%}
+          {%- endif -%}
+
+          {%- assign gallery_blocks = section.blocks | where: "type", "gallery_image" -%}
+          {%- if is_botanaroots and gallery_blocks.size > 0 -%}
+            {%- assign first_gallery_block = gallery_blocks.first -%}
+            {%- assign main_img_src = first_gallery_block.settings.image | image_url: width: 1200 -%}
+            {%- if main_img_src == blank -%}
+              {%- assign featured_img = current_variant.featured_image | default: product.featured_image -%}
+              {%- assign main_img_src = featured_img | image_url: width: 1200 -%}
+            {%- endif -%}
+            <div class="zv-pdp-main-media" id="zvMainMediaWrap">
+              {% if has_compare %}
+                <div class="zv-media-badge" id="zvMediaBadge">SAVE {{ savings_percent }}%</div>
+              {% endif %}
+              <img 
+                id="zvMainImg" 
+                src="{{ main_img_src }}" 
+                alt="{{ first_gallery_block.settings.alt | default: product.title | escape }}"
+                width="600"
+                height="600"
+                loading="eager"
+              >
+            </div>
+            {% if gallery_blocks.size > 1 %}
+              <div class="zv-pdp-thumbs-row" id="zvThumbnails">
+                {% for block in gallery_blocks %}
+                  {% assign thumb_src = block.settings.image | image_url: width: 1200 %}
+                  {% assign thumb_thumb = block.settings.image | image_url: width: 160 %}
+                  {% if thumb_src == blank %}
+                    {% for p_img in product.images offset: forloop.index0 limit: 1 %}
+                      {% assign thumb_src = p_img | image_url: width: 1200 %}
+                      {% assign thumb_thumb = p_img | image_url: width: 160 %}
+                    {% endfor %}
+                  {% endif %}
+                  <button 
+                    type="button" 
+                    class="zv-thumb-btn {% if forloop.first %}active{% endif %}" 
+                    data-img-src="{{ thumb_src }}" 
+                    data-thumb-index="{{ forloop.index0 }}"
+                    aria-label="View image {{ forloop.index }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    <img src="{{ thumb_thumb }}" alt="{{ block.settings.alt | default: product.title | escape }}" width="80" height="80" loading="lazy">
+                  </button>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {%- else -%}
+            <div class="zv-pdp-main-media" id="zvMainMediaWrap">
+              {% if has_compare %}
+                <div class="zv-media-badge" id="zvMediaBadge">SAVE {{ savings_percent }}%</div>
+              {% endif %}
+              
+              {% assign featured_img = current_variant.featured_image | default: product.featured_image %}
+              <img 
+                id="zvMainImg" 
+                src="{{ featured_img | image_url: width: 1200 }}" 
+                alt="{{ featured_img.alt | default: product.title | escape }}"
+                width="600"
+                height="600"
+                loading="eager"
+              >
+            </div>
+
+            {% if product.images.size > 1 %}
+              <div class="zv-pdp-thumbs-row" id="zvThumbnails">
+                {% for image in product.images %}
+                  <button 
+                    type="button" 
+                    class="zv-thumb-btn {% if forloop.first %}active{% endif %}" 
+                    data-img-src="{{ image | image_url: width: 1200 }}" 
+                    data-thumb-index="{{ forloop.index0 }}"
+                    aria-label="View image {{ forloop.index }}"
+                  >
+                    <img src="{{ image | image_url: width: 160 }}" alt="{{ image.alt | default: product.title | escape }}" width="80" height="80" loading="lazy">
+                  </button>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: BUY BOX (1:1 KITTY COLLECTIVE ANATOMY) -->
+      <div class="zv-pdp-info-col">
+        <div class="zv-pdp-buybox">
+          
+          <!-- Eyebrow Subtitle -->
+          <div class="zv-pdp-eyebrow">
+            {{ section.settings.eyebrow_text }}
+          </div>
+
+          <!-- Product Title -->
+          <h1 class="zv-pdp-title">{{ product.title }}</h1>
+
+          <!-- Price Row -->
+          <div class="kc-base-price" id="zvBasePrice">
+            <span class="kc-base-price__current" id="zvPriceCurrent">{{ current_variant.price | money }}</span>
+            {% if has_compare %}
+              <s id="zvPriceCompare">{{ current_variant.compare_at_price | money }}</s>
+              <span class="kc-base-price__save" id="zvPriceSave">SAVE {{ savings_percent }}%</span>
+            {% endif %}
+          </div>
+
+          <!-- Divider Line -->
+          <div class="zv-divider-line"></div>
+
+          <!-- Value Proposition & Benefits -->
+          {%- include 'zavelyn-pdp-data' -%}
+          <div class="zv-benefits-block">
+            {% if zv_vp_b0 != blank %}
+              <p class="zv-lead-prop">
+                {{ zv_vp_sub }}
+              </p>
+              <div class="zv-bullet-list">
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">⚡</span><span><strong>{{ zv_vp_b0 }}</strong></span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🛡️</span><span><strong>{{ zv_vp_b1 }}</strong></span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🔧</span><span><strong>{{ zv_vp_b2 }}</strong></span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🚚</span><span><strong>Dispatched within 24–48h</strong> from US fulfillment hubs</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">💚</span><span><strong>30-Day Money-Back Guarantee</strong> — peace of mind guarantee</span></div>
+              </div>
+            {% elsif product.handle == 'zavelyn-foldable-zippered-storage-bins' %}
+              <p class="zv-lead-prop">
+                An extra-large foldable storage container engineered for bulky quilts, blankets, winter coats, and seasonal linens.
+              </p>
+              <div class="zv-bullet-list">
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🧺</span><span><strong>XXL 210L Capacity</strong> — effortlessly stores 3 thick comforters or up to 200 seasonal garments</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🧵</span><span><strong>Reinforced Carrying Handles</strong> — cross-stitched webbing handles for secure, balanced lifting</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🔒</span><span><strong>Smooth Dual Zippers</strong> — robust two-way stainless steel zippers for wide, hassle-free packing</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🌿</span><span><strong>Breathable Dust Protection</strong> — premium fabric shields linens while keeping airflow fresh</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">📐</span><span><strong>Collapsible Space Saver</strong> — folds completely flat into a slim profile when not in use</span></div>
+              </div>
+            {% elsif product.handle == 'zavelyn-custom-fit-home-dentures' %}
+              <p class="zv-lead-prop">
+                A removable denture kit designed for at-home fitting, with a natural-looking appearance and an adjustable molding process.
+              </p>
+              <div class="zv-bullet-list">
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🦷</span><span><strong>Natural-Looking Smile</strong> — designed to resemble the appearance of natural teeth and realistic gum tones</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">✨</span><span><strong>At-Home Fitting</strong> — adjustable thermal molding system for a personalized suction fit</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">💧</span><span><strong>Removable & Easy to Maintain</strong> — designed for everyday removal, hygienic soaking, and simple cleaning</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🚚</span><span><strong>Tracked US Shipping</strong> — dispatched within 24–48h from US fulfillment hubs</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🛡️</span><span><strong>30-Day Returns</strong> — backed by Zavelyn customer protection (unopened/sealed oral hygiene items eligible)</span></div>
+              </div>
+            {% elsif product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+              <p class="zv-lead-prop">
+                Nourish your scalp and bring dry, fragile hair back to life with Zavelyn BotanaRoots Batana Hair Oil. A simple, natural addition to your hair care routine.
+              </p>
+              <div class="zv-bullet-list">
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🌿</span><span><strong>Pure Batana Oil</strong> — rich, nourishing care for your hair and scalp.</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">✨</span><span><strong>Fuller, Healthier-Looking Hair</strong> — helps hair look smoother, shinier, and more vibrant.</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">💧</span><span><strong>Deep Moisture &amp; Nourishment</strong> — helps soften dry strands and reduce the appearance of frizz.</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🚚</span><span><strong>Tracked US Shipping</strong> — estimated delivery in 7–15 business days.</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🛡️</span><span><strong>30-Day Returns</strong> — shop with confidence under our return policy.</span></div>
+              </div>
+            {% elsif product.handle contains 'diesel' or product.handle contains 'injector' %}
+              <p class="zv-lead-prop">
+                Stop fighting seized injectors for hours with slide hammers that damage cylinder heads. Power through rock-solid carbon in under 5 minutes.
+              </p>
+              <div class="zv-bullet-list">
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🛠️</span><span><strong>High-frequency pneumatic vibration</strong> breaks carbon bonds effortlessly</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🛡️</span><span><strong>Zero cylinder head damage</strong> — balanced vertical shock eliminates snapped threads</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🧰</span><span><strong>21-piece master adapter set</strong> fits Bosch, Delphi, Denso & Siemens injectors</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🚚</span><span><strong>Dispatched within 24–48h</strong> from US warehouses with insured tracking</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">💚</span><span><strong>30-Day Money-Back Guarantee</strong> — if she won't budge, get every cent back</span></div>
+              </div>
+            {% else %}
+              <p class="zv-lead-prop">
+                Engineered for maximum reliability and daily performance. Experience precision build quality backed by our ironclad satisfaction guarantee.
+              </p>
+              <div class="zv-bullet-list">
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">⚡</span><span><strong>Instant High Performance</strong> — tested and calibrated for immediate daily use</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🛡️</span><span><strong>Heavy-Duty Premium Materials</strong> — built to outlast ordinary alternatives</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🚚</span><span><strong>Dispatched within 24–48h</strong> from US regional fulfillment centers</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">💚</span><span><strong>30-Day Money-Back Guarantee</strong> — protected by our 30-day return policy</span></div>
+              </div>
+            {% endif %}
+          </div>
+
+          {%- if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
+            {%- render 'botanaroots-bundle-upsell',
+                img_buy3: section.settings.botana_img_buy3,
+                img_buy2: section.settings.botana_img_buy2,
+                img_buy1: section.settings.botana_img_buy1,
+                img_upsell: section.settings.botana_img_upsell
+            -%}
+          {%- elsif product.handle == 'zavelyn-vfit-red-light-intimate-wellness-device' -%}
+            <!-- vfit-buybox-injected: vFit Dedicated Starter Kit + Quantity Stepper -->
+            <style>
+              .zv-buy1-container {
+                background: #FFFFFF;
+                border: 2px solid #234E3E;
+                border-radius: 14px;
+                padding: 16px 18px;
+                margin-bottom: 20px;
+                box-shadow: 0 4px 16px rgba(35, 78, 62, 0.06);
+              }
+              .zv-buy1-card {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 14px;
+              }
+              .zv-buy1-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+              }
+              .zv-buy1-radio-dot {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 6px solid #234E3E;
+                background: #FFFFFF;
+                flex-shrink: 0;
+              }
+              .zv-buy1-content {
+                display: flex;
+                flex-direction: column;
+              }
+              .zv-buy1-title {
+                font-size: 15px;
+                font-weight: 800;
+                color: #183324;
+              }
+              .zv-buy1-sub {
+                font-size: 12.5px;
+                color: #667085;
+                margin-top: 2px;
+              }
+              .zv-buy1-price-col {
+                text-align: right;
+                flex-shrink: 0;
+              }
+              .zv-buy1-price {
+                font-size: 18px;
+                font-weight: 900;
+                color: #183324;
+                display: block;
+              }
+              .zv-buy1-compare {
+                font-size: 13px;
+                color: #98A2B3;
+                text-decoration: line-through;
+              }
+              .zv-qty-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 14px;
+                padding-top: 12px;
+                border-top: 1px dashed #E2D9D3;
+              }
+              .zv-qty-label-group {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              }
+              .zv-qty-title {
+                font-size: 13.5px;
+                font-weight: 800;
+                color: #183324;
+              }
+              .zv-qty-note {
+                font-size: 11.5px;
+                color: #667085;
+              }
+              .zv-qty-stepper {
+                display: flex;
+                align-items: center;
+                background: #F8F5F2;
+                border: 1.5px solid #D8CFC8;
+                border-radius: 9999px;
+                padding: 3px;
+              }
+              .zv-qty-btn {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                border: none;
+                background: #FFFFFF;
+                color: #183324;
+                font-size: 17px;
+                font-weight: 800;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.18s ease;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+                line-height: 1;
+              }
+              .zv-qty-btn:hover:not(:disabled) {
+                background: #234E3E;
+                color: #FFFFFF;
+              }
+              .zv-qty-btn:disabled {
+                opacity: 0.4;
+                cursor: not-allowed;
+              }
+              .zv-qty-num {
+                font-size: 15px;
+                font-weight: 800;
+                color: #183324;
+                min-width: 36px;
+                text-align: center;
+              }
+            </style>
+
+            <div class="zv-buy1-container">
+              <div class="zv-buy1-card">
+                <div class="zv-buy1-left">
+                  <div class="zv-buy1-radio-dot"></div>
+                  <div class="zv-buy1-content">
+                    <div class="zv-buy1-title">Buy 1 (Essential Starter Kit - Save 67%)</div>
+                    <div class="zv-buy1-sub">Single vFit Intimate Wellness Device + Photonic Primer Gel</div>
+                  </div>
+                </div>
+                <div class="zv-buy1-price-col">
+                  <span class="zv-buy1-price" id="zvBuy1Price">{{ current_variant.price | money }}</span>
+                  {% if current_variant.compare_at_price > current_variant.price %}
+                    <s class="zv-buy1-compare" id="zvBuy1Compare">{{ current_variant.compare_at_price | money }}</s>
+                  {% endif %}
+                </div>
+              </div>
+
+              <!-- Quantity Stepper under Buy 1 -->
+              <div class="zv-qty-wrap">
+                <div class="zv-qty-label-group">
+                  <span class="zv-qty-title">Quantity:</span>
+                  <span class="zv-qty-note">(Unit Price: {{ current_variant.price | money }})</span>
+                </div>
+                <div class="zv-qty-stepper">
+                  <button type="button" class="zv-qty-btn" id="vfitQtyMinus" aria-label="Decrease quantity" disabled>−</button>
+                  <span class="zv-qty-num" id="vfitQtyDisplay">1</span>
+                  <button type="button" class="zv-qty-btn" id="vfitQtyPlus" aria-label="Increase quantity">+</button>
+                </div>
+              </div>
+            </div>
+          {%- else -%}
+            <!-- Color / Style Swatches (if multi-variant with attribute options) -->
+          {% for option in product.options_with_values %}
+            {% assign opt_idx = forloop.index0 %}
+            {% if opt_idx != bundle_opt_idx %}
+              <div class="zv-variant-swatches">
+                <div class="zv-option-label">Select {{ option.name }}: <span class="zv-selected-val" data-opt-idx="{{ opt_idx }}">{{ option.selected_value }}</span></div>
+                <div class="zv-option-pills">
+                  {% for value in option.values %}
+                    <button 
+                      type="button" 
+                      class="zv-option-pill {% if option.selected_value == value %}active{% endif %}"
+                      data-option-index="{{ opt_idx }}"
+                      data-option-value="{{ value | escape }}"
+                    >
+                      {{ value }}
+                    </button>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+
+          <!-- BUNDLE OFFERS (3 HORIZONTAL CARDS - KITTY COLLECTIVE STYLE) -->
+          <fieldset class="kc-offers" id="zvBundleOffers">
+            <legend class="visually-hidden">Choose your purchase offer</legend>
+
+            {% if bundle_opt_idx > -1 %}
+              {% if product.handle == 'zavelyn-foldable-zippered-storage-bins' %}
+                <!-- SCOPED BUNDLE CONFIGURATION: ZAVELYN FOLDABLE STORAGE BINS (BUY 6 -> BUY 4 -> BUY 2) -->
+                <!-- BUNDLE 1: BUY 6 (HERO CARD - DEFAULT SELECTED) -->
+                <label class="kc-offer zv-storage-bin-card" data-tier="6" data-bundle-val="6 Storage Bins">
+                  <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="6" checked>
+                  <span class="kc-offer__card">
+                    <span class="kc-offer__badge">👑 BEST VALUE · FREE SHIPPING · EXTRA 15% OFF</span>
+                    <span class="kc-offer__body">
+                      <span class="kc-offer__radio" aria-hidden="true"></span>
+                      <span class="zv-card-thumb-wrap">
+                        <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-buy6-thumb.jpg?v=1793289989" alt="Buy 6 Storage Bins" width="60" height="60" loading="eager" class="zv-card-thumb-img">
+                      </span>
+                      <span class="kc-offer__copy">
+                        <strong>Buy 6</strong>
+                        <small>6 × XXL Storage Bins</small>
+                        <span class="zv-card-badges-row-mini">
+                          <span class="zv-badge-chip-green">FREE SHIPPING</span>
+                          <span class="zv-badge-chip-green">EXTRA 15% OFF</span>
+                        </span>
+                      </span>
+                      <span class="kc-offer__prices">
+                        <strong class="zv-tier-price" data-tier-idx="6">$101.95</strong>
+                        <span class="zv-unit-pill-warm">~$16.99 / bin</span>
+                        <s class="zv-tier-compare" data-tier-idx="6">$239.88</s>
+                      </span>
+                    </span>
+                  </span>
+                </label>
+
+                <!-- BUNDLE 2: BUY 4 (CLEAN CARD - FREE SHIPPING) -->
+                <label class="kc-offer zv-storage-bin-card" data-tier="4" data-bundle-val="4 Storage Bins">
+                  <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="4">
+                  <span class="kc-offer__card">
+                    <span class="kc-offer__body">
+                      <span class="kc-offer__radio" aria-hidden="true"></span>
+                      <span class="zv-card-thumb-wrap">
+                        <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-buy4-thumb.jpg?v=1793289996" alt="Buy 4 Storage Bins" width="60" height="60" loading="eager" class="zv-card-thumb-img">
+                      </span>
+                      <span class="kc-offer__copy">
+                        <strong>Buy 4</strong>
+                        <small>4 × XXL Storage Bins</small>
+                      </span>
+                      <span class="kc-offer__prices">
+                        <strong class="zv-tier-price" data-tier-idx="4">$79.96</strong>
+                        <span class="zv-unit-pill-warm">$19.99 / bin</span>
+                        <s class="zv-tier-compare" data-tier-idx="4">$159.92</s>
+                      </span>
+                    </span>
+                  </span>
+                </label>
+
+                <!-- BUNDLE 3: BUY 2 (SHIPPING +$4.95) -->
+                <label class="kc-offer zv-storage-bin-card" data-tier="2" data-bundle-val="2 Storage Bins">
+                  <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="2">
+                  <span class="kc-offer__card">
+                    <span class="kc-offer__badge zv-badge-orange-header">SHIPPING +$4.95</span>
+                    <span class="kc-offer__body">
+                      <span class="kc-offer__radio" aria-hidden="true"></span>
+                      <span class="zv-card-thumb-wrap">
+                        <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-buy2-thumb.jpg?v=1793290000" alt="Buy 2 Storage Bins" width="60" height="60" loading="eager" class="zv-card-thumb-img">
+                      </span>
+                      <span class="kc-offer__copy">
+                        <strong>Buy 2</strong>
+                        <small>2 × XXL Storage Bins</small>
+                      </span>
+                      <span class="kc-offer__prices">
+                        <strong class="zv-tier-price" data-tier-idx="2">$39.98</strong>
+                        <span class="zv-unit-pill-warm">$19.99 / bin</span>
+                        <s class="zv-tier-compare" data-tier-idx="2">$79.96</s>
+                      </span>
+                    </span>
+                  </span>
+                </label>
+
+              {% elsif product.handle == 'zavelyn-custom-fit-home-dentures' %}
+                <!-- SCOPED BUNDLE CONFIGURATION: ZAVELYN CUSTOM-FIT HOME DENTURES (BUY 3 -> BUY 2 -> BUY 1) -->
+                <!-- BUNDLE 1: BUY 3 (DEFAULT SELECTED) -->
+                <label class="kc-offer" data-tier="3" data-bundle-val="3 Complete Sets">
+                  <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="3" checked>
+                  <span class="kc-offer__card">
+                    <span class="kc-offer__badge">BEST VALUE · FREE SHIPPING · EXTRA 10% OFF</span>
+                    <span class="kc-offer__body">
+                      <span class="kc-offer__radio" aria-hidden="true"></span>
+                      <span class="kc-offer__copy">
+                        <strong>3 Complete Sets</strong>
+                        <small>Full Kit · Free Shipping</small>
+                      </span>
+                      <span class="kc-offer__prices">
+                        <strong class="zv-tier-price" data-tier-idx="3">$107.97</strong>
+                        <s class="zv-tier-compare" data-tier-idx="3">$239.94</s>
+                      </span>
+                    </span>
+                  </span>
+                </label>
+
+                <!-- BUNDLE 2: BUY 2 (NO PROMOTIONAL BADGES) -->
+                <label class="kc-offer" data-tier="2" data-bundle-val="2 Complete Sets">
+                  <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="2">
+                  <span class="kc-offer__card">
+                    <span class="kc-offer__body">
+                      <span class="kc-offer__radio" aria-hidden="true"></span>
+                      <span class="kc-offer__copy">
+                        <strong>2 Complete Sets</strong>
+                        <small>Full Kit · Free Shipping</small>
+                      </span>
+                      <span class="kc-offer__prices">
+                        <strong class="zv-tier-price" data-tier-idx="2">$79.98</strong>
+                        <s class="zv-tier-compare" data-tier-idx="2">$159.96</s>
+                      </span>
+                    </span>
+                  </span>
+                </label>
+
+                <!-- BUNDLE 3: BUY 1 (SHIPPING +$4.95) -->
+                <label class="kc-offer" data-tier="1" data-bundle-val="1 Complete Set">
+                  <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="1">
+                  <span class="kc-offer__card">
+                    <span class="kc-offer__badge">SHIPPING +$4.95</span>
+                    <span class="kc-offer__body">
+                      <span class="kc-offer__radio" aria-hidden="true"></span>
+                      <span class="kc-offer__copy">
+                        <strong>1 Complete Set</strong>
+                        <small>Full Kit · Standard Delivery</small>
+                      </span>
+                      <span class="kc-offer__prices">
+                        <strong class="zv-tier-price" data-tier-idx="1">$39.99</strong>
+                        <s class="zv-tier-compare" data-tier-idx="1">$79.98</s>
+                      </span>
+                    </span>
+                  </span>
+                </label>
+
+              {% elsif product.handle == 'livestock-heating-lamp' %}
+                <!-- SCOPED BUNDLE CONFIGURATION: LIVESTOCK HEATING LAMP (BUY 3 -> BUY 2 -> BUY 1) -->
+                <!-- BUNDLE 1: BUY 3 (DEFAULT SELECTED) -->
+                <label class="kc-offer" data-tier="3" data-bundle-val="3 Pack">
+                  <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="3" checked>
+                  <span class="kc-offer__card">
+                    <span class="kc-offer__badge">BEST VALUE · FREE SHIPPING · EXTRA 10% OFF</span>
+                    <span class="kc-offer__body">
+                      <span class="kc-offer__radio" aria-hidden="true"></span>
+                      <span class="kc-offer__copy">
+                        <strong>3 Packs</strong>
+                        <small>Complete Set</small>
+                      </span>
+                      <span class="kc-offer__prices">
+                        <strong class="zv-tier-price" data-tier-idx="3">$107.99</strong>
+                        <s class="zv-tier-compare" data-tier-idx="3">$269.99</s>
+                      </span>
+                    </span>
+                  </span>
+                </label>
+
+                <!-- BUNDLE 2: BUY 2 (NO PROMOTIONAL BADGES) -->
+                <label class="kc-offer" data-tier="2" data-bundle-val="2 Pack">
+                  <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="2">
+                  <span class="kc-offer__card">
+                    <span class="kc-offer__body">
+                      <span class="kc-offer__radio" aria-hidden="true"></span>
+                      <span class="kc-offer__copy">
+                        <strong>2 Packs</strong>
+                        <small>Complete Set</small>
+                      </span>
+                      <span class="kc-offer__prices">
+                        <strong class="zv-tier-price" data-tier-idx="2">$89.99</strong>
+                        <s class="zv-tier-compare" data-tier-idx="2">$179.99</s>
+                      </span>
+                    </span>
+                  </span>
+                </label>
+
+                <!-- BUNDLE 3: BUY 1 (SHIPPING +$4.95) -->
+                <label class="kc-offer" data-tier="1" data-bundle-val="1 Pack">
+                  <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="1">
+                  <span class="kc-offer__card">
+                    <span class="kc-offer__badge">SHIPPING +$4.95</span>
+                    <span class="kc-offer__body">
+                      <span class="kc-offer__radio" aria-hidden="true"></span>
+                      <span class="kc-offer__copy">
+                        <strong>1 Pack</strong>
+                        <small>Complete Set</small>
+                      </span>
+                      <span class="kc-offer__prices">
+                        <strong class="zv-tier-price" data-tier-idx="1">$49.99</strong>
+                        <s class="zv-tier-compare" data-tier-idx="1">$99.99</s>
+                      </span>
+                    </span>
+                  </span>
+                </label>
+
+              {% else %}
+                <!-- DYNAMIC NATIVE BUNDLE VARIANTS (OTHER PRODUCTS) -->
+                {% assign bundle_option = product.options_with_values[bundle_opt_idx] %}
+                {% for val in bundle_option.values limit: 3 %}
+                  {% assign card_tier = forloop.index %}
+                  {% assign val_parts = val | split: ' (' %}
+                  {% assign clean_title = val_parts[0] %}
+                  {% assign clean_sub = val_parts[1] | remove: ')' | default: 'Complete Set' %}
+                  
+                  <label class="kc-offer" data-tier="{{ card_tier }}" data-bundle-val="{{ val | escape }}">
+                    <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="{{ card_tier }}" {% if card_tier == 2 %}checked{% endif %}>
+                    <span class="kc-offer__card">
+                      {% if card_tier == 2 %}<span class="kc-offer__badge">MOST POPULAR</span>{% endif %}
+                      {% if card_tier == 3 %}<span class="kc-offer__badge">BEST VALUE</span>{% endif %}
+                      <span class="kc-offer__body">
+                        <span class="kc-offer__radio" aria-hidden="true"></span>
+                        <span class="kc-offer__copy">
+                          <strong>{{ clean_title }}</strong>
+                          <small>{{ clean_sub }}</small>
+                        </span>
+                        <span class="kc-offer__prices">
+                          <strong class="zv-tier-price" data-tier-idx="{{ card_tier }}">—</strong>
+                          <s class="zv-tier-compare" data-tier-idx="{{ card_tier }}"></s>
+                        </span>
+                      </span>
+                    </span>
+                  </label>
+                {% endfor %}
+              {% endif %}
+
+            {% else %}
+              <!-- SINGLE-VARIANT BUNDLE TIERS (e.g. Diesel Injector Kit) -->
+              <!-- Card 1: 1 Set -->
+              <label class="kc-offer" data-tier="1" data-qty="1">
+                <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="1">
+                <span class="kc-offer__card">
+                  <span class="kc-offer__body">
+                    <span class="kc-offer__radio" aria-hidden="true"></span>
+                    <span class="kc-offer__copy">
+                      <strong>Buy 1 Item</strong>
+                      <small>Standard Package</small>
+                    </span>
+                    <span class="kc-offer__prices">
+                      <strong id="zvOffer1Price">{{ current_variant.price | money }}</strong>
+                      {% if has_compare %}<s id="zvOffer1Compare">{{ current_variant.compare_at_price | money }}</s>{% endif %}
+                    </span>
+                  </span>
+                </span>
+              </label>
+
+              <!-- Card 2: 2 Sets (MOST POPULAR) -->
+              <label class="kc-offer" data-tier="2" data-qty="2">
+                <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="2" checked>
+                <span class="kc-offer__card">
+                  <span class="kc-offer__badge">MOST POPULAR</span>
+                  <span class="kc-offer__body">
+                    <span class="kc-offer__radio" aria-hidden="true"></span>
+                    <span class="kc-offer__copy">
+                      <strong>Buy 2 Items (Most Popular)</strong>
+                      <small>Most Popular · FREE Priority Shipping</small>
+                    </span>
+                    <span class="kc-offer__prices">
+                      {% assign tier2_price = current_variant.price | times: 2 %}
+                      {% assign tier2_compare = current_variant.compare_at_price | times: 2 %}
+                      <strong id="zvOffer2Price">{{ tier2_price | money }}</strong>
+                      {% if has_compare %}<s id="zvOffer2Compare">{{ tier2_compare | money }}</s>{% endif %}
+                    </span>
+                  </span>
+                </span>
+              </label>
+
+              <!-- Card 3: 3 Sets (BEST VALUE) -->
+              <label class="kc-offer" data-tier="3" data-qty="3">
+                <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="3">
+                <span class="kc-offer__card">
+                  <span class="kc-offer__badge">BEST VALUE</span>
+                  <span class="kc-offer__body">
+                    <span class="kc-offer__radio" aria-hidden="true"></span>
+                    <span class="kc-offer__copy">
+                      <strong>Buy 3 Items (Best Value)</strong>
+                      <small>Best Value · FREE Express Shipping</small>
+                    </span>
+                    <span class="kc-offer__prices">
+                      {% assign tier3_price = current_variant.price | times: 3 %}
+                      {% assign tier3_compare = current_variant.compare_at_price | times: 3 %}
+                      <strong id="zvOffer3Price">{{ tier3_price | money }}</strong>
+                      {% if has_compare %}<s id="zvOffer3Compare">{{ tier3_compare | money }}</s>{% endif %}
+                    </span>
+                  </span>
+                </span>
+              </label>
+            {% endif %}
+          </fieldset>
+        {%- endif -%}
+
+        {%- unless product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
+          <!-- Urgency Bar -->
+          <p class="kc-order-limit" id="zvUrgencyBar">
+            <span aria-hidden="true">✦</span>
+            <span>{{ section.settings.urgency_text | default: 'Limited Restock Batch • Free Tracked US Shipping' }}</span>
+          </p>
+
+          <!-- CTA BUTTONS -->
+          <div class="zv-cta-group">
+            <button type="button" class="kc-claim-button" id="zvClaimOfferBtn">
+              <span class="button-text">{{ section.settings.cta_text | default: 'CLAIM OFFER' }} ➔</span>
+              <div class="loading__spinner hidden" id="zvBtnSpinner">
+                <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                </svg>
+              </div>
+            </button>
+
+            <button type="button" class="zv-buy-now-btn" id="zvBuyNowBtn">
+              ⚡ BUY NOW (1-CLICK CHECKOUT)
+            </button>
+          </div>
+
+          <!-- SHOPIFY OFFICIAL PAYMENT BADGES -->
+          <div class="zv-payment-icons-wrapper" role="region" aria-label="Accepted payment methods">
+            <div class="zv-payment-icons-row">
+              {% assign payment_types = 'visa,master,american_express,apple_pay,google_pay,shopify_pay,discover' | split: ',' %}
+              {% for type in payment_types %}
+                <span class="zv-payment-icon" title="{{ type | replace: '_', ' ' | capitalize }}">
+                  {{ type | payment_type_svg_tag: class: 'zv-pay-svg' }}
+                </span>
+              {% endfor %}
+            </div>
+          </div>
+        {%- endunless -%}
+          <!-- TRUST CHIPS (.kc-trust) -->
+          {%- if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
+            {%- assign trust_blocks = section.blocks | where: "type", "trust_card" -%}
+            <div class="kc-trust zv-botana-trust" role="note" aria-label="Guarantee, shipping and security">
+              {%- if trust_blocks.size > 0 -%}
+                {%- for block in trust_blocks -%}
+                  <div class="kc-trust__chip" {{ block.shopify_attributes }}>
+                    <div class="kc-trust__icon-wrap">
+                      {%- case block.settings.icon -%}
+                        {%- when 'shipping' -%}
+                          <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                        {%- when 'lock' -%}
+                          <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                        {%- when 'star' -%}
+                          <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        {%- else -%}
+                          <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                      {%- endcase -%}
+                    </div>
+                    <span class="kc-trust__text">
+                      <strong class="kc-trust__title">{{ block.settings.title }}</strong>
+                      <span class="kc-trust__sub">{{ block.settings.subtext }}</span>
+                    </span>
+                  </div>
+                {%- endfor -%}
+              {%- else -%}
+                <div class="kc-trust__chip">
+                  <div class="kc-trust__icon-wrap">
+                    <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                  </div>
+                  <span class="kc-trust__text">
+                    <strong class="kc-trust__title">30-Day Returns</strong>
+                    <span class="kc-trust__sub">If you're not satisfied, return within 30 days</span>
+                  </span>
+                </div>
+                <div class="kc-trust__chip">
+                  <div class="kc-trust__icon-wrap">
+                    <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                  </div>
+                  <span class="kc-trust__text">
+                    <strong class="kc-trust__title">Free Tracked Shipping</strong>
+                    <span class="kc-trust__sub">Fast delivery with real-time tracking updates</span>
+                  </span>
+                </div>
+                <div class="kc-trust__chip">
+                  <div class="kc-trust__icon-wrap">
+                    <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                  </div>
+                  <span class="kc-trust__text">
+                    <strong class="kc-trust__title">Safe 256-Bit SSL</strong>
+                    <span class="kc-trust__sub">Encrypted & secure checkout guaranteed</span>
+                  </span>
+                </div>
+              {%- endif -%}
+            </div>
+          {%- else -%}
+                      <div class="kc-trust" role="note" aria-label="Guarantee, shipping and security">
+            <div class="kc-trust__chip">
+              <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true" focusable="false">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+              </svg>
+              <span class="kc-trust__text">
+                <strong class="kc-trust__title">30-Day Money-Back Guarantee</strong>
+                <span class="kc-trust__sub">If she won't budge, you don't pay</span>
+              </span>
+            </div>
+
+            <div class="kc-trust__chip">
+              <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true" focusable="false">
+                <path d="M20 8h-3V4H1v13h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-2 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+              </svg>
+              <span class="kc-trust__text">
+                <strong class="kc-trust__title">Free Tracked Shipping</strong>
+                <span class="kc-trust__sub">Estimated US Delivery: 3–5 days</span>
+              </span>
+            </div>
+
+            <div class="kc-trust__chip kc-trust__chip--desktop">
+              <svg viewBox="0 0 24 24" class="kc-trust__icon" aria-hidden="true" focusable="false">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+              </svg>
+              <span class="kc-trust__text">
+                <strong class="kc-trust__title">Safe 256-Bit SSL</strong>
+                <span class="kc-trust__sub">Encrypted & secure checkout</span>
+              </span>
+            </div>
+          </div>
+
+          
+          {%- endif -%}
+          <!-- SHORT FAQ ACCORDIONS (.kc-faq) - END OF BUY BOX -->
+          {%- if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
+            {%- assign faq_blocks = section.blocks | where: "type", "faq_item" -%}
+            <div class="kc-faq zv-botana-faq" role="region" aria-label="Frequently Asked Questions">
+              {%- if faq_blocks.size > 0 -%}
+                {%- for block in faq_blocks -%}
+                  <details class="kc-faq__item" {% if block.settings.default_open %}open{% endif %} {{ block.shopify_attributes }}>
+                    <summary class="kc-faq__q">
+                      <span>{{ block.settings.question }}</span>
+                    </summary>
+                    <div class="kc-faq__a">
+                      <p>{{ block.settings.answer }}</p>
+                    </div>
+                  </details>
+                {%- endfor -%}
+              {%- else -%}
+                <!-- Default BotanaRoots PDP FAQ Items (ALL CLOSED BY DEFAULT) -->
+                <details class="kc-faq__item">
+                  <summary class="kc-faq__q">
+                    <span>How does the 30-Day Return Guarantee work?</span>
+                  </summary>
+                  <div class="kc-faq__a">
+                    <p>Order Zavelyn BotanaRoots with complete confidence. If you are not satisfied with your results within 30 days of receiving your order, simply reach out to our dedicated support team for an effortless return process.</p>
+                  </div>
+                </details>
+
+                <details class="kc-faq__item">
+                  <summary class="kc-faq__q">
+                    <span>Shipping, Delivery & Returns</span>
+                  </summary>
+                  <div class="kc-faq__a">
+                    <p>All orders are dispatched from our US logistics hub within 24–48 hours. Standard tracked delivery takes 3–5 business days. You will receive real-time tracking updates via email as soon as your package leaves the warehouse.</p>
+                  </div>
+                </details>
+
+                <details class="kc-faq__item">
+                  <summary class="kc-faq__q">
+                    <span>Is payment safe and encrypted?</span>
+                  </summary>
+                  <div class="kc-faq__a">
+                    <p>Yes, 100%. We use bank-grade 256-bit SSL encryption to protect your transaction. Your payment information is processed directly by certified tier-1 merchant gateways and is never stored on our servers.</p>
+                  </div>
+                </details>
+              {%- endif -%}
+            </div>
+          {%- else -%}
+                      <div class="kc-faq">
+            {%- if zv_faq_count > 0 -%}
+              <details class="kc-faq__item" open>
+                <summary class="kc-faq__q">{{ zv_faq_0_q }}</summary>
+                <div class="kc-faq__a">
+                  <p>{{ zv_faq_0_a }}</p>
+                </div>
+              </details>
+              {%- if zv_faq_1_q != blank -%}
+              <details class="kc-faq__item">
+                <summary class="kc-faq__q">{{ zv_faq_1_q }}</summary>
+                <div class="kc-faq__a">
+                  <p>{{ zv_faq_1_a }}</p>
+                </div>
+              </details>
+              {%- endif -%}
+            {%- elsif product.handle contains 'diesel' or product.handle contains 'injector' -%}
+              <details class="kc-faq__item" open>
+                <summary class="kc-faq__q">Will this kit work on my vehicle and injector model?</summary>
+                <div class="kc-faq__a">
+                  <p>Yes. The kit includes 19 precision CNC-machined adapters covering all standard M14, M17, M20, M25, and M27 thread pitches used across Bosch, Delphi, Denso, and Siemens common rail diesel injectors (Ford Powerstroke, Dodge Cummins, Chevy Duramax, Sprinter CDI, VW/Audi TDI, BMW & Mercedes).</p>
+                </div>
+              </details>
+              <details class="kc-faq__item">
+                <summary class="kc-faq__q">How does the pneumatic vibration mechanism work?</summary>
+                <div class="kc-faq__a">
+                  <p>It connects directly to your standard shop air compressor (5–8 Bar / 70–115 PSI). Delivering up to 1000 micro-impact pulses per minute along the vertical injector axis, it fractures stubborn carbon deposits instantly without side-loading or snapping the injector body.</p>
+                </div>
+              </details>
+            {%- endif -%}
+
+            <details class="kc-faq__item" {% unless zv_faq_count > 0 or product.handle contains 'diesel' %}open{% endunless %}>
+              <summary class="kc-faq__q">How does the 30-Day Money-Back Guarantee work?</summary>
+              <div class="kc-faq__a">
+                <p>Order {{ product.title }} with complete confidence. If you are not completely satisfied with the performance or quality within 30 days of receiving your order, simply reach out to our dedicated support team for an immediate, hassle-free 100% refund.</p>
+              </div>
+            </details>
+
+            <details class="kc-faq__item">
+              <summary class="kc-faq__q">Shipping, Delivery & Returns</summary>
+              <div class="kc-faq__a">
+                <p>All orders are dispatched from our US logistics hub within 24–48 hours. Standard tracked delivery takes 3–5 business days. You will receive real-time tracking updates via email as soon as your package leaves the warehouse.</p>
+              </div>
+            </details>
+
+            <details class="kc-faq__item">
+              <summary class="kc-faq__q">Is payment safe and encrypted?</summary>
+              <div class="kc-faq__a">
+                <p>Yes, 100%. We use bank-grade 256-bit SSL encryption to protect your transaction. Your payment information is processed directly by certified tier-1 merchant gateways and is never stored on our servers.</p>
+              </div>
+            </details>
+          </div>
+          {%- endif -%}
+          
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{%- if product.handle == 'zavelyn-vfit-red-light-intimate-wellness-device' -%}
+  {%- render 'vfit-selfcare-upsell' -%}
+{%- endif -%}
+
+<!-- STICKY ADD TO CART BAR -->
+{% if section.settings.enable_sticky_atc %}
+  <div class="zv-sticky-atc-bar" id="zvStickyBar">
+    <div class="zv-sticky-inner">
+      <div class="zv-sticky-prod">
+        <img src="{{ featured_img | image_url: width: 100 }}" alt="{{ product.title | escape }}" width="50" height="50">
+        <div class="zv-sticky-info">
+          <strong class="zv-sticky-title">{{ product.title }}</strong>
+          <span class="zv-sticky-price" id="zvStickyPrice">{{ current_variant.price | money }}</span>
+        </div>
+      </div>
+      <button type="button" class="zv-sticky-btn" id="zvStickyBtn">
+        CLAIM OFFER ➔
+      </button>
+    </div>
+  </div>
+{% endif %}
+
+<style>
+/* CSS RESET & VARIABLES FOR PDP */
+.zv-pdp-section-wrap {
+  width: 100%;
+  background-color: #ffffff;
+  color: #17433c;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 24px 0 48px;
+  box-sizing: border-box;
+}
+.zv-pdp-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+.zv-pdp-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 989px) {
+  .zv-pdp-section-wrap {
+    padding: 16px 0 36px;
+  }
+  .zv-pdp-container {
+    padding: 0 16px;
+  }
+  .zv-pdp-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* LEFT COLUMN: GALLERY */
+.zv-pdp-gallery-inner {
+  position: sticky;
+  top: 90px;
+}
+.zv-pdp-main-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zv-pdp-main-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.zv-media-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #ef4a65;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 6px;
+  z-index: 2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.zv-pdp-thumbs-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.zv-pdp-thumbs-row::-webkit-scrollbar {
+  display: none;
+}
+.zv-thumb-btn {
+  width: 74px;
+  height: 74px;
+  flex: 0 0 74px;
+  border-radius: 8px;
+  border: 1.5px solid #e0e0e0;
+  overflow: hidden;
+  background: #ffffff;
+  cursor: pointer;
+  padding: 3px;
+  transition: all 0.2s ease;
+}
+.zv-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 5px;
+}
+.zv-thumb-btn.active {
+  border-color: #17433c;
+  box-shadow: 0 0 0 1px #17433c;
+}
+.zv-thumb-btn:hover {
+  border-color: #17433c;
+}
+
+/* RIGHT COLUMN: BUY BOX */
+.zv-pdp-buybox {
+  display: flex;
+  flex-direction: column;
+}
+.zv-pdp-eyebrow {
+  font-size: 13px;
+  font-weight: 750;
+  color: #17433c;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.zv-pdp-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #17433c;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 600px) {
+  .zv-pdp-title {
+    font-size: 26px;
+  }
+}
+
+/* PRICE ROW (.kc-base-price) */
+.kc-base-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: #17433c;
+  margin: 4px 0 12px;
+}
+.kc-base-price__current {
+  font-size: 32px;
+  font-weight: 800;
+  color: #17433c;
+  line-height: 1;
+}
+.kc-base-price s {
+  font-size: 18px;
+  color: #888888;
+  line-height: 1;
+}
+.kc-base-price__save {
+  background: #c6fa54;
+  color: #17433c;
+  padding: 5px 9px;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* DIVIDER */
+.zv-divider-line {
+  width: 100%;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 12px 0 16px;
+}
+
+/* VALUE PROPOSITION & BULLETS */
+.zv-benefits-block {
+  margin-bottom: 16px;
+}
+.zv-lead-prop {
+  font-size: 15px;
+  font-weight: 700;
+  color: #17433c;
+  line-height: 1.45;
+  margin: 0 0 12px;
+}
+.zv-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.zv-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #17433c;
+}
+.zv-bullet-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: -1px;
+}
+
+/* OPTION SWATCHES */
+.zv-variant-swatches {
+  margin: 10px 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.zv-option-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #17433c;
+}
+.zv-selected-val {
+  font-weight: 600;
+  color: #4a5c53;
+}
+.zv-option-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.zv-option-pill {
+  padding: 8px 14px;
+  border: 1.5px solid #d0d7d3;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #17433c;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.zv-option-pill.active {
+  border-color: #17433c;
+  background: #f2f6e9;
+  font-weight: 750;
+  box-shadow: 0 0 0 1px #17433c;
+}
+
+/* STORAGE BINS BUNDLE SELECTOR STYLES */
+.zv-storage-bin-card .zv-card-thumb-wrap {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f7f9f8;
+  border: 1px solid rgba(23, 67, 60, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zv-storage-bin-card .zv-card-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.zv-storage-bin-card .zv-badge-orange-header {
+  background: #D97706 !important;
+  color: #FFFFFF !important;
+}
+.zv-card-badges-row-mini {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+}
+.zv-badge-chip-green {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  color: #15803D;
+  background: #F0FDF4;
+  border: 1px solid #DCFCE7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1.1;
+  letter-spacing: 0.2px;
+}
+
+/* BUNDLE OFFERS (.kc-offers) */
+.kc-offers {
+  display: grid;
+  gap: 10px;
+  border: 0;
+  padding: 0;
+  margin: 8px 0 12px;
+  min-width: 0;
+}
+.kc-offer {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+.kc-offer__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.kc-offer__card {
+  display: block;
+  border: 1px solid #17433c;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fffaf7;
+  transition: all 0.2s;
+}
+.kc-offer__input:checked + .kc-offer__card {
+  border-width: 2px;
+  background: #f2f6e9;
+}
+.kc-offer__input:focus-visible + .kc-offer__card {
+  outline: 3px solid #17433c;
+  outline-offset: 3px;
+}
+.kc-offer__badge {
+  display: block;
+  background: #17433c;
+  color: #ffffff;
+  text-align: center;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+.kc-offer__body {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 14px;
+}
+.kc-offer__radio {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #17433c;
+  border-radius: 50%;
+  flex: 0 0 20px;
+  box-shadow: inset 0 0 0 4px #fffaf7;
+  transition: background 0.2s;
+}
+.kc-offer__input:checked + .kc-offer__card .kc-offer__radio {
+  background: #17433c;
+  box-shadow: inset 0 0 0 4px #f2f6e9;
+}
+.kc-offer__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+.kc-offer__copy strong {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #17433c;
+}
+.kc-offer__copy small {
+  font-size: 12px;
+  line-height: 1.35;
+  color: #5c6b60;
+}
+.kc-offer__prices {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 2px;
+  white-space: nowrap;
+}
+.kc-offer__prices strong {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #17433c;
+}
+.kc-offer__prices s {
+  font-size: 13px;
+  color: #888888;
+}
+
+/* URGENCY ALERT (.kc-order-limit) */
+.kc-order-limit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 14px;
+  margin: 12px 0 14px;
+  border: 1px solid #edc6a0;
+  border-radius: 8px;
+  background: #fff1e2;
+  color: #6e3516;
+  font-size: 13.5px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: center;
+}
+.kc-order-limit > span:first-child {
+  color: #b75a24;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+/* CTA BUTTONS */
+.zv-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+.kc-claim-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #17433c;
+  border-radius: 10px;
+  background: #c6fa54;
+  color: #17433c;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+.kc-claim-button:hover {
+  background: #17433c;
+  color: #c6fa54;
+}
+.kc-claim-button.loading .button-text {
+  visibility: hidden;
+}
+.loading__spinner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+}
+.loading__spinner.hidden {
+  display: none;
+}
+.spinner {
+  animation: zvSpin 1s linear infinite;
+  stroke: currentColor;
+}
+@keyframes zvSpin {
+  100% { transform: rotate(360deg); }
+}
+
+.zv-buy-now-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 20px;
+  border: 2px solid #17433c;
+  border-radius: 10px;
+  background: transparent;
+  color: #17433c;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 750;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.2s ease;
+}
+.zv-buy-now-btn:hover {
+  background: #f4f6f4;
+}
+
+/* PAYMENT ICONS */
+.zv-payment-icons-wrapper {
+  margin: 14px 0 10px;
+  width: 100%;
+}
+.zv-payment-icons-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+.zv-payment-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.zv-payment-icon svg,
+.zv-payment-icon .zv-pay-svg,
+.zv-pay-icon {
+  width: 38px;
+  height: 24px;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease;
+}
+.zv-payment-icon:hover svg,
+.zv-payment-icon:hover .zv-pay-svg {
+  transform: translateY(-1px);
+}
+
+/* TRUST CHIPS (.kc-trust) */
+.kc-trust {
+  --kc-green: #1B3A2D;
+  --kc-cream: #F7F1E8;
+  --kc-muted: #6E7D71;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+  width: 100%;
+}
+.kc-trust__chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--kc-cream);
+  border: 1px solid rgba(27,58,45,.14);
+  border-radius: 12px;
+  padding: 9px 12px;
+  min-width: 0;
+}
+.kc-trust__chip--desktop {
+  display: none;
+}
+.kc-trust__icon {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: var(--kc-green);
+}
+.kc-trust__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+.kc-trust__title {
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--kc-green);
+  white-space: nowrap;
+}
+.kc-trust__sub {
+  font-size: 11px;
+  line-height: 1.25;
+  color: var(--kc-muted);
+}
+@media screen and (min-width: 750px) {
+  .kc-trust {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .kc-trust__chip--desktop {
+    display: flex;
+  }
+}
+
+/* SHORT BUY BOX FAQ (.kc-faq) */
+.kc-faq {
+  --kc-green: #1B3A2D;
+  --kc-cream: #F7F1E8;
+  --kc-muted: #5C6B60;
+  margin-top: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.kc-faq__item {
+  background: var(--kc-cream);
+  border: 1px solid rgba(27,58,45,.14);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.kc-faq__q {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 15px;
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--kc-green);
+}
+.kc-faq__q::-webkit-details-marker {
+  display: none;
+}
+.kc-faq__q::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--kc-green);
+  border-bottom: 2px solid var(--kc-green);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  margin-right: 4px;
+}
+.kc-faq__item[open] .kc-faq__q::after {
+  transform: rotate(-135deg);
+}
+.kc-faq__a {
+  padding: 0 15px 15px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--kc-muted);
+}
+.kc-faq__a p {
+  margin: 0;
+}
+
+/* STICKY ADD TO CART BAR */
+.zv-sticky-atc-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+  padding: 12px 24px;
+  z-index: 999;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.zv-sticky-atc-bar.visible {
+  transform: translateY(0);
+}
+.zv-sticky-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.zv-sticky-prod {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.zv-sticky-prod img {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: contain;
+  border: 1px solid #eee;
+  flex-shrink: 0;
+}
+.zv-sticky-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.zv-sticky-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #17433c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.zv-sticky-price {
+  font-size: 14px;
+  font-weight: 800;
+  color: #17433c;
+}
+.zv-sticky-btn {
+  background: #c6fa54;
+  color: #17433c;
+  border: 1px solid #17433c;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 14.5px;
+  padding: 12px 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+.zv-sticky-btn:hover {
+  background: #17433c;
+  color: #c6fa54;
+}
+
+/* ==========================================================================
+   BOTANAROOTS TRUST CARDS (MOBILE FULL-WIDTH STACKED, DESKTOP 3-COLUMNS)
+   ========================================================================== */
+.zv-botana-trust {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 9px !important;
+  margin-top: 14px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.zv-botana-trust .kc-trust__chip {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: #FFFAF7 !important;
+  border: 1px solid rgba(23, 67, 60, 0.12) !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.zv-botana-trust .kc-trust__icon-wrap {
+  flex: 0 0 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  background: rgba(23, 67, 60, 0.08) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.zv-botana-trust .kc-trust__icon {
+  width: 17px !important;
+  height: 17px !important;
+  fill: #17433C !important;
+}
+
+.zv-botana-trust .kc-trust__text {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+}
+
+.zv-botana-trust .kc-trust__title {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  color: #17433C !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+}
+
+.zv-botana-trust .kc-trust__sub {
+  font-size: 11.5px !important;
+  line-height: 1.3 !important;
+  color: #5C6B60 !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+@media screen and (min-width: 768px) {
+  .zv-botana-trust {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+  .zv-botana-trust .kc-trust__chip {
+    padding: 10px 12px !important;
+    align-items: flex-start !important;
+  }
+}
+
+/* ==========================================================================
+   BOTANAROOTS SHORT FAQ (ACCORDION TOGGLE + SMOOTH CHEVRON ANIMATION)
+   ========================================================================== */
+.zv-botana-faq {
+  margin-top: 14px !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  box-sizing: border-box !important;
+}
+
+.zv-botana-faq .kc-faq__item {
+  background: #FFFAF7 !important;
+  border: 1px solid rgba(23, 67, 60, 0.12) !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  transition: all 0.2s ease !important;
+}
+
+.zv-botana-faq .kc-faq__item[open] {
+  background: #FFFFFF !important;
+  border-color: rgba(23, 67, 60, 0.25) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+.zv-botana-faq .kc-faq__q {
+  list-style: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 13px 15px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  color: #17433C !important;
+  user-select: none !important;
+}
+
+.zv-botana-faq .kc-faq__q::-webkit-details-marker {
+  display: none !important;
+}
+
+.zv-botana-faq .kc-faq__q::after {
+  content: "" !important;
+  flex: 0 0 8px !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-right: 2px solid #17433C !important;
+  border-bottom: 2px solid #17433C !important;
+  transform: rotate(45deg) !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  margin-right: 2px !important;
+}
+
+.zv-botana-faq .kc-faq__item[open] .kc-faq__q::after {
+  transform: rotate(-135deg) !important;
+}
+
+.zv-botana-faq .kc-faq__a {
+  padding: 0 15px 14px !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  color: #5C6B60 !important;
+  border-top: 1px solid rgba(23, 67, 60, 0.06) !important;
+  padding-top: 10px !important;
+}
+
+.zv-botana-faq .kc-faq__a p {
+  margin: 0 !important;
+}
+
+/* VFIT PDP FAQ ACCORDION STYLES */
+.zv-vfit-faq-item[open] {
+  border-color: #a50034 !important;
+  box-shadow: 0 4px 14px rgba(165, 0, 52, 0.08) !important;
+}
+.zv-vfit-faq-item[open] .zv-vfit-faq-arrow {
+  transform: rotate(-135deg) !important;
+}
+.zv-vfit-faq-summary::-webkit-details-marker {
+  display: none !important;
+}
+.zv-vfit-faq-summary:hover {
+  background: #fff9f9;
+}
+
+</style>
+
+<script>
+(function() {
+  const productVariants = {{ product.variants | json }};
+  const bundleOptIdx = {{ bundle_opt_idx }};
+  const mainImg = document.getElementById('zvMainImg');
+  const priceCurrentEl = document.getElementById('zvPriceCurrent');
+  const priceCompareEl = document.getElementById('zvPriceCompare');
+  const priceSaveEl = document.getElementById('zvPriceSave');
+  const stickyPriceEl = document.getElementById('zvStickyPrice');
+  const mediaBadge = document.getElementById('zvMediaBadge');
+
+  let activeTier = ({{ product.handle | json }} === 'zavelyn-foldable-zippered-storage-bins') ? 6 : (({{ product.handle | json }} === 'livestock-heating-lamp' || {{ product.handle | json }} === 'zavelyn-custom-fit-home-dentures') ? 3 : 2);
+  let activeQty = (bundleOptIdx > -1) ? 1 : 2;
+  let activeVariantId = '{{ current_variant.id }}';
+
+  // State of selected options
+  let currentOptions = {{ current_variant.options | json }};
+
+  // Helper to format currency
+  function formatMoney(cents) {
+    return (cents / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+  }
+
+  // Update bundle card prices & active variant for native bundle products
+  function refreshVariantAndBundlePrices() {
+    if (bundleOptIdx > -1) {
+      // For each bundle tier card (1, 2, 3), find matching variant with current non-bundle options
+      const offerLabels = document.querySelectorAll('#zvBundleOffers .kc-offer');
+      offerLabels.forEach((label, idx) => {
+        const bundleVal = label.getAttribute('data-bundle-val');
+        const testOptions = [...currentOptions];
+        testOptions[bundleOptIdx] = bundleVal;
+
+        const matchedVar = productVariants.find(v => {
+          return testOptions.every((opt, i) => v.options[i] === opt);
+        });
+
+        const priceStrong = label.querySelector('.zv-tier-price');
+        const compareS = label.querySelector('.zv-tier-compare');
+
+        if (matchedVar) {
+          if (priceStrong) priceStrong.textContent = formatMoney(matchedVar.price);
+          if (compareS) {
+            if (matchedVar.compare_at_price > matchedVar.price) {
+              compareS.textContent = formatMoney(matchedVar.compare_at_price);
+            } else {
+              compareS.textContent = '';
+            }
+          }
+
+          // If this card is currently selected, set activeVariantId
+          const radio = label.querySelector('input[type="radio"]');
+          if (radio && radio.checked) {
+            activeVariantId = matchedVar.id;
+            activeQty = 1;
+            if (priceCurrentEl) priceCurrentEl.textContent = formatMoney(matchedVar.price);
+            if (stickyPriceEl) stickyPriceEl.textContent = formatMoney(matchedVar.price);
+            if (compareS && matchedVar.compare_at_price > matchedVar.price) {
+              if (priceCompareEl) priceCompareEl.textContent = formatMoney(matchedVar.compare_at_price);
+              const savePct = Math.round((matchedVar.compare_at_price - matchedVar.price) * 100 / matchedVar.compare_at_price);
+              if (priceSaveEl) priceSaveEl.textContent = 'SAVE ' + savePct + '%';
+              if (mediaBadge) mediaBadge.textContent = 'SAVE ' + savePct + '%';
+            }
+            if (matchedVar.featured_image && mainImg) {
+              mainImg.src = matchedVar.featured_image.src;
+            }
+          }
+        }
+      });
+    } else {
+      // Single-variant product: Tier 1, 2, 3
+      if (activeTier === 1) activeQty = 1;
+      else if (activeTier === 2) activeQty = 2;
+      else if (activeTier === 3) activeQty = 3;
+    }
+  }
+
+  // 1. Image Thumbnail Switching
+  const thumbBtns = document.querySelectorAll('.zv-thumb-btn');
+  thumbBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      thumbBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const src = this.getAttribute('data-img-src');
+      if (src && mainImg) {
+        mainImg.src = src;
+      }
+    });
+  });
+
+  // 2. Offer Tier Radio Changes
+  const bundleRadios = document.querySelectorAll('input[name="zv_offer_tier"]');
+  bundleRadios.forEach(radio => {
+    radio.addEventListener('change', function() {
+      activeTier = parseInt(this.value, 10);
+      refreshVariantAndBundlePrices();
+    });
+  });
+
+  // 3. Option Swatch Pills (e.g. Color, Size)
+  const swatchBtns = document.querySelectorAll('.zv-option-pill');
+  swatchBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const optIdx = parseInt(this.getAttribute('data-option-index'), 10);
+      const optVal = this.getAttribute('data-option-value');
+      
+      const group = this.closest('.zv-variant-swatches');
+      group.querySelectorAll('.zv-option-pill').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const labelVal = group.querySelector('.zv-selected-val');
+      if (labelVal) labelVal.textContent = optVal;
+
+      currentOptions[optIdx] = optVal;
+      refreshVariantAndBundlePrices();
+    });
+  });
+
+  // Initialize prices
+  refreshVariantAndBundlePrices();
+
+  // 4. Cart Add Action
+  async function addToCart(goToCheckout = false) {
+    const claimBtn = document.getElementById('zvClaimOfferBtn');
+    const spinner = document.getElementById('zvBtnSpinner');
+    if (claimBtn) claimBtn.classList.add('loading');
+    if (spinner) spinner.classList.remove('hidden');
+
+    // On vFit, sync activeQty with vFit quantity stepper if present
+    const vfitQtyDisp = document.getElementById('vfitQtyDisplay');
+    if (vfitQtyDisp) {
+      const q = parseInt(vfitQtyDisp.innerText, 10);
+      if (!isNaN(q) && q >= 1) activeQty = q;
+    }
+
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id: activeVariantId,
+          quantity: activeQty
+        })
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to add item to cart');
+      }
+
+      if (goToCheckout) {
+        window.location.href = '/checkout';
+        return;
+      }
+
+      // 1. Try Willa Cart Drawer
+      if (typeof window.willaOpenCartDrawer === 'function') {
+        if (typeof window.willaRefreshCart === 'function') {
+          await window.willaRefreshCart();
+        }
+        window.willaOpenCartDrawer();
+        return;
+      }
+
+      // 2. Try Zavelyn Cart Drawer Custom Element
+      const zavelynDrawer = document.querySelector('zavelyn-cart-drawer');
+      if (zavelynDrawer) {
+        if (typeof zavelynDrawer.refresh === 'function') await zavelynDrawer.refresh();
+        if (typeof zavelynDrawer.open === 'function') {
+          zavelynDrawer.open();
+          return;
+        }
+      }
+
+      // 3. Fallback: Open willaCartDrawer DOM element directly
+      const directDrawer = document.getElementById('willaCartDrawer');
+      const directOverlay = document.getElementById('willaCartOverlay');
+      if (directDrawer) {
+        directDrawer.classList.add('active');
+        if (directOverlay) directOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        if (typeof window.willaRefreshCart === 'function') {
+          await window.willaRefreshCart();
+        }
+        return;
+      }
+
+      // 4. Dispatch global event
+      document.dispatchEvent(new CustomEvent('zavelyn:cart:open'));
+    } catch(err) {
+      console.error(err);
+      alert('Could not add to cart. Please try again.');
+    } finally {
+      if (claimBtn) claimBtn.classList.remove('loading');
+      if (spinner) spinner.classList.add('hidden');
+    }
+  }
+
+  const claimBtn = document.getElementById('zvClaimOfferBtn');
+  if (claimBtn) {
+    claimBtn.addEventListener('click', () => addToCart(false));
+  }
+
+  const buyNowBtn = document.getElementById('zvBuyNowBtn');
+  if (buyNowBtn) {
+    buyNowBtn.addEventListener('click', () => addToCart(true));
+  }
+
+  const stickyBtn = document.getElementById('zvStickyBtn');
+  if (stickyBtn) {
+    stickyBtn.addEventListener('click', () => addToCart(false));
+  }
+
+  // 5. Sticky ATC Bar scroll listener
+  const stickyBar = document.getElementById('zvStickyBar');
+  const buyBox = document.querySelector('.zv-pdp-buybox');
+  if (stickyBar && buyBox) {
+    window.addEventListener('scroll', function() {
+      const rect = buyBox.getBoundingClientRect();
+      if (rect.bottom < 100) {
+        stickyBar.classList.add('visible');
+      } else {
+        stickyBar.classList.remove('visible');
+      }
+    });
+  }
+})();
+</script>

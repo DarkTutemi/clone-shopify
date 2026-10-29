@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "main": {
+      "type": "zavelyn-pdp-main",
+      "settings": {
+        "eyebrow_text": "ZAVELYN HOME · SPACE-SAVING CLOSET & BEDROOM ESSENTIALS",
+        "urgency_text": "High Seasonal Demand · Restock Batch Dispatched Daily",
+        "rating_text": "4.9 / 5.0 · 2,410+ Verified Homeowners",
+        "cta_text": "CLAIM OFFER",
+        "enable_sticky_atc": true
+      }
+    },
+    "custom_body": {
+      "type": "zavelyn-storage-bins-body",
+      "settings": {}
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {
+        "badge_text": "FAST & INSURED TRACKED US DELIVERY",
+        "heading": "Doorstep Delivery Guarantee & Real-Time Tracking",
+        "subheading": "Every Zavelyn order is cushioned in protective packaging, inspected for quality, and dispatched from regional US warehouses within 24–48 business hours with tracked delivery."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_body",
+    "shipping"
+  ]
+}
