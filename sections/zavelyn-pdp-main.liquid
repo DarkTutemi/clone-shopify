@@ -493,7 +493,11 @@
           
           <!-- Eyebrow Subtitle -->
           <div class="zv-pdp-eyebrow">
-            {{ section.settings.eyebrow_text }}
+            {%- if product.handle == 'zavelyn-foldable-zippered-storage-bins' -%}
+              SMARTER HOME ORGANIZATION
+            {%- else -%}
+              {{ section.settings.eyebrow_text }}
+            {%- endif -%}
           </div>
 
           <!-- Product Title -->
@@ -514,7 +518,18 @@
           <!-- Value Proposition & Benefits -->
           {%- include 'zavelyn-pdp-data' -%}
           <div class="zv-benefits-block">
-            {% if zv_vp_b0 != blank %}
+            {% if product.handle == 'zavelyn-foldable-zippered-storage-bins' %}
+              <p class="zv-lead-prop">
+                Store bulky bedding, blankets, comforters, and seasonal clothing in convenient foldable storage bins designed to keep your home organized.
+              </p>
+              <div class="zv-bullet-list">
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🧺</span><span><strong>Spacious Bedding Storage</strong> — extra-large 210L capacity holds 3 king comforters, bulky quilts, or up to 200 seasonal garments</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🧵</span><span><strong>Convenient Carrying Handles</strong> — reinforced double-stitched webbing handles for secure, balanced lifting</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🔒</span><span><strong>Easy-Access Zipper Closure</strong> — heavy-duty two-way stainless steel zippers glide smoothly for wide packing</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">📐</span><span><strong>Foldable, Space-Saving Design</strong> — collapses completely flat into a slim profile when not in use</span></div>
+                <div class="zv-bullet-item"><span class="zv-bullet-icon">🌿</span><span><strong>Breathable Dust Protection</strong> — premium fabric shields linens while keeping airflow fresh</span></div>
+              </div>
+            {% elsif zv_vp_b0 != blank %}
               <p class="zv-lead-prop">
                 {{ zv_vp_sub }}
               </p>
@@ -524,17 +539,6 @@
                 <div class="zv-bullet-item"><span class="zv-bullet-icon">🔧</span><span><strong>{{ zv_vp_b2 }}</strong></span></div>
                 <div class="zv-bullet-item"><span class="zv-bullet-icon">🚚</span><span><strong>Dispatched within 24–48h</strong> from US fulfillment hubs</span></div>
                 <div class="zv-bullet-item"><span class="zv-bullet-icon">💚</span><span><strong>30-Day Money-Back Guarantee</strong> — peace of mind guarantee</span></div>
-              </div>
-            {% elsif product.handle == 'zavelyn-foldable-zippered-storage-bins' %}
-              <p class="zv-lead-prop">
-                An extra-large foldable storage container engineered for bulky quilts, blankets, winter coats, and seasonal linens.
-              </p>
-              <div class="zv-bullet-list">
-                <div class="zv-bullet-item"><span class="zv-bullet-icon">🧺</span><span><strong>XXL 210L Capacity</strong> — effortlessly stores 3 thick comforters or up to 200 seasonal garments</span></div>
-                <div class="zv-bullet-item"><span class="zv-bullet-icon">🧵</span><span><strong>Reinforced Carrying Handles</strong> — cross-stitched webbing handles for secure, balanced lifting</span></div>
-                <div class="zv-bullet-item"><span class="zv-bullet-icon">🔒</span><span><strong>Smooth Dual Zippers</strong> — robust two-way stainless steel zippers for wide, hassle-free packing</span></div>
-                <div class="zv-bullet-item"><span class="zv-bullet-icon">🌿</span><span><strong>Breathable Dust Protection</strong> — premium fabric shields linens while keeping airflow fresh</span></div>
-                <div class="zv-bullet-item"><span class="zv-bullet-icon">📐</span><span><strong>Collapsible Space Saver</strong> — folds completely flat into a slim profile when not in use</span></div>
               </div>
             {% elsif product.handle == 'zavelyn-custom-fit-home-dentures' %}
               <p class="zv-lead-prop">
@@ -742,6 +746,8 @@
                 </div>
               </div>
             </div>
+          {%- elsif product.handle == 'zavelyn-foldable-zippered-storage-bins' -%}
+            {%- comment -%} Zavelyn Storage Bins uses ONLY the unified 3-card bundle selector below. Do NOT render option swatch pills. {%- endcomment -%}
           {%- else -%}
             <!-- Color / Style Swatches (if multi-variant with attribute options) -->
           {% for option in product.options_with_values %}
@@ -764,87 +770,89 @@
               </div>
             {% endif %}
           {% endfor %}
+          {%- endif -%}
 
+          {%- unless product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' or product.handle == 'zavelyn-vfit-red-light-intimate-wellness-device' -%}
           <!-- BUNDLE OFFERS (3 HORIZONTAL CARDS - KITTY COLLECTIVE STYLE) -->
           <fieldset class="kc-offers" id="zvBundleOffers">
             <legend class="visually-hidden">Choose your purchase offer</legend>
 
-            {% if bundle_opt_idx > -1 %}
-              {% if product.handle == 'zavelyn-foldable-zippered-storage-bins' %}
-                <!-- SCOPED BUNDLE CONFIGURATION: ZAVELYN FOLDABLE STORAGE BINS (BUY 6 -> BUY 4 -> BUY 2) -->
-                <!-- BUNDLE 1: BUY 6 (HERO CARD - DEFAULT SELECTED) -->
-                <label class="kc-offer zv-storage-bin-card" data-tier="6" data-bundle-val="6 Storage Bins">
-                  <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="6" checked>
-                  <span class="kc-offer__card">
-                    <span class="kc-offer__badge">👑 BEST VALUE · FREE SHIPPING · EXTRA 15% OFF</span>
-                    <span class="kc-offer__body">
-                      <span class="kc-offer__radio" aria-hidden="true"></span>
-                      <span class="zv-card-thumb-wrap">
-                        <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-buy6-thumb.jpg?v=1793289989" alt="Buy 6 Storage Bins" width="60" height="60" loading="eager" class="zv-card-thumb-img">
-                      </span>
-                      <span class="kc-offer__copy">
-                        <strong>Buy 6</strong>
-                        <small>6 × XXL Storage Bins</small>
-                        <span class="zv-card-badges-row-mini">
-                          <span class="zv-badge-chip-green">FREE SHIPPING</span>
-                          <span class="zv-badge-chip-green">EXTRA 15% OFF</span>
-                        </span>
-                      </span>
-                      <span class="kc-offer__prices">
-                        <strong class="zv-tier-price" data-tier-idx="6">$101.95</strong>
-                        <span class="zv-unit-pill-warm">~$16.99 / bin</span>
-                        <s class="zv-tier-compare" data-tier-idx="6">$239.88</s>
+            {% if product.handle == 'zavelyn-foldable-zippered-storage-bins' %}
+              <!-- SCOPED BUNDLE CONFIGURATION: ZAVELYN FOLDABLE STORAGE BINS (BUY 6 -> BUY 4 -> BUY 2) -->
+              <!-- BUNDLE 1: BUY 6 (HERO CARD - DEFAULT SELECTED) -->
+              <label class="kc-offer zv-storage-bin-card" data-tier="6" data-bundle-val="6 Storage Bins">
+                <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="6" checked>
+                <span class="kc-offer__card">
+                  <span class="kc-offer__badge">👑 BEST VALUE · FREE SHIPPING · EXTRA 15% OFF</span>
+                  <span class="kc-offer__body">
+                    <span class="kc-offer__radio" aria-hidden="true"></span>
+                    <span class="zv-card-thumb-wrap">
+                      <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-buy6-thumb.jpg?v=1793289989" alt="Buy 6 Storage Bins" width="60" height="60" loading="eager" class="zv-card-thumb-img">
+                    </span>
+                    <span class="kc-offer__copy">
+                      <strong>Buy 6</strong>
+                      <small>6 × XXL Storage Bins</small>
+                      <span class="zv-card-badges-row-mini">
+                        <span class="zv-badge-chip-green">FREE SHIPPING</span>
+                        <span class="zv-badge-chip-green">EXTRA 15% OFF</span>
                       </span>
                     </span>
-                  </span>
-                </label>
-
-                <!-- BUNDLE 2: BUY 4 (CLEAN CARD - FREE SHIPPING) -->
-                <label class="kc-offer zv-storage-bin-card" data-tier="4" data-bundle-val="4 Storage Bins">
-                  <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="4">
-                  <span class="kc-offer__card">
-                    <span class="kc-offer__body">
-                      <span class="kc-offer__radio" aria-hidden="true"></span>
-                      <span class="zv-card-thumb-wrap">
-                        <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-buy4-thumb.jpg?v=1793289996" alt="Buy 4 Storage Bins" width="60" height="60" loading="eager" class="zv-card-thumb-img">
-                      </span>
-                      <span class="kc-offer__copy">
-                        <strong>Buy 4</strong>
-                        <small>4 × XXL Storage Bins</small>
-                      </span>
-                      <span class="kc-offer__prices">
-                        <strong class="zv-tier-price" data-tier-idx="4">$79.96</strong>
-                        <span class="zv-unit-pill-warm">$19.99 / bin</span>
-                        <s class="zv-tier-compare" data-tier-idx="4">$159.92</s>
-                      </span>
+                    <span class="kc-offer__prices">
+                      <strong class="zv-tier-price" data-tier-idx="6">$101.95</strong>
+                      <span class="zv-unit-pill-warm">~$16.99 / bin</span>
+                      <s class="zv-tier-compare" data-tier-idx="6">$239.88</s>
                     </span>
                   </span>
-                </label>
+                </span>
+              </label>
 
-                <!-- BUNDLE 3: BUY 2 (SHIPPING +$4.95) -->
-                <label class="kc-offer zv-storage-bin-card" data-tier="2" data-bundle-val="2 Storage Bins">
-                  <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="2">
-                  <span class="kc-offer__card">
-                    <span class="kc-offer__badge zv-badge-orange-header">SHIPPING +$4.95</span>
-                    <span class="kc-offer__body">
-                      <span class="kc-offer__radio" aria-hidden="true"></span>
-                      <span class="zv-card-thumb-wrap">
-                        <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-buy2-thumb.jpg?v=1793290000" alt="Buy 2 Storage Bins" width="60" height="60" loading="eager" class="zv-card-thumb-img">
-                      </span>
-                      <span class="kc-offer__copy">
-                        <strong>Buy 2</strong>
-                        <small>2 × XXL Storage Bins</small>
-                      </span>
-                      <span class="kc-offer__prices">
-                        <strong class="zv-tier-price" data-tier-idx="2">$39.98</strong>
-                        <span class="zv-unit-pill-warm">$19.99 / bin</span>
-                        <s class="zv-tier-compare" data-tier-idx="2">$79.96</s>
-                      </span>
+              <!-- BUNDLE 2: BUY 4 (CLEAN CARD - FREE SHIPPING) -->
+              <label class="kc-offer zv-storage-bin-card" data-tier="4" data-bundle-val="4 Storage Bins">
+                <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="4">
+                <span class="kc-offer__card">
+                  <span class="kc-offer__body">
+                    <span class="kc-offer__radio" aria-hidden="true"></span>
+                    <span class="zv-card-thumb-wrap">
+                      <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-buy4-thumb.jpg?v=1793289996" alt="Buy 4 Storage Bins" width="60" height="60" loading="eager" class="zv-card-thumb-img">
+                    </span>
+                    <span class="kc-offer__copy">
+                      <strong>Buy 4</strong>
+                      <small>4 × XXL Storage Bins</small>
+                    </span>
+                    <span class="kc-offer__prices">
+                      <strong class="zv-tier-price" data-tier-idx="4">$79.96</strong>
+                      <span class="zv-unit-pill-warm">$19.99 / bin</span>
+                      <s class="zv-tier-compare" data-tier-idx="4">$159.92</s>
                     </span>
                   </span>
-                </label>
+                </span>
+              </label>
 
-              {% elsif product.handle == 'zavelyn-custom-fit-home-dentures' %}
+              <!-- BUNDLE 3: BUY 2 (SHIPPING +$4.95) -->
+              <label class="kc-offer zv-storage-bin-card" data-tier="2" data-bundle-val="2 Storage Bins">
+                <input class="kc-offer__input" type="radio" name="zv_offer_tier" value="2">
+                <span class="kc-offer__card">
+                  <span class="kc-offer__badge zv-badge-orange-header">SHIPPING +$4.95</span>
+                  <span class="kc-offer__body">
+                    <span class="kc-offer__radio" aria-hidden="true"></span>
+                    <span class="zv-card-thumb-wrap">
+                      <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-storage-bins-buy2-thumb.jpg?v=1793290000" alt="Buy 2 Storage Bins" width="60" height="60" loading="eager" class="zv-card-thumb-img">
+                    </span>
+                    <span class="kc-offer__copy">
+                      <strong>Buy 2</strong>
+                      <small>2 × XXL Storage Bins</small>
+                    </span>
+                    <span class="kc-offer__prices">
+                      <strong class="zv-tier-price" data-tier-idx="2">$39.98</strong>
+                      <span class="zv-unit-pill-warm">$19.99 / bin</span>
+                      <s class="zv-tier-compare" data-tier-idx="2">$79.96</s>
+                    </span>
+                  </span>
+                </span>
+              </label>
+
+            {% elsif bundle_opt_idx > -1 %}
+              {% if product.handle == 'zavelyn-custom-fit-home-dentures' %}
                 <!-- SCOPED BUNDLE CONFIGURATION: ZAVELYN CUSTOM-FIT HOME DENTURES (BUY 3 -> BUY 2 -> BUY 1) -->
                 <!-- BUNDLE 1: BUY 3 (DEFAULT SELECTED) -->
                 <label class="kc-offer" data-tier="3" data-bundle-val="3 Complete Sets">
@@ -1053,7 +1061,7 @@
               </label>
             {% endif %}
           </fieldset>
-        {%- endif -%}
+        {%- endunless -%}
 
         {%- unless product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
           <!-- Urgency Bar -->
@@ -2215,6 +2223,49 @@
 
   // Update bundle card prices & active variant for native bundle products
   function refreshVariantAndBundlePrices() {
+    if ({{ product.handle | json }} === 'zavelyn-foldable-zippered-storage-bins') {
+      const offerLabels = document.querySelectorAll('#zvBundleOffers .kc-offer');
+      offerLabels.forEach((label) => {
+        const bundleVal = label.getAttribute('data-bundle-val');
+        const matchedVar = productVariants.find(v => v.title === bundleVal || v.option1 === bundleVal);
+
+        const priceStrong = label.querySelector('.zv-tier-price');
+        const compareS = label.querySelector('.zv-tier-compare');
+
+        if (matchedVar) {
+          if (priceStrong) priceStrong.textContent = formatMoney(matchedVar.price);
+          if (compareS) {
+            if (matchedVar.compare_at_price > matchedVar.price) {
+              compareS.textContent = formatMoney(matchedVar.compare_at_price);
+            } else {
+              compareS.textContent = '';
+            }
+          }
+
+          const radio = label.querySelector('input[type="radio"]');
+          if (radio && radio.checked) {
+            activeVariantId = matchedVar.id;
+            activeQty = 1;
+            if (priceCurrentEl) priceCurrentEl.textContent = formatMoney(matchedVar.price);
+            if (stickyPriceEl) stickyPriceEl.textContent = formatMoney(matchedVar.price);
+            if (matchedVar.compare_at_price > matchedVar.price) {
+              if (priceCompareEl) priceCompareEl.textContent = formatMoney(matchedVar.compare_at_price);
+              const savePct = Math.round((matchedVar.compare_at_price - matchedVar.price) * 100 / matchedVar.compare_at_price);
+              if (priceSaveEl) priceSaveEl.textContent = 'SAVE ' + savePct + '%';
+              if (mediaBadge) mediaBadge.textContent = 'SAVE ' + savePct + '%';
+            } else {
+              if (priceCompareEl) priceCompareEl.textContent = '';
+              if (priceSaveEl) priceSaveEl.textContent = '';
+            }
+            if (matchedVar.featured_image && mainImg) {
+              mainImg.src = matchedVar.featured_image.src;
+            }
+          }
+        }
+      });
+      return;
+    }
+
     if (bundleOptIdx > -1) {
       // For each bundle tier card (1, 2, 3), find matching variant with current non-bundle options
       const offerLabels = document.querySelectorAll('#zvBundleOffers .kc-offer');
