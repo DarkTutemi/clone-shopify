@@ -1,0 +1,619 @@
+/**
+ * ZAVELYN IMMERSIVE COMMERCE THEME V4.0
+ * 2.5D PHYSICAL RETAIL SHOWROOM & SHELF ARCHITECTURE
+ */
+
+/* ==========================================================================
+   SHOWROOM ENVIRONMENT & HERO HEADER
+   ========================================================================== */
+.zv-showroom-header {
+  background: linear-gradient(180deg, #17352B 0%, #11261F 100%);
+  color: #FFFFFF;
+  padding: 56px 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.zv-showroom-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(188, 231, 106, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.zv-showroom-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+  .zv-showroom-title-row {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.zv-showroom-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  color: var(--zv-accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.zv-showroom-h1 {
+  font-family: var(--zv-font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+@media screen and (min-width: 992px) {
+  .zv-showroom-h1 {
+    font-size: 46px;
+  }
+}
+
+.zv-showroom-desc {
+  font-size: 16px;
+  color: #C9D6CE;
+  max-width: 620px;
+  line-height: 1.55;
+  margin-top: 10px;
+}
+
+/* Controls Toolbar (View Toggle & Filters) */
+.zv-showroom-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.zv-view-switcher {
+  display: inline-flex;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--zv-radius-full);
+  padding: 4px;
+  gap: 4px;
+}
+
+.zv-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--zv-radius-full);
+  font-size: 13px;
+  font-weight: 700;
+  color: #C9D6CE;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--zv-transition-fast);
+}
+
+.zv-view-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.zv-view-btn.active {
+  background: #FFFFFF;
+  color: var(--zv-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.zv-showroom-stats {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #C9D6CE;
+}
+
+/* ==========================================================================
+   2.5D PHYSICAL SHELF ARCHITECTURE
+   ========================================================================== */
+.zv-showroom-stage {
+  background: var(--zv-bg);
+  padding: 48px 0 88px;
+  position: relative;
+  min-height: 600px;
+}
+
+/* Individual Shelf Tier */
+.zv-shelf-tier {
+  position: relative;
+  margin-bottom: 72px;
+  perspective: 1200px;
+}
+
+.zv-shelf-tier:last-child {
+  margin-bottom: 32px;
+}
+
+/* 4 Products Desktop Row */
+.zv-shelf-products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  position: relative;
+  z-index: 5;
+  padding: 0 16px;
+  align-items: end;
+}
+
+@media screen and (min-width: 992px) {
+  .zv-shelf-products {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: 0 24px;
+  }
+}
+
+/* Product On Shelf Card */
+.zv-shelf-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform var(--zv-transition-base);
+  user-select: none;
+}
+
+.zv-shelf-item:hover {
+  transform: translateY(-8px);
+}
+
+/* Product Visual Container with Shadow */
+.zv-shelf-media-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 260px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.zv-shelf-img {
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+  transition: transform var(--zv-transition-base), filter var(--zv-transition-base);
+  filter: drop-shadow(0 8px 16px rgba(23, 53, 43, 0.14));
+  position: relative;
+  z-index: 3;
+}
+
+.zv-shelf-item:hover .zv-shelf-img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 16px 24px rgba(23, 53, 43, 0.22));
+}
+
+/* Realistic Under-Product Shadow Surface */
+.zv-shelf-shadow-disc {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72%;
+  height: 18px;
+  background: radial-gradient(ellipse at center, rgba(17, 38, 31, 0.35) 0%, rgba(17, 38, 31, 0) 72%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity var(--zv-transition-base), transform var(--zv-transition-base);
+}
+
+.zv-shelf-item:hover .zv-shelf-shadow-disc {
+  transform: translateX(-50%) scale(0.85);
+  opacity: 0.5;
+}
+
+/* Product Shelf Tag (Title & Pricing Label Plate) */
+.zv-shelf-label-plate {
+  background: #FFFFFF;
+  border: 1px solid var(--zv-border);
+  border-radius: var(--zv-radius-md);
+  padding: 12px 14px;
+  width: 100%;
+  max-width: 270px;
+  box-shadow: 0 4px 14px rgba(23, 53, 43, 0.06);
+  position: relative;
+  z-index: 6;
+  transition: all var(--zv-transition-fast);
+}
+
+.zv-shelf-item:hover .zv-shelf-label-plate {
+  border-color: var(--zv-primary);
+  box-shadow: var(--zv-shadow-md);
+}
+
+.zv-shelf-tag-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.zv-shelf-item-title {
+  font-family: var(--zv-font-heading);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--zv-heading);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 4px 0 6px;
+  min-height: 38px;
+}
+
+.zv-shelf-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.zv-shelf-price-current {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--zv-primary);
+}
+
+.zv-shelf-price-compare {
+  font-size: 13px;
+  color: var(--zv-muted);
+  text-decoration: line-through;
+}
+
+.zv-shelf-quickbuy-btn {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 7px 12px;
+  background: var(--zv-surface-muted);
+  color: var(--zv-primary);
+  border-radius: var(--zv-radius-sm);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  border: 1px solid transparent;
+  transition: all var(--zv-transition-fast);
+}
+
+.zv-shelf-item:hover .zv-shelf-quickbuy-btn {
+  background: var(--zv-accent);
+  color: var(--zv-accent-dark);
+}
+
+/* ==========================================================================
+   PHYSICAL SHELF SURFACE STYLES (5 THEMES)
+   ========================================================================== */
+.zv-physical-shelf {
+  position: relative;
+  width: 100%;
+  margin-top: -14px;
+  z-index: 4;
+}
+
+/* Top Perspective Surface */
+.zv-shelf-surface-top {
+  height: 24px;
+  width: 100%;
+  transform: rotateX(25deg);
+  transform-origin: bottom center;
+}
+
+/* Front Edge Thickness */
+.zv-shelf-surface-front {
+  height: 20px;
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  position: relative;
+}
+
+/* Deep Under-Shelf Cast Shadow */
+.zv-shelf-surface-shadow {
+  height: 26px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+}
+
+/* THEME 1: WOOD SHELF (Warm Oak / Walnut) */
+.shelf-theme-wood .zv-shelf-surface-top {
+  background: linear-gradient(90deg, #D5A97D 0%, #E8C9A7 50%, #C99B6E 100%);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4), inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+.shelf-theme-wood .zv-shelf-surface-front {
+  background: linear-gradient(180deg, #9C6C42 0%, #754E2E 100%);
+  border-top: 1px solid #E8C9A7;
+  border-bottom: 2px solid #4E321B;
+}
+
+/* THEME 2: METAL SHELF (Industrial Brushed Steel) */
+.shelf-theme-metal .zv-shelf-surface-top {
+  background: linear-gradient(90deg, #9EACB4 0%, #CFD8DC 50%, #8A9BA4 100%);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6), inset 0 -2px 6px rgba(0, 0, 0, 0.3);
+}
+.shelf-theme-metal .zv-shelf-surface-front {
+  background: linear-gradient(180deg, #5D6D7E 0%, #34495E 100%);
+  border-top: 1.5px solid #FFFFFF;
+  border-bottom: 2px solid #1B2631;
+}
+
+/* THEME 3: BOUTIQUE SHELF (Clean White Lacquer with Gold Lip) */
+.shelf-theme-boutique .zv-shelf-surface-top {
+  background: linear-gradient(90deg, #FFFFFF 0%, #FAF8F5 50%, #FFFFFF 100%);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.8), inset 0 -2px 4px rgba(23, 53, 43, 0.08);
+}
+.shelf-theme-boutique .zv-shelf-surface-front {
+  background: linear-gradient(180deg, #D4AF37 0%, #AA820A 100%);
+  border-top: 1px solid #FFF2B2;
+  border-bottom: 2px solid #725700;
+}
+
+/* THEME 4: MODERN TECH SHELF (Matte Obsidian Slate with LED Edge) */
+.shelf-theme-tech .zv-shelf-surface-top {
+  background: linear-gradient(90deg, #22292F 0%, #2E3842 50%, #1A2127 100%);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+.shelf-theme-tech .zv-shelf-surface-front {
+  background: #141A1E;
+  border-top: 2px solid var(--zv-accent);
+  box-shadow: 0 0 12px rgba(188, 231, 106, 0.45);
+}
+
+/* THEME 5: FLOATING MINIMAL (Clean Glass / Acrylic) */
+.shelf-theme-floating .zv-shelf-surface-top {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+}
+.shelf-theme-floating .zv-shelf-surface-front {
+  background: rgba(23, 53, 43, 0.12);
+  border-bottom: 1.5px solid rgba(23, 53, 43, 0.2);
+}
+
+/* ==========================================================================
+   CONVENTIONAL GRID VIEW FALLBACK (WHEN TOGGLED)
+   ========================================================================== */
+.zv-showroom-stage.grid-mode .zv-shelf-tier {
+  margin-bottom: 0;
+  perspective: none;
+}
+.zv-showroom-stage.grid-mode .zv-physical-shelf {
+  display: none !important;
+}
+.zv-showroom-stage.grid-mode .zv-shelf-products {
+  margin-bottom: 24px;
+}
+.zv-showroom-stage.grid-mode .zv-shelf-item {
+  background: #FFFFFF;
+  border: 1px solid var(--zv-border);
+  border-radius: var(--zv-radius-lg);
+  padding: 16px;
+  box-shadow: var(--zv-shadow-sm);
+}
+
+/* ==========================================================================
+   QUICK VIEW MODAL & MOBILE BOTTOM SHEET
+   ========================================================================== */
+.zv-qv-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 35, 30, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity var(--zv-transition-base);
+}
+
+.zv-qv-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.zv-qv-modal {
+  background: #FFFFFF;
+  border-radius: var(--zv-radius-xl);
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--zv-shadow-lg);
+  position: relative;
+  transform: translateY(20px) scale(0.96);
+  transition: transform var(--zv-transition-base);
+}
+
+.zv-qv-overlay.active .zv-qv-modal {
+  transform: translateY(0) scale(1);
+}
+
+.zv-qv-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--zv-surface-muted);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  color: var(--zv-primary);
+  font-size: 20px;
+  transition: all var(--zv-transition-fast);
+}
+
+.zv-qv-close:hover {
+  background: var(--zv-primary);
+  color: #FFFFFF;
+}
+
+.zv-qv-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .zv-qv-body {
+    grid-template-columns: 1fr 1.15fr;
+    gap: 36px;
+    padding: 36px;
+  }
+}
+
+.zv-qv-gallery {
+  position: relative;
+  border-radius: var(--zv-radius-lg);
+  overflow: hidden;
+  background: var(--zv-surface-muted);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zv-qv-gallery img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.zv-qv-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.zv-qv-title {
+  font-family: var(--zv-font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--zv-heading);
+  margin: 0 0 12px;
+}
+
+.zv-qv-price-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.zv-qv-price-current {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--zv-primary);
+}
+
+.zv-qv-price-compare {
+  font-size: 18px;
+  color: var(--zv-muted);
+  text-decoration: line-through;
+}
+
+.zv-qv-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zv-qv-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--zv-body);
+}
+
+.zv-qv-bullets svg {
+  width: 16px;
+  height: 16px;
+  color: var(--zv-ok);
+  flex-shrink: 0;
+}
+
+.zv-qv-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.zv-qv-pdp-link {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--zv-primary);
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+/* Mobile Bottom Sheet Adaptation */
+@media screen and (max-width: 767px) {
+  .zv-qv-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+  .zv-qv-modal {
+    border-radius: var(--zv-radius-xl) var(--zv-radius-xl) 0 0;
+    max-height: 85vh;
+    transform: translateY(100%);
+  }
+  .zv-qv-drag-handle {
+    width: 44px;
+    height: 5px;
+    background: #D8DED8;
+    border-radius: 999px;
+    margin: 12px auto 6px;
+  }
+}

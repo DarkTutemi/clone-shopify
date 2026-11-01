@@ -1,0 +1,162 @@
+/**
+ * ZAVELYN IMMERSIVE COMMERCE THEME V4.0
+ * DESIGN TOKENS & SYSTEM VARIABLES
+ */
+
+:root {
+  /* Brand Palette */
+  --zv-primary: #17352B;          /* Deep Forest Green */
+  --zv-primary-hover: #0F241D;    /* Darkened Forest */
+  --zv-primary-rgb: 23, 53, 43;
+  --zv-accent: #BCE76A;           /* Soft Lime / High-converting highlight */
+  --zv-accent-hover: #AADB54;
+  --zv-accent-dark: #17352B;      /* Contrast text on accent */
+  --zv-bg: #FAFAF6;               /* Warm Off-White / Natural Canvas */
+  --zv-surface: #FFFFFF;          /* Pure White */
+  --zv-surface-muted: #F3F5EF;    /* Soft Tint Surface */
+  --zv-heading: #17231E;          /* Rich Charcoal */
+  --zv-body: #454F49;             /* Slate Grey text */
+  --zv-muted: #738076;            /* Secondary / Hint text */
+  --zv-border: #E5E8E2;           /* Card & Section Border */
+  --zv-border-light: rgba(23, 53, 43, 0.08);
+  --zv-ok: #2E7D32;               /* Success / In-Stock */
+  --zv-ok-tint: #E8F5E9;
+  --zv-warn: #D97706;             /* Orange Notice / Shipping Fee */
+  --zv-warn-tint: #FEF3C7;
+  
+  /* Typography Scale */
+  --zv-font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --zv-font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Radii */
+  --zv-radius-sm: 8px;
+  --zv-radius-md: 14px;
+  --zv-radius-lg: 20px;
+  --zv-radius-xl: 28px;
+  --zv-radius-full: 9999px;
+  
+  /* Shadows */
+  --zv-shadow-sm: 0 2px 8px rgba(23, 53, 43, 0.04);
+  --zv-shadow-md: 0 10px 24px -8px rgba(23, 53, 43, 0.08);
+  --zv-shadow-lg: 0 24px 50px -16px rgba(23, 53, 43, 0.14);
+  --zv-shadow-shelf: 0 18px 30px -10px rgba(0, 0, 0, 0.28);
+  --zv-shadow-lift: 0 14px 34px -10px rgba(23, 53, 43, 0.18);
+  
+  /* Transitions */
+  --zv-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --zv-transition-fast: 0.18s var(--zv-ease);
+  --zv-transition-base: 0.28s var(--zv-ease);
+  --zv-transition-slow: 0.45s var(--zv-ease);
+}
+
+/* Base Utility Classes */
+.zv-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .zv-container {
+    padding: 0 40px;
+  }
+}
+
+.zv-section-pad {
+  padding: 64px 0;
+}
+
+@media screen and (min-width: 992px) {
+  .zv-section-pad {
+    padding: 96px 0;
+  }
+}
+
+.zv-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--zv-radius-full);
+}
+
+.zv-badge-lime {
+  background: var(--zv-accent);
+  color: var(--zv-accent-dark);
+}
+
+.zv-badge-forest {
+  background: var(--zv-primary);
+  color: #FFFFFF;
+}
+
+.zv-badge-success {
+  background: var(--zv-ok-tint);
+  color: var(--zv-ok);
+}
+
+.zv-badge-warn {
+  background: var(--zv-warn-tint);
+  color: var(--zv-warn);
+}
+
+/* Button System */
+.zv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--zv-font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  padding: 16px 32px;
+  border-radius: var(--zv-radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--zv-transition-fast);
+  border: none;
+  line-height: 1.2;
+}
+
+.zv-btn-primary {
+  background: var(--zv-primary);
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px -6px rgba(var(--zv-primary-rgb), 0.45);
+}
+
+.zv-btn-primary:hover {
+  background: var(--zv-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -8px rgba(var(--zv-primary-rgb), 0.55);
+}
+
+.zv-btn-accent {
+  background: var(--zv-accent);
+  color: var(--zv-accent-dark);
+  box-shadow: 0 8px 20px -6px rgba(188, 231, 106, 0.45);
+}
+
+.zv-btn-accent:hover {
+  background: var(--zv-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -8px rgba(188, 231, 106, 0.6);
+}
+
+.zv-btn-outline {
+  background: transparent;
+  color: var(--zv-primary);
+  border: 1.5px solid var(--zv-primary);
+}
+
+.zv-btn-outline:hover {
+  background: rgba(var(--zv-primary-rgb), 0.06);
+}
+
+.zv-btn-block {
+  width: 100%;
+}

@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "main": {
+      "type": "zavelyn-v4-pdp-main",
+      "settings": {}
+    },
+    "story": {
+      "type": "zavelyn-v4-pdp-story",
+      "settings": {}
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "story",
+    "shipping"
+  ]
+}

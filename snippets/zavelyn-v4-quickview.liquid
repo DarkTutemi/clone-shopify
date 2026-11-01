@@ -1,0 +1,71 @@
+{% comment %}
+  ZAVELYN IMMERSIVE COMMERCE THEME V4.0
+  CINEMATIC QUICK VIEW MODAL & MOBILE BOTTOM SHEET
+{% endcomment %}
+
+<div class="zv-qv-overlay" id="zvQvOverlay" role="dialog" aria-modal="true" aria-labelledby="zvQvTitle">
+  <div class="zv-qv-modal" id="zvQvModal">
+    <!-- Mobile Drag Handle -->
+    <div class="zv-qv-drag-handle" aria-hidden="true"></div>
+
+    <button type="button" class="zv-qv-close" id="zvQvClose" aria-label="Close Quick View">&times;</button>
+
+    <div class="zv-qv-body">
+      <!-- Media Column -->
+      <div class="zv-qv-gallery">
+        <img id="zvQvImg" src="" alt="Product Image" loading="eager">
+        <span class="zv-badge zv-badge-lime" id="zvQvSave" style="position: absolute; top: 14px; left: 14px; display: none;"></span>
+      </div>
+
+      <!-- Info Column -->
+      <div class="zv-qv-info">
+        <div class="zv-badge zv-badge-forest" style="align-self: flex-start; margin-bottom: 8px;">
+          ★ 4.9/5 · Verified Customer Favorite
+        </div>
+
+        <h3 class="zv-qv-title" id="zvQvTitle">Product Title</h3>
+
+        <div class="zv-qv-price-row">
+          <span class="zv-qv-price-current" id="zvQvPrice">$0.00</span>
+          <span class="zv-qv-price-compare" id="zvQvCompare" style="display: none;">$0.00</span>
+        </div>
+
+        <ul class="zv-qv-bullets">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Precision engineered for daily durability</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Dispatched within 24–48h from regional US hubs</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Protected by Zavelyn 30-Day Money-Back Guarantee</span>
+          </li>
+        </ul>
+
+        <!-- Dynamic Variant Swatches -->
+        <div id="zvQvVariantsWrap"></div>
+
+        <!-- Quantity & Add To Cart -->
+        <div class="zv-qv-actions">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 13px; font-weight: 700; color: var(--zv-heading);">Quantity:</span>
+            <div style="display: flex; align-items: center; background: var(--zv-surface-muted); border-radius: 999px; padding: 2px;">
+              <button type="button" id="zvQvQtyMinus" style="width: 30px; height: 30px; border-radius: 50%; border: none; background: #fff; font-weight: 800; cursor: pointer;" disabled>−</button>
+              <span id="zvQvQtyDisplay" style="min-width: 32px; text-align: center; font-weight: 800; font-size: 14px;">1</span>
+              <button type="button" id="zvQvQtyPlus" style="width: 30px; height: 30px; border-radius: 50%; border: none; background: #fff; font-weight: 800; cursor: pointer;">+</button>
+            </div>
+          </div>
+
+          <button type="button" class="zv-btn zv-btn-accent zv-btn-block" id="zvQvAtcBtn">
+            <span>ADD TO CART ➔</span>
+          </button>
+
+          <a href="#" class="zv-qv-pdp-link" id="zvQvPdpLink">View Full Product Details &amp; Specifications</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

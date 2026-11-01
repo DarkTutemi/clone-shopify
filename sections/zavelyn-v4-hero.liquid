@@ -1,0 +1,77 @@
+{% comment %}
+  ZAVELYN IMMERSIVE COMMERCE THEME V4.0
+  HOMEPAGE IMMERSIVE RETAIL HERO
+{% endcomment %}
+
+{{ 'zavelyn-v4-tokens.css' | asset_url | stylesheet_tag }}
+
+<section class="zv-hero-section" style="background: linear-gradient(180deg, #17352B 0%, #11261F 100%); color: #FFFFFF; padding: 72px 0 88px; position: relative; overflow: hidden;">
+  <!-- Atmospheric Background Ambient Glow -->
+  <div style="position: absolute; top: -120px; right: -120px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(188, 231, 106, 0.15) 0%, rgba(23, 53, 43, 0) 70%); pointer-events: none;"></div>
+  
+  <div class="zv-container" style="position: relative; z-index: 2;">
+    <div style="max-width: 820px; margin: 0 auto; text-align: center;">
+      <div class="zv-badge zv-badge-lime" style="margin-bottom: 20px;">
+        ✨ ZAVELYN RETAIL SHOWROOM V4.0 · OFFICIAL STORE
+      </div>
+
+      <h1 style="font-family: var(--zv-font-heading); font-size: 38px; line-height: 1.12; font-weight: 800; letter-spacing: -0.8px; margin: 0 0 20px; color: #FFFFFF;">
+        {{ section.settings.heading | default: "Step Inside America's Most Innovative Home & Lifestyle Showrooms" }}
+      </h1>
+
+      <p style="font-size: 17.5px; line-height: 1.6; color: #D1DDD6; margin: 0 auto 36px; max-width: 680px;">
+        {{ section.settings.subheading | default: "Browse realistic 2.5D physical product shelves, inspect craftsmanship with interactive 360 zooms, and shop uncompromised quality with 30-day money-back protection." }}
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 48px;">
+        <a href="#zvStores" class="zv-btn zv-btn-accent" style="padding: 18px 36px; font-size: 16px;">
+          <span>ENTER SHOWROOMS ➔</span>
+        </a>
+        <a href="/collections/all-products" class="zv-btn zv-btn-outline" style="border-color: rgba(255, 255, 255, 0.4); color: #FFFFFF; padding: 18px 36px;">
+          <span>BROWSE ALL PRODUCTS</span>
+        </a>
+      </div>
+
+      <!-- Trust Badges Strip -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 32px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 13.5px; font-weight: 700; color: #C9D6CE;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="color: var(--zv-accent);">✓</span> Free US Delivery Over $49
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="color: var(--zv-accent);">✓</span> 30-Day Money-Back Guarantee
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="color: var(--zv-accent);">✓</span> 24–48h US Warehouse Dispatch
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="color: var(--zv-accent);">✓</span> 256-Bit SSL Encrypted Checkout
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zavelyn V4 Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Step Inside America's Most Innovative Home & Lifestyle Showrooms"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Browse realistic 2.5D physical product shelves, inspect craftsmanship with interactive 360 zooms, and shop uncompromised quality with 30-day money-back protection."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zavelyn V4 Hero"
+    }
+  ]
+}
+{% endschema %}

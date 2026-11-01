@@ -1,0 +1,193 @@
+{% comment %}
+  ZAVELYN IMMERSIVE COMMERCE THEME V4.0
+  CORE FEATURE: 2.5D PHYSICAL RETAIL SHOWROOM (COLLECTION TEMPLATE)
+{% endcomment %}
+
+{{ 'zavelyn-v4-tokens.css' | asset_url | stylesheet_tag }}
+{{ 'zavelyn-v4-showroom.css' | asset_url | stylesheet_tag }}
+
+{% assign shelf_style = section.settings.shelf_style | default: 'wood' %}
+{% if collection.handle contains 'tool' or collection.handle contains 'power' %}
+  {% assign shelf_style = 'metal' %}
+{% elsif collection.handle contains 'handpan' or collection.handle contains 'drum' %}
+  {% assign shelf_style = 'tech' %}
+{% elsif collection.handle contains 'wellness' or collection.handle contains 'denture' or collection.handle contains 'batana' %}
+  {% assign shelf_style = 'boutique' %}
+{% endif %}
+
+<div class="zv-showroom-wrapper shelf-theme-{{ shelf_style }}">
+
+  <!-- SHOWROOM ATMOSPHERIC HEADER -->
+  <header class="zv-showroom-header">
+    <div class="zv-container">
+      <div class="zv-showroom-title-row">
+        <div>
+          <div class="zv-showroom-eyebrow">
+            <span>🏛️ ZAVELYN DIGITAL SHOWROOM</span>
+            <span>&middot;</span>
+            <span>{{ shelf_style | capitalize }} Display Edition</span>
+          </div>
+          <h1 class="zv-showroom-h1">{{ collection.title }}</h1>
+          <div class="zv-showroom-desc">
+            {{ collection.description | default: "Step into our interactive showroom. All items are displayed on authentic physical shelves with real-time stock and instant 1-click Quick View." }}
+          </div>
+        </div>
+
+        <!-- Toolbar & View Switcher -->
+        <div class="zv-showroom-toolbar">
+          <div class="zv-showroom-stats">
+            <strong>{{ collection.products_count }}</strong> Products Available
+          </div>
+
+          <div class="zv-view-switcher" role="group" aria-label="Display View Mode">
+            <button type="button" class="zv-view-btn active" data-view-mode="shelf" title="2.5D Physical Showroom Shelves">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+              <span>Showroom</span>
+            </button>
+            <button type="button" class="zv-view-btn" data-view-mode="grid" title="Standard Catalog Grid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              <span>Grid</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2.5D SHELF SHOWROOM STAGE -->
+  <main class="zv-showroom-stage" id="zvShowroomStage">
+    <div class="zv-container">
+
+      {% paginate collection.products by 24 %}
+        {% assign items_per_shelf = 4 %}
+        {% assign total_products = collection.products.size %}
+
+        {% for product in collection.products %}
+          {% assign mod_index = forloop.index0 | modulo: items_per_shelf %}
+
+          {% comment %} Start a new shelf row every 4 products {% endcomment %}
+          {% if mod_index == 0 %}
+            <div class="zv-shelf-tier">
+              <div class="zv-shelf-products">
+          {% endif %}
+
+                <!-- Single Product Display on Shelf -->
+                {% assign current_variant = product.selected_or_first_available_variant %}
+                {% assign has_compare = false %}
+                {% if current_variant.compare_at_price > current_variant.price %}
+                  {% assign has_compare = true %}
+                  {% assign save_percent = current_variant.compare_at_price | minus: current_variant.price | times: 100.0 | divided_by: current_variant.compare_at_price | round %}
+                {% endif %}
+
+                <article 
+                  class="zv-shelf-item" 
+                  data-product-id="{{ product.id }}" 
+                  data-product-url="{{ product.url }}"
+                  data-product-json="{{ product | json | escape }}"
+                  tabindex="0"
+                  role="button"
+                  aria-label="{{ product.title | escape }} - {{ current_variant.price | money }}"
+                >
+                  <!-- Visual Media Container -->
+                  <div class="zv-shelf-media-wrap">
+                    {% if product.featured_image %}
+                      <img 
+                        src="{{ product.featured_image | image_url: width: 480 }}" 
+                        alt="{{ product.title | escape }}" 
+                        loading="lazy" 
+                        class="zv-shelf-img"
+                        width="240"
+                        height="240"
+                      >
+                    {% else %}
+                      {{ 'product-1' | placeholder_svg_tag: 'zv-shelf-img' }}
+                    {% endif %}
+                    
+                    <!-- Under-product realistic shadow plane -->
+                    <div class="zv-shelf-shadow-disc"></div>
+                  </div>
+
+                  <!-- Shelf Label Plate -->
+                  <div class="zv-shelf-label-plate">
+                    {% if has_compare %}
+                      <span class="zv-badge zv-badge-lime zv-shelf-tag-badge">SAVE {{ save_percent }}%</span>
+                    {% endif %}
+
+                    <h3 class="zv-shelf-item-title">{{ product.title }}</h3>
+
+                    <div class="zv-shelf-price-row">
+                      <span class="zv-shelf-price-current">{{ current_variant.price | money }}</span>
+                      {% if has_compare %}
+                        <span class="zv-shelf-price-compare">{{ current_variant.compare_at_price | money }}</span>
+                      {% endif %}
+                    </div>
+
+                    <button type="button" class="zv-shelf-quickbuy-btn">
+                      <span>⚡ Quick View</span>
+                    </button>
+                  </div>
+                </article>
+
+          {% comment %} Close shelf row every 4 products or at the end of collection {% endcomment %}
+          {% if mod_index == 3 or forloop.last %}
+              </div>
+
+              <!-- Physical 3D Shelf Surface Structure -->
+              <div class="zv-physical-shelf" aria-hidden="true">
+                <div class="zv-shelf-surface-top"></div>
+                <div class="zv-shelf-surface-front">
+                  <div style="font-size: 10px; font-weight: 800; letter-spacing: 1.5px; opacity: 0.65; color: #FFFFFF; text-transform: uppercase;">
+                    ZAVELYN RETAIL SPEC &middot; BAY {{ forloop.index0 | divided_by: 4 | plus: 1 }}
+                  </div>
+                </div>
+                <div class="zv-shelf-surface-shadow"></div>
+              </div>
+            </div>
+          {% endif %}
+
+        {% else %}
+          <div style="text-align: center; padding: 64px 0; color: var(--zv-muted);">
+            <h3>No products found in this showroom.</h3>
+            <p>Please check back soon or browse our other store departments.</p>
+          </div>
+        {% endfor %}
+
+        <!-- Accessible Pagination -->
+        {% if paginate.pages > 1 %}
+          <div style="display: flex; justify-content: center; gap: 8px; margin-top: 48px;">
+            {{ paginate | default_pagination }}
+          </div>
+        {% endif %}
+
+      {% endpaginate %}
+
+    </div>
+  </main>
+
+  <!-- QUICK VIEW CINEMATIC MODAL & BOTTOM SHEET -->
+  {% render 'zavelyn-v4-quickview' %}
+
+</div>
+
+<script src="{{ 'zavelyn-v4-showroom.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Zavelyn V4 Showroom",
+  "settings": [
+    {
+      "type": "select",
+      "id": "shelf_style",
+      "label": "Default Shelf Style",
+      "options": [
+        { "value": "wood", "label": "Natural Oak Wood" },
+        { "value": "metal", "label": "Industrial Steel Metal" },
+        { "value": "boutique", "label": "Minimalist White Boutique" },
+        { "value": "tech", "label": "Dark Obsidian Tech" },
+        { "value": "floating", "label": "Floating Minimalist Glass" }
+      ],
+      "default": "wood"
+    }
+  ]
+}
+{% endschema %}

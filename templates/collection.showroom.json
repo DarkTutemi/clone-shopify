@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "showroom": {
+      "type": "zavelyn-v4-showroom",
+      "settings": {
+        "shelf_style": "wood"
+      }
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {}
+    }
+  },
+  "order": [
+    "showroom",
+    "shipping"
+  ]
+}

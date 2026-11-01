@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "top_banner": {
+      "type": "zavelyn-top-banner",
+      "settings": {
+        "badge_text": "SHOWROOM V4.0",
+        "main_text": "EXPLORE 2.5D RETAIL SHOWROOMS · FREE US SHIPPING OVER $49",
+        "timer_end": "Live Now"
+      }
+    },
+    "hero": {
+      "type": "zavelyn-v4-hero",
+      "settings": {
+        "heading": "Step Inside America's Most Innovative Home & Lifestyle Showrooms",
+        "subheading": "Browse realistic 2.5D physical product shelves, inspect craftsmanship with interactive 360 zooms, and shop uncompromised quality with 30-day money-back protection."
+      }
+    },
+    "stores": {
+      "type": "zavelyn-v4-stores",
+      "settings": {}
+    },
+    "ticker": {
+      "type": "zavelyn-ticker",
+      "settings": {}
+    },
+    "bestsellers": {
+      "type": "zavelyn-bestsellers",
+      "settings": {
+        "heading": "Popular Zavelyn Best Sellers",
+        "subhead": "Real customer favorites engineered for reliability, durability, and time-saving efficiency.",
+        "collection": "best-sellers"
+      }
+    },
+    "pain_solution": {
+      "type": "zavelyn-pain-solution",
+      "settings": {
+        "heading": "Stop Buying Tools That Break.<br><span>Let Zavelyn Take Over.<\/span>",
+        "subhead": "You don't need another brittle gadget lying dead in your workshop. You need heavy-duty precision engineered to handle real-world tasks effortlessly."
+      }
+    },
+    "comparison": {
+      "type": "zavelyn-comparison-elixir",
+      "settings": {}
+    },
+    "faq": {
+      "type": "zavelyn-faq-elixir",
+      "settings": {}
+    }
+  },
+  "order": [
+    "top_banner",
+    "hero",
+    "stores",
+    "ticker",
+    "bestsellers",
+    "pain_solution",
+    "comparison",
+    "faq"
+  ]
+}

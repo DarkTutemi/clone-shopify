@@ -1,0 +1,631 @@
+/**
+ * ZAVELYN IMMERSIVE COMMERCE THEME V4.0
+ * PDP BUY BOX & CRO CONVERSION SYSTEM (INSPIRED BY SHOPSIDEK T01)
+ */
+
+/* ==========================================================================
+   PDP HERO BUY BOX LAYOUT
+   ========================================================================== */
+.zv-pdp-hero {
+  padding: 32px 0 64px;
+  background: #FFFFFF;
+}
+
+.zv-pdp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+@media screen and (min-width: 992px) {
+  .zv-pdp-grid {
+    grid-template-columns: 52% 48%;
+    gap: 48px;
+    align-items: start;
+  }
+}
+
+/* Sticky Gallery Column */
+.zv-pdp-gallery-col {
+  position: relative;
+}
+
+@media screen and (min-width: 992px) {
+  .zv-pdp-gallery-col {
+    position: sticky;
+    top: 96px;
+  }
+}
+
+.zv-pdp-main-media {
+  position: relative;
+  border-radius: var(--zv-radius-xl);
+  overflow: hidden;
+  background: var(--zv-surface-muted);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--zv-border);
+}
+
+.zv-pdp-main-img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  transition: transform var(--zv-transition-base);
+}
+
+.zv-pdp-save-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--zv-accent);
+  color: var(--zv-accent-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  padding: 6px 14px;
+  border-radius: var(--zv-radius-full);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.zv-pdp-thumbs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.zv-pdp-thumb {
+  border-radius: var(--zv-radius-md);
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--zv-surface-muted);
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 4px;
+  transition: all var(--zv-transition-fast);
+}
+
+.zv-pdp-thumb.active {
+  border-color: var(--zv-primary);
+  background: #FFFFFF;
+}
+
+.zv-pdp-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   BUY BOX INFORMATION & BUNDLE ENGINE
+   ========================================================================== */
+.zv-pdp-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.zv-pdp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  color: var(--zv-primary);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.zv-pdp-title {
+  font-family: var(--zv-font-heading);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+  color: var(--zv-heading);
+  margin: 0 0 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .zv-pdp-title {
+    font-size: 36px;
+  }
+}
+
+.zv-pdp-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--zv-muted);
+  margin-bottom: 16px;
+}
+
+.zv-stars {
+  color: #E5A93C;
+  letter-spacing: 1px;
+}
+
+.zv-pdp-price-hero {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.zv-price-active {
+  font-family: var(--zv-font-heading);
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--zv-primary);
+}
+
+.zv-price-compare {
+  font-size: 20px;
+  color: var(--zv-muted);
+  text-decoration: line-through;
+}
+
+.zv-price-savings {
+  background: var(--zv-ok-tint);
+  color: var(--zv-ok);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--zv-radius-full);
+}
+
+.zv-pdp-lead {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--zv-body);
+  margin-bottom: 18px;
+}
+
+.zv-pdp-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: grid;
+  gap: 10px;
+}
+
+.zv-pdp-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--zv-heading);
+  font-weight: 600;
+}
+
+.zv-pdp-benefits svg {
+  width: 18px;
+  height: 18px;
+  color: var(--zv-ok);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   TIERED BUNDLE SELECTOR (KACHING / SHOPSIDEK PATTERN)
+   ========================================================================== */
+.zv-bundle-box {
+  background: var(--zv-bg);
+  border: 1.5px solid var(--zv-border);
+  border-radius: var(--zv-radius-xl);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.zv-bundle-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.zv-bundle-title {
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--zv-primary);
+}
+
+.zv-bundle-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--zv-ok);
+}
+
+.zv-bundle-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zv-bundle-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 2px solid var(--zv-border);
+  border-radius: var(--zv-radius-lg);
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: all var(--zv-transition-fast);
+}
+
+.zv-bundle-card:hover {
+  border-color: #B5C4BC;
+}
+
+.zv-bundle-card.selected {
+  border-color: var(--zv-primary);
+  background: #F8FAF8;
+  box-shadow: 0 6px 18px -4px rgba(23, 53, 43, 0.12);
+}
+
+.zv-bundle-card-badge {
+  position: absolute;
+  top: -11px;
+  right: 18px;
+  background: var(--zv-primary);
+  color: #FFFFFF;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--zv-radius-full);
+}
+
+.zv-bundle-card-badge.lime {
+  background: var(--zv-accent);
+  color: var(--zv-accent-dark);
+}
+
+.zv-bundle-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.zv-bundle-card-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.zv-bundle-radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #CBD5CD;
+  background: #FFFFFF;
+  position: relative;
+  transition: all var(--zv-transition-fast);
+  flex-shrink: 0;
+}
+
+.zv-bundle-card.selected .zv-bundle-radio {
+  border-color: var(--zv-primary);
+  background: var(--zv-primary);
+  box-shadow: inset 0 0 0 4px #FFFFFF;
+}
+
+.zv-bundle-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.zv-bundle-card-name {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--zv-heading);
+}
+
+.zv-bundle-card-sub {
+  font-size: 12.5px;
+  color: var(--zv-muted);
+  margin-top: 2px;
+}
+
+.zv-bundle-card-pricing {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.zv-bundle-card-total {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--zv-primary);
+  display: block;
+}
+
+.zv-bundle-card-unit {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--zv-ok);
+  background: var(--zv-ok-tint);
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   GIFT & SHIPPING UNLOCK PROGRESSION BAR
+   ========================================================================== */
+.zv-gift-unlock {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: var(--zv-radius-md);
+  border: 1.5px dashed #CBD5CD;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all var(--zv-transition-base);
+}
+
+.zv-gift-unlock.unlocked {
+  border-style: solid;
+  border-color: var(--zv-ok);
+  background: var(--zv-ok-tint);
+}
+
+.zv-gift-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--zv-radius-sm);
+  background: var(--zv-surface-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.zv-gift-text {
+  flex: 1;
+}
+
+.zv-gift-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--zv-heading);
+  display: block;
+}
+
+.zv-gift-sub {
+  font-size: 12px;
+  color: var(--zv-muted);
+}
+
+.zv-gift-status-badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--zv-radius-full);
+  background: var(--zv-surface-muted);
+  color: var(--zv-muted);
+}
+
+.zv-gift-unlock.unlocked .zv-gift-status-badge {
+  background: var(--zv-ok);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   PRIMARY CTAS & WILLA CART INTEGRATION
+   ========================================================================== */
+.zv-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.zv-btn-claim {
+  background: var(--zv-accent);
+  color: var(--zv-accent-dark);
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  padding: 18px 24px;
+  border-radius: var(--zv-radius-md);
+  box-shadow: 0 10px 24px -6px rgba(188, 231, 106, 0.6);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all var(--zv-transition-fast);
+}
+
+.zv-btn-claim:hover {
+  background: var(--zv-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -6px rgba(188, 231, 106, 0.7);
+}
+
+.zv-btn-buynow {
+  background: var(--zv-primary);
+  color: #FFFFFF;
+  font-size: 14.5px;
+  font-weight: 800;
+  padding: 14px 24px;
+  border-radius: var(--zv-radius-md);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--zv-transition-fast);
+}
+
+.zv-btn-buynow:hover {
+  background: var(--zv-primary-hover);
+}
+
+/* Delivery Progress Stepper */
+.zv-delivery-stepper {
+  background: var(--zv-bg);
+  border: 1px solid var(--zv-border);
+  border-radius: var(--zv-radius-md);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+}
+
+.zv-stepper-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  text-align: center;
+}
+
+.zv-stepper-row::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--zv-border);
+  z-index: 1;
+}
+
+.zv-step {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.zv-step-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid var(--zv-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--zv-muted);
+}
+
+.zv-step.active .zv-step-dot {
+  background: var(--zv-primary);
+  border-color: var(--zv-primary);
+  color: #FFFFFF;
+}
+
+.zv-step-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--zv-heading);
+}
+
+.zv-step-sub {
+  font-size: 10.5px;
+  color: var(--zv-muted);
+}
+
+/* Trust Strip */
+.zv-trust-badges-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--zv-border);
+}
+
+.zv-trust-badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.zv-trust-badge-item svg {
+  width: 22px;
+  height: 22px;
+  color: var(--zv-primary);
+}
+
+.zv-trust-badge-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--zv-heading);
+}
+
+.zv-trust-badge-desc {
+  font-size: 11px;
+  color: var(--zv-muted);
+}
+
+/* ==========================================================================
+   STICKY ATC BAR (ON SCROLL)
+   ========================================================================== */
+.zv-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border-top: 1px solid var(--zv-border);
+  padding: 12px 24px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  z-index: 999;
+  transform: translateY(100%);
+  transition: transform var(--zv-transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.zv-sticky-bar.visible {
+  transform: translateY(0);
+}
+
+.zv-sticky-prod-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.zv-sticky-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--zv-radius-sm);
+  object-fit: contain;
+  background: var(--zv-surface-muted);
+}
+
+.zv-sticky-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--zv-heading);
+}
+
+.zv-sticky-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--zv-primary);
+}

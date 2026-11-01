@@ -1,0 +1,202 @@
+{% comment %}
+  ZAVELYN IMMERSIVE COMMERCE THEME V4.0
+  CRO STORYTELLING, MECHANISM, COMPARISON & FAQ (INSPIRED BY SHOPSIDEK T01)
+{% endcomment %}
+
+{{ 'zavelyn-v4-tokens.css' | asset_url | stylesheet_tag }}
+
+<!-- SECTION 1: CUSTOMER PROBLEM & DESIRED OUTCOME -->
+<section class="zv-section-pad" style="background: var(--zv-surface-muted);">
+  <div class="zv-container">
+    <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+      <span class="zv-badge zv-badge-forest" style="margin-bottom: 12px;">THE PROBLEM VS. THE SOLUTION</span>
+      <h2 style="font-family: var(--zv-font-heading); font-size: 32px; font-weight: 800; color: var(--zv-heading); line-height: 1.2; margin: 0 0 16px;">
+        Why Most Ordinary Alternatives Fall Short
+      </h2>
+      <p style="font-size: 16px; line-height: 1.6; color: var(--zv-body); margin-bottom: 36px;">
+        Traditional mass-market alternatives often compromise on material density, ergonomic design, and long-term durability — leaving you frustrated with repeated replacements.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 980px; margin: 0 auto;">
+      <div style="background: #FFFFFF; border: 1.5px solid #F0D5D5; border-radius: var(--zv-radius-lg); padding: 28px; box-shadow: var(--zv-shadow-sm);">
+        <div style="font-size: 13px; font-weight: 800; color: #C62828; text-transform: uppercase; margin-bottom: 8px;">✕ The Frustration</div>
+        <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 10px;">Fragile, Short-Lived Equipment</h3>
+        <p style="font-size: 14.5px; color: var(--zv-body); line-height: 1.5; margin: 0;">Flimsy components, awkward handling, and lack of manufacturer accountability cause recurring clutter and wasted expense.</p>
+      </div>
+
+      <div style="background: #FFFFFF; border: 2px solid var(--zv-primary); border-radius: var(--zv-radius-lg); padding: 28px; box-shadow: var(--zv-shadow-md); position: relative;">
+        <span class="zv-badge zv-badge-lime" style="position: absolute; top: -11px; right: 20px;">THE ZAVELYN STANDARD</span>
+        <div style="font-size: 13px; font-weight: 800; color: var(--zv-ok); text-transform: uppercase; margin-bottom: 8px;">✓ The Desired Outcome</div>
+        <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 10px;">Industrial-Grade Daily Reliability</h3>
+        <p style="font-size: 14.5px; color: var(--zv-body); line-height: 1.5; margin: 0;">Engineered with reinforced structural integrity, intuitive usability, and 100% satisfaction protection for true peace of mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: INTERACTIVE CATEGORY EXPLAINER (TABS) -->
+<section class="zv-section-pad" style="background: #FFFFFF;">
+  <div class="zv-container">
+    <div style="text-align: center; max-width: 680px; margin: 0 auto 40px;">
+      <span class="zv-badge zv-badge-forest" style="margin-bottom: 12px;">PRACTICAL SUITABILITY GUIDE</span>
+      <h2 style="font-family: var(--zv-font-heading); font-size: 32px; font-weight: 800; color: var(--zv-heading); line-height: 1.2; margin: 0 0 14px;">
+        Designed for Multiple Daily Environments
+      </h2>
+      <p style="font-size: 16px; color: var(--zv-body); line-height: 1.6; margin: 0;">
+        Explore how Zavelyn's versatile engineering adapts to your specific spaces and everyday routines.
+      </p>
+
+      <!-- Explainer Tabs -->
+      <div style="display: inline-flex; background: var(--zv-surface-muted); border-radius: var(--zv-radius-full); padding: 4px; gap: 6px; margin-top: 24px;">
+        <button type="button" class="zv-explainer-tab active" data-target="expPanel1" style="padding: 8px 20px; border-radius: 999px; border: none; font-weight: 800; font-size: 13.5px; cursor: pointer; background: var(--zv-primary); color: #FFFFFF;">
+          Everyday Use
+        </button>
+        <button type="button" class="zv-explainer-tab" data-target="expPanel2" style="padding: 8px 20px; border-radius: 999px; border: none; font-weight: 800; font-size: 13.5px; cursor: pointer; background: transparent; color: var(--zv-heading);">
+          Heavy-Duty Performance
+        </button>
+        <button type="button" class="zv-explainer-tab" data-target="expPanel3" style="padding: 8px 20px; border-radius: 999px; border: none; font-weight: 800; font-size: 13.5px; cursor: pointer; background: transparent; color: var(--zv-heading);">
+          Space &amp; Care
+        </button>
+      </div>
+    </div>
+
+    <!-- Explainer Panels -->
+    <div style="max-width: 860px; margin: 0 auto;">
+      <div class="zv-explainer-panel active" id="expPanel1" style="background: var(--zv-bg); border-radius: var(--zv-radius-xl); padding: 32px; border: 1px solid var(--zv-border);">
+        <h3 style="font-size: 20px; font-weight: 800; margin: 0 0 12px;">Effortless Daily Integration</h3>
+        <p style="font-size: 15.5px; line-height: 1.6; color: var(--zv-body); margin: 0 0 16px;">Set up in seconds without complicated tools or professional assistance. Engineered for natural, ergonomic daily interaction whether in living spaces, workshops, or bedrooms.</p>
+        <div style="display: flex; gap: 20px; font-size: 13.5px; font-weight: 700; color: var(--zv-primary);">
+          <span>✓ Instant setup</span>
+          <span>✓ Minimal footprint</span>
+          <span>✓ Zero maintenance hassle</span>
+        </div>
+      </div>
+
+      <div class="zv-explainer-panel" id="expPanel2" style="display: none; background: var(--zv-bg); border-radius: var(--zv-radius-xl); padding: 32px; border: 1px solid var(--zv-border);">
+        <h3 style="font-size: 20px; font-weight: 800; margin: 0 0 12px;">Stress-Tested Engineering</h3>
+        <p style="font-size: 15.5px; line-height: 1.6; color: var(--zv-body); margin: 0 0 16px;">Built using reinforced composites and precision seams designed to withstand continuous pressure, frequent movement, and heavy loads without deformation.</p>
+        <div style="display: flex; gap: 20px; font-size: 13.5px; font-weight: 700; color: var(--zv-primary);">
+          <span>✓ High-tensile materials</span>
+          <span>✓ Impact &amp; wear resistant</span>
+          <span>✓ Long-term structural retention</span>
+        </div>
+      </div>
+
+      <div class="zv-explainer-panel" id="expPanel3" style="display: none; background: var(--zv-bg); border-radius: var(--zv-radius-xl); padding: 32px; border: 1px solid var(--zv-border);">
+        <h3 style="font-size: 20px; font-weight: 800; margin: 0 0 12px;">Smart Space Optimization</h3>
+        <p style="font-size: 15.5px; line-height: 1.6; color: var(--zv-body); margin: 0 0 16px;">When not in active use, compact folding and modular stacking features allow you to reclaim valuable space immediately.</p>
+        <div style="display: flex; gap: 20px; font-size: 13.5px; font-weight: 700; color: var(--zv-primary);">
+          <span>✓ Folds flat</span>
+          <span>✓ Dust &amp; moisture protected</span>
+          <span>✓ Simple wipe-clean care</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: THE ZAVELYN DIFFERENCE (COMPARISON MATRIX) -->
+<section class="zv-section-pad" style="background: var(--zv-surface-muted);">
+  <div class="zv-container">
+    <div style="text-align: center; max-width: 680px; margin: 0 auto 40px;">
+      <span class="zv-badge zv-badge-forest" style="margin-bottom: 12px;">HEAD-TO-HEAD COMPARISON</span>
+      <h2 style="font-family: var(--zv-font-heading); font-size: 32px; font-weight: 800; color: var(--zv-heading); line-height: 1.2; margin: 0 0 14px;">
+        The Zavelyn Standard vs. Ordinary Brands
+      </h2>
+    </div>
+
+    <div style="max-width: 820px; margin: 0 auto; background: #FFFFFF; border-radius: var(--zv-radius-xl); overflow: hidden; border: 1px solid var(--zv-border); box-shadow: var(--zv-shadow-md);">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; background: var(--zv-primary); color: #FFFFFF; padding: 16px 24px; font-weight: 800; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.8px;">
+        <span>Feature / Standard</span>
+        <span style="color: var(--zv-accent);">Zavelyn Innovations</span>
+        <span style="color: #CFD8DC;">Standard Market</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; padding: 18px 24px; border-bottom: 1px solid var(--zv-border); font-size: 14.5px; align-items: center;">
+        <strong>Material &amp; Build Quality</strong>
+        <span style="color: var(--zv-ok); font-weight: 700;">✓ Heavy-Duty Reinforced</span>
+        <span style="color: var(--zv-muted);">Thin Generic Plastic</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; padding: 18px 24px; border-bottom: 1px solid var(--zv-border); font-size: 14.5px; align-items: center; background: #FAFBF9;">
+        <strong>US Warehouse Fulfillment</strong>
+        <span style="color: var(--zv-ok); font-weight: 700;">✓ 24–48h Dispatch</span>
+        <span style="color: var(--zv-muted);">Weeks from Overseas</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; padding: 18px 24px; border-bottom: 1px solid var(--zv-border); font-size: 14.5px; align-items: center;">
+        <strong>Satisfaction Guarantee</strong>
+        <span style="color: var(--zv-ok); font-weight: 700;">✓ 30-Day Money-Back</span>
+        <span style="color: var(--zv-muted);">No Return Support</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; padding: 18px 24px; font-size: 14.5px; align-items: center; background: #FAFBF9;">
+        <strong>Customer Support</strong>
+        <span style="color: var(--zv-ok); font-weight: 700;">✓ Dedicated US Team</span>
+        <span style="color: var(--zv-muted);">Automated Bots</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: FREQUENTLY ASKED QUESTIONS -->
+<section class="zv-section-pad" style="background: #FFFFFF;">
+  <div class="zv-container" style="max-width: 800px;">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <span class="zv-badge zv-badge-forest" style="margin-bottom: 12px;">GOT QUESTIONS?</span>
+      <h2 style="font-family: var(--zv-font-heading); font-size: 32px; font-weight: 800; color: var(--zv-heading); line-height: 1.2; margin: 0 0 14px;">
+        Frequently Asked Questions
+      </h2>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <details style="background: var(--zv-bg); border: 1px solid var(--zv-border); border-radius: var(--zv-radius-lg); padding: 18px 22px; cursor: pointer;" open>
+        <summary style="font-size: 16px; font-weight: 800; color: var(--zv-heading); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <span>How does the 30-Day Money-Back Guarantee work?</span>
+          <span style="font-size: 20px;">▾</span>
+        </summary>
+        <p style="font-size: 14.5px; line-height: 1.6; color: var(--zv-body); margin: 12px 0 0;">We want you to experience Zavelyn products completely risk-free. If for any reason you are not completely thrilled with your purchase within 30 days of doorstep delivery, simply contact our US support team for an effortless return and full refund.</p>
+      </details>
+
+      <details style="background: var(--zv-bg); border: 1px solid var(--zv-border); border-radius: var(--zv-radius-lg); padding: 18px 22px; cursor: pointer;">
+        <summary style="font-size: 16px; font-weight: 800; color: var(--zv-heading); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <span>When will my order ship and how do I track it?</span>
+          <span style="font-size: 20px;">▾</span>
+        </summary>
+        <p style="font-size: 14.5px; line-height: 1.6; color: var(--zv-body); margin: 12px 0 0;">All orders are processed and dispatched from regional US fulfillment centers within 24–48 business hours. As soon as your parcel is scanned by the carrier (USPS, FedEx, or DHL), you will receive a tracking link via email and SMS.</p>
+      </details>
+
+      <details style="background: var(--zv-bg); border: 1px solid var(--zv-border); border-radius: var(--zv-radius-lg); padding: 18px 22px; cursor: pointer;">
+        <summary style="font-size: 16px; font-weight: 800; color: var(--zv-heading); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <span>Are the bundle discount prices already applied?</span>
+          <span style="font-size: 20px;">▾</span>
+        </summary>
+        <p style="font-size: 14.5px; line-height: 1.6; color: var(--zv-body); margin: 12px 0 0;">Yes! The bundle tier prices shown in the buy box already reflect our volume savings and promotional discounts. You do not need to enter any coupons at checkout to receive the configured price.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: FINAL CRO PURCHASE CTA -->
+<section style="background: var(--zv-primary); color: #FFFFFF; padding: 72px 0; text-align: center;">
+  <div class="zv-container" style="max-width: 680px;">
+    <span class="zv-badge zv-badge-lime" style="margin-bottom: 16px;">100% SATISFACTION ASSURED</span>
+    <h2 style="font-family: var(--zv-font-heading); font-size: 36px; font-weight: 800; color: #FFFFFF; line-height: 1.2; margin: 0 0 16px;">
+      Make More Room for What Matters
+    </h2>
+    <p style="font-size: 16.5px; line-height: 1.6; color: #D1DDD6; margin: 0 0 32px;">
+      Join thousands of satisfied American households who rely on Zavelyn daily for smart organization, reliability, and verified performance.
+    </p>
+    <a href="#zvBuyBox" class="zv-btn zv-btn-accent" style="padding: 18px 40px; font-size: 16px;">
+      <span>CLAIM YOUR OFFER TODAY ➔</span>
+    </a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zavelyn V4 PDP Story",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,280 @@
+{% comment %}
+  ZAVELYN IMMERSIVE COMMERCE THEME V4.0
+  CRO BUY BOX HERO & BUNDLE ENGINE (INSPIRED BY SHOPSIDEK T01)
+{% endcomment %}
+
+{{ 'zavelyn-v4-tokens.css' | asset_url | stylesheet_tag }}
+{{ 'zavelyn-v4-pdp.css' | asset_url | stylesheet_tag }}
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign has_compare = false %}
+{% if current_variant.compare_at_price > current_variant.price %}
+  {% assign has_compare = true %}
+  {% assign save_pct = current_variant.compare_at_price | minus: current_variant.price | times: 100.0 | divided_by: current_variant.compare_at_price | round %}
+{% endif %}
+
+<section 
+  class="zv-pdp-hero" 
+  id="zvBuyBox"
+  data-initial-variant-id="{{ current_variant.id }}"
+  data-initial-price="{{ current_variant.price }}"
+  data-initial-compare="{{ current_variant.compare_at_price | default: current_variant.price }}"
+>
+  <div class="zv-container">
+    <div class="zv-pdp-grid">
+
+      <!-- LEFT COLUMN: STICKY PRODUCT GALLERY -->
+      <div class="zv-pdp-gallery-col">
+        <div class="zv-pdp-main-media">
+          {% if has_compare %}
+            <span class="zv-pdp-save-badge" id="zvPriceSavings">SAVE {{ save_pct }}%</span>
+          {% endif %}
+
+          {% if product.featured_image %}
+            <img 
+              id="zvMainImg" 
+              src="{{ product.featured_image | image_url: width: 900 }}" 
+              alt="{{ product.title | escape }}" 
+              class="zv-pdp-main-img"
+              width="600"
+              height="600"
+              loading="eager"
+            >
+          {% else %}
+            {{ 'product-1' | placeholder_svg_tag: 'zv-pdp-main-img' }}
+          {% endif %}
+        </div>
+
+        <!-- Thumbnails -->
+        {% if product.images.size > 1 %}
+          <div class="zv-pdp-thumbs">
+            {% for img in product.images limit: 6 %}
+              <div class="zv-pdp-thumb {% if forloop.first %}active{% endif %}" data-src="{{ img | image_url: width: 900 }}">
+                <img src="{{ img | image_url: width: 140 }}" alt="{{ img.alt | escape }}" loading="lazy">
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- RIGHT COLUMN: CRO BUY BOX INFO & BUNDLE ENGINE -->
+      <div class="zv-pdp-info-col">
+        <div class="zv-pdp-eyebrow">
+          <span>🏛️ ZAVELYN INNOVATIONS &middot; US DIRECT</span>
+        </div>
+
+        <h1 class="zv-pdp-title">{{ product.title }}</h1>
+
+        <!-- Star Rating -->
+        <div class="zv-pdp-rating-row">
+          <span class="zv-stars">★★★★★</span>
+          <span>4.9 / 5.0</span>
+          <span>&middot;</span>
+          <span>3,400+ Verified US Reviews</span>
+        </div>
+
+        <!-- Price Hero -->
+        <div class="zv-pdp-price-hero">
+          <span class="zv-price-active" id="zvPriceActive">{{ current_variant.price | money }}</span>
+          {% if has_compare %}
+            <span class="zv-price-compare" id="zvPriceCompare">{{ current_variant.compare_at_price | money }}</span>
+          {% endif %}
+        </div>
+
+        <!-- Lead Description -->
+        <div class="zv-pdp-lead">
+          {{ product.description | strip_html | truncatewords: 35 | default: "Engineered with industrial precision and built for long-term daily performance. Backed by our ironclad 30-day money-back guarantee." }}
+        </div>
+
+        <!-- Key Verified Benefits -->
+        <ul class="zv-pdp-benefits">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Precision-Engineered Heavy-Duty Construction</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Fast 24–48h Dispatch from Regional US Hubs</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Free Tracked Doorstep Delivery on Orders Over $49</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Risk-Free 30-Day In-Home Trial with Effortless Returns</span>
+          </li>
+        </ul>
+
+        <!-- TIERED BUNDLE SELECTOR (KACHING / SHOPSIDEK T01 PATTERN) -->
+        <div class="zv-bundle-box">
+          <div class="zv-bundle-head">
+            <span class="zv-bundle-title">CHOOSE YOUR PACKAGE:</span>
+            <span class="zv-bundle-guarantee">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+              <span>30-Day Returns</span>
+            </span>
+          </div>
+
+          <div class="zv-bundle-cards">
+            <!-- TIER 3: BUY 3 (BEST VALUE - DEFAULT SELECTED) -->
+            <div 
+              class="zv-bundle-card selected" 
+              data-qty="3"
+              data-price-cents="{{ current_variant.price | times: 3 }}"
+              data-compare-cents="{{ current_variant.compare_at_price | default: current_variant.price | times: 3 }}"
+            >
+              <span class="zv-bundle-card-badge lime">👑 BEST VALUE &middot; FREE SHIPPING &middot; EXTRA 20% OFF</span>
+              <div class="zv-bundle-card-body">
+                <div class="zv-bundle-card-left">
+                  <div class="zv-bundle-radio"></div>
+                  <div class="zv-bundle-card-info">
+                    <span class="zv-bundle-card-name">Buy 3 (Full Complete Set)</span>
+                    <span class="zv-bundle-card-sub">Best Value &middot; Most Comprehensive Kit</span>
+                  </div>
+                </div>
+                <div class="zv-bundle-card-pricing">
+                  <span class="zv-bundle-card-total">{{ current_variant.price | times: 3 | money }}</span>
+                  <span class="zv-bundle-card-unit">Best Per-Unit Price</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- TIER 2: BUY 2 (MOST POPULAR) -->
+            <div 
+              class="zv-bundle-card" 
+              data-qty="2"
+              data-price-cents="{{ current_variant.price | times: 2 }}"
+              data-compare-cents="{{ current_variant.compare_at_price | default: current_variant.price | times: 2 }}"
+            >
+              <span class="zv-bundle-card-badge">🔥 MOST POPULAR</span>
+              <div class="zv-bundle-card-body">
+                <div class="zv-bundle-card-left">
+                  <div class="zv-bundle-radio"></div>
+                  <div class="zv-bundle-card-info">
+                    <span class="zv-bundle-card-name">Buy 2 (Duo Pack)</span>
+                    <span class="zv-bundle-card-sub">Double Supply &middot; Free Tracked Shipping</span>
+                  </div>
+                </div>
+                <div class="zv-bundle-card-pricing">
+                  <span class="zv-bundle-card-total">{{ current_variant.price | times: 2 | money }}</span>
+                  <span class="zv-bundle-card-unit">Save 45%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- TIER 1: BUY 1 (STARTER) -->
+            <div 
+              class="zv-bundle-card" 
+              data-qty="1"
+              data-price-cents="{{ current_variant.price }}"
+              data-compare-cents="{{ current_variant.compare_at_price | default: current_variant.price }}"
+            >
+              <div class="zv-bundle-card-body">
+                <div class="zv-bundle-card-left">
+                  <div class="zv-bundle-radio"></div>
+                  <div class="zv-bundle-card-info">
+                    <span class="zv-bundle-card-name">Buy 1 (Single Item)</span>
+                    <span class="zv-bundle-card-sub">Standard Starter Package</span>
+                  </div>
+                </div>
+                <div class="zv-bundle-card-pricing">
+                  <span class="zv-bundle-card-total">{{ current_variant.price | money }}</span>
+                  <span class="zv-bundle-card-unit" style="background: var(--zv-surface-muted); color: var(--zv-muted);">Standard</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GIFT & SHIPPING UNLOCK PROGRESSION BAR -->
+          <div class="zv-gift-unlock unlocked" id="zvGiftUnlock">
+            <div class="zv-gift-icon-box">🎁</div>
+            <div class="zv-gift-text">
+              <span class="zv-gift-title" id="zvGiftTitle">🎁 FREE Mystery Gift &amp; Priority Shipping</span>
+              <span class="zv-gift-sub" id="zvGiftSub">You unlocked the maximum tier bundle perks!</span>
+            </div>
+            <span class="zv-gift-status-badge" id="zvGiftStatusBadge">UNLOCKED</span>
+          </div>
+        </div>
+
+        <!-- PRIMARY CTAS -->
+        <div class="zv-cta-group">
+          <button type="button" class="zv-btn-claim" id="zvBtnClaim">
+            <span>CLAIM OFFER ➔</span>
+          </button>
+
+          <button type="button" class="zv-btn-buynow" id="zvBtnBuyNow">
+            <span>⚡ BUY NOW (1-CLICK CHECKOUT)</span>
+          </button>
+        </div>
+
+        <!-- DELIVERY PROGRESS STEPPER -->
+        <div class="zv-delivery-stepper">
+          <div class="zv-stepper-row">
+            <div class="zv-step active">
+              <div class="zv-step-dot">1</div>
+              <span class="zv-step-label">Order Placed</span>
+              <span class="zv-step-sub">Instant Confirmation</span>
+            </div>
+            <div class="zv-step active">
+              <div class="zv-step-dot">2</div>
+              <span class="zv-step-label">24-48h Dispatch</span>
+              <span class="zv-step-sub">US Regional Hub</span>
+            </div>
+            <div class="zv-step">
+              <div class="zv-step-dot">3</div>
+              <span class="zv-step-label">Delivered</span>
+              <span class="zv-step-sub">Tracked Doorstep</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRUST STRIP -->
+        <div class="zv-trust-badges-row">
+          <div class="zv-trust-badge-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span class="zv-trust-badge-title">30-Day Returns</span>
+            <span class="zv-trust-badge-desc">Zero risk guarantee</span>
+          </div>
+          <div class="zv-trust-badge-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+            <span class="zv-trust-badge-title">Fast US Shipping</span>
+            <span class="zv-trust-badge-desc">Insured carrier transit</span>
+          </div>
+          <div class="zv-trust-badge-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            <span class="zv-trust-badge-title">256-Bit SSL</span>
+            <span class="zv-trust-badge-desc">Encrypted checkout</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STICKY ATC BAR ON SCROLL -->
+<div class="zv-sticky-bar" id="zvStickyBar" role="region" aria-label="Quick Add to Cart">
+  <div class="zv-sticky-prod-info">
+    {% if product.featured_image %}
+      <img src="{{ product.featured_image | image_url: width: 88 }}" alt="{{ product.title | escape }}" class="zv-sticky-thumb">
+    {% endif %}
+    <div>
+      <div class="zv-sticky-name">{{ product.title }}</div>
+      <div class="zv-sticky-price" id="zvStickyPrice">{{ current_variant.price | times: 3 | money }}</div>
+    </div>
+  </div>
+  <button type="button" class="zv-btn zv-btn-accent" id="zvStickyBtn" style="padding: 12px 28px;">
+    <span>CLAIM OFFER ➔</span>
+  </button>
+</div>
+
+<script src="{{ 'zavelyn-v4-pdp.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Zavelyn V4 PDP Buy Box",
+  "settings": []
+}
+{% endschema %}
