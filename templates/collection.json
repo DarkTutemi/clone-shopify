@@ -3,23 +3,27 @@
     "showroom": {
       "type": "zavelyn-v4-showroom",
       "blocks": {
-        "cutout_heater": {
-          "type": "cutout_override",
+        "override_heater": {
+          "type": "product_image_override",
           "settings": {
             "product": "sakerplus®-1500w-flame-effect-oscillating-space-heater",
             "enable_override": true,
+            "use_same_image": false,
+            "catalog_image_fit": "contain",
             "display_scale": 100,
+            "mobile_scale": 100,
             "baseline_offset": 0,
             "horizontal_offset": 0,
             "enable_contact_shadow": true,
             "shadow_width": 70,
             "shadow_opacity": 70,
-            "shadow_softness": 12
+            "shadow_softness": 12,
+            "reset_original": false
           }
         }
       },
       "block_order": [
-        "cutout_heater"
+        "override_heater"
       ],
       "settings": {
         "shelf_style": "wood"

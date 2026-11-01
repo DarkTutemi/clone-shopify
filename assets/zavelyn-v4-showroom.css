@@ -658,8 +658,21 @@
 }
 
 /* ==========================================================================
-   SHELF COLUMNS GRID (1, 2, 3, or 4 products)
+   STRICT RESPONSIVE SHELF ARCHITECTURE:
+   DESKTOP (>=992px): Exactly 4 products per complete shelf row. Single continuous shelf.
+   TABLET/MOBILE (<992px): Exactly 2 products per complete shelf row. Continuous sub-shelf.
+   INCOMPLETE ROW: Exactly 1 remaining product cleanly centered on shelf.
    ========================================================================== */
+
+/* 1. Dual Shelf Visibility */
+.zv-shelf-desktop-only {
+  display: block;
+}
+.zv-shelf-mobile-only {
+  display: none !important;
+}
+
+/* 2. Desktop Containers */
 .zv-shelf-columns-grid {
   display: grid;
   width: 100%;
@@ -669,39 +682,33 @@
   align-items: flex-end;
 }
 
-/* 4 Products Full Desktop Row */
-.zv-grid--4 {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+.zv-shelf-pair {
+  display: contents;
 }
 
-@media screen and (min-width: 992px) {
-  .zv-grid--4 {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-    padding: 0 28px;
-  }
+.zv-pair-products {
+  display: contents;
+}
+
+/* 4 Products Full Desktop Row */
+.zv-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 0 28px;
 }
 
 /* 3 Products Row - Balanced Center Spacing */
 .zv-grid--3 {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-@media screen and (min-width: 992px) {
-  .zv-grid--3 {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 980px;
-    margin: 0 auto;
-    gap: 36px;
-  }
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 980px;
+  margin: 0 auto;
+  gap: 36px;
 }
 
 /* 2 Products Row - Symmetrical Distribution */
 .zv-grid--2 {
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 36px;
   max-width: 720px;
   margin: 0 auto;
 }
@@ -713,12 +720,62 @@
   margin: 0 auto;
 }
 
+/* 3. Mobile / Tablet Responsive Override (< 1024px) */
+@media screen and (max-width: 1023px) {
+  .zv-shelf-desktop-only {
+    display: none !important;
+  }
+
+  .zv-shelf-columns-grid {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+
+  .zv-shelf-pair {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 56px;
+  }
+
+  .zv-shelf-mobile-only {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 174px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .zv-pair-products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 8px;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    box-sizing: border-box;
+    align-items: flex-end;
+  }
+
+  /* Incomplete Mobile Row (1 Product Remaining): Center horizontally */
+  .zv-pair--1 .zv-pair-products {
+    grid-template-columns: 1fr;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+
 /* Shelf Column: Contains Product (Top) + Hanging Tag (Bottom) */
 .zv-shelf-column {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 
 /* ==========================================================================
@@ -770,6 +827,15 @@
   align-items: flex-end;
   justify-content: center;
   z-index: 2;
+  transform-origin: bottom center;
+  transform: scale(var(--scale-d, 1)) translate(var(--trans-x, 0px), var(--trans-y, 0px));
+  transition: transform 0.25s ease;
+}
+
+@media screen and (max-width: 1023px) {
+  .zv-cutout-container {
+    transform: scale(var(--scale-m, var(--scale-d, 1))) translate(var(--trans-x, 0px), var(--trans-y, 0px));
+  }
 }
 
 .zv-cutout-img {
@@ -1371,21 +1437,22 @@
   text-decoration: none;
 }
 
-/* Catalog Grid Mode Fallback */
-.zv-showroom-stage.grid-mode .zv-shelf-products {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+/* ==========================================================================
+   VIEW MODES: SHOWROOM (2.5D SHELVES) vs CATALOG (GRID)
+   ========================================================================== */
+.zv-showroom-view-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-@media screen and (min-width: 992px) {
-  .zv-showroom-stage.grid-mode .zv-shelf-products {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
+.zv-catalog-view-wrap {
+  display: none;
 }
 
-.zv-showroom-stage.grid-mode .zv-shelf-ledge,
+/* Catalog Grid Mode Activated */
+.zv-showroom-stage.grid-mode .zv-continuous-wooden-shelf,
 .zv-showroom-stage.grid-mode .zv-fixture-lightbar,
 .zv-showroom-stage.grid-mode .zv-fixture-column {
   display: none !important;
@@ -1393,4 +1460,236 @@
 
 .zv-showroom-stage.grid-mode .zv-shelf-tier {
   margin-bottom: 24px;
+  padding-top: 0;
+}
+
+.zv-showroom-stage.grid-mode .zv-shelf-pair {
+  margin-bottom: 20px;
+}
+
+.zv-showroom-stage.grid-mode .zv-showroom-view-wrap {
+  display: none !important;
+}
+
+.zv-showroom-stage.grid-mode .zv-catalog-view-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+/* Catalog Product Card Styling */
+.zv-cat-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.zv-cat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+  border-color: rgba(0, 0, 0, 0.14);
+}
+
+.zv-cat-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.zv-cat-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.zv-cat-card:hover .zv-cat-card-img {
+  transform: scale(1.05);
+}
+
+.zv-cat-sale-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #dc2626;
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.zv-cat-card-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.zv-cat-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #d97706;
+  margin-bottom: 6px;
+}
+
+.zv-cat-rating-num {
+  font-weight: 700;
+  color: #111827;
+}
+
+.zv-cat-review-count {
+  color: #6b7280;
+  font-size: 10.5px;
+}
+
+.zv-cat-card-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 8px;
+  color: #111827;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 36px;
+}
+
+.zv-cat-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.zv-cat-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: auto;
+  margin-bottom: 12px;
+}
+
+.zv-cat-price-curr {
+  font-size: 16px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.zv-cat-price-old {
+  font-size: 12.5px;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.zv-cat-atc-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 9px 12px;
+  background: #111827;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.zv-cat-atc-btn:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+.zv-cat-atc-btn:active {
+  transform: scale(0.98);
+}
+
+.zv-cat-atc-btn.sold-out {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   MOBILE VIEWPORT REFINEMENTS (375px, 390px, 440px)
+   ========================================================================== */
+@media screen and (max-width: 767px) {
+  .zv-merch-display {
+    height: 180px;
+    max-width: 170px;
+    margin: 0 auto;
+  }
+
+  .zv-tag-card {
+    max-width: 160px;
+    padding: 6px 8px;
+  }
+
+  .zv-tag-title {
+    font-size: 11.5px;
+    max-width: 144px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .zv-tag-price-curr {
+    font-size: 13px;
+  }
+
+  .zv-tag-price-old {
+    font-size: 10px;
+  }
+
+  .zv-tag-save-badge {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+
+  .zv-tag-action-hint {
+    font-size: 9px;
+  }
+
+  .zv-cat-card-body {
+    padding: 10px 10px 12px;
+  }
+
+  .zv-cat-card-title {
+    font-size: 12px;
+    min-height: 32px;
+    margin-bottom: 6px;
+  }
+
+  .zv-cat-price-curr {
+    font-size: 14px;
+  }
+
+  .zv-cat-atc-btn {
+    padding: 7px 8px;
+    font-size: 11px;
+  }
 }

@@ -18,11 +18,21 @@
 
     // 1. Stage Mode Toggle (Showroom 2.5D vs Grid)
     if (stage && viewBtns.length > 0) {
-      const savedMode = localStorage.getItem('zv_showroom_view') || 'shelf';
-      applyStageMode(savedMode);
+      const urlParams = new URLSearchParams(window.location.search);
+      const viewParam = urlParams.get('view');
+      let initialMode = 'shelf';
+      if (viewParam === 'grid') {
+        initialMode = 'grid';
+      } else if (viewParam === 'showroom' || viewParam === 'shelf') {
+        initialMode = 'shelf';
+      } else {
+        initialMode = localStorage.getItem('zv_showroom_view') || 'shelf';
+      }
+      applyStageMode(initialMode);
 
       viewBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
           const mode = this.getAttribute('data-view-mode');
           applyStageMode(mode);
           localStorage.setItem('zv_showroom_view', mode);
@@ -548,6 +558,41 @@
     });
 
   }
+
+  // Global Direct Add to Cart for Catalog Cards
+  window.zvShowroomDirectAddToCart = async function(variantId, buttonElem) {
+    if (!variantId) return;
+    const originalHtml = buttonElem.innerHTML;
+    buttonElem.disabled = true;
+    buttonElem.innerHTML = '<span>ADDING...</span>';
+
+    try {
+      const response = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: Number(variantId), quantity: 1 })
+      });
+      if (!response.ok) throw new Error('Cart error');
+      buttonElem.innerHTML = '<span>✓ ADDED!</span>';
+      setTimeout(() => {
+        buttonElem.disabled = false;
+        buttonElem.innerHTML = originalHtml;
+        document.dispatchEvent(new CustomEvent('cart:updated'));
+        document.dispatchEvent(new CustomEvent('willa:cart:refresh'));
+        if (window.willaCart && typeof window.willaCart.open === 'function') {
+          window.willaCart.open();
+        } else {
+          const drawerToggle = document.querySelector('[data-cart-drawer-toggle], .willa-cart-trigger, [aria-controls="CartDrawer"]');
+          if (drawerToggle) drawerToggle.click();
+        }
+      }, 400);
+    } catch (err) {
+      console.error(err);
+      buttonElem.disabled = false;
+      buttonElem.innerHTML = '<span>ERROR</span>';
+      setTimeout(() => { buttonElem.innerHTML = originalHtml; }, 2000);
+    }
+  };
 
   // Initialize
   if (document.readyState === 'loading') {

@@ -57,7 +57,9 @@ async function main() {
 
   // 2. Snippets
   const snippetsToUpload = [
-    { key: 'snippets/zavelyn-v4-quickview.liquid', path: 'snippets/zavelyn-v4-quickview.liquid' }
+    { key: 'snippets/zavelyn-v4-quickview.liquid', path: 'snippets/zavelyn-v4-quickview.liquid' },
+    { key: 'snippets/product-card.liquid', path: 'snippets/product-card.liquid' },
+    { key: 'snippets/card-product.liquid', path: 'snippets/card-product.liquid' }
   ];
 
   console.log('\n--- Uploading Snippets ---');
