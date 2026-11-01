@@ -1,0 +1,439 @@
+{% comment %}
+  ZAVELYN IMMERSIVE COMMERCE THEME V4.1
+  CORE FEATURE: 2.5D REAL-WORLD PHYSICAL RETAIL SHOWROOM
+  Features:
+  - 6-Layer Architectural Retail Shelving
+  - Shelf-Edge Channel Price Tags (No tall card blocks under products!)
+  - Authentic Grounded Product Shadow Discs & Acrylic Merchandising Risers
+  - Hero Pedestal Showcase for Single-Product Collections
+  - Positional Zoom Spatial Inspection Bay (Replaces centered popup on desktop)
+{% endcomment %}
+
+{{ 'zavelyn-v4-tokens.css' | asset_url | stylesheet_tag }}
+{{ 'zavelyn-v4-showroom.css' | asset_url | stylesheet_tag }}
+
+{% assign shelf_style = section.settings.shelf_style | default: 'wood' %}
+{% if collection.handle contains 'tool' or collection.handle contains 'power' %}
+  {% assign shelf_style = 'metal' %}
+{% elsif collection.handle contains 'handpan' or collection.handle contains 'drum' or collection.handle contains 'sound' %}
+  {% assign shelf_style = 'tech' %}
+{% elsif collection.handle contains 'wellness' or collection.handle contains 'denture' or collection.handle contains 'batana' %}
+  {% assign shelf_style = 'boutique' %}
+{% endif %}
+
+<div class="zv-showroom-wrapper shelf-theme-{{ shelf_style }}">
+
+  <!-- =======================================================================
+       1. SHOWROOM ATMOSPHERIC ARCHITECTURAL HEADER
+       ======================================================================= -->
+  <header class="zv-showroom-header">
+    <div class="zv-container">
+      <div class="zv-showroom-title-row">
+        <div>
+          <div class="zv-showroom-eyebrow">
+            <span>🏛️ ZAVELYN RETAIL ENVIRONMENT</span>
+            <span>&middot;</span>
+            <span class="zv-shelf-style-badge">{{ shelf_style | capitalize }} Department</span>
+          </div>
+          <h1 class="zv-showroom-h1">{{ collection.title }}</h1>
+          <div class="zv-showroom-desc">
+            {{ collection.description | default: "Step into our physical retail showroom. Products are displayed on authentic architectural shelves. Click any item to pull it forward for spatial inspection and instant checkout." }}
+          </div>
+        </div>
+
+        <!-- Controls Toolbar (View Toggle & Inventory Count) -->
+        <div class="zv-showroom-toolbar">
+          <div class="zv-showroom-stats">
+            <span class="zv-live-status-dot"></span>
+            <strong>{{ collection.products_count }}</strong> Items on Display
+          </div>
+
+          <div class="zv-view-switcher" role="group" aria-label="Display View Mode">
+            <button type="button" class="zv-view-btn active" data-view-mode="shelf" title="2.5D Physical Showroom Shelves">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+              <span>Showroom</span>
+            </button>
+            <button type="button" class="zv-view-btn" data-view-mode="grid" title="Standard Catalog Grid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              <span>Grid</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       2. 2.5D SHELF SHOWROOM STAGE (PHYSICAL DISPLAY ENVIRONMENT)
+       ======================================================================= -->
+  <main class="zv-showroom-stage" id="zvShowroomStage">
+    
+    <!-- Architectural Fixture Columns (Store Wall Frame) -->
+    <div class="zv-fixture-column zv-fixture-left" aria-hidden="true"></div>
+    <div class="zv-fixture-column zv-fixture-right" aria-hidden="true"></div>
+
+    <div class="zv-container">
+
+      {% paginate collection.products by 24 %}
+        {% assign total_products = collection.products.size %}
+
+        <!-- CASE A: SINGLE-PRODUCT HERO PEDESTAL SHOWCASE -->
+        {% if total_products == 1 %}
+          {% assign single_product = collection.products.first %}
+          {% assign current_variant = single_product.selected_or_first_available_variant %}
+          {% assign has_compare = false %}
+          {% if current_variant.compare_at_price > current_variant.price %}
+            {% assign has_compare = true %}
+            {% assign save_percent = current_variant.compare_at_price | minus: current_variant.price | times: 100.0 | divided_by: current_variant.compare_at_price | round %}
+          {% endif %}
+
+          <div class="zv-hero-pedestal-showcase">
+            <div class="zv-pedestal-spotlight" aria-hidden="true"></div>
+            
+            <div 
+              class="zv-shelf-item zv-pedestal-item" 
+              data-product-id="{{ single_product.id }}"
+              data-product-handle="{{ single_product.handle }}"
+              data-product-url="{{ single_product.url }}"
+              data-product-json="{{ single_product | json | escape }}"
+              tabindex="0"
+              role="button"
+              aria-label="{{ single_product.title | escape }} - {{ current_variant.price | money }}"
+            >
+              <!-- Elevated Hero Visual Media -->
+              <div class="zv-merch-display zv-hero-merch">
+                {% if single_product.featured_image %}
+                  <img 
+                    src="{{ single_product.featured_image | image_url: width: 600 }}" 
+                    alt="{{ single_product.title | escape }}" 
+                    loading="eager" 
+                    class="zv-merch-img"
+                    width="320"
+                    height="320"
+                  >
+                {% else %}
+                  {{ 'product-1' | placeholder_svg_tag: 'zv-merch-img' }}
+                {% endif %}
+                
+                <!-- Ground Contact Shadow Plane -->
+                <div class="zv-shelf-contact-shadow"></div>
+                <div class="zv-shelf-ambient-shadow"></div>
+              </div>
+
+              <!-- Architectural Pillar Structure Underneath -->
+              <div class="zv-pedestal-pillar">
+                <div class="zv-pedestal-top"></div>
+                <div class="zv-pedestal-body">
+                  <div class="zv-shelf-edge-tag">
+                    <div class="zv-tag-title">{{ single_product.title }}</div>
+                    <div class="zv-tag-pricing">
+                      <span class="zv-tag-price-curr">{{ current_variant.price | money }}</span>
+                      {% if has_compare %}
+                        <span class="zv-tag-price-old">{{ current_variant.compare_at_price | money }}</span>
+                        <span class="zv-tag-save-badge">SAVE {{ save_percent }}%</span>
+                      {% endif %}
+                    </div>
+                    <div class="zv-tag-inspect-prompt">
+                      <span>INSPECT ITEM ➔</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="zv-pedestal-base"></div>
+              </div>
+            </div>
+          </div>
+
+        <!-- CASE B: MULTI-PRODUCT 4-SLOT SHELF ROWS -->
+        {% else %}
+          {% assign items_per_shelf = 4 %}
+
+          {% for product in collection.products %}
+            {% assign mod_index = forloop.index0 | modulo: items_per_shelf %}
+            {% assign current_variant = product.selected_or_first_available_variant %}
+            {% assign has_compare = false %}
+            {% if current_variant.compare_at_price > current_variant.price %}
+              {% assign has_compare = true %}
+              {% assign save_percent = current_variant.compare_at_price | minus: current_variant.price | times: 100.0 | divided_by: current_variant.compare_at_price | round %}
+            {% endif %}
+
+            {% comment %} Open a new shelf row every 4 products {% endcomment %}
+            {% if mod_index == 0 %}
+              <div class="zv-shelf-tier" data-tier-index="{{ forloop.index0 | divided_by: 4 }}">
+                
+                <!-- Overhead Fixture Lightbar & Spotlights -->
+                <div class="zv-fixture-lightbar" aria-hidden="true">
+                  <div class="zv-spotlight-beam" style="left: 12.5%;"></div>
+                  <div class="zv-spotlight-beam" style="left: 37.5%;"></div>
+                  <div class="zv-spotlight-beam" style="left: 62.5%;"></div>
+                  <div class="zv-spotlight-beam" style="left: 87.5%;"></div>
+                </div>
+
+                <!-- 4 Product Compartments Sitting on Shelf Surface -->
+                <div class="zv-shelf-products">
+            {% endif %}
+
+                  <!-- Individual Product Compartment on the Shelf -->
+                  <div class="zv-shelf-compartment" data-col-index="{{ mod_index }}">
+                    
+                    {% assign cutout_image_url = '' %}
+                    {% if product.handle == 'sakerplus®-1500w-flame-effect-oscillating-space-heater' %}
+                      {% assign cutout_image_url = 'zavelyn-cutout-space-heater.png' | asset_url %}
+                    {% elsif product.handle == 'zavelyn-automatic-dough-mixer-with-ferment-function' %}
+                      {% assign cutout_image_url = 'zavelyn-cutout-dough-mixer.png' | asset_url %}
+                    {% endif %}
+
+                    <article 
+                      class="zv-shelf-item" 
+                      data-product-id="{{ product.id }}" 
+                      data-product-handle="{{ product.handle }}"
+                      data-product-url="{{ product.url }}"
+                      data-product-json="{{ product | json | escape }}"
+                      data-col="{{ mod_index }}"
+                      {% if cutout_image_url != '' %}data-cutout-src="{{ cutout_image_url }}"{% endif %}
+                      tabindex="0"
+                      role="button"
+                      aria-label="{{ product.title | escape }} - {{ current_variant.price | money }}"
+                    >
+                      <!-- Freestanding Physical Merchandising Display on Shelf Plane -->
+                      <div class="zv-merch-display">
+                        {% if cutout_image_url != '' %}
+                          <!-- Mode A: Single-Product Transparent Cutout Experiment -->
+                          <div class="zv-cutout-wrap" style="position: relative; width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: center;">
+                            <img 
+                              src="{{ cutout_image_url }}" 
+                              alt="{{ product.title | escape }}" 
+                              loading="lazy" 
+                              class="zv-merch-img zv-cutout-img"
+                              style="max-width: 92%; max-height: 92%; object-fit: contain; filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.42));"
+                              width="240"
+                              height="240"
+                            >
+                          </div>
+                        {% else %}
+                          <!-- Mode B: Standard Acrylic Retail Riser for White/Opaque Media -->
+                          <div class="zv-acrylic-riser">
+                            {% if product.featured_image %}
+                              <img 
+                                src="{{ product.featured_image | image_url: width: 480 }}" 
+                                alt="{{ product.title | escape }}" 
+                                loading="lazy" 
+                                class="zv-merch-img"
+                                width="240"
+                                height="240"
+                              >
+                            {% else %}
+                              {{ 'product-1' | placeholder_svg_tag: 'zv-merch-img' }}
+                            {% endif %}
+                          </div>
+                        {% endif %}
+
+                        <!-- Realistic Under-Product Ground Contact Shadow -->
+                        <div class="zv-shelf-contact-shadow"></div>
+                        <div class="zv-shelf-ambient-shadow"></div>
+                      </div>
+
+
+                      <!-- Subtle Retail Shelf-Edge Channel Tag -->
+                      <div class="zv-shelf-edge-tag">
+                        <div class="zv-tag-title" title="{{ product.title | escape }}">
+                          {{ product.title }}
+                        </div>
+                        <div class="zv-tag-pricing">
+                          <span class="zv-tag-price-curr">{{ current_variant.price | money }}</span>
+                          {% if has_compare %}
+                            <span class="zv-tag-price-old">{{ current_variant.compare_at_price | money }}</span>
+                            <span class="zv-tag-save-badge">-{{ save_percent }}%</span>
+                          {% endif %}
+                        </div>
+                        <div class="zv-tag-inspect-prompt">
+                          <span>Pull Shelf ⚡</span>
+                        </div>
+                      </div>
+
+                    </article>
+                  </div>
+
+            {% comment %} Close shelf row every 4 products or at the end of collection {% endcomment %}
+            {% if mod_index == 3 or forloop.last %}
+                </div>
+
+                <!-- Physical 3D Shelf Ledge (Top Surface + Front Fascia + Drop Shadow) -->
+                <div class="zv-shelf-ledge" aria-hidden="true">
+                  <div class="zv-shelf-top-face">
+                    <div class="zv-wood-grain-overlay"></div>
+                  </div>
+                  <div class="zv-shelf-front-edge">
+                    <div class="zv-shelf-brass-channel">
+                      <span class="zv-channel-spec-label">
+                        ZAVELYN SPEC DISPLAY &middot; AISLE BAY {{ forloop.index0 | divided_by: 4 | plus: 1 }}
+                      </span>
+                    </div>
+                  </div>
+                  <div class="zv-shelf-under-shadow"></div>
+                </div>
+
+              </div>
+            {% endif %}
+
+          {% else %}
+            <div style="text-align: center; padding: 72px 0; color: var(--zv-muted);">
+              <h3>No products found in this showroom department.</h3>
+              <p>Please browse our other store departments or return to the main hall.</p>
+            </div>
+          {% endfor %}
+
+        {% endif %}
+
+        <!-- Accessible Pagination -->
+        {% if paginate.pages > 1 %}
+          <div class="zv-showroom-pagination">
+            {{ paginate | default_pagination }}
+          </div>
+        {% endif %}
+
+      {% endpaginate %}
+
+    </div>
+  </main>
+
+  <!-- =======================================================================
+       3. POSITIONAL ZOOM: SPATIAL PRODUCT INSPECTION BAY (DESKTOP)
+       Anchored directly to the selected shelf item's on-screen coordinates
+       ======================================================================= -->
+  <div class="zv-spatial-inspect-bay" id="zvSpatialInspectBay" aria-hidden="true" role="dialog" aria-modal="true">
+    
+    <!-- Atmospheric Showroom Dimming Backdrop -->
+    <div class="zv-inspect-backdrop" id="zvInspectBackdrop"></div>
+
+    <!-- Active Inspection Stage Container -->
+    <div class="zv-inspect-stage-wrap" id="zvInspectStageWrap">
+
+      <!-- Zoomed Product Focal Image (FLIP-animated from shelf position) -->
+      <div class="zv-inspect-focal-frame" id="zvInspectFocalFrame">
+        <div class="zv-focal-spotlight"></div>
+        <img src="" alt="" class="zv-focal-img" id="zvInspectFocalImg">
+        <div class="zv-focal-ground-shadow"></div>
+      </div>
+
+      <!-- Anchored Product Information Panel (Slides out beside the product) -->
+      <div class="zv-inspect-anchored-panel" id="zvInspectAnchoredPanel">
+        
+        <!-- Header & Close Button -->
+        <div class="zv-anchored-header">
+          <div class="zv-badge zv-badge-forest" style="font-size: 11px;">
+            <span>🏛️ SPATIAL SHELF INSPECTION</span>
+          </div>
+          <button type="button" class="zv-anchored-close-btn" id="zvInspectCloseBtn" aria-label="Return product to shelf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+
+        <!-- Product Identity -->
+        <h2 class="zv-anchored-title" id="zvInspectTitle">Product Title</h2>
+
+        <!-- Pricing & Value Strip -->
+        <div class="zv-anchored-price-strip">
+          <span class="zv-anchored-price-curr" id="zvInspectPriceCurr">$0.00</span>
+          <span class="zv-anchored-price-old" id="zvInspectPriceOld">$0.00</span>
+          <span class="zv-badge zv-badge-lime" id="zvInspectSaveBadge">SAVE 20%</span>
+        </div>
+
+        <!-- Verified Value Props -->
+        <ul class="zv-anchored-benefits-list">
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>In stock &middot; Dispatches directly from US warehouse</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>30-Day risk-free home trial with 100% money-back guarantee</span>
+          </li>
+        </ul>
+
+        <!-- Variant Options Pills Container -->
+        <div class="zv-anchored-variants" id="zvInspectVariants"></div>
+
+        <!-- Commerce Action Buttons -->
+        <div class="zv-anchored-actions">
+          <button type="button" class="zv-btn zv-btn-primary zv-btn-block zv-btn-lg" id="zvInspectAtcBtn">
+            <span>ADD TO CART ➔</span>
+          </button>
+          
+          <a href="#" class="zv-anchored-pdp-link" id="zvInspectPdpLink">
+            <span>View Full Product Page &amp; Video Reviews &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Safe Shipping & Security Guarantee -->
+        <div class="zv-anchored-trust-footer">
+          <span>🔒 256-bit Encrypted Checkout</span>
+          <span>&bull;</span>
+          <span>🚚 Fast 3-5 Day Delivery</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       4. MOBILE SHOWROOM BOTTOM SHEET (< 768px Viewports)
+       ======================================================================= -->
+  <div class="zv-mobile-sheet-overlay" id="zvMobileSheetOverlay" aria-hidden="true">
+    <div class="zv-mobile-sheet" id="zvMobileSheet">
+      <div class="zv-mobile-sheet-handle"></div>
+      
+      <div class="zv-mobile-sheet-header">
+        <button type="button" class="zv-mobile-sheet-close" id="zvMobileSheetClose" aria-label="Close bottom sheet">&times;</button>
+      </div>
+
+      <div class="zv-mobile-sheet-body">
+        <div class="zv-mobile-sheet-img-wrap">
+          <img src="" alt="" id="zvMobileSheetImg">
+        </div>
+        
+        <h3 id="zvMobileSheetTitle">Product Title</h3>
+        
+        <div class="zv-mobile-sheet-price-row">
+          <span class="zv-mobile-sheet-price" id="zvMobileSheetPrice">$0.00</span>
+          <span class="zv-mobile-sheet-compare" id="zvMobileSheetCompare">$0.00</span>
+          <span class="zv-badge zv-badge-lime" id="zvMobileSheetSave">SAVE 20%</span>
+        </div>
+
+        <div class="zv-mobile-sheet-variants" id="zvMobileSheetVariants"></div>
+
+        <button type="button" class="zv-btn zv-btn-primary zv-btn-block" id="zvMobileSheetAtcBtn" style="margin-top: 16px;">
+          <span>ADD TO CART ➔</span>
+        </button>
+
+        <a href="#" class="zv-mobile-sheet-pdp" id="zvMobileSheetPdpLink">
+          <span>View Full Specifications &amp; Story ➔</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="{{ 'zavelyn-v4-showroom.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Zavelyn V4 Showroom",
+  "settings": [
+    {
+      "type": "select",
+      "id": "shelf_style",
+      "label": "Default Shelf Style",
+      "options": [
+        { "value": "wood", "label": "Natural Oak Wood" },
+        { "value": "metal", "label": "Industrial Steel Metal" },
+        { "value": "boutique", "label": "Minimalist White Boutique" },
+        { "value": "tech", "label": "Dark Obsidian Tech" },
+        { "value": "floating", "label": "Floating Minimalist Glass" }
+      ],
+      "default": "wood"
+    }
+  ]
+}
+{% endschema %}
