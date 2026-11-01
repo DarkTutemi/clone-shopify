@@ -865,13 +865,10 @@
 .zv-spatial-inspect-bay {
   position: fixed;
   inset: 0;
-  z-index: 99999;
+  z-index: 99990;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.35s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .zv-spatial-inspect-bay.active {
@@ -879,96 +876,116 @@
   opacity: 1;
 }
 
-/* Atmospheric Dimming Backdrop */
+/* Atmospheric Dimming Backdrop (Subtle tint, shelves clearly visible in background) */
 .zv-inspect-backdrop {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: rgba(14, 28, 22, 0.76);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(14, 28, 22, 0.45);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  z-index: 99991;
+  pointer-events: auto;
 }
 
-/* Main Inspection Stage Wrap */
+/* Stage Wrap Coordinates Layer */
 .zv-inspect-stage-wrap {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 36px;
-  max-width: 1080px;
-  width: 90%;
-  max-height: 90vh;
-  margin: auto;
+  position: fixed;
+  inset: 0;
+  z-index: 99992;
+  pointer-events: none;
 }
 
-@media screen and (max-width: 991px) {
-  .zv-inspect-stage-wrap {
-    flex-direction: column;
-    max-height: 94vh;
-    overflow-y: auto;
-    gap: 20px;
-    padding: 20px;
-  }
-}
-
-/* Zoomed Product Focal Image (FLIP Positional Destination) */
+/* Zoomed Product Focal Frame (FLIP animated directly from shelf position) */
 .zv-inspect-focal-frame {
-  position: relative;
-  width: 380px;
-  height: 380px;
+  position: fixed;
+  z-index: 99995;
+  pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--zv-radius-xl);
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.95) 0%, rgba(240, 243, 238, 0.9) 100%);
-  box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.8);
-  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
-  flex-shrink: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  transform-origin: center center;
 }
 
 .zv-focal-img {
-  max-width: 82%;
-  max-height: 82%;
+  max-width: 96%;
+  max-height: 96%;
   object-fit: contain;
-  filter: drop-shadow(0 16px 32px rgba(23, 53, 43, 0.28));
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.45));
   position: relative;
   z-index: 3;
 }
 
 .zv-focal-ground-shadow {
   position: absolute;
-  bottom: 24px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 70%;
-  height: 18px;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45) 0%, transparent 72%);
+  width: 75%;
+  height: 16px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, transparent 72%);
   border-radius: 50%;
   z-index: 1;
 }
 
-/* Anchored Product Information Panel */
+/* Dimmed Shelf Items during Zoom */
+.zv-shelf-item.zv-shelf-dimmed {
+  opacity: 0.35 !important;
+  filter: saturate(0.6) blur(0.5px) !important;
+  pointer-events: none !important;
+  transition: all 0.35s ease !important;
+}
+
+/* Anchored Product Information Panel (Anchored beside expanded product) */
 .zv-inspect-anchored-panel {
+  position: fixed;
+  z-index: 99996;
+  width: 380px;
+  max-width: 92vw;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--zv-primary) transparent;
   background: #FFFFFF;
   border: 1.5px solid var(--zv-border);
-  border-radius: var(--zv-radius-xl);
-  padding: 32px;
-  width: 440px;
-  max-width: 100%;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+  border-radius: var(--zv-radius-xl, 20px);
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  pointer-events: auto;
   display: flex;
   flex-direction: column;
-  position: relative;
-  z-index: 10;
-  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1), opacity 0.35s ease;
+  transition: opacity 0.32s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media screen and (max-width: 991px) {
   .zv-inspect-anchored-panel {
-    width: 100%;
-    padding: 24px;
+    width: 340px;
+    padding: 20px;
   }
+}
+
+
+/* Custom Variant Dropdown (Prevents vertical blowout for Batana Oil 12 variants) */
+.zv-variant-dropdown {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--zv-heading, #17231E);
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--zv-primary, #17352B);
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.zv-variant-dropdown:focus {
+  border-color: var(--zv-accent, #BCE76A);
+  box-shadow: 0 0 0 3px rgba(188, 231, 106, 0.35);
 }
 
 .zv-anchored-header {

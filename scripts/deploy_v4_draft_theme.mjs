@@ -42,6 +42,7 @@ async function main() {
   // 1. Assets
   const assetsToUpload = [
     { key: 'assets/zavelyn-v4-tokens.css', path: 'assets/zavelyn-v4-tokens.css' },
+    { key: 'assets/zavelyn-v4-stores.css', path: 'assets/zavelyn-v4-stores.css' },
     { key: 'assets/zavelyn-v4-showroom.css', path: 'assets/zavelyn-v4-showroom.css' },
     { key: 'assets/zavelyn-v4-pdp.css', path: 'assets/zavelyn-v4-pdp.css' },
     { key: 'assets/zavelyn-v4-showroom.js', path: 'assets/zavelyn-v4-showroom.js' },

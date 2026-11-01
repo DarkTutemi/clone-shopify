@@ -1,0 +1,3215 @@
+[
+  {
+    "id": 15454955372729,
+    "title": "Zavelyn 3-in-1 Drywall Board Cutter",
+    "handle": "sakerplus®-3-in-1-gypsum-board-cutting-tool",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914518364345,
+        "title": "Default Title",
+        "price": "49.99",
+        "sku": "CP14318-E037",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454957633721,
+    "title": "Zavelyn 360 Magnetic Work Light",
+    "handle": "sakerplus®-360-app-controlled-magnetic-work-light",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914557325497,
+        "title": "Default Title",
+        "price": "164.99",
+        "sku": "LT132442-E001",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454962778297,
+    "title": "Zavelyn 5-in-1 Magnetic Wireless Charger",
+    "handle": "sakerplus®-5-in-1-magnetic-wireless-charging-station",
+    "template_suffix": null,
+    "variantsCount": 2,
+    "variants": [
+      {
+        "id": 67914653565113,
+        "title": "Beige",
+        "price": "95.99",
+        "sku": "HA131694-C010",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914653597881,
+        "title": "Black",
+        "price": "95.99",
+        "sku": "HA131694-C006",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454958158009,
+    "title": "Zavelyn 50FT LED Jobsite String Lights",
+    "handle": "sakerplus®-50ft-industrial-led-construction-string-lights",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914565845177,
+        "title": "Default Title",
+        "price": "119.99",
+        "sku": "LT132367-X15101",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15461471060153,
+    "title": "Zavelyn AirClear Plug-In Air Purifier",
+    "handle": "zavelyn-airclear-plugin-negative-ion-air-purifier",
+    "template_suffix": null,
+    "variantsCount": 6,
+    "variants": [
+      {
+        "id": 67980091719865,
+        "title": "Buy 1 (Single Room Purifier - Standard) / Glacier White (US Plug)",
+        "price": "39.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980091752633,
+        "title": "Buy 1 (Single Room Purifier - Standard) / Midnight Black (US Plug)",
+        "price": "39.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980091785401,
+        "title": "Buy 3 (Whole House Starter Pack - Save 55%) / Glacier White (US Plug)",
+        "price": "79.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980091818169,
+        "title": "Buy 3 (Whole House Starter Pack - Save 55%) / Midnight Black (US Plug)",
+        "price": "79.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980091850937,
+        "title": "Buy 6 (Complete Home Master Set - Buy 3 Get 3 FREE) / Glacier White (US Plug)",
+        "price": "119.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980091883705,
+        "title": "Buy 6 (Complete Home Master Set - Buy 3 Get 3 FREE) / Midnight Black (US Plug)",
+        "price": "119.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454956781753,
+    "title": "Zavelyn Automatic Chicken Coop Door",
+    "handle": "sakerplus®-battery-powered-automatic-chicken-coop-door",
+    "template_suffix": null,
+    "variantsCount": 2,
+    "variants": [
+      {
+        "id": 67914542809273,
+        "title": "1st Gen Battery-Powered",
+        "price": "69.99",
+        "sku": "CP46844-X88084",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914542842041,
+        "title": "2nd Gen Upgraded Battery-Powered",
+        "price": "70.99",
+        "sku": "CP46844-X88105",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15460988944569,
+    "title": "Zavelyn Automatic Dough Mixer & Fermenter",
+    "handle": "zavelyn-automatic-dough-mixer-with-ferment-function",
+    "template_suffix": null,
+    "variantsCount": 6,
+    "variants": [
+      {
+        "id": 67975848067257,
+        "title": "Buy 1 (Single Kitchen Master - Save 50%) / Classic Red",
+        "price": "169.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975848100025,
+        "title": "Buy 1 (Single Kitchen Master - Save 50%) / Modern White",
+        "price": "169.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975848132793,
+        "title": "Buy 2 (Double Baker Set - Save 55%) / Classic Red",
+        "price": "299.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975848165561,
+        "title": "Buy 2 (Double Baker Set - Save 55%) / Modern White",
+        "price": "299.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975848231097,
+        "title": "Buy 3 (The Ultimate Bakery Bundle - Save 60%) / Classic Red",
+        "price": "399.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975848263865,
+        "title": "Buy 3 (The Ultimate Bakery Bundle - Save 60%) / Modern White",
+        "price": "399.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454950850745,
+    "title": "Zavelyn Bathroom Exhaust Fan with Light",
+    "handle": "sakerplus®-bathroom-exhaust-fan-with-led-light",
+    "template_suffix": null,
+    "variantsCount": 4,
+    "variants": [
+      {
+        "id": 67914412097721,
+        "title": "Panel Size 10 in (3-Color LED)",
+        "price": "79.99",
+        "sku": "HA132486-X88398",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914412130489,
+        "title": "Panel Size 12 in (3-Color LED)",
+        "price": "89.99",
+        "sku": "HA132486-X88402",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914412163257,
+        "title": "Panel Size 10 in (Single Color LED)",
+        "price": "79.99",
+        "sku": "HA132486-X87948",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914412196025,
+        "title": "Panel Size 12 in (Single Color LED)",
+        "price": "89.99",
+        "sku": "HA132486-X87949",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15461545935033,
+    "title": "Zavelyn BotanaRoots Batana Hair Growth Oil",
+    "handle": "zavelyn-botanaroots-organic-batana-hair-growth-oil",
+    "template_suffix": null,
+    "variantsCount": 12,
+    "variants": [
+      {
+        "id": 67980643598521,
+        "title": "Buy 1 (1x 60ml Bottle - 30-Day Starter Supply) / 100% Pure Raw Honduran Batana (60ml)",
+        "price": "39.99",
+        "sku": "ZAV-BOTANA-1PK-PURE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": -2
+      },
+      {
+        "id": 67980643631289,
+        "title": "Buy 1 (1x 60ml Bottle - 30-Day Starter Supply) / Batana + Rosemary Scalp Infusion (60ml)",
+        "price": "39.99",
+        "sku": "ZAV-BOTANA-1PK-ROSE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980643664057,
+        "title": "Buy 2 (2x 60ml Bottles - 60-Day Intensive Growth Course - Save 45%) / 100% Pure Raw Honduran Batana (60ml)",
+        "price": "79.98",
+        "sku": "ZAV-BOTANA-2PK-PURE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980643696825,
+        "title": "Buy 2 (2x 60ml Bottles - 60-Day Intensive Growth Course - Save 45%) / Batana + Rosemary Scalp Infusion (60ml)",
+        "price": "79.98",
+        "sku": "ZAV-BOTANA-2PK-ROSE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980643729593,
+        "title": "Buy 3 (3x 60ml Bottles - 90-Day Full Hair Restoration - Buy 2 Get 1 FREE) / 100% Pure Raw Honduran Batana (60ml)",
+        "price": "95.99",
+        "sku": "ZAV-BOTANA-2PK-PURE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980643762361,
+        "title": "Buy 3 (3x 60ml Bottles - 90-Day Full Hair Restoration - Buy 2 Get 1 FREE) / Batana + Rosemary Scalp Infusion (60ml)",
+        "price": "95.99",
+        "sku": "ZAV-BOTANA-2PK-ROSE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68036047831225,
+        "title": "Buy 1 (1x 120ml Bottle - 60-Day Supply) / 100% Pure Raw Honduran Batana (120ml)",
+        "price": "49.99",
+        "sku": "ZAV-BOTANA-1PK-PURE-120ML",
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68036048257209,
+        "title": "Buy 1 (1x 120ml Bottle - 60-Day Supply) / Batana + Rosemary Scalp Infusion (120ml)",
+        "price": "49.99",
+        "sku": "ZAV-BOTANA-1PK-ROSE-120ML",
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68036048453817,
+        "title": "Buy 2 (2x 120ml Bottles - 120-Day Intensive Course) / 100% Pure Raw Honduran Batana (120ml)",
+        "price": "99.98",
+        "sku": "ZAV-BOTANA-2PK-PURE-120ML",
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68036048584889,
+        "title": "Buy 2 (2x 120ml Bottles - 120-Day Intensive Course) / Batana + Rosemary Scalp Infusion (120ml)",
+        "price": "99.98",
+        "sku": "ZAV-BOTANA-2PK-ROSE-120ML",
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68036048715961,
+        "title": "Buy 3 (3x 120ml Bottles - 180-Day Restoration - Best Value) / 100% Pure Raw Honduran Batana (120ml)",
+        "price": "125.99",
+        "sku": "ZAV-BOTANA-3PK-PURE-120ML",
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68036048912569,
+        "title": "Buy 3 (3x 120ml Bottles - 180-Day Restoration - Best Value) / Batana + Rosemary Scalp Infusion (120ml)",
+        "price": "125.99",
+        "sku": "ZAV-BOTANA-3PK-ROSE-120ML",
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15469942145209,
+    "title": "Zavelyn BotanaRoots Batana Hair Growth Oil — Exclusive BOGO Offer",
+    "handle": "zavelyn-botanaroots-bogo-special",
+    "template_suffix": null,
+    "variantsCount": 6,
+    "variants": [
+      {
+        "id": 68035793158329,
+        "title": "Buy 4 Get 4 FREE / 60ml",
+        "price": "159.96",
+        "sku": "ZAV-BTR-BOGO-8X60-PURE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68035795058873,
+        "title": "Buy 4 Get 4 FREE / 120ml",
+        "price": "239.96",
+        "sku": "ZAV-BTR-BOGO-8X120-PURE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68035795091641,
+        "title": "Buy 2 Get 2 FREE / 60ml",
+        "price": "79.98",
+        "sku": "ZAV-BTR-BOGO-4X60-PURE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68035795124409,
+        "title": "Buy 2 Get 2 FREE / 120ml",
+        "price": "119.98",
+        "sku": "ZAV-BTR-BOGO-4X120-PURE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68035795157177,
+        "title": "Buy 1 / 60ml",
+        "price": "39.99",
+        "sku": "ZAV-BTR-BOGO-1X60-PURE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68035795189945,
+        "title": "Buy 1 / 120ml",
+        "price": "49.99",
+        "sku": "ZAV-BTR-BOGO-1X120-PURE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454953177273,
+    "title": "Zavelyn Clamp-On Desk Shelf Organizer",
+    "handle": "sakerplus®-three-tier-clamp-on-desk-shelf-organizer",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914465214649,
+        "title": "Default Title",
+        "price": "50.99",
+        "sku": "HW132231-X87676",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454963859641,
+    "title": "Zavelyn Cordless Electric Garden Tiller",
+    "handle": "saker®-cordless-electric-garden-tiller-cultivator",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914673258681,
+        "title": "Electric Garden Tiller Cultivator",
+        "price": "83.99",
+        "sku": "GJ88858-X70586",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454961860793,
+    "title": "Zavelyn Cordless Heated Knee Massager",
+    "handle": "sakerplus®-cordless-heated-knee-massage-device",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914634166457,
+        "title": "Default Title",
+        "price": "166.99",
+        "sku": "HA131177-C001",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15460831953081,
+    "title": "Zavelyn Cordless Turbo Leaf Blower",
+    "handle": "saker-cordless-turbo-leaf-blower",
+    "template_suffix": null,
+    "variantsCount": 4,
+    "variants": [
+      {
+        "id": 67974079348921,
+        "title": "Portable Blower with 1 Battery",
+        "price": "75.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 999
+      },
+      {
+        "id": 67974079381689,
+        "title": "Portable Blower with 2 Batteries + Toolbox",
+        "price": "95.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 999
+      },
+      {
+        "id": 67974079414457,
+        "title": "Maxpower Blower Kit – 2 Batteries + 2 Power Nozzles",
+        "price": "91.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 999
+      },
+      {
+        "id": 67974079447225,
+        "title": "Maxpower Blower Kit – 2 Batteries + 2 Power Nozzles + Toolbox",
+        "price": "105.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 999
+      }
+    ]
+  },
+  {
+    "id": 15454953898169,
+    "title": "Zavelyn Cordless UV Mattress Vacuum",
+    "handle": "sakerplus®-cordless-handheld-uv-mattress-vacuum-cleaner",
+    "template_suffix": null,
+    "variantsCount": 2,
+    "variants": [
+      {
+        "id": 67914479567033,
+        "title": "Green",
+        "price": "46.99",
+        "sku": "HA132563-C004",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914479599801,
+        "title": "Blue",
+        "price": "46.99",
+        "sku": "HA132563-C008",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15460954276025,
+    "title": "Zavelyn CozyHeat Wearable Heated Blanket",
+    "handle": "zavelyn-cozyheat-heated-wearable-blanket-sweater",
+    "template_suffix": null,
+    "variantsCount": 15,
+    "variants": [
+      {
+        "id": 67975472840889,
+        "title": "Buy 1 (A Little Comfort) / Warm Brown",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975472873657,
+        "title": "Buy 1 (A Little Comfort) / Apricot",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975472906425,
+        "title": "Buy 1 (A Little Comfort) / Green",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975472939193,
+        "title": "Buy 1 (A Little Comfort) / Maple Red",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975472971961,
+        "title": "Buy 1 (A Little Comfort) / Purple",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975473004729,
+        "title": "Buy 2 (Share the Warmth - Save 45%) / Warm Brown",
+        "price": "89.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975473037497,
+        "title": "Buy 2 (Share the Warmth - Save 45%) / Apricot",
+        "price": "89.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975473070265,
+        "title": "Buy 2 (Share the Warmth - Save 45%) / Green",
+        "price": "89.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975473103033,
+        "title": "Buy 2 (Share the Warmth - Save 45%) / Maple Red",
+        "price": "89.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975473135801,
+        "title": "Buy 2 (Share the Warmth - Save 45%) / Purple",
+        "price": "89.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975473168569,
+        "title": "Buy 3 (The Family Cozy Set - Buy 2 Get 1 FREE) / Warm Brown",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975473463481,
+        "title": "Buy 3 (The Family Cozy Set - Buy 2 Get 1 FREE) / Apricot",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975473496249,
+        "title": "Buy 3 (The Family Cozy Set - Buy 2 Get 1 FREE) / Green",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975473529017,
+        "title": "Buy 3 (The Family Cozy Set - Buy 2 Get 1 FREE) / Maple Red",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67975473561785,
+        "title": "Buy 3 (The Family Cozy Set - Buy 2 Get 1 FREE) / Purple",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15474563907769,
+    "title": "Zavelyn Custom-Fit Home Dentures",
+    "handle": "zavelyn-custom-fit-home-dentures",
+    "template_suffix": "dentures",
+    "variantsCount": 3,
+    "variants": [
+      {
+        "id": 68080209330361,
+        "title": "3 Complete Sets",
+        "price": "107.97",
+        "sku": "ZAV-DENTURE-3SET",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68080209363129,
+        "title": "2 Complete Sets",
+        "price": "79.98",
+        "sku": "ZAV-DENTURE-2SET",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68080209395897,
+        "title": "1 Complete Set",
+        "price": "39.99",
+        "sku": "ZAV-DENTURE-1SET",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454952620217,
+    "title": "Zavelyn Diesel Injector Removal Kit",
+    "handle": "sakerplus®-universal-diesel-injector-removal-kit-clearance-sale",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914452992185,
+        "title": "Default Title",
+        "price": "72.99",
+        "sku": "GJ116630-E037",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454956355769,
+    "title": "Zavelyn Digital Mini Heat Press Machine",
+    "handle": "sakerplus®-portable-digital-mini-heat-press-machine",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914534518969,
+        "title": "Default Title",
+        "price": "149.99",
+        "sku": "GJ132614-X65160",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15459318890681,
+    "title": "Zavelyn Drum Mini (6\" 8-Tone C-Key)",
+    "handle": "zavelyn-drum-mini",
+    "template_suffix": "zavelyn-drum-mini",
+    "variantsCount": 7,
+    "variants": [
+      {
+        "id": 67959041032377,
+        "title": "White",
+        "price": "109.95",
+        "sku": "ZAV-MIN-WHT",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959041065145,
+        "title": "Red",
+        "price": "109.95",
+        "sku": "ZAV-MIN-RED",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959041097913,
+        "title": "Black",
+        "price": "109.95",
+        "sku": "ZAV-MIN-BLK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959041130681,
+        "title": "Blue",
+        "price": "109.95",
+        "sku": "ZAV-MIN-BLU",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959041163449,
+        "title": "Sandstone",
+        "price": "109.95",
+        "sku": "ZAV-MIN-SND",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959041196217,
+        "title": "Pink",
+        "price": "109.95",
+        "sku": "ZAV-MIN-PNK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959041228985,
+        "title": "Pink Tan",
+        "price": "109.95",
+        "sku": "ZAV-MIN-PTN",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15459315581113,
+    "title": "Zavelyn Drum Plus (11\" 11-Tone D-Major)",
+    "handle": "zavelyn-drum-plus",
+    "template_suffix": "zavelyn-drum-plus",
+    "variantsCount": 8,
+    "variants": [
+      {
+        "id": 67959037427897,
+        "title": "White",
+        "price": "159.95",
+        "sku": "ZAV-PLS-WHT",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959037460665,
+        "title": "Black",
+        "price": "159.95",
+        "sku": "ZAV-PLS-BLK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959037493433,
+        "title": "Emerald Green",
+        "price": "159.95",
+        "sku": "ZAV-PLS-GRN",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959037526201,
+        "title": "Red",
+        "price": "159.95",
+        "sku": "ZAV-PLS-RED",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959037558969,
+        "title": "Blue",
+        "price": "159.95",
+        "sku": "ZAV-PLS-BLU",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959037591737,
+        "title": "Pink",
+        "price": "159.95",
+        "sku": "ZAV-PLS-PNK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959037624505,
+        "title": "Sandstone",
+        "price": "159.95",
+        "sku": "ZAV-PLS-SND",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959037657273,
+        "title": "Pink Tan",
+        "price": "159.95",
+        "sku": "ZAV-PLS-PTN",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15459315220665,
+    "title": "Zavelyn Drum Pro (15\" 15-Tone D-Major)",
+    "handle": "zavelyn-drum-pro",
+    "template_suffix": "zavelyn-drum-pro",
+    "variantsCount": 5,
+    "variants": [
+      {
+        "id": 67959036838073,
+        "title": "Green",
+        "price": "259.95",
+        "sku": "ZAV-PRO-13-GRE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959036870841,
+        "title": "Black",
+        "price": "259.95",
+        "sku": "ZAV-PRO-13-BLA",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959036903609,
+        "title": "Navy",
+        "price": "259.95",
+        "sku": "ZAV-PRO-13-NAV",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959036936377,
+        "title": "Purple",
+        "price": "259.95",
+        "sku": "ZAV-PRO-13-PUR",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67959036969145,
+        "title": "Gold",
+        "price": "259.95",
+        "sku": "ZAV-PRO-13-GOL",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454946951353,
+    "title": "Zavelyn Fence Post Repair Kit",
+    "handle": "sakerplus-fence-post-repair-kit",
+    "template_suffix": null,
+    "variantsCount": 3,
+    "variants": [
+      {
+        "id": 67973153980601,
+        "title": "Buy 2",
+        "price": "72.99",
+        "sku": "ZAV-FENCE-02",
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67973154013369,
+        "title": "Buy 4",
+        "price": "138.68",
+        "sku": "ZAV-FENCE-04",
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67973154046137,
+        "title": "Buy 6",
+        "price": "186.12",
+        "sku": "ZAV-FENCE-06",
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454948982969,
+    "title": "Zavelyn Flame Effect Space Heater",
+    "handle": "sakerplus®-1500w-flame-effect-oscillating-space-heater",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914368352441,
+        "title": "Default Title",
+        "price": "114.99",
+        "sku": "HA129393-X87701",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15461501927609,
+    "title": "Zavelyn FlawlessBlend Foundation Stick",
+    "handle": "zavelyn-flawlessblend-color-changing-foundation-stick",
+    "template_suffix": null,
+    "variantsCount": 9,
+    "variants": [
+      {
+        "id": 67980319523001,
+        "title": "Buy 1 (Single Foundation Stick - Try Risk-Free) / #201 Light Ivory (Fair to Light)",
+        "price": "39.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980319555769,
+        "title": "Buy 1 (Single Foundation Stick - Try Risk-Free) / #202 Natural Radiance (Most Popular)",
+        "price": "39.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980319588537,
+        "title": "Buy 1 (Single Foundation Stick - Try Risk-Free) / #203 Warm Medium (Golden to Tan)",
+        "price": "39.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980319621305,
+        "title": "Buy 2 (Duo Everyday Set - Save 45%) / #201 Light Ivory (Fair to Light)",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980319654073,
+        "title": "Buy 2 (Duo Everyday Set - Save 45%) / #202 Natural Radiance (Most Popular)",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980319686841,
+        "title": "Buy 2 (Duo Everyday Set - Save 45%) / #203 Warm Medium (Golden to Tan)",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980319719609,
+        "title": "Buy 3 (Capsule Beauty Trio - Buy 2 Get 1 FREE) / #201 Light Ivory (Fair to Light)",
+        "price": "79.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980319752377,
+        "title": "Buy 3 (Capsule Beauty Trio - Buy 2 Get 1 FREE) / #202 Natural Radiance (Most Popular)",
+        "price": "79.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980319785145,
+        "title": "Buy 3 (Capsule Beauty Trio - Buy 2 Get 1 FREE) / #203 Warm Medium (Golden to Tan)",
+        "price": "79.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454964744377,
+    "title": "Zavelyn Flexible Neck Work Flashlight",
+    "handle": "sakerplus®-outdoor-flexible-neck-work-flashlight",
+    "template_suffix": null,
+    "variantsCount": 4,
+    "variants": [
+      {
+        "id": 67914693607609,
+        "title": "1 Pack + 4 Free Batteries",
+        "price": "19.99",
+        "sku": "OS123113-X87631",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914693640377,
+        "title": "2 Pack + 8 Free Batteries",
+        "price": "35.99",
+        "sku": "OS123113-Z44350",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914693673145,
+        "title": "3 Pack + 12 Free Batteries",
+        "price": "47.99",
+        "sku": "OS123113-Z44351",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914693705913,
+        "title": "5 Pack + 20 Free Batteries",
+        "price": "69.99",
+        "sku": "OS123113-Z44352",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15461521064121,
+    "title": "Zavelyn GravityGlider Stunt RC Jet",
+    "handle": "zavelyn-gravityglider-indestructible-stunt-rc-jet",
+    "template_suffix": null,
+    "variantsCount": 9,
+    "variants": [
+      {
+        "id": 67980435554489,
+        "title": "Buy 1 (Single Jet Fighter - Ready to Fly Kit) / Cosmic Blue (with 2.4GHz Controller)",
+        "price": "49.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980435587257,
+        "title": "Buy 1 (Single Jet Fighter - Ready to Fly Kit) / Candy Red (with 2.4GHz Controller)",
+        "price": "49.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980435620025,
+        "title": "Buy 1 (Single Jet Fighter - Ready to Fly Kit) / Lemon Yellow (with 2.4GHz Controller)",
+        "price": "49.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980435652793,
+        "title": "Buy 2 (Dogfight Duo Set - Save 45% + Extra Propellers) / Cosmic Blue (with 2.4GHz Controller)",
+        "price": "79.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980435685561,
+        "title": "Buy 2 (Dogfight Duo Set - Save 45% + Extra Propellers) / Candy Red (with 2.4GHz Controller)",
+        "price": "79.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980435718329,
+        "title": "Buy 2 (Dogfight Duo Set - Save 45% + Extra Propellers) / Lemon Yellow (with 2.4GHz Controller)",
+        "price": "79.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980435751097,
+        "title": "Buy 3 (Squadron Air Wing - Buy 2 Get 1 FREE) / Cosmic Blue (with 2.4GHz Controller)",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980435783865,
+        "title": "Buy 3 (Squadron Air Wing - Buy 2 Get 1 FREE) / Candy Red (with 2.4GHz Controller)",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980435816633,
+        "title": "Buy 3 (Squadron Air Wing - Buy 2 Get 1 FREE) / Lemon Yellow (with 2.4GHz Controller)",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454955045049,
+    "title": "Zavelyn Half Moon LED Lash Lamp",
+    "handle": "sakerplus®-dimmable-half-moon-led-lash-lamp",
+    "template_suffix": null,
+    "variantsCount": 3,
+    "variants": [
+      {
+        "id": 67914511155385,
+        "title": "Black",
+        "price": "84.99",
+        "sku": "LT132595-C001-X15101",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914511188153,
+        "title": "White",
+        "price": "84.99",
+        "sku": "LT132595-C005-X15101",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914511220921,
+        "title": "Pink",
+        "price": "84.99",
+        "sku": "LT132595-C009-X15101",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454949998777,
+    "title": "Zavelyn Handheld Steam Cleaner",
+    "handle": "sakerplus®-steam-disinfection-cleaner-clearance",
+    "template_suffix": null,
+    "variantsCount": 3,
+    "variants": [
+      {
+        "id": 67914393780409,
+        "title": "1 Set Steam Cleaner (with 1 Fiber Cloth)",
+        "price": "28.99",
+        "sku": "CP97052-X65102",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914393813177,
+        "title": "1 Set Steam Cleaner + 5 Fiber Cloths",
+        "price": "43.99",
+        "sku": "CP97052-X65103",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914393845945,
+        "title": "1 Set Steam Cleaner + 13 Fiber Cloths",
+        "price": "45.99",
+        "sku": "CP97052-X65105",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454953504953,
+    "title": "Zavelyn Handheld Thermal Imaging Camera",
+    "handle": "sakerplus®-high-precision-infrared-thermal-imaging-camera",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914471342265,
+        "title": "Default Title",
+        "price": "209.99",
+        "sku": "HA130826-X86520",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15460656021689,
+    "title": "Zavelyn Handpan Master (22\" 12-Tone D-Kurd)",
+    "handle": "zavelyn-handpan-master",
+    "template_suffix": "zavelyn-handpan-master",
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67971900375225,
+        "title": "432Hz (12 Notes)",
+        "price": "599.00",
+        "sku": "ZAV-HP-MST-432-12",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454951997625,
+    "title": "Zavelyn Home Sauna Steam Generator",
+    "handle": "sakerplus®-portable-home-sauna-steam-generator",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914438967481,
+        "title": "Default Title",
+        "price": "61.99",
+        "sku": "HA132935-X88405",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454958420153,
+    "title": "Zavelyn Hydraulic Cable Lug Crimper",
+    "handle": "sakerplus®-hydraulic-battery-cable-lug-crimping-tool",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914568892601,
+        "title": "Default Title",
+        "price": "104.99",
+        "sku": "GJ113731-X87496",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454954422457,
+    "title": "Zavelyn Hydraulic Pipe Crimping Tool Kit",
+    "handle": "sakerplus®-cordless-hydraulic-pipe-crimping-tool-kit",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914494214329,
+        "title": "Default Title",
+        "price": "779.99",
+        "sku": "GJ113731-X86884",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454957142201,
+    "title": "Zavelyn Infrared Sauna Blanket",
+    "handle": "portable-infrared",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914549100729,
+        "title": "Oxford cloth+Arm Hole",
+        "price": "187.99",
+        "sku": "HA132518-X88013",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454952882361,
+    "title": "Zavelyn Kids Basketball Hoop Set",
+    "handle": "sakerplus®-kids-indoor-outdoor-basketball-hoop-set",
+    "template_suffix": null,
+    "variantsCount": 3,
+    "variants": [
+      {
+        "id": 67914458464441,
+        "title": "Extra Large - 2 Basketballs",
+        "price": "79.99",
+        "sku": "OS124131-X88444",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914458497209,
+        "title": "1.22M - Pump & 2 Basketballs (Color Box)",
+        "price": "53.99",
+        "sku": "OS124131-X80849",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914458529977,
+        "title": "1.22M - Pump & 4 Basketballs (Color Box)",
+        "price": "55.99",
+        "sku": "OS124131-X80850",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15474869960889,
+    "title": "Zavelyn Large Foldable Zippered Storage Bins",
+    "handle": "zavelyn-foldable-zippered-storage-bins",
+    "template_suffix": "storage-bins",
+    "variantsCount": 3,
+    "variants": [
+      {
+        "id": 68082098405561,
+        "title": "6 Storage Bins",
+        "price": "101.95",
+        "sku": "ZAV-BIN-6PACK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68082098438329,
+        "title": "4 Storage Bins",
+        "price": "79.96",
+        "sku": "ZAV-BIN-4PACK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 68082098471097,
+        "title": "2 Storage Bins",
+        "price": "39.98",
+        "sku": "ZAV-BIN-2PACK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454952292537,
+    "title": "Zavelyn Laser Wall Chaser Groove Cutter",
+    "handle": "sakerplus®-laser-guided-electric-wall-chaser",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914445586617,
+        "title": "Default Title",
+        "price": "288.99",
+        "sku": "GJ132619-X88095",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15469512163513,
+    "title": "Zavelyn LED Red Light Face Mask",
+    "handle": "zavelyn-led-red-light-face-mask",
+    "template_suffix": "",
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 68033431240889,
+        "title": "Default Title",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454961238201,
+    "title": "Zavelyn Lightweight Kids Metal Detector",
+    "handle": "sakerplus®-kids-metal-detector-with-lcd-display",
+    "template_suffix": null,
+    "variantsCount": 3,
+    "variants": [
+      {
+        "id": 67914620141753,
+        "title": "Orange",
+        "price": "69.99",
+        "sku": "HB132178-C012",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914620174521,
+        "title": "Green",
+        "price": "69.99",
+        "sku": "HB132178-C1144",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914620207289,
+        "title": "Red",
+        "price": "69.99",
+        "sku": "HB132178-C002",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454964187321,
+    "title": "Zavelyn Livestock Grooming Scratch Brush",
+    "handle": "sakerplus®-livestock-massage-grooming-scratch-brush",
+    "template_suffix": null,
+    "variantsCount": 6,
+    "variants": [
+      {
+        "id": 67914680074425,
+        "title": "Yellow & Blue (17.2 in / 44 cm, Includes Two Types of Screws) / 1 set",
+        "price": "49.99",
+        "sku": "HW130958-C645-X86591",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914680107193,
+        "title": "Blue & Red (17.2 in / 44 cm, Includes Two Types of Screws) / 1 set",
+        "price": "49.99",
+        "sku": "HW130958-C1198-X86591",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914680139961,
+        "title": "Black (17.2 in / 44 cm, Includes Two Types of Screws) / 1 set",
+        "price": "49.99",
+        "sku": "HW130958-C001-X86591",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914680172729,
+        "title": "Yellow & Blue (17.2 in / 44 cm, Includes Two Types of Screws) / 2 sets",
+        "price": "79.99",
+        "sku": "HW130958-Z43526",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914680205497,
+        "title": "Blue & Red (17.2 in / 44 cm, Includes Two Types of Screws) / 2 sets",
+        "price": "79.99",
+        "sku": "HW130958-Z43527",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914680238265,
+        "title": "Black (17.2 in / 44 cm, Includes Two Types of Screws) / 2 sets",
+        "price": "79.99",
+        "sku": "HW130958-Z43528",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15455757336761,
+    "title": "Zavelyn Livestock Infrared Heating Lamp",
+    "handle": "livestock-heating-lamp",
+    "template_suffix": "sakerplus-livestock-heating-lamp",
+    "variantsCount": 3,
+    "variants": [
+      {
+        "id": 67930179403961,
+        "title": "1 Pack",
+        "price": "49.99",
+        "sku": "PT131318-1PACK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67930179436729,
+        "title": "2 Pack",
+        "price": "89.99",
+        "sku": "PT131318-2PACK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67953654300857,
+        "title": "3 Pack",
+        "price": "107.99",
+        "sku": "PT131318-3PACK",
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454959403193,
+    "title": "Zavelyn Low-Profile Downspout Catch Basin",
+    "handle": "sakerplus®-low-profile-downspout-catch-basin",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914587603129,
+        "title": "Default Title",
+        "price": "69.99",
+        "sku": "HB132291-E037",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15455481102521,
+    "title": "Zavelyn MagTrack Anti-Gravity Train Set",
+    "handle": "thoson-magtrack",
+    "template_suffix": "thoson-magtrack",
+    "variantsCount": 3,
+    "variants": [
+      {
+        "id": 67925383741625,
+        "title": "Rookie",
+        "price": "69.00",
+        "sku": "MAGTRACK-32",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67925383774393,
+        "title": "PRO",
+        "price": "119.00",
+        "sku": "MAGTRACK-68",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67925383807161,
+        "title": "Master",
+        "price": "159.00",
+        "sku": "MAGTRACK-141",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15461535416505,
+    "title": "Zavelyn MegaLifters Alloy RC Excavator",
+    "handle": "zavelyn-megalifters-heavy-duty-alloy-rc-construction-fleet",
+    "template_suffix": null,
+    "variantsCount": 12,
+    "variants": [
+      {
+        "id": 67980571181241,
+        "title": "Buy 1 (Single Construction Vehicle - Standard Starter Kit) / Heavy-Duty RC Excavator (Alloy Metal Bucket)",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980571214009,
+        "title": "Buy 1 (Single Construction Vehicle - Standard Starter Kit) / Hydraulic RC Dump Truck (Electric Bed)",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980571246777,
+        "title": "Buy 1 (Single Construction Vehicle - Standard Starter Kit) / All-Terrain RC Bulldozer (Alloy Metal Blade)",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980571279545,
+        "title": "Buy 1 (Single Construction Vehicle - Standard Starter Kit) / Front-End RC Wheel Loader (Lifting Arm)",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980571312313,
+        "title": "Buy 2 (Site Foreman Duo - Save 45% + Extra Batteries) / Heavy-Duty RC Excavator (Alloy Metal Bucket)",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980571345081,
+        "title": "Buy 2 (Site Foreman Duo - Save 45% + Extra Batteries) / Hydraulic RC Dump Truck (Electric Bed)",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980571377849,
+        "title": "Buy 2 (Site Foreman Duo - Save 45% + Extra Batteries) / All-Terrain RC Bulldozer (Alloy Metal Blade)",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980571410617,
+        "title": "Buy 2 (Site Foreman Duo - Save 45% + Extra Batteries) / Front-End RC Wheel Loader (Lifting Arm)",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980571443385,
+        "title": "Buy 3 (Mega Construction Crew - Buy 2 Get 1 FREE) / Heavy-Duty RC Excavator (Alloy Metal Bucket)",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980571476153,
+        "title": "Buy 3 (Mega Construction Crew - Buy 2 Get 1 FREE) / Hydraulic RC Dump Truck (Electric Bed)",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980571508921,
+        "title": "Buy 3 (Mega Construction Crew - Buy 2 Get 1 FREE) / All-Terrain RC Bulldozer (Alloy Metal Blade)",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980571541689,
+        "title": "Buy 3 (Mega Construction Crew - Buy 2 Get 1 FREE) / Front-End RC Wheel Loader (Lifting Arm)",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15455040340153,
+    "title": "Zavelyn Nasal Cleaner Starter Bundle",
+    "handle": "navage-starter-bundle",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67916568035513,
+        "title": "Default Title",
+        "price": "99.95",
+        "sku": "BNDL-80030",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454951211193,
+    "title": "Zavelyn Outdoor Solar Street Lights",
+    "handle": "sakerplus®-solar-street-lights-clearance-sale",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914420289721,
+        "title": "2 Pack",
+        "price": "55.99",
+        "sku": "CP93509-X63718",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454958878905,
+    "title": "Zavelyn Panoramic Dual Dash Camera",
+    "handle": "sakerplus®-panoramic-dash-camera-with-night-vision",
+    "template_suffix": null,
+    "variantsCount": 2,
+    "variants": [
+      {
+        "id": 67914578591929,
+        "title": "5 Lenses (No Memory Card or WiFi)",
+        "price": "86.99",
+        "sku": "AM132152-X87597",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914578624697,
+        "title": "5 Lenses With WiFi (No Memory Card)",
+        "price": "91.99",
+        "sku": "AM132152-X87598",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454951801017,
+    "title": "Zavelyn Portable Camping Fan with Light",
+    "handle": "sakerplus-camping-fan-with-light-battery-1",
+    "template_suffix": null,
+    "variantsCount": 2,
+    "variants": [
+      {
+        "id": 67914433626297,
+        "title": "Orange",
+        "price": "125.99",
+        "sku": "EC98268-C012",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914433659065,
+        "title": "Green",
+        "price": "125.99",
+        "sku": "EC98268-C004",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454949343417,
+    "title": "Zavelyn Portable Inverter Welding Machine",
+    "handle": "sakerplus®-portable-welding-machine-clearance",
+    "template_suffix": null,
+    "variantsCount": 2,
+    "variants": [
+      {
+        "id": 67914377658553,
+        "title": "1 * Sakerplus Portable Welding Machine",
+        "price": "67.99",
+        "sku": "GJ76085-X54891",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914377691321,
+        "title": "1 * Sakerplus Portable Welding Machine+40 welding rods",
+        "price": "81.99",
+        "sku": "GJ76085-X56726",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15460917313721,
+    "title": "Zavelyn Portable Mesh Nebulizer",
+    "handle": "zavelyn-portable-ultrasonic-mesh-nebulizer",
+    "template_suffix": null,
+    "variantsCount": 2,
+    "variants": [
+      {
+        "id": 67974980927673,
+        "title": "Buy 1 + Get 1 FREE (+ Free eBook)",
+        "price": "49.95",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67974980960441,
+        "title": "Buy 2 + Get 2 FREE (Best Family Bundle)",
+        "price": "99.90",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15455040241849,
+    "title": "Zavelyn Powered Nasal Care Cleaner",
+    "handle": "navage-advanced-nose-cleaner",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67916567937209,
+        "title": "Default Title",
+        "price": "114.99",
+        "sku": "BNDL-80060",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15461507956921,
+    "title": "Zavelyn PureFlow Wireless Pet Water Fountain",
+    "handle": "zavelyn-pureflow-wireless-stainless-steel-pet-water-fountain",
+    "template_suffix": null,
+    "variantsCount": 12,
+    "variants": [
+      {
+        "id": 67980362318009,
+        "title": "Buy 1 (Single Pet Fountain - Standard Kit) / Wireless Battery Pro (7L Large Tank)",
+        "price": "69.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980362350777,
+        "title": "Buy 1 (Single Pet Fountain - Standard Kit) / Wireless Battery Pro (4L Standard Tank)",
+        "price": "69.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980362383545,
+        "title": "Buy 1 (Single Pet Fountain - Standard Kit) / Plug-In Power (7L Large Tank)",
+        "price": "69.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980362416313,
+        "title": "Buy 1 (Single Pet Fountain - Standard Kit) / Plug-In Power (4L Standard Tank)",
+        "price": "69.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980362449081,
+        "title": "Buy 2 (Two-Room Hydration Set - Save 45%) / Wireless Battery Pro (7L Large Tank)",
+        "price": "119.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980362481849,
+        "title": "Buy 2 (Two-Room Hydration Set - Save 45%) / Wireless Battery Pro (4L Standard Tank)",
+        "price": "119.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980362514617,
+        "title": "Buy 2 (Two-Room Hydration Set - Save 45%) / Plug-In Power (7L Large Tank)",
+        "price": "119.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980362547385,
+        "title": "Buy 2 (Two-Room Hydration Set - Save 45%) / Plug-In Power (4L Standard Tank)",
+        "price": "119.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980362580153,
+        "title": "Buy 3 (Multi-Pet Complete Estate Set - Buy 2 Get 1 FREE) / Wireless Battery Pro (7L Large Tank)",
+        "price": "149.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980362612921,
+        "title": "Buy 3 (Multi-Pet Complete Estate Set - Buy 2 Get 1 FREE) / Wireless Battery Pro (4L Standard Tank)",
+        "price": "149.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980362645689,
+        "title": "Buy 3 (Multi-Pet Complete Estate Set - Buy 2 Get 1 FREE) / Plug-In Power (7L Large Tank)",
+        "price": "149.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980362678457,
+        "title": "Buy 3 (Multi-Pet Complete Estate Set - Buy 2 Get 1 FREE) / Plug-In Power (4L Standard Tank)",
+        "price": "149.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15460701831353,
+    "title": "Zavelyn Rain Drum (3\" 6-Tone Outdoor)",
+    "handle": "zavelyn-rain-drum",
+    "template_suffix": "zavelyn-rain-drum",
+    "variantsCount": 5,
+    "variants": [
+      {
+        "id": 67972414472377,
+        "title": "Green",
+        "price": "59.00",
+        "sku": "ZAV-RAIN-3-GRE",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67972414505145,
+        "title": "Black",
+        "price": "59.00",
+        "sku": "ZAV-RAIN-3-BLA",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67972414537913,
+        "title": "Navy",
+        "price": "59.00",
+        "sku": "ZAV-RAIN-3-NAV",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67972414570681,
+        "title": "Purple",
+        "price": "59.00",
+        "sku": "ZAV-RAIN-3-PUR",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67972414603449,
+        "title": "Gold",
+        "price": "59.00",
+        "sku": "ZAV-RAIN-3-GOL",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454951473337,
+    "title": "Zavelyn RAV4 Center Console USB Hub",
+    "handle": "sakerplus®-toyota-rav4-led-usb-charging-hub",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914427269305,
+        "title": "Default Title",
+        "price": "95.99",
+        "sku": "EC128015-X84097",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15469511213241,
+    "title": "Zavelyn Red Light Eye Care Mask",
+    "handle": "zavelyn-red-light-eye-care-mask",
+    "template_suffix": "",
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 68033411776697,
+        "title": "Default Title",
+        "price": "89.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": "shopify",
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454960255161,
+    "title": "Zavelyn Red Light Therapy Panel",
+    "handle": "sakerplus®-adjustable-red-light-therapy-panel",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914601169081,
+        "title": "Default Title",
+        "price": "165.99",
+        "sku": "HA132313-X15101",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454956028089,
+    "title": "Zavelyn Retractable LED Fill Light Stick",
+    "handle": "sakerplus®-rechargeable-retractable-led-fill-light-stick",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914528981177,
+        "title": "Default Title",
+        "price": "67.99",
+        "sku": "GJ132385-E001",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454963073209,
+    "title": "Zavelyn Rolling Nut & Fruit Harvester",
+    "handle": "sakerplus®-rolling-nut-and-ball-picker",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914660315321,
+        "title": "Default Title",
+        "price": "93.99",
+        "sku": "GJ127036-X87329",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15460886315193,
+    "title": "Zavelyn Rotary Cheese Grater & Slicer",
+    "handle": "zavelyn-5-in-1-rotary-cheese-grater-shredder",
+    "template_suffix": null,
+    "variantsCount": 4,
+    "variants": [
+      {
+        "id": 67974491996345,
+        "title": "White (1 pc)",
+        "price": "55.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67974492029113,
+        "title": "Green (1 pc)",
+        "price": "55.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67974492061881,
+        "title": "White (2 pcs) - Best Seller",
+        "price": "96.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67974492094649,
+        "title": "Green (2 pcs) - Hot Sale",
+        "price": "96.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454955765945,
+    "title": "Zavelyn Rotating Galaxy Star Projector",
+    "handle": "sakerplus®-rotating-galaxy-projector-with-adjustable-focus",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914524688569,
+        "title": "Default Title",
+        "price": "52.99",
+        "sku": "LT132688-X88160",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454960517305,
+    "title": "Zavelyn Rotating Goose Target Game",
+    "handle": "sakerplus®-electronic-rotating-goose-target-game",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914604150969,
+        "title": "Default Title",
+        "price": "52.99",
+        "sku": "TY132184-X47172",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15461407588537,
+    "title": "Zavelyn SculptComfort Wirefree Shapewear Bra",
+    "handle": "zavelyn-sculptcomfort-wirefree-breast-shapewear-bra",
+    "template_suffix": null,
+    "variantsCount": 18,
+    "variants": [
+      {
+        "id": 67979690934457,
+        "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Nude Tan",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979690967225,
+        "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Rich Brown",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979690999993,
+        "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Classic Black",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691032761,
+        "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Pure White",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691065529,
+        "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Blush Pink",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691098297,
+        "title": "Buy 1 (Single SculptComfort Bra - Try Risk-Free) / Ruby Red",
+        "price": "59.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691131065,
+        "title": "Buy 2 (Everyday Duo Set - Save 55%) / Nude Tan",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691163833,
+        "title": "Buy 2 (Everyday Duo Set - Save 55%) / Rich Brown",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691196601,
+        "title": "Buy 2 (Everyday Duo Set - Save 55%) / Classic Black",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691229369,
+        "title": "Buy 2 (Everyday Duo Set - Save 55%) / Pure White",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691262137,
+        "title": "Buy 2 (Everyday Duo Set - Save 55%) / Blush Pink",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691294905,
+        "title": "Buy 2 (Everyday Duo Set - Save 55%) / Ruby Red",
+        "price": "99.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691327673,
+        "title": "Buy 3 (Capsule Wardrobe Set - Buy 2 Get 1 FREE) / Nude Tan",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691360441,
+        "title": "Buy 3 (Capsule Wardrobe Set - Buy 2 Get 1 FREE) / Rich Brown",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691393209,
+        "title": "Buy 3 (Capsule Wardrobe Set - Buy 2 Get 1 FREE) / Classic Black",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691425977,
+        "title": "Buy 3 (Capsule Wardrobe Set - Buy 2 Get 1 FREE) / Pure White",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691458745,
+        "title": "Buy 3 (Capsule Wardrobe Set - Buy 2 Get 1 FREE) / Blush Pink",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979691491513,
+        "title": "Buy 3 (Capsule Wardrobe Set - Buy 2 Get 1 FREE) / Ruby Red",
+        "price": "129.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454960910521,
+    "title": "Zavelyn Self-Leveling Cross Laser Level",
+    "handle": "sakerplus®-self-leveling-laser-level-with-tripod",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914613457081,
+        "title": "Default Title",
+        "price": "96.99",
+        "sku": "GJ126393-X82633",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454947901625,
+    "title": "Zavelyn Sensory Textured Floor Mats",
+    "handle": "zavelyn-sensory-floor-mats",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914347086009,
+        "title": "Default Title",
+        "price": "79.99",
+        "sku": "CP133222-X88665",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454954750137,
+    "title": "Zavelyn Smart Hygrometer Thermometer Clock",
+    "handle": "sakerplus®-smart-thermometer-hygrometer-clock",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914502176953,
+        "title": "Default Title",
+        "price": "50.99",
+        "sku": "HB121850-E001",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454962286777,
+    "title": "Zavelyn Solar Motion Sensor Security Light",
+    "handle": "sakerplus®-outdoor-solar-motion-sensor-security-light",
+    "template_suffix": null,
+    "variantsCount": 5,
+    "variants": [
+      {
+        "id": 67914642456761,
+        "title": "Ground Stake - 1 PC",
+        "price": "39.99",
+        "sku": "LT129414-X85381",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914642489529,
+        "title": "Wall Mount - 1 PC",
+        "price": "39.99",
+        "sku": "LT129414-X85351",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914642522297,
+        "title": "Flexible Tripod - 1 PC",
+        "price": "46.99",
+        "sku": "LT129414-X85352",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914642555065,
+        "title": "Standing Clamp - 1 PC",
+        "price": "46.99",
+        "sku": "LT129414-X85353",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914642587833,
+        "title": "Magnetic Mount - 1 PC",
+        "price": "49.99",
+        "sku": "LT129414-X85354",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454950490297,
+    "title": "Zavelyn Squishy Egg Silicone Night Light",
+    "handle": "sakerplus®-squishy-egg-multicolor-tap-night-light",
+    "template_suffix": null,
+    "variantsCount": 2,
+    "variants": [
+      {
+        "id": 67914403283129,
+        "title": "Handle Base",
+        "price": "53.99",
+        "sku": "LT111107-X88463",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914403315897,
+        "title": "Flat Base",
+        "price": "62.99",
+        "sku": "LT111107-E001",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15455242387641,
+    "title": "Zavelyn SrefalSteam Thermal Steam Cleaner",
+    "handle": "srefalsteam",
+    "template_suffix": "srefalsteam",
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67920836853945,
+        "title": "Default Title",
+        "price": "89.99",
+        "sku": "SREFALSTEAM-PROMO",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15461446713529,
+    "title": "Zavelyn SuperTots Fresh Food Feeder Pacifier",
+    "handle": "zavelyn-supertots-fresh-food-fruit-feeder-pacifier",
+    "template_suffix": null,
+    "variantsCount": 12,
+    "variants": [
+      {
+        "id": 67979946426553,
+        "title": "Buy 1 (Single Feeder Pacifier - Standard Starter Kit) / Sky Blue (Includes S, M, L Teats)",
+        "price": "16.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979946459321,
+        "title": "Buy 1 (Single Feeder Pacifier - Standard Starter Kit) / Blush Pink (Includes S, M, L Teats)",
+        "price": "16.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979946492089,
+        "title": "Buy 1 (Single Feeder Pacifier - Standard Starter Kit) / Sunny Yellow (Includes S, M, L Teats)",
+        "price": "16.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979946524857,
+        "title": "Buy 1 (Single Feeder Pacifier - Standard Starter Kit) / Mint Green (Includes S, M, L Teats)",
+        "price": "16.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979946557625,
+        "title": "Buy 2 (Duo Pack - Save 45% + Extra Teething Nipple) / Sky Blue (Includes S, M, L Teats)",
+        "price": "26.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979946590393,
+        "title": "Buy 2 (Duo Pack - Save 45% + Extra Teething Nipple) / Blush Pink (Includes S, M, L Teats)",
+        "price": "26.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979946623161,
+        "title": "Buy 2 (Duo Pack - Save 45% + Extra Teething Nipple) / Sunny Yellow (Includes S, M, L Teats)",
+        "price": "26.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979946655929,
+        "title": "Buy 2 (Duo Pack - Save 45% + Extra Teething Nipple) / Mint Green (Includes S, M, L Teats)",
+        "price": "26.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979946688697,
+        "title": "Buy 3 (Complete Family & Daycare Set - Buy 2 Get 1 FREE) / Sky Blue (Includes S, M, L Teats)",
+        "price": "34.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979946721465,
+        "title": "Buy 3 (Complete Family & Daycare Set - Buy 2 Get 1 FREE) / Blush Pink (Includes S, M, L Teats)",
+        "price": "34.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979946754233,
+        "title": "Buy 3 (Complete Family & Daycare Set - Buy 2 Get 1 FREE) / Sunny Yellow (Includes S, M, L Teats)",
+        "price": "34.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67979946787001,
+        "title": "Buy 3 (Complete Family & Daycare Set - Buy 2 Get 1 FREE) / Mint Green (Includes S, M, L Teats)",
+        "price": "34.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454954193081,
+    "title": "Zavelyn Tactical MOLLE Utility Vest",
+    "handle": "sakerplus®-tactical-molle-utility-vest",
+    "template_suffix": null,
+    "variantsCount": 3,
+    "variants": [
+      {
+        "id": 67914489102521,
+        "title": "Black",
+        "price": "54.99",
+        "sku": "LB132757-C001",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914489135289,
+        "title": "Khaki",
+        "price": "54.99",
+        "sku": "LB132757-C011",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914489168057,
+        "title": "Olive Green",
+        "price": "54.99",
+        "sku": "LB132757-C053",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454948163769,
+    "title": "Zavelyn Tearable Non-Slip Drawer Liner",
+    "handle": "zavelyn-tearable-drawer-liner",
+    "template_suffix": null,
+    "variantsCount": 3,
+    "variants": [
+      {
+        "id": 67914352656569,
+        "title": "1 pc-Brown",
+        "price": "36.99",
+        "sku": "HW130038-C007",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914352689337,
+        "title": "2 pcs-Brown",
+        "price": "66.99",
+        "sku": "HW130038-Z45123",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914352722105,
+        "title": "5 pcs-Brown",
+        "price": "159.99",
+        "sku": "HW130038-Z45124",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454948556985,
+    "title": "Zavelyn Tearable Shelf & Drawer Liner",
+    "handle": "zavelyn-shelf-drawer-liner",
+    "template_suffix": null,
+    "variantsCount": 3,
+    "variants": [
+      {
+        "id": 67914360291513,
+        "title": "White Dotted-1 PC",
+        "price": "20.99",
+        "sku": "HW130038-X85994",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914360324281,
+        "title": "White Dotted-2 PCS",
+        "price": "32.99",
+        "sku": "HW130038-Z42795",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914360357049,
+        "title": "White Dotted-5 PCS",
+        "price": "79.99",
+        "sku": "HW130038-Z42796",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15461559533753,
+    "title": "Zavelyn ThermoGlove Heated Fingerless Gloves",
+    "handle": "zavelyn-thermoglove-smart-thermostatic-heated-fingerless-gloves",
+    "template_suffix": null,
+    "variantsCount": 9,
+    "variants": [
+      {
+        "id": 67980707037369,
+        "title": "Buy 1 Pair (Standard Warmth Starter Kit) / Stealth Black",
+        "price": "26.77",
+        "sku": "ZAV-GLOVE-1PK-BLK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980707070137,
+        "title": "Buy 1 Pair (Standard Warmth Starter Kit) / Heather Gray",
+        "price": "26.77",
+        "sku": "ZAV-GLOVE-1PK-GRY",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980707102905,
+        "title": "Buy 1 Pair (Standard Warmth Starter Kit) / Blush Pink",
+        "price": "26.77",
+        "sku": "ZAV-GLOVE-1PK-PNK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980707135673,
+        "title": "Buy 2 Pairs (Couple / Backup Pack - Save 45%) / Stealth Black",
+        "price": "44.99",
+        "sku": "ZAV-GLOVE-2PK-BLK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980707168441,
+        "title": "Buy 2 Pairs (Couple / Backup Pack - Save 45%) / Heather Gray",
+        "price": "44.99",
+        "sku": "ZAV-GLOVE-2PK-GRY",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980707201209,
+        "title": "Buy 2 Pairs (Couple / Backup Pack - Save 45%) / Blush Pink",
+        "price": "44.99",
+        "sku": "ZAV-GLOVE-2PK-PNK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980707233977,
+        "title": "Buy 3 Pairs (Family Winter Gift Pack - Buy 2 Get 1 FREE) / Stealth Black",
+        "price": "59.99",
+        "sku": "ZAV-GLOVE-2PK-BLK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980707266745,
+        "title": "Buy 3 Pairs (Family Winter Gift Pack - Buy 2 Get 1 FREE) / Heather Gray",
+        "price": "59.99",
+        "sku": "ZAV-GLOVE-2PK-GRY",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67980707299513,
+        "title": "Buy 3 Pairs (Family Winter Gift Pack - Buy 2 Get 1 FREE) / Blush Pink",
+        "price": "59.99",
+        "sku": "ZAV-GLOVE-2PK-PNK",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454949540025,
+    "title": "Zavelyn Titanium Pocket Pry Bar",
+    "handle": "sakerplus®-titanium-alloy-multifunction-pocket-pry-bar",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914383098041,
+        "title": "Default Title",
+        "price": "62.99",
+        "sku": "GJ132966-E099",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454963433657,
+    "title": "Zavelyn Ultra-Fine Cooking Oil Sprayer",
+    "handle": "sakerplus®-ultra-fine-cooking-oil-spray-bottle",
+    "template_suffix": null,
+    "variantsCount": 8,
+    "variants": [
+      {
+        "id": 67914666836153,
+        "title": "White（1 pc）",
+        "price": "16.99",
+        "sku": "KG131398-C005",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914666868921,
+        "title": "Orange（1 pc）",
+        "price": "16.99",
+        "sku": "KG131398-C003",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914666901689,
+        "title": "Green（1 pc）",
+        "price": "16.99",
+        "sku": "KG131398-C004",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914666934457,
+        "title": "White（2 pcs）",
+        "price": "29.99",
+        "sku": "KG131398-Z43632",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914666967225,
+        "title": "Orange（2 pcs）",
+        "price": "29.99",
+        "sku": "KG131398-Z43633",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914666999993,
+        "title": "Green（2 pcs）",
+        "price": "29.99",
+        "sku": "KG131398-Z43634",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914667032761,
+        "title": "Dual-Ended Measured Seasoning Jar – White (2 pcs)",
+        "price": "29.99",
+        "sku": "KG133360-Z45253",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      },
+      {
+        "id": 67914667065529,
+        "title": "3 Oil Spray Bottles (White + Yellow + Green) + 2 Dual-Ended Seasoning Jars (White)",
+        "price": "69.99",
+        "sku": "KG131398-Z45260",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454948786361,
+    "title": "Zavelyn UV Bed Vacuum Cleaner",
+    "handle": "saker®-powerful-uv-bed-vacuum-cleaner-clearance-sale",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914364879033,
+        "title": "Default Title",
+        "price": "44.99",
+        "sku": "CP103850-X70850",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15461356011705,
+    "title": "Zavelyn vFit Red Light Wellness Device",
+    "handle": "zavelyn-vfit-red-light-intimate-wellness-device",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67979120574649,
+        "title": "Buy 1 (Essential Starter Kit - Save 45%)",
+        "price": "149.99",
+        "sku": null,
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454959894713,
+    "title": "Zavelyn Wheel Alignment Tool Kit",
+    "handle": "sakerplus®-stainless-steel-wheel-alignment-kit",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914596286649,
+        "title": "Default Title",
+        "price": "63.99",
+        "sku": "AM132311-C001",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15454961565881,
+    "title": "Zavelyn Workbench Tail Vise Clamp",
+    "handle": "sakerplus®-adjustable-workbench-tail-vise-clamp",
+    "template_suffix": null,
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67914626367673,
+        "title": "Default Title",
+        "price": "49.99",
+        "sku": "GJ132086-X87547",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 15455092572345,
+    "title": "Zavelyn Yeoman Lawn Sweeper",
+    "handle": "the-yeoman-sweep",
+    "template_suffix": "yeoman-sweep",
+    "variantsCount": 1,
+    "variants": [
+      {
+        "id": 67918044954809,
+        "title": "21 in",
+        "price": "229.99",
+        "sku": "YEOMAN-SWEEP-21",
+        "inventory_policy": "continue",
+        "inventory_management": null,
+        "inventory_quantity": -1
+      }
+    ]
+  }
+]

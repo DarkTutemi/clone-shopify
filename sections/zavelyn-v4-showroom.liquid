@@ -175,6 +175,13 @@
                   <!-- Individual Product Compartment on the Shelf -->
                   <div class="zv-shelf-compartment" data-col-index="{{ mod_index }}">
                     
+                    {% assign cutout_image_url = '' %}
+                    {% if product.handle == 'sakerplus®-1500w-flame-effect-oscillating-space-heater' %}
+                      {% assign cutout_image_url = 'zavelyn-cutout-space-heater.png' | asset_url %}
+                    {% elsif product.handle == 'zavelyn-automatic-dough-mixer-with-ferment-function' %}
+                      {% assign cutout_image_url = 'zavelyn-cutout-dough-mixer.png' | asset_url %}
+                    {% endif %}
+
                     <article 
                       class="zv-shelf-item" 
                       data-product-id="{{ product.id }}" 
@@ -182,32 +189,49 @@
                       data-product-url="{{ product.url }}"
                       data-product-json="{{ product | json | escape }}"
                       data-col="{{ mod_index }}"
+                      {% if cutout_image_url != '' %}data-cutout-src="{{ cutout_image_url }}"{% endif %}
                       tabindex="0"
                       role="button"
                       aria-label="{{ product.title | escape }} - {{ current_variant.price | money }}"
                     >
                       <!-- Freestanding Physical Merchandising Display on Shelf Plane -->
                       <div class="zv-merch-display">
-                        <!-- If product image is opaque/white, framed in acrylic retail riser -->
-                        <div class="zv-acrylic-riser">
-                          {% if product.featured_image %}
+                        {% if cutout_image_url != '' %}
+                          <!-- Mode A: Single-Product Transparent Cutout Experiment -->
+                          <div class="zv-cutout-wrap" style="position: relative; width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: center;">
                             <img 
-                              src="{{ product.featured_image | image_url: width: 480 }}" 
+                              src="{{ cutout_image_url }}" 
                               alt="{{ product.title | escape }}" 
                               loading="lazy" 
-                              class="zv-merch-img"
+                              class="zv-merch-img zv-cutout-img"
+                              style="max-width: 92%; max-height: 92%; object-fit: contain; filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.42));"
                               width="240"
                               height="240"
                             >
-                          {% else %}
-                            {{ 'product-1' | placeholder_svg_tag: 'zv-merch-img' }}
-                          {% endif %}
-                        </div>
+                          </div>
+                        {% else %}
+                          <!-- Mode B: Standard Acrylic Retail Riser for White/Opaque Media -->
+                          <div class="zv-acrylic-riser">
+                            {% if product.featured_image %}
+                              <img 
+                                src="{{ product.featured_image | image_url: width: 480 }}" 
+                                alt="{{ product.title | escape }}" 
+                                loading="lazy" 
+                                class="zv-merch-img"
+                                width="240"
+                                height="240"
+                              >
+                            {% else %}
+                              {{ 'product-1' | placeholder_svg_tag: 'zv-merch-img' }}
+                            {% endif %}
+                          </div>
+                        {% endif %}
 
                         <!-- Realistic Under-Product Ground Contact Shadow -->
                         <div class="zv-shelf-contact-shadow"></div>
                         <div class="zv-shelf-ambient-shadow"></div>
                       </div>
+
 
                       <!-- Subtle Retail Shelf-Edge Channel Tag -->
                       <div class="zv-shelf-edge-tag">
