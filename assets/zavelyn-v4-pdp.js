@@ -50,6 +50,92 @@
       });
     });
 
+    // 1b. Adaptive Variant Selection (Pills & Dropdown)
+    const variantPills = buyBox.querySelectorAll('.zv-variant-pill-btn');
+    const variantDropdown = document.getElementById('zvVariantDropdown');
+    const variantLabel = document.getElementById('zvSelectedVariantLabel');
+
+    function onVariantSelected(variantId, priceCents, compareCents, title, imgSrc) {
+      activeVariantId = variantId;
+      basePriceCents = priceCents;
+      baseCompareCents = compareCents;
+
+      if (variantLabel) variantLabel.textContent = title;
+      if (imgSrc && mainImg) mainImg.src = imgSrc;
+
+      // Update prices on all bundle cards
+      bundleCards.forEach(card => {
+        const tierQty = parseInt(card.getAttribute('data-qty'), 10) || 1;
+        card.setAttribute('data-price-cents', basePriceCents * tierQty);
+        card.setAttribute('data-compare-cents', baseCompareCents * tierQty);
+        const totalEl = card.querySelector('.zv-bundle-card-total');
+        if (totalEl) totalEl.textContent = formatMoney(basePriceCents * tierQty);
+      });
+
+      // Update active price for currently selected bundle card
+      const selectedCard = buyBox.querySelector('.zv-bundle-card.selected');
+      if (selectedCard) {
+        const tierQty = parseInt(selectedCard.getAttribute('data-qty'), 10) || 1;
+        const currentPrice = basePriceCents * tierQty;
+        const comparePrice = baseCompareCents * tierQty;
+
+        if (priceActiveEl) priceActiveEl.textContent = formatMoney(currentPrice);
+        if (stickyPrice) stickyPrice.textContent = formatMoney(currentPrice);
+
+        if (priceCompareEl) {
+          if (comparePrice > currentPrice) {
+            priceCompareEl.textContent = formatMoney(comparePrice);
+            priceCompareEl.style.display = 'inline';
+            if (priceSavingsEl) {
+              const savePct = Math.round((comparePrice - currentPrice) * 100 / comparePrice);
+              priceSavingsEl.textContent = 'SAVE ' + savePct + '%';
+              priceSavingsEl.style.display = 'inline';
+            }
+          } else {
+            priceCompareEl.style.display = 'none';
+            if (priceSavingsEl) priceSavingsEl.style.display = 'none';
+          }
+        }
+      }
+    }
+
+    variantPills.forEach(pill => {
+      pill.addEventListener('click', function() {
+        variantPills.forEach(p => {
+          p.classList.remove('active');
+          p.style.background = '#FFFFFF';
+          p.style.color = 'var(--zv-heading)';
+          p.style.borderColor = 'var(--zv-border)';
+        });
+        this.classList.add('active');
+        this.style.background = 'var(--zv-primary)';
+        this.style.color = '#FFFFFF';
+        this.style.borderColor = 'var(--zv-primary)';
+
+        const vId = this.getAttribute('data-variant-id');
+        const vPrice = parseInt(this.getAttribute('data-variant-price'), 10);
+        const vCompare = parseInt(this.getAttribute('data-variant-compare'), 10);
+        const vTitle = this.getAttribute('data-variant-title');
+        const vImg = this.getAttribute('data-variant-img');
+
+        onVariantSelected(vId, vPrice, vCompare, vTitle, vImg);
+      });
+    });
+
+    if (variantDropdown) {
+      variantDropdown.addEventListener('change', function() {
+        const opt = this.options[this.selectedIndex];
+        if (!opt) return;
+        const vId = opt.value;
+        const vPrice = parseInt(opt.getAttribute('data-variant-price'), 10);
+        const vCompare = parseInt(opt.getAttribute('data-variant-compare'), 10);
+        const vTitle = opt.getAttribute('data-variant-title');
+        const vImg = opt.getAttribute('data-variant-img');
+
+        onVariantSelected(vId, vPrice, vCompare, vTitle, vImg);
+      });
+    }
+
     // 2. Bundle Card Click Handler
     bundleCards.forEach(card => {
       card.addEventListener('click', function() {

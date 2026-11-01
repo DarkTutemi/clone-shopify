@@ -106,6 +106,55 @@
           </li>
         </ul>
 
+        <!-- ADAPTIVE VARIANT SELECTOR (IF MULTIPLE VARIANTS EXIST) -->
+        {% if product.variants.size > 1 %}
+          <div class="zv-variant-selector-wrap" id="zvVariantSelectorWrap" style="margin: 20px 0 16px;">
+            <div style="font-size: 12.5px; font-weight: 800; letter-spacing: 0.8px; color: var(--zv-heading); text-transform: uppercase; margin-bottom: 8px;">
+              SELECT OPTION: <span id="zvSelectedVariantLabel" style="color: var(--zv-primary); font-weight: 700;">{{ current_variant.title }}</span>
+            </div>
+
+            {% if product.variants.size <= 4 %}
+              <!-- Adaptive Pill Buttons for <= 4 Variants -->
+              <div class="zv-variant-pills-row" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                {% for variant in product.variants %}
+                  <button 
+                    type="button" 
+                    class="zv-variant-pill-btn {% if variant.id == current_variant.id %}active{% endif %}"
+                    data-variant-id="{{ variant.id }}"
+                    data-variant-price="{{ variant.price }}"
+                    data-variant-compare="{{ variant.compare_at_price | default: variant.price }}"
+                    data-variant-title="{{ variant.title | escape }}"
+                    {% if variant.featured_image %}data-variant-img="{{ variant.featured_image | image_url: width: 900 }}"{% endif %}
+                    style="padding: 10px 16px; border-radius: 8px; border: 1.5px solid {% if variant.id == current_variant.id %}var(--zv-primary){% else %}var(--zv-border){% endif %}; background: {% if variant.id == current_variant.id %}var(--zv-primary){% else %}#FFFFFF{% endif %}; color: {% if variant.id == current_variant.id %}#FFFFFF{% else %}var(--zv-heading){% endif %}; font-size: 13.5px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;"
+                  >
+                    {{ variant.title }}
+                  </button>
+                {% endfor %}
+              </div>
+            {% else %}
+              <!-- Adaptive Custom Dropdown for > 4 Variants (Prevents Vertical Blowout) -->
+              <select 
+                class="zv-variant-select-dropdown" 
+                id="zvVariantDropdown"
+                style="width: 100%; padding: 12px 14px; font-size: 14px; font-weight: 700; color: var(--zv-heading); background: #FFFFFF; border: 1.5px solid var(--zv-primary); border-radius: 8px; cursor: pointer; outline: none;"
+              >
+                {% for variant in product.variants %}
+                  <option 
+                    value="{{ variant.id }}"
+                    {% if variant.id == current_variant.id %}selected{% endif %}
+                    data-variant-price="{{ variant.price }}"
+                    data-variant-compare="{{ variant.compare_at_price | default: variant.price }}"
+                    data-variant-title="{{ variant.title | escape }}"
+                    {% if variant.featured_image %}data-variant-img="{{ variant.featured_image | image_url: width: 900 }}"{% endif %}
+                  >
+                    {{ variant.title }} — {{ variant.price | money }}
+                  </option>
+                {% endfor %}
+              </select>
+            {% endif %}
+          </div>
+        {% endif %}
+
         <!-- TIERED BUNDLE SELECTOR (KACHING / SHOPSIDEK T01 PATTERN) -->
         <div class="zv-bundle-box">
           <div class="zv-bundle-head">
@@ -246,6 +295,37 @@
             <span class="zv-trust-badge-title">256-Bit SSL</span>
             <span class="zv-trust-badge-desc">Encrypted checkout</span>
           </div>
+        <!-- COLLAPSIBLE ACCORDION GROUP (T01 PATTERN) -->
+        <div class="zv-pdp-accordions" style="margin-top: 24px; border-top: 1px solid var(--zv-border);">
+          <details style="border-bottom: 1px solid var(--zv-border); padding: 14px 0; cursor: pointer;" open>
+            <summary style="font-weight: 800; font-size: 15px; color: var(--zv-heading); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>Product Overview &amp; Specifications</span>
+              <span style="font-size: 18px;">▾</span>
+            </summary>
+            <div style="font-size: 14px; line-height: 1.6; color: var(--zv-body); margin-top: 10px;">
+              {{ product.description }}
+            </div>
+          </details>
+
+          <details style="border-bottom: 1px solid var(--zv-border); padding: 14px 0; cursor: pointer;">
+            <summary style="font-weight: 800; font-size: 15px; color: var(--zv-heading); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>Fast 24-48h US Shipping &amp; Insured Transit</span>
+              <span style="font-size: 18px;">▾</span>
+            </summary>
+            <div style="font-size: 14px; line-height: 1.6; color: var(--zv-body); margin-top: 10px;">
+              Every order is packaged in protective heavy-duty boxing and dispatched directly from our regional US fulfillment centers within 24–48 business hours. Carrier tracking is provided via email and SMS immediately upon shipment.
+            </div>
+          </details>
+
+          <details style="border-bottom: 1px solid var(--zv-border); padding: 14px 0; cursor: pointer;">
+            <summary style="font-weight: 800; font-size: 15px; color: var(--zv-heading); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>Risk-Free 30-Day Money-Back Guarantee</span>
+              <span style="font-size: 18px;">▾</span>
+            </summary>
+            <div style="font-size: 14px; line-height: 1.6; color: var(--zv-body); margin-top: 10px;">
+              Try Zavelyn in your own home for a full 30 days. If you are not completely satisfied with its performance and quality, our US-based support team will issue a prompt and courteous refund.
+            </div>
+          </details>
         </div>
 
       </div>
@@ -275,6 +355,11 @@
 {% schema %}
 {
   "name": "Zavelyn V4 PDP Buy Box",
-  "settings": []
+  "settings": [],
+  "presets": [
+    {
+      "name": "Zavelyn V4 PDP Buy Box"
+    }
+  ]
 }
 {% endschema %}

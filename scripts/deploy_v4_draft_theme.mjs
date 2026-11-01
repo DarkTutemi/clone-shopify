@@ -85,8 +85,9 @@ async function main() {
   const templatesToUpload = [
     { key: 'templates/index.json', path: 'templates/index.v4.json' },
     { key: 'templates/collection.showroom.json', path: 'templates/collection.showroom.json' },
-    { key: 'templates/collection.json', path: 'templates/collection.showroom.json' }, // Makes default collection show showroom
-    { key: 'templates/product.showroom.json', path: 'templates/product.showroom.json' }
+    { key: 'templates/collection.json', path: 'templates/collection.showroom.json' },
+    { key: 'templates/product.showroom.json', path: 'templates/product.showroom.json' },
+    { key: 'templates/product.json', path: 'templates/product.json' }
   ];
 
   console.log('\n--- Uploading Templates ---');

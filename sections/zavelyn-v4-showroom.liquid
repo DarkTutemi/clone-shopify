@@ -134,20 +134,55 @@
                       
                       {% assign is_cutout = false %}
                       {% assign cutout_image_url = '' %}
-                      {% assign shadow_width = '68%' %}
-                      {% assign shadow_opacity = '0.70' %}
+                      {% assign display_scale = 100 %}
+                      {% assign baseline_offset = 0 %}
+                      {% assign horizontal_offset = 0 %}
+                      {% assign enable_contact_shadow = true %}
+                      {% assign shadow_width = 68 %}
+                      {% assign shadow_opacity = 0.70 %}
+                      {% assign shadow_softness = 12 %}
 
-                      {% if product.handle == 'sakerplus®-1500w-flame-effect-oscillating-space-heater' %}
-                        {% assign is_cutout = true %}
-                        {% assign cutout_image_url = 'zavelyn-cutout-space-heater.png' | asset_url %}
-                        {% assign shadow_width = '68%' %}
-                        {% assign shadow_opacity = '0.72' %}
-                      {% elsif product.handle == 'zavelyn-automatic-dough-mixer-with-ferment-function' %}
-                        {% assign is_cutout = true %}
-                        {% assign cutout_image_url = 'zavelyn-cutout-dough-mixer.png' | asset_url %}
-                        {% assign shadow_width = '75%' %}
-                        {% assign shadow_opacity = '0.62' %}
-                      {% endif %}
+                      {% comment %} 1. Check Theme Editor Block Overrides (Merchant Uploaded Cutouts) {% endcomment %}
+                      {% for block in section.blocks %}
+                        {% if block.type == 'cutout_override' and block.settings.enable_override %}
+                          {% if block.settings.product.id == product.id or block.settings.product.handle == product.handle %}
+                            {% if block.settings.cutout_image != blank %}
+                              {% assign is_cutout = true %}
+                              {% assign cutout_image_url = block.settings.cutout_image | image_url: width: 800 %}
+                              {% assign display_scale = block.settings.display_scale %}
+                              {% assign baseline_offset = block.settings.baseline_offset %}
+                              {% assign horizontal_offset = block.settings.horizontal_offset %}
+                              {% assign enable_contact_shadow = block.settings.enable_contact_shadow %}
+                              {% assign shadow_width = block.settings.shadow_width %}
+                              {% assign shadow_opacity = block.settings.shadow_opacity | divided_by: 100.0 %}
+                              {% assign shadow_softness = block.settings.shadow_softness %}
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                      {% endfor %}
+
+                      {% comment %} 2. Check Product Metafield custom.showroom_cutout {% endcomment %}
+                      {% unless is_cutout %}
+                        {% if product.metafields.custom.showroom_cutout != blank %}
+                          {% assign is_cutout = true %}
+                          {% assign cutout_image_url = product.metafields.custom.showroom_cutout | image_url: width: 800 %}
+                        {% endif %}
+                      {% endunless %}
+
+                      {% comment %} 3. Approved Presets Fallback (Space Heater & Dough Mixer) {% endcomment %}
+                      {% unless is_cutout %}
+                        {% if product.handle == 'sakerplus®-1500w-flame-effect-oscillating-space-heater' %}
+                          {% assign is_cutout = true %}
+                          {% assign cutout_image_url = 'zavelyn-cutout-space-heater.png' | asset_url %}
+                          {% assign shadow_width = 68 %}
+                          {% assign shadow_opacity = 0.72 %}
+                        {% elsif product.handle == 'zavelyn-automatic-dough-mixer-with-ferment-function' %}
+                          {% assign is_cutout = true %}
+                          {% assign cutout_image_url = 'zavelyn-cutout-dough-mixer.png' | asset_url %}
+                          {% assign shadow_width = 75 %}
+                          {% assign shadow_opacity = 0.62 %}
+                        {% endif %}
+                      {% endunless %}
 
                       {% capture safe_product_json %}
                       {
@@ -184,10 +219,16 @@
                         aria-label="{{ product.title | escape }} - {{ current_variant.price | money }}"
                       >
                         <!-- Freestanding Physical Merchandising Display on Top Surface of Shelf -->
-                        <div class="zv-merch-display" style="--shadow-w: {{ shadow_width }}; --shadow-op: {{ shadow_opacity }};">
+                        <div 
+                          class="zv-merch-display" 
+                          style="--shadow-w: {{ shadow_width }}%; --shadow-op: {{ shadow_opacity }}; --shadow-h: {{ shadow_softness }}px;"
+                        >
                           {% if is_cutout and cutout_image_url != '' %}
-                            <!-- Mode A: Approved Transparent Product Cutout (Space Heater) -->
-                            <div class="zv-cutout-container">
+                            <!-- Mode A: Approved / Merchant Uploaded Transparent Product Cutout -->
+                            <div 
+                              class="zv-cutout-container"
+                              style="transform: scale({{ display_scale | divided_by: 100.0 }}) translate({{ horizontal_offset }}px, {{ baseline_offset }}px);"
+                            >
                               <img 
                                 src="{{ cutout_image_url }}" 
                                 alt="{{ product.title | escape }}" 
@@ -197,6 +238,10 @@
                                 height="260"
                               >
                             </div>
+                            {% if enable_contact_shadow %}
+                              <div class="zv-shelf-contact-shadow"></div>
+                              <div class="zv-shelf-ambient-shadow"></div>
+                            {% endif %}
                           {% else %}
                             <!-- Mode B: Restrained Fallback Presentation for Non-Cutout Items -->
                             <div class="zv-fallback-container">
@@ -213,11 +258,8 @@
                                 {{ 'product-1' | placeholder_svg_tag: 'zv-merch-img' }}
                               {% endif %}
                             </div>
+                            <div class="zv-shelf-contact-shadow" style="--shadow-w: 70%; --shadow-op: 0.22;"></div>
                           {% endif %}
-
-                          <!-- Authentic Ground Contact & Ambient Shadow Discs -->
-                          <div class="zv-shelf-contact-shadow"></div>
-                          <div class="zv-shelf-ambient-shadow"></div>
                         </div>
                       </article>
 
@@ -418,6 +460,102 @@
         { "value": "floating", "label": "Floating Minimalist Glass" }
       ],
       "default": "wood"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "cutout_override",
+      "name": "Product Cutout Override",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Target Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "cutout_image",
+          "label": "Transparent Cutout Image (PNG/WebP)"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_override",
+          "label": "Enable Cutout Override",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "display_scale",
+          "label": "Display Scale",
+          "min": 50,
+          "max": 150,
+          "step": 5,
+          "unit": "%",
+          "default": 100
+        },
+        {
+          "type": "range",
+          "id": "baseline_offset",
+          "label": "Baseline Offset (Grounding)",
+          "min": -50,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "horizontal_offset",
+          "label": "Horizontal Offset",
+          "min": -50,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_contact_shadow",
+          "label": "Enable Contact Shadow",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "shadow_width",
+          "label": "Shadow Width",
+          "min": 30,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 70
+        },
+        {
+          "type": "range",
+          "id": "shadow_opacity",
+          "label": "Shadow Opacity",
+          "min": 10,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 70
+        },
+        {
+          "type": "range",
+          "id": "shadow_softness",
+          "label": "Shadow Softness / Height",
+          "min": 4,
+          "max": 30,
+          "step": 2,
+          "unit": "px",
+          "default": 12
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zavelyn V4 Showroom",
+      "blocks": []
     }
   ]
 }
