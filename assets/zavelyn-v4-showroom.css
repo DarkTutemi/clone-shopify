@@ -507,34 +507,223 @@
   z-index: 3;
 }
 
-/* 4 Products Desktop Row (2 Products Mobile) */
-.zv-shelf-products {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+/* ==========================================================================
+   2.5D REALISTIC PHYSICAL CONTINUOUS WOODEN SHELF ARCHITECTURE (V4.3)
+   Matches the merchant reference image: Continuous Wooden Plank + Front Clip Tags
+   ========================================================================== */
+
+.zv-shelf-tier {
   position: relative;
-  z-index: 6;
+  margin-bottom: 96px;
+  perspective: 1200px;
+  z-index: 10;
+}
+
+.zv-shelf-tier:last-child {
+  margin-bottom: 48px;
+}
+
+/* Ceiling Directional Lightbar & Spotlights */
+.zv-fixture-lightbar {
+  position: relative;
+  height: 6px;
+  background: linear-gradient(90deg, #6B7767 0%, #95A291 50%, #6B7767 100%);
+  border-radius: 3px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.zv-spotlight-beam {
+  position: absolute;
+  top: 6px;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 300px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* The Shelf Stage (Container for continuous plank and columns) */
+.zv-shelf-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   CONTINUOUS SOLID WOODEN SHELF PLANK (Behind columns)
+   ========================================================================== */
+.zv-continuous-wooden-shelf {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 282px; /* Sits precisely under 290px product displays */
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Top Perspective Surface of the Wooden Plank */
+.zv-wood-top-surface {
+  height: 28px;
+  background: linear-gradient(90deg, 
+    #B57F44 0%, 
+    #C9965B 15%, 
+    #D6A66C 35%, 
+    #E4B880 50%, 
+    #D6A66C 65%, 
+    #C9965B 85%, 
+    #B57F44 100%);
+  transform: perspective(700px) rotateX(28deg);
+  transform-origin: bottom center;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+
+.zv-wood-grain-texture {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.04) 0px, 
+    rgba(255, 255, 255, 0.04) 2px, 
+    transparent 2px, 
+    transparent 12px);
+  opacity: 0.7;
+}
+
+.zv-wood-top-highlight {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75), transparent);
+}
+
+/* Front Vertical Fascia Edge of the Wooden Plank */
+.zv-wood-front-fascia {
+  height: 34px;
+  background: linear-gradient(180deg, 
+    #9C652E 0%, 
+    #875524 35%, 
+    #72451A 75%, 
+    #5D3712 100%);
+  border-top: 2px solid #EEC58E; /* Crisp beveled highlight edge */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0 0 4px 4px;
+  position: relative;
+}
+
+.zv-wood-bevel-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.zv-wood-front-grain {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, 
+    rgba(255, 255, 255, 0.035) 0px, 
+    rgba(255, 255, 255, 0.035) 1px, 
+    transparent 1px, 
+    transparent 5px);
+}
+
+.zv-wood-bottom-bevel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Ambient Soft Drop Shadow on Wall Beneath the Shelf */
+.zv-wood-under-shadow {
+  height: 42px;
+  background: linear-gradient(180deg, 
+    rgba(35, 18, 8, 0.36) 0%, 
+    rgba(35, 18, 8, 0.14) 40%, 
+    rgba(35, 18, 8, 0) 100%);
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   SHELF COLUMNS GRID (1, 2, 3, or 4 products)
+   ========================================================================== */
+.zv-shelf-columns-grid {
+  display: grid;
+  width: 100%;
+  position: relative;
+  z-index: 5;
   padding: 0 16px;
   align-items: flex-end;
 }
 
+/* 4 Products Full Desktop Row */
+.zv-grid--4 {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
 @media screen and (min-width: 992px) {
-  .zv-shelf-products {
+  .zv-grid--4 {
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
     padding: 0 28px;
   }
 }
 
-/* Individual Shelf Compartment */
-.zv-shelf-compartment {
+/* 3 Products Row - Balanced Center Spacing */
+.zv-grid--3 {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media screen and (min-width: 992px) {
+  .zv-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 980px;
+    margin: 0 auto;
+    gap: 36px;
+  }
+}
+
+/* 2 Products Row - Symmetrical Distribution */
+.zv-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* 1 Product Row - Centered Featured Display (Exact Reference Match!) */
+.zv-grid--1 {
+  grid-template-columns: 1fr;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* Shelf Column: Contains Product (Top) + Hanging Tag (Bottom) */
+.zv-shelf-column {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
 
-/* Shelf Item Article (Interactive Grounded Display) */
+/* ==========================================================================
+   PRODUCT MERCHANDISING DISPLAY ON TOP OF SHELF
+   ========================================================================== */
 .zv-shelf-item {
   position: relative;
   display: flex;
@@ -544,8 +733,9 @@
   max-width: 270px;
   cursor: pointer;
   user-select: none;
-  transition: transform var(--zv-transition-base);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   outline: none;
+  z-index: 5;
 }
 
 .zv-shelf-item:hover,
@@ -553,75 +743,95 @@
   transform: translateY(-6px);
 }
 
-/* Dimmed State when another item is in Positional Zoom */
-.zv-shelf-item.zv-dimmed {
-  opacity: 0.28;
+.zv-shelf-item.zv-shelf-dimmed {
+  opacity: 0.32;
   filter: blur(1.5px);
   pointer-events: none;
   transition: all 0.35s ease;
 }
 
-/* Freestanding Merchandising Display on Shelf Plane */
 .zv-merch-display {
   position: relative;
   width: 100%;
-  aspect-ratio: 1;
-  max-width: 240px;
+  height: 290px;
+  max-width: 280px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 4px;
+  padding-bottom: 2px;
 }
 
-/* Acrylic Merchandising Stand (For white/opaque products) */
-.zv-acrylic-riser {
+/* Transparent Cutout Container */
+.zv-cutout-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 2;
+}
+
+.zv-cutout-img {
+  max-width: 96%;
+  max-height: 98%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.42));
+  transition: transform 0.28s ease;
+}
+
+.zv-shelf-item:hover .zv-cutout-img {
+  transform: scale(1.05);
+}
+
+/* Restrained Fallback Presentation for Non-Cutout Items */
+.zv-fallback-container {
   position: relative;
   width: 86%;
   height: 86%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--zv-radius-md);
-  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 6px 18px rgba(23, 53, 43, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(4px);
-  transition: all var(--zv-transition-base);
+  backdrop-filter: blur(6px);
+  transition: all 0.28s ease;
   overflow: hidden;
+  z-index: 2;
 }
 
-.zv-shelf-item:hover .zv-acrylic-riser {
-  background: rgba(255, 255, 255, 0.95);
+.zv-shelf-item:hover .zv-fallback-container {
+  background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 12px 28px rgba(23, 53, 43, 0.16);
-  border-color: var(--zv-primary);
+  border-color: var(--zv-primary, #17352B);
 }
 
-.zv-merch-img {
-  max-width: 90%;
-  max-height: 90%;
+.zv-fallback-img {
+  max-width: 88%;
+  max-height: 88%;
   object-fit: contain;
-  filter: drop-shadow(0 6px 12px rgba(23, 53, 43, 0.14));
-  transition: transform var(--zv-transition-base);
-  position: relative;
-  z-index: 3;
+  transition: transform 0.28s ease;
 }
 
-.zv-shelf-item:hover .zv-merch-img {
+.zv-shelf-item:hover .zv-fallback-img {
   transform: scale(1.06);
 }
 
-/* Realistic Ground Contact Shadow Discs */
+/* Realistic Ground Contact & Ambient Shadow Discs */
 .zv-shelf-contact-shadow {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
-  width: 65%;
+  width: var(--shadow-w, 68%);
   height: 12px;
-  background: radial-gradient(ellipse at center, rgba(17, 38, 31, 0.45) 0%, rgba(17, 38, 31, 0) 70%);
+  background: radial-gradient(ellipse at center, rgba(35, 18, 8, var(--shadow-op, 0.70)) 0%, rgba(35, 18, 8, 0) 70%);
   border-radius: 50%;
   z-index: 1;
   pointer-events: none;
+  transition: transform 0.28s ease, opacity 0.28s ease;
 }
 
 .zv-shelf-ambient-shadow {
@@ -631,232 +841,182 @@
   transform: translateX(-50%);
   width: 85%;
   height: 20px;
-  background: radial-gradient(ellipse at center, rgba(17, 38, 31, 0.2) 0%, rgba(17, 38, 31, 0) 72%);
+  background: radial-gradient(ellipse at center, rgba(35, 18, 8, 0.28) 0%, rgba(35, 18, 8, 0) 75%);
   border-radius: 50%;
   z-index: 0;
   pointer-events: none;
 }
 
-/* Subtle Retail Shelf-Edge Channel Tag (No Big White Cards!) */
-.zv-shelf-edge-tag {
-  width: 94%;
-  background: #FFFFFF;
-  border: 1px solid var(--zv-border);
-  border-radius: 6px;
-  padding: 8px 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-  position: relative;
-  z-index: 7;
-  transition: all var(--zv-transition-fast);
+.zv-shelf-item:hover .zv-shelf-contact-shadow {
+  transform: translateX(-50%) scale(0.92);
+  opacity: 0.85;
 }
 
-.zv-shelf-item:hover .zv-shelf-edge-tag {
-  border-color: var(--zv-primary);
-  box-shadow: 0 6px 16px rgba(23, 53, 43, 0.14);
+/* ==========================================================================
+   AUTHENTIC SHELF-EDGE PRICE TAG (Matches Merchant Reference Image)
+   ========================================================================== */
+.zv-shelf-clip-tag {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 240px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 10px; /* Positions clip right over the front wooden fascia */
+  transition: transform 0.22s ease;
+}
+
+.zv-shelf-clip-tag:hover,
+.zv-shelf-clip-tag:focus-visible {
+  transform: translateY(-2px);
+}
+
+/* Physical Clip Bracket Hooking over Front Shelf Edge */
+.zv-tag-clip-bracket {
+  width: 38px;
+  height: 11px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #D4D8DC 100%);
+  border-radius: 4px 4px 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-bottom: none;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 3;
+}
+
+.zv-tag-clip-bracket::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  right: 6px;
+  height: 1.5px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 1px;
+}
+
+/* White Price Card Hanging from Shelf Edge */
+.zv-tag-card {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.06);
+  transition: all 0.22s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.zv-shelf-clip-tag:hover .zv-tag-card,
+.zv-shelf-item:hover + .zv-shelf-clip-tag .zv-tag-card {
+  border-color: var(--zv-primary, #17352B);
+  box-shadow: 0 12px 24px rgba(23, 53, 43, 0.16), 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .zv-tag-title {
-  font-family: var(--zv-font-heading);
-  font-size: 13px;
+  font-family: var(--zv-font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 13.5px;
   font-weight: 700;
-  color: var(--zv-heading);
+  color: #18181B;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left;
+  line-height: 1.25;
+  margin-bottom: 5px;
 }
 
 .zv-tag-pricing {
   display: flex;
-  align-items: center;
-  gap: 6px;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
 }
 
 .zv-tag-price-curr {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
-  color: var(--zv-primary);
+  color: #0F5132;
 }
 
 .zv-tag-price-old {
-  font-size: 12px;
-  color: var(--zv-muted);
+  font-size: 12.5px;
+  color: #9CA3AF;
   text-decoration: line-through;
+  font-weight: 500;
 }
 
 .zv-tag-save-badge {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 800;
-  color: #17352B;
-  background: var(--zv-accent);
-  padding: 1px 5px;
-  border-radius: 3px;
+  color: #15803D;
+  background: #DCFCE7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: -0.2px;
 }
 
-.zv-tag-inspect-prompt {
-  font-size: 10.5px;
-  font-weight: 800;
-  color: var(--zv-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-align: right;
-  margin-top: 2px;
+.zv-tag-action-row {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 4px;
 }
 
-/* ==========================================================================
-   4. PHYSICAL 3D SHELF LEDGE STRUCTURE (WOOD, METAL, TECH, BOUTIQUE)
-   ========================================================================== */
-.zv-shelf-ledge {
-  position: relative;
-  width: 100%;
-  margin-top: -12px;
-  z-index: 4;
-}
-
-/* Top Perspective Shelf Plane (Where items rest) */
-.zv-shelf-top-face {
-  height: 28px;
-  transform: perspective(600px) rotateX(32deg);
-  transform-origin: bottom center;
-  border-radius: 4px;
-  position: relative;
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5);
-}
-
-/* Front Beveled Fascia Edge */
-.zv-shelf-front-edge {
-  height: 24px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.zv-shelf-brass-channel {
-  font-size: 9.5px;
+.zv-tag-action-hint {
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 1.8px;
+  letter-spacing: 0.6px;
+  color: #4B5563;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Deep Under-Shelf Cast Shadow */
-.zv-shelf-under-shadow {
-  height: 32px;
-  background: linear-gradient(180deg, rgba(17, 38, 31, 0.3) 0%, rgba(17, 38, 31, 0) 100%);
-  pointer-events: none;
-}
+/* Mobile Viewport Adjustments (< 768px) */
+@media screen and (max-width: 767px) {
+  .zv-shelf-tier {
+    margin-bottom: 64px;
+  }
 
-/* MATERIAL 1: NATURAL OAK WOOD (Default) */
-.shelf-theme-wood .zv-shelf-top-face {
-  background: linear-gradient(180deg, #D6C2A5 0%, #B89F7D 100%);
-}
-.shelf-theme-wood .zv-shelf-front-edge {
-  background: linear-gradient(180deg, #8C7353 0%, #635038 100%);
-  border-top: 1px solid #D6C2A5;
-}
+  .zv-merch-display {
+    height: 190px;
+  }
 
-/* MATERIAL 2: INDUSTRIAL METAL */
-.shelf-theme-metal .zv-shelf-top-face {
-  background: linear-gradient(180deg, #90A4AE 0%, #607D8B 100%);
-}
-.shelf-theme-metal .zv-shelf-front-edge {
-  background: linear-gradient(180deg, #37474F 0%, #212121 100%);
-  border-top: 1px solid #CFD8DC;
-}
+  .zv-continuous-wooden-shelf {
+    top: 184px;
+  }
 
-/* MATERIAL 3: WHITE BOUTIQUE */
-.shelf-theme-boutique .zv-shelf-top-face {
-  background: linear-gradient(180deg, #FFFFFF 0%, #E0E7E2 100%);
-}
-.shelf-theme-boutique .zv-shelf-front-edge {
-  background: linear-gradient(180deg, #17352B 0%, #0F221B 100%);
-  border-top: 1px solid var(--zv-accent);
-}
+  .zv-wood-top-surface {
+    height: 22px;
+  }
 
-/* MATERIAL 4: OBSIDIAN TECH */
-.shelf-theme-tech .zv-shelf-top-face {
-  background: linear-gradient(180deg, #334155 0%, #1E293B 100%);
-}
-.shelf-theme-tech .zv-shelf-front-edge {
-  background: linear-gradient(180deg, #0F172A 0%, #020617 100%);
-  border-top: 1px solid #475569;
-}
+  .zv-wood-front-fascia {
+    height: 28px;
+  }
 
-/* ==========================================================================
-   5. SINGLE-PRODUCT HERO PEDESTAL SHOWCASE
-   ========================================================================== */
-.zv-hero-pedestal-showcase {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 0 60px;
-  position: relative;
-}
+  .zv-tag-card {
+    padding: 8px 10px;
+  }
 
-.zv-pedestal-spotlight {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 380px;
-  height: 480px;
-  background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 70%);
-  pointer-events: none;
-}
+  .zv-tag-title {
+    font-size: 12px;
+  }
 
-.zv-pedestal-item {
-  max-width: 360px;
-}
+  .zv-tag-price-curr {
+    font-size: 14px;
+  }
 
-.zv-hero-merch {
-  max-width: 300px;
-  margin-bottom: 8px;
-}
+  .zv-tag-price-old {
+    font-size: 11px;
+  }
 
-.zv-pedestal-pillar {
-  width: 100%;
-  max-width: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.zv-pedestal-top {
-  width: 100%;
-  height: 24px;
-  background: linear-gradient(180deg, #D6C2A5 0%, #B89F7D 100%);
-  border-radius: 6px 6px 0 0;
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6);
-}
-
-.zv-pedestal-body {
-  width: 90%;
-  background: #FFFFFF;
-  border-left: 2px solid var(--zv-border);
-  border-right: 2px solid var(--zv-border);
-  padding: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.zv-pedestal-base {
-  width: 100%;
-  height: 18px;
-  background: #8C7353;
-  border-radius: 0 0 6px 6px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  .zv-tag-save-badge {
+    font-size: 10px;
+    padding: 1px 4px;
+  }
 }
 
 /* ==========================================================================

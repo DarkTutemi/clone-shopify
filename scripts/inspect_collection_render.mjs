@@ -1,15 +1,15 @@
 async function inspect() {
-  const url = 'https://tryzavelyn.com/collections/home-improvement?view=showroom&preview_theme_id=187926020281';
+  const url = 'https://tryzavelyn.com/collections/deals-of-the-day?view=showroom&preview_theme_id=187926020281';
   const res = await fetch(url);
   const html = await res.text();
   console.log('Title:', html.match(/<title>([^<]+)<\/title>/)?.[1]);
   
-  const mIdx = html.indexOf('id="MainContent"');
+  const mIdx = html.indexOf('sakerplus®-1500w-flame-effect-oscillating-space-heater');
   if (mIdx !== -1) {
-    console.log('MainContent HTML:');
-    console.log(html.substring(mIdx, mIdx + 1500));
+    console.log('Found heater at:', mIdx);
+    console.log(html.substring(mIdx - 200, mIdx + 800));
   } else {
-    console.log('MainContent not found!');
+    console.log('Heater handle not found in HTML');
   }
 }
 

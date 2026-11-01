@@ -44,26 +44,22 @@
 }
 
 /* ==========================================================================
-   RESPONSIVE GRID LAYOUT (Desktop 3/4 cols, Tablet 2 cols, Mobile 1 col)
+   RESPONSIVE GRID LAYOUT (Desktop 2x2, Tablet 2 cols, Mobile 1 col)
    ========================================================================== */
 .zv-stores-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 28px;
   padding: 0 16px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 768px) {
   .zv-stores-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .zv-stores-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 28px;
+    gap: 32px;
+    padding: 0 24px;
   }
 }
 

@@ -78,13 +78,13 @@
       return (cents / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     }
 
-    // 4. Attach Positional Inspection to All Shelf Items
+    // 4. Attach Positional Inspection to All Shelf Items & Shelf-Edge Clip Tags
     const shelfItems = document.querySelectorAll('.zv-shelf-item');
+    const shelfTags = document.querySelectorAll('.zv-shelf-clip-tag');
 
     shelfItems.forEach(item => {
       item.addEventListener('click', function(e) {
-        // Disallow zoom if explicitly clicking a secondary anchor tag
-        if (e.target.closest('a') && !e.target.closest('.zv-tag-inspect-prompt')) {
+        if (e.target.closest('a') && !e.target.closest('.zv-tag-action-row, .zv-tag-inspect-prompt')) {
           return;
         }
         e.preventDefault();
@@ -98,6 +98,29 @@
 
       // Accessible Keyboard Enter / Space
       item.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+
+    shelfTags.forEach(tag => {
+      tag.addEventListener('click', function(e) {
+        e.preventDefault();
+        const pid = this.getAttribute('data-product-id');
+        const col = this.closest('.zv-shelf-column');
+        const matchedItem = (col && col.querySelector('.zv-shelf-item')) || document.querySelector(`.zv-shelf-item[data-product-id="${pid}"]`);
+        if (matchedItem) {
+          if (window.innerWidth < 768) {
+            openMobileSheet(matchedItem);
+          } else {
+            openSpatialPositionalZoom(matchedItem);
+          }
+        }
+      });
+
+      tag.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           this.click();
