@@ -1,33 +1,33 @@
 /**
- * ZAVELYN IMMERSIVE COMMERCE THEME V4.0
- * 2.5D PHYSICAL RETAIL SHOWROOM & CINEMATIC ZOOM QUICK VIEW
+ * ZAVELYN IMMERSIVE COMMERCE THEME V4.1
+ * POSITIONAL ZOOM ENGINE & 2.5D SHOWROOM CONTROLLER
+ * 
+ * Replaces traditional screen-centered popup modals with authentic spatial
+ * inspection anchored directly to the selected product's physical shelf position.
  */
 
 (function() {
   'use strict';
 
-  function initShowroom() {
+  function initSpatialShowroom() {
     const stage = document.getElementById('zvShowroomStage');
     const viewBtns = document.querySelectorAll('.zv-view-btn');
-    const qvOverlay = document.getElementById('zvQvOverlay');
-    const qvModal = document.getElementById('zvQvModal');
-    const qvClose = document.getElementById('zvQvClose');
-    
-    // View Switcher (Shelf vs Grid)
+
+    // 1. View Switcher Mode (Showroom 2.5D vs Grid)
     if (stage && viewBtns.length > 0) {
       const savedMode = localStorage.getItem('zv_showroom_view') || 'shelf';
-      setStageMode(savedMode);
+      applyStageMode(savedMode);
 
       viewBtns.forEach(btn => {
         btn.addEventListener('click', function() {
           const mode = this.getAttribute('data-view-mode');
-          setStageMode(mode);
+          applyStageMode(mode);
           localStorage.setItem('zv_showroom_view', mode);
         });
       });
     }
 
-    function setStageMode(mode) {
+    function applyStageMode(mode) {
       if (!stage) return;
       viewBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-view-mode') === mode));
       if (mode === 'grid') {
@@ -37,249 +37,401 @@
       }
     }
 
-    // Quick View Elements
-    const qvImg = document.getElementById('zvQvImg');
-    const qvTitle = document.getElementById('zvQvTitle');
-    const qvPrice = document.getElementById('zvQvPrice');
-    const qvCompare = document.getElementById('zvQvCompare');
-    const qvSave = document.getElementById('zvQvSave');
-    const qvPdpLink = document.getElementById('zvQvPdpLink');
-    const qvAtcBtn = document.getElementById('zvQvAtcBtn');
-    const qvQtyMinus = document.getElementById('zvQvQtyMinus');
-    const qvQtyPlus = document.getElementById('zvQvQtyPlus');
-    const qvQtyDisplay = document.getElementById('zvQvQtyDisplay');
-    const qvVariantsWrap = document.getElementById('zvQvVariantsWrap');
+    // 2. Spatial Inspection Bay Elements (Desktop Positional Zoom)
+    const inspectBay = document.getElementById('zvSpatialInspectBay');
+    const inspectBackdrop = document.getElementById('zvInspectBackdrop');
+    const inspectStageWrap = document.getElementById('zvInspectStageWrap');
+    const inspectFocalFrame = document.getElementById('zvInspectFocalFrame');
+    const inspectFocalImg = document.getElementById('zvInspectFocalImg');
+    const inspectCloseBtn = document.getElementById('zvInspectCloseBtn');
+    const inspectTitle = document.getElementById('zvInspectTitle');
+    const inspectPriceCurr = document.getElementById('zvInspectPriceCurr');
+    const inspectPriceOld = document.getElementById('zvInspectPriceOld');
+    const inspectSaveBadge = document.getElementById('zvInspectSaveBadge');
+    const inspectVariants = document.getElementById('zvInspectVariants');
+    const inspectAtcBtn = document.getElementById('zvInspectAtcBtn');
+    const inspectPdpLink = document.getElementById('zvInspectPdpLink');
 
-    let currentQvProduct = null;
+    // 3. Mobile Bottom Sheet Elements (< 768px Viewports)
+    const mobileOverlay = document.getElementById('zvMobileSheetOverlay');
+    const mobileClose = document.getElementById('zvMobileSheetClose');
+    const mobileTitle = document.getElementById('zvMobileSheetTitle');
+    const mobilePrice = document.getElementById('zvMobileSheetPrice');
+    const mobileCompare = document.getElementById('zvMobileSheetCompare');
+    const mobileSave = document.getElementById('zvMobileSheetSave');
+    const mobileImg = document.getElementById('zvMobileSheetImg');
+    const mobileVariants = document.getElementById('zvMobileSheetVariants');
+    const mobileAtcBtn = document.getElementById('zvMobileSheetAtcBtn');
+    const mobilePdpLink = document.getElementById('zvMobileSheetPdpLink');
+
+    let currentProduct = null;
     let selectedVariantId = null;
-    let selectedQty = 1;
-    let lastActiveElement = null;
-
-    // Attach Click to All Shelf Items
-    const shelfItems = document.querySelectorAll('.zv-shelf-item');
-    shelfItems.forEach(item => {
-      item.addEventListener('click', function(e) {
-        // Prevent opening if user specifically clicked a direct link
-        if (e.target.closest('a') && !e.target.closest('.zv-shelf-quickbuy-btn')) {
-          return;
-        }
-        e.preventDefault();
-        lastActiveElement = this;
-        openQuickView(this);
-      });
-    });
+    let lastActiveItem = null;
 
     function formatMoney(cents) {
       return (cents / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     }
 
-    function openQuickView(itemElem) {
-      const pDataRaw = itemElem.getAttribute('data-product-json');
-      if (!pDataRaw) {
-        // Fallback: navigate directly to product
-        const url = itemElem.getAttribute('data-product-url');
-        if (url) window.location.href = url;
+    // 4. Attach Positional Inspection to All Shelf Items
+    const shelfItems = document.querySelectorAll('.zv-shelf-item');
+
+    shelfItems.forEach(item => {
+      // Click interaction
+      item.addEventListener('click', function(e) {
+        // Allow direct clicking if specifically targeted an explicit direct link
+        if (e.target.closest('a') && !e.target.closest('.zv-tag-inspect-prompt')) {
+          return;
+        }
+        e.preventDefault();
+        lastActiveItem = this;
+
+        if (window.innerWidth < 768) {
+          openMobileSheet(this);
+        } else {
+          openSpatialInspect(this);
+        }
+      });
+
+      // Accessible Keyboard Enter / Space trigger
+      item.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+
+    // =========================================================================
+    // DESKTOP: POSITIONAL ZOOM SPATIAL INSPECTION
+    // =========================================================================
+    function openSpatialInspect(itemElem) {
+      const rawJson = itemElem.getAttribute('data-product-json');
+      if (!rawJson) {
+        const fallbackUrl = itemElem.getAttribute('data-product-url');
+        if (fallbackUrl) window.location.href = fallbackUrl;
         return;
       }
 
       try {
-        currentQvProduct = JSON.parse(pDataRaw);
+        currentProduct = JSON.parse(rawJson);
       } catch (err) {
-        console.error('Failed to parse product data', err);
+        console.error('Failed to parse product JSON', err);
         return;
       }
 
-      selectedQty = 1;
-      if (qvQtyDisplay) qvQtyDisplay.textContent = '1';
-      if (qvQtyMinus) qvQtyMinus.disabled = true;
+      // Step A: Dim all other shelf items
+      shelfItems.forEach(si => {
+        if (si !== itemElem) {
+          si.classList.add('zv-dimmed');
+        }
+      });
 
-      const v0 = currentQvProduct.variants[0];
-      selectedVariantId = v0.id;
+      // Step B: Determine Anchored Direction (Left vs Right of Product)
+      const mediaWrap = itemElem.querySelector('.zv-merch-display') || itemElem;
+      const rect = mediaWrap.getBoundingClientRect();
+      const isLeftHalf = (rect.left + rect.width / 2) < (window.innerWidth / 2);
 
-      // Populate Quick View fields
-      if (qvTitle) qvTitle.textContent = currentQvProduct.title;
-      if (qvImg) {
-        qvImg.src = currentQvProduct.featured_image || (v0.featured_image ? v0.featured_image.src : '');
-        qvImg.alt = currentQvProduct.title;
-      }
-
-      updatePricing(v0);
-
-      if (qvPdpLink) {
-        qvPdpLink.href = '/products/' + currentQvProduct.handle;
-      }
-
-      // Render Variants if multi-variant
-      if (qvVariantsWrap) {
-        qvVariantsWrap.innerHTML = '';
-        if (currentQvProduct.variants.length > 1) {
-          const varLabel = document.createElement('div');
-          varLabel.style.fontSize = '12px';
-          varLabel.style.fontWeight = '700';
-          varLabel.style.marginBottom = '6px';
-          varLabel.textContent = 'Select Option:';
-          qvVariantsWrap.appendChild(varLabel);
-
-          const pillsWrap = document.createElement('div');
-          pillsWrap.style.display = 'flex';
-          pillsWrap.style.flexWrap = 'wrap';
-          pillsWrap.style.gap = '8px';
-          pillsWrap.style.marginBottom = '14px';
-
-          currentQvProduct.variants.forEach((v, idx) => {
-            const btn = document.createElement('button');
-            btn.type = 'button';
-            btn.className = 'zv-btn zv-btn-outline' + (idx === 0 ? ' active' : '');
-            btn.style.padding = '6px 14px';
-            btn.style.fontSize = '12.5px';
-            btn.style.borderRadius = '999px';
-            if (idx === 0) {
-              btn.style.background = 'var(--zv-primary)';
-              btn.style.color = '#FFFFFF';
-            }
-            btn.textContent = v.title;
-            btn.addEventListener('click', () => {
-              pillsWrap.querySelectorAll('button').forEach(b => {
-                b.style.background = 'transparent';
-                b.style.color = 'var(--zv-primary)';
-              });
-              btn.style.background = 'var(--zv-primary)';
-              btn.style.color = '#FFFFFF';
-              selectedVariantId = v.id;
-              if (v.featured_image && qvImg) qvImg.src = v.featured_image.src;
-              updatePricing(v);
-            });
-            pillsWrap.appendChild(btn);
-          });
-          qvVariantsWrap.appendChild(pillsWrap);
+      if (inspectStageWrap) {
+        if (isLeftHalf) {
+          inspectStageWrap.style.flexDirection = 'row'; // Product Left, Info Right
+        } else {
+          inspectStageWrap.style.flexDirection = 'row-reverse'; // Info Left, Product Right
         }
       }
 
-      // Show Modal
-      if (qvOverlay) {
-        qvOverlay.classList.add('active');
+      // Step C: Set Initial Selected Variant & Imagery
+      const v0 = currentProduct.variants[0];
+      selectedVariantId = v0.id;
+
+      if (inspectFocalImg) {
+        const imgSrc = currentProduct.featured_image || (v0.featured_image ? v0.featured_image.src : '');
+        inspectFocalImg.src = imgSrc;
+        inspectFocalImg.alt = currentProduct.title;
+      }
+
+      // Step D: Populate Identity & Pricing
+      if (inspectTitle) inspectTitle.textContent = currentProduct.title;
+      updateDesktopPricing(v0);
+
+      if (inspectPdpLink) {
+        inspectPdpLink.href = '/products/' + currentProduct.handle + '?view=showroom';
+      }
+
+      // Step E: Render Interactive Variant Pills
+      if (inspectVariants) {
+        inspectVariants.innerHTML = '';
+        if (currentProduct.variants.length > 1) {
+          const vHeader = document.createElement('div');
+          vHeader.style.fontSize = '12px';
+          vHeader.style.fontWeight = '800';
+          vHeader.style.letterSpacing = '0.8px';
+          vHeader.style.color = 'var(--zv-muted)';
+          vHeader.style.textTransform = 'uppercase';
+          vHeader.style.marginBottom = '8px';
+          vHeader.textContent = 'Select Configuration:';
+          inspectVariants.appendChild(vHeader);
+
+          const pillsRow = document.createElement('div');
+          pillsRow.style.display = 'flex';
+          pillsRow.style.flexWrap = 'wrap';
+          pillsRow.style.gap = '8px';
+
+          currentProduct.variants.forEach((v, idx) => {
+            const pill = document.createElement('button');
+            pill.type = 'button';
+            pill.className = 'zv-btn ' + (idx === 0 ? 'zv-btn-primary' : 'zv-btn-outline');
+            pill.style.padding = '6px 14px';
+            pill.style.fontSize = '12.5px';
+            pill.style.borderRadius = 'var(--zv-radius-full)';
+            pill.textContent = v.title;
+
+            pill.addEventListener('click', () => {
+              pillsRow.querySelectorAll('button').forEach(b => {
+                b.className = 'zv-btn zv-btn-outline';
+              });
+              pill.className = 'zv-btn zv-btn-primary';
+              selectedVariantId = v.id;
+              if (v.featured_image && inspectFocalImg) {
+                inspectFocalImg.src = v.featured_image.src;
+              }
+              updateDesktopPricing(v);
+            });
+
+            pillsRow.appendChild(pill);
+          });
+          inspectVariants.appendChild(pillsRow);
+        }
+      }
+
+      // Step F: Activate Spatial Stage
+      if (inspectBay) {
+        inspectBay.classList.add('active');
+        inspectBay.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
       }
     }
 
-    function updatePricing(variant) {
-      if (qvPrice) qvPrice.textContent = formatMoney(variant.price);
-      if (qvCompare) {
+    function updateDesktopPricing(variant) {
+      if (inspectPriceCurr) inspectPriceCurr.textContent = formatMoney(variant.price);
+      if (inspectPriceOld) {
         if (variant.compare_at_price > variant.price) {
-          qvCompare.textContent = formatMoney(variant.compare_at_price);
-          qvCompare.style.display = 'inline';
-          if (qvSave) {
+          inspectPriceOld.textContent = formatMoney(variant.compare_at_price);
+          inspectPriceOld.style.display = 'inline';
+          if (inspectSaveBadge) {
             const pct = Math.round((variant.compare_at_price - variant.price) * 100 / variant.compare_at_price);
-            qvSave.textContent = 'SAVE ' + pct + '%';
-            qvSave.style.display = 'inline';
+            inspectSaveBadge.textContent = 'SAVE ' + pct + '%';
+            inspectSaveBadge.style.display = 'inline-block';
           }
         } else {
-          qvCompare.style.display = 'none';
-          if (qvSave) qvSave.style.display = 'none';
+          inspectPriceOld.style.display = 'none';
+          if (inspectSaveBadge) inspectSaveBadge.style.display = 'none';
         }
       }
     }
 
-    function closeQuickView() {
-      if (qvOverlay) {
-        qvOverlay.classList.remove('active');
+    function closeSpatialInspect() {
+      if (inspectBay) {
+        inspectBay.classList.remove('active');
+        inspectBay.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
       }
-      if (lastActiveElement) {
-        lastActiveElement.focus();
+
+      // Restore dimming of shelf items
+      shelfItems.forEach(si => {
+        si.classList.remove('zv-dimmed');
+      });
+
+      if (lastActiveItem) {
+        lastActiveItem.focus();
       }
     }
 
-    if (qvClose) qvClose.addEventListener('click', closeQuickView);
-    if (qvOverlay) {
-      qvOverlay.addEventListener('click', function(e) {
-        if (e.target === qvOverlay) closeQuickView();
+    // Close Listeners for Desktop Positional Zoom
+    if (inspectCloseBtn) inspectCloseBtn.addEventListener('click', closeSpatialInspect);
+    if (inspectBackdrop) inspectBackdrop.addEventListener('click', closeSpatialInspect);
+
+    // =========================================================================
+    // MOBILE: ACCESSIBLE BOTTOM SHEET (< 768px Viewports)
+    // =========================================================================
+    function openMobileSheet(itemElem) {
+      const rawJson = itemElem.getAttribute('data-product-json');
+      if (!rawJson) return;
+
+      try {
+        currentProduct = JSON.parse(rawJson);
+      } catch (err) {
+        console.error('Failed to parse mobile product JSON', err);
+        return;
+      }
+
+      const v0 = currentProduct.variants[0];
+      selectedVariantId = v0.id;
+
+      if (mobileTitle) mobileTitle.textContent = currentProduct.title;
+      if (mobilePrice) mobilePrice.textContent = formatMoney(v0.price);
+      if (mobileCompare) {
+        if (v0.compare_at_price > v0.price) {
+          mobileCompare.textContent = formatMoney(v0.compare_at_price);
+          mobileCompare.style.display = 'inline';
+          if (mobileSave) {
+            const pct = Math.round((v0.compare_at_price - v0.price) * 100 / v0.compare_at_price);
+            mobileSave.textContent = 'SAVE ' + pct + '%';
+            mobileSave.style.display = 'inline-block';
+          }
+        } else {
+          mobileCompare.style.display = 'none';
+          if (mobileSave) mobileSave.style.display = 'none';
+        }
+      }
+
+      if (mobileImg) {
+        mobileImg.src = currentProduct.featured_image || (v0.featured_image ? v0.featured_image.src : '');
+        mobileImg.alt = currentProduct.title;
+      }
+
+      if (mobilePdpLink) {
+        mobilePdpLink.href = '/products/' + currentProduct.handle + '?view=showroom';
+      }
+
+      if (mobileVariants) {
+        mobileVariants.innerHTML = '';
+        if (currentProduct.variants.length > 1) {
+          const wrap = document.createElement('div');
+          wrap.style.display = 'flex';
+          wrap.style.flexWrap = 'wrap';
+          wrap.style.gap = '6px';
+          wrap.style.marginTop = '10px';
+
+          currentProduct.variants.forEach((v, idx) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'zv-btn ' + (idx === 0 ? 'zv-btn-primary' : 'zv-btn-outline');
+            btn.style.padding = '6px 12px';
+            btn.style.fontSize = '12px';
+            btn.style.borderRadius = 'var(--zv-radius-full)';
+            btn.textContent = v.title;
+
+            btn.addEventListener('click', () => {
+              wrap.querySelectorAll('button').forEach(b => {
+                b.className = 'zv-btn zv-btn-outline';
+              });
+              btn.className = 'zv-btn zv-btn-primary';
+              selectedVariantId = v.id;
+              if (v.featured_image && mobileImg) mobileImg.src = v.featured_image.src;
+              if (mobilePrice) mobilePrice.textContent = formatMoney(v.price);
+            });
+            wrap.appendChild(btn);
+          });
+          mobileVariants.appendChild(wrap);
+        }
+      }
+
+      if (mobileOverlay) {
+        mobileOverlay.classList.add('active');
+        mobileOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeMobileSheet() {
+      if (mobileOverlay) {
+        mobileOverlay.classList.remove('active');
+        mobileOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    }
+
+    if (mobileClose) mobileClose.addEventListener('click', closeMobileSheet);
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener('click', function(e) {
+        if (e.target === this) closeMobileSheet();
       });
     }
 
-    // Keyboard Escape support
+    // =========================================================================
+    // SHOPIFY COMMERCE: DIRECT ADD TO CART & WILLA CART DRAWER SYNC
+    // =========================================================================
+    async function handleAddToCart(buttonElem) {
+      if (!selectedVariantId) return;
+
+      const originalHtml = buttonElem.innerHTML;
+      buttonElem.disabled = true;
+      buttonElem.innerHTML = '<span>ADDING TO CART...</span>';
+
+      try {
+        const response = await fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            id: selectedVariantId,
+            quantity: 1
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to add item to cart');
+        }
+
+        const cartItem = await response.json();
+        console.log('✓ Added to cart:', cartItem);
+
+        // Success state
+        buttonElem.innerHTML = '<span>✓ ADDED!</span>';
+
+        setTimeout(() => {
+          closeSpatialInspect();
+          closeMobileSheet();
+          buttonElem.disabled = false;
+          buttonElem.innerHTML = originalHtml;
+
+          // Dispatch standard cart events
+          document.dispatchEvent(new CustomEvent('cart:updated'));
+          document.dispatchEvent(new CustomEvent('willa:cart:refresh'));
+
+          // Trigger Willa Cart Drawer if loaded
+          if (window.willaCart && typeof window.willaCart.open === 'function') {
+            window.willaCart.open();
+          } else {
+            const drawerToggle = document.querySelector('[data-cart-drawer-toggle], .willa-cart-trigger, [aria-controls="CartDrawer"]');
+            if (drawerToggle) drawerToggle.click();
+          }
+        }, 350);
+
+      } catch (err) {
+        console.error('Cart error:', err);
+        buttonElem.disabled = false;
+        buttonElem.innerHTML = '<span>ERROR - TRY AGAIN</span>';
+        setTimeout(() => { buttonElem.innerHTML = originalHtml; }, 2000);
+      }
+    }
+
+    if (inspectAtcBtn) {
+      inspectAtcBtn.addEventListener('click', function() {
+        handleAddToCart(this);
+      });
+    }
+
+    if (mobileAtcBtn) {
+      mobileAtcBtn.addEventListener('click', function() {
+        handleAddToCart(this);
+      });
+    }
+
+    // Keyboard ESC Listener
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && qvOverlay && qvOverlay.classList.contains('active')) {
-        closeQuickView();
+      if (e.key === 'Escape') {
+        closeSpatialInspect();
+        closeMobileSheet();
       }
     });
 
-    // Quantity Stepper
-    if (qvQtyPlus) {
-      qvQtyPlus.addEventListener('click', () => {
-        selectedQty++;
-        if (qvQtyDisplay) qvQtyDisplay.textContent = selectedQty;
-        if (qvQtyMinus) qvQtyMinus.disabled = false;
-      });
-    }
-    if (qvQtyMinus) {
-      qvQtyMinus.addEventListener('click', () => {
-        if (selectedQty > 1) {
-          selectedQty--;
-          if (qvQtyDisplay) qvQtyDisplay.textContent = selectedQty;
-          if (selectedQty === 1) qvQtyMinus.disabled = true;
-        }
-      });
-    }
-
-    // Quick View Add to Cart
-    if (qvAtcBtn) {
-      qvAtcBtn.addEventListener('click', async function() {
-        if (!selectedVariantId) return;
-
-        const originalText = qvAtcBtn.innerHTML;
-        qvAtcBtn.disabled = true;
-        qvAtcBtn.innerHTML = '<span>ADDING TO CART...</span>';
-
-        try {
-          const res = await fetch('/cart/add.js', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({
-              items: [{
-                id: selectedVariantId,
-                quantity: selectedQty
-              }]
-            })
-          });
-
-          if (!res.ok) {
-            throw new Error('Failed to add to cart');
-          }
-
-          // Close Quick View
-          closeQuickView();
-
-          // Trigger Willa / Zavelyn Cart Drawer
-          if (typeof window.willaRefreshCart === 'function') {
-            await window.willaRefreshCart();
-          }
-          if (typeof window.willaOpenCartDrawer === 'function') {
-            window.willaOpenCartDrawer();
-          } else {
-            const drawer = document.getElementById('willaCartDrawer');
-            const overlay = document.getElementById('willaCartOverlay');
-            if (drawer) {
-              drawer.classList.add('active');
-              if (overlay) overlay.classList.add('active');
-            } else {
-              window.location.href = '/cart';
-            }
-          }
-        } catch (err) {
-          console.error(err);
-          alert('Could not add to cart. Please try again.');
-        } finally {
-          qvAtcBtn.disabled = false;
-          qvAtcBtn.innerHTML = originalText;
-        }
-      });
-    }
   }
 
+  // Initialize on DOM Ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initShowroom);
+    document.addEventListener('DOMContentLoaded', initSpatialShowroom);
   } else {
-    initShowroom();
+    initSpatialShowroom();
   }
+
 })();
