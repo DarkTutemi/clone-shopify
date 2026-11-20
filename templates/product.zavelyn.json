@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main": {
+      "type": "rehab-glove-pdp-lushroot",
+      "settings": {}
+    },
+    "custom_body": {
+      "type": "zavelyn-rehab-body",
+      "settings": {}
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {
+        "badge_text": "FAST & INSURED TRACKED US DELIVERY",
+        "heading": "Doorstep Delivery Guarantee & Real-Time Tracking",
+        "subheading": "Every Zavelyn order is cushioned in protective packaging, inspected for medical-grade quality, and dispatched from regional US warehouses within 24–48 business hours with tracked delivery."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_body",
+    "shipping"
+  ]
+}
+

@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main": {
+      "type": "breakout-holster-pdp",
+      "settings": {}
+    },
+    "custom_body": {
+      "type": "breakout-holster-body",
+      "settings": {}
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {
+        "badge_text": "FAST & INSURED TRACKED US DELIVERY",
+        "heading": "Doorstep Delivery Guarantee & Real-Time Tracking",
+        "subheading": "Every Breakout 2.0 Holster order is precision-inspected, packed in protective packaging, and dispatched with tracked delivery within 24–48 business hours."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_body",
+    "shipping"
+  ]
+}
+

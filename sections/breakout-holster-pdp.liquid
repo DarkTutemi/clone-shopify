@@ -1,0 +1,1430 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+<div class="bh-pdp-wrapper" id="Section-{{ section.id }}">
+  <style>
+    #Section-{{ section.id }} {
+      --bh-red: #E52D27;
+      --bh-red-dark: #B31217;
+      --bh-red-bg: #FFF0F0;
+      --bh-black: #111111;
+      --bh-dark: #1E1E1E;
+      --bh-gray-light: #F8F9FA;
+      --bh-border: #E0E0E0;
+      --bh-text: #222222;
+      --bh-text-muted: #666666;
+      --bh-green: #2E7D32;
+      --bh-gold: #FFB800;
+
+      background: #FFFFFF;
+      padding: 0 0 50px 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--bh-text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    #Section-{{ section.id }} * {
+      box-sizing: border-box;
+    }
+
+    /* TOP ANNOUNCEMENT BANNER */
+    #Section-{{ section.id }} .bh-announcement {
+      background: var(--bh-red);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 11px 16px;
+      font-size: 14.5px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(229, 45, 39, 0.25);
+    }
+
+    #Section-{{ section.id }} .bh-container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 32px 24px 0 24px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #Section-{{ section.id }} .bh-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* LEFT GALLERY */
+    #Section-{{ section.id }} .bh-gallery-wrap {
+      position: sticky;
+      top: 24px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    #Section-{{ section.id }} .bh-main-box {
+      position: relative;
+      background: #000000;
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      border: 1px solid #E5E5E5;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    #Section-{{ section.id }} .bh-main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.2s ease;
+    }
+
+    #Section-{{ section.id }} .bh-badges-overlay {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 2;
+    }
+
+    #Section-{{ section.id }} .bh-badge-pill {
+      background: rgba(17, 17, 17, 0.88);
+      color: #FFFFFF;
+      backdrop-filter: blur(6px);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    #Section-{{ section.id }} .bh-thumbs-strip {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    #Section-{{ section.id }} .bh-thumb-btn {
+      width: 72px;
+      height: 72px;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      overflow: hidden;
+      cursor: pointer;
+      padding: 0;
+      flex-shrink: 0;
+      background: #000000;
+      transition: all 0.2s ease;
+    }
+
+    #Section-{{ section.id }} .bh-thumb-btn.active {
+      border-color: var(--bh-red);
+      box-shadow: 0 2px 10px rgba(229, 45, 39, 0.3);
+    }
+
+    #Section-{{ section.id }} .bh-thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* RIGHT BUY BOX */
+    #Section-{{ section.id }} .bh-buybox {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    #Section-{{ section.id }} .bh-rating-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    #Section-{{ section.id }} .bh-stars {
+      color: var(--bh-red);
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    #Section-{{ section.id }} .bh-rating-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: #444444;
+    }
+
+    #Section-{{ section.id }} .bh-title {
+      font-family: 'Oswald', 'Plus Jakarta Sans', sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--bh-black);
+      margin: 0 0 10px 0;
+    }
+
+    /* PRICE ROW */
+    #Section-{{ section.id }} .bh-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    #Section-{{ section.id }} .bh-price {
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--bh-black);
+      line-height: 1;
+    }
+
+    #Section-{{ section.id }} .bh-compare {
+      font-size: 20px;
+      color: #999999;
+      text-decoration: line-through;
+      font-weight: 600;
+    }
+
+    #Section-{{ section.id }} .bh-save-badge {
+      background: var(--bh-black);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    #Section-{{ section.id }} .bh-pitch {
+      font-size: 15px;
+      color: #444444;
+      margin: 0 0 16px 0;
+      line-height: 1.5;
+    }
+
+    #Section-{{ section.id }} .bh-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+      background: var(--bh-gray-light);
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid #ECECEC;
+    }
+
+    #Section-{{ section.id }} .bh-check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--bh-dark);
+    }
+
+    #Section-{{ section.id }} .bh-check-icon {
+      color: var(--bh-red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    /* BOGO OFFER PROMO BOX */
+    #Section-{{ section.id }} .bh-bogo-box {
+      background: #FFF5F5;
+      border: 2px solid var(--bh-red);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    #Section-{{ section.id }} .bh-bogo-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--bh-red);
+      margin: 0 0 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #Section-{{ section.id }} .bh-bogo-desc {
+      font-size: 13.5px;
+      color: #555555;
+      margin: 0 0 16px 0;
+    }
+
+    /* GUN CONFIGURATION CARDS */
+    #Section-{{ section.id }} .bh-config-group {
+      background: #FFFFFF;
+      border: 1px solid #E5D5D8;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    #Section-{{ section.id }} .bh-config-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    #Section-{{ section.id }} .bh-config-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--bh-black);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #Section-{{ section.id }} .bh-free-pill {
+      background: var(--bh-red);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    #Section-{{ section.id }} .bh-select-label {
+      font-size: 12.5px;
+      font-weight: 750;
+      color: #333333;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    #Section-{{ section.id }} .bh-dropdown {
+      width: 100%;
+      max-width: 100%;
+      height: 44px;
+      border-radius: 8px;
+      border: 1.5px solid #D5D5D5;
+      background: #FFFFFF;
+      padding: 0 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--bh-black);
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s ease;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
+
+    #Section-{{ section.id }} .bh-dropdown:focus {
+      border-color: var(--bh-red);
+    }
+
+    #Section-{{ section.id }} .bh-hand-pills {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    #Section-{{ section.id }} .bh-hand-btn {
+      flex: 1 1 0;
+      min-width: 0;
+      height: 40px;
+      border-radius: 8px;
+      border: 1.5px solid #D5D5D5;
+      background: #FFFFFF;
+      font-size: 13.5px;
+      font-weight: 750;
+      color: #444444;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    #Section-{{ section.id }} .bh-hand-btn.active {
+      border-color: var(--bh-red);
+      background: #FFF5F5;
+      color: var(--bh-red);
+      font-weight: 800;
+    }
+
+    /* MATERIAL SWATCHES */
+    #Section-{{ section.id }} .bh-material-row {
+      margin-top: 14px;
+    }
+
+    #Section-{{ section.id }} .bh-swatches {
+      display: flex;
+      gap: 12px;
+      margin-top: 6px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    #Section-{{ section.id }} .bh-swatch-btn {
+      flex: 1 1 0;
+      min-width: 0;
+      height: 48px;
+      border-radius: 8px;
+      border: 2px solid #D5D5D5;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    #Section-{{ section.id }} .bh-swatch-btn.active {
+      border-color: var(--bh-red);
+      box-shadow: 0 2px 8px rgba(229, 45, 39, 0.2);
+    }
+
+    #Section-{{ section.id }} .bh-swatch-thumb {
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      border: 1px solid #444444;
+    }
+
+    #Section-{{ section.id }} .bh-swatch-thumb.matte {
+      background: #1A1A1A;
+    }
+
+    #Section-{{ section.id }} .bh-swatch-thumb.carbon {
+      background: repeating-linear-gradient(45deg, #222, #222 3px, #333 3px, #333 6px);
+    }
+
+    #Section-{{ section.id }} .bh-swatch-name {
+      font-size: 13px;
+      font-weight: 750;
+      color: var(--bh-black);
+    }
+
+    /* SAVINGS ACCENT BANNER */
+    #Section-{{ section.id }} .bh-savings-banner {
+      background: #E8F5E9;
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #1B5E20;
+    }
+
+    /* CTA BUTTON */
+    #Section-{{ section.id }} .bh-cta-btn {
+      width: 100%;
+      background: var(--bh-red);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      box-shadow: 0 6px 22px rgba(229, 45, 39, 0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    #Section-{{ section.id }} .bh-cta-btn:hover {
+      background: var(--bh-red-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 26px rgba(229, 45, 39, 0.45);
+    }
+
+    #Section-{{ section.id }} .bh-cta-sub {
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+      letter-spacing: 0.5px;
+    }
+
+    /* TRUST BADGES ROW */
+    #Section-{{ section.id }} .bh-trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid #EEEEEE;
+      text-align: center;
+    }
+
+    #Section-{{ section.id }} .bh-trust-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #Section-{{ section.id }} .bh-trust-icon {
+      font-size: 24px;
+    }
+
+    #Section-{{ section.id }} .bh-trust-text {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--bh-dark);
+    }
+
+    /* INSTRUCTOR TESTIMONIAL */
+    #Section-{{ section.id }} .bh-instructor-quote {
+      background: var(--bh-gray-light);
+      border-left: 4px solid var(--bh-red);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 16px;
+      margin-top: 18px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    #Section-{{ section.id }} .bh-instructor-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    #Section-{{ section.id }} .bh-instructor-body {
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: #333333;
+    }
+
+    #Section-{{ section.id }} .bh-instructor-author {
+      font-weight: 800;
+      color: var(--bh-black);
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ACCORDIONS */
+    #Section-{{ section.id }} .bh-pdp-accordion {
+      margin-top: 20px;
+      border-top: 1px solid #ECECEC;
+    }
+
+    #Section-{{ section.id }} .bh-acc-item {
+      border-bottom: 1px solid #ECECEC;
+    }
+
+    #Section-{{ section.id }} .bh-acc-summary {
+      padding: 14px 0;
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--bh-black);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+    }
+
+    #Section-{{ section.id }} .bh-acc-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    #Section-{{ section.id }} .bh-acc-summary::after {
+      content: '▼';
+      font-size: 10px;
+      color: #888888;
+      transition: transform 0.2s ease;
+    }
+
+    #Section-{{ section.id }} .bh-acc-item[open] .bh-acc-summary::after {
+      transform: rotate(180deg);
+      color: var(--bh-red);
+    }
+
+    #Section-{{ section.id }} .bh-acc-content {
+      padding: 0 0 14px 0;
+      font-size: 13.5px;
+      color: #555555;
+      line-height: 1.55;
+    }
+
+    /* MOBILE STICKY BOTTOM DOCK */
+    .bh-mobile-sticky-dock {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #FFFFFF;
+      padding: 12px 18px;
+      border-top: 1px solid #E5E5E5;
+      box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .bh-mobile-sticky-dock .bh-dock-price {
+      font-size: 19px;
+      font-weight: 900;
+      color: var(--bh-black);
+      line-height: 1.1;
+    }
+
+    .bh-mobile-sticky-dock .bh-dock-sub {
+      font-size: 11px;
+      color: var(--bh-red);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .bh-mobile-sticky-dock .bh-dock-btn {
+      flex: 1;
+      max-width: 220px;
+      background: var(--bh-red);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 10px;
+      padding: 13px 18px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      text-align: center;
+      text-transform: uppercase;
+      box-shadow: 0 4px 14px rgba(229, 45, 39, 0.35);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 991px) {
+      #Section-{{ section.id }} .bh-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        width: 100%;
+      }
+      #Section-{{ section.id }} .bh-gallery-wrap {
+        position: static;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+      }
+      #Section-{{ section.id }} .bh-buybox {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+      }
+      #Section-{{ section.id }} .bh-title {
+        font-size: 28px;
+      }
+      .bh-mobile-sticky-dock {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #Section-{{ section.id }} .bh-announcement {
+        font-size: 11px;
+        padding: 8px 6px;
+        letter-spacing: 0.5px;
+      }
+      #Section-{{ section.id }} .bh-container {
+        padding: 16px 12px 0 12px;
+      }
+      #Section-{{ section.id }} .bh-bogo-box {
+        padding: 14px 10px;
+      }
+      #Section-{{ section.id }} .bh-config-group {
+        padding: 12px 8px;
+      }
+      #Section-{{ section.id }} .bh-hand-btn {
+        font-size: 12.5px;
+        padding: 0 4px;
+        height: 38px;
+      }
+      #Section-{{ section.id }} .bh-swatches {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+
+  <!-- TOP BANNER -->
+  <div class="bh-announcement">
+    ★ FALL SALE: BUY ONE GET ONE FREE! · FREE US SHIPPING · 30-DAY FIT GUARANTEE ★
+  </div>
+
+  <div class="bh-container">
+    <div class="bh-grid">
+
+      <!-- LEFT: MEDIA GALLERY -->
+      <div class="bh-gallery-wrap">
+        <div class="bh-main-box">
+          <div class="bh-badges-overlay">
+            <span class="bh-badge-pill">PATENTED BREAKOUT CHANNEL</span>
+            <span class="bh-badge-pill">HANDCRAFTED IN USA</span>
+          </div>
+          <img
+            id="bh-main-photo"
+            class="bh-main-img"
+            src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-1.webp?v=1794097611"
+            alt="Breakout 2.0 Holster BOGO Free"
+            width="600"
+            height="600"
+          >
+        </div>
+
+        <!-- THUMBNAILS -->
+        <div class="bh-thumbs-strip">
+          <button type="button" class="bh-thumb-btn active" data-img="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-1.webp?v=1794097611">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-1.webp?v=1794097611" alt="BOGO Offer" width="72" height="72">
+          </button>
+          <button type="button" class="bh-thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-2.webp?v=1794097611">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-2.webp?v=1794097611" alt="Ultimate Concealment" width="72" height="72">
+          </button>
+          <button type="button" class="bh-thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-3.webp?v=1794097611">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-3.webp?v=1794097611" alt="Rapid Draw Speed" width="72" height="72">
+          </button>
+          <button type="button" class="bh-thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-4.webp?v=1794097611">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-4.webp?v=1794097611" alt="Performance Profile" width="72" height="72">
+          </button>
+          <button type="button" class="bh-thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-5.webp?v=1794097611">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-5.webp?v=1794097611" alt="Preserve Finish" width="72" height="72">
+          </button>
+          <button type="button" class="bh-thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-6.webp?v=1794097611">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-6.webp?v=1794097611" alt="Veteran Proof" width="72" height="72">
+          </button>
+          <button type="button" class="bh-thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-7.webp?v=1794097611">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-7.webp?v=1794097611" alt="EDC Carry" width="72" height="72">
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT: BUY BOX -->
+      <div class="bh-buybox">
+        
+        <!-- REVIEWS -->
+        <div class="bh-rating-row">
+          <span class="bh-stars">★★★★★</span>
+          <span class="bh-rating-text">4.7 / 5.0 | 413 verified reviews</span>
+        </div>
+
+        <h1 class="bh-title">Breakout 2.0 Holster</h1>
+
+        <!-- PRICE -->
+        <div class="bh-price-row">
+          <span class="bh-price" id="bh-price-val">$129.99</span>
+          <span class="bh-compare" id="bh-compare-val">$260.00</span>
+          <span class="bh-save-badge">SAVE 50%</span>
+        </div>
+
+        <p class="bh-pitch">Forget you're carrying and remain undetectable with the Breakout Holster's, performance based design.</p>
+
+        <!-- CHECKLIST -->
+        <div class="bh-checklist">
+          <div class="bh-check-item">
+            <span class="bh-check-icon">✓</span>
+            <span>No Printing, Even Under a T-Shirt</span>
+          </div>
+          <div class="bh-check-item">
+            <span class="bh-check-icon">✓</span>
+            <span>All-Day Comfort Without the Pinch (Sitting or Driving)</span>
+          </div>
+          <div class="bh-check-item">
+            <span class="bh-check-icon">✓</span>
+            <span>Patented Breakout Channel Design for 0.8s Rapid Draw</span>
+          </div>
+          <div class="bh-check-item">
+            <span class="bh-check-icon">✓</span>
+            <span>Handcrafted in USA with Aircraft-Grade 0.08" Kydex</span>
+          </div>
+        </div>
+
+        <!-- BOGO OFFER PROMO BOX -->
+        <div class="bh-bogo-box">
+          <div class="bh-bogo-title">
+            <span>🔥</span> FALL SALE: BUY ONE GET ONE FREE!
+          </div>
+          <p class="bh-bogo-desc">Configure your primary holster and choose any second firearm model for your 100% FREE holster below.</p>
+
+          <!-- HOLSTER 1 -->
+          <div class="bh-config-group">
+            <div class="bh-config-header">
+              <span class="bh-config-title">1. First Holster (Included)</span>
+            </div>
+            
+            <label class="bh-select-label" for="bh-gun-1">Gun Make &amp; Model *</label>
+            <select class="bh-dropdown" id="bh-gun-1" aria-label="Gun 1 Model">
+              <option value="-- Please Select --">-- Please Select --</option>
+              <option value="1911 Commander Frame (4.25 Inch Barrel)">1911 Commander Frame (4.25 Inch Barrel)</option>
+              <option value="1911 Goverment Frame (5.0 Inch Barrel)">1911 Goverment Frame (5.0 Inch Barrel)</option>
+              <option value="1911 Goverment Frame W/ Tactical Rail (5.0 Inch Barrel)">1911 Goverment Frame W/ Tactical Rail (5.0 Inch Barrel)</option>
+              <option value="1911 Officer Frame (3.5 Inch Barrel)">1911 Officer Frame (3.5 Inch Barrel)</option>
+              <option value="Beretta 8000 Cougar D">Beretta 8000 Cougar D</option>
+              <option value="Beretta 80x Cheetah">Beretta 80x Cheetah</option>
+              <option value="Beretta 92">Beretta 92</option>
+              <option value="Beretta 92 (Variants With Rail)">Beretta 92 (Variants With Rail)</option>
+              <option value="Beretta 92D Centurion">Beretta 92D Centurion</option>
+              <option value="Beretta APX COMPACT">Beretta APX COMPACT</option>
+              <option value="Beretta APX FULL SIZE">Beretta APX FULL SIZE</option>
+              <option value="Beretta Nano">Beretta Nano</option>
+              <option value="Beretta Pico .380">Beretta Pico .380</option>
+              <option value="Beretta Px4 Storm (Compact)">Beretta Px4 Storm (Compact)</option>
+              <option value="Beretta Px4 Storm (Full Size)">Beretta Px4 Storm (Full Size)</option>
+              <option value="Bersa Thunder">Bersa Thunder</option>
+              <option value="Bogert XR9-L">Bogert XR9-L</option>
+              <option value="Bogert XR9-S (Will fit with .85 Inch gap at the end)">Bogert XR9-S (Will fit with .85 Inch gap at the end)</option>
+              <option value="Browning 1911">Browning 1911</option>
+              <option value="Browning Hi-Power">Browning Hi-Power</option>
+              <option value="Byrna CL">Byrna CL</option>
+              <option value="CANIK METE MC9">CANIK METE MC9</option>
+              <option value="CANIK METE MC9-L">CANIK METE MC9-L</option>
+              <option value="CANIK METE MC9-LS">CANIK METE MC9-LS</option>
+              <option value="CANIK METE MC9 PRIME">CANIK METE MC9 PRIME</option>
+              <option value="CANIK TP9 (Fits SA-SF-DA Models) (Will fit compacts as well with gap at end of holster)">CANIK TP9 (Fits SA-SF-DA Models) (Will fit compacts as well with gap at end of holster)</option>
+              <option value="Canik TP9 Elite SC">Canik TP9 Elite SC</option>
+              <option value="CANIK TP9 SFx">CANIK TP9 SFx</option>
+              <option value="Canik TTI Combat">Canik TTI Combat</option>
+              <option value="CZ-75 B">CZ-75 B</option>
+              <option value="CZ 75 P-01">CZ 75 P-01</option>
+              <option value="CZ 75 SP-01 Shadow">CZ 75 SP-01 Shadow</option>
+              <option value="CZ P-07 - CZ 75P-07 & P-07 DUTY">CZ P-07 - CZ 75P-07 & P-07 DUTY</option>
+              <option value="CZ-P10 C">CZ-P10 C</option>
+              <option value="CZ Shadow 2 (9mm)">CZ Shadow 2 (9mm)</option>
+              <option value="Diamond Back DB-9">Diamond Back DB-9</option>
+              <option value="FN 5.7">FN 5.7</option>
+              <option value="FN 503">FN 503</option>
+              <option value="FN 509 (Full Size)">FN 509 (Full Size)</option>
+              <option value="FN FNS">FN FNS</option>
+              <option value="FN REFLEX">FN REFLEX</option>
+              <option value="FN Reflex XL">FN Reflex XL</option>
+              <option value="Glock 17-22-47-31">Glock 17-22-47-31</option>
+              <option value="Glock 19-19X-45-23-32" selected>Glock 19-19X-45-23-32</option>
+              <option value="Glock 20-21">Glock 20-21</option>
+              <option value="Glock 26-27-33">Glock 26-27-33</option>
+              <option value="Glock 29-30">Glock 29-30</option>
+              <option value="Glock 34">Glock 34</option>
+              <option value="Glock 36">Glock 36</option>
+              <option value="Glock 42">Glock 42</option>
+              <option value="Glock 43-43X-43X MOS">Glock 43-43X-43X MOS</option>
+              <option value="Glock 48-48 MOS">Glock 48-48 MOS</option>
+              <option value="Glock Double (This Fits ALL Glock Double Stack Frames from Full-size to Subcompact)">Glock Double (This Fits ALL Glock Double Stack Frames from Full-size to Subcompact)</option>
+              <option value="H&K CC9">H&K CC9</option>
+              <option value="H&K P30-SK">H&K P30-SK</option>
+              <option value="H&K P30L">H&K P30L</option>
+              <option value="H&K USP .45">H&K USP .45</option>
+              <option value="H&K VP.40">H&K VP.40</option>
+              <option value="H&K VP9">H&K VP9</option>
+              <option value="H&K VP9-SK">H&K VP9-SK</option>
+              <option value="HK P2000 SK">HK P2000 SK</option>
+              <option value="IWI Masada Slim">IWI Masada Slim</option>
+              <option value="IWI Masada Slim Elite (Has Accessory Rail)">IWI Masada Slim Elite (Has Accessory Rail)</option>
+              <option value="Kahr CM 9">Kahr CM 9</option>
+              <option value="Kahr CW .45">Kahr CW .45</option>
+              <option value="KelTec P-11">KelTec P-11</option>
+              <option value="KelTec P-17">KelTec P-17</option>
+              <option value="KelTec P-3AT">KelTec P-3AT</option>
+              <option value="KelTec PF-9">KelTec PF-9</option>
+              <option value="KelTec PMR-30">KelTec PMR-30</option>
+              <option value="Kimber Micro">Kimber Micro</option>
+              <option value="Kimber R7-Mako">Kimber R7-Mako</option>
+              <option value="Kimber Solo">Kimber Solo</option>
+              <option value="Kimber Ultra Carry 2">Kimber Ultra Carry 2</option>
+              <option value="Mossberg MC1sc">Mossberg MC1sc</option>
+              <option value="Mossberg MC2C">Mossberg MC2C</option>
+              <option value="Poly-80 Full Size">Poly-80 Full Size</option>
+              <option value="PSA Dagger Compact">PSA Dagger Compact</option>
+              <option value="PSA Dagger Full Size">PSA Dagger Full Size</option>
+              <option value="PSA Micro Dagger C-1">PSA Micro Dagger C-1</option>
+              <option value="Ruger 5.7">Ruger 5.7</option>
+              <option value="Ruger American .45">Ruger American .45</option>
+              <option value="Ruger EC9 & EC9s">Ruger EC9 & EC9s</option>
+              <option value="Ruger LC.380 (LC9 frame chambered in .380)">Ruger LC.380 (LC9 frame chambered in .380)</option>
+              <option value="Ruger LC9 & LC9s">Ruger LC9 & LC9s</option>
+              <option value="Ruger LCP GEN 1">Ruger LCP GEN 1</option>
+              <option value="Ruger LCP GEN 2">Ruger LCP GEN 2</option>
+              <option value="Ruger LCP MAX .380">Ruger LCP MAX .380</option>
+              <option value="Ruger MAX 9">Ruger MAX 9</option>
+              <option value="Ruger RXM">Ruger RXM</option>
+              <option value="Ruger Security 380">Ruger Security 380</option>
+              <option value="Ruger Security 9">Ruger Security 9</option>
+              <option value="Ruger SR22">Ruger SR22</option>
+              <option value="Ruger SR9 (Compact)">Ruger SR9 (Compact)</option>
+              <option value="SAR-9">SAR-9</option>
+              <option value="SCCY CPX1">SCCY CPX1</option>
+              <option value="SCCY CPX2">SCCY CPX2</option>
+              <option value="Sig Sauer M-18">Sig Sauer M-18</option>
+              <option value="Sig Sauer P2022">Sig Sauer P2022</option>
+              <option value="Sig Sauer P220 (All Calibers)">Sig Sauer P220 (All Calibers)</option>
+              <option value="Sig Sauer P226 (All Calibers)">Sig Sauer P226 (All Calibers)</option>
+              <option value="Sig Sauer P229 (All Calibers)">Sig Sauer P229 (All Calibers)</option>
+              <option value="Sig Sauer P238">Sig Sauer P238</option>
+              <option value="Sig Sauer P239">Sig Sauer P239</option>
+              <option value="Sig Sauer P320 Carry (9mm-.40 S&W-.357 Sig)">Sig Sauer P320 Carry (9mm-.40 S&W-.357 Sig)</option>
+              <option value="Sig Sauer P320 Compact (9mm-.40 S&W-.357 Sig)">Sig Sauer P320 Compact (9mm-.40 S&W-.357 Sig)</option>
+              <option value="Sig Sauer P320 X-Compact (9mm-.40 S&W-.357 Sig)">Sig Sauer P320 X-Compact (9mm-.40 S&W-.357 Sig)</option>
+              <option value="Sig Sauer P365 - P365X - P365 SAS">Sig Sauer P365 - P365X - P365 SAS</option>
+              <option value="Sig Sauer P365 AXG Legion">Sig Sauer P365 AXG Legion</option>
+              <option value="Sig Sauer P365 Fuse">Sig Sauer P365 Fuse</option>
+              <option value="Sig Sauer P365 Nitron Micro">Sig Sauer P365 Nitron Micro</option>
+              <option value="Sig Sauer P365 X-Macro (ALL Variants)">Sig Sauer P365 X-Macro (ALL Variants)</option>
+              <option value="Sig Sauer P365 XL">Sig Sauer P365 XL</option>
+              <option value="Sig Sauer P938">Sig Sauer P938</option>
+              <option value="Smith & Wesson Bodyguard 2.0 Carry Comp (Performance Center)">Smith & Wesson Bodyguard 2.0 Carry Comp (Performance Center)</option>
+              <option value="Smith & Wesson CSX 3.1 Inch Barrel">Smith & Wesson CSX 3.1 Inch Barrel</option>
+              <option value="Smith & Wesson Equalizer">Smith & Wesson Equalizer</option>
+              <option value="Smith & Wesson M&P 9 Shield Plus Carry Comp (Performance Center)">Smith & Wesson M&P 9 Shield Plus Carry Comp (Performance Center)</option>
+              <option value="Smith & Wesson M&P Bodyguard">Smith & Wesson M&P Bodyguard</option>
+              <option value="Smith & Wesson M&P Bodyguard 2.0">Smith & Wesson M&P Bodyguard 2.0</option>
+              <option value="Smith & Wesson M&P Bodyguard with Crimson Trace laser">Smith & Wesson M&P Bodyguard with Crimson Trace laser</option>
+              <option value="Smith & Wesson M&P Full 4.25 Inch Barrel 1.0 & 2.0 (9mm-.40 S&W-.357 Sig)">Smith & Wesson M&P Full 4.25 Inch Barrel 1.0 & 2.0 (9mm-.40 S&W-.357 Sig)</option>
+              <option value="Smith & Wesson M&P Shield .45">Smith & Wesson M&P Shield .45</option>
+              <option value="Smith & Wesson M&P Shield 1.0 & 2.0 (9mm-.40 S&W)">Smith & Wesson M&P Shield 1.0 & 2.0 (9mm-.40 S&W)</option>
+              <option value="Smith & Wesson M&P Shield Plus (9mm-30 Super Carry)">Smith & Wesson M&P Shield Plus (9mm-30 Super Carry)</option>
+              <option value="Smith & Wesson M&P Shield X">Smith & Wesson M&P Shield X</option>
+              <option value="Smith & Wesson SD.40VE">Smith & Wesson SD.40VE</option>
+              <option value="Smith & Wesson SD9VE">Smith & Wesson SD9VE</option>
+              <option value="Smith & Wesson SD9VE 2.0">Smith & Wesson SD9VE 2.0</option>
+              <option value="Smith & Wesson Shield EZ (.380)">Smith & Wesson Shield EZ (.380)</option>
+              <option value="Smith & Wesson Shield EZ (30 Super Carry)">Smith & Wesson Shield EZ (30 Super Carry)</option>
+              <option value="Smith & Wesson Shield EZ (9mm)">Smith & Wesson Shield EZ (9mm)</option>
+              <option value="Springfield 1911 DS Prodigy (4.25 Inch Barrel)">Springfield 1911 DS Prodigy (4.25 Inch Barrel)</option>
+              <option value="Springfield 1911 EMP 3 Inch Barrel (All Calibers)">Springfield 1911 EMP 3 Inch Barrel (All Calibers)</option>
+              <option value="Springfield 911 .380">Springfield 911 .380</option>
+              <option value="Springfield Echelon">Springfield Echelon</option>
+              <option value="Springfield Echelon 4.0c (Will fit with .5 Inch gap at the end)">Springfield Echelon 4.0c (Will fit with .5 Inch gap at the end)</option>
+              <option value="Springfield Echelon 4.5">Springfield Echelon 4.5</option>
+              <option value="Springfield Hellcat">Springfield Hellcat</option>
+              <option value="Springfield Hellcat Pro">Springfield Hellcat Pro</option>
+              <option value="Springfield Hellcat Pro Comp OSP">Springfield Hellcat Pro Comp OSP</option>
+              <option value="Springfield Hellcat RDP">Springfield Hellcat RDP</option>
+              <option value="Springfield Hellcat RDP Micro Compact (NOT compatible with full size RDP)">Springfield Hellcat RDP Micro Compact (NOT compatible with full size RDP)</option>
+              <option value="Springfield XD 3.0 (Sub-Compact Barrel Length)">Springfield XD 3.0 (Sub-Compact Barrel Length)</option>
+              <option value="Springfield XD 4.0 (Full Size Barrel Length)">Springfield XD 4.0 (Full Size Barrel Length)</option>
+              <option value="Springfield XD Mod.2 Sub-Compact (3 Inch Barrel Round Trigger Guard)">Springfield XD Mod.2 Sub-Compact (3 Inch Barrel Round Trigger Guard)</option>
+              <option value="Springfield XD Sub-Compact (3 Inch Barrel Square Trigger Guard)">Springfield XD Sub-Compact (3 Inch Barrel Square Trigger Guard)</option>
+              <option value="Springfield XDE (3.3 Inch Barrel)">Springfield XDE (3.3 Inch Barrel)</option>
+              <option value="Springfield XDM 3.8 (Compact Barrel Length)">Springfield XDM 3.8 (Compact Barrel Length)</option>
+              <option value="Springfield XDS 3.3 Inch Barrel (All Variants)">Springfield XDS 3.3 Inch Barrel (All Variants)</option>
+              <option value="Springfield XDS 4.0 Inch Barrel (All Variants)">Springfield XDS 4.0 Inch Barrel (All Variants)</option>
+              <option value="Stacatto C2">Stacatto C2</option>
+              <option value="Stacatto P">Stacatto P</option>
+              <option value="Steyr M9-A1">Steyr M9-A1</option>
+              <option value="Stoeger STR-9">Stoeger STR-9</option>
+              <option value="Taurus 24/7">Taurus 24/7</option>
+              <option value="Taurus 709 Slim">Taurus 709 Slim</option>
+              <option value="Taurus G2C">Taurus G2C</option>
+              <option value="Taurus G3 Full Size">Taurus G3 Full Size</option>
+              <option value="Taurus G3C">Taurus G3C</option>
+              <option value="Taurus GX2">Taurus GX2</option>
+              <option value="Taurus GX4">Taurus GX4</option>
+              <option value="Taurus GX4 Carry">Taurus GX4 Carry</option>
+              <option value="Taurus GX4 XL">Taurus GX4 XL</option>
+              <option value="Taurus PT-111 Millennium G2">Taurus PT-111 Millennium G2</option>
+              <option value="Taurus Spectrum .380">Taurus Spectrum .380</option>
+              <option value="Walther CCP">Walther CCP</option>
+              <option value="Walther PDP 4.0 Inch Barrel">Walther PDP 4.0 Inch Barrel</option>
+              <option value="Walther PK.380">Walther PK.380</option>
+              <option value="Walther PPK">Walther PPK</option>
+              <option value="Walther PPQ">Walther PPQ</option>
+              <option value="Walther PPS">Walther PPS</option>
+              <option value="Walther PPS M2">Walther PPS M2</option>
+              <option value="Walther PPX">Walther PPX</option>
+              <option value="Wilson Combat EDC X9S">Wilson Combat EDC X9S</option>
+            </select>
+
+            <label class="bh-select-label">Hand Orientation *</label>
+            <div class="bh-hand-pills">
+              <button type="button" class="bh-hand-btn active" data-target="gun1-hand" data-val="Right">Right Hand</button>
+              <button type="button" class="bh-hand-btn" data-target="gun1-hand" data-val="Left">Left Hand</button>
+            </div>
+            <input type="hidden" id="bh-gun1-hand-val" value="Right">
+          </div>
+
+          <!-- HOLSTER 2 (FREE) -->
+          <div class="bh-config-group">
+            <div class="bh-config-header">
+              <span class="bh-config-title">2. Second Holster (100% FREE)</span>
+              <span class="bh-free-pill">FREE BOGO</span>
+            </div>
+
+            <label class="bh-select-label" for="bh-gun-2">Gun Make &amp; Model *</label>
+            <select class="bh-dropdown" id="bh-gun-2" aria-label="Gun 2 Model">
+              <option value="-- Please Select --">-- Please Select --</option>
+              <option value="1911 Commander Frame (4.25 Inch Barrel)">1911 Commander Frame (4.25 Inch Barrel)</option>
+              <option value="1911 Goverment Frame (5.0 Inch Barrel)">1911 Goverment Frame (5.0 Inch Barrel)</option>
+              <option value="1911 Goverment Frame W/ Tactical Rail (5.0 Inch Barrel)">1911 Goverment Frame W/ Tactical Rail (5.0 Inch Barrel)</option>
+              <option value="1911 Officer Frame (3.5 Inch Barrel)">1911 Officer Frame (3.5 Inch Barrel)</option>
+              <option value="Beretta 8000 Cougar D">Beretta 8000 Cougar D</option>
+              <option value="Beretta 80x Cheetah">Beretta 80x Cheetah</option>
+              <option value="Beretta 92">Beretta 92</option>
+              <option value="Beretta 92 (Variants With Rail)">Beretta 92 (Variants With Rail)</option>
+              <option value="Beretta 92D Centurion">Beretta 92D Centurion</option>
+              <option value="Beretta APX COMPACT">Beretta APX COMPACT</option>
+              <option value="Beretta APX FULL SIZE">Beretta APX FULL SIZE</option>
+              <option value="Beretta Nano">Beretta Nano</option>
+              <option value="Beretta Pico .380">Beretta Pico .380</option>
+              <option value="Beretta Px4 Storm (Compact)">Beretta Px4 Storm (Compact)</option>
+              <option value="Beretta Px4 Storm (Full Size)">Beretta Px4 Storm (Full Size)</option>
+              <option value="Bersa Thunder">Bersa Thunder</option>
+              <option value="Bogert XR9-L">Bogert XR9-L</option>
+              <option value="Bogert XR9-S (Will fit with .85 Inch gap at the end)">Bogert XR9-S (Will fit with .85 Inch gap at the end)</option>
+              <option value="Browning 1911">Browning 1911</option>
+              <option value="Browning Hi-Power">Browning Hi-Power</option>
+              <option value="Byrna CL">Byrna CL</option>
+              <option value="CANIK METE MC9">CANIK METE MC9</option>
+              <option value="CANIK METE MC9-L">CANIK METE MC9-L</option>
+              <option value="CANIK METE MC9-LS">CANIK METE MC9-LS</option>
+              <option value="CANIK METE MC9 PRIME">CANIK METE MC9 PRIME</option>
+              <option value="CANIK TP9 (Fits SA-SF-DA Models) (Will fit compacts as well with gap at end of holster)">CANIK TP9 (Fits SA-SF-DA Models) (Will fit compacts as well with gap at end of holster)</option>
+              <option value="Canik TP9 Elite SC">Canik TP9 Elite SC</option>
+              <option value="CANIK TP9 SFx">CANIK TP9 SFx</option>
+              <option value="Canik TTI Combat">Canik TTI Combat</option>
+              <option value="CZ-75 B">CZ-75 B</option>
+              <option value="CZ 75 P-01">CZ 75 P-01</option>
+              <option value="CZ 75 SP-01 Shadow">CZ 75 SP-01 Shadow</option>
+              <option value="CZ P-07 - CZ 75P-07 & P-07 DUTY">CZ P-07 - CZ 75P-07 & P-07 DUTY</option>
+              <option value="CZ-P10 C">CZ-P10 C</option>
+              <option value="CZ Shadow 2 (9mm)">CZ Shadow 2 (9mm)</option>
+              <option value="Diamond Back DB-9">Diamond Back DB-9</option>
+              <option value="FN 5.7">FN 5.7</option>
+              <option value="FN 503">FN 503</option>
+              <option value="FN 509 (Full Size)">FN 509 (Full Size)</option>
+              <option value="FN FNS">FN FNS</option>
+              <option value="FN REFLEX">FN REFLEX</option>
+              <option value="FN Reflex XL">FN Reflex XL</option>
+              <option value="Glock 17-22-47-31">Glock 17-22-47-31</option>
+              <option value="Glock 17L">Glock 17L</option>
+              <option value="Glock 19-19X-45-23-32">Glock 19-19X-45-23-32</option>
+              <option value="Glock 20-21">Glock 20-21</option>
+              <option value="Glock 26-27-33">Glock 26-27-33</option>
+              <option value="Glock 29-30">Glock 29-30</option>
+              <option value="Glock 34">Glock 34</option>
+              <option value="Glock 36">Glock 36</option>
+              <option value="Glock 42">Glock 42</option>
+              <option value="Glock 43-43X-43X MOS">Glock 43-43X-43X MOS</option>
+              <option value="Glock 48-48 MOS">Glock 48-48 MOS</option>
+              <option value="Glock Double (This Fits ALL Glock Double Stack Frames from Full-size to Subcompact)">Glock Double (This Fits ALL Glock Double Stack Frames from Full-size to Subcompact)</option>
+              <option value="H&K CC9">H&K CC9</option>
+              <option value="H&K P30-SK">H&K P30-SK</option>
+              <option value="H&K P30L">H&K P30L</option>
+              <option value="H&K USP .45">H&K USP .45</option>
+              <option value="H&K VP.40">H&K VP.40</option>
+              <option value="H&K VP9">H&K VP9</option>
+              <option value="H&K VP9-SK">H&K VP9-SK</option>
+              <option value="HK P2000 SK">HK P2000 SK</option>
+              <option value="IWI Masada Slim">IWI Masada Slim</option>
+              <option value="IWI Masada Slim Elite (Has Accessory Rail)">IWI Masada Slim Elite (Has Accessory Rail)</option>
+              <option value="Kahr CM 9">Kahr CM 9</option>
+              <option value="Kahr CW .45">Kahr CW .45</option>
+              <option value="KelTec P-11">KelTec P-11</option>
+              <option value="KelTec P-17">KelTec P-17</option>
+              <option value="KelTec P-3AT">KelTec P-3AT</option>
+              <option value="KelTec PF-9">KelTec PF-9</option>
+              <option value="KelTec PMR-30">KelTec PMR-30</option>
+              <option value="Kimber Micro">Kimber Micro</option>
+              <option value="Kimber R7-Mako">Kimber R7-Mako</option>
+              <option value="Kimber Solo">Kimber Solo</option>
+              <option value="Kimber Ultra Carry 2">Kimber Ultra Carry 2</option>
+              <option value="Mossberg MC1sc">Mossberg MC1sc</option>
+              <option value="Mossberg MC2C">Mossberg MC2C</option>
+              <option value="Poly-80 Full Size">Poly-80 Full Size</option>
+              <option value="PSA Dagger Compact">PSA Dagger Compact</option>
+              <option value="PSA Dagger Full Size">PSA Dagger Full Size</option>
+              <option value="PSA Micro Dagger C-1">PSA Micro Dagger C-1</option>
+              <option value="Ruger 5.7">Ruger 5.7</option>
+              <option value="Ruger American .45">Ruger American .45</option>
+              <option value="Ruger EC9 & EC9s">Ruger EC9 & EC9s</option>
+              <option value="Ruger LC.380 (LC9 frame chambered in .380)">Ruger LC.380 (LC9 frame chambered in .380)</option>
+              <option value="Ruger LC9 & LC9s">Ruger LC9 & LC9s</option>
+              <option value="Ruger LCP GEN 1">Ruger LCP GEN 1</option>
+              <option value="Ruger LCP GEN 2">Ruger LCP GEN 2</option>
+              <option value="Ruger LCP MAX .380">Ruger LCP MAX .380</option>
+              <option value="Ruger MAX 9">Ruger MAX 9</option>
+              <option value="Ruger RXM">Ruger RXM</option>
+              <option value="Ruger Security 380">Ruger Security 380</option>
+              <option value="Ruger Security 9">Ruger Security 9</option>
+              <option value="Ruger SR22">Ruger SR22</option>
+              <option value="Ruger SR9 (Compact)">Ruger SR9 (Compact)</option>
+              <option value="SAR-9">SAR-9</option>
+              <option value="SCCY CPX1">SCCY CPX1</option>
+              <option value="SCCY CPX2">SCCY CPX2</option>
+              <option value="Sig Sauer M-18">Sig Sauer M-18</option>
+              <option value="Sig Sauer P2022">Sig Sauer P2022</option>
+              <option value="Sig Sauer P220 (All Calibers)">Sig Sauer P220 (All Calibers)</option>
+              <option value="Sig Sauer P226 (All Calibers)">Sig Sauer P226 (All Calibers)</option>
+              <option value="Sig Sauer P229 (All Calibers)">Sig Sauer P229 (All Calibers)</option>
+              <option value="Sig Sauer P238">Sig Sauer P238</option>
+              <option value="Sig Sauer P239">Sig Sauer P239</option>
+              <option value="Sig Sauer P320 Carry (9mm-.40 S&W-.357 Sig)">Sig Sauer P320 Carry (9mm-.40 S&W-.357 Sig)</option>
+              <option value="Sig Sauer P320 Compact (9mm-.40 S&W-.357 Sig)">Sig Sauer P320 Compact (9mm-.40 S&W-.357 Sig)</option>
+              <option value="Sig Sauer P320 X-Compact (9mm-.40 S&W-.357 Sig)">Sig Sauer P320 X-Compact (9mm-.40 S&W-.357 Sig)</option>
+              <option value="Sig Sauer P365 - P365X - P365 SAS" selected>Sig Sauer P365 - P365X - P365 SAS</option>
+              <option value="Sig Sauer P365 AXG Legion">Sig Sauer P365 AXG Legion</option>
+              <option value="Sig Sauer P365 Fuse">Sig Sauer P365 Fuse</option>
+              <option value="Sig Sauer P365 Nitron Micro">Sig Sauer P365 Nitron Micro</option>
+              <option value="Sig Sauer P365 X-Macro (ALL Variants)">Sig Sauer P365 X-Macro (ALL Variants)</option>
+              <option value="Sig Sauer P365 XL">Sig Sauer P365 XL</option>
+              <option value="Sig Sauer P938">Sig Sauer P938</option>
+              <option value="Smith & Wesson Bodyguard 2.0 Carry Comp (Performance Center)">Smith & Wesson Bodyguard 2.0 Carry Comp (Performance Center)</option>
+              <option value="Smith & Wesson CSX 3.1 Inch Barrel">Smith & Wesson CSX 3.1 Inch Barrel</option>
+              <option value="Smith & Wesson Equalizer">Smith & Wesson Equalizer</option>
+              <option value="Smith & Wesson M&P 9 Shield Plus Carry Comp (Performance Center)">Smith & Wesson M&P 9 Shield Plus Carry Comp (Performance Center)</option>
+              <option value="Smith & Wesson M&P Bodyguard">Smith & Wesson M&P Bodyguard</option>
+              <option value="Smith & Wesson M&P Bodyguard 2.0">Smith & Wesson M&P Bodyguard 2.0</option>
+              <option value="Smith & Wesson M&P Bodyguard with Crimson Trace laser">Smith & Wesson M&P Bodyguard with Crimson Trace laser</option>
+              <option value="Smith & Wesson M&P Full 4.25 Inch Barrel 1.0 & 2.0 (9mm-.40 S&W-.357 Sig)">Smith & Wesson M&P Full 4.25 Inch Barrel 1.0 & 2.0 (9mm-.40 S&W-.357 Sig)</option>
+              <option value="Smith & Wesson M&P Shield .45">Smith & Wesson M&P Shield .45</option>
+              <option value="Smith & Wesson M&P Shield 1.0 & 2.0 (9mm-.40 S&W)">Smith & Wesson M&P Shield 1.0 & 2.0 (9mm-.40 S&W)</option>
+              <option value="Smith & Wesson M&P Shield Plus (9mm-30 Super Carry)">Smith & Wesson M&P Shield Plus (9mm-30 Super Carry)</option>
+              <option value="Smith & Wesson M&P Shield X">Smith & Wesson M&P Shield X</option>
+              <option value="Smith & Wesson M&P Subcompact 3.6 Inch Barrel">Smith & Wesson M&P Subcompact 3.6 Inch Barrel</option>
+              <option value="Smith & Wesson SD.40VE">Smith & Wesson SD.40VE</option>
+              <option value="Smith & Wesson SD9VE">Smith & Wesson SD9VE</option>
+              <option value="Smith & Wesson SD9VE 2.0">Smith & Wesson SD9VE 2.0</option>
+              <option value="Smith & Wesson Shield EZ (.380)">Smith & Wesson Shield EZ (.380)</option>
+              <option value="Smith & Wesson Shield EZ (30 Super Carry)">Smith & Wesson Shield EZ (30 Super Carry)</option>
+              <option value="Smith & Wesson Shield EZ (9mm)">Smith & Wesson Shield EZ (9mm)</option>
+              <option value="Springfield 1911 DS Prodigy (4.25 Inch Barrel)">Springfield 1911 DS Prodigy (4.25 Inch Barrel)</option>
+              <option value="Springfield 1911 EMP 3 Inch Barrel (All Calibers)">Springfield 1911 EMP 3 Inch Barrel (All Calibers)</option>
+              <option value="Springfield 911 .380">Springfield 911 .380</option>
+              <option value="Springfield Echelon">Springfield Echelon</option>
+              <option value="Springfield Echelon 4.0c (Will fit with .5 Inch gap at the end)">Springfield Echelon 4.0c (Will fit with .5 Inch gap at the end)</option>
+              <option value="Springfield Echelon 4.5">Springfield Echelon 4.5</option>
+              <option value="Springfield Hellcat">Springfield Hellcat</option>
+              <option value="Springfield Hellcat Pro">Springfield Hellcat Pro</option>
+              <option value="Springfield Hellcat Pro Comp OSP">Springfield Hellcat Pro Comp OSP</option>
+              <option value="Springfield Hellcat RDP">Springfield Hellcat RDP</option>
+              <option value="Springfield Hellcat RDP Micro Compact (NOT compatible with full size RDP)">Springfield Hellcat RDP Micro Compact (NOT compatible with full size RDP)</option>
+              <option value="Springfield XD 3.0 (Sub-Compact Barrel Length)">Springfield XD 3.0 (Sub-Compact Barrel Length)</option>
+              <option value="Springfield XD 4.0 (Full Size Barrel Length)">Springfield XD 4.0 (Full Size Barrel Length)</option>
+              <option value="Springfield XD Mod.2 Sub-Compact (3 Inch Barrel Round Trigger Guard)">Springfield XD Mod.2 Sub-Compact (3 Inch Barrel Round Trigger Guard)</option>
+              <option value="Springfield XD Sub-Compact (3 Inch Barrel Square Trigger Guard)">Springfield XD Sub-Compact (3 Inch Barrel Square Trigger Guard)</option>
+              <option value="Springfield XDE (3.3 Inch Barrel)">Springfield XDE (3.3 Inch Barrel)</option>
+              <option value="Springfield XDM 3.8 (Compact Barrel Length)">Springfield XDM 3.8 (Compact Barrel Length)</option>
+              <option value="Springfield XDS 3.3 Inch Barrel (All Variants)">Springfield XDS 3.3 Inch Barrel (All Variants)</option>
+              <option value="Springfield XDS 4.0 Inch Barrel (All Variants)">Springfield XDS 4.0 Inch Barrel (All Variants)</option>
+              <option value="Stacatto C2">Stacatto C2</option>
+              <option value="Stacatto P">Stacatto P</option>
+              <option value="Steyr M9-A1">Steyr M9-A1</option>
+              <option value="Stoeger STR-9">Stoeger STR-9</option>
+              <option value="Taurus 24/7">Taurus 24/7</option>
+              <option value="Taurus 709 Slim">Taurus 709 Slim</option>
+              <option value="Taurus G2C">Taurus G2C</option>
+              <option value="Taurus G3 Full Size">Taurus G3 Full Size</option>
+              <option value="Taurus G3C">Taurus G3C</option>
+              <option value="Taurus GX2">Taurus GX2</option>
+              <option value="Taurus GX4">Taurus GX4</option>
+              <option value="Taurus GX4 Carry">Taurus GX4 Carry</option>
+              <option value="Taurus GX4 XL">Taurus GX4 XL</option>
+              <option value="Taurus PT-111 Millennium G2">Taurus PT-111 Millennium G2</option>
+              <option value="Taurus Spectrum .380">Taurus Spectrum .380</option>
+              <option value="Walther CCP">Walther CCP</option>
+              <option value="Walther PDP 4.0 Inch Barrel">Walther PDP 4.0 Inch Barrel</option>
+              <option value="Walther PK.380">Walther PK.380</option>
+              <option value="Walther PPK">Walther PPK</option>
+              <option value="Walther PPQ">Walther PPQ</option>
+              <option value="Walther PPS">Walther PPS</option>
+              <option value="Walther PPS M2">Walther PPS M2</option>
+              <option value="Walther PPX">Walther PPX</option>
+              <option value="Wilson Combat EDC X9S">Wilson Combat EDC X9S</option>
+            </select>
+
+            <label class="bh-select-label">Hand Orientation *</label>
+            <div class="bh-hand-pills">
+              <button type="button" class="bh-hand-btn active" data-target="gun2-hand" data-val="Right">Right Hand</button>
+              <button type="button" class="bh-hand-btn" data-target="gun2-hand" data-val="Left">Left Hand</button>
+            </div>
+            <input type="hidden" id="bh-gun2-hand-val" value="Right">
+          </div>
+
+          <!-- MATERIAL OPTIONS -->
+          <div class="bh-material-row">
+            <label class="bh-select-label">Material Options *</label>
+            <div class="bh-swatches">
+              <button type="button" class="bh-swatch-btn active" data-mat="Flat Black" data-price="0">
+                <span class="bh-swatch-thumb matte"></span>
+                <span class="bh-swatch-name">Flat Black (Included)</span>
+              </button>
+              <button type="button" class="bh-swatch-btn" data-mat="Carbon Fiber Upgrade" data-price="19.99">
+                <span class="bh-swatch-thumb carbon"></span>
+                <span class="bh-swatch-name">Carbon Fiber Upgrade (+ $19.99)</span>
+              </button>
+            </div>
+            <input type="hidden" id="bh-material-val" value="Flat Black">
+          </div>
+        </div>
+
+        <!-- MINT SAVINGS BANNER -->
+        <div class="bh-savings-banner">
+          <span>⇘ 🏷️</span>
+          <span id="bh-savings-text">You save $130.01 on this order + FREE 2nd Holster included</span>
+          <span>⇙</span>
+        </div>
+
+        <!-- CTA BUTTON -->
+        <button type="button" class="bh-cta-btn" id="bh-main-atc-btn">
+          <span id="bh-cta-btn-text">ADD TO CART – $129.99</span>
+          <span class="bh-cta-sub">🛡️ 30-DAY FIT GUARANTEE · LIFETIME WARRANTY</span>
+        </button>
+
+        <!-- TRUST BADGES -->
+        <div class="bh-trust-row">
+          <div class="bh-trust-col">
+            <span class="bh-trust-icon">🎯</span>
+            <span class="bh-trust-text">30 Day Fit Guarantee</span>
+          </div>
+          <div class="bh-trust-col">
+            <span class="bh-trust-icon">🎖️</span>
+            <span class="bh-trust-text">Veteran Owned</span>
+          </div>
+          <div class="bh-trust-col">
+            <span class="bh-trust-icon">🇺🇸</span>
+            <span class="bh-trust-text">Made In U.S.A</span>
+          </div>
+        </div>
+
+        <!-- INSTRUCTOR TESTIMONIAL -->
+        <div class="bh-instructor-quote">
+          <img class="bh-instructor-img" src="https://cdn.shopify.com/s/files/1/0672/5749/9949/files/product-image-6.webp?v=1778526306" alt="Ryan S. CCW Instructor" width="48" height="48">
+          <div class="bh-instructor-body">
+            "As a concealed carry instructor, I recommend the Breakout Holster to my students, it's the only one that truly delivers all day comfort and reliable concealment."
+            <span class="bh-instructor-author">Ryan S. – Certified CCW Instructor</span>
+          </div>
+        </div>
+
+        <!-- ACCORDIONS -->
+        <div class="bh-pdp-accordion">
+          <details class="bh-acc-item">
+            <summary class="bh-acc-summary">Still Have Questions?</summary>
+            <div class="bh-acc-content">
+              Have questions about your specific firearm setup, optics cut, or light compatibility? Our US-based customer service team is staffed by active CCW carriers ready to assist you 7 days a week.
+            </div>
+          </details>
+
+          <details class="bh-acc-item">
+            <summary class="bh-acc-summary">Product Features</summary>
+            <div class="bh-acc-content">
+              • Molded 0.08" heavy-duty Kydex precision vacuum formed for exact trigger guard click retention.<br>
+              • Optic-cut standard: Compatible with RMR, Holosun, Shield RMS, and all micro red dots.<br>
+              • Open-muzzle design accommodates threaded barrels and compensators.<br>
+              • Heavy-duty steel IWB clip fits 1.5" tactical and leather belts with adjustable ride height.
+            </div>
+          </details>
+
+          <details class="bh-acc-item">
+            <summary class="bh-acc-summary">Warranty &amp; Guarantee</summary>
+            <div class="bh-acc-content">
+              Every Breakout 2.0 Holster comes backed by our ironclad <strong>30-Day Fit Guarantee</strong> and an unconditional <strong>Lifetime Warranty</strong> against cracks, hardware defects, or retention fatigue.
+            </div>
+          </details>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MOBILE STICKY DOCK -->
+  <div class="bh-mobile-sticky-dock" id="bh-mobile-dock">
+    <div>
+      <div class="bh-dock-price" id="bh-dock-price-val">$129.99</div>
+      <div class="bh-dock-sub">🔥 BOGO 2-Pack</div>
+    </div>
+    <button type="button" class="bh-dock-btn" id="bh-dock-atc-btn">ADD TO CART</button>
+  </div>
+
+  <script>
+    (function() {
+      const VARIANT_ID = 68197875482809;
+
+      const mainImg = document.getElementById('bh-main-photo');
+      const thumbBtns = document.querySelectorAll('#Section-{{ section.id }} .bh-thumb-btn');
+      const ctaBtn = document.getElementById('bh-main-atc-btn');
+      const ctaText = document.getElementById('bh-cta-btn-text');
+      const mobileBtn = document.getElementById('bh-dock-atc-btn');
+      const mobilePrice = document.getElementById('bh-dock-price-val');
+      const priceDisplay = document.getElementById('bh-price-val');
+      const compareDisplay = document.getElementById('bh-compare-val');
+      const savingsDisplay = document.getElementById('bh-savings-text');
+
+      // Gallery Thumbnails
+      thumbBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          thumbBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const src = btn.getAttribute('data-img');
+          if (src && mainImg) mainImg.src = src;
+        });
+      });
+
+      // Hand Orientation Buttons
+      document.querySelectorAll('#Section-{{ section.id }} .bh-hand-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const target = btn.getAttribute('data-target');
+          const val = btn.getAttribute('data-val');
+          btn.parentElement.querySelectorAll('.bh-hand-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          if (target === 'gun1-hand') {
+            document.getElementById('bh-gun1-hand-val').value = val;
+          } else if (target === 'gun2-hand') {
+            document.getElementById('bh-gun2-hand-val').value = val;
+          }
+        });
+      });
+
+      // Material Swatches
+      document.querySelectorAll('#Section-{{ section.id }} .bh-swatch-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#Section-{{ section.id }} .bh-swatch-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const mat = btn.getAttribute('data-mat');
+          const matInp = document.getElementById('bh-material-val');
+          if (matInp) matInp.value = mat;
+          updatePricing();
+        });
+      });
+
+      function updatePricing() {
+        const activeSwatch = document.querySelector('#Section-{{ section.id }} .bh-swatch-btn.active');
+        const mat = activeSwatch ? activeSwatch.getAttribute('data-mat') : 'Flat Black';
+
+        let currentPrice = '129.99';
+        let comparePrice = '260.00';
+        let saveAmt = '130.01';
+
+        if (mat === 'Carbon Fiber Upgrade') {
+          currentPrice = '149.98';
+          comparePrice = '300.00';
+          saveAmt = '150.02';
+        }
+
+        const priceStr = '$' + currentPrice;
+        const compareStr = '$' + comparePrice;
+
+        if (priceDisplay) priceDisplay.innerText = priceStr;
+        if (compareDisplay) compareDisplay.innerText = compareStr;
+        if (mobilePrice) mobilePrice.innerText = priceStr;
+        if (ctaText) ctaText.innerText = 'ADD TO CART – ' + priceStr;
+        if (savingsDisplay) {
+          savingsDisplay.innerText = '⇘ 🏷️ You save $' + saveAmt + ' on this order + FREE 2nd Holster included ⇙';
+        }
+      }
+
+      // Add to Cart
+      async function handleAddToCart() {
+        const gun1 = document.getElementById('bh-gun-1')?.value || '';
+        const gun2 = document.getElementById('bh-gun-2')?.value || '';
+
+        if (!gun1 || gun1 === '-- Please Select --' || !gun2 || gun2 === '-- Please Select --') {
+          alert('Please select your Gun Make & Model for both holsters.');
+          return;
+        }
+
+        if (ctaBtn) {
+          ctaBtn.disabled = true;
+          ctaBtn.style.opacity = '0.7';
+          ctaText.innerText = 'ADDING TO CART...';
+        }
+        if (mobileBtn) {
+          mobileBtn.innerText = 'ADDING...';
+        }
+
+        const hand1 = document.getElementById('bh-gun1-hand-val')?.value || 'Right';
+        const hand2 = document.getElementById('bh-gun2-hand-val')?.value || 'Right';
+        const activeSwatch = document.querySelector('#Section-{{ section.id }} .bh-swatch-btn.active');
+        const material = activeSwatch ? activeSwatch.getAttribute('data-mat') : 'Flat Black';
+
+        const properties = {
+          'Holster 1 Gun': gun1,
+          'Holster 1 Hand': hand1 + ' Hand',
+          'Holster 2 (FREE BOGO) Gun': gun2,
+          'Holster 2 Hand': hand2 + ' Hand',
+          'Material Finish': material === 'Carbon Fiber Upgrade' ? 'Carbon Fiber Upgrade (+ $19.99)' : 'Flat Black (Included)',
+          'Promotion': 'BUY ONE GET ONE FREE (50% OFF)'
+        };
+
+        const items = [{
+          id: VARIANT_ID,
+          quantity: 1,
+          properties: properties
+        }];
+
+        try {
+          const res = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items })
+          });
+
+          if (res.ok) {
+            window.location.href = '/checkout';
+          } else {
+            window.location.href = '/cart';
+          }
+        } catch (e) {
+          console.error(e);
+          window.location.href = '/cart';
+        }
+      }
+
+      if (ctaBtn) ctaBtn.addEventListener('click', handleAddToCart);
+      if (mobileBtn) mobileBtn.addEventListener('click', handleAddToCart);
+    })();
+  </script>
+</div>
+
+{% schema %}
+{
+  "name": "Breakout Holster PDP",
+  "settings": []
+}
+{% endschema %}

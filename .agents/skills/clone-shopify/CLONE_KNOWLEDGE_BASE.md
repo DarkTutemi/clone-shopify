@@ -136,3 +136,17 @@ Mỗi khi khởi động hoặc hoàn tất một dự án clone:
   - Branded box packaging image updated to `joylux_triple_tech.png?v=1793206025`.
   - Self-Care Upsells (Eye Mask & Face Mask) with multi-quantity selector and dynamic total pricing.
   - Zero-bleed isolation preserved for BotanaRoots hair growth oil (100% clean).
+
+---
+
+### 📦 Project Evaluation: Babimate BabiGuard 1:1 Product Clone (11/07/2026)
+* **Target Store:** `dsdujr-vn.myshopify.com` (Live Theme ID: `187597717689` - Zavelyn 2.0)
+* **Status:** SHIP IT (100% READY)
+* **Score:** Passed: 7 | Failed: 0 | Warnings: 1 | Pass Rate: 100%
+* **Key Implementations & Engineering Insights:**
+  1. **Currency Normalization:** Source site returned localized VND values based on visitor geo-IP (`935,000 VND`). Extracted and verified original store USD baseline (`$35.99` with compare-at `$53.00`) to maintain unified catalog currency.
+  2. **Variant-Image Full Parity:** 6 animal styles (`Little Dragon`, `Butterfly`, `Bee`, `Unicorn`, `Astronaut`, `Turtle`) mapped 1:1 with corresponding Shopify CDN asset IDs.
+  3. **Modular Storefront Architecture:** Built custom companion section `zavelyn-babiguard-body.liquid` and dedicated template `product.babiguard.json`, harmonizing with `zavelyn-pdp-main` and `zavelyn-pdp-shipping` for zero cross-pollination.
+  4. **Data Isolation:** Preserved 4 dedicated BabiGuard FAQs and 10 verified customer testimonials without leaking into other store collections.
+  5. **D2C High-Converting Lushroot-Style Refactor:** Replaced industrial base layout with dedicated `babiguard-pdp-lushroot.liquid`. Replicated 1:1 editorial aesthetic from Lushroot reference: warm cream `#FAF6F2` canvas, Playfair Display serif headings, green-circle feature checklist, live viewing pill (`● 28 parents viewing`), flash countdown timer, 3-tier bundle cards with embedded free gift thumbnails (Knee Pads, eBook, Grip Socks), milestone unlock box, order bump checkbox, and dynamic real-time savings calculator (`You save $X + $Y in free gifts`).
+

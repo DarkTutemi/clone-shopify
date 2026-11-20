@@ -1,0 +1,1324 @@
+  /* =========================================================
+     BASE + MONTSERRAT
+  ========================================================= */
+
+  #senzio-plantar-heel-explorer-v6,
+  #senzio-plantar-heel-explorer-v6 *,
+  #senzio-plantar-heel-explorer-v6 *::before,
+  #senzio-plantar-heel-explorer-v6 *::after {
+    box-sizing: border-box;
+  }
+
+  #senzio-plantar-heel-explorer-v6,
+  #senzio-plantar-heel-explorer-v6 h1,
+  #senzio-plantar-heel-explorer-v6 h2,
+  #senzio-plantar-heel-explorer-v6 h3,
+  #senzio-plantar-heel-explorer-v6 h4,
+  #senzio-plantar-heel-explorer-v6 h5,
+  #senzio-plantar-heel-explorer-v6 h6,
+  #senzio-plantar-heel-explorer-v6 p,
+  #senzio-plantar-heel-explorer-v6 span,
+  #senzio-plantar-heel-explorer-v6 small,
+  #senzio-plantar-heel-explorer-v6 strong,
+  #senzio-plantar-heel-explorer-v6 b,
+  #senzio-plantar-heel-explorer-v6 em,
+  #senzio-plantar-heel-explorer-v6 button,
+  #senzio-plantar-heel-explorer-v6 label {
+    font-family: var(--k-sans), Arial, sans-serif !important;
+    font-synthesis: none;
+  }
+
+  #senzio-plantar-heel-explorer-v6 {
+    --sphe6-green-950: #062f23;
+    --sphe6-green-900: #083d2d;
+    --sphe6-green-800: #0b523c;
+    --sphe6-green-700: #126a4e;
+    --sphe6-green-600: #22836a;
+    --sphe6-green-500: #35a680;
+
+    --sphe6-olive-800: #68732f;
+    --sphe6-olive-700: #7c8737;
+    --sphe6-olive-600: #96a24f;
+
+    --sphe6-text: #17382d;
+    --sphe6-muted: #62726c;
+    --sphe6-soft-muted: #7a8983;
+
+    --sphe6-white: #ffffff;
+    --sphe6-cream: #fffefa;
+    --sphe6-mint: #eaf7f1;
+    --sphe6-border: rgba(9, 83, 59, 0.12);
+
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    overflow: hidden;
+
+    color: var(--sphe6-text);
+
+    background:
+      radial-gradient(
+        circle at 74% 42%,
+        rgba(216, 242, 229, 0.52) 0%,
+        rgba(245, 251, 247, 0.22) 39%,
+        rgba(255, 255, 255, 0) 68%
+      ),
+      linear-gradient(
+        135deg,
+        #fffefa 0%,
+        #fbfaf5 48%,
+        #f8fbf9 100%
+      );
+  }
+
+  #senzio-plantar-heel-explorer-v6 svg {
+    display: block;
+  }
+
+  #senzio-plantar-heel-explorer-v6 img {
+    display: block;
+
+    max-width: 100%;
+
+    margin: 0 !important;
+    padding: 0;
+
+    border: 0;
+  }
+
+  #senzio-plantar-heel-explorer-v6 button {
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    font: inherit;
+    touch-action: manipulation;
+  }
+
+  /* =========================================================
+     BACKGROUND
+  ========================================================= */
+
+  .senzio-phe6__background {
+    position: absolute;
+    z-index: -3;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+  }
+
+  .senzio-phe6__orb {
+    position: absolute;
+
+    display: block;
+
+    border-radius: 50%;
+  }
+
+  .senzio-phe6__orb--one {
+    top: -220px;
+    right: -190px;
+
+    width: 500px;
+    height: 500px;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(143, 164, 66, 0.14),
+        rgba(143, 164, 66, 0)
+      );
+  }
+
+  .senzio-phe6__orb--two {
+    bottom: -245px;
+    left: -225px;
+
+    width: 520px;
+    height: 520px;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(47, 158, 119, 0.12),
+        rgba(47, 158, 119, 0)
+      );
+  }
+
+  .senzio-phe6__background-lines {
+    position: absolute;
+
+    right: 0;
+    bottom: -8%;
+    left: 0;
+
+    width: 100%;
+    height: 72%;
+
+    opacity: 0.22;
+  }
+
+  .senzio-phe6__background-lines path {
+    fill: none;
+
+    stroke: rgba(32, 106, 79, 0.12);
+    stroke-width: 2;
+  }
+
+  /* =========================================================
+     CONTAINER
+  ========================================================= */
+
+  .senzio-phe6__container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    margin: 0 auto;
+    padding:
+      clamp(24px, 3vw, 42px)
+      clamp(18px, 3.2vw, 42px)
+      clamp(42px, 4vw, 68px);
+  }
+
+
+  /* =========================================================
+     DESKTOP LAYOUT
+  ========================================================= */
+
+  .senzio-phe6__desktop {
+    display: grid;
+
+    grid-template-columns:
+      minmax(360px, 0.74fr)
+      minmax(690px, 1.26fr);
+
+    align-items: center;
+
+    gap: clamp(16px, 3vw, 44px);
+  }
+
+  /* =========================================================
+     DESKTOP DETAIL CARD
+  ========================================================= */
+
+  .senzio-phe6__desktop-card {
+    min-width: 0;
+    max-width: 525px;
+
+    padding: 20px;
+
+    border: 1px solid var(--sphe6-border);
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.91);
+
+    box-shadow:
+      0 18px 42px rgba(7, 58, 43, 0.085),
+      inset 0 1px 0 rgba(255, 255, 255, 0.55);
+
+    contain: content;
+  }
+
+  .senzio-phe6__card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-bottom: 14px;
+  }
+
+  .senzio-phe6__card-kicker {
+    min-height: 28px;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    color: var(--sphe6-green-700);
+    background: var(--sphe6-mint);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .senzio-phe6__card-count {
+    color: var(--sphe6-soft-muted);
+
+    font-size: 10px;
+    font-weight: 800;
+  }
+
+  /* =========================================================
+     DETAIL CARD MEDIA — RECTANGULAR
+  ========================================================= */
+
+  .senzio-phe6__detail-media,
+  .senzio-phe6__mobile-detail-media {
+    --sphe6-effect-color: rgba(57, 151, 105, 0.2);
+
+    position: relative;
+
+    width: 100%;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    border: 1px solid rgba(15, 91, 66, 0.1);
+
+    background:
+      radial-gradient(
+        circle at 50% 47%,
+        rgba(231, 246, 238, 0.96),
+        rgba(255, 255, 255, 0.97) 68%
+      );
+
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.74),
+      0 12px 28px rgba(8, 58, 42, 0.06);
+  }
+
+  .senzio-phe6__detail-media {
+    aspect-ratio: 1.36 / 1;
+
+    padding: 14px;
+
+    border-radius: 19px;
+  }
+
+  .senzio-phe6__mobile-detail-media {
+    aspect-ratio: 1.48 / 1;
+
+    padding: 12px;
+
+    border-radius: 17px;
+  }
+
+  .senzio-phe6__detail-effect,
+  .senzio-phe6__mobile-detail-effect {
+    position: absolute;
+    z-index: 0;
+
+    inset: 12%;
+
+    border-radius: 40%;
+
+    background:
+      radial-gradient(
+        circle,
+        var(--sphe6-effect-color),
+        rgba(255, 255, 255, 0) 72%
+      );
+
+    opacity: 0.55;
+
+    animation:
+      senzioPhe6EffectPulse
+      3.6s
+      ease-in-out
+      infinite;
+  }
+
+  .senzio-phe6__detail-media img,
+  .senzio-phe6__mobile-detail-media img {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 0;
+
+    transform-origin: center;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .senzio-phe6__card-copy {
+    margin-top: 17px;
+  }
+
+  #senzio-plantar-heel-explorer-v6 .senzio-phe6__card-copy h3 {
+    margin: 0 !important;
+
+    color: var(--sphe6-green-950);
+
+    font-size: clamp(27px, 2.2vw, 36px) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.042em !important;
+    line-height: 1.05 !important;
+  }
+
+  .senzio-phe6__card-jobs {
+    margin: 9px 0 0;
+
+    color: var(--sphe6-green-700);
+
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.45;
+  }
+
+  .senzio-phe6__card-description {
+    margin: 11px 0 0;
+
+    color: var(--sphe6-muted);
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.66;
+  }
+
+  .senzio-phe6__card-tags,
+  .senzio-phe6__mobile-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-top: 14px;
+  }
+
+  .senzio-phe6__card-tags span,
+  .senzio-phe6__mobile-card-tags span {
+    min-height: 31px;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 10px;
+
+    border: 1px solid rgba(17, 104, 77, 0.12);
+    border-radius: 999px;
+
+    color: var(--sphe6-green-900);
+    background: rgba(255, 255, 255, 0.86);
+
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  /* =========================================================
+     ORBIT
+  ========================================================= */
+
+  .senzio-phe6__orbit-column {
+    min-width: 0;
+  }
+
+  .senzio-phe6__orbit-stage {
+    position: relative;
+
+    width: min(100%, 900px);
+    aspect-ratio: 1 / 0.89;
+
+    margin-left: auto;
+
+    overflow: visible;
+    isolation: isolate;
+
+    contain: layout paint style;
+  }
+
+  .senzio-phe6__orbit-glow {
+    position: absolute;
+    z-index: 0;
+
+    top: 16%;
+    left: 18%;
+
+    width: 64%;
+    height: 67%;
+
+    border-radius: 50%;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(191, 234, 217, 0.65) 0%,
+        rgba(232, 247, 240, 0.24) 47%,
+        rgba(255, 255, 255, 0) 75%
+      );
+  }
+
+  .senzio-phe6__orbit-rings {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+
+    pointer-events: none;
+  }
+
+  .senzio-phe6__orbit-ring {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    display: block;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .senzio-phe6__orbit-ring--inner {
+    width: 47%;
+    height: 53%;
+
+    border: 1px solid rgba(18, 105, 78, 0.09);
+  }
+
+  .senzio-phe6__orbit-ring--outer {
+    width: 78%;
+    height: 76%;
+
+    border: 1px dashed rgba(18, 105, 78, 0.1);
+  }
+
+  /* =========================================================
+     CENTER PRODUCT
+  ========================================================= */
+
+  .senzio-phe6__product {
+    position: absolute;
+    z-index: 5;
+
+    top: 50%;
+    left: 50%;
+
+    width: 34%;
+    max-width: 300px;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+  }
+
+  .senzio-phe6__product-halo {
+    position: absolute;
+    z-index: 0;
+
+    inset: 8%;
+
+    border-radius: 50%;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(193, 232, 216, 0.45),
+        rgba(255, 255, 255, 0) 73%
+      );
+  }
+
+  .senzio-phe6__product-shadow {
+    position: absolute;
+    z-index: 0;
+
+    right: 15%;
+    bottom: 4%;
+    left: 15%;
+
+    height: 13%;
+
+    border-radius: 50%;
+
+    background: rgba(8, 55, 41, 0.14);
+
+    filter: blur(13px);
+  }
+
+  .senzio-phe6__product img {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    filter:
+      drop-shadow(0 23px 20px rgba(12, 58, 43, 0.16))
+      drop-shadow(0 6px 8px rgba(12, 58, 43, 0.08));
+  }
+
+  /* =========================================================
+     DESKTOP INGREDIENT NODES
+  ========================================================= */
+
+  .senzio-phe6__orbit-nodes {
+    position: absolute;
+    z-index: 9;
+    inset: 0;
+  }
+
+  .senzio-phe6__orbit-item {
+    --sphe6-node-x: 0px;
+    --sphe6-node-y: 0px;
+    --sphe6-thumb-scale: 1.45;
+    --sphe6-thumb-y: 38%;
+    --sphe6-effect-color: rgba(57, 151, 105, 0.2);
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 148px;
+    min-height: 154px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--sphe6-green-950);
+    background: transparent;
+
+    cursor: pointer;
+
+    transform:
+      translate(-50%, -50%)
+      translate(
+        var(--sphe6-node-x),
+        var(--sphe6-node-y)
+      );
+
+    transition:
+      transform 190ms ease,
+      filter 190ms ease;
+
+    will-change: transform;
+  }
+
+  .senzio-phe6__thumb-circle {
+    position: relative;
+
+    width: 118px;
+    height: 118px;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    border: 2px solid rgba(16, 99, 73, 0.12);
+    border-radius: 50%;
+
+    background:
+      radial-gradient(
+        circle at 50% 45%,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(239, 248, 243, 0.96) 72%,
+        rgba(229, 243, 235, 0.95) 100%
+      );
+
+    box-shadow:
+      0 13px 29px rgba(8, 58, 42, 0.09),
+      inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+    transition:
+      border-color 190ms ease,
+      box-shadow 190ms ease,
+      transform 190ms ease;
+  }
+
+  .senzio-phe6__thumb-effect {
+    position: absolute;
+    z-index: 0;
+
+    inset: 5%;
+
+    border-radius: 50%;
+
+    background:
+      radial-gradient(
+        circle,
+        var(--sphe6-effect-color),
+        rgba(255, 255, 255, 0) 72%
+      );
+
+    opacity: 0;
+
+    transform: scale(0.8);
+
+    transition:
+      opacity 190ms ease,
+      transform 190ms ease;
+  }
+
+  /*
+    IMPORTANT:
+    Ingredient artwork is deliberately zoomed and moved upward.
+    This crops out the ingredient names embedded inside the
+    uploaded images.
+  */
+
+  .senzio-phe6__thumb-image {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 50% var(--sphe6-thumb-y);
+
+    border-radius: 50%;
+
+    transform:
+      scale(var(--sphe6-thumb-scale));
+
+    transform-origin:
+      50%
+      var(--sphe6-thumb-y);
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  /*
+    Subtle lower mask hides any small remaining embedded
+    image-title pixels after zooming.
+  */
+
+  .senzio-phe6__thumb-circle::after {
+    content: "";
+
+    position: absolute;
+    z-index: 4;
+
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 17%;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(239, 248, 243, 0),
+        rgba(239, 248, 243, 0.72) 68%,
+        rgba(239, 248, 243, 0.95)
+      );
+
+    pointer-events: none;
+  }
+
+  .senzio-phe6__thumb-label {
+    width: 100%;
+    max-width: 146px;
+    min-height: 28px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    color: var(--sphe6-green-950);
+
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1.22;
+    text-align: center;
+
+    transition:
+      color 190ms ease,
+      transform 190ms ease;
+  }
+
+  .senzio-phe6__orbit-item:hover,
+  .senzio-phe6__orbit-item.is-preview,
+  .senzio-phe6__orbit-item.is-active {
+    z-index: 15;
+
+    transform:
+      translate(-50%, -50%)
+      translate(
+        var(--sphe6-node-x),
+        var(--sphe6-node-y)
+      )
+      scale(1.07);
+  }
+
+  .senzio-phe6__orbit-item:hover
+  .senzio-phe6__thumb-circle,
+  .senzio-phe6__orbit-item.is-preview
+  .senzio-phe6__thumb-circle,
+  .senzio-phe6__orbit-item.is-active
+  .senzio-phe6__thumb-circle {
+    border-color: rgba(18, 108, 80, 0.36);
+
+    box-shadow:
+      0 18px 36px rgba(8, 58, 42, 0.15),
+      0 0 0 5px rgba(230, 245, 237, 0.72),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .senzio-phe6__orbit-item:hover
+  .senzio-phe6__thumb-effect,
+  .senzio-phe6__orbit-item.is-preview
+  .senzio-phe6__thumb-effect,
+  .senzio-phe6__orbit-item.is-active
+  .senzio-phe6__thumb-effect {
+    opacity: 0.78;
+
+    transform: scale(1);
+  }
+
+  .senzio-phe6__orbit-item:hover
+  .senzio-phe6__thumb-label,
+  .senzio-phe6__orbit-item.is-preview
+  .senzio-phe6__thumb-label,
+  .senzio-phe6__orbit-item.is-active
+  .senzio-phe6__thumb-label {
+    color: var(--sphe6-green-700);
+
+    transform: translateY(1px);
+  }
+
+  .senzio-phe6__orbit-item.is-active
+  .senzio-phe6__thumb-circle {
+    animation:
+      senzioPhe6SelectedFloat
+      3.2s
+      ease-in-out
+      infinite;
+  }
+
+  .senzio-phe6__orbit-item:focus-visible {
+    outline: 3px solid rgba(29, 132, 98, 0.28);
+    outline-offset: 5px;
+
+    border-radius: 20px;
+  }
+
+  /* =========================================================
+     MOBILE BASE
+  ========================================================= */
+
+  .senzio-phe6__mobile {
+    display: none;
+  }
+
+  /* =========================================================
+     MOBILE DETAIL CARD
+  ========================================================= */
+
+  .senzio-phe6__mobile-card {
+    margin-top: 0;
+    padding: 15px;
+
+    border: 1px solid var(--sphe6-border);
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    box-shadow:
+      0 16px 37px rgba(7, 58, 43, 0.085),
+      inset 0 1px 0 rgba(255, 255, 255, 0.62);
+
+    contain: content;
+  }
+
+  .senzio-phe6__mobile-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-bottom: 12px;
+  }
+
+  .senzio-phe6__mobile-card-count {
+    color: var(--sphe6-soft-muted);
+
+    font-size: 9px;
+    font-weight: 800;
+  }
+
+  .senzio-phe6__mobile-card-kicker {
+    min-height: 27px;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 9px;
+
+    border-radius: 999px;
+
+    color: var(--sphe6-green-700);
+    background: var(--sphe6-mint);
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .senzio-phe6__mobile-card-copy {
+    margin-top: 14px;
+  }
+
+  #senzio-plantar-heel-explorer-v6
+  .senzio-phe6__mobile-card-copy h3 {
+    margin: 0 !important;
+
+    color: var(--sphe6-green-950);
+
+    font-size: clamp(25px, 7.5vw, 32px) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.042em !important;
+    line-height: 1.04 !important;
+  }
+
+  .senzio-phe6__mobile-card-jobs {
+    margin: 8px 0 0;
+
+    color: var(--sphe6-green-700);
+
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.42;
+  }
+
+  .senzio-phe6__mobile-card-description {
+    margin: 11px 0 0;
+
+    color: var(--sphe6-muted);
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.62;
+  }
+
+  /* =========================================================
+     MOBILE SELECTOR
+  ========================================================= */
+
+  .senzio-phe6__mobile-selector-wrap {
+    position: relative;
+
+    margin-top: 20px;
+  }
+
+  .senzio-phe6__mobile-selector-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 0 2px 10px;
+  }
+
+  .senzio-phe6__mobile-selector-head > div {
+    min-width: 0;
+  }
+
+  .senzio-phe6__mobile-selector-head small,
+  .senzio-phe6__mobile-selector-head strong {
+    display: block;
+  }
+
+  .senzio-phe6__mobile-selector-head small {
+    color: var(--sphe6-green-700);
+
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .senzio-phe6__mobile-selector-head strong {
+    margin-top: 4px;
+
+    color: var(--sphe6-green-950);
+
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1.25;
+  }
+
+  .senzio-phe6__swipe-label {
+    flex: 0 0 auto;
+
+    color: var(--sphe6-soft-muted);
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .senzio-phe6__mobile-selector {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+
+    margin-right: -14px;
+    margin-left: -14px;
+
+    padding:
+      7px
+      19px
+      17px;
+
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .senzio-phe6__mobile-selector::-webkit-scrollbar {
+    display: none;
+  }
+
+  .senzio-phe6__mobile-option {
+    --sphe6-thumb-scale: 1.45;
+    --sphe6-thumb-y: 38%;
+    --sphe6-effect-color: rgba(57, 151, 105, 0.2);
+
+    position: relative;
+
+    width: 92px;
+    min-height: 112px;
+
+    display: flex;
+    flex: 0 0 92px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--sphe6-green-950);
+    background: transparent;
+
+    cursor: pointer;
+    scroll-snap-align: center;
+
+    transition: transform 180ms ease;
+  }
+
+  .senzio-phe6__mobile-option
+  .senzio-phe6__thumb-circle {
+    width: 78px;
+    height: 78px;
+  }
+
+  .senzio-phe6__mobile-option
+  .senzio-phe6__thumb-label {
+    width: 92px;
+    min-height: 25px;
+
+    font-size: 8px;
+    line-height: 1.18;
+  }
+
+  .senzio-phe6__mobile-option.is-active {
+    transform:
+      translateY(-3px)
+      scale(1.035);
+  }
+
+  .senzio-phe6__mobile-option.is-active
+  .senzio-phe6__thumb-circle {
+    border-color: rgba(17, 111, 81, 0.4);
+
+    box-shadow:
+      0 15px 30px rgba(8, 58, 42, 0.15),
+      0 0 0 5px rgba(230, 245, 237, 0.78);
+
+    animation:
+      senzioPhe6SelectedFloat
+      3.2s
+      ease-in-out
+      infinite;
+  }
+
+  .senzio-phe6__mobile-option.is-active
+  .senzio-phe6__thumb-effect {
+    opacity: 0.8;
+
+    transform: scale(1);
+  }
+
+  .senzio-phe6__mobile-option.is-active
+  .senzio-phe6__thumb-label {
+    color: var(--sphe6-green-700);
+  }
+
+  .senzio-phe6__mobile-option:focus-visible {
+    outline: 3px solid rgba(29, 132, 98, 0.25);
+    outline-offset: 4px;
+
+    border-radius: 16px;
+  }
+
+  /* =========================================================
+     TABLET
+  ========================================================= */
+
+  @media (max-width: 1220px) and (min-width: 900px) {
+    .senzio-phe6__desktop {
+      grid-template-columns:
+        minmax(325px, 0.77fr)
+        minmax(565px, 1.23fr);
+
+      gap: 10px;
+    }
+
+    .senzio-phe6__desktop-card {
+      padding: 17px;
+    }
+
+    .senzio-phe6__orbit-stage {
+      width: min(100%, 770px);
+    }
+
+    .senzio-phe6__product {
+      width: 33%;
+    }
+
+    .senzio-phe6__orbit-item {
+      width: 128px;
+      min-height: 137px;
+    }
+
+    .senzio-phe6__thumb-circle {
+      width: 102px;
+      height: 102px;
+    }
+
+    .senzio-phe6__thumb-label {
+      max-width: 126px;
+
+      font-size: 8px;
+    }
+  }
+
+  /* =========================================================
+     MOBILE ACTIVATION
+  ========================================================= */
+
+  @media (max-width: 899px) {
+    .senzio-phe6__desktop {
+      display: none;
+    }
+
+    .senzio-phe6__mobile {
+      width: min(100%, 620px);
+
+      display: block;
+
+      margin: 0 auto;
+    }
+
+    .senzio-phe6__background-lines {
+      display: none;
+    }
+  }
+
+  /* =========================================================
+     MOBILE
+  ========================================================= */
+
+  @media (max-width: 768px) {
+    .senzio-phe6__container {
+      padding:
+        20px
+        14px
+        34px;
+    }
+
+    .senzio-phe6__mobile-card {
+      padding: 14px;
+
+      border-radius: 20px;
+    }
+
+    .senzio-phe6__mobile-card-description {
+      font-size: 12px;
+    }
+
+    .senzio-phe6__mobile-card-tags {
+      gap: 6px;
+
+      margin-top: 12px;
+    }
+
+    .senzio-phe6__mobile-card-tags span {
+      min-height: 30px;
+
+      padding: 6px 9px;
+
+      font-size: 8px;
+    }
+  }
+
+  /* =========================================================
+     SMALL MOBILE
+  ========================================================= */
+
+  @media (max-width: 390px) {
+    .senzio-phe6__container {
+      padding:
+        16px
+        12px
+        30px;
+    }
+
+    .senzio-phe6__mobile-card {
+      padding: 13px;
+    }
+
+    .senzio-phe6__mobile-detail-media {
+      padding: 9px;
+    }
+
+    .senzio-phe6__mobile-card-description {
+      font-size: 11px;
+    }
+
+    .senzio-phe6__mobile-selector {
+      margin-right: -12px;
+      margin-left: -12px;
+
+      padding-right: 17px;
+      padding-left: 17px;
+    }
+
+    .senzio-phe6__mobile-option {
+      width: 86px;
+
+      flex-basis: 86px;
+    }
+
+    .senzio-phe6__mobile-option
+    .senzio-phe6__thumb-circle {
+      width: 74px;
+      height: 74px;
+    }
+
+    .senzio-phe6__mobile-option
+    .senzio-phe6__thumb-label {
+      width: 86px;
+
+      font-size: 7.5px;
+    }
+  }
+
+  /* =========================================================
+     ANIMATIONS
+  ========================================================= */
+
+  @keyframes senzioPhe6EffectPulse {
+    0%,
+    100% {
+      opacity: 0.4;
+
+      transform: scale(0.9);
+    }
+
+    50% {
+      opacity: 0.75;
+
+      transform: scale(1.04);
+    }
+  }
+
+  @keyframes senzioPhe6SelectedFloat {
+    0%,
+    100% {
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+    50% {
+      transform:
+        translateY(-3px)
+        scale(1.025);
+    }
+  }
+
+  @keyframes senzioPhe6DetailGrow {
+    0%,
+    100% {
+      transform:
+        translateY(1px)
+        scale(0.985);
+    }
+
+    50% {
+      transform:
+        translateY(-2px)
+        scale(1.025);
+    }
+  }
+
+  /* =========================================================
+     SELECTED DETAIL IMAGE MOTION
+  ========================================================= */
+
+  .senzio-phe6__detail-media img,
+  .senzio-phe6__mobile-detail-media img {
+    animation:
+      senzioPhe6DetailGrow
+      4s
+      ease-in-out
+      infinite;
+  }
+
+  /* =========================================================
+     REDUCED MOTION
+  ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+    #senzio-plantar-heel-explorer-v6 *,
+    #senzio-plantar-heel-explorer-v6 *::before,
+    #senzio-plantar-heel-explorer-v6 *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  /* =========================================================
+     SHOPIFY / GEMPAGES HARDENING
+  ========================================================= */
+
+  #senzio-plantar-heel-explorer-v6 .senzio-phe6__mobile-product-stage,
+  #senzio-plantar-heel-explorer-v6 .senzio-phe6__mobile-product {
+    display: none !important;
+  }
+
+  #senzio-plantar-heel-explorer-v6 .senzio-phe6__desktop,
+  #senzio-plantar-heel-explorer-v6 .senzio-phe6__desktop-card,
+  #senzio-plantar-heel-explorer-v6 .senzio-phe6__orbit-column,
+  #senzio-plantar-heel-explorer-v6 .senzio-phe6__orbit-stage,
+  #senzio-plantar-heel-explorer-v6 .senzio-phe6__card-copy,
+  #senzio-plantar-heel-explorer-v6 .senzio-phe6__mobile-card-copy {
+    min-width: 0 !important;
+  }

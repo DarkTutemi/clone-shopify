@@ -1,0 +1,1104 @@
+  /* =====================================================
+     GLOBAL
+  ===================================================== */
+
+  .senzio-plantar-reviews,
+  .senzio-plantar-reviews *,
+  .senzio-plantar-reviews *::before,
+  .senzio-plantar-reviews *::after {
+    box-sizing: border-box;
+
+    font-family: var(--k-sans), Arial, sans-serif !important;
+  }
+
+  .senzio-plantar-reviews {
+    --ser-green: #016a4c;
+    --ser-green-dark: #004f3a;
+    --ser-green-deep: #003d2e;
+    --ser-green-soft: #edf8f4;
+    --ser-green-pale: #f7fcfa;
+
+    --ser-text: #24352e;
+    --ser-body: #5d6d66;
+    --ser-muted: #7c8983;
+
+    --ser-border: rgba(1, 106, 76, 0.15);
+    --ser-border-strong: rgba(1, 106, 76, 0.24);
+
+    --ser-shadow: rgba(17, 72, 52, 0.09);
+    --ser-shadow-hover: rgba(17, 72, 52, 0.15);
+
+    container-type: inline-size;
+
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 !important;
+    padding:
+      clamp(30px, 4vw, 52px)
+      0
+      clamp(28px, 4vw, 46px) !important;
+
+    overflow: hidden;
+
+    background:
+      radial-gradient(
+        circle at 4% 4%,
+        rgba(1, 106, 76, 0.12),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 96% 5%,
+        rgba(0, 79, 58, 0.09),
+        transparent 27%
+      ),
+      linear-gradient(
+        135deg,
+        #edf8f4 0%,
+        #fbfdfc 48%,
+        #eaf6f1 100%
+      );
+
+    color: var(--ser-text);
+  }
+
+  .senzio-plantar-reviews::before,
+  .senzio-plantar-reviews::after {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    border: 1px solid rgba(1, 106, 76, 0.07);
+    border-radius: 50%;
+
+    pointer-events: none;
+  }
+
+  .senzio-plantar-reviews::before {
+    top: -155px;
+    left: -95px;
+  }
+
+  .senzio-plantar-reviews::after {
+    right: -100px;
+    bottom: -165px;
+  }
+
+  .ser-shell {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  /* =====================================================
+     HEADER
+  ===================================================== */
+
+  .ser-header {
+    width: min(790px, calc(100% - 24px));
+
+    margin: 0 auto 20px;
+
+    text-align: center;
+  }
+
+  .ser-verified-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    margin-bottom: 10px;
+    padding: 7px 13px;
+
+    border: 1px solid var(--ser-border);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.86);
+    color: var(--ser-green);
+
+    box-shadow:
+      0 5px 16px rgba(1, 106, 76, 0.06),
+      inset 0 1px 0 #ffffff;
+
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+  }
+
+  .ser-verified-label svg {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+  }
+
+  .ser-verified-label circle {
+    fill: currentColor;
+  }
+
+  .ser-verified-label path {
+    fill: none;
+
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .ser-header h2 {
+    margin: 0;
+    padding: 0;
+
+    color: var(--ser-green-deep);
+
+    font-size: clamp(30px, 7.6vw, 42px);
+    font-weight: 900;
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+  }
+
+  .ser-header-description {
+    max-width: 620px;
+
+    margin: 10px auto 0;
+    padding: 0 5px;
+
+    color: var(--ser-body);
+
+    font-size: 12.5px;
+    font-weight: 500;
+    line-height: 1.55;
+  }
+
+  .ser-rating-summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    width: fit-content;
+    max-width: 100%;
+
+    margin-top: 13px;
+    padding: 8px 13px;
+
+    border: 1px solid var(--ser-border);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.88);
+    color: #52615a;
+
+    box-shadow:
+      0 5px 15px rgba(1, 106, 76, 0.05);
+
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .ser-rating-summary strong {
+    color: var(--ser-green-deep);
+
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  .ser-summary-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .ser-summary-stars i {
+    color: var(--ser-green);
+
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1;
+
+    -webkit-text-fill-color: var(--ser-green);
+  }
+
+  .ser-rating-divider {
+    width: 1px;
+    height: 15px;
+
+    background: rgba(1, 106, 76, 0.2);
+  }
+
+  /* =====================================================
+     CAROUSEL
+  ===================================================== */
+
+  .ser-carousel {
+    position: relative;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .ser-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 87%;
+    align-items: stretch;
+    gap: 12px;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 12px 16px 22px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+    scroll-padding-inline: 16px;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+    overscroll-behavior-inline: contain;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ser-track::-webkit-scrollbar {
+    display: none;
+
+    width: 0;
+    height: 0;
+  }
+
+  /* =====================================================
+     REVIEW CARD
+  ===================================================== */
+
+  .ser-card {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 325px;
+
+    padding: 17px;
+    overflow: hidden;
+
+    border: 1px solid rgba(1, 106, 76, 0.17);
+    border-radius: 19px;
+
+    background:
+      radial-gradient(
+        circle at 100% 0%,
+        rgba(1, 106, 76, 0.1),
+        transparent 38%
+      ),
+      radial-gradient(
+        circle at 0% 100%,
+        rgba(0, 79, 58, 0.08),
+        transparent 38%
+      ),
+      rgba(255, 255, 255, 0.97);
+
+    box-shadow:
+      0 8px 24px var(--ser-shadow),
+      inset 0 1px 0 #ffffff;
+
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .ser-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    height: 4px;
+
+    background:
+      linear-gradient(
+        90deg,
+        var(--ser-green-deep),
+        var(--ser-green),
+        #35a981
+      );
+  }
+
+  .ser-card::after {
+    content: "“";
+
+    position: absolute;
+    right: 50%;
+    bottom: -35px;
+    z-index: -1;
+
+    color: rgba(1, 106, 76, 0.045);
+
+    font-size: 150px;
+    font-weight: 800;
+    line-height: 1;
+
+    transform: translateX(50%);
+
+    pointer-events: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .ser-card:hover {
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 15px 34px var(--ser-shadow-hover),
+        inset 0 1px 0 #ffffff;
+    }
+  }
+
+  /* =====================================================
+     CARD TOP
+  ===================================================== */
+
+  .ser-card-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    margin-bottom: 13px;
+  }
+
+  .ser-card-stars {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .ser-card-stars i {
+    color: var(--ser-green);
+
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1;
+
+    -webkit-text-fill-color: var(--ser-green);
+  }
+
+  .ser-card-stars i.ser-star-empty {
+    color: #b9c9c2;
+
+    -webkit-text-fill-color: #b9c9c2;
+  }
+
+  .ser-date {
+    color: var(--ser-muted);
+
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  /* =====================================================
+     REVIEW CONTENT
+  ===================================================== */
+
+  .ser-review-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 16px;
+
+    border: 1px solid rgba(1, 106, 76, 0.08);
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.68);
+
+    text-align: center;
+  }
+
+  .ser-review-content h3 {
+    margin: 0 0 10px;
+
+    color: var(--ser-green-deep);
+
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .ser-review-content p {
+    margin: 0;
+
+    color: var(--ser-body);
+
+    font-size: 12.5px;
+    font-weight: 500;
+    line-height: 1.58;
+  }
+
+  /* =====================================================
+     AUTHOR
+  ===================================================== */
+
+  .ser-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 13px;
+    padding: 12px 13px;
+
+    border: 1px solid rgba(1, 106, 76, 0.08);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .ser-avatar {
+    position: relative;
+
+    flex: 0 0 52px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    overflow: hidden;
+
+    border: 2px solid rgba(255, 255, 255, 0.96);
+    border-radius: 50%;
+
+    background: #e8f3ee;
+
+    box-shadow:
+      0 5px 13px rgba(1, 106, 76, 0.18);
+  }
+
+  .ser-avatar img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: inherit;
+
+    filter:
+      contrast(0.96)
+      saturate(1.04);
+  }
+
+  .ser-author-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    min-width: 0;
+
+    text-align: center;
+  }
+
+  .ser-author-copy strong {
+    color: var(--ser-text);
+
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .ser-author-copy small {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    color: var(--ser-green);
+
+    font-size: 8.5px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+  }
+
+  .ser-author-copy small svg {
+    width: 11px;
+    height: 11px;
+    flex: 0 0 11px;
+  }
+
+  .ser-author-copy small circle {
+    fill: currentColor;
+  }
+
+  .ser-author-copy small path {
+    fill: none;
+
+    stroke: #ffffff;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* =====================================================
+     ARROWS
+  ===================================================== */
+
+  .ser-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 7;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.88);
+    border-radius: 50%;
+
+    background:
+      linear-gradient(
+        145deg,
+        var(--ser-green),
+        var(--ser-green-deep)
+      );
+
+    color: #ffffff;
+
+    box-shadow:
+      0 8px 20px rgba(0, 61, 45, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .ser-arrow svg {
+    width: 20px;
+    height: 20px;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 2.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .ser-arrow--previous {
+    left: 4px;
+  }
+
+  .ser-arrow--next {
+    right: 4px;
+  }
+
+  .ser-arrow:focus-visible {
+    outline: 3px solid rgba(1, 106, 76, 0.25);
+    outline-offset: 3px;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .ser-arrow:hover {
+      transform:
+        translateY(-50%)
+        scale(1.08);
+
+      box-shadow:
+        0 10px 25px rgba(0, 61, 45, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.32);
+    }
+  }
+
+  .ser-arrow:active {
+    transform:
+      translateY(-50%)
+      scale(0.96);
+  }
+
+  /* =====================================================
+     PAGINATION
+  ===================================================== */
+
+  .ser-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    width: 100%;
+    max-width: 250px;
+    min-height: 14px;
+
+    margin: 5px auto 0;
+  }
+
+  .ser-dot {
+    appearance: none;
+    -webkit-appearance: none;
+
+    flex: 0 0 8px;
+
+    width: 8px;
+    height: 8px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    border-radius: 999px;
+
+    background: rgba(1, 106, 76, 0.22);
+
+    cursor: pointer;
+
+    transition:
+      width 0.28s ease,
+      flex-basis 0.28s ease,
+      background 0.28s ease;
+  }
+
+  .ser-dot.is-active {
+    flex-basis: 27px;
+
+    width: 27px;
+
+    background:
+      linear-gradient(
+        90deg,
+        var(--ser-green-deep),
+        var(--ser-green)
+      );
+  }
+
+  /* =====================================================
+     SMALL MOBILE
+  ===================================================== */
+
+  @media screen and (max-width: 370px) {
+    .senzio-plantar-reviews {
+      padding-top: 25px !important;
+      padding-bottom: 26px !important;
+    }
+
+    .ser-header {
+      width: calc(100% - 18px);
+
+      margin-bottom: 16px;
+    }
+
+    .ser-header h2 {
+      font-size: clamp(27px, 8vw, 32px);
+    }
+
+    .ser-header-description {
+      font-size: 11.5px;
+    }
+
+    .ser-track {
+      grid-auto-columns: 89%;
+      gap: 10px;
+
+      padding-right: 11px;
+      padding-left: 11px;
+
+      scroll-padding-inline: 11px;
+    }
+
+    .ser-card {
+      min-height: 315px;
+
+      padding: 15px;
+    }
+
+    .ser-review-content {
+      padding: 13px 12px;
+    }
+
+    .ser-review-content h3 {
+      font-size: 16px;
+    }
+
+    .ser-review-content p {
+      font-size: 12px;
+    }
+
+    .ser-arrow {
+      width: 34px;
+      height: 34px;
+    }
+
+    .ser-arrow--previous {
+      left: 1px;
+    }
+
+    .ser-arrow--next {
+      right: 1px;
+    }
+  }
+
+  /* =====================================================
+     TABLET — TWO CARDS
+  ===================================================== */
+
+  @media screen and (min-width: 601px) {
+    .senzio-plantar-reviews {
+      padding:
+        40px
+        0
+        38px !important;
+    }
+
+    .ser-header {
+      width: min(750px, calc(100% - 32px));
+
+      margin-bottom: 25px;
+    }
+
+    .ser-verified-label {
+      padding: 8px 13px;
+
+      font-size: 11px;
+    }
+
+    .ser-verified-label svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .ser-header h2 {
+      font-size: clamp(37px, 5vw, 49px);
+    }
+
+    .ser-header-description {
+      font-size: 14px;
+    }
+
+    .ser-rating-summary {
+      margin-top: 14px;
+      padding: 9px 15px;
+
+      font-size: 11.5px;
+    }
+
+    .ser-track {
+      grid-auto-columns:
+        minmax(
+          300px,
+          calc((100% - 90px) / 2)
+        );
+
+      gap: 16px;
+
+      padding:
+        11px
+        37px
+        23px;
+
+      scroll-padding-inline: 37px;
+    }
+
+    .ser-card {
+      min-height: 345px;
+
+      padding: 20px;
+
+      border-radius: 20px;
+    }
+
+    .ser-card-stars i {
+      font-size: 19px;
+    }
+
+    .ser-date {
+      font-size: 11px;
+    }
+
+    .ser-review-content {
+      padding: 17px 19px;
+    }
+
+    .ser-review-content h3 {
+      font-size: 18px;
+    }
+
+    .ser-review-content p {
+      font-size: 13.5px;
+    }
+
+    .ser-author {
+      padding: 14px;
+    }
+
+    .ser-avatar {
+      flex-basis: 54px;
+
+      width: 54px;
+      height: 54px;
+    }
+
+    .ser-author-copy strong {
+      font-size: 13.5px;
+    }
+
+    .ser-arrow {
+      width: 44px;
+      height: 44px;
+    }
+
+    .ser-arrow--previous {
+      left: 8px;
+    }
+
+    .ser-arrow--next {
+      right: 8px;
+    }
+  }
+
+  /* =====================================================
+     DESKTOP — FOUR CARDS
+  ===================================================== */
+
+  @media screen and (min-width: 1000px) {
+    .senzio-plantar-reviews {
+      padding:
+        47px
+        0
+        43px !important;
+    }
+
+    .ser-header {
+      width: min(850px, calc(100% - 60px));
+
+      margin-bottom: 31px;
+    }
+
+    .ser-verified-label {
+      gap: 8px;
+
+      margin-bottom: 12px;
+      padding: 9px 16px;
+
+      font-size: 12px;
+    }
+
+    .ser-header h2 {
+      font-size: clamp(46px, 4.2vw, 62px);
+    }
+
+    .ser-header-description {
+      max-width: 680px;
+
+      font-size: 15px;
+    }
+
+    .ser-rating-summary {
+      gap: 8px;
+
+      margin-top: 15px;
+      padding: 10px 18px;
+
+      font-size: 12.5px;
+    }
+
+    .ser-rating-summary strong {
+      font-size: 16px;
+    }
+
+    .ser-summary-stars i {
+      font-size: 18px;
+    }
+
+    .ser-track {
+      grid-auto-columns:
+        minmax(
+          275px,
+          calc((100% - 176px) / 4)
+        );
+
+      gap: clamp(14px, 1.2vw, 20px);
+
+      padding:
+        12px
+        58px
+        25px;
+
+      scroll-padding-inline: 58px;
+    }
+
+    .ser-card {
+      min-height: 370px;
+
+      padding: 21px;
+
+      border-radius: 21px;
+    }
+
+    .ser-card-top {
+      margin-bottom: 16px;
+    }
+
+    .ser-card-stars i {
+      font-size: 20px;
+    }
+
+    .ser-date {
+      font-size: 12px;
+    }
+
+    .ser-review-content {
+      padding: 18px 20px;
+    }
+
+    .ser-review-content h3 {
+      margin-bottom: 12px;
+
+      font-size: 18px;
+    }
+
+    .ser-review-content p {
+      font-size: 13px;
+      line-height: 1.63;
+    }
+
+    .ser-author {
+      gap: 10px;
+
+      margin-top: 16px;
+      padding: 15px;
+    }
+
+    .ser-avatar {
+      flex-basis: 58px;
+
+      width: 58px;
+      height: 58px;
+    }
+
+    .ser-author-copy strong {
+      font-size: 14px;
+    }
+
+    .ser-author-copy small {
+      font-size: 9px;
+    }
+
+    .ser-arrow {
+      width: 50px;
+      height: 50px;
+    }
+
+    .ser-arrow svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .ser-arrow--previous {
+      left: 16px;
+    }
+
+    .ser-arrow--next {
+      right: 16px;
+    }
+
+    .ser-pagination {
+      max-width: 290px;
+
+      margin-top: 11px;
+    }
+  }
+
+  /* =====================================================
+     MEDIUM DESKTOP — THREE CARDS
+  ===================================================== */
+
+  @media screen and (min-width: 1000px) and (max-width: 1280px) {
+    .ser-track {
+      grid-auto-columns:
+        minmax(
+          290px,
+          calc((100% - 145px) / 3)
+        );
+
+      padding-right: 54px;
+      padding-left: 54px;
+
+      scroll-padding-inline: 54px;
+    }
+  }
+
+  /* =====================================================
+     REDUCED MOTION
+  ===================================================== */
+
+  @media (prefers-reduced-motion: reduce) {
+    .ser-track {
+      scroll-behavior: auto;
+    }
+
+    .ser-card,
+    .ser-arrow,
+    .ser-dot {
+      transition: none !important;
+    }
+  }
+
+.offer-page--balm .senzio-plantar-reviews { border-radius: 50px; }
+.offer-page--balm .ser-header h2,
+.offer-page--balm .ser-review-content h3 {
+  font-family: var(--k-sans), Arial, sans-serif;
+  font-weight: 900;
+}
+.offer-page--balm .ser-header h2 {
+  color: var(--ser-green-deep);
+  letter-spacing: -0.045em;
+}

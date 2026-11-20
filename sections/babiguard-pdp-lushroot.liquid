@@ -1,0 +1,1521 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+<div class="lr-pdp-wrapper" id="Section-{{ section.id }}">
+  <style>
+    #Section-{{ section.id }} {
+      --lr-bg: #FAF6F2;
+      --lr-card-bg: #FFFFFF;
+      --lr-plum-dark: #2A1420;
+      --lr-wine: #6A1B36;
+      --lr-wine-hover: #54142A;
+      --lr-wine-light: #FFF7F9;
+      --lr-wine-border: #E8D5DD;
+      --lr-green: #2E7D32;
+      --lr-green-bg: #E8F5E9;
+      --lr-text-muted: #66555E;
+      --lr-gold: #E5A83B;
+      
+      background: var(--lr-bg);
+      padding: 32px 0 60px 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--lr-plum-dark);
+      line-height: 1.5;
+      overflow-x: hidden;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #Section-{{ section.id }} * {
+      box-sizing: border-box;
+    }
+
+    #Section-{{ section.id }} .lr-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    /* BALANCED TWO-COLUMN DESKTOP GRID */
+    #Section-{{ section.id }} .lr-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+      gap: 48px;
+      align-items: start;
+      width: 100%;
+    }
+
+    /* LEFT COLUMN: GALLERY */
+    #Section-{{ section.id }} .lr-gallery-wrap {
+      position: sticky;
+      top: 24px;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      width: 100%;
+    }
+
+    #Section-{{ section.id }} .lr-main-img-box {
+      position: relative;
+      background: #FFFFFF;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(42, 20, 32, 0.05);
+      border: 1px solid var(--lr-wine-border);
+      aspect-ratio: 1 / 1;
+      width: 100%;
+    }
+
+    #Section-{{ section.id }} .lr-main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.25s ease;
+    }
+
+    #Section-{{ section.id }} .lr-img-badges {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    #Section-{{ section.id }} .lr-img-pill {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      color: var(--lr-plum-dark);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      text-transform: uppercase;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    #Section-{{ section.id }} .lr-thumbs-strip {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      overflow-x: auto;
+      width: 100%;
+      min-width: 0;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #Section-{{ section.id }} .lr-thumb-btn {
+      width: 68px;
+      height: 68px;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      overflow: hidden;
+      cursor: pointer;
+      background: #FFFFFF;
+      padding: 0;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    #Section-{{ section.id }} .lr-thumb-btn.active {
+      border-color: var(--lr-wine);
+      box-shadow: 0 2px 10px rgba(106, 27, 54, 0.2);
+    }
+
+    #Section-{{ section.id }} .lr-thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* RIGHT COLUMN: BUY BOX */
+    #Section-{{ section.id }} .lr-buybox {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      width: 100%;
+    }
+
+    #Section-{{ section.id }} .lr-rating-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    #Section-{{ section.id }} .lr-stars {
+      color: var(--lr-gold);
+      font-size: 16px;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    #Section-{{ section.id }} .lr-rating-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--lr-text-muted);
+    }
+
+    #Section-{{ section.id }} .lr-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--lr-plum-dark);
+      margin: 0 0 10px 0;
+      word-break: normal;
+    }
+
+    #Section-{{ section.id }} .lr-subhead {
+      font-size: 15px;
+      color: var(--lr-text-muted);
+      margin: 0 0 16px 0;
+      line-height: 1.5;
+    }
+
+    /* CHECKLIST */
+    #Section-{{ section.id }} .lr-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 18px;
+    }
+
+    #Section-{{ section.id }} .lr-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 550;
+      color: var(--lr-plum-dark);
+      line-height: 1.45;
+    }
+
+    #Section-{{ section.id }} .lr-check-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--lr-green-bg);
+      color: var(--lr-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* LIVE VIEWING PILL */
+    #Section-{{ section.id }} .lr-live-viewing {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FCE8ED;
+      color: #9A2445;
+      font-size: 13px;
+      font-weight: 650;
+      padding: 6px 14px;
+      border-radius: 20px;
+      width: fit-content;
+      margin-bottom: 18px;
+    }
+
+    #Section-{{ section.id }} .lr-live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #E52D56;
+      animation: lrPulse 1.6s infinite ease-in-out;
+      flex-shrink: 0;
+    }
+
+    @keyframes lrPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.6; }
+    }
+
+    /* PRICE ROW */
+    #Section-{{ section.id }} .lr-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    #Section-{{ section.id }} .lr-active-price {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--lr-plum-dark);
+      line-height: 1;
+    }
+
+    #Section-{{ section.id }} .lr-active-compare {
+      font-size: 18px;
+      color: #998891;
+      text-decoration: line-through;
+    }
+
+    #Section-{{ section.id }} .lr-save-badge {
+      background: var(--lr-wine);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* FLASH SALE COUNTDOWN BANNER WITH LIGHTNING BOLT */
+    #Section-{{ section.id }} .lr-countdown-banner {
+      background: #25101A;
+      color: #FFFFFF;
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 750;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      letter-spacing: 0.3px;
+    }
+
+    #Section-{{ section.id }} .lr-countdown-banner span.timer {
+      font-family: monospace;
+      font-size: 15.5px;
+      color: #FFB8C6;
+      letter-spacing: 1.5px;
+    }
+
+    /* ==============================================================
+       EXACT BUNDLE CARDS (MATCHING ATTACHED IMAGE)
+       ============================================================== */
+    #Section-{{ section.id }} .lr-bundle-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    /* BUNDLE CARD COMMON */
+    #Section-{{ section.id }} .lr-bcard {
+      position: relative;
+      background: #FFFFFF;
+      border: 1.5px solid #F0E6EC;
+      border-radius: 18px;
+      padding: 18px 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    #Section-{{ section.id }} .lr-bcard:hover {
+      border-color: rgba(106, 27, 54, 0.4);
+    }
+
+    #Section-{{ section.id }} .lr-bcard.active {
+      border: 2px solid var(--lr-wine);
+      box-shadow: 0 4px 18px rgba(106, 27, 54, 0.08);
+    }
+
+    /* CORNER BADGES WITH PROPER CLEARANCE */
+    #Section-{{ section.id }} .lr-bcard.has-badge {
+      padding-top: 26px;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-corner-badge {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      background: #5C1428;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      padding: 5px 14px;
+      border-radius: 0 16px 0 10px;
+      text-transform: uppercase;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-corner-badge.best-value {
+      background: #2A1420;
+    }
+
+    /* TOP ROW: RADIO + THUMBNAILS + TITLE + PRICE */
+    #Section-{{ section.id }} .lr-bcard-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-top-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* CUSTOM RADIO BUTTON */
+    #Section-{{ section.id }} .lr-bcard-radio {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid #C4B5BD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+      background: #FFFFFF;
+    }
+
+    #Section-{{ section.id }} .lr-bcard.active .lr-bcard-radio {
+      border-color: var(--lr-wine);
+    }
+
+    #Section-{{ section.id }} .lr-bcard-radio-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--lr-wine);
+      opacity: 0;
+      transform: scale(0.3);
+      transition: all 0.2s ease;
+    }
+
+    #Section-{{ section.id }} .lr-bcard.active .lr-bcard-radio-dot {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* CARD LEFT THUMBNAIL (1, 2, or 3 protectors) */
+    #Section-{{ section.id }} .lr-bcard-thumb {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: #FFFFFF;
+      border: 1px solid rgba(106, 27, 54, 0.12);
+      flex-shrink: 0;
+      display: block;
+    }
+
+    /* TITLE CONTENT */
+    #Section-{{ section.id }} .lr-bcard-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-title {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: var(--lr-plum-dark);
+      letter-spacing: -0.2px;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-tag-pink {
+      background: #FFEDF1;
+      color: #9A2445;
+      font-size: 11.5px;
+      font-weight: 750;
+      padding: 3px 8px;
+      border-radius: 5px;
+      white-space: nowrap;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-desc {
+      font-size: 12.5px;
+      color: var(--lr-text-muted);
+      line-height: 1.35;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-shipping {
+      color: var(--lr-green);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 3px;
+    }
+
+    /* PRICE RIGHT */
+    #Section-{{ section.id }} .lr-bcard-prices {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      flex-shrink: 0;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-main-price {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--lr-plum-dark);
+      line-height: 1.15;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-compare-price {
+      font-size: 12.5px;
+      color: #998891;
+      text-decoration: line-through;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-unit-price {
+      font-size: 11.5px;
+      color: var(--lr-text-muted);
+      font-weight: 600;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    /* SELECTOR ROW WITH DROPDOWNS */
+    #Section-{{ section.id }} .lr-bcard-selector-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+
+    #Section-{{ section.id }} .lr-select-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+      min-width: 120px;
+    }
+
+    #Section-{{ section.id }} .lr-select-label {
+      font-size: 12px;
+      font-weight: 750;
+      color: var(--lr-plum-dark);
+      display: block;
+    }
+
+    #Section-{{ section.id }} .lr-select-pill-wrap {
+      position: relative;
+      width: 100%;
+    }
+
+    #Section-{{ section.id }} .lr-select-pill {
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: #FFFFFF;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1.5 1.75L6 6.25L10.5 1.75' stroke='%236A1B36' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 11px 7px;
+      border: 1.5px solid var(--lr-wine);
+      border-radius: 22px;
+      padding: 7px 32px 7px 12px;
+      font-family: inherit;
+      font-size: 13.5px;
+      font-weight: 650;
+      color: var(--lr-plum-dark);
+      cursor: pointer;
+      outline: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    #Section-{{ section.id }} .lr-select-pill:hover,
+    #Section-{{ section.id }} .lr-select-pill:focus {
+      box-shadow: 0 0 0 3px rgba(106, 27, 54, 0.12);
+    }
+
+    /* UNLOCK GIFT BANNER (INSIDE CARDS 2 & 3) */
+    #Section-{{ section.id }} .lr-gift-unlock-banner {
+      background: #FDF1F4;
+      border-radius: 14px;
+      padding: 10px 16px;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    #Section-{{ section.id }} .lr-gift-unlock-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    #Section-{{ section.id }} .lr-gift-ico {
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    #Section-{{ section.id }} .lr-gift-txt-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    #Section-{{ section.id }} .lr-gift-unlock-title {
+      font-size: 13.5px;
+      font-weight: 750;
+      color: var(--lr-wine);
+      line-height: 1.3;
+    }
+
+    #Section-{{ section.id }} .lr-gift-unlock-sub {
+      font-size: 11.5px;
+      color: var(--lr-text-muted);
+      line-height: 1.3;
+    }
+
+    #Section-{{ section.id }} .lr-gift-v-divider {
+      height: 28px;
+      width: 1px;
+      background: rgba(106, 27, 54, 0.2);
+      margin: 0 6px;
+      flex-shrink: 0;
+    }
+
+    #Section-{{ section.id }} .lr-gift-unlock-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    #Section-{{ section.id }} .lr-gift-mini-thumb {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #FFFFFF;
+      border: 1px solid rgba(106, 27, 54, 0.12);
+      padding: 2px;
+    }
+
+    #Section-{{ section.id }} .lr-gift-plus {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--lr-wine);
+    }
+
+    #Section-{{ section.id }} .lr-gift-free-badge {
+      background: var(--lr-wine);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ORDER BUMP CHECKBOX */
+    #Section-{{ section.id }} .lr-order-bump {
+      border: 1.5px solid var(--lr-wine-border);
+      border-radius: 14px;
+      background: #FFFFFF;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 14px;
+    }
+
+    #Section-{{ section.id }} .lr-order-bump.active {
+      border-color: var(--lr-wine);
+      background: var(--lr-wine-light);
+    }
+
+    #Section-{{ section.id }} .lr-bump-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    #Section-{{ section.id }} .lr-bump-checkbox {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--lr-wine);
+      cursor: pointer;
+      flex-shrink: 0;
+      border-radius: 4px;
+    }
+
+    #Section-{{ section.id }} .lr-bump-thumb {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--lr-wine-border);
+      flex-shrink: 0;
+    }
+
+    #Section-{{ section.id }} .lr-bump-copy {
+      flex: 1;
+      min-width: 0;
+    }
+
+    #Section-{{ section.id }} .lr-bump-copy strong {
+      display: block;
+      font-size: 13.5px;
+      color: var(--lr-plum-dark);
+      line-height: 1.3;
+    }
+
+    #Section-{{ section.id }} .lr-bump-copy small {
+      font-size: 11.5px;
+      color: var(--lr-text-muted);
+      line-height: 1.35;
+      display: block;
+      margin-top: 2px;
+    }
+
+    #Section-{{ section.id }} .lr-bump-price {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    #Section-{{ section.id }} .lr-bump-price strong {
+      display: block;
+      font-size: 14.5px;
+      color: var(--lr-plum-dark);
+      font-weight: 800;
+    }
+
+    #Section-{{ section.id }} .lr-bump-price s {
+      font-size: 11px;
+      color: #998891;
+    }
+
+    /* DYNAMIC SAVINGS BANNER (MINT BACKGROUND WITH WINE TAG & BURSTS) */
+    #Section-{{ section.id }} .lr-savings-banner-wrap {
+      background: #EDF9F0;
+      border-radius: 12px;
+      padding: 12px 16px;
+      text-align: center;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--lr-wine);
+      font-size: 14.5px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    #Section-{{ section.id }} .lr-savings-accent {
+      font-size: 16px;
+      color: #D13B63;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    #Section-{{ section.id }} .lr-savings-tag-ico {
+      display: inline-flex;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    /* PRIMARY CTA BUTTON (WITH CART ICON & 30-DAY GUARANTEE) */
+    #Section-{{ section.id }} .lr-cta-btn {
+      width: 100%;
+      background: var(--lr-wine);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(106, 27, 54, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    #Section-{{ section.id }} .lr-cta-btn:hover {
+      background: var(--lr-wine-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(106, 27, 54, 0.32);
+    }
+
+    #Section-{{ section.id }} .lr-cta-main-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    #Section-{{ section.id }} .lr-cta-cart-svg {
+      width: 22px;
+      height: 22px;
+      stroke: #FFFFFF;
+      stroke-width: 2.2;
+      fill: none;
+      display: inline-block;
+    }
+
+    #Section-{{ section.id }} .lr-cta-sub {
+      font-size: 11.5px;
+      letter-spacing: 0.6px;
+      opacity: 0.95;
+      margin-top: 4px;
+      text-transform: uppercase;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #Section-{{ section.id }} .lr-shield-icon {
+      width: 14px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* MOBILE DOCK BAR (STICKY AT BOTTOM) */
+    #Section-{{ section.id }} .lr-mobile-sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--lr-wine-border);
+      padding: 10px 16px;
+      padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+      z-index: 9999;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    #Section-{{ section.id }} .lr-mobile-sticky-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #Section-{{ section.id }} .lr-mobile-sticky-price {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--lr-plum-dark);
+      line-height: 1.1;
+    }
+
+    #Section-{{ section.id }} .lr-mobile-sticky-sub {
+      font-size: 11px;
+      color: var(--lr-green);
+      font-weight: 700;
+    }
+
+    #Section-{{ section.id }} .lr-mobile-sticky-btn {
+      background: var(--lr-wine);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      flex: 1;
+      max-width: 220px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 991px) {
+      #Section-{{ section.id }} {
+        padding: 20px 0 110px 0;
+      }
+      #Section-{{ section.id }} .lr-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      #Section-{{ section.id }} .lr-gallery-wrap {
+        position: static;
+        max-width: 560px;
+        margin: 0 auto;
+      }
+      #Section-{{ section.id }} .lr-title {
+        font-size: 30px;
+      }
+      #Section-{{ section.id }} .lr-mobile-sticky-bar {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #Section-{{ section.id }} {
+        padding: 16px 0 110px 0;
+      }
+      #Section-{{ section.id }} .lr-container {
+        padding: 0 14px;
+      }
+      #Section-{{ section.id }} .lr-title {
+        font-size: 25px;
+        line-height: 1.22;
+      }
+      #Section-{{ section.id }} .lr-bcard {
+        padding: 16px 14px;
+      }
+      #Section-{{ section.id }} .lr-bcard.has-badge {
+        padding-top: 28px;
+      }
+      #Section-{{ section.id }} .lr-bcard-title {
+        font-size: 15.5px;
+      }
+      #Section-{{ section.id }} .lr-bcard-main-price {
+        font-size: 17.5px;
+      }
+      #Section-{{ section.id }} .lr-bcard-selector-row {
+        gap: 10px;
+      }
+      #Section-{{ section.id }} .lr-select-item {
+        min-width: 100px;
+      }
+      #Section-{{ section.id }} .lr-select-pill {
+        font-size: 12px;
+        padding: 6px 26px 6px 10px;
+      }
+      #Section-{{ section.id }} .lr-gift-unlock-title {
+        font-size: 12.5px;
+      }
+      #Section-{{ section.id }} .lr-gift-mini-thumb {
+        width: 38px;
+        height: 38px;
+      }
+      #Section-{{ section.id }} .lr-savings-banner-wrap {
+        font-size: 13px;
+        padding: 10px 12px;
+      }
+    }
+  </style>
+
+  <div class="lr-container">
+    <div class="lr-grid">
+
+      <!-- LEFT: PRODUCT GALLERY -->
+      <div class="lr-gallery-wrap">
+        <div class="lr-main-img-box">
+          <div class="lr-img-badges">
+            <span class="lr-img-pill">PARENTS' FAVORITE</span>
+            <span class="lr-img-pill">ZERO-SHOCK · 100% BREATHABLE</span>
+          </div>
+
+          <img 
+            id="lrMainImage" 
+            class="lr-main-img" 
+            src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babiguard-head-protector-5064522.png?v=1794055359" 
+            alt="BabiGuard Head Protector - Little Dragon"
+            loading="eager"
+            width="600"
+            height="600"
+          >
+        </div>
+
+        <div class="lr-thumbs-strip" id="lrThumbsStrip">
+          {% for img in product.images %}
+            <button 
+              type="button" 
+              class="lr-thumb-btn {% if forloop.first %}active{% endif %}"
+              data-img-src="{{ img | image_url: width: 1000 }}"
+              data-img-index="{{ forloop.index0 }}"
+              aria-label="View photo {{ forloop.index }}"
+            >
+              <img src="{{ img | image_url: width: 140 }}" alt="BabiGuard Thumbnail {{ forloop.index }}" loading="lazy">
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- RIGHT: BUY BOX -->
+      <div class="lr-buybox">
+        
+        <!-- Star Rating -->
+        <div class="lr-rating-bar">
+          <span class="lr-stars">★★★★★</span>
+          <span class="lr-rating-text">4.9 · 3,412 reviews</span>
+        </div>
+
+        <!-- Product Title -->
+        <h1 class="lr-title">BabiGuard™ Infant Head Protector</h1>
+
+        <!-- Product Subtitle -->
+        <p class="lr-subhead">
+          Zero-shock cushioning for wobbly toddlers. Softens backwards tumbles on hard tile and hardwood in comfort and style.
+        </p>
+
+        <!-- Checklist with Green Icons -->
+        <div class="lr-checklist">
+          <div class="lr-check-item">
+            <span class="lr-check-icon">✓</span>
+            <span>100% Protection for head & upper spine from hard backwards falls</span>
+          </div>
+          <div class="lr-check-item">
+            <span class="lr-check-icon">✓</span>
+            <span>Featherlight ~200g ergonomic backpack — toddlers barely feel it</span>
+          </div>
+          <div class="lr-check-item">
+            <span class="lr-check-icon">✓</span>
+            <span>3D breathable honeycomb mesh prevents heat build-up & sweating</span>
+          </div>
+          <div class="lr-check-item">
+            <span class="lr-check-icon">✓</span>
+            <span>Anti-slip chest harness stays securely in place while crawling & walking</span>
+          </div>
+        </div>
+
+        <!-- Live Viewing Badge -->
+        <div class="lr-live-viewing">
+          <span class="lr-live-dot"></span>
+          <span>28 parents are viewing this right now</span>
+        </div>
+
+        <!-- Price Display -->
+        <div class="lr-price-row">
+          <span class="lr-active-price" id="lrPriceDisplay">$79.99</span>
+          <s class="lr-active-compare" id="lrCompareDisplay">$159.00</s>
+          <span class="lr-save-badge" id="lrSaveBadge">SAVE 50%</span>
+        </div>
+
+        <!-- Flash Sale Countdown Banner With Lightning Bolt -->
+        <div class="lr-countdown-banner">
+          <span>⚡ Flash Sale ends in:</span>
+          <span class="timer" id="lrCountdown">06:33:00</span>
+        </div>
+
+        <!-- ==============================================================
+             EXACT BUNDLE CARDS (MATCHING USER ATTACHED IMAGE)
+             ============================================================== -->
+        <div class="lr-bundle-stack">
+
+          <!-- CARD 1: 1 BabiGuard -->
+          <div class="lr-bcard" id="lrBCard1" data-tier="1" data-qty="1" data-price="35.99" data-compare="53.00" data-save="17.01" data-save-pct="32%">
+            <div class="lr-bcard-top">
+              <div class="lr-bcard-top-left">
+                <span class="lr-bcard-radio"><span class="lr-bcard-radio-dot"></span></span>
+                <img id="lrCard1Thumb" class="lr-bcard-thumb" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babiguard-single-pink.png?v=1794065377" alt="1 BabiGuard Single">
+                <div class="lr-bcard-info">
+                  <div class="lr-bcard-title-row">
+                    <span class="lr-bcard-title">1 BabiGuard</span>
+                  </div>
+                  <span class="lr-bcard-desc">Starter protection · single unit for home play</span>
+                </div>
+              </div>
+              <div class="lr-bcard-prices">
+                <span class="lr-bcard-main-price">$35.99</span>
+                <s class="lr-bcard-compare-price">$53.00</s>
+                <span class="lr-bcard-unit-price">$35.99 / each</span>
+              </div>
+            </div>
+
+            <!-- Single Dropdown -->
+            <div class="lr-bcard-selector-row">
+              <div class="lr-select-item" style="max-width: 170px;">
+                <span class="lr-select-label">Choose Design</span>
+                <div class="lr-select-pill-wrap">
+                  <select class="lr-select-pill" id="lrDesignSelect_1">
+                    <option value="Butterfly" selected>🦋 Butterfly</option>
+                    <option value="Turtle">🐢 Turtle</option>
+                    <option value="Little Dragon">🐲 Dragon</option>
+                    <option value="Bee">🐝 Bee</option>
+                    <option value="Unicorn">🦄 Unicorn</option>
+                    <option value="Astronaut">👨‍🚀 Astronaut</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: 2 BabiGuards (MOST POPULAR) -->
+          <div class="lr-bcard has-badge" id="lrBCard2" data-tier="2" data-qty="2" data-price="59.99" data-compare="106.00" data-save="46.01" data-save-pct="45%">
+            <span class="lr-bcard-corner-badge">👑 MOST POPULAR</span>
+            <div class="lr-bcard-top">
+              <div class="lr-bcard-top-left">
+                <span class="lr-bcard-radio"><span class="lr-bcard-radio-dot"></span></span>
+                <img id="lrCard2Thumb" class="lr-bcard-thumb" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babiguard-pair-pink-green.png?v=1794065381" alt="2 BabiGuards Pair">
+                <div class="lr-bcard-info">
+                  <div class="lr-bcard-title-row">
+                    <span class="lr-bcard-title">2 BabiGuards</span>
+                    <span class="lr-bcard-tag-pink">Save 45% + Free Gift</span>
+                  </div>
+                  <span class="lr-bcard-desc">Ideal daily rotation · 1 for home, 1 for daycare / grandma</span>
+                  <span class="lr-bcard-shipping">🚚 Free US shipping included</span>
+                </div>
+              </div>
+              <div class="lr-bcard-prices">
+                <span class="lr-bcard-main-price">$59.99</span>
+                <s class="lr-bcard-compare-price">$106.00</s>
+                <span class="lr-bcard-unit-price">$29.99 / each</span>
+              </div>
+            </div>
+
+            <!-- 2 Dropdowns -->
+            <div class="lr-bcard-selector-row">
+              <div class="lr-select-item">
+                <span class="lr-select-label">Choose Design 1</span>
+                <div class="lr-select-pill-wrap">
+                  <select class="lr-select-pill" id="lrDesignSelect_2_1">
+                    <option value="Turtle" selected>🐢 Turtle</option>
+                    <option value="Butterfly">🦋 Butterfly</option>
+                    <option value="Little Dragon">🐲 Dragon</option>
+                    <option value="Bee">🐝 Bee</option>
+                    <option value="Unicorn">🦄 Unicorn</option>
+                    <option value="Astronaut">👨‍🚀 Astronaut</option>
+                  </select>
+                </div>
+              </div>
+              <div class="lr-select-item">
+                <span class="lr-select-label">Choose Design 2</span>
+                <div class="lr-select-pill-wrap">
+                  <select class="lr-select-pill" id="lrDesignSelect_2_2">
+                    <option value="Butterfly" selected>🦋 Butterfly</option>
+                    <option value="Turtle">🐢 Turtle</option>
+                    <option value="Little Dragon">🐲 Dragon</option>
+                    <option value="Bee">🐝 Bee</option>
+                    <option value="Unicorn">🦄 Unicorn</option>
+                    <option value="Astronaut">👨‍🚀 Astronaut</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unlock Gift Banner: Baby Pillow -->
+            <div class="lr-gift-unlock-banner">
+              <div class="lr-gift-unlock-left">
+                <span class="lr-gift-ico">🎁</span>
+                <div class="lr-gift-txt-stack">
+                  <strong class="lr-gift-unlock-title">Buy 2 to unlock a FREE Baby Pillow</strong>
+                  <span class="lr-gift-unlock-sub">Includes 1 ergonomic baby pillow</span>
+                </div>
+              </div>
+              <span class="lr-gift-v-divider"></span>
+              <div class="lr-gift-unlock-right">
+                <img class="lr-gift-mini-thumb" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/baby-ergonomic-pillow.png?v=1794065387" alt="Free Ergonomic Baby Pillow">
+                <span class="lr-gift-free-badge">FREE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3: 3 BabiGuards (BEST VALUE - DEFAULT ACTIVE) -->
+          <div class="lr-bcard active has-badge" id="lrBCard3" data-tier="3" data-qty="3" data-price="79.99" data-compare="159.00" data-save="79.01" data-save-pct="55%">
+            <span class="lr-bcard-corner-badge best-value">💎 BEST VALUE</span>
+            <div class="lr-bcard-top">
+              <div class="lr-bcard-top-left">
+                <span class="lr-bcard-radio"><span class="lr-bcard-radio-dot"></span></span>
+                <img id="lrCard3Thumb" class="lr-bcard-thumb" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babiguard-trio-pink-green-purple.png?v=1794065384" alt="3 BabiGuards Trio">
+                <div class="lr-bcard-info">
+                  <div class="lr-bcard-title-row">
+                    <span class="lr-bcard-title">3 BabiGuards</span>
+                    <span class="lr-bcard-tag-pink">Save 55% + 2 Free Gifts</span>
+                  </div>
+                  <span class="lr-bcard-desc">Complete multi-room nursery set · maximum savings</span>
+                  <span class="lr-bcard-shipping">🚚 Free US shipping included</span>
+                </div>
+              </div>
+              <div class="lr-bcard-prices">
+                <span class="lr-bcard-main-price">$79.99</span>
+                <s class="lr-bcard-compare-price">$159.00</s>
+                <span class="lr-bcard-unit-price">$26.66 / each</span>
+              </div>
+            </div>
+
+            <!-- 3 Dropdowns -->
+            <div class="lr-bcard-selector-row">
+              <div class="lr-select-item">
+                <span class="lr-select-label">Choose Design 1</span>
+                <div class="lr-select-pill-wrap">
+                  <select class="lr-select-pill" id="lrDesignSelect_3_1">
+                    <option value="Turtle" selected>🐢 Turtle</option>
+                    <option value="Butterfly">🦋 Butterfly</option>
+                    <option value="Little Dragon">🐲 Dragon</option>
+                    <option value="Bee">🐝 Bee</option>
+                    <option value="Unicorn">🦄 Unicorn</option>
+                    <option value="Astronaut">👨‍🚀 Astronaut</option>
+                  </select>
+                </div>
+              </div>
+              <div class="lr-select-item">
+                <span class="lr-select-label">Choose Design 2</span>
+                <div class="lr-select-pill-wrap">
+                  <select class="lr-select-pill" id="lrDesignSelect_3_2">
+                    <option value="Butterfly" selected>🦋 Butterfly</option>
+                    <option value="Turtle">🐢 Turtle</option>
+                    <option value="Little Dragon">🐲 Dragon</option>
+                    <option value="Bee">🐝 Bee</option>
+                    <option value="Unicorn">🦄 Unicorn</option>
+                    <option value="Astronaut">👨‍🚀 Astronaut</option>
+                  </select>
+                </div>
+              </div>
+              <div class="lr-select-item">
+                <span class="lr-select-label">Choose Design 3</span>
+                <div class="lr-select-pill-wrap">
+                  <select class="lr-select-pill" id="lrDesignSelect_3_3">
+                    <option value="Little Dragon" selected>🐲 Dragon</option>
+                    <option value="Turtle">🐢 Turtle</option>
+                    <option value="Butterfly">🦋 Butterfly</option>
+                    <option value="Bee">🐝 Bee</option>
+                    <option value="Unicorn">🦄 Unicorn</option>
+                    <option value="Astronaut">👨‍🚀 Astronaut</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unlock Gift Banner: Baby Pillow + Baby Nasal Suction Tool -->
+            <div class="lr-gift-unlock-banner">
+              <div class="lr-gift-unlock-left">
+                <span class="lr-gift-ico">🎁</span>
+                <div class="lr-gift-txt-stack">
+                  <strong class="lr-gift-unlock-title">Buy 3 to unlock 2 FREE Gifts</strong>
+                  <span class="lr-gift-unlock-sub">Get a FREE Baby Pillow + Baby Nasal Suction Tool</span>
+                </div>
+              </div>
+              <div class="lr-gift-unlock-right">
+                <img class="lr-gift-mini-thumb" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/baby-ergonomic-pillow.png?v=1794065387" alt="Free Baby Pillow">
+                <span class="lr-gift-plus">+</span>
+                <img class="lr-gift-mini-thumb" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/baby-nasal-suction-tool.png?v=1794065389" alt="Free Nasal Suction Tool">
+                <span class="lr-gift-free-badge">FREE</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ORDER BUMP CHECKBOX -->
+        <label class="lr-order-bump" id="lrOrderBumpLabel">
+          <div class="lr-bump-left">
+            <input type="checkbox" class="lr-bump-checkbox" id="lrOrderBumpCheckbox">
+            <img class="lr-bump-thumb" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babi-knee-pads-5-pack-328199.jpg?v=1794056185" alt="Baby Knee Pads">
+            <div class="lr-bump-copy">
+              <strong>Add BabiGuard Non-Slip Crawling Knee Pads</strong>
+              <small>Padded elastic knee shields for tile & hardwood. Only $12.99 with this order.</small>
+            </div>
+          </div>
+          <div class="lr-bump-price">
+            <strong>+$12.99</strong>
+            <s>$22.00</s>
+          </div>
+        </label>
+
+        <!-- DYNAMIC SAVINGS BANNER (MINT BACKGROUND WITH WINE TAG & BURSTS) -->
+        <div class="lr-savings-banner-wrap">
+          <span class="lr-savings-accent">⇘</span>
+          <span class="lr-savings-tag-ico">🏷️</span>
+          <span class="lr-savings-text" id="lrSavingsText">You save $79.01 on this order + FREE gift(s) included</span>
+          <span class="lr-savings-accent">⇙</span>
+        </div>
+
+        <!-- PRIMARY CTA BUTTON (CART ICON + 30-DAY GUARANTEE) -->
+        <button type="button" class="lr-cta-btn" id="lrCtaBtn">
+          <div class="lr-cta-main-row">
+            <svg class="lr-cta-cart-svg" viewBox="0 0 24 24">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="lr-cta-main-text" id="lrCtaMainText">ADD TO CART – $79.99</span>
+          </div>
+          <span class="lr-cta-sub">
+            <svg class="lr-shield-icon" viewBox="0 0 14 16" fill="none">
+              <path d="M7 0.5L0.8 3.3V7C0.8 11 3.5 14.7 7 15.6C10.5 14.7 13.2 11 13.2 7V3.3L7 0.5Z" fill="#F43F5E"/>
+              <path d="M5.5 8L6.8 9.3L9.2 6.5" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            30-DAY MONEY-BACK GUARANTEE
+          </span>
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MOBILE STICKY BOTTOM DOCK -->
+  <div class="lr-mobile-sticky-bar" id="lrMobileStickyBar">
+    <div class="lr-mobile-sticky-info">
+      <span class="lr-mobile-sticky-price" id="lrMobileStickyPrice">$79.99</span>
+      <span class="lr-mobile-sticky-sub">🚚 Free US Shipping</span>
+    </div>
+    <button type="button" class="lr-mobile-sticky-btn" id="lrMobileStickyBtn">
+      ADD TO CART
+    </button>
+  </div>
+
+  <script>
+    (function() {
+      // Variant catalog
+      const VARIANTS = {
+        'Turtle': { id: 68195175760057, name: 'Turtle', emoji: '🐢', img: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babiguard-head-protector-578660.jpg?v=1794055359' },
+        'Butterfly': { id: 68195175628985, name: 'Butterfly', emoji: '🦋', img: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babiguard-head-protector-937814.jpg?v=1794055359' },
+        'Little Dragon': { id: 68195175596217, name: 'Little Dragon', emoji: '🐲', img: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babiguard-head-protector-5064522.png?v=1794055359' },
+        'Bee': { id: 68195175661753, name: 'Bee', emoji: '🐝', img: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babiguard-head-protector-228337.jpg?v=1794055359' },
+        'Unicorn': { id: 68195175694521, name: 'Unicorn', emoji: '🦄', img: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babiguard-head-protector-523604.jpg?v=1794055359' },
+        'Astronaut': { id: 68195175727289, name: 'Astronaut', emoji: '👨‍🚀', img: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babiguard-head-protector-256119.jpg?v=1794055359' }
+      };
+
+      // Elements
+      const mainImg = document.getElementById('lrMainImage');
+      const thumbBtns = document.querySelectorAll('#Section-{{ section.id }} .lr-thumb-btn');
+      const bCards = document.querySelectorAll('#Section-{{ section.id }} .lr-bcard');
+      const priceDisplay = document.getElementById('lrPriceDisplay');
+      const compareDisplay = document.getElementById('lrCompareDisplay');
+      const saveBadge = document.getElementById('lrSaveBadge');
+      const bumpCheckbox = document.getElementById('lrOrderBumpCheckbox');
+      const bumpLabel = document.getElementById('lrOrderBumpLabel');
+      const savingsText = document.getElementById('lrSavingsText');
+      const ctaBtn = document.getElementById('lrCtaBtn');
+      const ctaMainText = document.getElementById('lrCtaMainText');
+      const countdown = document.getElementById('lrCountdown');
+      const mobileStickyPrice = document.getElementById('lrMobileStickyPrice');
+      const mobileStickyBtn = document.getElementById('lrMobileStickyBtn');
+
+      // Dropdown Elements
+      const d1 = document.getElementById('lrDesignSelect_1');
+      const d2_1 = document.getElementById('lrDesignSelect_2_1');
+      const d2_2 = document.getElementById('lrDesignSelect_2_2');
+      const d3_1 = document.getElementById('lrDesignSelect_3_1');
+      const d3_2 = document.getElementById('lrDesignSelect_3_2');
+      const d3_3 = document.getElementById('lrDesignSelect_3_3');
+
+      // State (Card 3 active by default as shown in image)
+      let activeTier = 3;
+      let activeQty = 3;
+      let activeBasePrice = 79.99;
+      let activeComparePrice = 159.00;
+      let activeSaveAmt = 79.01;
+      let isBumpAdded = false;
+      const bumpPrice = 12.99;
+
+      // 1. Thumbnail Strip Click
+      thumbBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          thumbBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const src = btn.getAttribute('data-img-src');
+          if (src && mainImg) mainImg.src = src;
+        });
+      });
+
+      // 2. Dropdown Change Handlers
+      function updateGalleryFromDesign(designKey) {
+        const v = VARIANTS[designKey];
+        if (v && v.img) {
+          if (mainImg) mainImg.src = v.img;
+          thumbBtns.forEach(t => {
+            if (t.getAttribute('data-img-src') === v.img) {
+              thumbBtns.forEach(b => b.classList.remove('active'));
+              t.classList.add('active');
+            }
+          });
+        }
+      }
+
+      if (d1) d1.addEventListener('change', () => { if (activeTier === 1) updateGalleryFromDesign(d1.value); });
+      if (d2_1) d2_1.addEventListener('change', () => { if (activeTier === 2) updateGalleryFromDesign(d2_1.value); });
+      if (d3_1) d3_1.addEventListener('change', () => { if (activeTier === 3) updateGalleryFromDesign(d3_1.value); });
+
+      // 3. Card Click Handler
+      bCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.tagName.toLowerCase() === 'select') return;
+
+          bCards.forEach(c => c.classList.remove('active'));
+          card.classList.add('active');
+
+          activeTier = parseInt(card.getAttribute('data-tier'), 10);
+          activeQty = parseInt(card.getAttribute('data-qty'), 10);
+          activeBasePrice = parseFloat(card.getAttribute('data-price'));
+          activeComparePrice = parseFloat(card.getAttribute('data-compare'));
+          activeSaveAmt = parseFloat(card.getAttribute('data-save'));
+
+          if (activeTier === 1 && d1) updateGalleryFromDesign(d1.value);
+          if (activeTier === 2 && d2_1) updateGalleryFromDesign(d2_1.value);
+          if (activeTier === 3 && d3_1) updateGalleryFromDesign(d3_1.value);
+
+          updatePriceUI();
+        });
+      });
+
+      // 4. Order Bump Toggle
+      if (bumpCheckbox && bumpLabel) {
+        bumpLabel.addEventListener('click', (e) => {
+          if (e.target !== bumpCheckbox) {
+            bumpCheckbox.checked = !bumpCheckbox.checked;
+          }
+          isBumpAdded = bumpCheckbox.checked;
+          if (isBumpAdded) {
+            bumpLabel.classList.add('active');
+          } else {
+            bumpLabel.classList.remove('active');
+          }
+          updatePriceUI();
+        });
+      }
+
+      // 5. Update Price & Savings UI
+      function updatePriceUI() {
+        let finalPrice = activeBasePrice;
+        let finalCompare = activeComparePrice;
+        let saveAmount = activeSaveAmt;
+
+        if (isBumpAdded) {
+          finalPrice += bumpPrice;
+          finalCompare += 22.00;
+          saveAmount += (22.00 - bumpPrice);
+        }
+
+        const priceStr = '$' + finalPrice.toFixed(2);
+        const compareStr = '$' + finalCompare.toFixed(2);
+
+        if (priceDisplay) priceDisplay.innerText = priceStr;
+        if (compareDisplay) compareDisplay.innerText = compareStr;
+        if (mobileStickyPrice) mobileStickyPrice.innerText = priceStr;
+
+        let pct = Math.round(((finalCompare - finalPrice) / finalCompare) * 100);
+        if (saveBadge) saveBadge.innerText = 'SAVE ' + pct + '%';
+
+        if (savingsText) {
+          if (activeTier === 1) {
+            savingsText.innerText = 'You save $' + saveAmount.toFixed(2) + ' on this order';
+          } else {
+            savingsText.innerText = 'You save $' + saveAmount.toFixed(2) + ' on this order + FREE gift(s) included';
+          }
+        }
+
+        if (ctaMainText) {
+          ctaMainText.innerText = 'ADD TO CART – ' + priceStr;
+        }
+      }
+
+      // 6. Add to Cart Handler
+      async function handleAddToCart() {
+        if (ctaBtn) {
+          ctaBtn.disabled = true;
+          ctaBtn.style.opacity = '0.7';
+          ctaMainText.innerText = 'ADDING TO CART...';
+        }
+        if (mobileStickyBtn) {
+          mobileStickyBtn.innerText = 'ADDING...';
+        }
+
+        let items = [];
+
+        if (activeTier === 1) {
+          const v1 = VARIANTS[d1 ? d1.value : 'Butterfly'] || VARIANTS['Butterfly'];
+          items.push({ id: v1.id, quantity: 1, properties: { 'Tier': '1 BabiGuard' } });
+        } else if (activeTier === 2) {
+          const v1 = VARIANTS[d2_1 ? d2_1.value : 'Turtle'] || VARIANTS['Turtle'];
+          const v2 = VARIANTS[d2_2 ? d2_2.value : 'Butterfly'] || VARIANTS['Butterfly'];
+          if (v1.id === v2.id) {
+            items.push({ id: v1.id, quantity: 2, properties: { 'Tier': '2 BabiGuards (Save 45% + Free Gift)' } });
+          } else {
+            items.push({ id: v1.id, quantity: 1, properties: { 'Tier': '2 BabiGuards - Item 1' } });
+            items.push({ id: v2.id, quantity: 1, properties: { 'Tier': '2 BabiGuards - Item 2' } });
+          }
+        } else if (activeTier === 3) {
+          const v1 = VARIANTS[d3_1 ? d3_1.value : 'Turtle'] || VARIANTS['Turtle'];
+          const v2 = VARIANTS[d3_2 ? d3_2.value : 'Butterfly'] || VARIANTS['Butterfly'];
+          const v3 = VARIANTS[d3_3 ? d3_3.value : 'Little Dragon'] || VARIANTS['Little Dragon'];
+          
+          const counts = {};
+          [v1, v2, v3].forEach(v => {
+            counts[v.id] = (counts[v.id] || 0) + 1;
+          });
+          Object.keys(counts).forEach(id => {
+            items.push({ id: parseInt(id, 10), quantity: counts[id], properties: { 'Tier': '3 BabiGuards (Save 55% + 2 Free Gifts)' } });
+          });
+        }
+
+        try {
+          const res = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items })
+          });
+
+          if (res.ok) {
+            window.location.href = '/checkout';
+          } else {
+            window.location.href = '/cart';
+          }
+        } catch (err) {
+          console.error(err);
+          window.location.href = '/cart';
+        }
+      }
+
+      if (ctaBtn) ctaBtn.addEventListener('click', handleAddToCart);
+      if (mobileStickyBtn) mobileStickyBtn.addEventListener('click', handleAddToCart);
+
+      // 7. Flash Sale Timer
+      if (countdown) {
+        let totalSeconds = 6 * 3600 + 33 * 60;
+        setInterval(() => {
+          if (totalSeconds <= 0) totalSeconds = 24 * 3600;
+          totalSeconds--;
+          const h = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+          const m = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+          const s = String(totalSeconds % 60).padStart(2, '0');
+          countdown.innerText = `${h}:${m}:${s}`;
+        }, 1000);
+      }
+
+      updatePriceUI();
+    })();
+  </script>
+</div>

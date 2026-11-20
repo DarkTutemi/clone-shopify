@@ -53,3 +53,7 @@ backups/**/assets/*.avif
 
 # Push helpers
 push_to_github.bat
+
+# Allow session chat & logs
+!session_chat/**
+
