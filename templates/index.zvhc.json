@@ -1,9 +1,5 @@
 {
   "sections": {
-    "announcement": {
-      "type": "zvhc-announcement-bar",
-      "settings": {}
-    },
     "hero": {
       "type": "zvhc-hero",
       "settings": {}
@@ -34,7 +30,6 @@
     }
   },
   "order": [
-    "announcement",
     "hero",
     "marquee",
     "concerns",
@@ -44,4 +39,3 @@
     "faq"
   ]
 }
-

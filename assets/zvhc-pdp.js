@@ -1,6 +1,7 @@
 /**
- * ZAVELYN HAIR CARE — PDP Interactive Engine (v1.0)
+ * ZAVELYN HAIR CARE — PDP Interactive Engine (v1.1)
  * Scoped under window.ZvhcPdp
+ * Handles strict variant matching, mathematically sound bundle savings, and safe cart actions
  */
 
 (function() {
@@ -91,39 +92,63 @@
       const self = this;
       if (!this.variants || this.variants.length === 0) return null;
 
-      // Look for variant matching currentTier bundle name and formula
+      // Exact variant matching based on tier keywords
       let matched = this.variants.find(function(v) {
         const title = (v.title || '').toLowerCase();
         let matchesTier = false;
-        if (self.currentTier === 1 && (title.includes('buy 1') || title.includes('starter') || title.includes('1 bottle') || title.includes('1 set'))) matchesTier = true;
-        if (self.currentTier === 2 && (title.includes('buy 2') || title.includes('duo') || title.includes('2 bottle') || title.includes('2 set'))) matchesTier = true;
-        if (self.currentTier === 3 && (title.includes('buy 3') || title.includes('restoration') || title.includes('buy 2 get 1') || title.includes('3 bottle') || title.includes('3 set'))) matchesTier = true;
+        if (self.currentTier === 1 && (title.includes('buy 1') || title.includes('starter') || title.includes('1 bottle') || title.includes('1 pc') || title.includes('1 unit') || title.includes('1 pouch') || title.includes('1 tin') || title.includes('1 compact') || title.includes('default title'))) {
+          matchesTier = true;
+        }
+        if (self.currentTier === 2 && (title.includes('buy 2') || title.includes('duo') || title.includes('2 bottle') || title.includes('2 pc') || title.includes('2 unit') || title.includes('2 pouch') || title.includes('2 tin') || title.includes('2 compact'))) {
+          matchesTier = true;
+        }
+        if (self.currentTier === 3 && (title.includes('buy 3') || title.includes('trio') || title.includes('restoration') || title.includes('3 bottle') || title.includes('3 pc') || title.includes('3 unit') || title.includes('3 pouch') || title.includes('3 tin') || title.includes('3 compact'))) {
+          matchesTier = true;
+        }
 
         let matchesFormula = true;
-        if (self.currentFormula.includes('Rosemary')) {
+        if (self.currentFormula && self.currentFormula.includes('Rosemary')) {
           matchesFormula = title.includes('rosemary');
-        } else {
-          matchesFormula = !title.includes('rosemary');
+        } else if (self.currentFormula && (title.includes('rosemary') || title.includes('infusion'))) {
+          matchesFormula = false;
         }
 
         return matchesTier && matchesFormula;
       });
 
-      // Fallback if strict match fails
-      if (!matched) {
-        matched = this.variants[Math.min(self.currentTier - 1, self.variants.length - 1)];
-      }
-
-      return matched;
+      // Return exact match only — NO unsafe index fallback!
+      return matched || null;
     },
 
     updateState: function() {
       const variant = this.resolveVariant();
-      if (!variant) return;
+      const ctaBtn = document.getElementById('zvhcMainCta');
+      const dockBtn = document.getElementById('zvhcDockCta');
+
+      if (!variant) {
+        if (ctaBtn) {
+          ctaBtn.disabled = true;
+          ctaBtn.style.opacity = '0.6';
+          const ctaPriceEl = document.getElementById('zvhcCtaPrice');
+          if (ctaPriceEl) ctaPriceEl.textContent = 'Unavailable';
+        }
+        if (dockBtn) {
+          dockBtn.disabled = true;
+          dockBtn.style.opacity = '0.6';
+        }
+        return;
+      }
+
+      if (ctaBtn) {
+        ctaBtn.disabled = false;
+        ctaBtn.style.opacity = '1';
+      }
+      if (dockBtn) {
+        dockBtn.disabled = false;
+        dockBtn.style.opacity = '1';
+      }
 
       const price = (variant.price / 100).toFixed(2);
-      const compare = variant.compare_at_price ? (variant.compare_at_price / 100).toFixed(2) : null;
-      let savings = compare ? (compare - price).toFixed(2) : null;
 
       // Dynamic price update in CTA
       const ctaPriceEl = document.getElementById('zvhcCtaPrice');
@@ -141,11 +166,11 @@
       const savingsCallout = document.getElementById('zvhcSavingsCallout');
       if (savingsCallout) {
         if (this.currentTier === 2) {
-          savingsCallout.innerHTML = '✨ <strong>Save 45% + FREE US Express Shipping</strong> included on this order';
+          savingsCallout.innerHTML = '✨ <strong>Save 30% vs Reg. + FREE US Tracked Shipping</strong> included on this order';
         } else if (this.currentTier === 3) {
-          savingsCallout.innerHTML = '🎉 <strong>Buy 2 Get 1 FREE (Save 55%) + 2 Free Gifts</strong> included';
+          savingsCallout.innerHTML = '🎉 <strong>Save 40% (Best Value Course) + 2 Free Gifts</strong> included';
         } else {
-          savingsCallout.innerHTML = '📦 Starter 30-Day Course · 60-Day Money-Back Guarantee';
+          savingsCallout.innerHTML = '📦 Starter Supply · 30-Day Satisfaction Guarantee';
         }
       }
     },
@@ -153,10 +178,12 @@
     addToCart: function() {
       const self = this;
       const variant = this.resolveVariant();
-      if (!variant) return;
+      if (!variant || !variant.id) {
+        alert('Please select an available product option.');
+        return;
+      }
 
       const ctaBtn = document.getElementById('zvhcMainCta');
-      const originalText = ctaBtn ? ctaBtn.innerHTML : '';
       if (ctaBtn) {
         ctaBtn.disabled = true;
         ctaBtn.style.opacity = '0.7';
@@ -247,4 +274,3 @@
     }
   };
 })();
-

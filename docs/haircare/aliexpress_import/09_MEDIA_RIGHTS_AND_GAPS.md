@@ -22,3 +22,4 @@ The 42 images harvested from the seven AliExpress candidate listings originate f
 | **Product 05: Batana Butter (20g)** | 6 High-Res Assets (Hero, Melting Texture, Tin Macro) | Need close-up finger melting texture demonstration | Film butter melting instantly on warm fingertip |
 | **Product 06: Curl Cream (100ml)** | 6 High-Res Assets (Hero, 4C Curls, Frizz Shield, Texture) | Need wet-to-dry curl clumping demonstration video | Film bounce & crunch-free curl check |
 | **Product 07: 7-in-1 Hair Oil (60ml)** | 6 High-Res Assets (Hero, 7 Botanicals, Dropper, Glow) | Need label close-up showing INCI ingredients clearly | Confirm final custom private label packaging |
+

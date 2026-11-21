@@ -5,60 +5,78 @@
 In accordance with Shopify draft data safety rules:
 - **NO active public products have been added or modified on the live store.**
 - The existing live Batana product (ID: `15461545935033`) remains completely untouched in its original state.
-- All seven AliExpress candidates have been structured as clean, staged DTC beauty products for **Zavelyn Hair Care** within Draft Theme `189127983289`.
+- All seven AliExpress candidates have been created as **unpublished DRAFT product records** in Shopify Admin via Admin API (`status: "draft"`), ensuring zero public visibility on live sales channels until launch approval.
+- All 7 products have dedicated templates (`templates/product.zvhc-*.json`) uploaded to Draft Theme `189127983289`.
 
 ---
 
-## 2. Product Records Breakdown
+## 2. Product Records Breakdown (Shopify Admin Verified)
 
-### Product 01: Zavelyn BotanaRoots Pure Honduran Batana Hair Growth Oil (60ml)
+### Product 01: Zavelyn BotanaRoots Pure Batana Scalp & Hair Oil (60ml)
 - **Source Item ID:** `3256807907799249`
-- **Product Status:** Staged / Primary Hero (Funnel B)
+- **Shopify Product ID:** `15542795731129`
+- **Shopify Handle:** `zvhc-batana-hair-growth-oil`
+- **Product Status:** `draft` (Unpublished)
 - **Assigned Template:** `templates/product.zvhc-batana.json`
-- **Shopify Variant Mapping:** 12 live variants (60ml / 120ml, Pure Raw / Rosemary Infusion)
-- **Bundle Strategy:** 1 Bottle ($39.99), 2 Bottles Duo ($79.98 - Most Popular), 3 Bottles Restoration ($95.99 - Best Value)
+- **Bundle Strategy:** 1 Bottle ($39.99), 2 Bottles Duo ($69.99 - Save 30%), 3 Bottles Trio ($89.99 - Save 40%)
 - **Harvested Media:** 6 High-Res Assets (Hero, Dropper Dispense, Real Results, Routine, Certification, Ingredients)
 
 ### Product 02: Zavelyn Instant Hair Density Keratin Building Fibers (100g)
 - **Source Item ID:** `3256811885406846`
-- **Product Status:** Staged / Secondary Hero (Funnel A)
+- **Shopify Product ID:** `15542795763897`
+- **Shopify Handle:** `zvhc-keratin-hair-building-fibers`
+- **Product Status:** `draft` (Unpublished)
 - **Assigned Template:** `templates/product.zvhc-fibers.json`
-- **Target Shades:** Black, Dark Brown, Medium Brown, Light Brown, Gray
-- **Bundle Strategy:** 1 Pack 100g ($34.99), 2 Packs + Applicator ($54.99), 3 Packs Salon Kit ($69.99)
-- **Harvested Media:** 6 High-Res Assets (Hero, 15s Before/After, Keratin Bond, Wind/Waterproof, Applicator, Shade Guide)
+- **Bundle Strategy:** 1 Pack 100g ($34.99), 2 Packs Duo ($59.99 - Save 30%), 3 Packs Trio ($79.99 - Save 40%)
+- **Harvested Media:** 6 High-Res Assets (Hero, Before/After, Keratin Bond, Wind/Waterproof, Applicator, Shade Guide)
 
-### Product 03: Zavelyn Root-Lift Volumizing & Mattifying Texture Powder
+### Product 03: Zavelyn Root-Lift Volumizing & Mattifying Styling Powder (10g)
 - **Source Item ID:** `3256810605010511`
-- **Product Status:** Staged / Cross-sell Complement
-- **Net Weight:** 10g
-- **Bundle Strategy:** 1 Unit ($19.99), 2 Units Duo ($29.99), Fiber Add-on ($14.99)
+- **Shopify Product ID:** `15542795796665`
+- **Shopify Handle:** `zvhc-root-lift-styling-powder`
+- **Product Status:** `draft` (Unpublished)
+- **Assigned Template:** `templates/product.zvhc-powder.json`
+- **Bundle Strategy:** 1 Unit ($19.99), 2 Units Duo ($34.99 - Save 30%), 3 Units Trio ($44.99 - Save 40%)
 - **Harvested Media:** 6 High-Res Assets (Hero, Root Lift Demo, Texture Macro, Pump Action, Oil Absorption, Styling)
 
 ### Product 04: Zavelyn Precision Hairline Shadow & Root Concealer Compact (4g)
 - **Source Item ID:** `3256808781854155`
-- **Product Status:** Staged / Edge & Scalp Line Care
-- **Net Weight:** 4g with built-in puff & mirror
-- **Target Shades:** #01 Black, #02 Dark Brown, #03 Medium Brown, #04 Gray
-- **Bundle Strategy:** 1 Compact ($24.99), 2 Compacts ($39.99), Add-on with Batana Oil ($16.99)
+- **Shopify Product ID:** `15542795862201`
+- **Shopify Handle:** `zvhc-precision-hairline-compact`
+- **Product Status:** `draft` (Unpublished)
+- **Assigned Template:** `templates/product.zvhc-hairline.json`
+- **Bundle Strategy:** 1 Compact ($24.99), 2 Compacts ($42.99 - Save 30%), 3 Compacts ($54.99 - Save 40%)
 - **Harvested Media:** 6 High-Res Assets (Hero, Temple Touchup, Compact Opened, Waterproof Test, Sponge Puff, Shades)
 
-### Product 05: Zavelyn Pure Raw Honduran Batana Scalp Balm & Butter (20g)
+### Product 05: Zavelyn Raw Unrefined Batana Scalp & Cuticle Balm (20g)
 - **Source Item ID:** `3256807671072569`
-- **Product Status:** Staged / Travel & Split End Therapy
-- **Net Weight:** 20g Aluminum Tin
-- **Bundle Strategy:** 1 Tin ($19.99), 3 Tins ($39.99 Buy 2 Get 1 Free), Add-on ($12.99)
+- **Shopify Product ID:** `15542795894969`
+- **Shopify Handle:** `zvhc-raw-batana-scalp-balm`
+- **Product Status:** `draft` (Unpublished)
+- **Assigned Template:** `templates/product.zvhc-balm.json`
+- **Bundle Strategy:** 1 Tin ($19.99), 2 Tins ($34.99 - Save 30%), 3 Tins ($44.99 - Save 40%)
 - **Harvested Media:** 6 High-Res Assets (Hero, Melting Texture, Overnight Mask, Split End Seal, Raw Nut, Tin Macro)
 
 ### Product 06: Zavelyn Botanical Curl Defining & Frizz-Shield Cream (100ml)
 - **Source Item ID:** `3256811372233630`
-- **Product Status:** Staged / Curl & Coily Care Collection
-- **Net Volume:** 100ml / 3.4 fl. oz
-- **Bundle Strategy:** 1 Bottle ($29.99), 2 Bottles ($49.99), Curl Routine Kit ($64.99)
+- **Shopify Product ID:** `15542795927737`
+- **Shopify Handle:** `zvhc-botanical-curl-cream`
+- **Product Status:** `draft` (Unpublished)
+- **Assigned Template:** `templates/product.zvhc-curl.json`
+- **Bundle Strategy:** 1 Bottle ($29.99), 2 Bottles ($49.99 - Save 30%), 3 Bottles ($64.99 - Save 40%)
 - **Harvested Media:** 6 High-Res Assets (Hero, 4C Curl Definition, Argan Moisture, Anti-Frizz Humidity Shield, Application, Texture)
 
 ### Product 07: Zavelyn 7-in-1 Botanical Multi-Oil Scalp & Growth Elixir (60ml)
 - **Source Item ID:** `3256811903160451`
-- **Product Status:** Staged / Intensive Scalp Treatment
-- **Net Volume:** 60ml Dropper Bottle
-- **Bundle Strategy:** 1 Bottle ($42.99), 2 Bottles Duo ($79.99), 3 Bottles Course ($99.99)
-- **Harvested Media:** 6 High-Res Assets (Hero, 7 Active Botanicals, Follicle Penetration, Scalp Massage, Amber Dropper, Glow)
+- **Shopify Product ID:** `15542795960505`
+- **Shopify Handle:** `zvhc-7-in-1-growth-elixir`
+- **Product Status:** `draft` (Unpublished)
+- **Assigned Template:** `templates/product.zvhc-7in1.json`
+- **Bundle Strategy:** 1 Bottle ($39.99), 2 Bottles ($69.99 - Save 30%), 3 Bottles ($89.99 - Save 40%)
+- **Harvested Media:** 6 High-Res Assets (Hero, Dropper Texture, 7 Oils Breakdown, Scalp Application, Length Strength, Bottle Close-up)
+
+---
+
+## 3. Preservation of Legacy Products
+- `zavelyn-botanaroots-organic-batana-hair-growth-oil` (ID: `15461545935033`) remains completely untouched in its active status and default template.
+- All legacy ad landing pages (`breakout-2-0-holster`, `zavelyn-rehabilitation-glove`, `babiguard-head-protector`, `the-yeoman-sweep`) are registered in the protected legacy list and retain their original headers, footers, carts, and styling.

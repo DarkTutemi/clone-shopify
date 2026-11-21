@@ -18,8 +18,17 @@
 
     {%- liquid
       assign is_haircare_route = false
-      if request.page_type == 'index' or template.suffix contains 'zvhc' or product.tags contains 'haircare' or product.handle contains 'batana' or collection.handle contains 'haircare'
+      if request.page_type == 'index'
         assign is_haircare_route = true
+      elsif template.suffix contains 'zvhc'
+        assign is_haircare_route = true
+      endif
+
+      # Protected legacy registry: ensure legacy ad landing pages never get misclassified
+      if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' or product.handle == 'zavelyn-botanaroots-bogo-special' or product.handle == 'breakout-2-0-holster-built-for-maximum-concealment-copy' or product.handle == 'zavelyn-rehabilitation-glove' or product.handle == 'babiguard-head-protector' or product.handle == 'the-yeoman-sweep' or product.handle contains 'saker' or product.handle contains 'srefalsteam'
+        unless template.suffix contains 'zvhc'
+          assign is_haircare_route = false
+        endunless
       endif
 
       if is_haircare_route

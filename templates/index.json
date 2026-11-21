@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "hero": {
+      "type": "zvhc-hero",
+      "settings": {}
+    },
+    "marquee": {
+      "type": "zvhc-marquee",
+      "settings": {}
+    },
+    "concerns": {
+      "type": "zvhc-shop-by-concern",
+      "settings": {}
+    },
+    "how_it_works": {
+      "type": "zvhc-pdp-how-it-works",
+      "settings": {}
+    },
+    "package": {
+      "type": "zvhc-pdp-package",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "zvhc-pdp-reviews",
+      "settings": {}
+    },
+    "faq": {
+      "type": "zvhc-pdp-faq",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "marquee",
+    "concerns",
+    "how_it_works",
+    "package",
+    "reviews",
+    "faq"
+  ]
+}
