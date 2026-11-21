@@ -34,3 +34,4 @@ Before explicitly publishing Theme `189127983289` to live production:
    - Review Batana PDP preview: `https://tryzavelyn.com/products/zavelyn-botanaroots-organic-batana-hair-growth-oil?preview_theme_id=189127983289`
 3. [ ] **Formal Approval:**
    - Explicitly instruct the agent to publish Draft Theme `189127983289` as the main theme when ready.
+

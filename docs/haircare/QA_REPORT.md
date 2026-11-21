@@ -46,3 +46,4 @@
 - **Free Shipping Meter:** Dynamically calculates cents remaining until `$50.00 USD` threshold is reached.
 - **In-Cart Cross-sell:** Scalp Massaging Brush (`+$9.99`) item adds directly to line items.
 - **Secure Handoff:** `/checkout` link transitions smoothly with all line items, variant properties, and discounts preserved.
+

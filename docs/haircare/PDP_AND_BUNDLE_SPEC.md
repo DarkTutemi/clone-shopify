@@ -57,3 +57,4 @@ In `sections/zvhc-cart-drawer.liquid`:
   - Above $50: `🎉 You've unlocked FREE US EXPRESS SHIPPING!`
 - **In-Cart 1-Click Upsell:** Soft Silicone Scalp Massaging Brush (`+$9.99`).
 - **AJAX Line Updates:** Instant quantity modification (`+`, `-`, `remove`) without page refresh.
+

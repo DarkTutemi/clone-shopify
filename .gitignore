@@ -45,6 +45,7 @@ backups/**/assets/*.gif
 backups/**/assets/*.mp4
 backups/**/assets/*.avif
 backup_live_*/assets/*
+data/haircare_media/
 
 # Large scraped raw HTML dumps
 *.html

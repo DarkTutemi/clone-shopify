@@ -86,3 +86,4 @@ To prevent CSS cascade contamination:
   - Role: `unpublished`
   - Status: Fully deployed with complete baseline sync + Zavelyn Hair Care modules.
 - **Git Branch:** `feature/zavelyn-haircare-v1`
+
