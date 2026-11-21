@@ -1,0 +1,349 @@
+{%- liquid
+  if group != blank
+    assign b = group.settings
+  endif
+-%}
+{%- unless b.show == false -%}
+<section
+  id="senzio-heel-relief-timeline"
+  class="sht-section"
+  data-sht-root
+  aria-labelledby="sht-main-title"
+  {% if group %}{{ group.shopify_attributes }}{% endif %}
+>
+  <div class="sht-shell">
+
+    <header class="sht-header">
+      <span class="sht-kicker">{{ b.kicker | default: 'The Relief Timeline' }}</span>
+
+      <h2 id="sht-main-title">
+        {{ b.title | default: 'What Consistent Daily Care May Feel Like' }}
+      </h2>
+
+      <p>
+        {{ b.lead | default: 'Follow the changes customers commonly describe as heel and plantar discomfort becomes easier to manage with consistent use.' }}
+      </p>
+    </header>
+
+    <div
+      class="sht-carousel"
+      data-sht-carousel
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Plantar and heel pain relief timeline"
+      tabindex="0"
+    >
+      <div class="sht-progress" aria-hidden="true">
+        <span class="sht-progress-fill" data-sht-progress></span>
+      </div>
+
+      <button
+        class="sht-arrow sht-arrow--previous"
+        type="button"
+        aria-label="Show previous timeline stage"
+        data-sht-previous
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15 5 8 12l7 7"></path>
+        </svg>
+      </button>
+
+      <div class="sht-viewport" data-sht-viewport>
+        <div class="sht-track" data-sht-track>
+
+          <!-- SLIDE 1 -->
+          <article
+            class="sht-slide is-active"
+            data-sht-slide
+            data-stage="0"
+            aria-label="Day 1 timeline stage"
+          >
+            <div class="sht-media">
+              <img
+                src="{% if b.s1_image != blank %}{{ b.s1_image | image_url: width: 1200 }}{% else %}{{ 'mb-time-1.png' | asset_url }}{% endif %}"
+                alt="{{ b.s1_alt | default: 'Day 1 plantar and heel pain relief timeline' }}"
+                width="1200"
+                height="900"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              >
+              <div class="sht-media-overlay" aria-hidden="true"></div>
+              <span class="sht-media-badge">{{ b.s1_badge | default: 'Day 1' }}</span>
+            </div>
+
+            <div class="sht-content">
+              <div class="sht-stage-heading">
+                <span class="sht-stage-number" aria-hidden="true">01</span>
+
+                <div class="sht-stage-title-wrap">
+                  <span class="sht-stage-label">{{ b.s1_label | default: 'The First Change' }}</span>
+                  <h3>{{ b.s1_title | default: 'Day 1' }}</h3>
+                </div>
+              </div>
+
+              <p class="sht-lead">
+                {{ b.s1_lead | default: 'The first steps after rest may begin to feel less sharp and less guarded.' }}
+              </p>
+
+              <div class="sht-points">
+                <div class="sht-point">
+                  <span class="sht-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 12.5 9.2 17 19 7"></path>
+                    </svg>
+                  </span>
+                  <span>{{ b.s1_p1 | default: 'The heel feels less aggressive.' }}</span>
+                </div>
+
+                <div class="sht-point">
+                  <span class="sht-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 12.5 9.2 17 19 7"></path>
+                    </svg>
+                  </span>
+                  <span>{{ b.s1_p2 | default: 'The arch loosens more quickly.' }}</span>
+                </div>
+
+                <div class="sht-point">
+                  <span class="sht-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 12.5 9.2 17 19 7"></path>
+                    </svg>
+                  </span>
+                  <span>{{ b.s1_p3 | default: 'Burning or throbbing starts to settle.' }}</span>
+                </div>
+              </div>
+
+              <div class="sht-result">
+                <span class="sht-result-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 3 14.3 8.2 20 9l-4.1 4 1 5.7L12 16l-4.9 2.7 1-5.7L4 9l5.7-.8L12 3Z"></path>
+                  </svg>
+                </span>
+
+                <strong>{{ b.s1_result | default: 'You notice the first difference.' }}</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 2 -->
+          <article
+            class="sht-slide"
+            data-sht-slide
+            data-stage="1"
+            aria-label="Week 1 timeline stage"
+          >
+            <div class="sht-media">
+              <img
+                src="{% if b.s2_image != blank %}{{ b.s2_image | image_url: width: 1200 }}{% else %}{{ 'mb-time-2.png' | asset_url }}{% endif %}"
+                alt="{{ b.s2_alt | default: 'Week 1 plantar and heel pain relief timeline' }}"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="sht-media-overlay" aria-hidden="true"></div>
+              <span class="sht-media-badge">{{ b.s2_badge | default: 'Week 1' }}</span>
+            </div>
+
+            <div class="sht-content">
+              <div class="sht-stage-heading">
+                <span class="sht-stage-number" aria-hidden="true">02</span>
+
+                <div class="sht-stage-title-wrap">
+                  <span class="sht-stage-label">{{ b.s2_label | default: 'Daily Comfort Builds' }}</span>
+                  <h3>{{ b.s2_title | default: 'Week 1' }}</h3>
+                </div>
+              </div>
+
+              <p class="sht-lead">
+                {{ b.s2_lead | default: 'You may get through more of the day without constantly thinking about your heel.' }}
+              </p>
+
+              <div class="sht-points">
+                <div class="sht-point">
+                  <span class="sht-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 12.5 9.2 17 19 7"></path>
+                    </svg>
+                  </span>
+                  <span>{{ b.s2_p1 | default: 'Less morning stiffness.' }}</span>
+                </div>
+
+                <div class="sht-point">
+                  <span class="sht-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 12.5 9.2 17 19 7"></path>
+                    </svg>
+                  </span>
+                  <span>{{ b.s2_p2 | default: 'Less limping through the day.' }}</span>
+                </div>
+
+                <div class="sht-point">
+                  <span class="sht-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 12.5 9.2 17 19 7"></path>
+                    </svg>
+                  </span>
+                  <span>{{ b.s2_p3 | default: 'Less end-of-day throbbing.' }}</span>
+                </div>
+              </div>
+
+              <div class="sht-result">
+                <span class="sht-result-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 16c3.2 0 5.1-1.6 6.2-4.8C11.4 7.7 13.2 6 17 6h3"></path>
+                    <path d="m16 2 4 4-4 4"></path>
+                  </svg>
+                </span>
+
+                <strong>{{ b.s2_result | default: 'Walking feels more natural.' }}</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 3 -->
+          <article
+            class="sht-slide"
+            data-sht-slide
+            data-stage="2"
+            aria-label="Weeks 2 to 4 timeline stage"
+          >
+            <div class="sht-media">
+              <img
+                src="{% if b.s3_image != blank %}{{ b.s3_image | image_url: width: 1200 }}{% else %}{{ 'mb-time-3.png' | asset_url }}{% endif %}"
+                alt="{{ b.s3_alt | default: 'Weeks 2 to 4 plantar and heel pain relief timeline' }}"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="sht-media-overlay" aria-hidden="true"></div>
+              <span class="sht-media-badge">{{ b.s3_badge | default: 'Weeks 2–4' }}</span>
+            </div>
+
+            <div class="sht-content">
+              <div class="sht-stage-heading">
+                <span class="sht-stage-number" aria-hidden="true">03</span>
+
+                <div class="sht-stage-title-wrap">
+                  <span class="sht-stage-label">{{ b.s3_label | default: 'Movement Feels Natural' }}</span>
+                  <h3>{{ b.s3_title | default: 'Weeks 2–4' }}</h3>
+                </div>
+              </div>
+
+              <p class="sht-lead">
+                {{ b.s3_lead | default: 'You may step more normally without bracing, hesitation, or constantly protecting the heel.' }}
+              </p>
+
+              <div class="sht-points">
+                <div class="sht-point">
+                  <span class="sht-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 12.5 9.2 17 19 7"></path>
+                    </svg>
+                  </span>
+                  <span>{{ b.s3_p1 | default: 'Standing longer feels manageable.' }}</span>
+                </div>
+
+                <div class="sht-point">
+                  <span class="sht-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 12.5 9.2 17 19 7"></path>
+                    </svg>
+                  </span>
+                  <span>{{ b.s3_p2 | default: 'Longer walks feel possible again.' }}</span>
+                </div>
+
+                <div class="sht-point">
+                  <span class="sht-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 12.5 9.2 17 19 7"></path>
+                    </svg>
+                  </span>
+                  <span>{{ b.s3_p3 | default: 'Your heel stops controlling your routine.' }}</span>
+                </div>
+              </div>
+
+              <div class="sht-result">
+                <span class="sht-result-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 17c4.4 0 5.8-3.5 7.1-7 1-2.7 2.4-5 6.9-5"></path>
+                    <path d="m14 2 4 3-3 4"></path>
+                  </svg>
+                </span>
+
+                <strong>{{ b.s3_result | default: 'Your feet stop controlling your day.' }}</strong>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <button
+        class="sht-arrow sht-arrow--next"
+        type="button"
+        aria-label="Show next timeline stage"
+        data-sht-next
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m9 5 7 7-7 7"></path>
+        </svg>
+      </button>
+
+      <div
+        class="sht-navigation"
+        role="tablist"
+        aria-label="Select a heel pain timeline stage"
+      >
+        <button
+          class="sht-nav-item is-active"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          data-sht-go="0"
+        >
+          <span class="sht-nav-dot" aria-hidden="true"><span></span></span>
+          <span class="sht-nav-copy">
+            <strong>{{ b.s1_title | default: 'Day 1' }}</strong>
+            <small>The first change</small>
+          </span>
+        </button>
+
+        <button
+          class="sht-nav-item"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          data-sht-go="1"
+        >
+          <span class="sht-nav-dot" aria-hidden="true"><span></span></span>
+          <span class="sht-nav-copy">
+            <strong>{{ b.s2_title | default: 'Week 1' }}</strong>
+            <small>Comfort builds</small>
+          </span>
+        </button>
+
+        <button
+          class="sht-nav-item"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          data-sht-go="2"
+        >
+          <span class="sht-nav-dot" aria-hidden="true"><span></span></span>
+          <span class="sht-nav-copy">
+            <strong>{{ b.s3_title | default: 'Weeks 2–4' }}</strong>
+            <small>Movement returns</small>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endunless -%}
+
+{{ 'zavelyn-balm-timeline.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'zavelyn-balm-timeline.js' | asset_url }}" defer></script>

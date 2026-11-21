@@ -1,0 +1,1353 @@
+<div class="willa-pdp-page">
+  <div class="willa-container">
+    {% if section.settings.show_breadcrumbs %}
+      <div class="willa-breadcrumbs">
+        <a href="/">Home</a> &gt; <a href="/collections/all-products">Shop</a> &gt; <span>{{ product.title }}</span>
+      </div>
+    {% endif %}
+
+    <div class="willa-pdp-layout">
+      <!-- Media Gallery -->
+      <div class="willa-pdp-gallery">
+        {% assign custom_gal_count = 0 %}
+        {% assign custom_first_img = '' %}
+        {% for block in section.blocks %}
+          {% if block.type == 'gallery_image' %}
+            {% assign custom_gal_count = custom_gal_count | plus: 1 %}
+            {% if custom_first_img == '' %}
+              {% if block.settings.image != blank %}
+                {% assign custom_first_img = block.settings.image | image_url: width: 1000 %}
+              {% elsif block.settings.image_url != blank %}
+                {% assign custom_first_img = block.settings.image_url %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+
+        <div class="willa-pdp-main-img-wrap">
+          {% if custom_gal_count > 0 and custom_first_img != '' %}
+            <img id="willaPdpMainImg" src="{{ custom_first_img }}" alt="{{ product.title | escape }}">
+          {% elsif product.featured_image %}
+            <img id="willaPdpMainImg" src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.title | escape }}">
+          {% else %}
+            <img id="willaPdpMainImg" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/t/3/assets/zavelyn-hero-main.png?v=1792853600" alt="{{ product.title | escape }}">
+          {% endif %}
+
+          {% if product.compare_at_price > product.price %}
+            <div class="willa-pdp-badge">{{ section.settings.badge_text | default: 'SPECIAL OFFER' }}</div>
+          {% endif %}
+        </div>
+
+        <div class="willa-pdp-thumbs">
+          {% if custom_gal_count > 0 %}
+            {% for block in section.blocks %}
+              {% if block.type == 'gallery_image' %}
+                {% assign thumb_src = '' %}
+                {% if block.settings.image != blank %}
+                  {% assign thumb_src = block.settings.image | image_url: width: 1000 %}
+                {% elsif block.settings.image_url != blank %}
+                  {% assign thumb_src = block.settings.image_url %}
+                {% endif %}
+                {% if thumb_src != '' %}
+                  <img class="willa-pdp-thumb {% if forloop.first %}active{% endif %}" src="{{ thumb_src }}" alt="{{ block.settings.alt | default: product.title | escape }}" onclick="switchPdpImg(this.src)" {{ block.shopify_attributes }}>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          {% elsif product.images.size > 1 %}
+            {% for image in product.images limit: 8 %}
+              <img class="willa-pdp-thumb {% if forloop.first %}active{% endif %}" src="{{ image | image_url: width: 160 }}" alt="{{ product.title | escape }}" onclick="switchPdpImg(this.src)">
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Purchase Box -->
+      <div class="willa-pdp-details">
+        <div class="willa-pdp-rating-row">
+          <div class="willa-stars">{% render 'trustpilot-stars', width: 92, height: 17 %}</div>
+          <span class="rating-text">{{ section.settings.rating_text | default: '4.9 / 5.0 (1,240+ Verified Reviews)' }}</span>
+        </div>
+
+        <h1 class="willa-pdp-title willa-serif">{{ product.title }}</h1>
+
+        <div class="willa-pdp-price-row">
+          <span class="willa-pdp-active-price" id="willaPdpPrice">{{ product.selected_or_first_available_variant.price | money }}</span>
+          {% assign calc_compare = product.selected_or_first_available_variant.compare_at_price %}
+          {% if calc_compare == blank or calc_compare <= product.selected_or_first_available_variant.price %}
+            {% assign calc_compare = product.selected_or_first_available_variant.price | times: 1.8 | round %}
+          {% endif %}
+          <span class="willa-pdp-compare-price" id="willaPdpComparePrice">{{ calc_compare | money }}</span>
+          <span class="willa-pdp-save-badge">{{ section.settings.save_badge_text | default: '50% OFF TODAY' }}</span>
+        </div>
+
+        <!-- Variants / Bundle Selector -->
+        {% unless product.has_only_default_variant %}
+          {% assign has_bundle_and_color = false %}
+          {% assign bundle_option = nil %}
+          {% assign color_option = nil %}
+
+          {% if product.options.size > 1 %}
+            {% for opt in product.options_with_values %}
+              {% assign opt_name_down = opt.name | downcase %}
+              {% if opt_name_down contains 'bundle' or opt_name_down contains 'quantity' or opt_name_down contains 'package' or opt_name_down contains 'tier' or opt_name_down contains 'pack' %}
+                {% assign bundle_option = opt %}
+              {% else %}
+                {% assign color_option = opt %}
+              {% endif %}
+            {% endfor %}
+            {% if bundle_option != nil and color_option != nil %}
+              {% assign has_bundle_and_color = true %}
+            {% endif %}
+          {% endif %}
+
+          {% if has_bundle_and_color %}
+            <!-- Two-Tier Selector: Buy 1, Buy 2, Buy 3 Bundle Cards + Color Swatches -->
+            <div class="willa-pdp-bundle-wrap">
+              <label class="variant-label" style="font-weight: 700; margin-bottom: 10px; display: block;">Select Bundle & Save:</label>
+              <div class="wf-bundle-selector">
+                {% for b_val in bundle_option.values %}
+                  {% assign rep_var = nil %}
+                  {% for v in product.variants %}
+                    {% if v.option1 == b_val and rep_var == nil %}
+                      {% assign rep_var = v %}
+                    {% endif %}
+                  {% endfor %}
+
+                  {% assign v_tag = 'Standard' %}
+                  {% assign v_tag_class = 'standard' %}
+                  {% assign v_desc = 'Standard Kit • Fast & Easy Setup' %}
+
+                  {% if product.handle contains 'dough-mixer' %}
+                    {% assign v_desc = '1x DoughMaster™ 7L Base + SUS 304 Bowl • Standard Kit' %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Save 60% • Just $133.33 each • Free Express US Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Save 55% • Just $149.99 each • Free Express US Shipping' %}
+                    {% endif %}
+                  {% elsif product.handle contains 'vfit' %}
+                    {% assign v_desc = '1x vFit Device + Photonic Gel + Wipes • Standard Kit' %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Buy 2, Get 1 FREE • Just $199.99 each • Free Discreet US Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Save 50% • Just $224.99 each • Free Discreet US Shipping' %}
+                    {% endif %}
+                  {% elsif product.handle contains 'bralisse' or product.handle contains 'shapewear' %}
+                    {% assign v_desc = '1x SculptComfort™ Wire-Free Bra • Standard Kit' %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Buy 2, Get 1 FREE • Just $43.33 each • Free Express US Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Save 55% • Just $49.99 each • Free Express US Shipping' %}
+                    {% endif %}
+                  {% elsif product.handle contains 'pacifier' or product.handle contains 'supertots' %}
+                    {% assign v_desc = '1x Feeder Pacifier + 3 Teats (S,M,L) • Starter Kit' %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Buy 2, Get 1 FREE • Just $11.66 each • Free Express US Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Save 45% • Just $13.49 each • Free Express US Shipping' %}
+                    {% endif %}
+                  {% elsif product.handle contains 'airclear' or product.handle contains 'clarifion' or product.handle contains 'ionizer' %}
+                    {% assign v_desc = '1x AirClear™ Plug-In Ionizer • Single Room Purifier' %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 6' or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Buy 3, Get 3 FREE • Just $19.99 each • Free Express US Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 3' or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Save 55% • Just $26.66 each • Free Express US Shipping' %}
+                    {% endif %}
+                  {% elsif product.handle contains 'foundation' or product.handle contains 'flawlessblend' %}
+                    {% assign v_desc = '1x Foundation Stick + Built-In Brush • Standard Kit' %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Buy 2, Get 1 FREE • Just $26.66 each • Free Express US Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Save 45% • Just $29.99 each • Free Express US Shipping' %}
+                    {% endif %}
+                  {% elsif product.handle contains 'pureflow' or product.handle contains 'fountain' %}
+                    {% assign v_desc = '1x PureFlow™ Fountain + Triple Filter • Standard Kit' %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Buy 2, Get 1 FREE • Just $49.99 each • Free Express US Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Save 45% • Just $59.99 each • Free Express US Shipping' %}
+                    {% endif %}
+                  {% elsif product.handle contains 'glider' or product.handle contains 'gravityglider' %}
+                    {% assign v_desc = '1x GravityGlider™ RC Jet + Controller • Ready to Fly' %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Buy 2, Get 1 FREE • Just $33.33 each • Free Express US Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Save 45% • Just $39.99 each • Free Express US Shipping' %}
+                    {% endif %}
+                  {% elsif product.handle contains 'megalifter' or product.handle contains 'lifter' or product.handle contains 'construction' %}
+                    {% assign v_desc = '1x MegaLifter™ Heavy Alloy Vehicle • Ready to Dig' %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Buy 2, Get 1 FREE • Just $43.33 each • Free Express US Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Save 45% • Just $49.99 each • Free Express US Shipping' %}
+                    {% endif %}
+                  {% elsif product.handle contains 'botana' or product.handle contains 'batana' %}
+                    {% assign v_desc = '1x BotanaRoots™ 60ml Bottle • 30-Day Starter Supply' %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Buy 2, Get 1 FREE • Just $29.67 each • Free Express US Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Save 45% • Just $34.50 each • Free Express US Shipping' %}
+                    {% endif %}
+                  {% elsif product.handle contains 'thermoglove' or product.handle contains 'glove' or product.handle contains 'ackerman' %}
+                    {% assign v_desc = '1 Pair ThermoGlove™ Heated Gloves • USB Fast Charging' %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Buy 2, Get 1 FREE • Just $33.33/pair • Free Express US Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Save 45% • Just $39.99/pair • Free Express US Shipping' %}
+                    {% endif %}
+                  {% elsif product.handle contains 'cozyheat' %}
+                    {% assign v_desc = '1 Cozy Wrap • Fast & Easy Setup' %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Buy 2, Get 1 FREE • Just $43.33 each • Free Express Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Save 45% • Just $45.00 each • Most Popular Choice' %}
+                    {% endif %}
+                  {% else %}
+                    {% if forloop.index == 3 or b_val contains 'Buy 3' %}
+                      {% assign v_tag = '★ BEST VALUE' %}
+                      {% assign v_tag_class = 'best-value' %}
+                      {% assign v_desc = 'Best Value Set • Free Express Shipping' %}
+                    {% elsif forloop.index == 2 or b_val contains 'Buy 2' %}
+                      {% assign v_tag = '★ MOST POPULAR' %}
+                      {% assign v_tag_class = 'popular' %}
+                      {% assign v_desc = 'Most Popular Choice • Extra Savings' %}
+                    {% endif %}
+                  {% endif %}
+
+                  <div class="wf-bundle-card {% if forloop.first %}active{% endif %}"
+                       data-bundle-val="{{ b_val | escape }}"
+                       onclick="selectTierBundle('{{ b_val | escape }}', '{{ rep_var.price | money }}', '{{ rep_var.compare_at_price | money }}', this)">
+                    <div class="wf-card-radio"></div>
+                    <div class="wf-card-info">
+                      <div class="wf-card-title-row">
+                        <span class="wf-card-title">{{ b_val }}</span>
+                        <span class="wf-card-tag {{ v_tag_class }}">{{ v_tag }}</span>
+                      </div>
+                      <div class="wf-card-desc">{{ v_desc }}</div>
+                    </div>
+                    <div class="wf-card-pricing">
+                      <span class="wf-card-price">{{ rep_var.price | money }}</span>
+                      {% if rep_var.compare_at_price > rep_var.price %}
+                        <span class="wf-card-comp">{{ rep_var.compare_at_price | money }}</span>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+
+              <!-- Color / Edition Swatches / Picker -->
+              <div class="willa-color-picker-wrap" style="margin-top: 18px; padding: 16px; background: #faf8f5; border: 1.5px solid #e7e4df; border-radius: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                  <span style="font-size: 14px; font-weight: 700; color: #231f20;">Select {{ color_option.name }}: <strong id="willaSelectedColorLabel" style="color: #8a2c13;">{{ color_option.values.first }}</strong></span>
+                  <span style="font-size: 12px; color: #16a34a; font-weight: 600;">✓ In Stock</span>
+                </div>
+                <div class="willa-color-chips" style="display: flex; gap: 8px; flex-wrap: wrap;">
+                  {% for c_val in color_option.values %}
+                    {% assign color_img = '' %}
+                    {% for v in product.variants %}
+                      {% if v.option2 == c_val and v.featured_image != blank and color_img == '' %}
+                        {% assign color_img = v.featured_image | image_url: width: 1000 %}
+                      {% endif %}
+                    {% endfor %}
+
+                    {% assign dot_color = '#cbd5e0' %}
+                    {% assign c_down = c_val | downcase %}
+                    {% if c_down contains 'brown' %}
+                      {% assign dot_color = '#8c5a3c' %}
+                    {% elsif c_down contains 'apricot' %}
+                      {% assign dot_color = '#e8c39e' %}
+                    {% elsif c_down contains 'green' %}
+                      {% assign dot_color = '#556b2f' %}
+                    {% elsif c_down contains 'rose' or c_down contains 'gold' %}
+                      {% assign dot_color = '#b76e79' %}
+                    {% elsif c_down contains 'pro' or c_down contains 'plus' %}
+                      {% assign dot_color = '#a50034' %}
+                    {% elsif c_down contains 'red' %}
+                      {% assign dot_color = '#9b2c2c' %}
+                    {% elsif c_down contains 'purple' %}
+                      {% assign dot_color = '#7e57c2' %}
+                    {% elsif c_down contains 'classic' or c_down contains 'pearl' or c_down contains 'white' %}
+                      {% assign dot_color = '#ffffff' %}
+                    {% elsif c_down contains 'black' %}
+                      {% assign dot_color = '#111827' %}
+                    {% endif %}
+
+                    <button type="button" class="willa-color-swatch-btn {% if forloop.first %}active{% endif %}"
+                            data-color-val="{{ c_val | escape }}"
+                            data-color-img="{{ color_img }}"
+                            onclick="selectTierColor('{{ c_val | escape }}', '{{ color_img }}', this)"
+                            style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 2px solid {% if forloop.first %}#8a2c13{% else %}#e2e8f0{% endif %}; border-radius: 8px; background: #ffffff; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.2s;">
+                      <span style="width: 14px; height: 14px; border-radius: 50%; background-color: {{ dot_color }}; border: 1px solid rgba(0,0,0,0.15); display: inline-block;"></span>
+                      <span>{{ c_val }}</span>
+                    </button>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+
+          {% else %}
+            <!-- Single-Option Bundle or Standard Variant Chips -->
+            {% assign is_bundle_product = false %}
+            {% for opt in product.options_with_values %}
+              {% assign opt_name_down = opt.name | downcase %}
+              {% if opt_name_down contains 'bundle' or opt_name_down contains 'quantity' or opt_name_down contains 'package' or opt_name_down contains 'pack' or product.handle contains 'fence-post' %}
+                {% assign is_bundle_product = true %}
+              {% endif %}
+            {% endfor %}
+
+            {% if is_bundle_product and product.variants.size > 1 %}
+              <div class="willa-pdp-bundle-wrap">
+                <label class="variant-label" style="font-weight: 700; margin-bottom: 10px; display: block;">Select Bundle Option:</label>
+                <div class="wf-bundle-selector">
+                  {% for variant in product.variants %}
+                    {% assign var_img = '' %}
+                    {% if variant.featured_image != blank %}
+                      {% assign var_img = variant.featured_image | image_url: width: 1000 %}
+                    {% elsif product.featured_image != blank %}
+                      {% assign var_img = product.featured_image | image_url: width: 1000 %}
+                    {% endif %}
+
+                    {% assign v_title = variant.title %}
+                    {% assign v_tag = 'Standard' %}
+                    {% assign v_tag_class = 'standard' %}
+                    {% assign v_desc = 'Complete Kit + Mounting Hardware' %}
+                    {% assign v_unit = '' %}
+
+                    {% if product.handle contains 'fence-post' %}
+                      {% if forloop.index == 1 or v_title contains '2' %}
+                        {% assign v_tag = 'Standard' %}
+                        {% assign v_tag_class = 'standard' %}
+                        {% assign v_desc = '2 Heavy-Duty H-Stakes + Hardware • Complete 2-Post Repair' %}
+                        {% assign unit_ea = variant.price | divided_by: 2.0 | money %}
+                        {% assign v_unit = '(' | append: unit_ea | append: '/ea)' %}
+                      {% elsif forloop.index == 2 or v_title contains '4' %}
+                        {% assign v_tag = '★ MOST POPULAR' %}
+                        {% assign v_tag_class = 'popular' %}
+                        {% assign v_desc = '4 Heavy-Duty H-Stakes + Hardware • Save Extra 5%' %}
+                        {% assign unit_ea = variant.price | divided_by: 4.0 | money %}
+                        {% assign v_unit = '(' | append: unit_ea | append: '/ea)' %}
+                      {% elsif forloop.index == 3 or v_title contains '6' %}
+                        {% assign v_tag = '★ BEST VALUE' %}
+                        {% assign v_tag_class = 'best-value' %}
+                        {% assign v_desc = '6 Heavy-Duty H-Stakes + Hardware • Save Extra 15% • <span class="wf-freeship-text">🚚 FREE US SHIPPING INCLUDED</span>' %}
+                        {% assign unit_ea = variant.price | divided_by: 6.0 | money %}
+                        {% assign v_unit = '(' | append: unit_ea | append: '/ea)' %}
+                      {% endif %}
+                    {% else %}
+                      {% if forloop.index == 2 %}
+                        {% assign v_tag = '★ MOST POPULAR' %}
+                        {% assign v_tag_class = 'popular' %}
+                        {% assign v_desc = 'Save Extra 5% • Most Popular Choice' %}
+                        {% assign unit_ea = variant.price | divided_by: 2.0 | money %}
+                        {% assign v_unit = '(' | append: unit_ea | append: '/ea)' %}
+                      {% elsif forloop.index == 3 %}
+                        {% assign v_tag = '★ BEST VALUE' %}
+                        {% assign v_tag_class = 'best-value' %}
+                        {% assign v_desc = 'Save Extra 15% • Free Express Shipping' %}
+                        {% assign unit_ea = variant.price | divided_by: 3.0 | money %}
+                        {% assign v_unit = '(' | append: unit_ea | append: '/ea)' %}
+                      {% else %}
+                        {% assign v_desc = 'Standard Kit • Fast & Easy Setup' %}
+                      {% endif %}
+                    {% endif %}
+
+                    <div class="wf-bundle-card {% if variant.id == product.selected_or_first_available_variant.id %}active{% endif %}"
+                         onclick="selectPdpBundleCard('{{ variant.id }}', '{{ variant.price | money }}', '{{ variant.compare_at_price | money }}', '{{ var_img }}', this)">
+                      <div class="wf-card-radio"></div>
+                      <div class="wf-card-info">
+                        <div class="wf-card-title-row">
+                          <span class="wf-card-title">{{ variant.title }}</span>
+                          <span class="wf-card-tag {{ v_tag_class }}">{{ v_tag }}</span>
+                          {% if product.handle contains 'fence-post' and forloop.index == 3 %}
+                            <span class="wf-card-tag freeship">🚚 FREE SHIPPING</span>
+                          {% endif %}
+                        </div>
+                        <div class="wf-card-desc">{{ v_desc }}</div>
+                      </div>
+                      <div class="wf-card-pricing">
+                        <span class="wf-card-price">{{ variant.price | money }}</span>
+                        {% if variant.compare_at_price > variant.price %}
+                          <span class="wf-card-comp">{{ variant.compare_at_price | money }}</span>
+                        {% endif %}
+                        {% if v_unit != '' %}
+                          <span class="wf-unit-note">{{ v_unit }}</span>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% else %}
+              <div class="willa-pdp-variants-wrap">
+                <label class="variant-label">Select Option:</label>
+                <div class="willa-pdp-variant-chips">
+                  {% for variant in product.variants %}
+                    {% assign var_img = '' %}
+                    {% if variant.featured_image != blank %}
+                      {% assign var_img = variant.featured_image | image_url: width: 1000 %}
+                    {% elsif product.featured_image != blank %}
+                      {% assign var_img = product.featured_image | image_url: width: 1000 %}
+                    {% endif %}
+                    <button type="button" class="willa-variant-chip {% if variant.id == product.selected_or_first_available_variant.id %}active{% endif %}" onclick="selectPdpVariant('{{ variant.id }}', '{{ variant.price | money }}', '{{ variant.compare_at_price | money }}', '{{ var_img }}', this)">
+                      {{ variant.title }}
+                    </button>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endunless %}
+
+        <!-- Quantity & ATC -->
+        <div class="willa-pdp-actions">
+          <div class="willa-pdp-qty-row">
+            <label for="willaPdpQty">Quantity:</label>
+            <div class="willa-pdp-qty-ctrl">
+              <button type="button" onclick="adjustPdpQty(-1)">-</button>
+              <input type="number" id="willaPdpQty" value="1" min="1" max="10" readonly>
+              <button type="button" onclick="adjustPdpQty(1)">+</button>
+            </div>
+          </div>
+
+          <button type="button" id="willaPdpAtcBtn" class="willa-btn-primary willa-pdp-atc" onclick="submitPdpOrder()">
+            {% if product.available %}
+              ADD TO CART ➔
+            {% else %}
+              SOLD OUT
+            {% endif %}
+          </button>
+        </div>
+
+        <!-- 1-Click Direct Checkout Button -->
+        <button type="button" id="willaPdpShopNowBtn" class="willa-pdp-shopnow" onclick="submitPdpDirectCheckout()">
+          ⚡ SHOP NOW (1-CLICK CHECKOUT) ➔
+        </button>
+
+        <!-- Guarantees Row -->
+        <div class="willa-pdp-trust-box">
+          <div class="pdp-trust-item">
+            <span>🛡️</span> <strong>30-Day Money-Back Guarantee</strong>
+          </div>
+          {% unless product.handle contains 'fence-post' %}
+            <div class="pdp-trust-item">
+              <span>🚚</span> <strong>Free Express Delivery on Orders $49+</strong>
+            </div>
+          {% endunless %}
+          <div class="pdp-trust-item">
+            <span>🔒</span> <strong>Safe &amp; Encrypted 256-Bit Checkout</strong>
+          </div>
+        </div>
+
+        <!-- Accordions: Description, Features, Shipping -->
+        <div class="willa-pdp-accordions">
+          {% if section.blocks.size > 0 %}
+            {% for block in section.blocks %}
+              <details class="willa-faq-item" {% if forloop.first or block.settings.open_default %}open{% endif %} {{ block.shopify_attributes }}>
+                <summary>
+                  <span>{{ block.settings.title }}</span>
+                  <span class="faq-icon">+</span>
+                </summary>
+                <div class="faq-content">
+                  {% if block.settings.use_product_description %}
+                    {% if product.description != blank %}
+                      {{ product.description }}
+                    {% else %}
+                      <p>Industrial-grade construction engineered for tough jobs and reliable long-term performance.</p>
+                    {% endif %}
+                  {% else %}
+                    <p>{{ block.settings.content }}</p>
+                  {% endif %}
+                </div>
+              </details>
+            {% endfor %}
+          {% else %}
+            <details class="willa-faq-item" open>
+              <summary>
+                <span>Product Description</span>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-content">
+                {% if product.description != blank %}
+                  {{ product.description }}
+                {% else %}
+                  <p>Industrial-grade construction engineered for tough jobs and reliable long-term performance.</p>
+                {% endif %}
+              </div>
+            </details>
+
+            <details class="willa-faq-item">
+              <summary>
+                <span>Shipping &amp; Delivery Information</span>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-content">
+                <p>Orders are dispatched within 24 hours from our US warehouses. Free standard shipping is automatically applied to orders over $49. Delivery takes 3–5 business days with live tracking.</p>
+              </div>
+            </details>
+
+            <details class="willa-faq-item">
+              <summary>
+                <span>Warranty &amp; Returns</span>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-content">
+                <p>We offer an unconditional 30-Day Money-Back Guarantee. If you are not completely satisfied, email support@tryzavelyn.com for an immediate exchange or refund.</p>
+              </div>
+            </details>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Bottom Purchase Bar -->
+  {% if section.settings.enable_sticky_atc %}
+    <div class="willa-pdp-sticky-bar" id="willaStickyAtc">
+      <div class="sticky-bar-left">
+        <span class="sticky-title">{{ product.title | truncate: 30 }}</span>
+        <span class="sticky-price" id="willaStickyPrice">{{ product.selected_or_first_available_variant.price | money }}</span>
+      </div>
+      <button type="button" class="willa-sticky-btn" onclick="submitPdpOrder()">
+        {{ section.settings.sticky_btn_text | default: 'BUY NOW ➔' }}
+      </button>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  
+  /* WF Bundle Cards Styles */
+  .willa-pdp-bundle-wrap {
+    margin-bottom: 24px;
+  }
+  .wf-bundle-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .wf-bundle-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border: 2px solid #e7e4df;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    position: relative;
+    box-sizing: border-box;
+  }
+  .wf-bundle-card:hover {
+    border-color: #cbd5e0;
+  }
+  .wf-bundle-card.active {
+    border-color: #8a2c13;
+    background: #fdfaf7;
+    box-shadow: 0 4px 14px rgba(138, 44, 19, 0.08);
+  }
+  .wf-card-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cbd5e0;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    box-sizing: border-box;
+  }
+  .wf-bundle-card.active .wf-card-radio {
+    border-color: #8a2c13;
+  }
+  .wf-bundle-card.active .wf-card-radio::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    background: #8a2c13;
+    border-radius: 50%;
+  }
+  .wf-card-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .wf-card-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+  .wf-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+  }
+  .wf-card-tag {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+  .wf-card-tag.standard {
+    background: #edf2f7;
+    color: #4a5568;
+  }
+  .wf-card-tag.popular {
+    background: #e6fffa;
+    color: #234e52;
+  }
+  
+  .wf-card-tag.freeship {
+    background: #059669;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(5, 150, 105, 0.25);
+  }
+  .wf-freeship-text {
+    color: #059669;
+    font-weight: 700;
+  }
+  .wf-card-freeship-badge {
+    display: inline-block;
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #10b981;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 6px;
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+  }
+
+  .wf-card-tag.best-value {
+    background: #feebc8;
+    color: #7b341e;
+  }
+  .wf-card-desc {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.4;
+  }
+  .wf-card-pricing {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .wf-card-price {
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+    color: #111827;
+  }
+  .wf-card-comp {
+    display: block;
+    font-size: 13px;
+    color: #9ca3af;
+    text-decoration: line-through;
+  }
+  .wf-unit-note {
+    display: block;
+    font-size: 11px;
+    color: #0d9488;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  .willa-pdp-page {
+    background-color: #ffffff;
+    padding: 30px 0 60px 0;
+  }
+  .willa-breadcrumbs {
+    font-size: 13px;
+    color: #8c827a;
+    margin-bottom: 24px;
+  }
+  .willa-breadcrumbs a {
+    color: #59514f;
+    text-decoration: none;
+  }
+  .willa-breadcrumbs a:hover {
+    color: #8a2c13;
+  }
+  .willa-breadcrumbs span {
+    color: #231f20;
+    font-weight: 600;
+  }
+
+  .willa-pdp-layout {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+  }
+  .willa-pdp-gallery {
+    flex: 1 1 52%;
+    position: sticky;
+    top: 90px;
+  }
+  .willa-pdp-main-img-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #faf7f4;
+    border: 1px solid #e7e4df;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(59, 43, 47, 0.06);
+    margin-bottom: 16px;
+  }
+  .willa-pdp-main-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.25s ease;
+  }
+  .willa-pdp-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background-color: #8a2c13;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .willa-pdp-thumbs {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  .willa-pdp-thumb {
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background: #faf7f4;
+    transition: border-color 0.2s;
+  }
+  .willa-pdp-thumb.active {
+    border-color: #8a2c13;
+  }
+
+  .willa-pdp-details {
+    flex: 1 1 48%;
+  }
+  .willa-pdp-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .willa-pdp-details .willa-stars {
+    color: #d97706;
+  }
+  .willa-pdp-details .rating-text {
+    font-size: 13px;
+    color: #59514f;
+    font-weight: 600;
+  }
+  .willa-pdp-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #231f20;
+    line-height: 1.25;
+    margin: 0 0 16px 0;
+  }
+
+  .willa-pdp-price-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .willa-pdp-active-price {
+    font-size: 28px;
+    font-weight: 900;
+    color: #8a2c13;
+  }
+  .willa-pdp-compare-price {
+    font-size: 18px;
+    text-decoration: line-through;
+    color: #8c827a;
+  }
+  .willa-pdp-save-badge {
+    background-color: #fbf0ee;
+    color: #8a2c13;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .willa-pdp-variants-wrap {
+    margin-bottom: 24px;
+  }
+  .variant-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #231f20;
+    margin-bottom: 10px;
+  }
+  .willa-pdp-variant-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .willa-variant-chip {
+    background-color: #faf7f4;
+    border: 1.5px solid #e7e4df;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #231f20;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .willa-variant-chip:hover {
+    border-color: #8a2c13;
+  }
+  .willa-variant-chip.active {
+    border-color: #8a2c13;
+    background-color: #fffbf9;
+    color: #8a2c13;
+    font-weight: 700;
+  }
+
+  .willa-pdp-actions {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+  .willa-pdp-qty-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .willa-pdp-qty-row label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #59514f;
+    display: none;
+  }
+  .willa-pdp-qty-ctrl {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e7e4df;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #faf7f4;
+  }
+  .willa-pdp-qty-ctrl button {
+    background: none;
+    border: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #231f20;
+  }
+  .willa-pdp-qty-ctrl input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    background: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #231f20;
+    outline: none;
+  }
+
+  
+  .willa-pdp-shopnow {
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 16px 24px;
+    background: #111827;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(17, 24, 39, 0.25);
+    transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+    box-sizing: border-box;
+  }
+  .willa-pdp-shopnow:hover {
+    background: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  }
+  .willa-pdp-shopnow:active {
+    transform: translateY(0);
+  }
+  .willa-pdp-shopnow:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .willa-pdp-atc {
+    flex: 1;
+    padding: 16px 24px !important;
+    font-size: 15px !important;
+  }
+
+  .willa-pdp-trust-box {
+    background-color: #faf7f4;
+    border: 1px solid #e7e4df;
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pdp-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #59514f;
+  }
+  .pdp-trust-item strong {
+    color: #231f20;
+  }
+
+  .willa-pdp-accordions details {
+    margin-bottom: 12px;
+  }
+
+  .willa-pdp-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-top: 1px solid #e7e4df;
+    padding: 12px 20px;
+    z-index: 999;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .willa-pdp-sticky-bar.visible {
+    display: flex;
+  }
+  .sticky-bar-left {
+    display: flex;
+    flex-direction: column;
+  }
+  .sticky-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #231f20;
+  }
+  .sticky-price {
+    font-size: 15px;
+    font-weight: 900;
+    color: #8a2c13;
+  }
+  .willa-sticky-btn {
+    background-color: #8a2c13;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  @media (max-width: 991px) {
+    .willa-pdp-layout {
+      flex-direction: column;
+      gap: 24px;
+    }
+    .willa-pdp-gallery {
+      position: static;
+      width: 100%;
+    }
+    .willa-pdp-title {
+      font-size: 24px;
+    }
+    .willa-pdp-active-price {
+      font-size: 24px;
+    }
+  }
+</style>
+
+<script>
+  let willaCurrentPdpVariantId = '{{ product.selected_or_first_available_variant.id }}';
+  let willaCurrentPdpQty = 1;
+
+  function switchPdpImg(src) {
+    const main = document.getElementById('willaPdpMainImg');
+    if (main && src) {
+      main.style.opacity = '0.5';
+      setTimeout(() => {
+        main.src = src;
+        main.style.opacity = '1';
+      }, 150);
+    }
+    document.querySelectorAll('.willa-pdp-thumb').forEach(t => {
+      if (t.src === src) t.classList.add('active');
+      else t.classList.remove('active');
+    });
+  }
+
+  
+  
+  const willaProductVariantsData = {{ product.variants | json }};
+  let willaCurrentTierBundle = '{% if bundle_option %}{{ bundle_option.values.first | escape }}{% endif %}';
+  let willaCurrentTierColor = '{% if color_option %}{{ color_option.values.first | escape }}{% endif %}';
+
+  function updateTierVariant() {
+    if (!willaProductVariantsData || willaProductVariantsData.length === 0) return;
+    const matched = willaProductVariantsData.find(v => {
+      const matchOpt1 = (v.option1 === willaCurrentTierBundle) || (!v.option1);
+      const matchOpt2 = (v.option2 === willaCurrentTierColor) || (!v.option2);
+      return matchOpt1 && matchOpt2;
+    });
+
+    if (matched) {
+      willaCurrentPdpVariantId = matched.id;
+      const priceFormatted = (matched.price / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+      const priceEl = document.getElementById('willaPdpPrice');
+      if (priceEl) priceEl.innerText = priceFormatted;
+
+      const stickyPriceEl = document.getElementById('willaStickyPrice');
+      if (stickyPriceEl) stickyPriceEl.innerText = priceFormatted;
+
+      if (matched.compare_at_price) {
+        const compFormatted = (matched.compare_at_price / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        const compEl = document.getElementById('willaPdpComparePrice');
+        if (compEl) compEl.innerText = compFormatted;
+      }
+
+      if (matched.featured_image && matched.featured_image.src) {
+        switchPdpImg(matched.featured_image.src);
+      }
+    }
+  }
+
+  function selectTierBundle(bundleVal, price, comparePrice, cardEl) {
+    willaCurrentTierBundle = bundleVal;
+    document.querySelectorAll('.wf-bundle-card').forEach(c => c.classList.remove('active'));
+    if (cardEl) cardEl.classList.add('active');
+    updateTierVariant();
+  }
+
+  function selectTierColor(colorVal, imgUrl, btnEl) {
+    willaCurrentTierColor = colorVal;
+    document.querySelectorAll('.willa-color-swatch-btn').forEach(b => {
+      b.classList.remove('active');
+      b.style.borderColor = '#e2e8f0';
+    });
+    if (btnEl) {
+      btnEl.classList.add('active');
+      btnEl.style.borderColor = '#8a2c13';
+    }
+    const label = document.getElementById('willaSelectedColorLabel');
+    if (label) label.innerText = colorVal;
+    if (imgUrl) switchPdpImg(imgUrl);
+    updateTierVariant();
+  }
+
+  function selectPdpBundleCard(id, price, comparePrice, imgUrl, el) {
+    willaCurrentPdpVariantId = id;
+    document.querySelectorAll('.wf-bundle-card').forEach(c => c.classList.remove('active'));
+    if (el) el.classList.add('active');
+
+    const priceEl = document.getElementById('willaPdpPrice');
+    if (priceEl) priceEl.innerText = price;
+
+    const stickyPriceEl = document.getElementById('willaStickyPrice');
+    if (stickyPriceEl) stickyPriceEl.innerText = price;
+
+    const compEl = document.getElementById('willaPdpComparePrice');
+    if (compEl && comparePrice) compEl.innerText = comparePrice;
+
+    if (imgUrl) switchPdpImg(imgUrl);
+  }
+
+  function selectPdpVariant(id, price, comparePrice, imgUrl, btn) {
+    willaCurrentPdpVariantId = id;
+    document.querySelectorAll('.willa-variant-chip').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    const priceEl = document.getElementById('willaPdpPrice');
+    if (priceEl) priceEl.innerText = price;
+
+    const stickyPriceEl = document.getElementById('willaStickyPrice');
+    if (stickyPriceEl) stickyPriceEl.innerText = price;
+
+    const compEl = document.getElementById('willaPdpComparePrice');
+    if (compEl && comparePrice) compEl.innerText = comparePrice;
+
+    if (imgUrl) switchPdpImg(imgUrl);
+  }
+
+  function adjustPdpQty(delta) {
+    const input = document.getElementById('willaPdpQty');
+    if (!input) return;
+    let val = parseInt(input.value) || 1;
+    val += delta;
+    if (val < 1) val = 1;
+    if (val > 10) val = 10;
+    input.value = val;
+    willaCurrentPdpQty = val;
+  }
+
+  
+  async function submitPdpDirectCheckout() {
+    const btn = document.getElementById('willaPdpShopNowBtn');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerText = '⚡ PROCEEDING TO CHECKOUT...';
+    }
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{
+            id: willaCurrentPdpVariantId,
+            quantity: willaCurrentPdpQty
+          }]
+        })
+      });
+      window.location.href = '/checkout';
+    } catch (e) {
+      window.location.href = '/cart/' + willaCurrentPdpVariantId + ':' + willaCurrentPdpQty;
+    }
+  }
+
+  async function submitPdpOrder() {
+    const btn = document.getElementById('willaPdpAtcBtn');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerText = 'ADDING...';
+    }
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{ id: willaCurrentPdpVariantId, quantity: willaCurrentPdpQty }]
+        })
+      });
+
+      if (res.ok) {
+        if (typeof window.willaOpenCartDrawer === 'function') {
+          await window.willaRefreshCart();
+          window.willaOpenCartDrawer();
+          btn.disabled = false;
+          btn.innerText = 'ADD TO CART ➔';
+        } else {
+          window.location.href = '/cart';
+        }
+      } else {
+        window.location.href = '/cart/' + willaCurrentPdpVariantId + ':' + willaCurrentPdpQty;
+      }
+    } catch (e) {
+      window.location.href = '/cart/' + willaCurrentPdpVariantId + ':' + willaCurrentPdpQty;
+    }
+  }
+
+  function initStickyBar() {
+    const mainAtc = document.getElementById('willaPdpAtcBtn');
+    const stickyBar = document.getElementById('willaStickyAtc');
+    if (!mainAtc || !stickyBar) return;
+
+    function checkSticky() {
+      const rect = mainAtc.getBoundingClientRect();
+      if (rect.bottom < 0) {
+        stickyBar.classList.add('visible');
+      } else {
+        stickyBar.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', checkSticky, { passive: true });
+    window.addEventListener('resize', checkSticky, { passive: true });
+    checkSticky();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStickyBar);
+  } else {
+    initStickyBar();
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Willa Main Product",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show Breadcrumbs Navigation",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Sale Badge Text",
+      "default": "SPECIAL OFFER"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating Text",
+      "default": "4.9 / 5.0 (1,240+ Verified Reviews)"
+    },
+    {
+      "type": "text",
+      "id": "save_badge_text",
+      "label": "Save Badge Text",
+      "default": "50% OFF"
+    },
+    {
+      "type": "header",
+      "content": "Sticky Add to Cart Bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_atc",
+      "label": "Enable Sticky Add to Cart Bar",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "sticky_btn_text",
+      "label": "Sticky Button Text",
+      "default": "BUY NOW ➔"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gallery_image",
+      "name": "Gallery Image (Slide)",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Select Image" },
+        { "type": "text", "id": "image_url", "label": "Or Image URL" },
+        { "type": "text", "id": "alt", "label": "Image Alt / Description" }
+      ]
+    },
+    {
+      "type": "accordion_item",
+      "name": "Product Accordion / Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Accordion Title",
+          "default": "Product Description"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_product_description",
+          "label": "Use Product Body Description",
+          "default": false
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Custom Content",
+          "default": "Industrial-grade construction engineered for tough jobs and reliable long-term performance."
+        },
+        {
+          "type": "checkbox",
+          "id": "open_default",
+          "label": "Open by Default",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Willa Main Product"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .willa-stars, .review-stars { display: inline-flex; align-items: center; line-height: 0; }
+</style>
+
+<style>
+  .willa-stars, .review-stars { display: inline-flex; align-items: center; line-height: 0; }
+</style>

@@ -1,0 +1,286 @@
+<footer class="willa-footer-wrap">
+  <div class="willa-container">
+    <!-- Top Footer: Newsletter & Brand Story -->
+    <div class="willa-footer-top">
+      <div class="willa-footer-brand-col">
+        <div class="willa-footer-logo">
+          <span>🌿</span>
+          <span class="willa-serif">{{ section.settings.logo_text | default: 'ZAVELYN' }}<sup class="willa-reg">®</sup></span>
+        </div>
+        <p class="willa-footer-about">
+          {{ section.settings.about_text | default: 'Engineered for performance and durability. We bring specialized farm repair solutions, precision crafting tools, and outdoor essentials directly to hardworking homeowners.' }}
+        </p>
+        <div class="willa-footer-contact">
+          <p>Email: <strong>{{ section.settings.support_email | default: 'support@tryzavelyn.com' }}</strong></p>
+          <p>Customer Support: {{ section.settings.support_hours | default: 'Monday – Sunday, 9am – 6pm EST' }}</p>
+        </div>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="willa-footer-links-col">
+        <h4>Shop Collections</h4>
+        <ul>
+          <li><a href="/collections/best-sellers">★ Best Sellers</a></li>
+          <li><a href="/collections/fence-and-farm">Fence &amp; Farm Repair</a></li>
+          <li><a href="/collections/power-tools">Power &amp; Precision Tools</a></li>
+          <li><a href="/collections/garden-and-outdoor">Lawn, Garden &amp; Outdoor</a></li>
+          <li><a href="/collections/home-and-workshop">Home &amp; Workshop</a></li>
+          <li><a href="/collections/all-products">Shop All Products</a></li>
+        </ul>
+      </div>
+
+      <!-- Customer Care & Policies -->
+      <div class="willa-footer-links-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="/pages/track-order">Track Your Order</a></li>
+          <li><a href="/policies/shipping-policy">Shipping Policy</a></li>
+          <li><a href="/policies/refund-policy">Refund &amp; Return Policy</a></li>
+          <li><a href="/policies/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/policies/terms-of-service">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="willa-footer-newsletter-col">
+        <h4>{{ section.settings.newsletter_title | default: 'Join the Zavelyn Community' }}</h4>
+        <p>{{ section.settings.newsletter_desc | default: 'Subscribe for exclusive 50% seasonal discounts, farm tips, and early access to new tool releases.' }}</p>
+        <form class="willa-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Zavelyn!');">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit" class="willa-btn-primary" style="padding: 12px 20px; font-size: 13px;">{{ section.settings.newsletter_btn_text | default: 'JOIN' }}</button>
+        </form>
+        <div class="willa-newsletter-note">
+          🔒 Zero spam. Unsubscribe at any time.
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Footer: Copyright & Payment Badges -->
+    <div class="willa-footer-bottom">
+      <div class="willa-copyright">
+        &copy; {{ 'now' | date: '%Y' }} {{ section.settings.copyright_text | default: 'Zavelyn Inc. All rights reserved.' }}
+      </div>
+      <div class="willa-payment-icons">
+        <span>VISA</span>
+        <span>MASTERCARD</span>
+        <span>AMEX</span>
+        <span>DISCOVER</span>
+        <span>PAYPAL</span>
+        <span>APPLE PAY</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .willa-footer-wrap {
+    background-color: #3b2b2f;
+    color: #f7f4ee;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    border-top: 1px solid #4a383d;
+  }
+  .willa-footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.2fr 1.8fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .willa-footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 14px;
+  }
+  .willa-footer-logo sup.willa-reg {
+    font-size: 13px;
+    vertical-align: super;
+    line-height: 0;
+    color: #ff8a65;
+    margin-left: 2px;
+  }
+  .willa-footer-about {
+    font-size: 13px;
+    color: #d1c7c2;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .willa-footer-contact p {
+    margin: 4px 0;
+    font-size: 12px;
+    color: #b5aba4;
+  }
+  .willa-footer-contact strong {
+    color: #ffffff;
+  }
+
+  .willa-footer-links-col h4, .willa-footer-newsletter-col h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+    letter-spacing: 0.5px;
+  }
+  .willa-footer-links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .willa-footer-links-col li {
+    margin-bottom: 10px;
+  }
+  .willa-footer-links-col a {
+    color: #d1c7c2;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.15s;
+  }
+  .willa-footer-links-col a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  .willa-footer-newsletter-col p {
+    font-size: 13px;
+    color: #d1c7c2;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .willa-newsletter-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .willa-newsletter-form input {
+    flex: 1;
+    background: #4a383d;
+    border: 1px solid #5d464d;
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: #ffffff;
+    font-size: 13px;
+    outline: none;
+  }
+  .willa-newsletter-form input::placeholder {
+    color: #a39599;
+  }
+  .willa-newsletter-note {
+    font-size: 11px;
+    color: #a39599;
+  }
+
+  .willa-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    font-size: 12px;
+    color: #b5aba4;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .willa-payment-icons {
+    display: flex;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+  .willa-payment-icons span {
+    background: #4a383d;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #ffffff;
+  }
+
+  @media (max-width: 991px) {
+    .willa-footer-top {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+  @media (max-width: 640px) {
+    .willa-footer-top {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .willa-footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+    .willa-newsletter-form {
+      flex-direction: column;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Willa Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Brand Logo Text",
+      "default": "ZAVELYN"
+    },
+    {
+      "type": "textarea",
+      "id": "about_text",
+      "label": "About Brand Description",
+      "default": "Engineered for performance and durability. We bring specialized farm repair solutions, precision crafting tools, and outdoor essentials directly to hardworking homeowners."
+    },
+    {
+      "type": "text",
+      "id": "support_email",
+      "label": "Support Email Address",
+      "default": "support@tryzavelyn.com"
+    },
+    {
+      "type": "text",
+      "id": "support_hours",
+      "label": "Customer Support Operating Hours",
+      "default": "Monday – Sunday, 9am – 6pm EST"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter Box"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Newsletter Title",
+      "default": "Join the Zavelyn Community"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter_desc",
+      "label": "Newsletter Description",
+      "default": "Subscribe for exclusive 50% seasonal discounts, farm tips, and early access to new tool releases."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_btn_text",
+      "label": "Newsletter Button Text",
+      "default": "JOIN"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "Zavelyn Inc. All rights reserved."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Willa Footer"
+    }
+  ]
+}
+{% endschema %}

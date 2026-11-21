@@ -1,0 +1,390 @@
+<section class="willa-hero-section">
+  <div class="willa-container willa-hero-inner">
+    <!-- Left Column: Compelling Copy & Immediate Mobile CTA -->
+    <div class="willa-hero-content">
+      <div class="willa-hero-badge">
+        {% if section.settings.pill_1 != blank %}<span class="willa-pill">{{ section.settings.pill_1 }}</span>{% endif %}
+        {% if section.settings.pill_2 != blank %}<span class="willa-pill willa-pill-green">{{ section.settings.pill_2 }}</span>{% endif %}
+      </div>
+
+      <h1 class="willa-hero-title willa-serif">
+        {{ section.settings.heading | default: "Smart Lifestyle Innovations & Heavy-Duty Essentials" }}
+      </h1>
+
+      <p class="willa-hero-desc">
+        {{ section.settings.desc | default: "Discover Zavelyn curated collection of smart heated gear, intimate wellness devices, kitchen innovations, and heavy-duty home essentials trusted by over 100,000+ happy customers." }}
+      </p>
+
+      <!-- Proof Row -->
+      <div class="willa-hero-proof">
+        <div class="willa-stars">{% render 'trustpilot-stars', width: 92, height: 17 %}</div>
+        <span class="proof-text">{{ section.settings.rating_text | default: '<strong>4.9/5.0</strong> based on 12,480+ verified reviews' }}</span>
+      </div>
+
+      <!-- Main Action Buttons -->
+      <div class="willa-hero-cta-wrap">
+        {% if section.settings.btn_primary_text != blank %}
+          <a href="{{ section.settings.btn_primary_link | default: '/collections/best-sellers' }}" class="willa-btn-primary">
+            {{ section.settings.btn_primary_text }}
+          </a>
+        {% endif %}
+        {% if section.settings.btn_secondary_text != blank %}
+          <a href="{{ section.settings.btn_secondary_link | default: '/collections/fence-and-farm' }}" class="willa-btn-secondary">
+            {{ section.settings.btn_secondary_text }}
+          </a>
+        {% endif %}
+      </div>
+
+      <!-- Trust Badges Under CTA -->
+      <div class="willa-hero-guarantees">
+        {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+            <div class="guarantee-item" {{ block.shopify_attributes }}>
+              <span>{{ block.settings.icon }}</span> <strong>{{ block.settings.highlight }}</strong> {{ block.settings.text }}
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="guarantee-item">
+            <span>🛡️</span> <strong>90-Day</strong> Risk-Free Trial
+          </div>
+          <div class="guarantee-item">
+            <span>🚚</span> <strong>Free Shipping</strong> Over $49
+          </div>
+          <div class="guarantee-item">
+            <span>🇺🇸</span> <strong>Fast US</strong> Warehouse Dispatch
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Right Column: Visual Product Showcase -->
+    <div class="willa-hero-visual">
+      <div class="willa-hero-image-card">
+        <img src="{{ section.settings.hero_image_url | default: 'https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg' }}" alt="{{ section.settings.heading | escape }}" class="willa-hero-main-img" loading="eager" fetchpriority="high">
+        
+        <!-- Floating Conversion Pill -->
+        <div class="willa-hero-floating-tag">
+          <div class="floating-tag-icon">{{ section.settings.floating_icon | default: '🔥' }}</div>
+          <div class="floating-tag-info">
+            <strong>{{ section.settings.floating_title | default: 'Zavelyn Innovation' }}</strong>
+            <span>{{ section.settings.floating_subtitle | default: 'Up to 50% Off Today' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .willa-hero-section {
+    background-color: #faf7f4;
+    padding-top: 36px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #e7e4df;
+    overflow: hidden;
+  }
+  .willa-hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+  .willa-hero-content {
+    flex: 1 1 55%;
+    max-width: 620px;
+  }
+  .willa-hero-visual {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .willa-hero-badge {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .willa-hero-title {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.18;
+    color: #231f20;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.5px;
+  }
+  .willa-hero-desc {
+    font-size: 16px;
+    color: #59514f;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+  }
+
+  .willa-hero-proof {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    background: #ffffff;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    display: inline-flex;
+    border: 1px solid #e7e4df;
+  }
+  .proof-text {
+    font-size: 13px;
+    color: #231f20;
+  }
+
+  .willa-hero-cta-wrap {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .willa-hero-guarantees {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+    color: #59514f;
+    flex-wrap: wrap;
+    border-top: 1px solid #e7e4df;
+    padding-top: 16px;
+  }
+  .guarantee-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .willa-hero-image-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(59, 43, 47, 0.12);
+    border: 1px solid #e7e4df;
+    background: #ffffff;
+    width: 100%;
+    max-width: 480px;
+  }
+  .willa-hero-main-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .willa-hero-floating-tag {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid #e7e4df;
+    border-radius: 14px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+  .floating-tag-icon { font-size: 20px; }
+  .floating-tag-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+  }
+  .floating-tag-info strong {
+    color: #231f20;
+    font-size: 13px;
+  }
+  .floating-tag-info span {
+    color: #8a2c13;
+    font-weight: 700;
+  }
+
+  @media (max-width: 991px) {
+    .willa-hero-inner {
+      flex-direction: column;
+      gap: 22px;
+    }
+    .willa-hero-content {
+      text-align: left;
+      max-width: 100%;
+    }
+    .willa-hero-title {
+      font-size: clamp(26px, 7vw, 32px);
+      line-height: 1.15;
+    }
+    .willa-hero-desc {
+      font-size: 14px;
+    }
+    .willa-hero-cta-wrap {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .willa-hero-cta-wrap a {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 15px 20px !important;
+      font-size: 14px !important;
+      text-align: center;
+    }
+    .willa-hero-guarantees {
+      gap: 12px;
+    }
+    .willa-hero-visual {
+      width: 100%;
+    }
+    .willa-hero-image-card {
+      max-width: 100%;
+      border-radius: 18px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Willa Hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Pills & Headings"
+    },
+    {
+      "type": "text",
+      "id": "pill_1",
+      "label": "Badge Pill 1",
+      "default": "★ 2026 ZAVELYN® COLLECTION"
+    },
+    {
+      "type": "text",
+      "id": "pill_2",
+      "label": "Badge Pill 2",
+      "default": "IN STOCK & READY TO SHIP"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Hero Main Heading",
+      "default": "Engineered for Heavy Duty. Built for Everyday Reliability."
+    },
+    {
+      "type": "textarea",
+      "id": "desc",
+      "label": "Hero Description",
+      "default": "Stop fighting broken equipment and low-grade tools. Zavelyn brings you industrial-grade farm repair kits, precision ultrasonic tools, and durable homestead solutions trusted by over 100,000+ customers."
+    },
+    {
+      "type": "header",
+      "content": "Proof & Ratings"
+    },
+    {
+      "type": "text",
+      "id": "rating_stars",
+      "label": "Stars Rating",
+      "default": "★★★★★"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating Text",
+      "default": "4.9/5.0 based on 12,480+ verified reviews"
+    },
+    {
+      "type": "header",
+      "content": "Action Buttons"
+    },
+    {
+      "type": "text",
+      "id": "btn_primary_text",
+      "label": "Primary Button Text",
+      "default": "EXPLORE BEST SELLERS ➔"
+    },
+    {
+      "type": "url",
+      "id": "btn_primary_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "btn_secondary_text",
+      "label": "Secondary Button Text",
+      "default": "FARM & FENCE REPAIR"
+    },
+    {
+      "type": "url",
+      "id": "btn_secondary_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Visual & Floating Badge"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_url",
+      "label": "Hero Image URL",
+      "default": "https://cdn.myshopage.com/54872b77-422f-45a5-7cfb-756212792b00.jpg"
+    },
+    {
+      "type": "text",
+      "id": "floating_icon",
+      "label": "Floating Tag Icon",
+      "default": "🔥"
+    },
+    {
+      "type": "text",
+      "id": "floating_title",
+      "label": "Floating Tag Title",
+      "default": "Zavelyn Innovation"
+    },
+    {
+      "type": "text",
+      "id": "floating_subtitle",
+      "label": "Floating Tag Subtitle",
+      "default": "Up to 50% Off Today"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Guarantee / Trust Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Emoji Icon",
+          "default": "🛡️"
+        },
+        {
+          "type": "text",
+          "id": "highlight",
+          "label": "Bold Highlight Text",
+          "default": "90-Day"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Guarantee Description",
+          "default": "Risk-Free Trial"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Willa Hero"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .willa-stars, .review-stars { display: inline-flex; align-items: center; line-height: 0; }
+</style>
+
+<style>
+  .willa-stars, .review-stars { display: inline-flex; align-items: center; line-height: 0; }
+</style>

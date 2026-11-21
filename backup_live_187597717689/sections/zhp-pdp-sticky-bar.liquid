@@ -1,0 +1,42 @@
+{%- assign st_src = section.settings.sticky_image | image_url: width: 200 -%}
+{%- if st_src == blank -%}{%- assign st_src = section.settings.sticky_image_url -%}{%- endif -%}
+
+<div class="wf-sticky-bar" id="wfStickyBar">
+  <div class="wf-sticky-inner">
+    <div class="wf-sticky-prod">
+      <img src="{{ st_src }}" alt="{{ section.settings.title | default: product.title }} Thumb" class="wf-sticky-thumb" id="wfStickyThumb" />
+      <div class="wf-sticky-info">
+        <span class="wf-sticky-title">{{ section.settings.title | default: product.title }}</span>
+        <span class="wf-sticky-price" id="wfStickyPrice">${{ section.settings.price | default: '259.95' }} <s class="wf-sticky-comp">${{ section.settings.compare_at | default: '499.95' }}</s></span>
+      </div>
+    </div>
+    <div class="wf-sticky-actions">
+      <select id="wfStickyBundleSelect" class="wf-sticky-select" onchange="syncStickySelect(this.value)">
+        <option value="1">1x Kit (${{ section.settings.price | default: '259.95' }})</option>
+        <option value="2">2x Duet Pack (Save $40 - POPULAR)</option>
+        <option value="3">3x Ensemble (Save $90 - BEST VALUE)</option>
+      </select>
+      <button type="button" class="wf-sticky-atc-btn" onclick="submitWfAddToCart()">
+        ADD TO CART • 50% OFF
+      </button>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Zavelyn Drum Sticky Bar",
+  "settings": [
+    { "type": "image_picker", "id": "sticky_image", "label": "Sticky Bar Thumbnail" },
+    { "type": "text", "id": "sticky_image_url", "label": "Fallback Sticky Thumbnail URL" },
+    { "type": "text", "id": "title", "label": "Title" },
+    { "type": "text", "id": "price", "label": "Price", "default": "259.95" },
+    { "type": "text", "id": "compare_at", "label": "Compare Price", "default": "499.95" }
+  ],
+  "presets": [
+    {
+      "name": "Zavelyn Drum Sticky Bar"
+    }
+  ]
+}
+{% endschema %}

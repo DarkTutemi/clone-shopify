@@ -1,0 +1,232 @@
+{% schema %}
+{
+  "name": "Doorstep Delivery & Track",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "FAST & INSURED TRACKED US DELIVERY"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Doorstep Delivery Guarantee & Real-Time Tracking"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Description",
+      "default": "Every Zavelyn order is cushioned in heavy-duty protective packaging, inspected for quality, and dispatched from regional US warehouses within 24–48 business hours. We partner directly with USPS, FedEx, and DHL Express to guarantee rapid, dependable doorstep transit."
+    },
+    {
+      "type": "header",
+      "content": "Section Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "shipping_img_1",
+      "label": "Image 1 (Packaging / Inspection)"
+    },
+    {
+      "type": "text",
+      "id": "shipping_img_1_url",
+      "label": "Image 1 Default URL",
+      "default": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/5555.webp?v=1792856415"
+    },
+    {
+      "type": "image_picker",
+      "id": "shipping_img_2",
+      "label": "Image 2 (Handover / Tracking Scan)"
+    },
+    {
+      "type": "text",
+      "id": "shipping_img_2_url",
+      "label": "Image 2 Default URL",
+      "default": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/44444.webp?v=1792856415"
+    },
+    {
+      "type": "header",
+      "content": "Trust Card 1"
+    },
+    {
+      "type": "text",
+      "id": "card1_icon",
+      "label": "Card 1 Icon",
+      "default": "⏱️"
+    },
+    {
+      "type": "text",
+      "id": "card1_title",
+      "label": "Card 1 Title",
+      "default": "24–48h Dispatch"
+    },
+    {
+      "type": "text",
+      "id": "card1_desc",
+      "label": "Card 1 Description",
+      "default": "Rapid order processing from regional US fulfillment hubs."
+    },
+    {
+      "type": "header",
+      "content": "Trust Card 2"
+    },
+    {
+      "type": "text",
+      "id": "card2_icon",
+      "label": "Card 2 Icon",
+      "default": "📦"
+    },
+    {
+      "type": "text",
+      "id": "card2_title",
+      "label": "Card 2 Title",
+      "default": "Insured Transit"
+    },
+    {
+      "type": "text",
+      "id": "card2_desc",
+      "label": "Card 2 Description",
+      "default": "Full protection against lost, stolen, or damaged parcels."
+    },
+    {
+      "type": "header",
+      "content": "Trust Card 3"
+    },
+    {
+      "type": "text",
+      "id": "card3_icon",
+      "label": "Card 3 Icon",
+      "default": "🔍"
+    },
+    {
+      "type": "text",
+      "id": "card3_title",
+      "label": "Card 3 Title",
+      "default": "Tracking Updates"
+    },
+    {
+      "type": "text",
+      "id": "card3_desc",
+      "label": "Card 3 Description",
+      "default": "Instant carrier tracking notifications via SMS and email."
+    },
+    {
+      "type": "header",
+      "content": "Trust Card 4"
+    },
+    {
+      "type": "text",
+      "id": "card4_icon",
+      "label": "Card 4 Icon",
+      "default": "🛡️"
+    },
+    {
+      "type": "text",
+      "id": "card4_title",
+      "label": "Card 4 Title",
+      "default": "Money-Back Guarantee"
+    },
+    {
+      "type": "text",
+      "id": "card4_desc",
+      "label": "Card 4 Description",
+      "default": "Standard 30-day return policy for peace of mind."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Doorstep Delivery & Track"
+    }
+  ]
+}
+{% endschema %}
+
+{%- assign img1_src = section.settings.shipping_img_1_url | default: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/5555.webp?v=1792856415' -%}
+{%- if section.settings.shipping_img_1 != blank -%}
+  {%- assign img1_src = section.settings.shipping_img_1 | image_url: width: 900 -%}
+{%- endif -%}
+
+{%- assign img2_src = section.settings.shipping_img_2_url | default: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/44444.webp?v=1792856415' -%}
+{%- if section.settings.shipping_img_2 != blank -%}
+  {%- assign img2_src = section.settings.shipping_img_2 | image_url: width: 900 -%}
+{%- endif -%}
+
+<section class="zv-delivery-section" id="zv-doorstep-delivery">
+  <div class="zv-container">
+    <div class="zv-delivery-layout">
+      
+      <!-- DESKTOP RIGHT (Top) / MOBILE 1ST: Header info -->
+      <div class="zv-delivery-header">
+        <span class="zv-badge zv-badge-lime">
+          <span class="zv-badge-icon">🚚</span> {{ section.settings.badge_text | default: 'FAST &amp; INSURED TRACKED US DELIVERY' }}
+        </span>
+        <h2 class="zv-delivery-title">{{ section.settings.heading | default: 'Doorstep Delivery Guarantee &amp; Real-Time Tracking' }}</h2>
+        <p class="zv-delivery-desc">
+          {{ section.settings.subheading | default: 'Every Zavelyn order is cushioned in heavy-duty protective packaging, inspected for quality, and dispatched from regional US warehouses within 24–48 business hours. We partner directly with USPS, FedEx, and DHL Express to guarantee rapid, dependable doorstep transit.' }}
+        </p>
+      </div>
+
+      <!-- DESKTOP LEFT (45%) / MOBILE 2ND: 2 Images Stacked -->
+      <div class="zv-delivery-media-col">
+        <div class="zv-delivery-img-wrap">
+          <img 
+            src="{{ img1_src }}" 
+            alt="Zavelyn Order Quality Inspection and Protective Packaging" 
+            width="600" 
+            height="403"
+            loading="lazy"
+            class="zv-delivery-img"
+          >
+        </div>
+        <div class="zv-delivery-img-wrap">
+          <img 
+            src="{{ img2_src }}" 
+            alt="Express Courier Handover and Real-Time Tracking Scan" 
+            width="600" 
+            height="254"
+            loading="lazy"
+            class="zv-delivery-img"
+          >
+        </div>
+      </div>
+
+      <!-- DESKTOP RIGHT (Bottom) / MOBILE 3RD: 4 Trust Benefit Cards -->
+      <div class="zv-delivery-cards-grid">
+        <div class="zv-trust-card">
+          <div class="zv-trust-card-icon">{{ section.settings.card1_icon | default: '⏱️' }}</div>
+          <div class="zv-trust-card-body">
+            <h3 class="zv-trust-card-title">{{ section.settings.card1_title | default: '24–48h Dispatch' }}</h3>
+            <p class="zv-trust-card-desc">{{ section.settings.card1_desc | default: 'Rapid order processing from regional US fulfillment hubs.' }}</p>
+          </div>
+        </div>
+
+        <div class="zv-trust-card">
+          <div class="zv-trust-card-icon">{{ section.settings.card2_icon | default: '📦' }}</div>
+          <div class="zv-trust-card-body">
+            <h3 class="zv-trust-card-title">{{ section.settings.card2_title | default: 'Insured Transit' }}</h3>
+            <p class="zv-trust-card-desc">{{ section.settings.card2_desc | default: 'Full protection against lost, stolen, or damaged parcels.' }}</p>
+          </div>
+        </div>
+
+        <div class="zv-trust-card">
+          <div class="zv-trust-card-icon">{{ section.settings.card3_icon | default: '🔍' }}</div>
+          <div class="zv-trust-card-body">
+            <h3 class="zv-trust-card-title">{{ section.settings.card3_title | default: 'Tracking Updates' }}</h3>
+            <p class="zv-trust-card-desc">{{ section.settings.card3_desc | default: 'Instant carrier tracking notifications via SMS and email.' }}</p>
+          </div>
+        </div>
+
+        <div class="zv-trust-card">
+          <div class="zv-trust-card-icon">{{ section.settings.card4_icon | default: '🛡️' }}</div>
+          <div class="zv-trust-card-body">
+            <h3 class="zv-trust-card-title">{{ section.settings.card4_title | default: 'Money-Back Guarantee' }}</h3>
+            <p class="zv-trust-card-desc">{{ section.settings.card4_desc | default: 'Standard 30-day return policy for peace of mind.' }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

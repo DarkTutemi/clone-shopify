@@ -1,0 +1,526 @@
+<div class="zv-babiguard-body-wrapper" id="Section-{{ section.id }}">
+  <style>
+    #Section-{{ section.id }} {
+      --lr-bg: #FAF6F2;
+      --lr-card-bg: #FFFFFF;
+      --lr-plum-dark: #2A1420;
+      --lr-wine: #6A1B36;
+      --lr-wine-light: #FFF7F9;
+      --lr-wine-border: #E8D5DD;
+      --lr-green: #2E7D32;
+      --lr-text-muted: #66555E;
+      --lr-gold: #E5A83B;
+
+      background: var(--lr-bg);
+      padding: 20px 20px 60px 20px;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--lr-plum-dark);
+      line-height: 1.65;
+    }
+    #Section-{{ section.id }} .zv-bg-container {
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+    #Section-{{ section.id }} .zv-bg-section {
+      background: var(--lr-card-bg);
+      border: 1px solid var(--lr-wine-border);
+      border-radius: 20px;
+      padding: 38px 34px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 24px rgba(42, 20, 32, 0.04);
+    }
+    #Section-{{ section.id }} .zv-bg-section h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--lr-plum-dark);
+      margin-top: 0;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    #Section-{{ section.id }} .zv-bg-section p {
+      font-size: 15.5px;
+      color: var(--lr-text-muted);
+      margin-bottom: 16px;
+    }
+    #Section-{{ section.id }} .zv-bg-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Visual Grids */
+    #Section-{{ section.id }} .zv-bg-feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+      margin-top: 24px;
+    }
+    #Section-{{ section.id }} .zv-bg-feature-media img {
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--lr-wine-border);
+      box-shadow: 0 10px 28px rgba(42, 20, 32, 0.06);
+      display: block;
+    }
+    #Section-{{ section.id }} .zv-bg-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    #Section-{{ section.id }} .zv-bg-card {
+      background: var(--lr-wine-light);
+      border: 1px solid var(--lr-wine-border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    #Section-{{ section.id }} .zv-bg-card-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    #Section-{{ section.id }} .zv-bg-card h3 {
+      font-size: 16px;
+      font-weight: 750;
+      color: var(--lr-plum-dark);
+      margin: 0 0 6px 0;
+    }
+    #Section-{{ section.id }} .zv-bg-card p {
+      font-size: 13.5px;
+      color: var(--lr-text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Milestone Steps */
+    #Section-{{ section.id }} .zv-bg-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    #Section-{{ section.id }} .zv-bg-step {
+      background: var(--lr-wine-light);
+      border: 1px solid var(--lr-wine-border);
+      border-radius: 14px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+    #Section-{{ section.id }} .zv-bg-step-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--lr-wine);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px auto;
+    }
+    #Section-{{ section.id }} .zv-bg-step h4 {
+      font-size: 15px;
+      font-weight: 750;
+      color: var(--lr-plum-dark);
+      margin: 0 0 6px 0;
+    }
+    #Section-{{ section.id }} .zv-bg-step p {
+      font-size: 12.5px;
+      color: var(--lr-text-muted);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* Specs Table */
+    #Section-{{ section.id }} .zv-bg-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 14.5px;
+    }
+    #Section-{{ section.id }} .zv-bg-table th,
+    #Section-{{ section.id }} .zv-bg-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--lr-wine-border);
+      text-align: left;
+    }
+    #Section-{{ section.id }} .zv-bg-table th {
+      width: 30%;
+      background: var(--lr-wine-light);
+      color: var(--lr-plum-dark);
+      font-weight: 750;
+    }
+    #Section-{{ section.id }} .zv-bg-table td {
+      color: var(--lr-text-muted);
+    }
+
+    /* FAQ Accordion */
+    #Section-{{ section.id }} .zv-bg-faq-item {
+      background: var(--lr-wine-light);
+      border: 1px solid var(--lr-wine-border);
+      border-radius: 14px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+    #Section-{{ section.id }} .zv-bg-faq-item[open] {
+      background: #FFFFFF;
+      border-color: var(--lr-wine);
+      box-shadow: 0 4px 14px rgba(106, 27, 54, 0.08);
+    }
+    #Section-{{ section.id }} .zv-bg-faq-summary {
+      padding: 18px 22px;
+      cursor: pointer;
+      font-weight: 750;
+      font-size: 15.5px;
+      color: var(--lr-plum-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      user-select: none;
+    }
+    #Section-{{ section.id }} .zv-bg-faq-summary::-webkit-details-marker {
+      display: none;
+    }
+    #Section-{{ section.id }} .zv-bg-faq-summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--lr-wine);
+      transition: transform 0.2s ease;
+    }
+    #Section-{{ section.id }} .zv-bg-faq-item[open] .zv-bg-faq-summary::after {
+      content: '−';
+    }
+    #Section-{{ section.id }} .zv-bg-faq-answer {
+      padding: 0 22px 20px;
+      font-size: 14.5px;
+      color: var(--lr-text-muted);
+      line-height: 1.65;
+      border-top: 1px solid var(--lr-wine-border);
+      padding-top: 14px;
+    }
+
+    /* Customer Reviews */
+    #Section-{{ section.id }} .zv-bg-reviews-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--lr-wine-border);
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    #Section-{{ section.id }} .zv-bg-stars {
+      color: var(--lr-gold);
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+    #Section-{{ section.id }} .zv-bg-score {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--lr-plum-dark);
+      margin-left: 8px;
+    }
+    #Section-{{ section.id }} .zv-bg-reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    #Section-{{ section.id }} .zv-bg-review-card {
+      background: var(--lr-wine-light);
+      border: 1px solid var(--lr-wine-border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    #Section-{{ section.id }} .zv-bg-review-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    #Section-{{ section.id }} .zv-bg-reviewer {
+      font-weight: 750;
+      font-size: 14.5px;
+      color: var(--lr-plum-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    #Section-{{ section.id }} .zv-bg-verified-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: #9A2445;
+      background: #FDECEF;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    #Section-{{ section.id }} .zv-bg-review-title {
+      font-weight: 750;
+      font-size: 14.5px;
+      color: var(--lr-plum-dark);
+      margin-bottom: 4px;
+    }
+    #Section-{{ section.id }} .zv-bg-review-text {
+      font-size: 13.5px;
+      color: var(--lr-text-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      #Section-{{ section.id }} {
+        padding: 10px 14px 40px 14px;
+      }
+      #Section-{{ section.id }} .zv-bg-section {
+        padding: 24px 18px;
+        border-radius: 16px;
+      }
+      #Section-{{ section.id }} .zv-bg-section h2 {
+        font-size: 22px;
+      }
+      #Section-{{ section.id }} .zv-bg-feature-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      #Section-{{ section.id }} .zv-bg-cards {
+        grid-template-columns: 1fr;
+      }
+      #Section-{{ section.id }} .zv-bg-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+      #Section-{{ section.id }} .zv-bg-reviews-grid {
+        grid-template-columns: 1fr;
+      }
+      #Section-{{ section.id }} .zv-bg-table th {
+        width: 40%;
+      }
+    }
+  </style>
+
+  <div class="zv-bg-container">
+    <!-- SECTION 1: THE ESSENTIAL SAFETY NET -->
+    <section class="zv-bg-section">
+      <h2><span>🛡️</span> The Essential Safety Net For Your Little Explorer</h2>
+      <p>BabiGuard is engineered specifically for the wobbly months. It softens the landing when babies tip backward on tile, hardwood, and carpet, giving them the confidence to stand right back up and keep exploring.</p>
+
+      <div class="zv-bg-feature-grid">
+        <div class="zv-bg-feature-media">
+          <img 
+            src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babiguard-head-protector-462377.jpg?v=1794055359" 
+            alt="BabiGuard Head Protector Safety Cushion" 
+            loading="lazy"
+            width="560"
+            height="560"
+          >
+        </div>
+        <div>
+          <div class="zv-bg-cards">
+            <div class="zv-bg-card">
+              <span class="zv-bg-card-icon">🎯</span>
+              <h3>Hollow Cushion Ring</h3>
+              <p>Circular center alleviates pressure on the skull while stabilizing head alignment upon backwards tumbles.</p>
+            </div>
+            <div class="zv-bg-card">
+              <span class="zv-bg-card-icon">🪶</span>
+              <h3>Ultra-Light (~220g)</h3>
+              <p>Weighs less than an apple. Babies hardly notice wearing it and move with unrestricted mobility.</p>
+            </div>
+            <div class="zv-bg-card">
+              <span class="zv-bg-card-icon">🌬️</span>
+              <h3>Breathable 3D Mesh</h3>
+              <p>Perforated honeycomb weave promotes continuous air circulation, keeping baby cool and sweat-free.</p>
+            </div>
+            <div class="zv-bg-card">
+              <span class="zv-bg-card-icon">🔒</span>
+              <h3>Reinforced Chest Clip</h3>
+              <p>Adjustable horizontal buckle prevents shoulder straps from slipping off tiny shoulders during play.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: DEVELOPMENT MILESTONES -->
+    <section class="zv-bg-section">
+      <h2><span>🌱</span> Growing with Every Milestone (5 to 24 Months)</h2>
+      <p>From the first time they sit independently to their first steps without holding onto the couch, BabiGuard provides constant peace of mind.</p>
+
+      <div class="zv-bg-steps">
+        <div class="zv-bg-step">
+          <div class="zv-bg-step-num">1</div>
+          <h4>Sitting Up</h4>
+          <p>5–8 Months · Shields against sudden backwards falling while learning torso balance.</p>
+        </div>
+        <div class="zv-bg-step">
+          <div class="zv-bg-step-num">2</div>
+          <h4>Crawling & Rolling</h4>
+          <p>7–10 Months · Full spinal and neck cushioning during energetic floor exploration.</p>
+        </div>
+        <div class="zv-bg-step">
+          <div class="zv-bg-step-num">3</div>
+          <h4>Pulling to Stand</h4>
+          <p>9–14 Months · Critical protection when releasing coffee tables and furniture edges.</p>
+        </div>
+        <div class="zv-bg-step">
+          <div class="zv-bg-step-num">4</div>
+          <h4>Independent Steps</h4>
+          <p>12–24 Months · Boosts confidence as toddlers master unassisted walking and running.</p>
+        </div>
+      </div>
+
+      <div class="zv-bg-feature-grid" style="margin-top: 28px;">
+        <div>
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--lr-plum-dark); margin-top: 0; margin-bottom: 12px;">The Secret to Fewer Tears & More Giggle</h3>
+          <p>Babies naturally learn balance through repetition. When a tumble is met with a soft, cushioned landing rather than a hard collision, toddlers bounce right back up without fear.</p>
+          <p>Designed with baby-grade hypoallergenic PP cotton and skin-friendly textiles, BabiGuard can be washed in minutes to stay fresh for everyday use.</p>
+        </div>
+        <div class="zv-bg-feature-media">
+          <img 
+            src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/babiguard-head-protector-4458910.png?v=1794055359" 
+            alt="BabiGuard 3D Cushion Protection Details" 
+            loading="lazy"
+            width="560"
+            height="560"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: FREQUENTLY ASKED QUESTIONS -->
+    <section class="zv-bg-section">
+      <h2><span>❓</span> Frequently Asked Questions</h2>
+      
+      <details class="zv-bg-faq-item">
+        <summary class="zv-bg-faq-summary">Won't this make them lose balance and fall more often?</summary>
+        <div class="zv-bg-faq-answer">
+          BabiGuard is light and soft, and most babies barely notice it once it's on. Neither we nor our customers have seen a change in balance while wearing it.
+        </div>
+      </details>
+
+      <details class="zv-bg-faq-item">
+        <summary class="zv-bg-faq-summary">Does this stop babies from learning that falling is bad?</summary>
+        <div class="zv-bg-faq-answer">
+          No. Babies learn to walk by falling, and BabiGuard doesn't change that. They still feel the wobble, the landing, and the effort of getting back up. It just takes the sting out of the hardest landings on tile and hardwood.
+        </div>
+      </details>
+
+      <details class="zv-bg-faq-item">
+        <summary class="zv-bg-faq-summary">Will this be comfortable for my child?</summary>
+        <div class="zv-bg-faq-answer">
+          Certainly! From the feedback we've received from 20,000+ happy customers, babies hardly notice it's on due to its lightweight and sleek design!
+        </div>
+      </details>
+
+      <details class="zv-bg-faq-item">
+        <summary class="zv-bg-faq-summary">Is my baby in the right age range?</summary>
+        <div class="zv-bg-faq-answer">
+          BabiGuard fits babies from about 5 to 24 months, through rolling, crawling, pulling up, and those first steps. It's made for supervised, awake play and shouldn't be worn during sleep.
+        </div>
+      </details>
+    </section>
+
+    <!-- SECTION 5: VERIFIED CUSTOMER REVIEWS -->
+    <section class="zv-bg-section">
+      <div class="zv-bg-reviews-header">
+        <h2><span>⭐</span> Real Parent Reviews</h2>
+        <div>
+          <span class="zv-bg-stars">★★★★★</span>
+          <span class="zv-bg-score">4.9 / 5.0 (97+ Verified Orders)</span>
+        </div>
+      </div>
+
+      <div class="zv-bg-reviews-grid">
+        <div class="zv-bg-review-card">
+          <div class="zv-bg-review-top">
+            <span class="zv-bg-reviewer">Jadon Ernser <span class="zv-bg-verified-badge">✔ Verified</span></span>
+            <span class="zv-bg-stars">★★★★★</span>
+          </div>
+          <div class="zv-bg-review-title">Great value</div>
+          <p class="zv-bg-review-text">Just like the picture I love it - very fluffy and soft! Fits my baby nicely.</p>
+        </div>
+
+        <div class="zv-bg-review-card">
+          <div class="zv-bg-review-top">
+            <span class="zv-bg-reviewer">Guillermo McKenzie <span class="zv-bg-verified-badge">✔ Verified</span></span>
+            <span class="zv-bg-stars">★★★★★</span>
+          </div>
+          <div class="zv-bg-review-title">Worth every penny</div>
+          <p class="zv-bg-review-text">Very good, worth every penny. Soft touch material. Resembles a backpack, has rubber bands and straps for adjustments.</p>
+        </div>
+
+        <div class="zv-bg-review-card">
+          <div class="zv-bg-review-top">
+            <span class="zv-bg-reviewer">Cassandra Dach <span class="zv-bg-verified-badge">✔ Verified</span></span>
+            <span class="zv-bg-stars">★★★★★</span>
+          </div>
+          <div class="zv-bg-review-title">Well made</div>
+          <p class="zv-bg-review-text">Looks really good, well made. I do recommend the Babiguard 👌🏻</p>
+        </div>
+
+        <div class="zv-bg-review-card">
+          <div class="zv-bg-review-top">
+            <span class="zv-bg-reviewer">Emma Morissette <span class="zv-bg-verified-badge">✔ Verified</span></span>
+            <span class="zv-bg-stars">★★★★★</span>
+          </div>
+          <div class="zv-bg-review-title">Parenting must-have!</div>
+          <p class="zv-bg-review-text">Parenting must have! Small but comfortably fits my baby's head without restricting movement.</p>
+        </div>
+
+        <div class="zv-bg-review-card">
+          <div class="zv-bg-review-top">
+            <span class="zv-bg-reviewer">Emory Kozey <span class="zv-bg-verified-badge">✔ Verified</span></span>
+            <span class="zv-bg-stars">★★★★★</span>
+          </div>
+          <div class="zv-bg-review-title">Super comfortable</div>
+          <p class="zv-bg-review-text">My baby loves it! Super comfortable and breathable. Great support and quality is top notch 👍</p>
+        </div>
+
+        <div class="zv-bg-review-card">
+          <div class="zv-bg-review-top">
+            <span class="zv-bg-reviewer">Camila Wyman <span class="zv-bg-verified-badge">✔ Verified</span></span>
+            <span class="zv-bg-stars">★★★★★</span>
+          </div>
+          <div class="zv-bg-review-title">Already worked as intended!</div>
+          <p class="zv-bg-review-text">Great :) Already worked as intended! Highly recommend for parents who want to keep their baby safe.</p>
+        </div>
+
+        <div class="zv-bg-review-card">
+          <div class="zv-bg-review-top">
+            <span class="zv-bg-reviewer">Bethany Torphy <span class="zv-bg-verified-badge">✔ Verified</span></span>
+            <span class="zv-bg-stars">★★★★★</span>
+          </div>
+          <div class="zv-bg-review-title">Looks beautiful</div>
+          <p class="zv-bg-review-text">Looks beautiful! Super happy with the pillow so far. Soft fabric and cute animal design.</p>
+        </div>
+
+        <div class="zv-bg-review-card">
+          <div class="zv-bg-review-top">
+            <span class="zv-bg-reviewer">Conner Jones <span class="zv-bg-verified-badge">✔ Verified</span></span>
+            <span class="zv-bg-stars">★★★★★</span>
+          </div>
+          <div class="zv-bg-review-title">Front buckle is the best!</div>
+          <p class="zv-bg-review-text">Woooow that was so lovely and so beautiful.. front buckle is the best thing, stays in place!</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Zavelyn BabiGuard Body",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Zavelyn BabiGuard Body"
+    }
+  ]
+}
+{% endschema %}

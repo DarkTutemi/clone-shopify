@@ -1,0 +1,77 @@
+{% comment %}
+  ZAVELYN HAIR CARE — Refined DTC Brand Footer
+{% endcomment %}
+<footer class="zvhc-footer">
+  <div class="zvhc-container">
+    <div class="zvhc-footer-grid">
+      <!-- Brand Statement -->
+      <div class="zvhc-footer-brand">
+        <a href="/" class="zvhc-logo" style="text-decoration: none;">
+          <span class="zvhc-logo-title" style="color: #FFFFFF;">ZAVELYN</span>
+          <span class="zvhc-logo-sub" style="color: var(--zvhc-gold);">HAIR CARE</span>
+        </a>
+        <p>
+          Dedicated to pure botanical scalp therapy. Wild-harvested Honduran Batana and cold-pressed plant lipids formulated to awaken follicles and rebuild strong, radiant hair.
+        </p>
+        <div style="margin-top: 14px; font-size: 0.8rem; color: #A39387;">
+          📍 Zavelyn Care Labs, 13101 Preston Rd, Suite 110, Dallas, TX 75240<br>
+          ✉️ <a href="mailto:support@tryzavelyn.com" style="color: var(--zvhc-gold); text-decoration: none;">support@tryzavelyn.com</a>
+        </div>
+      </div>
+
+      <!-- Column 1: Rituals -->
+      <div class="zvhc-footer-col">
+        <h4>TREATMENT RITUALS</h4>
+        <ul class="zvhc-footer-links">
+          <li><a href="/products/zavelyn-botanaroots-organic-batana-hair-growth-oil">Batana Hair Growth Oil</a></li>
+          <li><a href="/#concerns">Thinning Hairline &amp; Edges</a></li>
+          <li><a href="/#concerns">Breakage &amp; Split Ends</a></li>
+          <li><a href="/#concerns">Dry &amp; Flaky Scalp Care</a></li>
+          <li><a href="/#how-it-works">The 4-Step Hair Ritual</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Trust & Support -->
+      <div class="zvhc-footer-col">
+        <h4>CUSTOMER CARE</h4>
+        <ul class="zvhc-footer-links">
+          <li><a href="/#faq">60-Day Empty-Bottle Guarantee</a></li>
+          <li><a href="/pages/track-order">Track Your Order</a></li>
+          <li><a href="/policies/shipping-policy">Shipping &amp; Delivery</a></li>
+          <li><a href="/policies/refund-policy">Returns &amp; Refunds</a></li>
+          <li><a href="/policies/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/policies/terms-of-service">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Newsletter -->
+      <div class="zvhc-footer-col">
+        <h4>JOIN THE HAIR RITUAL</h4>
+        <p style="font-size: 0.84rem; color: #C7B9AF; margin-bottom: 14px; line-height: 1.5;">
+          Subscribe to receive private botanical hair wellness guides and exclusive VIP bundle access.
+        </p>
+        <form action="/contact#contact_form" method="post" style="display: flex; gap: 8px;">
+          <input type="email" name="contact[email]" placeholder="Enter your email" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); padding: 10px 14px; border-radius: 6px; color: #FFFFFF; font-size: 0.85rem; width: 100%;" required>
+          <button type="submit" style="background: var(--zvhc-gold); color: #221610; font-weight: 700; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">JOIN</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="zvhc-footer-bottom">
+      <div>&copy; {{ 'now' | date: '%Y' }} Zavelyn Hair Care Inc. All rights reserved.</div>
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <span>🇺🇸 Shipped from Regional US Warehouses</span>
+        <span>•</span>
+        <span>🔒 256-Bit SSL Encrypted Checkout</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "ZVHC Footer",
+  "settings": []
+}
+{% endschema %}

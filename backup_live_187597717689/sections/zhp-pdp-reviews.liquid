@@ -1,0 +1,61 @@
+<section class="wf-section wf-reviews-section" id="wfReviewsSec">
+  <div class="wf-container">
+    <div class="wf-center-header">
+      <span class="wf-sub-pill">{{ section.settings.pill_text | default: 'PRACTITIONER EXPERIENCES' }}</span>
+      <h2 class="wf-sec-title">{{ section.settings.title | default: 'Loved By Thousands of Sound Seekers' }}</h2>
+      <div class="wf-reviews-summary">
+        <span class="wf-stars-large">{% render 'trustpilot-stars', width: 96, height: 18 %}</span>
+        <span class="wf-rating-big">4.9 / 5.0</span>
+        <span class="wf-total-badge">{{ section.settings.rating_summary | default: '1,680+ Verified Reviews' }}</span>
+      </div>
+    </div>
+
+    <div class="wf-reviews-grid">
+      {%- for block in section.blocks -%}
+        <div class="wf-review-card" {{ block.shopify_attributes }}>
+          <div class="wf-rev-header">
+            <div class="wf-rev-avatar">{{ block.settings.author | slice: 0, 2 | upcase }}</div>
+            <div class="wf-rev-meta">
+              <span class="wf-rev-author">{{ block.settings.author }}</span>
+              <span class="wf-rev-verified">✓ Verified Practitioner</span>
+            </div>
+          </div>
+          <div class="wf-rev-stars">{% render 'trustpilot-stars', width: 80, height: 15 %}</div>
+          <h4 class="wf-rev-title">{{ block.settings.title }}</h4>
+          <p class="wf-rev-body">{{ block.settings.text }}</p>
+          <div class="wf-rev-footer">
+            <span class="wf-rev-variant">{{ block.settings.meta }}</span>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zavelyn Customer Reviews",
+  "settings": [
+    { "type": "text", "id": "pill_text", "label": "Pill Subtitle", "default": "PRACTITIONER EXPERIENCES" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Loved By Thousands of Sound Seekers" },
+    { "type": "text", "id": "rating_summary", "label": "Rating Summary Text", "default": "1,680+ Verified Reviews" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Customer Review",
+      "settings": [
+        { "type": "text", "id": "author", "label": "Author Name" },
+        { "type": "text", "id": "title", "label": "Review Headline" },
+        { "type": "textarea", "id": "text", "label": "Review Content" },
+        { "type": "text", "id": "meta", "label": "Product / Location Meta" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zavelyn Customer Reviews"
+    }
+  ]
+}
+{% endschema %}

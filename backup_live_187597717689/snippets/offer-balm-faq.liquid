@@ -1,0 +1,799 @@
+{%- liquid
+  if group != blank
+    assign b = group.settings
+  endif
+-%}
+{%- unless b.show == false -%}
+<section
+  id="senzio-faq-live"
+  class="senzio-faq-live"
+  data-senzio-faq-live
+  aria-labelledby="senzio-faq-live-title"
+  {% if group %}{{ group.shopify_attributes }}{% endif %}
+>
+  <div class="sfl-container">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="sfl-header">
+
+      <div class="sfl-title-icon" aria-hidden="true">
+        <svg viewBox="0 0 80 64" role="img">
+
+          <circle
+            class="sfl-icon-orbit"
+            cx="40"
+            cy="32"
+            r="27"
+          ></circle>
+
+          <path
+            class="sfl-icon-draw sfl-icon-stem"
+            d="M40 57V28"
+          ></path>
+
+          <path
+            class="sfl-icon-draw sfl-icon-leaf sfl-icon-leaf--left"
+            d="M39 43C25 42 16 33 15 20C29 20 39 28 42 41"
+          ></path>
+
+          <path
+            class="sfl-icon-draw sfl-icon-leaf sfl-icon-leaf--right"
+            d="M40 33C44 19 54 11 68 10C67 25 57 34 40 36"
+          ></path>
+
+          <circle
+            class="sfl-icon-dot sfl-icon-dot--one"
+            cx="13"
+            cy="32"
+            r="2.5"
+          ></circle>
+
+          <circle
+            class="sfl-icon-dot sfl-icon-dot--two"
+            cx="67"
+            cy="32"
+            r="2.5"
+          ></circle>
+
+        </svg>
+      </div>
+
+      <span class="sfl-eyebrow">
+        {{ b.eyebrow | default: 'Help Center' }}
+      </span>
+
+      <h2 id="senzio-faq-live-title">
+        {{ b.title | default: 'Questions? We Can Help.' }}
+      </h2>
+
+      <div class="sfl-title-line" aria-hidden="true">
+        <span></span>
+      </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         FAQ GRID
+    ====================================================== -->
+
+    <div class="sfl-grid">
+
+
+      <!-- ===================================================
+           FAQ 01
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_1 | default: 'How should I store the balm?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_1 != blank %}{{ b.a_1 }}{% else %}Keep the balm tightly closed and store it in a cool,
+              dry place away from direct sunlight, excessive heat,
+              and moisture. Always follow any storage instructions
+              printed on the product label.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 02
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_2 | default: 'How do I apply it?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_2 != blank %}{{ b.a_2 }}{% else %}Apply a small amount to clean, intact skin and massage
+              gently until evenly distributed. Use only as directed
+              on the product label.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 03
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_3 | default: 'How often should I use it?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_3 != blank %}{{ b.a_3 }}{% else %}Follow the directions on the product label. Many
+              customers include it in their morning and evening
+              routines.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 04
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_4 | default: 'Should I wash my hands?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_4 != blank %}{{ b.a_4 }}{% else %}Yes, unless you are applying the balm to your hands.
+              Avoid touching your eyes, mouth, and other sensitive
+              areas after application.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 05
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_5 | default: 'Can I use it on wounds?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_5 != blank %}{{ b.a_5 }}{% else %}No. Apply the balm only to clean, intact skin.
+              Do not apply it to open wounds, broken skin,
+              or irritated areas.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 06
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_6 | default: 'Is it suitable for sensitive skin?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_6 != blank %}{{ b.a_6 }}{% else %}Skin responses vary. Perform a small patch test
+              first and discontinue use if redness, burning,
+              or irritation occurs.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 07
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_7 | default: 'Is it safe for everyone?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_7 != blank %}{{ b.a_7 }}{% else %}It is for external use only. Consult a healthcare
+              professional before use on young children or if you
+              have allergies or a medical condition.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 08
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_8 | default: 'Can I use it while pregnant?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_8 != blank %}{{ b.a_8 }}{% else %}Consult your healthcare provider before using herbal
+              topical products during pregnancy or while
+              breastfeeding.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 09
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_9 | default: 'What does it feel like?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_9 != blank %}{{ b.a_9 }}{% else %}The peppermint oil may create a refreshing cooling
+              or warming sensation. Stop using it if the sensation
+              becomes uncomfortable.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 10
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_10 | default: 'How quickly does it work?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_10 != blank %}{{ b.a_10 }}{% else %}Results vary by person and area of use. Some customers
+              notice a soothing sensation shortly after application.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 11
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_11 | default: 'What ingredients are included?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_11 != blank %}{{ b.a_11 }}{% else %}The formula includes comfrey, Angelica Sinensis,
+              Angelica Dahurica, frankincense, myrrh, sesame oil,
+              peppermint oil, beeswax, and Feng Huang.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 12
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_12 | default: 'How does a topical balm work?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_12 != blank %}{{ b.a_12 }}{% else %}It is applied directly to the skin, where the oils,
+              massage, and botanical ingredients provide localized
+              cosmetic and soothing effects.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 13
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_13 | default: 'How much is in each jar?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_13 != blank %}{{ b.a_13 }}{% else %}Each jar contains 1 ounce or approximately 30 grams
+              of concentrated balm. How long it lasts depends on
+              the area and frequency of use.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 14
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_14 | default: 'When will my order arrive?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_14 != blank %}{{ b.a_14 }}{% else %}Delivery time depends on your destination and selected
+              shipping method. Tracking information is sent after
+              your order ships.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 15
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_15 | default: 'What is the refund policy?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_15 != blank %}{{ b.a_15 }}{% else %}Eligible orders are protected by our 30-Day Money-Back Guarantee. Contact support within the
+              guarantee period for assistance.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           FAQ 16
+      ==================================================== -->
+
+      <article class="sfl-item">
+
+        <button
+          class="sfl-question"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <span class="sfl-question-text">
+            {{ b.q_16 | default: 'How can I contact support?' }}
+          </span>
+
+          <span class="sfl-toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                class="sfl-plus-horizontal"
+                d="M6 12h12"
+              ></path>
+              <path
+                class="sfl-plus-vertical"
+                d="M12 6v12"
+              ></path>
+            </svg>
+          </span>
+
+        </button>
+
+        <div class="sfl-answer">
+          <div class="sfl-answer-inner">
+            <p>
+              {% if b.a_16 != blank %}{{ b.a_16 }}{% else %}Email
+              <a href="mailto:support@zavelyn.com">
+                support@zavelyn.com
+              </a>
+              for product, order, shipping, or refund assistance.{% endif %}
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+  </div>
+</section>
+{%- endunless -%}
+{{ 'zavelyn-balm-faq.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'zavelyn-balm-faq.js' | asset_url }}" defer></script>

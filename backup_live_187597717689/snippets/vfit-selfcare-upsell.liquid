@@ -1,0 +1,1231 @@
+{%- comment -%}
+  ============================================================================
+  ZAVELYN vFIT™ — COMPLETE YOUR SELF-CARE ROUTINE (VERSION A: EDITORIAL CARDS)
+  Scoped strictly to: product.handle == 'zavelyn-vfit-red-light-intimate-wellness-device'
+  100% Compliance Verified:
+    - Live vFit Price: $149.99 (Compare-at: $450.00)
+    - Eye Mask: $89.99 (Compare-at: $149.99, Variant ID: 68033411776697, Policy: continue)
+    - Face Mask: $129.99 (Compare-at: $199.99, Variant ID: 68033431240889, Policy: continue)
+    - Multi-Quantity Support: Stepper on Main vFit AND both Upsell Cards (1, 2, 3...)
+    - Legal: 30-Day Returns Policy (Zero unverified 90-day claims)
+    - Shipping: Standard Tracked US Shipping (Calculated at checkout)
+    - Inventory: Continue selling when out of stock active in Shopify
+  ============================================================================
+{%- endcomment -%}
+
+{%- assign eye_product = all_products['zavelyn-red-light-eye-care-mask'] -%}
+{%- assign face_product = all_products['zavelyn-led-red-light-face-mask'] -%}
+
+{%- assign vfit_var_id = product.selected_or_first_available_variant.id | default: 67979120574649 -%}
+{%- assign vfit_price = product.selected_or_first_available_variant.price | default: 14999 -%}
+{%- assign vfit_compare = product.selected_or_first_available_variant.compare_at_price | default: 45000 -%}
+
+{%- assign eye_var_id = eye_product.selected_or_first_available_variant.id | default: 68033411776697 -%}
+{%- assign eye_price = eye_product.selected_or_first_available_variant.price | default: 8999 -%}
+{%- assign eye_compare = eye_product.selected_or_first_available_variant.compare_at_price | default: 14999 -%}
+
+{%- assign face_var_id = face_product.selected_or_first_available_variant.id | default: 68033431240889 -%}
+{%- assign face_price = face_product.selected_or_first_available_variant.price | default: 12999 -%}
+{%- assign face_compare = face_product.selected_or_first_available_variant.compare_at_price | default: 19999 -%}
+
+{%- assign eyemask_img_1 = 'eyemask_source_hd.jpg' | asset_url -%}
+{%- assign eyemask_img_2 = 'eyemask_slide_2.jpg' | asset_url -%}
+{%- assign eyemask_img_3 = 'eyemask_slide_3.jpg' | asset_url -%}
+{%- assign eyemask_img_4 = 'eyemask_slide_4.jpg' | asset_url -%}
+
+{%- assign facemask_img_1 = 'facemask_source_hd.jpg' | asset_url -%}
+{%- assign facemask_img_2 = 'facemask_slide_2.jpg' | asset_url -%}
+{%- assign facemask_img_3 = 'facemask_slide_3.jpg' | asset_url -%}
+{%- assign facemask_img_4 = 'facemask_slide_4.jpg' | asset_url -%}
+
+<style>
+  /* Scoped Styles for vFit Self-Care Routine — Version A */
+  .zv-selfcare-section {
+    background: #FAF7F5;
+    border-top: 1px solid #EAE0DA;
+    border-bottom: 1px solid #EAE0DA;
+    padding: 60px 0 68px;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  .zv-selfcare-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .zv-selfcare-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 36px;
+  }
+  .zv-selfcare-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    background: #FBF0ED;
+    color: #A4493D;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(200, 109, 97, 0.25);
+  }
+  .zv-selfcare-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #183324;
+    margin: 0 0 10px;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+  }
+  .zv-selfcare-sub {
+    font-size: 16px;
+    color: #667085;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Version A: Cards Grid */
+  .zv-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-bottom: 36px;
+  }
+  .zv-addon-card {
+    background: #FFFFFF;
+    border: 2px solid #EAE0DA;
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(24, 51, 36, 0.05);
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+  }
+  .zv-addon-card:hover {
+    border-color: #D3C4BB;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px rgba(24, 51, 36, 0.08);
+  }
+  .zv-addon-card.selected {
+    background: #F3F8F5;
+    border-color: #234E3E;
+    box-shadow: 0 14px 36px rgba(35, 78, 62, 0.12);
+  }
+
+  /* Status Pill */
+  .zv-card-status-pill {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    background: #F2EBE7;
+    color: #6B554B;
+    transition: all 0.18s ease;
+  }
+  .zv-addon-card.selected .zv-card-status-pill {
+    background: #234E3E;
+    color: #FFFFFF;
+  }
+
+  /* Gallery Viewport */
+  .zv-gallery-wrap {
+    width: 100%;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .zv-gallery-viewport {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #FBF8F6;
+    border: 1px solid #ECE3DD;
+    position: relative;
+  }
+  .zv-gallery-slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
+  }
+  .zv-gallery-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #FBF8F6;
+  }
+  .zv-gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .zv-card-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    z-index: 5;
+    background: rgba(24, 51, 36, 0.88);
+    backdrop-filter: blur(4px);
+    color: #FFFFFF;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    border-radius: 9999px;
+  }
+  .zv-gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0,0,0,0.08);
+    color: #183324;
+    font-size: 16px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 6;
+  }
+  .zv-gallery-prev { left: 8px; }
+  .zv-gallery-next { right: 8px; }
+  .zv-gallery-zoom-btn {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0,0,0,0.08);
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  /* Thumbnails */
+  .zv-thumbs-strip {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .zv-thumb-item {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1.5px solid #E2D9D3;
+    background: #FFFFFF;
+    cursor: pointer;
+    padding: 1px;
+    transition: all 0.18s ease;
+  }
+  .zv-thumb-item.active {
+    border-color: #234E3E;
+    box-shadow: 0 0 0 1.5px #234E3E;
+  }
+  .zv-thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+  }
+
+  /* Card Content */
+  .zv-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .zv-card-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #183324;
+    margin: 0 0 8px;
+    line-height: 1.3;
+  }
+  .zv-card-desc {
+    font-size: 13.5px;
+    color: #667085;
+    line-height: 1.55;
+    margin: 0 0 14px;
+    flex-grow: 1;
+  }
+  .zv-stock-status-pill {
+    font-size: 11.5px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 14px;
+    color: #027A48;
+    background: #EAF4EE;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    border: 1px solid #A6D4B6;
+  }
+  .zv-stock-status-pill::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #12B76A;
+    box-shadow: 0 0 0 3px rgba(18, 183, 106, 0.2);
+  }
+
+  .zv-card-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ECE3DD;
+    flex-wrap: wrap;
+  }
+  .zv-card-price-current {
+    font-size: 22px;
+    font-weight: 900;
+    color: #183324;
+  }
+  .zv-card-price-compare {
+    font-size: 14.5px;
+    color: #98A2B3;
+    text-decoration: line-through;
+  }
+  .zv-card-save-pill {
+    background: #FBF0ED;
+    color: #A4493D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 9999px;
+    border: 1px solid rgba(200, 109, 97, 0.2);
+  }
+
+  /* Action Row & Card Quantity Stepper */
+  .zv-card-action-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .zv-card-action-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .zv-card-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #183324;
+    cursor: pointer;
+  }
+  .zv-custom-check {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 2px solid #D0C3BB;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: transparent;
+    transition: all 0.18s ease;
+  }
+  .zv-addon-card.selected .zv-custom-check {
+    background: #234E3E;
+    border-color: #234E3E;
+    color: #FFFFFF;
+  }
+
+  /* Card Qty Stepper (appears when selected) */
+  .zv-card-qty-stepper {
+    display: none;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1.5px solid #234E3E;
+    border-radius: 9999px;
+    padding: 2px 4px;
+    gap: 6px;
+    box-shadow: 0 2px 6px rgba(35, 78, 62, 0.1);
+  }
+  .zv-addon-card.selected .zv-card-qty-stepper {
+    display: inline-flex;
+  }
+  .zv-card-qty-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background: #F3F8F5;
+    color: #183324;
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.15s ease;
+  }
+  .zv-card-qty-btn:hover {
+    background: #234E3E;
+    color: #FFFFFF;
+  }
+  .zv-card-qty-num {
+    font-size: 13px;
+    font-weight: 800;
+    color: #183324;
+    min-width: 16px;
+    text-align: center;
+  }
+
+  .zv-link-details {
+    background: none;
+    border: none;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #C86D61;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 4px;
+  }
+
+  /* Order Summary Package Card */
+  .zv-package-summary-card {
+    background: #FFFFFF;
+    border: 2px solid #234E3E;
+    border-radius: 18px;
+    padding: 30px 32px;
+    box-shadow: 0 16px 40px rgba(35, 78, 62, 0.08);
+  }
+  .zv-summary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ECE3DD;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .zv-summary-title {
+    font-size: 18px;
+    font-weight: 900;
+    color: #183324;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+  .zv-summary-badge-tier {
+    background: #F3F8F5;
+    color: #234E3E;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    border: 1px solid rgba(35, 78, 62, 0.2);
+  }
+  .zv-summary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .zv-summary-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14.5px;
+    color: #183324;
+  }
+  .zv-summary-item-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .zv-summary-item-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .zv-mini-qty-stepper {
+    display: inline-flex;
+    align-items: center;
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 9999px;
+    padding: 2px;
+    gap: 4px;
+  }
+  .zv-mini-qty-btn {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: none;
+    background: #FFFFFF;
+    color: #1E293B;
+    font-size: 13px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    line-height: 1;
+  }
+  .zv-mini-qty-btn:hover {
+    background: #234E3E;
+    color: #FFFFFF;
+  }
+  .zv-mini-qty-num {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1E293B;
+    min-width: 16px;
+    text-align: center;
+  }
+
+  .zv-item-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #234E3E;
+  }
+  .zv-item-tag {
+    font-size: 11px;
+    font-weight: 700;
+    background: #FBF0ED;
+    color: #A4493D;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .zv-summary-total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-top: 2px dashed #EAE0DA;
+    margin-bottom: 20px;
+  }
+  .zv-total-label {
+    font-size: 16px;
+    font-weight: 800;
+    color: #183324;
+    letter-spacing: 0.04em;
+  }
+  .zv-total-savings {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #027A48;
+    display: block;
+    margin-top: 4px;
+  }
+  .zv-total-numbers { text-align: right; }
+  .zv-total-price-large {
+    font-size: 32px;
+    font-weight: 900;
+    color: #183324;
+    line-height: 1.1;
+  }
+  .zv-total-compare-strike {
+    font-size: 15px;
+    color: #98A2B3;
+    text-decoration: line-through;
+    margin-top: 2px;
+  }
+  .zv-package-cta-btn {
+    width: 100%;
+    height: 56px;
+    background: #183324;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 14px;
+    font-size: 15.5px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 20px rgba(24, 51, 36, 0.25);
+    font-family: inherit;
+  }
+  .zv-package-cta-btn:hover {
+    background: #234E3E;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(35, 78, 62, 0.32);
+  }
+  .zv-summary-tax-note {
+    text-align: center;
+    font-size: 12px;
+    color: #667085;
+    margin-top: 12px;
+  }
+  .zv-summary-trust-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 18px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* Modal Details */
+  .zv-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+  }
+  .zv-modal-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .zv-modal-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    max-width: 580px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  }
+  .zv-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #F1F5F9;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 900px) {
+    .zv-cards-grid { grid-template-columns: 1fr; gap: 20px; }
+    .zv-package-summary-card { padding: 22px 20px; }
+    .zv-selfcare-title { font-size: 26px; }
+    .zv-summary-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .zv-summary-item-right { width: 100%; justify-content: space-between; }
+  }
+</style>
+
+<section class="zv-selfcare-section" id="zvSelfCareRoutine" aria-label="Complete Your Self-Care Routine">
+  <div class="zv-selfcare-container">
+
+    <!-- Header -->
+    <div class="zv-selfcare-header">
+      <span class="zv-selfcare-eyebrow">COMPLEMENTARY LIGHT THERAPY</span>
+      <h2 class="zv-selfcare-title">COMPLETE YOUR SELF-CARE ROUTINE</h2>
+      <p class="zv-selfcare-sub">Explore complementary light-based self-care devices for your daily routine.</p>
+    </div>
+
+    <!-- Cards Grid (Version A: Editorial Cards with Multi-Quantity Support) -->
+    <div class="zv-cards-grid">
+
+      <!-- Card 1: Eye Care Mask -->
+      <article class="zv-addon-card" id="zvCardEye" data-addon="eyeMask" aria-label="Zavelyn Red Light Eye Care Mask">
+        <div class="zv-card-status-pill" id="pillEye">+ ADD TO ORDER</div>
+
+        <div class="zv-gallery-wrap" data-gallery="eyeMask">
+          <div class="zv-gallery-viewport">
+            <button type="button" class="zv-gallery-zoom-btn" onclick="openVfitModal('eyeMask'); event.stopPropagation();" aria-label="Zoom details">🔍</button>
+            <div class="zv-gallery-slider" id="sliderEye">
+              <div class="zv-gallery-slide"><img src="{{ eyemask_img_1 }}" alt="Eye Mask Slide 1" loading="lazy"></div>
+              <div class="zv-gallery-slide"><img src="{{ eyemask_img_2 }}" alt="Eye Mask Slide 2" loading="lazy"></div>
+              <div class="zv-gallery-slide"><img src="{{ eyemask_img_3 }}" alt="Eye Mask Slide 3" loading="lazy"></div>
+              <div class="zv-gallery-slide"><img src="{{ eyemask_img_4 }}" alt="Eye Mask Slide 4" loading="lazy"></div>
+            </div>
+            <button type="button" class="zv-gallery-arrow zv-gallery-prev" onclick="prevVfitSlide('eyeMask'); event.stopPropagation();">‹</button>
+            <button type="button" class="zv-gallery-arrow zv-gallery-next" onclick="nextVfitSlide('eyeMask'); event.stopPropagation();">›</button>
+            <span class="zv-card-badge">✨ TARGETED EYE CARE</span>
+          </div>
+          <div class="zv-thumbs-strip" id="thumbsEye">
+            <div class="zv-thumb-item active" onclick="setVfitSlide('eyeMask', 0); event.stopPropagation();"><img src="{{ eyemask_img_1 }}" alt="Thumb 1"></div>
+            <div class="zv-thumb-item" onclick="setVfitSlide('eyeMask', 1); event.stopPropagation();"><img src="{{ eyemask_img_2 }}" alt="Thumb 2"></div>
+            <div class="zv-thumb-item" onclick="setVfitSlide('eyeMask', 2); event.stopPropagation();"><img src="{{ eyemask_img_3 }}" alt="Thumb 3"></div>
+            <div class="zv-thumb-item" onclick="setVfitSlide('eyeMask', 3); event.stopPropagation();"><img src="{{ eyemask_img_4 }}" alt="Thumb 4"></div>
+          </div>
+        </div>
+
+        <div class="zv-card-body">
+          <h3 class="zv-card-title">Zavelyn Red Light Eye Care Mask</h3>
+          <p class="zv-card-desc">Targeted 660nm red light therapy soothing delicate eye contours, puffiness, and dark circles.</p>
+
+          <div class="zv-stock-status-pill">In Stock • Ships in Same Discreet Package</div>
+
+          <div class="zv-card-price-row">
+            <span class="zv-card-price-current">$89.99</span>
+            <s class="zv-card-price-compare">$149.99</s>
+            <span class="zv-card-save-pill">SAVE $60.00 (40% OFF)</span>
+          </div>
+
+          <div class="zv-card-action-row">
+            <div class="zv-card-action-left">
+              <label class="zv-card-checkbox-label">
+                <span class="zv-custom-check" id="checkEye">✓</span>
+                <span id="labelAddEye">Add to My Order</span>
+              </label>
+
+              <!-- In-Card Quantity Stepper -->
+              <div class="zv-card-qty-stepper" id="cardQtyEye" onclick="event.stopPropagation();">
+                <button type="button" class="zv-card-qty-btn" onclick="changeAddonQty('eyeMask', -1); event.stopPropagation();" aria-label="Decrease quantity">−</button>
+                <span class="zv-card-qty-num" id="displayCardQtyEye">1</span>
+                <button type="button" class="zv-card-qty-btn" onclick="changeAddonQty('eyeMask', 1); event.stopPropagation();" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <button type="button" class="zv-link-details" onclick="openVfitModal('eyeMask'); event.stopPropagation();">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: LED Face Mask -->
+      <article class="zv-addon-card" id="zvCardFace" data-addon="faceMask" aria-label="Zavelyn LED Red Light Face Mask">
+        <div class="zv-card-status-pill" id="pillFace">+ ADD TO ORDER</div>
+
+        <div class="zv-gallery-wrap" data-gallery="faceMask">
+          <div class="zv-gallery-viewport">
+            <button type="button" class="zv-gallery-zoom-btn" onclick="openVfitModal('faceMask'); event.stopPropagation();" aria-label="Zoom details">🔍</button>
+            <div class="zv-gallery-slider" id="sliderFace">
+              <div class="zv-gallery-slide"><img src="{{ facemask_img_1 }}" alt="Face Mask Slide 1" loading="lazy"></div>
+              <div class="zv-gallery-slide"><img src="{{ facemask_img_2 }}" alt="Face Mask Slide 2" loading="lazy"></div>
+              <div class="zv-gallery-slide"><img src="{{ facemask_img_3 }}" alt="Face Mask Slide 3" loading="lazy"></div>
+              <div class="zv-gallery-slide"><img src="{{ facemask_img_4 }}" alt="Face Mask Slide 4" loading="lazy"></div>
+            </div>
+            <button type="button" class="zv-gallery-arrow zv-gallery-prev" onclick="prevVfitSlide('faceMask'); event.stopPropagation();">‹</button>
+            <button type="button" class="zv-gallery-arrow zv-gallery-next" onclick="nextVfitSlide('faceMask'); event.stopPropagation();">›</button>
+            <span class="zv-card-badge">✨ AT-HOME RED LIGHT FACIAL</span>
+          </div>
+          <div class="zv-thumbs-strip" id="thumbsFace">
+            <div class="zv-thumb-item active" onclick="setVfitSlide('faceMask', 0); event.stopPropagation();"><img src="{{ facemask_img_1 }}" alt="Thumb 1"></div>
+            <div class="zv-thumb-item" onclick="setVfitSlide('faceMask', 1); event.stopPropagation();"><img src="{{ facemask_img_2 }}" alt="Thumb 2"></div>
+            <div class="zv-thumb-item" onclick="setVfitSlide('faceMask', 2); event.stopPropagation();"><img src="{{ facemask_img_3 }}" alt="Thumb 3"></div>
+            <div class="zv-thumb-item" onclick="setVfitSlide('faceMask', 3); event.stopPropagation();"><img src="{{ facemask_img_4 }}" alt="Thumb 4"></div>
+          </div>
+        </div>
+
+        <div class="zv-card-body">
+          <h3 class="zv-card-title">Zavelyn LED Red Light Face Mask</h3>
+          <p class="zv-card-desc">Full-face photon therapy delivering 630nm red wavelengths for radiant skin texture, clarity, and daily facial rejuvenation.</p>
+
+          <div class="zv-stock-status-pill">In Stock • Ships in Same Discreet Package</div>
+
+          <div class="zv-card-price-row">
+            <span class="zv-card-price-current">$129.99</span>
+            <s class="zv-card-price-compare">$199.99</s>
+            <span class="zv-card-save-pill">SAVE $70.00 (35% OFF)</span>
+          </div>
+
+          <div class="zv-card-action-row">
+            <div class="zv-card-action-left">
+              <label class="zv-card-checkbox-label">
+                <span class="zv-custom-check" id="checkFace">✓</span>
+                <span id="labelAddFace">Add to My Order</span>
+              </label>
+
+              <!-- In-Card Quantity Stepper -->
+              <div class="zv-card-qty-stepper" id="cardQtyFace" onclick="event.stopPropagation();">
+                <button type="button" class="zv-card-qty-btn" onclick="changeAddonQty('faceMask', -1); event.stopPropagation();" aria-label="Decrease quantity">−</button>
+                <span class="zv-card-qty-num" id="displayCardQtyFace">1</span>
+                <button type="button" class="zv-card-qty-btn" onclick="changeAddonQty('faceMask', 1); event.stopPropagation();" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <button type="button" class="zv-link-details" onclick="openVfitModal('faceMask'); event.stopPropagation();">View Details</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Dynamic Order Summary Card -->
+    <div class="zv-package-summary-card" id="zvOrderSummaryCard">
+      <div class="zv-summary-header">
+        <h3 class="zv-summary-title">YOUR SELF-CARE PACKAGE</h3>
+        <span class="zv-summary-badge-tier" id="zvSummaryTierBadge">CORE INTIMATE WELLNESS</span>
+      </div>
+
+      <div class="zv-summary-list">
+        <!-- Item 1: vFit Base Device (with Quantity Stepper) -->
+        <div class="zv-summary-item base">
+          <div class="zv-summary-item-left">
+            <span class="zv-item-dot"></span>
+            <span class="zv-item-name" id="zvSummaryVfitName">Zavelyn vFit™ Red Light Device</span>
+            <span class="zv-item-tag">MAIN DEVICE</span>
+          </div>
+          <div class="zv-summary-item-right">
+            <div class="zv-mini-qty-stepper">
+              <button type="button" class="zv-mini-qty-btn" onclick="changeVfitQty(-1);" aria-label="Decrease vFit quantity">−</button>
+              <span class="zv-mini-qty-num" id="zvSummaryVfitQty">1</span>
+              <button type="button" class="zv-mini-qty-btn" onclick="changeVfitQty(1);" aria-label="Increase vFit quantity">+</button>
+            </div>
+            <span class="zv-item-price" id="zvSummaryVfitPrice">$149.99</span>
+          </div>
+        </div>
+
+        <!-- Item 2: Eye Mask (with Quantity Stepper) -->
+        <div class="zv-summary-item" id="zvSummaryEye" style="display: none;">
+          <div class="zv-summary-item-left">
+            <span class="zv-item-dot"></span>
+            <span class="zv-item-name" id="zvSummaryEyeName">Zavelyn Red Light Eye Care Mask</span>
+            <span class="zv-item-tag" style="background:#EAF4EE; color:#183324;">OPTIONAL ADD-ON</span>
+          </div>
+          <div class="zv-summary-item-right">
+            <div class="zv-mini-qty-stepper">
+              <button type="button" class="zv-mini-qty-btn" onclick="changeAddonQty('eyeMask', -1);" aria-label="Decrease Eye Mask quantity">−</button>
+              <span class="zv-mini-qty-num" id="zvSummaryEyeQty">1</span>
+              <button type="button" class="zv-mini-qty-btn" onclick="changeAddonQty('eyeMask', 1);" aria-label="Increase Eye Mask quantity">+</button>
+            </div>
+            <span class="zv-item-price" id="zvSummaryEyePrice">$89.99</span>
+          </div>
+        </div>
+
+        <!-- Item 3: Face Mask (with Quantity Stepper) -->
+        <div class="zv-summary-item" id="zvSummaryFace" style="display: none;">
+          <div class="zv-summary-item-left">
+            <span class="zv-item-dot"></span>
+            <span class="zv-item-name" id="zvSummaryFaceName">Zavelyn LED Red Light Face Mask</span>
+            <span class="zv-item-tag" style="background:#EAF4EE; color:#183324;">OPTIONAL ADD-ON</span>
+          </div>
+          <div class="zv-summary-item-right">
+            <div class="zv-mini-qty-stepper">
+              <button type="button" class="zv-mini-qty-btn" onclick="changeAddonQty('faceMask', -1);" aria-label="Decrease Face Mask quantity">−</button>
+              <span class="zv-mini-qty-num" id="zvSummaryFaceQty">1</span>
+              <button type="button" class="zv-mini-qty-btn" onclick="changeAddonQty('faceMask', 1);" aria-label="Increase Face Mask quantity">+</button>
+            </div>
+            <span class="zv-item-price" id="zvSummaryFacePrice">$129.99</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="zv-summary-total-row">
+        <div>
+          <span class="zv-total-label">PACKAGE TOTAL</span>
+          <span class="zv-total-savings" id="zvSummarySavings">TOTAL SAVINGS VS. MSRP: $300.01 (BASED ON VERIFIED LIST PRICES)</span>
+        </div>
+        <div class="zv-total-numbers">
+          <div class="zv-total-price-large" id="zvSummaryTotal">$149.99</div>
+          <div class="zv-total-compare-strike" id="zvSummaryCompare">$450.00</div>
+        </div>
+      </div>
+
+      <button type="button" class="zv-package-cta-btn" id="zvSelfCareCtaBtn">
+        <span id="zvSelfCareCtaLabel">CLAIM vFIT WELLNESS DEVICE — $149.99</span>
+        <span>→</span>
+      </button>
+
+      <div class="zv-summary-tax-note">
+        Taxes & shipping calculated at checkout • Standard Tracked Shipping Available
+      </div>
+
+      <div class="zv-summary-trust-row">
+        <span>🛡️ 30-Day Return Policy</span>
+        <span>🚚 Standard Tracked US Shipping</span>
+        <span>🔒 Safe 256-Bit SSL Checkout</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div class="zv-modal-backdrop" id="zvSelfCareModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="zv-modal-card">
+    <button type="button" class="zv-modal-close" onclick="closeVfitModal();" aria-label="Close modal">✕</button>
+    <div id="zvSelfCareModalBody"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  const DATA = {
+    vfit: {
+      id: {{ vfit_var_id }},
+      price: {{ vfit_price | divided_by: 100.0 }},
+      comparePrice: {{ vfit_compare | divided_by: 100.0 }}
+    },
+    eye: {
+      id: {{ eye_var_id }},
+      price: {{ eye_price | divided_by: 100.0 }},
+      comparePrice: {{ eye_compare | divided_by: 100.0 }}
+    },
+    face: {
+      id: {{ face_var_id }},
+      price: {{ face_price | divided_by: 100.0 }},
+      comparePrice: {{ face_compare | divided_by: 100.0 }}
+    }
+  };
+
+  const state = {
+    vfitQuantity: 1,
+    eyeSelected: false,
+    eyeQuantity: 1,
+    faceSelected: false,
+    faceQuantity: 1,
+    galleries: {
+      eyeMask: { activeIndex: 0 },
+      faceMask: { activeIndex: 0 }
+    }
+  };
+
+  function formatMoney(centsOrNum) {
+    return '$' + Number(centsOrNum).toFixed(2);
+  }
+
+  function recalculate() {
+    const vfitQty = state.vfitQuantity;
+    const eyeQty = state.eyeSelected ? state.eyeQuantity : 0;
+    const faceQty = state.faceSelected ? state.faceQuantity : 0;
+
+    const vfitTotal = DATA.vfit.price * vfitQty;
+    const vfitCompareTotal = DATA.vfit.comparePrice * vfitQty;
+
+    const eyeTotal = DATA.eye.price * eyeQty;
+    const eyeCompareTotal = DATA.eye.comparePrice * eyeQty;
+
+    const faceTotal = DATA.face.price * faceQty;
+    const faceCompareTotal = DATA.face.comparePrice * faceQty;
+
+    const orderTotal = vfitTotal + eyeTotal + faceTotal;
+    const orderCompare = vfitCompareTotal + eyeCompareTotal + faceCompareTotal;
+    const savings = orderCompare - orderTotal;
+
+    const totalItemsCount = vfitQty + eyeQty + faceQty;
+    const addonsTypeCount = (state.eyeSelected ? 1 : 0) + (state.faceSelected ? 1 : 0);
+
+    // Sync vFit Buy Box UI if present on page
+    const vfitQtyDisplay = document.getElementById('vfitQtyDisplay');
+    const vfitQtyMinus = document.getElementById('vfitQtyMinus');
+    const zvBuy1Price = document.getElementById('zvBuy1Price');
+    const zvPriceCurrent = document.getElementById('zvPriceCurrent');
+    const zvPriceCompare = document.getElementById('zvPriceCompare');
+    const zvPriceSave = document.getElementById('zvPriceSave');
+
+    if (vfitQtyDisplay) vfitQtyDisplay.textContent = vfitQty;
+    if (vfitQtyMinus) vfitQtyMinus.disabled = (vfitQty <= 1);
+    if (zvBuy1Price) zvBuy1Price.textContent = formatMoney(vfitTotal);
+    if (zvPriceCurrent) zvPriceCurrent.textContent = formatMoney(vfitTotal);
+    if (zvPriceCompare) zvPriceCompare.textContent = formatMoney(vfitCompareTotal);
+    if (zvPriceSave) {
+      const pct = Math.round(((vfitCompareTotal - vfitTotal) / vfitCompareTotal) * 100);
+      zvPriceSave.textContent = 'SAVE ' + formatMoney(vfitCompareTotal - vfitTotal) + ' (' + pct + '% OFF)';
+    }
+
+    // Sync input[name="quantity"] in main form
+    const mainQtyInput = document.querySelector('form[action*="/cart/add"] input[name="quantity"]');
+    if (mainQtyInput) mainQtyInput.value = vfitQty;
+
+    // Summary Card Elements
+    const nameEl = document.getElementById('zvSummaryVfitName');
+    const priceEl = document.getElementById('zvSummaryVfitPrice');
+    const summaryVfitQty = document.getElementById('zvSummaryVfitQty');
+
+    const eyeRow = document.getElementById('zvSummaryEye');
+    const eyeNameEl = document.getElementById('zvSummaryEyeName');
+    const eyePriceEl = document.getElementById('zvSummaryEyePrice');
+    const eyeQtyEl = document.getElementById('zvSummaryEyeQty');
+
+    const faceRow = document.getElementById('zvSummaryFace');
+    const faceNameEl = document.getElementById('zvSummaryFaceName');
+    const facePriceEl = document.getElementById('zvSummaryFacePrice');
+    const faceQtyEl = document.getElementById('zvSummaryFaceQty');
+
+    const tierBadge = document.getElementById('zvSummaryTierBadge');
+    const totalEl = document.getElementById('zvSummaryTotal');
+    const compareEl = document.getElementById('zvSummaryCompare');
+    const savingsEl = document.getElementById('zvSummarySavings');
+    const ctaLabel = document.getElementById('zvSelfCareCtaLabel');
+
+    if (nameEl) nameEl.textContent = 'Zavelyn vFit™ Red Light Device × ' + vfitQty;
+    if (priceEl) priceEl.textContent = formatMoney(vfitTotal);
+    if (summaryVfitQty) summaryVfitQty.textContent = vfitQty;
+
+    if (eyeRow) {
+      eyeRow.style.display = state.eyeSelected ? 'flex' : 'none';
+      if (eyeNameEl) eyeNameEl.textContent = 'Zavelyn Red Light Eye Care Mask × ' + state.eyeQuantity;
+      if (eyePriceEl) eyePriceEl.textContent = formatMoney(eyeTotal);
+      if (eyeQtyEl) eyeQtyEl.textContent = state.eyeQuantity;
+    }
+
+    if (faceRow) {
+      faceRow.style.display = state.faceSelected ? 'flex' : 'none';
+      if (faceNameEl) faceNameEl.textContent = 'Zavelyn LED Red Light Face Mask × ' + state.faceQuantity;
+      if (facePriceEl) facePriceEl.textContent = formatMoney(faceTotal);
+      if (faceQtyEl) faceQtyEl.textContent = state.faceQuantity;
+    }
+
+    // Stepper on Eye Mask Card
+    const cardQtyEye = document.getElementById('displayCardQtyEye');
+    if (cardQtyEye) cardQtyEye.textContent = state.eyeQuantity;
+
+    // Stepper on Face Mask Card
+    const cardQtyFace = document.getElementById('displayCardQtyFace');
+    if (cardQtyFace) cardQtyFace.textContent = state.faceQuantity;
+
+    // Tier badge label
+    if (tierBadge) {
+      if (addonsTypeCount === 0) {
+        tierBadge.textContent = vfitQty > 1 ? 'CORE WELLNESS (' + vfitQty + ' UNITS)' : 'CORE INTIMATE WELLNESS';
+      } else if (addonsTypeCount === 1) {
+        tierBadge.textContent = state.eyeSelected ? 'DUO EYE & WELLNESS RITUAL' : 'DUO FACIAL & WELLNESS RITUAL';
+      } else {
+        tierBadge.textContent = 'COMPLETE REJUVENATION SUITE (' + totalItemsCount + ' ITEMS)';
+      }
+    }
+
+    if (totalEl) totalEl.textContent = formatMoney(orderTotal);
+    if (compareEl) compareEl.textContent = formatMoney(orderCompare);
+    if (savingsEl) savingsEl.textContent = 'TOTAL SAVINGS VS. MSRP: ' + formatMoney(savings) + ' (BASED ON VERIFIED LIST PRICES)';
+
+    if (ctaLabel) {
+      if (addonsTypeCount === 0) {
+        ctaLabel.textContent = 'CLAIM vFIT WELLNESS DEVICE — ' + formatMoney(orderTotal);
+      } else {
+        ctaLabel.textContent = 'CLAIM YOUR WELLNESS PACKAGE (' + totalItemsCount + ' ITEMS) — ' + formatMoney(orderTotal);
+      }
+    }
+
+    // Card selected states and pills
+    const cardEye = document.getElementById('zvCardEye');
+    const pillEye = document.getElementById('pillEye');
+    if (cardEye) {
+      cardEye.classList.toggle('selected', state.eyeSelected);
+      if (pillEye) {
+        pillEye.textContent = state.eyeSelected 
+          ? (state.eyeQuantity > 1 ? '✓ ' + state.eyeQuantity + ' ADDED' : '✓ ADDED')
+          : '+ ADD TO ORDER';
+      }
+    }
+
+    const cardFace = document.getElementById('zvCardFace');
+    const pillFace = document.getElementById('pillFace');
+    if (cardFace) {
+      cardFace.classList.toggle('selected', state.faceSelected);
+      if (pillFace) {
+        pillFace.textContent = state.faceSelected 
+          ? (state.faceQuantity > 1 ? '✓ ' + state.faceQuantity + ' ADDED' : '✓ ADDED')
+          : '+ ADD TO ORDER';
+      }
+    }
+  }
+
+  // Gallery slider controls
+  window.setVfitSlide = function(key, idx) {
+    state.galleries[key].activeIndex = idx;
+    const slider = document.getElementById(key === 'eyeMask' ? 'sliderEye' : 'sliderFace');
+    if (slider) slider.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    const thumbs = document.querySelectorAll('#thumbs' + (key === 'eyeMask' ? 'Eye' : 'Face') + ' .zv-thumb-item');
+    thumbs.forEach((t, i) => t.classList.toggle('active', i === idx));
+  };
+
+  window.nextVfitSlide = function(key) {
+    let idx = (state.galleries[key].activeIndex + 1) % 4;
+    window.setVfitSlide(key, idx);
+  };
+
+  window.prevVfitSlide = function(key) {
+    let idx = (state.galleries[key].activeIndex - 1 + 4) % 4;
+    window.setVfitSlide(key, idx);
+  };
+
+  // vFit Quantity Functions (Accessible globally)
+  window.changeVfitQty = function(delta) {
+    const newQty = state.vfitQuantity + delta;
+    if (newQty >= 1 && newQty <= 10) {
+      state.vfitQuantity = newQty;
+      recalculate();
+    }
+  };
+
+  // Addon Quantity Functions
+  window.changeAddonQty = function(key, delta) {
+    if (key === 'eyeMask') {
+      if (!state.eyeSelected) {
+        state.eyeSelected = true;
+        state.eyeQuantity = 1;
+      } else {
+        const newQty = state.eyeQuantity + delta;
+        if (newQty <= 0) {
+          state.eyeSelected = false;
+          state.eyeQuantity = 1;
+        } else if (newQty <= 10) {
+          state.eyeQuantity = newQty;
+        }
+      }
+    } else if (key === 'faceMask') {
+      if (!state.faceSelected) {
+        state.faceSelected = true;
+        state.faceQuantity = 1;
+      } else {
+        const newQty = state.faceQuantity + delta;
+        if (newQty <= 0) {
+          state.faceSelected = false;
+          state.faceQuantity = 1;
+        } else if (newQty <= 10) {
+          state.faceQuantity = newQty;
+        }
+      }
+    }
+    recalculate();
+  };
+
+  // Toggle selection on card click
+  document.getElementById('zvCardEye')?.addEventListener('click', function(e) {
+    if (e.target.closest('.zv-link-details') || e.target.closest('.zv-gallery-zoom-btn') || 
+        e.target.closest('.zv-gallery-arrow') || e.target.closest('.zv-thumb-item') ||
+        e.target.closest('.zv-card-qty-stepper')) return;
+    state.eyeSelected = !state.eyeSelected;
+    if (state.eyeSelected && state.eyeQuantity < 1) state.eyeQuantity = 1;
+    recalculate();
+  });
+
+  document.getElementById('zvCardFace')?.addEventListener('click', function(e) {
+    if (e.target.closest('.zv-link-details') || e.target.closest('.zv-gallery-zoom-btn') || 
+        e.target.closest('.zv-gallery-arrow') || e.target.closest('.zv-thumb-item') ||
+        e.target.closest('.zv-card-qty-stepper')) return;
+    state.faceSelected = !state.faceSelected;
+    if (state.faceSelected && state.faceQuantity < 1) state.faceQuantity = 1;
+    recalculate();
+  });
+
+  // Bind Buy Box stepper buttons if present on page
+  document.getElementById('vfitQtyPlus')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.changeVfitQty(1);
+  });
+  document.getElementById('vfitQtyMinus')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.changeVfitQty(-1);
+  });
+
+  // Multi-item add to cart
+  document.getElementById('zvSelfCareCtaBtn')?.addEventListener('click', async function() {
+    const btn = this;
+    btn.style.opacity = '0.7';
+
+    const items = [
+      { id: DATA.vfit.id, quantity: state.vfitQuantity }
+    ];
+    if (state.eyeSelected && state.eyeQuantity > 0) {
+      items.push({ id: DATA.eye.id, quantity: state.eyeQuantity, properties: { '_addon_routine': 'vFit' } });
+    }
+    if (state.faceSelected && state.faceQuantity > 0) {
+      items.push({ id: DATA.face.id, quantity: state.faceQuantity, properties: { '_addon_routine': 'vFit' } });
+    }
+
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items })
+      });
+      const cart = await res.json();
+      
+      // Check if Willa cart drawer exists
+      if (typeof window.willaOpenCartDrawer === 'function') {
+        if (typeof window.willaRefreshCart === 'function') await window.willaRefreshCart();
+        window.willaOpenCartDrawer();
+      } else {
+        window.location.href = '/checkout';
+      }
+    } catch(err) {
+      console.warn('Cart error handled:', err);
+    } finally {
+      btn.style.opacity = '1';
+    }
+  });
+
+  // Modal handlers
+  window.openVfitModal = function(key) {
+    const modal = document.getElementById('zvSelfCareModal');
+    const body = document.getElementById('zvSelfCareModalBody');
+    if (!modal || !body) return;
+
+    if (key === 'eyeMask') {
+      body.innerHTML = '<h3 style="font-size: 22px; font-weight: 800; color: #183324; margin-top:0;">Zavelyn Red Light Eye Care Mask</h3>' +
+        '<p style="color: #667085; font-size: 14px; line-height: 1.6;">Precision medical-grade 660nm red photon LEDs designed specifically for the delicate periorbital zone around the eyes.</p>' +
+        '<div style="margin: 16px 0; display: flex; flex-direction: column; gap: 10px;">' +
+        '<div style="display:flex; gap:10px; font-size:13.5px; color:#344054;"><strong style="color:#234E3E;">✓</strong><span><strong>30 Dual-Chipset LEDs:</strong> Concentrated biological photon delivery soothing micro-vessels.</span></div>' +
+        '<div style="display:flex; gap:10px; font-size:13.5px; color:#344054;"><strong style="color:#234E3E;">✓</strong><span><strong>Collagen Activation:</strong> Targets fine lines, puffiness, and undereye fatigue bags.</span></div>' +
+        '<div style="display:flex; gap:10px; font-size:13.5px; color:#344054;"><strong style="color:#234E3E;">✓</strong><span><strong>Zero Light-Leak Cushion:</strong> Soft memory silicone blackout rim.</span></div>' +
+        '<div style="display:flex; gap:10px; font-size:13.5px; color:#344054;"><strong style="color:#234E3E;">✓</strong><span><strong>10-Min Timer:</strong> Effortless hands-free operation before bedtime.</span></div>' +
+        '</div>';
+    } else {
+      body.innerHTML = '<h3 style="font-size: 22px; font-weight: 800; color: #183324; margin-top:0;">Zavelyn LED Red Light Face Mask</h3>' +
+        '<p style="color: #667085; font-size: 14px; line-height: 1.6;">Full-coverage facial photon therapy delivering 630nm biological red wavelengths for a spa-grade at-home skincare ritual.</p>' +
+        '<div style="margin: 16px 0; display: flex; flex-direction: column; gap: 10px;">' +
+        '<div style="display:flex; gap:10px; font-size:13.5px; color:#344054;"><strong style="color:#234E3E;">✓</strong><span><strong>Uniform Optical Net Exposure:</strong> Even distribution across forehead, cheeks, and chin.</span></div>' +
+        '<div style="display:flex; gap:10px; font-size:13.5px; color:#344054;"><strong style="color:#234E3E;">✓</strong><span><strong>7-Wavelength Bio-Light Therapy:</strong> Collagen, redness soothing, and blemish care.</span></div>' +
+        '<div style="display:flex; gap:10px; font-size:13.5px; color:#344054;"><strong style="color:#234E3E;">✓</strong><span><strong>Food-Grade Bio-Silicone:</strong> Adapts comfortably to all facial contours.</span></div>' +
+        '<div style="display:flex; gap:10px; font-size:13.5px; color:#344054;"><strong style="color:#234E3E;">✓</strong><span><strong>100% UV-Free:</strong> Integrated silicone eye shielding for total comfort.</span></div>' +
+        '</div>';
+    }
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeVfitModal = function() {
+    const modal = document.getElementById('zvSelfCareModal');
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+
+  recalculate();
+})();
+</script>

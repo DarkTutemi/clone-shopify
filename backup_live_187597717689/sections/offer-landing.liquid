@@ -1,0 +1,4542 @@
+{%- liquid
+  if request.page_type == 'product' and product != blank
+    assign offer_product = product
+  elsif section.settings.product != blank
+    assign offer_product = section.settings.product
+  else
+    assign offer_product = all_products['zavelyn-foot-sleeves']
+  endif
+  if offer_product == blank
+    assign offer_product = collections.all.products.first
+  endif
+  assign product = offer_product
+  assign current_variant = product.selected_or_first_available_variant
+  assign s = section.settings
+  assign brand = s.brand_name | default: 'Zavelyn'
+  assign cta_label = s.cta_label | default: 'Add to cart'
+  comment
+    Paid qty only (UI price). Physical totals: buy1=1, buy2get1=3, buy3get3=6
+  endcomment
+  assign cta_paid_qty = 1
+  assign cta_total_qty = 1
+  if s.packages_reversed
+    assign cta_paid_qty = 3
+    assign cta_total_qty = 6
+  endif
+  assign cta_price_cents = current_variant.price | times: cta_paid_qty
+  assign privacy_url = s.privacy_link | default: '/pages/privacy-policy'
+  assign terms_url = s.terms_link | default: '/pages/terms-of-service'
+  assign size_option = blank
+  for option in product.options_with_values
+    assign option_key = option.name | downcase
+    if option_key == 'size'
+      assign size_option = option
+      break
+    endif
+  endfor
+  assign grp_gallery = section.blocks | where: 'type', 'grp_gallery' | first
+  assign grp_perks = section.blocks | where: 'type', 'grp_perks' | first
+  assign grp_checks = section.blocks | where: 'type', 'grp_checks' | first
+  assign grp_press = section.blocks | where: 'type', 'grp_press' | first
+  assign grp_features = section.blocks | where: 'type', 'grp_features' | first
+  assign grp_timeline = section.blocks | where: 'type', 'grp_timeline' | first
+  assign grp_tech = section.blocks | where: 'type', 'grp_tech' | first
+  assign grp_compare = section.blocks | where: 'type', 'grp_compare' | first
+  assign grp_vreviews = section.blocks | where: 'type', 'grp_vreviews' | first
+  assign grp_clinicians = section.blocks | where: 'type', 'grp_clinicians' | first
+  assign grp_specialist = section.blocks | where: 'type', 'grp_specialist' | first
+  assign grp_reviews = section.blocks | where: 'type', 'grp_reviews' | first
+  assign grp_final = section.blocks | where: 'type', 'grp_final' | first
+  assign bogo_free_product = all_products['zavelyn-foot-sleeves-bogo-free']
+-%}
+{% render 'offer-seo', product: product, section: section %}
+
+<div class="offer-page" id="OfferTop">
+
+  <div class="offer-ticker">
+    <p class="offer-ticker__line">🦶 {{ s.ticker_text | default: 'RECOVERY SALE STARTS NOW.' }} <span>{{ s.ticker_highlight | default: 'BUY ONE GET ONE FREE!' }}</span></p>
+  </div>
+
+  {% render 'offer-header', brand: brand, product: product %}
+
+  <section class="offer-hero">
+    <div class="offer-hero__grid">
+      <div class="offer-hero__left">
+        <div class="offer-media" data-offer-gallery>
+          <div class="offer-media__stage">
+            {%- if grp_gallery and grp_gallery.settings.image_1 != blank -%}
+              {%- assign main_src = grp_gallery.settings.image_1 | image_url: width: 1200 -%}
+            {%- elsif grp_gallery and grp_gallery.settings.fallback_1 != blank -%}
+              {%- assign main_src = grp_gallery.settings.fallback_1 | asset_url -%}
+            {%- else -%}
+              {%- assign first_gallery = section.blocks | where: 'type', 'gallery_image' | first -%}
+              {%- if first_gallery and first_gallery.settings.image != blank -%}
+                {%- assign main_src = first_gallery.settings.image | image_url: width: 1200 -%}
+              {%- elsif first_gallery and first_gallery.settings.fallback_asset != blank -%}
+                {%- assign main_src = first_gallery.settings.fallback_asset | asset_url -%}
+              {%- else -%}
+                {%- assign main_src = 'offer-gallery-1.jpg' | asset_url -%}
+              {%- endif -%}
+            {%- endif -%}
+            <button type="button" class="offer-media__zoom" data-offer-zoom aria-label="Open gallery">
+              <img
+                data-offer-main
+                src="{{ main_src }}"
+                alt="{{ product.title | escape }}"
+                width="1200"
+                height="1200"
+                fetchpriority="high"
+              >
+            </button>
+            <button type="button" class="offer-media__nav offer-media__nav--prev" data-offer-prev aria-label="Previous image">❮</button>
+            <button type="button" class="offer-media__nav offer-media__nav--next" data-offer-next aria-label="Next image">❯</button>
+            {%- if s.show_frontrow != false -%}
+              <div class="offer-frontrow" data-frontrow>
+                <button type="button" class="offer-frontrow__x" data-frontrow-close aria-label="Close">×</button>
+                <div class="offer-frontrow__row">
+                  <div class="offer-frontrow__badge" aria-hidden="true">{{ s.frontrow_badge | default: "CLINICIANS'<br>CHOICE" }}</div>
+                  <div class="offer-frontrow__copy">
+                    <div>{{ s.frontrow_text | default: "832 clinicians share this on FrontrowMD without compensation." }}</div>
+                    <a href="#clinicians">{{ s.frontrow_link_label | default: 'View clinicians & learn more' }}</a>
+                  </div>
+                  <div class="offer-frontrow__faces" aria-hidden="true">
+                    {% render 'offer-img', image: s.frontrow_face_1, fallback: 'offer-frontrow-face-1.png', width: 44, height: 44, loading: 'lazy', alt: '' %}
+                    {% render 'offer-img', image: s.frontrow_face_2, fallback: 'offer-frontrow-face-2.png', width: 44, height: 44, loading: 'lazy', alt: '' %}
+                    {% render 'offer-img', image: s.frontrow_face_3, fallback: 'offer-frontrow-face-3.png', width: 44, height: 44, loading: 'lazy', alt: '' %}
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="offer-thumbs" role="list" {% if grp_gallery %}{{ grp_gallery.shopify_attributes }}{% endif %}>
+            {%- if grp_gallery -%}
+              {% render 'offer-group-slots', group: grp_gallery, mode: 'gallery' %}
+            {%- else -%}
+              {%- assign gallery_blocks = section.blocks | where: 'type', 'gallery_image' -%}
+              {%- if gallery_blocks.size > 0 -%}
+                {%- for block in gallery_blocks -%}
+                  {%- if block.settings.image != blank -%}
+                    {%- assign thumb_src = block.settings.image | image_url: width: 240 -%}
+                  {%- elsif block.settings.fallback_asset != blank -%}
+                    {%- assign thumb_src = block.settings.fallback_asset | asset_url -%}
+                  {%- else -%}
+                    {%- continue -%}
+                  {%- endif -%}
+                  <button type="button" class="{% if forloop.first %}is-active{% endif %}" data-offer-thumb data-index="{{ forloop.index0 }}" data-src="{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 1200 }}{% else %}{{ thumb_src }}{% endif %}" aria-label="Image {{ forloop.index }}" {{ block.shopify_attributes }}>
+                    <img src="{{ thumb_src }}" alt="" width="60" height="60" loading="lazy">
+                  </button>
+                {%- endfor -%}
+              {%- else -%}
+                {%- assign galleries = 'offer-gallery-1.jpg,offer-gallery-2.jpg,offer-gallery-3.jpg,offer-gallery-4.jpg,offer-gallery-5.webp,offer-gallery-6.jpg,offer-gallery-7.jpg' | split: ',' -%}
+                {%- for file in galleries -%}
+                  <button type="button" class="{% if forloop.first %}is-active{% endif %}" data-offer-thumb data-index="{{ forloop.index0 }}" data-src="{{ file | asset_url }}" aria-label="Image {{ forloop.index }}">
+                    <img src="{{ file | asset_url }}" alt="" width="60" height="60" loading="lazy">
+                  </button>
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-hero__right">
+        <a class="offer-stars" href="#REVIEW">
+          {% render 'offer-img', image: s.stars_image, fallback: 'offer-stars-47.png', alt: '4.7 out of 5 stars', width: 141, height: 26, loading: 'eager' %}
+          <span>{{ s.reviews_count_label | default: '(10,242 Reviews)' }}</span>
+        </a>
+
+        <h1 class="offer-title">{{ product.title }}</h1>
+
+        <div class="offer-price-block" data-offer-price-block>
+          <div class="offer-price-row">
+            <span class="offer-price" data-offer-price>{{ current_variant.price | money }}</span>
+            {%- if current_variant.compare_at_price > current_variant.price -%}
+              <span class="offer-price-dash" data-offer-price-dash aria-hidden="true">–</span>
+              <span class="offer-value" data-offer-value>{{ current_variant.compare_at_price | money }}</span>
+            {%- else -%}
+              <span class="offer-price-dash" data-offer-price-dash aria-hidden="true" hidden>–</span>
+              <span class="offer-value" data-offer-value hidden></span>
+            {%- endif -%}
+          </div>
+          <ul class="offer-sellpoints">
+            <li>{{ s.selling_point_1 | default: 'Instant heel & arch support from first wear' }}</li>
+            <li>{{ s.selling_point_2 | default: 'Boosts blood flow to help tissue recover' }}</li>
+            <li>{{ s.selling_point_3 | default: 'Thin enough for any shoe, all day' }}</li>
+          </ul>
+          <p class="offer-regular">{{ s.regular_price_prefix | default: 'Regular price' }} {{ current_variant.compare_at_price | default: current_variant.price | money }} {{ s.regular_price_suffix | default: 'per pair' }}</p>
+        </div>
+
+        <div class="offer-perks" {% if grp_perks %}{{ grp_perks.shopify_attributes }}{% endif %}>
+          {%- if grp_perks -%}
+            {%- if grp_perks.settings.label_1 != blank or grp_perks.settings.fallback_1 != blank -%}
+              <div class="offer-perk">{% render 'offer-img', image: grp_perks.settings.icon_1, fallback: grp_perks.settings.fallback_1, width: 30, height: 30, loading: 'lazy', alt: '' %} {{ grp_perks.settings.label_1 }}</div>
+            {%- endif -%}
+            {%- if grp_perks.settings.label_2 != blank or grp_perks.settings.fallback_2 != blank -%}
+              <div class="offer-perk">{% render 'offer-img', image: grp_perks.settings.icon_2, fallback: grp_perks.settings.fallback_2, width: 30, height: 30, loading: 'lazy', alt: '' %} {{ grp_perks.settings.label_2 }}</div>
+            {%- endif -%}
+            {%- if grp_perks.settings.label_3 != blank or grp_perks.settings.fallback_3 != blank -%}
+              <div class="offer-perk">{% render 'offer-img', image: grp_perks.settings.icon_3, fallback: grp_perks.settings.fallback_3, width: 30, height: 30, loading: 'lazy', alt: '' %} {{ grp_perks.settings.label_3 }}</div>
+            {%- endif -%}
+          {%- else -%}
+            {%- assign perk_blocks = section.blocks | where: 'type', 'perk' -%}
+            {%- if perk_blocks.size > 0 -%}
+              {%- for block in perk_blocks -%}
+                <div class="offer-perk" {{ block.shopify_attributes }}>
+                  {% render 'offer-img', image: block.settings.icon, fallback: block.settings.fallback_asset, width: 30, height: 30, loading: 'lazy', alt: '' %}
+                  {{ block.settings.label }}
+                </div>
+              {%- endfor -%}
+            {%- else -%}
+              <div class="offer-perk">{% render 'offer-img', fallback: 'offer-icon-truck.png', width: 30, height: 30, alt: '' %} Free Shipping</div>
+              <div class="offer-perk">{% render 'offer-img', fallback: 'offer-icon-shield.png', width: 30, height: 30, alt: '' %} 30-Days Guarantee</div>
+              <div class="offer-perk">{% render 'offer-img', fallback: 'offer-icon-people.png', width: 30, height: 30, alt: '' %} 500k+ Customers</div>
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+
+        <div
+          class="offer-bundles"
+          id="OfferPackages"
+          data-offer-bundles
+          data-unit-price="{{ current_variant.price }}"
+          data-compare-price="{{ current_variant.compare_at_price | default: current_variant.price }}"
+          data-money-format="{{ shop.money_format | escape }}"
+          data-value-suffix="{{ s.value_suffix | default: 'value' | escape }}"
+          {% if size_option != blank %}data-has-sizes="true"{% endif %}
+        >
+          <div class="offer-bundles__head">
+            <p class="offer-bundles__label">{{ s.bundles_label | default: 'Choose your package' }}</p>
+            {%- if size_option != blank -%}
+              <button type="button" class="offer-sizechart-link" data-offer-sizechart-open>{{ s.size_chart_link | default: 'Size chart' }}</button>
+            {%- endif -%}
+          </div>
+          <div class="offer-bundles__list{% if s.packages_reversed %} offer-bundles__list--rev{% endif %}" role="radiogroup" aria-label="Package">
+            <div class="offer-bundle{% unless s.packages_reversed %} is-active{% endunless %}">
+              <label class="offer-bundle__pick">
+                <input
+                  type="radio"
+                  name="offer_bundle"
+                  value="buy1"
+                  data-package="buy1"
+                  data-paid="1"
+                  data-free="0"
+                  data-total="1"
+                  data-qty="1"
+                  data-sleeves="1"
+                  data-discount-code=""
+                  {% unless s.packages_reversed %}checked{% endunless %}
+                >
+                <span class="offer-bundle__radio" aria-hidden="true"></span>
+                <span class="offer-bundle__body">
+                  <span class="offer-bundle__content">
+                    <span class="offer-bundle__title">{{ s.bundle_1_title | default: 'Buy 1' }}</span>
+                    <span class="offer-bundle__meta-row">
+                      <span class="offer-bundle__meta">{{ s.bundle_1_meta | default: '1 sleeve' }}</span>
+                      {%- if s.bundle_1_badge != blank -%}<span class="offer-bundle__ship">{{ s.bundle_1_badge }}</span>{%- endif -%}
+                    </span>
+                  </span>
+                  <span class="offer-bundle__price" data-bundle-price>{{ current_variant.price | money }}</span>
+                </span>
+              </label>
+              {%- if size_option != blank -%}
+                <div class="offer-bundle__sizes">
+                  <div class="offer-bundle__sizes-head">
+                    <div class="offer-bundle__sizes-rule"><span>{{ s.size_label | default: 'Size' }}</span></div>
+                    <button type="button" class="offer-sizechart-link offer-sizechart-link--inline" data-offer-sizechart-open>{{ s.size_chart_link | default: 'Size chart' }}</button>
+                  </div>
+                  <div class="offer-bundle__size-pills" role="radiogroup" aria-label="Size">
+                    {%- for value in size_option.values -%}
+                      {%- assign size_variant = blank -%}
+                      {%- for variant in product.variants -%}
+                        {%- if variant.option1 == value -%}
+                          {%- assign size_variant = variant -%}
+                          {%- break -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                      <button
+                        type="button"
+                        class="offer-size-pill{% if current_variant.option1 == value %} is-active{% endif %}"
+                        data-offer-size="{{ value | escape }}"
+                        data-variant-id="{{ size_variant.id }}"
+                        {% if size_variant == blank or size_variant.available == false %}disabled{% endif %}
+                      >{{ value }}</button>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+            <div class="offer-bundle offer-bundle--featured">
+              <label class="offer-bundle__pick">
+                <input
+                  type="radio"
+                  name="offer_bundle"
+                  value="buy2get1"
+                  data-package="buy2get1"
+                  data-paid="2"
+                  data-free="1"
+                  data-total="3"
+                  data-qty="2"
+                  data-sleeves="3"
+                  data-discount-code="{{ s.bundle_2_discount_code | default: 'FS21' | escape }}"
+                >
+                <span class="offer-bundle__radio" aria-hidden="true"></span>
+                <span class="offer-bundle__body">
+                  <span class="offer-bundle__content">
+                    <span class="offer-bundle__title">{{ s.bundle_2_title | default: 'Buy 2 Get 1 FREE' }}</span>
+                    <span class="offer-bundle__meta-row">
+                      <span class="offer-bundle__meta">{{ s.bundle_2_meta | default: '3 sleeves' }}</span>
+                      {%- if s.bundle_2_badge != blank -%}<span class="offer-bundle__ship">{{ s.bundle_2_badge }}</span>{%- endif -%}
+                    </span>
+                  </span>
+                  <span class="offer-bundle__price" data-bundle-price>{{ current_variant.price | times: 2 | money }}</span>
+                </span>
+              </label>
+              {%- if size_option != blank -%}
+                <div class="offer-bundle__sizes">
+                  <div class="offer-bundle__sizes-head">
+                    <div class="offer-bundle__sizes-rule"><span>{{ s.size_label | default: 'Size' }}</span></div>
+                    <button type="button" class="offer-sizechart-link offer-sizechart-link--inline" data-offer-sizechart-open>{{ s.size_chart_link | default: 'Size chart' }}</button>
+                  </div>
+                  <div class="offer-bundle__size-pills" role="radiogroup" aria-label="Size">
+                    {%- for value in size_option.values -%}
+                      {%- assign size_variant = blank -%}
+                      {%- for variant in product.variants -%}
+                        {%- if variant.option1 == value -%}
+                          {%- assign size_variant = variant -%}
+                          {%- break -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                      <button
+                        type="button"
+                        class="offer-size-pill{% if current_variant.option1 == value %} is-active{% endif %}"
+                        data-offer-size="{{ value | escape }}"
+                        data-variant-id="{{ size_variant.id }}"
+                        {% if size_variant == blank or size_variant.available == false %}disabled{% endif %}
+                      >{{ value }}</button>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+            <div class="offer-bundle offer-bundle--value{% if s.packages_reversed %} is-active{% endif %}">
+              <label class="offer-bundle__pick">
+                <input
+                  type="radio"
+                  name="offer_bundle"
+                  value="buy3get3"
+                  data-package="buy3get3"
+                  data-paid="3"
+                  data-free="3"
+                  data-total="6"
+                  data-qty="3"
+                  data-sleeves="6"
+                  data-discount-code="{{ s.bundle_3_discount_code | default: 'FS33' | escape }}"
+                  {% if s.packages_reversed %}checked{% endif %}
+                >
+                <span class="offer-bundle__radio" aria-hidden="true"></span>
+                <span class="offer-bundle__body">
+                  <span class="offer-bundle__content">
+                    <span class="offer-bundle__title">{{ s.bundle_3_title | default: 'Buy 3 Get 3 FREE' }}</span>
+                    <span class="offer-bundle__meta-row">
+                      <span class="offer-bundle__meta">{{ s.bundle_3_meta | default: '6 sleeves' }}</span>
+                      {%- if s.bundle_3_badge != blank -%}<span class="offer-bundle__ship offer-bundle__ship--free">{{ s.bundle_3_badge }}</span>{%- endif -%}
+                    </span>
+                  </span>
+                  <span class="offer-bundle__price" data-bundle-price>{{ current_variant.price | times: 3 | money }}</span>
+                </span>
+              </label>
+              {%- if size_option != blank -%}
+                <div class="offer-bundle__sizes">
+                  <div class="offer-bundle__sizes-head">
+                    <div class="offer-bundle__sizes-rule"><span>{{ s.size_label | default: 'Size' }}</span></div>
+                    <button type="button" class="offer-sizechart-link offer-sizechart-link--inline" data-offer-sizechart-open>{{ s.size_chart_link | default: 'Size chart' }}</button>
+                  </div>
+                  <div class="offer-bundle__size-pills" role="radiogroup" aria-label="Size">
+                    {%- for value in size_option.values -%}
+                      {%- assign size_variant = blank -%}
+                      {%- for variant in product.variants -%}
+                        {%- if variant.option1 == value -%}
+                          {%- assign size_variant = variant -%}
+                          {%- break -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                      <button
+                        type="button"
+                        class="offer-size-pill{% if current_variant.option1 == value %} is-active{% endif %}"
+                        data-offer-size="{{ value | escape }}"
+                        data-variant-id="{{ size_variant.id }}"
+                        {% if size_variant == blank or size_variant.available == false %}disabled{% endif %}
+                      >{{ value }}</button>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+
+        {%- if size_option != blank -%}
+          <div class="offer-sizechart" data-offer-sizechart hidden>
+            <div class="offer-sizechart__backdrop" data-offer-sizechart-close tabindex="-1"></div>
+            <div class="offer-sizechart__dialog" role="dialog" aria-modal="true" aria-labelledby="OfferSizeChartTitle">
+              <div class="offer-sizechart__head">
+                <h2 id="OfferSizeChartTitle">{{ s.size_chart_title | default: 'Shoe Size Guide' }}</h2>
+                <button type="button" class="offer-sizechart__close" data-offer-sizechart-close aria-label="Close">×</button>
+              </div>
+              <div class="offer-sizechart__body">
+                {% render 'offer-img', image: s.size_guide_image, fallback: 'offer-size-guide.jpg', class: 'offer-sizechart__img', alt: 'Zavelyn Foot Sleeve size guide', width: 1260, height: 948, loading: 'lazy' %}
+                <p class="offer-sizechart__note">{{ s.size_chart_note | default: "If the size you order doesn't fit perfectly, we offer easy exchanges within 30 days." }}</p>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {% form 'product', product, id: 'OfferAddForm', class: 'offer-buy-form' %}
+          <input type="hidden" name="id" id="OfferVariantId" value="{{ current_variant.id }}">
+          <input type="hidden" name="quantity" id="OfferQuantity" value="{{ cta_total_qty }}">
+          <button class="offer-cta" type="submit" name="add" data-offer-checkout {% unless current_variant.available %}disabled{% endunless %}>
+            <span class="offer-cta__label">{{ cta_label }}</span>
+            <span class="offer-cta__sep" aria-hidden="true">—</span>
+            <span class="offer-cta__price" data-offer-cta-price>{{ cta_price_cents | money_without_trailing_zeros }}</span>
+          </button>
+        {% endform %}
+
+        <div class="offer-reserve" data-offer-reserve>
+          <span class="offer-reserve__pulse" aria-hidden="true"></span>
+          <p>
+            {{ s.reserve_prefix | default: 'High demand — package reserved for' }}
+            <strong data-offer-timer>10:00</strong>
+            {% if current_variant.inventory_management != blank and current_variant.inventory_quantity > 0 and current_variant.inventory_quantity <= 20 %}
+              · {{ s.reserve_left_prefix | default: 'Only' }} <strong>{{ current_variant.inventory_quantity }}</strong> left
+            {% else %}
+              · {{ s.reserve_left_prefix | default: 'Only' }} <strong>{{ s.reserve_stock_fallback | default: '14' }}</strong> {{ s.reserve_left_suffix | default: 'left in stock' }}
+            {% endif %}
+          </p>
+        </div>
+
+        <div class="offer-ship" data-offer-ship>
+          {% render 'offer-img', image: s.ship_icon, fallback: 'offer-icon-truck.png', width: 28, height: 28, alt: '' %}
+          <div>
+            <div><strong>{{ s.shipping_to_label | default: 'Shipping to' }}</strong> <span data-offer-ship-country>{{ localization.country.name | default: 'your country' }}</span></div>
+            <div>{{ s.shipping_arrive | default: 'Your order will arrive in' }} <strong>{{ s.shipping_days | default: '7–15 Business Days' }}</strong></div>
+          </div>
+        </div>
+
+        <div class="offer-sale">
+          <span class="offer-sale__tag">{{ s.sale_tag | default: 'Recovery Sale' }}</span>
+          <p class="offer-sale__title">{{ s.sale_title | default: 'BUY ONE GET ONE FREE' }}</p>
+        </div>
+
+        <div class="offer-faq" data-offer-accordion>
+          {%- assign faq_blocks = section.blocks | where: 'type', 'faq_item' -%}
+          {%- if faq_blocks.size > 0 -%}
+            {%- for block in faq_blocks -%}
+              <div class="offer-faq__item" {{ block.shopify_attributes }}>
+                <button type="button" class="offer-faq__trigger" aria-expanded="false">{{ block.settings.title }}</button>
+                <div class="offer-faq__panel">
+                  {%- if block.settings.style == 'description' -%}
+                    <div class="offer-faq__body">
+                      <p>{{ s.description_intro }}</p>
+                      <ul class="offer-faq__checks" {% if grp_checks %}{{ grp_checks.shopify_attributes }}{% endif %}>
+                        {%- if grp_checks -%}
+                          {%- if grp_checks.settings.check_1 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_1 }}</span></li>{%- endif -%}
+                          {%- if grp_checks.settings.check_2 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_2 }}</span></li>{%- endif -%}
+                          {%- if grp_checks.settings.check_3 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_3 }}</span></li>{%- endif -%}
+                          {%- if grp_checks.settings.check_4 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_4 }}</span></li>{%- endif -%}
+                          {%- if grp_checks.settings.check_5 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_5 }}</span></li>{%- endif -%}
+                          {%- if grp_checks.settings.check_6 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_6 }}</span></li>{%- endif -%}
+                          {%- if grp_checks.settings.check_7 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_7 }}</span></li>{%- endif -%}
+                          {%- if grp_checks.settings.check_8 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_8 }}</span></li>{%- endif -%}
+                        {%- else -%}
+                          {%- for check in section.blocks -%}
+                            {%- if check.type == 'desc_check' -%}
+                              <li {{ check.shopify_attributes }}>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ check.settings.text }}</span></li>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        {%- endif -%}
+                      </ul>
+                    </div>
+                  {%- elsif block.settings.style == 'size' -%}
+                    <div class="offer-faq__body offer-faq__body--media">
+                      {%- assign size_fb = block.settings.fallback_asset | default: 'offer-size-guide.jpg' -%}{% render 'offer-img', image: block.settings.image, fallback: size_fb, class: 'offer-faq__size', alt: 'Size guide', width: 1260, height: 948, loading: 'lazy' %}
+                    </div>
+                  {%- else -%}
+                    <div class="offer-faq__body offer-faq__body--split">
+                      <div class="offer-faq__copy">
+                        {{ block.settings.text | newline_to_br }}
+                      </div>
+                      {% render 'offer-img', image: block.settings.image, fallback: block.settings.fallback_asset, width: 50, height: 50, loading: 'lazy', alt: block.settings.title %}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            <div class="offer-faq__item">
+              <button type="button" class="offer-faq__trigger" aria-expanded="false">{{ s.faq_description_title | default: 'Description' }}</button>
+              <div class="offer-faq__panel">
+                <div class="offer-faq__body">
+                  <p>{{ s.description_intro | default: "Morning heel pain that won't quit? Leaning on grocery carts for support? The Zavelyn Foot Sleeve delivers:" }}</p>
+                  <ul class="offer-faq__checks" {% if grp_checks %}{{ grp_checks.shopify_attributes }}{% endif %}>
+                    {%- if grp_checks -%}
+                      {%- if grp_checks.settings.check_1 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_1 }}</span></li>{%- endif -%}
+                      {%- if grp_checks.settings.check_2 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_2 }}</span></li>{%- endif -%}
+                      {%- if grp_checks.settings.check_3 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_3 }}</span></li>{%- endif -%}
+                      {%- if grp_checks.settings.check_4 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_4 }}</span></li>{%- endif -%}
+                      {%- if grp_checks.settings.check_5 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_5 }}</span></li>{%- endif -%}
+                      {%- if grp_checks.settings.check_6 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_6 }}</span></li>{%- endif -%}
+                      {%- if grp_checks.settings.check_7 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_7 }}</span></li>{%- endif -%}
+                      {%- if grp_checks.settings.check_8 != blank -%}<li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ grp_checks.settings.check_8 }}</span></li>{%- endif -%}
+                    {%- else -%}
+                      {%- assign check_blocks = section.blocks | where: 'type', 'desc_check' -%}
+                      {%- if check_blocks.size > 0 -%}
+                        {%- for check in check_blocks -%}
+                          <li {{ check.shopify_attributes }}>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>{{ check.settings.text }}</span></li>
+                        {%- endfor -%}
+                      {%- else -%}
+                        <li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>Revolutionary support technology</span></li>
+                        <li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>Relief starts instantly</span></li>
+                        <li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>Fits any shoe</span></li>
+                        <li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>Proven by 500K+ users</span></li>
+                        <li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>Increases blood flow</span></li>
+                        <li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>Works all day long</span></li>
+                        <li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>Designed by foot experts</span></li>
+                        <li>{% render 'offer-img', image: s.check_blue_icon, fallback: 'offer-check-blue.png', width: 22, height: 25, loading: 'lazy', alt: '' %}<span>30-Day Satisfaction Guarantee</span></li>
+                      {%- endif -%}
+                    {%- endif -%}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="offer-faq__item">
+              <button type="button" class="offer-faq__trigger" aria-expanded="false">{{ s.faq_size_title | default: 'Size Guide' }}</button>
+              <div class="offer-faq__panel">
+                <div class="offer-faq__body offer-faq__body--media">
+                  {% render 'offer-img', image: s.size_guide_image, fallback: 'offer-size-guide.jpg', class: 'offer-faq__size', alt: 'Zavelyn Foot Sleeve size guide', width: 1260, height: 948, loading: 'lazy' %}
+                </div>
+              </div>
+            </div>
+            <div class="offer-faq__item">
+              <button type="button" class="offer-faq__trigger" aria-expanded="false">{{ s.faq_care_title | default: 'Care & Wash Guide' }}</button>
+              <div class="offer-faq__panel">
+                <div class="offer-faq__body offer-faq__body--split">
+                  <div class="offer-faq__copy">{{ s.care_text | default: 'Machine wash cold on a delicate cycle with mild detergent to maintain elasticity and support.' | newline_to_br }}</div>
+                  {% render 'offer-img', image: s.care_icon, fallback: 'offer-wash-care.png', alt: 'Wash care', width: 50, height: 50, loading: 'lazy' %}
+                </div>
+              </div>
+            </div>
+            <div class="offer-faq__item">
+              <button type="button" class="offer-faq__trigger" aria-expanded="false">{{ s.faq_materials_title | default: 'Premium Materials Certified' }}</button>
+              <div class="offer-faq__panel">
+                <div class="offer-faq__body offer-faq__body--split">
+                  <div class="offer-faq__copy"><p>{{ s.materials_text | default: 'Premium nylon-spandex. Hypoallergenic, breathable, chemical-free. Durable comfort for daily wear.' }}</p></div>
+                  {% render 'offer-img', image: s.materials_icon, fallback: 'offer-certipur.png', alt: 'Certified materials', width: 50, height: 50, loading: 'lazy' %}
+                </div>
+              </div>
+            </div>
+            <div class="offer-faq__item">
+              <button type="button" class="offer-faq__trigger" aria-expanded="false">{{ s.faq_guarantee_title | default: '30-Day Satisfaction Guarantee' }}</button>
+              <div class="offer-faq__panel">
+                <div class="offer-faq__body offer-faq__body--split">
+                  <div class="offer-faq__copy"><p>{{ s.guarantee_text | default: "Not satisfied? Contact us within 30 days, we'll make it right. Zero risk." }}</p></div>
+                  {% render 'offer-img', image: s.guarantee_icon, fallback: 'offer-guarantee.webp', alt: '30-day guarantee', width: 50, height: 50, loading: 'lazy' %}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- if grp_press -%}
+  <section class="offer-sec offer-sec--press" {{ grp_press.shopify_attributes }}>
+    <div class="offer-row">
+      <p class="offer-quote">{{ grp_press.settings.quote | default: s.press_quote | default: '“The Zavelyn Foot Sleeve addresses what other solutions miss. While most target inflammation, this tackles tissue breakdown at the source.” - Wellness Weekly' }}</p>
+      <div class="offer-press" role="list" aria-label="As seen in">
+        {%- if grp_press -%}
+          {%- if grp_press.settings.logo_1 != blank or grp_press.settings.fallback_1 != blank -%}<div class="offer-press__cell" role="listitem">{% render 'offer-img', image: grp_press.settings.logo_1, fallback: grp_press.settings.fallback_1, alt: grp_press.settings.alt_1, width: 250, height: 158, loading: 'lazy' %}</div>{%- endif -%}
+          {%- if grp_press.settings.logo_2 != blank or grp_press.settings.fallback_2 != blank -%}<div class="offer-press__cell" role="listitem">{% render 'offer-img', image: grp_press.settings.logo_2, fallback: grp_press.settings.fallback_2, alt: grp_press.settings.alt_2, width: 250, height: 158, loading: 'lazy' %}</div>{%- endif -%}
+          {%- if grp_press.settings.logo_3 != blank or grp_press.settings.fallback_3 != blank -%}<div class="offer-press__cell" role="listitem">{% render 'offer-img', image: grp_press.settings.logo_3, fallback: grp_press.settings.fallback_3, alt: grp_press.settings.alt_3, width: 250, height: 158, loading: 'lazy' %}</div>{%- endif -%}
+          {%- if grp_press.settings.logo_4 != blank or grp_press.settings.fallback_4 != blank -%}<div class="offer-press__cell" role="listitem">{% render 'offer-img', image: grp_press.settings.logo_4, fallback: grp_press.settings.fallback_4, alt: grp_press.settings.alt_4, width: 250, height: 158, loading: 'lazy' %}</div>{%- endif -%}
+          {%- if grp_press.settings.logo_5 != blank or grp_press.settings.fallback_5 != blank -%}<div class="offer-press__cell" role="listitem">{% render 'offer-img', image: grp_press.settings.logo_5, fallback: grp_press.settings.fallback_5, alt: grp_press.settings.alt_5, width: 250, height: 158, loading: 'lazy' %}</div>{%- endif -%}
+        {%- else -%}
+          {%- assign press_blocks = section.blocks | where: 'type', 'press_logo' -%}
+          {%- if press_blocks.size > 0 -%}
+            {%- for block in press_blocks -%}
+              <div class="offer-press__cell" role="listitem" {{ block.shopify_attributes }}>
+                {% render 'offer-img', image: block.settings.image, fallback: block.settings.fallback_asset, alt: block.settings.alt, width: 250, height: 158, loading: 'lazy' %}
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            <div class="offer-press__cell" role="listitem">{% render 'offer-img', fallback: 'offer-mag-people.png', alt: 'People', width: 250, height: 158, loading: 'lazy' %}</div>
+            <div class="offer-press__cell" role="listitem">{% render 'offer-img', fallback: 'offer-mag-cnn.png', alt: 'CNN', width: 250, height: 158, loading: 'lazy' %}</div>
+            <div class="offer-press__cell" role="listitem">{% render 'offer-img', fallback: 'offer-mag-esquire.png', alt: 'Esquire', width: 250, height: 158, loading: 'lazy' %}</div>
+            <div class="offer-press__cell" role="listitem">{% render 'offer-img', fallback: 'offer-mag-nbc.png', alt: 'NBC News', width: 250, height: 158, loading: 'lazy' %}</div>
+            <div class="offer-press__cell" role="listitem">{% render 'offer-img', fallback: 'offer-mag-ny.png', alt: 'New York', width: 250, height: 158, loading: 'lazy' %}</div>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
+  {%- if grp_features -%}
+  <section class="offer-sec offer-sec--mint" {{ grp_features.shopify_attributes }}>
+    <div class="offer-row">
+      <div class="offer-card offer-card--split">
+        <div>
+          <h2>{{ grp_features.settings.heading | default: s.features_heading | default: "Zavelyn Foot Sleeve's dual-action system: blood flow restoration + multi-directional support" }}</h2>
+        </div>
+        <div>
+          <p>{{ grp_features.settings.text | default: s.features_text }}</p>
+          <p style="margin-top:12px;font-weight:700;color:#111;">{{ grp_features.settings.cta_line | default: s.features_cta_line }}</p>
+        </div>
+      </div>
+
+      {%- if grp_features -%}
+        {%- for i in (1..5) -%}
+          {%- liquid
+            case i
+              when 1
+                assign fh = grp_features.settings.item_1_heading
+                assign ft = grp_features.settings.item_1_text
+                assign fi = grp_features.settings.item_1_image
+                assign ff = grp_features.settings.item_1_fallback
+                assign fv = grp_features.settings.item_1_video
+                assign fvu = grp_features.settings.item_1_video_url
+                assign fr = grp_features.settings.item_1_reverse
+              when 2
+                assign fh = grp_features.settings.item_2_heading
+                assign ft = grp_features.settings.item_2_text
+                assign fi = grp_features.settings.item_2_image
+                assign ff = grp_features.settings.item_2_fallback
+                assign fv = grp_features.settings.item_2_video
+                assign fvu = grp_features.settings.item_2_video_url
+                assign fr = grp_features.settings.item_2_reverse
+              when 3
+                assign fh = grp_features.settings.item_3_heading
+                assign ft = grp_features.settings.item_3_text
+                assign fi = grp_features.settings.item_3_image
+                assign ff = grp_features.settings.item_3_fallback
+                assign fv = grp_features.settings.item_3_video
+                assign fvu = grp_features.settings.item_3_video_url
+                assign fr = grp_features.settings.item_3_reverse
+              when 4
+                assign fh = grp_features.settings.item_4_heading
+                assign ft = grp_features.settings.item_4_text
+                assign fi = grp_features.settings.item_4_image
+                assign ff = grp_features.settings.item_4_fallback
+                assign fv = grp_features.settings.item_4_video
+                assign fvu = grp_features.settings.item_4_video_url
+                assign fr = grp_features.settings.item_4_reverse
+              when 5
+                assign fh = grp_features.settings.item_5_heading
+                assign ft = grp_features.settings.item_5_text
+                assign fi = grp_features.settings.item_5_image
+                assign ff = grp_features.settings.item_5_fallback
+                assign fv = grp_features.settings.item_5_video
+                assign fvu = grp_features.settings.item_5_video_url
+                assign fr = grp_features.settings.item_5_reverse
+            endcase
+          -%}
+          {%- if fh != blank or ff != blank or fi != blank or fv != blank or fvu != blank -%}
+            <article class="offer-card offer-card--split{% if fr %} offer-card--rev{% endif %}">
+              <div>
+                <h3>{{ fh }}</h3>
+                <p>{{ ft }}</p>
+              </div>
+              <div class="offer-card__media{% if fv != blank or fvu != blank %} offer-card__media--video{% endif %}">
+                {%- if fv != blank -%}
+                  {{ fv | video_tag: image_size: '1100x', autoplay: true, loop: true, muted: true, controls: true, playsinline: true, class: 'offer-card__video' }}
+                {%- elsif fvu != blank -%}
+                  <video
+                    class="offer-card__video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    controls
+                    preload="metadata"
+                    {% if fi != blank %}poster="{{ fi | image_url: width: 1100 }}"{% endif %}
+                    src="{{ fvu | escape }}"
+                  ></video>
+                {%- else -%}
+                  {% render 'offer-img', image: fi, fallback: ff, alt: fh, width: 800, height: 600, loading: 'lazy' %}
+                {%- endif -%}
+              </div>
+            </article>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- else -%}
+        {%- assign feature_blocks = section.blocks | where: 'type', 'feature' -%}
+        {%- if feature_blocks.size > 0 -%}
+          {%- for block in feature_blocks -%}
+            <article class="offer-card offer-card--split{% if block.settings.reverse %} offer-card--rev{% endif %}" {{ block.shopify_attributes }}>
+              <div>
+                <h3>{{ block.settings.heading }}</h3>
+                <p>{{ block.settings.text }}</p>
+              </div>
+              <div class="offer-card__media">
+                {% render 'offer-img', image: block.settings.image, fallback: block.settings.fallback_asset, alt: block.settings.heading, width: 800, height: 600, loading: 'lazy' %}
+              </div>
+            </article>
+          {%- endfor -%}
+        {%- else -%}
+          <article class="offer-card offer-card--split">
+            <div><h3>Polyaxial <span class="offer-blue">Support</span> Straps</h3><p>No other sleeve has ever done this—lifts the burden off compromised tissue so it can stop the constant tearing and finally recover. That same support helps prevent discomfort from coming back.</p></div>
+            <div class="offer-card__media">{% render 'offer-img', fallback: 'offer-support-tech.jpg', alt: 'Polyaxial Support Straps', width: 800, height: 600, loading: 'lazy' %}</div>
+          </article>
+          <article class="offer-card offer-card--split offer-card--rev">
+            <div><h3>Biolateral Circular <span class="offer-blue">Compression</span> Technology</h3><p>Drives blood deep into tissue that's been starved for months, delivering oxygen and nutrients that kickstart and accelerate natural recovery.</p></div>
+            <div class="offer-card__media">{% render 'offer-img', fallback: 'offer-infographic.jpg', alt: 'Biolateral Compression', width: 800, height: 600, loading: 'lazy' %}</div>
+          </article>
+          <article class="offer-card offer-card--split">
+            <div><h3>All-Day Active <span class="offer-blue">Support</span></h3><p>Works continuously while you move, not just when you're resting. Your feet get constant blood flow and support whether you're at work, running errands, or staying active, so recovery happens during your real life.</p></div>
+            <div class="offer-card__media">{% render 'offer-img', fallback: 'offer-feature-allday.jpg', alt: 'All-Day Active Support', width: 800, height: 600, loading: 'lazy' %}</div>
+          </article>
+          <article class="offer-card offer-card--split offer-card--rev">
+            <div><h3>Instant Relief <span class="offer-blue">Technology</span></h3><p>Feel the difference the moment you put them on as support immediately lifts the burden off damaged tissue. This isn't numbing or masking, it's real structural support doing what compromised tissue can't.</p></div>
+            <div class="offer-card__media">{% render 'offer-img', fallback: 'offer-gallery-4.jpg', alt: 'Instant Relief', width: 800, height: 600, loading: 'lazy' %}</div>
+          </article>
+          <article class="offer-card offer-card--split">
+            <div><h3>Long-Term <span class="offer-blue">Protection</span></h3><p>After recovery, wear them strategically on demanding days to keep tissue supported and blood flowing. This prevents you from slipping back into the breakdown cycle, keeping discomfort away for good.</p></div>
+            <div class="offer-card__media">{% render 'offer-img', fallback: 'offer-gallery-2.jpg', alt: 'Long-Term Protection', width: 800, height: 600, loading: 'lazy' %}</div>
+          </article>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  </section>
+  {%- endif -%}
+
+  {%- if grp_timeline -%}
+  <section class="offer-sec offer-sec--cream" id="timeline" {{ grp_timeline.shopify_attributes }}>
+    <div class="offer-row offer-timeline">
+      <div class="offer-head offer-head--timeline">
+        <h2>{{ grp_timeline.settings.heading | default: s.timeline_heading | default: 'What to Expect in Your First 30 Days' }}</h2>
+        <p>{{ grp_timeline.settings.subtext | default: s.timeline_subtext }}</p>
+      </div>
+
+      <div class="offer-timeline-hero">
+        {%- assign timeline_hero = grp_timeline.settings.hero_image | default: s.timeline_hero_image -%}
+        {% render 'offer-img', image: timeline_hero, fallback: 'offer-timeline-hero.jpg', alt: 'Pain level over 30 days', width: 1843, height: 856, loading: 'lazy' %}
+      </div>
+
+      {%- if grp_timeline -%}
+        {%- for i in (1..5) -%}
+          {%- liquid
+            case i
+              when 1
+                assign ds = grp_timeline.settings.day_1_style
+                assign di = grp_timeline.settings.day_1_icon
+                assign df = grp_timeline.settings.day_1_fallback
+                assign dl = grp_timeline.settings.day_1_label
+                assign dt = grp_timeline.settings.day_1_title
+                assign dtx = grp_timeline.settings.day_1_text
+                assign dp1 = grp_timeline.settings.day_1_perk_1
+                assign dp2 = grp_timeline.settings.day_1_perk_2
+                assign dp3 = grp_timeline.settings.day_1_perk_3
+                assign dq = grp_timeline.settings.day_1_quote
+              when 2
+                assign ds = grp_timeline.settings.day_2_style
+                assign di = grp_timeline.settings.day_2_icon
+                assign df = grp_timeline.settings.day_2_fallback
+                assign dl = grp_timeline.settings.day_2_label
+                assign dt = grp_timeline.settings.day_2_title
+                assign dtx = grp_timeline.settings.day_2_text
+                assign dp1 = grp_timeline.settings.day_2_perk_1
+                assign dp2 = grp_timeline.settings.day_2_perk_2
+                assign dp3 = grp_timeline.settings.day_2_perk_3
+                assign dq = grp_timeline.settings.day_2_quote
+              when 3
+                assign ds = grp_timeline.settings.day_3_style
+                assign di = grp_timeline.settings.day_3_icon
+                assign df = grp_timeline.settings.day_3_fallback
+                assign dl = grp_timeline.settings.day_3_label
+                assign dt = grp_timeline.settings.day_3_title
+                assign dtx = grp_timeline.settings.day_3_text
+                assign dp1 = grp_timeline.settings.day_3_perk_1
+                assign dp2 = grp_timeline.settings.day_3_perk_2
+                assign dp3 = grp_timeline.settings.day_3_perk_3
+                assign dq = grp_timeline.settings.day_3_quote
+              when 4
+                assign ds = grp_timeline.settings.day_4_style
+                assign di = grp_timeline.settings.day_4_icon
+                assign df = grp_timeline.settings.day_4_fallback
+                assign dl = grp_timeline.settings.day_4_label
+                assign dt = grp_timeline.settings.day_4_title
+                assign dtx = grp_timeline.settings.day_4_text
+                assign dp1 = grp_timeline.settings.day_4_perk_1
+                assign dp2 = grp_timeline.settings.day_4_perk_2
+                assign dp3 = grp_timeline.settings.day_4_perk_3
+                assign dq = grp_timeline.settings.day_4_quote
+              when 5
+                assign ds = grp_timeline.settings.day_5_style
+                assign di = grp_timeline.settings.day_5_icon
+                assign df = grp_timeline.settings.day_5_fallback
+                assign dl = grp_timeline.settings.day_5_label
+                assign dt = grp_timeline.settings.day_5_title
+                assign dtx = grp_timeline.settings.day_5_text
+                assign dp1 = grp_timeline.settings.day_5_perk_1
+                assign dp2 = grp_timeline.settings.day_5_perk_2
+                assign dp3 = grp_timeline.settings.day_5_perk_3
+                assign dq = grp_timeline.settings.day_5_quote
+            endcase
+          -%}
+          {%- if dl != blank or dt != blank -%}
+            <article class="offer-day offer-day--{{ ds }}">
+              {% render 'offer-img', image: di, fallback: df, class: 'offer-day__icon', width: 55, height: 55, loading: 'lazy', alt: '' %}
+              <div class="offer-day__body">
+                <div class="offer-day__label">{{ dl }}</div>
+                <h3 class="offer-day__title">{{ dt }}</h3>
+                <p class="offer-day__text">{{ dtx }}</p>
+                <ul class="offer-day__perks">
+                  {%- if dp1 != blank -%}<li>{{ dp1 }}</li>{%- endif -%}
+                  {%- if dp2 != blank -%}<li>{{ dp2 }}</li>{%- endif -%}
+                  {%- if dp3 != blank -%}<li>{{ dp3 }}</li>{%- endif -%}
+                </ul>
+                {%- if dq != blank -%}
+                  <div class="offer-day__quote">
+                    {% render 'offer-img', image: s.quote_icon, fallback: 'offer-quote-icon.png', width: 34, height: 34, alt: '' %}
+                    <span>{{ dq }}</span>
+                  </div>
+                {%- endif -%}
+                {%- if ds == '30' -%}
+                  {%- assign ba_before_img = grp_timeline.settings.ba_before_image | default: s.ba_before_image -%}
+                  {%- assign ba_after_img = grp_timeline.settings.ba_after_image | default: s.ba_after_image -%}
+                  <div class="offer-ba">
+                    {% render 'offer-img', image: ba_before_img, fallback: 'offer-ba-before.jpg', class: 'offer-ba__photo', alt: 'Before', width: 206, height: 206, loading: 'lazy' %}
+                    <div class="offer-ba__col">
+                      <div class="offer-ba__tag">
+                        {% render 'offer-img', image: s.ba_cross_icon, fallback: 'offer-cross.png', width: 26, height: 26, alt: '' %}
+                        <strong>{{ grp_timeline.settings.ba_before_label | default: s.ba_before_label | default: 'Before Zavelyn' }}</strong>
+                      </div>
+                      <p>{{ grp_timeline.settings.ba_before_quote | default: s.ba_before_quote }}</p>
+                    </div>
+                    {% render 'offer-img', image: s.ba_arrow_icon, fallback: 'offer-ba-arrow.png', class: 'offer-ba__arrow', width: 26, height: 26, alt: '' %}
+                    <div class="offer-ba__col offer-ba__col--after">
+                      <div class="offer-ba__tag">
+                        {% render 'offer-img', image: s.ba_check_icon, fallback: 'offer-check.png', width: 26, height: 26, alt: '' %}
+                        <strong>{{ grp_timeline.settings.ba_after_label | default: s.ba_after_label | default: 'After 30 Days' }}</strong>
+                      </div>
+                      <p>{{ grp_timeline.settings.ba_after_quote | default: s.ba_after_quote }}</p>
+                    </div>
+                    {% render 'offer-img', image: ba_after_img, fallback: 'offer-ba-after.jpg', class: 'offer-ba__photo', alt: 'After', width: 206, height: 206, loading: 'lazy' %}
+                  </div>
+                {%- endif -%}
+              </div>
+            </article>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- else -%}
+        {%- assign day_blocks = section.blocks | where: 'type', 'timeline_day' -%}
+        {%- if day_blocks.size > 0 -%}
+          {%- for block in day_blocks -%}
+            <article class="offer-day offer-day--{{ block.settings.style }}" {{ block.shopify_attributes }}>
+              {% render 'offer-img', image: block.settings.icon, fallback: block.settings.fallback_asset, class: 'offer-day__icon', width: 55, height: 55, loading: 'lazy', alt: '' %}
+              <div class="offer-day__body">
+                <div class="offer-day__label">{{ block.settings.label }}</div>
+                <h3 class="offer-day__title">{{ block.settings.title }}</h3>
+                <p class="offer-day__text">{{ block.settings.text }}</p>
+                <ul class="offer-day__perks">
+                  {%- if block.settings.perk_1 != blank -%}<li>{{ block.settings.perk_1 }}</li>{%- endif -%}
+                  {%- if block.settings.perk_2 != blank -%}<li>{{ block.settings.perk_2 }}</li>{%- endif -%}
+                  {%- if block.settings.perk_3 != blank -%}<li>{{ block.settings.perk_3 }}</li>{%- endif -%}
+                </ul>
+                {%- if block.settings.quote != blank -%}
+                  <div class="offer-day__quote">
+                    {% render 'offer-img', image: s.quote_icon, fallback: 'offer-quote-icon.png', width: 34, height: 34, alt: '' %}
+                    <span>{{ block.settings.quote }}</span>
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.style == '30' -%}
+                  <div class="offer-ba">
+                    {% render 'offer-img', image: s.ba_before_image, fallback: 'offer-ba-before.jpg', class: 'offer-ba__photo', alt: 'Before', width: 206, height: 206, loading: 'lazy' %}
+                    <div class="offer-ba__col">
+                      <div class="offer-ba__tag">
+                        {% render 'offer-img', image: s.ba_cross_icon, fallback: 'offer-cross.png', width: 26, height: 26, alt: '' %}
+                        <strong>{{ s.ba_before_label | default: 'Before Zavelyn' }}</strong>
+                      </div>
+                      <p>{{ s.ba_before_quote }}</p>
+                    </div>
+                    {% render 'offer-img', image: s.ba_arrow_icon, fallback: 'offer-ba-arrow.png', class: 'offer-ba__arrow', width: 26, height: 26, alt: '' %}
+                    <div class="offer-ba__col offer-ba__col--after">
+                      <div class="offer-ba__tag">
+                        {% render 'offer-img', image: s.ba_check_icon, fallback: 'offer-check.png', width: 26, height: 26, alt: '' %}
+                        <strong>{{ s.ba_after_label | default: 'After 30 Days' }}</strong>
+                      </div>
+                      <p>{{ s.ba_after_quote }}</p>
+                    </div>
+                    {% render 'offer-img', image: s.ba_after_image, fallback: 'offer-ba-after.jpg', class: 'offer-ba__photo', alt: 'After', width: 206, height: 206, loading: 'lazy' %}
+                  </div>
+                {%- endif -%}
+              </div>
+            </article>
+          {%- endfor -%}
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  </section>
+  {%- endif -%}
+
+  {%- if grp_tech -%}
+  <section class="offer-sec offer-sec--tech" {{ grp_tech.shopify_attributes }}>
+    <div class="offer-row">
+      <div class="offer-head offer-head--tech">
+        <h2>{{ grp_tech.settings.heading | default: s.tech_heading | default: 'We spent years perfecting our innovative foot support technology.' }}</h2>
+      </div>
+      <div class="offer-tech-hero">
+        {%- assign tech_img = grp_tech.settings.image | default: s.tech_image -%}
+        {% render 'offer-img', image: tech_img, fallback: 'offer-support-tech.jpg', alt: 'Foot support technology callouts', width: 749, height: 727, loading: 'lazy' %}
+      </div>
+      <div class="offer-mats">
+        {%- if grp_tech -%}
+          {%- if grp_tech.settings.mat_1_heading != blank or grp_tech.settings.mat_1_fallback != blank -%}
+            <article class="offer-mat">
+              {% render 'offer-img', image: grp_tech.settings.mat_1_badge, fallback: grp_tech.settings.mat_1_fallback, class: 'offer-mat__badge', width: 40, height: 50, loading: 'lazy', alt: grp_tech.settings.mat_1_heading %}
+              <h3>{{ grp_tech.settings.mat_1_heading }}</h3>
+              <p>{{ grp_tech.settings.mat_1_text | newline_to_br }}</p>
+            </article>
+          {%- endif -%}
+          {%- if grp_tech.settings.mat_2_heading != blank or grp_tech.settings.mat_2_fallback != blank -%}
+            <article class="offer-mat">
+              {% render 'offer-img', image: grp_tech.settings.mat_2_badge, fallback: grp_tech.settings.mat_2_fallback, class: 'offer-mat__badge', width: 40, height: 50, loading: 'lazy', alt: grp_tech.settings.mat_2_heading %}
+              <h3>{{ grp_tech.settings.mat_2_heading }}</h3>
+              <p>{{ grp_tech.settings.mat_2_text | newline_to_br }}</p>
+            </article>
+          {%- endif -%}
+          {%- if grp_tech.settings.mat_3_heading != blank or grp_tech.settings.mat_3_fallback != blank -%}
+            <article class="offer-mat">
+              {% render 'offer-img', image: grp_tech.settings.mat_3_badge, fallback: grp_tech.settings.mat_3_fallback, class: 'offer-mat__badge', width: 40, height: 50, loading: 'lazy', alt: grp_tech.settings.mat_3_heading %}
+              <h3>{{ grp_tech.settings.mat_3_heading }}</h3>
+              <p>{{ grp_tech.settings.mat_3_text | newline_to_br }}</p>
+            </article>
+          {%- endif -%}
+        {%- else -%}
+          {%- assign mat_blocks = section.blocks | where: 'type', 'material' -%}
+          {%- if mat_blocks.size > 0 -%}
+            {%- for block in mat_blocks -%}
+              <article class="offer-mat" {{ block.shopify_attributes }}>
+                {% render 'offer-img', image: block.settings.badge, fallback: block.settings.fallback_asset, class: 'offer-mat__badge', width: 40, height: 50, loading: 'lazy', alt: block.settings.heading %}
+                <h3>{{ block.settings.heading }}</h3>
+                <p>{{ block.settings.text | newline_to_br }}</p>
+              </article>
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
+  {%- if grp_compare -%}
+  <section class="offer-sec offer-sec--compare" {{ grp_compare.shopify_attributes }}>
+    <div class="offer-row offer-compare">
+      <div class="offer-compare__copy">
+        <h2>{{ grp_compare.settings.heading | default: s.compare_heading | default: 'Why Zavelyn Stands Out' }}</h2>
+        <p>{{ grp_compare.settings.text | default: s.compare_text }}</p>
+        <a class="offer-cta" href="#OfferPackages" data-offer-scroll-packages>
+          <span class="offer-cta__label">{{ cta_label }}</span>
+          <span class="offer-cta__sep" aria-hidden="true">—</span>
+          <span class="offer-cta__price" data-offer-cta-price>{{ cta_price_cents | money_without_trailing_zeros }}</span>
+        </a>
+      </div>
+      <div class="offer-compare__media">
+        {%- assign compare_img = grp_compare.settings.image | default: s.compare_image -%}
+        {%- assign compare_alt = grp_compare.settings.heading | default: s.compare_heading -%}
+        {% render 'offer-img', image: compare_img, fallback: 'offer-why-stands.jpg', alt: compare_alt, width: 1300, height: 1264, loading: 'lazy' %}
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
+  {%- if grp_vreviews -%}
+  <section class="offer-sec offer-sec--vreviews" {{ grp_vreviews.shopify_attributes }}>
+    <div class="offer-row">
+      <div class="offer-head offer-head--vreviews">
+        <h2>{{ grp_vreviews.settings.heading | default: s.vreviews_heading | default: 'Real People. Real Relief.' }}</h2>
+      </div>
+      <div class="offer-vreviews">
+        {%- if grp_vreviews -%}
+          {%- for i in (1..4) -%}
+            {%- liquid
+              case i
+                when 1
+                  assign vp = grp_vreviews.settings.item_1_poster
+                  assign vf = grp_vreviews.settings.item_1_fallback
+                  assign vv = grp_vreviews.settings.item_1_video
+                  assign vt = grp_vreviews.settings.item_1_title
+                  assign vtx = grp_vreviews.settings.item_1_text
+                  assign va = grp_vreviews.settings.item_1_author
+                when 2
+                  assign vp = grp_vreviews.settings.item_2_poster
+                  assign vf = grp_vreviews.settings.item_2_fallback
+                  assign vv = grp_vreviews.settings.item_2_video
+                  assign vt = grp_vreviews.settings.item_2_title
+                  assign vtx = grp_vreviews.settings.item_2_text
+                  assign va = grp_vreviews.settings.item_2_author
+                when 3
+                  assign vp = grp_vreviews.settings.item_3_poster
+                  assign vf = grp_vreviews.settings.item_3_fallback
+                  assign vv = grp_vreviews.settings.item_3_video
+                  assign vt = grp_vreviews.settings.item_3_title
+                  assign vtx = grp_vreviews.settings.item_3_text
+                  assign va = grp_vreviews.settings.item_3_author
+                when 4
+                  assign vp = grp_vreviews.settings.item_4_poster
+                  assign vf = grp_vreviews.settings.item_4_fallback
+                  assign vv = grp_vreviews.settings.item_4_video
+                  assign vt = grp_vreviews.settings.item_4_title
+                  assign vtx = grp_vreviews.settings.item_4_text
+                  assign va = grp_vreviews.settings.item_4_author
+              endcase
+            -%}
+            {%- if vt != blank or vf != blank or vp != blank -%}
+              {%- if vp != blank -%}
+                {%- assign poster_src = vp | image_url: width: 720 -%}
+              {%- elsif vf != blank -%}
+                {%- assign poster_src = vf | asset_url -%}
+              {%- else -%}
+                {%- assign poster_src = '' -%}
+              {%- endif -%}
+              <article class="offer-vreview">
+                <button type="button" class="offer-vreview__media" data-offer-video aria-label="Play {{ va | escape }} video">
+                  {%- if poster_src != blank -%}<img src="{{ poster_src }}" alt="" width="720" height="900" loading="lazy">{%- endif -%}
+                  {%- if vv != blank -%}
+                    <video preload="metadata" playsinline loop src="{{ vv }}" {% if poster_src != blank %}poster="{{ poster_src }}"{% endif %}></video>
+                  {%- endif -%}
+                  <span class="offer-vreview__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="32" height="32"><path d="M8 5v14l11-7z" fill="#111"></path></svg>
+                  </span>
+                </button>
+                <div class="offer-vreview__body">
+                  <div class="offer-vreview__stars" aria-label="5 stars">★★★★★</div>
+                  <h3>{{ vt }}</h3>
+                  <p>{{ vtx }}</p>
+                  <p class="offer-vreview__author">{{ va }}</p>
+                </div>
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- assign vreview_blocks = section.blocks | where: 'type', 'video_review' -%}
+          {%- if vreview_blocks.size > 0 -%}
+            {%- for block in vreview_blocks -%}
+              {%- if block.settings.poster != blank -%}
+                {%- assign poster_src = block.settings.poster | image_url: width: 720 -%}
+              {%- elsif block.settings.fallback_asset != blank -%}
+                {%- assign poster_src = block.settings.fallback_asset | asset_url -%}
+              {%- else -%}
+                {%- assign poster_src = '' -%}
+              {%- endif -%}
+              <article class="offer-vreview" {{ block.shopify_attributes }}>
+                <button type="button" class="offer-vreview__media" data-offer-video aria-label="Play {{ block.settings.author | escape }} video">
+                  {%- if poster_src != blank -%}<img src="{{ poster_src }}" alt="" width="720" height="900" loading="lazy">{%- endif -%}
+                  {%- if block.settings.video_url != blank -%}
+                    <video preload="metadata" playsinline loop src="{{ block.settings.video_url }}" {% if poster_src != blank %}poster="{{ poster_src }}"{% endif %}></video>
+                  {%- endif -%}
+                  <span class="offer-vreview__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="32" height="32"><path d="M8 5v14l11-7z" fill="#111"></path></svg>
+                  </span>
+                </button>
+                <div class="offer-vreview__body">
+                  <div class="offer-vreview__stars" aria-label="5 stars">★★★★★</div>
+                  <h3>{{ block.settings.title }}</h3>
+                  <p>{{ block.settings.text }}</p>
+                  <p class="offer-vreview__author">{{ block.settings.author }}</p>
+                </div>
+              </article>
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
+  {%- if grp_clinicians -%}
+  <section class="offer-sec offer-sec--clinicians" id="clinicians" {{ grp_clinicians.shopify_attributes }}>
+    <div class="offer-row">
+      <div class="offer-clinicians-widget" data-offer-frontrow>
+        <iframe
+          class="offer-clinicians-widget__iframe iframe-frontrow-testimonials"
+          id="OfferCliniciansFrame"
+          title="Independent Clinician Evaluations"
+          loading="lazy"
+          data-src="{{ grp_clinicians.settings.iframe_url | default: s.clinicians_iframe_url | default: 'https://app.thefrontrowhealth.com/api/widgets?presentation_type=qual&product_id=3736' }}"
+          data-script="{{ grp_clinicians.settings.script_url | default: s.clinicians_script_url | default: 'https://app.thefrontrowhealth.com/api/widgets/script?presentation_type=qual&product_id=3736' }}"
+          allow="clipboard-write"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
+  {%- if grp_specialist -%}
+  <section class="offer-sec offer-sec--specialist" {{ grp_specialist.shopify_attributes }}>
+    <div class="offer-row">
+      <div class="offer-specialist">
+        <div class="offer-specialist__media">
+          {%- assign specialist_img = grp_specialist.settings.image | default: s.specialist_image -%}
+          {% render 'offer-img', image: specialist_img, fallback: 'offer-annie.jpg', alt: 'Foot care specialist', width: 1500, height: 1500, loading: 'lazy' %}
+        </div>
+        <div class="offer-specialist__copy">
+          <h2>{{ grp_specialist.settings.heading | default: s.specialist_heading | default: 'Developed & Validated by Foot Care Specialists' }}</h2>
+          {{ grp_specialist.settings.text | default: s.specialist_text | newline_to_br }}
+          <ul class="offer-specialist__list">
+            {%- assign b1 = grp_specialist.settings.bullet_1 | default: s.specialist_bullet_1 -%}
+            {%- assign b2 = grp_specialist.settings.bullet_2 | default: s.specialist_bullet_2 -%}
+            {%- assign b3 = grp_specialist.settings.bullet_3 | default: s.specialist_bullet_3 -%}
+            {%- if b1 != blank -%}<li>{{ b1 }}</li>{%- endif -%}
+            {%- if b2 != blank -%}<li>{{ b2 }}</li>{%- endif -%}
+            {%- if b3 != blank -%}<li>{{ b3 }}</li>{%- endif -%}
+          </ul>
+          <a class="offer-cta" href="#OfferPackages" data-offer-scroll-packages>
+            <span class="offer-cta__label">{{ cta_label }}</span>
+            <span class="offer-cta__sep" aria-hidden="true">—</span>
+            <span class="offer-cta__price" data-offer-cta-price>{{ cta_price_cents | money_without_trailing_zeros }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
+  {%- if grp_reviews -%}
+  <section class="offer-sec offer-sec--reviews" id="REVIEW" {{ grp_reviews.shopify_attributes }}>
+    <div class="offer-row">
+      <div class="offer-head offer-head--reviews">
+        <h2>{{ grp_reviews.settings.heading | default: s.reviews_heading | default: 'See Why 500,000+ Satisfied Customers Trust Zavelyn' }}</h2>
+      </div>
+      <div class="offer-ratings">
+        <div class="offer-score">
+          <div class="offer-score__value"><strong>{{ grp_reviews.settings.score_value | default: s.score_value | default: '4.7' }}</strong> {{ grp_reviews.settings.score_out_of | default: s.score_out_of | default: 'out of 5' }}</div>
+          {% render 'offer-img', image: s.stars_image, fallback: 'offer-stars-47.png', class: 'offer-score__stars', alt: '4.7 out of 5 stars', width: 108, height: 23, loading: 'lazy' %}
+          <p class="offer-score__note">{{ grp_reviews.settings.score_note | default: s.score_note }}</p>
+        </div>
+        <div class="offer-bars">
+          <div class="offer-bar"><span>{{ grp_reviews.settings.bar_comfort_label | default: s.bar_comfort_label | default: 'Comfort' }}</span><div class="offer-bar__track"><div class="offer-bar__fill" style="width:{{ grp_reviews.settings.bar_comfort_pct | default: s.bar_comfort_pct | default: 96 }}%"></div></div><span>{{ grp_reviews.settings.bar_comfort | default: s.bar_comfort | default: '4.8/5' }}</span></div>
+          <div class="offer-bar"><span>{{ grp_reviews.settings.bar_support_label | default: s.bar_support_label | default: 'Support' }}</span><div class="offer-bar__track"><div class="offer-bar__fill" style="width:{{ grp_reviews.settings.bar_support_pct | default: s.bar_support_pct | default: 94 }}%"></div></div><span>{{ grp_reviews.settings.bar_support | default: s.bar_support | default: '4.7/5' }}</span></div>
+          <div class="offer-bar"><span>{{ grp_reviews.settings.bar_quality_label | default: s.bar_quality_label | default: 'Quality' }}</span><div class="offer-bar__track"><div class="offer-bar__fill" style="width:{{ grp_reviews.settings.bar_quality_pct | default: s.bar_quality_pct | default: 94 }}%"></div></div><span>{{ grp_reviews.settings.bar_quality | default: s.bar_quality | default: '4.7/5' }}</span></div>
+          <div class="offer-bar"><span>{{ grp_reviews.settings.bar_value_label | default: s.bar_value_label | default: 'Value for Money' }}</span><div class="offer-bar__track"><div class="offer-bar__fill" style="width:{{ grp_reviews.settings.bar_value_pct | default: s.bar_value_pct | default: 92 }}%"></div></div><span>{{ grp_reviews.settings.bar_value | default: s.bar_value | default: '4.6/5' }}</span></div>
+        </div>
+      </div>
+      <div class="offer-review-list">
+        {%- if grp_reviews -%}
+          {%- for i in (1..6) -%}
+            {%- liquid
+              case i
+                when 1
+                  assign rn = grp_reviews.settings.item_1_name
+                  assign rd = grp_reviews.settings.item_1_date
+                  assign rtx = grp_reviews.settings.item_1_text
+                  assign rp = grp_reviews.settings.item_1_photo
+                  assign rf = grp_reviews.settings.item_1_fallback
+                  assign rv = grp_reviews.settings.item_1_verified
+                when 2
+                  assign rn = grp_reviews.settings.item_2_name
+                  assign rd = grp_reviews.settings.item_2_date
+                  assign rtx = grp_reviews.settings.item_2_text
+                  assign rp = grp_reviews.settings.item_2_photo
+                  assign rf = grp_reviews.settings.item_2_fallback
+                  assign rv = grp_reviews.settings.item_2_verified
+                when 3
+                  assign rn = grp_reviews.settings.item_3_name
+                  assign rd = grp_reviews.settings.item_3_date
+                  assign rtx = grp_reviews.settings.item_3_text
+                  assign rp = grp_reviews.settings.item_3_photo
+                  assign rf = grp_reviews.settings.item_3_fallback
+                  assign rv = grp_reviews.settings.item_3_verified
+                when 4
+                  assign rn = grp_reviews.settings.item_4_name
+                  assign rd = grp_reviews.settings.item_4_date
+                  assign rtx = grp_reviews.settings.item_4_text
+                  assign rp = grp_reviews.settings.item_4_photo
+                  assign rf = grp_reviews.settings.item_4_fallback
+                  assign rv = grp_reviews.settings.item_4_verified
+                when 5
+                  assign rn = grp_reviews.settings.item_5_name
+                  assign rd = grp_reviews.settings.item_5_date
+                  assign rtx = grp_reviews.settings.item_5_text
+                  assign rp = grp_reviews.settings.item_5_photo
+                  assign rf = grp_reviews.settings.item_5_fallback
+                  assign rv = grp_reviews.settings.item_5_verified
+                when 6
+                  assign rn = grp_reviews.settings.item_6_name
+                  assign rd = grp_reviews.settings.item_6_date
+                  assign rtx = grp_reviews.settings.item_6_text
+                  assign rp = grp_reviews.settings.item_6_photo
+                  assign rf = grp_reviews.settings.item_6_fallback
+                  assign rv = grp_reviews.settings.item_6_verified
+              endcase
+            -%}
+            {%- if rn != blank -%}
+              <article class="offer-review-item">
+                <div class="offer-review-item__aside">
+                  <strong>{{ rn }}</strong>
+                  <span class="offer-review-item__verified">{{ rv | default: 'Verified buyer' }}</span>
+                </div>
+                <div class="offer-review-item__content">
+                  <div class="offer-review-item__top">
+                    {% render 'offer-img', image: s.review_stars_image, fallback: 'offer-star5.webp', class: 'offer-review-item__stars', alt: '5 stars', width: 100, height: 20, loading: 'lazy' %}
+                    <span class="offer-review-item__date">{{ rd }}</span>
+                  </div>
+                  <p>{{ rtx }}</p>
+                </div>
+                {% render 'offer-img', image: rp, fallback: rf, class: 'offer-review-item__photo', alt: rn, width: 200, height: 267, loading: 'lazy' %}
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- assign review_blocks = section.blocks | where: 'type', 'review' -%}
+          {%- if review_blocks.size > 0 -%}
+            {%- for block in review_blocks -%}
+              <article class="offer-review-item" {{ block.shopify_attributes }}>
+                <div class="offer-review-item__aside">
+                  <strong>{{ block.settings.name }}</strong>
+                  <span class="offer-review-item__verified">{{ block.settings.verified_label | default: 'Verified buyer' }}</span>
+                </div>
+                <div class="offer-review-item__content">
+                  <div class="offer-review-item__top">
+                    {% render 'offer-img', image: s.review_stars_image, fallback: 'offer-star5.webp', class: 'offer-review-item__stars', alt: '5 stars', width: 100, height: 20, loading: 'lazy' %}
+                    <span class="offer-review-item__date">{{ block.settings.date }}</span>
+                  </div>
+                  <p>{{ block.settings.text }}</p>
+                </div>
+                {% render 'offer-img', image: block.settings.photo, fallback: block.settings.fallback_asset, class: 'offer-review-item__photo', alt: block.settings.name, width: 200, height: 267, loading: 'lazy' %}
+              </article>
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
+  {%- if grp_final -%}
+  <section class="offer-final" {{ grp_final.shopify_attributes }}>
+    <div class="offer-row">
+      <div class="offer-final__banner">
+        {%- assign final_banner = grp_final.settings.banner_image | default: s.final_banner_image -%}
+        {% render 'offer-img', image: final_banner, fallback: 'offer-footer-img.jpg', alt: 'Customer wearing Zavelyn Foot Sleeve', width: 2000, height: 715, loading: 'lazy' %}
+        <div class="offer-final__actions">
+          <a class="offer-final__cta offer-final__cta--primary" href="#OfferPackages" data-offer-scroll-packages>{{ grp_final.settings.cta_primary | default: s.final_cta_primary | default: 'Buy One Get One FREE' }}</a>
+          <a class="offer-final__cta offer-final__cta--ghost" href="#OfferPackages" data-offer-scroll-packages>{{ grp_final.settings.cta_secondary | default: s.final_cta_secondary | default: cta_label }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
+  <footer class="offer-foot">
+    <div class="offer-foot__inner">
+      <div class="offer-foot__logo">{{ brand }}</div>
+      <p class="offer-foot__line">© {{ 'now' | date: '%Y' }} {{ brand }}®. {{ s.footer_rights | default: 'All Rights Reserved.' }}</p>
+      <p class="offer-foot__line"><a href="{{ privacy_url }}">{{ s.footer_privacy_label | default: 'Privacy Policy' }}</a> - <a href="{{ terms_url }}">{{ s.footer_terms_label | default: 'Terms of Service' }}</a></p>
+      <p class="offer-foot__line">{{ s.footer_email | default: 'support@zavelyn.com' }}</p>
+    </div>
+  </footer>
+
+  <button type="button" class="offer-top" data-offer-top aria-label="Back to top" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 5v14M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div class="offer-sticky" data-offer-sticky aria-hidden="true" inert>
+    <div class="offer-sticky__inner">
+      <div class="offer-sticky__copy">{{ s.sticky_copy | default: 'Recovery Sale, Buy One Get One FREE!' }}</div>
+      <a class="offer-sticky__cta" href="#OfferPackages" data-offer-scroll-packages tabindex="-1">
+        <span class="offer-cta__label">{{ s.sticky_cta | default: cta_label }}</span>
+        <span class="offer-cta__sep" aria-hidden="true">—</span>
+        <span class="offer-cta__price" data-offer-cta-price>{{ cta_price_cents | money_without_trailing_zeros }}</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="FsBogoFreeMap">
+{
+{%- if bogo_free_product != blank -%}
+  {%- for v in bogo_free_product.variants -%}
+  {{ v.option1 | json }}: {{ v.id }}{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+{%- endif -%}
+}
+</script>
+
+<script>
+  (function () {
+    const main = document.querySelector('[data-offer-main]');
+    const thumbs = Array.prototype.slice.call(document.querySelectorAll('[data-offer-thumb]'));
+    const sources = thumbs.map(function (t) { return t.dataset.src; });
+    var index = 0;
+
+    function setSlide(i) {
+      if (!main || !sources.length) return;
+      index = (i + sources.length) % sources.length;
+      main.src = sources[index];
+      thumbs.forEach(function (t, n) {
+        t.classList.toggle('is-active', n === index);
+      });
+    }
+
+    thumbs.forEach(function (thumb) {
+      thumb.addEventListener('click', function () {
+        setSlide(Number(thumb.dataset.index));
+      });
+    });
+
+    var prev = document.querySelector('[data-offer-prev]');
+    var next = document.querySelector('[data-offer-next]');
+    if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); setSlide(index - 1); });
+    if (next) next.addEventListener('click', function (e) { e.stopPropagation(); setSlide(index + 1); });
+
+    var fancyboxLoading = null;
+    function loadFancybox(cb) {
+      if (window.Fancybox) { cb(); return; }
+      if (fancyboxLoading) { fancyboxLoading.then(cb); return; }
+      fancyboxLoading = new Promise(function (resolve) {
+        var css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css';
+        document.head.appendChild(css);
+        var s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js';
+        s.onload = function () { resolve(); };
+        s.onerror = function () { resolve(); };
+        document.body.appendChild(s);
+      });
+      fancyboxLoading.then(cb);
+    }
+
+    var zoom = document.querySelector('[data-offer-zoom]');
+    if (zoom) {
+      zoom.addEventListener('click', function () {
+        if (!sources.length) return;
+        loadFancybox(function () {
+          if (!window.Fancybox) return;
+          window.Fancybox.show(
+            sources.map(function (src) { return { src: src, type: 'image' }; }),
+            { startIndex: index }
+          );
+        });
+      });
+    }
+
+    var closeFr = document.querySelector('[data-frontrow-close]');
+    if (closeFr) {
+      closeFr.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var fr = document.querySelector('[data-frontrow]');
+        if (fr) fr.remove();
+      });
+    }
+
+    var sticky = document.querySelector('[data-offer-sticky]');
+    var stickyCta = sticky ? sticky.querySelector('[data-offer-scroll-packages], [data-offer-checkout]') : null;
+    var hero = document.querySelector('.offer-hero');
+    if (sticky && hero && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        var on = !entries[0].isIntersecting;
+        sticky.classList.toggle('is-on', on);
+        sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
+        if (on) sticky.removeAttribute('inert');
+        else sticky.setAttribute('inert', '');
+        if (stickyCta) stickyCta.tabIndex = on ? 0 : -1;
+        document.documentElement.classList.toggle('offer-sticky-on', on);
+      }, { threshold: 0.05 }).observe(hero);
+    }
+
+    /* Lazy-load Frontrow iframe + script near viewport */
+    (function lazyFrontrow() {
+      var wrap = document.querySelector('[data-offer-frontrow]');
+      var frame = document.getElementById('OfferCliniciansFrame');
+      if (!wrap || !frame) return;
+      var src = frame.getAttribute('data-src');
+      var scriptSrc = frame.getAttribute('data-script');
+      function mount() {
+        if (frame.getAttribute('src')) return;
+        if (src) frame.setAttribute('src', src);
+        if (scriptSrc && !document.querySelector('script[data-offer-frontrow-script]')) {
+          var s = document.createElement('script');
+          s.src = scriptSrc;
+          s.defer = true;
+          s.setAttribute('data-offer-frontrow-script', '1');
+          document.body.appendChild(s);
+        }
+      }
+      if (!('IntersectionObserver' in window)) { mount(); return; }
+      new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        mount();
+      }, { rootMargin: '200px 0px' }).observe(wrap);
+    })();
+
+    var topBtn = document.querySelector('[data-offer-top]');
+    if (topBtn) {
+      var topThreshold = 480;
+      function syncTopBtn() {
+        var show = window.scrollY > topThreshold;
+        topBtn.hidden = !show;
+        topBtn.classList.toggle('is-on', show);
+      }
+      window.addEventListener('scroll', syncTopBtn, { passive: true });
+      syncTopBtn();
+      topBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    var accordion = document.querySelector('[data-offer-accordion]');
+    if (accordion) {
+      var items = Array.prototype.slice.call(accordion.querySelectorAll('.offer-faq__item'));
+      items.forEach(function (item, i) {
+        var trigger = item.querySelector('.offer-faq__trigger');
+        var panel = item.querySelector('.offer-faq__panel');
+        if (!trigger || !panel) return;
+        var panelId = 'offer-faq-panel-' + i;
+        panel.id = panelId;
+        trigger.setAttribute('aria-controls', panelId);
+        trigger.setAttribute('id', 'offer-faq-trigger-' + i);
+        panel.setAttribute('role', 'region');
+        panel.setAttribute('aria-labelledby', 'offer-faq-trigger-' + i);
+        trigger.addEventListener('click', function () {
+          var willOpen = !item.classList.contains('is-open');
+          items.forEach(function (other) {
+            var open = other === item && willOpen;
+            other.classList.toggle('is-open', open);
+            var btn = other.querySelector('.offer-faq__trigger');
+            var otherPanel = other.querySelector('.offer-faq__panel');
+            if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (otherPanel) {
+              if (open) otherPanel.removeAttribute('hidden');
+              else otherPanel.setAttribute('hidden', '');
+            }
+          });
+        });
+        panel.setAttribute('hidden', '');
+      });
+    }
+
+    /* Frontrow iframe auto-height (official event: RESIZE_TESTIMONIALS_HEIGHT) */
+    window.addEventListener('message', function (event) {
+      if (!event || !event.data) return;
+      var data = event.data;
+      var height = null;
+      if (typeof data === 'object') {
+        if (data.name === 'RESIZE_TESTIMONIALS_HEIGHT' || data.type === 'RESIZE_TESTIMONIALS_HEIGHT') {
+          height = data.value;
+        } else {
+          height = data.height || data.iframeHeight || (data.payload && data.payload.height);
+          if (!height && data.name && /height|resize/i.test(String(data.name))) {
+            height = data.value || data.h;
+          }
+          if (!height && data.type && /height|resize/i.test(String(data.type))) {
+            height = data.value || data.h;
+          }
+        }
+      }
+      if (!height && typeof data === 'string') {
+        try {
+          var parsed = JSON.parse(data);
+          height = parsed.height || parsed.iframeHeight || parsed.value;
+        } catch (err) {
+          var m = data.match(/height[=:](\d+)/i);
+          if (m) height = Number(m[1]);
+        }
+      }
+      height = Number(height);
+      if (!height || height < 200) return;
+      var frame = document.getElementById('OfferCliniciansFrame');
+      if (frame) {
+        frame.style.height = height + 'px';
+        frame.style.minHeight = '0';
+      }
+    });
+
+    var videoCards = Array.prototype.slice.call(document.querySelectorAll('[data-offer-video]'));
+    var soundUnlocked = false;
+
+    function unlockSound() {
+      soundUnlocked = true;
+      videoCards.forEach(function (card) {
+        if (!card.classList.contains('is-playing')) return;
+        var v = card.querySelector('video');
+        if (!v) return;
+        v.muted = false;
+        v.volume = 1;
+      });
+    }
+    document.addEventListener('pointerdown', unlockSound, { once: true, passive: true });
+    document.addEventListener('keydown', unlockSound, { once: true });
+
+    function stopVideoCard(card) {
+      card.classList.remove('is-playing');
+      var v = card.querySelector('video');
+      if (!v) return;
+      v.pause();
+      try { v.currentTime = 0; } catch (e) {}
+    }
+
+    function playVideoCard(card) {
+      var video = card.querySelector('video');
+      if (!video) return;
+      videoCards.forEach(function (other) {
+        if (other !== card) stopVideoCard(other);
+      });
+      card.classList.add('is-playing');
+      video.muted = false;
+      video.volume = 1;
+      var playPromise = video.play();
+      if (playPromise && playPromise.catch) {
+        playPromise.catch(function () {
+          /* Browser blocked sound without a prior gesture — play muted, unmute after click */
+          video.muted = true;
+          return video.play().catch(function () {});
+        });
+      }
+    }
+
+    videoCards.forEach(function (card) {
+      var video = card.querySelector('video');
+      if (!video) return;
+
+      card.addEventListener('mouseenter', function () {
+        playVideoCard(card);
+      });
+      card.addEventListener('mouseleave', function () {
+        stopVideoCard(card);
+      });
+
+      /* Click unlocks sound + plays with audio (also handles mobile tap) */
+      card.addEventListener('click', function (e) {
+        unlockSound();
+        e.preventDefault();
+        if (window.matchMedia('(hover: hover)').matches) {
+          if (card.classList.contains('is-playing')) {
+            video.muted = false;
+            video.volume = 1;
+            return;
+          }
+          playVideoCard(card);
+          return;
+        }
+        if (card.classList.contains('is-playing')) {
+          stopVideoCard(card);
+        } else {
+          playVideoCard(card);
+        }
+      });
+    });
+
+    /* Bundle selector + ATC → Shopify Checkout */
+    var bundlesRoot = document.querySelector('[data-offer-bundles]');
+    var qtyInput = document.getElementById('OfferQuantity');
+    var variantInput = document.getElementById('OfferVariantId');
+    var priceEl = document.querySelector('[data-offer-price]');
+    var valueEl = document.querySelector('[data-offer-value]');
+    var priceDashEl = document.querySelector('[data-offer-price-dash]');
+    var buyForm = document.getElementById('OfferAddForm');
+    var checkoutBtns = Array.prototype.slice.call(document.querySelectorAll('[data-offer-checkout]'));
+    var checkoutBusy = false;
+
+    function formatMoney(cents, format) {
+      var amount = (Number(cents) / 100).toFixed(2);
+      var withSep = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      if (!format) return '$' + withSep;
+      return format
+        .replace(/\{\{\s*amount_with_comma_separator\s*\}\}/g, withSep.replace('.', ',').replace(/,(?=\d{3})/g, '.'))
+        .replace(/\{\{\s*amount_no_decimals\s*\}\}/g, Math.round(Number(cents) / 100).toString())
+        .replace(/\{\{\s*amount\s*\}\}/g, withSep);
+    }
+
+    function formatCtaMoney(cents) {
+      var n = Number(cents) / 100;
+      if (!isFinite(n)) return '';
+      if (Math.abs(n - Math.round(n)) < 0.001) return '$' + Math.round(n);
+      return '$' + n.toFixed(2);
+    }
+
+    var ctaPriceEls = Array.prototype.slice.call(document.querySelectorAll('[data-offer-cta-price]'));
+
+    /* Canonical package map — paid vs free vs physical total (never confuse these) */
+    var PACKAGE_MAP = {
+      buy1: { package: 'buy1', paidQuantity: 1, freeQuantity: 0, totalQuantity: 1, discountCode: '', title: 'Buy 1' },
+      buy2get1: { package: 'buy2get1', paidQuantity: 2, freeQuantity: 1, totalQuantity: 3, discountCode: 'FS21', title: 'Buy 2 Get 1 FREE' },
+      buy3get3: { package: 'buy3get3', paidQuantity: 3, freeQuantity: 3, totalQuantity: 6, discountCode: 'FS33', title: 'Buy 3 Get 3 FREE' }
+    };
+
+    var selectedSize = null;
+    var selectedSizeBtn = bundlesRoot
+      ? bundlesRoot.querySelector('.offer-size-pill.is-active:not([disabled])') || bundlesRoot.querySelector('.offer-size-pill:not([disabled])')
+      : null;
+    if (selectedSizeBtn) selectedSize = selectedSizeBtn.getAttribute('data-offer-size');
+
+    function currentVariantId() {
+      if (!bundlesRoot) return variantInput ? String(variantInput.value || '') : '';
+      var active = null;
+      if (selectedSize) {
+        active = bundlesRoot.querySelector('.offer-size-pill.is-active[data-offer-size="' + selectedSize + '"]:not([disabled])');
+      }
+      if (!active) active = bundlesRoot.querySelector('.offer-size-pill.is-active:not([disabled])');
+      if (!active) active = bundlesRoot.querySelector('.offer-size-pill:not([disabled])');
+      var id = active ? active.getAttribute('data-variant-id') : '';
+      if (id && variantInput) variantInput.value = id;
+      return id || (variantInput ? String(variantInput.value || '') : '');
+    }
+
+    function syncSelectedSize(size) {
+      if (!bundlesRoot || !size) return;
+      selectedSize = size;
+      bundlesRoot.querySelectorAll('.offer-size-pill').forEach(function (btn) {
+        var match = btn.getAttribute('data-offer-size') === size;
+        btn.classList.toggle('is-active', match);
+      });
+      currentVariantId();
+    }
+
+    function getOfferState() {
+      var checked = bundlesRoot
+        ? bundlesRoot.querySelector('input[name="offer_bundle"]:checked')
+        : null;
+      var key = checked
+        ? (checked.getAttribute('data-package') || checked.value || 'buy1')
+        : 'buy1';
+      if (!PACKAGE_MAP[key]) key = 'buy1';
+      var base = PACKAGE_MAP[key];
+      var codeFromDom = checked ? (checked.getAttribute('data-discount-code') || '').trim() : '';
+      var card = checked && checked.closest('.offer-bundle');
+      var titleEl = card && card.querySelector('.offer-bundle__title');
+      var title = titleEl ? titleEl.textContent.trim() : base.title;
+      var variantId = currentVariantId();
+      return {
+        package: base.package,
+        variantId: variantId ? Number(variantId) : 0,
+        size: selectedSize || '',
+        paidQuantity: base.paidQuantity,
+        freeQuantity: base.freeQuantity,
+        totalQuantity: base.totalQuantity,
+        unitsPerPack: base.totalQuantity,
+        discountCode: codeFromDom || base.discountCode || '',
+        title: title,
+        baseTitle: title,
+        qty: base.paidQuantity,
+        free: base.freeQuantity,
+        cartQty: base.totalQuantity
+      };
+    }
+
+    /* Back-compat alias */
+    function selectedBundle() { return getOfferState(); }
+
+    function syncOfferState() {
+      if (!bundlesRoot) return;
+      var unit = Number(bundlesRoot.getAttribute('data-unit-price') || 0);
+      var compare = Number(bundlesRoot.getAttribute('data-compare-price') || unit);
+      var format = bundlesRoot.getAttribute('data-money-format') || '${{amount}}';
+      var state = getOfferState();
+
+      /* UI price = amount customer PAYS (paidQuantity × unit), never totalQuantity */
+      var paidCents = unit * state.paidQuantity;
+      var valueCents = Math.max(compare, unit) * state.totalQuantity;
+
+      if (qtyInput) qtyInput.value = String(state.totalQuantity);
+      if (variantInput && state.variantId) variantInput.value = String(state.variantId);
+
+      bundlesRoot.querySelectorAll('.offer-bundle').forEach(function (card) {
+        var input = card.querySelector('input[name="offer_bundle"]');
+        card.classList.toggle('is-active', !!(input && input.checked));
+        var priceNode = card.querySelector('[data-bundle-price]');
+        if (priceNode && input) {
+          var paid = Number(input.getAttribute('data-paid') || input.getAttribute('data-qty') || 1);
+          priceNode.textContent = formatMoney(unit * paid, format);
+        }
+      });
+
+      if (selectedSize) syncSelectedSize(selectedSize);
+      if (priceEl) priceEl.textContent = formatMoney(paidCents, format);
+      if (valueEl) {
+        if (valueCents > paidCents) {
+          valueEl.textContent = formatMoney(valueCents, format);
+          valueEl.hidden = false;
+          if (priceDashEl) priceDashEl.hidden = false;
+        } else {
+          valueEl.textContent = '';
+          valueEl.hidden = true;
+          if (priceDashEl) priceDashEl.hidden = true;
+        }
+      }
+      var ctaMoney = formatCtaMoney(paidCents);
+      ctaPriceEls.forEach(function (el) { el.textContent = ctaMoney; });
+    }
+
+    function syncBundleUI() { syncOfferState(); }
+
+    function clearDiscountCode() {
+      try {
+        document.cookie = 'discount_code=; Max-Age=0; Path=/';
+        document.cookie = 'discount_code=; Max-Age=0; Path=/; SameSite=Lax';
+      } catch (err) {}
+      return fetch('/cart/update.js', {
+        method: 'POST',
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify({ discount: '' })
+      }).catch(function () {});
+    }
+
+    function applyDiscountCode(code) {
+      if (!code) return clearDiscountCode();
+      return fetch('/discount/' + encodeURIComponent(code), {
+        credentials: 'same-origin',
+        redirect: 'follow'
+      }).catch(function () {});
+    }
+
+    if (bundlesRoot) {
+      bundlesRoot.querySelectorAll('input[name="offer_bundle"]').forEach(function (input) {
+        input.addEventListener('change', function () {
+          /* Package is source of truth — refresh paid/free/total immediately */
+          syncOfferState();
+        });
+      });
+      bundlesRoot.querySelectorAll('[data-offer-size]').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (btn.disabled) return;
+          var card = btn.closest('.offer-bundle');
+          var radio = card && card.querySelector('input[name="offer_bundle"]');
+          if (radio && !radio.checked) {
+            radio.checked = true;
+          }
+          syncSelectedSize(btn.getAttribute('data-offer-size'));
+          syncOfferState();
+        });
+      });
+    }
+    syncOfferState();
+
+    /* Size chart popup */
+    var sizeChart = document.querySelector('[data-offer-sizechart]');
+    var sizeChartLastFocus = null;
+    function openSizeChart() {
+      if (!sizeChart) return;
+      sizeChartLastFocus = document.activeElement;
+      sizeChart.hidden = false;
+      document.documentElement.classList.add('offer-sizechart-open');
+      var closeBtn = sizeChart.querySelector('[data-offer-sizechart-close].offer-sizechart__close');
+      if (closeBtn) closeBtn.focus();
+    }
+    function closeSizeChart() {
+      if (!sizeChart || sizeChart.hidden) return;
+      sizeChart.hidden = true;
+      document.documentElement.classList.remove('offer-sizechart-open');
+      if (sizeChartLastFocus && sizeChartLastFocus.focus) sizeChartLastFocus.focus();
+    }
+    document.querySelectorAll('[data-offer-sizechart-open]').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openSizeChart();
+      });
+    });
+    document.querySelectorAll('[data-offer-sizechart-close]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        closeSizeChart();
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeSizeChart();
+    });
+
+    /* Shipping country from visitor IP (Shopify geo) */
+    (function syncShipCountryFromIp() {
+      var countryEl = document.querySelector('[data-offer-ship-country]');
+      if (!countryEl) return;
+      fetch('/browsing_context_suggestions.json', {
+        credentials: 'same-origin',
+        headers: { Accept: 'application/json' }
+      })
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (data) {
+          var detected = data && data.detected_values && data.detected_values.country;
+          var name = detected && (detected.name || detected.handle);
+          if (name) countryEl.textContent = name;
+        })
+        .catch(function () {});
+    })();
+
+    var BOGO_FREE_BY_SIZE = {};
+    try {
+      var freeMapEl = document.getElementById('FsBogoFreeMap');
+      BOGO_FREE_BY_SIZE = freeMapEl ? JSON.parse(freeMapEl.textContent) : {};
+    } catch (err) {
+      BOGO_FREE_BY_SIZE = {};
+    }
+
+    function newBundleId() {
+      return 'fs_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 8);
+    }
+
+    function buildBundleItems(state) {
+      var bundleId = newBundleId();
+      var youGet = state.totalQuantity + (state.totalQuantity === 1 ? ' sleeve' : ' sleeves');
+      var summary = youGet;
+      if (state.freeQuantity > 0) {
+        summary = youGet + ' · pay for ' + state.paidQuantity + ' · ' + state.freeQuantity + ' free';
+      }
+      var shared = {
+        _bundle: 'bogo',
+        _bundle_id: bundleId,
+        _package: state.package,
+        _paid: String(state.paidQuantity),
+        _free: String(state.freeQuantity),
+        _cart_qty: String(state.totalQuantity),
+        _units_per_pack: String(state.unitsPerPack),
+        Offer: state.title,
+        'You get': summary
+      };
+      if (state.size) shared.Size = state.size;
+
+      var items = [];
+      /* Paid line — customer is charged for these units */
+      items.push({
+        id: state.variantId,
+        quantity: state.paidQuantity,
+        properties: Object.assign({}, shared, {
+          _role: 'paid',
+          'Line type': state.freeQuantity > 0 ? 'Paid sleeves' : 'Package'
+        })
+      });
+
+      /*
+        Free line — $0 complimentary variant (same size).
+        Keeps physical sleeve count correct without cart-wide BXGY
+        fighting when multiple different packages share one cart.
+      */
+      if (state.freeQuantity > 0) {
+        var freeId = state.size ? BOGO_FREE_BY_SIZE[state.size] : null;
+        if (freeId) {
+          items.push({
+            id: Number(freeId),
+            quantity: state.freeQuantity,
+            properties: Object.assign({}, shared, {
+              _role: 'free',
+              'Line type': 'Free sleeves (included)',
+              'You get': state.freeQuantity + (state.freeQuantity === 1 ? ' free sleeve' : ' free sleeves')
+            })
+          });
+        } else {
+          /* Fallback: paid variant + rely on FS21/FS33 (single-package carts) */
+          items[0].quantity = state.totalQuantity;
+          items[0].properties._role = 'combined';
+          items[0].properties._discount_code = state.discountCode || '';
+          items[0].properties['Line type'] = 'Package';
+        }
+      }
+      return { items: items, bundleId: bundleId, summary: summary, usedFreeProduct: !!(state.freeQuantity > 0 && state.size && BOGO_FREE_BY_SIZE[state.size]) };
+    }
+
+    function goToCheckout(trigger) {
+      if (checkoutBusy) return;
+
+      /* Live package + size only — never stale qty from a previous selection */
+      syncOfferState();
+      var state = getOfferState();
+      if (!state.variantId || !state.paidQuantity) {
+        window.location.href = '#OfferPackages';
+        return;
+      }
+
+      checkoutBusy = true;
+      checkoutBtns.forEach(function (btn) { btn.classList.add('is-loading'); });
+      if (trigger && trigger.classList) trigger.classList.add('is-loading');
+
+      /*
+        APPEND mode: each ATC is an independent package/bundle.
+        Do NOT clear the cart. Do NOT replace prior packages.
+        Same package + same size may merge; different packages stay separate.
+      */
+      /*
+        Always APPEND a new independent bundle (_bundle_id).
+        Never clear cart. Never replace prior packages.
+      */
+      var built = buildBundleItems(state);
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin',
+        body: JSON.stringify({ items: built.items })
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('add_failed');
+          return res.json();
+        })
+        .then(function () {
+          /* BXGY codes are cart-wide and break mixed packages — prefer $0 free units */
+          if (!built.usedFreeProduct && state.discountCode) {
+            return applyDiscountCode(state.discountCode);
+          }
+          return clearDiscountCode();
+        })
+        .then(function () {
+          return fetch('/cart.js', { credentials: 'same-origin' }).then(function (r) {
+            return r.ok ? r.json() : null;
+          });
+        })
+        .then(function (cart) {
+          checkoutBusy = false;
+          checkoutBtns.forEach(function (btn) { btn.classList.remove('is-loading'); });
+          if (trigger && trigger.classList) trigger.classList.remove('is-loading');
+          if (cart) {
+            document.dispatchEvent(new CustomEvent('zavelyn:offer-cart:open', { detail: { cart: cart } }));
+            return;
+          }
+          window.location.href = '/checkout';
+        })
+        .catch(function () {
+          checkoutBusy = false;
+          checkoutBtns.forEach(function (btn) { btn.classList.remove('is-loading'); });
+          if (trigger && trigger.classList) trigger.classList.remove('is-loading');
+          syncOfferState();
+          if (buyForm) buyForm.submit();
+        });
+    }
+
+    if (buyForm) {
+      buyForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        goToCheckout(e.submitter || buyForm.querySelector('[data-offer-checkout]'));
+      });
+    }
+
+    checkoutBtns.forEach(function (btn) {
+      if (btn.closest('#OfferAddForm')) return;
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        goToCheckout(btn);
+      });
+    });
+
+    function scrollToPackages(e) {
+      if (e) e.preventDefault();
+      var target = document.getElementById('OfferPackages');
+      if (!target) return;
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (history && history.replaceState) {
+        history.replaceState(null, '', '#OfferPackages');
+      }
+    }
+    document.querySelectorAll('[data-offer-scroll-packages]').forEach(function (link) {
+      link.addEventListener('click', scrollToPackages);
+    });
+
+    /* Session reserve timer */
+    var timerEl = document.querySelector('[data-offer-timer]');
+    if (timerEl) {
+      var TIMER_KEY = 'zavelyn_offer_reserve_until';
+      var DURATION = 10 * 60 * 1000;
+      var until = Number(sessionStorage.getItem(TIMER_KEY) || 0);
+      var now = Date.now();
+      if (!until || until < now) {
+        until = now + DURATION;
+        sessionStorage.setItem(TIMER_KEY, String(until));
+      }
+      function tickTimer() {
+        var left = Math.max(0, until - Date.now());
+        var mins = Math.floor(left / 60000);
+        var secs = Math.floor((left % 60000) / 1000);
+        timerEl.textContent = mins + ':' + (secs < 10 ? '0' : '') + secs;
+        if (left <= 0) {
+          until = Date.now() + DURATION;
+          sessionStorage.setItem(TIMER_KEY, String(until));
+        }
+      }
+      tickTimer();
+      setInterval(tickTimer, 1000);
+    }
+
+    /* Scroll reveal */
+    (function initOfferReveal() {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var root = document.getElementById('OfferTop') || document;
+      var targets = Array.prototype.slice.call(root.querySelectorAll([
+        '.offer-card',
+        '.offer-day',
+        '.offer-mat',
+        '.offer-vreview',
+        '.offer-review-item',
+        '.offer-specialist',
+        '.offer-compare',
+        '.offer-press',
+        '.offer-quote',
+        '.offer-final__banner',
+        '.offer-timeline-hero',
+        '.offer-tech-hero',
+        '.offer-head',
+        '.offer-ratings',
+        '.offer-clinicians-widget'
+      ].join(',')));
+
+      if (!targets.length) return;
+
+      targets.forEach(function (el, i) {
+        if (el.classList.contains('offer-reveal')) return;
+        el.classList.add('offer-reveal');
+        if (el.classList.contains('offer-card--rev') || el.classList.contains('offer-compare__media')) {
+          el.classList.add('offer-reveal--right');
+        } else if (el.classList.contains('offer-card') || el.classList.contains('offer-specialist__media')) {
+          el.classList.add('offer-reveal--left');
+        } else if (el.classList.contains('offer-final__banner') || el.classList.contains('offer-timeline-hero')) {
+          el.classList.add('offer-reveal--scale');
+        }
+        el.style.transitionDelay = (Math.min(i % 4, 3) * 70) + 'ms';
+      });
+
+      if (reduce || !('IntersectionObserver' in window)) {
+        targets.forEach(function (el) { el.classList.add('is-in'); });
+        return;
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      targets.forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.92) {
+          el.classList.add('is-in');
+        } else {
+          io.observe(el);
+        }
+      });
+    })();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Offer landing",
+  "tag": "section",
+  "class": "section-offer-landing",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Brand & ticker"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand name",
+      "default": "Zavelyn"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text",
+      "label": "Ticker text",
+      "default": "RECOVERY SALE STARTS NOW."
+    },
+    {
+      "type": "text",
+      "id": "ticker_highlight",
+      "label": "Ticker highlight",
+      "default": "BUY ONE GET ONE FREE!"
+    },
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "image_picker",
+      "id": "stars_image",
+      "label": "Stars image"
+    },
+    {
+      "type": "text",
+      "id": "reviews_count_label",
+      "label": "Reviews count label",
+      "default": "(10,242 Reviews)"
+    },
+    {
+      "type": "text",
+      "id": "selling_point_1",
+      "label": "Selling point 1",
+      "default": "Instant heel & arch support from first wear"
+    },
+    {
+      "type": "text",
+      "id": "selling_point_2",
+      "label": "Selling point 2",
+      "default": "Boosts blood flow to help tissue recover"
+    },
+    {
+      "type": "text",
+      "id": "selling_point_3",
+      "label": "Selling point 3",
+      "default": "Thin enough for any shoe, all day"
+    },
+    {
+      "type": "text",
+      "id": "regular_price_prefix",
+      "label": "Regular price prefix",
+      "default": "Regular price"
+    },
+    {
+      "type": "text",
+      "id": "regular_price_suffix",
+      "label": "Regular price suffix",
+      "default": "per pair"
+    },
+    {
+      "type": "text",
+      "id": "bundles_label",
+      "label": "Bundles label",
+      "default": "Choose your package"
+    },
+    {
+      "type": "checkbox",
+      "id": "packages_reversed",
+      "label": "Reverse package order",
+      "default": false,
+      "info": "Show Buy 3 first, then Buy 2, then Buy 1"
+    },
+    {
+      "type": "text",
+      "id": "size_label",
+      "label": "Size row label",
+      "default": "Size"
+    },
+    {
+      "type": "text",
+      "id": "size_chart_link",
+      "label": "Size chart link label",
+      "default": "Size chart"
+    },
+    {
+      "type": "text",
+      "id": "size_chart_title",
+      "label": "Size chart popup title",
+      "default": "Shoe Size Guide"
+    },
+    {
+      "type": "textarea",
+      "id": "size_chart_note",
+      "label": "Size chart popup note",
+      "default": "If the size you order doesn't fit perfectly, we offer easy exchanges within 30 days."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Primary CTA label",
+      "default": "Add to cart"
+    },
+    {
+      "type": "text",
+      "id": "reserve_prefix",
+      "label": "Reserve prefix",
+      "default": "High demand — package reserved for"
+    },
+    {
+      "type": "text",
+      "id": "reserve_stock_fallback",
+      "label": "Stock fallback count",
+      "default": "14"
+    },
+    {
+      "type": "text",
+      "id": "shipping_arrive",
+      "label": "Shipping arrive text",
+      "default": "Your order will arrive in"
+    },
+    {
+      "type": "text",
+      "id": "shipping_days",
+      "label": "Shipping days",
+      "default": "7–15 Business Days"
+    },
+    {
+      "type": "text",
+      "id": "sale_tag",
+      "label": "Sale tag",
+      "default": "Recovery Sale"
+    },
+    {
+      "type": "text",
+      "id": "sale_title",
+      "label": "Sale title",
+      "default": "BUY ONE GET ONE FREE"
+    },
+    {
+      "type": "header",
+      "content": "Frontrow badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_frontrow",
+      "label": "Show Frontrow badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "frontrow_badge",
+      "label": "Badge label",
+      "default": "CLINICIANS' CHOICE"
+    },
+    {
+      "type": "text",
+      "id": "frontrow_text",
+      "label": "Badge text",
+      "default": "832 clinicians share this on FrontrowMD without compensation."
+    },
+    {
+      "type": "text",
+      "id": "frontrow_link_label",
+      "label": "Link label",
+      "default": "View clinicians & learn more"
+    },
+    {
+      "type": "image_picker",
+      "id": "frontrow_face_1",
+      "label": "Face 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "frontrow_face_2",
+      "label": "Face 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "frontrow_face_3",
+      "label": "Face 3"
+    },
+    {
+      "type": "header",
+      "content": "Accordion images"
+    },
+    {
+      "type": "image_picker",
+      "id": "size_guide_image",
+      "label": "Size guide image"
+    },
+    {
+      "type": "image_picker",
+      "id": "care_icon",
+      "label": "Care icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "materials_icon",
+      "label": "Materials icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "guarantee_icon",
+      "label": "Guarantee icon"
+    },
+    {
+      "type": "textarea",
+      "id": "care_text",
+      "label": "Care text",
+      "default": "Machine wash cold on a delicate cycle with mild detergent to maintain elasticity and support.\n\nAir dry or tumble dry on low heat to preserve compression properties.\n\nDo not iron, bleach, use fabric softeners, or dry clean."
+    },
+    {
+      "type": "textarea",
+      "id": "materials_text",
+      "label": "Materials text",
+      "default": "Premium nylon-spandex. Hypoallergenic, breathable, chemical-free. Durable comfort for daily wear."
+    },
+    {
+      "type": "textarea",
+      "id": "guarantee_text",
+      "label": "Guarantee text",
+      "default": "Not satisfied? Contact us within 30 days, we'll make it right. Zero risk."
+    },
+    {
+      "type": "textarea",
+      "id": "description_intro",
+      "label": "Description intro",
+      "default": "Morning heel pain that won't quit? Leaning on grocery carts for support? The Zavelyn Foot Sleeve delivers:"
+    },
+    {
+      "type": "header",
+      "content": "Press"
+    },
+    {
+      "type": "textarea",
+      "id": "press_quote",
+      "label": "Press quote",
+      "default": "“The Zavelyn Foot Sleeve addresses what other solutions miss. While most target inflammation, this tackles tissue breakdown at the source.” - Wellness Weekly"
+    },
+    {
+      "type": "header",
+      "content": "Features intro"
+    },
+    {
+      "type": "text",
+      "id": "features_heading",
+      "label": "Features heading",
+      "default": "Zavelyn Foot Sleeve's dual-action system: blood flow restoration + multi-directional support"
+    },
+    {
+      "type": "textarea",
+      "id": "features_text",
+      "label": "Features text",
+      "default": "After 4 weeks, heel pain shifts from inflammation to tissue breakdown—that's why ice, stretches, and anti-inflammatories stop working. Your tissue is starved of blood and tearing with every step, creating a cycle that never ends."
+    },
+    {
+      "type": "text",
+      "id": "features_cta_line",
+      "label": "Features CTA line",
+      "default": "Discover how Zavelyn technology breaks this cycle. ↓"
+    },
+    {
+      "type": "header",
+      "content": "Timeline"
+    },
+    {
+      "type": "text",
+      "id": "timeline_heading",
+      "label": "Timeline heading",
+      "default": "What to Expect in Your First 30 Days"
+    },
+    {
+      "type": "textarea",
+      "id": "timeline_subtext",
+      "label": "Timeline subtext",
+      "default": "Compare Zavelyn with other compression supports and discover the difference in quality materials, targeted support, and long-lasting comfort."
+    },
+    {
+      "type": "image_picker",
+      "id": "timeline_hero_image",
+      "label": "Timeline hero image"
+    },
+    {
+      "type": "image_picker",
+      "id": "ba_before_image",
+      "label": "Before photo"
+    },
+    {
+      "type": "image_picker",
+      "id": "ba_after_image",
+      "label": "After photo"
+    },
+    {
+      "type": "text",
+      "id": "ba_before_label",
+      "label": "Before label",
+      "default": "Before Zavelyn"
+    },
+    {
+      "type": "text",
+      "id": "ba_before_quote",
+      "label": "Before quote",
+      "default": "“I couldn't even walk to the kitchen”"
+    },
+    {
+      "type": "text",
+      "id": "ba_after_label",
+      "label": "After label",
+      "default": "After 30 Days"
+    },
+    {
+      "type": "text",
+      "id": "ba_after_quote",
+      "label": "After quote",
+      "default": "“I wake up and just… walk. No pain.”"
+    },
+    {
+      "type": "header",
+      "content": "Tech"
+    },
+    {
+      "type": "text",
+      "id": "tech_heading",
+      "label": "Tech heading",
+      "default": "We spent years perfecting our innovative foot support technology."
+    },
+    {
+      "type": "image_picker",
+      "id": "tech_image",
+      "label": "Tech image"
+    },
+    {
+      "type": "header",
+      "content": "Compare"
+    },
+    {
+      "type": "text",
+      "id": "compare_heading",
+      "label": "Compare heading",
+      "default": "Why Zavelyn Stands Out"
+    },
+    {
+      "type": "textarea",
+      "id": "compare_text",
+      "label": "Compare text",
+      "default": "Compare Zavelyn with other compression supports and discover the difference in quality materials, targeted support, and long-lasting comfort."
+    },
+    {
+      "type": "image_picker",
+      "id": "compare_image",
+      "label": "Compare image"
+    },
+    {
+      "type": "header",
+      "content": "Video reviews"
+    },
+    {
+      "type": "text",
+      "id": "vreviews_heading",
+      "label": "Video reviews heading",
+      "default": "Real People. Real Relief."
+    },
+    {
+      "type": "header",
+      "content": "Clinicians"
+    },
+    {
+      "type": "text",
+      "id": "clinicians_iframe_url",
+      "label": "Frontrow iframe URL",
+      "default": "https://app.thefrontrowhealth.com/api/widgets?presentation_type=qual&product_id=3736"
+    },
+    {
+      "type": "text",
+      "id": "clinicians_script_url",
+      "label": "Frontrow script URL",
+      "default": "https://app.thefrontrowhealth.com/api/widgets/script?presentation_type=qual&product_id=3736"
+    },
+    {
+      "type": "header",
+      "content": "Specialist"
+    },
+    {
+      "type": "image_picker",
+      "id": "specialist_image",
+      "label": "Specialist photo"
+    },
+    {
+      "type": "text",
+      "id": "specialist_heading",
+      "label": "Specialist heading",
+      "default": "Developed & Validated by Foot Care Specialists"
+    },
+    {
+      "type": "textarea",
+      "id": "specialist_text",
+      "label": "Specialist text",
+      "default": "Zavelyn combines advanced compression technology with clinical expertise.\n\nTo ensure real-world results, we partnered with Anabelen “Annie” Aranton, a licensed physical therapist with decades of experience helping people overcome foot and heel discomfort."
+    },
+    {
+      "type": "text",
+      "id": "specialist_bullet_1",
+      "label": "Bullet 1",
+      "default": "Built on the science of foot movement"
+    },
+    {
+      "type": "text",
+      "id": "specialist_bullet_2",
+      "label": "Bullet 2",
+      "default": "Informed by real patient outcomes"
+    },
+    {
+      "type": "text",
+      "id": "specialist_bullet_3",
+      "label": "Bullet 3",
+      "default": "Refined by years of clinical practice"
+    },
+    {
+      "type": "header",
+      "content": "Written reviews"
+    },
+    {
+      "type": "text",
+      "id": "reviews_heading",
+      "label": "Reviews heading",
+      "default": "See Why 500,000+ Satisfied Customers Trust Zavelyn"
+    },
+    {
+      "type": "text",
+      "id": "score_value",
+      "label": "Score value",
+      "default": "4.7"
+    },
+    {
+      "type": "text",
+      "id": "score_note",
+      "label": "Score note",
+      "default": "Based on reviews from 500K+ customers"
+    },
+    {
+      "type": "text",
+      "id": "bar_comfort",
+      "label": "Comfort score",
+      "default": "4.8/5"
+    },
+    {
+      "type": "range",
+      "id": "bar_comfort_pct",
+      "label": "Comfort %",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 96,
+      "unit": "%"
+    },
+    {
+      "type": "text",
+      "id": "bar_support",
+      "label": "Support score",
+      "default": "4.7/5"
+    },
+    {
+      "type": "range",
+      "id": "bar_support_pct",
+      "label": "Support %",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 94,
+      "unit": "%"
+    },
+    {
+      "type": "text",
+      "id": "bar_quality",
+      "label": "Quality score",
+      "default": "4.7/5"
+    },
+    {
+      "type": "range",
+      "id": "bar_quality_pct",
+      "label": "Quality %",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 94,
+      "unit": "%"
+    },
+    {
+      "type": "text",
+      "id": "bar_value",
+      "label": "Value score",
+      "default": "4.6/5"
+    },
+    {
+      "type": "range",
+      "id": "bar_value_pct",
+      "label": "Value %",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 92,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Final banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "final_banner_image",
+      "label": "Final banner image"
+    },
+    {
+      "type": "text",
+      "id": "final_cta_primary",
+      "label": "Primary CTA",
+      "default": "Buy One Get One FREE"
+    },
+    {
+      "type": "text",
+      "id": "final_cta_secondary",
+      "label": "Secondary CTA",
+      "default": "Add to cart"
+    },
+    {
+      "type": "header",
+      "content": "Bundles"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1_title",
+      "label": "Bundle 1 title",
+      "default": "Buy 1"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1_meta",
+      "label": "Bundle 1 meta",
+      "default": "1 sleeve"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1_badge",
+      "label": "Bundle 1 badge",
+      "default": "$4.95 ship"
+    },
+    {
+      "type": "number",
+      "id": "bundle_1_qty",
+      "label": "Bundle 1 paid qty",
+      "default": 1
+    },
+    {
+      "type": "number",
+      "id": "bundle_1_free",
+      "label": "Bundle 1 free qty",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "bundle_1_sleeves",
+      "label": "Bundle 1 sleeves",
+      "default": 1
+    },
+    {
+      "type": "text",
+      "id": "bundle_2_title",
+      "label": "Bundle 2 title",
+      "default": "Buy 2 Get 1 FREE"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2_meta",
+      "label": "Bundle 2 meta",
+      "default": "3 sleeves"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2_badge",
+      "label": "Bundle 2 badge"
+    },
+    {
+      "type": "number",
+      "id": "bundle_2_qty",
+      "label": "Bundle 2 paid qty",
+      "default": 2
+    },
+    {
+      "type": "number",
+      "id": "bundle_2_free",
+      "label": "Bundle 2 free qty",
+      "default": 1
+    },
+    {
+      "type": "number",
+      "id": "bundle_2_sleeves",
+      "label": "Bundle 2 sleeves",
+      "default": 3
+    },
+    {
+      "type": "text",
+      "id": "bundle_3_title",
+      "label": "Bundle 3 title",
+      "default": "Buy 3 Get 3 FREE"
+    },
+    {
+      "type": "text",
+      "id": "bundle_3_meta",
+      "label": "Bundle 3 meta",
+      "default": "6 sleeves"
+    },
+    {
+      "type": "text",
+      "id": "bundle_3_badge",
+      "label": "Bundle 3 badge",
+      "default": "Free ship"
+    },
+    {
+      "type": "number",
+      "id": "bundle_3_qty",
+      "label": "Bundle 3 paid qty",
+      "default": 3
+    },
+    {
+      "type": "number",
+      "id": "bundle_3_free",
+      "label": "Bundle 3 free qty",
+      "default": 3
+    },
+    {
+      "type": "number",
+      "id": "bundle_3_sleeves",
+      "label": "Bundle 3 sleeves",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Shipping labels"
+    },
+    {
+      "type": "text",
+      "id": "shipping_to_label",
+      "label": "Shipping to label",
+      "default": "Shipping to"
+    },
+    {
+      "type": "text",
+      "id": "reserve_left_prefix",
+      "label": "Stock left prefix",
+      "default": "Only"
+    },
+    {
+      "type": "text",
+      "id": "reserve_left_suffix",
+      "label": "Stock left suffix",
+      "default": "left in stock"
+    },
+    {
+      "type": "header",
+      "content": "FAQ titles"
+    },
+    {
+      "type": "text",
+      "id": "faq_description_title",
+      "label": "Description title",
+      "default": "Description"
+    },
+    {
+      "type": "text",
+      "id": "faq_size_title",
+      "label": "Size guide title",
+      "default": "Size Guide"
+    },
+    {
+      "type": "text",
+      "id": "faq_care_title",
+      "label": "Care title",
+      "default": "Care & Wash Guide"
+    },
+    {
+      "type": "text",
+      "id": "faq_materials_title",
+      "label": "Materials title",
+      "default": "Premium Materials Certified"
+    },
+    {
+      "type": "text",
+      "id": "faq_guarantee_title",
+      "label": "Guarantee title",
+      "default": "30-Day Satisfaction Guarantee"
+    },
+    {
+      "type": "header",
+      "content": "Review score labels"
+    },
+    {
+      "type": "text",
+      "id": "score_out_of",
+      "label": "Out of label",
+      "default": "out of 5"
+    },
+    {
+      "type": "text",
+      "id": "bar_comfort_label",
+      "label": "Comfort label",
+      "default": "Comfort"
+    },
+    {
+      "type": "text",
+      "id": "bar_support_label",
+      "label": "Support label",
+      "default": "Support"
+    },
+    {
+      "type": "text",
+      "id": "bar_quality_label",
+      "label": "Quality label",
+      "default": "Quality"
+    },
+    {
+      "type": "text",
+      "id": "bar_value_label",
+      "label": "Value label",
+      "default": "Value for Money"
+    },
+    {
+      "type": "image_picker",
+      "id": "review_stars_image",
+      "label": "5-star icon"
+    },
+    {
+      "type": "header",
+      "content": "UI icons"
+    },
+    {
+      "type": "image_picker",
+      "id": "check_blue_icon",
+      "label": "Description check icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "quote_icon",
+      "label": "Quote icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "ba_cross_icon",
+      "label": "Before icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "ba_check_icon",
+      "label": "After icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "ba_arrow_icon",
+      "label": "Before/after arrow"
+    },
+    {
+      "type": "image_picker",
+      "id": "ship_icon",
+      "label": "Shipping icon"
+    },
+    {
+      "type": "text",
+      "id": "footer_privacy_label",
+      "label": "Privacy label",
+      "default": "Privacy Policy"
+    },
+    {
+      "type": "text",
+      "id": "footer_terms_label",
+      "label": "Terms label",
+      "default": "Terms of Service"
+    },
+    {
+      "type": "text",
+      "id": "footer_rights",
+      "label": "Rights line",
+      "default": "All Rights Reserved."
+    },
+    {
+      "type": "text",
+      "id": "value_suffix",
+      "label": "Price value suffix",
+      "default": "value"
+    },
+    {
+      "type": "header",
+      "content": "Sticky & footer"
+    },
+    {
+      "type": "text",
+      "id": "sticky_copy",
+      "label": "Sticky copy",
+      "default": "Recovery Sale, Buy One Get One FREE!"
+    },
+    {
+      "type": "text",
+      "id": "sticky_cta",
+      "label": "Sticky CTA",
+      "default": "Add to cart"
+    },
+    {
+      "type": "text",
+      "id": "footer_email",
+      "label": "Support email",
+      "default": "support@zavelyn.com"
+    },
+    {
+      "type": "url",
+      "id": "privacy_link",
+      "label": "Privacy policy"
+    },
+    {
+      "type": "url",
+      "id": "terms_link",
+      "label": "Terms of service"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "grp_gallery",
+      "name": "Gallery",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Gallery images"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "text",
+          "id": "fallback_1",
+          "label": "Fallback asset 1",
+          "default": "offer-gallery-1.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "text",
+          "id": "fallback_2",
+          "label": "Fallback asset 2",
+          "default": "offer-gallery-2.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "text",
+          "id": "fallback_3",
+          "label": "Fallback asset 3",
+          "default": "offer-gallery-3.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "text",
+          "id": "fallback_4",
+          "label": "Fallback asset 4",
+          "default": "offer-gallery-4.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "text",
+          "id": "fallback_5",
+          "label": "Fallback asset 5",
+          "default": "offer-gallery-5.webp"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "text",
+          "id": "fallback_6",
+          "label": "Fallback asset 6",
+          "default": "offer-gallery-6.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_7",
+          "label": "Image 7"
+        },
+        {
+          "type": "text",
+          "id": "fallback_7",
+          "label": "Fallback asset 7",
+          "default": "offer-gallery-7.jpg"
+        }
+      ]
+    },
+    {
+      "type": "grp_perks",
+      "name": "Perks",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Trust perks"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "text",
+          "id": "fallback_1",
+          "label": "Fallback 1"
+        },
+        {
+          "type": "text",
+          "id": "label_1",
+          "label": "Label 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "text",
+          "id": "fallback_2",
+          "label": "Fallback 2"
+        },
+        {
+          "type": "text",
+          "id": "label_2",
+          "label": "Label 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_3",
+          "label": "Icon 3"
+        },
+        {
+          "type": "text",
+          "id": "fallback_3",
+          "label": "Fallback 3"
+        },
+        {
+          "type": "text",
+          "id": "label_3",
+          "label": "Label 3"
+        }
+      ]
+    },
+    {
+      "type": "grp_checks",
+      "name": "Description checks",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Description checklist"
+        },
+        {
+          "type": "text",
+          "id": "check_1",
+          "label": "Check 1"
+        },
+        {
+          "type": "text",
+          "id": "check_2",
+          "label": "Check 2"
+        },
+        {
+          "type": "text",
+          "id": "check_3",
+          "label": "Check 3"
+        },
+        {
+          "type": "text",
+          "id": "check_4",
+          "label": "Check 4"
+        },
+        {
+          "type": "text",
+          "id": "check_5",
+          "label": "Check 5"
+        },
+        {
+          "type": "text",
+          "id": "check_6",
+          "label": "Check 6"
+        },
+        {
+          "type": "text",
+          "id": "check_7",
+          "label": "Check 7"
+        },
+        {
+          "type": "text",
+          "id": "check_8",
+          "label": "Check 8"
+        }
+      ]
+    },
+    {
+      "type": "grp_press",
+      "name": "Press",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Press quote"
+        },
+        {
+          "type": "header",
+          "content": "Logos"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo_1",
+          "label": "Logo 1"
+        },
+        {
+          "type": "text",
+          "id": "fallback_1",
+          "label": "Fallback 1"
+        },
+        {
+          "type": "text",
+          "id": "alt_1",
+          "label": "Alt 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo_2",
+          "label": "Logo 2"
+        },
+        {
+          "type": "text",
+          "id": "fallback_2",
+          "label": "Fallback 2"
+        },
+        {
+          "type": "text",
+          "id": "alt_2",
+          "label": "Alt 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo_3",
+          "label": "Logo 3"
+        },
+        {
+          "type": "text",
+          "id": "fallback_3",
+          "label": "Fallback 3"
+        },
+        {
+          "type": "text",
+          "id": "alt_3",
+          "label": "Alt 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo_4",
+          "label": "Logo 4"
+        },
+        {
+          "type": "text",
+          "id": "fallback_4",
+          "label": "Fallback 4"
+        },
+        {
+          "type": "text",
+          "id": "alt_4",
+          "label": "Alt 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo_5",
+          "label": "Logo 5"
+        },
+        {
+          "type": "text",
+          "id": "fallback_5",
+          "label": "Fallback 5"
+        },
+        {
+          "type": "text",
+          "id": "alt_5",
+          "label": "Alt 5"
+        }
+      ]
+    },
+    {
+      "type": "grp_features",
+      "name": "Features",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Section heading"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Section text"
+        },
+        {
+          "type": "text",
+          "id": "cta_line",
+          "label": "CTA line"
+        },
+        {
+          "type": "header",
+          "content": "Feature 1"
+        },
+        {
+          "type": "text",
+          "id": "item_1_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "item_1_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_1_image",
+          "label": "Image"
+        },
+        {
+          "type": "video",
+          "id": "item_1_video",
+          "label": "Video (Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "item_1_video_url",
+          "label": "Video URL (mp4)",
+          "info": "Optional. Used if no Shopify video is selected. Image is used as poster."
+        },
+        {
+          "type": "text",
+          "id": "item_1_fallback",
+          "label": "Fallback asset"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_1_reverse",
+          "label": "Reverse layout",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Feature 2"
+        },
+        {
+          "type": "text",
+          "id": "item_2_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "item_2_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_2_image",
+          "label": "Image"
+        },
+        {
+          "type": "video",
+          "id": "item_2_video",
+          "label": "Video (Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "item_2_video_url",
+          "label": "Video URL (mp4)",
+          "info": "Optional. Used if no Shopify video is selected. Image is used as poster."
+        },
+        {
+          "type": "text",
+          "id": "item_2_fallback",
+          "label": "Fallback asset"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_2_reverse",
+          "label": "Reverse layout",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Feature 3"
+        },
+        {
+          "type": "text",
+          "id": "item_3_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "item_3_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_3_image",
+          "label": "Image"
+        },
+        {
+          "type": "video",
+          "id": "item_3_video",
+          "label": "Video (Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "item_3_video_url",
+          "label": "Video URL (mp4)",
+          "info": "Optional. Used if no Shopify video is selected. Image is used as poster."
+        },
+        {
+          "type": "text",
+          "id": "item_3_fallback",
+          "label": "Fallback asset"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_3_reverse",
+          "label": "Reverse layout",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Feature 4"
+        },
+        {
+          "type": "text",
+          "id": "item_4_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "item_4_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_4_image",
+          "label": "Image"
+        },
+        {
+          "type": "video",
+          "id": "item_4_video",
+          "label": "Video (Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "item_4_video_url",
+          "label": "Video URL (mp4)",
+          "info": "Optional. Used if no Shopify video is selected. Image is used as poster."
+        },
+        {
+          "type": "text",
+          "id": "item_4_fallback",
+          "label": "Fallback asset"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_4_reverse",
+          "label": "Reverse layout",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Feature 5"
+        },
+        {
+          "type": "text",
+          "id": "item_5_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "item_5_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_5_image",
+          "label": "Image"
+        },
+        {
+          "type": "video",
+          "id": "item_5_video",
+          "label": "Video (Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "item_5_video_url",
+          "label": "Video URL (mp4)",
+          "info": "Optional. Used if no Shopify video is selected. Image is used as poster."
+        },
+        {
+          "type": "text",
+          "id": "item_5_fallback",
+          "label": "Fallback asset"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_5_reverse",
+          "label": "Reverse layout",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "grp_timeline",
+      "name": "Timeline",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "subtext",
+          "label": "Subtext"
+        },
+        {
+          "type": "image_picker",
+          "id": "hero_image",
+          "label": "Hero chart image"
+        },
+        {
+          "type": "header",
+          "content": "Before / After"
+        },
+        {
+          "type": "image_picker",
+          "id": "ba_before_image",
+          "label": "Before image"
+        },
+        {
+          "type": "image_picker",
+          "id": "ba_after_image",
+          "label": "After image"
+        },
+        {
+          "type": "text",
+          "id": "ba_before_label",
+          "label": "Before label",
+          "default": "Before Zavelyn"
+        },
+        {
+          "type": "text",
+          "id": "ba_after_label",
+          "label": "After label",
+          "default": "After 30 Days"
+        },
+        {
+          "type": "textarea",
+          "id": "ba_before_quote",
+          "label": "Before quote"
+        },
+        {
+          "type": "textarea",
+          "id": "ba_after_quote",
+          "label": "After quote"
+        },
+        {
+          "type": "header",
+          "content": "Day card 1"
+        },
+        {
+          "type": "select",
+          "id": "day_1_style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "1",
+              "label": "Day 1"
+            },
+            {
+              "value": "3",
+              "label": "Day 3"
+            },
+            {
+              "value": "7",
+              "label": "Day 7"
+            },
+            {
+              "value": "14",
+              "label": "Day 14"
+            },
+            {
+              "value": "30",
+              "label": "Day 30"
+            }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "image_picker",
+          "id": "day_1_icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "day_1_fallback",
+          "label": "Fallback icon"
+        },
+        {
+          "type": "text",
+          "id": "day_1_label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "day_1_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "day_1_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "day_1_perk_1",
+          "label": "Perk 1"
+        },
+        {
+          "type": "text",
+          "id": "day_1_perk_2",
+          "label": "Perk 2"
+        },
+        {
+          "type": "text",
+          "id": "day_1_perk_3",
+          "label": "Perk 3"
+        },
+        {
+          "type": "textarea",
+          "id": "day_1_quote",
+          "label": "Quote"
+        },
+        {
+          "type": "header",
+          "content": "Day card 2"
+        },
+        {
+          "type": "select",
+          "id": "day_2_style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "1",
+              "label": "Day 1"
+            },
+            {
+              "value": "3",
+              "label": "Day 3"
+            },
+            {
+              "value": "7",
+              "label": "Day 7"
+            },
+            {
+              "value": "14",
+              "label": "Day 14"
+            },
+            {
+              "value": "30",
+              "label": "Day 30"
+            }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "image_picker",
+          "id": "day_2_icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "day_2_fallback",
+          "label": "Fallback icon"
+        },
+        {
+          "type": "text",
+          "id": "day_2_label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "day_2_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "day_2_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "day_2_perk_1",
+          "label": "Perk 1"
+        },
+        {
+          "type": "text",
+          "id": "day_2_perk_2",
+          "label": "Perk 2"
+        },
+        {
+          "type": "text",
+          "id": "day_2_perk_3",
+          "label": "Perk 3"
+        },
+        {
+          "type": "textarea",
+          "id": "day_2_quote",
+          "label": "Quote"
+        },
+        {
+          "type": "header",
+          "content": "Day card 3"
+        },
+        {
+          "type": "select",
+          "id": "day_3_style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "1",
+              "label": "Day 1"
+            },
+            {
+              "value": "3",
+              "label": "Day 3"
+            },
+            {
+              "value": "week1",
+              "label": "Week 1"
+            },
+            {
+              "value": "week2",
+              "label": "Week 2"
+            },
+            {
+              "value": "30",
+              "label": "Day 30"
+            }
+          ],
+          "default": "week1"
+        },
+        {
+          "type": "image_picker",
+          "id": "day_3_icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "day_3_fallback",
+          "label": "Fallback icon"
+        },
+        {
+          "type": "text",
+          "id": "day_3_label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "day_3_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "day_3_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "day_3_perk_1",
+          "label": "Perk 1"
+        },
+        {
+          "type": "text",
+          "id": "day_3_perk_2",
+          "label": "Perk 2"
+        },
+        {
+          "type": "text",
+          "id": "day_3_perk_3",
+          "label": "Perk 3"
+        },
+        {
+          "type": "textarea",
+          "id": "day_3_quote",
+          "label": "Quote"
+        },
+        {
+          "type": "header",
+          "content": "Day card 4"
+        },
+        {
+          "type": "select",
+          "id": "day_4_style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "1",
+              "label": "Day 1"
+            },
+            {
+              "value": "3",
+              "label": "Day 3"
+            },
+            {
+              "value": "week1",
+              "label": "Week 1"
+            },
+            {
+              "value": "week2",
+              "label": "Week 2"
+            },
+            {
+              "value": "30",
+              "label": "Day 30"
+            }
+          ],
+          "default": "week2"
+        },
+        {
+          "type": "image_picker",
+          "id": "day_4_icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "day_4_fallback",
+          "label": "Fallback icon"
+        },
+        {
+          "type": "text",
+          "id": "day_4_label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "day_4_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "day_4_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "day_4_perk_1",
+          "label": "Perk 1"
+        },
+        {
+          "type": "text",
+          "id": "day_4_perk_2",
+          "label": "Perk 2"
+        },
+        {
+          "type": "text",
+          "id": "day_4_perk_3",
+          "label": "Perk 3"
+        },
+        {
+          "type": "textarea",
+          "id": "day_4_quote",
+          "label": "Quote"
+        },
+        {
+          "type": "header",
+          "content": "Day card 5"
+        },
+        {
+          "type": "select",
+          "id": "day_5_style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "1",
+              "label": "Day 1"
+            },
+            {
+              "value": "3",
+              "label": "Day 3"
+            },
+            {
+              "value": "7",
+              "label": "Day 7"
+            },
+            {
+              "value": "14",
+              "label": "Day 14"
+            },
+            {
+              "value": "30",
+              "label": "Day 30"
+            }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "image_picker",
+          "id": "day_5_icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "day_5_fallback",
+          "label": "Fallback icon"
+        },
+        {
+          "type": "text",
+          "id": "day_5_label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "day_5_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "day_5_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "day_5_perk_1",
+          "label": "Perk 1"
+        },
+        {
+          "type": "text",
+          "id": "day_5_perk_2",
+          "label": "Perk 2"
+        },
+        {
+          "type": "text",
+          "id": "day_5_perk_3",
+          "label": "Perk 3"
+        },
+        {
+          "type": "textarea",
+          "id": "day_5_quote",
+          "label": "Quote"
+        }
+      ]
+    },
+    {
+      "type": "grp_tech",
+      "name": "Tech & materials",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Tech image"
+        },
+        {
+          "type": "header",
+          "content": "Materials"
+        },
+        {
+          "type": "image_picker",
+          "id": "mat_1_badge",
+          "label": "Material 1 badge"
+        },
+        {
+          "type": "text",
+          "id": "mat_1_fallback",
+          "label": "Fallback 1"
+        },
+        {
+          "type": "text",
+          "id": "mat_1_heading",
+          "label": "Heading 1"
+        },
+        {
+          "type": "textarea",
+          "id": "mat_1_text",
+          "label": "Text 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "mat_2_badge",
+          "label": "Material 2 badge"
+        },
+        {
+          "type": "text",
+          "id": "mat_2_fallback",
+          "label": "Fallback 2"
+        },
+        {
+          "type": "text",
+          "id": "mat_2_heading",
+          "label": "Heading 2"
+        },
+        {
+          "type": "textarea",
+          "id": "mat_2_text",
+          "label": "Text 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "mat_3_badge",
+          "label": "Material 3 badge"
+        },
+        {
+          "type": "text",
+          "id": "mat_3_fallback",
+          "label": "Fallback 3"
+        },
+        {
+          "type": "text",
+          "id": "mat_3_heading",
+          "label": "Heading 3"
+        },
+        {
+          "type": "textarea",
+          "id": "mat_3_text",
+          "label": "Text 3"
+        }
+      ]
+    },
+    {
+      "type": "grp_compare",
+      "name": "Compare",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Why Zavelyn Stands Out"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "grp_vreviews",
+      "name": "Video reviews",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Real People. Real Relief."
+        },
+        {
+          "type": "header",
+          "content": "Video 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_1_poster",
+          "label": "Poster"
+        },
+        {
+          "type": "text",
+          "id": "item_1_fallback",
+          "label": "Fallback poster"
+        },
+        {
+          "type": "text",
+          "id": "item_1_video",
+          "label": "Video URL"
+        },
+        {
+          "type": "text",
+          "id": "item_1_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "item_1_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "item_1_author",
+          "label": "Author"
+        },
+        {
+          "type": "header",
+          "content": "Video 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_2_poster",
+          "label": "Poster"
+        },
+        {
+          "type": "text",
+          "id": "item_2_fallback",
+          "label": "Fallback poster"
+        },
+        {
+          "type": "text",
+          "id": "item_2_video",
+          "label": "Video URL"
+        },
+        {
+          "type": "text",
+          "id": "item_2_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "item_2_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "item_2_author",
+          "label": "Author"
+        },
+        {
+          "type": "header",
+          "content": "Video 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_3_poster",
+          "label": "Poster"
+        },
+        {
+          "type": "text",
+          "id": "item_3_fallback",
+          "label": "Fallback poster"
+        },
+        {
+          "type": "text",
+          "id": "item_3_video",
+          "label": "Video URL"
+        },
+        {
+          "type": "text",
+          "id": "item_3_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "item_3_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "item_3_author",
+          "label": "Author"
+        },
+        {
+          "type": "header",
+          "content": "Video 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_4_poster",
+          "label": "Poster"
+        },
+        {
+          "type": "text",
+          "id": "item_4_fallback",
+          "label": "Fallback poster"
+        },
+        {
+          "type": "text",
+          "id": "item_4_video",
+          "label": "Video URL"
+        },
+        {
+          "type": "text",
+          "id": "item_4_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "item_4_text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "item_4_author",
+          "label": "Author"
+        }
+      ]
+    },
+    {
+      "type": "grp_clinicians",
+      "name": "Clinicians",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "iframe_url",
+          "label": "Frontrow iframe URL"
+        },
+        {
+          "type": "text",
+          "id": "script_url",
+          "label": "Frontrow script URL"
+        }
+      ]
+    },
+    {
+      "type": "grp_specialist",
+      "name": "Specialist",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "bullet_1",
+          "label": "Bullet 1"
+        },
+        {
+          "type": "text",
+          "id": "bullet_2",
+          "label": "Bullet 2"
+        },
+        {
+          "type": "text",
+          "id": "bullet_3",
+          "label": "Bullet 3"
+        }
+      ]
+    },
+    {
+      "type": "grp_reviews",
+      "name": "Written reviews",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "score_value",
+          "label": "Score value",
+          "default": "4.7"
+        },
+        {
+          "type": "text",
+          "id": "score_out_of",
+          "label": "Out of label",
+          "default": "out of 5"
+        },
+        {
+          "type": "text",
+          "id": "score_note",
+          "label": "Score note"
+        },
+        {
+          "type": "text",
+          "id": "bar_comfort_label",
+          "label": "Comfort label",
+          "default": "Comfort"
+        },
+        {
+          "type": "text",
+          "id": "bar_comfort",
+          "label": "Comfort score",
+          "default": "4.8/5"
+        },
+        {
+          "type": "range",
+          "id": "bar_comfort_pct",
+          "label": "Comfort %",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 96,
+          "unit": "%"
+        },
+        {
+          "type": "text",
+          "id": "bar_support_label",
+          "label": "Support label",
+          "default": "Support"
+        },
+        {
+          "type": "text",
+          "id": "bar_support",
+          "label": "Support score",
+          "default": "4.7/5"
+        },
+        {
+          "type": "range",
+          "id": "bar_support_pct",
+          "label": "Support %",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 94,
+          "unit": "%"
+        },
+        {
+          "type": "text",
+          "id": "bar_quality_label",
+          "label": "Quality label",
+          "default": "Quality"
+        },
+        {
+          "type": "text",
+          "id": "bar_quality",
+          "label": "Quality score",
+          "default": "4.7/5"
+        },
+        {
+          "type": "range",
+          "id": "bar_quality_pct",
+          "label": "Quality %",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 94,
+          "unit": "%"
+        },
+        {
+          "type": "text",
+          "id": "bar_value_label",
+          "label": "Value label",
+          "default": "Value for Money"
+        },
+        {
+          "type": "text",
+          "id": "bar_value",
+          "label": "Value score",
+          "default": "4.6/5"
+        },
+        {
+          "type": "range",
+          "id": "bar_value_pct",
+          "label": "Value %",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 92,
+          "unit": "%"
+        },
+        {
+          "type": "image_picker",
+          "id": "review_stars_image",
+          "label": "5-star icon"
+        },
+        {
+          "type": "header",
+          "content": "Review 1"
+        },
+        {
+          "type": "text",
+          "id": "item_1_name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "item_1_date",
+          "label": "Date"
+        },
+        {
+          "type": "textarea",
+          "id": "item_1_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_1_photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_1_fallback",
+          "label": "Fallback photo"
+        },
+        {
+          "type": "text",
+          "id": "item_1_verified",
+          "label": "Verified label",
+          "default": "Verified buyer"
+        },
+        {
+          "type": "header",
+          "content": "Review 2"
+        },
+        {
+          "type": "text",
+          "id": "item_2_name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "item_2_date",
+          "label": "Date"
+        },
+        {
+          "type": "textarea",
+          "id": "item_2_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_2_photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_2_fallback",
+          "label": "Fallback photo"
+        },
+        {
+          "type": "text",
+          "id": "item_2_verified",
+          "label": "Verified label",
+          "default": "Verified buyer"
+        },
+        {
+          "type": "header",
+          "content": "Review 3"
+        },
+        {
+          "type": "text",
+          "id": "item_3_name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "item_3_date",
+          "label": "Date"
+        },
+        {
+          "type": "textarea",
+          "id": "item_3_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_3_photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_3_fallback",
+          "label": "Fallback photo"
+        },
+        {
+          "type": "text",
+          "id": "item_3_verified",
+          "label": "Verified label",
+          "default": "Verified buyer"
+        },
+        {
+          "type": "header",
+          "content": "Review 4"
+        },
+        {
+          "type": "text",
+          "id": "item_4_name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "item_4_date",
+          "label": "Date"
+        },
+        {
+          "type": "textarea",
+          "id": "item_4_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_4_photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_4_fallback",
+          "label": "Fallback photo"
+        },
+        {
+          "type": "text",
+          "id": "item_4_verified",
+          "label": "Verified label",
+          "default": "Verified buyer"
+        },
+        {
+          "type": "header",
+          "content": "Review 5"
+        },
+        {
+          "type": "text",
+          "id": "item_5_name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "item_5_date",
+          "label": "Date"
+        },
+        {
+          "type": "textarea",
+          "id": "item_5_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_5_photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_5_fallback",
+          "label": "Fallback photo"
+        },
+        {
+          "type": "text",
+          "id": "item_5_verified",
+          "label": "Verified label",
+          "default": "Verified buyer"
+        },
+        {
+          "type": "header",
+          "content": "Review 6"
+        },
+        {
+          "type": "text",
+          "id": "item_6_name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "item_6_date",
+          "label": "Date"
+        },
+        {
+          "type": "textarea",
+          "id": "item_6_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_6_photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_6_fallback",
+          "label": "Fallback photo"
+        },
+        {
+          "type": "text",
+          "id": "item_6_verified",
+          "label": "Verified label",
+          "default": "Verified buyer"
+        }
+      ]
+    },
+    {
+      "type": "grp_final",
+      "name": "Final banner",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "banner_image",
+          "label": "Banner image"
+        },
+        {
+          "type": "text",
+          "id": "cta_primary",
+          "label": "Primary CTA",
+          "default": "Buy One Get One FREE"
+        },
+        {
+          "type": "text",
+          "id": "cta_secondary",
+          "label": "Secondary CTA",
+          "default": "Add to cart"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offer landing",
+      "blocks": [
+        {
+          "type": "grp_gallery"
+        },
+        {
+          "type": "grp_perks"
+        },
+        {
+          "type": "grp_checks"
+        },
+        {
+          "type": "grp_press"
+        },
+        {
+          "type": "grp_features"
+        },
+        {
+          "type": "grp_timeline"
+        },
+        {
+          "type": "grp_tech"
+        },
+        {
+          "type": "grp_compare"
+        },
+        {
+          "type": "grp_vreviews"
+        },
+        {
+          "type": "grp_clinicians"
+        },
+        {
+          "type": "grp_specialist"
+        },
+        {
+          "type": "grp_reviews"
+        },
+        {
+          "type": "grp_final"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20
+}
+{% endschema %}

@@ -1,0 +1,413 @@
+{% comment %}
+  ZAVELYN HAIR CARE — Slide-Out Cart Drawer (Ported & Scoped from TRYMALORA)
+  Features $50 USD Free Shipping Progress Bar, In-Cart Hair Care Upsell, and 60-Day Guarantee
+{% endcomment %}
+
+<div class="zvhc-cart-overlay" id="zvhcCartOverlay" onclick="closeZvhcCart()"></div>
+
+<div class="zvhc-cart-drawer" id="zvhcCartDrawer" aria-modal="true" role="dialog" aria-label="Shopping Bag">
+  <!-- 1. Header -->
+  <div class="zvhc-cart-header">
+    <div class="zvhc-cart-title">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <path d="M16 10a4 4 0 0 1-8 0"></path>
+      </svg>
+      <span>Your Shopping Bag (<span id="zvhcDrawerCount">{{ cart.item_count }}</span>)</span>
+    </div>
+    <button type="button" class="zvhc-cart-close" onclick="closeZvhcCart()" aria-label="Close bag">&times;</button>
+  </div>
+
+  <!-- 2. Free US Shipping Progress Bar ($50.00 USD) -->
+  {% assign shipping_threshold = 5000 %}
+  <div class="zvhc-shipping-bar-wrap">
+    <div class="zvhc-shipping-text" id="zvhcShippingText">
+      {% if cart.total_price >= shipping_threshold %}
+        🎉 You've unlocked <strong>FREE US EXPRESS SHIPPING</strong>!
+      {% else %}
+        Only <strong>{{ shipping_threshold | minus: cart.total_price | money }}</strong> away from <strong>FREE US SHIPPING</strong>!
+      {% endif %}
+    </div>
+    <div class="zvhc-shipping-progress-bg">
+      {% assign shipping_percent = cart.total_price | times: 100 | divided_by: shipping_threshold %}
+      {% if shipping_percent > 100 %}{% assign shipping_percent = 100 %}{% endif %}
+      <div class="zvhc-shipping-progress-fill" id="zvhcShippingFill" style="width: {{ shipping_percent }}%;"></div>
+    </div>
+  </div>
+
+  <!-- 3. Cart Items Body -->
+  <div class="zvhc-cart-body" id="zvhcCartBody">
+    {% if cart.item_count > 0 %}
+      <div class="zvhc-cart-items-list" id="zvhcCartItemsList">
+        {% for item in cart.items %}
+          <div class="zvhc-cart-item" data-line-key="{{ item.key }}">
+            <div class="zvhc-cart-item-img">
+              <img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}">
+            </div>
+            <div class="zvhc-cart-item-details">
+              <div class="zvhc-cart-item-title-row">
+                <h4>{{ item.product.title }}</h4>
+                <button type="button" class="zvhc-item-remove" onclick="zvhcUpdateLine('{{ item.key }}', 0)" aria-label="Remove">&times;</button>
+              </div>
+              {% unless item.product.has_only_default_variant %}
+                <div class="zvhc-cart-item-variant">{{ item.variant.title }}</div>
+              {% endunless %}
+
+              <div class="zvhc-cart-item-bottom">
+                <div class="zvhc-qty-controls">
+                  <button type="button" onclick="zvhcUpdateLine('{{ item.key }}', {{ item.quantity | minus: 1 }})">−</button>
+                  <span>{{ item.quantity }}</span>
+                  <button type="button" onclick="zvhcUpdateLine('{{ item.key }}', {{ item.quantity | plus: 1 }})">+</button>
+                </div>
+                <div class="zvhc-item-pricing">
+                  {% if item.original_line_price > item.final_line_price %}
+                    <del>{{ item.original_line_price | money }}</del>
+                    <span>{{ item.final_line_price | money }}</span>
+                  {% else %}
+                    <span>{{ item.final_line_price | money }}</span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- In-Cart Upsell Card: Scalp Massager -->
+      <div class="zvhc-drawer-upsell">
+        <div style="font-size: 0.76rem; font-weight: 700; color: var(--zvhc-copper); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">
+          RECOMMENDED COMPLEMENT
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <div>
+            <div style="font-weight: 700; font-size: 0.88rem; color: var(--zvhc-espresso);">Silicone Scalp Stimulating Comb</div>
+            <div style="font-size: 0.78rem; color: var(--zvhc-muted);">Boosts follicle absorption by 3.4x · Only $9.99</div>
+          </div>
+          <button type="button" class="zvhc-upsell-add-btn" onclick="zvhcAddUpsell()">
+            + Add $9.99
+          </button>
+        </div>
+      </div>
+
+    {% else %}
+      <div class="zvhc-cart-empty">
+        <p>Your hair care ritual bag is empty.</p>
+        <a href="/products/zavelyn-botanaroots-organic-batana-hair-growth-oil" class="zvhc-btn zvhc-btn-primary" style="margin-top: 16px;">
+          DISCOVER BATANA ROUTINE
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- 4. Footer & Checkout -->
+  {% if cart.item_count > 0 %}
+    <div class="zvhc-cart-footer">
+      <div class="zvhc-subtotal-row">
+        <span>Estimated Subtotal</span>
+        <span class="zvhc-subtotal-price" id="zvhcSubtotalPrice">{{ cart.total_price | money }}</span>
+      </div>
+      <p style="font-size: 0.76rem; color: var(--zvhc-muted); margin-bottom: 14px;">
+        Taxes and express shipping calculated at checkout.
+      </p>
+
+      <a href="/checkout" class="zvhc-checkout-btn">
+        <span>PROCEED TO SECURE CHECKOUT &rarr;</span>
+      </a>
+
+      <div class="zvhc-drawer-trust">
+        <span>🔒 256-Bit SSL Encrypted</span>
+        <span>•</span>
+        <span>🛡️ 60-Day Guarantee</span>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  .zvhc-cart-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(34, 22, 16, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .zvhc-cart-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .zvhc-cart-drawer {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: 100%;
+    max-width: 420px;
+    background: #FAF7F2;
+    z-index: 9999;
+    box-shadow: -6px 0 24px rgba(34, 22, 16, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+  }
+  .zvhc-cart-drawer.is-open {
+    transform: translateX(0);
+  }
+  .zvhc-cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--zvhc-border);
+  }
+  .zvhc-cart-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--zvhc-espresso);
+  }
+  .zvhc-cart-close {
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--zvhc-espresso);
+  }
+  .zvhc-shipping-bar-wrap {
+    background: #F4EFE6;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--zvhc-border);
+  }
+  .zvhc-shipping-text {
+    font-size: 0.8rem;
+    color: var(--zvhc-espresso);
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .zvhc-shipping-progress-bg {
+    width: 100%;
+    height: 6px;
+    background: #E5DACD;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .zvhc-shipping-progress-fill {
+    height: 100%;
+    background: var(--zvhc-botanical);
+    transition: width 0.3s ease;
+  }
+  .zvhc-cart-body {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px 24px;
+  }
+  .zvhc-cart-item {
+    display: flex;
+    gap: 14px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--zvhc-border);
+  }
+  .zvhc-cart-item-img {
+    width: 72px;
+    height: 72px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid var(--zvhc-border);
+    flex-shrink: 0;
+  }
+  .zvhc-cart-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .zvhc-cart-item-details {
+    flex-grow: 1;
+  }
+  .zvhc-cart-item-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .zvhc-cart-item-title-row h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--zvhc-espresso);
+    margin: 0;
+    line-height: 1.3;
+  }
+  .zvhc-item-remove {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--zvhc-muted);
+    cursor: pointer;
+    line-height: 1;
+  }
+  .zvhc-cart-item-variant {
+    font-size: 0.76rem;
+    color: var(--zvhc-muted);
+    margin: 4px 0 8px;
+  }
+  .zvhc-cart-item-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .zvhc-qty-controls {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--zvhc-border);
+    border-radius: 4px;
+    background: #FFFFFF;
+  }
+  .zvhc-qty-controls button {
+    background: transparent;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--zvhc-espresso);
+  }
+  .zvhc-qty-controls span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0 4px;
+  }
+  .zvhc-item-pricing {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--zvhc-espresso);
+  }
+  .zvhc-drawer-upsell {
+    background: #FFFFFF;
+    border: 1px dashed var(--zvhc-copper);
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 14px;
+  }
+  .zvhc-upsell-add-btn {
+    background: var(--zvhc-copper-light);
+    color: var(--zvhc-copper-dark);
+    border: 1px solid var(--zvhc-copper);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .zvhc-upsell-add-btn:hover {
+    background: var(--zvhc-copper);
+    color: #FFFFFF;
+  }
+  .zvhc-cart-empty {
+    text-align: center;
+    padding: 48px 0;
+    color: var(--zvhc-muted);
+  }
+  .zvhc-cart-footer {
+    padding: 20px 24px;
+    background: #FFFFFF;
+    border-top: 1px solid var(--zvhc-border);
+  }
+  .zvhc-subtotal-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--zvhc-espresso);
+    margin-bottom: 6px;
+  }
+  .zvhc-checkout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: var(--zvhc-burgundy-cta);
+    color: #FFFFFF !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 16px;
+    border-radius: 8px;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 14px rgba(59, 27, 21, 0.25);
+    transition: all 0.2s ease;
+  }
+  .zvhc-checkout-btn:hover {
+    background: var(--zvhc-burgundy-cta-hover);
+  }
+  .zvhc-drawer-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+    font-size: 0.74rem;
+    color: var(--zvhc-muted);
+  }
+</style>
+
+<script>
+  window.openZvhcCart = function() {
+    const overlay = document.getElementById('zvhcCartOverlay');
+    const drawer = document.getElementById('zvhcCartDrawer');
+    if (overlay && drawer) {
+      overlay.classList.add('is-open');
+      drawer.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  window.closeZvhcCart = function() {
+    const overlay = document.getElementById('zvhcCartOverlay');
+    const drawer = document.getElementById('zvhcCartDrawer');
+    if (overlay && drawer) {
+      overlay.classList.remove('is-open');
+      drawer.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+  };
+
+  window.zvhcUpdateLine = function(lineKey, quantity) {
+    fetch('/cart/change.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: lineKey, quantity: quantity })
+    })
+    .then(function() {
+      window.location.reload();
+    })
+    .catch(function(err) {
+      console.error(err);
+      window.location.reload();
+    });
+  };
+
+  window.zvhcAddUpsell = function() {
+    // Add default upsell variant or refresh
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: 67980643598521, quantity: 1 })
+    })
+    .then(function() {
+      window.location.reload();
+    });
+  };
+</script>
+
+{% schema %}
+{
+  "name": "ZVHC Cart Drawer",
+  "settings": []
+}
+{% endschema %}

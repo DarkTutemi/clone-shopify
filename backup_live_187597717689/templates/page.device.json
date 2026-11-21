@@ -1,0 +1,262 @@
+{
+  "layout": "offer",
+  "sections": {
+    "offer": {
+      "type": "offer-device",
+      "settings": {
+        "product": "v1-device",
+        "brand_name": "Zavelyn",
+        "ticker_text": "LIMITED OFFER.",
+        "ticker_highlight": "DEVICE + 3 FREE BONUSES",
+        "reviews_count_label": "rated 4.6\/5 by 50,000+ customers",
+        "cta_label": "Add to cart",
+        "packages_reversed": true,
+        "packs_title": "Choose your package",
+        "pack_1_title": "Buy 1",
+        "pack_1_save": "Save 46$",
+        "pack_1_ship": "$4.95 ship",
+        "pack_2_title": "Buy 2",
+        "pack_2_save": "Save 92$",
+        "pack_2_ship": "",
+        "pack_3_title": "Buy 3",
+        "pack_3_save": "Extra 10% OFF",
+        "pack_3_ship": "Free ship"
+      },
+      "blocks": {
+        "sec_gallery": {
+          "type": "sec_gallery",
+          "settings": {
+            "fallback_1": "pen-gallery-1.jpg",
+            "fallback_2": "pen-gallery-2.jpg",
+            "fallback_3": "pen-gallery-3.jpg",
+            "fallback_4": "pen-gallery-4.jpg",
+            "fallback_5": "pen-gallery-5.jpg",
+            "fallback_6": "pen-gallery-6.jpg",
+            "fallback_7": "pen-gallery-7.jpg"
+          }
+        },
+        "sec_hero": {
+          "type": "sec_hero",
+          "settings": {
+            "bonus_label": "Buy now and receive 3 bonuses:",
+            "bonus_1": "FREE How to Use Acupuncture eBook ($10 Value)",
+            "bonus_2": "FREE 3x Extra Healing Pen Cap ($15 Value)",
+            "bonus_3": "FREE Healing Body Point Map ($5 Value)",
+            "perk_1": "Natural Pain Relief",
+            "perk_2": "Ergonomic Design",
+            "perk_3": "Easy To Use",
+            "perk_4": "1-Year Warranty",
+            "perk_1_fallback": "pen-icon-natural.svg",
+            "perk_2_fallback": "pen-icon-ergo.svg",
+            "perk_3_fallback": "pen-icon-easy.svg",
+            "perk_4_fallback": "pen-icon-warranty.svg",
+            "quote_name": "Laura M.",
+            "quote_fallback": "pen-laura.jpg"
+          }
+        },
+        "sec_heal": {
+          "type": "sec_heal",
+          "settings": {
+            "heading": "Press the pen against body parts you want to heal!",
+            "fallback": "pen-heal.webp"
+          }
+        },
+        "sec_features": {
+          "type": "sec_features",
+          "settings": {
+            "heading": "V1 Device",
+            "fallback": "pen-gloves.jpg"
+          }
+        },
+        "sec_reset": {
+          "type": "sec_reset",
+          "settings": {
+            "heading": "Your Daily Reset, Simplified"
+          }
+        },
+        "sec_howto": {
+          "type": "sec_howto",
+          "settings": {
+            "heading": "How To Use V1 Device",
+            "eyebrow": "Step-by-Step Guide",
+            "fallback": "pen-howto.jpg"
+          }
+        },
+        "sec_reviews_slider": {
+          "type": "sec_reviews_slider",
+          "settings": {
+            "eyebrow": "Real people",
+            "heading": "Real Reviews",
+            "item_1_title": "“I noticed a difference from the first use”",
+            "item_1_text": "I wasn’t sure what to expect at first, but after trying it on my shoulder, I felt a noticeable difference right away.",
+            "item_1_name": "Daniel R.",
+            "item_2_title": "“Perfect after long work days”",
+            "item_2_text": "I spend most of my day sitting, and I often get stiffness in my lower back and neck.",
+            "item_2_name": "Anthony K.",
+            "item_3_title": "“I finally found something I actually use daily”",
+            "item_3_text": "I’ve tried different things before, but nothing really stuck. This is different because it’s so easy to use.",
+            "item_3_name": "Michelle T.",
+            "item_4_title": "“A great alternative to constant appointments”",
+            "item_4_text": "I used to rely on regular appointments whenever I felt tension building up.",
+            "item_4_name": "Laura M.",
+            "item_5_title": "“It’s become part of my daily routine”",
+            "item_5_text": "What I like most is how easy it is to stay consistent.",
+            "item_5_name": "Kevin S.",
+            "item_6_title": "“Very comfortable and easy to adjust”",
+            "item_6_text": "At first I thought it might feel uncomfortable, but it’s actually very gentle.",
+            "item_6_name": "Natalie P."
+          }
+        },
+        "sec_stats": {
+          "type": "sec_stats",
+          "settings": {
+            "eyebrow": "Loved By 50,000+ Customers",
+            "heading": "Dont take it from us",
+            "fallback": "pen-stats.jpg"
+          }
+        },
+        "sec_relief": {
+          "type": "sec_relief",
+          "settings": {
+            "eyebrow": "Easy To Use",
+            "heading": "Effortless Relief In Minutes",
+            "fallback": "pen-hotspot.jpg"
+          }
+        },
+        "sec_compare": {
+          "type": "sec_compare",
+          "settings": {
+            "heading": "Vs. Other Brands",
+            "us_fallback": "pen-vs-us.jpg",
+            "them_fallback": "pen-vs-them.jpg"
+          }
+        },
+        "sec_faq": {
+          "type": "sec_faq",
+          "settings": {
+            "eyebrow": "You got questions",
+            "heading": "we got answers",
+            "fallback": "pen-faq-side.jpg",
+            "q_1": "How fast does shipping take?",
+            "a_1": "We process orders within 1–2 business days. Delivery typically takes 6-8 business days depending on your location.",
+            "q_2": "What if I don't love it?",
+            "a_2": "We offer a 30-day money-back guarantee. Contact us within 30 days for a full refund.",
+            "q_3": "How long does it take to feel the effects?",
+            "a_3": "Many users report feeling a noticeable difference within the first few minutes of use.",
+            "q_4": "Do I need to use a conductive gel?",
+            "a_4": "Using a conductive gel is not required, but recommended for optimal performance.",
+            "q_5": "Can I use the device if I have a pacemaker?",
+            "a_5": "We do not recommend using the device if you have a pacemaker or implanted electronic medical devices.",
+            "q_6": "How long should I use it every day?",
+            "a_6": "Most users use the device for about 5–10 minutes per area."
+          }
+        },
+        "sec_loox": {
+          "type": "sec_loox",
+          "settings": {
+            "heading": "What Customers Say About",
+            "score_value": "4.7",
+            "score_note": "Based on reviews from 50,000+ customers",
+            "item_1_name": "William D.",
+            "item_1_date": "8\/8\/2026",
+            "item_1_fallback": "pen-loox-1.jpg",
+            "item_1_text": "I was told by my doctor that surgery might be the only option for my carpal tunnel.",
+            "item_1_verified": true,
+            "item_1_stars": 5,
+            "item_2_name": "Michael S.",
+            "item_2_date": "8\/5\/2026",
+            "item_2_fallback": "pen-loox-2.jpg",
+            "item_2_text": "I bought this mainly because of the constant tension in my shoulders from desk work.",
+            "item_2_verified": true,
+            "item_2_stars": 5,
+            "item_3_name": "Matthew F.",
+            "item_3_date": "8\/3\/2026",
+            "item_3_fallback": "pen-loox-3.jpg",
+            "item_3_text": "When I first took this device out of the box, I was impressed by how solid it feels.",
+            "item_3_verified": true,
+            "item_3_stars": 5,
+            "item_4_name": "Sophie L.",
+            "item_4_date": "8\/1\/2026",
+            "item_4_fallback": "pen-loox-4.jpg",
+            "item_4_text": "What I love most is that it isn’t a one-setting-fits-all tool.",
+            "item_4_verified": true,
+            "item_4_stars": 5,
+            "item_5_name": "Samuel C.",
+            "item_5_date": "7\/27\/2026",
+            "item_5_fallback": "pen-loox-5.jpg",
+            "item_5_text": "It helps me manage muscle soreness without relying on extra medication.",
+            "item_5_verified": true,
+            "item_5_stars": 5,
+            "item_6_name": "Erica D.",
+            "item_6_date": "7\/25\/2026",
+            "item_6_fallback": "pen-loox-6.jpg",
+            "item_6_text": "I’ve been dealing with shoulder stiffness and arm pain for years.",
+            "item_6_verified": true,
+            "item_6_stars": 5,
+            "item_7_name": "Rachel P.",
+            "item_7_date": "7\/19\/2026",
+            "item_7_fallback": "pen-loox-7.jpg",
+            "item_7_text": "One of the things I appreciate most is how simple it is to control.",
+            "item_7_verified": true,
+            "item_7_stars": 5,
+            "item_8_name": "Olivia M.",
+            "item_8_date": "7\/15\/2026",
+            "item_8_fallback": "pen-loox-8.jpg",
+            "item_8_text": "I ended up buying two so both my partner and I could use them.",
+            "item_8_verified": true,
+            "item_8_stars": 5,
+            "item_9_name": "Kevin A.",
+            "item_9_date": "7\/11\/2026",
+            "item_9_fallback": "pen-loox-9.jpg",
+            "item_9_text": "I spend hours typing and developed wrist pain that felt like carpal tunnel.",
+            "item_9_verified": true,
+            "item_9_stars": 5,
+            "item_10_name": "Daniel K.",
+            "item_10_date": "7\/8\/2026",
+            "item_10_fallback": "pen-loox-10.jpg",
+            "item_10_text": "My knees have been giving me trouble for years, especially after long walks.",
+            "item_10_verified": true,
+            "item_10_stars": 5,
+            "item_11_name": "Robert J.",
+            "item_11_date": "7\/4\/2026",
+            "item_11_fallback": "pen-loox-11.jpg",
+            "item_11_text": "At my age, joint pain has become part of everyday life.",
+            "item_11_verified": true,
+            "item_11_stars": 5,
+            "item_12_name": "Catherine K.",
+            "item_12_date": "6\/30\/2026",
+            "item_12_fallback": "pen-loox-12.jpg",
+            "item_12_text": "After a few minutes, the tightness in my neck softened.",
+            "item_12_verified": true,
+            "item_12_stars": 5
+          }
+        },
+        "sec_footer": {
+          "type": "sec_footer",
+          "settings": {
+            "email": "support@zavelyn.com",
+            "sticky_copy": "V1 + 3 Bonuses FREE"
+          }
+        }
+      },
+      "block_order": [
+        "sec_gallery",
+        "sec_hero",
+        "sec_heal",
+        "sec_features",
+        "sec_reset",
+        "sec_howto",
+        "sec_reviews_slider",
+        "sec_stats",
+        "sec_relief",
+        "sec_compare",
+        "sec_faq",
+        "sec_loox",
+        "sec_footer"
+      ]
+    }
+  },
+  "order": [
+    "offer"
+  ]
+}

@@ -1,0 +1,430 @@
+{%- comment -%}
+  Shared header for offer landings: logo → product links → cart + minicart
+  Usage: {% render 'offer-header', brand: brand, product: product %}
+{%- endcomment -%}
+{%- liquid
+  assign brand_label = brand | default: 'Zavelyn'
+  assign nav_handles = 'zavelyn-foot-sleeves,cdf,v1-device,zavelyn-rehabilitation-glove,miracle-balm' | split: ','
+  assign nav_labels = 'Foot Sleeve,AFO Brace,Device,Zavelyn,Balm' | split: ','
+  assign active_handle = ''
+  if product != blank
+    assign active_handle = product.handle
+  endif
+  assign track_url = pages['track-order'].url | default: '/pages/track-order'
+  assign track_active = false
+  if request.page_type == 'page' and page.handle == 'track-order'
+    assign track_active = true
+  endif
+  assign ship_threshold = settings.cart_free_shipping_threshold | default: 10000
+  assign ship_remaining = ship_threshold | minus: cart.total_price
+  if ship_remaining < 0
+    assign ship_remaining = 0
+  endif
+  if ship_threshold > 0
+    assign ship_progress = cart.total_price | times: 100.0 | divided_by: ship_threshold
+    if ship_progress > 100
+      assign ship_progress = 100
+    endif
+  else
+    assign ship_progress = 100
+  endif
+-%}
+
+{%- capture offer_nav_cards -%}
+  {%- for handle in nav_handles -%}
+    {%- assign nav_product = all_products[handle] -%}
+    {%- assign nav_label = nav_labels[forloop.index0] -%}
+    {%- if nav_product != blank -%}
+      {%- assign nav_href = nav_product.url -%}
+      {%- if nav_label == blank -%}
+        {%- assign nav_label = nav_product.title -%}
+      {%- endif -%}
+    {%- else -%}
+      {%- assign nav_href = '/products/' | append: handle -%}
+    {%- endif -%}
+    <li>
+      <a
+        class="offer-mega__card{% if active_handle == handle %} is-active{% endif %}"
+        href="{{ nav_href }}"
+        {% if active_handle == handle %}aria-current="page"{% endif %}
+      >
+        <span class="offer-mega__media">
+          {%- if nav_product.featured_image != blank -%}
+            <img
+              src="{{ nav_product.featured_image | image_url: width: 480 }}"
+              alt=""
+              width="180"
+              height="180"
+              loading="lazy"
+            >
+          {%- endif -%}
+        </span>
+        <span class="offer-mega__copy">
+          <span class="offer-mega__name">{{ nav_label }}</span>
+          {%- if nav_product != blank -%}
+            <span class="offer-mega__price">
+              {%- if nav_product.compare_at_price > nav_product.price -%}
+                <s>{{ nav_product.compare_at_price | money }}</s>
+              {%- endif -%}
+              {{ nav_product.price | money }}
+            </span>
+          {%- endif -%}
+        </span>
+      </a>
+    </li>
+  {%- endfor -%}
+{%- endcapture -%}
+
+<header class="offer-logo-bar" data-offer-header>
+  <button
+    type="button"
+    class="offer-header__menu-btn"
+    data-offer-menu-open
+    aria-expanded="false"
+    aria-controls="OfferMobileMenu"
+    aria-label="Open menu"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+  </button>
+
+  <a class="offer-logo" href="{{ routes.root_url }}">{{ brand_label }}</a>
+
+  <nav class="offer-header__nav" aria-label="Products">
+    <ul class="offer-header__menu" role="list">
+      <li class="offer-header__shop" data-offer-shop>
+        <button
+          type="button"
+          class="offer-header__link offer-header__shop-btn"
+          data-offer-mega-toggle
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="OfferMega"
+        >
+          Shop
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="offer-mega" id="OfferMega">
+          <div class="offer-mega__panel">
+            <ul class="offer-mega__grid" role="list">
+              {{ offer_nav_cards }}
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a
+          class="offer-header__link{% if track_active %} is-active{% endif %}"
+          href="{{ track_url }}"
+          {% if track_active %}aria-current="page"{% endif %}
+        >
+          Track Order
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <button
+    type="button"
+    class="offer-header__cart"
+    data-offer-cart-open
+    aria-label="Open cart"
+    aria-controls="OfferMiniCart"
+    aria-expanded="false"
+  >
+    <svg class="offer-header__cart-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M6 6h15l-1.5 9h-12z"/>
+      <path d="M6 6 5 3H2"/>
+      <circle cx="9" cy="20" r="1"/>
+      <circle cx="18" cy="20" r="1"/>
+    </svg>
+    <span
+      class="offer-header__cart-count"
+      data-offer-cart-count
+      {% if cart.item_count == 0 %}hidden{% endif %}
+    >
+      {{ cart.item_count }}
+    </span>
+  </button>
+</header>
+
+<div class="offer-mobile-menu" id="OfferMobileMenu" data-offer-mobile-menu aria-hidden="true">
+  <div class="offer-mobile-menu__overlay" data-offer-menu-close></div>
+  <div class="offer-mobile-menu__panel" data-offer-menu-panel tabindex="-1" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="offer-mobile-menu__header">
+      <p class="offer-mobile-menu__title">Shop</p>
+      <button type="button" class="offer-mobile-menu__close" data-offer-menu-close aria-label="Close menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6 6l12 12M18 6 6 18"/>
+        </svg>
+      </button>
+    </div>
+    <ul class="offer-mobile-menu__list" role="list">
+      {{ offer_nav_cards }}
+    </ul>
+    <a
+      class="offer-mobile-menu__track{% if track_active %} is-active{% endif %}"
+      href="{{ track_url }}"
+      {% if track_active %}aria-current="page"{% endif %}
+    >
+      Track Order
+    </a>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var header = document.querySelector('[data-offer-header]');
+    if (!header || header.dataset.menuBound === 'true') return;
+    header.dataset.menuBound = 'true';
+
+    var shop = header.querySelector('[data-offer-shop]');
+    var mega = header.querySelector('.offer-mega');
+    var megaToggle = header.querySelector('[data-offer-mega-toggle]');
+    var mobile = document.querySelector('[data-offer-mobile-menu]');
+    var openBtn = header.querySelector('[data-offer-menu-open]');
+    var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+    var closeTimer = null;
+
+    function setMega(open) {
+      if (!shop || !megaToggle) return;
+      shop.classList.toggle('is-open', open);
+      megaToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    function cancelMegaClose() {
+      if (!closeTimer) return;
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+
+    function scheduleMegaClose() {
+      if (!finePointer.matches) return;
+      cancelMegaClose();
+      closeTimer = setTimeout(function () {
+        closeTimer = null;
+        setMega(false);
+      }, 280);
+    }
+
+    if (megaToggle) {
+      megaToggle.addEventListener('click', function (event) {
+        event.preventDefault();
+        cancelMegaClose();
+        setMega(!shop.classList.contains('is-open'));
+      });
+    }
+
+    [shop, mega].forEach(function (el) {
+      if (!el) return;
+      el.addEventListener('mouseenter', function () {
+        if (!finePointer.matches) return;
+        cancelMegaClose();
+        setMega(true);
+      });
+      el.addEventListener('mouseleave', scheduleMegaClose);
+    });
+
+    function openMobile() {
+      if (!mobile) return;
+      mobile.setAttribute('aria-hidden', 'false');
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
+      document.documentElement.classList.add('offer-menu-open');
+      var panel = mobile.querySelector('[data-offer-menu-panel]');
+      if (panel) panel.focus();
+    }
+
+    function closeMobile() {
+      if (!mobile || mobile.getAttribute('aria-hidden') !== 'false') return;
+      mobile.setAttribute('aria-hidden', 'true');
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+      document.documentElement.classList.remove('offer-menu-open');
+      if (openBtn) openBtn.focus();
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openMobile);
+    if (mobile) {
+      mobile.querySelectorAll('[data-offer-menu-close]').forEach(function (el) {
+        el.addEventListener('click', closeMobile);
+      });
+      mobile.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMobile);
+      });
+    }
+
+    document.addEventListener('click', function (event) {
+      if (shop && !shop.contains(event.target)) setMega(false);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+      setMega(false);
+      closeMobile();
+    });
+  })();
+</script>
+
+<div
+  class="offer-minicart"
+  id="OfferMiniCart"
+  data-offer-minicart
+  data-ship-threshold="{{ ship_threshold }}"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="OfferMiniCartTitle"
+>
+  <div class="offer-minicart__overlay" data-offer-cart-close></div>
+  <div class="offer-minicart__panel" data-offer-cart-panel tabindex="-1">
+    <div class="offer-minicart__header">
+      <h2 class="offer-minicart__title" id="OfferMiniCartTitle">
+        Your cart
+        <span data-offer-cart-title-count>{%- if cart.item_count > 0 -%}({{ cart.item_count }}){%- endif -%}</span>
+      </h2>
+      <button type="button" class="offer-minicart__close" data-offer-cart-close aria-label="Close cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6 6l12 12M18 6 6 18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="offer-minicart__urgency" data-offer-cart-urgency {% if cart.item_count == 0 %}hidden{% endif %}>
+      <span class="offer-minicart__pulse" aria-hidden="true"></span>
+      Sale price reserved — complete checkout to lock it in
+    </div>
+
+    <div class="offer-minicart__ship" data-offer-cart-ship {% if cart.item_count == 0 %}hidden{% endif %}>
+      <p class="offer-minicart__ship-msg" data-offer-cart-ship-msg>
+        {%- if ship_remaining == 0 -%}
+          You’ve unlocked <strong>FREE shipping</strong>
+        {%- else -%}
+          You’re <strong>{{ ship_remaining | money }}</strong> away from <strong>FREE shipping</strong>
+        {%- endif -%}
+      </p>
+      <div class="offer-minicart__ship-track" role="presentation">
+        <div class="offer-minicart__ship-bar" data-offer-cart-ship-bar style="width: {{ ship_progress }}%;"></div>
+      </div>
+    </div>
+
+    <div class="offer-minicart__body" data-offer-cart-body>
+      {%- if cart.item_count == 0 -%}
+        <div class="offer-minicart__empty">
+          <p class="offer-minicart__empty-title">Your cart is empty</p>
+          <p class="offer-minicart__empty-copy">Add a recovery essential and enjoy free shipping over {{ ship_threshold | money }}.</p>
+          <a class="offer-minicart__empty-cta" href="{{ routes.root_url }}" data-offer-cart-close>Continue shopping</a>
+        </div>
+      {%- else -%}
+        <ul class="offer-minicart__list" role="list">
+          {%- comment -%} JS regroups paid+free lines by _bundle_id into clear package cards {%- endcomment -%}
+          {%- for item in cart.items -%}
+            {%- if item.properties._role == 'free' and item.properties._bundle_id != blank -%}
+              {%- continue -%}
+            {%- endif -%}
+            <li class="offer-minicart__item{% if item.properties._bundle != blank %} is-package{% endif %}" data-key="{{ item.key | escape }}" data-line="{{ forloop.index }}">
+              <a class="offer-minicart__thumb" href="{{ item.url }}">
+                {%- if item.image -%}
+                  <img
+                    src="{{ item.image | image_url: width: 160 }}"
+                    alt="{{ item.product.title | escape }}"
+                    width="80"
+                    height="80"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+              </a>
+              <div class="offer-minicart__meta">
+                {%- if item.properties.Offer != blank -%}
+                  <p class="offer-minicart__offer">{{ item.properties.Offer }}</p>
+                {%- elsif item.properties.Package != blank -%}
+                  <p class="offer-minicart__offer">{{ item.properties.Package }}</p>
+                {%- else -%}
+                  <a class="offer-minicart__name" href="{{ item.url }}">{{ item.product.title }}</a>
+                {%- endif -%}
+                {%- capture summary_bits -%}
+                  {%- if item.properties.Size != blank -%}Size {{ item.properties.Size }}{%- endif -%}
+                  {%- if item.properties['You get'] != blank -%}
+                    {%- if item.properties.Size != blank %} · {% endif -%}{{ item.properties['You get'] }}
+                  {%- elsif item.properties.Contents != blank -%}
+                    {%- if item.properties.Size != blank %} · {% endif -%}{{ item.properties.Contents }}
+                  {%- endif -%}
+                {%- endcapture -%}
+                {%- assign summary_bits = summary_bits | strip -%}
+                {%- if summary_bits != blank -%}
+                  <p class="offer-minicart__summary">{{ summary_bits }}</p>
+                {%- endif -%}
+                <div class="offer-minicart__row">
+                  <span class="offer-minicart__pay-label">You pay</span>
+                  <span class="offer-minicart__price">
+                    {%- if item.original_line_price > item.final_line_price -%}
+                      <s>{{ item.original_line_price | money }}</s>
+                    {%- endif -%}
+                    {{ item.final_line_price | money }}
+                  </span>
+                </div>
+                <button type="button" class="offer-minicart__remove" data-offer-cart-delta="remove" data-key="{{ item.key | escape }}" data-line="{{ forloop.index }}">Remove package</button>
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    <div class="offer-minicart__trust" data-offer-cart-trust aria-label="Purchase benefits">
+      <div class="offer-minicart__trust-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>
+        <span>30-day guarantee</span>
+      </div>
+      <div class="offer-minicart__trust-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <span>Secure checkout</span>
+      </div>
+      <div class="offer-minicart__trust-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h13l3 4v6H3z"/><path d="M16 11h4"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>
+        <span>Fast shipping</span>
+      </div>
+    </div>
+
+    <div class="offer-minicart__footer" data-offer-cart-footer {% if cart.item_count == 0 %}hidden{% endif %}>
+      {%- if cart.total_discount > 0 -%}
+        <p class="offer-minicart__savings" data-offer-cart-savings>
+          You’re saving <strong>{{ cart.total_discount | money }}</strong> today
+        </p>
+      {%- else -%}
+        <p class="offer-minicart__savings" data-offer-cart-savings hidden></p>
+      {%- endif -%}
+
+      <div class="offer-minicart__subtotal">
+        <span>Subtotal</span>
+        <strong data-offer-cart-subtotal>{{ cart.total_price | money }}</strong>
+      </div>
+      <p class="offer-minicart__note">Taxes &amp; shipping calculated at checkout · Risk-free for 30 days</p>
+
+      <a class="offer-minicart__checkout" href="/checkout">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        Secure checkout
+      </a>
+
+      <p class="offer-minicart__social" data-offer-cart-social>Rated 4.6/5 by 50,000+ customers</p>
+
+      <div class="offer-minicart__payments" aria-label="Accepted payment methods">
+        {%- assign offer_payment_types = 'visa,master,american_express,paypal,shopify_pay' | split: ',' -%}
+        {%- for type in offer_payment_types -%}
+          <img
+            class="offer-minicart__pay-icon"
+            src="{{ type | payment_type_img_url }}"
+            alt="{{ type | replace: '_', ' ' | capitalize }}"
+            width="38"
+            height="24"
+            loading="lazy"
+            decoding="async"
+          >
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'zavelyn-offer-cart.js' | asset_url }}" defer></script>

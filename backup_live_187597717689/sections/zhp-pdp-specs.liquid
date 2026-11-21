@@ -1,0 +1,60 @@
+{{ 'zhp-pdp.css' | asset_url | stylesheet_tag }}
+
+<section class="wf-section wf-specs-section">
+  <div class="wf-container">
+    <div class="wf-specs-card">
+      <h2 class="wf-sec-title">{{ section.settings.title | default: 'Technical Specifications' }}</h2>
+      <div class="wf-specs-grid">
+        <div class="wf-spec-row">
+          <span class="wf-spec-key">Diameter / Size:</span>
+          <span class="wf-spec-val">{{ section.settings.spec_diameter | default: '13 Inches (33 cm) Pro Studio' }}</span>
+        </div>
+        <div class="wf-spec-row">
+          <span class="wf-spec-key">Material:</span>
+          <span class="wf-spec-val">{{ section.settings.spec_material | default: 'Tempered Carbon-Titanium Surgical Alloy Steel' }}</span>
+        </div>
+        <div class="wf-spec-row">
+          <span class="wf-spec-key">Scale / Tuning:</span>
+          <span class="wf-spec-val">{{ section.settings.spec_tuning | default: 'Master D-Major Harmonic Scale (15 Notes)' }}</span>
+        </div>
+        <div class="wf-spec-row">
+          <span class="wf-spec-key">Tuning Frequency:</span>
+          <span class="wf-spec-val">{{ section.settings.spec_frequency | default: '432 Hz Natural Biological Resonance' }}</span>
+        </div>
+        <div class="wf-spec-row">
+          <span class="wf-spec-key">Number of Tones:</span>
+          <span class="wf-spec-val">{{ section.settings.spec_tones | default: '15 Acoustic Tongues (2 Complete Octaves)' }}</span>
+        </div>
+        <div class="wf-spec-row">
+          <span class="wf-spec-key">Weight:</span>
+          <span class="wf-spec-val">{{ section.settings.spec_weight | default: '8.4 lbs (3.8 kg) Studio Stability' }}</span>
+        </div>
+        <div class="wf-spec-row">
+          <span class="wf-spec-key">Surface Finish:</span>
+          <span class="wf-spec-val">{{ section.settings.spec_finish | default: 'Baked Electrostatic Pearlescent Protective Coating' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zavelyn PDP Specs",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Technical Specifications" },
+    { "type": "text", "id": "spec_diameter", "label": "Diameter / Size" },
+    { "type": "text", "id": "spec_material", "label": "Material", "default": "Tempered Carbon-Titanium Surgical Alloy Steel" },
+    { "type": "text", "id": "spec_tuning", "label": "Scale / Tuning" },
+    { "type": "text", "id": "spec_frequency", "label": "Tuning Frequency", "default": "432 Hz Natural Biological Resonance" },
+    { "type": "text", "id": "spec_tones", "label": "Number of Tones" },
+    { "type": "text", "id": "spec_weight", "label": "Weight" },
+    { "type": "text", "id": "spec_finish", "label": "Surface Finish", "default": "Baked Electrostatic Pearlescent Protective Coating" }
+  ],
+  "presets": [
+    {
+      "name": "Zavelyn PDP Specs"
+    }
+  ]
+}
+{% endschema %}

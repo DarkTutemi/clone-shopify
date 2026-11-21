@@ -1,0 +1,28 @@
+{%- comment -%}
+  {% render 'menu-product', product: product %}
+{%- endcomment -%}
+{%- liquid
+  assign featured = product.featured_media
+-%}
+
+<article class="menu-product">
+  <a class="menu-product__media" href="{{ product.url }}" tabindex="-1" aria-hidden="true">
+    {%- if featured -%}
+      {{
+        featured
+        | image_url: width: 480
+        | image_tag:
+          widths: '140, 180, 240, 360, 480',
+          sizes: '(min-width: 900px) 180px, 140px',
+          loading: 'lazy',
+          alt: ''
+      }}
+    {%- else -%}
+      {{ 'product-1' | placeholder_svg_tag: 'menu-product__placeholder' }}
+    {%- endif -%}
+  </a>
+  <div class="menu-product__info">
+    <a class="menu-product__title" href="{{ product.url }}">{{ product.title }}</a>
+    {% render 'price', product: product %}
+  </div>
+</article>

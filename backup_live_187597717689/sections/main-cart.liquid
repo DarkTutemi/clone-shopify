@@ -1,0 +1,59 @@
+{% render 'breadcrumbs' %}
+
+<section class="section">
+  <div class="page-width">
+    <h1>{{ 'sections.cart.title' | t }}</h1>
+
+    {%- if cart.item_count == 0 -%}
+      <div class="empty-state">
+        <p>{{ 'sections.cart.empty' | t }}</p>
+        <a class="button button--primary" href="{{ routes.all_products_collection_url }}">
+          {{ 'sections.cart.continue' | t }}
+        </a>
+      </div>
+    {%- else -%}
+      <form action="{{ routes.cart_url }}" method="post" id="cart" class="cart-page">
+        <div>
+          {% render 'free-shipping-bar' %}
+          <table class="visually-hidden">
+            <caption>{{ 'sections.cart.caption' | t }}</caption>
+          </table>
+
+          {%- for item in cart.items -%}
+            {% render 'cart-item', item: item, index: forloop.index %}
+          {%- endfor -%}
+
+          {%- if settings.cart_show_notes -%}
+            <div class="field" style="margin-block-start: 1.5rem;">
+              <label class="field__label" for="CartNote">{{ 'sections.cart.note' | t }}</label>
+              <textarea class="field__textarea" name="note" id="CartNote">{{ cart.note }}</textarea>
+            </div>
+          {%- endif -%}
+        </div>
+
+        <aside class="cart-summary">
+          <div class="cart-summary__row cart-summary__total">
+            <span>{{ 'sections.cart.subtotal' | t }}</span>
+            <span>{{ cart.total_price | money }}</span>
+          </div>
+          <p class="cart-drawer__note">{{ 'sections.cart.taxes' | t }}</p>
+          <button type="submit" name="update" class="button button--secondary button--full">
+            {{ 'sections.cart.update' | t }}
+          </button>
+          <button type="submit" name="checkout" class="button button--primary button--full">
+            {{ 'sections.cart.checkout' | t }}
+          </button>
+        </aside>
+      </form>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart",
+  "tag": "section",
+  "class": "section-main-cart",
+  "settings": []
+}
+{% endschema %}

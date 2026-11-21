@@ -1,0 +1,57 @@
+<section class="section" data-lazy-section>
+  <div class="page-width">
+    <div class="newsletter-section">
+      {%- if section.settings.title != blank -%}
+        <h2>{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <p class="section__subheader" style="margin-inline: auto;">{{ section.settings.text }}</p>
+      {%- endif -%}
+
+      {% form 'customer', class: 'newsletter-section__form' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <label class="visually-hidden" for="NewsletterEmail-{{ section.id }}">{{ 'newsletter.label' | t }}</label>
+        <input
+          id="NewsletterEmail-{{ section.id }}"
+          class="field__input"
+          type="email"
+          name="contact[email]"
+          placeholder="{{ 'newsletter.placeholder' | t }}"
+          required
+          autocomplete="email"
+        >
+        <button type="submit" class="button button--primary">{{ 'newsletter.submit' | t }}</button>
+        {%- if form.posted_successfully? -%}
+          <p role="status" style="width: 100%; margin-block-start: 0.75rem;">{{ 'newsletter.success' | t }}</p>
+        {%- endif -%}
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "tag": "section",
+  "class": "section-newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Join the list"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Be first to know about new arrivals and private offers."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

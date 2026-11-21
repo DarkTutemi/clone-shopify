@@ -1,0 +1,183 @@
+
+{{ 'zhp-collection.css' | asset_url | stylesheet_tag }}
+<div class="zhp-wrapper">
+  <section class="zhp-endorsements">
+    <div class="zhp-container">
+      <div class="zhp-section-header">
+        <span class="zhp-tag">{{ section.settings.tag | default: 'EXPERT VOICES' }}</span>
+        <h2 class="zhp-section-title">{{ section.settings.title | default: 'The Voices of Calm and Balance' }}</h2>
+        <p class="zhp-section-subtitle">{{ section.settings.subtitle | default: 'Hear how renowned yoga instructors, authors, and percussionists use Zavelyn Drums to find serenity.' }}</p>
+      </div>
+
+      <div class="zhp-endorsements-grid">
+        {% for block in section.blocks %}
+          <div class="zhp-endorsement-card" {{ block.shopify_attributes }}>
+            <div class="zhp-endorser-header">
+              {% if block.settings.avatar != blank %}
+                {{ block.settings.avatar | image_url: width: 120 | image_tag: class: 'zhp-endorser-avatar', loading: 'lazy', alt: block.settings.name }}
+              {% elsif block.settings.fallback_avatar != blank %}
+                <img src="{{ block.settings.fallback_avatar }}" alt="{{ block.settings.name }}" class="zhp-endorser-avatar" loading="lazy">
+              {% endif %}
+              <div class="zhp-endorser-details">
+                <h4>{{ block.settings.name }}</h4>
+                <div class="zhp-endorser-role">{{ block.settings.role }}</div>
+                <div class="zhp-endorser-handle">{{ block.settings.handle }}</div>
+              </div>
+            </div>
+            <div class="zhp-endorsement-tag">{{ block.settings.tag }}</div>
+            <blockquote class="zhp-endorsement-quote">
+              "{{ block.settings.quote }}"
+            </blockquote>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "06. Chuyên gia & Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Nhãn danh mục",
+      "default": "EXPERT VOICES"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tiêu đề",
+      "default": "The Voices of Calm and Balance"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Mô tả phụ",
+      "default": "Hear how renowned yoga instructors, authors, and percussionists use Zavelyn Drums to find serenity."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "endorser",
+      "name": "Chuyên gia / Influencer",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Ảnh đại diện (Avatar)"
+        },
+        {
+          "type": "text",
+          "id": "fallback_avatar",
+          "label": "URL ảnh dự phòng"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Họ và tên",
+          "default": "Radhi Devlukia"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Chức danh",
+          "default": "Co-Founder Sama Tea & Joyo Tea"
+        },
+        {
+          "type": "text",
+          "id": "handle",
+          "label": "Handle / Followers",
+          "default": "@radhidevlukia • 2.2M"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Chủ đề",
+          "default": "INNER PEACE"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Lời nhận xét",
+          "default": "When everything is noisy around me, this drum helps me find a corner of calm. It's my beautiful daily escape."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "06. Chuyên gia & Reviews",
+      "blocks": [
+        {
+          "type": "endorser",
+          "settings": {
+            "name": "Radhi Devlukia",
+            "role": "Co-Founder Sama Tea & Joyo Tea",
+            "handle": "@radhidevlukia • 2.2M",
+            "tag": "INNER PEACE",
+            "quote": "When everything is noisy around me, this drum helps me find a corner of calm. It's my beautiful daily escape.",
+            "fallback_avatar": "https://cdn.shopify.com/s/files/1/0780/8362/1190/files/radhi_v.avif?v=1697095497"
+          }
+        },
+        {
+          "type": "endorser",
+          "settings": {
+            "name": "Adam Green",
+            "role": "Sound Practitioner & Creator",
+            "handle": "@ethereal.in.e",
+            "tag": "SOUND THERAPY",
+            "quote": "The sounds of my drum make me feel good instantly. Everything seems brighter, calmer, and more joyful.",
+            "fallback_avatar": "https://cdn.shopify.com/s/files/1/0780/8362/1190/files/adam_green.avif?v=1697097548"
+          }
+        },
+        {
+          "type": "endorser",
+          "settings": {
+            "name": "Bianca Oliveira",
+            "role": "Certified Yoga Coach • Biancayoga",
+            "handle": "@biancayoga",
+            "tag": "YOGA & MINDFULNESS",
+            "quote": "The drum adds extraordinary depth to our yoga sessions. My students can feel every movement and breath more deeply.",
+            "fallback_avatar": "https://cdn.shopify.com/s/files/1/0780/8362/1190/files/bianca_green.avif?v=1697097548"
+          }
+        },
+        {
+          "type": "endorser",
+          "settings": {
+            "name": "Joana Duarte",
+            "role": "Mindfulness Instructor & Author",
+            "handle": "@joana____duarte • 0.5M",
+            "tag": "HERE & NOW",
+            "quote": "This drum brings me back here and now, away from anxious thoughts and worries. It feels like a long, deep exhale.",
+            "fallback_avatar": "https://cdn.shopify.com/s/files/1/0780/8362/1190/files/joana_green.avif?v=1697097548"
+          }
+        },
+        {
+          "type": "endorser",
+          "settings": {
+            "name": "Steve Nguyen",
+            "role": "Painter, Actor & Director",
+            "handle": "@stevenguyen • 0.5M",
+            "tag": "AUDITORY INSPIRATION",
+            "quote": "When I'm stuck in my art, the acoustic vibration helps dissolve creative blocks. Fresh ideas start flowing naturally.",
+            "fallback_avatar": "https://cdn.shopify.com/s/files/1/0780/8362/1190/files/steve_green.avif?v=1697097548"
+          }
+        },
+        {
+          "type": "endorser",
+          "settings": {
+            "name": "Taylor Dorothea",
+            "role": "Percussion Influencer & Educator",
+            "handle": "@taylor.dorothea • 0.5M",
+            "tag": "LIVING RHYTHM",
+            "quote": "Each drum has a story. Zavelyn speaks immediately to the heart and inspires me to share acoustic music everywhere.",
+            "fallback_avatar": "https://cdn.shopify.com/s/files/1/0780/8362/1190/files/taylor_green.avif?v=1697097548"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

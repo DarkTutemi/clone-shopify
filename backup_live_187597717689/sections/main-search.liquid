@@ -1,0 +1,81 @@
+<section class="section">
+  <div class="page-width page-width--narrow">
+    <h1>{{ 'templates.search.title' | t }}</h1>
+
+    <zavelyn-predictive-search
+      class="predictive-search"
+      style="margin-block: 1.5rem;"
+      data-section-id="predictive-search"
+      data-loading-message="{{ 'general.search.predictive.loading' | t }}"
+      data-empty-message="{{ 'general.search.predictive.no_results' | t }}"
+      data-error-message="{{ 'general.search.predictive.error' | t }}"
+    >
+      <form class="predictive-search__form" action="{{ routes.search_url }}" method="get" role="search">
+        <div class="predictive-search__input-wrap">
+          <label class="visually-hidden" for="SearchPageInput">{{ 'general.search.search' | t }}</label>
+          <input
+            id="SearchPageInput"
+            class="predictive-search__input"
+            type="search"
+            name="q"
+            value="{{ search.terms | escape }}"
+            placeholder="{{ 'general.search.placeholder' | t }}"
+            role="combobox"
+            aria-expanded="false"
+            aria-controls="SearchPageResults"
+            aria-autocomplete="list"
+          >
+        </div>
+        <button type="submit" class="button button--primary">{{ 'general.search.submit' | t }}</button>
+      </form>
+      <div id="SearchPageResults" class="predictive-search__results" data-predictive-results aria-hidden="true"></div>
+      <div class="visually-hidden" data-predictive-status role="status"></div>
+    </zavelyn-predictive-search>
+  </div>
+
+  <div class="page-width" style="margin-block-start: 2rem;">
+    {%- if search.performed -%}
+      {%- if search.results_count == 0 -%}
+        <div class="empty-state">
+          <p>{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+        </div>
+      {%- else -%}
+        <p class="collection-toolbar__count">
+          {{ 'templates.search.results_with_count' | t: count: search.results_count }}
+          — “{{ search.terms | escape }}”
+        </p>
+
+        {%- paginate search.results by 24 -%}
+          <div class="product-grid product-grid--4">
+            {%- for item in search.results -%}
+              {%- case item.object_type -%}
+                {%- when 'product' -%}
+                  {% render 'product-card', product: item %}
+                {%- else -%}
+                  <article class="product-card">
+                    <div class="product-card__info">
+                      <p class="product-card__vendor">{{ item.object_type | capitalize }}</p>
+                      <a class="product-card__title" href="{{ item.url }}">{{ item.title }}</a>
+                      {%- if item.content != blank -%}
+                        <p class="section__subheader">{{ item.content | strip_html | truncate: 120 }}</p>
+                      {%- endif -%}
+                    </div>
+                  </article>
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+          {% render 'pagination', paginate: paginate %}
+        {%- endpaginate -%}
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Search",
+  "tag": "section",
+  "class": "section-main-search",
+  "settings": []
+}
+{% endschema %}

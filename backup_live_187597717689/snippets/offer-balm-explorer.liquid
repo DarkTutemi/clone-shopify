@@ -1,0 +1,303 @@
+{%- liquid
+  if group != blank
+    assign b = group.settings
+  endif
+  if b.product_image != blank
+    assign ing_stage = b.product_image | image_url: width: 800
+  else
+    assign ing_stage = 'mb-ing-stage.png' | asset_url
+  endif
+-%}
+{{ 'zavelyn-balm-explorer.css' | asset_url | stylesheet_tag }}
+{%- unless b.show == false -%}
+<section
+  id="senzio-plantar-heel-explorer-v6"
+  class="senzio-phe6"
+  {% if group %}{{ group.shopify_attributes }}{% endif %}
+>
+  <!-- =====================================================
+       DECORATIVE BACKGROUND
+  ====================================================== -->
+
+  <div class="senzio-phe6__background" aria-hidden="true">
+    <span class="senzio-phe6__orb senzio-phe6__orb--one"></span>
+    <span class="senzio-phe6__orb senzio-phe6__orb--two"></span>
+
+    <svg
+      class="senzio-phe6__background-lines"
+      viewBox="0 0 1600 900"
+      preserveAspectRatio="none"
+    >
+      <path d="M-100 720C205 545 480 730 830 572C1147 430 1400 375 1720 430"></path>
+      <path d="M-95 795C250 660 530 810 910 640C1223 499 1460 450 1725 512"></path>
+    </svg>
+  </div>
+
+  <div class="senzio-phe6__container">
+
+    <!-- =====================================================
+         DESKTOP INTERFACE
+    ====================================================== -->
+
+    <div class="senzio-phe6__desktop">
+      <!-- ===================================================
+           DESKTOP DETAIL CARD
+      ==================================================== -->
+
+      <aside
+        class="senzio-phe6__desktop-card"
+        id="senzioPhe6DesktopCard"
+        aria-live="polite"
+      >
+        <div class="senzio-phe6__card-top">
+          <span class="senzio-phe6__card-kicker">
+            {{ b.kicker | default: 'Plantar & heel comfort ingredient' }}
+          </span>
+
+          <span
+            class="senzio-phe6__card-count"
+            id="senzioPhe6DesktopCount"
+          >
+            01 / 09
+          </span>
+        </div>
+
+        <div
+          class="senzio-phe6__detail-media"
+          id="senzioPhe6DesktopMedia"
+          data-motion="grow"
+        >
+          <span
+            class="senzio-phe6__detail-effect"
+            aria-hidden="true"
+          ></span>
+
+          <img
+            id="senzioPhe6DesktopImage"
+            src=""
+            alt=""
+            width="700"
+            height="470"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+
+        <div class="senzio-phe6__card-copy">
+          <h3 id="senzioPhe6DesktopName">
+            Comfrey
+          </h3>
+
+          <p
+            class="senzio-phe6__card-jobs"
+            id="senzioPhe6DesktopJobs"
+          >
+            Heel and tissue comfort
+          </p>
+
+          <p
+            class="senzio-phe6__card-description"
+            id="senzioPhe6DesktopDescription"
+          ></p>
+
+          <div
+            class="senzio-phe6__card-tags"
+            id="senzioPhe6DesktopTags"
+            role="list"
+          ></div>
+        </div>
+      </aside>
+
+      <!-- ===================================================
+           DESKTOP INGREDIENT ORBIT
+      ==================================================== -->
+
+      <div class="senzio-phe6__orbit-column">
+        <div
+          class="senzio-phe6__orbit-stage"
+          id="senzioPhe6OrbitStage"
+          aria-label="Interactive plantar fasciitis and heel-pain ingredient selector"
+        >
+          <div class="senzio-phe6__orbit-glow" aria-hidden="true"></div>
+
+          <div class="senzio-phe6__orbit-rings" aria-hidden="true">
+            <span class="senzio-phe6__orbit-ring senzio-phe6__orbit-ring--inner"></span>
+            <span class="senzio-phe6__orbit-ring senzio-phe6__orbit-ring--outer"></span>
+          </div>
+
+          <!-- CENTER PRODUCT -->
+          <div class="senzio-phe6__product">
+            <span
+              class="senzio-phe6__product-halo"
+              aria-hidden="true"
+            ></span>
+
+            <span
+              class="senzio-phe6__product-shadow"
+              aria-hidden="true"
+            ></span>
+
+            <img
+              src="{{ ing_stage }}"
+              alt="{{ b.product_alt | default: 'Zavelyn Miracle Balm for plantar fasciitis, heel pain, and arch soreness' }}"
+              width="600"
+              height="600"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            >
+          </div>
+
+          <!-- GENERATED INGREDIENT CIRCLES -->
+          <div
+            class="senzio-phe6__orbit-nodes"
+            id="senzioPhe6OrbitNodes"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         MOBILE INTERFACE
+
+         MOBILE ORDER:
+         1. Selected ingredient details
+         2. Swipeable ingredient selector
+
+         The standalone product image is intentionally omitted
+         on mobile to reduce visual height and image loading.
+    ====================================================== -->
+
+    <div class="senzio-phe6__mobile">
+      <!-- ===================================================
+           MOBILE SELECTED INGREDIENT DETAILS
+      ==================================================== -->
+
+      <article
+        class="senzio-phe6__mobile-card"
+        id="senzioPhe6MobileCard"
+        aria-live="polite"
+      >
+        <div class="senzio-phe6__mobile-card-top">
+          <span
+            class="senzio-phe6__mobile-card-count"
+            id="senzioPhe6MobileCount"
+          >
+            01 / 09
+          </span>
+
+          <span class="senzio-phe6__mobile-card-kicker">
+            Plantar ingredient details
+          </span>
+        </div>
+
+        <div
+          class="senzio-phe6__mobile-detail-media"
+          id="senzioPhe6MobileMedia"
+          data-motion="grow"
+        >
+          <span
+            class="senzio-phe6__mobile-detail-effect"
+            aria-hidden="true"
+          ></span>
+
+          <img
+            id="senzioPhe6MobileImage"
+            src=""
+            alt=""
+            width="700"
+            height="470"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          >
+        </div>
+
+        <div class="senzio-phe6__mobile-card-copy">
+          <h3 id="senzioPhe6MobileName">
+            Comfrey
+          </h3>
+
+          <p
+            class="senzio-phe6__mobile-card-jobs"
+            id="senzioPhe6MobileJobs"
+          >
+            Heel and tissue comfort
+          </p>
+
+          <p
+            class="senzio-phe6__mobile-card-description"
+            id="senzioPhe6MobileDescription"
+          ></p>
+
+          <div
+            class="senzio-phe6__mobile-card-tags"
+            id="senzioPhe6MobileTags"
+            role="list"
+          ></div>
+        </div>
+      </article>
+
+      <!-- ===================================================
+           MOBILE INGREDIENT SELECTOR BELOW DETAILS
+      ==================================================== -->
+
+      <div class="senzio-phe6__mobile-selector-wrap">
+        <div class="senzio-phe6__mobile-selector-head">
+          <div>
+            <small>Explore plantar &amp; heel comfort</small>
+            <strong>Choose an ingredient</strong>
+          </div>
+
+          <span class="senzio-phe6__swipe-label">
+            Swipe
+          </span>
+        </div>
+
+        <div
+          class="senzio-phe6__mobile-selector"
+          id="senzioPhe6MobileSelector"
+          role="tablist"
+          aria-label="Choose a plantar fasciitis and heel-pain comfort ingredient"
+        ></div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endunless -%}
+{%- if group != blank -%}
+<script>
+  window.MB_ING_DATA = [
+    {%- for i in (1..9) -%}
+      {%- liquid
+        assign nk = 'name_' | append: i
+        assign jk = 'jobs_' | append: i
+        assign dk = 'description_' | append: i
+        assign tk = 'tags_' | append: i
+        assign ik = 'image_' | append: i
+      -%}
+      {
+        "name": {{ b[nk] | json }},
+        "jobs": {{ b[jk] | json }},
+        "description": {{ b[dk] | json }},
+        "tags": {{ b[tk] | split: ',' | json }},
+        "image": {% if b[ik] != blank %}{{ b[ik] | image_url: width: 800 | json }}{% else %}""{% endif %}
+      }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ];
+</script>
+{%- endif -%}
+<script>
+  window.MB_ING_ASSETS = {
+    "comfrey": {{ 'mb-ing-comfrey.png' | asset_url | json }},
+    "fenghuang": {{ 'mb-ing-fenghuang.png' | asset_url | json }},
+    "angelica-sinensis": {{ 'mb-ing-angelica.png' | asset_url | json }},
+    "radix-angelicae-dahuricae": {{ 'mb-ing-radix.png' | asset_url | json }},
+    "frankincense": {{ 'mb-ing-frankincense.png' | asset_url | json }},
+    "myrrh": {{ 'mb-ing-myrrh.png' | asset_url | json }},
+    "peppermint-oil": {{ 'mb-ing-peppermint.png' | asset_url | json }},
+    "sesame-oil": {{ 'mb-ing-sesame.png' | asset_url | json }},
+    "beeswax": {{ 'mb-ing-beeswax.png' | asset_url | json }}
+  };
+</script>
+{{ 'zavelyn-balm-explorer.js' | asset_url | script_tag }}

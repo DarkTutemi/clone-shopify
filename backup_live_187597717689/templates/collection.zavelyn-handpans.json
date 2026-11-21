@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "zhp_marquee": {
+      "type": "zhp-marquee",
+      "settings": {}
+    },
+    "zhp_hero": {
+      "type": "zhp-hero",
+      "settings": {}
+    },
+    "zhp_bestsellers": {
+      "type": "zhp-bestsellers",
+      "settings": {}
+    },
+    "zhp_comparison": {
+      "type": "zhp-comparison",
+      "settings": {}
+    },
+    "zhp_model_tabs": {
+      "type": "zhp-model-tabs",
+      "settings": {}
+    },
+    "zhp_buyers_guide": {
+      "type": "zhp-buyers-guide",
+      "settings": {}
+    },
+    "zhp_what_you_get": {
+      "type": "zhp-what-you-get",
+      "settings": {}
+    },
+    "zhp_faq": {
+      "type": "zhp-faq",
+      "settings": {}
+    }
+  },
+  "order": [
+    "zhp_marquee",
+    "zhp_hero",
+    "zhp_bestsellers",
+    "zhp_comparison",
+    "zhp_model_tabs",
+    "zhp_buyers_guide",
+    "zhp_what_you_get",
+    "zhp_faq"
+  ]
+}

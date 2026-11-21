@@ -1,0 +1,31 @@
+{% layout none %}
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {%- assign gift_card_balance = gift_card.balance | money -%}
+    <title>{{ 'gift_cards.issued.title' | t: value: gift_card_balance, shop: shop.name }}</title>
+    {{ 'zavelyn-base.css' | asset_url | stylesheet_tag }}
+    {{ content_for_header }}
+  </head>
+  <body>
+    <main class="page-width page-width--narrow section" style="text-align: center;">
+      <h1>{{ shop.name }}</h1>
+      <p>{{ 'gift_cards.issued.subtext' | t }}</p>
+      <p style="font-size: var(--font-size-2xl); font-weight: 700; margin-block: 1.5rem;">
+        {{ gift_card.balance | money }}
+      </p>
+      {%- if gift_card.enabled == false or gift_card.expired -%}
+        <p>{{ 'gift_cards.issued.expired' | t }}</p>
+      {%- endif -%}
+      <p>
+        <strong>{{ 'gift_cards.issued.gift_card_code' | t }}</strong><br>
+        <code style="font-size: 1.25rem; letter-spacing: 0.08em;">{{ gift_card.code | format_code }}</code>
+      </p>
+      <p style="margin-block-start: 2rem;">
+        <a class="button button--primary" href="{{ shop.url }}">{{ 'gift_cards.issued.shop_link' | t }}</a>
+      </p>
+    </main>
+  </body>
+</html>

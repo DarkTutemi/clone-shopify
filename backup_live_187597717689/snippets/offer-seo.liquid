@@ -1,0 +1,130 @@
+{%- comment -%}
+  JSON-LD for the offer funnel. Expects product context when available.
+{%- endcomment -%}
+{%- liquid
+  assign seo_product = product
+  if seo_product == blank and section.settings.product != blank
+    assign seo_product = section.settings.product
+  endif
+  if seo_product == blank
+    assign seo_product = all_products['zavelyn-foot-sleeves']
+  endif
+  assign seo_variant = seo_product.selected_or_first_available_variant
+  assign seo_desc = page_description | default: seo_product.description | strip_html | truncate: 160
+  if seo_desc == blank
+    assign seo_desc = section.settings.description_intro | default: shop.description | default: shop.name
+  endif
+  assign next_year = 'now' | date: '%Y' | plus: 1
+  assign price_plain = seo_variant.price | money_without_currency | strip_html | remove: ','
+-%}
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+{%- if seo_product != blank -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": {{ seo_product.title | json }},
+    "description": {{ seo_desc | json }},
+    "url": {{ request.origin | append: seo_product.url | json }},
+    "brand": {
+      "@type": "Brand",
+      "name": "Zavelyn"
+    },
+    "sku": {{ seo_variant.sku | default: seo_variant.id | json }},
+    {%- if seo_product.featured_image -%}
+    "image": [{{ seo_product.featured_image | image_url: width: 1200 | prepend: 'https:' | json }}],
+    {%- else -%}
+    "image": [{{ 'offer-gallery-1.jpg' | asset_url | json }}],
+    {%- endif -%}
+    "offers": {
+      "@type": "Offer",
+      "url": {{ request.origin | append: seo_product.url | json }},
+      "priceCurrency": {{ cart.currency.iso_code | default: shop.currency | json }},
+      "price": {{ price_plain | json }},
+      "priceValidUntil": "{{ next_year }}-12-31",
+      "availability": "https://schema.org/{% if seo_variant.available %}InStock{% else %}OutOfStock{% endif %}",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }}
+      }
+    }
+  }
+  </script>
+{%- endif -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Zavelyn",
+  "url": {{ request.origin | json }},
+  "email": {{ section.settings.footer_email | default: 'support@zavelyn.com' | json }}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": {{ page_title | default: seo_product.title | default: shop.name | json }},
+  "description": {{ seo_desc | json }},
+  "url": {{ canonical_url | json }},
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": {{ shop.name | json }},
+    "url": {{ request.origin | json }}
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": {{ section.settings.faq_description_title | default: 'Description' | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ section.settings.description_intro | default: 'The Zavelyn Foot Sleeve delivers all-day foot support.' | strip_newlines | json }}
+      }
+    },
+    {
+      "@type": "Question",
+      "name": {{ section.settings.faq_size_title | default: 'Size Guide' | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "See the on-page size guide for Zavelyn Foot Sleeve sizing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": {{ section.settings.faq_care_title | default: 'Care & Wash Guide' | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ section.settings.care_text | default: 'Machine wash cold on a delicate cycle. Air dry or tumble dry low.' | strip_newlines | json }}
+      }
+    },
+    {
+      "@type": "Question",
+      "name": {{ section.settings.faq_materials_title | default: 'Premium Materials Certified' | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ section.settings.materials_text | default: 'Premium nylon-spandex. Hypoallergenic, breathable, chemical-free.' | strip_newlines | json }}
+      }
+    },
+    {
+      "@type": "Question",
+      "name": {{ section.settings.faq_guarantee_title | default: '30-Day Satisfaction Guarantee' | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ section.settings.guarantee_text | default: 'Not satisfied? Contact us within 30 days.' | strip_newlines | json }}
+      }
+    }
+  ]
+}
+</script>

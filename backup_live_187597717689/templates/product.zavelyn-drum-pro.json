@@ -1,0 +1,122 @@
+{
+  "wrapper": "div#shopify-section-zavelyn-drum-pro",
+  "sections": {
+    "banner": {
+      "type": "zhp-pdp-banner",
+      "settings": {
+        "banner_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PandaDrumPro_White_1a_LFs.webp?v=1716783328",
+        "badge_text": "NATURAL RESONANCE",
+        "heading": "Tuned to 432 Hz: The Frequency of Natural Healing",
+        "text": "",
+        "point_1": "Harmonic resonance that melts daily stress within 5 minutes",
+        "point_2": "Zero discordant frequencies — impossible to play an out-of-tune note",
+        "point_3": "Used by sound healers, yoga instructors, and therapists worldwide"
+      }
+    },
+    "experience": {
+      "type": "zhp-pdp-experience",
+      "settings": {
+        "feature_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/PandaDrumPro_White_Th_Pts.webp?v=1716961111",
+        "pill_text": "EFFORTLESS PLAY",
+        "title": "Zero Musical Training Required",
+        "description": ""
+      }
+    },
+    "included": {
+      "type": "zhp-pdp-included",
+      "settings": {
+        "included_image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/1209\/4037\/files\/UnpackingPro.webp?v=1751703134",
+        "pill_text": "COMPLETE PACKAGE",
+        "title": "Everything You Need to Begin Immediately",
+        "description": ""
+      }
+    },
+    "specs": {
+      "type": "zhp-pdp-specs",
+      "settings": {
+        "title": "Technical Specifications",
+        "spec_diameter": "13 Inches (33 cm) Pro Studio",
+        "spec_material": "Tempered Carbon-Titanium Surgical Alloy Steel",
+        "spec_tuning": "Master D-Major Harmonic Scale (15 Notes)",
+        "spec_frequency": "432 Hz Natural Biological Resonance",
+        "spec_tones": "15 Acoustic Tongues (2 Complete Octaves)",
+        "spec_weight": "7.8 lbs (3.5 kg) Balanced Studio Resonance",
+        "spec_finish": "Baked Electrostatic Pearlescent Protective Coating"
+      }
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {}
+    },
+    "faq": {
+      "type": "zhp-pdp-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I need any prior musical experience to play?",
+            "answer": "None whatsoever! Zavelyn Drums are designed to be completely intuitive. Because every note is tuned to natural harmonic scales, there are zero discordant or 'bad' notes. You can play purely by intuition, or follow the numbered songbook."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What does 432 Hz tuning mean?",
+            "answer": "Standard modern music is tuned to 440 Hz, which can sound tense. 432 Hz is the natural harmonic frequency historically used by classical masters. Scientific studies indicate 432 Hz produces calmer emotional responses, lower heart rates, and enhanced meditation states."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Should I play with the mallets or my hands?",
+            "answer": "Both! The included weighted bamboo mallets produce a bright, loud, crystal-clear bell resonance with minimum effort. Playing with your hands or the silicone finger picks creates a softer, warmer, and more intimate tone ideal for quiet meditation."
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Will the drum ever go out of tune?",
+            "answer": "No. The acoustic tongues are laser-cut from high-grade tempered alloy steel and heat-treated. Unless subjected to severe physical deformation, the instrument will maintain its pitch calibration for decades."
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "We offer a 30-Day Return Window. If you don't feel a noticeable sense of relaxation, joy, and peace when playing your Zavelyn Drum™, return it for a 100% full refund with no questions asked."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "settings": {
+        "pill_text": "QUESTIONS & ANSWERS",
+        "title": "Frequently Asked Questions",
+        "description": ""
+      }
+    },
+    "main": {
+      "type": "zavelyn-pdp-main",
+      "settings": {
+        "eyebrow_text": "ZAVELYN INNOVATIONS · MEDITATION & SOUND THERAPY",
+        "urgency_text": "High US Demand · Limited Handcrafted Batches Remaining",
+        "cta_text": "CLAIM OFFER",
+        "enable_sticky_atc": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "banner",
+    "experience",
+    "included",
+    "specs",
+    "shipping",
+    "faq"
+  ]
+}

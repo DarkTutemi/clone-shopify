@@ -1,0 +1,49 @@
+{{ 'zhp-pdp.css' | asset_url | stylesheet_tag }}
+
+{%- assign b_src = section.settings.banner_image | image_url: width: 1000 -%}
+{%- if b_src == blank -%}
+  {%- assign b_src = section.settings.banner_image_url -%}
+{%- endif -%}
+
+<section class="wf-section wf-banner-section">
+  <div class="wf-container">
+    <div class="wf-banner-card">
+      <div class="wf-banner-grid">
+        <div class="wf-banner-media">
+          <img src="{{ b_src }}" alt="{{ section.settings.heading | default: '432 Hz Sound Healing' }}" width="600" height="600" loading="lazy" />
+        </div>
+        <div class="wf-banner-content">
+          <span class="wf-sub-pill">{{ section.settings.badge_text | default: 'NATURAL RESONANCE' }}</span>
+          <h2 class="wf-banner-title">{{ section.settings.heading | default: 'Tuned to 432 Hz: The Frequency of Natural Healing' }}</h2>
+          <p class="wf-banner-desc">{{ section.settings.text | default: 'Unlike standard concert tuning (440 Hz), 432 Hz is mathematically aligned with the natural vibration of biological life. Every tone promotes deep nervous system relief, cortisol reduction, and tranquil mindfulness.' }}</p>
+          <div class="wf-banner-points">
+            <div class="wf-point-item"><span class="wf-point-icon">✓</span> <span>{{ section.settings.point_1 | default: 'Harmonic resonance that melts daily stress within 5 minutes' }}</span></div>
+            <div class="wf-point-item"><span class="wf-point-icon">✓</span> <span>{{ section.settings.point_2 | default: 'Zero discordant frequencies — impossible to play an out-of-tune note' }}</span></div>
+            <div class="wf-point-item"><span class="wf-point-icon">✓</span> <span>{{ section.settings.point_3 | default: 'Used by sound healers, yoga instructors, and therapists worldwide' }}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zavelyn Drum 432Hz Banner",
+  "settings": [
+    { "type": "image_picker", "id": "banner_image", "label": "Banner Image" },
+    { "type": "text", "id": "banner_image_url", "label": "Fallback Banner Image URL" },
+    { "type": "text", "id": "badge_text", "label": "Badge Text", "default": "NATURAL RESONANCE" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Tuned to 432 Hz: The Frequency of Natural Healing" },
+    { "type": "textarea", "id": "text", "label": "Description" },
+    { "type": "text", "id": "point_1", "label": "Bullet Point 1", "default": "Harmonic resonance that melts daily stress within 5 minutes" },
+    { "type": "text", "id": "point_2", "label": "Bullet Point 2", "default": "Zero discordant frequencies — impossible to play an out-of-tune note" },
+    { "type": "text", "id": "point_3", "label": "Bullet Point 3", "default": "Used by sound healers, yoga instructors, and therapists worldwide" }
+  ],
+  "presets": [
+    {
+      "name": "Zavelyn Drum 432Hz Banner"
+    }
+  ]
+}
+{% endschema %}

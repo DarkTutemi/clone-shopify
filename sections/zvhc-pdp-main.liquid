@@ -1,0 +1,214 @@
+{% comment %}
+  ZAVELYN HAIR CARE — Flagship PDP Main Buy Box Section
+  Engineered for ultra-high DTC beauty conversion with Kaching-style bundle tiers.
+{% endcomment %}
+
+{{ 'zvhc-haircare.css' | asset_url | stylesheet_tag }}
+{{ 'zvhc-pdp.css' | asset_url | stylesheet_tag }}
+
+<section class="zvhc-pdp-section" id="zvhcBuyBoxSection">
+  <div class="zvhc-container">
+    <div class="zvhc-pdp-layout">
+      <!-- 1. Left Gallery Column -->
+      <div class="zvhc-gallery">
+        <div class="zvhc-gallery-main">
+          {% assign featured_img = product.featured_image | default: product.images[0] %}
+          <img id="zvhcMainImg" src="{{ featured_img | image_url: width: 800 }}" alt="{{ product.title | escape }}" loading="eager">
+        </div>
+        
+        {% if product.images.size > 1 %}
+          <div class="zvhc-gallery-thumbs" aria-label="Product image thumbnails">
+            {% for img in product.images limit: 8 %}
+              <div class="zvhc-gallery-thumb{% if forloop.first %} is-active{% endif %}" data-full-src="{{ img | image_url: width: 800 }}">
+                <img src="{{ img | image_url: width: 140 }}" alt="Thumbnail {{ forloop.index }}">
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- 2. Right Buy Box Column -->
+      <div class="zvhc-buybox">
+        <!-- Review Stars & Live Viewers -->
+        <div class="zvhc-reviews-row">
+          <div class="zvhc-stars">★★★★★</div>
+          <span>4.9 / 5.0 (2,418+ Reviews)</span>
+          <div class="zvhc-viewers-pill">
+            <span class="zvhc-pulse-dot"></span>
+            <span>38 viewing right now</span>
+          </div>
+        </div>
+
+        <h1 class="zvhc-pdp-title">{{ product.title | default: "Zavelyn Organic Batana Hair Growth Oil" }}</h1>
+        <div class="zvhc-pdp-subtitle">
+          100% Pure Cold-Pressed Honduran Miracle Nut Oil. Deeply awakens dormant follicles, repairs damaged hair cuticles, and restores luscious natural thickness.
+        </div>
+
+        <!-- Formula Selector -->
+        <div class="zvhc-formula-section">
+          <div class="zvhc-formula-label">SELECT BOTANICAL FORMULA:</div>
+          <div class="zvhc-formula-options">
+            <button type="button" class="zvhc-formula-btn is-active" data-formula="100% Pure Raw Honduran Batana (60ml)">
+              <div class="zvhc-formula-name">Pure Raw Batana</div>
+              <div class="zvhc-formula-desc">100% unrefined cold-pressed oil</div>
+            </button>
+            <button type="button" class="zvhc-formula-btn" data-formula="Batana + Rosemary Scalp Infusion (60ml)">
+              <div class="zvhc-formula-name">Batana + Rosemary</div>
+              <div class="zvhc-formula-desc">Infused with rosemary scalp activator</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Kaching-Style Bundle Cards -->
+        <div class="zvhc-bundle-label">
+          <span>CHOOSE YOUR TREATMENT COURSE:</span>
+          <span style="color: var(--zvhc-copper); font-size: 0.76rem;">60-DAY EMPTY-BOTTLE GUARANTEE</span>
+        </div>
+
+        <div class="zvhc-bundles-container">
+          <!-- Tier 1: 1 Bottle -->
+          <div class="zvhc-bundle-card" data-tier="1">
+            <div class="zvhc-bundle-card-top">
+              <div class="zvhc-bundle-radio-wrap">
+                <div class="zvhc-radio-circle"><div class="zvhc-radio-dot"></div></div>
+                <div class="zvhc-bundle-info-title">
+                  <span>1 Bottle</span>
+                  <span class="zvhc-save-pill">Starter</span>
+                </div>
+              </div>
+              <div class="zvhc-bundle-pricing">
+                <div class="zvhc-bundle-price">$39.99</div>
+                <div class="zvhc-bundle-compare">$80.00</div>
+                <div class="zvhc-bundle-each">$39.99 / bottle</div>
+              </div>
+            </div>
+            <div class="zvhc-bundle-subtext">30-day targeted trial course for hairline &amp; scalp edges</div>
+          </div>
+
+          <!-- Tier 2: 2 Bottles (Duo Care - Most Popular) -->
+          <div class="zvhc-bundle-card is-selected" data-tier="2">
+            <div class="zvhc-card-badge">★ MOST POPULAR</div>
+            <div class="zvhc-bundle-card-top">
+              <div class="zvhc-bundle-radio-wrap">
+                <div class="zvhc-radio-circle"><div class="zvhc-radio-dot"></div></div>
+                <div class="zvhc-bundle-info-title">
+                  <span>2 Bottles Duo</span>
+                  <span class="zvhc-save-pill">Save 45%</span>
+                </div>
+              </div>
+              <div class="zvhc-bundle-pricing">
+                <div class="zvhc-bundle-price">$79.98</div>
+                <div class="zvhc-bundle-compare">$160.00</div>
+                <div class="zvhc-bundle-each">$39.99 / bottle</div>
+              </div>
+            </div>
+            <div class="zvhc-bundle-subtext">Recommended 60-day intensive growth &amp; length retention cycle</div>
+            <div class="zvhc-bundle-perk">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>FREE US Express Tracked Shipping included</span>
+            </div>
+            <div class="zvhc-gift-unlock">
+              🎁 <span><strong>Free Gift Unlocked:</strong> Soft Silicone Scalp Massaging Comb ($14.99 Value)</span>
+            </div>
+          </div>
+
+          <!-- Tier 3: 3 Bottles (Full Restoration - Best Value) -->
+          <div class="zvhc-bundle-card" data-tier="3">
+            <div class="zvhc-card-badge">💎 BEST VALUE</div>
+            <div class="zvhc-bundle-card-top">
+              <div class="zvhc-bundle-radio-wrap">
+                <div class="zvhc-radio-circle"><div class="zvhc-radio-dot"></div></div>
+                <div class="zvhc-bundle-info-title">
+                  <span>3 Bottles Course</span>
+                  <span class="zvhc-save-pill">Buy 2 Get 1 FREE</span>
+                </div>
+              </div>
+              <div class="zvhc-bundle-pricing">
+                <div class="zvhc-bundle-price">$95.99</div>
+                <div class="zvhc-bundle-compare">$240.00</div>
+                <div class="zvhc-bundle-each">$31.99 / bottle</div>
+              </div>
+            </div>
+            <div class="zvhc-bundle-subtext">Complete 90-day multi-room follicle restoration routine</div>
+            <div class="zvhc-bundle-perk">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>FREE US Express Tracked Shipping included</span>
+            </div>
+            <div class="zvhc-gift-unlock">
+              🎁 <span><strong>2 Free Gifts Unlocked:</strong> Scalp Massager + Pure Silk Sleep Bonnet ($29.98 Value)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Savings Callout -->
+        <div class="zvhc-savings-callout" id="zvhcSavingsCallout">
+          ✨ <strong>Save 45% + FREE US Express Shipping</strong> included on this order
+        </div>
+
+        <!-- Two-Line CTA Button -->
+        <button type="button" class="zvhc-cta-btn" id="zvhcMainCta">
+          <div class="zvhc-cta-line-1">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span>ADD TO CART — <span id="zvhcCtaPrice">$79.98</span></span>
+          </div>
+          <div class="zvhc-cta-line-2">
+            🔒 60-DAY 100% EMPTY-BOTTLE GUARANTEE
+          </div>
+        </button>
+
+        <!-- Security & Delivery Notes -->
+        <div class="zvhc-guarantee-note">
+          <span>🔒 256-Bit SSL Encrypted Checkout</span>
+          <span>•</span>
+          <span>⚡ Dispatched within 24 Hours</span>
+        </div>
+
+        <!-- 3-Step Delivery Stepper -->
+        <div class="zvhc-stepper">
+          <div class="zvhc-step-item">
+            <div class="zvhc-step-dot"></div>
+            <div class="zvhc-step-lbl">ORDERED</div>
+            <div class="zvhc-step-val">Today</div>
+          </div>
+          <div class="zvhc-step-item">
+            <div class="zvhc-step-dot"></div>
+            <div class="zvhc-step-lbl">DISPATCHED</div>
+            <div class="zvhc-step-val">Within 24 Hours</div>
+          </div>
+          <div class="zvhc-step-item">
+            <div class="zvhc-step-dot"></div>
+            <div class="zvhc-step-lbl">DELIVERED</div>
+            <div class="zvhc-step-val">2–4 Business Days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mobile Sticky Dock -->
+<div class="zvhc-mobile-dock" id="zvhcMobileDock">
+  <div class="zvhc-dock-info">
+    <div class="zvhc-dock-info-title">{{ product.title | truncate: 26 }}</div>
+    <div class="zvhc-dock-info-price" id="zvhcDockPrice">$79.98</div>
+  </div>
+  <button type="button" class="zvhc-dock-btn" id="zvhcDockCta">
+    ADD TO CART
+  </button>
+</div>
+
+<script src="{{ 'zvhc-pdp.js' | asset_url }}" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.ZvhcPdp) {
+      window.ZvhcPdp.init({{ product.variants | json }});
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "ZVHC PDP Main BuyBox",
+  "settings": []
+}
+{% endschema %}

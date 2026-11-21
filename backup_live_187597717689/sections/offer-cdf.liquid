@@ -1,0 +1,3136 @@
+{%- liquid
+  if request.page_type == 'product' and product != blank
+    assign offer_product = product
+  elsif section.settings.product != blank
+    assign offer_product = section.settings.product
+  else
+    assign offer_product = all_products['cdf']
+  endif
+  if offer_product == blank
+    assign offer_product = collections.all.products.first
+  endif
+  assign product = offer_product
+  assign current_variant = product.selected_or_first_available_variant
+  assign s = section.settings
+  assign brand = s.brand_name | default: 'Zavelyn'
+  assign cta_label = s.cta_label | default: 'Add to cart'
+  assign sec_gallery = section.blocks | where: 'type', 'sec_gallery' | first
+  assign sec_hero = section.blocks | where: 'type', 'sec_hero' | first
+  assign sec_intro = section.blocks | where: 'type', 'sec_intro' | first
+  assign sec_results = section.blocks | where: 'type', 'sec_results' | first
+  assign sec_lift = section.blocks | where: 'type', 'sec_lift' | first
+  assign sec_strain = section.blocks | where: 'type', 'sec_strain' | first
+  assign sec_trusted = section.blocks | where: 'type', 'sec_trusted' | first
+  assign sec_falls = section.blocks | where: 'type', 'sec_falls' | first
+  assign sec_easy = section.blocks | where: 'type', 'sec_easy' | first
+  assign sec_doctors = section.blocks | where: 'type', 'sec_doctors' | first
+  assign sec_guarantee = section.blocks | where: 'type', 'sec_guarantee' | first
+  assign sec_faq = section.blocks | where: 'type', 'sec_faq' | first
+  assign sec_reviews = section.blocks | where: 'type', 'sec_reviews' | first
+  assign sec_trust = section.blocks | where: 'type', 'sec_trust' | first
+  assign sec_footer = section.blocks | where: 'type', 'sec_footer' | first
+-%}
+{% render 'offer-seo', product: product, section: section %}
+{{ 'zavelyn-cdf.css' | asset_url | stylesheet_tag }}
+
+<div class="offer-page offer-page--cdf" id="OfferTop">
+  <div class="offer-ticker">
+    <p class="offer-ticker__line">🦶 {{ s.ticker_text | default: 'RECOVERY SALE STARTS NOW.' }} <span>{{ s.ticker_highlight | default: 'BUY 2 · EXTRA 10% OFF!' }}</span></p>
+  </div>
+  {% render 'offer-header', brand: brand, product: product %}
+
+  {%- comment -%} ===== 1. HERO + BUY BOX ===== {%- endcomment -%}
+  <section class="offer-hero">
+    <div class="offer-hero__grid">
+      <div class="offer-hero__left">
+        <div class="offer-media" data-offer-gallery>
+          <div class="offer-media__stage">
+            {%- if sec_gallery and sec_gallery.settings.image_1 != blank -%}
+              {%- assign main_src = sec_gallery.settings.image_1 | image_url: width: 1200 -%}
+            {%- elsif sec_gallery and sec_gallery.settings.fallback_1 != blank -%}
+              {%- assign main_src = sec_gallery.settings.fallback_1 | asset_url -%}
+            {%- else -%}
+              {%- assign main_src = 'cdf-gallery-1.jpg' | asset_url -%}
+            {%- endif -%}
+            <button type="button" class="offer-media__zoom" data-offer-zoom aria-label="Open gallery">
+              <img data-offer-main src="{{ main_src }}" alt="{{ product.title | escape }}" width="1200" height="1200" fetchpriority="high">
+            </button>
+            <button type="button" class="offer-media__nav offer-media__nav--prev" data-offer-prev aria-label="Previous">❮</button>
+            <button type="button" class="offer-media__nav offer-media__nav--next" data-offer-next aria-label="Next">❯</button>
+          </div>
+          <div class="offer-thumbs" role="list" {% if sec_gallery %}{{ sec_gallery.shopify_attributes }}{% endif %}>
+            {%- if sec_gallery -%}
+              {% render 'offer-group-slots', group: sec_gallery, mode: 'gallery', count: 10 %}
+            {%- else -%}
+              {%- assign galleries = 'cdf-gallery-1.jpg,cdf-gallery-2.jpg,cdf-gallery-3.jpg,cdf-gallery-4.jpg,cdf-gallery-5.jpg,cdf-gallery-6.jpg,cdf-gallery-7.jpg,cdf-gallery-8.jpg,cdf-gallery-9.jpg,cdf-gallery-10.jpg' | split: ',' -%}
+              {%- for file in galleries -%}
+                {%- assign thumb_file = file | replace: '.jpg', '-thumb.jpg' -%}
+                <button type="button" class="{% if forloop.first %}is-active{% endif %}" data-offer-thumb data-index="{{ forloop.index0 }}" data-src="{{ file | asset_url }}" aria-label="Image {{ forloop.index }}">
+                  <img src="{{ thumb_file | asset_url }}" alt="" width="60" height="60" {% if forloop.first %}loading="eager"{% else %}loading="lazy"{% endif %} decoding="async">
+                </button>
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-hero__right">
+        <a class="cdf-review-row" href="#REVIEW">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span class="rating"><strong>4.9</strong></span>
+          <span class="sep">|</span>
+          <span>3,269 reviews</span>
+        </a>
+        <h1 class="offer-title">{{ product.title }}</h1>
+
+        <div class="cdf-price-row">
+          <span class="cdf-price" data-cdf-price>{{ current_variant.price | money }}</span>
+          {% if current_variant.compare_at_price > current_variant.price %}
+            <span class="cdf-compare" data-cdf-compare>{{ current_variant.compare_at_price | money }}</span>
+            <span class="cdf-sale-badge">Sale</span>
+          {% endif %}
+        </div>
+
+        <p class="cdf-lead">{% if sec_hero.settings.lead != blank %}{{ sec_hero.settings.lead }}{% else %}Naturally support your foot, reduce tripping risk, <strong>improve walking stability and regain confident movement</strong> without surgery or medications instantly.{% endif %}</p>
+
+        <div class="pi-feats">
+          <div class="pi-feat">
+            <div class="pi-feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg></div>
+            <div class="pi-feat-text"><p class="pi-feat-title">Better Mobility</p><p class="pi-feat-sub">Reducing toe dragging &amp; stumbling</p></div>
+          </div>
+          <div class="pi-feat">
+            <div class="pi-feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg></div>
+            <div class="pi-feat-text"><p class="pi-feat-title">Enhanced Balance</p><p class="pi-feat-sub">Improves walking stability &amp; balance</p></div>
+          </div>
+          <div class="pi-feat">
+            <div class="pi-feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg></div>
+            <div class="pi-feat-text"><p class="pi-feat-title">Secure Fit</p><p class="pi-feat-sub">Keeps your foot lifted &amp; supported</p></div>
+          </div>
+          <div class="pi-feat">
+            <div class="pi-feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg></div>
+            <div class="pi-feat-text"><p class="pi-feat-title">All-Day Wear</p><p class="pi-feat-sub">Lightweight &amp; comfortable</p></div>
+          </div>
+        </div>
+
+        <div class="cdf-risk">
+          <span aria-hidden="true">💡</span>
+          <div><strong>Try it risk-free for 30 days</strong> If you don't notice less foot dragging, better stability or safer walking, we'll refund you in full.</div>
+        </div>
+
+        {%- assign pack1_price = current_variant.price -%}
+        {%- assign pack2_qty = s.bundle_2_qty | default: 2 -%}
+        {%- assign pack2_discount = s.bundle_2_discount | default: 10 -%}
+        {%- assign pack2_full = current_variant.price | times: pack2_qty -%}
+        {%- assign pack2_off = pack2_full | times: pack2_discount | divided_by: 100 -%}
+        {%- assign pack2_price = pack2_full | minus: pack2_off -%}
+
+        {%- comment -%} Single-brace options: Foot Side + Size (Black only) {%- endcomment -%}
+        {%- capture cdf_item_opts_markup -%}
+            <div class="cdf-bundle-opt" data-opt="Foot Side">
+              <div class="offer-bundle__sizes-head">
+                <div class="offer-bundle__sizes-rule"><span>Foot Side: <em data-cdf-side-label>Left</em></span></div>
+              </div>
+              <div class="offer-bundle__size-pills" role="radiogroup" aria-label="Foot Side">
+                <button type="button" class="offer-size-pill is-active" data-cdf-side="Left">Left</button>
+                <button type="button" class="offer-size-pill" data-cdf-side="Right">Right</button>
+              </div>
+            </div>
+            <div class="cdf-bundle-opt" data-opt="Size">
+              <div class="offer-bundle__sizes-head">
+                <div class="offer-bundle__sizes-rule"><span>Size: <em data-cdf-size-label>S</em></span></div>
+                <button type="button" class="offer-sizechart-link offer-sizechart-link--inline" data-cdf-sizechart-toggle>Size chart</button>
+              </div>
+              <div class="offer-bundle__size-pills" role="radiogroup" aria-label="Size">
+                <button type="button" class="offer-size-pill is-active" data-cdf-size="S">S</button>
+                <button type="button" class="offer-size-pill" data-cdf-size="M">M</button>
+                <button type="button" class="offer-size-pill" data-cdf-size="L">L</button>
+                <button type="button" class="offer-size-pill" data-cdf-size="XL">XL</button>
+              </div>
+            </div>
+        {%- endcapture -%}
+
+        <div
+          class="offer-bundles"
+          id="OfferPackages"
+          data-offer-bundles
+          data-unit-price="{{ current_variant.price }}"
+          data-money-format="{{ shop.money_format | escape }}"
+          data-discount-code="{{ s.bundle_2_discount_code | default: 'CDF10' | escape }}"
+        >
+          <div class="offer-bundles__head">
+            <p class="offer-bundles__label">{{ s.bundles_label | default: 'Choose your package' }}</p>
+          </div>
+          <div class="offer-bundles__list{% if s.packages_reversed %} offer-bundles__list--rev{% endif %}" role="radiogroup" aria-label="Package">
+            <div class="offer-bundle{% unless s.packages_reversed %} is-active{% endunless %}">
+              <label class="offer-bundle__pick">
+                <input
+                  type="radio"
+                  name="offer_bundle"
+                  value="1"
+                  data-qty="{{ s.bundle_1_qty | default: 1 }}"
+                  data-discount="0"
+                  {% unless s.packages_reversed %}checked{% endunless %}
+                >
+                <span class="offer-bundle__radio" aria-hidden="true"></span>
+                <span class="offer-bundle__body">
+                  <span class="offer-bundle__content">
+                    <span class="offer-bundle__title">{{ s.bundle_1_title | default: 'Buy 1' }}</span>
+                    <span class="offer-bundle__meta-row">
+                      <span class="offer-bundle__meta">{{ s.bundle_1_meta | default: '1 brace' }}</span>
+                      {%- if s.bundle_1_badge != blank -%}
+                        <span class="offer-bundle__ship">{{ s.bundle_1_badge }}</span>
+                      {%- else -%}
+                        <span class="offer-bundle__ship">$4.95 ship</span>
+                      {%- endif -%}
+                    </span>
+                  </span>
+                  <span class="offer-bundle__price" data-bundle-price>{{ pack1_price | money }}</span>
+                </span>
+              </label>
+              <div class="offer-bundle__sizes cdf-bundle-opts" data-cdf-items="1">
+                <div class="cdf-item-opts" data-cdf-item="0">
+                  {{ cdf_item_opts_markup }}
+                </div>
+              </div>
+            </div>
+            <div class="offer-bundle offer-bundle--featured{% if s.packages_reversed %} is-active{% endif %}">
+              <label class="offer-bundle__pick">
+                <input
+                  type="radio"
+                  name="offer_bundle"
+                  value="2"
+                  data-qty="{{ pack2_qty }}"
+                  data-discount="{{ pack2_discount }}"
+                  {% if s.packages_reversed %}checked{% endif %}
+                >
+                <span class="offer-bundle__radio" aria-hidden="true"></span>
+                <span class="offer-bundle__body">
+                  <span class="offer-bundle__content">
+                    <span class="offer-bundle__title">{{ s.bundle_2_title | default: 'Buy 2' }}</span>
+                    <span class="offer-bundle__meta-row">
+                      <span class="offer-bundle__meta">{{ s.bundle_2_meta | default: 'Extra 10% OFF' }}</span>
+                      {%- if s.bundle_2_badge != blank -%}
+                        <span class="offer-bundle__ship offer-bundle__ship--free">{{ s.bundle_2_badge }}</span>
+                      {%- else -%}
+                        <span class="offer-bundle__ship offer-bundle__ship--free">Free ship</span>
+                      {%- endif -%}
+                    </span>
+                  </span>
+                  <span class="offer-bundle__price" data-bundle-price>{{ pack2_price | money }}</span>
+                </span>
+              </label>
+              <div class="offer-bundle__sizes cdf-bundle-opts" data-cdf-items="2">
+                <div class="cdf-item-opts" data-cdf-item="0">
+                  <p class="cdf-item-opts__title">Brace 1</p>
+                  {{ cdf_item_opts_markup }}
+                </div>
+                <div class="cdf-item-opts" data-cdf-item="1">
+                  <p class="cdf-item-opts__title">Brace 2</p>
+                  <div class="cdf-bundle-opt" data-opt="Foot Side">
+                    <div class="offer-bundle__sizes-head">
+                      <div class="offer-bundle__sizes-rule"><span>Foot Side: <em data-cdf-side-label>Right</em></span></div>
+                    </div>
+                    <div class="offer-bundle__size-pills" role="radiogroup" aria-label="Foot Side">
+                      <button type="button" class="offer-size-pill" data-cdf-side="Left">Left</button>
+                      <button type="button" class="offer-size-pill is-active" data-cdf-side="Right">Right</button>
+                    </div>
+                  </div>
+                  <div class="cdf-bundle-opt" data-opt="Size">
+                    <div class="offer-bundle__sizes-head">
+                      <div class="offer-bundle__sizes-rule"><span>Size: <em data-cdf-size-label>S</em></span></div>
+                      <button type="button" class="offer-sizechart-link offer-sizechart-link--inline" data-cdf-sizechart-toggle>Size chart</button>
+                    </div>
+                    <div class="offer-bundle__size-pills" role="radiogroup" aria-label="Size">
+                      <button type="button" class="offer-size-pill is-active" data-cdf-size="S">S</button>
+                      <button type="button" class="offer-size-pill" data-cdf-size="M">M</button>
+                      <button type="button" class="offer-size-pill" data-cdf-size="L">L</button>
+                      <button type="button" class="offer-size-pill" data-cdf-size="XL">XL</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="offer-sizechart" data-cdf-sizechart hidden>
+          <div class="offer-sizechart__backdrop" data-cdf-sizechart-close tabindex="-1"></div>
+          <div class="offer-sizechart__dialog" role="dialog" aria-modal="true" aria-labelledby="CdfSizeChartTitle">
+            <div class="offer-sizechart__head">
+              <h2 id="CdfSizeChartTitle">Shoe Size Guide</h2>
+              <button type="button" class="offer-sizechart__close" data-cdf-sizechart-close aria-label="Close">×</button>
+            </div>
+            <div class="offer-sizechart__body">
+              <table class="cdf-sizechart-table">
+                <thead>
+                  <tr><th>SIZE</th><th>US (MEN)</th><th>US (WOMEN)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>S</td><td>3–5</td><td>4.5–6.5</td></tr>
+                  <tr><td>M</td><td>5–8</td><td>6.5–9.5</td></tr>
+                  <tr><td>L</td><td>8–11</td><td>9.5–12.5</td></tr>
+                  <tr><td>XL</td><td>11–14</td><td>12.5–15.5</td></tr>
+                </tbody>
+              </table>
+              <p class="offer-sizechart__note">If the size you order doesn't fit perfectly, don't worry! We offer a 30-day window for easy exchanges.</p>
+            </div>
+          </div>
+        </div>
+
+        {%- if s.packages_reversed -%}
+          {%- assign cta_price_cents = pack2_price -%}
+        {%- else -%}
+          {%- assign cta_price_cents = pack1_price -%}
+        {%- endif -%}
+        {% form 'product', product, id: 'OfferAddForm', class: 'offer-buy-form' %}
+          <input type="hidden" name="id" id="OfferVariantId" value="{{ current_variant.id }}">
+          <input type="hidden" name="quantity" id="OfferQuantity" value="{% if s.packages_reversed %}{{ pack2_qty }}{% else %}1{% endif %}">
+          <button class="offer-cta" type="submit" name="add" data-offer-checkout {% unless current_variant.available %}disabled{% endunless %}>
+            <span class="offer-cta__label">{{ cta_label }}</span>
+            <span class="offer-cta__sep" aria-hidden="true">—</span>
+            <span class="offer-cta__price" data-offer-cta-price>{{ cta_price_cents | money_without_trailing_zeros }}</span>
+          </button>
+        {% endform %}
+
+        <div class="cdf-trust">
+          <span>Free shipping on Buy 2</span>
+          <span>100% money-back</span>
+        </div>
+
+        <div class="single-review">
+          <div class="single-review-top">
+            <div class="single-review-top-left">
+              <img class="single-reviewer-img" src="{{ 'cdf-reviewer.png' | asset_url }}" alt="Sarah Jenkins" width="40" height="40" loading="lazy">
+              <p>Sarah Jenkins</p>
+              <img src="{{ 'cdf-stars.svg' | asset_url }}" alt="" width="69" height="13" loading="lazy">
+            </div>
+          </div>
+          <div class="single-review-bottom">
+            <p>I was terrified of tripping and constantly looked at the ground. This brace fits perfectly inside my sneakers and gave me instant stability. I walked the whole park today without dragging my foot once. Finally feel confident again!</p>
+            <div class="review-footer">
+              <div class="verified-badge">
+                <img src="{{ 'cdf-verified.svg' | asset_url }}" alt="" width="16" height="16" loading="lazy">
+                <p>Verified customer</p>
+              </div>
+              <span class="review-date">12 Dec 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cdf-sia" aria-label="See it in action">
+          <div class="cdf-sia__grid">
+            <div class="cdf-sia-card">
+              <video playsinline muted loop preload="metadata" poster="{{ 'cdf-video-thumb-1.jpg' | asset_url }}">
+                <source src="https://cedrow.com/cdn/shop/videos/c/vp/4091e65b3b3749f38c55f1ac039c732f/4091e65b3b3749f38c55f1ac039c732f.HD-1080p-2.5Mbps-90709356.mp4?v=0" type="video/mp4">
+              </video>
+              <span class="cdf-sia-card__badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5 14.6 4l3.5-.4.8 3.4 3 1.9-1.5 3.2 1.5 3.2-3 1.9-.8 3.4-3.5-.4L12 22.5 9.4 20l-3.5.4-.8-3.4-3-1.9L3.6 12 2.1 8.8l3-1.9.8-3.4L9.4 4 12 1.5zm-1.2 14.2 5.9-5.9-1.4-1.4-4.5 4.4-2-2-1.4 1.5 3.4 3.4z"></path></svg> Verified Buyer</span>
+              <span class="cdf-sia-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.14v13.72L19 12 8 5.14z"></path></svg></span>
+            </div>
+            <div class="cdf-sia-card">
+              <video playsinline muted loop preload="metadata" poster="{{ 'cdf-video-thumb-2.jpg' | asset_url }}">
+                <source src="https://cedrow.com/cdn/shop/videos/c/vp/e9a004f477d047bfb714c282be2c46c4/e9a004f477d047bfb714c282be2c46c4.HD-1080p-2.5Mbps-90709355.mp4?v=0" type="video/mp4">
+              </video>
+              <span class="cdf-sia-card__badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5 14.6 4l3.5-.4.8 3.4 3 1.9-1.5 3.2 1.5 3.2-3 1.9-.8 3.4-3.5-.4L12 22.5 9.4 20l-3.5.4-.8-3.4-3-1.9L3.6 12 2.1 8.8l3-1.9.8-3.4L9.4 4 12 1.5zm-1.2 14.2 5.9-5.9-1.4-1.4-4.5 4.4-2-2-1.4 1.5 3.4 3.4z"></path></svg> Verified Buyer</span>
+              <span class="cdf-sia-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.14v13.72L19 12 8 5.14z"></path></svg></span>
+            </div>
+            <div class="cdf-sia-card">
+              <video playsinline muted loop preload="metadata" poster="{{ 'cdf-video-thumb-3.jpg' | asset_url }}">
+                <source src="https://cedrow.com/cdn/shop/videos/c/vp/d61437b622f941bc8333df58caf19de4/d61437b622f941bc8333df58caf19de4.HD-1080p-4.8Mbps-90823000.mp4?v=0" type="video/mp4">
+              </video>
+              <span class="cdf-sia-card__badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5 14.6 4l3.5-.4.8 3.4 3 1.9-1.5 3.2 1.5 3.2-3 1.9-.8 3.4-3.5-.4L12 22.5 9.4 20l-3.5.4-.8-3.4-3-1.9L3.6 12 2.1 8.8l3-1.9.8-3.4L9.4 4 12 1.5zm-1.2 14.2 5.9-5.9-1.4-1.4-4.5 4.4-2-2-1.4 1.5 3.4 3.4z"></path></svg> Verified Buyer</span>
+              <span class="cdf-sia-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.14v13.72L19 12 8 5.14z"></path></svg></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="offer-faq device-accordion" data-offer-accordion>
+          <div class="offer-faq__item">
+            <button type="button" class="offer-faq__trigger" aria-expanded="false">Benefits</button>
+            <div class="offer-faq__panel"><div class="offer-faq__body">
+              <div class="ced-benefits">
+                <div class="ced-benefits__panel ced-benefits__panel--old">
+                  <span class="ced-benefits__panel-title">The old way</span>
+                  <ul class="ced-benefits__list">
+                    <li><span class="ced-benefits__mark ced-benefits__mark--x">✕</span>Feel rigid, heavy, and restrictive</li>
+                    <li><span class="ced-benefits__mark ced-benefits__mark--x">✕</span>Crowd your shoes</li>
+                    <li><span class="ced-benefits__mark ced-benefits__mark--x">✕</span>Look medical and unnatural</li>
+                    <li><span class="ced-benefits__mark ced-benefits__mark--x">✕</span>Make walking feel tiring</li>
+                  </ul>
+                </div>
+                <div class="ced-benefits__panel ced-benefits__panel--new">
+                  <span class="ced-benefits__panel-title">The {{ brand }} way</span>
+                  <ul class="ced-benefits__list">
+                    <li><span class="ced-benefits__mark ced-benefits__mark--check">✓</span>Lightweight and comfortable</li>
+                    <li><span class="ced-benefits__mark ced-benefits__mark--check">✓</span>Fits inside all shoes</li>
+                    <li><span class="ced-benefits__mark ced-benefits__mark--check">✓</span>Discreet, everyday design</li>
+                    <li><span class="ced-benefits__mark ced-benefits__mark--check">✓</span>Walk naturally all day</li>
+                  </ul>
+                  <div class="ced-benefits__accent"><span class="ced-benefits__accent-icon">✦</span><span>No surgery. No medications. Just everyday support.</span></div>
+                </div>
+                <div class="ced-benefits__details">
+                  <div class="ced-benefits__detail">
+                    <div class="ced-benefits__detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5Z"></path><path d="m2 17 10 5 10-5"></path><path d="m2 12 10 5 10-5"></path></svg></div>
+                    <div class="ced-benefits__detail-body"><strong>Low Profile Lift Design</strong><p>A streamlined support system that fits comfortably inside all shoes without changing your normal fit or style.</p></div>
+                  </div>
+                  <div class="ced-benefits__detail">
+                    <div class="ced-benefits__detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3Z"></path></svg></div>
+                    <div class="ced-benefits__detail-body"><strong>Adaptive Dorsiflexion Strap</strong><p>Gently assists foot lift while you walk, helping reduce toe dragging and improving step clearance.</p></div>
+                  </div>
+                  <div class="ced-benefits__detail">
+                    <div class="ced-benefits__detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                    <div class="ced-benefits__detail-body"><strong>Secure and Adjustable Fit</strong><p>Soft, breathable materials and adjustable straps keep the brace stable and comfortable throughout the day.</p></div>
+                  </div>
+                </div>
+                <div class="ced-benefits__footer">
+                  <p>Walk with greater confidence and support. {{ brand }} naturally supports your foot, reduces tripping risk, improves walking stability and regains confident movement, without surgery or medications.</p>
+                </div>
+              </div>
+            </div></div>
+          </div>
+          <div class="offer-faq__item">
+            <button type="button" class="offer-faq__trigger" aria-expanded="false">How to use?</button>
+            <div class="offer-faq__panel"><div class="offer-faq__body">
+              <ol class="cdf-steps">
+                <li><span class="cdf-steps__num">01</span><div><strong>Wrap</strong> Place the soft ankle cuff around your lower leg, just above the ankle bone. Secure it comfortably using the strap.</div></li>
+                <li><span class="cdf-steps__num">02</span><div><strong>Attach</strong> Connect the lift strap or buckle to your shoe laces or front anchor point so it aligns with the top of your foot.</div></li>
+                <li><span class="cdf-steps__num">03</span><div><strong>Adjust</strong> Tighten the strap gently until your foot is supported in a natural lifted position.</div></li>
+                <li><span class="cdf-steps__num">04</span><div><strong>Walk</strong> Take a few steps and fine-tune the tension so it feels secure, comfortable, and supportive.</div></li>
+              </ol>
+            </div></div>
+          </div>
+          <div class="offer-faq__item">
+            <button type="button" class="offer-faq__trigger" aria-expanded="false">Who is this for?</button>
+            <div class="offer-faq__panel"><div class="offer-faq__body">
+              <ul class="cdf-audience">
+                <li><strong>People with Foot Drop</strong> If you experience toe dragging or difficulty lifting your foot while walking.</li>
+                <li><strong>Stroke or Nerve Injury Recovery</strong> Helpful for those regaining mobility and stability during recovery.</li>
+                <li><strong>MS &amp; Neuropathy Support</strong> For individuals managing foot weakness related to neurological conditions.</li>
+                <li><strong>Active Adults &amp; Seniors</strong> Ideal for those who want to stay mobile, independent, and steady on their feet.</li>
+                <li><strong>Daily Use at Home or Outdoors</strong> Great for walking around the house, errands, or light outdoor activity.</li>
+              </ul>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 2. Stop toe dragging ===== {%- endcomment -%}
+  <section class="cdf-intro">
+    <div class="cdf-intro__bg" aria-hidden="true">
+      {%- assign _oi_fallback_1_1 = sec_intro.settings.fallback | default: 'cdf-intro-bg.png' -%}{% render 'offer-img', image: sec_intro.settings.image, fallback: _oi_fallback_1_1, alt: '', width: 2000, height: 1331, loading: 'lazy' %}
+    </div>
+    <div class="cdf-intro__inner">
+      <div class="cdf-intro__badge">
+        <svg viewBox="0 0 256 256" aria-hidden="true"><path d="M229.5,113,166.06,89.94,143,26.5a16,16,0,0,0-30,0L89.94,89.94,26.5,113a16,16,0,0,0,0,30l63.44,23.07L113,229.5a16,16,0,0,0,30,0l23.07-63.44L229.5,143a16,16,0,0,0,0-30ZM157.08,152.3a8,8,0,0,0-4.78,4.78L128,223.9l-24.3-66.82a8,8,0,0,0-4.78-4.78L32.1,128l66.82-24.3a8,8,0,0,0,4.78-4.78L128,32.1l24.3,66.82a8,8,0,0,0,4.78,4.78L223.9,128Z"></path></svg>
+        <em>{{ sec_intro.settings.badge | default: 'Secure support for every step' }}</em>
+      </div>
+      <h2 class="cdf-h2">{% if sec_intro.settings.heading != blank %}{{ sec_intro.settings.heading }}{% else %}Stop toe dragging &amp; walk with confidence again <em>instantly</em>{% endif %}</h2>
+      <div class="cdf-intro__copy">
+        {%- if sec_intro and sec_intro.settings.body != blank -%}
+          {{ sec_intro.settings.body | newline_to_br }}
+        {%- else -%}
+          <p>Foot drop, nerve weakness, or neurological conditions can make it difficult to lift the front of your foot while walking.</p>
+          <p>This causes your toes to drag, <strong>increases your risk of tripping, and forces you to overcompensate with your hips and knees</strong> leading to tiring, unstable steps and constant fear of falling.</p>
+          <p>Wearing a supportive foot drop brace helps keep your foot in a natural lifted position while you walk, <span class="cdf-intro__u">improving step clearance and stability.</span><br>This reduces stumbling risk, supports smoother movement, and helps you walk with greater confidence and independence throughout your day.</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 3. Real results tabs (RSS) ===== {%- endcomment -%}
+  <section class="rss-section">
+    <div class="offer-head"><h2>{{ sec_results.settings.heading | default: 'Walk Freely Again. Real Results' }}</h2></div>
+    <div class="rss-tabs">
+      <span class="rss-tab-pill" id="rss-pill"></span>
+      <button type="button" class="rss-tab-btn active" data-tab="stiffness">Foot Dragging</button>
+      <button type="button" class="rss-tab-btn" data-tab="position">Fall Risk</button>
+      <button type="button" class="rss-tab-btn" data-tab="mobility">Ankle Mobility</button>
+    </div>
+    <div class="rss-panels">
+      <div class="rss-panel active" id="rss-panel-stiffness">
+        <div class="rss-heading"><h2><span class="rss-stat">80%</span> of participants noticed their foot stopped dragging when walking <strong><i>within first use</i></strong></h2></div>
+        <div class="rss-details">
+          <ul class="rss-bullets">
+            <li class="rss-bullet"><span class="rss-bullet-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>Based on observational study</li>
+            <li class="rss-bullet"><span class="rss-bullet-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>100+ participants per study</li>
+            <li class="rss-bullet"><span class="rss-bullet-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>World class doctors &amp; researchers</li>
+          </ul>
+          <a href="#OfferTop" class="rss-cta" data-offer-checkout>Take advantage of the offer <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"></polyline><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+        <div class="rss-chart-wrap">
+          <div class="rss-chart-head"><h3>Foot Drag While Walking</h3><span class="rss-improve"><svg viewBox="0 0 24 24"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>85% reduction</span></div>
+          <p class="rss-chart-sub">Average drag frequency over the first 14 days</p>
+          <div class="rss-chart-inner">
+            <div class="rss-h-lines"><div class="rss-h-line"></div><div class="rss-h-line"></div><div class="rss-h-line"></div><div class="rss-h-line"></div><div class="rss-h-line"></div></div>
+            <div class="rss-v-lines"><div class="rss-v-line"></div><div class="rss-v-line"></div><div class="rss-v-line"></div><div class="rss-v-line"></div></div>
+            <div class="rss-y-labels"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div>
+            <div class="rss-x-labels"><span>Day 1</span><span>Day 3</span><span>Day 7</span><span>Day 14</span></div>
+            <span class="rss-y-title">Drag Frequency</span><span class="rss-x-title">Days of use</span>
+            <canvas class="rss-canvas" id="rss-chart-stiffness"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="rss-panel" id="rss-panel-position">
+        <div class="rss-heading"><h2><span class="rss-stat">91%</span> of participants reported significantly fewer near-falls and trips while walking <strong><i>within 1 week</i></strong></h2></div>
+        <div class="rss-details">
+          <ul class="rss-bullets">
+            <li class="rss-bullet"><span class="rss-bullet-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>Based on observational study</li>
+            <li class="rss-bullet"><span class="rss-bullet-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>100+ participants per study</li>
+            <li class="rss-bullet"><span class="rss-bullet-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>World class doctors &amp; researchers</li>
+          </ul>
+          <a href="#OfferTop" class="rss-cta" data-offer-checkout>Take advantage of the offer <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"></polyline><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+        <div class="rss-chart-wrap">
+          <div class="rss-chart-head"><h3>Fall Risk While Walking</h3><span class="rss-improve"><svg viewBox="0 0 24 24"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>88% reduction</span></div>
+          <p class="rss-chart-sub">Average trip frequency over the first 14 days</p>
+          <div class="rss-chart-inner">
+            <div class="rss-h-lines"><div class="rss-h-line"></div><div class="rss-h-line"></div><div class="rss-h-line"></div><div class="rss-h-line"></div><div class="rss-h-line"></div></div>
+            <div class="rss-v-lines"><div class="rss-v-line"></div><div class="rss-v-line"></div><div class="rss-v-line"></div><div class="rss-v-line"></div></div>
+            <div class="rss-y-labels"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div>
+            <div class="rss-x-labels"><span>Day 1</span><span>Day 3</span><span>Day 7</span><span>Day 14</span></div>
+            <span class="rss-y-title">Trip Frequency</span><span class="rss-x-title">Days of use</span>
+            <canvas class="rss-canvas" id="rss-chart-position"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="rss-panel" id="rss-panel-mobility">
+        <div class="rss-heading"><h2><span class="rss-stat">87%</span> of participants experienced measurably improved ankle flexibility <strong><i>within 2 weeks</i></strong></h2></div>
+        <div class="rss-details">
+          <ul class="rss-bullets">
+            <li class="rss-bullet"><span class="rss-bullet-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>Based on observational study</li>
+            <li class="rss-bullet"><span class="rss-bullet-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>100+ participants per study</li>
+            <li class="rss-bullet"><span class="rss-bullet-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>World class doctors &amp; researchers</li>
+          </ul>
+          <a href="#OfferTop" class="rss-cta" data-offer-checkout>Take advantage of the offer <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"></polyline><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+        <div class="rss-chart-wrap">
+          <div class="rss-chart-head"><h3>Ankle Stiffness Over Time</h3><span class="rss-improve"><svg viewBox="0 0 24 24"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>80% reduction</span></div>
+          <p class="rss-chart-sub">Average stiffness over the first 21 days</p>
+          <div class="rss-chart-inner">
+            <div class="rss-h-lines"><div class="rss-h-line"></div><div class="rss-h-line"></div><div class="rss-h-line"></div><div class="rss-h-line"></div><div class="rss-h-line"></div></div>
+            <div class="rss-v-lines"><div class="rss-v-line"></div><div class="rss-v-line"></div><div class="rss-v-line"></div><div class="rss-v-line"></div></div>
+            <div class="rss-y-labels"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div>
+            <div class="rss-x-labels"><span>Day 1</span><span>Day 7</span><span>Day 14</span><span>Day 21</span></div>
+            <span class="rss-y-title">Ankle Stiffness</span><span class="rss-x-title">Days of use</span>
+            <canvas class="rss-canvas" id="rss-chart-mobility"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 4. Supported foot lift ===== {%- endcomment -%}
+  <section class="offer-sec">
+    <div class="cdf-iwt">
+      <div class="cdf-iwt__media">
+        <video poster="{{ 'cdf-iwt-1.jpg' | asset_url }}" controls playsinline preload="metadata" width="900" height="900">
+          <source src="https://cedrow.com/cdn/shop/videos/c/vp/4091e65b3b3749f38c55f1ac039c732f/4091e65b3b3749f38c55f1ac039c732f.HD-1080p-2.5Mbps-90709356.mp4?v=0" type="video/mp4">
+        </video>
+      </div>
+      <div class="cdf-iwt__copy">
+        <h2>{% if sec_lift.settings.heading != blank %}{{ sec_lift.settings.heading }}{% else %}From uncertain steps to <em>supported foot lift</em>{% endif %}</h2>
+        <p>You try to walk normally, but your foot doesn’t lift enough. Your toes catch the ground, your steps feel uneven, and every walk requires extra focus.</p>
+        <p>Over time, this can make you slow down, avoid longer walks, or feel anxious about stumbling.</p>
+        <p>This brace helps hold your foot in a <strong>gently lifted position while you walk, guiding it through a safer and more natural step motion.</strong></p>
+        <p>Instead of forcing your hips and knees to overcompensate, your foot stays supported where it needs to be.</p>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 5. Reduce strain ===== {%- endcomment -%}
+  <section class="offer-sec offer-sec--mint">
+    <div class="cdf-iwt cdf-iwt--reverse">
+      <div class="cdf-iwt__media">
+        {%- assign _oi_fallback_2_1 = sec_strain.settings.fallback | default: 'cdf-strain.jpg' -%}{%- assign _oi_alt_2_2 = sec_strain.settings.heading | default: 'Reduce knee, hip, and back strain' -%}{% render 'offer-img', image: sec_strain.settings.image, fallback: _oi_fallback_2_1, alt: _oi_alt_2_2, width: 1100, height: 1100, loading: 'lazy' %}
+      </div>
+      <div class="cdf-iwt__copy">
+        <h2>{{ sec_strain.settings.heading | default: 'Reduce knee, hip, and back strain linked to foot drop' }}</h2>
+        <p>Over time, these altered movements can <strong>place extra stress on your knees, hips, and lower back,</strong> making walking feel more tiring and uncomfortable.</p>
+        <p>By helping keep your foot supported in a lifted position, It encourages a steadier, more natural walking motion, reducing unnecessary strain on other parts of your body.</p>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 6. Trusted by 45,000+ ===== {%- endcomment -%}
+  <section class="cdf-trusted">
+    <div class="cdf-trusted__grid">
+      <div class="cdf-trusted__media">
+        <video
+          class="cdf-trusted__video"
+          playsinline
+          muted
+          loop
+          autoplay
+          preload="metadata"
+          poster="{{ 'cdf-trusted-poster.jpg' | asset_url }}"
+          width="1080"
+          height="1080"
+        >
+          <source src="https://cedrow.com/cdn/shop/videos/c/vp/8f38d0ced9ea47d78bc50ef96d035863/8f38d0ced9ea47d78bc50ef96d035863.HD-1080p-7.2Mbps-84359340.mp4?v=0" type="video/mp4">
+        </video>
+      </div>
+      <div class="cdf-trusted__copy">
+        <h3>{% if sec_trusted.settings.heading != blank %}{{ sec_trusted.settings.heading }}{% else %}Trusted by <em>45,000+</em> for safer walking{% endif %}</h3>
+        <p class="cdf-trusted__quote">
+          <span class="cdf-hl">“I used to be terrified of tripping,</span> constantly watching the ground to make sure my toes didn't catch.
+          <span class="cdf-hl">This brace is lightweight and lifts my foot instantly,</span> so I can walk naturally without thinking about every step.
+          <span class="cdf-hl">I feel steady and safe again,</span> and I’m finally walking outdoors without the fear of falling. It’s not just a brace, <span class="cdf-hl">it gave me my independence back.”</span>
+        </p>
+        <p class="cdf-trusted__reviewer">
+          Reviewed by Michael R.<br>
+          <span class="cdf-trusted__date">
+            <img src="{{ 'cdf-tick.png' | asset_url }}" alt="" width="20" height="20" loading="lazy">
+            <span>Written on 15.01.26</span>
+          </span>
+        </p>
+        <div class="cdf-ratings">
+          <div class="cdf-rating">
+            <img src="{{ 'cdf-fb.png' | asset_url }}" alt="Facebook" width="160" height="40" loading="lazy">
+            <strong>Rating 4.9</strong>
+            <span>★★★★★</span>
+          </div>
+          <div class="cdf-rating">
+            <img src="{{ 'cdf-google.png' | asset_url }}" alt="Google" width="160" height="40" loading="lazy">
+            <strong>Rating 4.8</strong>
+            <span>★★★★★</span>
+          </div>
+          <div class="cdf-rating">
+            <img src="{{ 'cdf-steplift.png' | asset_url }}" alt="StepLift" width="160" height="40" loading="lazy">
+            <strong>Rating 5.0</strong>
+            <span>★★★★★</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 7. Reduce falls ===== {%- endcomment -%}
+  <section class="offer-sec">
+    <div class="cdf-iwt cdf-iwt--reverse">
+      <div class="cdf-iwt__media">
+        {%- assign _oi_fallback_3_1 = sec_falls.settings.fallback | default: 'cdf-falls.jpg' -%}{%- assign _oi_alt_3_2 = sec_falls.settings.heading | default: 'Safe and easier steps on stairs' -%}{% render 'offer-img', image: sec_falls.settings.image, fallback: _oi_fallback_3_1, alt: _oi_alt_3_2, width: 1500, height: 1500, loading: 'lazy' %}
+      </div>
+      <div class="cdf-iwt__copy">
+        <h2>{{ sec_falls.settings.heading | default: 'Reduce the risk of falls on stairs and uneven surfaces' }}</h2>
+        <p>By <strong>lifting the foot</strong> and keeping the toes elevated with every step, this brace prevents the <strong>toe dragging</strong> that often leads to trips on stairs and uneven ground.</p>
+        <p>This improves <strong>foot clearance, stability, and balance</strong> significantly <strong>reducing the risk of sudden falls.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 8. Very easy to use ===== {%- endcomment -%}
+  <section class="offer-sec offer-sec--mint">
+    <div class="offer-row">
+      <div class="offer-head">
+        <h2>{{ sec_easy.settings.heading | default: 'Very easy to use' }}</h2>
+        <p class="cdf-easy-lead">No tools. No straps to wrestle. No help needed. The {{ brand }} brace goes on in under a minute, and it works with any shoes you already own.</p>
+      </div>
+      <div class="cdf-easy-grid">
+        <article class="cdf-easy-card">
+          <div class="cdf-easy-card__media">
+            <video poster="{{ 'cdf-easy-1.jpg' | asset_url }}" controls playsinline preload="metadata" width="800" height="800">
+              <source src="https://cedrow.com/cdn/shop/videos/c/vp/c4445ea41d8b493ba0c8f5a76951a2c5/c4445ea41d8b493ba0c8f5a76951a2c5.HD-1080p-7.2Mbps-90618278.mp4?v=0" type="video/mp4">
+            </video>
+          </div>
+          <div class="cdf-easy-card__body">
+            <h3>Slide it on &amp; lock it</h3>
+            <p>Slip your foot into the brace. The soft shell hugs your ankle and holds it at the right angle. Snap the rear lock closed and you're secure. That's the whole setup. Nothing to adjust, nothing to tighten.</p>
+          </div>
+        </article>
+        <article class="cdf-easy-card">
+          <div class="cdf-easy-card__media">
+            <video poster="{{ 'cdf-easy-2.jpg' | asset_url }}" controls playsinline preload="metadata" width="800" height="800">
+              <source src="https://cedrow.com/cdn/shop/videos/c/vp/a65a4db1eec943038ecbfa34b928686b/a65a4db1eec943038ecbfa34b928686b.HD-1080p-4.8Mbps-90618996.mp4?v=0" type="video/mp4">
+            </video>
+          </div>
+          <div class="cdf-easy-card__body">
+            <h3>Pull on your favorite shoes</h3>
+            <p>The slim, low-profile design hides under any regular shoe. Pull on your sneakers, boots, or walking shoes and go about your day. No special footwear, no extra parts.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 9. Doctors + compare ===== {%- endcomment -%}
+  <section class="offer-sec">
+    <div class="cdf-iwt">
+      <div class="cdf-iwt__media">
+        {%- assign _oi_fallback_4_1 = sec_doctors.settings.fallback | default: 'cdf-doctor.jpg' -%}{%- assign _oi_alt_4_2 = sec_doctors.settings.heading | default: 'Endorsed by doctors and physical therapists' -%}{% render 'offer-img', image: sec_doctors.settings.image, fallback: _oi_fallback_4_1, alt: _oi_alt_4_2, width: 1500, height: 1500, loading: 'lazy' %}
+      </div>
+      <div class="cdf-iwt__copy">
+        <h2>{{ sec_doctors.settings.heading | default: 'Endorsed by doctors and physical therapists' }}</h2>
+        <p>Medical professionals recommend this brace because it effectively <strong>restores natural foot lift</strong>, improves <strong>walking stability</strong>, and helps prevent the <strong>tripping risks and joint strain</strong> often associated with <strong>foot drop</strong>.</p>
+        <p>Its proven <strong>mechanical design</strong> supports confident movement <strong>without surgery, invasive procedures, or lengthy rehabilitation</strong>, making it an <strong>effective, everyday solution for safer walking</strong>.</p>
+      </div>
+    </div>
+    <div class="cdf-compare-table">
+      {%- capture cdf_x -%}
+        <span class="cdf-x" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.75 2C6.365 2 2 6.365 2 11.75C2 17.135 6.365 21.5 11.75 21.5C17.135 21.5 21.5 17.135 21.5 11.75C21.5 6.365 17.135 2 11.75 2ZM10.03 8.97C9.96134 8.89631 9.87854 8.83721 9.78654 8.79622C9.69454 8.75523 9.59522 8.73318 9.49452 8.73141C9.39382 8.72963 9.29379 8.74816 9.2004 8.78588C9.10701 8.8236 9.02218 8.87974 8.95096 8.95096C8.87974 9.02218 8.8236 9.10701 8.78588 9.2004C8.74816 9.29379 8.72963 9.39382 8.73141 9.49452C8.73318 9.59522 8.75523 9.69454 8.79622 9.78654C8.83721 9.87854 8.89631 9.96134 8.97 10.03L10.69 11.75L8.97 13.47C8.89631 13.5387 8.83721 13.6215 8.79622 13.7135C8.75523 13.8055 8.73318 13.9048 8.73141 14.0055C8.72963 14.1062 8.74816 14.2062 8.78588 14.2996C8.8236 14.393 8.87974 14.4778 8.95096 14.549C9.02218 14.6203 9.10701 14.6764 9.2004 14.7141C9.29379 14.7518 9.39382 14.7704 9.49452 14.7686C9.59522 14.7668 9.69454 14.7448 9.78654 14.7038C9.87854 14.6628 9.96134 14.6037 10.03 14.53L11.75 12.81L13.47 14.53C13.5387 14.6037 13.6215 14.6628 13.7135 14.7038C13.8055 14.7448 13.9048 14.7668 14.0055 14.7686C14.1062 14.7704 14.2062 14.7518 14.2996 14.7141C14.393 14.6764 14.4778 14.6203 14.549 14.549C14.6203 14.4778 14.6764 14.393 14.7141 14.2996C14.7518 14.2062 14.7704 14.1062 14.7686 14.0055C14.7668 13.9048 14.7448 13.8055 14.7038 13.7135C14.6628 13.6215 14.6037 13.5387 14.53 13.47L12.81 11.75L14.53 10.03C14.6037 9.96134 14.6628 9.87854 14.7038 9.78654C14.7448 9.69454 14.7668 9.59522 14.7686 9.49452C14.7704 9.39382 14.7518 9.29379 14.7141 9.2004C14.6764 9.10701 14.6203 9.02218 14.549 8.95096C14.4778 8.87974 14.393 8.8236 14.2996 8.78588C14.2062 8.74816 14.1062 8.72963 14.0055 8.73141C13.9048 8.73318 13.8055 8.75523 13.7135 8.79622C13.6215 8.83721 13.5387 8.89631 13.47 8.97L11.75 10.69L10.03 8.97Z" fill="#e31c23"></path></svg></span>
+      {%- endcapture -%}
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th class="cdf-compare-table__brand"><em>{{ brand }}</em></th>
+            <th>Rigid Plastic AFO</th>
+            <th>Surgery</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Comfort Level</strong></td>
+            <td>Lightweight &amp; Breathable</td>
+            <td>{{ cdf_x }}</td>
+            <td>{{ cdf_x }}</td>
+          </tr>
+          <tr>
+            <td><strong>Mobility</strong></td>
+            <td>Flexible Support</td>
+            <td>Restricted Motion</td>
+            <td>{{ cdf_x }}</td>
+          </tr>
+          <tr>
+            <td><strong>Ease of Use</strong></td>
+            <td>Instant &amp; Simple</td>
+            <td>Complex Fit</td>
+            <td>Invasive Procedure</td>
+          </tr>
+          <tr>
+            <td><strong>Cost</strong></td>
+            <td>Affordable</td>
+            <td>Expensive</td>
+            <td>Very Expensive</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 10. Guarantee ===== {%- endcomment -%}
+  <section class="cdf-guarantee">
+    <div class="cdf-guarantee__bg" aria-hidden="true">
+      <img src="{{ 'cdf-intro-bg.png' | asset_url }}" alt="" width="2000" height="1331" loading="lazy" decoding="async">
+    </div>
+    <div class="cdf-guarantee__inner">
+      <div class="cdf-guarantee__badge">
+        <svg viewBox="0 0 256 256" aria-hidden="true"><path d="M229.5,113,166.06,89.94,143,26.5a16,16,0,0,0-30,0L89.94,89.94,26.5,113a16,16,0,0,0,0,30l63.44,23.07L113,229.5a16,16,0,0,0,30,0l23.07-63.44L229.5,143a16,16,0,0,0,0-30ZM157.08,152.3a8,8,0,0,0-4.78,4.78L128,223.9l-24.3-66.82a8,8,0,0,0-4.78-4.78L32.1,128l66.82-24.3a8,8,0,0,0,4.78-4.78L128,32.1l24.3,66.82a8,8,0,0,0,4.78,4.78L223.9,128Z"></path></svg>
+        <em>{{ sec_guarantee.settings.eyebrow | default: 'Better Mobility | Better Life' }}</em>
+      </div>
+      <h2 class="cdf-guarantee__title">{{ sec_guarantee.settings.heading | default: 'Free size swaps & returns up to 30 Days' }}</h2>
+      <p class="cdf-guarantee__copy">{% if sec_guarantee.settings.text != blank %}{{ sec_guarantee.settings.text | newline_to_br }}{% else %}We’re so confident this brace will transform your mobility, we want you to prove it to yourself.<br>If you don’t feel an immediate difference in your stability and confidence within 30 days, simply send it back for a full refund.{% endif %}</p>
+      <a class="cdf-guarantee__cta" href="#OfferTop" data-offer-checkout>
+        {{ sec_guarantee.settings.cta_label | default: 'Get right now' }}
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8.25 4.5 7.5 7.5-7.5 7.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 11. FAQ ===== {%- endcomment -%}
+  <section class="offer-sec offer-sec--tech" id="faq">
+    <div class="offer-row">
+      <div class="offer-head">
+        <h2>{{ sec_faq.settings.heading | default: "Got questions? We've got answers." }}</h2>
+      </div>
+      <div class="device-faq-shell">
+        <div class="offer-faq" data-offer-accordion>
+          {%- assign has_faq_slots = false -%}
+          {%- if sec_faq and sec_faq.settings.q_1 != blank -%}{%- assign has_faq_slots = true -%}{%- endif -%}
+          {%- if has_faq_slots -%}
+            {%- for i in (1..8) -%}
+              {%- capture qk -%}q_{{ i }}{%- endcapture -%}
+              {%- capture ak -%}a_{{ i }}{%- endcapture -%}
+              {%- assign qv = sec_faq.settings[qk] -%}
+              {%- assign av = sec_faq.settings[ak] -%}
+              {%- if qv != blank -%}
+                <div class="offer-faq__item">
+                  <button type="button" class="offer-faq__trigger" aria-expanded="false">{{ qv }}</button>
+                  <div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>{{ av | newline_to_br }}</p></div></div>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- else -%}
+            <div class="offer-faq__item"><button type="button" class="offer-faq__trigger" aria-expanded="false">How does this brace help with foot drop?</button><div class="offer-faq__panel" hidden><div class="offer-faq__body"><p>The brace attaches to your shoe and ankle to mechanically lift the front of your foot while you walk.</p></div></div></div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 12. Customer reviews (Loox-style photo masonry) ===== {%- endcomment -%}
+  <section class="cdf-reviews" id="REVIEW">
+    <div class="cdf-reviews__inner">
+      <header class="cdf-reviews__head">
+        <p class="cdf-reviews__eyebrow">Real customers · Verified purchases</p>
+        <h2>{{ sec_reviews.settings.heading | default: 'Customer Reviews' }}</h2>
+        <div class="cdf-reviews__scorecard">
+          <div class="cdf-reviews__score-main">
+            <span class="cdf-reviews__score-num">{{ sec_reviews.settings.score_value | default: '5.0' }}</span>
+            <div class="cdf-reviews__score-meta">
+              <div class="cdf-reviews__stars" aria-hidden="true">★★★★★</div>
+              <p>{{ sec_reviews.settings.score_prefix | default: 'Overall rating' }}</p>
+            </div>
+          </div>
+          <div class="cdf-reviews__score-divider" aria-hidden="true"></div>
+          <div class="cdf-reviews__score-count">
+            <strong>{{ sec_reviews.settings.score_count | default: '3,398' }}</strong>
+            <span>{{ sec_reviews.settings.score_suffix | default: 'verified reviews' }}</span>
+          </div>
+        </div>
+      </header>
+      <div class="cdf-review-grid">
+        {%- assign has_review_slots = false -%}
+        {%- if sec_reviews and sec_reviews.settings.item_1_name != blank -%}{%- assign has_review_slots = true -%}{%- endif -%}
+        {%- if has_review_slots -%}
+          {%- for i in (1..12) -%}
+            {%- capture nk -%}item_{{ i }}_name{%- endcapture -%}
+            {%- capture tk -%}item_{{ i }}_text{%- endcapture -%}
+            {%- capture ik -%}item_{{ i }}_image{%- endcapture -%}
+            {%- capture fk -%}item_{{ i }}_fallback{%- endcapture -%}
+            {%- capture vk -%}item_{{ i }}_verified{%- endcapture -%}
+            {%- assign rn = sec_reviews.settings[nk] -%}
+            {%- if rn != blank -%}
+              {%- assign rtx = sec_reviews.settings[tk] -%}
+              {%- assign rimg = sec_reviews.settings[ik] -%}
+              {%- assign rfb = sec_reviews.settings[fk] | default: 'cdf-loox-1.jpg' -%}
+              <article class="cdf-review-card">
+                <div class="cdf-review-card__media">
+                  {%- if rimg != blank -%}
+                    {{ rimg | image_url: width: 750 | image_tag: alt: rn, width: 375, height: 500, loading: 'lazy' }}
+                  {%- else -%}
+                    <img src="{{ rfb | asset_url }}" alt="Review by {{ rn | escape }}" width="375" height="500" loading="lazy">
+                  {%- endif -%}
+                </div>
+                <div class="cdf-review-card__body">
+                  <div class="cdf-review-card__who">
+                    <strong>{{ rn }}</strong>
+                    {%- if sec_reviews.settings[vk] -%}
+                      <span class="cdf-verified">
+                        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111"/><path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Verified
+                      </span>
+                    {%- endif -%}
+                  </div>
+                  <div class="cdf-review-card__stars" aria-label="5 out of 5">★★★★★</div>
+                  <p>{{ rtx }}</p>
+                </div>
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- assign cdf_loox = 'cdf-loox-1.jpg,cdf-loox-2.jpg,cdf-loox-3.jpg,cdf-loox-4.jpg,cdf-loox-5.jpg,cdf-loox-6.jpg,cdf-loox-7.jpg,cdf-loox-8.jpg,cdf-loox-9.jpg,cdf-loox-10.jpg,cdf-loox-11.jpg,cdf-loox-12.jpg' | split: ',' -%}
+          {%- assign cdf_loox_names = 'Alan U.|Raymond C.|Sam B.|Steve R.|Patricia M.|John S.|Jennifer L.|Richard A.|Elizabeth D.|Linda K.|Robert P.|Sarah J.' | split: '|' -%}
+          {%- for img_name in cdf_loox -%}
+            {%- assign i = forloop.index0 -%}
+            <article class="cdf-review-card">
+              <div class="cdf-review-card__media"><img src="{{ img_name | asset_url }}" alt="Review by {{ cdf_loox_names[i] | escape }}" width="375" height="500" loading="lazy"></div>
+              <div class="cdf-review-card__body">
+                <div class="cdf-review-card__who"><strong>{{ cdf_loox_names[i] }}</strong></div>
+                <div class="cdf-review-card__stars" aria-label="5 out of 5">★★★★★</div>
+              </div>
+            </article>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===== 13. Trust icons ===== {%- endcomment -%}
+  <section class="cdf-trustbar">
+    <div class="cdf-icons">
+      <div class="cdf-icon">
+        <div class="cdf-icon__glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3.5 16.5 14.2 5.8c.8-.8 2-.8 2.8 0l1.2 1.2c.8.8.8 2 0 2.8L7.5 20.5H3.5v-4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8l4 4M3.5 16.5l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.5 3.5l2 2M20 8.5l1.5-.5M15.5 4l-.5-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="cdf-icon__text">
+          <h4>{{ sec_trust.settings.icon_1_title | default: 'Free Ship on Buy 2' }}</h4>
+          <p>{{ sec_trust.settings.icon_1_text | default: '$4.95 shipping on Buy 1' }}</p>
+        </div>
+      </div>
+      <div class="cdf-icon">
+        <div class="cdf-icon__glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M21 8.5V17a2 2 0 0 1-1 1.73l-7 4.04a2 2 0 0 1-2 0l-7-4.04A2 2 0 0 1 3 17V8.5a2 2 0 0 1 1-1.73l7-4.04a2 2 0 0 1 2 0l7 4.04A2 2 0 0 1 21 8.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3.3 7.5 12 12.5l8.7-5M12 12.5V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="cdf-icon__text">
+          <h4>{{ sec_trust.settings.icon_2_title | default: '30 Days Guarantee' }}</h4>
+          <p>{{ sec_trust.settings.icon_2_text | default: "Didn't like it? return it" }}</p>
+        </div>
+      </div>
+      <div class="cdf-icon">
+        <div class="cdf-icon__glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M19 7H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5.5A1.5 1.5 0 0 0 14.5 4h-5A1.5 1.5 0 0 0 8 5.5V7M3 12h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16.5 15.5h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="cdf-icon__text">
+          <h4>{{ sec_trust.settings.icon_3_title | default: 'Secure Payment' }}</h4>
+          <p>{{ sec_trust.settings.icon_3_text | default: 'Secure and trusted credit card provider' }}</p>
+        </div>
+      </div>
+      <div class="cdf-icon">
+        <div class="cdf-icon__glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="cdf-icon__text">
+          <h4>{{ sec_trust.settings.icon_4_title | default: 'Happy Customers' }}</h4>
+          <p>{{ sec_trust.settings.icon_4_text | default: 'Thousands of happy customers worldwide' }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="offer-foot">
+    <div class="offer-foot__inner">
+      <div class="offer-foot__logo">{{ brand }}</div>
+      <p class="offer-foot__line">© {{ 'now' | date: '%Y' }} {{ brand }}®. {{ sec_footer.settings.rights | default: 'All Rights Reserved.' }}</p>
+      <p class="offer-foot__line"><a href="{{ sec_footer.settings.privacy_url | default: '/pages/privacy-policy' }}">{{ sec_footer.settings.privacy_label | default: 'Privacy Policy' }}</a> - <a href="{{ sec_footer.settings.terms_url | default: '/pages/terms-of-service' }}">{{ sec_footer.settings.terms_label | default: 'Terms of Service' }}</a></p>
+      <p class="offer-foot__line">{{ sec_footer.settings.email | default: 'support@zavelyn.com' }}</p>
+    </div>
+  </footer>
+
+  <button type="button" class="offer-top" data-offer-top aria-label="Back to top" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="offer-sticky" data-offer-sticky aria-hidden="true" inert>
+    <div class="offer-sticky__inner">
+      <div class="offer-sticky__copy">{% if sec_footer.settings.sticky_copy != blank %}{{ sec_footer.settings.sticky_copy }}{% else %}{{ brand }} Foot Drop AFO Brace — 50% OFF{% endif %}</div>
+      <a class="offer-sticky__cta" href="#OfferTop" data-offer-checkout tabindex="-1">
+        <span class="offer-cta__label">{% if sec_footer.settings.sticky_cta != blank %}{{ sec_footer.settings.sticky_cta }}{% else %}{{ cta_label }}{% endif %}</span>
+        <span class="offer-cta__sep" aria-hidden="true">—</span>
+        <span class="offer-cta__price" data-offer-cta-price>{{ cta_price_cents | money_without_trailing_zeros }}</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="CdfVariantsJson">
+[
+{%- assign cdf_black_variants = product.variants | where: 'option1', 'Black' -%}
+{%- if cdf_black_variants.size == 0 -%}
+  {%- assign cdf_black_variants = product.variants -%}
+{%- endif -%}
+{%- for v in cdf_black_variants -%}
+  {
+    "id": {{ v.id | json }},
+    "available": {{ v.available | json }},
+    "price": {{ v.price | json }},
+    "compare": {{ v.compare_at_price | default: v.price | json }},
+    "price_money": {{ v.price | money | json }},
+    "compare_money": {{ v.compare_at_price | money | json }},
+    "option1": {{ v.option1 | json }},
+    "option2": {{ v.option2 | json }},
+    "option3": {{ v.option3 | json }},
+    "title": {{ v.title | json }}
+  }{% unless forloop.last %},{% endunless %}
+{%- endfor -%}
+]
+</script>
+<script>
+(function () {
+  var main = document.querySelector('[data-offer-main]');
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll('[data-offer-thumb]'));
+  var sources = thumbs.map(function (t) { return t.dataset.src; });
+  var index = 0;
+  function setSlide(i) {
+    if (!main || !sources.length) return;
+    index = (i + sources.length) % sources.length;
+    main.src = sources[index];
+    thumbs.forEach(function (t, n) { t.classList.toggle('is-active', n === index); });
+  }
+  thumbs.forEach(function (thumb) {
+    thumb.addEventListener('click', function () { setSlide(Number(thumb.dataset.index)); });
+  });
+  var prev = document.querySelector('[data-offer-prev]');
+  var next = document.querySelector('[data-offer-next]');
+  if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); setSlide(index - 1); });
+  if (next) next.addEventListener('click', function (e) { e.stopPropagation(); setSlide(index + 1); });
+
+  var fancyboxLoading = null;
+  function loadFancybox(cb) {
+    if (window.Fancybox) { cb(); return; }
+    if (fancyboxLoading) { fancyboxLoading.then(cb); return; }
+    fancyboxLoading = new Promise(function (resolve) {
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css';
+      document.head.appendChild(css);
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js';
+      s.onload = function () { resolve(); };
+      s.onerror = function () { resolve(); };
+      document.body.appendChild(s);
+    });
+    fancyboxLoading.then(cb);
+  }
+  var zoom = document.querySelector('[data-offer-zoom]');
+  if (zoom) {
+    zoom.addEventListener('click', function () {
+      if (!sources.length) return;
+      loadFancybox(function () {
+        if (!window.Fancybox) return;
+        window.Fancybox.show(
+          sources.map(function (src) { return { src: src, type: 'image' }; }),
+          { startIndex: index }
+        );
+      });
+    });
+  }
+
+  document.querySelectorAll('[data-offer-accordion]').forEach(function (accordion, aIdx) {
+    var items = Array.prototype.slice.call(accordion.querySelectorAll('.offer-faq__item'));
+    function setOpen(target, open) {
+      target.classList.toggle('is-open', open);
+      var btn = target.querySelector('.offer-faq__trigger');
+      var p = target.querySelector('.offer-faq__panel');
+      if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (p) {
+        p.removeAttribute('hidden');
+        if (open) p.removeAttribute('aria-hidden');
+        else p.setAttribute('aria-hidden', 'true');
+      }
+    }
+    items.forEach(function (item, i) {
+      var trigger = item.querySelector('.offer-faq__trigger');
+      var panel = item.querySelector('.offer-faq__panel');
+      if (!trigger || !panel) return;
+      var panelId = 'cdf-faq-' + aIdx + '-' + i;
+      panel.id = panelId;
+      trigger.setAttribute('aria-controls', panelId);
+      panel.setAttribute('role', 'region');
+      panel.removeAttribute('hidden');
+      trigger.addEventListener('click', function () {
+        var willOpen = !item.classList.contains('is-open');
+        items.forEach(function (other) { setOpen(other, other === item && willOpen); });
+      });
+    });
+    /* Default: all closed unless an item already has .is-open */
+    var preset = accordion.querySelector('.offer-faq__item.is-open');
+    items.forEach(function (other) { setOpen(other, preset ? other === preset : false); });
+  });
+
+  /* Size chart modal */
+  var sizeChart = document.querySelector('[data-cdf-sizechart]');
+  var sizeChartLastFocus = null;
+  function openSizeChart() {
+    if (!sizeChart) return;
+    sizeChartLastFocus = document.activeElement;
+    sizeChart.hidden = false;
+    document.documentElement.classList.add('offer-sizechart-open');
+    var closeBtn = sizeChart.querySelector('[data-cdf-sizechart-close].offer-sizechart__close');
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeSizeChart() {
+    if (!sizeChart || sizeChart.hidden) return;
+    sizeChart.hidden = true;
+    document.documentElement.classList.remove('offer-sizechart-open');
+    if (sizeChartLastFocus && sizeChartLastFocus.focus) sizeChartLastFocus.focus();
+  }
+  document.querySelectorAll('[data-cdf-sizechart-toggle]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var card = btn.closest('.offer-bundle');
+      var radio = card && card.querySelector('input[name="offer_bundle"]');
+      if (radio && !radio.checked) {
+        radio.checked = true;
+        radio.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      openSizeChart();
+    });
+  });
+  document.querySelectorAll('[data-cdf-sizechart-close]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      closeSizeChart();
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeSizeChart();
+  });
+
+  /* Trusted split: keep muted autoplay loop when visible */
+  document.querySelectorAll('.cdf-trusted__video').forEach(function (vid) {
+    vid.muted = true;
+    function tryPlay() { vid.play().catch(function () {}); }
+    tryPlay();
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) tryPlay();
+          else vid.pause();
+        });
+      }, { threshold: 0.25 });
+      io.observe(vid);
+    }
+  });
+
+  /* See-it-in-action: play muted loop on hover/click; hide play btn while playing */
+  document.querySelectorAll('.cdf-sia-card video').forEach(function (vid) {
+    var card = vid.closest('.cdf-sia-card');
+    if (!card) return;
+
+    function syncPlayUi() {
+      card.classList.toggle('is-playing', !vid.paused && !vid.ended);
+    }
+
+    vid.addEventListener('play', syncPlayUi);
+    vid.addEventListener('playing', syncPlayUi);
+    vid.addEventListener('pause', syncPlayUi);
+    vid.addEventListener('ended', syncPlayUi);
+    syncPlayUi();
+
+    card.addEventListener('mouseenter', function () {
+      vid.muted = true;
+      vid.play().catch(function () {});
+    });
+    card.addEventListener('mouseleave', function () {
+      vid.pause();
+      try { vid.currentTime = 0; } catch (e) {}
+      syncPlayUi();
+    });
+    card.addEventListener('click', function () {
+      if (vid.paused) {
+        vid.muted = true;
+        vid.play().catch(function () {});
+      } else {
+        vid.pause();
+      }
+    });
+  });
+
+  /* RSS results charts (Cedrow clone) */
+  (function () {
+    var CHARTS = {
+      stiffness: { points: [100, 60, 32, 15] },
+      position: { points: [100, 55, 26, 12] },
+      mobility: { points: [100, 68, 38, 20] }
+    };
+    var animating = {};
+    var INK = '#1857b2';
+
+    function drawChart(id) {
+      var canvas = document.getElementById('rss-chart-' + id);
+      if (!canvas) return;
+      var wrap = canvas.parentElement;
+      var isMobile = window.innerWidth <= 860;
+      var padLeft = isMobile ? 38 : 52;
+      var padBottom = isMobile ? 38 : 44;
+      var W = (wrap.clientWidth - padLeft) || 400;
+      var H = (wrap.clientHeight - padBottom) || 256;
+      var dpr = window.devicePixelRatio || 1;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      canvas.style.width = W + 'px';
+      canvas.style.height = H + 'px';
+      var ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+      var pts = CHARTS[id].points;
+      var cols = pts.length;
+      var xStep = W / (cols - 1);
+      function vy(v) { return H - (v / 100) * H; }
+      function vx(i) { return i * xStep; }
+      var lineWidth = isMobile ? 3.5 : 3;
+      var dotRadius = isMobile ? 6.5 : 6;
+      var duration = 1100;
+      var start = null;
+      animating[id] = true;
+
+      function buildPath(toFrac) {
+        var p = new Path2D();
+        p.moveTo(vx(0), vy(pts[0]));
+        var totalSegs = cols - 1;
+        var drawnSegs = toFrac * totalSegs;
+        for (var s = 0; s < totalSegs; s++) {
+          if (drawnSegs <= s) break;
+          var frac = Math.min(drawnSegs - s, 1);
+          var x0 = vx(s), y0 = vy(pts[s]);
+          var x1 = vx(s + 1), y1 = vy(pts[s + 1]);
+          var ex = x0 + (x1 - x0) * frac;
+          var ey = y0 + (y1 - y0) * frac;
+          var cpx = (x0 + x1) / 2;
+          p.bezierCurveTo(cpx, y0, cpx, ey, ex, ey);
+        }
+        return p;
+      }
+
+      function frame(ts) {
+        if (!animating[id]) return;
+        if (!start) start = ts;
+        var t = Math.min((ts - start) / duration, 1);
+        var ease = 1 - Math.pow(1 - t, 3);
+        ctx.clearRect(0, 0, W, H);
+        var totalSegs = cols - 1;
+        var drawn = ease * totalSegs;
+        var path = buildPath(ease);
+        var endX = (function () {
+          var ts2 = Math.min(drawn, totalSegs);
+          var s = Math.floor(ts2);
+          if (s >= totalSegs) return vx(totalSegs);
+          var frac = ts2 - s;
+          return vx(s) + (vx(s + 1) - vx(s)) * frac;
+        })();
+        var area = new Path2D(path);
+        area.lineTo(endX, H);
+        area.lineTo(vx(0), H);
+        area.closePath();
+        var grad = ctx.createLinearGradient(0, 0, 0, H);
+        grad.addColorStop(0, 'rgba(24, 87, 178, 0.16)');
+        grad.addColorStop(1, 'rgba(24, 87, 178, 0)');
+        ctx.fillStyle = grad;
+        ctx.fill(area);
+        ctx.save();
+        ctx.shadowColor = 'rgba(24, 87, 178, 0.18)';
+        ctx.shadowBlur = 8;
+        ctx.shadowOffsetY = 4;
+        ctx.strokeStyle = INK;
+        ctx.lineWidth = lineWidth;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.stroke(path);
+        ctx.restore();
+        for (var d = 0; d < cols; d++) {
+          var alpha = d < Math.floor(drawn) ? 1 : d === Math.floor(drawn) ? (drawn % 1) : 0;
+          if (alpha <= 0) continue;
+          ctx.beginPath();
+          ctx.arc(vx(d), vy(pts[d]), dotRadius + 4, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(24,87,178,' + (0.10 * alpha) + ')';
+          ctx.fill();
+          ctx.beginPath();
+          ctx.arc(vx(d), vy(pts[d]), dotRadius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(24,87,178,' + alpha + ')';
+          ctx.fill();
+          ctx.strokeStyle = '#fff';
+          ctx.lineWidth = 2.5;
+          ctx.stroke();
+        }
+        if (t < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    function movePill(btn) {
+      var pill = document.getElementById('rss-pill');
+      if (!pill || !btn) return;
+      pill.style.left = btn.offsetLeft + 'px';
+      pill.style.width = btn.offsetWidth + 'px';
+    }
+
+    var buttons = document.querySelectorAll('.rss-tab-btn');
+    var panels = document.querySelectorAll('.rss-panel');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var tab = btn.getAttribute('data-tab');
+        buttons.forEach(function (b) { b.classList.remove('active'); });
+        panels.forEach(function (p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        movePill(btn);
+        var panel = document.getElementById('rss-panel-' + tab);
+        if (panel) {
+          panel.classList.add('active');
+          animating[tab] = false;
+          setTimeout(function () { drawChart(tab); }, 16);
+        }
+      });
+    });
+
+    function initRss() {
+      var active = document.querySelector('.rss-tab-btn.active');
+      movePill(active);
+      drawChart('stiffness');
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initRss);
+    else initRss();
+
+    var rt;
+    window.addEventListener('resize', function () {
+      clearTimeout(rt);
+      rt = setTimeout(function () {
+        var active = document.querySelector('.rss-tab-btn.active');
+        if (active) {
+          movePill(active);
+          var tab = active.getAttribute('data-tab');
+          animating[tab] = false;
+          drawChart(tab);
+        }
+      }, 150);
+    });
+  })();
+
+  /* Variant matching — Black only; Buy 2 = two independent side/size picks */
+  var variants = [];
+  try {
+    var raw = document.getElementById('CdfVariantsJson');
+    variants = raw ? JSON.parse(raw.textContent) : [];
+  } catch (e) { variants = []; }
+  variants = variants.filter(function (v) { return v.option1 === 'Black'; });
+
+  /* Brace 1 defaults Left; Brace 2 defaults Right (pair) */
+  var items = [
+    { side: 'Left', size: 'S' },
+    { side: 'Right', size: 'S' }
+  ];
+  var COLOR = 'Black';
+  var variantInput = document.getElementById('OfferVariantId');
+  var priceEl = document.querySelector('[data-cdf-price]');
+  var compareEl = document.querySelector('[data-cdf-compare]');
+  var buyForm = document.getElementById('OfferAddForm');
+  var qtyInput = document.getElementById('OfferQuantity');
+  var bundlesRoot = document.querySelector('[data-offer-bundles]');
+  var checkoutBtns = Array.prototype.slice.call(document.querySelectorAll('[data-offer-checkout]'));
+  var checkoutBusy = false;
+
+  function formatMoney(cents) {
+    if (typeof cents !== 'number') return '';
+    return '$' + (cents / 100).toFixed(2);
+  }
+
+  function formatCtaMoney(cents) {
+    var n = Number(cents) / 100;
+    if (!isFinite(n)) return '';
+    if (Math.abs(n - Math.round(n)) < 0.001) return '$' + Math.round(n);
+    return '$' + n.toFixed(2);
+  }
+
+  var ctaPriceEls = Array.prototype.slice.call(document.querySelectorAll('[data-offer-cta-price]'));
+
+  function findVariantFor(side, size) {
+    return variants.find(function (v) {
+      return v.option1 === COLOR && v.option2 === side && v.option3 === size;
+    }) || null;
+  }
+
+  function selectedBundle() {
+    if (!bundlesRoot) return { qty: 1, discount: 0, label: 'Buy 1' };
+    var checked = bundlesRoot.querySelector('input[name="offer_bundle"]:checked');
+    if (!checked) return { qty: 1, discount: 0, label: 'Buy 1' };
+    var qty = Math.max(1, Number(checked.getAttribute('data-qty') || 1));
+    var discount = Math.max(0, Number(checked.getAttribute('data-discount') || 0));
+    var card = checked.closest('.offer-bundle');
+    var titleEl = card && card.querySelector('.offer-bundle__title');
+    return {
+      qty: qty,
+      discount: discount,
+      label: titleEl ? titleEl.textContent.trim() : ('Buy ' + qty)
+    };
+  }
+
+  function activateBundleFrom(el) {
+    var card = el && el.closest('.offer-bundle');
+    var radio = card && card.querySelector('input[name="offer_bundle"]');
+    if (radio && !radio.checked) {
+      radio.checked = true;
+      syncBundleUI();
+    }
+  }
+
+  function itemIndexFrom(el) {
+    var wrap = el && el.closest('[data-cdf-item]');
+    if (!wrap) return 0;
+    var n = Number(wrap.getAttribute('data-cdf-item') || 0);
+    return isNaN(n) ? 0 : n;
+  }
+
+  function syncItemUI() {
+    document.querySelectorAll('.cdf-item-opts[data-cdf-item]').forEach(function (wrap) {
+      var idx = Number(wrap.getAttribute('data-cdf-item') || 0);
+      var item = items[idx] || items[0];
+      var sideLabel = wrap.querySelector('[data-cdf-side-label]');
+      var sizeLabel = wrap.querySelector('[data-cdf-size-label]');
+      if (sideLabel) sideLabel.textContent = item.side;
+      if (sizeLabel) sizeLabel.textContent = item.size;
+      wrap.querySelectorAll('[data-cdf-side]').forEach(function (b) {
+        b.classList.toggle('is-active', b.getAttribute('data-cdf-side') === item.side);
+      });
+      wrap.querySelectorAll('[data-cdf-size]').forEach(function (b) {
+        b.classList.toggle('is-active', b.getAttribute('data-cdf-size') === item.size);
+      });
+    });
+  }
+
+  function syncVariant() {
+    var primary = findVariantFor(items[0].side, items[0].size);
+    if (primary && variantInput) variantInput.value = primary.id;
+    if (compareEl && primary) {
+      if (primary.compare > primary.price) {
+        compareEl.textContent = primary.compare_money || formatMoney(primary.compare);
+        compareEl.style.display = '';
+      } else {
+        compareEl.style.display = 'none';
+      }
+    }
+    var bundle = selectedBundle();
+    var allOk = true;
+    for (var i = 0; i < bundle.qty; i++) {
+      var v = findVariantFor(items[i].side, items[i].size);
+      if (!v || !v.available) allOk = false;
+    }
+    var cta = document.querySelector('#OfferAddForm [data-offer-checkout]');
+    if (cta) cta.disabled = !allOk;
+    syncItemUI();
+    syncBundleUI();
+  }
+
+  document.querySelectorAll('[data-cdf-side]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      activateBundleFrom(btn);
+      var idx = itemIndexFrom(btn);
+      items[idx] = items[idx] || { side: 'Left', size: 'S' };
+      items[idx].side = btn.getAttribute('data-cdf-side');
+      syncVariant();
+    });
+  });
+  document.querySelectorAll('[data-cdf-size]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (btn.disabled) return;
+      activateBundleFrom(btn);
+      var idx = itemIndexFrom(btn);
+      items[idx] = items[idx] || { side: 'Left', size: 'S' };
+      items[idx].size = btn.getAttribute('data-cdf-size');
+      syncVariant();
+    });
+  });
+
+  function unitCents() {
+    var v = findVariantFor(items[0].side, items[0].size);
+    if (v && typeof v.price === 'number') return v.price;
+    if (bundlesRoot) return Number(bundlesRoot.getAttribute('data-unit-price') || 0);
+    return 0;
+  }
+
+  function syncBundleUI() {
+    var unit = unitCents();
+    var bundle = selectedBundle();
+    var total = Math.round(unit * bundle.qty * (100 - bundle.discount) / 100);
+    if (qtyInput) qtyInput.value = String(bundle.qty);
+    if (priceEl) priceEl.textContent = formatMoney(total);
+    if (bundlesRoot) {
+      bundlesRoot.querySelectorAll('.offer-bundle').forEach(function (card) {
+        var input = card.querySelector('input[name="offer_bundle"]');
+        card.classList.toggle('is-active', !!(input && input.checked));
+        var priceNode = card.querySelector('[data-bundle-price]');
+        if (priceNode && input) {
+          var q = Math.max(1, Number(input.getAttribute('data-qty') || 1));
+          var d = Math.max(0, Number(input.getAttribute('data-discount') || 0));
+          priceNode.textContent = formatMoney(Math.round(unit * q * (100 - d) / 100));
+        }
+      });
+    }
+    var ctaMoney = formatCtaMoney(total);
+    ctaPriceEls.forEach(function (el) { el.textContent = ctaMoney; });
+  }
+
+  if (bundlesRoot) {
+    bundlesRoot.querySelectorAll('input[name="offer_bundle"]').forEach(function (input) {
+      input.addEventListener('change', syncVariant);
+    });
+  }
+  syncVariant();
+
+  function buildCartItems(bundle) {
+    var packageLabel = bundle.label || ('Buy ' + bundle.qty);
+    if (bundle.discount > 0 && packageLabel.indexOf('%') === -1) {
+      packageLabel += ' · Extra ' + bundle.discount + '% OFF';
+    }
+    var contentsLabel = bundle.qty === 1 ? '1 brace' : (bundle.qty + ' braces');
+    var discountCode = bundlesRoot ? (bundlesRoot.getAttribute('data-discount-code') || '') : '';
+    var bundleId = 'cdf_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 8);
+    var merged = {};
+    var braceNotes = [];
+    for (var i = 0; i < bundle.qty; i++) {
+      var pick = items[i] || items[0];
+      var v = findVariantFor(pick.side, pick.size);
+      if (!v) continue;
+      var key = String(v.id);
+      if (!merged[key]) {
+        merged[key] = {
+          id: v.id,
+          quantity: 0,
+          properties: {
+            _bundle: 'cdf-pack',
+            _bundle_id: bundleId,
+            _paid: String(bundle.qty),
+            _discount: String(bundle.discount),
+            _cart_qty: String(bundle.qty),
+            _discount_code: bundle.discount > 0 ? discountCode : '',
+            Offer: packageLabel,
+            'You get': contentsLabel
+          }
+        };
+      }
+      merged[key].quantity += 1;
+      var note = pick.side + ' / ' + pick.size;
+      braceNotes.push('Brace ' + (i + 1) + ': ' + note);
+      merged[key].properties['Brace ' + (i + 1)] = note;
+    }
+    return {
+      items: Object.keys(merged).map(function (k) { return merged[k]; }),
+      note: [packageLabel, contentsLabel].concat(braceNotes).join(' · ')
+    };
+  }
+
+  function goToCheckout(trigger) {
+    var bundle = selectedBundle();
+    var built = buildCartItems(bundle);
+    var cartItems = built.items;
+    if (checkoutBusy || !cartItems.length) return;
+    checkoutBusy = true;
+    checkoutBtns.forEach(function (btn) { btn.classList.add('is-loading'); });
+    if (trigger && trigger.classList) trigger.classList.add('is-loading');
+    var discountCode = bundlesRoot ? (bundlesRoot.getAttribute('data-discount-code') || '') : '';
+    if (variantInput && cartItems[0]) variantInput.value = cartItems[0].id;
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({ items: cartItems })
+    })
+      .then(function (res) { if (!res.ok) throw new Error('add_failed'); return res.json(); })
+      .then(function () {
+        return fetch('/cart/update.js', {
+          method: 'POST',
+          headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+          credentials: 'same-origin',
+          body: JSON.stringify({ note: built.note })
+        }).catch(function () {});
+      })
+      .then(function () {
+        if (bundle.discount > 0 && discountCode) {
+          return fetch('/discount/' + encodeURIComponent(discountCode), {
+            credentials: 'same-origin',
+            redirect: 'follow'
+          }).catch(function () {});
+        }
+      })
+      .then(function () {
+        return fetch('/cart.js', { credentials: 'same-origin' }).then(function (r) {
+          return r.ok ? r.json() : null;
+        });
+      })
+      .then(function (cart) {
+        checkoutBusy = false;
+        checkoutBtns.forEach(function (btn) { btn.classList.remove('is-loading'); });
+        if (trigger && trigger.classList) trigger.classList.remove('is-loading');
+        if (cart) {
+          document.dispatchEvent(new CustomEvent('zavelyn:offer-cart:open', { detail: { cart: cart } }));
+          return;
+        }
+        var url = '/checkout';
+        if (bundle.discount > 0 && discountCode) url += '?discount=' + encodeURIComponent(discountCode);
+        window.location.href = url;
+      })
+      .catch(function () {
+        checkoutBusy = false;
+        checkoutBtns.forEach(function (btn) { btn.classList.remove('is-loading'); });
+        if (trigger && trigger.classList) trigger.classList.remove('is-loading');
+        if (buyForm) buyForm.submit();
+      });
+  }
+  if (buyForm) buyForm.addEventListener('submit', function (e) { e.preventDefault(); goToCheckout(e.submitter); });
+  checkoutBtns.forEach(function (btn) {
+    if (btn.closest('#OfferAddForm')) return;
+    btn.addEventListener('click', function (e) { e.preventDefault(); goToCheckout(btn); });
+  });
+
+  var sticky = document.querySelector('[data-offer-sticky]');
+  var stickyCta = sticky ? sticky.querySelector('[data-offer-checkout]') : null;
+  var hero = document.querySelector('.offer-hero');
+  if (sticky && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      var on = !entries[0].isIntersecting;
+      sticky.classList.toggle('is-on', on);
+      sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
+      if (on) sticky.removeAttribute('inert');
+      else sticky.setAttribute('inert', '');
+      if (stickyCta) stickyCta.tabIndex = on ? 0 : -1;
+      document.documentElement.classList.toggle('offer-sticky-on', on);
+    }, { threshold: 0.05 }).observe(hero);
+  }
+
+  var topBtn = document.querySelector('[data-offer-top]');
+  if (topBtn) {
+    function syncTopBtn() {
+      var show = window.scrollY > 480;
+      topBtn.hidden = !show;
+      topBtn.classList.toggle('is-on', show);
+    }
+    window.addEventListener('scroll', syncTopBtn, { passive: true });
+    syncTopBtn();
+    topBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Offer CDF landing",
+  "tag": "section",
+  "class": "section-offer-cdf",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand",
+      "default": "Zavelyn"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text",
+      "label": "Ticker",
+      "default": "RECOVERY SALE STARTS NOW."
+    },
+    {
+      "type": "text",
+      "id": "ticker_highlight",
+      "label": "Ticker highlight",
+      "default": "BUY 2 · EXTRA 10% OFF!"
+    },
+    {
+      "type": "text",
+      "id": "reviews_count_label",
+      "label": "Reviews label",
+      "default": "4.9 | 3,269 reviews"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA",
+      "default": "Add to cart"
+    },
+    {
+      "type": "header",
+      "content": "Packages"
+    },
+    {
+      "type": "checkbox",
+      "id": "packages_reversed",
+      "label": "Reverse package order (Buy 2 first)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "bundles_label",
+      "label": "Packages label",
+      "default": "Choose your package"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1_title",
+      "label": "Package 1 title",
+      "default": "Buy 1"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1_meta",
+      "label": "Package 1 meta",
+      "default": "1 brace"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1_badge",
+      "label": "Package 1 badge",
+      "default": "$4.95 ship"
+    },
+    {
+      "type": "number",
+      "id": "bundle_1_qty",
+      "label": "Package 1 quantity",
+      "default": 1
+    },
+    {
+      "type": "text",
+      "id": "bundle_2_title",
+      "label": "Package 2 title",
+      "default": "Buy 2"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2_meta",
+      "label": "Package 2 meta",
+      "default": "Choose Left & Right · Extra 10% OFF"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2_badge",
+      "label": "Package 2 badge",
+      "default": "Free ship"
+    },
+    {
+      "type": "number",
+      "id": "bundle_2_qty",
+      "label": "Package 2 quantity",
+      "default": 2
+    },
+    {
+      "type": "number",
+      "id": "bundle_2_discount",
+      "label": "Package 2 discount %",
+      "default": 10
+    },
+    {
+      "type": "text",
+      "id": "bundle_2_discount_code",
+      "label": "Package 2 discount code",
+      "default": "CDF10"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sec_gallery",
+      "name": "0. Gallery",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Gallery images"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "text",
+          "id": "fallback_1",
+          "label": "Fallback asset 1",
+          "default": "cdf-gallery-1.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "text",
+          "id": "fallback_2",
+          "label": "Fallback asset 2",
+          "default": "cdf-gallery-2.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "text",
+          "id": "fallback_3",
+          "label": "Fallback asset 3",
+          "default": "cdf-gallery-3.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "text",
+          "id": "fallback_4",
+          "label": "Fallback asset 4",
+          "default": "cdf-gallery-4.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "text",
+          "id": "fallback_5",
+          "label": "Fallback asset 5",
+          "default": "cdf-gallery-5.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "text",
+          "id": "fallback_6",
+          "label": "Fallback asset 6",
+          "default": "cdf-gallery-6.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_7",
+          "label": "Image 7"
+        },
+        {
+          "type": "text",
+          "id": "fallback_7",
+          "label": "Fallback asset 7",
+          "default": "cdf-gallery-7.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_8",
+          "label": "Image 8"
+        },
+        {
+          "type": "text",
+          "id": "fallback_8",
+          "label": "Fallback asset 8",
+          "default": "cdf-gallery-8.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_9",
+          "label": "Image 9"
+        },
+        {
+          "type": "text",
+          "id": "fallback_9",
+          "label": "Fallback asset 9",
+          "default": "cdf-gallery-9.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_10",
+          "label": "Image 10"
+        },
+        {
+          "type": "text",
+          "id": "fallback_10",
+          "label": "Fallback asset 10",
+          "default": "cdf-gallery-10.jpg"
+        }
+      ]
+    },
+    {
+      "type": "sec_hero",
+      "name": "1. Hero / Buy box",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "lead",
+          "label": "Lead text",
+          "default": "Naturally support your foot, reduce tripping risk, improve walking stability and regain confident movement without surgery or medications instantly."
+        },
+        {
+          "type": "textarea",
+          "id": "risk_text",
+          "label": "Risk-free note",
+          "default": "Try it risk-free for 30 days. If you don't notice less foot dragging, better stability or safer walking, we'll refund you in full."
+        },
+        {
+          "type": "text",
+          "id": "feat_1_title",
+          "label": "Feature 1 title",
+          "default": "Better Mobility"
+        },
+        {
+          "type": "text",
+          "id": "feat_1_sub",
+          "label": "Feature 1 sub",
+          "default": "Reducing toe dragging & stumbling"
+        },
+        {
+          "type": "text",
+          "id": "feat_2_title",
+          "label": "Feature 2 title",
+          "default": "Enhanced Balance"
+        },
+        {
+          "type": "text",
+          "id": "feat_2_sub",
+          "label": "Feature 2 sub",
+          "default": "Improves walking stability & balance"
+        },
+        {
+          "type": "text",
+          "id": "feat_3_title",
+          "label": "Feature 3 title",
+          "default": "Secure Fit"
+        },
+        {
+          "type": "text",
+          "id": "feat_3_sub",
+          "label": "Feature 3 sub",
+          "default": "Keeps your foot lifted & supported"
+        },
+        {
+          "type": "text",
+          "id": "feat_4_title",
+          "label": "Feature 4 title",
+          "default": "All-Day Wear"
+        },
+        {
+          "type": "text",
+          "id": "feat_4_sub",
+          "label": "Feature 4 sub",
+          "default": "Lightweight & comfortable"
+        }
+      ]
+    },
+    {
+      "type": "sec_intro",
+      "name": "2. Intro",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "default": "Secure support for every step"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Stop toe dragging & walk with confidence again instantly"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Background fallback",
+          "default": "cdf-intro-bg.png"
+        }
+      ]
+    },
+    {
+      "type": "sec_results",
+      "name": "3. Real results",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Walk Freely Again. Real Results"
+        }
+      ]
+    },
+    {
+      "type": "sec_lift",
+      "name": "4. Supported foot lift",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "From uncertain steps to supported foot lift"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Poster / image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback asset",
+          "default": "cdf-iwt-1.jpg"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL"
+        }
+      ]
+    },
+    {
+      "type": "sec_strain",
+      "name": "5. Reduce strain",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Reduce knee, hip, and back strain linked to foot drop"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback asset",
+          "default": "cdf-strain.jpg"
+        }
+      ]
+    },
+    {
+      "type": "sec_trusted",
+      "name": "6. Trusted quote",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Trusted by 45,000+ for safer walking"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Reviewer meta",
+          "default": "Reviewed by Michael R. · Written on 15.01.26"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Poster"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Poster fallback",
+          "default": "cdf-trusted-poster.jpg"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL"
+        }
+      ]
+    },
+    {
+      "type": "sec_falls",
+      "name": "7. Reduce falls",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Reduce the risk of falls on stairs and uneven surfaces"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback asset",
+          "default": "cdf-falls.jpg"
+        }
+      ]
+    },
+    {
+      "type": "sec_easy",
+      "name": "8. Easy to use",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Very easy to use"
+        },
+        {
+          "type": "textarea",
+          "id": "subtext",
+          "label": "Subtext"
+        },
+        {
+          "type": "text",
+          "id": "card_1_title",
+          "label": "Card 1 title",
+          "default": "Slide it on & lock it"
+        },
+        {
+          "type": "textarea",
+          "id": "card_1_text",
+          "label": "Card 1 text"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_1_image",
+          "label": "Card 1 poster"
+        },
+        {
+          "type": "text",
+          "id": "card_1_fallback",
+          "label": "Card 1 fallback",
+          "default": "cdf-easy-1.jpg"
+        },
+        {
+          "type": "url",
+          "id": "card_1_video",
+          "label": "Card 1 video URL"
+        },
+        {
+          "type": "text",
+          "id": "card_2_title",
+          "label": "Card 2 title",
+          "default": "Pull on your favorite shoes"
+        },
+        {
+          "type": "textarea",
+          "id": "card_2_text",
+          "label": "Card 2 text"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_2_image",
+          "label": "Card 2 poster"
+        },
+        {
+          "type": "text",
+          "id": "card_2_fallback",
+          "label": "Card 2 fallback",
+          "default": "cdf-easy-2.jpg"
+        },
+        {
+          "type": "url",
+          "id": "card_2_video",
+          "label": "Card 2 video URL"
+        }
+      ]
+    },
+    {
+      "type": "sec_doctors",
+      "name": "9. Doctors / compare",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Endorsed by doctors and physical therapists"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Fallback asset",
+          "default": "cdf-doctor.jpg"
+        }
+      ]
+    },
+    {
+      "type": "sec_guarantee",
+      "name": "10. Guarantee",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Better Mobility | Better Life"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Free size swaps & returns up to 30 Days"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Body"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "CTA label",
+          "default": "Get right now"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background"
+        },
+        {
+          "type": "text",
+          "id": "fallback",
+          "label": "Background fallback",
+          "default": "cdf-intro-bg.png"
+        }
+      ]
+    },
+    {
+      "type": "sec_faq",
+      "name": "11. FAQ",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Got questions? We've got answers."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 1"
+        },
+        {
+          "type": "text",
+          "id": "q_1",
+          "label": "Question",
+          "default": "How does this brace help with foot drop?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_1",
+          "label": "Answer",
+          "default": "The brace attaches to your shoe and ankle to mechanically lift the front of your foot while you walk. This prevents your toes from dragging on the ground, which significantly improves clearance and reduces the risk of tripping on stairs or uneven surfaces."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 2"
+        },
+        {
+          "type": "text",
+          "id": "q_2",
+          "label": "Question",
+          "default": "What type of shoes can I wear this with?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_2",
+          "label": "Answer",
+          "default": "This brace is designed to work with lace-up shoes, sneakers, or boots. It uses the shoe’s laces as an anchor point to lift the foot."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 3"
+        },
+        {
+          "type": "text",
+          "id": "q_3",
+          "label": "Question",
+          "default": "Is it difficult to put on?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_3",
+          "label": "Answer",
+          "default": "Not at all. The design is simple and user-friendly, often allowing for one-handed application."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 4"
+        },
+        {
+          "type": "text",
+          "id": "q_4",
+          "label": "Question",
+          "default": "Can I wear it all day?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_4",
+          "label": "Answer",
+          "default": "Yes. The brace is made from lightweight, breathable materials designed for extended wear."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 5"
+        },
+        {
+          "type": "text",
+          "id": "q_5",
+          "label": "Question",
+          "default": "Will this work for severe foot drop?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_5",
+          "label": "Answer",
+          "default": "This brace is ideal for mild to moderate foot drop. For rigid deformities, consult a doctor."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 6"
+        },
+        {
+          "type": "text",
+          "id": "q_6",
+          "label": "Question",
+          "default": "Does it come in different sizes?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_6",
+          "label": "Answer",
+          "default": "Yes. Please refer to our size chart above to choose the correct size."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 7"
+        },
+        {
+          "type": "text",
+          "id": "q_7",
+          "label": "Question",
+          "default": "Can I wear it on either foot?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_7",
+          "label": "Answer",
+          "default": "These braces are designed specifically for the Left or Right foot."
+        },
+        {
+          "type": "header",
+          "content": "FAQ 8"
+        },
+        {
+          "type": "text",
+          "id": "q_8",
+          "label": "Question",
+          "default": "What if it doesn't work for me?"
+        },
+        {
+          "type": "textarea",
+          "id": "a_8",
+          "label": "Answer",
+          "default": "We offer a 30-day risk-free guarantee."
+        }
+      ]
+    },
+    {
+      "type": "sec_reviews",
+      "name": "12. Reviews",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Customer Reviews"
+        },
+        {
+          "type": "text",
+          "id": "score_prefix",
+          "label": "Score prefix",
+          "default": "Overall rating"
+        },
+        {
+          "type": "text",
+          "id": "score_value",
+          "label": "Score value",
+          "default": "5.0"
+        },
+        {
+          "type": "text",
+          "id": "score_count",
+          "label": "Score count",
+          "default": "3,398"
+        },
+        {
+          "type": "text",
+          "id": "score_suffix",
+          "label": "Score suffix",
+          "default": "verified reviews"
+        },
+        {
+          "type": "header",
+          "content": "Review 1"
+        },
+        {
+          "type": "text",
+          "id": "item_1_name",
+          "label": "Name",
+          "default": "Alan U."
+        },
+        {
+          "type": "text",
+          "id": "item_1_date",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "textarea",
+          "id": "item_1_text",
+          "label": "Text",
+          "default": "Very easy to use and very comfortable. It is also very supportive."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_1_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_1_fallback",
+          "label": "Fallback asset",
+          "default": "cdf-loox-1.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_1_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_1_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 2"
+        },
+        {
+          "type": "text",
+          "id": "item_2_name",
+          "label": "Name",
+          "default": "Raymond C."
+        },
+        {
+          "type": "text",
+          "id": "item_2_date",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "textarea",
+          "id": "item_2_text",
+          "label": "Text",
+          "default": "👌🫶👍"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_2_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_2_fallback",
+          "label": "Fallback asset",
+          "default": "cdf-loox-2.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_2_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_2_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 3"
+        },
+        {
+          "type": "text",
+          "id": "item_3_name",
+          "label": "Name",
+          "default": "Sam B."
+        },
+        {
+          "type": "text",
+          "id": "item_3_date",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "textarea",
+          "id": "item_3_text",
+          "label": "Text",
+          "default": "It works great. I've had $750 braces that didn't work as well as this one."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_3_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_3_fallback",
+          "label": "Fallback asset",
+          "default": "cdf-loox-3.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_3_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_3_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 4"
+        },
+        {
+          "type": "text",
+          "id": "item_4_name",
+          "label": "Name",
+          "default": "Steve R."
+        },
+        {
+          "type": "text",
+          "id": "item_4_date",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "textarea",
+          "id": "item_4_text",
+          "label": "Text",
+          "default": "I was truly skeptical of this afo when I first got it. But man, I love this thing."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_4_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_4_fallback",
+          "label": "Fallback asset",
+          "default": "cdf-loox-4.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_4_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_4_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 5"
+        },
+        {
+          "type": "text",
+          "id": "item_5_name",
+          "label": "Name",
+          "default": "Patricia M."
+        },
+        {
+          "type": "text",
+          "id": "item_5_date",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "textarea",
+          "id": "item_5_text",
+          "label": "Text",
+          "default": "Not gonna lie, I wish it came in more colors, but the black is discreet enough."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_5_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_5_fallback",
+          "label": "Fallback asset",
+          "default": "cdf-loox-5.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_5_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_5_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 6"
+        },
+        {
+          "type": "text",
+          "id": "item_6_name",
+          "label": "Name",
+          "default": "John S."
+        },
+        {
+          "type": "text",
+          "id": "item_6_date",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "textarea",
+          "id": "item_6_text",
+          "label": "Text",
+          "default": "It works well but you definitely need sturdy lace-up shoes."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_6_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_6_fallback",
+          "label": "Fallback asset",
+          "default": "cdf-loox-6.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_6_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_6_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 7"
+        },
+        {
+          "type": "text",
+          "id": "item_7_name",
+          "label": "Name",
+          "default": "Jennifer L."
+        },
+        {
+          "type": "text",
+          "id": "item_7_date",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "textarea",
+          "id": "item_7_text",
+          "label": "Text",
+          "default": "It takes a little getting used to at first, maybe the first two days, but once you figure out the tension, it works perfectly."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_7_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_7_fallback",
+          "label": "Fallback asset",
+          "default": "cdf-loox-7.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_7_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_7_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 8"
+        },
+        {
+          "type": "text",
+          "id": "item_8_name",
+          "label": "Name",
+          "default": "Richard A."
+        },
+        {
+          "type": "text",
+          "id": "item_8_date",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "textarea",
+          "id": "item_8_text",
+          "label": "Text",
+          "default": "I can walk the dog without staring at the ground the whole time."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_8_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_8_fallback",
+          "label": "Fallback asset",
+          "default": "cdf-loox-8.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_8_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_8_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 9"
+        },
+        {
+          "type": "text",
+          "id": "item_9_name",
+          "label": "Name",
+          "default": "Elizabeth D."
+        },
+        {
+          "type": "text",
+          "id": "item_9_date",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "textarea",
+          "id": "item_9_text",
+          "label": "Text",
+          "default": "Game changer."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_9_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_9_fallback",
+          "label": "Fallback asset",
+          "default": "cdf-loox-9.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_9_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_9_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 10"
+        },
+        {
+          "type": "text",
+          "id": "item_10_name",
+          "label": "Name",
+          "default": "Linda K."
+        },
+        {
+          "type": "text",
+          "id": "item_10_date",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "textarea",
+          "id": "item_10_text",
+          "label": "Text",
+          "default": "Shipping was fast, package looked good. The brace itself is well made."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_10_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_10_fallback",
+          "label": "Fallback asset",
+          "default": "cdf-loox-10.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_10_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_10_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 11"
+        },
+        {
+          "type": "text",
+          "id": "item_11_name",
+          "label": "Name",
+          "default": "Robert P."
+        },
+        {
+          "type": "text",
+          "id": "item_11_date",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "textarea",
+          "id": "item_11_text",
+          "label": "Text",
+          "default": "Finally I can wear my normal sneakers again!"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_11_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_11_fallback",
+          "label": "Fallback asset",
+          "default": "cdf-loox-11.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_11_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_11_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Review 12"
+        },
+        {
+          "type": "text",
+          "id": "item_12_name",
+          "label": "Name",
+          "default": "Sarah J."
+        },
+        {
+          "type": "text",
+          "id": "item_12_date",
+          "label": "Date",
+          "default": "1 day ago"
+        },
+        {
+          "type": "textarea",
+          "id": "item_12_text",
+          "label": "Text",
+          "default": "This brace has honestly changed my daily walks."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_12_image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "item_12_fallback",
+          "label": "Fallback asset",
+          "default": "cdf-loox-12.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "item_12_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "item_12_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        }
+      ]
+    },
+    {
+      "type": "sec_trust",
+      "name": "13. Trust icons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon_1_glyph",
+          "label": "Icon 1 glyph",
+          "default": "🚚"
+        },
+        {
+          "type": "text",
+          "id": "icon_1_title",
+          "label": "Icon 1 title",
+          "default": "Free Ship on Buy 2"
+        },
+        {
+          "type": "text",
+          "id": "icon_1_text",
+          "label": "Icon 1 text",
+          "default": "$4.95 shipping on Buy 1"
+        },
+        {
+          "type": "text",
+          "id": "icon_2_glyph",
+          "label": "Icon 2 glyph",
+          "default": "↺"
+        },
+        {
+          "type": "text",
+          "id": "icon_2_title",
+          "label": "Icon 2 title",
+          "default": "30 Days Guarantee"
+        },
+        {
+          "type": "text",
+          "id": "icon_2_text",
+          "label": "Icon 2 text",
+          "default": "Didn't like it? return it"
+        },
+        {
+          "type": "text",
+          "id": "icon_3_glyph",
+          "label": "Icon 3 glyph",
+          "default": "🔒"
+        },
+        {
+          "type": "text",
+          "id": "icon_3_title",
+          "label": "Icon 3 title",
+          "default": "Secure Payment"
+        },
+        {
+          "type": "text",
+          "id": "icon_3_text",
+          "label": "Icon 3 text",
+          "default": "Secure and trusted credit card provider"
+        },
+        {
+          "type": "text",
+          "id": "icon_4_glyph",
+          "label": "Icon 4 glyph",
+          "default": "♥"
+        },
+        {
+          "type": "text",
+          "id": "icon_4_title",
+          "label": "Icon 4 title",
+          "default": "Happy Customers"
+        },
+        {
+          "type": "text",
+          "id": "icon_4_text",
+          "label": "Icon 4 text",
+          "default": "Thousands of happy customers worldwide"
+        }
+      ]
+    },
+    {
+      "type": "sec_footer",
+      "name": "14. Footer / sticky",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "rights",
+          "label": "Rights line",
+          "default": "All Rights Reserved."
+        },
+        {
+          "type": "text",
+          "id": "privacy_label",
+          "label": "Privacy label",
+          "default": "Privacy Policy"
+        },
+        {
+          "type": "text",
+          "id": "terms_label",
+          "label": "Terms label",
+          "default": "Terms of Service"
+        },
+        {
+          "type": "url",
+          "id": "privacy_url",
+          "label": "Privacy URL"
+        },
+        {
+          "type": "url",
+          "id": "terms_url",
+          "label": "Terms URL"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Support email",
+          "default": "support@zavelyn.com"
+        },
+        {
+          "type": "text",
+          "id": "sticky_copy",
+          "label": "Sticky copy",
+          "default": "Zavelyn Foot Drop AFO Brace — 50% OFF"
+        },
+        {
+          "type": "text",
+          "id": "sticky_cta",
+          "label": "Sticky CTA",
+          "default": "Add to cart"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offer CDF landing",
+      "blocks": [
+        {
+          "type": "sec_gallery"
+        },
+        {
+          "type": "sec_hero"
+        },
+        {
+          "type": "sec_intro"
+        },
+        {
+          "type": "sec_results"
+        },
+        {
+          "type": "sec_lift"
+        },
+        {
+          "type": "sec_strain"
+        },
+        {
+          "type": "sec_trusted"
+        },
+        {
+          "type": "sec_falls"
+        },
+        {
+          "type": "sec_easy"
+        },
+        {
+          "type": "sec_doctors"
+        },
+        {
+          "type": "sec_guarantee"
+        },
+        {
+          "type": "sec_faq"
+        },
+        {
+          "type": "sec_reviews"
+        },
+        {
+          "type": "sec_trust"
+        },
+        {
+          "type": "sec_footer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

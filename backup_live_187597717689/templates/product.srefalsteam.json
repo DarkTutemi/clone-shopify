@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main": {
+      "type": "zavelyn-pdp-main",
+      "settings": {
+        "eyebrow_text": "ZAVELYN INNOVATIONS · COMMERCIAL SANITIZING",
+        "urgency_text": "High US Demand · Limited Units Remaining at Clearance Pricing",
+        "cta_text": "CLAIM OFFER",
+        "enable_sticky_atc": true
+      }
+    },
+    "custom_body": {
+      "type": "srefalsteam-funnel",
+      "settings": {}
+    },
+    "shipping": {
+      "type": "zavelyn-pdp-shipping",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "custom_body",
+    "shipping"
+  ]
+}

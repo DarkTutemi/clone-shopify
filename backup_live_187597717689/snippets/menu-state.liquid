@@ -1,0 +1,43 @@
+{%- comment -%}
+  Echoes "mega" when the link can show products, otherwise nothing.
+  {% render 'menu-state', link: link %}
+{%- endcomment -%}
+{%- liquid
+  assign has_products = false
+
+  if link.type == 'collection_link' and link.object.products_count > 0
+    assign has_products = true
+  elsif link.type == 'catalog_link' and collections.all.products_count > 0
+    assign has_products = true
+  endif
+
+  unless has_products
+    for child in link.links
+      if child.type == 'product_link' and child.object != blank
+        assign has_products = true
+      elsif child.type == 'collection_link' and child.object.products_count > 0
+        assign has_products = true
+      elsif child.type == 'catalog_link' and collections.all.products_count > 0
+        assign has_products = true
+      elsif child.links != blank
+        for grandchild in child.links
+          if grandchild.type == 'product_link' and grandchild.object != blank
+            assign has_products = true
+            break
+          elsif grandchild.type == 'collection_link' and grandchild.object.products_count > 0
+            assign has_products = true
+            break
+          elsif grandchild.type == 'catalog_link' and collections.all.products_count > 0
+            assign has_products = true
+            break
+          endif
+        endfor
+      endif
+
+      if has_products
+        break
+      endif
+    endfor
+  endunless
+-%}
+{%- if has_products -%}mega{%- endif -%}

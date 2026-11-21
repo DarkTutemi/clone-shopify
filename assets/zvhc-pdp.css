@@ -1,0 +1,535 @@
+/**
+ * ZAVELYN HAIR CARE — PDP Specific Stylesheet (v1.0)
+ * Scoped under .zvhc-pdp-section and zvhc-buybox
+ */
+
+.zvhc-pdp-section {
+  padding: 32px 0 64px;
+  background-color: #FAF7F2;
+}
+
+@media (min-width: 992px) {
+  .zvhc-pdp-section {
+    padding: 48px 0 80px;
+  }
+}
+
+.zvhc-pdp-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 992px) {
+  .zvhc-pdp-layout {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: start;
+  }
+}
+
+/* ==========================================================================
+   PRODUCT GALLERY
+   ========================================================================== */
+.zvhc-gallery {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .zvhc-gallery {
+    position: sticky;
+    top: 96px;
+  }
+}
+
+.zvhc-gallery-main {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--zvhc-radius-lg);
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: var(--zvhc-shadow-md);
+  border: 1px solid var(--zvhc-border);
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.zvhc-gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.zvhc-gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+}
+
+.zvhc-gallery-thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--zvhc-radius-sm);
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: #FFFFFF;
+  flex-shrink: 0;
+  transition: border-color 0.2s ease;
+}
+
+.zvhc-gallery-thumb.is-active {
+  border-color: var(--zvhc-copper);
+}
+
+.zvhc-gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   BUY BOX HERO
+   ========================================================================== */
+.zvhc-buybox {
+  display: flex;
+  flex-direction: column;
+}
+
+.zvhc-reviews-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--zvhc-espresso);
+}
+
+.zvhc-stars {
+  color: #D48B38;
+  letter-spacing: 1px;
+}
+
+.zvhc-viewers-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FDF4E7;
+  color: #92540D;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--zvhc-radius-full);
+  margin-left: auto;
+}
+
+.zvhc-pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: #D48B38;
+  border-radius: 50%;
+  animation: zvhcPulse 1.8s infinite;
+}
+
+@keyframes zvhcPulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.zvhc-pdp-title {
+  font-family: var(--zvhc-font-serif);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--zvhc-espresso);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.zvhc-pdp-subtitle {
+  font-size: 0.95rem;
+  color: var(--zvhc-muted);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   KACHING-STYLE BUNDLE CARDS
+   ========================================================================== */
+.zvhc-bundle-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--zvhc-espresso);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.zvhc-bundles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.zvhc-bundle-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1.5px solid var(--zvhc-border);
+  border-radius: var(--zvhc-radius-md);
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.zvhc-bundle-card:hover {
+  border-color: #D1B8A3;
+}
+
+.zvhc-bundle-card.is-selected {
+  border-color: var(--zvhc-copper);
+  background: #FFFAF5;
+  box-shadow: 0 4px 16px rgba(184, 115, 51, 0.12);
+}
+
+.zvhc-card-badge {
+  position: absolute;
+  top: -11px;
+  right: 16px;
+  background: var(--zvhc-copper);
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border-radius: var(--zvhc-radius-full);
+  box-shadow: 0 2px 6px rgba(184, 115, 51, 0.3);
+}
+
+.zvhc-bundle-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.zvhc-bundle-radio-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.zvhc-radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--zvhc-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.zvhc-bundle-card.is-selected .zvhc-radio-circle {
+  border-color: var(--zvhc-copper);
+}
+
+.zvhc-radio-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--zvhc-copper);
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+.zvhc-bundle-card.is-selected .zvhc-radio-dot {
+  transform: scale(1);
+}
+
+.zvhc-bundle-info-title {
+  font-family: var(--zvhc-font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--zvhc-espresso);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.zvhc-save-pill {
+  font-family: var(--zvhc-font-sans);
+  background: var(--zvhc-botanical-light);
+  color: var(--zvhc-botanical);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--zvhc-radius-full);
+}
+
+.zvhc-bundle-pricing {
+  text-align: right;
+}
+
+.zvhc-bundle-price {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--zvhc-espresso);
+  line-height: 1;
+}
+
+.zvhc-bundle-compare {
+  font-size: 0.85rem;
+  color: var(--zvhc-muted);
+  text-decoration: line-through;
+  margin-top: 3px;
+}
+
+.zvhc-bundle-each {
+  font-size: 0.75rem;
+  color: var(--zvhc-muted);
+  margin-top: 2px;
+}
+
+.zvhc-bundle-subtext {
+  font-size: 0.82rem;
+  color: var(--zvhc-muted);
+  margin-top: 8px;
+  padding-left: 32px;
+  line-height: 1.4;
+}
+
+.zvhc-bundle-perk {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--zvhc-botanical);
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  padding-left: 32px;
+}
+
+.zvhc-gift-unlock {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #FFF5EC;
+  border-radius: var(--zvhc-radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: #8C4713;
+  font-weight: 600;
+  border: 1px dashed #E0BA98;
+}
+
+/* ==========================================================================
+   FORMULA / VARIANT SELECTOR
+   ========================================================================== */
+.zvhc-formula-section {
+  margin-bottom: 24px;
+}
+
+.zvhc-formula-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--zvhc-espresso);
+  margin-bottom: 10px;
+}
+
+.zvhc-formula-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.zvhc-formula-btn {
+  background: #FFFFFF;
+  border: 1.5px solid var(--zvhc-border);
+  padding: 12px 14px;
+  border-radius: var(--zvhc-radius-md);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.zvhc-formula-btn.is-active {
+  border-color: var(--zvhc-copper);
+  background: #FFFAF5;
+}
+
+.zvhc-formula-name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--zvhc-espresso);
+  margin-bottom: 2px;
+}
+
+.zvhc-formula-desc {
+  font-size: 0.72rem;
+  color: var(--zvhc-muted);
+}
+
+/* ==========================================================================
+   DYNAMIC SAVINGS CALLOUT & 2-LINE CTA
+   ========================================================================== */
+.zvhc-savings-callout {
+  background: var(--zvhc-botanical-light);
+  color: var(--zvhc-botanical);
+  padding: 10px 16px;
+  border-radius: var(--zvhc-radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.zvhc-cta-btn {
+  width: 100%;
+  background: var(--zvhc-burgundy-cta);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--zvhc-radius-md);
+  padding: 16px 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(59, 27, 21, 0.3);
+}
+
+.zvhc-cta-btn:hover {
+  background: var(--zvhc-burgundy-cta-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(59, 27, 21, 0.4);
+}
+
+.zvhc-cta-line-1 {
+  font-family: var(--zvhc-font-sans);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.zvhc-cta-line-2 {
+  font-size: 0.76rem;
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  color: #E2C0B0;
+}
+
+.zvhc-guarantee-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--zvhc-muted);
+}
+
+.zvhc-stepper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 24px;
+  padding: 16px;
+  background: #FFFFFF;
+  border-radius: var(--zvhc-radius-md);
+  border: 1px solid var(--zvhc-border);
+}
+
+.zvhc-step-item {
+  text-align: center;
+}
+
+.zvhc-step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--zvhc-copper);
+  margin: 0 auto 6px;
+}
+
+.zvhc-step-lbl {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--zvhc-espresso);
+}
+
+.zvhc-step-val {
+  font-size: 0.75rem;
+  color: var(--zvhc-muted);
+}
+
+/* ==========================================================================
+   STICKY MOBILE ATC DOCK
+   ========================================================================== */
+.zvhc-mobile-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  padding: 12px 16px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 99;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--zvhc-border);
+}
+
+@media (max-width: 768px) {
+  .zvhc-mobile-dock.is-visible {
+    display: flex;
+  }
+}
+
+.zvhc-dock-info-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--zvhc-espresso);
+}
+
+.zvhc-dock-info-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--zvhc-copper-dark);
+}
+
+.zvhc-dock-btn {
+  background: var(--zvhc-burgundy-cta);
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: var(--zvhc-radius-md);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+}

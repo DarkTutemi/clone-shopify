@@ -1,0 +1,1450 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+<div class="lr-pdp-wrapper" id="Section-{{ section.id }}">
+  <style>
+    #Section-{{ section.id }} {
+      --lr-bg: #FAF6F2;
+      --lr-card-bg: #FFFFFF;
+      --lr-plum-dark: #2A1420;
+      --lr-wine: #6A1B36;
+      --lr-wine-hover: #54142A;
+      --lr-wine-light: #FFF7F9;
+      --lr-wine-border: #E8D5DD;
+      --lr-green: #2E7D32;
+      --lr-green-bg: #E8F5E9;
+      --lr-text-muted: #66555E;
+      --lr-gold: #E5A83B;
+      
+      background: var(--lr-bg);
+      padding: 32px 0 60px 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--lr-plum-dark);
+      line-height: 1.5;
+      overflow-x: hidden;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #Section-{{ section.id }} * {
+      box-sizing: border-box;
+    }
+
+    #Section-{{ section.id }} .lr-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    /* BALANCED TWO-COLUMN DESKTOP GRID */
+    #Section-{{ section.id }} .lr-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+      gap: 48px;
+      align-items: start;
+      width: 100%;
+    }
+
+    /* LEFT COLUMN: GALLERY */
+    #Section-{{ section.id }} .lr-gallery-wrap {
+      position: sticky;
+      top: 24px;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      width: 100%;
+    }
+
+    #Section-{{ section.id }} .lr-main-img-box {
+      position: relative;
+      background: #FFFFFF;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(42, 20, 32, 0.05);
+      border: 1px solid var(--lr-wine-border);
+      aspect-ratio: 1 / 1;
+      width: 100%;
+    }
+
+    #Section-{{ section.id }} .lr-main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.25s ease;
+    }
+
+    #Section-{{ section.id }} .lr-img-badges {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    #Section-{{ section.id }} .lr-img-pill {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      color: var(--lr-plum-dark);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      text-transform: uppercase;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    #Section-{{ section.id }} .lr-thumbs-strip {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      overflow-x: auto;
+      width: 100%;
+      min-width: 0;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #Section-{{ section.id }} .lr-thumb-btn {
+      width: 68px;
+      height: 68px;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      overflow: hidden;
+      cursor: pointer;
+      background: #FFFFFF;
+      padding: 0;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    #Section-{{ section.id }} .lr-thumb-btn.active {
+      border-color: var(--lr-wine);
+      box-shadow: 0 2px 10px rgba(106, 27, 54, 0.2);
+    }
+
+    #Section-{{ section.id }} .lr-thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* RIGHT COLUMN: BUY BOX */
+    #Section-{{ section.id }} .lr-buybox {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      width: 100%;
+    }
+
+    #Section-{{ section.id }} .lr-rating-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    #Section-{{ section.id }} .lr-stars {
+      color: var(--lr-gold);
+      font-size: 16px;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    #Section-{{ section.id }} .lr-rating-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--lr-text-muted);
+    }
+
+    #Section-{{ section.id }} .lr-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--lr-plum-dark);
+      margin: 0 0 10px 0;
+      word-break: normal;
+    }
+
+    #Section-{{ section.id }} .lr-subhead {
+      font-size: 15px;
+      color: var(--lr-text-muted);
+      margin: 0 0 16px 0;
+      line-height: 1.5;
+    }
+
+    /* CHECKLIST */
+    #Section-{{ section.id }} .lr-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 18px;
+    }
+
+    #Section-{{ section.id }} .lr-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 550;
+      color: var(--lr-plum-dark);
+      line-height: 1.45;
+    }
+
+    #Section-{{ section.id }} .lr-check-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--lr-green-bg);
+      color: var(--lr-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* LIVE VIEWING PILL */
+    #Section-{{ section.id }} .lr-live-viewing {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FCE8ED;
+      color: #9A2445;
+      font-size: 13px;
+      font-weight: 650;
+      padding: 6px 14px;
+      border-radius: 20px;
+      width: fit-content;
+      margin-bottom: 18px;
+    }
+
+    #Section-{{ section.id }} .lr-live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #E52D56;
+      animation: lrPulse 1.6s infinite ease-in-out;
+      flex-shrink: 0;
+    }
+
+    @keyframes lrPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.6; }
+    }
+
+    /* PRICE ROW */
+    #Section-{{ section.id }} .lr-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    #Section-{{ section.id }} .lr-active-price {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--lr-plum-dark);
+      line-height: 1;
+    }
+
+    #Section-{{ section.id }} .lr-active-compare {
+      font-size: 18px;
+      color: #998891;
+      text-decoration: line-through;
+    }
+
+    #Section-{{ section.id }} .lr-save-badge {
+      background: var(--lr-wine);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* FLASH SALE COUNTDOWN BANNER WITH LIGHTNING BOLT */
+    #Section-{{ section.id }} .lr-countdown-banner {
+      background: #25101A;
+      color: #FFFFFF;
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 750;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      letter-spacing: 0.3px;
+    }
+
+    #Section-{{ section.id }} .lr-countdown-banner span.timer {
+      font-family: monospace;
+      font-size: 15.5px;
+      color: #FFB8C6;
+      letter-spacing: 1.5px;
+    }
+
+    /* SIZING GUIDE BUTTON */
+    #Section-{{ section.id }} .lr-size-guide-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--lr-wine);
+      cursor: pointer;
+      margin-bottom: 16px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      background: none;
+      border: none;
+      padding: 0;
+      width: fit-content;
+      transition: opacity 0.2s ease;
+    }
+    #Section-{{ section.id }} .lr-size-guide-trigger:hover {
+      opacity: 0.85;
+    }
+    #Section-{{ section.id }} .lr-size-guide-icon {
+      flex-shrink: 0;
+      stroke: var(--lr-wine);
+    }
+
+    /* BUNDLE STACK */
+    #Section-{{ section.id }} .lr-bundle-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    /* BUNDLE CARD COMMON */
+    #Section-{{ section.id }} .lr-bcard {
+      position: relative;
+      background: #FFFFFF;
+      border: 1.5px solid #F0E6EC;
+      border-radius: 18px;
+      padding: 16px 18px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    #Section-{{ section.id }} .lr-bcard:hover {
+      border-color: rgba(106, 27, 54, 0.4);
+    }
+
+    #Section-{{ section.id }} .lr-bcard.active {
+      border: 2px solid var(--lr-wine);
+      box-shadow: 0 4px 18px rgba(106, 27, 54, 0.08);
+    }
+
+    #Section-{{ section.id }} .lr-bcard.has-badge {
+      padding-top: 22px;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-corner-badge {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      background: var(--lr-wine);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      padding: 5px 14px;
+      border-radius: 0 16px 0 10px;
+      text-transform: uppercase;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* TOP ROW: RADIO + THUMBNAILS + TITLE + PRICE */
+    #Section-{{ section.id }} .lr-bcard-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-top-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* CUSTOM RADIO BUTTON */
+    #Section-{{ section.id }} .lr-bcard-radio {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid #C4B5BD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 3px;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+      background: #FFFFFF;
+    }
+
+    #Section-{{ section.id }} .lr-bcard.active .lr-bcard-radio {
+      border-color: var(--lr-wine);
+    }
+
+    #Section-{{ section.id }} .lr-bcard-radio-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--lr-wine);
+      opacity: 0;
+      transform: scale(0.3);
+      transition: all 0.2s ease;
+    }
+
+    #Section-{{ section.id }} .lr-bcard.active .lr-bcard-radio-dot {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* CARD LEFT THUMBNAIL */
+    #Section-{{ section.id }} .lr-bcard-thumb {
+      width: 65px;
+      height: 65px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: #FFFFFF;
+      border: 1px solid rgba(106, 27, 54, 0.12);
+      flex-shrink: 0;
+      display: block;
+    }
+
+    /* TITLE CONTENT */
+    #Section-{{ section.id }} .lr-bcard-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--lr-plum-dark);
+      letter-spacing: -0.2px;
+      line-height: 1.25;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-tag-pink {
+      background: #FFEBF0;
+      color: var(--lr-wine);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-desc {
+      font-size: 13px;
+      color: #6C5B64;
+      line-height: 1.4;
+      margin: 2px 0 0 0;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-shipping-note {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #1F7A37;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 4px;
+    }
+
+    /* RIGHT PRICING IN CARD */
+    #Section-{{ section.id }} .lr-bcard-pricing {
+      text-align: right;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-price {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--lr-plum-dark);
+      line-height: 1.1;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-compare {
+      font-size: 13.5px;
+      color: #998891;
+      text-decoration: line-through;
+      margin-top: 2px;
+    }
+
+    #Section-{{ section.id }} .lr-bcard-each {
+      font-size: 12px;
+      color: var(--lr-text-muted);
+      margin-top: 2px;
+    }
+
+    /* SELECTORS LAYOUT */
+    #Section-{{ section.id }} .lr-selectors-single,
+    #Section-{{ section.id }} .lr-selectors-dual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding-top: 4px;
+    }
+
+    #Section-{{ section.id }} .lr-pill-pair {
+      display: flex;
+      gap: 6px;
+      width: 100%;
+    }
+
+    #Section-{{ section.id }} .lr-selector-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    #Section-{{ section.id }} .lr-selector-label {
+      font-size: 12.5px;
+      font-weight: 750;
+      color: var(--lr-plum-dark);
+      margin-bottom: 2px;
+    }
+
+    #Section-{{ section.id }} .lr-select-pill {
+      position: relative;
+      background: #FFFFFF;
+      border: 1.5px solid var(--lr-wine);
+      border-radius: 20px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px 0 10px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      width: 100%;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+
+    #Section-{{ section.id }} .lr-select-pill select {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    #Section-{{ section.id }} .lr-select-pill-text {
+      font-size: 13px;
+      font-weight: 650;
+      color: var(--lr-plum-dark);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      pointer-events: none;
+    }
+
+    #Section-{{ section.id }} .lr-select-pill-arrow {
+      position: absolute;
+      right: 9px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 6px;
+      pointer-events: none;
+      color: var(--lr-wine);
+    }
+
+    @media (max-width: 540px) {
+      #Section-{{ section.id }} .lr-selectors-single,
+      #Section-{{ section.id }} .lr-selectors-dual {
+        gap: 8px;
+      }
+      #Section-{{ section.id }} .lr-pill-pair {
+        gap: 4px;
+      }
+      #Section-{{ section.id }} .lr-select-pill {
+        padding: 0 18px 0 8px;
+        height: 36px;
+      }
+      #Section-{{ section.id }} .lr-select-pill-text {
+        font-size: 11.5px;
+      }
+      #Section-{{ section.id }} .lr-select-pill-arrow {
+        right: 6px;
+        width: 8px;
+      }
+      #Section-{{ section.id }} .lr-selector-label {
+        font-size: 11px;
+      }
+    }
+
+    /* MINT SAVINGS ACCENT BANNER */
+    #Section-{{ section.id }} .lr-savings-banner {
+      background: #EBF6EE;
+      border-radius: 12px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    #Section-{{ section.id }} .lr-savings-tag-icon {
+      flex-shrink: 0;
+      stroke: var(--lr-wine);
+    }
+
+    #Section-{{ section.id }} .lr-savings-text {
+      font-size: 15px;
+      font-weight: 750;
+      color: var(--lr-wine);
+      line-height: 1.25;
+    }
+
+    /* PRIMARY CTA BUTTON */
+    #Section-{{ section.id }} .lr-cta-btn {
+      width: 100%;
+      background: var(--lr-wine);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      padding: 16px 20px;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(106, 27, 54, 0.28);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    #Section-{{ section.id }} .lr-cta-btn:hover {
+      background: var(--lr-wine-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(106, 27, 54, 0.35);
+    }
+
+    #Section-{{ section.id }} .lr-cta-main-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    #Section-{{ section.id }} .lr-cta-cart-svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    #Section-{{ section.id }} .lr-cta-subtext {
+      font-size: 12.5px;
+      font-weight: 650;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #Section-{{ section.id }} .lr-safe-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--lr-text-muted);
+      font-weight: 550;
+      flex-wrap: wrap;
+    }
+
+    #Section-{{ section.id }} .lr-safe-divider {
+      color: #D9CCD3;
+    }
+
+    /* SIZING GUIDE MODAL */
+    #Section-{{ section.id }} .lr-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(42, 20, 32, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    #Section-{{ section.id }} .lr-modal-overlay.active {
+      display: flex;
+    }
+
+    #Section-{{ section.id }} .lr-modal-card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 24px;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    #Section-{{ section.id }} .lr-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #F0E6EC;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--lr-plum-dark);
+    }
+
+    #Section-{{ section.id }} .lr-modal-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+      margin-top: 14px;
+    }
+
+    /* MOBILE STICKY BOTTOM DOCK */
+    .lr-mobile-sticky-dock {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #FFFFFF;
+      padding: 12px 18px;
+      border-top: 1px solid #EADCE4;
+      box-shadow: 0 -4px 20px rgba(42, 20, 32, 0.08);
+      z-index: 9999;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .lr-mobile-sticky-dock .lr-dock-price-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lr-mobile-sticky-dock .lr-dock-price {
+      font-size: 20px;
+      font-weight: 800;
+      color: #2A1420;
+      line-height: 1.1;
+    }
+
+    .lr-mobile-sticky-dock .lr-dock-sub {
+      font-size: 11.5px;
+      color: #1F7A37;
+      font-weight: 700;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .lr-mobile-sticky-dock .lr-dock-btn {
+      flex: 1;
+      max-width: 220px;
+      background: #6A1B36;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 10px;
+      padding: 13px 18px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(106, 27, 54, 0.3);
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 991px) {
+      #Section-{{ section.id }} {
+        padding: 20px 0 50px 0;
+      }
+      #Section-{{ section.id }} .lr-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      #Section-{{ section.id }} .lr-gallery-wrap {
+        position: static;
+      }
+      #Section-{{ section.id }} .lr-title {
+        font-size: 28px;
+      }
+      .lr-mobile-sticky-dock {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #Section-{{ section.id }} .lr-container {
+        padding: 0 16px;
+      }
+      #Section-{{ section.id }} .lr-bcard {
+        padding: 16px 14px;
+      }
+      #Section-{{ section.id }} .lr-bcard.has-badge {
+        padding-top: 28px;
+      }
+      #Section-{{ section.id }} .lr-bcard-selectors {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      #Section-{{ section.id }} .lr-pill-pair {
+        display: flex;
+        gap: 4px;
+        width: 100%;
+      }
+      #Section-{{ section.id }} .lr-select-pill {
+        height: 34px;
+        padding: 0 18px 0 6px;
+        border-radius: 18px;
+      }
+      #Section-{{ section.id }} .lr-select-pill-text {
+        font-size: 11px;
+      }
+      #Section-{{ section.id }} .lr-select-pill-arrow {
+        right: 6px;
+        width: 7px;
+      }
+      #Section-{{ section.id }} .lr-selector-label {
+        font-size: 11px;
+        margin-bottom: 3px;
+      }
+      #Section-{{ section.id }} .lr-gift-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+
+  <div class="lr-container">
+    <div class="lr-grid">
+      
+      <!-- LEFT COLUMN: MEDIA GALLERY -->
+      <div class="lr-gallery-wrap">
+        <div class="lr-main-img-box">
+          <div class="lr-img-badges">
+            <span class="lr-img-pill">CLINICAL GRADE</span>
+            <span class="lr-img-pill">NEUROLOGIST RECOMMENDED</span>
+          </div>
+          <img
+            id="lr-main-photo"
+            class="lr-main-img"
+            src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-1.png?v=1791657297"
+            alt="Zavelyn Robotic Stroke Rehabilitation Glove"
+            width="600"
+            height="600"
+          >
+        </div>
+
+        <!-- THUMBNAIL STRIP -->
+        <div class="lr-thumbs-strip">
+          <button type="button" class="lr-thumb-btn active" data-img-src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-1.png?v=1791657297" aria-label="Glove Photo 1">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-1.png?v=1791657297" alt="Gallery thumbnail 1" width="68" height="68">
+          </button>
+          <button type="button" class="lr-thumb-btn" data-img-src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-2.png?v=1791657300" aria-label="Glove Photo 2">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-2.png?v=1791657300" alt="Gallery thumbnail 2" width="68" height="68">
+          </button>
+          <button type="button" class="lr-thumb-btn" data-img-src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-3.png?v=1791657304" aria-label="Glove Photo 3">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-3.png?v=1791657304" alt="Gallery thumbnail 3" width="68" height="68">
+          </button>
+          <button type="button" class="lr-thumb-btn" data-img-src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-4.png?v=1791657308" aria-label="Glove Photo 4">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-4.png?v=1791657308" alt="Gallery thumbnail 4" width="68" height="68">
+          </button>
+          <button type="button" class="lr-thumb-btn" data-img-src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-5.png?v=1791657311" aria-label="Glove Photo 5">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-5.png?v=1791657311" alt="Gallery thumbnail 5" width="68" height="68">
+          </button>
+          <button type="button" class="lr-thumb-btn" data-img-src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-6.png?v=1791657314" aria-label="Glove Photo 6">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-6.png?v=1791657314" alt="Gallery thumbnail 6" width="68" height="68">
+          </button>
+          <button type="button" class="lr-thumb-btn" data-img-src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-7.png?v=1791657318" aria-label="Glove Photo 7">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-7.png?v=1791657318" alt="Gallery thumbnail 7" width="68" height="68">
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: BUY BOX -->
+      <div class="lr-buybox">
+        
+        <!-- RATING & REVIEWS -->
+        <div class="lr-rating-bar">
+          <span class="lr-stars">★★★★★</span>
+          <span class="lr-rating-text">4.9 · 1,842 verified reviews</span>
+        </div>
+
+        <!-- PRODUCT TITLE & SUBTITLE -->
+        <h1 class="lr-title">Zavelyn™ Robotic Stroke & Hand Rehabilitation Glove</h1>
+        <p class="lr-subhead">Medical-grade pneumatic bionic therapy for stroke recovery, hemiplegia, and finger stiffness. Reclaim hand mobility, grip strength, and daily independence right at home.</p>
+
+        <!-- VALUE CHECKLIST -->
+        <div class="lr-checklist">
+          <div class="lr-check-item">
+            <span class="lr-check-icon">✓</span>
+            <span>Dual-Mode Recovery: Passive flexion &amp; mirror therapy for rapid motor recovery</span>
+          </div>
+          <div class="lr-check-item">
+            <span class="lr-check-icon">✓</span>
+            <span>Independent Air Valves: Target individual fingers or full-hand grip rehabilitation</span>
+          </div>
+          <div class="lr-check-item">
+            <span class="lr-check-icon">✓</span>
+            <span>Bionic Pneumatic Drive: Ergonomic, lightweight glove with safe pressure feedback</span>
+          </div>
+          <div class="lr-check-item">
+            <span class="lr-check-icon">✓</span>
+            <span>Intuitive Touchscreen Host: Real-time routine adjustments &amp; customizable speed</span>
+          </div>
+        </div>
+
+        <!-- LIVE VIEWING INDICATOR -->
+        <div class="lr-live-viewing">
+          <span class="lr-live-dot"></span>
+          <span>24 patients &amp; caregivers are viewing this right now</span>
+        </div>
+
+        <!-- DYNAMIC PRICE DISPLAY -->
+        <div class="lr-price-row">
+          <span class="lr-active-price" id="lr-price-val">$149.00</span>
+          <span class="lr-active-compare" id="lr-compare-val">$360.00</span>
+          <span class="lr-save-badge" id="lr-save-pill">SAVE 58%</span>
+        </div>
+
+        <!-- SIZE GUIDE BUTTON -->
+        <button type="button" class="lr-size-guide-trigger" id="lr-open-size-modal">
+          <svg class="lr-size-guide-icon" width="22" height="15" viewBox="0 0 24 16" fill="none" stroke="#6A1B36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="1" width="22" height="14" rx="4" ry="4"></rect>
+            <line x1="6" y1="1" x2="6" y2="7"></line>
+            <line x1="11" y1="1" x2="11" y2="9"></line>
+            <line x1="16" y1="1" x2="16" y2="7"></line>
+          </svg>
+          <span>View Size Guide &amp; Hand Measurement Chart</span>
+        </button>
+
+        <!-- BUNDLE SELECTOR STACK -->
+        <div class="lr-bundle-stack">
+
+          <!-- CARD 1: 1 REHABILITATION GLOVE -->
+          <div class="lr-bcard" data-tier="1" data-price="89.00" data-compare="180.00" data-save="91.00">
+            <div class="lr-bcard-top">
+              <div class="lr-bcard-top-left">
+                <span class="lr-bcard-radio"><span class="lr-bcard-radio-dot"></span></span>
+                <img
+                  class="lr-bcard-thumb"
+                  src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-rehab-box-thumb.png?v=1794152773"
+                  alt="1 Rehabilitation Glove"
+                  width="65"
+                  height="65"
+                >
+                <div class="lr-bcard-info">
+                  <div class="lr-bcard-title-row">
+                    <span class="lr-bcard-title">1 Rehabilitation Glove</span>
+                  </div>
+                  <p class="lr-bcard-desc">Starter recovery · single unit for daily home therapy</p>
+                </div>
+              </div>
+              <div class="lr-bcard-pricing">
+                <span class="lr-bcard-price">$89.00</span>
+                <span class="lr-bcard-compare">$180.00</span>
+                <span class="lr-bcard-each">$89.00 / each</span>
+              </div>
+            </div>
+
+            <!-- CARD 1 SELECTORS -->
+            <div class="lr-bcard-selectors lr-selectors-single">
+              <div class="lr-selector-group">
+                <span class="lr-selector-label">Side of Hand</span>
+                <div class="lr-select-pill">
+                  <select id="lr-card1-hand" aria-label="Card 1 Hand">
+                    <option value="Right Hand" selected>Right Hand</option>
+                    <option value="Left Hand">Left Hand</option>
+                  </select>
+                  <span class="lr-select-pill-text" id="lr-card1-hand-label">Right Hand</span>
+                  <svg class="lr-select-pill-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+                </div>
+              </div>
+
+              <div class="lr-selector-group">
+                <span class="lr-selector-label">Size</span>
+                <div class="lr-select-pill">
+                  <select id="lr-card1-size" aria-label="Card 1 Size">
+                    <option value="Small">Small</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Large">Large</option>
+                    <option value="Extra Large">Extra Large</option>
+                    <option value="XXL">XXL</option>
+                  </select>
+                  <span class="lr-select-pill-text" id="lr-card1-size-label">Medium</span>
+                  <svg class="lr-select-pill-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: 2 REHABILITATION GLOVES (MOST POPULAR) -->
+          <div class="lr-bcard has-badge active" data-tier="2" data-price="149.00" data-compare="360.00" data-save="211.00">
+            <span class="lr-bcard-corner-badge">👑 MOST POPULAR</span>
+            <div class="lr-bcard-top">
+              <div class="lr-bcard-top-left">
+                <span class="lr-bcard-radio"><span class="lr-bcard-radio-dot"></span></span>
+                <img
+                  class="lr-bcard-thumb"
+                  src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-rehab-box-thumb.png?v=1794152773"
+                  alt="2 Rehabilitation Gloves"
+                  width="65"
+                  height="65"
+                >
+                <div class="lr-bcard-info">
+                  <div class="lr-bcard-title-row">
+                    <span class="lr-bcard-title">2 Rehabilitation Gloves</span>
+                    <span class="lr-bcard-tag-pink">Save 58%</span>
+                  </div>
+                  <p class="lr-bcard-desc">Bilateral recovery · 1 for each hand or daily clinic rotation</p>
+                  <span class="lr-bcard-shipping-note">🚚 Free US shipping included</span>
+                </div>
+              </div>
+              <div class="lr-bcard-pricing">
+                <span class="lr-bcard-price">$149.00</span>
+                <span class="lr-bcard-compare">$360.00</span>
+                <span class="lr-bcard-each">$74.50 / each</span>
+              </div>
+            </div>
+
+            <!-- CARD 2 SELECTORS (GLOVE 1 & GLOVE 2) -->
+            <div class="lr-bcard-selectors lr-selectors-dual">
+              <div class="lr-selector-group">
+                <span class="lr-selector-label">Glove 1 Hand &amp; Size</span>
+                <div class="lr-pill-pair">
+                  <div class="lr-select-pill" style="flex: 1.15;">
+                    <select id="lr-card2-hand-1" aria-label="Glove 1 Hand">
+                      <option value="Right Hand" selected>Right Hand</option>
+                      <option value="Left Hand">Left Hand</option>
+                    </select>
+                    <span class="lr-select-pill-text" id="lr-card2-hand-1-label">Right Hand</span>
+                    <svg class="lr-select-pill-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+                  </div>
+                  <div class="lr-select-pill" style="flex: 1;">
+                    <select id="lr-card2-size-1" aria-label="Glove 1 Size">
+                      <option value="Small">Small</option>
+                      <option value="Medium" selected>Medium</option>
+                      <option value="Large">Large</option>
+                      <option value="Extra Large">Extra Large</option>
+                      <option value="XXL">XXL</option>
+                    </select>
+                    <span class="lr-select-pill-text" id="lr-card2-size-1-label">Medium</span>
+                    <svg class="lr-select-pill-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lr-selector-group">
+                <span class="lr-selector-label">Glove 2 Hand &amp; Size</span>
+                <div class="lr-pill-pair">
+                  <div class="lr-select-pill" style="flex: 1.15;">
+                    <select id="lr-card2-hand-2" aria-label="Glove 2 Hand">
+                      <option value="Right Hand">Right Hand</option>
+                      <option value="Left Hand" selected>Left Hand</option>
+                    </select>
+                    <span class="lr-select-pill-text" id="lr-card2-hand-2-label">Left Hand</span>
+                    <svg class="lr-select-pill-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+                  </div>
+                  <div class="lr-select-pill" style="flex: 1;">
+                    <select id="lr-card2-size-2" aria-label="Glove 2 Size">
+                      <option value="Small">Small</option>
+                      <option value="Medium" selected>Medium</option>
+                      <option value="Large">Large</option>
+                      <option value="Extra Large">Extra Large</option>
+                      <option value="XXL">XXL</option>
+                    </select>
+                    <span class="lr-select-pill-text" id="lr-card2-size-2-label">Medium</span>
+                    <svg class="lr-select-pill-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- MINT SAVINGS ACCENT BANNER -->
+        <div class="lr-savings-banner">
+          <svg class="lr-savings-tag-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A1B36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+          </svg>
+          <span class="lr-savings-text" id="lr-savings-str">You save $211.00 on this order</span>
+        </div>
+
+        <!-- PRIMARY CTA BUTTON -->
+        <button type="button" class="lr-cta-btn" id="lr-atc-main-btn">
+          <div class="lr-cta-main-row">
+            <svg class="lr-cta-cart-svg" viewBox="0 0 24 24">
+              <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+            </svg>
+            <span id="lr-cta-text">ADD TO CART — $149.00</span>
+          </div>
+          <div class="lr-cta-subtext">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#2196F3"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span>30-DAY GUARANTEE</span>
+          </div>
+        </button>
+
+        <!-- SAFE CHECKOUT ROW -->
+        <div class="lr-safe-row">
+          <span>🔒 256-Bit SSL Encrypted Checkout</span>
+          <span class="lr-safe-divider">|</span>
+          <span>⚡ Shipped from Regional US Centers</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SIZING GUIDE LIGHTBOX MODAL -->
+  <div class="lr-modal-overlay" id="lr-size-modal">
+    <div class="lr-modal-card">
+      <button type="button" class="lr-modal-close" id="lr-close-size-modal">&times;</button>
+      <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; margin: 0 0 8px 0; color: #2A1420;">Zavelyn™ Glove Sizing Guide</h3>
+      <p style="font-size: 13.5px; color: #66555E; margin: 0 0 14px 0;">Measure from the crease of your wrist to the tip of your middle finger, and measure the palm width at the widest point.</p>
+      <img
+        class="lr-modal-img"
+        src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-size-chart.png?v=1794068885"
+        alt="Zavelyn Sizing Guide Chart"
+        width="600"
+        height="400"
+      >
+    </div>
+  </div>
+
+  <!-- MOBILE STICKY BOTTOM DOCK -->
+  <div class="lr-mobile-sticky-dock" id="lr-mobile-dock">
+    <div class="lr-dock-price-col">
+      <span class="lr-dock-price" id="lr-dock-price-val">$149.00</span>
+      <span class="lr-dock-sub">🚚 Free US Shipping</span>
+    </div>
+    <button type="button" class="lr-dock-btn" id="lr-dock-atc-btn">ADD TO CART</button>
+  </div>
+
+  <script>
+    (function() {
+      // 10 SHOPIFY VARIANTS FROM PRODUCT 15424286589113
+      const VARIANTS = {
+        'Right Hand-Small': 67683407298745,
+        'Right Hand-Medium': 67683407331513,
+        'Right Hand-Large': 67683407364281,
+        'Right Hand-Extra Large': 67683407397049,
+        'Right Hand-XXL': 67683407429817,
+        'Left Hand-Small': 67683407462585,
+        'Left Hand-Medium': 67683407495353,
+        'Left Hand-Large': 67683407528121,
+        'Left Hand-Extra Large': 67683407560889,
+        'Left Hand-XXL': 67683407593657
+      };
+
+      const GALLERY_RIGHT = "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-1.png?v=1791657297";
+      const GALLERY_LEFT = "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-gallery-2.png?v=1791657300";
+
+      // DEFAULT TO TIER 2 (2 Gloves, $149.00)
+      let activeTier = 2;
+      let activeBasePrice = 149.00;
+      let activeComparePrice = 360.00;
+      let activeSaveAmt = 211.00;
+
+      const mainImg = document.getElementById('lr-main-photo');
+      const thumbBtns = document.querySelectorAll('#Section-{{ section.id }} .lr-thumb-btn');
+      const bCards = document.querySelectorAll('#Section-{{ section.id }} .lr-bcard');
+      const priceDisplay = document.getElementById('lr-price-val');
+      const compareDisplay = document.getElementById('lr-compare-val');
+      const saveBadge = document.getElementById('lr-save-pill');
+      const savingsText = document.getElementById('lr-savings-str');
+      const ctaMainText = document.getElementById('lr-cta-text');
+      const ctaBtn = document.getElementById('lr-atc-main-btn');
+      const mobileStickyBtn = document.getElementById('lr-dock-atc-btn');
+      const mobileStickyPrice = document.getElementById('lr-dock-price-val');
+
+      // Gallery Thumb Click
+      thumbBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          thumbBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const src = btn.getAttribute('data-img-src');
+          if (src && mainImg) mainImg.src = src;
+        });
+      });
+
+      // Synchronize dropdown labels
+      function bindSelectPill(selectId, labelId, onHandChange) {
+        const sel = document.getElementById(selectId);
+        const lbl = document.getElementById(labelId);
+        if (sel && lbl) {
+          sel.addEventListener('change', () => {
+            lbl.innerText = sel.options[sel.selectedIndex].text;
+            if (onHandChange) onHandChange(sel.value);
+          });
+        }
+      }
+
+      function updatePhotoForHand(handVal) {
+        if (!mainImg) return;
+        if (handVal === 'Left Hand') {
+          mainImg.src = GALLERY_LEFT;
+          thumbBtns.forEach(b => {
+            if (b.getAttribute('data-img-src') === GALLERY_LEFT) {
+              thumbBtns.forEach(t => t.classList.remove('active'));
+              b.classList.add('active');
+            }
+          });
+        } else {
+          mainImg.src = GALLERY_RIGHT;
+          thumbBtns.forEach(b => {
+            if (b.getAttribute('data-img-src') === GALLERY_RIGHT) {
+              thumbBtns.forEach(t => t.classList.remove('active'));
+              b.classList.add('active');
+            }
+          });
+        }
+      }
+
+      bindSelectPill('lr-card1-hand', 'lr-card1-hand-label', (h) => { if (activeTier === 1) updatePhotoForHand(h); });
+      bindSelectPill('lr-card1-size', 'lr-card1-size-label');
+
+      bindSelectPill('lr-card2-hand-1', 'lr-card2-hand-1-label', (h) => { if (activeTier === 2) updatePhotoForHand(h); });
+      bindSelectPill('lr-card2-size-1', 'lr-card2-size-1-label');
+      bindSelectPill('lr-card2-hand-2', 'lr-card2-hand-2-label');
+      bindSelectPill('lr-card2-size-2', 'lr-card2-size-2-label');
+
+      // Card Selection
+      bCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.tagName && e.target.tagName.toLowerCase() === 'select') return;
+
+          bCards.forEach(c => c.classList.remove('active'));
+          card.classList.add('active');
+
+          activeTier = parseInt(card.getAttribute('data-tier'), 10);
+          activeBasePrice = parseFloat(card.getAttribute('data-price'));
+          activeComparePrice = parseFloat(card.getAttribute('data-compare'));
+          activeSaveAmt = parseFloat(card.getAttribute('data-save'));
+
+          if (activeTier === 1) {
+            const h = document.getElementById('lr-card1-hand')?.value;
+            if (h) updatePhotoForHand(h);
+          } else if (activeTier === 2) {
+            const h = document.getElementById('lr-card2-hand-1')?.value;
+            if (h) updatePhotoForHand(h);
+          }
+
+          updatePriceUI();
+        });
+      });
+
+      function updatePriceUI() {
+        const finalPrice = activeBasePrice;
+        const finalCompare = activeComparePrice;
+        const saveAmount = activeSaveAmt;
+
+        const priceStr = '$' + finalPrice.toFixed(2);
+        const compareStr = '$' + finalCompare.toFixed(2);
+
+        if (priceDisplay) priceDisplay.innerText = priceStr;
+        if (compareDisplay) compareDisplay.innerText = compareStr;
+        if (mobileStickyPrice) mobileStickyPrice.innerText = priceStr;
+
+        const pct = Math.round(((finalCompare - finalPrice) / finalCompare) * 100);
+        if (saveBadge) saveBadge.innerText = 'SAVE ' + pct + '%';
+
+        if (savingsText) {
+          savingsText.innerText = 'You save $' + saveAmount.toFixed(2) + ' on this order';
+        }
+
+        if (ctaMainText) {
+          ctaMainText.innerText = 'ADD TO CART — ' + priceStr;
+        }
+      }
+
+      // Sizing Guide Modal
+      const modal = document.getElementById('lr-size-modal');
+      const openModalBtn = document.getElementById('lr-open-size-modal');
+      const closeModalBtn = document.getElementById('lr-close-size-modal');
+
+      if (openModalBtn && modal) {
+        openModalBtn.addEventListener('click', () => modal.classList.add('active'));
+      }
+      if (closeModalBtn && modal) {
+        closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+      }
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) modal.classList.remove('active');
+        });
+      }
+
+      // Add to Cart
+      async function handleAddToCart() {
+        if (ctaBtn) {
+          ctaBtn.disabled = true;
+          ctaBtn.style.opacity = '0.7';
+          ctaMainText.innerText = 'ADDING TO CART...';
+        }
+        if (mobileStickyBtn) {
+          mobileStickyBtn.innerText = 'ADDING...';
+        }
+
+        let items = [];
+
+        if (activeTier === 1) {
+          const h = document.getElementById('lr-card1-hand')?.value || 'Right Hand';
+          const s = document.getElementById('lr-card1-size')?.value || 'Medium';
+          const vid = VARIANTS[`${h}-${s}`] || 67683407331513;
+          items.push({
+            id: vid,
+            quantity: 1,
+            properties: {
+              'Tier': '1 Rehabilitation Glove',
+              'Hand': h,
+              'Size': s
+            }
+          });
+        } else if (activeTier === 2) {
+          const h1 = document.getElementById('lr-card2-hand-1')?.value || 'Right Hand';
+          const s1 = document.getElementById('lr-card2-size-1')?.value || 'Medium';
+          const h2 = document.getElementById('lr-card2-hand-2')?.value || 'Left Hand';
+          const s2 = document.getElementById('lr-card2-size-2')?.value || 'Medium';
+
+          const vid1 = VARIANTS[`${h1}-${s1}`] || 67683407331513;
+          const vid2 = VARIANTS[`${h2}-${s2}`] || 67683407495353;
+
+          if (vid1 === vid2) {
+            items.push({
+              id: vid1,
+              quantity: 2,
+              properties: {
+                'Tier': '2 Rehabilitation Gloves (Save 58%)',
+                'Configuration': `${h1} (${s1}) + ${h2} (${s2})`
+              }
+            });
+          } else {
+            items.push({
+              id: vid1,
+              quantity: 1,
+              properties: {
+                'Tier': '2 Rehabilitation Gloves (Save 58%) - Glove 1',
+                'Hand': h1,
+                'Size': s1
+              }
+            });
+            items.push({
+              id: vid2,
+              quantity: 1,
+              properties: {
+                'Tier': '2 Rehabilitation Gloves (Save 58%) - Glove 2',
+                'Hand': h2,
+                'Size': s2
+              }
+            });
+          }
+        }
+
+        try {
+          const res = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items })
+          });
+
+          if (res.ok) {
+            window.location.href = '/checkout';
+          } else {
+            window.location.href = '/cart';
+          }
+        } catch (err) {
+          console.error(err);
+          window.location.href = '/cart';
+        }
+      }
+
+      if (ctaBtn) ctaBtn.addEventListener('click', handleAddToCart);
+      if (mobileStickyBtn) mobileStickyBtn.addEventListener('click', handleAddToCart);
+    })();
+  </script>
+</div>
+
+{% schema %}
+{
+  "name": "Rehab Glove PDP Lushroot",
+  "settings": []
+}
+{% endschema %}

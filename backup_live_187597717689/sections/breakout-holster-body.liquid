@@ -1,0 +1,646 @@
+<div class="bh-body-wrapper" id="Section-{{ section.id }}">
+  <style>
+    #Section-{{ section.id }} {
+      --bh-red: #E52D27;
+      --bh-red-dark: #B31217;
+      --bh-black: #111111;
+      --bh-dark: #1E1E1E;
+      --bh-gray-light: #F8F9FA;
+      --bh-border: #E8E8E8;
+      --bh-gold: #FFB800;
+
+      background: #FFFFFF;
+      padding: 20px 20px 60px 20px;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #222222;
+      line-height: 1.65;
+    }
+
+    #Section-{{ section.id }} .bh-b-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    #Section-{{ section.id }} .bh-b-card {
+      background: #FFFFFF;
+      border: 1px solid var(--bh-border);
+      border-radius: 18px;
+      padding: 40px 36px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    #Section-{{ section.id }} .bh-b-heading {
+      font-family: 'Oswald', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--bh-black);
+      margin: 0 0 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #Section-{{ section.id }} .bh-b-sub {
+      font-size: 15.5px;
+      color: #555555;
+      margin-bottom: 24px;
+    }
+
+    /* 4 ADVANTAGE CARDS */
+    #Section-{{ section.id }} .bh-adv-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    #Section-{{ section.id }} .bh-adv-card {
+      background: #FAFAFA;
+      border: 1px solid #EAEAEA;
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    #Section-{{ section.id }} .bh-adv-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--bh-red);
+    }
+
+    #Section-{{ section.id }} .bh-adv-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    #Section-{{ section.id }} .bh-adv-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--bh-black);
+      margin: 0 0 8px 0;
+    }
+
+    #Section-{{ section.id }} .bh-adv-desc {
+      font-size: 13.5px;
+      color: #666666;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* 2-COL FEATURE GRID */
+    #Section-{{ section.id }} .bh-split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 24px;
+    }
+
+    #Section-{{ section.id }} .bh-split-media img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      border: 1px solid #E0E0E0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      display: block;
+    }
+
+    #Section-{{ section.id }} .bh-split-text h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--bh-black);
+      margin: 0 0 12px 0;
+    }
+
+    #Section-{{ section.id }} .bh-feature-pills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    #Section-{{ section.id }} .bh-feature-pill-box {
+      background: #FFF5F5;
+      border: 1px solid #F8D7DA;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    #Section-{{ section.id }} .bh-pill-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--bh-red-dark);
+      margin: 0 0 4px 0;
+    }
+
+    #Section-{{ section.id }} .bh-pill-desc {
+      font-size: 12.5px;
+      color: #666666;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* REVIEWS GRID */
+    #Section-{{ section.id }} .bh-rev-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    #Section-{{ section.id }} .bh-rev-card {
+      background: #FAFAFA;
+      border: 1px solid #EAEAEA;
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    #Section-{{ section.id }} .bh-rev-stars {
+      color: var(--bh-red);
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    #Section-{{ section.id }} .bh-rev-author {
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--bh-black);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    #Section-{{ section.id }} .bh-rev-verified {
+      background: #E8F5E9;
+      color: #1B5E20;
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    #Section-{{ section.id }} .bh-rev-gun {
+      font-size: 12px;
+      font-weight: 700;
+      color: #777777;
+      margin-bottom: 8px;
+    }
+
+    #Section-{{ section.id }} .bh-rev-text {
+      font-size: 13.5px;
+      color: #444444;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* FAQ ACCORDION */
+    #Section-{{ section.id }} .bh-faq-item {
+      background: #FAFAFA;
+      border: 1px solid #E8E8E8;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    #Section-{{ section.id }} .bh-faq-item[open] {
+      background: #FFFFFF;
+      border-color: var(--bh-red);
+      box-shadow: 0 4px 14px rgba(229, 45, 39, 0.08);
+    }
+
+    #Section-{{ section.id }} .bh-faq-summary {
+      padding: 16px 20px;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--bh-black);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+    }
+
+    #Section-{{ section.id }} .bh-faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    #Section-{{ section.id }} .bh-faq-summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--bh-red);
+    }
+
+    #Section-{{ section.id }} .bh-faq-item[open] .bh-faq-summary::after {
+      content: '−';
+    }
+
+    #Section-{{ section.id }} .bh-faq-answer {
+      padding: 0 20px 18px 20px;
+      font-size: 14px;
+      color: #555555;
+      line-height: 1.6;
+      border-top: 1px solid #ECECEC;
+      padding-top: 12px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 991px) {
+      #Section-{{ section.id }} .bh-adv-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      #Section-{{ section.id }} .bh-split-grid {
+        grid-template-columns: 1fr;
+      }
+      #Section-{{ section.id }} .bh-rev-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #Section-{{ section.id }} {
+        padding: 10px 14px 40px 14px;
+      }
+      #Section-{{ section.id }} .bh-b-card {
+        padding: 24px 18px;
+      }
+      #Section-{{ section.id }} .bh-adv-grid {
+        grid-template-columns: 1fr;
+      }
+      #Section-{{ section.id }} .bh-feature-pills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    /* BREAKTHROUGH DESIGN & UNMATCHED PERFORMANCE */
+    #Section-{{ section.id }} .bh-breakthrough-card {
+      background: #FFFFFF;
+      border: 1px solid var(--bh-border);
+      border-radius: 18px;
+      padding: 40px 36px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    #Section-{{ section.id }} .bh-breakthrough-heading {
+      font-family: 'Oswald', sans-serif;
+      font-size: 34px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--bh-black);
+      text-align: center;
+      margin: 0 0 32px 0;
+    }
+
+    #Section-{{ section.id }} .bh-breakthrough-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    #Section-{{ section.id }} .bh-bt-item {
+      background: #F8F8F9;
+      border: 1px solid #ECECEC;
+      border-radius: 18px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #Section-{{ section.id }} .bh-bt-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    #Section-{{ section.id }} .bh-bt-img-wrap {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #EAEAEA;
+    }
+
+    #Section-{{ section.id }} .bh-bt-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    #Section-{{ section.id }} .bh-bt-content {
+      padding: 18px 4px 6px 4px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #Section-{{ section.id }} .bh-bt-title {
+      font-family: 'Oswald', 'Plus Jakarta Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--bh-black);
+      margin: 0 0 8px 0;
+      letter-spacing: 0.5px;
+    }
+
+    #Section-{{ section.id }} .bh-bt-desc {
+      font-size: 14.5px;
+      color: #555555;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    @media (max-width: 991px) {
+      #Section-{{ section.id }} .bh-breakthrough-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      #Section-{{ section.id }} .bh-breakthrough-heading {
+        font-size: 28px;
+        margin-bottom: 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #Section-{{ section.id }} .bh-breakthrough-card {
+        padding: 24px 16px;
+      }
+      #Section-{{ section.id }} .bh-breakthrough-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      #Section-{{ section.id }} .bh-breakthrough-heading {
+        font-size: 24px;
+        margin-bottom: 18px;
+      }
+      #Section-{{ section.id }} .bh-bt-item {
+        padding: 14px;
+      }
+      #Section-{{ section.id }} .bh-bt-title {
+        font-size: 20px;
+      }
+    }
+</style>
+
+  <div class="bh-b-container">
+
+    <!-- 1. THE BREAKOUT 2.0 ADVANTAGE -->
+    <div class="bh-b-card">
+      <h2 class="bh-b-heading"><span>🛡️</span> The Breakout 2.0 Advantage</h2>
+      <p class="bh-b-sub">Engineered specifically for everyday concealed carry carriers who refuse to compromise between comfort and lightning-fast weapon presentation.</p>
+
+      <div class="bh-adv-grid">
+        <div class="bh-adv-card">
+          <span class="bh-adv-icon">🥷</span>
+          <h3 class="bh-adv-title">Complete Concealment</h3>
+          <p class="bh-adv-desc">Low-profile geometry hugs your waistline tightly. Completely eliminates weapon printing even when wearing light summer t-shirts.</p>
+        </div>
+
+        <div class="bh-adv-card">
+          <span class="bh-adv-icon">🚗</span>
+          <h3 class="bh-adv-title">Sit &amp; Drive Comfortably</h3>
+          <p class="bh-adv-desc">Smooth, bevel-buffed Kydex edges and recessed sweat guard eliminate painful pinching against the pelvis and abdomen while driving.</p>
+        </div>
+
+        <div class="bh-adv-card">
+          <span class="bh-adv-icon">🔒</span>
+          <h3 class="bh-adv-title">Retention &amp; Control</h3>
+          <p class="bh-adv-desc">Audible tactile positive-click trigger guard lock. Fully adjustable retention screws let you dial in your exact drawing resistance.</p>
+        </div>
+
+        <div class="bh-adv-card">
+          <span class="bh-adv-icon">⚡</span>
+          <h3 class="bh-adv-title">Fast Instant Access</h3>
+          <p class="bh-adv-desc">Patented Breakout Channel forward opening allows instantaneous clearance from holster to full presentation in under 0.8 seconds.</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- 2. BREAKTHROUGH DESIGN & UNMATCHED PERFORMANCE -->
+    <div class="bh-b-card bh-breakthrough-card">
+      <h2 class="bh-breakthrough-heading">Breakthrough Design &amp; Unmatched Performance</h2>
+
+      <div class="bh-breakthrough-grid">
+        <div class="bh-bt-item">
+          <div class="bh-bt-img-wrap">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/bh-breakthrough-1.jpg?v=1794103448" alt="Minimal Printing" width="600" height="450" loading="lazy">
+          </div>
+          <div class="bh-bt-content">
+            <h3 class="bh-bt-title">Minimal Printing</h3>
+            <p class="bh-bt-desc">Enjoy the peace of mind of deep concealment for minimal visibility</p>
+          </div>
+        </div>
+
+        <div class="bh-bt-item">
+          <div class="bh-bt-img-wrap">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/bh-breakthrough-2.jpg?v=1794103452" alt="Exceptional Retention" width="600" height="450" loading="lazy">
+          </div>
+          <div class="bh-bt-content">
+            <h3 class="bh-bt-title">Exceptional Retention</h3>
+            <p class="bh-bt-desc">Ensures your firearm stays secure and stable in any activity or situation.</p>
+          </div>
+        </div>
+
+        <div class="bh-bt-item">
+          <div class="bh-bt-img-wrap">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/bh-breakthrough-3.jpg?v=1794103455" alt="Silky Smooth Edges" width="600" height="450" loading="lazy">
+          </div>
+          <div class="bh-bt-content">
+            <h3 class="bh-bt-title">Silky Smooth Edges</h3>
+            <p class="bh-bt-desc">Reduces discomfort, wear and tear to your carry for seamless operation.</p>
+          </div>
+        </div>
+
+        <div class="bh-bt-item">
+          <div class="bh-bt-img-wrap">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/bh-breakthrough-4.jpg?v=1794103458" alt="Extreme Durability" width="600" height="450" loading="lazy">
+          </div>
+          <div class="bh-bt-content">
+            <h3 class="bh-bt-title">Extreme Durability</h3>
+            <p class="bh-bt-desc">Holds up for a lifetime with weather proof, scratch-resistant infused .08 Kydex.</p>
+          </div>
+        </div>
+
+        <div class="bh-bt-item">
+          <div class="bh-bt-img-wrap">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/bh-breakthrough-5.jpg?v=1794103462" alt="Ultralight Shell" width="600" height="450" loading="lazy">
+          </div>
+          <div class="bh-bt-content">
+            <h3 class="bh-bt-title">Ultralight Shell</h3>
+            <p class="bh-bt-desc">Feather light design increases freedom of movement without sacrifice.</p>
+          </div>
+        </div>
+
+        <div class="bh-bt-item">
+          <div class="bh-bt-img-wrap">
+            <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/bh-breakthrough-6.jpg?v=1794103465" alt="Enhanced Stability" width="600" height="450" loading="lazy">
+          </div>
+          <div class="bh-bt-content">
+            <h3 class="bh-bt-title">Enhanced Stability</h3>
+            <p class="bh-bt-desc">Reduce holder shift, sag, and improve retention with double steel clips.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. BUILT FOR REAL EVERYDAY CARRY -->
+    <div class="bh-b-card">
+      <div class="bh-split-grid">
+        <div class="bh-split-media">
+          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/product-image-4.webp?v=1794097611" alt="Performance Profile" width="550" height="400">
+        </div>
+        <div class="bh-split-text">
+          <h3>Precision Molded 0.08" Aircraft-Grade Kydex</h3>
+          <p>Unlike cheap generic nylon or leather pouches that collapse after drawing, the Breakout 2.0 maintains rigid mouth integrity for safe, effortless one-handed reholstering every single time.</p>
+          
+          <div class="bh-feature-pills-grid">
+            <div class="bh-feature-pill-box">
+              <h4 class="bh-pill-title">Optic-Cut Standard</h4>
+              <p class="bh-pill-desc">Pre-relieved slide area accommodates RMR, Holosun, and all standard slide-mounted red dot sights.</p>
+            </div>
+            <div class="bh-feature-pill-box">
+              <h4 class="bh-pill-title">Open-Muzzle Clearance</h4>
+              <p class="bh-pill-desc">Extended barrel clearance fits factory barrels, threaded barrels, and compensators cleanly.</p>
+            </div>
+            <div class="bh-feature-pill-box">
+              <h4 class="bh-pill-title">Protective Sweat Guard</h4>
+              <p class="bh-pill-desc">Shields weapon steel from body moisture and salt, preventing corrosion and slide staining.</p>
+            </div>
+            <div class="bh-feature-pill-box">
+              <h4 class="bh-pill-title">Heavy-Duty Steel Clip</h4>
+              <p class="bh-pill-desc">Spring tempered steel clip securely grips belts up to 1.5" thickness without slipping on the draw.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. VETERAN OWNED STORY -->
+    <div class="bh-b-card">
+      <div class="bh-split-grid">
+        <div class="bh-split-text">
+          <h2 class="bh-b-heading"><span>🎖️</span> Veteran Owned &amp; Built With Purpose</h2>
+          <p>Founded by military veterans and passionate CCW practitioners, our mission was simple: eliminate the drawer full of discarded, uncomfortable holsters every gun owner accumulates.</p>
+          <p>Every Breakout 2.0 Holster is CNC-cut and hand-finished in the USA. We test each design against hundreds of hours of daily carry, sitting, driving, and range drills to ensure absolute reliability when it matters most.</p>
+        </div>
+        <div class="bh-split-media">
+          <img src="https://cdn.shopify.com/s/files/1/0672/5749/9949/files/product-image-6.webp?v=1794097611" alt="Veteran Owned" width="550" height="400">
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. CUSTOMER REVIEWS -->
+    <div class="bh-b-card">
+      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--bh-border); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+        <div>
+          <h2 class="bh-b-heading" style="margin: 0;"><span>💬</span> Verified Carrier Reviews</h2>
+          <span style="font-size: 14px; color: #666666;">Overall rating: <strong>4.7 / 5.0</strong> based on 413 verified owners</span>
+        </div>
+        <div style="font-size: 20px; color: var(--bh-red); letter-spacing: 2px;">★★★★★</div>
+      </div>
+
+      <div class="bh-rev-grid">
+        <div class="bh-rev-card">
+          <div class="bh-rev-stars">★★★★★</div>
+          <div class="bh-rev-author">Jason T. <span class="bh-rev-verified">Verified Buyer</span></div>
+          <div class="bh-rev-gun">Carrying: Glock 19X (Carbon Fiber)</div>
+          <p class="bh-rev-text">"I have a bin of at least 8 holsters from Alien Gear, We the People, and Tier 1. The Breakout 2.0 is the first one that doesn't dig into my leg when driving my truck for 4 hours a day. The BOGO deal was unbeatable—got one for my Glock 19 and one for my 43X."</p>
+        </div>
+
+        <div class="bh-rev-card">
+          <div class="bh-rev-stars">★★★★★</div>
+          <div class="bh-rev-author">Marcus D. <span class="bh-rev-verified">Verified Buyer</span></div>
+          <div class="bh-rev-gun">Carrying: Sig P365 X-Macro (Matte Black)</div>
+          <p class="bh-rev-text">"Draw speed with the breakout channel is legit. You don't have to pull 6 inches straight up to clear the holster—once it clears the trigger guard it breaks forward naturally. Fantastic retention click and zero printing under a basic polo shirt."</p>
+        </div>
+
+        <div class="bh-rev-card">
+          <div class="bh-rev-stars">★★★★★</div>
+          <div class="bh-rev-author">David R. <span class="bh-rev-verified">Verified Buyer</span></div>
+          <div class="bh-rev-gun">Carrying: S&amp;W Shield Plus (Carbon Fiber)</div>
+          <p class="bh-rev-text">"Top notch quality from a veteran-owned company. Edge polishing is completely smooth with no sharp burrs. Delivery was fast and the 30-day trial gives you complete peace of mind. Highly recommend to anyone serious about daily EDC."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. FREQUENTLY ASKED QUESTIONS -->
+    <div class="bh-b-card">
+      <h2 class="bh-b-heading"><span>❓</span> Frequently Asked Questions</h2>
+      <p class="bh-b-sub">Got questions about compatibility or sizing? Here are direct answers to our most common carrier inquiries:</p>
+
+      <div style="margin-top: 20px;">
+        <details class="bh-faq-item" open>
+          <summary class="bh-faq-summary">What carry positions is the Breakout 2.0 compatible with?</summary>
+          <div class="bh-faq-answer">
+            The Breakout 2.0 is an Inside-the-Waistband (IWB) holster optimized for <strong>Appendix Carry (12 to 1 o'clock)</strong> as well as <strong>Strong Side Hip Carry (3 to 4 o'clock)</strong>. The clip allows adjustable cant for customized angle preference.
+          </div>
+        </details>
+
+        <details class="bh-faq-item">
+          <summary class="bh-faq-summary">What belt size does it work with?</summary>
+          <div class="bh-faq-answer">
+            Our heavy-duty tempered steel clip is designed to fit all standard <strong>1.5-inch tactical, reinforced nylon, and leather gun belts</strong> securely.
+          </div>
+        </details>
+
+        <details class="bh-faq-item">
+          <summary class="bh-faq-summary">Is it compatible with red dots and optics?</summary>
+          <div class="bh-faq-answer">
+            Yes! All Breakout 2.0 Holsters are molded with an optics relief cut that fits all standard micro and full-size slide-mounted optics (Holosun 407k/507k, Trijicon RMR, Shield RMS, Sig Romeo, etc.).
+          </div>
+        </details>
+
+        <details class="bh-faq-item">
+          <summary class="bh-faq-summary">Does it work with threaded barrels?</summary>
+          <div class="bh-faq-answer">
+            Yes, the open-muzzle bottom profile accommodates factory threaded barrels and standard compensators without obstruction.
+          </div>
+        </details>
+
+        <details class="bh-faq-item">
+          <summary class="bh-faq-summary">Will the retention loosen up over time?</summary>
+          <div class="bh-faq-answer">
+            No. Unlike leather which stretches or nylon which frays, 0.08" aircraft Kydex maintains its thermo-formed memory permanently. If you ever desire tighter or looser retention, simply adjust the tension screws below the trigger guard.
+          </div>
+        </details>
+
+        <details class="bh-faq-item">
+          <summary class="bh-faq-summary">How does the Buy One Get One Free (BOGO) offer work?</summary>
+          <div class="bh-faq-answer">
+            When you purchase the Breakout 2.0 for $99.99, you receive a second holster 100% free! You can choose completely different firearm models and hand orientations for each holster (for example, Holster 1 for a Glock 19 Right Hand, and Holster 2 for a Sig P365 Left Hand).
+          </div>
+        </details>
+
+        <details class="bh-faq-item">
+          <summary class="bh-faq-summary">What is the 30-Day Fit Guarantee?</summary>
+          <div class="bh-faq-answer">
+            We want you to test carry your Breakout 2.0 every single day. If for any reason it doesn't provide the comfort, concealment, and draw speed you expected, contact us within 30 days for a prompt, hassle-free refund.
+          </div>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Breakout Holster Body",
+  "settings": []
+}
+{% endschema %}
+

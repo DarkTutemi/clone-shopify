@@ -44,6 +44,7 @@ backups/**/assets/*.webp
 backups/**/assets/*.gif
 backups/**/assets/*.mp4
 backups/**/assets/*.avif
+backup_live_*/assets/*
 
 # Large scraped raw HTML dumps
 *.html

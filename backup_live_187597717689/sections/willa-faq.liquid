@@ -1,0 +1,180 @@
+<section class="willa-faq-section">
+  <div class="willa-container">
+    <div class="willa-section-header">
+      <span class="willa-pill">{{ section.settings.pill_text | default: 'GOT QUESTIONS?' }}</span>
+      <h2 class="willa-section-title willa-serif">{{ section.settings.heading | default: 'Frequently Asked Questions' }}</h2>
+      <p class="willa-section-subtitle">{{ section.settings.subtitle | default: 'Everything you need to know about our products, shipping, and guarantees.' }}</p>
+    </div>
+
+    <div class="willa-faq-wrap">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <details class="willa-faq-item" {% if forloop.first or block.settings.open_default %}open{% endif %} {{ block.shopify_attributes }}>
+            <summary>
+              <span>{{ block.settings.question }}</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-content">
+              <p>{{ block.settings.answer }}</p>
+            </div>
+          </details>
+        {% endfor %}
+      {% else %}
+        <!-- Default Fallback FAQs -->
+        <details class="willa-faq-item" open>
+          <summary>
+            <span>How fast is shipping, and where do orders ship from?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-content">
+            <p>All orders are packed and dispatched directly from our regional US fulfillment centers. Standard delivery takes 3–5 business days. You will receive an automated tracking number via email the moment your package leaves our warehouse.</p>
+          </div>
+        </details>
+
+        <details class="willa-faq-item">
+          <summary>
+            <span>What is the 30-Day Money-Back Guarantee?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-content">
+            <p>We stand 100% behind the craftsmanship and durability of every tool we make. If you are not thoroughly satisfied with the performance of your purchase for any reason within 30-Days of delivery, simply email us at support@tryzavelyn.com for a hassle-free refund.</p>
+          </div>
+        </details>
+
+        <details class="willa-faq-item">
+          <summary>
+            <span>Are replacement parts or blades available for your tools?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-content">
+            <p>Yes! We stock replacement blade packs, switch cords, extension accessories, and adapters for all our core tools. You can order them directly on our store or reach out to customer support anytime.</p>
+          </div>
+        </details>
+
+        <details class="willa-faq-item">
+          <summary>
+            <span>Is checkout secure? What payment methods do you accept?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-content">
+            <p>All transactions are 100% encrypted with bank-level 256-bit SSL security. We accept all major credit and debit cards (Visa, MasterCard, American Express, Discover), PayPal, Apple Pay, Google Pay, and Shop Pay.</p>
+          </div>
+        </details>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .willa-faq-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+    border-bottom: 1px solid #e7e4df;
+  }
+  .willa-faq-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .willa-faq-item {
+    border: 1px solid #e7e4df;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    background-color: #faf7f4;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+  }
+  .willa-faq-item[open] {
+    background-color: #ffffff;
+    box-shadow: 0 4px 16px rgba(59, 43, 47, 0.05);
+  }
+  .willa-faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #231f20;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+  .willa-faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-icon {
+    font-size: 20px;
+    color: #8a2c13;
+    font-weight: 400;
+    transition: transform 0.2s ease;
+  }
+  .willa-faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+  .faq-content {
+    padding: 0 22px 20px 22px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #59514f;
+  }
+  .faq-content p {
+    margin: 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Willa FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "pill_text",
+      "label": "Badge Pill Text",
+      "default": "GOT QUESTIONS?"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Everything you need to know about our products, shipping, and guarantees."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How fast is shipping, and where do orders ship from?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "All orders are packed and dispatched directly from our regional US fulfillment centers. Standard delivery takes 3–5 business days."
+        },
+        {
+          "type": "checkbox",
+          "id": "open_default",
+          "label": "Open by Default",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Willa FAQ"
+    }
+  ]
+}
+{% endschema %}

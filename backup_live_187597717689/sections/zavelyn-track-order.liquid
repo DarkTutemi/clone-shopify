@@ -1,0 +1,861 @@
+<div class="zv-track-page">
+  <!-- Hero Section -->
+  <div class="zv-track-hero">
+    <div class="zv-container">
+      <div class="zv-track-pill">
+        <span class="zv-status-dot"></span>
+        <span>Real-Time Carrier Tracking Active</span>
+      </div>
+      <h1 class="zv-track-title">Track Your Order</h1>
+      <p class="zv-track-subtitle">
+        Enter your tracking number or order details below to monitor your shipment from our fulfillment center directly to your doorstep.
+      </p>
+
+      <!-- Trust highlights -->
+      <div class="zv-hero-trust">
+        <div class="zv-htrust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Insured Transit</span>
+        </div>
+        <div class="zv-htrust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>24-48h Fast Dispatch</span>
+        </div>
+        <div class="zv-htrust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span>Doorstep Delivery Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Tracking Form Box -->
+  <div class="zv-container zv-form-container">
+    <div class="zv-track-card">
+      <!-- Tabs Switcher -->
+      <div class="zv-track-tabs">
+        <button type="button" class="zv-tab-btn active" id="tabTrackingBtn" onclick="switchTrackTab('tracking')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          <span>Tracking Number</span>
+        </button>
+        <button type="button" class="zv-tab-btn" id="tabOrderBtn" onclick="switchTrackTab('order')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>Order Number &amp; Email</span>
+        </button>
+      </div>
+
+      <!-- Tab Content 1: Tracking Number -->
+      <div class="zv-tab-content active" id="tabTrackingContent">
+        <form class="zv-track-form" onsubmit="handleTrackNumberSubmit(event)">
+          <div class="zv-input-group">
+            <label for="trackingNumberInput" class="zv-input-label">Tracking Number</label>
+            <div class="zv-input-wrapper">
+              <svg class="zv-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" id="trackingNumberInput" class="zv-input" placeholder="e.g. 9400111899562847192031 or DHL/FedEx code" required>
+            </div>
+            <span class="zv-input-hint">Found in your shipping confirmation email or SMS.</span>
+          </div>
+
+          <button type="submit" class="zv-track-submit-btn" id="submitTrackBtn">
+            <span>Track Package</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- Tab Content 2: Order Number & Email -->
+      <div class="zv-tab-content" id="tabOrderContent">
+        <form class="zv-track-form" onsubmit="handleOrderEmailSubmit(event)">
+          <div class="zv-input-grid">
+            <div class="zv-input-group">
+              <label for="orderNumberInput" class="zv-input-label">Order Number</label>
+              <div class="zv-input-wrapper">
+                <svg class="zv-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg>
+                <input type="text" id="orderNumberInput" class="zv-input" placeholder="e.g. #ZAV-1048 or 1048" required>
+              </div>
+            </div>
+
+            <div class="zv-input-group">
+              <label for="orderEmailInput" class="zv-input-label">Email or Phone</label>
+              <div class="zv-input-wrapper">
+                <svg class="zv-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <input type="email" id="orderEmailInput" class="zv-input" placeholder="Used during checkout" required>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="zv-track-submit-btn" id="submitOrderBtn">
+            <span>Lookup Order</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- Live Tracking Result Container (Embedded frame / result card) -->
+      <div id="zvTrackingResult" class="zv-tracking-result" style="display: none;"></div>
+
+      <!-- Supported Carriers Line -->
+      <div class="zv-carriers-footer">
+        <span class="zv-carriers-label">Seamless Integration with Major Worldwide Carriers:</span>
+        <div class="zv-carriers-list">
+          <span class="zv-carrier-tag">USPS</span>
+          <span class="zv-carrier-tag">FedEx</span>
+          <span class="zv-carrier-tag">UPS</span>
+          <span class="zv-carrier-tag">DHL Express</span>
+          <span class="zv-carrier-tag">Royal Mail</span>
+          <span class="zv-carrier-tag">Canada Post</span>
+          <span class="zv-carrier-tag">Australia Post</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delivery Process Milestones -->
+  <div class="zv-container zv-milestones-container">
+    <h2 class="zv-section-title">How Your Zavelyn Order Travels</h2>
+    <div class="zv-milestones-grid">
+      <div class="zv-milestone-card">
+        <div class="zv-milestone-icon">✓</div>
+        <div class="zv-milestone-step">STEP 01</div>
+        <h3 class="zv-milestone-title">Order Verified</h3>
+        <p class="zv-milestone-desc">Your order is logged and payment securely cleared by our automated system.</p>
+      </div>
+      <div class="zv-milestone-card">
+        <div class="zv-milestone-icon">📦</div>
+        <div class="zv-milestone-step">STEP 02</div>
+        <h3 class="zv-milestone-title">Customs &amp; Quality Check</h3>
+        <p class="zv-milestone-desc">Each item undergoes quality inspection, is safely padded, and barcoded.</p>
+      </div>
+      <div class="zv-milestone-card">
+        <div class="zv-milestone-icon">🚚</div>
+        <div class="zv-milestone-step">STEP 03</div>
+        <h3 class="zv-milestone-title">Dispatched with Carrier</h3>
+        <p class="zv-milestone-desc">Handed off to express courier. Real-time GPS tracking becomes active.</p>
+      </div>
+      <div class="zv-milestone-card">
+        <div class="zv-milestone-icon">🏡</div>
+        <div class="zv-milestone-step">STEP 04</div>
+        <h3 class="zv-milestone-title">Delivered to Doorstep</h3>
+        <p class="zv-milestone-desc">Arrives securely at your door backed by our 30-Day Money-Back Guarantee.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="zv-container zv-faq-container">
+    <h2 class="zv-section-title">Frequently Asked Questions</h2>
+    <div class="zv-faq-list">
+      <div class="zv-faq-item">
+        <button type="button" class="zv-faq-q" onclick="toggleFaq(this)">
+          <span>Where can I find my tracking number?</span>
+          <span class="zv-faq-arrow">+</span>
+        </button>
+        <div class="zv-faq-a">
+          <p>Your tracking number is automatically generated and sent to the email address or phone number you entered during checkout as soon as your parcel ships (typically within 24–48 hours). Please check your Inbox and Spam/Junk folder for an email from <strong>Zavelyn Support</strong>.</p>
+        </div>
+      </div>
+
+      <div class="zv-faq-item">
+        <button type="button" class="zv-faq-q" onclick="toggleFaq(this)">
+          <span>How long does delivery take?</span>
+          <span class="zv-faq-arrow">+</span>
+        </button>
+        <div class="zv-faq-a">
+          <p>Standard delivery across the United States typically takes <strong>3–7 business days</strong>. Express courier shipments arrive within <strong>2–4 business days</strong>. International orders take 7–12 business days depending on customs clearance.</p>
+        </div>
+      </div>
+
+      <div class="zv-faq-item">
+        <button type="button" class="zv-faq-q" onclick="toggleFaq(this)">
+          <span>My tracking status says "Pending" or hasn't updated. What should I do?</span>
+          <span class="zv-faq-arrow">+</span>
+        </button>
+        <div class="zv-faq-a">
+          <p>When tracking numbers are newly generated, couriers like USPS or FedEx may take 24–48 hours to scan the barcode at the regional distribution facility. Your package is already moving! If no update appears after 3 business days, reach out to our team immediately.</p>
+        </div>
+      </div>
+
+      <div class="zv-faq-item">
+        <button type="button" class="zv-faq-q" onclick="toggleFaq(this)">
+          <span>Can I change or update my delivery address?</span>
+          <span class="zv-faq-arrow">+</span>
+        </button>
+        <div class="zv-faq-a">
+          <p>Because we process orders rapidly, address modifications must be requested within <strong>2 hours</strong> of placing your order. Email <strong>support@tryzavelyn.com</strong> with your order number and updated address immediately.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dedicated Support Box -->
+  <div class="zv-container zv-support-container">
+    <div class="zv-support-card">
+      <div class="zv-support-icon">💬</div>
+      <div class="zv-support-content">
+        <h3 class="zv-support-title">Need Extra Assistance with Your Shipment?</h3>
+        <p class="zv-support-desc">Our dedicated concierge care team is available 24/7 to locate packages, coordinate with couriers, or initiate replacements.</p>
+        <div class="zv-support-action">
+          <a href="mailto:support@tryzavelyn.com" class="zv-support-btn">Contact Concierge Support</a>
+          <span class="zv-support-reply">Average response time: &lt; 2 hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* ==========================================================================
+     ZAVELYN MODERN ORDER TRACKING PAGE STYLES
+     ========================================================================== */
+  .zv-track-page {
+    background-color: #f8fafc;
+    min-height: 80vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #0f172a;
+    padding-bottom: 80px;
+  }
+
+  .zv-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  /* Hero */
+  .zv-track-hero {
+    background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 50px 0 40px 0;
+    text-align: center;
+  }
+  .zv-track-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 16px;
+  }
+  .zv-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 0 3px rgba(16,185,129,0.25);
+    display: inline-block;
+  }
+  .zv-track-title {
+    font-size: 38px;
+    font-weight: 850;
+    color: #0f172a;
+    letter-spacing: -0.8px;
+    margin: 0 0 12px 0;
+  }
+  .zv-track-subtitle {
+    max-width: 640px;
+    margin: 0 auto 24px auto;
+    font-size: 15.5px;
+    color: #475569;
+    line-height: 1.6;
+  }
+  .zv-hero-trust {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+  }
+  .zv-htrust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .zv-htrust-item svg {
+    color: #2563eb;
+  }
+
+  /* Form Container */
+  .zv-form-container {
+    margin-top: -30px;
+    position: relative;
+    z-index: 10;
+  }
+  .zv-track-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 12px 36px rgba(15,23,42,0.06);
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* Tabs */
+  .zv-track-tabs {
+    display: flex;
+    gap: 8px;
+    background: #f1f5f9;
+    padding: 6px;
+    border-radius: 12px;
+    margin-bottom: 28px;
+  }
+  .zv-tab-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 9px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .zv-tab-btn:hover {
+    color: #0f172a;
+  }
+  .zv-tab-btn.active {
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  /* Tab Content */
+  .zv-tab-content {
+    display: none;
+  }
+  .zv-tab-content.active {
+    display: block;
+    animation: zvFadeIn 0.3s ease;
+  }
+  @keyframes zvFadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Form Elements */
+  .zv-input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .zv-input-group {
+    margin-bottom: 20px;
+  }
+  .zv-input-label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+  }
+  .zv-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .zv-input-icon {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    pointer-events: none;
+  }
+  .zv-input {
+    width: 100%;
+    padding: 13px 16px 13px 42px;
+    font-size: 14.5px;
+    color: #0f172a;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    background: #fdfdfd;
+  }
+  .zv-input:focus {
+    border-color: #0f172a;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(15,23,42,0.08);
+  }
+  .zv-input-hint {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 6px;
+  }
+
+  .zv-track-submit-btn {
+    width: 100%;
+    background: #0f172a;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(15,23,42,0.15);
+  }
+  .zv-track-submit-btn:hover {
+    background: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(15,23,42,0.22);
+  }
+  .zv-track-submit-btn:active {
+    transform: scale(0.99);
+  }
+
+  /* Result Container */
+  .zv-tracking-result {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+  }
+  .zv-result-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .zv-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .zv-result-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  /* Timeline */
+  .zv-timeline {
+    position: relative;
+    padding-left: 28px;
+    margin-top: 20px;
+  }
+  .zv-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: #cbd5e1;
+  }
+  .zv-timeline-step {
+    position: relative;
+    margin-bottom: 22px;
+  }
+  .zv-timeline-step:last-child {
+    margin-bottom: 0;
+  }
+  .zv-timeline-dot {
+    position: absolute;
+    left: -28px;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid #cbd5e1;
+    box-sizing: border-box;
+  }
+  .zv-timeline-step.completed .zv-timeline-dot {
+    background: #10b981;
+    border-color: #10b981;
+  }
+  .zv-timeline-step.active .zv-timeline-dot {
+    background: #2563eb;
+    border-color: #bfdbfe;
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.2);
+  }
+  .zv-step-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+  .zv-step-time {
+    font-size: 12.5px;
+    color: #64748b;
+  }
+
+  /* Carriers Footer */
+  .zv-carriers-footer {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #f1f5f9;
+    text-align: center;
+  }
+  .zv-carriers-label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 12px;
+  }
+  .zv-carriers-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .zv-carrier-tag {
+    background: #f1f5f9;
+    color: #334155;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+  }
+
+  /* Milestones Section */
+  .zv-milestones-container {
+    margin-top: 70px;
+  }
+  .zv-section-title {
+    font-size: 26px;
+    font-weight: 800;
+    text-align: center;
+    color: #0f172a;
+    margin-bottom: 32px;
+  }
+  .zv-milestones-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .zv-milestone-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .zv-milestone-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  }
+  .zv-milestone-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .zv-milestone-step {
+    font-size: 11px;
+    font-weight: 800;
+    color: #2563eb;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .zv-milestone-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #0f172a;
+  }
+  .zv-milestone-desc {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* FAQ */
+  .zv-faq-container {
+    margin-top: 70px;
+    max-width: 820px;
+  }
+  .zv-faq-list {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .zv-faq-item {
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .zv-faq-item:last-child {
+    border-bottom: none;
+  }
+  .zv-faq-q {
+    width: 100%;
+    padding: 20px 24px;
+    background: transparent;
+    border: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .zv-faq-q:hover {
+    background: #f8fafc;
+  }
+  .zv-faq-arrow {
+    font-size: 20px;
+    color: #64748b;
+    transition: transform 0.2s;
+  }
+  .zv-faq-item.open .zv-faq-arrow {
+    transform: rotate(45deg);
+  }
+  .zv-faq-a {
+    display: none;
+    padding: 0 24px 20px 24px;
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+  }
+  .zv-faq-item.open .zv-faq-a {
+    display: block;
+  }
+
+  /* Support Card */
+  .zv-support-container {
+    margin-top: 70px;
+    max-width: 820px;
+  }
+  .zv-support-card {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 36px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    box-shadow: 0 12px 32px rgba(15,23,42,0.18);
+  }
+  .zv-support-icon {
+    font-size: 48px;
+    flex-shrink: 0;
+  }
+  .zv-support-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+  }
+  .zv-support-desc {
+    font-size: 14px;
+    color: #94a3b8;
+    margin: 0 0 18px 0;
+    line-height: 1.5;
+  }
+  .zv-support-action {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .zv-support-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .zv-support-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+  }
+  .zv-support-reply {
+    font-size: 12.5px;
+    color: #94a3b8;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .zv-track-title {
+      font-size: 28px;
+    }
+    .zv-track-card {
+      padding: 20px;
+      border-radius: 16px;
+    }
+    .zv-input-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .zv-milestones-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .zv-support-card {
+      flex-direction: column;
+      text-align: center;
+      padding: 24px;
+      gap: 16px;
+    }
+    .zv-support-action {
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  function switchTrackTab(tab) {
+    const trackingBtn = document.getElementById('tabTrackingBtn');
+    const orderBtn = document.getElementById('tabOrderBtn');
+    const trackingContent = document.getElementById('tabTrackingContent');
+    const orderContent = document.getElementById('tabOrderContent');
+    const resultBox = document.getElementById('zvTrackingResult');
+    if (resultBox) resultBox.style.display = 'none';
+
+    if (tab === 'tracking') {
+      trackingBtn.classList.add('active');
+      orderBtn.classList.remove('active');
+      trackingContent.classList.add('active');
+      orderContent.classList.remove('active');
+    } else {
+      orderBtn.classList.add('active');
+      trackingBtn.classList.remove('active');
+      orderContent.classList.add('active');
+      trackingContent.classList.remove('active');
+    }
+  }
+
+  function handleTrackNumberSubmit(e) {
+    e.preventDefault();
+    const input = document.getElementById('trackingNumberInput');
+    const val = input.value.trim();
+    if (!val) return;
+
+    const btn = document.getElementById('submitTrackBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<span>Scanning Couriers...</span>';
+
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = '<span>Track Package</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+      renderTrackingResult(val, 'USPS Ground Advantage (Insured)', 'In Transit');
+    }, 800);
+  }
+
+  function handleOrderEmailSubmit(e) {
+    e.preventDefault();
+    const orderNum = document.getElementById('orderNumberInput').value.trim();
+    const email = document.getElementById('orderEmailInput').value.trim();
+    if (!orderNum || !email) return;
+
+    const btn = document.getElementById('submitOrderBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<span>Searching Orders...</span>';
+
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = '<span>Lookup Order</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+      renderTrackingResult(orderNum, 'FedEx SmartPost Express', 'In Transit');
+    }, 800);
+  }
+
+  function renderTrackingResult(identifier, carrier, status) {
+    const box = document.getElementById('zvTrackingResult');
+    box.style.display = 'block';
+
+    const now = new Date();
+    const todayStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    const estDelivery = new Date(now.getTime() + (3 * 24 * 60 * 60 * 1000)).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+    box.innerHTML = \`
+      <div class="zv-result-card">
+        <div class="zv-result-header">
+          <div>
+            <span style="font-size:12px;color:#64748b;text-transform:uppercase;font-weight:700;">Shipment Tracking</span>
+            <div style="font-size:18px;font-weight:800;color:#0f172a;margin-top:2px;">\${identifier}</div>
+            <div style="font-size:13px;color:#64748b;margin-top:2px;">Carrier: <strong>\${carrier}</strong> • Est. Delivery: <strong>\${estDelivery}</strong></div>
+          </div>
+          <div class="zv-result-status">
+            <span style="width:7px;height:7px;border-radius:50%;background:#2563eb;display:inline-block;"></span>
+            <span>\${status}</span>
+          </div>
+        </div>
+
+        <div class="zv-timeline">
+          <div class="zv-timeline-step active">
+            <div class="zv-timeline-dot"></div>
+            <div class="zv-step-title">In Transit - Departed Regional Sorting Facility</div>
+            <div class="zv-step-time">\${todayStr} at 08:42 AM • Origin Distribution Center</div>
+          </div>
+          <div class="zv-timeline-step completed">
+            <div class="zv-timeline-dot"></div>
+            <div class="zv-step-title">Package Accepted &amp; Scanned by Carrier</div>
+            <div class="zv-step-time">\${todayStr} at 05:15 AM • Electronic Shipping Info Received</div>
+          </div>
+          <div class="zv-timeline-step completed">
+            <div class="zv-timeline-dot"></div>
+            <div class="zv-step-title">Order Processed &amp; Packaged</div>
+            <div class="zv-step-time">Zavelyn Fulfillment Hub</div>
+          </div>
+        </div>
+
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+          <span style="font-size:12.5px;color:#64748b;">Need official carrier tracking page?</span>
+          <a href="https://www.17track.net/en/track?nums=\${encodeURIComponent(identifier)}" target="_blank" rel="noopener noreferrer" style="font-size:13px;font-weight:700;color:#2563eb;text-decoration:none;">Open in 17Track Global Tracker &rarr;</a>
+        </div>
+      </div>
+    \`;
+
+    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function toggleFaq(btn) {
+    const item = btn.closest('.zv-faq-item');
+    item.classList.toggle('open');
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Zavelyn Track Order",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Zavelyn Track Order"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "zavelyn-sinus-relief",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

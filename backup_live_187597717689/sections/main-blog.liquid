@@ -1,0 +1,47 @@
+<section class="section">
+  <div class="page-width">
+    <header class="section__header">
+      <h1>{{ blog.title }}</h1>
+    </header>
+
+    {%- paginate blog.articles by 12 -%}
+      <div class="product-grid product-grid--3">
+        {%- for article in blog.articles -%}
+          <article class="product-card">
+            {%- if article.image -%}
+              <a class="product-card__media" href="{{ article.url }}">
+                {{
+                  article.image
+                  | image_url: width: 900
+                  | image_tag:
+                    widths: '320, 480, 640, 900',
+                    sizes: '(min-width: 900px) 33vw, 100vw',
+                    loading: 'lazy',
+                    alt: article.image.alt | default: article.title | escape
+                }}
+              </a>
+            {%- endif -%}
+            <div class="product-card__info">
+              <a class="product-card__title" href="{{ article.url }}">{{ article.title }}</a>
+              <p class="product-card__vendor">{{ article.published_at | date: '%B %d, %Y' }}</p>
+              {%- if article.excerpt != blank -%}
+                <p class="section__subheader">{{ article.excerpt | strip_html | truncate: 140 }}</p>
+              {%- endif -%}
+              <a class="button button--text" href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a>
+            </div>
+          </article>
+        {%- endfor -%}
+      </div>
+      {% render 'pagination', paginate: paginate %}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "tag": "section",
+  "class": "section-main-blog",
+  "settings": []
+}
+{% endschema %}
