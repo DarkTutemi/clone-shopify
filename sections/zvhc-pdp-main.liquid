@@ -1,219 +1,194 @@
 {% comment %}
-  ZAVELYN HAIR CARE — Main Product Section & Buy Box (Ported & Scoped from TRYMALORA)
-  Features 1/2/3 Bundle Cards, Honest Savings Math, and Safe Variant Mapping
+  ZAVELYN HAIR CARE — Main Product Section & Buy Box
+  Supports dynamic 1/2/3 bundle cards, shade swatches for Fibers & Compact, and safe variant resolution
 {% endcomment %}
 
-<section class="zvhc-pdp-main" id="zvhcBuyBoxSection">
+{% assign has_shades = false %}
+{% for option in product.options_with_values %}
+  {% if option.name == 'Shade' %}
+    {% assign has_shades = true %}
+    {% assign shade_option = option %}
+  {% endif %}
+{% endfor %}
+
+<section class="zvhc-pdp-main" id="zvhcBuyBoxSection" style="padding: 40px 0 60px; background: var(--zvhc-ivory);">
   <div class="zvhc-container">
     <div class="zvhc-pdp-grid">
       <!-- 1. Left Gallery Column -->
       <div class="zvhc-gallery">
-        <div class="zvhc-main-image-wrap">
+        <div class="zvhc-main-image-wrap" style="position: relative; border-radius: 20px; overflow: hidden; background: #FFFFFF; border: 2px solid rgba(1,93,71,0.08); aspect-ratio: 1/1; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
           {% if product.featured_image %}
-            <img id="zvhcMainImg" src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.title | escape }}">
+            <img id="zvhcMainImg" src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.title | escape }}" style="width: 100%; height: 100%; object-fit: cover;">
           {% else %}
-            <img id="zvhcMainImg" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-1.jpg?v=1793191361" alt="{{ product.title | escape }}">
+            <img id="zvhcMainImg" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419" alt="{{ product.title | escape }}" style="width: 100%; height: 100%; object-fit: cover;">
           {% endif %}
+          <div class="zvhc-gallery-badge" style="position: absolute; top: 14px; left: 14px; background: var(--zvhc-green); color: var(--zvhc-lime); font-size: 0.75rem; font-weight: 800; padding: 5px 12px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em;">
+            100% PURE BOTANICAL
+          </div>
         </div>
-        <div class="zvhc-thumbs-row">
+        
+        <!-- Thumbnails Row -->
+        <div class="zvhc-thumbs-row" style="display: flex; gap: 10px; margin-top: 14px; overflow-x: auto; padding-bottom: 6px;">
           {% if product.images.size > 1 %}
-            {% for img in product.images limit: 5 %}
-              <div class="zvhc-thumb-item {% if forloop.first %}is-active{% endif %}" onclick="zvhcSelectThumb(this, '{{ img | image_url: width: 1000 }}')">
-                <img src="{{ img | image_url: width: 160 }}" alt="{{ product.title | escape }}">
+            {% for img in product.images limit: 6 %}
+              <div class="zvhc-thumb-item {% if forloop.first %}is-active{% endif %}" onclick="zvhcSelectThumb(this, '{{ img | image_url: width: 1000 }}')" style="width: 72px; height: 72px; flex-shrink: 0; border-radius: 12px; overflow: hidden; cursor: pointer; border: 2px solid {% if forloop.first %}var(--zvhc-orange){% else %}rgba(1,93,71,0.12){% endif %}; background: #FFF;">
+                <img src="{{ img | image_url: width: 160 }}" alt="{{ product.title | escape }}" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
             {% endfor %}
-          {% else %}
-            <div class="zvhc-thumb-item is-active" onclick="zvhcSelectThumb(this, 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-1.jpg?v=1793191361')">
-              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-1.jpg?v=1793191361" alt="Bottle">
-            </div>
-            <div class="zvhc-thumb-item" onclick="zvhcSelectThumb(this, 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-2.jpg?v=1792936448')">
-              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-2.jpg?v=1792936448" alt="Model">
-            </div>
-            <div class="zvhc-thumb-item" onclick="zvhcSelectThumb(this, 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-3.png?v=1793191524')">
-              <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-3.png?v=1793191524" alt="Ingredients">
-            </div>
           {% endif %}
         </div>
       </div>
 
       <!-- 2. Right Buy Box Column -->
-      <div class="zvhc-buybox">
+      <div class="zvhc-buybox" style="display: flex; flex-direction: column;">
         <!-- Review Stars -->
-        <div class="zvhc-reviews-row">
-          <div class="zvhc-stars">★★★★★</div>
-          <span>Customer Verified Experiences · Pure Botanical Formula</span>
+        <div class="zvhc-reviews-row" style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+          <div class="zvhc-stars" style="color: var(--zvhc-orange); font-size: 1.15rem; letter-spacing: 2px;">★★★★★</div>
+          <span style="font-size: 0.86rem; font-weight: 700; color: var(--zvhc-forest); opacity: 0.9;">Verified Botanical Formula · US Verified</span>
         </div>
 
-        <h1 class="zvhc-pdp-title">{{ product.title | default: "Zavelyn BotanaRoots Batana Hair Oil" }}</h1>
-        <div class="zvhc-pdp-subtitle">
-          Pure Cold-Pressed Batana Botanical Oil. Deeply nourishes the scalp, replenishes dry hair cuticles, and restores lustrous natural hair resilience.
+        <h1 class="zvhc-pdp-title" style="color: var(--zvhc-forest); font-family: var(--zvhc-font-heading); font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px;">
+          {{ product.title }}
+        </h1>
+        
+        <div class="zvhc-pdp-subtitle" style="font-size: 0.98rem; line-height: 1.5; color: #444; margin-bottom: 24px;">
+          {{ product.description | strip_html | truncatewords: 35 | default: "Targeted botanical therapy formulated with high-potency active plant lipids to restore vitality, bounce, and density." }}
         </div>
 
-        <!-- Formula Selector -->
-        <div class="zvhc-formula-section">
-          <div class="zvhc-formula-label">SELECT BOTANICAL FORMULA:</div>
-          <div class="zvhc-formula-options">
-            <button type="button" class="zvhc-formula-btn is-active" data-formula="100% Pure Raw Honduran Batana (60ml)">
-              <div class="zvhc-formula-name">Pure Raw Batana</div>
-              <div class="zvhc-formula-desc">100% unrefined cold-pressed oil</div>
-            </button>
-            <button type="button" class="zvhc-formula-btn" data-formula="Batana + Rosemary Scalp Infusion (60ml)">
-              <div class="zvhc-formula-name">Batana + Rosemary</div>
-              <div class="zvhc-formula-desc">Infused with rosemary scalp activator</div>
-            </button>
+        {% if has_shades %}
+          <!-- Shade Selector (For Fibers and Hairline Compact) -->
+          <div class="zvhc-shade-selector" style="background: #FFFFFF; border-radius: 16px; padding: 18px 20px; border: 2px solid rgba(1,93,71,0.08); margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="font-size: 0.82rem; font-weight: 800; color: var(--zvhc-forest); text-transform: uppercase; letter-spacing: 0.06em;">CHOOSE YOUR SHADE:</span>
+              <span id="zvhcSelectedShadeName" style="font-size: 0.85rem; font-weight: 700; color: var(--zvhc-orange);">Black</span>
+            </div>
+            <div class="zvhc-shade-options" style="display: flex; gap: 12px; flex-wrap: wrap;">
+              {% for val in shade_option.values %}
+                {% assign swatch_color = '#1A1A1A' %}
+                {% if val contains 'Dark Brown' %}
+                  {% assign swatch_color = '#382218' %}
+                {% elsif val contains 'Medium Brown' %}
+                  {% assign swatch_color = '#5C3826' %}
+                {% endif %}
+                <button type="button" class="zvhc-shade-btn {% if forloop.first %}is-active{% endif %}" data-shade="{{ val | escape }}" onclick="zvhcSelectShade('{{ val | escape }}', this)" style="display: flex; align-items: center; gap: 8px; background: #FAF8F5; border: 2px solid {% if forloop.first %}var(--zvhc-orange){% else %}rgba(0,0,0,0.1){% endif %}; padding: 8px 14px; border-radius: 999px; cursor: pointer; font-size: 0.85rem; font-weight: 700; color: var(--zvhc-forest);">
+                  <span style="width: 18px; height: 18px; border-radius: 50%; background: {{ swatch_color }}; display: inline-block; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4);"></span>
+                  <span>{{ val }}</span>
+                </button>
+              {% endfor %}
+            </div>
           </div>
+        {% endif %}
+
+        <!-- Kaching-Style Bundle Cards (1x, 2x, 3x) -->
+        <div class="zvhc-bundle-label" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span style="font-size: 0.82rem; font-weight: 800; color: var(--zvhc-forest); text-transform: uppercase; letter-spacing: 0.06em;">SELECT QUANTITY / COURSE:</span>
+          <span style="color: var(--zvhc-green); font-size: 0.78rem; font-weight: 800;">30-DAY MONEY-BACK GUARANTEE</span>
         </div>
 
-        <!-- Kaching-Style Bundle Cards -->
-        <div class="zvhc-bundle-label">
-          <span>CHOOSE YOUR TREATMENT COURSE:</span>
-          <span style="color: var(--zvhc-copper); font-size: 0.76rem;">30-DAY SATISFACTION GUARANTEE</span>
-        </div>
-
-        <div class="zvhc-bundle-cards-group">
-          <!-- Tier 1: 1 Bottle (Starter Supply) -->
-          <div class="zvhc-bundle-card" data-tier="1">
-            <div class="zvhc-bundle-card-top">
-              <div class="zvhc-bundle-radio-wrap">
-                <div class="zvhc-radio-circle"><div class="zvhc-radio-dot"></div></div>
-                <div class="zvhc-bundle-info-title">
-                  <span>1 Bottle</span>
-                  <span class="zvhc-save-pill">Starter</span>
+        <div class="zvhc-bundle-cards-group" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+          <!-- Tier 1: 1 Unit (Starter Supply) -->
+          <div class="zvhc-bundle-card" data-tier="1" onclick="zvhcSelectTier(1)" style="position: relative; background: #FFFFFF; border-radius: 16px; padding: 18px 20px; border: 2px solid rgba(1,93,71,0.12); cursor: pointer; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="zvhc-radio-circle" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid #CCC; display: flex; align-items: center; justify-content: center;">
+                  <div class="zvhc-radio-dot" style="width: 10px; height: 10px; border-radius: 50%; background: var(--zvhc-green); display: none;"></div>
+                </div>
+                <div>
+                  <div style="font-weight: 800; font-size: 1.05rem; color: var(--zvhc-forest);">Buy 1 (Starter Supply)</div>
+                  <div style="font-size: 0.8rem; color: #777;">Standard single unit order</div>
                 </div>
               </div>
-              <div class="zvhc-bundle-pricing">
-                <div class="zvhc-bundle-price">$39.99</div>
-                <div class="zvhc-bundle-compare">$49.99</div>
-                <div class="zvhc-bundle-each">$39.99 / bottle</div>
+              <div style="text-align: right;">
+                <div class="zvhc-tier-price" id="zvhcPriceTier1" style="font-weight: 900; font-size: 1.25rem; color: var(--zvhc-forest);">$39.99</div>
+                <div class="zvhc-tier-compare" id="zvhcCompareTier1" style="font-size: 0.85rem; text-decoration: line-through; color: #888;">$49.99</div>
               </div>
-            </div>
-            <div class="zvhc-bundle-subtext">30-day targeted supply for scalp &amp; hairline care</div>
-          </div>
-
-          <!-- Tier 2: 2 Bottles (Duo Care - Most Popular) -->
-          <div class="zvhc-bundle-card is-selected" data-tier="2">
-            <div class="zvhc-card-badge">★ MOST POPULAR</div>
-            <div class="zvhc-bundle-card-top">
-              <div class="zvhc-bundle-radio-wrap">
-                <div class="zvhc-radio-circle"><div class="zvhc-radio-dot"></div></div>
-                <div class="zvhc-bundle-info-title">
-                  <span>2 Bottles Duo</span>
-                  <span class="zvhc-save-pill">Save 30%</span>
-                </div>
-              </div>
-              <div class="zvhc-bundle-pricing">
-                <div class="zvhc-bundle-price">$69.99</div>
-                <div class="zvhc-bundle-compare">$99.98</div>
-                <div class="zvhc-bundle-each">$35.00 / bottle</div>
-              </div>
-            </div>
-            <div class="zvhc-bundle-subtext">Recommended 60-day intensive scalp hydration &amp; hair strength routine</div>
-            <div class="zvhc-bundle-perk">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>FREE US Tracked Shipping included</span>
-            </div>
-            <div class="zvhc-gift-unlock">
-              🎁 <span><strong>Free Gift Unlocked:</strong> Soft Silicone Scalp Massaging Comb ($14.99 Value)</span>
             </div>
           </div>
 
-          <!-- Tier 3: 3 Bottles (Full Restoration - Best Value) -->
-          <div class="zvhc-bundle-card" data-tier="3">
-            <div class="zvhc-card-badge">💎 BEST VALUE</div>
-            <div class="zvhc-bundle-card-top">
-              <div class="zvhc-bundle-radio-wrap">
-                <div class="zvhc-radio-circle"><div class="zvhc-radio-dot"></div></div>
-                <div class="zvhc-bundle-info-title">
-                  <span>3 Bottles Course</span>
-                  <span class="zvhc-save-pill">Save 40%</span>
+          <!-- Tier 2: 2 Units (Duo Care - Most Popular) -->
+          <div class="zvhc-bundle-card is-selected" data-tier="2" onclick="zvhcSelectTier(2)" style="position: relative; background: #FFFFFF; border-radius: 16px; padding: 20px; border: 2.5px solid var(--zvhc-orange); cursor: pointer; box-shadow: 0 8px 24px rgba(253,85,10,0.12); transition: all 0.2s ease;">
+            <div style="position: absolute; top: -12px; right: 20px; background: var(--zvhc-orange); color: #FFF; font-size: 0.72rem; font-weight: 900; padding: 3px 12px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em;">
+              ★ MOST POPULAR · SAVE 30%
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="zvhc-radio-circle" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--zvhc-green); display: flex; align-items: center; justify-content: center;">
+                  <div class="zvhc-radio-dot" style="width: 10px; height: 10px; border-radius: 50%; background: var(--zvhc-green); display: block;"></div>
+                </div>
+                <div>
+                  <div style="font-weight: 800; font-size: 1.05rem; color: var(--zvhc-forest);">Buy 2 (Duo Care Course)</div>
+                  <div style="font-size: 0.8rem; color: var(--zvhc-green); font-weight: 700;">Includes FREE US Shipping</div>
                 </div>
               </div>
-              <div class="zvhc-bundle-pricing">
-                <div class="zvhc-bundle-price">$89.99</div>
-                <div class="zvhc-bundle-compare">$149.97</div>
-                <div class="zvhc-bundle-each">$30.00 / bottle</div>
+              <div style="text-align: right;">
+                <div class="zvhc-tier-price" id="zvhcPriceTier2" style="font-weight: 900; font-size: 1.25rem; color: var(--zvhc-forest);">$69.99</div>
+                <div class="zvhc-tier-compare" id="zvhcCompareTier2" style="font-size: 0.85rem; text-decoration: line-through; color: #888;">$99.98</div>
               </div>
             </div>
-            <div class="zvhc-bundle-subtext">Complete 90-day comprehensive botanical restoration routine</div>
-            <div class="zvhc-bundle-perk">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>FREE US Tracked Shipping included</span>
+          </div>
+
+          <!-- Tier 3: 3 Units (Trio Bundle - Best Value) -->
+          <div class="zvhc-bundle-card" data-tier="3" onclick="zvhcSelectTier(3)" style="position: relative; background: #FFFFFF; border-radius: 16px; padding: 18px 20px; border: 2px solid rgba(1,93,71,0.12); cursor: pointer; transition: all 0.2s ease;">
+            <div style="position: absolute; top: -11px; right: 20px; background: var(--zvhc-green); color: var(--zvhc-lime); font-size: 0.72rem; font-weight: 900; padding: 3px 12px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em;">
+              BEST VALUE · SAVE 40%
             </div>
-            <div class="zvhc-gift-unlock">
-              🎁 <span><strong>2 Free Gifts Unlocked:</strong> Scalp Massager + Pure Silk Sleep Bonnet ($29.98 Value)</span>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="zvhc-radio-circle" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid #CCC; display: flex; align-items: center; justify-content: center;">
+                  <div class="zvhc-radio-dot" style="width: 10px; height: 10px; border-radius: 50%; background: var(--zvhc-green); display: none;"></div>
+                </div>
+                <div>
+                  <div style="font-weight: 800; font-size: 1.05rem; color: var(--zvhc-forest);">Buy 3 (Trio Restoration Bundle)</div>
+                  <div style="font-size: 0.8rem; color: var(--zvhc-green); font-weight: 700;">Includes FREE US Shipping</div>
+                </div>
+              </div>
+              <div style="text-align: right;">
+                <div class="zvhc-tier-price" id="zvhcPriceTier3" style="font-weight: 900; font-size: 1.25rem; color: var(--zvhc-forest);">$89.99</div>
+                <div class="zvhc-tier-compare" id="zvhcCompareTier3" style="font-size: 0.85rem; text-decoration: line-through; color: #888;">$149.97</div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Savings Callout -->
-        <div class="zvhc-savings-callout" id="zvhcSavingsCallout">
-          ✨ <strong>Save $30 vs Reg. + FREE US Tracked Shipping</strong> included on this order
-        </div>
-
-        <!-- Two-Line CTA Button -->
-        <button type="button" class="zvhc-cta-btn" id="zvhcMainCta">
-          <div class="zvhc-cta-line-1">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-            <span>ADD TO CART — <span id="zvhcCtaPrice">$69.99</span></span>
-          </div>
-          <div class="zvhc-cta-line-2">
-            🔒 30-DAY SATISFACTION GUARANTEE
-          </div>
+        <!-- Add to Cart CTA -->
+        <button type="button" id="zvhcAddToCartBtn" onclick="zvhcExecuteAddToCart()" style="width: 100%; background: var(--zvhc-forest); color: var(--zvhc-lime); font-family: var(--zvhc-font-heading); font-size: 1.15rem; font-weight: 900; letter-spacing: 0.04em; padding: 18px 24px; border-radius: 999px; border: none; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 10px 28px rgba(23,45,32,0.3); text-transform: uppercase;">
+          ADD TO CART — <span id="zvhcCtaPrice">$69.99</span>
         </button>
 
-        <!-- Security & Delivery Notes -->
-        <div class="zvhc-guarantee-note">
-          <span>🔒 256-Bit SSL Encrypted Checkout</span>
-          <span>•</span>
-          <span>📦 Tracked US Shipping</span>
+        <!-- Trust Features Strip -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 24px; text-align: center; border-top: 1px solid rgba(1,93,71,0.1); padding-top: 18px;">
+          <div>
+            <div style="font-size: 1.2rem; margin-bottom: 4px;">🌿</div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: var(--zvhc-forest);">100% CLEAN BOTANICAL</div>
+          </div>
+          <div>
+            <div style="font-size: 1.2rem; margin-bottom: 4px;">🇺🇸</div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: var(--zvhc-forest);">FAST US DELIVERY</div>
+          </div>
+          <div>
+            <div style="font-size: 1.2rem; margin-bottom: 4px;">🛡️</div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: var(--zvhc-forest);">30-DAY GUARANTEE</div>
+          </div>
         </div>
 
-        <!-- 3-Step Delivery Stepper -->
-        <div class="zvhc-stepper">
-          <div class="zvhc-step-item">
-            <div class="zvhc-step-dot"></div>
-            <div class="zvhc-step-lbl">ORDER CONFIRMED</div>
-            <div class="zvhc-step-val">Instant</div>
-          </div>
-          <div class="zvhc-step-item">
-            <div class="zvhc-step-dot"></div>
-            <div class="zvhc-step-lbl">FULFILLMENT</div>
-            <div class="zvhc-step-val">US Tracked</div>
-          </div>
-          <div class="zvhc-step-item">
-            <div class="zvhc-step-dot"></div>
-            <div class="zvhc-step-lbl">DELIVERY</div>
-            <div class="zvhc-step-val">Tracked Shipping</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Mobile Sticky Dock -->
-<div class="zvhc-mobile-dock" id="zvhcMobileDock">
-  <div class="zvhc-dock-info">
-    <div class="zvhc-dock-info-title">{{ product.title | default: "Batana Hair Care" | truncate: 26 }}</div>
-    <div class="zvhc-dock-info-price" id="zvhcDockPrice">$69.99</div>
+<!-- Sticky Mobile Add to Cart Dock -->
+<div id="zvhcStickyDock" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #FFFFFF; border-top: 2px solid rgba(1,93,71,0.12); padding: 12px 16px; z-index: 998; box-shadow: 0 -8px 24px rgba(0,0,0,0.12);">
+  <div style="display: flex; justify-content: space-between; align-items: center; max-width: 600px; margin: 0 auto; gap: 12px;">
+    <div>
+      <div style="font-size: 0.8rem; font-weight: 800; color: var(--zvhc-forest);" id="zvhcStickyTitle">{{ product.title | truncate: 25 }}</div>
+      <div style="font-size: 1.15rem; font-weight: 900; color: var(--zvhc-orange);" id="zvhcStickyPrice">$69.99</div>
+    </div>
+    <button type="button" onclick="zvhcExecuteAddToCart()" style="background: var(--zvhc-forest); color: var(--zvhc-lime); font-weight: 900; font-size: 0.95rem; padding: 14px 22px; border-radius: 999px; border: none; cursor: pointer; text-transform: uppercase;">
+      ADD TO CART
+    </button>
   </div>
-  <button type="button" class="zvhc-dock-btn" id="zvhcDockCta">
-    ADD TO CART
-  </button>
 </div>
 
-<script src="{{ 'zvhc-pdp.js' | asset_url }}" defer></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    if (window.ZvhcPdp) {
-      window.ZvhcPdp.init({{ product.variants | json }});
-    }
-  });
+  window.ZVHC_PRODUCT_DATA = {{ product | json }};
 </script>
-
-{% schema %}
-{
-  "name": "ZVHC PDP Main BuyBox",
-  "settings": []
-}
-{% endschema %}

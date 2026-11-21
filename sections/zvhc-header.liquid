@@ -1,38 +1,42 @@
 {% comment %}
-  ZAVELYN HAIR CARE — Main Header & Navigation
+  ZAVELYN HAIR CARE — Bold Botanical Header & Navigation
 {% endcomment %}
-<header class="zvhc-header" id="zvhcHeader">
+<header class="zvhc-header" id="zvhcHeader" style="background-color: var(--zvhc-ivory); border-bottom: 2px solid rgba(1,93,71,0.08);">
   <div class="zvhc-container">
     <div class="zvhc-header-inner">
       <!-- Brand Logo -->
       <a href="/" class="zvhc-logo" aria-label="Zavelyn Hair Care Homepage">
-        <span class="zvhc-logo-title">ZAVELYN</span>
-        <span class="zvhc-logo-sub">HAIR CARE</span>
+        <span class="zvhc-logo-title" style="color: var(--zvhc-forest); font-family: var(--zvhc-font-heading); font-size: 1.55rem; font-weight: 900; letter-spacing: -0.02em;">ZAVELYN</span>
+        <span class="zvhc-logo-sub" style="color: var(--zvhc-orange); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.22em; margin-top: -3px;">HAIR CARE</span>
       </a>
 
       <!-- Desktop Navigation -->
       <nav class="zvhc-nav" aria-label="Main Navigation">
-        <a href="/products/zavelyn-botanaroots-organic-batana-hair-growth-oil" class="zvhc-nav-link">Batana Hair Routine</a>
-        <a href="/#concerns" class="zvhc-nav-link">Shop by Concern</a>
-        <a href="/#how-it-works" class="zvhc-nav-link">4-Step Ritual</a>
-        <a href="/#ingredients" class="zvhc-nav-link">Ingredients</a>
-        <a href="/#reviews" class="zvhc-nav-link">Real Results</a>
-        <a href="/#faq" class="zvhc-nav-link">FAQ</a>
+        <a href="/collections/zvhc-all" class="zvhc-nav-link" style="color: var(--zvhc-forest); font-weight: 700;">Shop All</a>
+        <a href="/#concerns" class="zvhc-nav-link" style="color: var(--zvhc-forest); font-weight: 700;">By Concern</a>
+        <a href="/#all-products" class="zvhc-nav-link" style="color: var(--zvhc-forest); font-weight: 700;">The 7 Essentials</a>
+        <a href="/#routine" class="zvhc-nav-link" style="color: var(--zvhc-forest); font-weight: 700;">4-Step Ritual</a>
+        <a href="/#comparison" class="zvhc-nav-link" style="color: var(--zvhc-forest); font-weight: 700;">Compare</a>
+        <a href="/#bundles" class="zvhc-nav-link" style="color: var(--zvhc-forest); font-weight: 700;">Routine Bundles</a>
+        <a href="/#faq" class="zvhc-nav-link" style="color: var(--zvhc-forest); font-weight: 700;">FAQ</a>
       </nav>
 
-      <!-- Right Actions: Bag Icon -->
-      <div class="zvhc-header-actions">
-        <button type="button" class="zvhc-bag-btn" onclick="if(window.openZvhcCart){window.openZvhcCart();}else if(window.openWillaCart){window.openWillaCart();}" aria-label="Shopping Bag">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Right Actions: Bag Icon & Mobile Toggle -->
+      <div class="zvhc-header-actions" style="display: flex; align-items: center; gap: 14px;">
+        <a href="/collections/zvhc-all" class="zvhc-header-cta-pill" style="display: none; background: var(--zvhc-lime); color: var(--zvhc-forest); font-weight: 800; font-size: 0.8rem; padding: 7px 14px; border-radius: 999px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em;">
+          Explore Shop
+        </a>
+        <button type="button" class="zvhc-bag-btn" onclick="if(window.openZvhcCart){window.openZvhcCart();}else if(window.openWillaCart){window.openWillaCart();}" aria-label="Shopping Bag" style="color: var(--zvhc-forest);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <path d="M16 10a4 4 0 0 1-8 0"></path>
           </svg>
-          <span class="zvhc-bag-count" id="zvhcHeaderBagCount">{{ cart.item_count }}</span>
+          <span class="zvhc-bag-count" id="zvhcHeaderBagCount" style="background: var(--zvhc-orange); color: #FFF;">{{ cart.item_count }}</span>
         </button>
 
-        <button type="button" class="zvhc-mobile-menu-toggle" onclick="toggleZvhcMobileMenu()" aria-label="Toggle mobile menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button type="button" class="zvhc-mobile-menu-toggle" onclick="toggleZvhcMobileMenu()" aria-label="Toggle mobile menu" style="color: var(--zvhc-forest);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -58,18 +62,23 @@
   function toggleZvhcMobileMenu() {
     const nav = document.querySelector('.zvhc-nav');
     if (nav) {
-      if (nav.style.display === 'flex') {
+      if (nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
         nav.style.display = 'none';
       } else {
+        nav.classList.add('is-open');
         nav.style.display = 'flex';
         nav.style.flexDirection = 'column';
         nav.style.position = 'absolute';
         nav.style.top = '72px';
         nav.style.left = '0';
         nav.style.width = '100%';
-        nav.style.background = '#FFFFFF';
-        nav.style.padding = '20px';
-        nav.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+        nav.style.background = '#FFF9EE';
+        nav.style.padding = '24px 20px';
+        nav.style.borderBottom = '3px solid #015D47';
+        nav.style.boxShadow = '0 16px 32px rgba(1,93,71,0.12)';
+        nav.style.zIndex = '999';
+        nav.style.gap = '14px';
       }
     }
   }
@@ -81,4 +90,3 @@
   "settings": []
 }
 {% endschema %}
-

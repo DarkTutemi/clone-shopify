@@ -12,20 +12,32 @@
       "type": "zvhc-shop-by-concern",
       "settings": {}
     },
-    "how_it_works": {
-      "type": "zvhc-pdp-how-it-works",
+    "all_products": {
+      "type": "zvhc-all-products",
       "settings": {}
     },
-    "package": {
-      "type": "zvhc-pdp-package",
+    "botana_routine": {
+      "type": "zvhc-botana-routine",
       "settings": {}
     },
-    "reviews": {
-      "type": "zvhc-pdp-reviews",
+    "video_ugc": {
+      "type": "zvhc-video-ugc",
       "settings": {}
     },
-    "faq": {
-      "type": "zvhc-pdp-faq",
+    "comparison": {
+      "type": "zvhc-comparison",
+      "settings": {}
+    },
+    "ingredients": {
+      "type": "zvhc-ingredient-education",
+      "settings": {}
+    },
+    "bundles": {
+      "type": "zvhc-bundles",
+      "settings": {}
+    },
+    "faq_trust": {
+      "type": "zvhc-faq-trust",
       "settings": {}
     }
   },
@@ -33,9 +45,12 @@
     "hero",
     "marquee",
     "concerns",
-    "how_it_works",
-    "package",
-    "reviews",
-    "faq"
+    "all_products",
+    "botana_routine",
+    "video_ugc",
+    "comparison",
+    "ingredients",
+    "bundles",
+    "faq_trust"
   ]
 }

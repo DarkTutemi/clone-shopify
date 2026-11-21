@@ -1,276 +1,220 @@
 /**
- * ZAVELYN HAIR CARE — PDP Interactive Engine (v1.1)
+ * ZAVELYN HAIR CARE — PDP Interactive Engine (v2.0)
  * Scoped under window.ZvhcPdp
- * Handles strict variant matching, mathematically sound bundle savings, and safe cart actions
+ * Handles dynamic shade selection, 1/2/3 bundle card pricing, variant mapping, and cart actions
  */
 
 (function() {
   'use strict';
 
-  window.ZvhcPdp = {
-    currentTier: 2, // Default to Tier 2 (Most Popular Duo)
-    currentFormula: '100% Pure Raw Honduran Batana (60ml)',
-    variants: [],
+  var currentTier = 2; // Default to Tier 2 (Duo - Most Popular)
+  var currentShade = '';
+  var productData = null;
 
-    init: function(variantsData) {
-      this.variants = variantsData || [];
-      this.bindEvents();
-      this.updateState();
-      this.initStickyDock();
-      this.initFaq();
-      this.initGallery();
-    },
+  window.zvhcInitPdp = function() {
+    productData = window.ZVHC_PRODUCT_DATA;
+    if (!productData) return;
 
-    bindEvents: function() {
-      const self = this;
-
-      // Bundle card clicks
-      document.querySelectorAll('.zvhc-bundle-card').forEach(function(card) {
-        card.addEventListener('click', function() {
-          const tier = parseInt(this.getAttribute('data-tier'), 10);
-          if (tier) {
-            self.setTier(tier);
-          }
-        });
-      });
-
-      // Formula selector clicks
-      document.querySelectorAll('.zvhc-formula-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          const formula = this.getAttribute('data-formula');
-          if (formula) {
-            self.setFormula(formula);
-          }
-        });
-      });
-
-      // Main CTA click
-      const ctaBtn = document.getElementById('zvhcMainCta');
-      if (ctaBtn) {
-        ctaBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          self.addToCart();
-        });
+    // Detect if product has shades
+    var hasShades = false;
+    if (productData.options) {
+      for (var i = 0; i < productData.options.length; i++) {
+        var opt = productData.options[i];
+        if (typeof opt === 'string' && opt.toLowerCase() === 'shade') hasShades = true;
+        if (opt.name && opt.name.toLowerCase() === 'shade') hasShades = true;
       }
+    }
 
-      // Mobile Dock CTA click
-      const dockBtn = document.getElementById('zvhcDockCta');
-      if (dockBtn) {
-        dockBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          self.addToCart();
-        });
+    if (hasShades) {
+      var firstShadeBtn = document.querySelector('.zvhc-shade-btn');
+      if (firstShadeBtn) {
+        currentShade = firstShadeBtn.getAttribute('data-shade') || 'Black';
+      } else {
+        currentShade = 'Black';
       }
-    },
+    }
 
-    setTier: function(tier) {
-      this.currentTier = tier;
-      document.querySelectorAll('.zvhc-bundle-card').forEach(function(card) {
-        const cTier = parseInt(card.getAttribute('data-tier'), 10);
-        if (cTier === tier) {
-          card.classList.add('is-selected');
-        } else {
-          card.classList.remove('is-selected');
-        }
-      });
-      this.updateState();
-    },
+    window.zvhcUpdateTierDisplay();
+    window.zvhcInitStickyObserver();
+  };
 
-    setFormula: function(formula) {
-      this.currentFormula = formula;
-      document.querySelectorAll('.zvhc-formula-btn').forEach(function(btn) {
-        if (btn.getAttribute('data-formula') === formula) {
-          btn.classList.add('is-active');
-        } else {
-          btn.classList.remove('is-active');
-        }
-      });
-      this.updateState();
-    },
+  window.zvhcSelectThumb = function(el, url) {
+    var mainImg = document.getElementById('zvhcMainImg');
+    if (mainImg) mainImg.src = url;
+    document.querySelectorAll('.zvhc-thumb-item').forEach(function(t) {
+      t.style.borderColor = 'rgba(1,93,71,0.12)';
+    });
+    el.style.borderColor = 'var(--zvhc-orange)';
+  };
 
-    resolveVariant: function() {
-      const self = this;
-      if (!this.variants || this.variants.length === 0) return null;
+  window.zvhcSelectShade = function(shade, btn) {
+    currentShade = shade;
+    document.querySelectorAll('.zvhc-shade-btn').forEach(function(b) {
+      b.style.borderColor = 'rgba(0,0,0,0.1)';
+      b.classList.remove('is-active');
+    });
+    btn.style.borderColor = 'var(--zvhc-orange)';
+    btn.classList.add('is-active');
 
-      // Exact variant matching based on tier keywords
-      let matched = this.variants.find(function(v) {
-        const title = (v.title || '').toLowerCase();
-        let matchesTier = false;
-        if (self.currentTier === 1 && (title.includes('buy 1') || title.includes('starter') || title.includes('1 bottle') || title.includes('1 pc') || title.includes('1 unit') || title.includes('1 pouch') || title.includes('1 tin') || title.includes('1 compact') || title.includes('default title'))) {
-          matchesTier = true;
-        }
-        if (self.currentTier === 2 && (title.includes('buy 2') || title.includes('duo') || title.includes('2 bottle') || title.includes('2 pc') || title.includes('2 unit') || title.includes('2 pouch') || title.includes('2 tin') || title.includes('2 compact'))) {
-          matchesTier = true;
-        }
-        if (self.currentTier === 3 && (title.includes('buy 3') || title.includes('trio') || title.includes('restoration') || title.includes('3 bottle') || title.includes('3 pc') || title.includes('3 unit') || title.includes('3 pouch') || title.includes('3 tin') || title.includes('3 compact'))) {
-          matchesTier = true;
-        }
+    var label = document.getElementById('zvhcSelectedShadeName');
+    if (label) label.textContent = shade;
 
-        let matchesFormula = true;
-        if (self.currentFormula && self.currentFormula.includes('Rosemary')) {
-          matchesFormula = title.includes('rosemary');
-        } else if (self.currentFormula && (title.includes('rosemary') || title.includes('infusion'))) {
-          matchesFormula = false;
-        }
+    window.zvhcUpdateTierDisplay();
+  };
 
-        return matchesTier && matchesFormula;
-      });
-
-      // Return exact match only — NO unsafe index fallback!
-      return matched || null;
-    },
-
-    updateState: function() {
-      const variant = this.resolveVariant();
-      const ctaBtn = document.getElementById('zvhcMainCta');
-      const dockBtn = document.getElementById('zvhcDockCta');
-
-      if (!variant) {
-        if (ctaBtn) {
-          ctaBtn.disabled = true;
-          ctaBtn.style.opacity = '0.6';
-          const ctaPriceEl = document.getElementById('zvhcCtaPrice');
-          if (ctaPriceEl) ctaPriceEl.textContent = 'Unavailable';
-        }
-        if (dockBtn) {
-          dockBtn.disabled = true;
-          dockBtn.style.opacity = '0.6';
-        }
-        return;
+  window.zvhcSelectTier = function(tier) {
+    currentTier = tier;
+    document.querySelectorAll('.zvhc-bundle-card').forEach(function(card) {
+      var cardTier = parseInt(card.getAttribute('data-tier'), 10);
+      var dot = card.querySelector('.zvhc-radio-dot');
+      var circle = card.querySelector('.zvhc-radio-circle');
+      if (cardTier === tier) {
+        card.style.borderColor = 'var(--zvhc-orange)';
+        card.style.borderWidth = '2.5px';
+        if (dot) dot.style.display = 'block';
+        if (circle) circle.style.borderColor = 'var(--zvhc-green)';
+      } else {
+        card.style.borderColor = 'rgba(1,93,71,0.12)';
+        card.style.borderWidth = '2px';
+        if (dot) dot.style.display = 'none';
+        if (circle) circle.style.borderColor = '#CCC';
       }
+    });
 
-      if (ctaBtn) {
-        ctaBtn.disabled = false;
-        ctaBtn.style.opacity = '1';
-      }
-      if (dockBtn) {
-        dockBtn.disabled = false;
-        dockBtn.style.opacity = '1';
-      }
+    window.zvhcUpdateTierDisplay();
+  };
 
-      const price = (variant.price / 100).toFixed(2);
+  window.zvhcFindVariant = function(tier, shade) {
+    if (!productData || !productData.variants) return null;
+    var variants = productData.variants;
 
-      // Dynamic price update in CTA
-      const ctaPriceEl = document.getElementById('zvhcCtaPrice');
-      if (ctaPriceEl) {
-        ctaPriceEl.textContent = '$' + price;
-      }
-
-      // Dynamic dock update
-      const dockPriceEl = document.getElementById('zvhcDockPrice');
-      if (dockPriceEl) {
-        dockPriceEl.textContent = '$' + price;
-      }
-
-      // Savings callout text
-      const savingsCallout = document.getElementById('zvhcSavingsCallout');
-      if (savingsCallout) {
-        if (this.currentTier === 2) {
-          savingsCallout.innerHTML = '✨ <strong>Save 30% vs Reg. + FREE US Tracked Shipping</strong> included on this order';
-        } else if (this.currentTier === 3) {
-          savingsCallout.innerHTML = '🎉 <strong>Save 40% (Best Value Course) + 2 Free Gifts</strong> included';
-        } else {
-          savingsCallout.innerHTML = '📦 Starter Supply · 30-Day Satisfaction Guarantee';
-        }
-      }
-    },
-
-    addToCart: function() {
-      const self = this;
-      const variant = this.resolveVariant();
-      if (!variant || !variant.id) {
-        alert('Please select an available product option.');
-        return;
-      }
-
-      const ctaBtn = document.getElementById('zvhcMainCta');
-      if (ctaBtn) {
-        ctaBtn.disabled = true;
-        ctaBtn.style.opacity = '0.7';
-      }
-
-      const payload = {
-        id: variant.id,
-        quantity: 1
-      };
-
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      })
-      .then(function(res) { return res.json(); })
-      .then(function(item) {
-        if (ctaBtn) {
-          ctaBtn.disabled = false;
-          ctaBtn.style.opacity = '1';
-        }
-        // Trigger drawer
-        if (typeof window.openZvhcCart === 'function') {
-          window.openZvhcCart();
-        } else if (typeof window.openWillaCart === 'function') {
-          window.openWillaCart();
-        } else {
-          window.location.href = '/cart';
-        }
-      })
-      .catch(function(err) {
-        console.error('Error adding to cart:', err);
-        if (ctaBtn) {
-          ctaBtn.disabled = false;
-          ctaBtn.style.opacity = '1';
-        }
-        window.location.href = '/cart';
-      });
-    },
-
-    initStickyDock: function() {
-      const mainCta = document.getElementById('zvhcMainCta');
-      const dock = document.getElementById('zvhcMobileDock');
-      if (!mainCta || !dock) return;
-
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              dock.classList.remove('is-visible');
-            } else if (entry.boundingClientRect.top < 0) {
-              dock.classList.add('is-visible');
-            }
-          });
-        }, { threshold: 0 });
-        observer.observe(mainCta);
-      }
-    },
-
-    initGallery: function() {
-      const thumbs = document.querySelectorAll('.zvhc-gallery-thumb');
-      const mainImg = document.getElementById('zvhcMainImg');
-      if (!thumbs.length || !mainImg) return;
-
-      thumbs.forEach(function(thumb) {
-        thumb.addEventListener('click', function() {
-          thumbs.forEach(function(t) { t.classList.remove('is-active'); });
-          this.classList.add('is-active');
-          const fullSrc = this.getAttribute('data-full-src');
-          if (fullSrc) {
-            mainImg.style.opacity = '0.4';
-            mainImg.src = fullSrc;
-            setTimeout(function() { mainImg.style.opacity = '1'; }, 100);
-          }
-        });
-      });
-    },
-
-    initFaq: function() {
-      document.querySelectorAll('.zvhc-faq-trigger').forEach(function(trigger) {
-        trigger.addEventListener('click', function() {
-          const item = this.closest('.zvhc-faq-item');
-          if (item) {
-            item.classList.toggle('is-open');
-          }
-        });
-      });
+    if (variants.length === 9) {
+      // 3 shades x 3 bundles
+      return variants.find(function(v) {
+        var matchShade = shade ? (v.option1 === shade || v.option1.indexOf(shade) !== -1 || (shade.indexOf('Black') !== -1 && v.option1.indexOf('Black') !== -1)) : true;
+        var matchTier = v.option2 ? (v.option2.indexOf(tier + 'x') !== -1 || v.option2.indexOf(tier + ' ') !== -1) : false;
+        return matchShade && matchTier;
+      }) || variants[tier - 1] || variants[0];
+    } else {
+      // 3 bundles (single option)
+      return variants[tier - 1] || variants[0];
     }
   };
+
+  window.zvhcUpdateTierDisplay = function() {
+    if (!productData) return;
+
+    // Update prices on the 3 tier cards
+    for (var t = 1; t <= 3; t++) {
+      var v = window.zvhcFindVariant(t, currentShade);
+      if (v) {
+        var priceEl = document.getElementById('zvhcPriceTier' + t);
+        var cmpEl = document.getElementById('zvhcCompareTier' + t);
+        var price = (parseFloat(v.price) / 100).toFixed(2);
+        if (v.price > 1000) {
+          price = (parseFloat(v.price) / 100).toFixed(2);
+        } else {
+          price = parseFloat(v.price).toFixed(2);
+        }
+        if (priceEl) priceEl.textContent = '$' + price;
+        if (cmpEl && v.compare_at_price) {
+          var cmp = parseFloat(v.compare_at_price).toFixed(2);
+          if (v.compare_at_price > 1000) cmp = (parseFloat(v.compare_at_price) / 100).toFixed(2);
+          cmpEl.textContent = '$' + cmp;
+        }
+      }
+    }
+
+    // Update active tier CTA and sticky dock
+    var activeVariant = window.zvhcFindVariant(currentTier, currentShade);
+    if (activeVariant) {
+      var activePrice = parseFloat(activeVariant.price).toFixed(2);
+      if (activeVariant.price > 1000) activePrice = (parseFloat(activeVariant.price) / 100).toFixed(2);
+      var ctaPrice = document.getElementById('zvhcCtaPrice');
+      if (ctaPrice) ctaPrice.textContent = '$' + activePrice;
+      var stickyPrice = document.getElementById('zvhcStickyPrice');
+      if (stickyPrice) stickyPrice.textContent = '$' + activePrice;
+    }
+  };
+
+  window.zvhcExecuteAddToCart = function() {
+    var v = window.zvhcFindVariant(currentTier, currentShade);
+    if (!v || !v.id) {
+      alert('Please choose a variant option.');
+      return;
+    }
+
+    var btn = document.getElementById('zvhcAddToCartBtn');
+    if (btn) {
+      btn.textContent = 'ADDING TO CART...';
+      btn.disabled = true;
+    }
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: v.id,
+        quantity: 1
+      })
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(item) {
+      if (btn) {
+        btn.innerHTML = 'ADDED! <span id="zvhcCtaPrice">✓</span>';
+        setTimeout(function() {
+          btn.disabled = false;
+          window.zvhcUpdateTierDisplay();
+        }, 1500);
+      }
+      // Update header bag count
+      fetch('/cart.js')
+        .then(function(r) { return r.json(); })
+        .then(function(cart) {
+          var badge = document.getElementById('zvhcHeaderBagCount');
+          if (badge) badge.textContent = cart.item_count;
+        });
+
+      // Open drawer if available
+      if (window.openZvhcCart) {
+        window.openZvhcCart();
+      } else if (window.openWillaCart) {
+        window.openWillaCart();
+      } else {
+        window.location.href = '/cart';
+      }
+    })
+    .catch(function(err) {
+      console.error(err);
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = 'TRY AGAIN';
+      }
+    });
+  };
+
+  window.zvhcInitStickyObserver = function() {
+    var cta = document.getElementById('zvhcAddToCartBtn');
+    var dock = document.getElementById('zvhcStickyDock');
+    if (!cta || !dock) return;
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+            dock.style.display = 'block';
+          } else {
+            dock.style.display = 'none';
+          }
+        });
+      }, { threshold: 0.1 });
+      observer.observe(cta);
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', window.zvhcInitPdp);
+  } else {
+    window.zvhcInitPdp();
+  }
 })();

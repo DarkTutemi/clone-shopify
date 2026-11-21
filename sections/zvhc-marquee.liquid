@@ -1,53 +1,41 @@
 {% comment %}
-  ZAVELYN HAIR CARE — Marquee Ticker
+  ZAVELYN HAIR CARE — Bold Botanical Marquee Ticker
 {% endcomment %}
-<div class="zvhc-marquee" aria-hidden="true">
-  <div class="zvhc-marquee-track">
-    <div class="zvhc-marquee-item">
-      <span>🌿 PURE BOTANICAL BATANA FORMULA</span>
-    </div>
-    <div class="zvhc-marquee-item">
-      <span>★ NOURISHING SCALP &amp; STRAND CARE</span>
-    </div>
-    <div class="zvhc-marquee-item">
-      <span>🐇 100% CRUELTY-FREE BOTANICALS</span>
-    </div>
-    <div class="zvhc-marquee-item">
-      <span>🚫 ZERO PARABENS, SULFATES OR MINERAL OIL</span>
-    </div>
-    <div class="zvhc-marquee-item">
-      <span>🌿 CLEAN, PLANT-POWERED INGREDIENTS</span>
-    </div>
-    <div class="zvhc-marquee-item">
-      <span>🚚 RELIABLE TRACKED US SHIPPING</span>
-    </div>
-    <div class="zvhc-marquee-item">
-      <span>🛡️ 30-DAY SATISFACTION GUARANTEE</span>
-    </div>
-    <!-- Repeat for seamless loop -->
-    <div class="zvhc-marquee-item">
-      <span>🌿 PURE BOTANICAL BATANA FORMULA</span>
-    </div>
-    <div class="zvhc-marquee-item">
-      <span>★ NOURISHING SCALP &amp; STRAND CARE</span>
-    </div>
-    <div class="zvhc-marquee-item">
-      <span>🐇 100% CRUELTY-FREE BOTANICALS</span>
-    </div>
-    <div class="zvhc-marquee-item">
-      <span>🚫 ZERO PARABENS, SULFATES OR MINERAL OIL</span>
-    </div>
-    <div class="zvhc-marquee-item">
-      <span>🌿 CLEAN, PLANT-POWERED INGREDIENTS</span>
-    </div>
-    <div class="zvhc-marquee-item">
-      <span>🚚 RELIABLE TRACKED US SHIPPING</span>
-    </div>
-    <div class="zvhc-marquee-item">
-      <span>🛡️ 30-DAY SATISFACTION GUARANTEE</span>
-    </div>
+<div class="zvhc-marquee" aria-hidden="true" style="background: var(--zvhc-forest); color: var(--zvhc-lime); padding: 14px 0; overflow: hidden; border-top: 2px solid rgba(224,243,84,0.2); border-bottom: 2px solid rgba(224,243,84,0.2);">
+  <div class="zvhc-marquee-track" style="display: flex; gap: 36px; white-space: nowrap; animation: zvhcMarqueeScroll 28s linear infinite; font-family: var(--zvhc-font-heading); font-size: 0.95rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;">
+    <div class="zvhc-marquee-item">🌿 100% RAW HONDURAN BATANA</div>
+    <div class="zvhc-marquee-item" style="color: var(--zvhc-orange);">★</div>
+    <div class="zvhc-marquee-item">SULFATE & PARABEN FREE</div>
+    <div class="zvhc-marquee-item" style="color: var(--zvhc-orange);">★</div>
+    <div class="zvhc-marquee-item">NO SYNTHETIC DILUTION</div>
+    <div class="zvhc-marquee-item" style="color: var(--zvhc-orange);">★</div>
+    <div class="zvhc-marquee-item">INSTANT FOLLICLE NOURISHMENT</div>
+    <div class="zvhc-marquee-item" style="color: var(--zvhc-orange);">★</div>
+    <div class="zvhc-marquee-item">US REGIONAL FULFILLMENT</div>
+    <div class="zvhc-marquee-item" style="color: var(--zvhc-orange);">★</div>
+    <div class="zvhc-marquee-item">30-DAY MONEY-BACK GUARANTEE</div>
+    <div class="zvhc-marquee-item" style="color: var(--zvhc-orange);">★</div>
+    <!-- Duplicate for infinite seamless scroll -->
+    <div class="zvhc-marquee-item">🌿 100% RAW HONDURAN BATANA</div>
+    <div class="zvhc-marquee-item" style="color: var(--zvhc-orange);">★</div>
+    <div class="zvhc-marquee-item">SULFATE & PARABEN FREE</div>
+    <div class="zvhc-marquee-item" style="color: var(--zvhc-orange);">★</div>
+    <div class="zvhc-marquee-item">NO SYNTHETIC DILUTION</div>
+    <div class="zvhc-marquee-item" style="color: var(--zvhc-orange);">★</div>
+    <div class="zvhc-marquee-item">INSTANT FOLLICLE NOURISHMENT</div>
+    <div class="zvhc-marquee-item" style="color: var(--zvhc-orange);">★</div>
+    <div class="zvhc-marquee-item">US REGIONAL FULFILLMENT</div>
+    <div class="zvhc-marquee-item" style="color: var(--zvhc-orange);">★</div>
+    <div class="zvhc-marquee-item">30-DAY MONEY-BACK GUARANTEE</div>
   </div>
 </div>
+
+<style>
+@keyframes zvhcMarqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
 
 {% schema %}
 {
