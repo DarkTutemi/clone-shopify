@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "main": {
+      "type": "zvhc-pdp-main",
+      "settings": {}
+    },
+    "marquee": {
+      "type": "zvhc-pdp-marquee",
+      "settings": {}
+    },
+    "how_it_works": {
+      "type": "zvhc-pdp-how-it-works",
+      "settings": {}
+    },
+    "package": {
+      "type": "zvhc-pdp-package",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "zvhc-pdp-reviews",
+      "settings": {}
+    },
+    "faq": {
+      "type": "zvhc-pdp-faq",
+      "settings": {}
+    },
+    "shipping": {
+      "type": "zvhc-pdp-shipping",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "marquee",
+    "how_it_works",
+    "package",
+    "reviews",
+    "faq",
+    "shipping"
+  ]
+}
