@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-11-22T07:37:09.549Z",
+  "theme_id": 189127983289,
+  "theme_role": "main",
+  "git_sha": "01fbf2c2295ef2eaa43fe1718f900032dd35c6e2",
+  "git_branch": "feature/zavelyn-haircare-v1",
+  "files": [
+    {
+      "file": "sections/zvhc-header.liquid",
+      "backup": "C:\\Users\\Admin\\Desktop\\CLONE SPF\\backups\\live_v3_2_hotfix_snapshot\\sections_zvhc-header.liquid",
+      "size": 24094
+    },
+    {
+      "file": "assets/zvhc-t01-components.css",
+      "backup": "C:\\Users\\Admin\\Desktop\\CLONE SPF\\backups\\live_v3_2_hotfix_snapshot\\assets_zvhc-t01-components.css",
+      "size": 5782
+    },
+    {
+      "file": "sections/zvhc-our-story.liquid",
+      "backup": "C:\\Users\\Admin\\Desktop\\CLONE SPF\\backups\\live_v3_2_hotfix_snapshot\\sections_zvhc-our-story.liquid",
+      "size": 18054
+    },
+    {
+      "file": "templates/page.zvhc-our-story.json",
+      "backup": "C:\\Users\\Admin\\Desktop\\CLONE SPF\\backups\\live_v3_2_hotfix_snapshot\\templates_page.zvhc-our-story.json",
+      "size": 126
+    },
+    {
+      "file": "sections/zavelyn-track-order.liquid",
+      "backup": "C:\\Users\\Admin\\Desktop\\CLONE SPF\\backups\\live_v3_2_hotfix_snapshot\\sections_zavelyn-track-order.liquid",
+      "size": 22547
+    },
+    {
+      "file": "sections/zvhc-track-order.liquid",
+      "backup": "C:\\Users\\Admin\\Desktop\\CLONE SPF\\backups\\live_v3_2_hotfix_snapshot\\sections_zvhc-track-order.liquid",
+      "size": 22547
+    },
+    {
+      "file": "templates/page.track-order.json",
+      "backup": "C:\\Users\\Admin\\Desktop\\CLONE SPF\\backups\\live_v3_2_hotfix_snapshot\\templates_page.track-order.json",
+      "size": 131
+    },
+    {
+      "file": "templates/page.zvhc-track-order.json",
+      "backup": "C:\\Users\\Admin\\Desktop\\CLONE SPF\\backups\\live_v3_2_hotfix_snapshot\\templates_page.zvhc-track-order.json",
+      "size": 128
+    },
+    {
+      "file": "sections/zvhc-footer.liquid",
+      "backup": "C:\\Users\\Admin\\Desktop\\CLONE SPF\\backups\\live_v3_2_hotfix_snapshot\\sections_zvhc-footer.liquid",
+      "size": 5641
+    },
+    {
+      "file": "layout/theme.liquid",
+      "backup": "C:\\Users\\Admin\\Desktop\\CLONE SPF\\backups\\live_v3_2_hotfix_snapshot\\layout_theme.liquid",
+      "size": 10965
+    }
+  ]
+}
