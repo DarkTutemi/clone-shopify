@@ -1,0 +1,471 @@
+/**
+ * ZAVELYN HAIR CARE — T01 PDP Stylesheet
+ * Faithfully reproduces ShopSideK T01 Product Buy Box and PDP Sections
+ */
+
+.zvhc-pdp-section {
+  padding: 32px 0 64px;
+  background-color: var(--zvhc-t01-bg, #E9E4E6);
+}
+
+@media (min-width: 992px) {
+  .zvhc-pdp-section {
+    padding: 48px 0 80px;
+  }
+}
+
+.zvhc-pdp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 992px) {
+  .zvhc-pdp-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 52px;
+    align-items: start;
+  }
+}
+
+/* Gallery */
+.zvhc-gallery {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .zvhc-gallery {
+    position: sticky;
+    top: 96px;
+  }
+}
+
+.zvhc-main-image-wrap {
+  position: relative;
+  border-radius: var(--zvhc-radius-img, 16px);
+  overflow: hidden;
+  background-color: var(--zvhc-t01-bg-card, #FFFFFF);
+  border: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  aspect-ratio: 1/1;
+  box-shadow: 0 4px 20px rgba(43, 27, 36, 0.05);
+}
+
+.zvhc-main-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.zvhc-thumbs-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.zvhc-thumb-item {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1.5px solid var(--zvhc-t01-border, #EAD7DD);
+  background: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.zvhc-thumb-item.is-active,
+.zvhc-thumb-item:hover {
+  border-color: var(--zvhc-t01-accent-rose, #B0476E);
+}
+
+.zvhc-thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Buy Box Column */
+.zvhc-buybox {
+  display: flex;
+  flex-direction: column;
+}
+
+.zvhc-reviews-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--zvhc-t01-text-muted, #5A4651);
+}
+
+.zvhc-stars {
+  color: var(--zvhc-t01-star-gold, #E0A33A);
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+}
+
+.zvhc-pdp-title {
+  font-family: var(--zvhc-font-serif, 'Fraunces', serif);
+  font-size: clamp(2rem, 3.2vw, 2.45rem);
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.zvhc-pdp-subtitle {
+  font-size: 0.95rem;
+  color: var(--zvhc-t01-text-muted, #5A4651);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Bullet Benefits */
+.zvhc-benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.zvhc-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+}
+
+.zvhc-benefit-item svg {
+  color: var(--zvhc-t01-trust-green, #3F8F6B);
+  flex-shrink: 0;
+}
+
+/* Shade Swatches (for Fibers & Hairline Compact) */
+.zvhc-shade-box {
+  background: #FFFFFF;
+  border: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  border-radius: var(--zvhc-radius-card, 14px);
+  padding: 16px 18px;
+  margin-bottom: 18px;
+}
+
+.zvhc-shade-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+}
+
+.zvhc-shade-header span:first-child {
+  font-weight: 700;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.zvhc-shade-header span:last-child {
+  font-weight: 700;
+  color: var(--zvhc-t01-accent-rose, #B0476E);
+}
+
+.zvhc-swatches-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.zvhc-swatch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  background: var(--zvhc-t01-bg, #E9E4E6);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  transition: all 0.2s ease;
+}
+
+.zvhc-swatch-btn.is-active,
+.zvhc-swatch-btn:hover {
+  border-color: var(--zvhc-t01-accent-rose, #B0476E);
+  background: #FFFFFF;
+}
+
+.zvhc-swatch-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
+}
+
+/* T01 BUNDLE CARDS (.kc-tier) */
+.zvhc-bundle-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.zvhc-bundle-card {
+  position: relative;
+  background: var(--zvhc-t01-bg-card, #FFFFFF);
+  border: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  border-radius: var(--zvhc-radius-card, 14px);
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zvhc-bundle-card:hover {
+  border-color: var(--zvhc-t01-accent-rose, #B0476E);
+}
+
+.zvhc-bundle-card.is-selected {
+  border: 2px solid var(--zvhc-t01-accent-rose, #B0476E);
+  background: var(--zvhc-t01-card-sel-bg, #FDF2F6);
+}
+
+.zvhc-tier-badge {
+  position: absolute;
+  top: -11px;
+  right: 18px;
+  background: var(--zvhc-t01-accent-rose, #B0476E);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 3px 12px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.zvhc-tier-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.zvhc-tier-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-grow: 1;
+}
+
+.zvhc-radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--zvhc-t01-border, #EAD7DD);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #FFFFFF;
+  transition: border-color 0.2s ease;
+}
+
+.zvhc-bundle-card.is-selected .zvhc-radio-circle {
+  border-color: var(--zvhc-t01-accent-rose, #B0476E);
+}
+
+.zvhc-radio-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--zvhc-t01-accent-rose, #B0476E);
+  display: none;
+}
+
+.zvhc-bundle-card.is-selected .zvhc-radio-dot {
+  display: block;
+}
+
+.zvhc-tier-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.zvhc-tier-title {
+  font-family: var(--zvhc-font-sans, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+}
+
+.zvhc-tier-pill {
+  background: var(--zvhc-t01-pill-bg, #F8E4EB);
+  color: var(--zvhc-t01-accent-rose, #B0476E);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.zvhc-tier-sub {
+  font-size: 0.82rem;
+  color: var(--zvhc-t01-text-muted, #5A4651);
+}
+
+.zvhc-tier-ship {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--zvhc-t01-trust-green, #3F8F6B);
+  margin-top: 4px;
+}
+
+.zvhc-tier-pricing {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.zvhc-tier-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  line-height: 1.1;
+}
+
+.zvhc-tier-compare {
+  font-size: 0.85rem;
+  text-decoration: line-through;
+  color: var(--zvhc-t01-text-subtle, #7A6670);
+  margin-top: 2px;
+}
+
+/* T01 Compact Upsell */
+.zvhc-upsell-box {
+  background: #FFFFFF;
+  border: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  border-radius: var(--zvhc-radius-card, 14px);
+  padding: 14px 18px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.zvhc-upsell-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.zvhc-upsell-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid var(--zvhc-t01-border, #EAD7DD);
+}
+
+.zvhc-upsell-info h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin: 0 0 2px;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+}
+
+.zvhc-upsell-info p {
+  font-size: 0.78rem;
+  color: var(--zvhc-t01-text-muted, #5A4651);
+  margin: 0;
+}
+
+.zvhc-upsell-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.zvhc-upsell-price {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+}
+
+.zvhc-upsell-checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1.5px solid var(--zvhc-t01-accent-rose, #B0476E);
+  cursor: pointer;
+  accent-color: var(--zvhc-t01-accent-rose, #B0476E);
+}
+
+/* Trust Strip */
+.zvhc-trust-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 24px;
+  text-align: center;
+  border-top: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  padding-top: 18px;
+}
+
+.zvhc-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.zvhc-trust-item svg {
+  color: var(--zvhc-t01-accent-rose, #B0476E);
+  width: 20px;
+  height: 20px;
+}
+
+.zvhc-trust-item span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Sticky Mobile Dock */
+.zvhc-sticky-dock {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border-top: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  padding: 12px 16px;
+  z-index: 998;
+  box-shadow: 0 -4px 20px rgba(43, 27, 36, 0.08);
+}
+
+.zvhc-sticky-dock-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 12px;
+}

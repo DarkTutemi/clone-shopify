@@ -1,0 +1,57 @@
+/**
+ * ZAVELYN HAIR CARE — T01 Design Tokens Specification
+ * Directly extracted from ShopSideK T01 reference (https://shopsidek.com/templates/t01/)
+ */
+
+:root {
+  /* Canvas & Backgrounds */
+  --zvhc-t01-bg: #E9E4E6;              /* Main page background */
+  --zvhc-t01-bg-alt: #FBEDE8;          /* Warm peach/rose secondary section background */
+  --zvhc-t01-bg-card: #FFFFFF;         /* Pure white card & container background */
+  --zvhc-t01-header-bg: #1B1418;       /* Deep obsidian/plum header */
+  
+  /* Text & Typography */
+  --zvhc-t01-text-main: #2B1B24;       /* Primary dark plum text */
+  --zvhc-t01-text-muted: #5A4651;      /* Secondary descriptive text */
+  --zvhc-t01-text-subtle: #7A6670;     /* Tertiary captions & labels */
+  --zvhc-t01-text-light: #FFFFFF;      /* Inverted white text */
+  
+  /* Primary Action & Brand Accents */
+  --zvhc-t01-cta-bg: #6B1E46;          /* Deep berry / plum CTA button */
+  --zvhc-t01-cta-hover: #521636;       /* CTA hover state */
+  --zvhc-t01-cta-shadow: rgba(107, 30, 70, 0.45);
+  --zvhc-t01-accent-rose: #B0476E;     /* Rose active borders & badges */
+  --zvhc-t01-card-sel-bg: #FDF2F6;     /* Selected bundle card tint */
+  --zvhc-t01-pill-bg: #F8E4EB;         /* Offer & discount pill background */
+  
+  /* Borders & Dividers */
+  --zvhc-t01-border: #EAD7DD;          /* Default soft card/input border */
+  --zvhc-t01-border-subtle: #F0E6E9;   /* Subtle divider lines */
+  
+  /* Status & Functional */
+  --zvhc-t01-star-gold: #E0A33A;       /* Verified star rating gold */
+  --zvhc-t01-trust-green: #3F8F6B;     /* Free shipping & verified check green */
+
+  /* Typography Families */
+  --zvhc-font-serif: 'Fraunces', Georgia, serif;
+  --zvhc-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Elevation & Geometry */
+  --zvhc-radius-btn: 12px;
+  --zvhc-radius-card: 14px;
+  --zvhc-radius-pill: 9999px;
+  --zvhc-radius-img: 16px;
+
+  --zvhc-container-max: 1180px;
+
+  /* Aliases for Cart Drawer & Component Interop */
+  --zvhc-espresso: var(--zvhc-t01-text-main);
+  --zvhc-border: var(--zvhc-t01-border);
+  --zvhc-muted: var(--zvhc-t01-text-muted);
+  --zvhc-copper: var(--zvhc-t01-accent-rose);
+  --zvhc-copper-light: var(--zvhc-t01-card-sel-bg);
+  --zvhc-copper-dark: var(--zvhc-t01-cta-bg);
+  --zvhc-burgundy-cta: var(--zvhc-t01-cta-bg);
+  --zvhc-burgundy-cta-hover: var(--zvhc-t01-cta-hover);
+  --zvhc-botanical: var(--zvhc-t01-accent-rose);
+}

@@ -1,46 +1,6 @@
 /**
- * ZAVELYN HAIR CARE — PDP Specific Stylesheet (v2.0 Bold Botanical)
+ * ZAVELYN HAIR CARE — Legacy PDP Bridge Stylesheet
+ * Redirects to T01 PDP Design System
  */
 
-.zvhc-pdp-main {
-  background-color: var(--zvhc-ivory);
-}
-
-.zvhc-pdp-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
-
-@media (min-width: 992px) {
-  .zvhc-pdp-grid {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 48px;
-    align-items: start;
-  }
-}
-
-.zvhc-gallery {
-  position: relative;
-}
-
-@media (min-width: 992px) {
-  .zvhc-gallery {
-    position: sticky;
-    top: 90px;
-  }
-}
-
-.zvhc-bundle-card:hover {
-  border-color: var(--zvhc-green) !important;
-}
-
-.zvhc-shade-btn:hover {
-  border-color: var(--zvhc-orange) !important;
-}
-
-#zvhcAddToCartBtn:hover {
-  background-color: var(--zvhc-orange) !important;
-  color: #FFFFFF !important;
-  transform: translateY(-1px);
-}
+@import url('zvhc-t01-pdp.css');

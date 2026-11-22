@@ -1,0 +1,129 @@
+/**
+ * ZAVELYN HAIR CARE — T01 Core Stylesheet
+ * Scoped strictly to .zvhc-wrapper
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+.zvhc-wrapper {
+  background-color: var(--zvhc-t01-bg, #E9E4E6);
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  font-family: var(--zvhc-font-sans, 'Inter', system-ui, -apple-system, sans-serif);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.zvhc-wrapper * {
+  box-sizing: border-box;
+}
+
+.zvhc-container {
+  width: 100%;
+  max-width: var(--zvhc-container-max, 1180px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Headings */
+.zvhc-wrapper h1,
+.zvhc-wrapper h2,
+.zvhc-wrapper h3,
+.zvhc-wrapper .zvhc-h1,
+.zvhc-wrapper .zvhc-h2,
+.zvhc-wrapper .zvhc-h3 {
+  font-family: var(--zvhc-font-serif, 'Fraunces', Georgia, serif);
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  font-weight: 600;
+  margin: 0 0 16px;
+  line-height: 1.18;
+}
+
+.zvhc-wrapper h1,
+.zvhc-wrapper .zvhc-h1 {
+  font-size: clamp(2rem, 3.8vw, 2.5rem);
+  letter-spacing: -0.02em;
+}
+
+.zvhc-wrapper h2,
+.zvhc-wrapper .zvhc-h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  letter-spacing: -0.01em;
+}
+
+.zvhc-wrapper h3,
+.zvhc-wrapper .zvhc-h3 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+.zvhc-wrapper p {
+  color: var(--zvhc-t01-text-muted, #5A4651);
+  margin: 0 0 16px;
+  line-height: 1.55;
+}
+
+.zvhc-wrapper a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.zvhc-wrapper a:hover {
+  opacity: 0.85;
+}
+
+/* Base Buttons */
+.zvhc-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--zvhc-t01-cta-bg, #6B1E46);
+  color: #FFFFFF !important;
+  font-family: var(--zvhc-font-sans, 'Inter', sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  height: 56px;
+  padding: 0 32px;
+  border-radius: var(--zvhc-radius-btn, 12px);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 24px -10px rgba(107, 30, 70, 0.55);
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.zvhc-btn-primary:hover {
+  background-color: var(--zvhc-t01-cta-hover, #521636);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px -10px rgba(107, 30, 70, 0.65);
+}
+
+.zvhc-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  font-family: var(--zvhc-font-sans, 'Inter', sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  height: 52px;
+  padding: 0 28px;
+  border-radius: var(--zvhc-radius-btn, 12px);
+  border: 1.5px solid var(--zvhc-t01-border, #EAD7DD);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zvhc-btn-secondary:hover {
+  background-color: #FFFFFF;
+  border-color: var(--zvhc-t01-accent-rose, #B0476E);
+}

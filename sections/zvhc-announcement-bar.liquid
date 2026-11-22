@@ -1,21 +1,21 @@
 {% comment %}
-  ZAVELYN HAIR CARE — Bold Botanical Announcement Bar
+  ZAVELYN HAIR CARE — T01 Style Top Announcement Bar
 {% endcomment %}
-<div class="zvhc-announcement" style="background-color: var(--zvhc-green); color: var(--zvhc-ivory); font-weight: 600; font-size: 0.82rem; padding: 10px 0; letter-spacing: 0.04em; text-align: center;">
+<div class="zvhc-t01-announcement">
   <div class="zvhc-container">
-    <span>{{ section.settings.announcement_text | default: '🌿 FREE US SHIPPING ON ORDERS OVER $50 • 30-DAY MONEY-BACK GUARANTEE • 100% CLEAN BOTANICALS' }}</span>
+    <span>{{ section.settings.announcement_text | default: 'Free US Tracked Shipping on Orders Over $50 · 30-Day Strand Satisfaction Guarantee' }}</span>
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "ZVHC Announcement Bar",
+  "name": "ZVHC T01 Announcement",
   "settings": [
     {
       "type": "text",
       "id": "announcement_text",
       "label": "Announcement Text",
-      "default": "🌿 FREE US SHIPPING ON ORDERS OVER $50 • 30-DAY MONEY-BACK GUARANTEE • 100% CLEAN BOTANICALS"
+      "default": "Free US Tracked Shipping on Orders Over $50 · 30-Day Strand Satisfaction Guarantee"
     }
   ]
 }

@@ -181,8 +181,11 @@
     {{ 'zavelyn-pdp-body.css' | asset_url | stylesheet_tag }}
 
     {% if is_haircare_route %}
-      {{ 'zvhc-haircare.css' | asset_url | stylesheet_tag }}
-      {{ 'zvhc-pdp.css' | asset_url | stylesheet_tag }}
+      {{ 'zvhc-t01-tokens.css' | asset_url | stylesheet_tag }}
+      {{ 'zvhc-t01-core.css' | asset_url | stylesheet_tag }}
+      {{ 'zvhc-t01-pdp.css' | asset_url | stylesheet_tag }}
+      {{ 'zvhc-t01-components.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'zvhc-t01.js' | asset_url }}" defer></script>
     {% endif %}
   </head>
 
