@@ -1,0 +1,173 @@
+[
+  {
+    "name": "homepage",
+    "path": "/",
+    "url": "https://tryzavelyn.com/",
+    "title": "Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals",
+    "desktop_img": "audit\\baseline_screenshots\\homepage_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\homepage_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "p01_batana_oil",
+    "path": "/products/zvhc-batana-hair-growth-oil",
+    "url": "https://tryzavelyn.com/products/zvhc-batana-hair-growth-oil",
+    "title": "Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals",
+    "desktop_img": "audit\\baseline_screenshots\\p01_batana_oil_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\p01_batana_oil_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "p02_keratin_fibers",
+    "path": "/products/zvhc-keratin-hair-building-fibers",
+    "url": "https://tryzavelyn.com/products/zvhc-keratin-hair-building-fibers",
+    "title": "Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals",
+    "desktop_img": "audit\\baseline_screenshots\\p02_keratin_fibers_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\p02_keratin_fibers_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "p03_root_powder",
+    "path": "/products/zvhc-root-lift-styling-powder",
+    "url": "https://tryzavelyn.com/products/zvhc-root-lift-styling-powder",
+    "title": "Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals",
+    "desktop_img": "audit\\baseline_screenshots\\p03_root_powder_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\p03_root_powder_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "p04_hairline_compact",
+    "path": "/products/zvhc-precision-hairline-compact",
+    "url": "https://tryzavelyn.com/products/zvhc-precision-hairline-compact",
+    "title": "Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals",
+    "desktop_img": "audit\\baseline_screenshots\\p04_hairline_compact_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\p04_hairline_compact_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "p05_raw_balm",
+    "path": "/products/zvhc-raw-batana-scalp-balm",
+    "url": "https://tryzavelyn.com/products/zvhc-raw-batana-scalp-balm",
+    "title": "Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals",
+    "desktop_img": "audit\\baseline_screenshots\\p05_raw_balm_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\p05_raw_balm_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "p06_curl_cream",
+    "path": "/products/zvhc-botanical-curl-cream",
+    "url": "https://tryzavelyn.com/products/zvhc-botanical-curl-cream",
+    "title": "Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals",
+    "desktop_img": "audit\\baseline_screenshots\\p06_curl_cream_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\p06_curl_cream_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "p07_7in1_elixir",
+    "path": "/products/zvhc-7-in-1-growth-elixir",
+    "url": "https://tryzavelyn.com/products/zvhc-7-in-1-growth-elixir",
+    "title": "Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals",
+    "desktop_img": "audit\\baseline_screenshots\\p07_7in1_elixir_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\p07_7in1_elixir_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "p08_hair_mask",
+    "path": "/products/zvhc-batana-deep-conditioning-hair-mask",
+    "url": "https://tryzavelyn.com/products/zvhc-batana-deep-conditioning-hair-mask",
+    "title": "Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals",
+    "desktop_img": "audit\\baseline_screenshots\\p08_hair_mask_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\p08_hair_mask_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "legacy_01_holster",
+    "path": "/products/breakout-2-0-holster-built-for-maximum-concealment-copy",
+    "url": "https://tryzavelyn.com/products/breakout-2-0-holster-built-for-maximum-concealment-copy",
+    "title": "Breakout 2.0 Holster - Built For Maximum Concealment – Zavelyn",
+    "desktop_img": "audit\\baseline_screenshots\\legacy_01_holster_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\legacy_01_holster_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "legacy_02_rehab_glove",
+    "path": "/products/zavelyn-rehabilitation-glove",
+    "url": "https://tryzavelyn.com/products/zavelyn-rehabilitation-glove",
+    "title": "Zavelyn™ Robotic Stroke & Hand Rehabilitation Glove",
+    "desktop_img": "audit\\baseline_screenshots\\legacy_02_rehab_glove_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\legacy_02_rehab_glove_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "legacy_03_babiguard",
+    "path": "/products/babiguard-head-protector",
+    "url": "https://tryzavelyn.com/products/babiguard-head-protector",
+    "title": "BabiGuard Head Protector - Infant Head & Back Cushion Backpack – Zavelyn",
+    "desktop_img": "audit\\baseline_screenshots\\legacy_03_babiguard_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\legacy_03_babiguard_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "legacy_04_yeoman_sweep",
+    "path": "/products/the-yeoman-sweep",
+    "url": "https://tryzavelyn.com/products/the-yeoman-sweep",
+    "title": "Yeoman Heavy-Duty Push Lawn Sweeper | Zavelyn",
+    "desktop_img": "audit\\baseline_screenshots\\legacy_04_yeoman_sweep_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\legacy_04_yeoman_sweep_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "legacy_05_botanaroots_orig",
+    "path": "/products/zavelyn-botanaroots-organic-batana-hair-growth-oil",
+    "url": "https://tryzavelyn.com/products/zavelyn-botanaroots-organic-batana-hair-growth-oil",
+    "title": "BotanaRoots Pure Batana Oil for Hair & Scalp | Zavelyn",
+    "desktop_img": "audit\\baseline_screenshots\\legacy_05_botanaroots_orig_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\legacy_05_botanaroots_orig_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "legacy_06_botanaroots_bogo",
+    "path": "/products/zavelyn-botanaroots-bogo-special",
+    "url": "https://tryzavelyn.com/products/zavelyn-botanaroots-bogo-special",
+    "title": "Zavelyn BotanaRoots Batana Hair Growth Oil — Exclusive BOGO Offer",
+    "desktop_img": "audit\\baseline_screenshots\\legacy_06_botanaroots_bogo_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\legacy_06_botanaroots_bogo_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "legacy_07_handpan_master",
+    "path": "/products/zavelyn-handpan-master",
+    "url": "https://tryzavelyn.com/products/zavelyn-handpan-master",
+    "title": "Handpan Master 22\" 12-Tone D-Kurdish Drum | Zavelyn",
+    "desktop_img": "audit\\baseline_screenshots\\legacy_07_handpan_master_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\legacy_07_handpan_master_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "legacy_08_fence_repair",
+    "path": "/products/sakerplus-fence-post-repair-kit",
+    "url": "https://tryzavelyn.com/products/sakerplus-fence-post-repair-kit",
+    "title": "Heavy-Duty Steel Fence Post Repair Kit | Zavelyn",
+    "desktop_img": "audit\\baseline_screenshots\\legacy_08_fence_repair_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\legacy_08_fence_repair_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "legacy_09_thoson_magtrack",
+    "path": "/products/thoson-magtrack",
+    "url": "https://tryzavelyn.com/products/thoson-magtrack",
+    "title": "MagTrack Anti-Gravity Glow Electric Train Track | Zavelyn",
+    "desktop_img": "audit\\baseline_screenshots\\legacy_09_thoson_magtrack_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\legacy_09_thoson_magtrack_mobile_390.png",
+    "status": "OK"
+  },
+  {
+    "name": "legacy_10_heat_lamp",
+    "path": "/products/livestock-heating-lamp",
+    "url": "https://tryzavelyn.com/products/livestock-heating-lamp",
+    "title": "Livestock Infrared Heating Lamp for Barns | Zavelyn",
+    "desktop_img": "audit\\baseline_screenshots\\legacy_10_heat_lamp_desktop_1440.png",
+    "mobile_img": "audit\\baseline_screenshots\\legacy_10_heat_lamp_mobile_390.png",
+    "status": "OK"
+  }
+]

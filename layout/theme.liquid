@@ -39,11 +39,15 @@
 
       if is_haircare_route
         assign brand_name = 'Zavelyn Hair Care'
-        assign meta_title = 'Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals'
+        if request.page_type == 'index'
+          assign meta_title = 'Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals'
+        else
+          assign meta_title = page_title
+        endif
       else
         assign brand_name = 'Zavelyn'
         assign meta_title = page_title
-        if request.page_type == 'index' or meta_title == blank or meta_title == shop.name or meta_title == 'My Store' or meta_title contains 'Sakerplus'
+        if request.page_type == 'index' or meta_title == blank or meta_title == shop.name or meta_title == 'My Store'
           assign meta_title = 'Zavelyn Official Store — Heavy Duty Tools & Homestead Essentials'
         endif
       endif
@@ -58,7 +62,7 @@
     {% if page_description %}
       <meta name="description" content="{{ page_description | escape }}">
     {% elsif is_haircare_route %}
-      <meta name="description" content="Discover Zavelyn Hair Care. Powered by pure wild-harvested Honduran Batana oil to nourish the scalp, awaken dormant follicles, and restore thick, vibrant hair density.">
+      <meta name="description" content="Discover Zavelyn Hair Care. Powered by pure wild-harvested Honduran Batana oil and nourishing bio-lipids to deeply condition the scalp barrier, reduce comb friction, and restore radiant strand vitality.">
     {% endif %}
 
     {% render 'meta-tags' %}
@@ -140,8 +144,8 @@
 
     <script>
       document.documentElement.classList.replace('no-js', 'js');
-      window.Zavelyn = window.Sakerplus = window.Sakerplus || {};
-      window.Sakerplus.routes = {
+      window.Zavelyn = window.Zavelyn || {};
+      window.Zavelyn.routes = {
         cart_url: '{{ routes.cart_url }}',
         cart_add_url: '{{ routes.cart_add_url }}',
         cart_change_url: '{{ routes.cart_change_url }}',
@@ -150,7 +154,7 @@
         search_url: '{{ routes.search_url }}',
         root_url: '{{ routes.root_url }}'
       };
-      window.Sakerplus.strings = {
+      window.Zavelyn.strings = {
         cartError: {{ 'cart.general.error' | t | json }},
         cartItemAdded: {{ 'cart.general.item_added' | t | json }},
         soldOut: {{ 'products.product.sold_out' | t | json }},
@@ -158,7 +162,7 @@
         addToCart: {{ 'products.product.add_to_cart' | t | json }},
         loading: {{ 'general.accessibility.loading' | t | json }}
       };
-      window.Sakerplus.settings = {
+      window.Zavelyn.settings = {
         cartType: {{ settings.cart_type | json }},
         moneyFormat: {{ shop.money_format | json }},
         moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }},
@@ -167,6 +171,8 @@
         freeShippingThreshold: {{ settings.cart_free_shipping_threshold | json }},
         showFreeShipping: {{ settings.cart_show_free_shipping | json }}
       };
+      // Legacy compatibility alias
+      window.Sakerplus = window.Zavelyn;
     </script>
 
     <script type="importmap">
@@ -224,7 +230,7 @@
           const body = document.querySelector('.shopify-policy__body');
           if (body) {
             body.innerHTML = body.innerHTML
-              .replace(/\[INSERT RETURN ADDRESS\]/g, 'Zavelyn Returns Department, 13101 Preston Rd, Suite 110, Dallas, TX 75240, United States')
+              .replace(/\[INSERT RETURN ADDRESS\]/g, 'support@tryzavelyn.com to receive an authorized RMA return number and regional return hub destination')
               .replace(/\[NOTE TO MERCHANT:[^\]]*\]/g, '')
               .replace(/\[agent name\]/g, 'Zavelyn Customer Support')
               .replace(/\[LINK\]/g, '<a href="mailto:support@tryzavelyn.com">support@tryzavelyn.com</a>');

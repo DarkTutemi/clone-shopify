@@ -1,0 +1,240 @@
+{
+  "theme_id": "189188079801",
+  "timestamp": "2026-11-22T14:57:52.092Z",
+  "results": [
+    {
+      "target": "homepage",
+      "path": "/",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals",
+        "ogSiteName": "Zavelyn Hair Care",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": true,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": false,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 9975
+      }
+    },
+    {
+      "target": "our_story",
+      "path": "/pages/our-story",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Our Story — Zavelyn Hair Care",
+        "ogSiteName": "Zavelyn Hair Care",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": true,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": false,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 4134
+      }
+    },
+    {
+      "target": "track_order",
+      "path": "/pages/track-order",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Track Order – Zavelyn Hair Care",
+        "ogSiteName": "Zavelyn Hair Care",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": true,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": false,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 1959
+      }
+    },
+    {
+      "target": "p01_batana_oil",
+      "path": "/products/zvhc-batana-hair-growth-oil",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Zavelyn BotanaRoots Pure Batana Scalp & Hair Oil (60ml)",
+        "ogSiteName": "Zavelyn Hair Care",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": true,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": false,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 6893
+      }
+    },
+    {
+      "target": "p02_keratin_fibers",
+      "path": "/products/zvhc-keratin-hair-building-fibers",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Zavelyn Instant Hair Density Keratin Building Fibers (100g)",
+        "ogSiteName": "Zavelyn Hair Care",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": true,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": false,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 6744
+      }
+    },
+    {
+      "target": "p03_root_powder",
+      "path": "/products/zvhc-root-lift-styling-powder",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Zavelyn Root-Lift Volumizing & Mattifying Styling Powder (10g)",
+        "ogSiteName": "Zavelyn Hair Care",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": true,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": false,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 6492
+      }
+    },
+    {
+      "target": "p04_hairline_compact",
+      "path": "/products/zvhc-precision-hairline-compact",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Zavelyn Precision Hairline Shadow & Root Concealer Compact (4g)",
+        "ogSiteName": "Zavelyn Hair Care",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": true,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": false,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 6678
+      }
+    },
+    {
+      "target": "p05_raw_balm",
+      "path": "/products/zvhc-raw-batana-scalp-balm",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Zavelyn Raw Unrefined Batana Scalp & Cuticle Balm (20g)",
+        "ogSiteName": "Zavelyn Hair Care",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": true,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": false,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 6572
+      }
+    },
+    {
+      "target": "p06_curl_cream",
+      "path": "/products/zvhc-botanical-curl-cream",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Zavelyn Botanical Curl Defining & Frizz-Shield Cream (100ml)",
+        "ogSiteName": "Zavelyn Hair Care",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": true,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": false,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 6600
+      }
+    },
+    {
+      "target": "p07_7in1_elixir",
+      "path": "/products/zvhc-7-in-1-growth-elixir",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Zavelyn 7-in-1 Botanical Multi-Oil Scalp & Growth Elixir (60ml)",
+        "ogSiteName": "Zavelyn Hair Care",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": true,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": false,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 6793
+      }
+    },
+    {
+      "target": "p08_hair_mask",
+      "path": "/products/zvhc-batana-deep-conditioning-hair-mask",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Zavelyn Batana Deep Conditioning Hair Mask (120g)",
+        "ogSiteName": "Zavelyn Hair Care",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": true,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": true,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 6992
+      }
+    },
+    {
+      "target": "legacy_01_holster",
+      "path": "/products/breakout-2-0-holster-built-for-maximum-concealment-copy",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Breakout 2.0 Holster - Built For Maximum Concealment – Zavelyn",
+        "ogSiteName": "Zavelyn",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": false,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": false,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 16238
+      }
+    },
+    {
+      "target": "legacy_02_rehab_glove",
+      "path": "/products/zavelyn-rehabilitation-glove",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Zavelyn™ Robotic Stroke & Hand Rehabilitation Glove",
+        "ogSiteName": "Zavelyn",
+        "hasSakerplus": false,
+        "hasFakeReviews": false,
+        "hasShippingThreshold6999": false,
+        "hasOldThreshold50": false,
+        "containerText": "",
+        "hasDimethiconol": false,
+        "hasSiliconeFreeOnMask": false,
+        "bodyLength": 10874
+      }
+    }
+  ]
+}

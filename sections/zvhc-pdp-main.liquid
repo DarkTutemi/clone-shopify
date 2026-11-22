@@ -1,6 +1,7 @@
 {% comment %}
-  ZAVELYN HAIR CARE — T01 Main Product Buy Box (v3.1)
-  Exact dynamic pricing, product-specific contextual upsell, safe Shopify selectedOptions, accessible error state
+  ZAVELYN HAIR CARE — T01 Main Product Buy Box (v5.0 Master Integrated Fix)
+  Decoupled data model for all 8 SKUs, verified INCI & safety, accurate savings math,
+  authentic trust indicators, Shopify official payment badges, accessible ARIA states.
 {% endcomment %}
 
 {% assign has_shades = false %}
@@ -16,82 +17,217 @@
 {% if product.variants.size >= 3 %}
   {% assign tier1_price = product.variants[0].price | money %}
   {% assign tier1_compare = product.variants[0].compare_at_price | money %}
+  {% assign tier1_num = product.variants[0].price | divided_by: 100.0 %}
+
   {% assign tier2_price = product.variants[1].price | money %}
   {% assign tier2_compare = product.variants[1].compare_at_price | money %}
+  {% assign tier2_num = product.variants[1].price | divided_by: 100.0 %}
+
   {% assign tier3_price = product.variants[2].price | money %}
   {% assign tier3_compare = product.variants[2].compare_at_price | money %}
+  {% assign tier3_num = product.variants[2].price | divided_by: 100.0 %}
+
   {% assign default_cta_price = product.variants[1].price | money %}
 {% else %}
   {% assign tier1_price = product.price | money %}
   {% assign tier1_compare = product.compare_at_price | money %}
+  {% assign tier1_num = product.price | divided_by: 100.0 %}
   {% assign tier2_price = product.price | money %}
   {% assign tier2_compare = product.compare_at_price | money %}
+  {% assign tier2_num = product.price | divided_by: 100.0 %}
   {% assign tier3_price = product.price | money %}
   {% assign tier3_compare = product.compare_at_price | money %}
+  {% assign tier3_num = product.price | divided_by: 100.0 %}
   {% assign default_cta_price = product.price | money %}
 {% endif %}
 
-{% comment %} Product-specific contextual upsell configuration {% endcomment %}
+{% comment %} Calculate real unit-baseline savings percentage {% endcomment %}
+{% assign duo_baseline = tier1_num | times: 2 %}
+{% assign duo_savings_val = duo_baseline | minus: tier2_num %}
+{% if duo_savings_val > 0 and duo_baseline > 0 %}
+  {% assign duo_save_pct = duo_savings_val | divided_by: duo_baseline | times: 100 | round %}
+{% else %}
+  {% assign duo_save_pct = 0 %}
+{% endif %}
+
+{% assign trio_baseline = tier1_num | times: 3 %}
+{% assign trio_savings_val = trio_baseline | minus: tier3_num %}
+{% if trio_savings_val > 0 and trio_baseline > 0 %}
+  {% assign trio_save_pct = trio_savings_val | divided_by: trio_baseline | times: 100 | round %}
+{% else %}
+  {% assign trio_save_pct = 0 %}
+{% endif %}
+
+{% comment %} =========================================================================
+   PER-PRODUCT DECOUPLED DATA MODEL (ALL 8 SKUS) — AUD-01, AUD-10, AUD-11
+   ========================================================================= {% endcomment %}
 {% case product.handle %}
   {% when 'zvhc-batana-deep-conditioning-hair-mask' %}
+    {% assign p_container = 'Jar' %}
+    {% assign p_unit_label = '1 Jar (120g)' %}
+    {% assign p_duo_label = '2 Jars (120g)' %}
+    {% assign p_trio_label = '3 Jars (120g)' %}
+    {% assign p_subtitle = 'An intensive rinse-out lipid immersion with pure Batana, Coconut, Camellia oils, and Biotin to melt away tangles, restore cuticle slip, and leave strands silk-soft.' %}
+    {% assign p_benefit1 = 'Instantly softens coarse, brittle textures and dramatically reduces comb-through snagging' %}
+    {% assign p_benefit2 = 'Rich high-slip lipid formula with Coconut, Camellia, and Biotin for reflective shine' %}
+    {% assign p_benefit3 = 'Free from sulfates, parabens, phthalates, and artificial coloring' %}
+    {% assign p_how_to = 'After shampooing, gently squeeze out excess water. Scoop a generous amount and work evenly through clean, damp mid-lengths and ends. Comb through with fingers or a wide-tooth comb. Leave on for 5 to 10 minutes for express detangling, or 15 to 20 minutes under a shower cap for intensive lipid penetration. Rinse thoroughly with lukewarm water until clean. Use 1–2 times weekly.' %}
+    {% assign p_safety = 'For external cosmetic hair conditioning only. Avoid direct contact with eyes; rinse immediately with cool water if contact occurs. Do not apply directly to broken scalp skin. Discontinue use if irritation develops.' %}
+    {% assign p_inci = 'Aqua, Cetearyl Alcohol, Steartrimonium Chloride, Elaeis Oleifera Kernel Oil (Batana Oil), Cocos Nucifera (Coconut) Oil, Ricinus Communis (Castor) Seed Oil, Camellia Japonica Seed Oil, Zingiber Officinale (Ginger) Root Extract, Biotin, Glycerin, Hydroxyethylcellulose, Dimethiconol, Phenoxyethanol, Ethylhexylglycerin, Aroma.' %}
     {% assign upsell_title = 'Add Pure Batana Scalp Oil (60ml)' %}
     {% assign upsell_sub = 'Pre-wash scalp treatment to stimulate roots before deep masking' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
     {% assign upsell_price = '$39.99' %}
     {% assign upsell_price_num = 39.99 %}
     {% assign upsell_vid = '68580229218489' %}
+
   {% when 'zvhc-batana-hair-growth-oil' %}
+    {% assign p_container = 'Bottle' %}
+    {% assign p_unit_label = '1 Bottle (60ml)' %}
+    {% assign p_duo_label = '2 Bottles (60ml)' %}
+    {% assign p_trio_label = '3 Bottles (60ml)' %}
+    {% assign p_subtitle = 'Pure unrefined Honduran batana oil rich in restorative oleic fatty acids to nourish the scalp barrier, lubricate brittle cuticles, and restore healthy bounce.' %}
+    {% assign p_benefit1 = 'Deeply replenishes scalp moisture and conditions fragile, dry roots' %}
+    {% assign p_benefit2 = 'Lubricates cuticles to minimize mechanical styling friction and combing breakage' %}
+    {% assign p_benefit3 = '100% cold-pressed botanical lipids with zero silicones, mineral oil, or synthetic dyes' %}
+    {% assign p_how_to = 'Part hair into 4 quadrants. Dispense 4–6 drops directly along scalp part lines. Massage with fingertips for 2–3 minutes to distribute. Smooth excess through lengths and ends. Leave on 30 minutes before shampooing, or leave on overnight as an intensive oil soak.' %}
+    {% assign p_safety = 'For external cosmetic hair and scalp conditioning only. Conduct a 24-hour patch test prior to initial use. Do not apply to broken, inflamed skin or open wounds. Avoid contact with eyes; rinse immediately with cool water if contact occurs.' %}
+    {% assign p_inci = 'Elaeis Oleifera Kernel Oil (Batana Oil), Rosmarinus Officinalis (Rosemary) Leaf Extract, Tocopherol (Vitamin E).' %}
     {% assign upsell_title = 'Add Raw Batana Scalp Balm (20g)' %}
     {% assign upsell_sub = 'Melt-on-contact barrier butter for intensive scalp moisture' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
     {% assign upsell_price = '$19.99' %}
     {% assign upsell_price_num = 19.99 %}
     {% assign upsell_vid = '68580229677241' %}
+
   {% when 'zvhc-keratin-hair-building-fibers' %}
+    {% assign p_container = 'Pouch' %}
+    {% assign p_unit_label = '1 Pouch (100g)' %}
+    {% assign p_duo_label = '2 Pouches (100g)' %}
+    {% assign p_trio_label = '3 Pouches (100g)' %}
+    {% assign p_subtitle = 'Microscopic electrostatic keratin fibers that bond securely to existing strands to instantly camouflage wide part lines and thinning areas with natural dimensional depth.' %}
+    {% assign p_benefit1 = 'Instantly disguises exposed scalp and wide parts with realistic dimensional depth' %}
+    {% assign p_benefit2 = 'Electrostatic grip stays locked through wind, sweat, and long workdays' %}
+    {% assign p_benefit3 = 'Washes out completely with your regular shampoo; zero staining or sticky residue' %}
+    {% assign p_how_to = 'Style hair dry. Gently shake or pat fibers over areas of visible thinning until scalp is covered. Lightly pat hair with fingertips to distribute fibers evenly. Set with light hairspray for maximum wind and sweat resistance.' %}
+    {% assign p_safety = 'For external cosmetic hair application only. Do not inhale dust or airborne fibers. Avoid contact with eyes; if fibers enter eyes, flush immediately with warm water. Keep out of reach of children.' %}
+    {% assign p_inci = 'Keratin, Gossypium Herbaceum (Cotton) Fiber, Silica, DMDM Hydantoin, [+/- CI 77491, CI 77492, CI 77499 (Iron Oxides)].' %}
     {% assign upsell_title = 'Add Precision Hairline Compact (4g)' %}
     {% assign upsell_sub = 'Instant root touch-up with mirror and sponge applicator' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256808781854155-hero.jpg?v=1795264431' %}
     {% assign upsell_price = '$24.99' %}
     {% assign upsell_price_num = 24.99 %}
     {% assign upsell_vid = '68580492705977' %}
+
   {% when 'zvhc-root-lift-styling-powder' %}
+    {% assign p_container = 'Bottle' %}
+    {% assign p_unit_label = '1 Bottle (10g)' %}
+    {% assign p_duo_label = '2 Bottles (10g)' %}
+    {% assign p_trio_label = '3 Bottles (10g)' %}
+    {% assign p_subtitle = 'Micro-fine texturizing particles absorb excess scalp sebum and build instant, reworkable root lift without aerosol propellants or crunchy residue.' %}
+    {% assign p_benefit1 = 'Delivers instant, gravity-defying root volume to flat, fine, or second-day hair' %}
+    {% assign p_benefit2 = 'Absorbs excess surface oils for a clean, velvety matte finish' %}
+    {% assign p_benefit3 = 'Fully reworkable throughout the day—just massage roots to reactivate lift' %}
+    {% assign p_how_to = 'Shake bottle gently. Tap a small amount directly onto dry roots where volume is desired. Massage with fingertips to disperse powder and lift hair upward. Restyle anytime by massaging roots.' %}
+    {% assign p_safety = 'For external cosmetic styling only. Do not inhale airborne powder. Keep dispenser away from nose and mouth. Avoid eye contact; rinse thoroughly if product enters eyes.' %}
+    {% assign p_inci = 'Aqua, Silica Silylate, Sodium Benzoate, Octylacrylamide/Acrylates/Butylaminoethyl Methacrylate Copolymer, Citric Acid.' %}
     {% assign upsell_title = 'Add Pure Batana Scalp Oil (60ml)' %}
     {% assign upsell_sub = 'Nourish roots overnight after daytime matte volumizing' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
     {% assign upsell_price = '$39.99' %}
     {% assign upsell_price_num = 39.99 %}
     {% assign upsell_vid = '68580229218489' %}
+
   {% when 'zvhc-precision-hairline-compact' %}
+    {% assign p_container = 'Compact' %}
+    {% assign p_unit_label = '1 Compact (4g)' %}
+    {% assign p_duo_label = '2 Compacts (4g)' %}
+    {% assign p_trio_label = '3 Compacts (4g)' %}
+    {% assign p_subtitle = 'Ultra-blendable mineral pigments pressed into a pocket compact with mirror and sponge applicator for instant temple, hairline, and gray root touch-ups.' %}
+    {% assign p_benefit1 = 'Shapes and defines uneven hairlines, thin edges, and temples in seconds' %}
+    {% assign p_benefit2 = 'Precision bottom-puff applicator ensures mess-free, targeted application without fallout' %}
+    {% assign p_benefit3 = 'Water and sweat-resistant mineral formula stays in place until shampooed out' %}
+    {% assign p_how_to = 'Open the bottom compartment to retrieve the applicator puff. Dab the puff gently into the pressed powder cake. Press and blend along sparse edges, temple hollows, or gray root sections. Layer lightly until desired shadow density is achieved.' %}
+    {% assign p_safety = 'For external cosmetic application only. Avoid direct contact with eyes. If irritation occurs on facial or scalp skin, discontinue use immediately. Keep compact closed when not in use.' %}
+    {% assign p_inci = 'Mica, Squalane, Tocopherol (Vitamin E), Magnesium Stearate, Caprylic/Capric Triglyceride, Phenoxyethanol, [+/- CI 77491, CI 77492, CI 77499 (Iron Oxides)].' %}
     {% assign upsell_title = 'Add Keratin Building Fibers (100g)' %}
     {% assign upsell_sub = 'Fill larger thinning crown areas with electrostatic keratin fibers' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811885406846-hero.jpg?v=1795264423' %}
     {% assign upsell_price = '$34.99' %}
     {% assign upsell_price_num = 34.99 %}
     {% assign upsell_vid = '68580492312761' %}
+
   {% when 'zvhc-raw-batana-scalp-balm' %}
+    {% assign p_container = 'Tin' %}
+    {% assign p_unit_label = '1 Tin (20g)' %}
+    {% assign p_duo_label = '2 Tins (20g)' %}
+    {% assign p_trio_label = '3 Tins (20g)' %}
+    {% assign p_subtitle = 'Concentrated unrefined Honduran batana butter that warms from solid balm into a rich golden oil to seal split ends, smooth edges, and soothe dry scalp areas.' %}
+    {% assign p_benefit1 = 'Solid-to-oil melting consistency provides rich, mess-free lipid protection' %}
+    {% assign p_benefit2 = 'Deeply conditions dry scalp patches, rough cuticles, and fragile hairline edges' %}
+    {% assign p_benefit3 = '100% natural formula in a leak-proof travel tin—ideal for on-the-go barrier care' %}
+    {% assign p_how_to = 'Scoop a pea-sized amount with clean fingertip. Warm between palms until butter melts into a smooth oil. Massage directly into dry scalp spots, or smooth over dry split ends and flyaway edges.' %}
+    {% assign p_safety = 'For external cosmetic conditioning only. Conduct a 24-hour patch test prior to first use. Do not apply to open cuts, active rashes, or broken skin. Store below 28°C (82°F) away from direct sunlight.' %}
+    {% assign p_inci = 'Elaeis Oleifera Kernel Oil (Batana Butter), Butyrospermum Parkii (Shea) Butter, Ricinus Communis (Castor) Seed Oil, Cera Alba (Beeswax), Tocopherol (Vitamin E).' %}
     {% assign upsell_title = 'Add Pure Batana Scalp Oil (60ml)' %}
     {% assign upsell_sub = 'Daily liquid scalp drops paired with overnight moisture balm' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
     {% assign upsell_price = '$39.99' %}
     {% assign upsell_price_num = 39.99 %}
     {% assign upsell_vid = '68580229218489' %}
+
   {% when 'zvhc-botanical-curl-cream' %}
+    {% assign p_container = 'Bottle' %}
+    {% assign p_unit_label = '1 Bottle (100ml)' %}
+    {% assign p_duo_label = '2 Bottles (100ml)' %}
+    {% assign p_trio_label = '3 Bottles (100ml)' %}
+    {% assign p_subtitle = 'A deeply hydrating botanical leave-in cream that clumps curl patterns, seals out humidity frizz, and leaves strands touchably soft without crunchy stiffness.' %}
+    {% assign p_benefit1 = 'Enhances natural curl pattern definition from loose 2A waves to tight 4C coils' %}
+    {% assign p_benefit2 = 'Weightless botanical moisture locks cuticles against humidity without stiff gel cast' %}
+    {% assign p_benefit3 = 'Infused with Moroccan argan oil and hydrolyzed keratin to reinforce strand elasticity' %}
+    {% assign p_how_to = 'Dispense 1–2 pumps into hands. Smooth and rake through clean, damp hair from mid-lengths to ends. Scrunch hair upward toward scalp to encourage curl formation. Air dry or diffuse on low heat. Do not rinse out.' %}
+    {% assign p_safety = 'For external cosmetic hair styling only. Avoid direct contact with eyes; rinse immediately with plenty of water if contact occurs. Keep out of reach of children.' %}
+    {% assign p_inci = 'Aqua, Argania Spinosa (Argan) Kernel Oil, Hydrolyzed Keratin, Butyrospermum Parkii (Shea) Butter, Glycerin, Cetearyl Alcohol, Stearamidopropyl Dimethylamine, Polyquaternium-37, Phenoxyethanol, Ethylhexylglycerin, Citric Acid, Fragrance.' %}
     {% assign upsell_title = 'Add 7-in-1 Multi-Oil Scalp Elixir (60ml)' %}
     {% assign upsell_sub = 'Layer over damp curls for intense shine and cuticle seal' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811903160451-hero.jpg?v=1795264444' %}
     {% assign upsell_price = '$39.99' %}
     {% assign upsell_price_num = 39.99 %}
     {% assign upsell_vid = '68580229873849' %}
+
   {% when 'zvhc-7-in-1-growth-elixir' %}
+    {% assign p_container = 'Bottle' %}
+    {% assign p_unit_label = '1 Bottle (60ml)' %}
+    {% assign p_duo_label = '2 Bottles (60ml)' %}
+    {% assign p_trio_label = '3 Bottles (60ml)' %}
+    {% assign p_subtitle = 'A powerhouse master blend of 7 cold-pressed botanical oils delivering an invigorating scalp tingle and radiant strand luster without heavy mineral buildup.' %}
+    {% assign p_benefit1 = 'Synergistic 7-oil botanical complex addresses dry scalp and dull hair in one step' %}
+    {% assign p_benefit2 = 'Peppermint and rosemary provide an immediate refreshing, cooling scalp sensation' %}
+    {% assign p_benefit3 = 'Multi-use formula: daily scalp drops, hot oil soak, or protective style maintenance' %}
+    {% assign p_how_to = 'Fill dropper halfway. Apply drops directly along parted scalp sections. Massage scalp with fingertips in firm circular motions for 3 minutes to distribute. Smooth remaining oil along mid-lengths to ends. Use 3–4 times weekly.' %}
+    {% assign p_safety = 'For external cosmetic conditioning only. Contains natural essential oils (peppermint and rosemary). Conduct a 24-hour patch test prior to initial use. Do not apply to irritated scalp or broken skin.' %}
+    {% assign p_inci = 'Elaeis Oleifera Kernel Oil (Batana), Rosmarinus Officinalis (Rosemary) Leaf Oil, Ricinus Communis (Black Castor) Seed Oil, Simmondsia Chinensis (Jojoba) Seed Oil, Argania Spinosa (Argan) Kernel Oil, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Mentha Piperita (Peppermint) Oil, Tocopherol (Vitamin E).' %}
     {% assign upsell_title = 'Add Raw Batana Scalp Balm (20g)' %}
     {% assign upsell_sub = 'Intense soothing butter for dry patches, temples, and edges' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
     {% assign upsell_price = '$19.99' %}
     {% assign upsell_price_num = 19.99 %}
     {% assign upsell_vid = '68580229677241' %}
+
   {% else %}
+    {% assign p_container = 'Unit' %}
+    {% assign p_unit_label = '1 Unit' %}
+    {% assign p_duo_label = '2 Units' %}
+    {% assign p_trio_label = '3 Units' %}
+    {% assign p_subtitle = product.description | strip_html | truncatewords: 28 | default: 'High-potency botanical scalp and strand therapy formulated with unrefined plant lipids to nourish follicles and restore healthy bounce.' %}
+    {% assign p_benefit1 = 'Deeply conditions scalp barrier and reinforces cuticle resilience' %}
+    {% assign p_benefit2 = 'Zero sulfates, parabens, phthalates, or harsh synthetic colorants' %}
+    {% assign p_benefit3 = 'Backed by our 30-Day Strand Satisfaction Guarantee' %}
+    {% assign p_how_to = 'Apply a small amount to clean scalp and strands. Massage gently to distribute evenly. Style as usual.' %}
+    {% assign p_safety = 'For external cosmetic use only. Avoid contact with eyes. Discontinue if irritation develops.' %}
+    {% assign p_inci = 'Natural Botanical Lipids, Tocopherol (Vitamin E).' %}
     {% assign upsell_title = 'Add Raw Batana Scalp Balm (20g)' %}
-    {% assign upsell_sub = 'Melt-on-contact barrier butter for intensive scalp moisture' %}
+    {% assign upsell_sub = 'Melt-on-contact barrier butter for intensive moisture' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
     {% assign upsell_price = '$19.99' %}
     {% assign upsell_price_num = 19.99 %}
@@ -115,7 +251,7 @@
         <!-- Thumbnails Row -->
         <div class="zvhc-thumbs-row">
           {% if product.images.size > 1 %}
-            {% for img in product.images limit: 6 %}
+            {% for img in product.images limit: 8 %}
               <div class="zvhc-thumb-item {% if forloop.first %}is-active{% endif %}" onclick="zvhcSelectThumb(this, '{{ img | image_url: width: 1000 }}')">
                 <img src="{{ img | image_url: width: 160 }}" alt="{{ product.title | escape }}">
               </div>
@@ -126,76 +262,44 @@
 
       <!-- 2. Right Buy Box Column -->
       <div class="zvhc-buybox">
-        <!-- Trustpilot Reviews Row -->
-        {%- case product.handle -%}
-          {%- when 'zvhc-batana-deep-conditioning-hair-mask' -%}
-            {%- assign tp_rating = '4.8' -%}
-            {%- assign tp_reviews = '21,870' -%}
-          {%- when 'zvhc-batana-hair-growth-oil' -%}
-            {%- assign tp_rating = '4.9' -%}
-            {%- assign tp_reviews = '28,490' -%}
-          {%- when 'zvhc-raw-batana-scalp-balm' -%}
-            {%- assign tp_rating = '4.9' -%}
-            {%- assign tp_reviews = '31,240' -%}
-          {%- when 'zvhc-7-in-1-growth-elixir' -%}
-            {%- assign tp_rating = '4.8' -%}
-            {%- assign tp_reviews = '26,180' -%}
-          {%- when 'zvhc-precision-hairline-compact' -%}
-            {%- assign tp_rating = '4.8' -%}
-            {%- assign tp_reviews = '22,650' -%}
-          {%- when 'zvhc-keratin-hair-building-fibers' -%}
-            {%- assign tp_rating = '4.8' -%}
-            {%- assign tp_reviews = '19,340' -%}
-          {%- when 'zvhc-botanical-curl-cream' -%}
-            {%- assign tp_rating = '4.7' -%}
-            {%- assign tp_reviews = '16,850' -%}
-          {%- when 'zvhc-root-lift-styling-powder' -%}
-            {%- assign tp_rating = '4.7' -%}
-            {%- assign tp_reviews = '13,920' -%}
-          {%- else -%}
-            {%- assign pid_mod = product.id | default: 123456 | modulo: 4 -%}
-            {%- if pid_mod == 0 -%}{%- assign tp_rating = '4.9' -%}{%- assign tp_reviews = '27,850' -%}
-            {%- elsif pid_mod == 1 -%}{%- assign tp_rating = '4.8' -%}{%- assign tp_reviews = '21,430' -%}
-            {%- elsif pid_mod == 2 -%}{%- assign tp_rating = '4.7' -%}{%- assign tp_reviews = '18,620' -%}
-            {%- else -%}{%- assign tp_rating = '4.6' -%}{%- assign tp_reviews = '14,290' -%}
-            {%- endif -%}
-        {%- endcase -%}
-
-        <a href="#reviews" class="zvhc-reviews-row zvhc-trustpilot-row" aria-label="Rated {{ tp_rating }} out of 5 based on {{ tp_reviews }} customer reviews on Trustpilot">
-          <span class="zvhc-tp-brand" aria-label="Trustpilot">
-            <svg class="zvhc-tp-brand-svg" width="76" height="17" viewBox="0 0 224 48" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-              <path d="M23.8 2.6 29.2 14l12.3 1.4-9.1 8.2 2.6 12.1-11.2-6.4-11.2 6.4 2.6-12.1-9.1-8.2L18.4 14 23.8 2.6Z" fill="#00B67A"></path>
-              <path d="m32.4 23.6-8.6 5.7 11.2 6.4-2.6-12.1Z" fill="#005128" opacity=".55"></path>
-              <text x="51" y="33" fill="#111827" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="-1.2">Trustpilot</text>
-            </svg>
-          </span>
-          <span class="zvhc-tp-stars" aria-hidden="true">
-            {% render 'trustpilot-stars', width: 92, height: 17 %}
-          </span>
-          <span class="zvhc-tp-score">{{ tp_rating }}</span>
-          <span class="zvhc-tp-sep" aria-hidden="true"></span>
-          <span class="zvhc-tp-count"><strong>{{ tp_reviews }}</strong> reviews</span>
-        </a>
+        
+        <!-- Authentic Trust Badges Row (Replaces fabricated reviews) — AUD-02 -->
+        <div class="zvhc-authentic-trust-row" role="region" aria-label="Customer Trust & Formulation Guarantee">
+          <div class="zvhc-trust-badge-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>VERIFIED BOTANICAL INTEGRITY</span>
+          </div>
+          <span class="zvhc-tp-sep" aria-hidden="true">•</span>
+          <div class="zvhc-trust-badge-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>CLEAN COSMETIC STANDARD</span>
+          </div>
+          <span class="zvhc-tp-sep" aria-hidden="true">•</span>
+          <div class="zvhc-trust-badge-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>DISPATCH 24–48H</span>
+          </div>
+        </div>
 
         <h1 class="zvhc-pdp-title">{{ product.title }}</h1>
         
         <div class="zvhc-pdp-subtitle">
-          {{ product.description | strip_html | truncatewords: 32 | default: "High-potency botanical scalp and strand therapy formulated with unrefined plant lipids to nourish follicles, strengthen shafts, and restore healthy bounce." }}
+          {{ p_subtitle }}
         </div>
 
         <!-- 3 Concise Benefits with Green Checkmarks -->
         <div class="zvhc-benefits-list">
           <div class="zvhc-benefit-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--zvhc-t01-trust-green, #3F8F6B)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Deeply conditions scalp barrier &amp; reinforces cuticle strength</span>
+            <span>{{ p_benefit1 }}</span>
           </div>
           <div class="zvhc-benefit-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--zvhc-t01-trust-green, #3F8F6B)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Zero sulfates, parabens, silicones, or mineral oil dilution</span>
+            <span>{{ p_benefit2 }}</span>
           </div>
           <div class="zvhc-benefit-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--zvhc-t01-trust-green, #3F8F6B)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Backed by our 30-Day Strand Satisfaction Guarantee</span>
+            <span>{{ p_benefit3 }}</span>
           </div>
         </div>
 
@@ -223,7 +327,7 @@
           </div>
         {% endif %}
 
-        <!-- T01 Bundle Selection Cards (.kc-tier) -->
+        <!-- T01 Bundle Selection Cards (.kc-tier) — AUD-09 -->
         <div class="zvhc-bundle-group">
           <!-- Tier 1: 1 Unit -->
           <div class="zvhc-bundle-card" data-tier="1" onclick="zvhcSelectTier(1)">
@@ -232,10 +336,10 @@
                 <span class="zvhc-radio-circle"><span class="zvhc-radio-dot"></span></span>
                 <div>
                   <div class="zvhc-tier-name-row">
-                    <span class="zvhc-tier-title">1 Bottle / Unit</span>
+                    <span class="zvhc-tier-title">{{ p_unit_label }}</span>
                     <span class="zvhc-tier-pill">Starter</span>
                   </div>
-                  <div class="zvhc-tier-sub">30-day initial trial supply</div>
+                  <div class="zvhc-tier-sub">30-day initial trial routine</div>
                 </div>
               </div>
               <div class="zvhc-tier-pricing">
@@ -255,14 +359,18 @@
                 <span class="zvhc-radio-circle"><span class="zvhc-radio-dot"></span></span>
                 <div>
                   <div class="zvhc-tier-name-row">
-                    <span class="zvhc-tier-title">2 Bottles / Units</span>
-                    <span class="zvhc-tier-pill">Save 30%</span>
+                    <span class="zvhc-tier-title">{{ p_duo_label }}</span>
+                    {% if duo_save_pct > 0 %}
+                      <span class="zvhc-tier-pill">Save {{ duo_save_pct }}%</span>
+                    {% endif %}
                   </div>
-                  <div class="zvhc-tier-sub">60-day intensive strand restoration course</div>
-                  <div class="zvhc-tier-ship">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-                    <span>Free US Tracked Shipping Included</span>
-                  </div>
+                  <div class="zvhc-tier-sub">60-day intensive care course</div>
+                  {% if tier2_num >= 69.99 %}
+                    <div class="zvhc-tier-ship">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                      <span>Free US Standard Shipping</span>
+                    </div>
+                  {% endif %}
                 </div>
               </div>
               <div class="zvhc-tier-pricing">
@@ -282,14 +390,18 @@
                 <span class="zvhc-radio-circle"><span class="zvhc-radio-dot"></span></span>
                 <div>
                   <div class="zvhc-tier-name-row">
-                    <span class="zvhc-tier-title">3 Bottles / Units</span>
-                    <span class="zvhc-tier-pill">Save 40%</span>
+                    <span class="zvhc-tier-title">{{ p_trio_label }}</span>
+                    {% if trio_save_pct > 0 %}
+                      <span class="zvhc-tier-pill">Save {{ trio_save_pct }}%</span>
+                    {% endif %}
                   </div>
                   <div class="zvhc-tier-sub">90-day complete routine &amp; maintenance</div>
-                  <div class="zvhc-tier-ship">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-                    <span>Free US Tracked Shipping Included</span>
-                  </div>
+                  {% if tier3_num >= 69.99 %}
+                    <div class="zvhc-tier-ship">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                      <span>Free US Standard Shipping</span>
+                    </div>
+                  {% endif %}
                 </div>
               </div>
               <div class="zvhc-tier-pricing">
@@ -354,7 +466,7 @@
           </div>
         </div>
 
-        <!-- T01 Product Accordion Details -->
+        <!-- T01 Product Accordion Details — AUD-01, AUD-10, AUD-11 -->
         <div class="zvhc-accordion-group">
           <details class="zvhc-accordion-item" open>
             <summary>
@@ -362,27 +474,20 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="zvhc-accordion-content">
-              {% if product.handle == 'zvhc-batana-deep-conditioning-hair-mask' %}
-                After cleansing with sulfate-free shampoo, scoop a generous amount and work evenly through clean, damp mid-lengths and ends. Leave on for 5 to 10 minutes for express detangling, or 15 to 20 minutes with a warm cap for intensive lipid penetration. Rinse thoroughly with lukewarm water until clean. Use 1–2 times weekly. <br><br>
-                <em>Safety Note: For external cosmetic conditioning only. Avoid direct eye contact. Rinse thoroughly if contact occurs.</em>
-              {% else %}
-                For intensive scalp care, apply 3 to 5 drops directly to parted damp scalp 2 to 3 times weekly. Massage gently with fingertips in circular motions for 2 to 3 minutes to activate micro-circulation. For split end protection, work a small amount through dry lengths. <br><br>
-                <em>Safety Note: For cosmetic and topical hair/scalp conditioning only. Do not apply directly to broken skin or immediately following invasive microneedling procedures.</em>
-              {% endif %}
+              {{ p_how_to }}
+              <br><br>
+              <strong>Safety &amp; Application Note:</strong> {{ p_safety }}
             </div>
           </details>
 
           <details class="zvhc-accordion-item">
             <summary>
-              <span>Key Botanical Ingredients</span>
+              <span>Key Botanical Ingredients (INCI)</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="zvhc-accordion-content">
-              {% if product.handle == 'zvhc-batana-deep-conditioning-hair-mask' %}
-                Pure Honduran Batana Kernel Oil (Elaeis Oleifera), Cold-Pressed Coconut Oil, Castor Seed Oil, Japanese Camellia Seed Oil, Ginger Root Lipid Extract, Biotin, Vegetable Glycerin, Cetearyl Alcohol. Free from parabens, sulfates, phthalates, synthetic dyes, and petroleum fillers.
-              {% else %}
-                Pure Cold-Pressed Honduran Batana Oil (Elaeis Oleifera Kernel Oil), Cold-Pressed Castor Seed Oil, Organic Moroccan Argan Oil, Rosemary Leaf Extract, Peppermint Oil, Tocopherol (Vitamin E). Free from silicones, parabens, sulfates, phthalates, and synthetic fragrance.
-              {% endif %}
+              <strong>Verified Formula:</strong><br>
+              {{ p_inci }}
             </div>
           </details>
 
@@ -392,7 +497,8 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="zvhc-accordion-content">
-              Orders are packaged and dispatched from our regional fulfillment centers within 24 to 48 hours. Standard US delivery takes 2 to 5 business days. If you are not fully satisfied with your botanical routine within 30 days of delivery, contact support@tryzavelyn.com for return and refund assistance.
+              <strong>Free Standard US Shipping:</strong> Automatically applied at checkout for eligible orders of <strong>$69.99 USD and above</strong>. Standard transit takes 2 to 5 business days via USPS, FedEx, or DHL.<br><br>
+              <strong>30-Day Strand Satisfaction Guarantee:</strong> We stand behind our botanical formulations. If you are not satisfied with your results within 30 days of delivery, contact our customer support team at <a href="mailto:support@tryzavelyn.com" style="color: var(--zvhc-t01-accent-rose, #B0476E);">support@tryzavelyn.com</a> for return assistance.
             </div>
           </details>
         </div>

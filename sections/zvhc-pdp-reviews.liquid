@@ -1,6 +1,6 @@
 {% comment %}
-  ZAVELYN HAIR CARE — Verified Reviews & Formulation Transparency (v3.1)
-  Compliant with FTC/Shopify guidelines: No fictional testimonials, honest empty-review state
+  ZAVELYN HAIR CARE — Verified Reviews & Formulation Transparency (v5.0)
+  Compliant with FTC/Shopify guidelines: No fictional testimonials, honest empty-review state, formulation parity.
 {% endcomment %}
 <section class="zvhc-reviews-section" id="reviews" style="padding: 72px 0; background: var(--zvhc-t01-bg, #E9E4E6);">
   <div class="zvhc-container">
@@ -16,7 +16,7 @@
       
       <!-- Left: Honest Empty Review State -->
       <div class="zvhc-editorial-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 28px; border: 1px dashed var(--zvhc-t01-border, #EAD7DD); background: #FFFFFF;">
-        <div style="margin-bottom: 14px;">{% render 'trustpilot-stars', width: 110, height: 21 %}</div>
+        <div style="font-size: 2rem; margin-bottom: 12px;" aria-hidden="true">🌿</div>
         <h3 class="zvhc-h3" style="font-size: 1.25rem; margin-bottom: 8px;">Be the First to Share Your Experience</h3>
         <p style="font-size: 0.9rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.55; margin-bottom: 24px; max-width: 380px;">
           Initial production orders are currently shipping. If you recently purchased this product, you will receive an automatic review link via email 14 days after delivery.
@@ -43,16 +43,21 @@
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <div style="width: 22px; height: 22px; border-radius: 50%; background: var(--zvhc-t01-pill-bg, #F8E4EB); color: var(--zvhc-t01-accent-rose, #B0476E); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0;">✓</div>
             <div>
-              <div style="font-weight: 700; font-size: 0.9rem; color: var(--zvhc-t01-text-main, #2B1B24);">Zero Silicones or Sulfates</div>
-              <div style="font-size: 0.82rem; color: var(--zvhc-t01-text-muted, #5A4651);">Rinses completely clean without pore-clogging film or plastic barrier buildup.</div>
+              {% if product.handle == 'zvhc-batana-deep-conditioning-hair-mask' %}
+                <div style="font-weight: 700; font-size: 0.9rem; color: var(--zvhc-t01-text-main, #2B1B24);">High-Slip Detangling Formulation</div>
+                <div style="font-size: 0.82rem; color: var(--zvhc-t01-text-muted, #5A4651);">Enriched with cosmetic Dimethiconol &amp; Biotin to dramatically reduce wet comb breakage without parabens.</div>
+              {% else %}
+                <div style="font-weight: 700; font-size: 0.9rem; color: var(--zvhc-t01-text-main, #2B1B24);">Zero Harsh Sulfates or Parabens</div>
+                <div style="font-size: 0.82rem; color: var(--zvhc-t01-text-muted, #5A4651);">Gentle botanical formulations that protect natural strand moisture and color integrity.</div>
+              {% endif %}
             </div>
           </div>
 
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <div style="width: 22px; height: 22px; border-radius: 50%; background: var(--zvhc-t01-pill-bg, #F8E4EB); color: var(--zvhc-t01-accent-rose, #B0476E); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0;">✓</div>
             <div>
-              <div style="font-weight: 700; font-size: 0.9rem; color: var(--zvhc-t01-text-main, #2B1B24);">30-Day Return Guarantee</div>
-              <div style="font-size: 0.82rem; color: var(--zvhc-t01-text-muted, #5A4651);">If you're not satisfied with strand comfort within 30 days, email support for full refund assistance.</div>
+              <div style="font-weight: 700; font-size: 0.9rem; color: var(--zvhc-t01-text-main, #2B1B24);">30-Day Satisfaction Guarantee</div>
+              <div style="font-size: 0.82rem; color: var(--zvhc-t01-text-muted, #5A4651);">If you're not satisfied with strand comfort within 30 days, email support@tryzavelyn.com for full assistance.</div>
             </div>
           </div>
         </div>

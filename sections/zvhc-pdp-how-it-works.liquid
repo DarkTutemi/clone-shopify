@@ -1,60 +1,120 @@
 {% comment %}
-  ZAVELYN HAIR CARE — 4-Step Hair Ritual / How It Works
+  ZAVELYN HAIR CARE — Dynamic 4-Step Hair Ritual / How It Works (v5.0)
+  Decoupled per SKU: Custom steps and copy for every single product (AUD-01)
 {% endcomment %}
+
+{% case product.handle %}
+  {% when 'zvhc-batana-deep-conditioning-hair-mask' %}
+    {% assign r_eyebrow = 'WEEKLY CONDITIONING RESET' %}
+    {% assign r_heading = 'How To Practice The Deep Masking Ritual' %}
+    {% assign r_sub = 'Rescue parched, tangled strands with an intensive rinse-out lipid conditioning immersion.' %}
+    {% assign s1_num = '01' %}{% assign s1_title = 'Cleanse & Prep' %}{% assign s1_desc = 'Wash hair with a gentle sulfate-free shampoo. Gently squeeze out excess water with a towel so strands are damp.' %}
+    {% assign s2_num = '02' %}{% assign s2_title = 'Coat Mid-Lengths & Ends' %}{% assign s2_desc = 'Scoop a generous amount and rake thoroughly through hair, concentrating from ear level down to fragile tips.' %}
+    {% assign s3_num = '03' %}{% assign s3_title = '5–10 Min Deep Soak' %}{% assign s3_desc = 'Detangle gently with fingers or a wide-tooth comb. Leave on 5–10 minutes, or up to 20 minutes under a shower cap.' %}
+    {% assign s4_num = '04' %}{% assign s4_title = 'Lukewarm Rinse' %}{% assign s4_desc = 'Rinse thoroughly with lukewarm water until the water runs clear. Enjoy instant silk-soft slip and weightless bounce.' %}
+
+  {% when 'zvhc-keratin-hair-building-fibers' %}
+    {% assign r_eyebrow = '60-SECOND TRANSFORMATION' %}
+    {% assign r_heading = 'How To Apply Instant Hair Density Fibers' %}
+    {% assign r_sub = 'Conceal wide part lines and thinning areas with natural electrostatic keratin bonding.' %}
+    {% assign s1_num = '01' %}{% assign s1_title = 'Dry & Style First' %}{% assign s1_desc = 'Ensure hair and scalp are 100% dry. Style your hair into your preferred parting before applying fibers.' %}
+    {% assign s2_num = '02' %}{% assign s2_title = 'Angle & Shake' %}{% assign s2_desc = 'Hold container at a 45-degree angle 2–3 inches above thinning areas. Gently shake until scalp is concealed.' %}
+    {% assign s3_num = '03' %}{% assign s3_title = 'Pat to Settle' %}{% assign s3_desc = 'Lightly pat your hair with flat palms to disperse and interlock the electrostatic fibers with natural strands.' %}
+    {% assign s4_num = '04' %}{% assign s4_title = 'Lock with Mist' %}{% assign s4_desc = 'Apply a light mist of hairspray to lock fibers securely against wind, humidity, and active movement all day.' %}
+
+  {% when 'zvhc-root-lift-styling-powder' %}
+    {% assign r_eyebrow = 'INSTANT TEXTURE & VOLUME' %}
+    {% assign r_heading = 'How To Build Reworkable Root Lift' %}
+    {% assign r_sub = 'Elevate flat, limp roots and absorb scalp oils without heavy aerosol residues.' %}
+    {% assign s1_num = '01' %}{% assign s1_title = 'Section Dry Roots' %}{% assign s1_desc = 'Part dry hair at the crown or sides where maximum fullness and structural lift are needed.' %}
+    {% assign s2_num = '02' %}{% assign s2_title = 'Tap Directly' %}{% assign s2_desc = 'Lightly tap 2–3 shakes of powder directly onto the root line. A little goes a very long way.' %}
+    {% assign s3_num = '03' %}{% assign s3_title = 'Massage to Activate' %}{% assign s3_desc = 'Work fingertips firmly into roots with upward lifting motions to dissolve powder and create immediate texture.' %}
+    {% assign s4_num = '04' %}{% assign s4_title = 'Rework Anytime' %}{% assign s4_desc = 'Re-fluff volume anytime throughout the day simply by massaging roots with your fingertips.' %}
+
+  {% when 'zvhc-precision-hairline-compact' %}
+    {% assign r_eyebrow = 'PRECISION HAIRLINE CONTOURING' %}
+    {% assign r_heading = 'How To Shade Hairlines & Gray Roots' %}
+    {% assign r_sub = 'Shape uneven edges and touch up roots in seconds with zero fallout.' %}
+    {% assign s1_num = '01' %}{% assign s1_title = 'Retrieve Bottom Puff' %}{% assign s1_desc = 'Open the concealed bottom compartment of the compact to access the high-density applicator sponge.' %}
+    {% assign s2_num = '02' %}{% assign s2_title = 'Dab Mineral Pigment' %}{% assign s2_desc = 'Dab the sponge gently into the pressed mineral powder cake to pick up a controlled amount of color.' %}
+    {% assign s3_num = '03' %}{% assign s3_title = 'Stipple & Blend' %}{% assign s3_desc = 'Press and blend along receding temples, sparse hairline edges, or gray root regrowth.' %}
+    {% assign s4_num = '04' %}{% assign s4_title = 'Natural Matte Finish' %}{% assign s4_desc = 'Layer lightly for natural scalp shadow depth. Stays water-resistant until shampooed out.' %}
+
+  {% when 'zvhc-raw-batana-scalp-balm' %}
+    {% assign r_eyebrow = 'SOLID-TO-OIL LIPID CARE' %}
+    {% assign r_heading = 'How To Use Raw Unrefined Batana Balm' %}
+    {% assign r_sub = 'Warm concentrated Honduran butter for targeted occlusive moisture along scalp and edges.' %}
+    {% assign s1_num = '01' %}{% assign s1_title = 'Scoop Pea Size' %}{% assign s1_desc = 'Use a clean fingertip to scoop a small, pea-sized portion of firm butter from the aluminum tin.' %}
+    {% assign s2_num = '02' %}{% assign s2_title = 'Warm Between Palms' %}{% assign s2_desc = 'Rub hands together for 5 seconds. Body heat melts the beeswax and batana into a golden botanical oil.' %}
+    {% assign s3_num = '03' %}{% assign s3_title = 'Target Dry Patches' %}{% assign s3_desc = 'Massage directly onto dry scalp spots, flaky areas, or smooth over flyaway hairline edges.' %}
+    {% assign s4_num = '04' %}{% assign s4_title = 'Overnight End Seal' %}{% assign s4_desc = 'Smooth remaining balm through split ends before bed to seal cuticles against nocturnal friction.' %}
+
+  {% when 'zvhc-botanical-curl-cream' %}
+    {% assign r_eyebrow = 'SOFT CRUNCH-FREE DEFINITION' %}
+    {% assign r_heading = 'How To Style Defined, Bouncy Curls' %}
+    {% assign r_sub = 'Lock in natural curl clumping and humidity resistance without stiff gel cast.' %}
+    {% assign s1_num = '01' %}{% assign s1_title = 'Apply to Damp Hair' %}{% assign s1_desc = 'Start with freshly washed, soaking wet or damp curls. Gently detangle with a wide-tooth comb.' %}
+    {% assign s2_num = '02' %}{% assign s2_title = 'Rake & Distribute' %}{% assign s2_desc = 'Dispense 1–2 pumps into palms. Rake evenly from mid-lengths to ends, ensuring every curl ribbon is coated.' %}
+    {% assign s3_num = '03' %}{% assign s3_title = 'Scrunch to Shape' %}{% assign s3_desc = 'Cup curls in hands and scrunch upward toward the scalp to encourage natural coil formation.' %}
+    {% assign s4_num = '04' %}{% assign s4_title = 'Air Dry or Diffuse' %}{% assign s4_desc = 'Allow hair to air dry or diffuse on low heat. Enjoy soft, touchable definition that resists humidity.' %}
+
+  {% when 'zvhc-7-in-1-growth-elixir' %}
+    {% assign r_eyebrow = '7-BOTANICAL MASTER ROUTINE' %}
+    {% assign r_heading = 'How To Practice The Multi-Oil Scalp Ritual' %}
+    {% assign r_sub = 'Awaken scalp comfort and coat lengths with our synergistic 7-oil botanical elixir.' %}
+    {% assign s1_num = '01' %}{% assign s1_title = 'Part & Dispense' %}{% assign s1_desc = 'Part hair into 4 sections. Draw half a dropper of elixir and apply directly along parted scalp lines.' %}
+    {% assign s2_num = '02' %}{% assign s2_title = '3-Minute Scalp Massage' %}{% assign s2_desc = 'Massage in circular motions with fingertips. Feel the refreshing botanical cooling tingle from peppermint and rosemary.' %}
+    {% assign s3_num = '03' %}{% assign s3_title = 'Coat Fragile Ends' %}{% assign s3_desc = 'Smooth remaining drops through mid-lengths and ends to lock cuticles and impart high-gloss luster.' %}
+    {% assign s4_num = '04' %}{% assign s4_title = 'Versatile Leave-in' %}{% assign s4_desc = 'Leave in for daily edge protection, or use as a luxurious pre-shampoo hot oil conditioning soak.' %}
+
+  {% else %}
+    {% assign r_eyebrow = 'SIMPLE 4-STEP ROUTINE' %}
+    {% assign r_heading = 'How To Practice The Batana Scalp Ritual' %}
+    {% assign r_sub = 'Harness unrefined Honduran Batana oil to nourish the scalp moisture barrier and restore strand resilience.' %}
+    {% assign s1_num = '01' %}{% assign s1_title = 'Warm & Activate' %}{% assign s1_desc = 'Dispense 4–6 drops into clean dry palms. Rub hands together vigorously for 5 seconds to warm the botanical lipids.' %}
+    {% assign s2_num = '02' %}{% assign s2_title = 'Scalp Massage' %}{% assign s2_desc = 'Part hair into sections. Massage directly into scalp with fingertips in firm circular motions for 2–3 minutes.' %}
+    {% assign s3_num = '03' %}{% assign s3_title = 'Coat Lengths & Ends' %}{% assign s3_desc = 'Smooth remaining oil through mid-lengths down to fragile ends to protect against styling friction.' %}
+    {% assign s4_num = '04' %}{% assign s4_title = 'Absorb & Rinse' %}{% assign s4_desc = 'Leave on 30 minutes before shampooing, or wrap in a silk scarf overnight for intensive conditioning.' %}
+{% endcase %}
+
 <section class="zvhc-ritual-section" id="how-it-works">
   <div class="zvhc-container">
     <div class="zvhc-section-header">
-      <div class="zvhc-eyebrow">SIMPLE 4-STEP ROUTINE</div>
-      <h2 class="zvhc-heading-md">How To Practice The Batana Scalp Ritual</h2>
+      <div class="zvhc-eyebrow">{{ r_eyebrow }}</div>
+      <h2 class="zvhc-heading-md">{{ r_heading }}</h2>
       <p style="color: var(--zvhc-muted); margin-top: 10px; font-size: 0.95rem;">
-        Harness the ancient Mesoamerican beauty ritual practiced for centuries by the Tawira ("people of beautiful hair").
+        {{ r_sub }}
       </p>
     </div>
 
     <div class="zvhc-ritual-grid">
       <!-- Step 1 -->
       <div class="zvhc-step-card">
-        <div class="zvhc-step-num">01</div>
-        <div class="zvhc-step-title">Warm &amp; Activate</div>
-        <div class="zvhc-step-desc">
-          Dispense 4–6 drops into clean dry palms. Rub hands together vigorously for 5 seconds to melt and activate the dense botanical lipids.
-        </div>
+        <div class="zvhc-step-num">{{ s1_num }}</div>
+        <div class="zvhc-step-title">{{ s1_title }}</div>
+        <div class="zvhc-step-desc">{{ s1_desc }}</div>
       </div>
 
       <!-- Step 2 -->
       <div class="zvhc-step-card">
-        <div class="zvhc-step-num">02</div>
-        <div class="zvhc-step-title">Scalp Massage</div>
-        <div class="zvhc-step-desc">
-          Part hair into 4 sections. Massage directly into scalp with pads of your fingers or our silicone massager in circular motions for 3–5 minutes.
-        </div>
+        <div class="zvhc-step-num">{{ s2_num }}</div>
+        <div class="zvhc-step-title">{{ s2_title }}</div>
+        <div class="zvhc-step-desc">{{ s2_desc }}</div>
       </div>
 
       <!-- Step 3 -->
       <div class="zvhc-step-card">
-        <div class="zvhc-step-num">03</div>
-        <div class="zvhc-step-title">Coat Lengths &amp; Ends</div>
-        <div class="zvhc-step-desc">
-          Smooth remaining elixir through mid-lengths down to fragile ends to lock cuticles, protect against split ends, and eliminate frizz.
-        </div>
+        <div class="zvhc-step-num">{{ s3_num }}</div>
+        <div class="zvhc-step-title">{{ s3_title }}</div>
+        <div class="zvhc-step-desc">{{ s3_desc }}</div>
       </div>
 
       <!-- Step 4 -->
       <div class="zvhc-step-card">
-        <div class="zvhc-step-num">04</div>
-        <div class="zvhc-step-title">Rest &amp; Nourish</div>
-        <div class="zvhc-step-desc">
-          Leave in for at least 30 minutes, or wrap in our silk sleep bonnet overnight for intensive salon-grade follicle deep conditioning.
-        </div>
+        <div class="zvhc-step-num">{{ s4_num }}</div>
+        <div class="zvhc-step-title">{{ s4_title }}</div>
+        <div class="zvhc-step-desc">{{ s4_desc }}</div>
       </div>
     </div>
   </div>
 </section>
-
-{% schema %}
-{
-  "name": "ZVHC How It Works",
-  "settings": []
-}
-{% endschema %}
-

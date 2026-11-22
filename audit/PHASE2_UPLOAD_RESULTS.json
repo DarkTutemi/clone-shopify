@@ -1,0 +1,103 @@
+{
+  "theme_id": 189188079801,
+  "timestamp": "2026-11-22T14:56:39.449Z",
+  "all_passed": true,
+  "results": [
+    {
+      "key": "sections/zvhc-pdp-main.liquid",
+      "uploaded": true,
+      "verifiedSize": 35605,
+      "updatedAt": "2026-11-22T07:52:24-07:00"
+    },
+    {
+      "key": "sections/zvhc-pdp-how-it-works.liquid",
+      "uploaded": true,
+      "verifiedSize": 10256,
+      "updatedAt": "2026-11-22T07:52:24-07:00"
+    },
+    {
+      "key": "sections/zvhc-pdp-faq.liquid",
+      "uploaded": true,
+      "verifiedSize": 14623,
+      "updatedAt": "2026-11-22T07:52:25-07:00"
+    },
+    {
+      "key": "sections/zvhc-pdp-reviews.liquid",
+      "uploaded": true,
+      "verifiedSize": 5534,
+      "updatedAt": "2026-11-22T07:52:26-07:00"
+    },
+    {
+      "key": "sections/zvhc-pdp-shipping.liquid",
+      "uploaded": true,
+      "verifiedSize": 11356,
+      "updatedAt": "2026-11-22T07:52:27-07:00"
+    },
+    {
+      "key": "sections/zvhc-announcement-bar.liquid",
+      "uploaded": true,
+      "verifiedSize": 736,
+      "updatedAt": "2026-11-22T07:52:28-07:00"
+    },
+    {
+      "key": "sections/zvhc-cart-drawer.liquid",
+      "uploaded": true,
+      "verifiedSize": 12875,
+      "updatedAt": "2026-11-22T07:52:29-07:00"
+    },
+    {
+      "key": "sections/zvhc-hero.liquid",
+      "uploaded": true,
+      "verifiedSize": 4845,
+      "updatedAt": "2026-11-22T07:52:30-07:00"
+    },
+    {
+      "key": "sections/zvhc-all-products.liquid",
+      "uploaded": true,
+      "verifiedSize": 14163,
+      "updatedAt": "2026-11-22T07:52:31-07:00"
+    },
+    {
+      "key": "sections/zvhc-header.liquid",
+      "uploaded": true,
+      "verifiedSize": 24917,
+      "updatedAt": "2026-11-22T07:52:32-07:00"
+    },
+    {
+      "key": "sections/zvhc-footer.liquid",
+      "uploaded": true,
+      "verifiedSize": 5846,
+      "updatedAt": "2026-11-22T07:52:33-07:00"
+    },
+    {
+      "key": "sections/zvhc-faq-trust.liquid",
+      "uploaded": true,
+      "verifiedSize": 4295,
+      "updatedAt": "2026-11-22T07:52:34-07:00"
+    },
+    {
+      "key": "snippets/meta-tags.liquid",
+      "uploaded": true,
+      "verifiedSize": 3763,
+      "updatedAt": "2026-11-22T07:52:35-07:00"
+    },
+    {
+      "key": "layout/theme.liquid",
+      "uploaded": true,
+      "verifiedSize": 11386,
+      "updatedAt": "2026-11-22T07:56:37-07:00"
+    },
+    {
+      "key": "sections/zvhc-our-story.liquid",
+      "uploaded": true,
+      "verifiedSize": 18667,
+      "updatedAt": "2026-11-22T07:52:37-07:00"
+    },
+    {
+      "key": "templates/page.zvhc-our-story.json",
+      "uploaded": true,
+      "verifiedSize": 137,
+      "updatedAt": "2026-11-22T07:52:38-07:00"
+    }
+  ]
+}

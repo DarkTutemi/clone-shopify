@@ -1,6 +1,6 @@
 {% comment %}
-  ZAVELYN HAIR CARE — Product-Specific & Compliance FAQ Section (v3.1)
-  Transparent return policy, shipping details, and explicit cosmetic safety guidelines
+  ZAVELYN HAIR CARE — Product-Specific & Compliance FAQ Section (v5.0)
+  Decoupled FAQs for all 8 SKUs, explicit $69.99 USD shipping threshold, transparent return policy.
 {% endcomment %}
 <section class="zvhc-faq-section" id="faq" style="padding: 72px 0;">
   <div class="zvhc-container">
@@ -8,7 +8,7 @@
       <div style="font-size: 0.78rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;">FREQUENTLY ASKED QUESTIONS</div>
       <h2 class="zvhc-h2">Everything You Need To Know</h2>
       <p style="color: var(--zvhc-t01-text-muted, #5A4651); font-size: 0.95rem;">
-        Clear answers about our botanical sourcing, daily usage instructions, shipping timelines, and 30-day return policy.
+        Clear answers about our botanical sourcing, routine application, free US shipping over $69.99, and 30-day satisfaction guarantee.
       </p>
     </div>
 
@@ -21,7 +21,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </summary>
         <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
-          Our formulas harness pure unrefined plant lipids (such as Honduran Batana oil and Moroccan Argan) rich in oleic fatty acids and phytosterols. They condition the natural scalp moisture barrier, lubricate brittle hair cuticles, and reduce friction during styling—leading to visibly softer, more resilient strands without synthetic coating agents.
+          Our formulas harness unrefined plant lipids (such as Honduran Batana oil and Moroccan Argan) rich in oleic fatty acids and phytosterols. They condition the natural scalp moisture barrier, lubricate brittle hair cuticles, and reduce friction during styling—leading to visibly softer, more resilient strands without synthetic dyes or harsh parabens.
         </div>
       </details>
 
@@ -32,82 +32,124 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </summary>
         <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
-          <strong>No.</strong> Zavelyn botanical oils, balms, and styling powders are formulated strictly for cosmetic conditioning on healthy, intact skin and hair. Do not apply directly to broken skin, open wounds, active infections, or immediately following at-home or clinical microneedling procedures until the epidermal barrier has fully healed and recovered.
+          <strong>No.</strong> Zavelyn botanical oils, balms, creams, and powders are formulated strictly for cosmetic conditioning on healthy, intact skin and hair. Do not apply directly to broken skin, open wounds, active infections, or immediately following at-home or clinical microneedling procedures until the epidermal barrier has fully recovered.
         </div>
       </details>
 
       <!-- FAQ 3: Product-specific Q -->
-      {% if product.handle contains 'fibers' %}
-        <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
-          <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-            <span>How do Keratin Building Fibers stay in place throughout the day?</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </summary>
-          <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
-            Our fibers carry a natural electrostatic charge that creates an instant magnetic bond with existing hair shafts. They resist wind, humidity, and light workout perspiration, and wash out cleanly with your regular shampoo.
-          </div>
-        </details>
-      {% elsif product.handle contains 'compact' %}
-        <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
-          <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-            <span>How do I achieve a natural hairline touch-up without harsh lines?</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </summary>
-          <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
-            Dab the high-density applicator sponge gently into the powder and tap off any excess. Start slightly behind your natural hairline and blend forward using light stippling motions for a seamless, soft-focus finish.
-          </div>
-        </details>
-      {% elsif product.handle contains 'powder' %}
-        <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
-          <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-            <span>Does this root-lift styling powder leave a white residue?</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </summary>
-          <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
-            No. The micronized silica silylate formula turns completely invisible upon scalp contact and light fingertip distribution, delivering instant matte grip and volume without dulling hair color.
-          </div>
-        </details>
-      {% else %}
-        <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
-          <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-            <span>Will this oil weigh down fine or straight hair textures?</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </summary>
-          <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
-            When used as directed, no. For fine or low-porosity hair, use 2 to 3 drops as a pre-shampoo treatment 30 minutes before washing, or apply sparingly exclusively to fragile ends.
-          </div>
-        </details>
-      {% endif %}
+      {% case product.handle %}
+        {% when 'zvhc-batana-deep-conditioning-hair-mask' %}
+          <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+              <span>How often should I use the Batana Deep Conditioning Hair Mask?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+              For normal to dry hair, 1 application weekly provides deep detangling and lipid replenishment. For chemically colored, bleached, or heat-stressed hair, use 2 times weekly. Focus application on mid-lengths and fragile ends.
+            </div>
+          </details>
 
-      <!-- FAQ 4: Shipping & Dispatch -->
+        {% when 'zvhc-keratin-hair-building-fibers' %}
+          <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+              <span>How do Keratin Building Fibers stay in place throughout the day?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+              Our microscopic keratin fibers carry a natural electrostatic charge that clings mechanically to existing hair shafts. They resist wind, humidity, and light workout sweat, and wash out cleanly with your regular shampoo.
+            </div>
+          </details>
+
+        {% when 'zvhc-precision-hairline-compact' %}
+          <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+              <span>How do I achieve a natural hairline touch-up without harsh lines?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+              Dab the high-density applicator sponge gently into the powder and tap off any excess. Start slightly behind your natural hairline and blend forward using light stippling motions for a seamless, soft-focus natural shadow.
+            </div>
+          </details>
+
+        {% when 'zvhc-root-lift-styling-powder' %}
+          <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+              <span>Does this root-lift styling powder leave a white residue?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+              No. The micronized silica silylate formula turns completely invisible upon scalp contact and light fingertip distribution, delivering instant matte grip and volume without dulling hair color.
+            </div>
+          </details>
+
+        {% when 'zvhc-raw-batana-scalp-balm' %}
+          <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+              <span>Why is the Raw Batana Balm solid in the tin?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+              Raw unrefined batana butter and beeswax naturally solidify at room temperature and melt cleanly at body heat (35°C / 95°F). Simply rub a pea-sized amount between clean fingertips to melt it into a golden lipid oil.
+            </div>
+          </details>
+
+        {% when 'zvhc-botanical-curl-cream' %}
+          <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+              <span>Will this curl defining cream make my curls stiff or crunchy?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+              No. It is an oil-in-water cream emulsion crafted with argan oil and shea butter that absorbs into the hair shaft, providing flexible, touchable definition that resists humidity without crispy stiffness.
+            </div>
+          </details>
+
+        {% when 'zvhc-7-in-1-growth-elixir' %}
+          <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+              <span>Why does the 7-in-1 Elixir tingle when massaged into the scalp?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+              The refreshing, cooling sensation is the natural sensory effect of pure peppermint and rosemary essential oils on the scalp, providing an invigorating botanical ritual.
+            </div>
+          </details>
+
+        {% else %}
+          <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+              <span>What does authentic Batana oil smell like?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+              Authentic Honduran Batana has a rich, characteristic nutty and roasted coffee-like aroma from traditional roasting. It contains no synthetic masking fragrances.
+            </div>
+          </details>
+      {% endcase %}
+
+      <!-- FAQ 4: Shipping & Free Shipping Threshold ($69.99 USD) -->
       <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
         <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-          <span>How fast does shipping take within the United States?</span>
+          <span>How does shipping work, and how do I qualify for Free US Shipping?</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </summary>
         <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
-          Orders are processed and dispatched within 24 to 48 business hours from our US distribution centers. Standard domestic shipping arrives in 2 to 5 business days with full door-to-door USPS / carrier tracking provided via email.
+          <strong>Free Standard US Shipping</strong> is automatically applied at checkout for all eligible US orders with a subtotal of <strong>$69.99 USD and above</strong>. Orders below $69.99 USD incur standard calculated delivery fees.<br><br>
+          All orders are inspected, packaged, and dispatched from regional US distribution centers within 24 to 48 business hours. Delivery typically takes 2 to 5 business days via USPS, FedEx, or DHL with real-time doorstep tracking updates provided via email and SMS.
         </div>
       </details>
 
       <!-- FAQ 5: 30-Day Guarantee & Returns -->
       <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
         <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-          <span>What is your 30-Day Satisfaction Guarantee?</span>
+          <span>What is your 30-Day Strand Satisfaction Guarantee?</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </summary>
         <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
-          We stand firmly behind the cosmetic quality of our botanical hair care. If you are not satisfied with your strand comfort or hair experience within 30 days of receiving your package, simply email us at <strong>support@tryzavelyn.com</strong> with your order confirmation number, and our team will guide you through our return and refund process.
+          We stand firmly behind the cosmetic quality of our botanical hair care routines. If you are not satisfied with your hair care experience within 30 days of receiving your package, simply email us at <strong>support@tryzavelyn.com</strong> with your order confirmation number, and our support team will provide an authorized return RMA and guide you through our refund process.
         </div>
       </details>
 
     </div>
   </div>
 </section>
-
-{% schema %}
-{
-  "name": "ZVHC PDP FAQ",
-  "settings": []
-}
-{% endschema %}

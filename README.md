@@ -24,13 +24,15 @@ Hệ thống được thiết kế theo mô hình **Multi-Funnel Isolation (Các
 
 | Theme ID | Tên Theme trên Store | Vai trò (Role) | Trạng thái & Mô tả |
 | :--- | :--- | :---: | :--- |
-| **`187597717689`** | **Zavelyn 2.0** | `main` | **THEME LIVE CHÍNH THỨC**. Đang phục vụ toàn bộ khách hàng trên `https://tryzavelyn.com`. Chứa đầy đủ bản cập nhật mới nhất của vFit, BotanaRoots, Handpans và các phễu DR. |
-| **`187720335545`** | **[Draft] Zavelyn - Fix Non-Botana Products Isolation** | `unpublished` | **THEME DRAFT KIỂM THỬ**. Dùng làm staging môi trường cách ly, chạy nghiệm thu các tính năng mới trước khi deploy lên live theme. |
-| **`186607567033`** | **Zavelyn (Pre-Publish Backup)** | `unpublished` | **THEME DỰ PHÒNG AN TOÀN**. Bản sao lưu đầy đủ 915 file trước đợt nâng cấp Zavelyn 2.0. |
+| **`189188079801`** | **ZAVELYN HAIR CARE — V5 INTEGRATED DRAFT** | `main` | **THEME LIVE CHÍNH THỨC (V5 RELEASE)**. Đang phục vụ toàn bộ khách hàng trên `https://tryzavelyn.com`. Tích hợp đầy đủ 8 SKU Hair Care, chính sách Free Shipping $69.99+, zero brand bleed, và hệ thống trust signals trung thực. |
+| **`189127983289`** | **ZAVELYN HAIR CARE — V1 — DRAFT** | `unpublished` | **THEME DỰ PHÒNG ROLLBACK**. Lưu trữ bản snapshot V3.2 trước đợt nâng cấp Master V5. |
+| **`187597717689`** | **Zavelyn 2.0** | `unpublished` | **THEME LƯU TRỮ LEGACY (BẢO VỆ TUYỆT ĐỐI)**. Lưu giữ nguyên trạng các funnel quảng cáo đời đầu. |
 
 - **Shopify Store URL**: `https://dsdujr-vn.myshopify.com`
 - **Tên miền Public**: `https://tryzavelyn.com`
-- **Shopify API Version**: `2024-10` / `2026-10` (GraphQL & Admin REST API)
+- **Shopify API Version**: `2024-01` / `2024-10` (GraphQL & Admin REST API)
+- **Active Hair Care Catalog**: 8 Active SKUs (P01 Batana Oil, P02 Fibers, P03 Powder, P04 Compact, P05 Balm, P06 Curl Cream, P07 7-in-1 Elixir, P08 Batana Hair Mask)
+- **Free Shipping Threshold**: $69.99 USD and above for eligible US orders (Cents total: `6999`)
 
 ---
 
