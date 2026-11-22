@@ -15,7 +15,7 @@
     <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
       
       <!-- FAQ 1: Sourcing & Function -->
-      <details class="zvhc-accordion-item" open style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+      <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
         <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
           <span>How does this botanical formula support scalp and strand comfort?</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -149,6 +149,43 @@
           We stand firmly behind the cosmetic quality of our botanical hair care routines. If you are not satisfied with your hair care experience within 30 days of receiving your package, simply email us at <strong>support@tryzavelyn.com</strong> with your order confirmation number, and our support team will provide an authorized return RMA and guide you through our refund process.
         </div>
       </details>
+
+      <!-- Zavelyn Formulation Insight Card (Cosmetic Science Attribution) -->
+      {% case product.handle %}
+        {% when 'zvhc-batana-deep-conditioning-hair-mask' %}
+          {% assign insight_text = "Our Deep Conditioning Masque utilizes a cationic conditioning matrix (Steartrimonium Chloride) combined with high-slip botanicals (Batana, Virgin Coconut, and Camellia Japonica oils). Damaged hair cuticles carry an excess negative electrostatic charge. Cationic conditioning agents neutralize this charge upon contact, flattening raised cuticle scales while depositing hydrophobic lipids along the fiber. Biotin and ginger root extract reinforce the protein-lipid interface, dramatically enhancing wet detangling slip and reducing fiber fracture during brushing." %}
+        {% when 'zvhc-batana-hair-growth-oil' %}
+          {% assign insight_text = "Batana oil (Elaeis oleifera kernel oil) is characterized by a concentrated lipid profile rich in oleic acid (Omega-9, ~50–60%) and linoleic acid (Omega-6). These unsaturated fatty acids possess high molecular affinity for the hair shaft's epicuticular lipid membrane, allowing them to penetrate intercellular spaces within the cuticle rather than simply coating the surface. Paired with rosemary leaf extract and natural tocopherol (Vitamin E), the formula delivers antioxidant stability, protects fragile lipid layers from oxidative stress, and significantly reduces mechanical combing friction." %}
+        {% when 'zvhc-keratin-hair-building-fibers' %}
+          {% assign insight_text = "Zavelyn Keratin Building Fibers are precision micro-milled to 0.3–0.5 mm from high-grade natural keratin and organic cotton fibers. During dispensing, physical friction imparts an inherent electrostatic charge. Because human hair strands carry an opposite dielectric potential, the fibers cling securely via van der Waals forces and electrostatic adhesion to individual shafts. This creates immediate optical volumetric density without weighing down the root or interfering with natural scalp perspiration." %}
+        {% when 'zvhc-root-lift-styling-powder' %}
+          {% assign insight_text = "Our volumizing formula leverages micronized Silica Silylate—a modified porous mineral with an ultra-high specific surface area. Upon contact with the scalp and roots, the particles selectively adsorb excess sebum and surface oils without stripping inherent moisture. Simultaneously, microscopic particle-to-fiber friction creates structural separation and mechanical lift between adjacent hair shafts, producing instant, gravity-defying texture that can be reactivated throughout the day with light fingertip manipulation." %}
+        {% when 'zvhc-precision-hairline-compact' %}
+          {% assign insight_text = "Formulated as an anhydrous pressed pigment suspension, this hairline shadow blends pharmaceutical-grade cosmetic Mica and natural Iron Oxides with botanical Squalane and Caprylic/Capric Triglycerides. The biocompatible squalane base mimics natural cutaneous sebum, allowing mineral pigments to adhere smoothly to skin and hair follicles without caking, flaking, or migrating when exposed to facial perspiration or environmental humidity." %}
+        {% when 'zvhc-raw-batana-scalp-balm' %}
+          {% assign insight_text = "Zavelyn Raw Batana Balm is an anhydrous, water-free occlusive formulation featuring Honduran Batana butter, unrefined African Shea butter, and pure Beeswax. Its melting point is precisely calibrated to body temperature (~35°C / 95°F), enabling it to transition smoothly from a firm solid into a rich spreadable lipid oil upon skin contact. The beeswax-ester matrix forms a semi-breathable protective barrier that retards transepidermal water loss (TEWL) across the scalp stratum corneum while soothing chronically parched edges." %}
+        {% when 'zvhc-botanical-curl-cream' %}
+          {% assign insight_text = "Our Botanical Curl Cream is an engineered oil-in-water micro-emulsion combining Moroccan Argan oil, unrefined Shea butter, and Hydrolyzed Keratin. Argan oil's balanced oleic/linoleic lipid profile penetrates the porous cortex of curly hair, while low-molecular-weight hydrolyzed keratin fills gaps in the protein matrix. The emulsion clumps curl ribbons into cohesive bundles, smoothing cuticle irregularities and sealing out atmospheric moisture to prevent humidity-induced frizz without crispy polymer stiffness." %}
+        {% when 'zvhc-7-in-1-growth-elixir' %}
+          {% assign insight_text = "The 7-in-1 Botanical Elixir delivers a multi-tiered lipid profile featuring 7 complementary plant oils: Batana, Jamaican Black Castor, Jojoba, Moroccan Argan, Sweet Almond, Rosemary, and Peppermint. Jojoba wax esters closely replicate human sebum to balance follicular moisture, ricinoleic acid from Jamaican Black Castor oil provides emollient cushion, while menthol from pure peppermint and 1,8-cineole from rosemary produce an invigorating, refreshing sensory tingle that revitalizes the scalp experience." %}
+        {% else %}
+          {% assign insight_text = "Zavelyn Hair Care formulations are systematically designed around clean botanical lipids, unrefined cold-pressed oils, and functional cosmetic science. Each formula respects the scalp's delicate stratum corneum barrier and hair fiber structure, eliminating harsh sulfates, synthetic dyes, and heavy silicones in favor of pure, restorative plant biochemistry." %}
+      {% endcase %}
+
+      <div class="zvhc-formulation-insight-card" style="margin-top: 24px; background: #FAF7F2; border: 1px solid #E6D7DC; border-radius: 14px; padding: 26px 28px; position: relative;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+          <span style="font-size: 1.15rem;" aria-hidden="true">🧪</span>
+          <span style="font-size: 0.76rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E); letter-spacing: 0.12em; text-transform: uppercase;">ZAVELYN FORMULATION INSIGHT</span>
+        </div>
+        <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--zvhc-t01-text-main, #2B1B24); margin: 0 0 10px 0; font-family: var(--zvhc-font-heading, inherit);">Cosmetic Science &amp; Botanical Efficacy</h3>
+        <p style="font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.65; margin: 0 0 16px 0;">
+          {{ insight_text }}
+        </p>
+        <div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1px solid rgba(176, 71, 110, 0.15); font-size: 0.8rem; color: #7A6671;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span><strong>Zavelyn Hair Care</strong> · Product Formulation Team (Cosmetic Science &amp; Botanical R&amp;D)</span>
+        </div>
+      </div>
 
     </div>
   </div>

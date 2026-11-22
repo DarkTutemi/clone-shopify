@@ -8,12 +8,12 @@
       "type": "zvhc-pdp-marquee",
       "settings": {}
     },
-    "how_it_works": {
-      "type": "zvhc-pdp-how-it-works",
-      "settings": {}
-    },
     "package": {
       "type": "zvhc-pdp-package",
+      "settings": {}
+    },
+    "how_it_works": {
+      "type": "zvhc-pdp-how-it-works",
       "settings": {}
     },
     "reviews": {
@@ -32,8 +32,8 @@
   "order": [
     "main",
     "marquee",
-    "how_it_works",
     "package",
+    "how_it_works",
     "reviews",
     "faq",
     "shipping"

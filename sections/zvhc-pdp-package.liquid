@@ -41,7 +41,7 @@
     {% assign item4_desc = "Mirror and applicator hidden inside the bottom compartment for fast on-the-go touch-ups." %}
 
   {% when 'zvhc-raw-batana-scalp-balm' %}
-    {% assign pkg_title = "What's Inside Your Raw Batana Scalp Balm" %}
+    {% assign pkg_title = "What's Inside Your Nourishing Batana Scalp Balm" %}
     {% assign pkg_sub = "Solid nutrient-dense butter that melts on skin contact to soothe parched scalps and seal edges." %}
     {% assign item1_title = "100% Unrefined Honduran Batana Butter" %}
     {% assign item1_desc = "Traditional roasted palm seed butter packed with natural phytosterols and nourishing oleic fatty acids." %}
@@ -49,11 +49,11 @@
     {% assign item2_desc = "Deep-penetrating emollient that calms tight, itchy scalps and forms a breathable moisture barrier." %}
     {% assign item3_title = "Natural Protective Beeswax" %}
     {% assign item3_desc = "Locks restorative botanical lipids into the cuticle layer to prevent moisture evaporation." %}
-    {% assign item4_title = "Recyclable Pocket Aluminum Tin (20g)" %}
-    {% assign item4_desc = "Compact twist-top tin designed for daily purse, gym bag, or travel pocket carry." %}
+    {% assign item4_title = "Recyclable Aluminum Protective Tin (100g)" %}
+    {% assign item4_desc = "Durable twist-top aluminum tin engineered to protect solid botanical butters from air and heat degradation." %}
 
   {% when 'zvhc-botanical-curl-cream' %}
-    {% assign pkg_title = "What's Inside Your Botanical Curl Cream" %}
+    {% assign pkg_title = "What's Inside Your Batana Hydrating Curl Cream" %}
     {% assign pkg_sub = "Nourishing curl definer that enhances natural wave and coil patterns with lightweight moisture slip." %}
     {% assign item1_title = "Organic Moroccan Argan Kernel Oil" %}
     {% assign item1_desc = "Seals moisture into open curl cuticles, eliminating frizz and enhancing natural shine." %}
@@ -61,8 +61,8 @@
     {% assign item2_desc = "Fortifies textured hair against mechanical breakage during detangling and twisting." %}
     {% assign item3_title = "Hydrolyzed Botanical Wheat Protein" %}
     {% assign item3_desc = "Restores bounce, elasticity, and spring to heat-damaged curls without crunchiness." %}
-    {% assign item4_title = "Airless Dispenser Bottle (100ml)" %}
-    {% assign item4_desc = "Hygienic pump dispenses uniform doses of cream while protecting botanical actives from oxidation." %}
+    {% assign item4_title = "Protective Ergonomic Squeeze Tube (100ml)" %}
+    {% assign item4_desc = "Convenient squeeze tube designed for controlled application through damp hair without mess or oxidation." %}
 
   {% when 'zvhc-7-in-1-growth-elixir' %}
     {% assign pkg_title = "What's Inside Your 7-in-1 Multi-Oil Scalp Elixir" %}
@@ -76,10 +76,21 @@
     {% assign item4_title = "Amber Glass Dropper Bottle (60ml)" %}
     {% assign item4_desc = "UV-filtering amber glass protects delicate cold-pressed fatty acids from light breakdown." %}
 
-  {% else %}
-    {% comment %} Default to Pure Batana Scalp & Hair Oil {% endcomment %}
-    {% assign pkg_title = "What's Inside Your Pure Batana Elixir" %}
-    {% assign pkg_sub = "No artificial fillers, synthetic perfumes, silicones or watered-down carrier oils. Every drop delivers pure plant lipids." %}
+  {% when 'zvhc-batana-deep-conditioning-hair-mask' %}
+    {% assign pkg_title = "What's Inside Your Batana Deep Conditioning Hair Mask" %}
+    {% assign pkg_sub = "An intensive restorative lipid emulsion formulated with unrefined Batana, Coconut, Camellia, and Biotin to melt tangles and restore cuticle slip." %}
+    {% assign item1_title = "Honduran Batana Oil (Elaeis Oleifera)" %}
+    {% assign item1_desc = "Rich in essential oleic fatty acids that deeply condition parched strands and restore natural lipid barriers." %}
+    {% assign item2_title = "Raw Virgin Coconut &amp; Camellia Seed Lipids" %}
+    {% assign item2_desc = "High-slip emollient plant oils that seal hair cuticles, dramatically reduce comb-through snagging, and impart mirror shine." %}
+    {% assign item3_title = "Strengthening Biotin &amp; Ginger Root Extract" %}
+    {% assign item3_desc = "Nourishing micro-nutrients that fortify fragile hair shafts and improve fiber elasticity against mechanical damage." %}
+    {% assign item4_title = "Wide-Mouth Protective Treatment Jar (120g)" %}
+    {% assign item4_desc = "Ergonomic wide-opening jar engineered for effortless scoop access in the shower with a secure moisture-tight twist seal." %}
+
+  {% when 'zvhc-batana-hair-growth-oil' %}
+    {% assign pkg_title = "What's Inside Your Pure Batana Hair & Scalp Oil" %}
+    {% assign pkg_sub = "No artificial fillers, synthetic perfumes, silicones or watered-down carrier oils. Every drop delivers pure unrefined plant lipids." %}
     {% assign item1_title = "Pure Cold-Pressed Batana Oil (Elaeis Oleifera)" %}
     {% assign item1_desc = "Rich in phytosterols and oleic fatty acids to nourish the scalp moisture barrier and condition hair strands." %}
     {% assign item2_title = "Rosemary Leaf Extract (Rosmarinus Officinalis)" %}
@@ -88,6 +99,19 @@
     {% assign item3_desc = "Antioxidant-rich protection that shields dry hair against environmental stress and styling damage." %}
     {% assign item4_title = "Amber Glass Apothecary Dropper Bottle (60ml)" %}
     {% assign item4_desc = "Protective amber glass preserves active botanical properties against UV light degradation." %}
+
+  {% else %}
+    {% comment %} Default fallback {% endcomment %}
+    {% assign pkg_title = "What's Inside Your Pure Botanical Care" %}
+    {% assign pkg_sub = "No artificial fillers, synthetic perfumes, silicones or watered-down carrier oils. Pure botanical care for resilient strands." %}
+    {% assign item1_title = "Cold-Pressed Botanical Lipids" %}
+    {% assign item1_desc = "Rich in natural phytosterols and fatty acids to nourish the scalp and condition hair strands." %}
+    {% assign item2_title = "Revitalizing Plant Extracts" %}
+    {% assign item2_desc = "Refreshing natural extracts that support scalp balance and promote healthy-looking hair." %}
+    {% assign item3_title = "Antioxidant Tocopherol (Vitamin E)" %}
+    {% assign item3_desc = "Lipid protection that shields delicate strands against environmental stress and styling friction." %}
+    {% assign item4_title = "Protective Recyclable Packaging" %}
+    {% assign item4_desc = "Engineered to protect active botanical phytonutrients from light and oxygen exposure." %}
 {% endcase %}
 
 <section class="zvhc-package-section" id="ingredients">
