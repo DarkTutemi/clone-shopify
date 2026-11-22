@@ -1,83 +1,121 @@
 {% comment %}
-  ZAVELYN HAIR CARE — T01 Curated Routine Bundles
+  ZAVELYN HAIR CARE — T01 Curated Routine Bundles (v3.1)
+  Functional multi-product bundles that add all line items directly to Shopify cart
 {% endcomment %}
 <section class="zvhc-editorial-section alt-bg" id="bundles">
   <div class="zvhc-container">
     <div style="text-align: center; max-width: 680px; margin: 0 auto 52px;">
       <div style="font-size: 0.78rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;">CURATED ROUTINES</div>
       <h2 class="zvhc-h2">Complete Multi-Product Sets</h2>
-      <p>Save up to 40% when pairing our targeted scalp therapies with styling essentials. Complete routines designed to work better together.</p>
+      <p>Pair our targeted scalp therapies with styling essentials. Complete botanical regimens designed to work together and added directly to your cart.</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px;">
-      <!-- Bundle 1 -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;">
+      
+      <!-- Bundle 1: Scalp & Edge Care Duo -->
       <div class="zvhc-editorial-card" style="display: flex; flex-direction: column; position: relative;">
-        <span class="zvhc-tier-badge" style="top: -11px; right: 20px;">Save 33%</span>
+        <span class="zvhc-tier-badge" style="top: -11px; right: 20px;">Duo Set</span>
         <div style="font-size: 0.75rem; font-weight: 700; color: var(--zvhc-t01-accent-rose, #B0476E); text-transform: uppercase; margin-bottom: 4px;">Daily Edge Recovery</div>
-        <h3 class="zvhc-h3" style="margin-bottom: 10px;">Scalp &amp; Edge Care Duo</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 18px;">Combines Pure Batana Scalp Oil (60ml) and Precision Hairline Shadow Compact (4g) for daily nourishment plus instant temple perfecting.</p>
+        <h3 class="zvhc-h3" style="margin-bottom: 8px;">Scalp &amp; Edge Care Duo</h3>
+        <p style="font-size: 0.88rem; margin-bottom: 16px;">Combines Pure Batana Scalp Oil (60ml) and Precision Hairline Shadow Compact (4g) for daily nourishment plus instant hairline perfecting.</p>
         
-        <div style="display: flex; gap: 12px; margin-bottom: 20px;">
+        <div style="display: flex; gap: 12px; margin-bottom: 16px;">
           <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419" alt="Batana Oil" style="width: 68px; height: 68px; object-fit: cover; border-radius: 10px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
           <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256808781854155-hero.jpg?v=1795264431" alt="Hairline Compact" style="width: 68px; height: 68px; object-fit: cover; border-radius: 10px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
         </div>
 
-        <div style="display: flex; align-items: baseline; gap: 8px; margin-top: auto; margin-bottom: 18px;">
-          <span style="font-size: 1.5rem; font-weight: 800; color: var(--zvhc-t01-text-main, #2B1B24);">$49.99</span>
-          <span style="font-size: 0.95rem; text-decoration: line-through; color: var(--zvhc-t01-text-subtle, #7A6670);">$74.98</span>
-          <span class="zvhc-tier-pill">You Save $24.99</span>
+        <!-- Shade Selector for Compact -->
+        <div style="margin-bottom: 16px; background: var(--zvhc-t01-bg, #E9E4E6); padding: 10px 14px; border-radius: 8px;">
+          <label for="zvhcBundleDuoShade" style="display: block; font-size: 0.75rem; font-weight: 700; color: var(--zvhc-t01-text-main, #2B1B24); margin-bottom: 4px;">HAIRLINE COMPACT SHADE:</label>
+          <select id="zvhcBundleDuoShade" style="width: 100%; height: 36px; padding: 0 10px; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 6px; font-size: 0.85rem; background: #FFF;">
+            <option value="68580492705977">#01 Black</option>
+            <option value="68580492804281">#02 Dark Brown</option>
+            <option value="68580492902585">#03 Medium Brown</option>
+          </select>
         </div>
-        <a href="/products/zvhc-batana-hair-growth-oil" class="zvhc-btn-primary">
-          BUILD THIS DUO →
-        </a>
+
+        <div style="display: flex; align-items: baseline; gap: 8px; margin-top: auto; margin-bottom: 16px;">
+          <span style="font-size: 1.45rem; font-weight: 800; color: var(--zvhc-t01-text-main, #2B1B24);">$64.98</span>
+          <span style="font-size: 0.9rem; text-decoration: line-through; color: var(--zvhc-t01-text-subtle, #7A6670);">$81.99</span>
+          <span class="zvhc-tier-pill">Includes 2 Products</span>
+        </div>
+
+        <div id="zvhcBundleDuoError" style="display: none; color: #B02020; font-size: 0.82rem; margin-bottom: 8px;"></div>
+        <button type="button" class="zvhc-btn-primary" onclick="zvhcAddDuoBundle(this)">
+          ADD BOTH TO CART · $64.98
+        </button>
       </div>
 
-      <!-- Bundle 2 -->
+      <!-- Bundle 2: Instant Density 3-Piece Kit -->
       <div class="zvhc-editorial-card" style="display: flex; flex-direction: column; position: relative; border-color: var(--zvhc-t01-accent-rose, #B0476E); background: var(--zvhc-t01-card-sel-bg, #FDF2F6);">
-        <span class="zvhc-tier-badge" style="top: -11px; right: 20px;">★ MOST POPULAR KIT</span>
+        <span class="zvhc-tier-badge" style="top: -11px; right: 20px;">★ POPULAR KIT</span>
         <div style="font-size: 0.75rem; font-weight: 700; color: var(--zvhc-t01-accent-rose, #B0476E); text-transform: uppercase; margin-bottom: 4px;">Instant Fullness</div>
-        <h3 class="zvhc-h3" style="margin-bottom: 10px;">Instant Density 3-Piece Kit</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 18px;">The ultimate cosmetic fullness kit: Keratin Building Fibers (100g) + Root-Lift Powder (10g) + Precision Hairline Shadow Compact (4g).</p>
+        <h3 class="zvhc-h3" style="margin-bottom: 8px;">Instant Density 3-Piece Kit</h3>
+        <p style="font-size: 0.88rem; margin-bottom: 16px;">Full cosmetic density: Keratin Building Fibers (100g) + Root-Lift Powder (10g) + Precision Hairline Compact (4g).</p>
         
-        <div style="display: flex; gap: 12px; margin-bottom: 20px;">
-          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811885406846-hero.jpg?v=1795264423" alt="Keratin Fibers" style="width: 68px; height: 68px; object-fit: cover; border-radius: 10px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
-          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256810605010511-hero.jpg?v=1795264427" alt="Root Powder" style="width: 68px; height: 68px; object-fit: cover; border-radius: 10px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
-          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256808781854155-hero.jpg?v=1795264431" alt="Hairline Compact" style="width: 68px; height: 68px; object-fit: cover; border-radius: 10px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
+        <div style="display: flex; gap: 10px; margin-bottom: 16px;">
+          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811885406846-hero.jpg?v=1795264423" alt="Keratin Fibers" style="width: 58px; height: 58px; object-fit: cover; border-radius: 8px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
+          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256810605010511-hero.jpg?v=1795264427" alt="Root Powder" style="width: 58px; height: 58px; object-fit: cover; border-radius: 8px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
+          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256808781854155-hero.jpg?v=1795264431" alt="Hairline Compact" style="width: 58px; height: 58px; object-fit: cover; border-radius: 8px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
         </div>
 
-        <div style="display: flex; align-items: baseline; gap: 8px; margin-top: auto; margin-bottom: 18px;">
-          <span style="font-size: 1.5rem; font-weight: 800; color: var(--zvhc-t01-text-main, #2B1B24);">$69.99</span>
-          <span style="font-size: 0.95rem; text-decoration: line-through; color: var(--zvhc-t01-text-subtle, #7A6670);">$94.97</span>
-          <span class="zvhc-tier-pill">You Save $24.98</span>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; background: #FFF; padding: 10px; border-radius: 8px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
+          <div>
+            <label for="zvhcBundleTrioFiberShade" style="display: block; font-size: 0.72rem; font-weight: 700; margin-bottom: 4px;">FIBERS SHADE:</label>
+            <select id="zvhcBundleTrioFiberShade" style="width: 100%; height: 34px; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 6px; font-size: 0.8rem; background: #FFF;">
+              <option value="68580492312761">Black</option>
+              <option value="68580492411065">Dark Brown</option>
+              <option value="68580492509369">Medium Brown</option>
+            </select>
+          </div>
+          <div>
+            <label for="zvhcBundleTrioCompactShade" style="display: block; font-size: 0.72rem; font-weight: 700; margin-bottom: 4px;">COMPACT SHADE:</label>
+            <select id="zvhcBundleTrioCompactShade" style="width: 100%; height: 34px; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 6px; font-size: 0.8rem; background: #FFF;">
+              <option value="68580492705977">#01 Black</option>
+              <option value="68580492804281">#02 Dark Brown</option>
+              <option value="68580492902585">#03 Medium Brown</option>
+            </select>
+          </div>
         </div>
-        <a href="/products/zvhc-keratin-hair-building-fibers" class="zvhc-btn-primary">
-          GET THE DENSITY KIT →
-        </a>
+
+        <div style="display: flex; align-items: baseline; gap: 8px; margin-top: auto; margin-bottom: 16px;">
+          <span style="font-size: 1.45rem; font-weight: 800; color: var(--zvhc-t01-text-main, #2B1B24);">$79.97</span>
+          <span style="font-size: 0.9rem; text-decoration: line-through; color: var(--zvhc-t01-text-subtle, #7A6670);">$101.99</span>
+          <span class="zvhc-tier-pill">Includes 3 Products</span>
+        </div>
+
+        <div id="zvhcBundleTrioError" style="display: none; color: #B02020; font-size: 0.82rem; margin-bottom: 8px;"></div>
+        <button type="button" class="zvhc-btn-primary" onclick="zvhcAddTrioBundle(this)">
+          ADD 3-PIECE SET TO CART · $79.97
+        </button>
       </div>
 
-      <!-- Bundle 3 -->
+      <!-- Bundle 3: Wash-to-Style 4-Piece Routine -->
       <div class="zvhc-editorial-card" style="display: flex; flex-direction: column; position: relative;">
-        <span class="zvhc-tier-badge" style="top: -11px; right: 20px;">Save 35%</span>
+        <span class="zvhc-tier-badge" style="top: -11px; right: 20px;">Complete Care</span>
         <div style="font-size: 0.75rem; font-weight: 700; color: var(--zvhc-t01-accent-rose, #B0476E); text-transform: uppercase; margin-bottom: 4px;">Total Hair Regimen</div>
-        <h3 class="zvhc-h3" style="margin-bottom: 10px;">Wash-to-Style 4-Piece Routine</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 18px;">Complete botanical regimen: Scalp Balm (20g) + Batana Oil (60ml) + Curl Cream (100ml) + 7-in-1 Elixir (60ml).</p>
+        <h3 class="zvhc-h3" style="margin-bottom: 8px;">Wash-to-Style 4-Piece Routine</h3>
+        <p style="font-size: 0.88rem; margin-bottom: 16px;">The complete botanical regimen: Raw Scalp Balm (20g) + Pure Batana Oil (60ml) + Curl Cream (100ml) + 7-in-1 Elixir (60ml).</p>
         
-        <div style="display: flex; gap: 8px; margin-bottom: 20px;">
-          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435" alt="Scalp Balm" style="width: 54px; height: 54px; object-fit: cover; border-radius: 8px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
-          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419" alt="Batana Oil" style="width: 54px; height: 54px; object-fit: cover; border-radius: 8px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
-          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811372233630-hero.jpg?v=1795264440" alt="Curl Cream" style="width: 54px; height: 54px; object-fit: cover; border-radius: 8px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
-          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811903160451-hero.jpg?v=1795264444" alt="7-in-1 Elixir" style="width: 54px; height: 54px; object-fit: cover; border-radius: 8px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
+        <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435" alt="Scalp Balm" style="width: 52px; height: 52px; object-fit: cover; border-radius: 8px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
+          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419" alt="Batana Oil" style="width: 52px; height: 52px; object-fit: cover; border-radius: 8px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
+          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811372233630-hero.jpg?v=1795264440" alt="Curl Cream" style="width: 52px; height: 52px; object-fit: cover; border-radius: 8px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
+          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811903160451-hero.jpg?v=1795264444" alt="7-in-1 Elixir" style="width: 52px; height: 52px; object-fit: cover; border-radius: 8px; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
         </div>
 
-        <div style="display: flex; align-items: baseline; gap: 8px; margin-top: auto; margin-bottom: 18px;">
-          <span style="font-size: 1.5rem; font-weight: 800; color: var(--zvhc-t01-text-main, #2B1B24);">$89.99</span>
-          <span style="font-size: 0.95rem; text-decoration: line-through; color: var(--zvhc-t01-text-subtle, #7A6670);">$134.96</span>
-          <span class="zvhc-tier-pill">You Save $44.97</span>
+        <div style="display: flex; align-items: baseline; gap: 8px; margin-top: auto; margin-bottom: 16px;">
+          <span style="font-size: 1.45rem; font-weight: 800; color: var(--zvhc-t01-text-main, #2B1B24);">$129.96</span>
+          <span style="font-size: 0.9rem; text-decoration: line-through; color: var(--zvhc-t01-text-subtle, #7A6670);">$162.98</span>
+          <span class="zvhc-tier-pill">Includes 4 Full Products</span>
         </div>
-        <a href="/products/zvhc-botanical-curl-cream" class="zvhc-btn-primary">
-          BUILD WASH ROUTINE →
-        </a>
+
+        <div id="zvhcBundleRoutineError" style="display: none; color: #B02020; font-size: 0.82rem; margin-bottom: 8px;"></div>
+        <button type="button" class="zvhc-btn-primary" onclick="zvhcAddRoutineBundle(this)">
+          ADD 4-PIECE ROUTINE TO CART · $129.96
+        </button>
       </div>
+
     </div>
   </div>
 </section>

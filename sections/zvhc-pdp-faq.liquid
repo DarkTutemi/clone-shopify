@@ -1,71 +1,106 @@
 {% comment %}
-  ZAVELYN HAIR CARE — FAQ Accordion Section
+  ZAVELYN HAIR CARE — Product-Specific & Compliance FAQ Section (v3.1)
+  Transparent return policy, shipping details, and explicit cosmetic safety guidelines
 {% endcomment %}
-<section class="zvhc-faq-section" id="faq">
+<section class="zvhc-faq-section" id="faq" style="padding: 72px 0;">
   <div class="zvhc-container">
-    <div class="zvhc-section-header">
-      <div class="zvhc-eyebrow">FREQUENTLY ASKED QUESTIONS</div>
-      <h2 class="zvhc-heading-md">Everything You Need To Know</h2>
-      <p style="color: var(--zvhc-muted); margin-top: 10px; font-size: 0.95rem;">
-        Have questions about our sourcing, formula, or our 30-day satisfaction guarantee? We have answers.
+    <div style="text-align: center; max-width: 680px; margin: 0 auto 48px;">
+      <div style="font-size: 0.78rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;">FREQUENTLY ASKED QUESTIONS</div>
+      <h2 class="zvhc-h2">Everything You Need To Know</h2>
+      <p style="color: var(--zvhc-t01-text-muted, #5A4651); font-size: 0.95rem;">
+        Clear answers about our botanical sourcing, daily usage instructions, shipping timelines, and 30-day return policy.
       </p>
     </div>
 
-    <div class="zvhc-faq-list">
-      <!-- FAQ 1 -->
-      <div class="zvhc-faq-item is-open">
-        <button type="button" class="zvhc-faq-trigger">
-          <span class="zvhc-faq-q">How soon can I expect to notice healthier scalp and hair?</span>
-          <span class="zvhc-faq-icon">+</span>
-        </button>
-        <div class="zvhc-faq-answer">
-          Most customers notice significantly softer, shinier strands and a calmer, deeply moisturized scalp within the first 1 to 2 weeks of regular application. With consistent massage and routine use over 4 to 8 weeks, hair strands feel noticeably stronger with visibly reduced breakage.
+    <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+      
+      <!-- FAQ 1: Sourcing & Function -->
+      <details class="zvhc-accordion-item" open style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+        <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>How does this botanical formula support scalp and strand comfort?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </summary>
+        <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+          Our formulas harness pure unrefined plant lipids (such as Honduran Batana oil and Moroccan Argan) rich in oleic fatty acids and phytosterols. They condition the natural scalp moisture barrier, lubricate brittle hair cuticles, and reduce friction during styling—leading to visibly softer, more resilient strands without synthetic coating agents.
         </div>
-      </div>
+      </details>
 
-      <!-- FAQ 2 -->
-      <div class="zvhc-faq-item">
-        <button type="button" class="zvhc-faq-trigger">
-          <span class="zvhc-faq-q">What makes Cold-Pressed Batana Oil so effective?</span>
-          <span class="zvhc-faq-icon">+</span>
-        </button>
-        <div class="zvhc-faq-answer">
-          Unlike mineral oils or synthetic silicones that merely coat the hair shaft, pure Batana oil contains rich phytosterols, carotenoids, and essential fatty acids (oleic and linoleic acids). These plant lipids deeply condition the scalp moisture barrier and nourish dry hair cuticles from root to tip.
+      <!-- FAQ 2: Safety & Microneedling Compliance -->
+      <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+        <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>Can I use this product immediately after microneedling or on irritated skin?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </summary>
+        <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+          <strong>No.</strong> Zavelyn botanical oils, balms, and styling powders are formulated strictly for cosmetic conditioning on healthy, intact skin and hair. Do not apply directly to broken skin, open wounds, active infections, or immediately following at-home or clinical microneedling procedures until the epidermal barrier has fully healed and recovered.
         </div>
-      </div>
+      </details>
 
-      <!-- FAQ 3 -->
-      <div class="zvhc-faq-item">
-        <button type="button" class="zvhc-faq-trigger">
-          <span class="zvhc-faq-q">Will this oil weigh down fine or straight hair?</span>
-          <span class="zvhc-faq-icon">+</span>
-        </button>
-        <div class="zvhc-faq-answer">
-          Not when used properly! While Batana is deeply conditioning, it absorbs readily into the scalp. If you have fine or straight hair, simply use 2–3 drops as a pre-wash treatment 30 minutes before shampooing, or massage into your scalp overnight and wash out in the morning.
-        </div>
-      </div>
+      <!-- FAQ 3: Product-specific Q -->
+      {% if product.handle contains 'fibers' %}
+        <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+          <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+            <span>How do Keratin Building Fibers stay in place throughout the day?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+            Our fibers carry a natural electrostatic charge that creates an instant magnetic bond with existing hair shafts. They resist wind, humidity, and light workout perspiration, and wash out cleanly with your regular shampoo.
+          </div>
+        </details>
+      {% elsif product.handle contains 'compact' %}
+        <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+          <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+            <span>How do I achieve a natural hairline touch-up without harsh lines?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+            Dab the high-density applicator sponge gently into the powder and tap off any excess. Start slightly behind your natural hairline and blend forward using light stippling motions for a seamless, soft-focus finish.
+          </div>
+        </details>
+      {% elsif product.handle contains 'powder' %}
+        <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+          <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+            <span>Does this root-lift styling powder leave a white residue?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+            No. The micronized silica silylate formula turns completely invisible upon scalp contact and light fingertip distribution, delivering instant matte grip and volume without dulling hair color.
+          </div>
+        </details>
+      {% else %}
+        <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+          <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+            <span>Will this oil weigh down fine or straight hair textures?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+            When used as directed, no. For fine or low-porosity hair, use 2 to 3 drops as a pre-shampoo treatment 30 minutes before washing, or apply sparingly exclusively to fragile ends.
+          </div>
+        </details>
+      {% endif %}
 
-      <!-- FAQ 4 -->
-      <div class="zvhc-faq-item">
-        <button type="button" class="zvhc-faq-trigger">
-          <span class="zvhc-faq-q">Is it safe for color-treated, bleached, or relaxed hair?</span>
-          <span class="zvhc-faq-icon">+</span>
-        </button>
-        <div class="zvhc-faq-answer">
-          Yes, absolutely. Chemical processing, bleaching, and thermal heat styling deplete hair of its protective lipid layer. Batana oil replenishes essential lipid nourishment, smoothing the cuticle to help retain moisture and protect against everyday stress.
+      <!-- FAQ 4: Shipping & Dispatch -->
+      <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+        <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>How fast does shipping take within the United States?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </summary>
+        <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+          Orders are processed and dispatched within 24 to 48 business hours from our US distribution centers. Standard domestic shipping arrives in 2 to 5 business days with full door-to-door USPS / carrier tracking provided via email.
         </div>
-      </div>
+      </details>
 
-      <!-- FAQ 5 -->
-      <div class="zvhc-faq-item">
-        <button type="button" class="zvhc-faq-trigger">
-          <span class="zvhc-faq-q">How does your 30-Day Satisfaction Guarantee work?</span>
-          <span class="zvhc-faq-icon">+</span>
-        </button>
-        <div class="zvhc-faq-answer">
-          We want you to experience Zavelyn Hair Care with complete peace of mind. If you are not completely satisfied with your hair care experience within 30 days of receiving your order, simply email our customer support at support@tryzavelyn.com for assistance with a return or refund.
+      <!-- FAQ 5: 30-Day Guarantee & Returns -->
+      <details class="zvhc-accordion-item" style="background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 12px; padding: 20px 24px;">
+        <summary style="font-weight: 700; font-size: 1.05rem; color: var(--zvhc-t01-text-main, #2B1B24); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>What is your 30-Day Satisfaction Guarantee?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </summary>
+        <div style="margin-top: 14px; font-size: 0.92rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.6;">
+          We stand firmly behind the cosmetic quality of our botanical hair care. If you are not satisfied with your strand comfort or hair experience within 30 days of receiving your package, simply email us at <strong>support@tryzavelyn.com</strong> with your order confirmation number, and our team will guide you through our return and refund process.
         </div>
-      </div>
+      </details>
+
     </div>
   </div>
 </section>

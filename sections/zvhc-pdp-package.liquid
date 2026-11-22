@@ -1,58 +1,151 @@
 {% comment %}
-  ZAVELYN HAIR CARE — Package & Ingredient Spotlight
+  ZAVELYN HAIR CARE — Product-Specific Package & Ingredient Spotlight (v3.1)
+  Dynamically tailored to each of the 7 products
 {% endcomment %}
+
+{% case product.handle %}
+  {% when 'zvhc-keratin-hair-building-fibers' %}
+    {% assign pkg_title = "What's Inside Your Keratin Fibers Pouch" %}
+    {% assign pkg_sub = "Premium electrostatic microfibers that cling magnetically to hair strands for immediate visible density." %}
+    {% assign item1_title = "100% Natural Organic Plant Keratin" %}
+    {% assign item1_desc = "Derived from sustainably sourced natural plant proteins with identical texture to human hair." %}
+    {% assign item2_title = "Electrostatic Cling Matrix" %}
+    {% assign item2_desc = "Charged fibers adhere firmly to individual hairs, resisting wind, light moisture, and workout sweat." %}
+    {% assign item3_title = "Natural Mineral Pigments" %}
+    {% assign item3_desc = "Fade-resistant earth minerals blended into Black, Dark Brown, and Medium Brown shades." %}
+    {% assign item4_title = "Precision Refill Pouch (100g)" %}
+    {% assign item4_desc = "Resealable moisture-barrier pouch providing up to 60+ applications per pack." %}
+
+  {% when 'zvhc-root-lift-styling-powder' %}
+    {% assign pkg_title = "What's Inside Your Root-Lift Styling Powder" %}
+    {% assign pkg_sub = "Micronized volumizing powder that lifts limp roots and absorbs excess scalp sebum instantly." %}
+    {% assign item1_title = "Micronized Silica Silylate" %}
+    {% assign item1_desc = "Ultra-lightweight mineral powder that creates physical separation and friction between hair strands." %}
+    {% assign item2_title = "Sebum-Absorbing Botanical Complex" %}
+    {% assign item2_desc = "Neutralizes daytime oiliness without leaving a sticky or chalky white residue." %}
+    {% assign item3_title = "Natural Matte Finish Polymers" %}
+    {% assign item3_desc = "Provides flexible, reworkable hold that lasts from morning styling through evening dinner." %}
+    {% assign item4_title = "Directional Pump Applicator (10g)" %}
+    {% assign item4_desc = "Accurate puff dispenser deposits powder directly at roots without mess or spillage." %}
+
+  {% when 'zvhc-precision-hairline-compact' %}
+    {% assign pkg_title = "What's Inside Your Hairline Shadow Compact" %}
+    {% assign pkg_sub = "Targeted hairline, temple, and crown touch-up powder in an elegant travel-ready compact." %}
+    {% assign item1_title = "Micro-Milled Mineral Colorants" %}
+    {% assign item1_desc = "Ultra-fine pressed powder that blends seamlessly against skin and hair follicles." %}
+    {% assign item2_title = "Water-Resistant Plant Wax Matrix" %}
+    {% assign item2_desc = "Stays in place throughout the day without smudging onto forehead, collars, or pillowcases." %}
+    {% assign item3_title = "High-Density Application Sponge" %}
+    {% assign item3_desc = "Soft, dense circular sponge engineered to deposit powder smoothly along sharp hairline contours." %}
+    {% assign item4_title = "Built-in Vanity Mirror Compact (4g)" %}
+    {% assign item4_desc = "Mirror and applicator hidden inside the bottom compartment for fast on-the-go touch-ups." %}
+
+  {% when 'zvhc-raw-batana-scalp-balm' %}
+    {% assign pkg_title = "What's Inside Your Raw Batana Scalp Balm" %}
+    {% assign pkg_sub = "Solid nutrient-dense butter that melts on skin contact to soothe parched scalps and seal edges." %}
+    {% assign item1_title = "100% Unrefined Honduran Batana Butter" %}
+    {% assign item1_desc = "Traditional roasted palm seed butter packed with natural phytosterols and nourishing oleic fatty acids." %}
+    {% assign item2_title = "Raw African Shea Butter" %}
+    {% assign item2_desc = "Deep-penetrating emollient that calms tight, itchy scalps and forms a breathable moisture barrier." %}
+    {% assign item3_title = "Natural Protective Beeswax" %}
+    {% assign item3_desc = "Locks restorative botanical lipids into the cuticle layer to prevent moisture evaporation." %}
+    {% assign item4_title = "Recyclable Pocket Aluminum Tin (20g)" %}
+    {% assign item4_desc = "Compact twist-top tin designed for daily purse, gym bag, or travel pocket carry." %}
+
+  {% when 'zvhc-botanical-curl-cream' %}
+    {% assign pkg_title = "What's Inside Your Botanical Curl Cream" %}
+    {% assign pkg_sub = "Nourishing curl definer that enhances natural wave and coil patterns with lightweight moisture slip." %}
+    {% assign item1_title = "Organic Moroccan Argan Kernel Oil" %}
+    {% assign item1_desc = "Seals moisture into open curl cuticles, eliminating frizz and enhancing natural shine." %}
+    {% assign item2_title = "Cold-Pressed Honduran Batana Oil" %}
+    {% assign item2_desc = "Fortifies textured hair against mechanical breakage during detangling and twisting." %}
+    {% assign item3_title = "Hydrolyzed Botanical Wheat Protein" %}
+    {% assign item3_desc = "Restores bounce, elasticity, and spring to heat-damaged curls without crunchiness." %}
+    {% assign item4_title = "Airless Dispenser Bottle (100ml)" %}
+    {% assign item4_desc = "Hygienic pump dispenses uniform doses of cream while protecting botanical actives from oxidation." %}
+
+  {% when 'zvhc-7-in-1-growth-elixir' %}
+    {% assign pkg_title = "What's Inside Your 7-in-1 Multi-Oil Scalp Elixir" %}
+    {% assign pkg_sub = "A synergistic multi-botanical fusion of seven cold-pressed oils formulated for comprehensive scalp conditioning." %}
+    {% assign item1_title = "Batana &amp; Jamaican Black Castor Oil" %}
+    {% assign item1_desc = "Powerhouse duo rich in ricinoleic and oleic acids to nourish hair follicles and seal shafts." %}
+    {% assign item2_title = "Organic Rosemary &amp; Peppermint Leaf Extracts" %}
+    {% assign item2_desc = "Invigorating botanical extracts that deliver an energizing scalp tingle and refresh circulation." %}
+    {% assign item3_title = "Argan, Jojoba &amp; Virgin Coconut Oils" %}
+    {% assign item3_desc = "Mimics the scalp's natural sebum to balance moisture without clogging pores or leaving residue." %}
+    {% assign item4_title = "Amber Glass Dropper Bottle (60ml)" %}
+    {% assign item4_desc = "UV-filtering amber glass protects delicate cold-pressed fatty acids from light breakdown." %}
+
+  {% else %}
+    {% comment %} Default to Pure Batana Scalp & Hair Oil {% endcomment %}
+    {% assign pkg_title = "What's Inside Your Pure Batana Elixir" %}
+    {% assign pkg_sub = "No artificial fillers, synthetic perfumes, silicones or watered-down carrier oils. Every drop delivers pure plant lipids." %}
+    {% assign item1_title = "Pure Cold-Pressed Batana Oil (Elaeis Oleifera)" %}
+    {% assign item1_desc = "Rich in phytosterols and oleic fatty acids to nourish the scalp moisture barrier and condition hair strands." %}
+    {% assign item2_title = "Rosemary Leaf Extract (Rosmarinus Officinalis)" %}
+    {% assign item2_desc = "A revitalizing botanical essence known to refresh the scalp and support healthy-looking hair." %}
+    {% assign item3_title = "Natural Vitamin E &amp; Essential Plant Lipids" %}
+    {% assign item3_desc = "Antioxidant-rich protection that shields dry hair against environmental stress and styling damage." %}
+    {% assign item4_title = "Amber Glass Apothecary Dropper Bottle (60ml)" %}
+    {% assign item4_desc = "Protective amber glass preserves active botanical properties against UV light degradation." %}
+{% endcase %}
+
 <section class="zvhc-package-section" id="ingredients">
   <div class="zvhc-container">
     <div class="zvhc-package-grid">
       <!-- Left Image Column -->
       <div class="zvhc-package-img-col">
-        <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-3.png?v=1793191524" alt="Pure Batana Botanical Ingredients" loading="lazy">
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title | escape }}" loading="lazy" style="border-radius: 14px; width: 100%; object-fit: cover;">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zavelyn-botana-asset-3.png?v=1793191524" alt="Pure Botanical Ingredients" loading="lazy">
+        {% endif %}
       </div>
 
       <!-- Right Content Column -->
       <div class="zvhc-package-content">
         <div class="zvhc-eyebrow">CLEAN BOTANICAL CARE</div>
-        <h2 class="zvhc-heading-md">What's Inside Your Pure Batana Elixir</h2>
-        <p style="color: var(--zvhc-muted); margin-top: 10px; font-size: 0.95rem;">
-          No artificial fillers, synthetic fragrances, silicones or watered-down carrier oils. Every drop delivers nutrient-rich plant lipids.
+        <h2 class="zvhc-heading-md">{{ pkg_title }}</h2>
+        <p style="color: var(--zvhc-t01-text-muted, #5A4651); margin-top: 10px; font-size: 0.95rem;">
+          {{ pkg_sub }}
         </p>
 
-        <div class="zvhc-package-list">
+        <div class="zvhc-package-list" style="margin-top: 24px;">
           <div class="zvhc-package-item">
             <div class="zvhc-package-icon">🌿</div>
             <div>
-              <div class="zvhc-package-item-title">Pure Cold-Pressed Batana Oil (Elaeis Oleifera)</div>
-              <div class="zvhc-package-item-desc">Rich in phytosterols and oleic fatty acids to nourish the scalp and condition hair strands.</div>
+              <div class="zvhc-package-item-title">{{ item1_title }}</div>
+              <div class="zvhc-package-item-desc">{{ item1_desc }}</div>
             </div>
           </div>
 
           <div class="zvhc-package-item">
             <div class="zvhc-package-icon">🌱</div>
             <div>
-              <div class="zvhc-package-item-title">Rosemary Leaf Extract (Rosmarinus Officinalis)</div>
-              <div class="zvhc-package-item-desc">A revitalizing botanical essence known to refresh the scalp and support healthy-looking hair.</div>
+              <div class="zvhc-package-item-title">{{ item2_title }}</div>
+              <div class="zvhc-package-item-desc">{{ item2_desc }}</div>
             </div>
           </div>
 
           <div class="zvhc-package-item">
             <div class="zvhc-package-icon">✨</div>
             <div>
-              <div class="zvhc-package-item-title">Natural Vitamin E &amp; Essential Plant Lipids</div>
-              <div class="zvhc-package-item-desc">Antioxidant-rich protection that shields dry hair against environmental stress and styling damage.</div>
+              <div class="zvhc-package-item-title">{{ item3_title }}</div>
+              <div class="zvhc-package-item-desc">{{ item3_desc }}</div>
             </div>
           </div>
 
           <div class="zvhc-package-item">
             <div class="zvhc-package-icon">🧪</div>
             <div>
-              <div class="zvhc-package-item-title">Amber Glass Apothecary Dropper Bottle</div>
-              <div class="zvhc-package-item-desc">Protective amber glass preserves active botanical properties against light degradation.</div>
+              <div class="zvhc-package-item-title">{{ item4_title }}</div>
+              <div class="zvhc-package-item-desc">{{ item4_desc }}</div>
             </div>
           </div>
         </div>
 
-        <a href="#zvhcBuyBoxSection" class="zvhc-btn zvhc-btn-primary" style="margin-top: 16px;">
-          CLAIM YOUR TREATMENT COURSE &rarr;
+        <a href="#zvhcBuyBoxSection" class="zvhc-btn-primary" style="margin-top: 24px; display: inline-flex; width: auto; padding: 0 28px;">
+          SELECT YOUR TREATMENT COURSE &rarr;
         </a>
       </div>
     </div>
