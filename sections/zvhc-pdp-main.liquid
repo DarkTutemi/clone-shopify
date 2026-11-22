@@ -290,6 +290,18 @@
           </div>
         </div>
 
+        <!-- SHOPIFY OFFICIAL PAYMENT BADGES -->
+        <div class="zvhc-payment-methods" role="region" aria-label="Accepted payment methods">
+          <div class="zvhc-payment-methods-row">
+            {%- assign payment_types = 'visa,master,american_express,discover,paypal,apple_pay,google_pay,shopify_pay' | split: ',' -%}
+            {%- for type in payment_types -%}
+              <span class="zvhc-payment-badge" title="{{ type | replace: '_', ' ' | capitalize }}">
+                {{ type | payment_type_svg_tag: class: 'zvhc-pay-svg' }}
+              </span>
+            {%- endfor -%}
+          </div>
+        </div>
+
         <!-- T01 Product Accordion Details -->
         <div class="zvhc-accordion-group">
           <details class="zvhc-accordion-item" open>

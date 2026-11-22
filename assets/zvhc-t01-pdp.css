@@ -447,6 +447,45 @@
   letter-spacing: 0.04em;
 }
 
+/* Payment Badges (Shopify Payments) */
+.zvhc-payment-methods {
+  margin-top: 18px;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.zvhc-payment-methods-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.zvhc-payment-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zvhc-payment-badge svg,
+.zvhc-payment-badge .zvhc-pay-svg {
+  width: 38px;
+  height: 24px;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(43, 27, 36, 0.08);
+  border: 1px solid rgba(43, 27, 36, 0.08);
+  background: #FFFFFF;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.zvhc-payment-badge:hover svg,
+.zvhc-payment-badge:hover .zvhc-pay-svg {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(43, 27, 36, 0.14);
+}
+
 /* Sticky Mobile Dock */
 .zvhc-sticky-dock {
   display: none;
