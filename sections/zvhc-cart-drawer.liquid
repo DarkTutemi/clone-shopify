@@ -74,18 +74,37 @@
         {% endfor %}
       </div>
 
-      <!-- In-Cart Upsell Card: Scalp Massager -->
+      <!-- In-Cart Upsell Card: Authentic Hair Care Complement -->
+      {% assign cart_has_balm = false %}
+      {% for item in cart.items %}
+        {% if item.variant_id == 68580229677241 %}
+          {% assign cart_has_balm = true %}
+        {% endif %}
+      {% endfor %}
+
+      {% if cart_has_balm %}
+        {% assign drawer_upsell_vid = 68580229415097 %}
+        {% assign drawer_upsell_title = 'Root-Lift Styling Powder (10g)' %}
+        {% assign drawer_upsell_sub = 'Instant root volume & oil absorption · $19.99' %}
+        {% assign drawer_upsell_price = '$19.99' %}
+      {% else %}
+        {% assign drawer_upsell_vid = 68580229677241 %}
+        {% assign drawer_upsell_title = 'Raw Batana Scalp & Cuticle Balm (20g)' %}
+        {% assign drawer_upsell_sub = 'Pocket-sized unrefined butter for dry edges · $19.99' %}
+        {% assign drawer_upsell_price = '$19.99' %}
+      {% endif %}
+
       <div class="zvhc-drawer-upsell">
-        <div style="font-size: 0.76rem; font-weight: 700; color: var(--zvhc-copper); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">
+        <div style="font-size: 0.76rem; font-weight: 700; color: var(--zvhc-copper, #935B47); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">
           RECOMMENDED COMPLEMENT
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
           <div>
-            <div style="font-weight: 700; font-size: 0.88rem; color: var(--zvhc-espresso);">Silicone Scalp Stimulating Comb</div>
-            <div style="font-size: 0.78rem; color: var(--zvhc-muted);">Gently stimulates scalp circulation · Only $9.99</div>
+            <div style="font-weight: 700; font-size: 0.88rem; color: var(--zvhc-espresso, #2B1B24);">{{ drawer_upsell_title }}</div>
+            <div style="font-size: 0.78rem; color: var(--zvhc-muted, #705B64);">{{ drawer_upsell_sub }}</div>
           </div>
-          <button type="button" class="zvhc-upsell-add-btn" onclick="zvhcAddUpsell()">
-            + Add $9.99
+          <button type="button" class="zvhc-upsell-add-btn" onclick="zvhcAddUpsell({{ drawer_upsell_vid }})">
+            + Add {{ drawer_upsell_price }}
           </button>
         </div>
       </div>
@@ -384,7 +403,11 @@
       body: JSON.stringify({ id: lineKey, quantity: quantity })
     })
     .then(function() {
-      window.location.reload();
+      if (typeof window.zvhcRefreshCartDrawer === 'function') {
+        window.zvhcRefreshCartDrawer();
+      } else {
+        window.location.reload();
+      }
     })
     .catch(function(err) {
       console.error(err);
@@ -392,14 +415,22 @@
     });
   };
 
-  window.zvhcAddUpsell = function() {
-    // Add default upsell variant or refresh
+  window.zvhcAddUpsell = function(variantId) {
+    var vid = variantId || 68580229677241;
     fetch('/cart/add.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: 67980643598521, quantity: 1 })
+      body: JSON.stringify({ id: vid, quantity: 1 })
     })
     .then(function() {
+      if (typeof window.zvhcRefreshCartDrawer === 'function') {
+        window.zvhcRefreshCartDrawer();
+      } else {
+        window.location.reload();
+      }
+    })
+    .catch(function(err) {
+      console.error(err);
       window.location.reload();
     });
   };

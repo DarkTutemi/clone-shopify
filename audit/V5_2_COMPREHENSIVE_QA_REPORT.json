@@ -1,0 +1,359 @@
+{
+  "timestamp": "2026-11-22T16:11:59.327Z",
+  "themeId": "189191585977",
+  "pdpTests": [
+    {
+      "product": "Batana Scalp & Hair Oil",
+      "handle": "zvhc-batana-hair-growth-oil",
+      "title": "Pure Batana Scalp & Hair Oil (60ml) | Zavelyn Hair Care",
+      "shippingBadge": "🚚\nSTANDARD TRACKED US DELIVERY",
+      "shippingHeading": "Doorstep Delivery & Order Tracking",
+      "shippingDesc": "Free Standard US Shipping on eligible orders $69.99 USD and above. Every Zavelyn order is carefully prepared in protective packaging and dispatched within 24–48 business hours. We provide full carrier tracking from dispatch to your doorstep via recognized postal and express carriers.",
+      "cardTitles": [
+        "24–48h Dispatch",
+        "Tracked Delivery Protection",
+        "Tracking Updates",
+        "30-Day Strand Guarantee"
+      ],
+      "trustStrip": "100% CLEAN BOTANICAL TRACKED US DELIVERY 30-DAY GUARANTEE",
+      "paymentIconsCount": 8,
+      "upsellTitle": "Add Raw Batana Scalp Balm (20g)",
+      "upsellPrice": "+$19.99",
+      "currentCtaPrice": "$69.99",
+      "tier1Price": "$39.99",
+      "tier2Price": "$69.99",
+      "tier3Price": "$89.99"
+    },
+    {
+      "product": "Keratin Hair Building Fibers",
+      "handle": "zvhc-keratin-hair-building-fibers",
+      "title": "Keratin Hair Building Fibers 100g Pouch | Zavelyn Hair Care",
+      "shippingBadge": "🚚\nSTANDARD TRACKED US DELIVERY",
+      "shippingHeading": "Doorstep Delivery & Order Tracking",
+      "shippingDesc": "Free Standard US Shipping on eligible orders $69.99 USD and above. Every Zavelyn order is carefully prepared in protective packaging and dispatched within 24–48 business hours. We provide full carrier tracking from dispatch to your doorstep via recognized postal and express carriers.",
+      "cardTitles": [
+        "24–48h Dispatch",
+        "Tracked Delivery Protection",
+        "Tracking Updates",
+        "30-Day Strand Guarantee"
+      ],
+      "trustStrip": "100% CLEAN BOTANICAL TRACKED US DELIVERY 30-DAY GUARANTEE",
+      "paymentIconsCount": 8,
+      "upsellTitle": "Add Precision Hairline Compact (4g)",
+      "upsellPrice": "+$24.99",
+      "currentCtaPrice": "$59.99",
+      "tier1Price": "$34.99",
+      "tier2Price": "$59.99",
+      "tier3Price": "$79.99"
+    },
+    {
+      "product": "Root-Lift Styling Powder",
+      "handle": "zvhc-root-lift-styling-powder",
+      "title": "Root-Lift Volumizing Styling Powder (10g) | Zavelyn Hair Care",
+      "shippingBadge": "🚚\nSTANDARD TRACKED US DELIVERY",
+      "shippingHeading": "Doorstep Delivery & Order Tracking",
+      "shippingDesc": "Free Standard US Shipping on eligible orders $69.99 USD and above. Every Zavelyn order is carefully prepared in protective packaging and dispatched within 24–48 business hours. We provide full carrier tracking from dispatch to your doorstep via recognized postal and express carriers.",
+      "cardTitles": [
+        "24–48h Dispatch",
+        "Tracked Delivery Protection",
+        "Tracking Updates",
+        "30-Day Strand Guarantee"
+      ],
+      "trustStrip": "100% CLEAN BOTANICAL TRACKED US DELIVERY 30-DAY GUARANTEE",
+      "paymentIconsCount": 8,
+      "upsellTitle": "Add Pure Batana Scalp Oil (60ml)",
+      "upsellPrice": "+$39.99",
+      "currentCtaPrice": "$34.99",
+      "tier1Price": "$19.99",
+      "tier2Price": "$34.99",
+      "tier3Price": "$44.99"
+    },
+    {
+      "product": "Precision Hairline Compact",
+      "handle": "zvhc-precision-hairline-compact",
+      "title": "Precision Hairline Shadow Compact (4g) | Zavelyn Hair Care",
+      "shippingBadge": "🚚\nSTANDARD TRACKED US DELIVERY",
+      "shippingHeading": "Doorstep Delivery & Order Tracking",
+      "shippingDesc": "Free Standard US Shipping on eligible orders $69.99 USD and above. Every Zavelyn order is carefully prepared in protective packaging and dispatched within 24–48 business hours. We provide full carrier tracking from dispatch to your doorstep via recognized postal and express carriers.",
+      "cardTitles": [
+        "24–48h Dispatch",
+        "Tracked Delivery Protection",
+        "Tracking Updates",
+        "30-Day Strand Guarantee"
+      ],
+      "trustStrip": "100% CLEAN BOTANICAL TRACKED US DELIVERY 30-DAY GUARANTEE",
+      "paymentIconsCount": 8,
+      "upsellTitle": "Add Keratin Building Fibers (100g)",
+      "upsellPrice": "+$34.99",
+      "currentCtaPrice": "$42.99",
+      "tier1Price": "$24.99",
+      "tier2Price": "$42.99",
+      "tier3Price": "$54.99"
+    },
+    {
+      "product": "Raw Unrefined Batana Scalp Balm",
+      "handle": "zvhc-raw-batana-scalp-balm",
+      "title": "Raw Unrefined Batana Scalp & Cuticle Balm (20g) | Zavelyn Hair Care",
+      "shippingBadge": "🚚\nSTANDARD TRACKED US DELIVERY",
+      "shippingHeading": "Doorstep Delivery & Order Tracking",
+      "shippingDesc": "Free Standard US Shipping on eligible orders $69.99 USD and above. Every Zavelyn order is carefully prepared in protective packaging and dispatched within 24–48 business hours. We provide full carrier tracking from dispatch to your doorstep via recognized postal and express carriers.",
+      "cardTitles": [
+        "24–48h Dispatch",
+        "Tracked Delivery Protection",
+        "Tracking Updates",
+        "30-Day Strand Guarantee"
+      ],
+      "trustStrip": "100% CLEAN BOTANICAL TRACKED US DELIVERY 30-DAY GUARANTEE",
+      "paymentIconsCount": 8,
+      "upsellTitle": "Add Pure Batana Scalp Oil (60ml)",
+      "upsellPrice": "+$39.99",
+      "currentCtaPrice": "$34.99",
+      "tier1Price": "$19.99",
+      "tier2Price": "$34.99",
+      "tier3Price": "$44.99"
+    },
+    {
+      "product": "Botanical Curl Defining Cream",
+      "handle": "zvhc-botanical-curl-cream",
+      "title": "Botanical Curl Defining Cream (100ml) | Zavelyn Hair Care",
+      "shippingBadge": "🚚\nSTANDARD TRACKED US DELIVERY",
+      "shippingHeading": "Doorstep Delivery & Order Tracking",
+      "shippingDesc": "Free Standard US Shipping on eligible orders $69.99 USD and above. Every Zavelyn order is carefully prepared in protective packaging and dispatched within 24–48 business hours. We provide full carrier tracking from dispatch to your doorstep via recognized postal and express carriers.",
+      "cardTitles": [
+        "24–48h Dispatch",
+        "Tracked Delivery Protection",
+        "Tracking Updates",
+        "30-Day Strand Guarantee"
+      ],
+      "trustStrip": "100% CLEAN BOTANICAL TRACKED US DELIVERY 30-DAY GUARANTEE",
+      "paymentIconsCount": 8,
+      "upsellTitle": "Add 7-in-1 Multi-Oil Scalp Elixir (60ml)",
+      "upsellPrice": "+$39.99",
+      "currentCtaPrice": "$49.99",
+      "tier1Price": "$29.99",
+      "tier2Price": "$49.99",
+      "tier3Price": "$64.99"
+    },
+    {
+      "product": "7-in-1 Multi-Oil Scalp Elixir",
+      "handle": "zvhc-7-in-1-growth-elixir",
+      "title": "7-in-1 Botanical Multi-Oil Scalp Elixir (60ml) | Zavelyn Hair Care",
+      "shippingBadge": "🚚\nSTANDARD TRACKED US DELIVERY",
+      "shippingHeading": "Doorstep Delivery & Order Tracking",
+      "shippingDesc": "Free Standard US Shipping on eligible orders $69.99 USD and above. Every Zavelyn order is carefully prepared in protective packaging and dispatched within 24–48 business hours. We provide full carrier tracking from dispatch to your doorstep via recognized postal and express carriers.",
+      "cardTitles": [
+        "24–48h Dispatch",
+        "Tracked Delivery Protection",
+        "Tracking Updates",
+        "30-Day Strand Guarantee"
+      ],
+      "trustStrip": "100% CLEAN BOTANICAL TRACKED US DELIVERY 30-DAY GUARANTEE",
+      "paymentIconsCount": 8,
+      "upsellTitle": "Add Raw Batana Scalp Balm (20g)",
+      "upsellPrice": "+$19.99",
+      "currentCtaPrice": "$69.99",
+      "tier1Price": "$39.99",
+      "tier2Price": "$69.99",
+      "tier3Price": "$89.99"
+    },
+    {
+      "product": "Batana Deep Conditioning Hair Mask",
+      "handle": "zvhc-batana-deep-conditioning-hair-mask",
+      "title": "Batana Deep Conditioning Hair Mask (120g) | Zavelyn Hair Care",
+      "shippingBadge": "🚚\nSTANDARD TRACKED US DELIVERY",
+      "shippingHeading": "Doorstep Delivery & Order Tracking",
+      "shippingDesc": "Free Standard US Shipping on eligible orders $69.99 USD and above. Every Zavelyn order is carefully prepared in protective packaging and dispatched within 24–48 business hours. We provide full carrier tracking from dispatch to your doorstep via recognized postal and express carriers.",
+      "cardTitles": [
+        "24–48h Dispatch",
+        "Tracked Delivery Protection",
+        "Tracking Updates",
+        "30-Day Strand Guarantee"
+      ],
+      "trustStrip": "100% CLEAN BOTANICAL TRACKED US DELIVERY 30-DAY GUARANTEE",
+      "paymentIconsCount": 8,
+      "upsellTitle": "Add Pure Batana Scalp Oil (60ml)",
+      "upsellPrice": "+$39.99",
+      "currentCtaPrice": "$49.99",
+      "tier1Price": "$29.99",
+      "tier2Price": "$49.99",
+      "tier3Price": "$64.99"
+    }
+  ],
+  "cartBoundaryTests": [
+    {
+      "priceCents": 6498,
+      "qualified": false
+    },
+    {
+      "priceCents": 6998,
+      "qualified": false
+    },
+    {
+      "priceCents": 6999,
+      "qualified": true
+    },
+    {
+      "priceCents": 7000,
+      "qualified": true
+    }
+  ],
+  "trackingTests": [
+    {
+      "code": "9400111899562847192031",
+      "detectedBadge": "USPS GROUND ADVANTAGE / PRIORITY",
+      "destinationUrl": "https://tools.usps.com/go/TrackConfirmAction?tLabels=9400111899562847192031"
+    },
+    {
+      "code": "1Z9999999999999999",
+      "detectedBadge": "UPS TRACK",
+      "destinationUrl": "https://www.ups.com/track?tracknum=1Z9999999999999999"
+    },
+    {
+      "code": "785641298412",
+      "detectedBadge": "FEDEX EXPRESS / GROUND",
+      "destinationUrl": "https://www.fedex.com/fedextrack/?trknbr=785641298412"
+    },
+    {
+      "code": "1234567890",
+      "detectedBadge": "DHL EXPRESS",
+      "destinationUrl": "https://www.dhl.com/us-en/home/tracking/tracking-express.html?submit=1&tracking-id=1234567890"
+    }
+  ],
+  "pagesTests": [
+    {
+      "page": "Homepage",
+      "title": "Zavelyn Hair Care — Pure Raw Honduran Batana Oil & Botanical Scalp Rituals",
+      "announcement": "FREE STANDARD US SHIPPING ON ELIGIBLE ORDERS $69.99+ · 30-DAY STRAND SATISFACTION GUARANTEE",
+      "hasShopMenu": true,
+      "hasCartDrawer": true
+    },
+    {
+      "page": "Our Story",
+      "title": "Our Story — Zavelyn Hair Care",
+      "hasOurStorySection": true,
+      "heading": "Care for Every Strand. Confidence in Every Ritual."
+    }
+  ],
+  "legacyFunnelTests": [
+    {
+      "id": 1,
+      "handle": "breakout-2-0-holster-built-for-maximum-concealment-copy",
+      "name": "Breakout 2.0 Holster",
+      "expectedTitle": "Breakout 2.0 Holster",
+      "title": "Breakout 2.0 Holster - Built For Maximum Concealment – Zavelyn",
+      "hasZvhcHeader": false,
+      "hasZvhcDropdown": false,
+      "hasZvhcDoorstepDelivery": false,
+      "bodyLength": 134264,
+      "status": "PASS"
+    },
+    {
+      "id": 2,
+      "handle": "zavelyn-rehabilitation-glove",
+      "name": "Rehabilitation Glove",
+      "expectedTitle": "Rehabilitation Glove",
+      "title": "Zavelyn™ Robotic Stroke & Hand Rehabilitation Glove",
+      "hasZvhcHeader": false,
+      "hasZvhcDropdown": false,
+      "hasZvhcDoorstepDelivery": false,
+      "bodyLength": 123297,
+      "status": "PASS"
+    },
+    {
+      "id": 3,
+      "handle": "babiguard-head-protector",
+      "name": "BabiGuard Head Protector",
+      "expectedTitle": "BabiGuard",
+      "title": "BabiGuard Head Protector - Infant Head & Back Cushion Backpack – Zavelyn",
+      "hasZvhcHeader": false,
+      "hasZvhcDropdown": false,
+      "hasZvhcDoorstepDelivery": false,
+      "bodyLength": 120738,
+      "status": "PASS"
+    },
+    {
+      "id": 4,
+      "handle": "the-yeoman-sweep",
+      "name": "Yeoman Lawn Sweeper",
+      "expectedTitle": "Yeoman",
+      "title": "Yeoman Heavy-Duty Push Lawn Sweeper | Zavelyn",
+      "hasZvhcHeader": false,
+      "hasZvhcDropdown": false,
+      "hasZvhcDoorstepDelivery": false,
+      "bodyLength": 175731,
+      "status": "PASS"
+    },
+    {
+      "id": 5,
+      "handle": "zavelyn-botanaroots-organic-batana-hair-growth-oil",
+      "name": "BotanaRoots Hair Growth Oil",
+      "expectedTitle": "BotanaRoots",
+      "title": "BotanaRoots Pure Batana Oil for Hair & Scalp | Zavelyn",
+      "hasZvhcHeader": false,
+      "hasZvhcDropdown": false,
+      "hasZvhcDoorstepDelivery": false,
+      "bodyLength": 151344,
+      "status": "PASS"
+    },
+    {
+      "id": 6,
+      "handle": "zavelyn-botanaroots-bogo-special",
+      "name": "BotanaRoots BOGO Special",
+      "expectedTitle": "BOGO",
+      "title": "Zavelyn BotanaRoots Batana Hair Growth Oil — Exclusive BOGO Offer",
+      "hasZvhcHeader": false,
+      "hasZvhcDropdown": false,
+      "hasZvhcDoorstepDelivery": false,
+      "bodyLength": 112571,
+      "status": "PASS"
+    },
+    {
+      "id": 7,
+      "handle": "zavelyn-handpan-master",
+      "name": "Handpan Master 432Hz",
+      "expectedTitle": "Handpan",
+      "title": "Handpan Master 22\" 12-Tone D-Kurdish Drum | Zavelyn",
+      "hasZvhcHeader": false,
+      "hasZvhcDropdown": false,
+      "hasZvhcDoorstepDelivery": false,
+      "bodyLength": 121946,
+      "status": "PASS"
+    },
+    {
+      "id": 8,
+      "handle": "sakerplus-fence-post-repair-kit",
+      "name": "Fence Post Repair Kit",
+      "expectedTitle": "Fence",
+      "title": "Heavy-Duty Steel Fence Post Repair Kit | Zavelyn",
+      "hasZvhcHeader": false,
+      "hasZvhcDropdown": false,
+      "hasZvhcDoorstepDelivery": false,
+      "bodyLength": 132727,
+      "status": "PASS"
+    },
+    {
+      "id": 9,
+      "handle": "thoson-magtrack",
+      "name": "Thoson MagTrack Train",
+      "expectedTitle": "MagTrack",
+      "title": "MagTrack Anti-Gravity Glow Electric Train Track | Zavelyn",
+      "hasZvhcHeader": false,
+      "hasZvhcDropdown": false,
+      "hasZvhcDoorstepDelivery": false,
+      "bodyLength": 202435,
+      "status": "PASS"
+    },
+    {
+      "id": 10,
+      "handle": "livestock-heating-lamp",
+      "name": "Livestock Heating Lamp",
+      "expectedTitle": "Livestock",
+      "title": "Livestock Infrared Heating Lamp for Barns | Zavelyn",
+      "hasZvhcHeader": false,
+      "hasZvhcDropdown": false,
+      "hasZvhcDoorstepDelivery": false,
+      "bodyLength": 229199,
+      "status": "PASS"
+    }
+  ]
+}

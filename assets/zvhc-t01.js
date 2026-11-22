@@ -385,7 +385,23 @@
   };
 
   window.zvhcRefreshCartDrawer = function() {
-    fetch('/cart.js')
+    var previewParam = '';
+    if (window.location.search.indexOf('preview_theme_id=') !== -1) {
+      var match = window.location.search.match(/preview_theme_id=(\d+)/);
+      if (match) previewParam = '&preview_theme_id=' + match[1];
+    }
+    fetch('/?sections=zvhc-cart-drawer' + previewParam)
+      .then(function(r) { return r.json(); })
+      .then(function(sections) {
+        var html = sections && sections['zvhc-cart-drawer'];
+        if (html) {
+          var container = document.getElementById('shopify-section-zvhc-cart-drawer');
+          if (container) {
+            container.outerHTML = html;
+          }
+        }
+        return fetch('/cart.js');
+      })
       .then(function(r) { return r.json(); })
       .then(function(cart) {
         var badges = document.querySelectorAll('.zvhc-t01-bag-count, #zvhcHeaderBagCount');
@@ -397,13 +413,12 @@
           var drawer = document.getElementById('zvhcCartDrawer') || document.querySelector('.zvhc-cart-drawer');
           if (drawer) {
             drawer.classList.add('is-open');
-          } else {
-            window.location.href = '/cart';
           }
         }
       })
       .catch(function(err) {
         console.error('Cart refresh error:', err);
+        if (window.openZvhcCart) window.openZvhcCart();
       });
   };
 

@@ -10,11 +10,11 @@
       <!-- DESKTOP RIGHT (Top) / MOBILE 1ST: Header info -->
       <div class="zvhc-delivery-header">
         <span class="zvhc-delivery-badge">
-          <span class="zvhc-delivery-badge-icon">🚚</span> {{ section.settings.badge_text | default: 'FAST & INSURED TRACKED US DELIVERY' }}
+          <span class="zvhc-delivery-badge-icon">🚚</span> {{ section.settings.badge_text | default: 'STANDARD TRACKED US DELIVERY' }}
         </span>
-        <h2 class="zvhc-delivery-title">{{ section.settings.heading | default: 'Doorstep Delivery Guarantee & Real-Time Tracking' }}</h2>
+        <h2 class="zvhc-delivery-title">{{ section.settings.heading | default: 'Doorstep Delivery & Order Tracking' }}</h2>
         <p class="zvhc-delivery-desc">
-          {{ section.settings.subheading | default: 'Free Standard US Shipping on eligible orders $69.99 USD and above. Every Zavelyn order is cushioned in heavy-duty protective packaging, inspected for quality, and dispatched from regional US warehouses within 24–48 business hours. We partner directly with USPS, FedEx, and DHL Express to guarantee rapid, dependable doorstep transit.' }}
+          {{ section.settings.subheading | default: 'Free Standard US Shipping on eligible orders $69.99 USD and above. Every Zavelyn order is carefully prepared in protective packaging and dispatched within 24–48 business hours. We provide full carrier tracking from dispatch to your doorstep via recognized postal and express carriers.' }}
         </p>
       </div>
 
@@ -49,16 +49,16 @@
           <div class="zvhc-shipping-card-icon zvhc-icon-timer" aria-hidden="true">⏱️</div>
           <div class="zvhc-shipping-card-body">
             <h3 class="zvhc-shipping-card-title">{{ section.settings.card1_title | default: '24–48h Dispatch' }}</h3>
-            <p class="zvhc-shipping-card-desc">{{ section.settings.card1_desc | default: 'Rapid order processing from regional US fulfillment hubs.' }}</p>
+            <p class="zvhc-shipping-card-desc">{{ section.settings.card1_desc | default: 'Orders processed and prepared for transit within 24–48 business hours.' }}</p>
           </div>
         </div>
 
-        <!-- Card 2: Insured Transit -->
+        <!-- Card 2: Tracked Transit Protection -->
         <div class="zvhc-shipping-card">
           <div class="zvhc-shipping-card-icon zvhc-icon-box" aria-hidden="true">📦</div>
           <div class="zvhc-shipping-card-body">
-            <h3 class="zvhc-shipping-card-title">{{ section.settings.card2_title | default: 'Insured Transit' }}</h3>
-            <p class="zvhc-shipping-card-desc">{{ section.settings.card2_desc | default: 'Full protection against lost, stolen, or damaged parcels.' }}</p>
+            <h3 class="zvhc-shipping-card-title">{{ section.settings.card2_title | default: 'Tracked Delivery Protection' }}</h3>
+            <p class="zvhc-shipping-card-desc">{{ section.settings.card2_desc | default: 'Reliable tracking updates and dedicated customer care support throughout transit.' }}</p>
           </div>
         </div>
 
@@ -67,16 +67,16 @@
           <div class="zvhc-shipping-card-icon zvhc-icon-search" aria-hidden="true">🔍</div>
           <div class="zvhc-shipping-card-body">
             <h3 class="zvhc-shipping-card-title">{{ section.settings.card3_title | default: 'Tracking Updates' }}</h3>
-            <p class="zvhc-shipping-card-desc">{{ section.settings.card3_desc | default: 'Instant carrier tracking notifications via SMS and email.' }}</p>
+            <p class="zvhc-shipping-card-desc">{{ section.settings.card3_desc | default: 'Direct carrier tracking details sent via email as soon as your order is dispatched.' }}</p>
           </div>
         </div>
 
-        <!-- Card 4: Money-Back Guarantee -->
+        <!-- Card 4: 30-Day Strand Guarantee -->
         <div class="zvhc-shipping-card">
           <div class="zvhc-shipping-card-icon zvhc-icon-shield" aria-hidden="true">🛡️</div>
           <div class="zvhc-shipping-card-body">
-            <h3 class="zvhc-shipping-card-title">{{ section.settings.card4_title | default: 'Money-Back Guarantee' }}</h3>
-            <p class="zvhc-shipping-card-desc">{{ section.settings.card4_desc | default: 'Standard 30-day return policy for peace of mind.' }}</p>
+            <h3 class="zvhc-shipping-card-title">{{ section.settings.card4_title | default: '30-Day Strand Guarantee' }}</h3>
+            <p class="zvhc-shipping-card-desc">{{ section.settings.card4_desc | default: 'Standard 30-day satisfaction return policy for our botanical formulas.' }}</p>
           </div>
         </div>
       </div>
@@ -318,19 +318,19 @@
       "type": "text",
       "id": "badge_text",
       "label": "Badge Text",
-      "default": "FAST & INSURED TRACKED US DELIVERY"
+      "default": "STANDARD TRACKED US DELIVERY"
     },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Doorstep Delivery Guarantee & Real-Time Tracking"
+      "default": "Doorstep Delivery & Order Tracking"
     },
     {
       "type": "textarea",
       "id": "subheading",
       "label": "Description",
-      "default": "Every Zavelyn order is cushioned in heavy-duty protective packaging, inspected for quality, and dispatched from regional US warehouses within 24–48 business hours. We partner directly with USPS, FedEx, and DHL Express to guarantee rapid, dependable doorstep transit."
+      "default": "Free Standard US Shipping on eligible orders $69.99 USD and above. Every Zavelyn order is carefully prepared in protective packaging and dispatched within 24–48 business hours. We provide full carrier tracking from dispatch to your doorstep via recognized postal and express carriers."
     },
     {
       "type": "text",
@@ -354,19 +354,19 @@
       "type": "text",
       "id": "card1_desc",
       "label": "Card 1 Description",
-      "default": "Rapid order processing from regional US fulfillment hubs."
+      "default": "Orders processed and prepared for transit within 24–48 business hours."
     },
     {
       "type": "text",
       "id": "card2_title",
       "label": "Card 2 Title",
-      "default": "Insured Transit"
+      "default": "Tracked Delivery Protection"
     },
     {
       "type": "text",
       "id": "card2_desc",
       "label": "Card 2 Description",
-      "default": "Full protection against lost, stolen, or damaged parcels."
+      "default": "Reliable tracking updates and dedicated customer care support throughout transit."
     },
     {
       "type": "text",
@@ -378,19 +378,19 @@
       "type": "text",
       "id": "card3_desc",
       "label": "Card 3 Description",
-      "default": "Instant carrier tracking notifications via SMS and email."
+      "default": "Direct carrier tracking details sent via email as soon as your order is dispatched."
     },
     {
       "type": "text",
       "id": "card4_title",
       "label": "Card 4 Title",
-      "default": "Money-Back Guarantee"
+      "default": "30-Day Strand Guarantee"
     },
     {
       "type": "text",
       "id": "card4_desc",
       "label": "Card 4 Description",
-      "default": "Standard 30-day return policy for peace of mind."
+      "default": "Standard 30-day satisfaction return policy for our botanical formulas."
     }
   ],
   "presets": [
