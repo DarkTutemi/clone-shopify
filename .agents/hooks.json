@@ -1,4 +1,19 @@
 {
+  "browser-process-guard": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ./scripts/guard_browser_process.mjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
   "chat-auto-backup": {
     "enabled": true,
     "Stop": [
