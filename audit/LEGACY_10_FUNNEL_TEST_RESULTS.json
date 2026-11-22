@@ -1,0 +1,198 @@
+{
+  "timestamp": "2026-11-22T15:25:52.510Z",
+  "tested_count": 10,
+  "passed_count": 10,
+  "failed_count": 0,
+  "results": [
+    {
+      "id": 1,
+      "name": "Breakout 2.0 Holster",
+      "handle": "breakout-2-0-holster-built-for-maximum-concealment-copy",
+      "url": "https://tryzavelyn.com/products/breakout-2-0-holster-built-for-maximum-concealment-copy",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Breakout 2.0 Holster - Built For Maximum Concealment – Zavelyn",
+        "bodyLength": 15917,
+        "hasZvhcHeader": false,
+        "hasZvhcShopDropdown": false,
+        "hasAtc": false
+      },
+      "screenshots": {
+        "desktop": "legacy_01_breakout-2-0-holster_desktop_1440.png",
+        "mobile": "legacy_01_breakout-2-0-holster_mobile_390.png"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Rehabilitation Glove",
+      "handle": "zavelyn-rehabilitation-glove",
+      "url": "https://tryzavelyn.com/products/zavelyn-rehabilitation-glove",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Zavelyn™ Robotic Stroke & Hand Rehabilitation Glove",
+        "bodyLength": 10553,
+        "hasZvhcHeader": false,
+        "hasZvhcShopDropdown": false,
+        "hasAtc": false
+      },
+      "screenshots": {
+        "desktop": "legacy_02_zavelyn-rehabilitati_desktop_1440.png",
+        "mobile": "legacy_02_zavelyn-rehabilitati_mobile_390.png"
+      }
+    },
+    {
+      "id": 3,
+      "name": "BabiGuard Head Protector",
+      "handle": "babiguard-head-protector",
+      "url": "https://tryzavelyn.com/products/babiguard-head-protector",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "BabiGuard Head Protector - Infant Head & Back Cushion Backpack – Zavelyn",
+        "bodyLength": 6996,
+        "hasZvhcHeader": false,
+        "hasZvhcShopDropdown": false,
+        "hasAtc": false
+      },
+      "screenshots": {
+        "desktop": "legacy_03_babiguard-head-prote_desktop_1440.png",
+        "mobile": "legacy_03_babiguard-head-prote_mobile_390.png"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Yeoman Lawn Sweeper",
+      "handle": "the-yeoman-sweep",
+      "url": "https://tryzavelyn.com/products/the-yeoman-sweep",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Yeoman Heavy-Duty Push Lawn Sweeper | Zavelyn",
+        "bodyLength": 10085,
+        "hasZvhcHeader": false,
+        "hasZvhcShopDropdown": false,
+        "hasAtc": false
+      },
+      "screenshots": {
+        "desktop": "legacy_04_the-yeoman-sweep_desktop_1440.png",
+        "mobile": "legacy_04_the-yeoman-sweep_mobile_390.png"
+      }
+    },
+    {
+      "id": 5,
+      "name": "BotanaRoots Hair Growth Oil",
+      "handle": "zavelyn-botanaroots-organic-batana-hair-growth-oil",
+      "url": "https://tryzavelyn.com/products/zavelyn-botanaroots-organic-batana-hair-growth-oil",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "BotanaRoots Pure Batana Oil for Hair & Scalp | Zavelyn",
+        "bodyLength": 7953,
+        "hasZvhcHeader": false,
+        "hasZvhcShopDropdown": false,
+        "hasAtc": false
+      },
+      "screenshots": {
+        "desktop": "legacy_05_zavelyn-botanaroots-_desktop_1440.png",
+        "mobile": "legacy_05_zavelyn-botanaroots-_mobile_390.png"
+      }
+    },
+    {
+      "id": 6,
+      "name": "BotanaRoots BOGO Special",
+      "handle": "zavelyn-botanaroots-bogo-special",
+      "url": "https://tryzavelyn.com/products/zavelyn-botanaroots-bogo-special",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Zavelyn BotanaRoots Batana Hair Growth Oil — Exclusive BOGO Offer",
+        "bodyLength": 4326,
+        "hasZvhcHeader": false,
+        "hasZvhcShopDropdown": false,
+        "hasAtc": false
+      },
+      "screenshots": {
+        "desktop": "legacy_06_zavelyn-botanaroots-_desktop_1440.png",
+        "mobile": "legacy_06_zavelyn-botanaroots-_mobile_390.png"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Handpan Master 432Hz",
+      "handle": "zavelyn-handpan-master",
+      "url": "https://tryzavelyn.com/products/zavelyn-handpan-master",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Handpan Master 22\" 12-Tone D-Kurdish Drum | Zavelyn",
+        "bodyLength": 6588,
+        "hasZvhcHeader": false,
+        "hasZvhcShopDropdown": false,
+        "hasAtc": false
+      },
+      "screenshots": {
+        "desktop": "legacy_07_zavelyn-handpan-mast_desktop_1440.png",
+        "mobile": "legacy_07_zavelyn-handpan-mast_mobile_390.png"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Fence Post Repair Kit",
+      "handle": "sakerplus-fence-post-repair-kit",
+      "url": "https://tryzavelyn.com/products/sakerplus-fence-post-repair-kit",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Heavy-Duty Steel Fence Post Repair Kit | Zavelyn",
+        "bodyLength": 7987,
+        "hasZvhcHeader": false,
+        "hasZvhcShopDropdown": false,
+        "hasAtc": false
+      },
+      "screenshots": {
+        "desktop": "legacy_08_sakerplus-fence-post_desktop_1440.png",
+        "mobile": "legacy_08_sakerplus-fence-post_mobile_390.png"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Thoson MagTrack Train",
+      "handle": "thoson-magtrack",
+      "url": "https://tryzavelyn.com/products/thoson-magtrack",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "MagTrack Anti-Gravity Glow Electric Train Track | Zavelyn",
+        "bodyLength": 11279,
+        "hasZvhcHeader": false,
+        "hasZvhcShopDropdown": false,
+        "hasAtc": false
+      },
+      "screenshots": {
+        "desktop": "legacy_09_thoson-magtrack_desktop_1440.png",
+        "mobile": "legacy_09_thoson-magtrack_mobile_390.png"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Livestock Heating Lamp",
+      "handle": "livestock-heating-lamp",
+      "url": "https://tryzavelyn.com/products/livestock-heating-lamp",
+      "status": "PASS",
+      "issues": [],
+      "pageState": {
+        "title": "Livestock Infrared Heating Lamp for Barns | Zavelyn",
+        "bodyLength": 13032,
+        "hasZvhcHeader": false,
+        "hasZvhcShopDropdown": false,
+        "hasAtc": false
+      },
+      "screenshots": {
+        "desktop": "legacy_10_livestock-heating-la_desktop_1440.png",
+        "mobile": "legacy_10_livestock-heating-la_mobile_390.png"
+      }
+    }
+  ]
+}

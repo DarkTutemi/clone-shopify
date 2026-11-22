@@ -6,7 +6,7 @@ async function main() {
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
       client_id: '172e9e29abd0fe12f671d8441479c7c2',
-      client_secret: process.env.SHOPIFY_API_SECRET || "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",
+      client_secret: process.env.SHOPIFY_API_SECRET,
       grant_type: 'client_credentials'
     })
   });

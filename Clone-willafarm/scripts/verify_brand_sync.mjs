@@ -2,7 +2,7 @@ import fs from 'fs';
 
 const domain = 'dsdujr-vn.myshopify.com';
 const id = '172e9e29abd0fe12f671d8441479c7c2';
-const sec = process.env.SHOPIFY_API_SECRET || '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';
+const sec = process.env.SHOPIFY_API_SECRET;
 
 async function getAccessToken() {
   const tRes = await fetch(`https://${domain}/admin/oauth/access_token`, {

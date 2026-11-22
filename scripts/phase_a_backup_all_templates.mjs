@@ -3,7 +3,7 @@ import path from 'path';
 import crypto from 'crypto';
 
 const CLIENT_ID = '172e9e29abd0fe12f671d8441479c7c2';
-const CLIENT_SECRET = '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';
+const CLIENT_SECRET = process.env.SHOPIFY_API_SECRET;
 const SHOP = 'dsdujr-vn.myshopify.com';
 const DRAFT_THEME_ID = '187597717689';
 const LIVE_THEME_ID = '186607567033';

@@ -12,8 +12,8 @@ function maskSecrets(str) {
   return str
     .replace(/AQ\.[a-zA-Z0-9_\-]+/g, 'AQ.REDACTED_GEMINI_KEY')
     .replace(/AIza[0-9A-Za-z-_]{35}/g, 'AIza_REDACTED_SECRET')
-    .replace(/shpat_[a-zA-Z0-9]+/g, 'shpat_REDACTED_SECRET')
-    .replace(/shpss_[a-zA-Z0-9]+/g, 'shpss_REDACTED_SECRET')
+    .replace(/shpat_[a-zA-Z0-9]+/g, 'process.env.SHOPIFY_API_SECRET_SECRET')
+    .replace(/shpss_[a-zA-Z0-9]+/g, 'process.env.SHOPIFY_API_SECRET_SECRET')
     .replace(/sk_live_[0-9a-zA-Z]+/g, 'sk_live_REDACTED_SECRET')
     .replace(/sk_test_[0-9a-zA-Z]+/g, 'sk_test_REDACTED_SECRET')
     .replace(/pk_live_[0-9a-zA-Z]+/g, 'pk_live_REDACTED_SECRET')

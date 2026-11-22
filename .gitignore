@@ -10,6 +10,10 @@ pnpm-debug.log*
 .env.local
 .env.*.local
 *.pem
+session_chat/
+chat_history/
+backups/chat_sessions/
+audit/SECRET_SCAN_REPORT.json
 
 # OS & Editor files
 .DS_Store
@@ -56,6 +60,5 @@ data/haircare_media/
 # Push helpers
 push_to_github.bat
 
-# Allow session chat & logs
-!session_chat/**
+
 

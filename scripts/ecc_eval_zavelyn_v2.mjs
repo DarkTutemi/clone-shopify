@@ -4,7 +4,7 @@ import dns from 'dns';
 dns.setDefaultResultOrder('ipv4first');
 
 const CLIENT_ID = '172e9e29abd0fe12f671d8441479c7c2';
-const CLIENT_SECRET = process.env.SHOPIFY_API_SECRET || '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';
+const CLIENT_SECRET = process.env.SHOPIFY_API_SECRET;
 const SHOP = 'dsdujr-vn.myshopify.com';
 const LIVE_THEME_ID = '187597717689'; // Zavelyn 2.0 (Role: main)
 const DRAFT_THEME_ID = '187720335545'; // [Draft] Zavelyn - Fix Non-Botana Products Isolation

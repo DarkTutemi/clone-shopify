@@ -7,8 +7,8 @@ for (const file of ['transcript.jsonl', 'transcript_full.jsonl']) {
   if (fs.existsSync(p)) {
     let content = fs.readFileSync(p, 'utf8');
     // Redact Shopify tokens
-    content = content.replace(/shpat_[a-zA-Z0-9]{32,}/g, 'shpat_REDACTED_SECRET_TOKEN');
-    content = content.replace(/shpss_[a-zA-Z0-9]{32,}/g, 'shpss_REDACTED_SECRET_TOKEN');
+    content = content.replace(/shpat_[a-zA-Z0-9]{32,}/g, 'process.env.SHOPIFY_API_SECRET_SECRET_TOKEN');
+    content = content.replace(/shpss_[a-zA-Z0-9]{32,}/g, 'process.env.SHOPIFY_API_SECRET_SECRET_TOKEN');
     fs.writeFileSync(p, content, 'utf8');
     console.log(`✓ Sanitized ${file}`);
   }
