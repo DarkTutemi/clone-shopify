@@ -1,0 +1,717 @@
+{% comment %}
+  ZAVELYN — Real Carrier Order Tracking Experience
+  Replaces insecure mock tracking with authentic carrier routing and Shopify Account lookup.
+  Aesthetic: ShopSideK T01 Refined Editorial Card
+{% endcomment %}
+
+<div class="zvhc-track-page" id="zvhcTrackPage">
+  <!-- Hero Section -->
+  <header class="zvhc-track-hero">
+    <div class="zvhc-track-container">
+      <span class="zvhc-track-badge">
+        <span class="zvhc-track-status-dot"></span>
+        <span>OFFICIAL CARRIER TRACKING</span>
+      </span>
+      <h1 class="zvhc-track-title">Track Your Order</h1>
+      <p class="zvhc-track-sub">
+        Enter your carrier tracking number to look up live, verified delivery status directly on the official carrier network.
+      </p>
+
+      <!-- Trust highlights -->
+      <div class="zvhc-track-trust-strip">
+        <div class="zvhc-ttrust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Insured Transit</span>
+        </div>
+        <div class="zvhc-ttrust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>24–48h Dispatch</span>
+        </div>
+        <div class="zvhc-ttrust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span>30-Day Satisfaction Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Tracking Box -->
+  <main class="zvhc-track-container zvhc-track-main">
+    <div class="zvhc-track-card">
+      
+      <!-- Tabs Switcher -->
+      <div class="zvhc-track-tabs" role="tablist">
+        <button type="button" class="zvhc-tab-btn is-active" id="zvhcTabTrackBtn" role="tab" aria-selected="true" aria-controls="zvhcTabTrackContent" onclick="zvhcSwitchTab('tracking')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          <span>Carrier Tracking Number</span>
+        </button>
+        <button type="button" class="zvhc-tab-btn" id="zvhcTabOrderBtn" role="tab" aria-selected="false" aria-controls="zvhcTabOrderContent" onclick="zvhcSwitchTab('order')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>Order Number &amp; Account</span>
+        </button>
+      </div>
+
+      <!-- Tab 1: Carrier Tracking Number -->
+      <div class="zvhc-tab-panel is-active" id="zvhcTabTrackContent" role="tabpanel" aria-labelledby="zvhcTabTrackBtn">
+        <form class="zvhc-track-form" onsubmit="zvhcHandleTrackSubmit(event)">
+          <div class="zvhc-field-group">
+            <label for="zvhcTrackingInput" class="zvhc-field-label">Tracking Number</label>
+            <div class="zvhc-input-wrap">
+              <svg class="zvhc-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input 
+                type="text" 
+                id="zvhcTrackingInput" 
+                class="zvhc-track-input" 
+                placeholder="e.g. 9400111899562847192031 (USPS) or 785641298412 (FedEx)" 
+                required
+                autocomplete="off"
+              >
+            </div>
+            <span class="zvhc-field-hint">Found in your dispatch confirmation email or SMS notification.</span>
+          </div>
+
+          <div class="zvhc-field-group">
+            <label for="zvhcCarrierSelect" class="zvhc-field-label">Carrier Network</label>
+            <select id="zvhcCarrierSelect" class="zvhc-track-select">
+              <option value="auto">Auto-Detect Carrier</option>
+              <option value="usps">USPS (United States Postal Service)</option>
+              <option value="fedex">FedEx Express &amp; Ground</option>
+              <option value="ups">UPS (United Parcel Service)</option>
+              <option value="dhl">DHL Express</option>
+              <option value="17track">Universal Global Tracking (17Track)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="zvhc-btn-track" id="zvhcTrackBtn">
+            <span>Verify &amp; Track Package</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </form>
+
+        <!-- Dynamic Verified Result Notification -->
+        <div id="zvhcRealResult" class="zvhc-real-result" style="display: none;" role="region" aria-live="polite">
+          <div class="zvhc-result-box">
+            <div class="zvhc-result-top">
+              <div class="zvhc-result-badge" id="zvhcResultCarrierBadge">USPS Official Tracking</div>
+              <span class="zvhc-result-secure-tag">🔒 Authenticated Carrier Portal</span>
+            </div>
+            <div class="zvhc-result-code-wrap">
+              <span class="zvhc-result-label">Tracking Number:</span>
+              <strong class="zvhc-result-code" id="zvhcResultCode"></strong>
+            </div>
+            <p class="zvhc-result-desc">
+              To ensure 100% data authenticity, GPS transit milestone timestamps, and carrier proof-of-delivery signatures, tracking records are securely viewed directly on the official carrier server.
+            </p>
+            <div class="zvhc-result-actions">
+              <a href="#" id="zvhcCarrierOutLink" target="_blank" rel="noopener noreferrer" class="zvhc-btn-carrier-link">
+                <span>Open Live Official Carrier Tracking</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Order Number & Email / Account Lookup -->
+      <div class="zvhc-tab-panel" id="zvhcTabOrderContent" role="tabpanel" aria-labelledby="zvhcTabOrderBtn">
+        <div class="zvhc-order-lookup-info">
+          <div class="zvhc-lookup-step">
+            <div class="zvhc-step-num">1</div>
+            <div>
+              <h3 class="zvhc-step-title">Order Confirmation Email</h3>
+              <p class="zvhc-step-desc">
+                When your order was placed, an email confirmation was dispatched from <strong>support@tryzavelyn.com</strong> containing your unique 4-digit order number (e.g. #1048) and an authenticated link to view your live order status.
+              </p>
+            </div>
+          </div>
+
+          <div class="zvhc-lookup-step">
+            <div class="zvhc-step-num">2</div>
+            <div>
+              <h3 class="zvhc-step-title">Customer Account Portal</h3>
+              <p class="zvhc-step-desc">
+                Log into your customer account using the email address you entered at checkout to view complete order history, fulfillment status, and shipping labels.
+              </p>
+              <a href="/account" class="zvhc-btn-account-link">Sign In to Customer Account &rarr;</a>
+            </div>
+          </div>
+
+          <div class="zvhc-lookup-step">
+            <div class="zvhc-step-num">3</div>
+            <div>
+              <h3 class="zvhc-step-title">Need Order Assistance?</h3>
+              <p class="zvhc-step-desc">
+                If you have not received your tracking number within 48 business hours, our care team is ready to verify your fulfillment status.
+              </p>
+              <a href="mailto:support@tryzavelyn.com?subject=Order%20Tracking%20Assistance" class="zvhc-btn-support-link">Email support@tryzavelyn.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrier Logos Footer -->
+      <div class="zvhc-track-carriers-strip">
+        <span class="zvhc-carriers-label">Seamless integration with verified carrier networks:</span>
+        <div class="zvhc-carriers-tags">
+          <span class="zvhc-carrier-pill">USPS</span>
+          <span class="zvhc-carrier-pill">FedEx</span>
+          <span class="zvhc-carrier-pill">UPS</span>
+          <span class="zvhc-carrier-pill">DHL Express</span>
+          <span class="zvhc-carrier-pill">17Track</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Customer Care Help Box -->
+    <div class="zvhc-track-help-card">
+      <div class="zvhc-help-icon">✉️</div>
+      <div class="zvhc-help-content">
+        <h3 class="zvhc-help-title">Dedicated Customer Care</h3>
+        <p class="zvhc-help-desc">
+          Questions regarding transit delays, address corrections, or product returns? Our team responds within 24 business hours.
+        </p>
+        <a href="mailto:support@tryzavelyn.com?subject=Order%20Inquiry" class="zvhc-btn-help">Contact Support Team</a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<style>
+/* ==========================================================================
+   ZAVELYN HAIR CARE — REAL ORDER TRACKING STYLES (T01 AESTHETIC)
+   ========================================================================== */
+.zvhc-track-page {
+  background-color: var(--zvhc-t01-bg, #FBF8F5);
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  font-family: var(--zvhc-font-sans, -apple-system, BlinkMacSystemFont, sans-serif);
+  padding-bottom: 80px;
+}
+
+.zvhc-track-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero */
+.zvhc-track-hero {
+  padding: 60px 0 36px;
+  text-align: center;
+}
+
+.zvhc-track-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #17433C;
+  background: #EEFACC;
+  padding: 6px 14px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+}
+
+.zvhc-track-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #17433C;
+}
+
+.zvhc-track-title {
+  font-family: var(--zvhc-font-serif, 'Fraunces', serif);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+}
+
+.zvhc-track-sub {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(43, 27, 36, 0.75);
+  max-width: 620px;
+  margin: 0 auto 28px;
+}
+
+.zvhc-track-trust-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.zvhc-ttrust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(43, 27, 36, 0.7);
+}
+
+.zvhc-ttrust-item svg {
+  color: var(--zvhc-t01-accent-rose, #B0476E);
+}
+
+/* Card */
+.zvhc-track-card {
+  background: #FFFFFF;
+  border: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 8px 30px rgba(43, 27, 36, 0.05);
+}
+
+/* Tabs */
+.zvhc-track-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: var(--zvhc-t01-bg, #FBF8F5);
+  padding: 6px;
+  border-radius: 12px;
+  margin-bottom: 28px;
+}
+
+.zvhc-tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 46px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(43, 27, 36, 0.65);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zvhc-tab-btn.is-active {
+  background: #FFFFFF;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  box-shadow: 0 2px 8px rgba(43, 27, 36, 0.06);
+}
+
+.zvhc-tab-panel {
+  display: none;
+}
+
+.zvhc-tab-panel.is-active {
+  display: block;
+}
+
+/* Form */
+.zvhc-field-group {
+  margin-bottom: 20px;
+}
+
+.zvhc-field-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  margin-bottom: 6px;
+}
+
+.zvhc-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.zvhc-input-icon {
+  position: absolute;
+  left: 14px;
+  color: rgba(43, 27, 36, 0.4);
+}
+
+.zvhc-track-input,
+.zvhc-track-select {
+  width: 100%;
+  height: 50px;
+  border: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  border-radius: 10px;
+  padding: 0 16px 0 44px;
+  font-size: 0.92rem;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  background: #FFFFFF;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.zvhc-track-select {
+  padding-left: 14px;
+  cursor: pointer;
+}
+
+.zvhc-track-input:focus,
+.zvhc-track-select:focus {
+  border-color: var(--zvhc-t01-accent-rose, #B0476E);
+  box-shadow: 0 0 0 3px rgba(176, 71, 110, 0.1);
+}
+
+.zvhc-field-hint {
+  display: block;
+  font-size: 0.78rem;
+  color: rgba(43, 27, 36, 0.55);
+  margin-top: 5px;
+}
+
+.zvhc-btn-track {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--zvhc-t01-cta-bg, #6B1E46);
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.zvhc-btn-track:hover {
+  background: #842657;
+  transform: translateY(-1px);
+}
+
+/* Verified Result Card */
+.zvhc-real-result {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--zvhc-t01-border, #EAD7DD);
+}
+
+.zvhc-result-box {
+  background: var(--zvhc-t01-bg, #FBF8F5);
+  border: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.zvhc-result-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.zvhc-result-badge {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #17433C;
+  background: #EEFACC;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.zvhc-result-secure-tag {
+  font-size: 0.78rem;
+  color: rgba(43, 27, 36, 0.6);
+  font-weight: 600;
+}
+
+.zvhc-result-code-wrap {
+  margin-bottom: 12px;
+}
+
+.zvhc-result-label {
+  font-size: 0.82rem;
+  color: rgba(43, 27, 36, 0.65);
+  margin-right: 6px;
+}
+
+.zvhc-result-code {
+  font-size: 1.15rem;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  font-family: monospace;
+}
+
+.zvhc-result-desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(43, 27, 36, 0.75);
+  margin: 0 0 20px;
+}
+
+.zvhc-btn-carrier-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #17433C;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.zvhc-btn-carrier-link:hover {
+  background: #0F2D28;
+}
+
+/* Tab 2: Order Lookup Info */
+.zvhc-order-lookup-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.zvhc-lookup-step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--zvhc-t01-border, #EAD7DD);
+}
+
+.zvhc-lookup-step:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.zvhc-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--zvhc-t01-accent-rose, #B0476E);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.zvhc-step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  margin: 0 0 4px;
+}
+
+.zvhc-step-desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(43, 27, 36, 0.7);
+  margin: 0 0 10px;
+}
+
+.zvhc-btn-account-link,
+.zvhc-btn-support-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--zvhc-t01-accent-rose, #B0476E);
+  text-decoration: none;
+}
+
+/* Carriers Strip */
+.zvhc-track-carriers-strip {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.zvhc-carriers-label {
+  font-size: 0.8rem;
+  color: rgba(43, 27, 36, 0.6);
+}
+
+.zvhc-carriers-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.zvhc-carrier-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(43, 27, 36, 0.75);
+  background: var(--zvhc-t01-bg, #FBF8F5);
+  border: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* Support Card */
+.zvhc-track-help-card {
+  margin-top: 32px;
+  background: #1B1418;
+  color: #FFFFFF;
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.zvhc-help-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.zvhc-help-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 6px;
+}
+
+.zvhc-help-desc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 14px;
+}
+
+.zvhc-btn-help {
+  display: inline-block;
+  background: var(--zvhc-t01-cta-bg, #6B1E46);
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.zvhc-btn-help:hover {
+  background: #842657;
+}
+
+@media (max-width: 640px) {
+  .zvhc-track-card {
+    padding: 24px 18px;
+  }
+  .zvhc-track-tabs {
+    grid-template-columns: 1fr;
+  }
+  .zvhc-track-help-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+
+<script>
+  function zvhcSwitchTab(tab) {
+    const trackBtn = document.getElementById('zvhcTabTrackBtn');
+    const orderBtn = document.getElementById('zvhcTabOrderBtn');
+    const trackPanel = document.getElementById('zvhcTabTrackContent');
+    const orderPanel = document.getElementById('zvhcTabOrderContent');
+    const resultBox = document.getElementById('zvhcRealResult');
+    if (resultBox) resultBox.style.display = 'none';
+
+    if (tab === 'tracking') {
+      trackBtn.classList.add('is-active');
+      trackBtn.setAttribute('aria-selected', 'true');
+      orderBtn.classList.remove('is-active');
+      orderBtn.setAttribute('aria-selected', 'false');
+      trackPanel.classList.add('is-active');
+      orderPanel.classList.remove('is-active');
+    } else {
+      orderBtn.classList.add('is-active');
+      orderBtn.setAttribute('aria-selected', 'true');
+      trackBtn.classList.remove('is-active');
+      trackBtn.setAttribute('aria-selected', 'false');
+      orderPanel.classList.add('is-active');
+      trackPanel.classList.remove('is-active');
+    }
+  }
+
+  function zvhcDetectCarrier(code) {
+    const clean = code.replace(/[\s-]/g, '').toUpperCase();
+    if (/^(94|93|92|95|420|91)\d{18,22}$/.test(clean) || /^[A-Z]{2}\d{9}US$/.test(clean)) {
+      return { name: 'USPS Ground Advantage / Priority', url: 'https://tools.usps.com/go/TrackConfirmAction?tLabels=' + encodeURIComponent(clean) };
+    }
+    if (/^1Z[A-Z0-9]{16}$/i.test(clean)) {
+      return { name: 'UPS Track', url: 'https://www.ups.com/track?tracknum=' + encodeURIComponent(clean) };
+    }
+    if (/^\d{12}$/.test(clean) || /^\d{15}$/.test(clean)) {
+      return { name: 'FedEx Express / Ground', url: 'https://www.fedex.com/fedextrack/?trknbr=' + encodeURIComponent(clean) };
+    }
+    if (/^\d{10}$/.test(clean)) {
+      return { name: 'DHL Express', url: 'https://www.dhl.com/us-en/home/tracking/tracking-express.html?submit=1&tracking-id=' + encodeURIComponent(clean) };
+    }
+    return { name: 'Universal Carrier Network (17Track)', url: 'https://www.17track.net/en/track?nums=' + encodeURIComponent(clean) };
+  }
+
+  function zvhcHandleTrackSubmit(e) {
+    e.preventDefault();
+    const input = document.getElementById('zvhcTrackingInput');
+    const carrierSelect = document.getElementById('zvhcCarrierSelect').value;
+    const rawCode = input ? input.value.trim() : '';
+    if (!rawCode) return;
+
+    // Sanitize alphanumeric input safely
+    const cleanCode = rawCode.replace(/[^a-zA-Z0-9-_]/g, '');
+    let carrierInfo;
+
+    if (carrierSelect === 'usps') {
+      carrierInfo = { name: 'USPS (United States Postal Service)', url: 'https://tools.usps.com/go/TrackConfirmAction?tLabels=' + encodeURIComponent(cleanCode) };
+    } else if (carrierSelect === 'fedex') {
+      carrierInfo = { name: 'FedEx Express & Ground', url: 'https://www.fedex.com/fedextrack/?trknbr=' + encodeURIComponent(cleanCode) };
+    } else if (carrierSelect === 'ups') {
+      carrierInfo = { name: 'UPS (United Parcel Service)', url: 'https://www.ups.com/track?tracknum=' + encodeURIComponent(cleanCode) };
+    } else if (carrierSelect === 'dhl') {
+      carrierInfo = { name: 'DHL Express', url: 'https://www.dhl.com/us-en/home/tracking/tracking-express.html?submit=1&tracking-id=' + encodeURIComponent(cleanCode) };
+    } else if (carrierSelect === '17track') {
+      carrierInfo = { name: 'Universal Carrier Tracker (17Track)', url: 'https://www.17track.net/en/track?nums=' + encodeURIComponent(cleanCode) };
+    } else {
+      carrierInfo = zvhcDetectCarrier(cleanCode);
+    }
+
+    const resultBox = document.getElementById('zvhcRealResult');
+    const badgeEl = document.getElementById('zvhcResultCarrierBadge');
+    const codeEl = document.getElementById('zvhcResultCode');
+    const outLink = document.getElementById('zvhcCarrierOutLink');
+
+    // Safe DOM assignment with zero unsanitized innerHTML
+    if (badgeEl) badgeEl.textContent = carrierInfo.name;
+    if (codeEl) codeEl.textContent = cleanCode;
+    if (outLink) {
+      outLink.href = carrierInfo.url;
+      outLink.setAttribute('aria-label', 'Open official live tracking for ' + cleanCode + ' on ' + carrierInfo.name);
+    }
+
+    if (resultBox) {
+      resultBox.style.display = 'block';
+      resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "ZVHC Track Order",
+  "settings": []
+}
+{% endschema %}

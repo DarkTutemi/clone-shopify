@@ -1,0 +1,205 @@
+{% comment %}
+  ZAVELYN HAIR CARE — T01 Editorial Brand Footer
+  Organized 4-Column Layout:
+  1. Brand Statement
+  2. Explore (Collections)
+  3. About (Our Story, Contact, FAQ)
+  4. Customer Care (Track Order, Policies)
+{% endcomment %}
+<footer class="zvhc-t01-footer" id="zvhcFooter" role="contentinfo">
+  <div class="zvhc-container">
+    <div class="zvhc-t01-footer-grid">
+      
+      <!-- Column 1: Brand -->
+      <div class="zvhc-footer-col zvhc-footer-brand">
+        <a href="/" class="zvhc-t01-logo" style="margin-bottom: 14px;" aria-label="Zavelyn Hair Care — Homepage">
+          <span class="zvhc-t01-logo-title" style="color: #FFFFFF; font-size: 1.6rem;">ZAVELYN</span>
+          <span class="zvhc-t01-logo-sub">HAIR CARE</span>
+        </a>
+        <p class="zvhc-footer-brand-desc">
+          Pure botanical scalp and strand therapy. Formulated with unrefined Honduran Batana and cold-pressed bio-lipids to restore resilient, radiant hair.
+        </p>
+        <div class="zvhc-footer-contact-info">
+          ✉️ <a href="mailto:support@tryzavelyn.com" class="zvhc-footer-mail-link">support@tryzavelyn.com</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Explore -->
+      <div class="zvhc-footer-col">
+        <h4 class="zvhc-footer-col-title">EXPLORE</h4>
+        <ul class="zvhc-footer-links">
+          <li><a href="/collections/zvhc-all">Shop All (7 Essentials)</a></li>
+          <li><a href="/collections/zvhc-batana">Batana Care</a></li>
+          <li><a href="/collections/zvhc-curl">Curl &amp; Coily Care</a></li>
+          <li><a href="/collections/zvhc-coverage">Hair Coverage</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: About -->
+      <div class="zvhc-footer-col">
+        <h4 class="zvhc-footer-col-title">ABOUT</h4>
+        <ul class="zvhc-footer-links">
+          <li><a href="/pages/our-story">Our Story</a></li>
+          <li><a href="{{ section.settings.contact_url | default: '/#faq' }}">Contact</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Customer Care -->
+      <div class="zvhc-footer-col">
+        <h4 class="zvhc-footer-col-title">CUSTOMER CARE</h4>
+        <ul class="zvhc-footer-links">
+          <li><a href="/pages/track-order">Track Order</a></li>
+          <li><a href="/policies/shipping-policy">Shipping Policy</a></li>
+          <li><a href="/policies/refund-policy">Returns &amp; Refunds</a></li>
+          <li><a href="/policies/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/policies/terms-of-service">Terms of Service</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Strip -->
+    <div class="zvhc-footer-bottom">
+      <div>&copy; {{ 'now' | date: '%Y' }} Zavelyn Hair Care. All rights reserved.</div>
+      <div class="zvhc-footer-trust-tags">
+        <span>🌿 100% Clean Botanical Formulas</span>
+        <span class="zvhc-bullet">•</span>
+        <span>🛡️ 30-Day Satisfaction Guarantee</span>
+        <span class="zvhc-bullet">•</span>
+        <span>🔒 256-Bit SSL Encrypted Checkout</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+/* ==========================================================================
+   ZAVELYN HAIR CARE — T01 FOOTER STYLING
+   ========================================================================== */
+.zvhc-t01-footer {
+  background-color: var(--zvhc-t01-header-bg, #1B1418);
+  color: #FFFFFF;
+  padding: 64px 0 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--zvhc-font-sans, -apple-system, BlinkMacSystemFont, sans-serif);
+}
+
+.zvhc-t01-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.zvhc-footer-col-title {
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 18px;
+}
+
+.zvhc-footer-brand-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 16px;
+  max-width: 340px;
+}
+
+.zvhc-footer-contact-info {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.zvhc-footer-mail-link {
+  color: var(--zvhc-t01-accent-rose, #B0476E);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.zvhc-footer-mail-link:hover {
+  color: #FFFFFF;
+}
+
+.zvhc-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zvhc-footer-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.zvhc-footer-links a:hover {
+  color: #FFFFFF;
+  transform: translateX(2px);
+}
+
+.zvhc-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.zvhc-footer-trust-tags {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.zvhc-bullet {
+  opacity: 0.4;
+}
+
+/* Responsive Footer */
+@media (max-width: 992px) {
+  .zvhc-t01-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 540px) {
+  .zvhc-t01-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .zvhc-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "ZVHC Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "contact_url",
+      "label": "Contact Link URL",
+      "default": "/#faq"
+    }
+  ]
+}
+{% endschema %}

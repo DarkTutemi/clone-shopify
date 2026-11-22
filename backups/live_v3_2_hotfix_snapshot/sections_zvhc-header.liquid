@@ -1,0 +1,823 @@
+{% comment %}
+  ZAVELYN HAIR CARE — ShopSideK T01 Premium Header Toolbar
+  Features:
+  - Refined Desktop Navigation with Shop Dropdown
+  - Dedicated Mobile Slide-out Drawer with Touch-optimized targets & keyboard trap
+  - Real Shopify Cart Item Count
+  - Accessible focus management & ARIA states
+{% endcomment %}
+
+<header class="zvhc-t01-header" id="zvhcHeader" role="banner">
+  <div class="zvhc-container">
+    <div class="zvhc-t01-header-inner">
+      
+      <!-- Brand Logo (Left) -->
+      <a href="/" class="zvhc-t01-logo" aria-label="Zavelyn Hair Care — Homepage">
+        <span class="zvhc-t01-logo-title">{{ section.settings.logo_title | default: 'ZAVELYN' }}</span>
+        <span class="zvhc-t01-logo-sub">{{ section.settings.logo_sub | default: 'HAIR CARE' }}</span>
+      </a>
+
+      <!-- Desktop Center Navigation (Center) -->
+      <nav class="zvhc-t01-nav" id="zvhcDesktopNav" aria-label="Primary Navigation">
+        <!-- Shop with Refined Dropdown -->
+        <div class="zvhc-nav-item zvhc-nav-has-dropdown" id="zvhcShopDropdown">
+          <button 
+            type="button" 
+            class="zvhc-t01-nav-link zvhc-dropdown-trigger" 
+            aria-expanded="false" 
+            aria-haspopup="true" 
+            aria-controls="zvhcShopMenu"
+            id="zvhcShopBtn"
+          >
+            <span>Shop</span>
+            <svg class="zvhc-caret-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          
+          <div class="zvhc-dropdown-menu" id="zvhcShopMenu" role="menu" aria-labelledby="zvhcShopBtn">
+            <a href="/collections/zvhc-all" class="zvhc-dropdown-item" role="menuitem">
+              <div class="zvhc-dropdown-text">
+                <span class="zvhc-dropdown-title">Shop All</span>
+                <span class="zvhc-dropdown-desc">The complete 7-essential botanical system</span>
+              </div>
+            </a>
+            <a href="/collections/zvhc-batana" class="zvhc-dropdown-item" role="menuitem">
+              <div class="zvhc-dropdown-text">
+                <span class="zvhc-dropdown-title">Batana Care</span>
+                <span class="zvhc-dropdown-desc">Raw Honduran Batana scalp &amp; follicle therapy</span>
+              </div>
+            </a>
+            <a href="/collections/zvhc-curl" class="zvhc-dropdown-item" role="menuitem">
+              <div class="zvhc-dropdown-text">
+                <span class="zvhc-dropdown-title">Curl &amp; Coily Care</span>
+                <span class="zvhc-dropdown-desc">Botanical curl definition &amp; deep lipid hydration</span>
+              </div>
+            </a>
+            <a href="/collections/zvhc-scalp" class="zvhc-dropdown-item" role="menuitem">
+              <div class="zvhc-dropdown-text">
+                <span class="zvhc-dropdown-title">Scalp &amp; Edge Care</span>
+                <span class="zvhc-dropdown-desc">Nutrient density for delicate hairlines &amp; roots</span>
+              </div>
+            </a>
+            <a href="/collections/zvhc-coverage" class="zvhc-dropdown-item" role="menuitem">
+              <div class="zvhc-dropdown-text">
+                <span class="zvhc-dropdown-title">Instant Hair Coverage</span>
+                <span class="zvhc-dropdown-desc">Keratin building fibers &amp; precision hairline compact</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Our Story -->
+        <a href="/pages/our-story" class="zvhc-t01-nav-link">Our Story</a>
+
+        <!-- Track Order -->
+        <a href="/pages/track-order" class="zvhc-t01-nav-link">Track Order</a>
+
+        <!-- Contact -->
+        <a href="{{ section.settings.contact_url | default: '/#faq' }}" class="zvhc-t01-nav-link">Contact</a>
+      </nav>
+
+      <!-- Desktop & Mobile Right Actions (Right) -->
+      <div class="zvhc-t01-actions">
+        
+        <!-- Search Toggle -->
+        <button 
+          type="button" 
+          class="zvhc-action-btn zvhc-search-btn" 
+          onclick="toggleZvhcSearch()" 
+          aria-label="Search Storefront" 
+          aria-expanded="false" 
+          aria-controls="zvhcSearchModal"
+          id="zvhcSearchTrigger"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Shopping Bag with Real Cart Count -->
+        <button 
+          type="button" 
+          class="zvhc-t01-bag-btn" 
+          onclick="if(window.openZvhcCart){window.openZvhcCart();}else if(window.openWillaCart){window.openWillaCart();}" 
+          aria-label="View Shopping Bag ({{ cart.item_count }} items)"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="zvhc-t01-bag-count" id="zvhcHeaderBagCount">{{ cart.item_count }}</span>
+        </button>
+
+        <!-- Mobile Hamburger Toggle (Strictly hidden on desktop via media query) -->
+        <button 
+          type="button" 
+          class="zvhc-mobile-menu-toggle" 
+          onclick="toggleZvhcMobileDrawer()" 
+          aria-label="Open mobile navigation menu" 
+          aria-expanded="false" 
+          aria-controls="zvhcMobileDrawer"
+          id="zvhcMobileToggleBtn"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Integrated Quick Search Overlay -->
+  <div class="zvhc-search-bar" id="zvhcSearchModal" aria-hidden="true">
+    <div class="zvhc-container">
+      <form action="/search" method="get" class="zvhc-search-form" role="search">
+        <svg class="zvhc-search-icon-inside" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input 
+          type="search" 
+          name="q" 
+          id="zvhcSearchInput" 
+          placeholder="Search Batana oil, fibers, curl cream..." 
+          class="zvhc-search-input"
+          autocomplete="off"
+        >
+        <button type="button" class="zvhc-search-close" onclick="closeZvhcSearch()" aria-label="Close search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Slide-out Drawer Navigation -->
+<div class="zvhc-drawer-wrapper" id="zvhcMobileDrawer" aria-hidden="true">
+  <div class="zvhc-drawer-backdrop" onclick="toggleZvhcMobileDrawer(false)"></div>
+  <aside class="zvhc-drawer-panel" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    
+    <!-- Drawer Top Header -->
+    <div class="zvhc-drawer-header">
+      <div class="zvhc-t01-logo">
+        <span class="zvhc-t01-logo-title" style="font-size: 1.35rem;">ZAVELYN</span>
+        <span class="zvhc-t01-logo-sub">HAIR CARE</span>
+      </div>
+      <button 
+        type="button" 
+        class="zvhc-drawer-close" 
+        onclick="toggleZvhcMobileDrawer(false)" 
+        aria-label="Close navigation menu"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Drawer Search -->
+    <div class="zvhc-drawer-search">
+      <form action="/search" method="get" class="zvhc-drawer-search-form" role="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="search" name="q" placeholder="Search hair rituals..." class="zvhc-drawer-search-input">
+      </form>
+    </div>
+
+    <!-- Drawer Nav List -->
+    <nav class="zvhc-drawer-nav" aria-label="Mobile Navigation List">
+      <!-- Shop Accordion -->
+      <div class="zvhc-drawer-accordion">
+        <button 
+          type="button" 
+          class="zvhc-drawer-accordion-btn" 
+          onclick="toggleZvhcMobileAccordion(this)" 
+          aria-expanded="true"
+        >
+          <span>Shop Collections</span>
+          <svg class="zvhc-drawer-caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="zvhc-drawer-subnav" style="display: block;">
+          <a href="/collections/zvhc-all" class="zvhc-drawer-sublink" onclick="toggleZvhcMobileDrawer(false)">Shop All (7 Essentials)</a>
+          <a href="/collections/zvhc-batana" class="zvhc-drawer-sublink" onclick="toggleZvhcMobileDrawer(false)">Batana Care</a>
+          <a href="/collections/zvhc-curl" class="zvhc-drawer-sublink" onclick="toggleZvhcMobileDrawer(false)">Curl &amp; Coily Care</a>
+          <a href="/collections/zvhc-scalp" class="zvhc-drawer-sublink" onclick="toggleZvhcMobileDrawer(false)">Scalp &amp; Edge Care</a>
+          <a href="/collections/zvhc-coverage" class="zvhc-drawer-sublink" onclick="toggleZvhcMobileDrawer(false)">Instant Hair Coverage</a>
+        </div>
+      </div>
+
+      <a href="/pages/our-story" class="zvhc-drawer-link" onclick="toggleZvhcMobileDrawer(false)">Our Story</a>
+      <a href="/pages/track-order" class="zvhc-drawer-link" onclick="toggleZvhcMobileDrawer(false)">Track Order</a>
+      <a href="{{ section.settings.contact_url | default: '/#faq' }}" class="zvhc-drawer-link" onclick="toggleZvhcMobileDrawer(false)">Contact</a>
+    </nav>
+
+    <!-- Drawer Bottom Strip -->
+    <div class="zvhc-drawer-footer">
+      <div class="zvhc-drawer-trust-pill">
+        <span>🌿 Pure Clean Botanicals</span>
+        <span>•</span>
+        <span>🇺🇸 Fast US Delivery</span>
+      </div>
+      <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.5; margin-top: 10px;">
+        Questions? Email <a href="mailto:support@tryzavelyn.com" style="color: var(--zvhc-t01-accent-rose, #B0476E); text-decoration: none;">support@tryzavelyn.com</a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<style>
+/* ==========================================================================
+   ZAVELYN HAIR CARE — T01 HEADER & NAVIGATION STYLES
+   ========================================================================== */
+.zvhc-t01-header {
+  background-color: var(--zvhc-t01-header-bg, #1B1418);
+  color: #FFFFFF;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.zvhc-t01-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+/* Brand Logo (Enhanced Visual Weight) */
+.zvhc-t01-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.zvhc-t01-logo-title {
+  font-family: var(--zvhc-font-serif, 'Fraunces', serif);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.zvhc-t01-logo-sub {
+  font-family: var(--zvhc-font-sans, -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--zvhc-t01-accent-rose, #B0476E);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* Desktop Navigation (Center) */
+.zvhc-t01-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.zvhc-t01-nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease;
+}
+
+.zvhc-t01-nav-link:hover,
+.zvhc-t01-nav-link:focus-visible {
+  color: #FFFFFF;
+}
+
+/* Shop Dropdown Menu */
+.zvhc-nav-has-dropdown {
+  position: relative;
+}
+
+.zvhc-caret-icon {
+  transition: transform 0.2s ease;
+}
+
+.zvhc-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  width: 320px;
+  background: #241A20;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 1000;
+}
+
+/* Hover & Focus state on Desktop */
+@media (min-width: 993px) {
+  .zvhc-nav-has-dropdown:hover .zvhc-dropdown-menu,
+  .zvhc-nav-has-dropdown:focus-within .zvhc-dropdown-menu,
+  .zvhc-dropdown-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .zvhc-nav-has-dropdown:hover .zvhc-caret-icon,
+  .zvhc-nav-has-dropdown:focus-within .zvhc-caret-icon {
+    transform: rotate(180deg);
+  }
+}
+
+.zvhc-dropdown-item {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: background 0.15s ease;
+}
+
+.zvhc-dropdown-item:hover,
+.zvhc-dropdown-item:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.zvhc-dropdown-title {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.zvhc-dropdown-desc {
+  display: block;
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 2px;
+  line-height: 1.35;
+}
+
+/* Actions (Right) */
+.zvhc-t01-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.zvhc-action-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.zvhc-action-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.zvhc-t01-bag-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  position: relative;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.zvhc-t01-bag-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.zvhc-t01-bag-count {
+  background: var(--zvhc-t01-accent-rose, #B0476E);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Hamburger toggle: STRICTLY HIDDEN ON DESKTOP */
+.zvhc-mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Integrated Search Bar */
+.zvhc-search-bar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #1B1418;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 0;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.zvhc-search-bar.is-active {
+  display: block;
+}
+
+.zvhc-search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.zvhc-search-icon-inside {
+  position: absolute;
+  left: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+.zvhc-search-input {
+  width: 100%;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 22px;
+  padding: 0 46px 0 42px;
+  color: #FFFFFF;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.zvhc-search-input:focus {
+  border-color: var(--zvhc-t01-accent-rose, #B0476E);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.zvhc-search-close {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+}
+
+/* Mobile Slide-out Drawer */
+.zvhc-drawer-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none;
+}
+
+.zvhc-drawer-wrapper.is-open {
+  display: block;
+}
+
+.zvhc-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  animation: zvhcFadeIn 0.25s ease;
+}
+
+.zvhc-drawer-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: #1B1418;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.4);
+  animation: zvhcSlideLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.zvhc-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.zvhc-drawer-close {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.zvhc-drawer-search {
+  margin: 18px 0 20px;
+}
+
+.zvhc-drawer-search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.zvhc-drawer-search-form svg {
+  position: absolute;
+  left: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.zvhc-drawer-search-input {
+  width: 100%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 0 12px 0 36px;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.zvhc-drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.zvhc-drawer-link {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 12px;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.zvhc-drawer-link:hover,
+.zvhc-drawer-link:active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.zvhc-drawer-accordion-btn {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.zvhc-drawer-accordion-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.zvhc-drawer-subnav {
+  padding-left: 14px;
+  border-left: 2px solid var(--zvhc-t01-accent-rose, #B0476E);
+  margin: 4px 0 12px 12px;
+}
+
+.zvhc-drawer-sublink {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.88rem;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.zvhc-drawer-sublink:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.zvhc-drawer-footer {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.zvhc-drawer-trust-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes zvhcFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zvhcSlideLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+body.zvhc-menu-open {
+  overflow: hidden !important;
+}
+
+/* Media Queries for Desktop / Mobile Isolation */
+@media (max-width: 992px) {
+  .zvhc-t01-nav {
+    display: none !important;
+  }
+  .zvhc-mobile-menu-toggle {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 993px) {
+  .zvhc-mobile-menu-toggle {
+    display: none !important;
+  }
+  .zvhc-drawer-wrapper {
+    display: none !important;
+  }
+}
+</style>
+
+<script>
+  // Mobile Drawer Toggle
+  function toggleZvhcMobileDrawer(forceState) {
+    const drawer = document.getElementById('zvhcMobileDrawer');
+    const toggleBtn = document.getElementById('zvhcMobileToggleBtn');
+    if (!drawer) return;
+
+    const isOpen = drawer.classList.contains('is-open');
+    const newState = typeof forceState === 'boolean' ? forceState : !isOpen;
+
+    if (newState) {
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('zvhc-menu-open');
+    } else {
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      if (toggleBtn) {
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.focus();
+      }
+      document.body.classList.remove('zvhc-menu-open');
+    }
+  }
+
+  // Mobile Accordion Toggle
+  function toggleZvhcMobileAccordion(btn) {
+    const subnav = btn.nextElementSibling;
+    const caret = btn.querySelector('.zvhc-drawer-caret');
+    if (!subnav) return;
+
+    if (subnav.style.display === 'none') {
+      subnav.style.display = 'block';
+      btn.setAttribute('aria-expanded', 'true');
+      if (caret) caret.style.transform = 'rotate(0deg)';
+    } else {
+      subnav.style.display = 'none';
+      btn.setAttribute('aria-expanded', 'false');
+      if (caret) caret.style.transform = 'rotate(-90deg)';
+    }
+  }
+
+  // Quick Search Toggle
+  function toggleZvhcSearch() {
+    const searchBar = document.getElementById('zvhcSearchModal');
+    const trigger = document.getElementById('zvhcSearchTrigger');
+    const input = document.getElementById('zvhcSearchInput');
+    if (!searchBar) return;
+
+    const isActive = searchBar.classList.contains('is-active');
+    if (isActive) {
+      searchBar.classList.remove('is-active');
+      searchBar.setAttribute('aria-hidden', 'true');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    } else {
+      searchBar.classList.add('is-active');
+      searchBar.setAttribute('aria-hidden', 'false');
+      if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      if (input) setTimeout(() => input.focus(), 100);
+    }
+  }
+
+  function closeZvhcSearch() {
+    const searchBar = document.getElementById('zvhcSearchModal');
+    const trigger = document.getElementById('zvhcSearchTrigger');
+    if (!searchBar) return;
+    searchBar.classList.remove('is-active');
+    searchBar.setAttribute('aria-hidden', 'true');
+    if (trigger) {
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.focus();
+    }
+  }
+
+  // Keyboard Navigation: Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const drawer = document.getElementById('zvhcMobileDrawer');
+      if (drawer && drawer.classList.contains('is-open')) {
+        toggleZvhcMobileDrawer(false);
+      }
+      const searchBar = document.getElementById('zvhcSearchModal');
+      if (searchBar && searchBar.classList.contains('is-active')) {
+        closeZvhcSearch();
+      }
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "ZVHC Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_title",
+      "label": "Logo Title",
+      "default": "ZAVELYN"
+    },
+    {
+      "type": "text",
+      "id": "logo_sub",
+      "label": "Logo Subtitle",
+      "default": "HAIR CARE"
+    },
+    {
+      "type": "text",
+      "id": "contact_url",
+      "label": "Contact Link URL",
+      "default": "/#faq"
+    }
+  ]
+}
+{% endschema %}

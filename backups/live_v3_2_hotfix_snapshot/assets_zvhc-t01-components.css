@@ -1,0 +1,275 @@
+/**
+ * ZAVELYN HAIR CARE — T01 Editorial Components Stylesheet
+ * Faithfully reproduces ShopSideK T01 Lower Editorial & Brand Modules
+ */
+
+/* 1. Header Toolbar */
+.zvhc-t01-header {
+  background-color: var(--zvhc-t01-header-bg, #1B1418);
+  color: var(--zvhc-t01-text-light, #FFFFFF);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.zvhc-t01-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.zvhc-t01-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.zvhc-t01-logo-title {
+  font-family: var(--zvhc-font-serif, 'Fraunces', serif);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.zvhc-t01-logo-sub {
+  font-family: var(--zvhc-font-sans, sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--zvhc-t01-accent-rose, #B0476E);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.zvhc-t01-nav {
+  display: none;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (min-width: 820px) {
+  .zvhc-t01-nav {
+    display: flex;
+  }
+}
+
+.zvhc-t01-nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.zvhc-t01-nav-link:hover {
+  color: #FFFFFF;
+}
+
+.zvhc-t01-bag-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  position: relative;
+  padding: 6px;
+}
+
+.zvhc-t01-bag-count {
+  background: var(--zvhc-t01-accent-rose, #B0476E);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: -2px;
+}
+
+/* 2. Top Announcement Bar */
+.zvhc-t01-announcement {
+  background-color: var(--zvhc-t01-bg-card, #FFFFFF);
+  color: var(--zvhc-t01-text-main, #2B1B24);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  letter-spacing: 0.03em;
+}
+
+/* 3. T01 Benefit Ticker / Marquee */
+.zvhc-t01-ticker {
+  background: #FFFFFF;
+  border-top: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  border-bottom: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  padding: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.zvhc-t01-ticker-track {
+  display: inline-flex;
+  gap: 32px;
+  animation: zvhcTickerScroll 30s linear infinite;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--zvhc-t01-text-muted, #5A4651);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@keyframes zvhcTickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 4. Editorial Storytelling Sections (Alternating Canvas) */
+.zvhc-editorial-section {
+  padding: 64px 0;
+  background-color: var(--zvhc-t01-bg, #E9E4E6);
+}
+
+.zvhc-editorial-section.alt-bg {
+  background-color: var(--zvhc-t01-bg-alt, #FBEDE8);
+}
+
+.zvhc-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .zvhc-editorial-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+}
+
+.zvhc-editorial-card {
+  background: #FFFFFF;
+  border: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  border-radius: var(--zvhc-radius-card, 14px);
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(43, 27, 36, 0.04);
+}
+
+/* 5. UGC Video Carousel */
+.zvhc-video-carousel-section {
+  padding: 64px 0;
+  background-color: var(--zvhc-t01-bg, #E9E4E6);
+}
+
+.zvhc-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.zvhc-video-card {
+  position: relative;
+  aspect-ratio: 9/16;
+  border-radius: var(--zvhc-radius-card, 14px);
+  overflow: hidden;
+  background: #1B1418;
+  border: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  box-shadow: 0 6px 20px rgba(43, 27, 36, 0.08);
+}
+
+.zvhc-video-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.88;
+}
+
+.zvhc-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, transparent 40%, rgba(0,0,0,0.75) 100%);
+  color: #FFFFFF;
+}
+
+/* 6. Accordion Details (FAQ & Specs) */
+.zvhc-accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.zvhc-accordion-item {
+  background: #FFFFFF;
+  border: 1px solid var(--zvhc-t01-border, #EAD7DD);
+  border-radius: var(--zvhc-radius-card, 14px);
+  padding: 18px 20px;
+  cursor: pointer;
+}
+
+.zvhc-accordion-item summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--zvhc-font-sans, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--zvhc-t01-text-main, #2B1B24);
+}
+
+.zvhc-accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.zvhc-accordion-item[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.zvhc-accordion-content {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--zvhc-t01-border-subtle, #F0E6E9);
+  color: var(--zvhc-t01-text-muted, #5A4651);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* 7. Footer */
+.zvhc-t01-footer {
+  background-color: var(--zvhc-t01-header-bg, #1B1418);
+  color: #FFFFFF;
+  padding: 64px 0 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.zvhc-t01-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 36px;
+  margin-bottom: 48px;
+}
+
+.zvhc-t01-footer a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.88rem;
+}
+
+.zvhc-t01-footer a:hover {
+  color: #FFFFFF;
+}
