@@ -1,0 +1,402 @@
+{% comment %}
+  ZAVELYN HAIR CARE — Doorstep Delivery Guarantee & Real-Time Tracking
+  Universal Section for all 7 Hair Care PDPs
+{% endcomment %}
+
+<section class="zvhc-delivery-section" id="zvhc-doorstep-delivery" aria-label="Doorstep Delivery Guarantee">
+  <div class="zvhc-delivery-container">
+    <div class="zvhc-delivery-layout">
+      
+      <!-- DESKTOP RIGHT (Top) / MOBILE 1ST: Header info -->
+      <div class="zvhc-delivery-header">
+        <span class="zvhc-delivery-badge">
+          <span class="zvhc-delivery-badge-icon">🚚</span> {{ section.settings.badge_text | default: 'FAST & INSURED TRACKED US DELIVERY' }}
+        </span>
+        <h2 class="zvhc-delivery-title">{{ section.settings.heading | default: 'Doorstep Delivery Guarantee & Real-Time Tracking' }}</h2>
+        <p class="zvhc-delivery-desc">
+          {{ section.settings.subheading | default: 'Every Zavelyn order is cushioned in heavy-duty protective packaging, inspected for quality, and dispatched from regional US warehouses within 24–48 business hours. We partner directly with USPS, FedEx, and DHL Express to guarantee rapid, dependable doorstep transit.' }}
+        </p>
+      </div>
+
+      <!-- DESKTOP LEFT (45%) / MOBILE 2ND: 2 Images Stacked -->
+      <div class="zvhc-delivery-media-col">
+        <div class="zvhc-delivery-img-wrap">
+          <img 
+            src="{{ section.settings.shipping_img_1_url | default: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/5555.webp?v=1792856415' }}" 
+            alt="FedEx Office Courier Delivery Transit" 
+            width="600" 
+            height="403"
+            loading="lazy"
+            class="zvhc-delivery-img"
+          >
+        </div>
+        <div class="zvhc-delivery-img-wrap">
+          <img 
+            src="{{ section.settings.shipping_img_2_url | default: 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/44444.webp?v=1792856415' }}" 
+            alt="Real-Time Carrier Transit and Express Delivery Scan" 
+            width="600" 
+            height="254"
+            loading="lazy"
+            class="zvhc-delivery-img"
+          >
+        </div>
+      </div>
+
+      <!-- DESKTOP RIGHT (Bottom) / MOBILE 3RD: 4 Trust Benefit Cards -->
+      <div class="zvhc-delivery-cards-grid">
+        <!-- Card 1: 24-48h Dispatch -->
+        <div class="zvhc-shipping-card">
+          <div class="zvhc-shipping-card-icon zvhc-icon-timer" aria-hidden="true">⏱️</div>
+          <div class="zvhc-shipping-card-body">
+            <h3 class="zvhc-shipping-card-title">{{ section.settings.card1_title | default: '24–48h Dispatch' }}</h3>
+            <p class="zvhc-shipping-card-desc">{{ section.settings.card1_desc | default: 'Rapid order processing from regional US fulfillment hubs.' }}</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Insured Transit -->
+        <div class="zvhc-shipping-card">
+          <div class="zvhc-shipping-card-icon zvhc-icon-box" aria-hidden="true">📦</div>
+          <div class="zvhc-shipping-card-body">
+            <h3 class="zvhc-shipping-card-title">{{ section.settings.card2_title | default: 'Insured Transit' }}</h3>
+            <p class="zvhc-shipping-card-desc">{{ section.settings.card2_desc | default: 'Full protection against lost, stolen, or damaged parcels.' }}</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Tracking Updates -->
+        <div class="zvhc-shipping-card">
+          <div class="zvhc-shipping-card-icon zvhc-icon-search" aria-hidden="true">🔍</div>
+          <div class="zvhc-shipping-card-body">
+            <h3 class="zvhc-shipping-card-title">{{ section.settings.card3_title | default: 'Tracking Updates' }}</h3>
+            <p class="zvhc-shipping-card-desc">{{ section.settings.card3_desc | default: 'Instant carrier tracking notifications via SMS and email.' }}</p>
+          </div>
+        </div>
+
+        <!-- Card 4: Money-Back Guarantee -->
+        <div class="zvhc-shipping-card">
+          <div class="zvhc-shipping-card-icon zvhc-icon-shield" aria-hidden="true">🛡️</div>
+          <div class="zvhc-shipping-card-body">
+            <h3 class="zvhc-shipping-card-title">{{ section.settings.card4_title | default: 'Money-Back Guarantee' }}</h3>
+            <p class="zvhc-shipping-card-desc">{{ section.settings.card4_desc | default: 'Standard 30-day return policy for peace of mind.' }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* Doorstep Delivery Guarantee & Tracking Section */
+.zvhc-delivery-section {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #EFEAE8;
+}
+
+.zvhc-delivery-container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* DESKTOP 2-COLUMN GRID: Left 45% (Images), Right 55% (Header + 4 Cards) */
+@media (min-width: 993px) {
+  .zvhc-delivery-layout {
+    display: grid;
+    grid-template-columns: 4.5fr 5.5fr;
+    grid-template-areas:
+      "media header"
+      "media cards";
+    column-gap: 52px;
+    row-gap: 28px;
+    align-items: center;
+  }
+
+  .zvhc-delivery-media-col {
+    grid-area: media;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .zvhc-delivery-header {
+    grid-area: header;
+    margin-bottom: 0;
+  }
+
+  .zvhc-delivery-cards-grid {
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Images */
+.zvhc-delivery-img-wrap {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: #FFFFFF;
+  border: 1px solid #E8EDE9;
+}
+
+.zvhc-delivery-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.zvhc-delivery-img-wrap:hover .zvhc-delivery-img {
+  transform: scale(1.02);
+}
+
+/* Header & Typography */
+.zvhc-delivery-header {
+  margin-bottom: 24px;
+}
+
+.zvhc-delivery-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #17433C;
+  background: #EEFACC;
+  padding: 6px 14px;
+  border-radius: 30px;
+  margin-bottom: 14px;
+}
+
+.zvhc-delivery-badge-icon {
+  font-size: 13px;
+}
+
+.zvhc-delivery-title {
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 800;
+  color: #17433C;
+  letter-spacing: -0.5px;
+  margin: 10px 0 14px;
+}
+
+.zvhc-delivery-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #556860;
+  margin: 0;
+}
+
+/* 4 Trust Benefit Cards */
+.zvhc-shipping-card {
+  background: #FFFFFF;
+  border: 1px solid #E8EDE9;
+  border-radius: 14px;
+  padding: 18px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: 0 2px 10px rgba(23, 67, 60, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.zvhc-shipping-card:hover {
+  transform: translateY(-2px);
+  border-color: #B0476E;
+  box-shadow: 0 8px 22px rgba(23, 67, 60, 0.08);
+}
+
+.zvhc-shipping-card-icon {
+  font-size: 20px;
+  line-height: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.zvhc-icon-timer {
+  background: #EEF4FD;
+}
+
+.zvhc-icon-box {
+  background: #FFF0E6;
+}
+
+.zvhc-icon-search {
+  background: #E8F7F9;
+}
+
+.zvhc-icon-shield {
+  background: #EBF3FE;
+}
+
+.zvhc-shipping-card-body {
+  flex: 1;
+}
+
+.zvhc-shipping-card-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #17433C;
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+
+.zvhc-shipping-card-desc {
+  font-size: 13px;
+  line-height: 1.48;
+  color: #556860;
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .zvhc-delivery-section {
+    padding: 56px 0;
+  }
+  .zvhc-delivery-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .zvhc-delivery-header {
+    order: 1;
+    margin-bottom: 0;
+  }
+  .zvhc-delivery-media-col {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .zvhc-delivery-cards-grid {
+    order: 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .zvhc-delivery-section {
+    padding: 44px 0;
+  }
+  .zvhc-delivery-title {
+    font-size: 24px;
+    line-height: 1.28;
+    margin: 8px 0 10px;
+  }
+  .zvhc-delivery-desc {
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+  .zvhc-delivery-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "ZVHC Delivery Track",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "FAST & INSURED TRACKED US DELIVERY"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Doorstep Delivery Guarantee & Real-Time Tracking"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Description",
+      "default": "Every Zavelyn order is cushioned in heavy-duty protective packaging, inspected for quality, and dispatched from regional US warehouses within 24–48 business hours. We partner directly with USPS, FedEx, and DHL Express to guarantee rapid, dependable doorstep transit."
+    },
+    {
+      "type": "text",
+      "id": "shipping_img_1_url",
+      "label": "Image 1 URL",
+      "default": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/5555.webp?v=1792856415"
+    },
+    {
+      "type": "text",
+      "id": "shipping_img_2_url",
+      "label": "Image 2 URL",
+      "default": "https://cdn.shopify.com/s/files/1/0826/2483/9865/files/44444.webp?v=1792856415"
+    },
+    {
+      "type": "text",
+      "id": "card1_title",
+      "label": "Card 1 Title",
+      "default": "24–48h Dispatch"
+    },
+    {
+      "type": "text",
+      "id": "card1_desc",
+      "label": "Card 1 Description",
+      "default": "Rapid order processing from regional US fulfillment hubs."
+    },
+    {
+      "type": "text",
+      "id": "card2_title",
+      "label": "Card 2 Title",
+      "default": "Insured Transit"
+    },
+    {
+      "type": "text",
+      "id": "card2_desc",
+      "label": "Card 2 Description",
+      "default": "Full protection against lost, stolen, or damaged parcels."
+    },
+    {
+      "type": "text",
+      "id": "card3_title",
+      "label": "Card 3 Title",
+      "default": "Tracking Updates"
+    },
+    {
+      "type": "text",
+      "id": "card3_desc",
+      "label": "Card 3 Description",
+      "default": "Instant carrier tracking notifications via SMS and email."
+    },
+    {
+      "type": "text",
+      "id": "card4_title",
+      "label": "Card 4 Title",
+      "default": "Money-Back Guarantee"
+    },
+    {
+      "type": "text",
+      "id": "card4_desc",
+      "label": "Card 4 Description",
+      "default": "Standard 30-day return policy for peace of mind."
+    }
+  ],
+  "presets": [
+    {
+      "name": "ZVHC Delivery Track"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,35 @@
+{
+  "current": {
+    "color_background": "#F7F4EF",
+    "color_surface": "#FFFFFF",
+    "color_text": "#1A1A1A",
+    "color_text_muted": "#5C5C5C",
+    "color_accent": "#0B3D2E",
+    "color_accent_contrast": "#F7F4EF",
+    "color_border": "#D9D2C5",
+    "color_sale": "#8B2E2E",
+    "color_success": "#1F6B4A",
+    "color_error": "#9B1C1C",
+    "font_heading": "assistant_n4",
+    "font_body": "assistant_n4",
+    "font_size_base": 16,
+    "heading_scale": 120,
+    "page_width": 1280,
+    "section_spacing": 64,
+    "product_card_image_ratio": "4 \/ 5",
+    "cart_type": "drawer",
+    "cart_show_notes": true,
+    "cart_show_free_shipping": true,
+    "cart_free_shipping_threshold": 4900,
+    "predictive_search_enabled": true,
+    "predictive_search_limit": 6,
+    "content_for_index": [],
+    "blocks": {
+      "9752555012629308362": {
+        "type": "shopify:\/\/apps\/parkour-facebook-pixel\/blocks\/threasury_pixel\/f23b2ffe-4c53-446e-ad3a-7976ffbee5c2",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  }
+}

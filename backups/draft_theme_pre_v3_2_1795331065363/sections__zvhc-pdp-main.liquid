@@ -1,0 +1,359 @@
+{% comment %}
+  ZAVELYN HAIR CARE — T01 Main Product Buy Box (v3.1)
+  Exact dynamic pricing, product-specific contextual upsell, safe Shopify selectedOptions, accessible error state
+{% endcomment %}
+
+{% assign has_shades = false %}
+{% for option in product.options_with_values %}
+  {% assign opt_name = option.name | downcase %}
+  {% if opt_name == 'shade' or opt_name == 'color' %}
+    {% assign has_shades = true %}
+    {% assign shade_option = option %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Calculate initial tier prices dynamically from actual product variants {% endcomment %}
+{% if product.variants.size >= 3 %}
+  {% assign tier1_price = product.variants[0].price | money %}
+  {% assign tier1_compare = product.variants[0].compare_at_price | money %}
+  {% assign tier2_price = product.variants[1].price | money %}
+  {% assign tier2_compare = product.variants[1].compare_at_price | money %}
+  {% assign tier3_price = product.variants[2].price | money %}
+  {% assign tier3_compare = product.variants[2].compare_at_price | money %}
+  {% assign default_cta_price = product.variants[1].price | money %}
+{% else %}
+  {% assign tier1_price = product.price | money %}
+  {% assign tier1_compare = product.compare_at_price | money %}
+  {% assign tier2_price = product.price | money %}
+  {% assign tier2_compare = product.compare_at_price | money %}
+  {% assign tier3_price = product.price | money %}
+  {% assign tier3_compare = product.compare_at_price | money %}
+  {% assign default_cta_price = product.price | money %}
+{% endif %}
+
+{% comment %} Product-specific contextual upsell configuration {% endcomment %}
+{% case product.handle %}
+  {% when 'zvhc-batana-hair-growth-oil' %}
+    {% assign upsell_title = 'Add Raw Batana Scalp Balm (20g)' %}
+    {% assign upsell_sub = 'Melt-on-contact barrier butter for intensive scalp moisture' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
+    {% assign upsell_price = '$19.99' %}
+    {% assign upsell_price_num = 19.99 %}
+    {% assign upsell_vid = '68580229677241' %}
+  {% when 'zvhc-keratin-hair-building-fibers' %}
+    {% assign upsell_title = 'Add Precision Hairline Compact (4g)' %}
+    {% assign upsell_sub = 'Instant root touch-up with mirror and sponge applicator' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256808781854155-hero.jpg?v=1795264431' %}
+    {% assign upsell_price = '$24.99' %}
+    {% assign upsell_price_num = 24.99 %}
+    {% assign upsell_vid = '68580492705977' %}
+  {% when 'zvhc-root-lift-styling-powder' %}
+    {% assign upsell_title = 'Add Pure Batana Scalp Oil (60ml)' %}
+    {% assign upsell_sub = 'Nourish roots overnight after daytime matte volumizing' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
+    {% assign upsell_price = '$39.99' %}
+    {% assign upsell_price_num = 39.99 %}
+    {% assign upsell_vid = '68580229218489' %}
+  {% when 'zvhc-precision-hairline-compact' %}
+    {% assign upsell_title = 'Add Keratin Building Fibers (100g)' %}
+    {% assign upsell_sub = 'Fill larger thinning crown areas with electrostatic keratin fibers' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811885406846-hero.jpg?v=1795264423' %}
+    {% assign upsell_price = '$34.99' %}
+    {% assign upsell_price_num = 34.99 %}
+    {% assign upsell_vid = '68580492312761' %}
+  {% when 'zvhc-raw-batana-scalp-balm' %}
+    {% assign upsell_title = 'Add Pure Batana Scalp Oil (60ml)' %}
+    {% assign upsell_sub = 'Daily liquid scalp drops paired with overnight moisture balm' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
+    {% assign upsell_price = '$39.99' %}
+    {% assign upsell_price_num = 39.99 %}
+    {% assign upsell_vid = '68580229218489' %}
+  {% when 'zvhc-botanical-curl-cream' %}
+    {% assign upsell_title = 'Add 7-in-1 Multi-Oil Scalp Elixir (60ml)' %}
+    {% assign upsell_sub = 'Layer over damp curls for intense shine and cuticle seal' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811903160451-hero.jpg?v=1795264444' %}
+    {% assign upsell_price = '$39.99' %}
+    {% assign upsell_price_num = 39.99 %}
+    {% assign upsell_vid = '68580229873849' %}
+  {% when 'zvhc-7-in-1-growth-elixir' %}
+    {% assign upsell_title = 'Add Raw Batana Scalp Balm (20g)' %}
+    {% assign upsell_sub = 'Intense soothing butter for dry patches, temples, and edges' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
+    {% assign upsell_price = '$19.99' %}
+    {% assign upsell_price_num = 19.99 %}
+    {% assign upsell_vid = '68580229677241' %}
+  {% else %}
+    {% assign upsell_title = 'Add Raw Batana Scalp Balm (20g)' %}
+    {% assign upsell_sub = 'Melt-on-contact barrier butter for intensive scalp moisture' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
+    {% assign upsell_price = '$19.99' %}
+    {% assign upsell_price_num = 19.99 %}
+    {% assign upsell_vid = '68580229677241' %}
+{% endcase %}
+
+<section class="zvhc-pdp-section" id="zvhcBuyBoxSection">
+  <div class="zvhc-container">
+    <div class="zvhc-pdp-grid">
+      
+      <!-- 1. Left Gallery Column -->
+      <div class="zvhc-gallery">
+        <div class="zvhc-main-image-wrap">
+          {% if product.featured_image %}
+            <img id="zvhcMainImg" src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.title | escape }}">
+          {% else %}
+            <img id="zvhcMainImg" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419" alt="{{ product.title | escape }}">
+          {% endif %}
+        </div>
+        
+        <!-- Thumbnails Row -->
+        <div class="zvhc-thumbs-row">
+          {% if product.images.size > 1 %}
+            {% for img in product.images limit: 6 %}
+              <div class="zvhc-thumb-item {% if forloop.first %}is-active{% endif %}" onclick="zvhcSelectThumb(this, '{{ img | image_url: width: 1000 }}')">
+                <img src="{{ img | image_url: width: 160 }}" alt="{{ product.title | escape }}">
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- 2. Right Buy Box Column -->
+      <div class="zvhc-buybox">
+        <!-- Review Stars -->
+        <div class="zvhc-reviews-row">
+          <div class="zvhc-stars" style="color: var(--zvhc-t01-star-gold, #E0A33A);">★★★★★</div>
+          <span>Pure Botanical Scalp &amp; Strand Therapy</span>
+        </div>
+
+        <h1 class="zvhc-pdp-title">{{ product.title }}</h1>
+        
+        <div class="zvhc-pdp-subtitle">
+          {{ product.description | strip_html | truncatewords: 32 | default: "High-potency botanical scalp and strand therapy formulated with unrefined plant lipids to nourish follicles, strengthen shafts, and restore healthy bounce." }}
+        </div>
+
+        <!-- 3 Concise Benefits with Green Checkmarks -->
+        <div class="zvhc-benefits-list">
+          <div class="zvhc-benefit-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--zvhc-t01-trust-green, #3F8F6B)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Deeply conditions scalp barrier &amp; reinforces cuticle strength</span>
+          </div>
+          <div class="zvhc-benefit-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--zvhc-t01-trust-green, #3F8F6B)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Zero sulfates, parabens, silicones, or mineral oil dilution</span>
+          </div>
+          <div class="zvhc-benefit-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--zvhc-t01-trust-green, #3F8F6B)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Backed by our 30-Day Strand Satisfaction Guarantee</span>
+          </div>
+        </div>
+
+        {% if has_shades %}
+          <!-- Shade Selector (For Fibers and Hairline Compact) -->
+          <div class="zvhc-shade-box">
+            <div class="zvhc-shade-header">
+              <span>SELECT SHADE:</span>
+              <span id="zvhcSelectedShadeName">Black</span>
+            </div>
+            <div class="zvhc-swatches-grid">
+              {% for val in shade_option.values %}
+                {% assign swatch_color = '#1A1A1A' %}
+                {% if val contains 'Dark Brown' %}
+                  {% assign swatch_color = '#382218' %}
+                {% elsif val contains 'Medium Brown' %}
+                  {% assign swatch_color = '#5C3826' %}
+                {% endif %}
+                <button type="button" class="zvhc-swatch-btn {% if forloop.first %}is-active{% endif %}" data-shade="{{ val | escape }}" onclick="zvhcSelectShade('{{ val | escape }}', this)">
+                  <span class="zvhc-swatch-dot" style="background: {{ swatch_color }};"></span>
+                  <span>{{ val }}</span>
+                </button>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- T01 Bundle Selection Cards (.kc-tier) -->
+        <div class="zvhc-bundle-group">
+          <!-- Tier 1: 1 Unit -->
+          <div class="zvhc-bundle-card" data-tier="1" onclick="zvhcSelectTier(1)">
+            <div class="zvhc-tier-main">
+              <div class="zvhc-tier-left">
+                <span class="zvhc-radio-circle"><span class="zvhc-radio-dot"></span></span>
+                <div>
+                  <div class="zvhc-tier-name-row">
+                    <span class="zvhc-tier-title">1 Bottle / Unit</span>
+                    <span class="zvhc-tier-pill">Starter</span>
+                  </div>
+                  <div class="zvhc-tier-sub">30-day initial trial supply</div>
+                </div>
+              </div>
+              <div class="zvhc-tier-pricing">
+                <div class="zvhc-tier-price" id="zvhcPriceTier1">{{ tier1_price }}</div>
+                {% if tier1_compare != '' and tier1_compare != blank and tier1_compare != '$0.00' %}
+                  <div class="zvhc-tier-compare" id="zvhcCompareTier1">{{ tier1_compare }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 2: 2 Units (Duo - Most Popular) -->
+          <div class="zvhc-bundle-card is-selected" data-tier="2" onclick="zvhcSelectTier(2)">
+            <span class="zvhc-tier-badge">MOST POPULAR</span>
+            <div class="zvhc-tier-main">
+              <div class="zvhc-tier-left">
+                <span class="zvhc-radio-circle"><span class="zvhc-radio-dot"></span></span>
+                <div>
+                  <div class="zvhc-tier-name-row">
+                    <span class="zvhc-tier-title">2 Bottles / Units</span>
+                    <span class="zvhc-tier-pill">Save 30%</span>
+                  </div>
+                  <div class="zvhc-tier-sub">60-day intensive strand restoration course</div>
+                  <div class="zvhc-tier-ship">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    <span>Free US Tracked Shipping Included</span>
+                  </div>
+                </div>
+              </div>
+              <div class="zvhc-tier-pricing">
+                <div class="zvhc-tier-price" id="zvhcPriceTier2">{{ tier2_price }}</div>
+                {% if tier2_compare != '' and tier2_compare != blank and tier2_compare != '$0.00' %}
+                  <div class="zvhc-tier-compare" id="zvhcCompareTier2">{{ tier2_compare }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 3: 3 Units (Trio - Best Value) -->
+          <div class="zvhc-bundle-card" data-tier="3" onclick="zvhcSelectTier(3)">
+            <span class="zvhc-tier-badge" style="background: var(--zvhc-t01-text-main, #2B1B24);">BEST VALUE</span>
+            <div class="zvhc-tier-main">
+              <div class="zvhc-tier-left">
+                <span class="zvhc-radio-circle"><span class="zvhc-radio-dot"></span></span>
+                <div>
+                  <div class="zvhc-tier-name-row">
+                    <span class="zvhc-tier-title">3 Bottles / Units</span>
+                    <span class="zvhc-tier-pill">Save 40%</span>
+                  </div>
+                  <div class="zvhc-tier-sub">90-day complete routine &amp; maintenance</div>
+                  <div class="zvhc-tier-ship">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    <span>Free US Tracked Shipping Included</span>
+                  </div>
+                </div>
+              </div>
+              <div class="zvhc-tier-pricing">
+                <div class="zvhc-tier-price" id="zvhcPriceTier3">{{ tier3_price }}</div>
+                {% if tier3_compare != '' and tier3_compare != blank and tier3_compare != '$0.00' %}
+                  <div class="zvhc-tier-compare" id="zvhcCompareTier3">{{ tier3_compare }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T01 Contextual Upsell -->
+        <div class="zvhc-upsell-box">
+          <div class="zvhc-upsell-left">
+            <img src="{{ upsell_img }}" alt="{{ upsell_title | escape }}" class="zvhc-upsell-thumb">
+            <div class="zvhc-upsell-info">
+              <h4>{{ upsell_title }}</h4>
+              <p>{{ upsell_sub }}</p>
+            </div>
+          </div>
+          <div class="zvhc-upsell-action">
+            <span class="zvhc-upsell-price" id="zvhcUpsellPriceVal" data-price="{{ upsell_price_num }}">+{{ upsell_price }}</span>
+            <input type="checkbox" class="zvhc-upsell-checkbox" data-variant-id="{{ upsell_vid }}" data-price="{{ upsell_price_num }}" onchange="zvhcToggleUpsell(this)" aria-label="{{ upsell_title | escape }}">
+          </div>
+        </div>
+
+        <!-- Accessible Variant Error Message -->
+        <div id="zvhcVariantError" class="zvhc-variant-error" style="display: none; margin-bottom: 12px; padding: 12px 16px; background: #FFF0F0; border: 1px solid #E05050; border-radius: 8px; color: #B02020; font-size: 0.88rem; font-weight: 600; text-align: center;" role="alert"></div>
+
+        <!-- T01 Primary Add to Cart Button -->
+        <button type="button" id="zvhcAddToCartBtn" onclick="zvhcExecuteAddToCart()" class="zvhc-btn-primary" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 56px; border-radius: 12px; gap: 2px;">
+          <span style="font-size: 1rem; font-weight: 700; letter-spacing: 0.04em;">ADD TO CART · <span id="zvhcCtaPrice">{{ default_cta_price }}</span></span>
+          <span style="font-size: 0.68rem; font-weight: 500; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.08em;">30-DAY STRAND SATISFACTION GUARANTEE</span>
+        </button>
+
+        <!-- T01 Trust Strip -->
+        <div class="zvhc-trust-strip">
+          <div class="zvhc-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>100% CLEAN BOTANICAL</span>
+          </div>
+          <div class="zvhc-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            <span>FAST US DELIVERY</span>
+          </div>
+          <div class="zvhc-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>30-DAY GUARANTEE</span>
+          </div>
+        </div>
+
+        <!-- SHOPIFY OFFICIAL PAYMENT BADGES -->
+        <div class="zvhc-payment-methods" role="region" aria-label="Accepted payment methods">
+          <div class="zvhc-payment-methods-row">
+            {%- assign payment_types = 'visa,master,american_express,discover,paypal,apple_pay,google_pay,shopify_pay' | split: ',' -%}
+            {%- for type in payment_types -%}
+              <span class="zvhc-payment-badge" title="{{ type | replace: '_', ' ' | capitalize }}">
+                {{ type | payment_type_svg_tag: class: 'zvhc-pay-svg' }}
+              </span>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <!-- T01 Product Accordion Details -->
+        <div class="zvhc-accordion-group">
+          <details class="zvhc-accordion-item" open>
+            <summary>
+              <span>How to Use in Your Routine</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="zvhc-accordion-content">
+              For intensive scalp care, apply 3 to 5 drops directly to parted damp scalp 2 to 3 times weekly. Massage gently with fingertips in circular motions for 2 to 3 minutes to activate micro-circulation. For split end protection, work a small amount through dry lengths. <br><br>
+              <em>Safety Note: For cosmetic and topical hair/scalp conditioning only. Do not apply directly to broken skin or immediately following invasive microneedling procedures.</em>
+            </div>
+          </details>
+
+          <details class="zvhc-accordion-item">
+            <summary>
+              <span>Key Botanical Ingredients</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="zvhc-accordion-content">
+              Pure Cold-Pressed Honduran Batana Oil (Elaeis Oleifera Kernel Oil), Cold-Pressed Castor Seed Oil, Organic Moroccan Argan Oil, Rosemary Leaf Extract, Peppermint Oil, Tocopherol (Vitamin E). Free from silicones, parabens, sulfates, phthalates, and synthetic fragrance.
+            </div>
+          </details>
+
+          <details class="zvhc-accordion-item">
+            <summary>
+              <span>US Shipping &amp; 30-Day Guarantee</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="zvhc-accordion-content">
+              Orders are packaged and dispatched from our regional fulfillment centers within 24 to 48 hours. Standard US delivery takes 2 to 5 business days. If you are not fully satisfied with your botanical routine within 30 days of delivery, contact support@tryzavelyn.com for return and refund assistance.
+            </div>
+          </details>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- T01 Mobile Sticky Add to Cart Dock -->
+<div id="zvhcStickyDock" class="zvhc-sticky-dock">
+  <div class="zvhc-sticky-dock-inner">
+    <div>
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--zvhc-t01-text-main, #2B1B24);">{{ product.title | truncate: 24 }}</div>
+      <div style="font-size: 1.15rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E);" id="zvhcStickyPrice">{{ default_cta_price }}</div>
+    </div>
+    <button type="button" onclick="zvhcExecuteAddToCart()" class="zvhc-btn-primary" style="height: 46px; padding: 0 24px; font-size: 0.9rem; width: auto;">
+      ADD TO CART
+    </button>
+  </div>
+</div>
+
+<script>
+  window.ZVHC_PRODUCT_DATA = {{ product | json }};
+</script>

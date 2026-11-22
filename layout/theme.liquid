@@ -24,6 +24,10 @@
         assign is_haircare_route = true
       elsif collection.handle contains 'zvhc' or request.path contains '/collections/zvhc'
         assign is_haircare_route = true
+      elsif request.path contains '/pages/our-story' or page.handle == 'our-story'
+        assign is_haircare_route = true
+      elsif request.path contains '/pages/track-order' or page.handle == 'track-order'
+        assign is_haircare_route = true
       endif
 
       # Protected legacy registry: ensure legacy ad landing pages never get misclassified

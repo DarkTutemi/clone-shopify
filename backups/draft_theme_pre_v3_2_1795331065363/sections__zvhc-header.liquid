@@ -1,0 +1,76 @@
+{% comment %}
+  ZAVELYN HAIR CARE — T01 Minimal Header Toolbar
+{% endcomment %}
+<header class="zvhc-t01-header" id="zvhcHeader">
+  <div class="zvhc-container">
+    <div class="zvhc-t01-header-inner">
+      <!-- Brand Logo -->
+      <a href="/" class="zvhc-t01-logo" aria-label="Zavelyn Hair Care Homepage">
+        <span class="zvhc-t01-logo-title">ZAVELYN</span>
+        <span class="zvhc-t01-logo-sub">HAIR CARE</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="zvhc-t01-nav" aria-label="Main Navigation">
+        <a href="/collections/zvhc-all" class="zvhc-t01-nav-link">Shop All</a>
+        <a href="/#concerns" class="zvhc-t01-nav-link">By Concern</a>
+        <a href="/#all-products" class="zvhc-t01-nav-link">The 7 Essentials</a>
+        <a href="/#routine" class="zvhc-t01-nav-link">4-Step Ritual</a>
+        <a href="/#comparison" class="zvhc-t01-nav-link">Compare</a>
+        <a href="/#bundles" class="zvhc-t01-nav-link">Routine Bundles</a>
+        <a href="/#faq" class="zvhc-t01-nav-link">FAQ</a>
+      </nav>
+
+      <!-- Right Actions: Bag Icon -->
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <button type="button" class="zvhc-t01-bag-btn" onclick="if(window.openZvhcCart){window.openZvhcCart();}else if(window.openWillaCart){window.openWillaCart();}" aria-label="Shopping Bag">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="zvhc-t01-bag-count" id="zvhcHeaderBagCount">{{ cart.item_count }}</span>
+        </button>
+
+        <button type="button" class="zvhc-mobile-menu-toggle" onclick="toggleZvhcMobileMenu()" aria-label="Toggle mobile menu" style="background: none; border: none; color: #FFF; cursor: pointer; display: flex; align-items: center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  function toggleZvhcMobileMenu() {
+    const nav = document.querySelector('.zvhc-t01-nav');
+    if (nav) {
+      if (nav.style.display === 'flex') {
+        nav.style.display = 'none';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.top = '64px';
+        nav.style.left = '0';
+        nav.style.width = '100%';
+        nav.style.background = '#1B1418';
+        nav.style.padding = '24px 20px';
+        nav.style.borderBottom = '1px solid rgba(255,255,255,0.15)';
+        nav.style.boxShadow = '0 16px 32px rgba(0,0,0,0.3)';
+        nav.style.zIndex = '999';
+        nav.style.gap = '14px';
+      }
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "ZVHC T01 Header",
+  "settings": []
+}
+{% endschema %}

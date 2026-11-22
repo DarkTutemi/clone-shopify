@@ -1,0 +1,77 @@
+{% comment %}
+  ZAVELYN HAIR CARE — T01 Dark Brand Footer
+{% endcomment %}
+<footer class="zvhc-t01-footer">
+  <div class="zvhc-container">
+    <div class="zvhc-t01-footer-grid">
+      <!-- Brand Statement -->
+      <div>
+        <a href="/" class="zvhc-t01-logo" style="margin-bottom: 14px;">
+          <span class="zvhc-t01-logo-title" style="color: #FFFFFF;">ZAVELYN</span>
+          <span class="zvhc-t01-logo-sub">HAIR CARE</span>
+        </a>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7); margin-bottom: 16px;">
+          Pure botanical scalp and strand therapy. Formulated with unrefined Honduran Batana and cold-pressed bio-lipids to restore resilient, radiant hair.
+        </p>
+        <div style="font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.6;">
+          📍 Zavelyn Care Labs, 13101 Preston Rd, Suite 110, Dallas, TX 75240<br>
+          ✉️ <a href="mailto:support@tryzavelyn.com" style="color: var(--zvhc-t01-accent-rose, #B0476E); text-decoration: none;">support@tryzavelyn.com</a>
+        </div>
+      </div>
+
+      <!-- Links Column 1: Collections -->
+      <div>
+        <h4 style="color: #FFFFFF; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 16px;">HAIR CARE RITUALS</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li><a href="/collections/zvhc-all">Shop All 7 Essentials</a></li>
+          <li><a href="/collections/zvhc-batana">Batana Scalp Therapy</a></li>
+          <li><a href="/collections/zvhc-curl">Curl &amp; Coily Care</a></li>
+          <li><a href="/collections/zvhc-scalp">Scalp &amp; Edge Care</a></li>
+          <li><a href="/collections/zvhc-coverage">Instant Hair Coverage</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Customer Care -->
+      <div>
+        <h4 style="color: #FFFFFF; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 16px;">CUSTOMER CARE</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li><a href="/#faq">30-Day Money-Back Guarantee</a></li>
+          <li><a href="/pages/track-order">Track Your Package</a></li>
+          <li><a href="/policies/shipping-policy">Shipping Policy (US 2-5 Days)</a></li>
+          <li><a href="/policies/refund-policy">Returns &amp; Refund Policy</a></li>
+          <li><a href="/policies/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/policies/terms-of-service">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <h4 style="color: #FFFFFF; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 16px;">JOIN THE HAIR RITUAL</h4>
+        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 14px; line-height: 1.5;">
+          Subscribe to receive VIP botanical guides and exclusive private bundle access.
+        </p>
+        <form action="/contact#contact_form" method="post" style="display: flex; gap: 8px;">
+          <input type="email" name="contact[email]" placeholder="Enter your email" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 12px 14px; border-radius: 8px; color: #FFFFFF; font-size: 0.85rem; width: 100%; outline: none;" required>
+          <button type="submit" style="background: var(--zvhc-t01-cta-bg, #6B1E46); color: #FFFFFF; font-weight: 700; border: none; padding: 12px 18px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; text-transform: uppercase;">JOIN</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom Strip -->
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; font-size: 0.82rem; color: rgba(255,255,255,0.5);">
+      <div>&copy; {{ 'now' | date: '%Y' }} Zavelyn Hair Care Inc. All rights reserved.</div>
+      <div style="display: flex; gap: 16px;">
+        <span>🇺🇸 Shipped from Regional US Warehouses</span>
+        <span>•</span>
+        <span>🔒 256-Bit SSL Encrypted Checkout</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "ZVHC T01 Footer",
+  "settings": []
+}
+{% endschema %}

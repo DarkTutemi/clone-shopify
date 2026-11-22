@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "hero": {
+      "type": "zvhc-hero",
+      "settings": {}
+    },
+    "marquee": {
+      "type": "zvhc-marquee",
+      "settings": {}
+    },
+    "concerns": {
+      "type": "zvhc-shop-by-concern",
+      "settings": {}
+    },
+    "all_products": {
+      "type": "zvhc-all-products",
+      "settings": {}
+    },
+    "botana_routine": {
+      "type": "zvhc-botana-routine",
+      "settings": {}
+    },
+    "video_ugc": {
+      "type": "zvhc-video-ugc",
+      "settings": {}
+    },
+    "comparison": {
+      "type": "zvhc-comparison",
+      "settings": {}
+    },
+    "ingredients": {
+      "type": "zvhc-ingredient-education",
+      "settings": {}
+    },
+    "bundles": {
+      "type": "zvhc-bundles",
+      "settings": {}
+    },
+    "faq_trust": {
+      "type": "zvhc-faq-trust",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "marquee",
+    "concerns",
+    "all_products",
+    "botana_routine",
+    "video_ugc",
+    "comparison",
+    "ingredients",
+    "bundles",
+    "faq_trust"
+  ]
+}

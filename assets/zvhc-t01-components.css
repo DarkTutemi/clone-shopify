@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 70px;
 }
 
 .zvhc-t01-logo {
@@ -28,7 +28,7 @@
 
 .zvhc-t01-logo-title {
   font-family: var(--zvhc-font-serif, 'Fraunces', serif);
-  font-size: 1.45rem;
+  font-size: 1.65rem;
   font-weight: 700;
   color: #FFFFFF;
   letter-spacing: -0.01em;
@@ -40,9 +40,9 @@
   font-size: 0.65rem;
   font-weight: 700;
   color: var(--zvhc-t01-accent-rose, #B0476E);
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .zvhc-t01-nav {
