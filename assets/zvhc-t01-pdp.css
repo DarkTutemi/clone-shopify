@@ -104,6 +104,75 @@
   color: var(--zvhc-t01-text-muted, #5A4651);
 }
 
+.zvhc-trustpilot-row {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-bottom: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 1;
+  width: fit-content;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.zvhc-trustpilot-row:hover {
+  opacity: 0.85;
+}
+
+.zvhc-tp-brand {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.zvhc-tp-brand-svg {
+  display: block;
+  height: 17px;
+  width: auto;
+}
+
+.zvhc-tp-stars,
+.trustpilot-stars-wrap {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.zvhc-tp-score {
+  font-weight: 800;
+  color: #111827;
+  font-size: 0.95rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.zvhc-tp-sep {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #9CA3AF;
+  vertical-align: middle;
+}
+
+.zvhc-tp-count {
+  font-size: 0.88rem;
+  color: var(--zvhc-t01-text-muted, #5A4651);
+  line-height: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(90, 70, 81, 0.3);
+}
+
+.zvhc-tp-count strong {
+  font-weight: 700;
+  color: #111827;
+}
+
 .zvhc-stars {
   color: var(--zvhc-t01-star-gold, #E0A33A);
   letter-spacing: 2px;
