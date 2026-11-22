@@ -23,6 +23,10 @@
     "faq": {
       "type": "zvhc-pdp-faq",
       "settings": {}
+    },
+    "shipping": {
+      "type": "zvhc-pdp-shipping",
+      "settings": {}
     }
   },
   "order": [
@@ -31,7 +35,7 @@
     "how_it_works",
     "package",
     "reviews",
-    "faq"
+    "faq",
+    "shipping"
   ]
 }
-
