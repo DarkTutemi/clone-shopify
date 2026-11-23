@@ -640,11 +640,11 @@
 <div id="zvhcStickyDock" class="zvhc-sticky-dock">
   <div class="zvhc-sticky-dock-inner">
     <div>
-      <div style="font-size: 0.8rem; font-weight: 700; color: var(--zvhc-t01-text-main, #2B1B24);">{{ p_short_title | default: product.title | truncate: 28 }}</div>
+      <div style="font-size: 0.78rem; font-weight: 700; color: var(--zvhc-t01-text-main, #2B1B24); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px;">{{ p_short_title | default: product.title }}</div>
       <div style="font-size: 1.15rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E);" id="zvhcStickyPrice">{{ default_cta_price }}</div>
     </div>
-    <button type="button" onclick="zvhcExecuteAddToCart()" class="zvhc-btn-primary" style="height: 46px; padding: 0 24px; font-size: 0.9rem; width: auto;">
-      ADD TO CART
+    <button type="button" onclick="zvhcExecuteAddToCart()" class="zvhc-btn-primary" style="height: 44px; padding: 0 20px; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.04em; width: auto; white-space: nowrap; border-radius: 8px;">
+      RECLAIM MY EDGES →
     </button>
   </div>
 </div>

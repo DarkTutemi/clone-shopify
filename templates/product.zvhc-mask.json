@@ -8,6 +8,18 @@
       "type": "zvhc-pdp-marquee",
       "settings": {}
     },
+    "before_after": {
+      "type": "zvhc-pdp-before-after",
+      "settings": {}
+    },
+    "vs_drugstore": {
+      "type": "zvhc-pdp-vs-drugstore",
+      "settings": {}
+    },
+    "protective_styles": {
+      "type": "zvhc-pdp-protective-styles",
+      "settings": {}
+    },
     "texture_macro": {
       "type": "zvhc-pdp-texture-macro",
       "settings": {}
@@ -40,6 +52,9 @@
   "order": [
     "main",
     "marquee",
+    "before_after",
+    "vs_drugstore",
+    "protective_styles",
     "texture_macro",
     "how_it_works",
     "package",
