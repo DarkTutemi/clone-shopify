@@ -48,6 +48,34 @@
 
     window.zvhcUpdateTierDisplay();
     window.zvhcInitStickyObserver();
+    window.zvhcInitCountdown();
+  };
+
+  window.zvhcInitCountdown = function() {
+    var timerEl = document.getElementById('zvhcCampaignTimer');
+    if (!timerEl) return;
+    var endStr = timerEl.getAttribute('data-end-time');
+    var endTime = endStr ? new Date(endStr).getTime() : (Date.now() + 45600000);
+    if (isNaN(endTime)) endTime = Date.now() + 45600000;
+
+    function update() {
+      var now = Date.now();
+      var diff = Math.max(0, endTime - now);
+      var totalSecs = Math.floor(diff / 1000);
+      var hours = Math.floor(totalSecs / 3600);
+      var mins = Math.floor((totalSecs % 3600) / 60);
+      var secs = totalSecs % 60;
+
+      var hEl = document.getElementById('timerHours');
+      var mEl = document.getElementById('timerMins');
+      var sEl = document.getElementById('timerSecs');
+
+      if (hEl) hEl.textContent = (hours < 10 ? '0' : '') + hours;
+      if (mEl) mEl.textContent = (mins < 10 ? '0' : '') + mins;
+      if (sEl) sEl.textContent = (secs < 10 ? '0' : '') + secs;
+    }
+    update();
+    setInterval(update, 1000);
   };
 
   window.zvhcSelectThumb = function(el, url) {

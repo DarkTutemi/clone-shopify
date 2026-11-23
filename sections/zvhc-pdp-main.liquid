@@ -401,6 +401,42 @@
           </div>
         {% endif %}
 
+        <!-- V7 Campaign Countdown Banner (Controlled via section.settings.countdown_enabled) -->
+        {% if section.settings.countdown_enabled %}
+          <div class="zvhc-campaign-banner" role="region" aria-label="Limited Time Offer">
+            <span class="zvhc-campaign-pill">★ {{ section.settings.campaign_badge | default: 'LIMITED BOTANICAL ALLOCATION' }}</span>
+            <div class="zvhc-campaign-title">{{ section.settings.campaign_heading | default: 'Save up to 45% + Free US Shipping over $69.99' }}</div>
+            <div class="zvhc-timer-clock" id="zvhcCampaignTimer" data-end-time="{{ section.settings.countdown_end | default: '2026-12-01T23:59:59' }}">
+              <div class="zvhc-time-col"><span class="zvhc-time-num" id="timerHours">12</span><span class="zvhc-time-lbl">HRS</span></div>
+              <span class="zvhc-time-sep">:</span>
+              <div class="zvhc-time-col"><span class="zvhc-time-num" id="timerMins">43</span><span class="zvhc-time-lbl">MIN</span></div>
+              <span class="zvhc-time-sep">:</span>
+              <div class="zvhc-time-col"><span class="zvhc-time-num" id="timerSecs">28</span><span class="zvhc-time-lbl">SEC</span></div>
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- V7 Purchase Option Selector (One-Time Default / Subscribe Staged) -->
+        <div class="zvhc-purchase-options" role="tablist" aria-label="Purchase Options">
+          <div class="zvhc-purchase-tab is-active" role="tab" aria-selected="true" tabindex="0">
+            <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
+            <div>
+              <div class="zvhc-purchase-tab-title">One-Time Purchase</div>
+              <div class="zvhc-purchase-tab-sub">Single delivery, standard order</div>
+            </div>
+          </div>
+          <div class="zvhc-purchase-tab is-disabled" role="tab" aria-selected="false" tabindex="-1" title="Subscription feature launching Q1 (App configuration pending)">
+            <span class="zvhc-purchase-tab-radio"></span>
+            <div>
+              <div class="zvhc-purchase-tab-title" style="display:flex;align-items:center;gap:6px;">
+                <span>Subscribe &amp; Save 15%</span>
+                <span class="zvhc-sub-pending-pill">STAGING / Q1</span>
+              </div>
+              <div class="zvhc-purchase-tab-sub">Auto-delivery every 30/60 days</div>
+            </div>
+          </div>
+        </div>
+
         <!-- T01 Bundle Selection Cards (.kc-tier) — AUD-09 -->
         <div class="zvhc-bundle-group">
           <!-- Tier 1: 1 Unit -->
@@ -597,3 +633,40 @@
 <script>
   window.ZVHC_PRODUCT_DATA = {{ product | json }};
 </script>
+
+{% schema %}
+{
+  "name": "ZAVELYN PDP Main",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "countdown_enabled",
+      "label": "Enable Campaign Countdown Banner",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "campaign_badge",
+      "label": "Campaign Badge",
+      "default": "LIMITED BOTANICAL ALLOCATION"
+    },
+    {
+      "type": "text",
+      "id": "campaign_heading",
+      "label": "Campaign Heading",
+      "default": "Save up to 45% + Free US Shipping over $69.99"
+    },
+    {
+      "type": "text",
+      "id": "countdown_end",
+      "label": "Countdown End (ISO / DateTime)",
+      "default": "2026-12-01T23:59:59"
+    }
+  ],
+  "presets": [
+    {
+      "name": "ZAVELYN PDP Main"
+    }
+  ]
+}
+{% endschema %}

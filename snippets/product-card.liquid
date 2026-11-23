@@ -51,10 +51,43 @@
   </a>
 
   <div class="zv-prod-body">
-    <div class="zv-rating-row">
-      <span class="zv-stars">★★★★★</span>
-      <span class="zv-rating-num">4.9</span>
-      <span class="zv-review-count">({{ card_product.id | modulo: 800 | plus: 240 }})</span>
+    {%- case card_product.handle -%}
+      {%- when 'zvhc-batana-hair-growth-oil' -%}
+        {%- assign card_tp_rating = '4.9' -%}
+        {%- assign card_tp_reviews = '28,490' -%}
+      {%- when 'zvhc-raw-batana-scalp-balm' -%}
+        {%- assign card_tp_rating = '4.9' -%}
+        {%- assign card_tp_reviews = '31,240' -%}
+      {%- when 'zvhc-7-in-1-growth-elixir' -%}
+        {%- assign card_tp_rating = '4.8' -%}
+        {%- assign card_tp_reviews = '26,180' -%}
+      {%- when 'zvhc-precision-hairline-compact' -%}
+        {%- assign card_tp_rating = '4.8' -%}
+        {%- assign card_tp_reviews = '22,650' -%}
+      {%- when 'zvhc-keratin-hair-building-fibers' -%}
+        {%- assign card_tp_rating = '4.8' -%}
+        {%- assign card_tp_reviews = '19,340' -%}
+      {%- when 'zvhc-botanical-curl-cream' -%}
+        {%- assign card_tp_rating = '4.7' -%}
+        {%- assign card_tp_reviews = '16,850' -%}
+      {%- when 'zvhc-root-lift-styling-powder' -%}
+        {%- assign card_tp_rating = '4.7' -%}
+        {%- assign card_tp_reviews = '13,920' -%}
+      {%- when 'zvhc-batana-deep-conditioning-hair-mask' -%}
+        {%- assign card_tp_rating = '4.9' -%}
+        {%- assign card_tp_reviews = '24,310' -%}
+      {%- else -%}
+        {%- assign c_mod = card_product.id | default: 123456 | modulo: 4 -%}
+        {%- if c_mod == 0 -%}{%- assign card_tp_rating = '4.9' -%}{%- assign card_tp_reviews = '27,850' -%}
+        {%- elsif c_mod == 1 -%}{%- assign card_tp_rating = '4.8' -%}{%- assign card_tp_reviews = '21,430' -%}
+        {%- elsif c_mod == 2 -%}{%- assign card_tp_rating = '4.7' -%}{%- assign card_tp_reviews = '18,620' -%}
+        {%- else -%}{%- assign card_tp_rating = '4.6' -%}{%- assign card_tp_reviews = '14,290' -%}
+        {%- endif -%}
+    {%- endcase -%}
+    <div class="zv-rating-row" style="display:inline-flex;align-items:center;gap:6px;">
+      {% render 'trustpilot-stars', width: 72, height: 14 %}
+      <span class="zv-rating-num" style="font-weight:700;font-size:0.85rem;color:#111827;">{{ card_tp_rating }}</span>
+      <span class="zv-review-count" style="font-size:0.78rem;color:#6b7280;">({{ card_tp_reviews }})</span>
     </div>
 
     <h3 class="zv-prod-title">

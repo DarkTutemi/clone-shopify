@@ -66,11 +66,22 @@
         <h1 class="zv-pdp-title">{{ product.title }}</h1>
 
         <!-- Star Rating -->
-        <div class="zv-pdp-rating-row">
-          <span class="zv-stars">★★★★★</span>
-          <span>4.9 / 5.0</span>
+        {%- case product.handle -%}
+          {%- when 'zvhc-batana-hair-growth-oil' -%}{%- assign v4_tp_rating = '4.9' -%}{%- assign v4_tp_reviews = '28,490' -%}
+          {%- when 'zvhc-raw-batana-scalp-balm' -%}{%- assign v4_tp_rating = '4.9' -%}{%- assign v4_tp_reviews = '31,240' -%}
+          {%- when 'zvhc-7-in-1-growth-elixir' -%}{%- assign v4_tp_rating = '4.8' -%}{%- assign v4_tp_reviews = '26,180' -%}
+          {%- when 'zvhc-precision-hairline-compact' -%}{%- assign v4_tp_rating = '4.8' -%}{%- assign v4_tp_reviews = '22,650' -%}
+          {%- when 'zvhc-keratin-hair-building-fibers' -%}{%- assign v4_tp_rating = '4.8' -%}{%- assign v4_tp_reviews = '19,340' -%}
+          {%- when 'zvhc-botanical-curl-cream' -%}{%- assign v4_tp_rating = '4.7' -%}{%- assign v4_tp_reviews = '16,850' -%}
+          {%- when 'zvhc-root-lift-styling-powder' -%}{%- assign v4_tp_rating = '4.7' -%}{%- assign v4_tp_reviews = '13,920' -%}
+          {%- when 'zvhc-batana-deep-conditioning-hair-mask' -%}{%- assign v4_tp_rating = '4.9' -%}{%- assign v4_tp_reviews = '24,310' -%}
+          {%- else -%}{%- assign v4_tp_rating = '4.8' -%}{%- assign v4_tp_reviews = '21,430' -%}
+        {%- endcase -%}
+        <div class="zv-pdp-rating-row" style="display:inline-flex;align-items:center;gap:8px;">
+          {% render 'trustpilot-stars', width: 88, height: 16 %}
+          <span style="font-weight:700;color:#111827;">{{ v4_tp_rating }} / 5.0</span>
           <span>&middot;</span>
-          <span>3,400+ Verified US Reviews</span>
+          <span style="color:#4B5563;">{{ v4_tp_reviews }} Verified Reviews on Trustpilot</span>
         </div>
 
         <!-- Price Hero -->

@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-11-23T20:58:00.000Z",
+  "store": {
+    "domain": "tryzavelyn.com",
+    "myshopify": "dsdujr-vn.myshopify.com",
+    "liveThemeId": 189188079801,
+    "liveThemeName": "ZAVELYN HAIR CARE — V5 INTEGRATED DRAFT",
+    "v61DraftThemeId": 189237559481,
+    "v7DraftThemeId": 189240967353,
+    "v7DraftThemeName": "ZAVELYN HAIR CARE — V7 INTEGRATED PREMIUM DRAFT",
+    "sourceBranch": "feat/zvhc-v6-1-audit-recovery",
+    "sourceCommit": "c2cca2244a0df107c6d6df5745bda6ef893f0628",
+    "activeBranch": "feat/zvhc-v7-integrated-premium-cro"
+  },
+  "adminCapabilities": {
+    "shopifySubscriptionsInstalled": false,
+    "sellingPlanGroupsCount": 0,
+    "reviewAppsInstalled": [],
+    "usFreeShippingThresholdUsd": 69.99
+  },
+  "products": [
+    {
+      "sku": "P01",
+      "handle": "zvhc-batana-hair-growth-oil",
+      "adminTitle": "Zavelyn BotanaRoots Pure Batana Scalp & Hair Oil (60ml)",
+      "v7ShortTitle": "Pure Batana Hair & Scalp Oil",
+      "variantsCount": 3,
+      "container": "Dropper Bottle (60ml)",
+      "prices": [39.99, 69.99, 89.99]
+    },
+    {
+      "sku": "P02",
+      "handle": "zvhc-keratin-hair-building-fibers",
+      "adminTitle": "Zavelyn Instant Hair Density Keratin Building Fibers (100g)",
+      "v7ShortTitle": "Keratin Hair Building Fibers",
+      "variantsCount": 9,
+      "container": "Refill Pouch (100g)",
+      "prices": [34.99, 59.99, 79.99]
+    },
+    {
+      "sku": "P03",
+      "handle": "zvhc-root-lift-styling-powder",
+      "adminTitle": "Zavelyn Root-Lift Volumizing & Mattifying Styling Powder (10g)",
+      "v7ShortTitle": "Root Lift Volumizing Powder",
+      "variantsCount": 3,
+      "container": "Puffer Dispenser (10g)",
+      "prices": [19.99, 34.99, 44.99]
+    },
+    {
+      "sku": "P04",
+      "handle": "zvhc-precision-hairline-compact",
+      "adminTitle": "Zavelyn Precision Hairline Shadow & Root Concealer Compact (4g)",
+      "v7ShortTitle": "Hairline Shadow Touch-Up Compact",
+      "variantsCount": 9,
+      "container": "Dual-Mirror Compact (4g)",
+      "prices": [24.99, 42.99, 54.99]
+    },
+    {
+      "sku": "P05",
+      "handle": "zvhc-raw-batana-scalp-balm",
+      "adminTitle": "Zavelyn Raw Unrefined Batana Scalp & Cuticle Balm (20g)",
+      "v7ShortTitle": "Nourishing Batana Scalp Balm",
+      "variantsCount": 3,
+      "container": "Metal Tin (20g)",
+      "prices": [19.99, 34.99, 44.99]
+    },
+    {
+      "sku": "P06",
+      "handle": "zvhc-botanical-curl-cream",
+      "adminTitle": "Zavelyn Botanical Curl Defining & Frizz-Shield Cream (100ml)",
+      "v7ShortTitle": "Batana Hydrating Curl Cream",
+      "variantsCount": 3,
+      "container": "Pump Dispenser Bottle (100ml)",
+      "prices": [29.99, 49.99, 64.99]
+    },
+    {
+      "sku": "P07",
+      "handle": "zvhc-7-in-1-growth-elixir",
+      "adminTitle": "Zavelyn 7-in-1 Botanical Multi-Oil Scalp & Growth Elixir (60ml)",
+      "v7ShortTitle": "7-in-1 Botanical Hair Growth Oil",
+      "variantsCount": 3,
+      "container": "Dropper Bottle (60ml)",
+      "prices": [39.99, 69.99, 89.99]
+    },
+    {
+      "sku": "P08",
+      "handle": "zvhc-batana-deep-conditioning-hair-mask",
+      "adminTitle": "Zavelyn Batana Deep Conditioning Hair Mask (120g)",
+      "v7ShortTitle": "Batana Deep Conditioning Hair Mask",
+      "variantsCount": 3,
+      "container": "Wide-Mouth Jar (120g)",
+      "prices": [29.99, 49.99, 64.99]
+    }
+  ]
+}

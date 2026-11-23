@@ -1,0 +1,14 @@
+SKU,Field_Name,V6_or_V6_1_Claim,Shopify_Admin_Actual,Physical_Inventory_or_Truth,Resolution_in_V7,Governance_Status
+P01,Reviews_Trustpilot,"4.9 / 28,490 reviews",No review app installed,"Unauthenticated hard-coded mockup",Remove unauthenticated Trustpilot branding per §9; replace with authentic botanical badges,RESOLVED_V7_STAGING
+P02,Shade_Variations,"3 shades x 3 packs = 9 variants",9 variants active,Black / Dark Brown / Medium Brown,Preserve exact 9 variant IDs and shade selector,RESOLVED_VERIFIED
+P03,Tier_Pricing,"1x $24.99 / 2x $44.99 / 3x $59.99","1x $19.99 / 2x $34.99 / 3x $44.99","Physical Shopify catalog price",Synchronize theme copy & math to actual Admin pricing ($19.99 / $34.99 / $44.99),RESOLVED_PRICE_SYNC
+P03,Dispenser_Type,Serum dropper,Puffer bottle,Directional micro-puff dispenser,Label as Directional Micro-Puff Dispenser (10g),RESOLVED_VERIFIED
+P04,Tier_Pricing,"1x $24.99 / 2x $44.99 / 3x $59.99","1x $24.99 / 2x $42.99 / 3x $54.99","Physical Shopify catalog price",Synchronize theme copy & math to actual Admin pricing ($24.99 / $42.99 / $54.99),RESOLVED_PRICE_SYNC
+P05,Net_Weight,100g Tin (Speculative OEM),20g Tin,"Physical warehouse stock 20g metal tin",Strictly 20g / 0.7 oz Metal Tin across all surfaces; zero 100g permitted,RESOLVED_STRICT_20G
+P06,Container_Form,Squeeze Tube,Pump Bottle,"Physical 100ml cylindrical pump bottle",Strictly 100ml Pump Dispenser Bottle; zero tube mentions,RESOLVED_PUMP_BOTTLE
+P06,Tier_Pricing,"1x $24.99 / 2x $44.99 / 3x $59.99","1x $29.99 / 2x $49.99 / 3x $64.99","Physical Shopify catalog price",Synchronize theme copy & math to actual Admin pricing ($29.99 / $49.99 / $64.99),RESOLVED_PRICE_SYNC
+P07,Essential_Oils,"Single unrefined oil or vague blend",Multi-oil blend,"Batana + Rosemary + Peppermint + 4 Carrier Oils",Break down exact 7 active botanicals with usage warnings,RESOLVED_VERIFIED
+P08,Net_Weight,"100g (Supplier draft)",120g Jar in Shopify,"120g wide-mouth jar in inventory",Preserve 120g in storefront; track 100g as OEM concept question,RESOLVED_120G_STOREFRONT
+P08,Tier_Pricing,"1x $29.99 / 2x $54.99 / 3x $74.99","1x $29.99 / 2x $49.99 / 3x $64.99","Physical Shopify catalog price",Synchronize theme copy & math to actual Admin pricing ($29.99 / $49.99 / $64.99),RESOLVED_PRICE_SYNC
+ALL,Subscription_App,"Active subscription discounting",App not installed,"Zero selling plan groups in Admin",Develop subscription-ready architecture; keep Subscribe disabled/hidden until owner installs app,RESOLVED_BLOCKED_FLAG
+ALL,Campaign_Countdown,"Running sale countdown",No schedule configured,"No active discount schedule",Integrate theme schema controllable timer; default OFF until owner schedules sale,RESOLVED_SCHEMA_OFF

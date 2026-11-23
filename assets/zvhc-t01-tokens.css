@@ -42,7 +42,7 @@
   --zvhc-radius-pill: 9999px;
   --zvhc-radius-img: 16px;
 
-  --zvhc-container-max: 1180px;
+  --zvhc-container-max: 1280px;
 
   /* Aliases for Cart Drawer & Component Interop */
   --zvhc-espresso: var(--zvhc-t01-text-main);
