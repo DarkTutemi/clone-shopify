@@ -8,32 +8,16 @@
       "type": "zvhc-marquee",
       "settings": {}
     },
-    "concerns": {
-      "type": "zvhc-shop-by-concern",
-      "settings": {}
-    },
     "all_products": {
       "type": "zvhc-all-products",
       "settings": {}
     },
-    "botana_routine": {
-      "type": "zvhc-botana-routine",
+    "before_after": {
+      "type": "zvhc-pdp-before-after",
       "settings": {}
     },
-    "video_ugc": {
-      "type": "zvhc-video-ugc",
-      "settings": {}
-    },
-    "comparison": {
-      "type": "zvhc-comparison",
-      "settings": {}
-    },
-    "ingredients": {
-      "type": "zvhc-ingredient-education",
-      "settings": {}
-    },
-    "bundles": {
-      "type": "zvhc-bundles",
+    "vs_drugstore": {
+      "type": "zvhc-pdp-vs-drugstore",
       "settings": {}
     },
     "faq_trust": {
@@ -44,13 +28,9 @@
   "order": [
     "hero",
     "marquee",
-    "concerns",
     "all_products",
-    "botana_routine",
-    "video_ugc",
-    "comparison",
-    "ingredients",
-    "bundles",
+    "before_after",
+    "vs_drugstore",
     "faq_trust"
   ]
 }
