@@ -8,6 +8,8 @@
 
   var currentTier = 2; // Default to Tier 2 (Most Popular / Duo)
   var currentShade = '';
+  var currentSize = '60ml';
+  var currentFormula = '100% Pure Raw Honduran Batana';
   var productData = null;
   var upsellIncluded = false;
   var upsellVariantId = null;
@@ -120,15 +122,41 @@
     window.zvhcUpdateTierDisplay();
   };
 
+  window.zvhcSelectSize = function(size, btn) {
+    currentSize = size;
+    document.querySelectorAll('.zvhc-size-btn').forEach(function(b) {
+      b.classList.remove('is-active');
+    });
+    if (btn) btn.classList.add('is-active');
+    var label = document.getElementById('zvhcSelectedSizeName');
+    if (label) label.textContent = size;
+    window.zvhcUpdateTierDisplay();
+  };
+
+  window.zvhcSelectFormula = function(formula, btn) {
+    currentFormula = formula;
+    document.querySelectorAll('.zvhc-formula-btn').forEach(function(b) {
+      b.classList.remove('is-active');
+    });
+    if (btn) btn.classList.add('is-active');
+    var label = document.getElementById('zvhcSelectedFormulaName');
+    if (label) label.textContent = formula;
+    window.zvhcUpdateTierDisplay();
+  };
+
   /**
    * P0-A FIX: Safe Shopify selectedOptions matching.
+   * Multi-variant precision for bundles, sizes (60ml/120ml), formulas, and shades.
    * NEVER fallback to variants[0] or variants[tier-1].
    * If not found, returns null.
    */
-  window.zvhcFindVariant = function(tier, shade) {
+  window.zvhcFindVariant = function(tier, shade, size, formula) {
     if (!productData || !productData.variants || productData.variants.length === 0) {
       return null;
     }
+    var targetSize = size || currentSize;
+    var targetFormula = formula || currentFormula;
+    var targetShade = shade || currentShade;
 
     var options = productData.options || [];
     var shadeOptPos = -1;
@@ -153,32 +181,53 @@
     var shadeKey = (shadeOptPos !== -1) ? ('option' + shadeOptPos) : null;
 
     var matched = productData.variants.find(function(v) {
-      // 1. Match Tier
+      // 1. Match Tier (starts with buy <tier> or <tier>x or <tier> jar/bottle/pouch/tin)
       var vTierVal = v[tierKey];
       if (!vTierVal) return false;
+      var lowerTierVal = vTierVal.toLowerCase().trim();
 
       var tierMatches = false;
-      var tierPrefix1 = tier + 'x'; // "1x 100g", "2x 100g", "3x 100g"
-      var tierPrefix2 = 'buy ' + tier; // "Buy 1", "Buy 2", "Buy 3"
-      var tierPrefix3 = tier + ' ';
-      var lowerTierVal = vTierVal.toLowerCase();
-
-      if (lowerTierVal.indexOf(tierPrefix1.toLowerCase()) !== -1 ||
-          lowerTierVal.indexOf(tierPrefix2.toLowerCase()) !== -1 ||
-          lowerTierVal.indexOf(tierPrefix3.toLowerCase()) !== -1 ||
-          lowerTierVal.indexOf('(' + tier + 'x') !== -1) {
+      if (lowerTierVal.startsWith('buy ' + tier + ' ') || lowerTierVal.startsWith('buy ' + tier + '(') || lowerTierVal === ('buy ' + tier)) {
+        tierMatches = true;
+      } else if (lowerTierVal.startsWith(tier + 'x ') || lowerTierVal.startsWith(tier + 'x(') || lowerTierVal.startsWith(tier + ' jar') || lowerTierVal.startsWith(tier + ' bottle') || lowerTierVal.startsWith(tier + ' pouch') || lowerTierVal.startsWith(tier + ' compact') || lowerTierVal.startsWith(tier + ' tin') || lowerTierVal.startsWith(tier + ' unit')) {
+        tierMatches = true;
+      } else if (lowerTierVal.indexOf('(' + tier + 'x') !== -1 && !lowerTierVal.startsWith('buy 3') && !lowerTierVal.startsWith('buy 2')) {
         tierMatches = true;
       }
 
       if (!tierMatches) return false;
 
       // 2. Match Shade (if product has shade option)
-      if (shadeKey && shade) {
+      if (shadeKey && targetShade) {
         var vShadeVal = v[shadeKey];
         if (!vShadeVal) return false;
         var cleanShadeVal = vShadeVal.replace(/^#\d+\s*/, '').trim().toLowerCase();
-        var cleanTargetShade = shade.replace(/^#\d+\s*/, '').trim().toLowerCase();
+        var cleanTargetShade = targetShade.replace(/^#\d+\s*/, '').trim().toLowerCase();
         if (cleanShadeVal !== cleanTargetShade) {
+          return false;
+        }
+      }
+
+      // 3. Match Size (if variants contain 60ml / 120ml)
+      if (targetSize) {
+        var combined = (v.option1 + ' ' + (v.option2 || '')).toLowerCase();
+        var hasSizeOption = productData.variants.some(function(varItem) {
+          return (varItem.option1 + ' ' + (varItem.option2 || '')).toLowerCase().indexOf(targetSize.toLowerCase()) !== -1;
+        });
+        if (hasSizeOption && combined.indexOf(targetSize.toLowerCase()) === -1) {
+          return false;
+        }
+      }
+
+      // 4. Match Formula (if option2 contains Rosemary vs Pure)
+      if (v.option2 && targetFormula) {
+        var fVal = v.option2.toLowerCase();
+        var isTargetRosemary = targetFormula.toLowerCase().indexOf('rosemary') !== -1;
+        var isVariantRosemary = fVal.indexOf('rosemary') !== -1;
+        var hasFormulaOptions = productData.variants.some(function(varItem) {
+          return (varItem.option2 || '').toLowerCase().indexOf('rosemary') !== -1;
+        });
+        if (hasFormulaOptions && isTargetRosemary !== isVariantRosemary) {
           return false;
         }
       }
@@ -197,7 +246,7 @@
 
     // Update prices on the 3 tier cards
     for (var t = 1; t <= 3; t++) {
-      var v = window.zvhcFindVariant(t, currentShade);
+      var v = window.zvhcFindVariant(t, currentShade, currentSize, currentFormula);
       var priceEl = document.getElementById('zvhcPriceTier' + t);
       var cmpEl = document.getElementById('zvhcCompareTier' + t);
 
@@ -219,7 +268,7 @@
     }
 
     // Active tier price calculation & validation
-    var activeVariant = window.zvhcFindVariant(currentTier, currentShade);
+    var activeVariant = window.zvhcFindVariant(currentTier, currentShade, currentSize, currentFormula);
     if (activeVariant && activeVariant.available !== false) {
       if (errorEl) {
         errorEl.textContent = '';
@@ -265,7 +314,7 @@
    * P0-F FIX: Checked AJAX Cart execution with response.ok validation
    */
   window.zvhcExecuteAddToCart = function() {
-    var v = window.zvhcFindVariant(currentTier, currentShade);
+    var v = window.zvhcFindVariant(currentTier, currentShade, currentSize, currentFormula);
     var errorEl = document.getElementById('zvhcVariantError');
     var btn = document.getElementById('zvhcAddToCartBtn');
 

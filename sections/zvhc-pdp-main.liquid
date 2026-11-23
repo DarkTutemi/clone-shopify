@@ -98,19 +98,20 @@
     {% assign upsell_vid = '68580229218489' %}
 
   {% when 'zvhc-batana-hair-growth-oil', 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
-    {% assign p_short_title = 'Pure Batana Hair Growth & Edge Oil' %}
-    {% assign p_spec_label = '100% Raw Unrefined Honduran Batana | 60 ml / 2 fl oz' %}
+    {% assign p_short_title = 'BotanaRoots™ Batana Hair Growth & Edge Oil' %}
+    {% assign p_spec_label = '2 oz / 60 ml · 100% Raw Honduran Batana · Cold-Pressed' %}
     {% assign p_container = 'Bottle' %}
-    {% assign p_unit_label = '1 Bottle (60ml)' %}
-    {% assign p_duo_label = '2 Bottles (60ml)' %}
-    {% assign p_trio_label = '3 Bottles (60ml)' %}
-    {% assign p_subtitle = 'Pure unrefined Honduran Batana Oil fortified with rosemary extract and vitamin E. Clinical-strength botanical therapy formulated to awaken dormant follicles, rescue thinning edges, and accelerate dense 3–8 week regrowth.' %}
-    {% assign p_benefit1 = 'Clinically targets traction alopecia, thinning edges, and sparse crown areas from braids & lace wigs' %}
-    {% assign p_benefit2 = 'Penetrates deep into the follicle matrix without heavy mineral oil buildup or clogged pores' %}
-    {% assign p_benefit3 = 'Fast-absorbing, non-greasy moisture seal for Type 3A–4C coils, locs, weaves, and natural hair' %}
-    {% assign p_how_to = 'Part hair into 4 quadrants. Dispense 4–6 drops directly along scalp part lines. Massage with fingertips for 2–3 minutes to distribute. Smooth excess through lengths and ends. Leave on 30 minutes before shampooing, or leave on overnight as an intensive oil soak.' %}
-    {% assign p_safety = 'For external cosmetic hair and scalp conditioning only. Conduct a 24-hour patch test prior to initial use. Do not apply to broken, inflamed skin or open wounds. Avoid contact with eyes; rinse immediately with cool water if contact occurs.' %}
-    {% assign p_inci = 'Elaeis Oleifera Kernel Oil (Batana Oil), Rosmarinus Officinalis (Rosemary) Leaf Extract, Tocopherol (Vitamin E).' %}
+    {% assign p_unit_label = '1 Bottle' %}
+    {% assign p_duo_label = '2 Bottles' %}
+    {% assign p_trio_label = '3 Bottles' %}
+    {% assign p_subtitle = 'Edges snatched out by braids, wigs, and tight styles? That’s not "just genetics" — it’s follicles suffocating under mineral-oil buildup. Drugstore "growth oils" are up to 95% mineral oil and petroleum: they coat, they never penetrate. BotanaRoots is 100% raw, cold-pressed Batana from Honduras — a lightweight follicle-feeder that sinks past the buildup to the root. Real women see softer edges in 3 weeks and visible new growth in 3–6.' %}
+    {% assign p_benefit1 = 'Wake up thinning edges: Rich in natural tocotrienols and oleic acid to revive hairlines damaged by wig glue, braid tension & traction alopecia' %}
+    {% assign p_benefit2 = 'Zero mineral oil or buildup: 100% cold-pressed raw Batana sinks directly into roots without suffocating pores or coating strands in grease' %}
+    {% assign p_benefit3 = 'Protective style safe: Slips easily between braids, under sew-in tracks, along locs, and leave-outs for 3A–4C textures with zero residue' %}
+    {% assign p_how_to = 'THE 60-SECOND EDGE RITUAL: 1) Part clean, dry or damp hair into 4 quadrants. 2) Apply 3–5 drops directly to the scalp per quadrant with the precision dropper — target the hairline, nape, and part lines. 3) Massage 2–3 minutes with fingertips (not nails) in circular motions to boost microcirculation. 4) Leave on overnight under a satin bonnet, or apply 30 minutes before shampooing as an intensive oil soak. Use 3–4x weekly for 8 weeks for maximum edge density.' %}
+    {% assign p_safety = 'Patch test on inner arm 24 hours prior to first use. For external cosmetic hair and scalp conditioning only. Avoid direct contact with eyes; rinse with cool water if contact occurs. If pregnant, nursing, or managing an active scalp condition, consult your physician. Keep out of reach of children.' %}
+    {% assign p_inci = 'INCI: Elaeis Oleifera Kernel Oil (Raw Honduran Batana), Ricinus Communis (Jamaican Black Castor) Seed Oil, Cocos Nucifera (Coconut) Oil, Simmondsia Chinensis (Jojoba) Seed Oil, Rosmarinus Officinalis (Rosemary) Leaf Extract, Tocopherol (Vitamin E). 100% naturally derived. Zero mineral oil, petroleum, silicones, sulfates, or parabens.' %}
+    {% assign p_guarantee = 'THE 60-DAY EDGE RECOVERY PROMISE: Give your hairline 60 days. Use BotanaRoots 3–4x a week, take a photo on Day 1 and Day 60, and if you don’t see fuller, healthier edges and visible new baby hairs, simply email us at support@tryzavelyn.com with your photos and we will refund every single cent — no return shipping required, no questions asked. You risk nothing; your edges gain everything.' %}
     {% assign upsell_title = 'Add Nourishing Raw Batana Scalp & Edge Balm (20g)' %}
     {% assign upsell_sub = 'Melt-on-contact barrier butter for intensive scalp moisture' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
@@ -366,7 +367,7 @@
 
         <!-- Cultural Eyebrow Pill -->
         <div class="zvhc-cultural-eyebrow" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.74rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 8px; margin-bottom: 4px;">
-          <span>✦ CRAFTED FOR NATURAL 3A–4C COILS, BRAIDS &amp; EDGE REGROWTH</span>
+          <span>✦ ACCELERATED EDGE &amp; FOLLICLE RESTORATION • 3A–4C NATURAL COILS</span>
         </div>
 
         <h1 class="zvhc-pdp-title">{{ p_short_title | default: product.title }}</h1>
@@ -379,6 +380,36 @@
         <div class="zvhc-pdp-subtitle">
           {{ p_subtitle }}
         </div>
+
+        {% if product.handle contains 'batana' or product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+          <!-- Azure Boutique-Style 6 Quick Value Pills -->
+          <div class="zvhc-quick-pills-wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin: 14px 0 16px;">
+            <div class="zvhc-quick-pill" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #FAF5F7; border: 1px solid #F0D9E2; border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #2B1B24;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Regrows Edges</span>
+            </div>
+            <div class="zvhc-quick-pill" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #FAF5F7; border: 1px solid #F0D9E2; border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #2B1B24;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Nourishes Scalp</span>
+            </div>
+            <div class="zvhc-quick-pill" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #FAF5F7; border: 1px solid #F0D9E2; border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #2B1B24;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Restores Elasticity</span>
+            </div>
+            <div class="zvhc-quick-pill" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #FAF5F7; border: 1px solid #F0D9E2; border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #2B1B24;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Restores Shine</span>
+            </div>
+            <div class="zvhc-quick-pill" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #FAF5F7; border: 1px solid #F0D9E2; border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #2B1B24;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Strengthens Follicles</span>
+            </div>
+            <div class="zvhc-quick-pill" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #FAF5F7; border: 1px solid #F0D9E2; border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #2B1B24;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Stops Breakage</span>
+            </div>
+          </div>
+        {% endif %}
 
         <!-- 3 Concise Benefits with Green Checkmarks -->
         <div class="zvhc-benefits-list">
@@ -420,6 +451,40 @@
           </div>
         {% endif %}
 
+        {% if product.handle contains 'batana-hair-growth-oil' or product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+          <!-- Bottle Size Selector -->
+          <div class="zvhc-size-box" style="margin-top: 14px; margin-bottom: 10px;">
+            <div style="font-size: 0.76rem; font-weight: 800; color: var(--zvhc-t01-text-muted, #5A4651); letter-spacing: 0.06em; margin-bottom: 6px;">
+              SELECT BOTTLE SIZE: <span id="zvhcSelectedSizeName" style="color: var(--zvhc-t01-accent-rose, #B0476E);">60ml (2 oz)</span>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="zvhc-swatch-btn zvhc-size-btn is-active" onclick="zvhcSelectSize('60ml', this)">
+                <span>60ml / 2 oz</span>
+                <span style="font-size: 0.68rem; opacity: 0.75; margin-left: 4px;">(Standard)</span>
+              </button>
+              <button type="button" class="zvhc-swatch-btn zvhc-size-btn" onclick="zvhcSelectSize('120ml', this)">
+                <span>120ml / 4 oz</span>
+                <span style="font-size: 0.68rem; color: #B0476E; font-weight: 700; margin-left: 4px;">(Double Size · Save More)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Formula Selector -->
+          <div class="zvhc-formula-box" style="margin-bottom: 16px;">
+            <div style="font-size: 0.76rem; font-weight: 800; color: var(--zvhc-t01-text-muted, #5A4651); letter-spacing: 0.06em; margin-bottom: 6px;">
+              SELECT FORMULA: <span id="zvhcSelectedFormulaName" style="color: var(--zvhc-t01-accent-rose, #B0476E);">100% Raw Batana</span>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="zvhc-swatch-btn zvhc-formula-btn is-active" onclick="zvhcSelectFormula('100% Pure Raw Honduran Batana', this)">
+                <span>🌿 100% Raw Pure Batana</span>
+              </button>
+              <button type="button" class="zvhc-swatch-btn zvhc-formula-btn" onclick="zvhcSelectFormula('Batana + Rosemary Scalp Infusion', this)">
+                <span>🌱 Batana + Rosemary Scalp Infusion</span>
+              </button>
+            </div>
+          </div>
+        {% endif %}
+
         <!-- V7 Campaign Countdown Banner (Controlled via section.settings.countdown_enabled) -->
         {% if section.settings.countdown_enabled %}
           <div class="zvhc-campaign-banner" role="region" aria-label="Limited Time Offer">
@@ -454,6 +519,12 @@
               <div class="zvhc-purchase-tab-sub">Auto-delivery every 30/60 days</div>
             </div>
           </div>
+        </div>
+
+        <!-- Fast Tracked Dispatch Badge -->
+        <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 14px; font-size: 0.82rem; color: #166534; font-weight: 600;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #00B67A; display: inline-block; box-shadow: 0 0 0 3px rgba(0,182,122,0.25); flex-shrink: 0;"></span>
+          <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow • Free shipping on 2+ bottles</span>
         </div>
 
         <!-- T01 Bundle Selection Cards (.kc-tier) — AUD-09 -->
@@ -562,9 +633,9 @@
         <div id="zvhcVariantError" class="zvhc-variant-error" style="display: none; margin-bottom: 12px; padding: 12px 16px; background: #FFF0F0; border: 1px solid #E05050; border-radius: 8px; color: #B02020; font-size: 0.88rem; font-weight: 600; text-align: center;" role="alert"></div>
 
         <!-- T01 Primary Add to Cart Button -->
-        <button type="button" id="zvhcAddToCartBtn" onclick="zvhcExecuteAddToCart()" class="zvhc-btn-primary" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 56px; border-radius: 12px; gap: 2px;">
-          <span style="font-size: 1rem; font-weight: 700; letter-spacing: 0.04em;">ADD TO CART · <span id="zvhcCtaPrice">{{ default_cta_price }}</span></span>
-          <span style="font-size: 0.68rem; font-weight: 500; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.08em;">30-DAY STRAND SATISFACTION GUARANTEE</span>
+        <button type="button" id="zvhcAddToCartBtn" onclick="zvhcExecuteAddToCart()" class="zvhc-btn-primary" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 58px; border-radius: 12px; gap: 2px;">
+          <span style="font-size: 1.05rem; font-weight: 800; letter-spacing: 0.04em;">RECLAIM MY EDGES — ADD TO CART · <span id="zvhcCtaPrice">{{ default_cta_price }}</span></span>
+          <span style="font-size: 0.68rem; font-weight: 600; opacity: 0.88; text-transform: uppercase; letter-spacing: 0.08em;">60-DAY EDGE RECOVERY GUARANTEE</span>
         </button>
 
         <!-- T01 Trust Strip -->
@@ -595,11 +666,22 @@
           </div>
         </div>
 
+        <!-- 60-Day Edge Recovery Guarantee Box -->
+        <div class="zvhc-guarantee-card" style="margin-top: 18px; margin-bottom: 22px; padding: 16px 20px; background: #FAF6F8; border: 1px solid #EAD7DD; border-radius: 12px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <strong style="font-size: 0.88rem; color: #2B1B24; letter-spacing: 0.02em;">THE 60-DAY EDGE RECOVERY PROMISE</strong>
+          </div>
+          <p style="font-size: 0.82rem; color: #5A4651; line-height: 1.55; margin: 0;">
+            Give your hairline 60 days. Use BotanaRoots 3–4x weekly. Take a photo on Day 1 and Day 60. If you don't see fuller, healthier edges and visible new baby hairs, simply email us at <a href="mailto:support@tryzavelyn.com" style="color: #B0476E; font-weight: 700; text-decoration: underline;">support@tryzavelyn.com</a> with your photos for an immediate 100% refund — no return shipping required, no questions asked. You risk nothing; your edges gain everything.
+          </p>
+        </div>
+
         <!-- T01 Product Accordion Details — All Collapsed by Default (V6 Spec) -->
         <div class="zvhc-accordion-group">
           <details class="zvhc-accordion-item">
             <summary>
-              <span>How to Use in Your Routine</span>
+              <span>The 60-Second Edge Ritual &amp; Application</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="zvhc-accordion-content">
@@ -611,7 +693,7 @@
 
           <details class="zvhc-accordion-item">
             <summary>
-              <span>Key Botanical Ingredients (INCI)</span>
+              <span>100% Raw Honduran Botanical Profile (INCI)</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="zvhc-accordion-content">
@@ -622,11 +704,24 @@
 
           <details class="zvhc-accordion-item">
             <summary>
-              <span>30-Day Guarantee</span>
+              <span>The 60-Day Edge Recovery Guarantee &amp; Easy Returns</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="zvhc-accordion-content">
-              <strong>30-Day Strand Satisfaction Guarantee:</strong> We stand firmly behind the cosmetic quality of our botanical formulations. If you are not completely satisfied with your hair care experience within 30 days of delivery, simply contact our customer care team at <a href="mailto:support@tryzavelyn.com" style="color: var(--zvhc-t01-accent-rose, #B0476E); text-decoration: underline;">support@tryzavelyn.com</a> with your order number. We will provide an authorized return merchandise authorization (RMA) and guide you through our hassle-free refund process.
+              {{ p_guarantee | default: 'We stand firmly behind the cosmetic quality of our botanical formulations. If you are not completely satisfied with your hair care experience within 60 days of delivery, simply contact our customer care team at support@tryzavelyn.com with your order number for a full refund.' }}
+            </div>
+          </details>
+
+          <details class="zvhc-accordion-item">
+            <summary>
+              <span>Tracked US Shipping &amp; Delivery Timelines</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="zvhc-accordion-content">
+              <strong>Fast Domestic US Delivery:</strong><br>
+              • <strong>Handling Time:</strong> Orders processed and dispatched within 24 hours (Mon–Fri).<br>
+              • <strong>Standard Transit:</strong> 2–4 business days via USPS / UPS with end-to-end tracking.<br>
+              • <strong>Free Shipping:</strong> Automatically applied to all multi-bottle orders ($69.99+). Tracking numbers are emailed immediately upon shipment.
             </div>
           </details>
         </div>

@@ -455,6 +455,58 @@
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
 }
 
+/* Quick Scan Pills (Azure Boutique Style) */
+.zvhc-quick-pills-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 14px 0 16px;
+}
+@media (max-width: 640px) {
+  .zvhc-quick-pills-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.zvhc-quick-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  background: #FAF5F7;
+  border: 1px solid #F0D9E2;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2B1B24;
+}
+.zvhc-quick-pill svg {
+  flex-shrink: 0;
+}
+
+/* Size & Formula Selectors */
+.zvhc-size-btn,
+.zvhc-formula-btn {
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+  background: #FAF0F4;
+  border: 1.5px solid #F0D3DE;
+}
+.zvhc-size-btn.is-active,
+.zvhc-formula-btn.is-active {
+  border-color: var(--zvhc-t01-accent-rose, #B0476E);
+  background: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(176, 71, 110, 0.12);
+}
+
+/* Guarantee Card */
+.zvhc-guarantee-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.zvhc-guarantee-card:hover {
+  box-shadow: 0 4px 14px rgba(43, 27, 36, 0.06);
+}
+
 /* T01 BUNDLE CARDS (.kc-tier) */
 .zvhc-bundle-group {
   display: flex;
