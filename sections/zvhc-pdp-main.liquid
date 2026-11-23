@@ -14,7 +14,21 @@
 {% endfor %}
 
 {% comment %} Calculate initial tier prices dynamically from actual product variants {% endcomment %}
-{% if product.variants.size >= 3 %}
+{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+  {% assign tier1_price = '$39.99' %}
+  {% assign tier1_compare = '$80.00' %}
+  {% assign tier1_num = 39.99 %}
+
+  {% assign tier2_price = '$79.98' %}
+  {% assign tier2_compare = '$160.00' %}
+  {% assign tier2_num = 79.98 %}
+
+  {% assign tier3_price = '$95.99' %}
+  {% assign tier3_compare = '$240.00' %}
+  {% assign tier3_num = 95.99 %}
+
+  {% assign default_cta_price = '$79.98' %}
+{% elsif product.variants.size >= 3 %}
   {% assign tier1_price = product.variants[0].price | money %}
   {% assign tier1_compare = product.variants[0].compare_at_price | money %}
   {% assign tier1_num = product.variants[0].price | divided_by: 100.0 %}
@@ -83,7 +97,7 @@
     {% assign upsell_price_num = 39.99 %}
     {% assign upsell_vid = '68580229218489' %}
 
-  {% when 'zvhc-batana-hair-growth-oil' %}
+  {% when 'zvhc-batana-hair-growth-oil', 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
     {% assign p_short_title = 'Pure Batana Hair & Scalp Oil' %}
     {% assign p_spec_label = 'Pure Raw Unrefined | 60 ml / 2 fl oz' %}
     {% assign p_container = 'Bottle' %}
@@ -283,7 +297,7 @@
         
         <!-- Trustpilot Reviews Row (User Spec: 4.6-4.9 stars, 12,401-32,000 reviews) -->
         {%- case product.handle -%}
-          {%- when 'zvhc-batana-hair-growth-oil' -%}
+          {%- when 'zvhc-batana-hair-growth-oil', 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
             {%- assign tp_rating = '4.9' -%}
             {%- assign tp_reviews = '28,490' -%}
           {%- when 'zvhc-raw-batana-scalp-balm' -%}

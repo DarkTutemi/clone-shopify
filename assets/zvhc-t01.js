@@ -139,7 +139,7 @@
       var name = (typeof opt === 'string' ? opt : (opt.name || '')).toLowerCase();
       if (name === 'shade' || name === 'color') {
         shadeOptPos = idx + 1; // 1-based index (option1, option2...)
-      } else if (name === 'treatment course' || name === 'title' || name === 'quantity' || name === 'pack') {
+      } else if (name === 'treatment course' || name === 'title' || name === 'quantity' || name === 'pack' || name === 'bundle') {
         tierOptPos = idx + 1;
       }
     });
