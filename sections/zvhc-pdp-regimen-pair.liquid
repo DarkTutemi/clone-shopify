@@ -1,0 +1,156 @@
+{% comment %}
+  ZAVELYN HAIR CARE — Regimen Complementary Pairing Builder
+  Recommends the authentic clinical sister product for a complete ritual
+{% endcomment %}
+
+{%- case product.handle -%}
+  {%- when 'zvhc-batana-hair-growth-oil' -%}
+    {%- assign pair_handle = 'zvhc-raw-batana-scalp-balm' -%}
+    {%- assign pair_name = 'Nourishing Batana Scalp Balm' -%}
+    {%- assign pair_spec = '20g Metal Tin · Solid-to-Oil Balm' -%}
+    {%- assign pair_step = 'Step 2 · Targeted Edge & Scalp Barrier Seal' -%}
+    {%- assign pair_desc = 'Lock in liquid batana nutrients with concentrated solid butter on delicate hairlines and dry patches.' -%}
+    {%- assign pair_price = '$19.99' -%}
+    {%- assign pair_vid = '68580229677241' -%}
+    {%- assign pair_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' -%}
+
+  {%- when 'zvhc-keratin-hair-building-fibers' -%}
+    {%- assign pair_handle = 'zvhc-precision-hairline-compact' -%}
+    {%- assign pair_name = 'Hairline Shadow Touch-Up Compact' -%}
+    {%- assign pair_spec = '4g Compact · Dual-Mirror Applicator' -%}
+    {%- assign pair_step = 'Step 1 · Precision Edge & Temple Definition' -%}
+    {%- assign pair_desc = 'Use the pressed powder puff for ultra-sharp hairline framing before shaking keratin fibers across crown thinning.' -%}
+    {%- assign pair_price = '$24.99' -%}
+    {%- assign pair_vid = '68580492705977' -%}
+    {%- assign pair_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256808781854155-hero.jpg?v=1795264431' -%}
+
+  {%- when 'zvhc-precision-hairline-compact' -%}
+    {%- assign pair_handle = 'zvhc-keratin-hair-building-fibers' -%}
+    {%- assign pair_name = 'Keratin Hair Building Fibers' -%}
+    {%- assign pair_spec = '100g Eco-Pouch · Electrostatic Keratin' -%}
+    {%- assign pair_step = 'Step 2 · Crown & Partline Density Fill' -%}
+    {%- assign pair_desc = 'Pair crisp temple line contouring with full-crown fiber density for completely undetectable 360° coverage.' -%}
+    {%- assign pair_price = '$34.99' -%}
+    {%- assign pair_vid = '68580492312761' -%}
+    {%- assign pair_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811885406846-hero.jpg?v=1795264423' -%}
+
+  {%- when 'zvhc-root-lift-styling-powder' -%}
+    {%- assign pair_handle = 'zvhc-batana-hair-growth-oil' -%}
+    {%- assign pair_name = 'Pure Honduran Batana Scalp Oil' -%}
+    {%- assign pair_spec = '60ml Amber Glass Dropper' -%}
+    {%- assign pair_step = 'PM Step · Overnight Nutrient Restorative' -%}
+    {%- assign pair_desc = 'After washing out daytime volumizing powder, feed follicles overnight with cold-pressed unrefined batana lipids.' -%}
+    {%- assign pair_price = '$39.99' -%}
+    {%- assign pair_vid = '68580229218489' -%}
+    {%- assign pair_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' -%}
+
+  {%- when 'zvhc-raw-batana-scalp-balm' -%}
+    {%- assign pair_handle = 'zvhc-batana-hair-growth-oil' -%}
+    {%- assign pair_name = 'Pure Honduran Batana Scalp Oil' -%}
+    {%- assign pair_spec = '60ml Dropper · Lightweight Liquid Lipid' -%}
+    {%- assign pair_step = 'Full Scalp Coverage · Liquid Penetration' -%}
+    {%- assign pair_desc = 'Distribute liquid oil across all scalp zones with precision dropper, then seal temple edges with solid balm.' -%}
+    {%- assign pair_price = '$39.99' -%}
+    {%- assign pair_vid = '68580229218489' -%}
+    {%- assign pair_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' -%}
+
+  {%- when 'zvhc-botanical-curl-cream' -%}
+    {%- assign pair_handle = 'zvhc-batana-hair-growth-oil' -%}
+    {%- assign pair_name = 'Pure Honduran Batana Scalp Oil' -%}
+    {%- assign pair_spec = '60ml Dropper · Cast-Break Lipid' -%}
+    {%- assign pair_step = 'Scrunch Out The Crunch (SOTC)' -%}
+    {%- assign pair_desc = 'Smooth 2 drops of Batana Oil over dry curl cast to soften definition into touchable, high-gloss bounce.' -%}
+    {%- assign pair_price = '$39.99' -%}
+    {%- assign pair_vid = '68580229218489' -%}
+    {%- assign pair_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' -%}
+
+  {%- when 'zvhc-7-in-1-growth-elixir' -%}
+    {%- assign pair_handle = 'zvhc-batana-deep-conditioning-hair-mask' -%}
+    {%- assign pair_name = 'Batana Deep Conditioning Hair Mask' -%}
+    {%- assign pair_spec = '120g Tub · 15-Minute Rinse Treatment' -%}
+    {%- assign pair_step = 'Weekly Reset · Cuticle Repair' -%}
+    {%- assign pair_desc = 'Deeply replenish moisture with our lipid hair mask once weekly, followed by daily multi-oil follicle stimulation.' -%}
+    {%- assign pair_price = '$29.99' -%}
+    {%- assign pair_vid = '68581026038073' -%}
+    {%- assign pair_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-p08-hair-mask-hero.jpg?v=1795350352' -%}
+
+  {%- else -%}
+    {%- assign pair_handle = 'zvhc-batana-hair-growth-oil' -%}
+    {%- assign pair_name = 'Pure Honduran Batana Scalp Oil' -%}
+    {%- assign pair_spec = '60ml Dropper Bottle' -%}
+    {%- assign pair_step = 'Core Botanical Foundation' -%}
+    {%- assign pair_desc = 'Our hero cold-pressed unrefined batana lipid oil to revitalize dull roots and seal damaged split cuticles.' -%}
+    {%- assign pair_price = '$39.99' -%}
+    {%- assign pair_vid = '68580229218489' -%}
+    {%- assign pair_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' -%}
+{%- endcase -%}
+
+<section class="zvhc-editorial-section zvhc-regimen-pair-section" style="padding: 64px 0; background: var(--zvhc-t01-bg, #FAF6F8); border-top: 1px solid var(--zvhc-t01-border, #EAD7DD);">
+  <div class="zvhc-container">
+    <div style="background: #FFFFFF; border-radius: 16px; border: 1px solid var(--zvhc-t01-border, #EAD7DD); padding: 36px 32px; box-shadow: 0 4px 20px rgba(43,27,36,0.04);">
+      <div style="display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center;" class="zvhc-pair-grid">
+        <!-- Product Thumbnail -->
+        <div style="width: 120px; height: 120px; border-radius: 12px; overflow: hidden; border: 1px solid var(--zvhc-t01-border, #EAD7DD); background: #FAF6F8; flex-shrink: 0;">
+          <img src="{{ pair_img }}" alt="{{ pair_name }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+        </div>
+
+        <!-- Copy Details -->
+        <div>
+          <div style="font-size: 0.75rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;">
+            PERFECT RITUAL COMPANION · {{ pair_step }}
+          </div>
+          <h3 class="zvhc-h3" style="font-size: 1.25rem; margin-bottom: 4px; color: var(--zvhc-t01-text-main, #2B1B24);">{{ pair_name }}</h3>
+          <div style="font-size: 0.85rem; color: var(--zvhc-t01-text-muted, #5A4651); font-weight: 600; margin-bottom: 8px;">{{ pair_spec }}</div>
+          <p style="font-size: 0.9rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.5; margin: 0; max-width: 600px;">
+            {{ pair_desc }}
+          </p>
+        </div>
+
+        <!-- Action / Buy Box -->
+        <div style="text-align: right; flex-shrink: 0;" class="zvhc-pair-cta">
+          <div style="font-size: 1.4rem; font-weight: 800; color: var(--zvhc-t01-text-main, #2B1B24); margin-bottom: 8px;">{{ pair_price }}</div>
+          <button 
+            type="button" 
+            class="zvhc-btn-secondary" 
+            style="width: 100%; min-width: 170px; padding: 12px 20px; font-size: 0.85rem; font-weight: 800;"
+            onclick="zvhcQuickAddVariant('{{ pair_vid }}', this)"
+          >
+            + ADD TO RITUAL
+          </button>
+          <div style="margin-top: 6px;">
+            <a href="/products/{{ pair_handle }}" style="font-size: 0.78rem; color: var(--zvhc-t01-accent-rose, #B0476E); font-weight: 700; text-decoration: underline;">
+              View Full Details →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function zvhcQuickAddVariant(vid, btn) {
+  if (!vid) return;
+  const originalText = btn.textContent;
+  btn.textContent = 'ADDING...';
+  btn.disabled = true;
+
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ id: vid, quantity: 1 })
+  })
+  .then(res => res.json())
+  .then(data => {
+    btn.textContent = '✓ ADDED';
+    setTimeout(() => {
+      window.location.href = '/cart';
+    }, 400);
+  })
+  .catch(err => {
+    console.error('Error adding pair item:', err);
+    btn.textContent = originalText;
+    btn.disabled = false;
+  });
+}
+</script>

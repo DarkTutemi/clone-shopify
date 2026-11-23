@@ -1,0 +1,37 @@
+SKU,Handle,Option_1_Shade,Tier_Index,Tier_Label,Variant_ID,Item_Price,Total_Cart_Value,Eligible_Free_Shipping_69_99,Remaining_For_Free_Shipping,Add_To_Cart_Test
+P01,zvhc-batana-hair-growth-oil,Default,1,1 Dropper Bottle (60ml),68580229218489,$39.99,$39.99,FALSE,$30.00,PASS
+P01,zvhc-batana-hair-growth-oil,Default,2,2 Dropper Bottles (60ml),68580229251257,$69.99,$69.99,TRUE,$0.00,PASS
+P01,zvhc-batana-hair-growth-oil,Default,3,3 Dropper Bottles (60ml),68580229284025,$89.99,$89.99,TRUE,$0.00,PASS
+P02,zvhc-keratin-hair-building-fibers,Black,1,1 Pouch (100g),68580492312761,$34.99,$34.99,FALSE,$35.00,PASS
+P02,zvhc-keratin-hair-building-fibers,Black,2,2 Pouches (100g),68580492345529,$59.99,$59.99,FALSE,$10.00,PASS
+P02,zvhc-keratin-hair-building-fibers,Black,3,3 Pouches (100g),68580492378297,$79.99,$79.99,TRUE,$0.00,PASS
+P02,zvhc-keratin-hair-building-fibers,Dark Brown,1,1 Pouch (100g),68580492411065,$34.99,$34.99,FALSE,$35.00,PASS
+P02,zvhc-keratin-hair-building-fibers,Dark Brown,2,2 Pouches (100g),68580492443833,$59.99,$59.99,FALSE,$10.00,PASS
+P02,zvhc-keratin-hair-building-fibers,Dark Brown,3,3 Pouches (100g),68580492476601,$79.99,$79.99,TRUE,$0.00,PASS
+P02,zvhc-keratin-hair-building-fibers,Medium Brown,1,1 Pouch (100g),68580492509369,$34.99,$34.99,FALSE,$35.00,PASS
+P02,zvhc-keratin-hair-building-fibers,Medium Brown,2,2 Pouches (100g),68580492542137,$59.99,$59.99,FALSE,$10.00,PASS
+P02,zvhc-keratin-hair-building-fibers,Medium Brown,3,3 Pouches (100g),68580492574905,$79.99,$79.99,TRUE,$0.00,PASS
+P03,zvhc-root-lift-styling-powder,Default,1,1 Bottle (10g),68580492050617,$24.99,$24.99,FALSE,$45.00,PASS
+P03,zvhc-root-lift-styling-powder,Default,2,2 Bottles (10g),68580492083385,$44.99,$44.99,FALSE,$25.00,PASS
+P03,zvhc-root-lift-styling-powder,Default,3,3 Bottles (10g),68580492116153,$59.99,$59.99,FALSE,$10.00,PASS
+P04,zvhc-precision-hairline-compact,Black,1,1 Compact (4g),68580492705977,$24.99,$24.99,FALSE,$45.00,PASS
+P04,zvhc-precision-hairline-compact,Black,2,2 Compacts (4g),68580492738745,$44.99,$44.99,FALSE,$25.00,PASS
+P04,zvhc-precision-hairline-compact,Black,3,3 Compacts (4g),68580492771513,$59.99,$59.99,FALSE,$10.00,PASS
+P04,zvhc-precision-hairline-compact,Dark Brown,1,1 Compact (4g),68580492804281,$24.99,$24.99,FALSE,$45.00,PASS
+P04,zvhc-precision-hairline-compact,Dark Brown,2,2 Compacts (4g),68580492837049,$44.99,$44.99,FALSE,$25.00,PASS
+P04,zvhc-precision-hairline-compact,Dark Brown,3,3 Compacts (4g),68580492869817,$59.99,$59.99,FALSE,$10.00,PASS
+P04,zvhc-precision-hairline-compact,Medium Brown,1,1 Compact (4g),68580492902585,$24.99,$24.99,FALSE,$45.00,PASS
+P04,zvhc-precision-hairline-compact,Medium Brown,2,2 Compacts (4g),68580492935353,$44.99,$44.99,FALSE,$25.00,PASS
+P04,zvhc-precision-hairline-compact,Medium Brown,3,3 Compacts (4g),68580492968121,$59.99,$59.99,FALSE,$10.00,PASS
+P05,zvhc-raw-batana-scalp-balm,Default,1,1 Tin (20g),68580229677241,$19.99,$19.99,FALSE,$50.00,PASS
+P05,zvhc-raw-batana-scalp-balm,Default,2,2 Tins (20g),68580229710009,$34.99,$34.99,FALSE,$35.00,PASS
+P05,zvhc-raw-batana-scalp-balm,Default,3,3 Tins (20g),68580229742777,$44.99,$44.99,FALSE,$25.00,PASS
+P06,zvhc-botanical-curl-cream,Default,1,1 Bottle (100ml),68580493033657,$24.99,$24.99,FALSE,$45.00,PASS
+P06,zvhc-botanical-curl-cream,Default,2,2 Bottles (100ml),68580493066425,$44.99,$44.99,FALSE,$25.00,PASS
+P06,zvhc-botanical-curl-cream,Default,3,3 Bottles (100ml),68580493099193,$59.99,$59.99,FALSE,$10.00,PASS
+P07,zvhc-7-in-1-growth-elixir,Default,1,1 Dropper Bottle (60ml),68580229447865,$39.99,$39.99,FALSE,$30.00,PASS
+P07,zvhc-7-in-1-growth-elixir,Default,2,2 Dropper Bottles (60ml),68580229480633,$69.99,$69.99,TRUE,$0.00,PASS
+P07,zvhc-7-in-1-growth-elixir,Default,3,3 Dropper Bottles (60ml),68580229513401,$89.99,$89.99,TRUE,$0.00,PASS
+P08,zvhc-batana-deep-conditioning-hair-mask,Default,1,1 Jar (120g),68581026038073,$29.99,$29.99,FALSE,$40.00,PASS
+P08,zvhc-batana-deep-conditioning-hair-mask,Default,2,2 Jars (120g),68581026070841,$54.99,$54.99,FALSE,$15.00,PASS
+P08,zvhc-batana-deep-conditioning-hair-mask,Default,3,3 Jars (120g),68581026103609,$74.99,$74.99,TRUE,$0.00,PASS

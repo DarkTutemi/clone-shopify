@@ -1,0 +1,64 @@
+{% comment %}
+  ZAVELYN HAIR CARE — Texture & High-Slip Lipid Profile (Bespoke for P05 Balm & P08 Mask)
+{% endcomment %}
+<section class="zvhc-texture-macro-section" style="padding: 72px 0; background: #FFFFFF; border-top: 1px solid var(--zvhc-t01-border, #EAD7DD); border-bottom: 1px solid var(--zvhc-t01-border, #EAD7DD);">
+  <div class="zvhc-container">
+    <div style="text-align: center; max-width: 680px; margin: 0 auto 48px;">
+      <div style="font-size: 0.78rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px;">LIPID ARCHITECTURE</div>
+      {% if product.handle == 'zvhc-raw-batana-scalp-balm' %}
+        <h2 class="zvhc-h2">Solid-To-Oil Thermal Transition</h2>
+        <p style="color: var(--zvhc-t01-text-muted, #5A4651); font-size: 0.95rem; line-height: 1.6;">
+          Engineered as a concentrated anhydrous butter that melts at body temperature (~35°C / 95°F) into a golden emollient oil for mess-free targeted barrier protection.
+        </p>
+      {% else %}
+        <h2 class="zvhc-h2">High-Slip Lipid Immersion</h2>
+        <p style="color: var(--zvhc-t01-text-muted, #5A4651); font-size: 0.95rem; line-height: 1.6;">
+          A rich, velvety masque emulsion combining Honduran Batana, raw Coconut, and Camellia oils to coat hair cuticles with restorative lipids and eliminate comb snagging.
+        </p>
+      {% endif %}
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      <!-- Fact 1 -->
+      <div style="background: #FAF7F2; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 14px; padding: 26px;">
+        <div style="font-size: 1.5rem; margin-bottom: 12px;">💧</div>
+        <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--zvhc-t01-text-main, #2B1B24); margin-bottom: 8px;">Oleic &amp; Linoleic Ratio</h3>
+        <p style="font-size: 0.88rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.5; margin: 0;">
+          Over 50% unsaturated fatty acids that slip between lifted cuticle shingles, restoring flexible hydrophobicity to parched fibers.
+        </p>
+      </div>
+
+      <!-- Fact 2 -->
+      <div style="background: #FAF7F2; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 14px; padding: 26px;">
+        <div style="font-size: 1.5rem; margin-bottom: 12px;">🛡️</div>
+        {% if product.handle == 'zvhc-raw-batana-scalp-balm' %}
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--zvhc-t01-text-main, #2B1B24); margin-bottom: 8px;">Beeswax Protective Film</h3>
+          <p style="font-size: 0.88rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.5; margin: 0;">
+            Creates a semi-breathable moisture shield that drastically retards transepidermal water loss (TEWL) across fragile scalp skin and edges.
+          </p>
+        {% else %}
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--zvhc-t01-text-main, #2B1B24); margin-bottom: 8px;">Cationic Static Neutralizer</h3>
+          <p style="font-size: 0.88rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.5; margin: 0;">
+            Positively charged conditioning molecules bind to negative damage sites along the fiber, instantly flattening raised scales for mirror-like shine.
+          </p>
+        {% endif %}
+      </div>
+
+      <!-- Fact 3 -->
+      <div style="background: #FAF7F2; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 14px; padding: 26px;">
+        <div style="font-size: 1.5rem; margin-bottom: 12px;">🌿</div>
+        <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--zvhc-t01-text-main, #2B1B24); margin-bottom: 8px;">Clean Botanical Lipid Standard</h3>
+        <p style="font-size: 0.88rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.5; margin: 0;">
+          Free from parabens, phthalates, artificial dyes, and harsh sulfates. Respects hair fiber integrity and cutaneous scalp health.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ZVHC Texture Macro",
+  "settings": []
+}
+{% endschema %}

@@ -8,12 +8,20 @@
       "type": "zvhc-pdp-marquee",
       "settings": {}
     },
-    "package": {
-      "type": "zvhc-pdp-package",
+    "texture_macro": {
+      "type": "zvhc-pdp-texture-macro",
       "settings": {}
     },
     "how_it_works": {
       "type": "zvhc-pdp-how-it-works",
+      "settings": {}
+    },
+    "package": {
+      "type": "zvhc-pdp-package",
+      "settings": {}
+    },
+    "regimen_pair": {
+      "type": "zvhc-pdp-regimen-pair",
       "settings": {}
     },
     "reviews": {
@@ -32,8 +40,10 @@
   "order": [
     "main",
     "marquee",
-    "package",
+    "texture_macro",
     "how_it_works",
+    "package",
+    "regimen_pair",
     "reviews",
     "faq",
     "shipping"

@@ -27,12 +27,20 @@
           </a>
         </div>
         
-        <!-- Botanical Formulation Line -->
-        <div style="display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--zvhc-t01-border, #EAD7DD); padding-top: 20px;">
-          <div class="zvhc-stars" style="color: var(--zvhc-t01-star-gold, #E0A33A);">★★★★★</div>
-          <div style="font-size: 0.88rem; font-weight: 600; color: var(--zvhc-t01-text-muted, #5A4651);">
-            Pure Honduran Batana &amp; Bioactive Plant Lipids · Clean Cosmetic Formulation
-          </div>
+        <!-- Botanical Formulation Line with Trustpilot -->
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--zvhc-t01-border, #EAD7DD); padding-top: 20px;">
+          <span class="zvhc-tp-brand" aria-label="Trustpilot" style="display: inline-flex; align-items: center;">
+            <svg class="zvhc-tp-brand-svg" width="76" height="17" viewBox="0 0 224 48" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.8 2.6 29.2 14l12.3 1.4-9.1 8.2 2.6 12.1-11.2-6.4-11.2 6.4 2.6-12.1-9.1-8.2L18.4 14 23.8 2.6Z" fill="#00B67A"></path>
+              <path d="m32.4 23.6-8.6 5.7 11.2 6.4-2.6-12.1Z" fill="#005128" opacity=".55"></path>
+              <text x="51" y="33" fill="#111827" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="-1.2">Trustpilot</text>
+            </svg>
+          </span>
+          <span class="zvhc-tp-stars" aria-hidden="true" style="display: inline-flex; align-items: center;">
+            {% render 'trustpilot-stars', width: 92, height: 17 %}
+          </span>
+          <span class="zvhc-tp-score" style="font-weight: 800; color: #111827; font-size: 0.95rem;">4.9</span>
+          <span style="font-size: 0.88rem; font-weight: 600; color: var(--zvhc-t01-text-muted, #5A4651);">(28,490+ reviews) · Pure Botanical Scalp &amp; Strand Therapy</span>
         </div>
       </div>
 

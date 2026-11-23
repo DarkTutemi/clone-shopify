@@ -577,3 +577,21 @@
   margin: 0 auto;
   gap: 12px;
 }
+
+/* Bespoke Modular Sections Responsive Styles */
+@media (max-width: 768px) {
+  .zvhc-pair-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+  .zvhc-pair-grid > div:first-child {
+    margin: 0 auto;
+  }
+  .zvhc-pair-cta {
+    text-align: center !important;
+    width: 100%;
+  }
+  .zvhc-pair-cta .zvhc-btn-secondary {
+    width: 100% !important;
+  }
+}
