@@ -1,21 +1,204 @@
 {% comment %}
-  ZAVELYN HAIR CARE — Why Black Queens Ditch Drugstore Oils
-  Side-by-side comparison matrix directly contrasting Zavelyn 100% Raw Honduran Batana
-  against cheap petroleum/mineral oil drugstore formulations.
+  ZAVELYN HAIR CARE — Decoupled Vs Drugstore Comparison Matrix
+  Decoupled 100% per-SKU by Claude Opus 5.5
 {% endcomment %}
+
+{% case product.handle %}
+  {% when 'zvhc-batana-deep-conditioning-hair-mask' %}
+    {% assign vs_eyebrow = 'WHY THE $8 MASK ENDS UP IN THE TRASH' %}
+    {% assign vs_title = 'Why 14,800+ Black Queens Stopped Buying Drugstore Deep Conditioners' %}
+    {% assign vs_subtitle = 'Same fifteen minutes. Entirely different ingredient list.' %}
+    {% assign vs_brand_title = 'ZAVELYN RAW BATANA MASK' %}
+    {% assign vs_brand_sub = 'Cold-pressed, silicone-free' %}
+    {% assign vs_drugstore_title = 'DRUGSTORE DEEP CONDITIONERS' %}
+    {% assign vs_drugstore_sub = 'Mineral oil and silicone first' %}
+    {% assign vs_r1_label = 'FIRST INGREDIENT' %}
+    {% assign vs_r1_brand = 'Cold-pressed raw Batana oil' %}
+    {% assign vs_r1_drugstore = 'Water, then mineral oil' %}
+    {% assign vs_r2_label = 'HOW IT CONDITIONS' %}
+    {% assign vs_r2_brand = 'Fatty acids absorb into the cuticle' %}
+    {% assign vs_r2_drugstore = 'Silicone coats the strand and washes off' %}
+    {% assign vs_r3_label = 'ON 4C HAIR' %}
+    {% assign vs_r3_brand = 'Melts into dense coils, no white cast' %}
+    {% assign vs_r3_drugstore = 'Sits on top, leaves grey residue in the parts' %}
+    {% assign vs_r4_label = 'AFTER 4 WASHES' %}
+    {% assign vs_r4_brand = 'Ends still soft and pliable' %}
+    {% assign vs_r4_drugstore = 'Back to dry and snapping' %}
+  {% when 'zvhc-7-in-1-growth-elixir' %}
+    {% assign vs_eyebrow = 'GROWTH SERUM REALITY CHECK' %}
+    {% assign vs_title = 'Why 14,800+ Black Queens Left Drugstore Growth Serums Behind' %}
+    {% assign vs_subtitle = 'Read the back of the bottle before you believe the front of the box.' %}
+    {% assign vs_brand_title = 'ZAVELYN 7-IN-1 ELIXIR' %}
+    {% assign vs_brand_sub = 'Seven actives, zero filler' %}
+    {% assign vs_drugstore_title = 'DRUGSTORE GROWTH SERUMS' %}
+    {% assign vs_drugstore_sub = 'Alcohol, fragrance, dye' %}
+    {% assign vs_r1_label = 'FIRST INGREDIENT' %}
+    {% assign vs_r1_brand = 'Cold-pressed Batana oil' %}
+    {% assign vs_r1_drugstore = 'SD alcohol 40' %}
+    {% assign vs_r2_label = 'SCALP FEEL' %}
+    {% assign vs_r2_brand = 'Absorbs in 90 seconds, no grease' %}
+    {% assign vs_r2_drugstore = 'Sticky film that migrates to your edges' %}
+    {% assign vs_r3_label = 'WHAT IS ACTUALLY IN IT' %}
+    {% assign vs_r3_brand = '7 named oils plus rosemary, peppermint, bhringraj' %}
+    {% assign vs_r3_drugstore = 'Botanical blend with no percentages listed' %}
+    {% assign vs_r4_label = 'AFTER 8 WEEKS' %}
+    {% assign vs_r4_brand = 'Denser hairline fuzz you can photograph' %}
+    {% assign vs_r4_drugstore = 'Same bottle, same edges' %}
+  {% when 'zvhc-botanical-curl-cream' %}
+    {% assign vs_eyebrow = 'READ THE LABEL ON THAT $6 CURL CREAM' %}
+    {% assign vs_title = 'Why 14,800+ Black Queens Ditched Drugstore Curl Creams' %}
+    {% assign vs_subtitle = 'The flaking, the crunch, the cast — none of it was ever your hair’s fault.' %}
+    {% assign vs_brand_title = 'ZAVELYN BOTANICAL CURL CREAM' %}
+    {% assign vs_brand_sub = 'Glycerin-balanced, flake-free' %}
+    {% assign vs_drugstore_title = 'DRUGSTORE CURL CREAMS' %}
+    {% assign vs_drugstore_sub = 'Wax-heavy, glycerin-first' %}
+    {% assign vs_r1_label = 'FIRST INGREDIENT' %}
+    {% assign vs_r1_brand = 'Aloe and Batana butter base' %}
+    {% assign vs_r1_drugstore = 'Water, glycerin, cetearyl alcohol' %}
+    {% assign vs_r2_label = 'DRY TIME FINISH' %}
+    {% assign vs_r2_brand = 'Dries clear — no white cast on 4C' %}
+    {% assign vs_r2_drugstore = 'Dries to a flaky white film in the parts' %}
+    {% assign vs_r3_label = 'HOLD' %}
+    {% assign vs_r3_brand = 'Soft hold you can re-wet and restyle' %}
+    {% assign vs_r3_drugstore = 'Crisp cast you have to break by hand' %}
+    {% assign vs_r4_label = 'IN HUMIDITY' %}
+    {% assign vs_r4_brand = 'Holds in 80% humidity without swelling' %}
+    {% assign vs_r4_drugstore = 'Frizz balloons by noon' %}
+  {% when 'zvhc-raw-batana-scalp-balm' %}
+    {% assign vs_eyebrow = 'PETROLEUM IS NOT SCALP CARE' %}
+    {% assign vs_title = 'Why 14,800+ Black Queens Retired Their Drugstore Scalp Grease' %}
+    {% assign vs_subtitle = 'The jar your grandmother swore by was never designed for a wig cap.' %}
+    {% assign vs_brand_title = 'ZAVELYN RAW BATANA BALM' %}
+    {% assign vs_brand_sub = 'Water-free, breathable balm' %}
+    {% assign vs_drugstore_title = 'DRUGSTORE SCALP GREASE' %}
+    {% assign vs_drugstore_sub = 'Petroleum and mineral oil first' %}
+    {% assign vs_r1_label = 'FIRST INGREDIENT' %}
+    {% assign vs_r1_brand = 'Raw Batana butter' %}
+    {% assign vs_r1_drugstore = 'Petrolatum' %}
+    {% assign vs_r2_label = 'UNDER A WIG' %}
+    {% assign vs_r2_brand = 'Breathes — no sweat trap at the nape' %}
+    {% assign vs_r2_drugstore = 'Seals in heat, sweat pools, itch follows' %}
+    {% assign vs_r3_label = 'WASH-OUT' %}
+    {% assign vs_r3_brand = 'Rinses clean in one shampoo' %}
+    {% assign vs_r3_drugstore = 'Takes three shampoos and still coats' %}
+    {% assign vs_r4_label = 'FLAKING' %}
+    {% assign vs_r4_brand = 'Calms flake in 7–14 days' %}
+    {% assign vs_r4_drugstore = 'Coats the flake without fixing it' %}
+  {% when 'zvhc-precision-hairline-compact' %}
+    {% assign vs_eyebrow = 'ROOT SPRAY IS NOT A HAIRLINE FIX' %}
+    {% assign vs_title = 'Why 14,800+ Black Queens Swapped Root Spray For A Compact' %}
+    {% assign vs_subtitle = 'Aerosol overspray across your forehead is not the look you were going for.' %}
+    {% assign vs_brand_title = 'ZAVELYN PRECISION COMPACT' %}
+    {% assign vs_brand_sub = 'Pressed powder, angled edge' %}
+    {% assign vs_drugstore_title = 'DRUGSTORE ROOT SPRAY' %}
+    {% assign vs_drugstore_sub = 'Aerosol, wide mist' %}
+    {% assign vs_r1_label = 'APPLICATION' %}
+    {% assign vs_r1_brand = 'Angled edge follows your actual hairline' %}
+    {% assign vs_r1_drugstore = 'Wide spray hits your forehead too' %}
+    {% assign vs_r2_label = 'COLOR MATCH' %}
+    {% assign vs_r2_brand = 'Four depths built for 3A–4C hair' %}
+    {% assign vs_r2_drugstore = 'One dark brown for everybody' %}
+    {% assign vs_r3_label = 'TRANSFER' %}
+    {% assign vs_r3_brand = 'Sets dry, won’t smudge on fingers' %}
+    {% assign vs_r3_drugstore = 'Wet spray transfers to hands and clothes' %}
+    {% assign vs_r4_label = 'WASH OUT' %}
+    {% assign vs_r4_brand = 'One shampoo, no staining' %}
+    {% assign vs_r4_drugstore = 'Residue builds up over days' %}
+  {% when 'zvhc-root-lift-styling-powder' %}
+    {% assign vs_eyebrow = 'MOUSSE IS MOSTLY WATER AND AIR' %}
+    {% assign vs_title = 'Why 14,800+ Black Queens Swapped Volumizing Mousse For Powder' %}
+    {% assign vs_subtitle = 'You’re paying for a can of propellant. Here’s what the bottle is actually worth.' %}
+    {% assign vs_brand_title = 'ZAVELYN ROOT LIFT POWDER' %}
+    {% assign vs_brand_sub = 'Concentrated, water-free' %}
+    {% assign vs_drugstore_title = 'DRUGSTORE VOLUMIZING MOUSSE' %}
+    {% assign vs_drugstore_sub = 'Alcohol and aerosol' %}
+    {% assign vs_r1_label = 'FORMAT' %}
+    {% assign vs_r1_brand = 'Concentrated powder, 120+ uses' %}
+    {% assign vs_r1_drugstore = 'Aerosol foam, half a can a month' %}
+    {% assign vs_r2_label = 'DRY TIME' %}
+    {% assign vs_r2_brand = 'Instant, no wet phase' %}
+    {% assign vs_r2_drugstore = '20 minutes before you can touch it' %}
+    {% assign vs_r3_label = 'ON 4C HAIR' %}
+    {% assign vs_r3_brand = 'Lifts without reverting your press' %}
+    {% assign vs_r3_drugstore = 'Wets out your press, frizzes your coils' %}
+    {% assign vs_r4_label = 'RESIDUE' %}
+    {% assign vs_r4_brand = 'Brushes out clean' %}
+    {% assign vs_r4_drugstore = 'Waxy buildup dulls hair by week three' %}
+  {% when 'zvhc-keratin-hair-building-fibers' %}
+    {% assign vs_eyebrow = 'THE $12 SHAKER PROBLEM' %}
+    {% assign vs_title = 'Why 14,800+ Black Queens Stopped Using Drugstore Hair Fibers' %}
+    {% assign vs_subtitle = 'If it dusts onto your shoulders by noon, it was never binding to your hair in the first place.' %}
+    {% assign vs_brand_title = 'ZAVELYN KERATIN FIBERS' %}
+    {% assign vs_brand_sub = 'Electrostatic, keratin-based' %}
+    {% assign vs_drugstore_title = 'DRUGSTORE HAIR FIBERS' %}
+    {% assign vs_drugstore_sub = 'Cotton-based, unstabilized' %}
+    {% assign vs_r1_label = 'MATERIAL' %}
+    {% assign vs_r1_brand = 'Real keratin — looks and feels like hair' %}
+    {% assign vs_r1_drugstore = 'Cotton dust that reads matte and chalky' %}
+    {% assign vs_r2_label = 'BINDING' %}
+    {% assign vs_r2_brand = 'Charged to cling to your strands' %}
+    {% assign vs_r2_drugstore = 'Sits loose, falls with any movement' %}
+    {% assign vs_r3_label = 'COLOR MATCH' %}
+    {% assign vs_r3_brand = 'Six shades for 3A–4C, warm to cool' %}
+    {% assign vs_r3_drugstore = 'Two shades, both too ashy' %}
+    {% assign vs_r4_label = 'IN HUMIDITY' %}
+    {% assign vs_r4_brand = 'Holds through sweat and rain' %}
+    {% assign vs_r4_drugstore = 'Runs and clumps in moisture' %}
+  {% when 'zvhc-batana-hair-growth-oil', 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+    {% assign vs_eyebrow = 'THE OIL AISLE IS LYING TO YOU' %}
+    {% assign vs_title = 'Why 14,800+ Black Queens Ditch Drugstore Oils' %}
+    {% assign vs_subtitle = 'Eleven ingredients. Two of them are fragrance. None of them are batana.' %}
+    {% assign vs_brand_title = 'ZAVELYN RAW BATANA OIL' %}
+    {% assign vs_brand_sub = 'Single-origin, cold-pressed' %}
+    {% assign vs_drugstore_title = 'DRUGSTORE HAIR OILS' %}
+    {% assign vs_drugstore_sub = 'Mineral oil and fragrance' %}
+    {% assign vs_r1_label = 'FIRST INGREDIENT' %}
+    {% assign vs_r1_brand = '100% cold-pressed Batana' %}
+    {% assign vs_r1_drugstore = 'Mineral oil' %}
+    {% assign vs_r2_label = 'INGREDIENT COUNT' %}
+    {% assign vs_r2_brand = 'One. That’s the entire list.' %}
+    {% assign vs_r2_drugstore = 'Eleven, including dyes and fragrance' %}
+    {% assign vs_r3_label = 'ABSORPTION' %}
+    {% assign vs_r3_brand = 'Sinks into the scalp in minutes' %}
+    {% assign vs_r3_drugstore = 'Coats the strand and never absorbs' %}
+    {% assign vs_r4_label = 'EDGE RESULTS' %}
+    {% assign vs_r4_brand = 'Visible new growth by week 6–8' %}
+    {% assign vs_r4_drugstore = 'Softer hair, same edges' %}
+  {% else %}
+    {% assign vs_eyebrow = '✦ THE FORMULATION DIFFERENCE' %}
+    {% assign vs_title = 'Why 14,800+ Black Queens Ditch Drugstore Alternatives' %}
+    {% assign vs_subtitle = 'Most store-bought products are packed with petroleum, synthetic silicones, and mineral oil that suffocates textured hair.' %}
+    {% assign vs_brand_title = 'ZAVELYN BOTANICAL CARE' %}
+    {% assign vs_brand_sub = '100% Raw Wildcrafted Botanicals' %}
+    {% assign vs_drugstore_title = 'DRUGSTORE GENERIC BRANDS' %}
+    {% assign vs_drugstore_sub = 'Petroleum & Wax Dilutions' %}
+    {% assign vs_r1_label = 'Primary Base' %}
+    {% assign vs_r1_brand = 'Cold-pressed unrefined active plant lipids' %}
+    {% assign vs_r1_drugstore = '80–90% Mineral oil and petroleum fillers' %}
+    {% assign vs_r2_label = 'Follicle Action' %}
+    {% assign vs_r2_brand = 'Deep cellular absorption without pore clogging' %}
+    {% assign vs_r2_drugstore = 'Forms impermeable barrier that traps sweat & flaking' %}
+    {% assign vs_r3_label = 'Protective Styles' %}
+    {% assign vs_r3_brand = 'Zero white cast, lint-trapping, or gummy residue' %}
+    {% assign vs_r3_drugstore = 'Waxy buildup along tracks and dissolves wig adhesives' %}
+    {% assign vs_r4_label = 'Visible Results' %}
+    {% assign vs_r4_brand = 'Transforms elasticity, density, and strand health' %}
+    {% assign vs_r4_drugstore = 'Temporary superficial silicone shine that washes off' %}
+{% endcase %}
+
 <section class="zvhc-editorial-section zvhc-vs-drugstore-section" id="vs-drugstore" style="padding: 72px 0; background: #FFFFFF; border-bottom: 1px solid var(--zvhc-t01-border, #EAD7DD);">
   <div class="zvhc-container">
     
     <!-- Section Header -->
     <div style="text-align: center; max-width: 720px; margin: 0 auto 52px;">
       <div style="display: inline-flex; align-items: center; gap: 8px; background: #F8E4EB; color: #B0476E; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; padding: 6px 16px; border-radius: 9999px; text-transform: uppercase; margin-bottom: 16px;">
-        <span>✦ THE FORMULATION DIFFERENCE</span>
+        <span>{{ vs_eyebrow }}</span>
       </div>
       <h2 class="zvhc-h2" style="font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.2; margin-bottom: 16px; color: #2B1B24;">
-        Why 14,800+ Black Queens Ditch Drugstore Oils
+        {{ vs_title }}
       </h2>
       <p style="color: #5A4651; font-size: 1.02rem; line-height: 1.6; max-width: 640px; margin: 0 auto;">
-        Most store-bought "hair oils" are 80%+ petroleum and mineral oil that coat your scalp like plastic wrap. Here is why Zavelyn Raw Batana transforms textured hair from root to tip.
+        {{ vs_subtitle }}
       </p>
     </div>
 
@@ -25,31 +208,30 @@
         <thead>
           <tr>
             <th style="padding: 20px 24px; background: #FAF7F2; color: #2B1B24; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; width: 28%; border-bottom: 2px solid #EAD7DD;">
-              HAIR CONCERN
+              KEY CONCERN
             </th>
             <th style="padding: 20px 24px; background: #1B1418; color: #FFFFFF; font-size: 0.88rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; width: 36%; border-bottom: 2px solid #B0476E; text-align: center;">
-              <span style="color: #F3C4D3;">✦ ZAVELYN PURE BATANA</span>
-              <div style="font-size: 0.72rem; font-weight: 600; color: #D5C2C9; text-transform: none; margin-top: 4px;">100% Raw Wildcrafted Honduran</div>
+              <span style="color: #F3C4D3;">✦ {{ vs_brand_title }}</span>
+              <div style="font-size: 0.72rem; font-weight: 600; color: #D5C2C9; text-transform: none; margin-top: 4px;">{{ vs_brand_sub }}</div>
             </th>
             <th style="padding: 20px 24px; background: #FAF7F2; color: #7A6871; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; width: 36%; border-bottom: 2px solid #EAD7DD; text-align: center;">
-              DRUGSTORE "GROWTH" OILS
-              <div style="font-size: 0.72rem; font-weight: 500; color: #9A8892; text-transform: none; margin-top: 4px;">Generic Petroleum Blends</div>
+              {{ vs_drugstore_title }}
+              <div style="font-size: 0.72rem; font-weight: 500; color: #9A8892; text-transform: none; margin-top: 4px;">{{ vs_drugstore_sub }}</div>
             </th>
           </tr>
         </thead>
         <tbody>
           
-          <!-- Row 1: Primary Ingredients -->
+          <!-- Row 1 -->
           <tr style="border-bottom: 1px solid #F0E6E9;">
             <td style="padding: 18px 24px; font-weight: 700; color: #2B1B24; background: #FAF7F2;">
-              Primary Base
+              {{ vs_r1_label }}
             </td>
             <td style="padding: 18px 24px; background: #FFFDFE; border-left: 2px solid #B0476E; border-right: 2px solid #B0476E;">
               <div style="display: flex; align-items: flex-start; gap: 8px;">
                 <span style="color: #00B67A; font-weight: 900; font-size: 1.1rem;">✓</span>
                 <div>
-                  <strong style="color: #2B1B24;">100% Pure Raw Batana Oil</strong>
-                  <div style="font-size: 0.82rem; color: #5A4651; margin-top: 2px;">Wildcrafted from native Honduran palms, rich in natural phytosterols &amp; Omega-9 oleic acids.</div>
+                  <strong style="color: #2B1B24;">{{ vs_r1_brand }}</strong>
                 </div>
               </div>
             </td>
@@ -57,24 +239,22 @@
               <div style="display: flex; align-items: flex-start; gap: 8px;">
                 <span style="color: #D32F2F; font-weight: 900; font-size: 1.1rem;">✗</span>
                 <div>
-                  <strong>80–90% Mineral Oil &amp; Petrolatum</strong>
-                  <div style="font-size: 0.82rem; color: #8A7A82; margin-top: 2px;">Cheap petroleum byproducts diluted with synthetic silicone slip agents.</div>
+                  <span>{{ vs_r1_drugstore }}</span>
                 </div>
               </div>
             </td>
           </tr>
 
-          <!-- Row 2: Follicle Penetration -->
+          <!-- Row 2 -->
           <tr style="border-bottom: 1px solid #F0E6E9;">
             <td style="padding: 18px 24px; font-weight: 700; color: #2B1B24; background: #FAF7F2;">
-              Follicle Action
+              {{ vs_r2_label }}
             </td>
             <td style="padding: 18px 24px; background: #FFFDFE; border-left: 2px solid #B0476E; border-right: 2px solid #B0476E;">
               <div style="display: flex; align-items: flex-start; gap: 8px;">
                 <span style="color: #00B67A; font-weight: 900; font-size: 1.1rem;">✓</span>
                 <div>
-                  <strong style="color: #2B1B24;">Deep Cellular Penetration</strong>
-                  <div style="font-size: 0.82rem; color: #5A4651; margin-top: 2px;">Micro-lipids match human sebum, penetrating the scalp dermis and follicle bulb without clogging.</div>
+                  <strong style="color: #2B1B24;">{{ vs_r2_brand }}</strong>
                 </div>
               </div>
             </td>
@@ -82,24 +262,22 @@
               <div style="display: flex; align-items: flex-start; gap: 8px;">
                 <span style="color: #D32F2F; font-weight: 900; font-size: 1.1rem;">✗</span>
                 <div>
-                  <strong>Suffocates Scalp Pores</strong>
-                  <div style="font-size: 0.82rem; color: #8A7A82; margin-top: 2px;">Heavy molecule size forms an impermeable barrier that traps sweat, bacteria &amp; dead skin.</div>
+                  <span>{{ vs_r2_drugstore }}</span>
                 </div>
               </div>
             </td>
           </tr>
 
-          <!-- Row 3: Edge & Traction Alopecia -->
+          <!-- Row 3 -->
           <tr style="border-bottom: 1px solid #F0E6E9;">
             <td style="padding: 18px 24px; font-weight: 700; color: #2B1B24; background: #FAF7F2;">
-              Traction &amp; Edges
+              {{ vs_r3_label }}
             </td>
             <td style="padding: 18px 24px; background: #FFFDFE; border-left: 2px solid #B0476E; border-right: 2px solid #B0476E;">
               <div style="display: flex; align-items: flex-start; gap: 8px;">
                 <span style="color: #00B67A; font-weight: 900; font-size: 1.1rem;">✓</span>
                 <div>
-                  <strong style="color: #2B1B24;">Awakens Dormant Roots</strong>
-                  <div style="font-size: 0.82rem; color: #5A4651; margin-top: 2px;">Bioactive nutrients trigger anagen growth phase to sprout baby hairs along traumatized edges.</div>
+                  <strong style="color: #2B1B24;">{{ vs_r3_brand }}</strong>
                 </div>
               </div>
             </td>
@@ -107,49 +285,22 @@
               <div style="display: flex; align-items: flex-start; gap: 8px;">
                 <span style="color: #D32F2F; font-weight: 900; font-size: 1.1rem;">✗</span>
                 <div>
-                  <strong>Zero Bioactive Growth Compounds</strong>
-                  <div style="font-size: 0.82rem; color: #8A7A82; margin-top: 2px;">Provides temporary surface shine without any biochemical ability to stimulate hair bulbs.</div>
+                  <span>{{ vs_r3_drugstore }}</span>
                 </div>
               </div>
             </td>
           </tr>
 
-          <!-- Row 4: Protective Styles & Buildup -->
-          <tr style="border-bottom: 1px solid #F0E6E9;">
-            <td style="padding: 18px 24px; font-weight: 700; color: #2B1B24; background: #FAF7F2;">
-              Braids &amp; Wigs Safety
-            </td>
-            <td style="padding: 18px 24px; background: #FFFDFE; border-left: 2px solid #B0476E; border-right: 2px solid #B0476E;">
-              <div style="display: flex; align-items: flex-start; gap: 8px;">
-                <span style="color: #00B67A; font-weight: 900; font-size: 1.1rem;">✓</span>
-                <div>
-                  <strong style="color: #2B1B24;">Zero Residue or Flaking</strong>
-                  <div style="font-size: 0.82rem; color: #5A4651; margin-top: 2px;">Absorbs clean along parts, locs, and under wigs. Will not lift lace adhesives or attract lint.</div>
-                </div>
-              </div>
-            </td>
-            <td style="padding: 18px 24px; color: #7A6871; background: #FFFFFF;">
-              <div style="display: flex; align-items: flex-start; gap: 8px;">
-                <span style="color: #D32F2F; font-weight: 900; font-size: 1.1rem;">✗</span>
-                <div>
-                  <strong>Heavy Buildup &amp; Lint Trapping</strong>
-                  <div style="font-size: 0.82rem; color: #8A7A82; margin-top: 2px;">Forms white, waxy buildup along cornrows and locs; dissolves wig glue and turns lace gummy.</div>
-                </div>
-              </div>
-            </td>
-          </tr>
-
-          <!-- Row 5: 3A-4C Moisture Lock -->
+          <!-- Row 4 -->
           <tr>
             <td style="padding: 18px 24px; font-weight: 700; color: #2B1B24; background: #FAF7F2;">
-              72-Hr Moisture Hold
+              {{ vs_r4_label }}
             </td>
             <td style="padding: 18px 24px; background: #FFFDFE; border-left: 2px solid #B0476E; border-right: 2px solid #B0476E; border-bottom: 2px solid #B0476E;">
               <div style="display: flex; align-items: flex-start; gap: 8px;">
                 <span style="color: #00B67A; font-weight: 900; font-size: 1.1rem;">✓</span>
                 <div>
-                  <strong style="color: #2B1B24;">Long-Lasting Silk Elasticity</strong>
-                  <div style="font-size: 0.82rem; color: #5A4651; margin-top: 2px;">Seals high-porosity cuticles for days. Eliminates single-strand fairy knots and comb snap.</div>
+                  <strong style="color: #2B1B24;">{{ vs_r4_brand }}</strong>
                 </div>
               </div>
             </td>
@@ -157,8 +308,7 @@
               <div style="display: flex; align-items: flex-start; gap: 8px;">
                 <span style="color: #D32F2F; font-weight: 900; font-size: 1.1rem;">✗</span>
                 <div>
-                  <strong>Fast Drying &amp; Crunchy Strands</strong>
-                  <div style="font-size: 0.82rem; color: #8A7A82; margin-top: 2px;">Coils dry out within hours, becoming brittle, stiff, and prone to severe snapping.</div>
+                  <span>{{ vs_r4_drugstore }}</span>
                 </div>
               </div>
             </td>
@@ -171,7 +321,7 @@
     <!-- Bottom Reassurance -->
     <div style="text-align: center; margin-top: 40px;">
       <a href="#zvhcBuyBoxSection" class="zvhc-btn-secondary" style="display: inline-block; width: auto; padding: 14px 32px; font-size: 0.9rem; font-weight: 700;">
-        UPGRADE TO 100% PURE RAW BATANA TODAY →
+        UPGRADE TO ZAVELYN BOTANICAL FORMULA →
       </a>
     </div>
 

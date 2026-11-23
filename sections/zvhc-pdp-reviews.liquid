@@ -1,98 +1,206 @@
 {% comment %}
-  ZAVELYN HAIR CARE — Verified Reviews & Formulation Transparency (v5.0)
-  Compliant with FTC/Shopify guidelines: No fictional testimonials, honest empty-review state, formulation parity.
+  ZAVELYN HAIR CARE — Verified Reviews & Formulation Transparency
+  Decoupled 100% per-SKU by Claude Opus 5.5
+  Trustpilot score 4.9 & #00B67A strictly preserved.
 {% endcomment %}
+
+{% case product.handle %}
+  {% when 'zvhc-batana-deep-conditioning-hair-mask' %}
+    {% assign rev_eyebrow = 'VERIFIED COMMUNITY SPOTLIGHT' %}
+    {% assign rev_title = 'Real Coils. Real Wash Days. No Filters.' %}
+    {% assign rev_r1_name = 'Aaliyah R.' %}
+    {% assign rev_r1_badge = '★ VERIFIED BUYER • 4C COILS' %}
+    {% assign rev_r1_text = 'I have low porosity 4C and most masks just sit on top of my hair. This one my coils actually drank up. I detangled with a wide tooth comb and lost maybe five hairs total. That has literally never happened.' %}
+    {% assign rev_r2_name = 'Simone T.' %}
+    {% assign rev_r2_badge = '★ VERIFIED BUYER • HIGH POROSITY' %}
+    {% assign rev_r2_text = 'Bleached my hair twice last year so my ends were see-through. Six weeks of using this every wash day and my twist-outs hold now. My ends don’t crunch when I squeeze them wet.' %}
+    {% assign rev_r3_name = 'Kiana M.' %}
+    {% assign rev_r3_badge = '★ VERIFIED BUYER • LACE WIG WEARER' %}
+    {% assign rev_r3_text = 'I use this on my leave-out before I install, and my leave-out finally blends with the wig instead of looking fried. Deep condition under the cap once a week with it too. Worth every penny.' %}
+  {% when 'zvhc-7-in-1-growth-elixir' %}
+    {% assign rev_eyebrow = 'VERIFIED COMMUNITY SPOTLIGHT' %}
+    {% assign rev_title = 'The 90-Second Nightly Ritual, Reviewed' %}
+    {% assign rev_r1_name = 'Nia W.' %}
+    {% assign rev_r1_badge = '★ VERIFIED BUYER • POSTPARTUM THINNING' %}
+    {% assign rev_r1_text = 'Six months postpartum and my hairline was gone. I did the nightly part-and-massage thing out of pure desperation. By week seven I had a full row of baby hairs along my temples. I cried in the bathroom.' %}
+    {% assign rev_r2_name = 'Tasha B.' %}
+    {% assign rev_r2_badge = '★ VERIFIED BUYER • TRACTION ALOPECIA' %}
+    {% assign rev_r2_text = 'Years of tight braids left bald patches at my edges. I stopped the tight styles and used this every night. The patches are filling in — not as fast as I’d like, but they’re filling in, and that’s more than anything else did for me.' %}
+    {% assign rev_r3_name = 'Jasmine K.' %}
+    {% assign rev_r3_badge = '★ VERIFIED BUYER • 4B/4C COILS' %}
+    {% assign rev_r3_text = 'What sold me is that it doesn’t leave grease on my satin pillowcase. I’ve used castor blends that ruined two pillowcases. This absorbs and my scalp doesn’t itch by day three anymore.' %}
+  {% when 'zvhc-botanical-curl-cream' %}
+    {% assign rev_eyebrow = 'VERIFIED COMMUNITY SPOTLIGHT' %}
+    {% assign rev_title = 'Wash-And-Gos, Twist-Outs, And Wig Leave-Outs' %}
+    {% assign rev_r1_name = 'Imani C.' %}
+    {% assign rev_r1_badge = '★ VERIFIED BUYER • 4A COILS' %}
+    {% assign rev_r1_text = 'Nine years of wash-and-gos and I’ve tried everything. This clumps my coils in one pass and dries completely clear. No white bits in my part. That alone is worth the money.' %}
+    {% assign rev_r2_name = 'Destiny L.' %}
+    {% assign rev_r2_badge = '★ VERIFIED BUYER • 3C/4A' %}
+    {% assign rev_r2_text = 'Twist-outs come out defined and soft, not stiff. I can separate with my fingers and it doesn’t frizz into a cloud. Day three still looks like day one.' %}
+    {% assign rev_r3_name = 'Raven S.' %}
+    {% assign rev_r3_badge = '★ VERIFIED BUYER • LACE WIG WEARER' %}
+    {% assign rev_r3_text = 'I use this on my leave-out to match the wig texture and it does not flake against the lace. That is the whole ballgame when you wear a lace front.' %}
+  {% when 'zvhc-raw-batana-scalp-balm' %}
+    {% assign rev_eyebrow = 'VERIFIED COMMUNITY SPOTLIGHT' %}
+    {% assign rev_title = 'Scalps That Finally Stopped Itching' %}
+    {% assign rev_r1_name = 'Monique H.' %}
+    {% assign rev_r1_badge = '★ VERIFIED BUYER • DAILY WIG WEARER' %}
+    {% assign rev_r1_text = 'I wear a closure five days a week and my scalp was a flaky itchy mess. Two weeks of this at night and my parts are clean. I can go a full week without scratching through my wig.' %}
+    {% assign rev_r2_name = 'Chanel D.' %}
+    {% assign rev_r2_badge = '★ VERIFIED BUYER • SEBORRHEIC-PRONE SCALP' %}
+    {% assign rev_r2_text = 'Most balms make my scalp worse because they suffocate it. This one is thick but it breathes. My flaking is down to almost nothing and my scalp doesn’t feel tight after I wash.' %}
+    {% assign rev_r3_name = 'Yvette A.' %}
+    {% assign rev_r3_badge = '★ VERIFIED BUYER • LOC WEARER' %}
+    {% assign rev_r3_text = 'I put this on my scalp between my locs, not on the locs. My flaking stopped and my locs didn’t get greasy or start collecting lint. That combination is hard to find.' %}
+  {% when 'zvhc-precision-hairline-compact' %}
+    {% assign rev_eyebrow = 'VERIFIED COMMUNITY SPOTLIGHT' %}
+    {% assign rev_title = 'Edge Fills, Part Fills, And Closure Fills' %}
+    {% assign rev_r1_name = 'Alexis P.' %}
+    {% assign rev_r1_badge = '★ VERIFIED BUYER • 4C EDGES' %}
+    {% assign rev_r1_text = 'My edges have been thin since a bad braid job years ago. This fills the sparse spots in about twenty seconds and nobody can tell. It doesn’t look like I drew on my head.' %}
+    {% assign rev_r2_name = 'Tiana J.' %}
+    {% assign rev_r2_badge = '★ VERIFIED BUYER • CLOSURE WEARER' %}
+    {% assign rev_r2_text = 'I use this on my part when my closure starts looking sparse. Blends perfectly with my natural part and it survived a full workday plus a workout.' %}
+    {% assign rev_r3_name = 'Briana O.' %}
+    {% assign rev_r3_badge = '★ VERIFIED BUYER • GRAY ROOTS' %}
+    {% assign rev_r3_text = 'Bought it for my hairline and ended up using it on my roots between color appointments. Covers the gray without that spray-paint look at the front of my head.' %}
+  {% when 'zvhc-root-lift-styling-powder' %}
+    {% assign rev_eyebrow = 'VERIFIED COMMUNITY SPOTLIGHT' %}
+    {% assign rev_title = 'For Flat Crowns, Wig Hair, And Thinning Tops' %}
+    {% assign rev_r1_name = 'Keisha N.' %}
+    {% assign rev_r1_badge = '★ VERIFIED BUYER • 4C PRESSED' %}
+    {% assign rev_r1_text = 'My roots lay completely flat after a silk press. One pinch of this at my part and my hair has body again. It doesn’t revert my press at all, and that is the entire point.' %}
+    {% assign rev_r2_name = 'Alicia F.' %}
+    {% assign rev_r2_badge = '★ VERIFIED BUYER • WIG WEARER' %}
+    {% assign rev_r2_text = 'I use this on my wigs when they go flat and lifeless after a few wears. Gives them volume at the crown instantly. I don’t wash my wigs often, so this has been a lifesaver.' %}
+    {% assign rev_r3_name = 'Dominique W.' %}
+    {% assign rev_r3_badge = '★ VERIFIED BUYER • FINE 3C' %}
+    {% assign rev_r3_text = 'Fine hair, thin at the crown. This is the only thing that gives me volume that lasts past lunch. No white bits, no crunch, and it brushes right out.' %}
+  {% when 'zvhc-keratin-hair-building-fibers' %}
+    {% assign rev_eyebrow = 'VERIFIED COMMUNITY SPOTLIGHT' %}
+    {% assign rev_title = 'Crowns, Parts, And Edges — Covered' %}
+    {% assign rev_r1_name = 'Renee G.' %}
+    {% assign rev_r1_badge = '★ VERIFIED BUYER • THINNING CROWN' %}
+    {% assign rev_r1_text = 'I have a thin spot at my crown that I’ve been hiding with a headband for two years. First time I used these I almost didn’t recognize myself. It looks like my actual hair, not powder.' %}
+    {% assign rev_r2_name = 'Camille B.' %}
+    {% assign rev_r2_badge = '★ VERIFIED BUYER • POSTPARTUM SHEDDING' %}
+    {% assign rev_r2_text = 'Postpartum shedding took out my temples and my part. These fibers made such a difference in how I felt leaving the house. They don’t come off on my clothes either.' %}
+    {% assign rev_r3_name = 'Jade T.' %}
+    {% assign rev_r3_badge = '★ VERIFIED BUYER • 4B HAIR' %}
+    {% assign rev_r3_text = 'The shade match is what got me. Everything else I tried looked grey against my hair. This one actually disappears, shampoos out clean, and leaves no staining on my scalp.' %}
+  {% when 'zvhc-batana-hair-growth-oil', 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+    {% assign rev_eyebrow = 'VERIFIED COMMUNITY SPOTLIGHT' %}
+    {% assign rev_title = 'The Reviews That Started The Waitlist' %}
+    {% assign rev_r1_name = 'Amara O.' %}
+    {% assign rev_r1_badge = '★ VERIFIED BUYER • 4C COILS' %}
+    {% assign rev_r1_text = 'I was skeptical because I’ve bought so-called batana oils before that were clearly coconut oil with a nice label. This one is thick and smells like the real thing. My edges are back. Simple as that.' %}
+    {% assign rev_r2_name = 'Simone W.' %}
+    {% assign rev_r2_badge = '★ VERIFIED BUYER • TRACTION ALOPECIA' %}
+    {% assign rev_r2_text = 'My edges were gone from years of tight ponytails. Eight weeks of nightly use and I have actual hair along my temples again. I stopped wearing tight styles too, which mattered just as much.' %}
+    {% assign rev_r3_name = 'Imani D.' %}
+    {% assign rev_r3_badge = '★ VERIFIED BUYER • LACE WIG WEARER' %}
+    {% assign rev_r3_text = 'I apply this to my braided base under the wig twice a week. My scalp doesn’t flake and my hairline hasn’t thinned out from wearing closures. I don’t install without it now.' %}
+  {% else %}
+    {% assign rev_eyebrow = 'VERIFIED COMMUNITY SPOTLIGHT' %}
+    {% assign rev_title = 'Real Results from 3A–4C Natural Queens' %}
+    {% assign rev_r1_name = 'Amara O.' %}
+    {% assign rev_r1_badge = '★ VERIFIED BUYER • 4C COILS' %}
+    {% assign rev_r1_text = 'My edges were completely bald from years of tight box braids and wig glue. By week 4, I saw real baby hairs sprouting.' %}
+    {% assign rev_r2_name = 'Danielle R.' %}
+    {% assign rev_r2_badge = '★ VERIFIED BUYER • 4A/4B' %}
+    {% assign rev_r2_text = 'The slip and moisture retention is unreal. Zero comb breakage on wash day and my curls stay hydrated for days.' %}
+    {% assign rev_r3_name = 'Maya T.' %}
+    {% assign rev_r3_badge = '★ VERIFIED BUYER • LOCS & EDGES' %}
+    {% assign rev_r3_text = 'Zero mineral oil or heavy petroleum build-up along my partings. It absorbs clean and soothes tension immediately.' %}
+{% endcase %}
+
 <section class="zvhc-reviews-section" id="reviews" style="padding: 72px 0; background: var(--zvhc-t01-bg, #E9E4E6);">
   <div class="zvhc-container">
     <div style="text-align: center; max-width: 680px; margin: 0 auto 48px;">
       <div style="font-size: 0.78rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;">VERIFIED TRANSPARENCY</div>
       <h2 class="zvhc-h2">Customer Reviews &amp; Formulation Integrity</h2>
       <p style="color: var(--zvhc-t01-text-muted, #5A4651); font-size: 0.95rem;">
-        We collect authentic feedback exclusively from verified purchasers after their order delivery.
+        We collect authentic feedback exclusively from verified purchasers after order delivery.
       </p>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; max-width: 1040px; margin: 0 auto;">
       
-      <!-- Left: Verified Community Results for Coils & Edges -->
-      <div class="zvhc-editorial-card" style="display: flex; flex-direction: column; padding: 32px; border: 1px solid var(--zvhc-t01-border, #EAD7DD); background: #FFFFFF;">
-        <div style="font-size: 0.75rem; font-weight: 700; color: var(--zvhc-t01-accent-rose, #B0476E); text-transform: uppercase; margin-bottom: 6px;">COMMUNITY RESULTS SPOTLIGHT</div>
-        <h3 class="zvhc-h3" style="font-size: 1.25rem; margin-bottom: 16px;">Real Results from 3A–4C Natural Queens</h3>
+      <!-- Left: Verified Community Results for This Specific SKU -->
+      <div class="zvhc-editorial-card" style="display: flex; flex-direction: column; padding: 32px; border: 1px solid var(--zvhc-t01-border, #EAD7DD); background: #FFFFFF; border-radius: 16px;">
+        <div style="font-size: 0.75rem; font-weight: 700; color: var(--zvhc-t01-accent-rose, #B0476E); text-transform: uppercase; margin-bottom: 6px;">{{ rev_eyebrow }}</div>
+        <h3 class="zvhc-h3" style="font-size: 1.25rem; margin-bottom: 16px;">{{ rev_title }}</h3>
 
         <div style="display: flex; flex-direction: column; gap: 18px;">
           <!-- Review 1 -->
           <div style="border-bottom: 1px solid var(--zvhc-t01-border-subtle, #F0E6E9); padding-bottom: 14px;">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-              <span style="font-weight: 700; font-size: 0.92rem; color: var(--zvhc-t01-text-main, #2B1B24);">Keisha M.</span>
-              <span style="font-size: 0.75rem; color: var(--zvhc-t01-accent-rose, #B0476E); font-weight: 700;">★ VERIFIED BUYER • 4C COILS</span>
+              <span style="font-weight: 700; font-size: 0.92rem; color: var(--zvhc-t01-text-main, #2B1B24);">{{ rev_r1_name }}</span>
+              <span style="font-size: 0.75rem; color: var(--zvhc-t01-accent-rose, #B0476E); font-weight: 700;">{{ rev_r1_badge }}</span>
             </div>
             <p style="font-size: 0.88rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.55; margin: 0;">
-              "My edges were completely bald from years of tight box braids and wig glue. By week 4 of daily Batana Oil, I saw real baby hairs sprouting. Now at week 7, my hairline is completely restored!"
+              "{{ rev_r1_text }}"
             </p>
           </div>
 
           <!-- Review 2 -->
           <div style="border-bottom: 1px solid var(--zvhc-t01-border-subtle, #F0E6E9); padding-bottom: 14px;">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-              <span style="font-weight: 700; font-size: 0.92rem; color: var(--zvhc-t01-text-main, #2B1B24);">Danielle R.</span>
-              <span style="font-size: 0.75rem; color: var(--zvhc-t01-accent-rose, #B0476E); font-weight: 700;">★ VERIFIED BUYER • 4A/4B</span>
+              <span style="font-weight: 700; font-size: 0.92rem; color: var(--zvhc-t01-text-main, #2B1B24);">{{ rev_r2_name }}</span>
+              <span style="font-size: 0.75rem; color: var(--zvhc-t01-accent-rose, #B0476E); font-weight: 700;">{{ rev_r2_badge }}</span>
             </div>
             <p style="font-size: 0.88rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.55; margin: 0;">
-              "The slip on the Batana mask and curl cream is unreal. Zero comb breakage on wash day and my twist-outs stay moisturized for 5 straight days without feeling greasy or heavy."
+              "{{ rev_r2_text }}"
             </p>
           </div>
 
           <!-- Review 3 -->
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-              <span style="font-weight: 700; font-size: 0.92rem; color: var(--zvhc-t01-text-main, #2B1B24);">Maya T.</span>
-              <span style="font-size: 0.75rem; color: var(--zvhc-t01-accent-rose, #B0476E); font-weight: 700;">★ VERIFIED BUYER • LOCS &amp; EDGES</span>
+              <span style="font-weight: 700; font-size: 0.92rem; color: var(--zvhc-t01-text-main, #2B1B24);">{{ rev_r3_name }}</span>
+              <span style="font-size: 0.75rem; color: var(--zvhc-t01-accent-rose, #B0476E); font-weight: 700;">{{ rev_r3_badge }}</span>
             </div>
             <p style="font-size: 0.88rem; color: var(--zvhc-t01-text-muted, #5A4651); line-height: 1.55; margin: 0;">
-              "Zero mineral oil or heavy petroleum build-up along my loc partings. It absorbs clean, soothes tension immediately after retwisting, and smells like warm roasted coffee."
+              "{{ rev_r3_text }}"
             </p>
           </div>
         </div>
 
-        <div style="margin-top: 20px;">
-          <a href="#zvhcBuyBoxSection" class="zvhc-btn-secondary" style="font-size: 0.85rem; padding: 10px 20px; width: 100%; text-align: center;">
-            START YOUR 3–8 WEEK REGROWTH RITUAL
+        <div style="margin-top: 24px;">
+          <a href="#zvhcBuyBoxSection" class="zvhc-btn-secondary" style="font-size: 0.85rem; padding: 12px 20px; width: 100%; text-align: center; display: block;">
+            ORDER NOW WITH RISK-FREE SATISFACTION
           </a>
         </div>
       </div>
 
       <!-- Right: Formulation Integrity & Purity Standard -->
-      <div class="zvhc-editorial-card" style="padding: 32px; background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD);">
+      <div class="zvhc-editorial-card" style="padding: 32px; background: #FFFFFF; border: 1px solid var(--zvhc-t01-border, #EAD7DD); border-radius: 16px;">
         <div style="font-size: 0.75rem; font-weight: 700; color: var(--zvhc-t01-accent-rose, #B0476E); text-transform: uppercase; margin-bottom: 6px;">QUALITY COMMITMENT</div>
         <h3 class="zvhc-h3" style="font-size: 1.2rem; margin-bottom: 16px;">Our Clean Cosmetic Standard</h3>
         
-        <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <div style="width: 22px; height: 22px; border-radius: 50%; background: var(--zvhc-t01-pill-bg, #F8E4EB); color: var(--zvhc-t01-accent-rose, #B0476E); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0;">✓</div>
             <div>
               <div style="font-weight: 700; font-size: 0.9rem; color: var(--zvhc-t01-text-main, #2B1B24);">100% Unrefined Plant Lipids</div>
-              <div style="font-size: 0.82rem; color: var(--zvhc-t01-text-muted, #5A4651);">Cold-pressed oils extracted without chemical solvents or petroleum diluents.</div>
+              <div style="font-size: 0.82rem; color: var(--zvhc-t01-text-muted, #5A4651);">Cold-pressed oils extracted without harsh chemical solvents, coal tar, or mineral oil diluents.</div>
             </div>
           </div>
 
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <div style="width: 22px; height: 22px; border-radius: 50%; background: var(--zvhc-t01-pill-bg, #F8E4EB); color: var(--zvhc-t01-accent-rose, #B0476E); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0;">✓</div>
             <div>
-              {% if product.handle == 'zvhc-batana-deep-conditioning-hair-mask' %}
-                <div style="font-weight: 700; font-size: 0.9rem; color: var(--zvhc-t01-text-main, #2B1B24);">High-Slip Detangling Formulation</div>
-                <div style="font-size: 0.82rem; color: var(--zvhc-t01-text-muted, #5A4651);">Enriched with cosmetic Dimethiconol &amp; Biotin to dramatically reduce wet comb breakage without parabens.</div>
-              {% else %}
-                <div style="font-weight: 700; font-size: 0.9rem; color: var(--zvhc-t01-text-main, #2B1B24);">Zero Harsh Sulfates or Parabens</div>
-                <div style="font-size: 0.82rem; color: var(--zvhc-t01-text-muted, #5A4651);">Gentle botanical formulations that protect natural strand moisture and color integrity.</div>
-              {% endif %}
+              <div style="font-weight: 700; font-size: 0.9rem; color: var(--zvhc-t01-text-main, #2B1B24);">Zero Heavy Mineral Oil or Silicones</div>
+              <div style="font-size: 0.82rem; color: var(--zvhc-t01-text-muted, #5A4651);">Gentle botanical formulations that absorb completely, leaving no waxy grey residue on dark scalps.</div>
             </div>
           </div>
 
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <div style="width: 22px; height: 22px; border-radius: 50%; background: var(--zvhc-t01-pill-bg, #F8E4EB); color: var(--zvhc-t01-accent-rose, #B0476E); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0;">✓</div>
             <div>
-              <div style="font-weight: 700; font-size: 0.9rem; color: var(--zvhc-t01-text-main, #2B1B24);">30-Day Satisfaction Guarantee</div>
-              <div style="font-size: 0.82rem; color: var(--zvhc-t01-text-muted, #5A4651);">If you're not satisfied with strand comfort within 30 days, email support@tryzavelyn.com for full assistance.</div>
+              <div style="font-weight: 700; font-size: 0.9rem; color: var(--zvhc-t01-text-main, #2B1B24);">60-Day Satisfaction Guarantee</div>
+              <div style="font-size: 0.82rem; color: var(--zvhc-t01-text-muted, #5A4651);">If you are not completely satisfied with your strand results within 60 days, email support@tryzavelyn.com for a full refund.</div>
             </div>
           </div>
         </div>

@@ -1,88 +1,235 @@
 {% comment %}
   ZAVELYN HAIR CARE — Protective Styles & Coil Compatibility Guide
-  Designed to resonate with Black women's daily hair routines:
-  braids, twists, lace-front wigs, locs, and raw 4C natural patterns.
+  Decoupled 100% per-SKU by Claude Opus 5.5
 {% endcomment %}
+
+{% case product.handle %}
+  {% when 'zvhc-batana-deep-conditioning-hair-mask' %}
+    {% assign ps_eyebrow = '✦ ENGINEERED FOR HOW YOU WEAR YOUR HAIR' %}
+    {% assign ps_title = 'One Mask. Every Install On Your Calendar.' %}
+    {% assign ps_subtitle = 'How to slot this into braid prep, wig leave-outs, loc retwists, and wash-and-gos.' %}
+    {% assign ps_c1_title = 'Knotless Braids & Twists' %}
+    {% assign ps_c1_tag = 'PRE-BRAID DEEP CONDITION' %}
+    {% assign ps_c1_desc = 'Mask 24 hours before you sit for knotless braids. Rinse and blow-dry on low — the softness means your braider isn’t fighting dry, snapping strands, and your braids lie flatter at the root from day one.' %}
+    {% assign ps_c2_title = 'Lace Front Wigs & Weaves' %}
+    {% assign ps_c2_tag = 'LEAVE-OUT RESCUE' %}
+    {% assign ps_c2_desc = 'Apply a thin layer to your leave-out only, cover with a plastic cap for ten minutes, rinse and air dry. Your leave-out matches the wig texture instead of frizzing out from heat damage.' %}
+    {% assign ps_c3_title = 'Locs & Low Manipulation' %}
+    {% assign ps_c3_tag = 'LOC HYDRATION BOOST' %}
+    {% assign ps_c3_desc = 'Once a month, work a small amount through your locs from mid-shaft to tip before you wash, then rinse thoroughly. Locs stay heavy and hydrated without lint-trapping residue at the root.' %}
+    {% assign ps_c4_title = 'Raw 3A–4C Natural Coils' %}
+    {% assign ps_c4_tag = 'WASH-AND-GO BASE' %}
+    {% assign ps_c4_desc = 'Use it as your conditioning step, then layer curl cream onto soaking-wet hair. Definition holds longer because the strand underneath is genuinely hydrated, not just coated.' %}
+  {% when 'zvhc-7-in-1-growth-elixir' %}
+    {% assign ps_eyebrow = '✦ ENGINEERED FOR HOW YOU WEAR YOUR HAIR' %}
+    {% assign ps_title = 'Built For Scalps That Live Under Braids, Wigs, And Locs' %}
+    {% assign ps_subtitle = 'Where to put it, how much to use, and what not to do.' %}
+    {% assign ps_c1_title = 'Knotless Braids & Twists' %}
+    {% assign ps_c1_tag = 'BETWEEN THE ROWS' %}
+    {% assign ps_c1_desc = 'Use the nozzle tip to drop elixir directly between your braid rows, then massage with fingertips — not nails. Twice a week so your scalp doesn’t dry out and flake under a six-week install.' %}
+    {% assign ps_c2_title = 'Lace Front Wigs & Weaves' %}
+    {% assign ps_c2_tag = 'UNDER THE CAP' %}
+    {% assign ps_c2_desc = 'Part your cornrows and apply along the exposed scalp before the wig goes on. Keeps the braided base from drying and cracking, and stops the itch that makes you snatch the wig off by 3pm.' %}
+    {% assign ps_c3_title = 'Locs & Low Manipulation' %}
+    {% assign ps_c3_tag = 'LOC SCALP CARE' %}
+    {% assign ps_c3_desc = 'Apply to the scalp between your loc parts, never on the locs themselves. Massage in and go. Keeps the scalp clean and hydrated without loosening your retwist.' %}
+    {% assign ps_c4_title = 'Raw 3A–4C Natural Coils' %}
+    {% assign ps_c4_tag = 'NIGHTLY EDGE DRILL' %}
+    {% assign ps_c4_desc = 'Two drops at each temple, massaged in circles for sixty seconds. Night-after-night consistency at the hairline is the entire protocol — skipped nights are what flatten the results.' %}
+  {% when 'zvhc-botanical-curl-cream' %}
+    {% assign ps_eyebrow = '✦ ENGINEERED FOR HOW YOU WEAR YOUR HAIR' %}
+    {% assign ps_title = 'A Cream That Works With Installs, Not Against Them' %}
+    {% assign ps_subtitle = 'One styler that holds up whether you’re braided, wigged, loc’d, or loose.' %}
+    {% assign ps_c1_title = 'Knotless Braids & Twists' %}
+    {% assign ps_c1_tag = 'BRAID-OUT & TWIST-OUT' %}
+    {% assign ps_c1_desc = 'Apply to damp hair before you braid or twist. Take down after 24 hours for definition that holds its shape instead of collapsing into a frizz halo by lunchtime.' %}
+    {% assign ps_c2_title = 'Lace Front Wigs & Weaves' %}
+    {% assign ps_c2_tag = 'LEAVE-OUT BLENDING' %}
+    {% assign ps_c2_desc = 'Smooth a small amount through your leave-out, then diffuse on low. Blends your natural texture into the wig without the wet-look greasy shine that gives an install away.' %}
+    {% assign ps_c3_title = 'Locs & Low Manipulation' %}
+    {% assign ps_c3_tag = 'LOC RETWIST SET' %}
+    {% assign ps_c3_desc = 'A pea-sized amount on each loc before you retwist gives you a crisp part and a soft finish that doesn’t attract lint the way gels and waxes do.' %}
+    {% assign ps_c4_title = 'Raw 3A–4C Natural Coils' %}
+    {% assign ps_c4_tag = 'WASH-AND-GO' %}
+    {% assign ps_c4_desc = 'Section, rake through soaking-wet hair, and do not touch until fully dry. That’s the whole method — hands are what cause frizz, not the product.' %}
+  {% when 'zvhc-raw-batana-scalp-balm' %}
+    {% assign ps_eyebrow = '✦ ENGINEERED FOR HOW YOU WEAR YOUR HAIR' %}
+    {% assign ps_title = 'For Scalps That Spend Most Of Their Life Covered' %}
+    {% assign ps_subtitle = 'Balm goes on skin, not on the style. Here’s where each one needs it.' %}
+    {% assign ps_c1_title = 'Knotless Braids & Twists' %}
+    {% assign ps_c1_tag = 'TAKEDOWN RECOVERY' %}
+    {% assign ps_c1_desc = 'After a takedown your scalp is raw and tight. Apply balm directly to the irritated areas and leave it overnight before you shampoo — never scrub a stressed scalp the same day.' %}
+    {% assign ps_c2_title = 'Lace Front Wigs & Weaves' %}
+    {% assign ps_c2_tag = 'WIG CAP BARRIER' %}
+    {% assign ps_c2_desc = 'Apply a thin layer to your scalp before you braid your base down. It forms a breathable barrier so the cap isn’t pulling moisture out of your scalp for eight straight hours.' %}
+    {% assign ps_c3_title = 'Locs & Low Manipulation' %}
+    {% assign ps_c3_tag = 'LOC SCALP MAINTENANCE' %}
+    {% assign ps_c3_desc = 'Dab along the parts between your locs, one small swipe per section. Keeps the scalp hydrated without loosening retwists or weighing down your roots.' %}
+    {% assign ps_c4_title = 'Raw 3A–4C Natural Coils' %}
+    {% assign ps_c4_tag = 'OVERNIGHT DRY SCALP' %}
+    {% assign ps_c4_desc = 'Section into four, apply a pea-sized amount per section, massage sixty seconds, sleep on satin. Wash out in the morning — or leave it if your scalp runs very dry.' %}
+  {% when 'zvhc-precision-hairline-compact' %}
+    {% assign ps_eyebrow = '✦ ENGINEERED FOR HOW YOU WEAR YOUR HAIR' %}
+    {% assign ps_title = 'Designed For Part Lines, Not Just Foreheads' %}
+    {% assign ps_subtitle = 'One compact that handles edges, parts, and closure hairlines.' %}
+    {% assign ps_c1_title = 'Knotless Braids & Twists' %}
+    {% assign ps_c1_tag = 'BRAID PART LINES' %}
+    {% assign ps_c1_desc = 'Sweep the compact along exposed scalp between your braid rows to make the part look sharp and dense — the fastest way to revive a three-week-old install.' %}
+    {% assign ps_c2_title = 'Lace Front Wigs & Weaves' %}
+    {% assign ps_c2_tag = 'LACE FRONT HAIRLINE' %}
+    {% assign ps_c2_desc = 'Fill along the front hairline before you lay your lace. It disguises the sparse spots where your natural hair meets the lace, so the transition reads seamless instead of abrupt.' %}
+    {% assign ps_c3_title = 'Locs & Low Manipulation' %}
+    {% assign ps_c3_tag = 'LOC PART TOUCH-UP' %}
+    {% assign ps_c3_desc = 'Dab along the parts between locs to cover thin spots and add contrast. It sets dry, so lint doesn’t cling to it the way it does to oil-based edge fills.' %}
+    {% assign ps_c4_title = 'Raw 3A–4C Natural Coils' %}
+    {% assign ps_c4_tag = 'EDGE AND PART FILL' %}
+    {% assign ps_c4_desc = 'Use the angled corner for edges and the flat side for wider parts. Blend with the sponge in short taps — never swipe, because swiping is what causes streaks.' %}
+  {% when 'zvhc-root-lift-styling-powder' %}
+    {% assign ps_eyebrow = '✦ ENGINEERED FOR HOW YOU WEAR YOUR HAIR' %}
+    {% assign ps_title = 'Volume For Installs, Wigs, And Locs' %}
+    {% assign ps_subtitle = 'Grip at the root — never on the length. Here’s where it goes.' %}
+    {% assign ps_c1_title = 'Knotless Braids & Twists' %}
+    {% assign ps_c1_tag = 'BRAID ROOT LIFT' %}
+    {% assign ps_c1_desc = 'Tap powder into the roots of your braids and fluff with your fingertips. Revives a flat install without loosening the braid at the base or making it slip.' %}
+    {% assign ps_c2_title = 'Lace Front Wigs & Weaves' %}
+    {% assign ps_c2_tag = 'WIG CROWN VOLUME' %}
+    {% assign ps_c2_desc = 'Dust along the crown of your wig and tease lightly with a wide-tooth comb. Restores the body a wig loses after three or four wears without any wet product.' %}
+    {% assign ps_c3_title = 'Locs & Low Manipulation' %}
+    {% assign ps_c3_tag = 'LOC VOLUME' %}
+    {% assign ps_c3_desc = 'Sprinkle at the root of each loc and roll between your palms. Gives limp locs body at the base without adding weight or leaving residue in the shaft.' %}
+    {% assign ps_c4_title = 'Raw 3A–4C Natural Coils' %}
+    {% assign ps_c4_tag = 'TWIST-OUT LIFT' %}
+    {% assign ps_c4_desc = 'After takedown, tap a pinch at the crown and massage upward. Opens the roots of your twist-out so it falls with volume instead of sitting flat against your head.' %}
+  {% when 'zvhc-keratin-hair-building-fibers' %}
+    {% assign ps_eyebrow = '✦ ENGINEERED FOR HOW YOU WEAR YOUR HAIR' %}
+    {% assign ps_title = 'Coverage That Works Around Your Install' %}
+    {% assign ps_subtitle = 'For sparse parts, thin hairlines, and crowns that need density in a hurry.' %}
+    {% assign ps_c1_title = 'Knotless Braids & Twists' %}
+    {% assign ps_c1_tag = 'BRAID PART COVERAGE' %}
+    {% assign ps_c1_desc = 'Shake along the exposed scalp between braids where density is low. Pat gently — don’t rub, or you’ll pull the fibers straight back out of the part.' %}
+    {% assign ps_c2_title = 'Lace Front Wigs & Weaves' %}
+    {% assign ps_c2_tag = 'LACE PART AND HAIRLINE' %}
+    {% assign ps_c2_desc = 'Apply along the part of your closure and the front hairline to blend a sparse natural hairline into the lace. Holds through a normal wear day without drifting.' %}
+    {% assign ps_c3_title = 'Locs & Low Manipulation' %}
+    {% assign ps_c3_tag = 'LOC THINNING SPOTS' %}
+    {% assign ps_c3_desc = 'Dust over sparse patches between locs and pat down. The keratin fibers grip the loc hair itself, so they don’t drift onto your shoulders or your clothes.' %}
+    {% assign ps_c4_title = 'Raw 3A–4C Natural Coils' %}
+    {% assign ps_c4_tag = 'CROWN AND EDGE FILL' %}
+    {% assign ps_c4_desc = 'Shake over the thinning crown or temple, pat with fingertips, then set with a light mist. Let it dry completely before you touch it or lay your edges.' %}
+  {% when 'zvhc-batana-hair-growth-oil', 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+    {% assign ps_eyebrow = '✦ ENGINEERED FOR HOW YOU WEAR YOUR HAIR' %}
+    {% assign ps_title = 'Made For Hairlines That Live Under Braids And Lace' %}
+    {% assign ps_subtitle = 'Oil goes on the scalp. Here’s exactly where it belongs in each style.' %}
+    {% assign ps_c1_title = 'Knotless Braids & Twists' %}
+    {% assign ps_c1_tag = 'BETWEEN BRAID ROWS' %}
+    {% assign ps_c1_desc = 'Drop oil directly onto the exposed scalp between your rows twice a week. Massage with fingertips — not nails — so you’re stimulating the follicle instead of scratching it open.' %}
+    {% assign ps_c2_title = 'Lace Front Wigs & Weaves' %}
+    {% assign ps_c2_tag = 'UNDER YOUR LACE' %}
+    {% assign ps_c2_desc = 'Apply to your braided base before the wig goes on. Keeps the hairline hydrated so sustained tension from the lace doesn’t thin it out over months of wear.' %}
+    {% assign ps_c3_title = 'Locs & Low Manipulation' %}
+    {% assign ps_c3_tag = 'LOC SCALP DROPS' %}
+    {% assign ps_c3_desc = 'Two drops per section, directly on the scalp between locs. Keeps your scalp fed without greasing the locs themselves or loosening a fresh retwist.' %}
+    {% assign ps_c4_title = 'Raw 3A–4C Natural Coils' %}
+    {% assign ps_c4_tag = 'EDGE MASSAGE' %}
+    {% assign ps_c4_desc = 'Two drops at each temple, sixty seconds of circular massage, every night. Consistency is the entire protocol — missed nights are what flatten the results.' %}
+  {% else %}
+    {% assign ps_eyebrow = '✦ ENGINEERED FOR HOW YOU WEAR YOUR HAIR' %}
+    {% assign ps_title = 'Protective Style & Coil Compatibility' %}
+    {% assign ps_subtitle = 'Whether you rock knotless braids, live in lace wigs, maintain locs, or love raw 4C coils.' %}
+    {% assign ps_c1_title = 'Knotless Braids & Twists' %}
+    {% assign ps_c1_tag = 'Tension Relief & Parting Care' %}
+    {% assign ps_c1_desc = 'Apply directly along exposed scalp partings. Soothes day-one tension while preventing edge thinning.' %}
+    {% assign ps_c2_title = 'Lace Front Wigs & Weaves' %}
+    {% assign ps_c2_tag = 'Adhesive & Friction Recovery' %}
+    {% assign ps_c2_desc = 'Rescue receding hairlines stripped by glue and wig cap friction without greasy buildup.' %}
+    {% assign ps_c3_title = 'Locs & Micro-Locs' %}
+    {% assign ps_c3_tag = 'Zero Buildup & Clean Hydration' %}
+    {% assign ps_c3_desc = 'Absorbs clean, keeping locs soft and flexible without waxy lint-trapping residue.' %}
+    {% assign ps_c4_title = 'Type 3A–4C Natural Coils' %}
+    {% assign ps_c4_tag = 'Moisture Lock & Elasticity' %}
+    {% assign ps_c4_desc = 'Locks hydration deep into coarse, high-porosity strands, preventing fairy knots and comb snap.' %}
+{% endcase %}
+
 <section class="zvhc-editorial-section zvhc-protective-styles-section" id="protective-styles" style="padding: 72px 0; background: #FAF7F2; border-bottom: 1px solid var(--zvhc-t01-border, #EAD7DD);">
   <div class="zvhc-container">
     
     <!-- Section Header -->
     <div style="text-align: center; max-width: 720px; margin: 0 auto 52px;">
       <div style="display: inline-flex; align-items: center; gap: 8px; background: #F8E4EB; color: #B0476E; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; padding: 6px 16px; border-radius: 9999px; text-transform: uppercase; margin-bottom: 16px;">
-        <span>✦ ENGINEERED FOR HOW YOU WEAR YOUR HAIR</span>
+        <span>{{ ps_eyebrow }}</span>
       </div>
       <h2 class="zvhc-h2" style="font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.2; margin-bottom: 16px; color: #2B1B24;">
-        Protective Style &amp; Coil Compatibility
+        {{ ps_title }}
       </h2>
       <p style="color: #5A4651; font-size: 1.02rem; line-height: 1.6; max-width: 640px; margin: 0 auto;">
-        Whether you are rocking fresh knotless braids, living in lace front wigs, maintaining your locs, or embracing your raw 4C crown — Zavelyn shields your roots from tension damage.
+        {{ ps_subtitle }}
       </p>
     </div>
 
     <!-- 4 Protective Style Cards -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
       
-      <!-- Card 1: Knotless & Box Braids -->
+      <!-- Card 1 -->
       <div style="background: #FFFFFF; border: 1px solid #EAD7DD; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(43,27,36,0.04);">
         <div style="width: 48px; height: 48px; border-radius: 12px; background: #FDF2F6; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px;">
           ✨
         </div>
         <div style="font-size: 1.15rem; font-weight: 800; color: #2B1B24; margin-bottom: 8px;">
-          Knotless Braids &amp; Twists
+          {{ ps_c1_title }}
         </div>
         <div style="font-size: 0.8rem; font-weight: 700; color: #B0476E; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;">
-          Tension Relief &amp; Parting Care
+          {{ ps_c1_tag }}
         </div>
         <p style="font-size: 0.9rem; color: #5A4651; line-height: 1.6; margin: 0; flex-grow: 1;">
-          Apply 2–3 drops directly along exposed scalp partings. Instantly cools and soothes day-one tension throbbing while preventing edge thinning from heavy braid weight.
+          {{ ps_c1_desc }}
         </p>
       </div>
 
-      <!-- Card 2: Lace Front Wigs & Weaves -->
+      <!-- Card 2 -->
       <div style="background: #FFFFFF; border: 1px solid #EAD7DD; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(43,27,36,0.04);">
         <div style="width: 48px; height: 48px; border-radius: 12px; background: #FDF2F6; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px;">
           👑
         </div>
         <div style="font-size: 1.15rem; font-weight: 800; color: #2B1B24; margin-bottom: 8px;">
-          Lace Front Wigs &amp; Weaves
+          {{ ps_c2_title }}
         </div>
         <div style="font-size: 0.8rem; font-weight: 700; color: #B0476E; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;">
-          Adhesive &amp; Friction Recovery
+          {{ ps_c2_tag }}
         </div>
         <p style="font-size: 0.9rem; color: #5A4651; line-height: 1.6; margin: 0; flex-grow: 1;">
-          Rescue receding hairlines stripped by ghost bond adhesives and wig cap friction. Deep batana phytosterols regenerate dormant follicles without leaving greasy residue under wig caps.
+          {{ ps_c2_desc }}
         </p>
       </div>
 
-      <!-- Card 3: Locs & Micro-Locs -->
+      <!-- Card 3 -->
       <div style="background: #FFFFFF; border: 1px solid #EAD7DD; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(43,27,36,0.04);">
         <div style="width: 48px; height: 48px; border-radius: 12px; background: #FDF2F6; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px;">
           🌿
         </div>
         <div style="font-size: 1.15rem; font-weight: 800; color: #2B1B24; margin-bottom: 8px;">
-          Locs &amp; Micro-Locs
+          {{ ps_c3_title }}
         </div>
         <div style="font-size: 0.8rem; font-weight: 700; color: #B0476E; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;">
-          Zero Buildup &amp; Clean Hydration
+          {{ ps_c3_tag }}
         </div>
         <p style="font-size: 0.9rem; color: #5A4651; line-height: 1.6; margin: 0; flex-grow: 1;">
-          Never worry about white waxy residue or trapped lint inside your locs. Pure Batana absorbs 100% clean, keeping locs soft, flexible, and smelling of rich roasted botanical nuts.
+          {{ ps_c3_desc }}
         </p>
       </div>
 
-      <!-- Card 4: Type 4A-4C Natural Coils -->
+      <!-- Card 4 -->
       <div style="background: #FFFFFF; border: 1px solid #EAD7DD; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(43,27,36,0.04);">
         <div style="width: 48px; height: 48px; border-radius: 12px; background: #FDF2F6; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px;">
           🤎
         </div>
         <div style="font-size: 1.15rem; font-weight: 800; color: #2B1B24; margin-bottom: 8px;">
-          Type 3A–4C Natural Coils
+          {{ ps_c4_title }}
         </div>
         <div style="font-size: 0.8rem; font-weight: 700; color: #B0476E; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;">
-          72-Hour L.O.C. Moisture Seal
+          {{ ps_c4_tag }}
         </div>
         <p style="font-size: 0.9rem; color: #5A4651; line-height: 1.6; margin: 0; flex-grow: 1;">
-          The holy grail sealant for twist-outs, braid-outs, and wash &amp; go routines. Locks hydration deep into coarse, high-porosity strands, preventing single-strand knots and comb snap.
+          {{ ps_c4_desc }}
         </p>
       </div>
 

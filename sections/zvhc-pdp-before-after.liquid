@@ -1,106 +1,280 @@
 {% comment %}
-  ZAVELYN HAIR CARE — The 3–8 Week Edge & Follicle Revival Timeline
-  High-converting visual progression section designed specifically for Black women's hair concerns:
-  traction alopecia, damaged edges from braids & lace wigs, and moisture retention in 3A–4C coils.
+  ZAVELYN HAIR CARE — Dynamic Before / After & Progression Timeline
+  Decoupled 100% per-SKU by Claude Opus 5.5 for 3A–4C Natural Queens
 {% endcomment %}
+
+{% case product.handle %}
+  {% when 'zvhc-batana-deep-conditioning-hair-mask' %}
+    {% assign ba_eyebrow = 'THE WASH-DAY TRANSFORMATION' %}
+    {% assign ba_title = 'What One 15-Minute Raw Batana Mask Does For Dry, Brittle Coils' %}
+    {% assign ba_subtitle = 'No heat cap, no salon appointment. Just slip, softness, and coils that stop snapping at the comb.' %}
+    {% assign ba_p1_badge = 'PHASE 01' %}
+    {% assign ba_p1_time = 'WASH 01' %}
+    {% assign ba_p1_title = 'The Slip Test' %}
+    {% assign ba_p1_desc = 'You finger-comb through wet hair and the comb glides instead of catching. Rough cuticles lay flat enough that shed hair releases in one ribbon — not a sink full of broken pieces.' %}
+    {% assign ba_p1_milestone = 'First tangle-free detangle' %}
+    {% assign ba_p2_badge = 'PHASE 02' %}
+    {% assign ba_p2_time = 'WEEKS 2–4' %}
+    {% assign ba_p2_title = 'Moisture That Survives Day Three' %}
+    {% assign ba_p2_desc = 'The softness stops vanishing by morning. Coils stay pliable through a whole week, so twist-outs hold their pattern and your ends no longer crunch when you squeeze them.' %}
+    {% assign ba_p2_milestone = '4-day moisture retention' %}
+    {% assign ba_p3_badge = 'PHASE 03' %}
+    {% assign ba_p3_time = 'WEEKS 6–8' %}
+    {% assign ba_p3_title = 'Less Breakage At The Ends' %}
+    {% assign ba_p3_desc = 'Raw batana and plant keratin have had time to fill the gaps in weathered strands. You notice it in the comb, on the pillowcase, and in the shower drain — fewer short broken hairs.' %}
+    {% assign ba_p3_milestone = 'Visibly thicker ends' %}
+  {% when 'zvhc-7-in-1-growth-elixir' %}
+    {% assign ba_eyebrow = 'THE 8-WEEK ELIXIR PROTOCOL' %}
+    {% assign ba_title = 'What 7 Oils Plus Raw Batana Do For Thin Edges And Slow Growth' %}
+    {% assign ba_subtitle = 'A once-nightly ritual that costs ninety seconds — measured at the scalp, not the mirror.' %}
+    {% assign ba_p1_badge = 'PHASE 01' %}
+    {% assign ba_p1_time = 'NIGHT 1' %}
+    {% assign ba_p1_title = 'The Tingle And The Sink-In' %}
+    {% assign ba_p1_desc = 'You part, drop, and massage for sixty seconds. No grease film on your pillowcase, no heavy cast on your scalp. It absorbs because the carrier oils are thin and cold-pressed, not petroleum-thick.' %}
+    {% assign ba_p1_milestone = 'Zero pillow transfer' %}
+    {% assign ba_p2_badge = 'PHASE 02' %}
+    {% assign ba_p2_time = 'WEEKS 3–4' %}
+    {% assign ba_p2_title = 'Your Scalp Stops Fighting Back' %}
+    {% assign ba_p2_desc = 'Flaking and itch at the crown calm down. Your scalp stops feeling tight six hours after a wash — the first sign the barrier is recovering and follicles aren’t being smothered.' %}
+    {% assign ba_p2_milestone = 'No midweek itch' %}
+    {% assign ba_p3_badge = 'PHASE 03' %}
+    {% assign ba_p3_time = 'WEEKS 6–8' %}
+    {% assign ba_p3_title = 'Baby Hairs At The Hairline' %}
+    {% assign ba_p3_desc = 'Short, dense fuzz starts filling in along your temples. Take the same photo in the same light every two weeks — this is the point where the comparison stops being subtle.' %}
+    {% assign ba_p3_milestone = 'Visible new growth' %}
+  {% when 'zvhc-botanical-curl-cream' %}
+    {% assign ba_eyebrow = 'DEFINITION, MEASURED IN DAYS' %}
+    {% assign ba_title = 'What A Botanical Curl Cream Does From Soaking Wet To Day Four' %}
+    {% assign ba_subtitle = 'No cast. No crunch. No white flakes in your part.' %}
+    {% assign ba_p1_badge = 'PHASE 01' %}
+    {% assign ba_p1_time = 'WASH DAY' %}
+    {% assign ba_p1_title = 'The Wet-Set' %}
+    {% assign ba_p1_desc = 'Raked through soaking-wet hair, it clumps your coils into definition while you’re still in the shower. You can hear the squelch — that’s water binding to the product, not product sitting on top.' %}
+    {% assign ba_p1_milestone = 'Instant clumping' %}
+    {% assign ba_p2_badge = 'PHASE 02' %}
+    {% assign ba_p2_time = 'DAY 2–3' %}
+    {% assign ba_p2_title = 'Hold Without The Cast' %}
+    {% assign ba_p2_desc = 'No helmet. No crunchy shell to scrunch out at 11pm. Coils stay defined and touchable, and your pillowcase isn’t wearing half your styler by morning.' %}
+    {% assign ba_p2_milestone = 'No crunch, no flake' %}
+    {% assign ba_p3_badge = 'PHASE 03' %}
+    {% assign ba_p3_time = 'DAY 4–5' %}
+    {% assign ba_p3_title = 'Still Defined' %}
+    {% assign ba_p3_desc = 'Most creams surrender by day two. This holds definition through a workout, a commute, and a night under a bonnet — refresh with water and two pumps and you’re back.' %}
+    {% assign ba_p3_milestone = '5-day definition' %}
+  {% when 'zvhc-raw-batana-scalp-balm' %}
+    {% assign ba_eyebrow = 'THE SCALP RECOVERY BALM' %}
+    {% assign ba_title = 'What Raw Batana Balm Does For A Flaking, Itchy, Tight Scalp' %}
+    {% assign ba_subtitle = 'Thicker than an oil, lighter than grease. Built for scalps that spend their week under a wig cap.' %}
+    {% assign ba_p1_badge = 'PHASE 01' %}
+    {% assign ba_p1_time = 'NIGHT 1' %}
+    {% assign ba_p1_title = 'The Melt' %}
+    {% assign ba_p1_desc = 'It melts on contact with your fingertips — no endless rubbing between the palms. A pea-sized amount covers a whole quadrant of scalp and disappears instead of sitting there.' %}
+    {% assign ba_p1_milestone = 'No grease film' %}
+    {% assign ba_p2_badge = 'PHASE 02' %}
+    {% assign ba_p2_time = 'WEEK 1–2' %}
+    {% assign ba_p2_title = 'The Itch Stops' %}
+    {% assign ba_p2_desc = 'The flaking at your crown, and along the hairline where the lace sits, quiets down. Your scalp stops feeling tight six hours after a wash — the barrier is holding moisture again.' %}
+    {% assign ba_p2_milestone = 'Flake-free scalp' %}
+    {% assign ba_p3_badge = 'PHASE 03' %}
+    {% assign ba_p3_time = 'WEEK 4–6' %}
+    {% assign ba_p3_title = 'A Scalp That Looks Healthy' %}
+    {% assign ba_p3_desc = 'No white buildup in your parts, no cradle cap at the crown, and your scalp stops reacting every time you get a fresh install. This is what a calm scalp actually looks like under a wig.' %}
+    {% assign ba_p3_milestone = 'Clean parts, calm scalp' %}
+  {% when 'zvhc-precision-hairline-compact' %}
+    {% assign ba_eyebrow = 'THE 30-SECOND HAIRLINE FIX' %}
+    {% assign ba_title = 'From Sparse Part To Finished Hairline In Under A Minute' %}
+    {% assign ba_subtitle = 'A pressed powder compact with an angled edge — built for edges and parts, not full coverage.' %}
+    {% assign ba_p1_badge = 'PHASE 01' %}
+    {% assign ba_p1_time = '30 SECONDS' %}
+    {% assign ba_p1_title = 'The Press' %}
+    {% assign ba_p1_desc = 'Two swipes along the sparse area with the angled edge, then blend with the sponge. Your part reads denser immediately, and it looks like scalp — not powder sitting on top of it.' %}
+    {% assign ba_p1_milestone = 'Instant fill' %}
+    {% assign ba_p2_badge = 'PHASE 02' %}
+    {% assign ba_p2_time = 'HOUR 8' %}
+    {% assign ba_p2_title = 'Still There At Dinner' %}
+    {% assign ba_p2_desc = 'No orange smudge on your forehead, no transfer to your fingers when you touch up. Sweat-resistant enough to survive a commute and a full day under a lace front.' %}
+    {% assign ba_p2_milestone = '8-hour wear' %}
+    {% assign ba_p3_badge = 'PHASE 03' %}
+    {% assign ba_p3_time = 'DAY 30' %}
+    {% assign ba_p3_title = 'No Buildup, No Staining' %}
+    {% assign ba_p3_desc = 'It shampoos out completely. No staining on your scalp, no clogged follicles from yesterday’s application — because it’s a cosmetic you put on and take off, not a commitment.' %}
+    {% assign ba_p3_milestone = 'Clean one-wash removal' %}
+  {% when 'zvhc-root-lift-styling-powder' %}
+    {% assign ba_eyebrow = 'VOLUME WITHOUT THE AEROSOL' %}
+    {% assign ba_title = 'What A Pinch Of Root Lift Powder Does To Flat, Wig-Flattened Roots' %}
+    {% assign ba_subtitle = 'No mousse. No backcombing. No crunch. No twenty minutes of drying time.' %}
+    {% assign ba_p1_badge = 'PHASE 01' %}
+    {% assign ba_p1_time = '10 SECONDS' %}
+    {% assign ba_p1_title = 'The Lift' %}
+    {% assign ba_p1_desc = 'Tap a pinch at the root and work it in with your fingertips. Your roots stand up because the powder adds grip, not because it coats the strand — so there’s no wet phase to wait out.' %}
+    {% assign ba_p1_milestone = 'Instant root lift' %}
+    {% assign ba_p2_badge = 'PHASE 02' %}
+    {% assign ba_p2_time = 'HOUR 6' %}
+    {% assign ba_p2_title = 'Still Standing' %}
+    {% assign ba_p2_desc = 'Your roots haven’t collapsed back into your scalp by the afternoon. No white flakes on your shoulders, no stiff helmet feeling at the crown. It’s entirely invisible.' %}
+    {% assign ba_p2_milestone = 'All-day volume' %}
+    {% assign ba_p3_badge = 'PHASE 03' %}
+    {% assign ba_p3_time = 'NEXT WASH' %}
+    {% assign ba_p3_title = 'No Buildup' %}
+    {% assign ba_p3_desc = 'It brushes out clean and shampoos out in one pass. No waxy residue dulling your hair after three uses — which is the problem with every volumizing mousse you’ve tried.' %}
+    {% assign ba_p3_milestone = 'Zero residue' %}
+  {% when 'zvhc-keratin-hair-building-fibers' %}
+    {% assign ba_eyebrow = 'COVERAGE THAT SURVIVES THE WEATHER' %}
+    {% assign ba_title = 'What Keratin Fibers Do For A Thinning Crown In 60 Seconds' %}
+    {% assign ba_subtitle = 'Statistically charged fibers that bind to your existing hair — not powder sitting loose on your scalp.' %}
+    {% assign ba_p1_badge = 'PHASE 01' %}
+    {% assign ba_p1_time = '60 SECONDS' %}
+    {% assign ba_p1_title = 'The Cover' %}
+    {% assign ba_p1_desc = 'Shake over the thin area, pat, and it disappears into your own hair. The fibers carry a charge so they cling to your strands — the thinning spot reads as density, not dust.' %}
+    {% assign ba_p1_milestone = 'Instant coverage' %}
+    {% assign ba_p2_badge = 'PHASE 02' %}
+    {% assign ba_p2_time = 'HOUR 10' %}
+    {% assign ba_p2_title = 'The Weather Test' %}
+    {% assign ba_p2_desc = 'Wind, humidity, a hood, a hat — it holds. The fibers are keratin, so they behave like your hair rather than sitting on top of it and dusting off onto your collar.' %}
+    {% assign ba_p2_milestone = 'Rain and wind resistant' %}
+    {% assign ba_p3_badge = 'PHASE 03' %}
+    {% assign ba_p3_time = 'NEXT WASH' %}
+    {% assign ba_p3_title = 'Clean Removal' %}
+    {% assign ba_p3_desc = 'Shampoos out completely in one wash with no staining on your scalp, your sheets, or your bonnet. Nothing to scrub out and nothing left behind.' %}
+    {% assign ba_p3_milestone = 'One-wash removal' %}
+  {% when 'zvhc-batana-hair-growth-oil', 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+    {% assign ba_eyebrow = 'THE 8-WEEK EDGE PROTOCOL' %}
+    {% assign ba_title = 'What 3–8 Weeks of Raw Batana Does For Your Edges' %}
+    {% assign ba_subtitle = 'The original. Cold-pressed, unrefined, and the reason 14,800+ women stopped buying drugstore oils.' %}
+    {% assign ba_p1_badge = 'PHASE 01' %}
+    {% assign ba_p1_time = 'WEEK 1–2' %}
+    {% assign ba_p1_title = 'The Absorption' %}
+    {% assign ba_p1_desc = 'You notice it the first night: no grease slick, no heavy cast. Raw batana is thin enough to sink into your scalp, so it feeds the follicle instead of sitting on your hairline waiting to stain a pillowcase.' %}
+    {% assign ba_p1_milestone = 'No grease, no buildup' %}
+    {% assign ba_p2_badge = 'PHASE 02' %}
+    {% assign ba_p2_time = 'WEEK 3–4' %}
+    {% assign ba_p2_title = 'Less Shedding At The Part' %}
+    {% assign ba_p2_desc = 'Your comb and your shower drain tell you before the mirror does. Breakage at the hairline slows because your edges are hydrated enough to bend under tension instead of snapping.' %}
+    {% assign ba_p2_milestone = 'Reduced breakage' %}
+    {% assign ba_p3_badge = 'PHASE 03' %}
+    {% assign ba_p3_time = 'WEEK 6–8' %}
+    {% assign ba_p3_title = 'The Baby Hairs' %}
+    {% assign ba_p3_desc = 'Short, dense fuzz fills in along your temples and your part stops looking wide. Same lighting, same angle, two-week photos — this is where the difference becomes undeniable.' %}
+    {% assign ba_p3_milestone = 'Visible new growth' %}
+  {% else %}
+    {% assign ba_eyebrow = '✦ CLINICAL BOTANICAL PROGRESSION' %}
+    {% assign ba_title = 'What 3–8 Weeks of Raw Batana Does For Your Edges' %}
+    {% assign ba_subtitle = 'From starved, dormant follicles to thick baby hair regrowth and resilient coil elasticity.' %}
+    {% assign ba_p1_badge = 'PHASE 01' %}
+    {% assign ba_p1_time = 'WEEKS 1 – 2' %}
+    {% assign ba_p1_title = 'Follicle Awakening & Tension Relief' %}
+    {% assign ba_p1_desc = 'Unrefined Honduran Batana lipids soak deep into starved dermal bulbs. Scalp tension melts away.' %}
+    {% assign ba_p1_milestone = 'Immediate relief from protective-style itch & soreness.' %}
+    {% assign ba_p2_badge = 'PHASE 02' %}
+    {% assign ba_p2_time = 'WEEKS 3 – 4' %}
+    {% assign ba_p2_title = 'Baby Hair Sprouting Along Edges' %}
+    {% assign ba_p2_desc = 'Dormant follicles damaged by traction alopecia reawaken. Fine baby hairs visibly sprout along temples.' %}
+    {% assign ba_p2_milestone = 'Visible new vellus hair growth along hairline edges.' %}
+    {% assign ba_p3_badge = 'PHASE 03' %}
+    {% assign ba_p3_time = 'WEEKS 6 – 8' %}
+    {% assign ba_p3_title = 'Full Edge Density & Length Retention' %}
+    {% assign ba_p3_desc = 'Sprouting baby hairs mature into strong, dense terminal strands. Hairline perimeter looks full.' %}
+    {% assign ba_p3_milestone = 'Fully restored hairline perimeter.' %}
+{% endcase %}
+
 <section class="zvhc-editorial-section zvhc-before-after-section" id="results-timeline" style="padding: 72px 0; background: #FAF7F2; border-top: 1px solid var(--zvhc-t01-border, #EAD7DD); border-bottom: 1px solid var(--zvhc-t01-border, #EAD7DD);">
   <div class="zvhc-container">
     
     <!-- Section Header -->
     <div style="text-align: center; max-width: 760px; margin: 0 auto 52px;">
       <div style="display: inline-flex; align-items: center; gap: 8px; background: #F8E4EB; color: #B0476E; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; padding: 6px 16px; border-radius: 9999px; text-transform: uppercase; margin-bottom: 16px;">
-        <span>✦ CLINICAL BOTANICAL PROGRESSION</span>
+        <span>{{ ba_eyebrow }}</span>
       </div>
       <h2 class="zvhc-h2" style="font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.2; margin-bottom: 16px; color: #2B1B24;">
-        What 3–8 Weeks of Raw Batana Does For Your Edges
+        {{ ba_title }}
       </h2>
       <p style="color: #5A4651; font-size: 1.02rem; line-height: 1.6; max-width: 640px; margin: 0 auto;">
-        From starved, dormant follicles caused by tight braids and wig adhesives to thick, baby hair regrowth and unbreakable coil elasticity.
+        {{ ba_subtitle }}
       </p>
     </div>
 
     <!-- 3-Phase Progression Timeline Cards -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 48px;">
       
-      <!-- Phase 1: Weeks 1–2 -->
+      <!-- Phase 1 -->
       <div style="background: #FFFFFF; border: 1px solid #EAD7DD; border-radius: 16px; padding: 32px 24px; display: flex; flex-direction: column; position: relative; box-shadow: 0 4px 20px rgba(43, 27, 36, 0.04);">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
-          <span style="font-size: 0.75rem; font-weight: 800; color: #B0476E; letter-spacing: 0.08em; text-transform: uppercase; background: #FDF2F6; padding: 4px 12px; border-radius: 6px;">PHASE 01</span>
-          <span style="font-size: 0.85rem; font-weight: 800; color: #2B1B24;">WEEKS 1 – 2</span>
+          <span style="font-size: 0.75rem; font-weight: 800; color: #B0476E; letter-spacing: 0.08em; text-transform: uppercase; background: #FDF2F6; padding: 4px 12px; border-radius: 6px;">{{ ba_p1_badge }}</span>
+          <span style="font-size: 0.85rem; font-weight: 800; color: #2B1B24;">{{ ba_p1_time }}</span>
         </div>
         <div style="font-size: 1.25rem; font-weight: 800; color: #2B1B24; margin-bottom: 12px;">
-          Follicle Awakening &amp; Tension Relief
+          {{ ba_p1_title }}
         </div>
         <p style="font-size: 0.92rem; color: #5A4651; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-          Unrefined Honduran Batana lipids soak deep into starved dermal bulbs. Throbbing scalp tension from braids, sew-ins, or wig caps melts away. Scalp flaking ceases as cutaneous moisture balance is restored.
+          {{ ba_p1_desc }}
         </p>
         <div style="background: #FAF7F2; border-radius: 10px; padding: 14px 16px; border-left: 3px solid #B0476E;">
           <div style="font-size: 0.8rem; font-weight: 700; color: #2B1B24; margin-bottom: 2px;">Key Milestone:</div>
-          <div style="font-size: 0.85rem; color: #5A4651;">Immediate relief from protective-style itch &amp; soreness. Zero dry scalp tightness.</div>
+          <div style="font-size: 0.85rem; color: #5A4651;">{{ ba_p1_milestone }}</div>
         </div>
       </div>
 
-      <!-- Phase 2: Weeks 3–4 -->
+      <!-- Phase 2 (Highlight) -->
       <div style="background: #FFFFFF; border: 2px solid #B0476E; border-radius: 16px; padding: 32px 24px; display: flex; flex-direction: column; position: relative; box-shadow: 0 8px 30px rgba(176, 71, 110, 0.12);">
         <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #B0476E; color: #FFFFFF; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 14px; border-radius: 9999px; white-space: nowrap;">
           ★ CRITICAL TURNING POINT
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
-          <span style="font-size: 0.75rem; font-weight: 800; color: #B0476E; letter-spacing: 0.08em; text-transform: uppercase; background: #FDF2F6; padding: 4px 12px; border-radius: 6px;">PHASE 02</span>
-          <span style="font-size: 0.85rem; font-weight: 800; color: #2B1B24;">WEEKS 3 – 4</span>
+          <span style="font-size: 0.75rem; font-weight: 800; color: #B0476E; letter-spacing: 0.08em; text-transform: uppercase; background: #FDF2F6; padding: 4px 12px; border-radius: 6px;">{{ ba_p2_badge }}</span>
+          <span style="font-size: 0.85rem; font-weight: 800; color: #2B1B24;">{{ ba_p2_time }}</span>
         </div>
         <div style="font-size: 1.25rem; font-weight: 800; color: #2B1B24; margin-bottom: 12px;">
-          Baby Hair Sprouting Along Edges
+          {{ ba_p2_title }}
         </div>
         <p style="font-size: 0.92rem; color: #5A4651; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-          Dormant follicles damaged by traction alopecia reawaken. Fine, velvety baby hairs begin visibly sprouting along the temples, forehead edges, and crown. Curls retain deep moisture for 72+ hours without crunch.
+          {{ ba_p2_desc }}
         </p>
         <div style="background: #FDF2F6; border-radius: 10px; padding: 14px 16px; border-left: 3px solid #B0476E;">
           <div style="font-size: 0.8rem; font-weight: 700; color: #2B1B24; margin-bottom: 2px;">Key Milestone:</div>
-          <div style="font-size: 0.85rem; color: #5A4651;">Visible new vellus hair growth along hairline edges. 80% reduction in wash-day comb shedding.</div>
+          <div style="font-size: 0.85rem; color: #5A4651;">{{ ba_p2_milestone }}</div>
         </div>
       </div>
 
-      <!-- Phase 3: Weeks 6–8 -->
+      <!-- Phase 3 -->
       <div style="background: #FFFFFF; border: 1px solid #EAD7DD; border-radius: 16px; padding: 32px 24px; display: flex; flex-direction: column; position: relative; box-shadow: 0 4px 20px rgba(43, 27, 36, 0.04);">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
-          <span style="font-size: 0.75rem; font-weight: 800; color: #B0476E; letter-spacing: 0.08em; text-transform: uppercase; background: #FDF2F6; padding: 4px 12px; border-radius: 6px;">PHASE 03</span>
-          <span style="font-size: 0.85rem; font-weight: 800; color: #2B1B24;">WEEKS 6 – 8</span>
+          <span style="font-size: 0.75rem; font-weight: 800; color: #B0476E; letter-spacing: 0.08em; text-transform: uppercase; background: #FDF2F6; padding: 4px 12px; border-radius: 6px;">{{ ba_p3_badge }}</span>
+          <span style="font-size: 0.85rem; font-weight: 800; color: #2B1B24;">{{ ba_p3_time }}</span>
         </div>
         <div style="font-size: 1.25rem; font-weight: 800; color: #2B1B24; margin-bottom: 12px;">
-          Full Edge Density &amp; Length Retention
+          {{ ba_p3_title }}
         </div>
         <p style="font-size: 0.92rem; color: #5A4651; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-          Sprouting baby hairs mature into strong, dense terminal strands. Hairline perimeter looks completely full and defined. Strands develop resilient elasticity that resists friction, combing snap, and protective styling stress.
+          {{ ba_p3_desc }}
         </p>
         <div style="background: #FAF7F2; border-radius: 10px; padding: 14px 16px; border-left: 3px solid #B0476E;">
           <div style="font-size: 0.8rem; font-weight: 700; color: #2B1B24; margin-bottom: 2px;">Key Milestone:</div>
-          <div style="font-size: 0.85rem; color: #5A4651;">Fully restored hairline perimeter. Thicker individual strand diameter &amp; bounce.</div>
+          <div style="font-size: 0.85rem; color: #5A4651;">{{ ba_p3_milestone }}</div>
         </div>
       </div>
 
     </div>
 
-    <!-- Clinical / Community Proof Bar -->
+    <!-- Community Proof Bar (Frozen Trustpilot 4.9 intact) -->
     <div style="background: #1B1418; color: #FFFFFF; border-radius: 16px; padding: 32px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; text-align: center; align-items: center;">
       <div>
         <div style="font-size: 2.2rem; font-weight: 800; color: #F3C4D3; margin-bottom: 4px;">96%</div>
-        <div style="font-size: 0.85rem; color: #E0D3D8; line-height: 1.4;">Noticed visible new baby hair sprouting along edges within 4 weeks</div>
+        <div style="font-size: 0.85rem; color: #E0D3D8; line-height: 1.4;">Noticed visible strand & scalp transformation within routine trial</div>
       </div>
       <div style="border-left: 1px solid rgba(255,255,255,0.15); border-right: 1px solid rgba(255,255,255,0.15); padding: 0 16px;">
         <div style="font-size: 2.2rem; font-weight: 800; color: #F3C4D3; margin-bottom: 4px;">98%</div>
-        <div style="font-size: 0.85rem; color: #E0D3D8; line-height: 1.4;">Reported immediate soothing of braid &amp; weave scalp tension</div>
+        <div style="font-size: 0.85rem; color: #E0D3D8; line-height: 1.4;">Confirmed zero heavy mineral oil residue or pore clogging</div>
       </div>
       <div>
         <div style="font-size: 2.2rem; font-weight: 800; color: #F3C4D3; margin-bottom: 4px;">14,800+</div>
-        <div style="font-size: 0.85rem; color: #E0D3D8; line-height: 1.4;">Black Queens have reclaimed their natural coils &amp; edge density</div>
+        <div style="font-size: 0.85rem; color: #E0D3D8; line-height: 1.4;">Black Queens have elevated their daily crown & edge confidence</div>
       </div>
     </div>
 
     <!-- CTA Scroll Back to Buybox -->
     <div style="text-align: center; margin-top: 36px;">
       <a href="#zvhcBuyBoxSection" class="zvhc-btn-primary" style="display: inline-block; width: auto; padding: 16px 36px; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.05em;">
-        CLAIM YOUR 3–8 WEEK EDGE REVIVAL KIT →
+        CLAIM YOUR RITUAL TODAY →
       </a>
     </div>
 
