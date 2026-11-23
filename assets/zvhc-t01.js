@@ -385,6 +385,35 @@
     });
   };
 
+  /**
+   * Functional Cart Drawer Upsell addition
+   */
+  window.zvhcAddUpsell = function(variantId) {
+    var vid = variantId || 68580229677241;
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: [{ id: parseInt(vid, 10), quantity: 1 }] })
+    })
+    .then(function(res) {
+      if (!res.ok) throw new Error('Failed to add upsell');
+      return res.json();
+    })
+    .then(function() {
+      if (typeof window.zvhcRefreshCartDrawer === 'function') {
+        window.zvhcRefreshCartDrawer();
+      } else {
+        window.location.reload();
+      }
+    })
+    .catch(function(err) {
+      console.error('Upsell add error:', err);
+      if (typeof window.zvhcRefreshCartDrawer === 'function') {
+        window.zvhcRefreshCartDrawer();
+      }
+    });
+  };
+
   // Bundle 1: Scalp & Edge Care Duo
   window.zvhcAddDuoBundle = function(btn) {
     var shadeSelect = document.getElementById('zvhcBundleDuoShade');
