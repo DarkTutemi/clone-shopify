@@ -294,8 +294,11 @@
 }
 
 .zvhc-purchase-tab.is-disabled {
-  opacity: 0.78;
+  opacity: 0.72;
   background: #FAF8F9;
+  cursor: not-allowed;
+  pointer-events: none;
+  user-select: none;
 }
 
 .zvhc-purchase-tab-radio {
