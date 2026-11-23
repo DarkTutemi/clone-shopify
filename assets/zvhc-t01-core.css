@@ -80,6 +80,16 @@
   transition: opacity 0.2s ease;
 }
 
+.zvhc-mobile-drawer a,
+.zvhc-mobile-drawer a span,
+.zvhc-mobile-drawer .zvhc-drawer-link,
+.zvhc-mobile-drawer .zvhc-drawer-link span,
+.zvhc-drawer-nav a,
+.zvhc-drawer-nav span {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
 .zvhc-wrapper a:hover {
   opacity: 0.85;
 }
