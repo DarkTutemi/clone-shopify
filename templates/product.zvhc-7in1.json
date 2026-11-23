@@ -4,20 +4,16 @@
       "type": "zvhc-pdp-main",
       "settings": {}
     },
-    "marquee": {
-      "type": "zvhc-pdp-marquee",
-      "settings": {}
-    },
     "before_after": {
       "type": "zvhc-pdp-before-after",
       "settings": {}
     },
-    "vs_drugstore": {
-      "type": "zvhc-pdp-vs-drugstore",
+    "reviews": {
+      "type": "zvhc-pdp-reviews",
       "settings": {}
     },
-    "protective_styles": {
-      "type": "zvhc-pdp-protective-styles",
+    "vs_drugstore": {
+      "type": "zvhc-pdp-vs-drugstore",
       "settings": {}
     },
     "botanical_wheel": {
@@ -28,39 +24,28 @@
       "type": "zvhc-pdp-how-it-works",
       "settings": {}
     },
-    "package": {
-      "type": "zvhc-pdp-package",
+    "protective_styles": {
+      "type": "zvhc-pdp-protective-styles",
       "settings": {}
     },
     "regimen_pair": {
       "type": "zvhc-pdp-regimen-pair",
       "settings": {}
     },
-    "reviews": {
-      "type": "zvhc-pdp-reviews",
-      "settings": {}
-    },
     "faq": {
       "type": "zvhc-pdp-faq",
-      "settings": {}
-    },
-    "shipping": {
-      "type": "zvhc-pdp-shipping",
       "settings": {}
     }
   },
   "order": [
     "main",
-    "marquee",
     "before_after",
+    "reviews",
     "vs_drugstore",
-    "protective_styles",
     "botanical_wheel",
     "how_it_works",
-    "package",
+    "protective_styles",
     "regimen_pair",
-    "reviews",
-    "faq",
-    "shipping"
+    "faq"
   ]
 }
