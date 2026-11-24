@@ -1,12 +1,126 @@
 {% comment %}
-  ZAVELYN HAIR CARE — T01 Style Top Announcement Bar (v5.0)
+  ZAVELYN HAIR CARE — T01 Style Top Announcement Bar (v5.2 Seamless Mobile Marquee)
   Single Source of Truth: Free Standard US Shipping on eligible orders $69.99 USD and above
 {% endcomment %}
-<div class="zvhc-t01-announcement">
-  <div class="zvhc-container">
-    <span>{{ section.settings.announcement_text | default: 'FREE STANDARD US SHIPPING ON ELIGIBLE ORDERS $69.99+ · 30-DAY STRAND SATISFACTION GUARANTEE' }}</span>
+{% assign announcement_msg = section.settings.announcement_text | default: 'FREE STANDARD US SHIPPING ON ELIGIBLE ORDERS $69.99+ · 30-DAY STRAND SATISFACTION GUARANTEE' %}
+
+<div class="zvhc-t01-announcement" role="region" aria-label="Store Announcement">
+  <!-- Desktop: Centered Static Message -->
+  <div class="zvhc-container zvhc-announcement-desktop">
+    <span>{{ announcement_msg }}</span>
+  </div>
+
+  <!-- Mobile: Smooth Continuous Seamless Marquee (max-width: 767px) -->
+  <div class="zvhc-announcement-mobile">
+    <div class="zvhc-announcement-track">
+      <div class="zvhc-announcement-item">
+        <span>{{ announcement_msg }}</span>
+        <span class="zvhc-announcement-sep" aria-hidden="true">&nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </div>
+      <div class="zvhc-announcement-item" aria-hidden="true">
+        <span>{{ announcement_msg }}</span>
+        <span class="zvhc-announcement-sep">&nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </div>
+      <div class="zvhc-announcement-item" aria-hidden="true">
+        <span>{{ announcement_msg }}</span>
+        <span class="zvhc-announcement-sep">&nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </div>
+      <div class="zvhc-announcement-item" aria-hidden="true">
+        <span>{{ announcement_msg }}</span>
+        <span class="zvhc-announcement-sep">&nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </div>
+    </div>
   </div>
 </div>
+
+<style>
+  .zvhc-t01-announcement {
+    background-color: var(--zvhc-t01-bg-card, #FFFFFF);
+    color: var(--zvhc-t01-text-main, #2B1B24);
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--zvhc-t01-border, #EAD7DD);
+    letter-spacing: 0.03em;
+    overflow: hidden;
+    position: relative;
+    z-index: 100;
+  }
+
+  .zvhc-announcement-desktop {
+    display: block;
+    text-align: center;
+    padding: 8px 16px;
+  }
+
+  .zvhc-announcement-mobile {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .zvhc-t01-announcement {
+      height: 34px;
+      min-height: 34px;
+      max-height: 36px;
+      padding: 0;
+      line-height: 34px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .zvhc-announcement-desktop {
+      display: none !important;
+    }
+
+    .zvhc-announcement-mobile {
+      display: flex !important;
+      align-items: center;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .zvhc-announcement-track {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      animation: zvhcAnnouncementScroll 22s linear infinite;
+      will-change: transform;
+    }
+
+    .zvhc-announcement-item {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--zvhc-t01-text-main, #2B1B24);
+    }
+
+    .zvhc-announcement-sep {
+      color: var(--zvhc-t01-accent-rose, #B0476E);
+      opacity: 0.8;
+      font-size: 0.65rem;
+    }
+
+    @keyframes zvhcAnnouncementScroll {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .zvhc-announcement-track {
+        animation: none !important;
+        transform: none !important;
+      }
+      .zvhc-announcement-mobile {
+        overflow-x: auto;
+      }
+    }
+  }
+</style>
 
 {% schema %}
 {
