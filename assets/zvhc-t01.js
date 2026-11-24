@@ -305,6 +305,10 @@
 
       if (isBotanaRoots) {
         var bp = BOTANAROOTS_PRICING[t];
+        var ship2 = document.getElementById('zvhcTier2ShipBadge');
+        if (ship2) {
+          ship2.style.display = isSubscription ? 'none' : 'flex';
+        }
         if (isSubscription) {
           if (priceEl) priceEl.textContent = '$' + bp.sub.toFixed(2) + '/mo';
           if (cmpEl) {
@@ -433,9 +437,19 @@
       btn.disabled = true;
     }
 
+    var isBotanaRoots = (productData && productData.handle === 'zavelyn-botanaroots-organic-batana-hair-growth-oil');
+    var BOTANAROOTS_PLANS = window.ZVHC_BOTANAROOTS_PLANS || {
+      1: '6200033465',
+      2: '6199771321',
+      3: '6200066233'
+    };
+
     var mainItem = { id: parseInt(v.id, 10), quantity: 1 };
-    if (isSubscription && sellingPlanId) {
-      mainItem.selling_plan = parseInt(sellingPlanId, 10);
+    if (isSubscription) {
+      var planToAttach = isBotanaRoots ? (BOTANAROOTS_PLANS[currentTier] || '6199771321') : sellingPlanId;
+      if (planToAttach) {
+        mainItem.selling_plan = parseInt(planToAttach, 10);
+      }
     }
 
     var itemsToAdd = [mainItem];

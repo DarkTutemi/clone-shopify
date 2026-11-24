@@ -704,7 +704,7 @@
                   </div>
                   <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}60-Day Intensive Course · 4 Jars Fulfillment (2 Jars + 2 FREE){% else %}60-day intensive edge &amp; crown regrowth course{% endif %}</div>
                   {% if tier2_num >= 69.99 or product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
-                    <div class="zvhc-tier-ship">
+                    <div class="zvhc-tier-ship" id="zvhcTier2ShipBadge"{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %} style="display: none;"{% endif %}>
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
                       <span>Free US Standard Shipping</span>
                     </div>
@@ -1047,6 +1047,13 @@
     window.ZVHC_SELLING_PLAN_ID = '{{ product.selling_plan_groups[0].selling_plans[0].id }}';
   {% else %}
     window.ZVHC_SELLING_PLAN_ID = '6199771321';
+  {% endif %}
+  {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+    window.ZVHC_BOTANAROOTS_PLANS = {
+      1: '6200033465',
+      2: '6199771321',
+      3: '6200066233'
+    };
   {% endif %}
 </script>
 
