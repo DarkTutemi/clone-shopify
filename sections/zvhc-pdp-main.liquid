@@ -159,12 +159,12 @@
     {% assign p_how_to = 'THE 90-SECOND EDGE RITUAL: 1) Section dry or damp hair into 4 quadrants exposing edges or crown. 2) Scoop a pea-sized amount directly from the 120ml jar with clean fingertips and warm between palms for 3 seconds until melted into a golden lipid oil. 3) Gently massage melted oil into edges, temples, and scalp with circular motions for 60 seconds. 4) Smooth excess down ends and wrap under a satin bonnet overnight. Use 3–4x weekly.' %}
     {% assign p_safety = 'Patch test on inner arm 24 hours prior to first use. For external cosmetic hair and scalp conditioning only. Avoid direct contact with eyes; rinse with cool water if contact occurs. If pregnant, nursing, or managing an active scalp condition, consult your physician. Keep out of reach of children.' %}
     {% assign p_inci = 'INCI: Elaeis Oleifera Kernel Oil (100% Pure Raw Honduran Batana Butter/Oil). 100% naturally derived. Zero mineral oil, petroleum, silicones, sulfates, fragrance, or parabens.' %}
-    {% assign upsell_title = 'Add Nourishing Raw Batana Scalp & Edge Balm (20g)' %}
-    {% assign upsell_sub = 'Melt-on-contact barrier butter for intensive scalp moisture' %}
-    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
-    {% assign upsell_price = '$19.99' %}
-    {% assign upsell_price_num = 19.99 %}
-    {% assign upsell_vid = '68580229677241' %}
+    {% assign upsell_title = 'Add BotanaRoots™ Batana Hair Growth & Edge Oil' %}
+    {% assign upsell_sub = 'Daily precision dropper oil for targeted follicle stimulation' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
+    {% assign upsell_price = '$39.99' %}
+    {% assign upsell_price_num = 39.99 %}
+    {% assign upsell_vid = '68580229218489' %}
 
   {% when 'zvhc-keratin-hair-building-fibers' %}
     {% assign p_short_title = 'Keratin Hair Building Fibers' %}
@@ -749,18 +749,128 @@
 
         <!-- T01 Contextual Upsell -->
         <div class="zvhc-upsell-box">
-          <div class="zvhc-upsell-left">
-            <img src="{{ upsell_img }}" alt="{{ upsell_title | escape }}" class="zvhc-upsell-thumb">
+          <div class="zvhc-upsell-left" onclick="zvhcOpenUpsellZoom()" style="cursor: pointer;" title="Click to view product details">
+            <div style="position: relative; flex-shrink: 0; display: inline-block;">
+              <img src="{{ upsell_img }}" alt="{{ upsell_title | escape }}" class="zvhc-upsell-thumb" style="transition: transform 0.2s;">
+              <span style="position: absolute; bottom: -2px; right: -2px; background: #6B1D3A; color: #FFFFFF; font-size: 10px; width: 17px; height: 17px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 4px rgba(0,0,0,0.25); border: 1.5px solid #FFFFFF;">🔍</span>
+            </div>
             <div class="zvhc-upsell-info">
-              <h4>{{ upsell_title }}</h4>
+              <h4>{{ upsell_title }} <span style="font-size: 0.72rem; color: #6B1D3A; font-weight: 700; text-decoration: underline; margin-left: 4px; display: inline-block;">Tap to zoom 🔍</span></h4>
               <p>{{ upsell_sub }}</p>
             </div>
           </div>
           <div class="zvhc-upsell-action">
             <span class="zvhc-upsell-price" id="zvhcUpsellPriceVal" data-price="{{ upsell_price_num }}">+{{ upsell_price }}</span>
-            <input type="checkbox" class="zvhc-upsell-checkbox" data-variant-id="{{ upsell_vid }}" data-price="{{ upsell_price_num }}" onchange="zvhcToggleUpsell(this)" aria-label="{{ upsell_title | escape }}">
+            <input type="checkbox" class="zvhc-upsell-checkbox" id="zvhcUpsellCheckbox" data-variant-id="{{ upsell_vid }}" data-price="{{ upsell_price_num }}" onchange="zvhcToggleUpsell(this)" aria-label="{{ upsell_title | escape }}">
           </div>
         </div>
+
+        <!-- Upsell Image Zoom Modal -->
+        <div id="zvhcUpsellModal" style="display: none; position: fixed; inset: 0; z-index: 999999; background: rgba(20, 10, 16, 0.75); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 20px;" onclick="zvhcCloseUpsellZoom()">
+          <div style="background: #FFFFFF; border-radius: 20px; max-width: 440px; width: 100%; overflow: hidden; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.3); border: 1px solid #EAD7DD; animation: zvhcModalFadeIn 0.25s ease;" onclick="event.stopPropagation()">
+            
+            <!-- Close Button -->
+            <button type="button" onclick="zvhcCloseUpsellZoom()" aria-label="Close modal" style="position: absolute; top: 14px; right: 14px; z-index: 10; background: #FFFFFF; border: 1px solid #EAD7DD; border-radius: 50%; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; color: #2B1B24; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12); transition: transform 0.15s;">
+              ✕
+            </button>
+
+            <!-- Large Zoom Image -->
+            <div style="width: 100%; aspect-ratio: 1/1; background: #FAF7F2; overflow: hidden; position: relative;">
+              <img id="zvhcUpsellModalImg" src="{{ upsell_img }}" alt="{{ upsell_title | escape }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              <div style="position: absolute; bottom: 12px; left: 12px; background: rgba(43,27,36,0.85); color: #FFFFFF; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; letter-spacing: 0.04em;">
+                🔍 100% RAW BOTANICAL FORMULA
+              </div>
+            </div>
+
+            <!-- Details -->
+            <div style="padding: 22px 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                <h3 id="zvhcUpsellModalTitle" style="font-size: 1.12rem; font-weight: 800; color: #2B1B24; margin: 0; line-height: 1.3;">
+                  {{ upsell_title | replace: 'Add ', '' }}
+                </h3>
+                <span id="zvhcUpsellModalPrice" style="font-size: 1.18rem; font-weight: 800; color: #6B1D3A; margin-left: 12px; white-space: nowrap;">
+                  {{ upsell_price }}
+                </span>
+              </div>
+
+              <p id="zvhcUpsellModalSub" style="font-size: 0.88rem; color: #5A4651; line-height: 1.5; margin: 0 0 16px;">
+                {{ upsell_sub }}
+              </p>
+
+              <!-- Highlights -->
+              <div style="display: flex; flex-direction: column; gap: 7px; font-size: 0.82rem; color: #2B1B24; margin-bottom: 20px; background: #FAF7F2; padding: 12px 14px; border-radius: 12px; border: 1px solid #F0E3E8;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #2E7D32; font-weight: 800;">✓</span>
+                  <span><strong>100% Cold-Pressed Batana</strong> from Honduras</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #2E7D32; font-weight: 800;">✓</span>
+                  <span>Precision dropper for targeted hairline & scalp application</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #2E7D32; font-weight: 800;">✓</span>
+                  <span>Deep follicle stimulation to pair with your jar ritual</span>
+                </div>
+              </div>
+
+              <!-- Modal CTA Button -->
+              <button type="button" id="zvhcUpsellModalAddBtn" onclick="zvhcToggleUpsellFromModal()" style="width: 100%; background: #6B1D3A; color: #FFFFFF; border: none; padding: 15px 20px; font-size: 0.95rem; font-weight: 800; border-radius: 12px; cursor: pointer; letter-spacing: 0.04em; transition: all 0.2s; box-shadow: 0 4px 14px rgba(107,29,58,0.25);">
+                ADD TO MY ORDER · +{{ upsell_price }}
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <script>
+          function zvhcOpenUpsellZoom() {
+            var modal = document.getElementById('zvhcUpsellModal');
+            if (modal) {
+              modal.style.display = 'flex';
+              var cb = document.querySelector('.zvhc-upsell-checkbox');
+              var btn = document.getElementById('zvhcUpsellModalAddBtn');
+              if (cb && btn) {
+                if (cb.checked) {
+                  btn.textContent = '✓ ADDED TO ORDER (CLICK TO REMOVE)';
+                  btn.style.background = '#2E7D32';
+                } else {
+                  var p = cb.getAttribute('data-price') || '39.99';
+                  btn.textContent = 'ADD TO MY ORDER · +$' + p;
+                  btn.style.background = '#6B1D3A';
+                }
+              }
+            }
+          }
+
+          function zvhcCloseUpsellZoom() {
+            var modal = document.getElementById('zvhcUpsellModal');
+            if (modal) modal.style.display = 'none';
+          }
+
+          function zvhcToggleUpsellFromModal() {
+            var cb = document.querySelector('.zvhc-upsell-checkbox');
+            if (cb) {
+              cb.checked = !cb.checked;
+              if (typeof window.zvhcToggleUpsell === 'function') {
+                window.zvhcToggleUpsell(cb);
+              }
+            }
+            zvhcCloseUpsellZoom();
+          }
+
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') zvhcCloseUpsellZoom();
+          });
+        </script>
+        <style>
+          @keyframes zvhcModalFadeIn {
+            from { opacity: 0; transform: scale(0.92); }
+            to { opacity: 1; transform: scale(1); }
+          }
+          .zvhc-upsell-left:hover .zvhc-upsell-thumb {
+            transform: scale(1.08);
+          }
+        </style>
 
         <!-- Accessible Variant Error Message -->
         <div id="zvhcVariantError" class="zvhc-variant-error" style="display: none; margin-bottom: 12px; padding: 12px 16px; background: #FFF0F0; border: 1px solid #E05050; border-radius: 8px; color: #B02020; font-size: 0.88rem; font-weight: 600; text-align: center;" role="alert"></div>
