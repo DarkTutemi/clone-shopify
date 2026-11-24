@@ -35,6 +35,10 @@
     "faq": {
       "type": "zvhc-pdp-faq",
       "settings": {}
+    },
+    "delivery_guarantee": {
+      "type": "zvhc-pdp-delivery-guarantee",
+      "settings": {}
     }
   },
   "order": [
@@ -46,6 +50,7 @@
     "protective_styles",
     "harvest_origin",
     "regimen_pair",
-    "faq"
+    "faq",
+    "delivery_guarantee"
   ]
 }
