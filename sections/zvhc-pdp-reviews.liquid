@@ -253,16 +253,30 @@
 </section>
 
 {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
-<div style="width: 100%; line-height: 0; overflow: hidden; background: #FAF7F2;">
-  <img
-    src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/5.webp?v=1795535511"
-    alt="Zavelyn BotanaRoots Batana Oil — 100% Honduran Miracle Oil"
-    style="width: 100%; height: auto; display: block; max-height: 600px; object-fit: cover; object-position: center top;"
-    loading="lazy"
-    width="1440"
-    height="600"
-  >
+<div class="zvhc-botanaroots-interstitial" style="width: 100%; background: #FAF7F2; padding: 48px 20px; display: flex; justify-content: center; align-items: center; box-sizing: border-box;">
+  <div style="max-width: 580px; width: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 24px rgba(43,27,36,0.06); background: #FAF7F2;">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/5.webp?v=1795535511"
+      alt="Zavelyn BotanaRoots Batana Oil — 100% Honduran Miracle Oil"
+      style="width: 100%; height: auto; display: block;"
+      loading="lazy"
+      width="1080"
+      height="1350"
+    >
+  </div>
 </div>
+<style>
+  @media (max-width: 767px) {
+    .zvhc-botanaroots-interstitial {
+      padding: 0 !important;
+    }
+    .zvhc-botanaroots-interstitial > div {
+      max-width: 100% !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+  }
+</style>
 {% endif %}
 
 {% schema %}
