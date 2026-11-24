@@ -99,7 +99,7 @@
     {% assign p_how_to = 'After shampooing, gently squeeze out excess water. Scoop a generous amount and work evenly through clean, damp mid-lengths and ends. Comb through with fingers or a wide-tooth comb. Leave on for 5 to 10 minutes for express detangling, or 15 to 20 minutes under a shower cap for intensive lipid penetration. Rinse thoroughly with lukewarm water until clean. Use 1–2 times weekly.' %}
     {% assign p_safety = 'For external cosmetic hair conditioning only. Avoid direct contact with eyes; rinse immediately with cool water if contact occurs. Do not apply directly to broken scalp skin. Discontinue use if irritation develops.' %}
     {% assign p_inci = 'Aqua, Cetearyl Alcohol, Steartrimonium Chloride, Elaeis Oleifera Kernel Oil (Batana Oil), Cocos Nucifera (Coconut) Oil, Ricinus Communis (Castor) Seed Oil, Camellia Japonica Seed Oil, Zingiber Officinale (Ginger) Root Extract, Biotin, Glycerin, Hydroxyethylcellulose, Dimethiconol, Phenoxyethanol, Ethylhexylglycerin, Aroma.' %}
-    {% assign upsell_title = 'Add Pure Batana Hair Growth & Edge Oil (60ml)' %}
+    {% assign upsell_title = 'Add Pure Batana Hair Growth & Edge Oil (120g)' %}
     {% assign upsell_sub = 'Pre-wash scalp treatment to stimulate roots before deep masking' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
     {% assign upsell_price = '$39.99' %}
@@ -109,11 +109,11 @@
   {% when 'zvhc-batana-hair-growth-oil', 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
     {% assign p_short_title = 'BotanaRoots™ Batana Hair Growth & Edge Oil' %}
     {% assign p_eyebrow = '✦ ACCELERATED EDGE & FOLLICLE RESTORATION • 3A–4C NATURAL COILS' %}
-    {% assign p_spec_label = '2 oz / 60 ml · 100% Raw Honduran Batana · Cold-Pressed' %}
+    {% assign p_spec_label = '120g (4 oz) · 100% Raw Honduran Batana · Cold-Pressed' %}
     {% assign p_container = 'Bottle' %}
-    {% assign p_unit_label = '1 Bottle' %}
-    {% assign p_duo_label = '2 Bottles' %}
-    {% assign p_trio_label = '3 Bottles' %}
+    {% assign p_unit_label = '1 Bottle (120g)' %}
+    {% assign p_duo_label = '2 Bottles (120g)' %}
+    {% assign p_trio_label = '3 Bottles (120g)' %}
     {% assign p_subtitle = 'Edges snatched out by braids, wigs, and tight styles? That’s not "just genetics" — it’s follicles suffocating under mineral-oil buildup. Drugstore "growth oils" are up to 95% mineral oil and petroleum: they coat, they never penetrate. BotanaRoots is 100% raw, cold-pressed Batana from Honduras — a lightweight follicle-feeder that sinks past the buildup to the root. Real women see softer edges in 3 weeks and visible new growth in 3–6.' %}
     {% assign p_benefit1 = 'Wake up thinning edges: Rich in natural tocotrienols and oleic acid to revive hairlines damaged by wig glue, braid tension & traction alopecia' %}
     {% assign p_benefit2 = 'Zero mineral oil or buildup: 100% cold-pressed raw Batana sinks directly into roots without suffocating pores or coating strands in grease' %}
@@ -189,7 +189,7 @@
     {% assign p_how_to = 'Shake bottle gently. Tap a small amount directly onto dry roots where volume is desired. Massage with fingertips to disperse powder and lift hair upward. Restyle anytime by massaging roots.' %}
     {% assign p_safety = 'For external cosmetic styling only. Do not inhale airborne powder. Keep dispenser away from nose and mouth. Avoid eye contact; rinse thoroughly if product enters eyes.' %}
     {% assign p_inci = 'Aqua, Silica Silylate, Sodium Benzoate, Octylacrylamide/Acrylates/Butylaminoethyl Methacrylate Copolymer, Citric Acid.' %}
-    {% assign upsell_title = 'Add Pure Batana Hair Growth & Edge Oil (60ml)' %}
+    {% assign upsell_title = 'Add Pure Batana Hair Growth & Edge Oil (120g)' %}
     {% assign upsell_sub = 'Nourish roots overnight after daytime matte volumizing' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
     {% assign upsell_price = '$39.99' %}
@@ -249,7 +249,7 @@
     {% assign p_how_to = 'Scoop a pea-sized amount with clean fingertip. Warm between palms until butter melts into a smooth oil. Massage directly into dry scalp spots, or smooth over dry split ends and flyaway edges.' %}
     {% assign p_safety = 'For external cosmetic conditioning only. Conduct a 24-hour patch test prior to first use. Do not apply to open cuts, active rashes, or broken skin. Store below 28°C (82°F) away from direct sunlight.' %}
     {% assign p_inci = 'Elaeis Oleifera Kernel Oil (Batana Butter), Butyrospermum Parkii (Shea) Butter, Ricinus Communis (Castor) Seed Oil, Cera Alba (Beeswax), Tocopherol (Vitamin E).' %}
-    {% assign upsell_title = 'Add Pure Batana Hair Growth & Edge Oil (60ml)' %}
+    {% assign upsell_title = 'Add Pure Batana Hair Growth & Edge Oil (120g)' %}
     {% assign upsell_sub = 'Daily liquid scalp drops paired with overnight moisture balm' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
     {% assign upsell_price = '$39.99' %}
@@ -531,39 +531,7 @@
           </div>
         {% endif %}
 
-        {% if product.handle contains 'batana-hair-growth-oil' or product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
-          <!-- Bottle Size Selector -->
-          <div class="zvhc-size-box" style="margin-top: 14px; margin-bottom: 10px;">
-            <div style="font-size: 0.76rem; font-weight: 800; color: var(--zvhc-t01-text-muted, #5A4651); letter-spacing: 0.06em; margin-bottom: 6px;">
-              SELECT BOTTLE SIZE: <span id="zvhcSelectedSizeName" style="color: var(--zvhc-t01-accent-rose, #B0476E);">60ml (2 oz)</span>
-            </div>
-            <div style="display: flex; gap: 8px;">
-              <button type="button" class="zvhc-swatch-btn zvhc-size-btn is-active" onclick="zvhcSelectSize('60ml', this)">
-                <span>60ml / 2 oz</span>
-                <span style="font-size: 0.68rem; opacity: 0.75; margin-left: 4px;">(Standard)</span>
-              </button>
-              <button type="button" class="zvhc-swatch-btn zvhc-size-btn" onclick="zvhcSelectSize('120ml', this)">
-                <span>120ml / 4 oz</span>
-                <span style="font-size: 0.68rem; color: #B0476E; font-weight: 700; margin-left: 4px;">(Double Size · Save More)</span>
-              </button>
-            </div>
-          </div>
 
-          <!-- Formula Selector -->
-          <div class="zvhc-formula-box" style="margin-bottom: 16px;">
-            <div style="font-size: 0.76rem; font-weight: 800; color: var(--zvhc-t01-text-muted, #5A4651); letter-spacing: 0.06em; margin-bottom: 6px;">
-              SELECT FORMULA: <span id="zvhcSelectedFormulaName" style="color: var(--zvhc-t01-accent-rose, #B0476E);">100% Raw Batana</span>
-            </div>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <button type="button" class="zvhc-swatch-btn zvhc-formula-btn is-active" onclick="zvhcSelectFormula('100% Pure Raw Honduran Batana', this)">
-                <span>🌿 100% Raw Pure Batana</span>
-              </button>
-              <button type="button" class="zvhc-swatch-btn zvhc-formula-btn" onclick="zvhcSelectFormula('Batana + Rosemary Scalp Infusion', this)">
-                <span>🌱 Batana + Rosemary Scalp Infusion</span>
-              </button>
-            </div>
-          </div>
-        {% endif %}
 
         <!-- V7 Campaign Countdown Banner (Controlled via section.settings.countdown_enabled) -->
         {% if section.settings.countdown_enabled %}

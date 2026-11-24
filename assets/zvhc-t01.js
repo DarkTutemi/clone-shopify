@@ -8,7 +8,7 @@
 
   var currentTier = 2; // Default to Tier 2 (Most Popular / Duo)
   var currentShade = '';
-  var currentSize = '60ml';
+  var currentSize = '120';
   var currentFormula = '100% Pure Raw Honduran Batana';
   var productData = null;
   var upsellIncluded = false;
