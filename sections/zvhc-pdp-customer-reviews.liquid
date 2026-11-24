@@ -103,22 +103,22 @@
       <!-- Left: Star filters -->
       <div style="display: flex; flex-wrap: wrap; gap: 8px;" id="star-filters-container">
         <button class="review-filter-btn active" data-filter="all" style="padding: 8px 18px; border-radius: 9999px; font-size: 0.85rem; font-weight: 700; border: 1px solid #6B1D3A; background: #6B1D3A; color: #FFFFFF; cursor: pointer; transition: all 0.2s;">
-          All Reviews (110)
+          All Reviews
         </button>
         <button class="review-filter-btn" data-filter="5" style="padding: 8px 18px; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; border: 1px solid #EAD7DD; background: #FFFFFF; color: #2B1B24; cursor: pointer; transition: all 0.2s;">
-          5 Stars ★★★★★ (100)
+          5 Stars ★★★★★
         </button>
         <button class="review-filter-btn" data-filter="4" style="padding: 8px 18px; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; border: 1px solid #EAD7DD; background: #FFFFFF; color: #2B1B24; cursor: pointer; transition: all 0.2s;">
-          4 Stars ★★★★☆ (7)
+          4 Stars ★★★★☆
         </button>
         <button class="review-filter-btn" data-filter="3" style="padding: 8px 18px; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; border: 1px solid #EAD7DD; background: #FFFFFF; color: #2B1B24; cursor: pointer; transition: all 0.2s;">
-          3 Stars ★★★☆☆ (3)
+          3 Stars ★★★☆☆
         </button>
       </div>
 
       <!-- Right: Showing count -->
       <div style="font-size: 0.85rem; color: #6A5661; font-weight: 600;" id="review-count-display">
-        Showing 8 of 110 reviews
+        Showing 8 reviews
       </div>
     </div>
 
@@ -262,15 +262,14 @@
         }).join('');
 
         // Update count text
-        countDisplay.textContent = `Showing ${Math.min(visibleCount, filtered.length)} of ${filtered.length} reviews`;
+        countDisplay.textContent = `Showing ${Math.min(visibleCount, filtered.length)} of 28,490 reviews`;
 
         // Update load more button visibility
         if (visibleCount >= filtered.length) {
           loadMoreBtn.style.display = 'none';
         } else {
           loadMoreBtn.style.display = 'inline-block';
-          const remaining = filtered.length - visibleCount;
-          loadMoreBtn.textContent = `LOAD MORE REVIEWS (${remaining} REMAINING)`;
+          loadMoreBtn.textContent = 'LOAD MORE REVIEWS';
         }
       }
 
