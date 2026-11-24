@@ -587,7 +587,31 @@
             <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow</span>
           </div>
 
-          <!-- V7 Purchase Option Selector (Below Dispatch Badge for BotanaRoots) -->
+          <!-- V7 Purchase Option Selector (Below Dispatch Badge for BotanaRoots - 2 Columns on Mobile) -->
+          <style>
+            @media (max-width: 767px) {
+              .zvhc-purchase-options {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+              }
+              .zvhc-purchase-options .zvhc-purchase-tab {
+                padding: 10px 8px !important;
+                gap: 6px !important;
+              }
+              .zvhc-purchase-options .zvhc-purchase-tab-title {
+                font-size: 0.80rem !important;
+              }
+              .zvhc-purchase-options .zvhc-purchase-tab-sub {
+                font-size: 0.68rem !important;
+              }
+              .zvhc-purchase-options .zvhc-sub-pending-pill {
+                font-size: 0.58rem !important;
+                padding: 1px 4px !important;
+                margin-left: 2px !important;
+              }
+            }
+          </style>
           <div class="zvhc-purchase-options" role="tablist" aria-label="Purchase Options" style="margin-bottom: 14px;">
             <div class="zvhc-purchase-tab is-active" role="tab" aria-selected="true" tabindex="0">
               <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>

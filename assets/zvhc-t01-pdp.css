@@ -270,8 +270,23 @@
 
 @media (max-width: 480px) {
   .zvhc-purchase-options {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
+  }
+  .zvhc-purchase-tab {
+    padding: 10px 8px;
+    gap: 6px;
+  }
+  .zvhc-purchase-tab-title {
+    font-size: 0.80rem;
+  }
+  .zvhc-purchase-tab-sub {
+    font-size: 0.68rem;
+  }
+  .zvhc-sub-pending-pill {
+    font-size: 0.58rem;
+    padding: 1px 4px;
+    margin-left: 2px;
   }
 }
 
