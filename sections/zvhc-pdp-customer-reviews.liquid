@@ -195,7 +195,13 @@
       const filterBtns = document.querySelectorAll('.review-filter-btn');
 
       function getFilteredReviews() {
-        if (currentFilter === 'all') return allReviews;
+        if (currentFilter === 'all') {
+          // Sort: 5-star first (most recent), then 4-star, then 3-star — so the first 8 visible are always 6×5★ + 2×4★
+          const fiveStar = allReviews.filter(r => r.rating === 5);
+          const fourStar = allReviews.filter(r => r.rating === 4);
+          const threeStar = allReviews.filter(r => r.rating === 3);
+          return [...fiveStar.slice(0, 6), ...fourStar.slice(0, 2), ...fiveStar.slice(6), ...fourStar.slice(2), ...threeStar];
+        }
         const ratingNum = parseInt(currentFilter, 10);
         return allReviews.filter(r => r.rating === ratingNum);
       }
