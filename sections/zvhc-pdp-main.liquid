@@ -15,19 +15,19 @@
 
 {% comment %} Calculate initial tier prices dynamically from actual product variants {% endcomment %}
 {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
-  {% assign tier1_price = '$39.99' %}
-  {% assign tier1_compare = '$80.00' %}
-  {% assign tier1_num = 39.99 %}
+  {% assign tier1_price = '$49.99' %}
+  {% assign tier1_compare = '$100.00' %}
+  {% assign tier1_num = 49.99 %}
 
-  {% assign tier2_price = '$79.98' %}
-  {% assign tier2_compare = '$160.00' %}
-  {% assign tier2_num = 79.98 %}
+  {% assign tier2_price = '$99.98' %}
+  {% assign tier2_compare = '$200.00' %}
+  {% assign tier2_num = 99.98 %}
 
-  {% assign tier3_price = '$95.99' %}
-  {% assign tier3_compare = '$240.00' %}
-  {% assign tier3_num = 95.99 %}
+  {% assign tier3_price = '$125.99' %}
+  {% assign tier3_compare = '$300.00' %}
+  {% assign tier3_num = 125.99 %}
 
-  {% assign default_cta_price = '$79.98' %}
+  {% assign default_cta_price = '$99.98' %}
 {% elsif product.variants.size >= 3 %}
   {% assign tier1_price = product.variants[0].price | money %}
   {% assign tier1_compare = product.variants[0].compare_at_price | money %}
@@ -106,7 +106,7 @@
     {% assign upsell_price_num = 39.99 %}
     {% assign upsell_vid = '68580229218489' %}
 
-  {% when 'zvhc-batana-hair-growth-oil', 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+  {% when 'zvhc-batana-hair-growth-oil' %}
     {% assign p_short_title = 'BotanaRoots™ Batana Hair Growth & Edge Oil' %}
     {% assign p_eyebrow = '✦ ACCELERATED EDGE & FOLLICLE RESTORATION • 3A–4C NATURAL COILS' %}
     {% assign p_spec_label = '120g (4 oz) · 100% Raw Honduran Batana · Cold-Pressed' %}
@@ -129,6 +129,36 @@
     {% assign p_how_to = 'THE 60-SECOND EDGE RITUAL: 1) Part clean, dry or damp hair into 4 quadrants. 2) Apply 3–5 drops directly to the scalp per quadrant with the precision dropper — target the hairline, nape, and part lines. 3) Massage 2–3 minutes with fingertips (not nails) in circular motions to boost microcirculation. 4) Leave on overnight under a satin bonnet, or apply 30 minutes before shampooing as an intensive oil soak. Use 3–4x weekly for 8 weeks for maximum edge density.' %}
     {% assign p_safety = 'Patch test on inner arm 24 hours prior to first use. For external cosmetic hair and scalp conditioning only. Avoid direct contact with eyes; rinse with cool water if contact occurs. If pregnant, nursing, or managing an active scalp condition, consult your physician. Keep out of reach of children.' %}
     {% assign p_inci = 'INCI: Elaeis Oleifera Kernel Oil (Raw Honduran Batana), Ricinus Communis (Jamaican Black Castor) Seed Oil, Cocos Nucifera (Coconut) Oil, Simmondsia Chinensis (Jojoba) Seed Oil, Rosmarinus Officinalis (Rosemary) Leaf Extract, Tocopherol (Vitamin E). 100% naturally derived. Zero mineral oil, petroleum, silicones, sulfates, or parabens.' %}
+    {% assign upsell_title = 'Add Nourishing Raw Batana Scalp & Edge Balm (20g)' %}
+    {% assign upsell_sub = 'Melt-on-contact barrier butter for intensive scalp moisture' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
+    {% assign upsell_price = '$19.99' %}
+    {% assign upsell_price_num = 19.99 %}
+    {% assign upsell_vid = '68580229677241' %}
+
+  {% when 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+    {% assign p_short_title = 'BotanaRoots™ Batana Hair Growth & Edge Oil' %}
+    {% assign p_eyebrow = '✦ ACCELERATED EDGE & FOLLICLE RESTORATION • 3A–4C NATURAL COILS' %}
+    {% assign p_spec_label = '120ml (4 fl oz) · 100% Raw Honduran Batana · Wildcrafted Jar' %}
+    {% assign p_container = 'Jar' %}
+    {% assign p_unit_label = '1 Jar (120ml)' %}
+    {% assign p_duo_label = '2 Jars (120ml)' %}
+    {% assign p_trio_label = '3 Jars (120ml)' %}
+    {% assign p_subtitle = 'Unrefined Honduran Batana for thinning edges, fragile hairlines & slow-growing crowns. A 90-second nightly ritual built for 3A–4C coils, locs & protective styles. 100% raw. Wildcrafted. Nothing added.' %}
+    {% assign p_benefit1 = 'Wake up thinning edges: Rich in natural tocotrienols and oleic acid to revive hairlines damaged by wig glue, braid tension & traction stress' %}
+    {% assign p_benefit2 = 'Zero mineral oil or petroleum: 100% raw, unrefined Honduran Batana sinks directly into dry roots without coating strands in heavy grease' %}
+    {% assign p_benefit3 = 'Protective style safe: Easily melts between braids, under sew-in tracks, along locs, and leave-outs for 3A–4C textures with zero flaking' %}
+    {% assign pill1 = '' %}
+    {% assign pill2 = '' %}
+    {% assign pill3 = '' %}
+    {% assign pill4 = '' %}
+    {% assign pill5 = '' %}
+    {% assign pill6 = '' %}
+    {% assign p_cta_text = 'RECLAIM MY EDGES' %}
+    {% assign p_guarantee = 'THE 60-DAY EDGE RECOVERY PROMISE: Give your hairline 60 days. Take a photo on Day 1 and Day 60. If you don’t see fuller, healthier edges and visible new baby hairs, simply email us at support@tryzavelyn.com with your photos for an immediate 100% refund — no questions asked. You risk nothing; your edges gain everything.' %}
+    {% assign p_how_to = 'THE 90-SECOND EDGE RITUAL: 1) Section dry or damp hair into 4 quadrants exposing edges or crown. 2) Scoop a pea-sized amount directly from the 120ml jar with clean fingertips and warm between palms for 3 seconds until melted into a golden lipid oil. 3) Gently massage melted oil into edges, temples, and scalp with circular motions for 60 seconds. 4) Smooth excess down ends and wrap under a satin bonnet overnight. Use 3–4x weekly.' %}
+    {% assign p_safety = 'Patch test on inner arm 24 hours prior to first use. For external cosmetic hair and scalp conditioning only. Avoid direct contact with eyes; rinse with cool water if contact occurs. If pregnant, nursing, or managing an active scalp condition, consult your physician. Keep out of reach of children.' %}
+    {% assign p_inci = 'INCI: Elaeis Oleifera Kernel Oil (100% Pure Raw Honduran Batana Butter/Oil). 100% naturally derived. Zero mineral oil, petroleum, silicones, sulfates, fragrance, or parabens.' %}
     {% assign upsell_title = 'Add Nourishing Raw Batana Scalp & Edge Balm (20g)' %}
     {% assign upsell_sub = 'Melt-on-contact barrier butter for intensive scalp moisture' %}
     {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
@@ -428,6 +458,7 @@
         </a>
 
         <!-- Authentic Trust Badges Row (Black Haircare Standard) -->
+        {% unless product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
         <div class="zvhc-authentic-trust-row" role="region" aria-label="Customer Trust & Formulation Guarantee">
           <div class="zvhc-trust-badge-pill">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -444,6 +475,7 @@
             <span>TRACKED US DELIVERY</span>
           </div>
         </div>
+        {% endunless %}
 
         <!-- Cultural Eyebrow Pill -->
         <div class="zvhc-cultural-eyebrow" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.74rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 8px; margin-bottom: 4px;">
@@ -451,7 +483,7 @@
         </div>
 
         <h1 class="zvhc-pdp-title">{{ p_short_title | default: product.title }}</h1>
-        {% if p_spec_label != blank %}
+        {% if p_spec_label != blank and product.handle != 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
           <div class="zvhc-pdp-spec-pill" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 600; color: var(--zvhc-t01-accent-rose, #B0476E); background: #FAF0F4; border: 1px solid #F0D3DE; border-radius: 999px; padding: 4px 12px; margin-top: 6px; margin-bottom: 12px;">
             <span>{{ p_spec_label }}</span>
           </div>
@@ -572,7 +604,7 @@
         <!-- Fast Tracked Dispatch Badge -->
         <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 14px; font-size: 0.82rem; color: #166534; font-weight: 600;">
           <span style="width: 8px; height: 8px; border-radius: 50%; background: #00B67A; display: inline-block; box-shadow: 0 0 0 3px rgba(0,182,122,0.25); flex-shrink: 0;"></span>
-          <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow • Free shipping on 2+ bottles</span>
+          <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow{% unless product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %} • Free shipping on 2+ bottles{% endunless %}</span>
         </div>
 
         <!-- T01 Bundle Selection Cards (.kc-tier) — AUD-09 -->
@@ -587,7 +619,7 @@
                     <span class="zvhc-tier-title">{{ p_unit_label }}</span>
                     <span class="zvhc-tier-pill">Starter</span>
                   </div>
-                  <div class="zvhc-tier-sub">30-day initial trial routine • awaken follicles</div>
+                  <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}30-Day Starter Routine · Awaken Dormant Follicles{% else %}30-day initial trial routine • awaken follicles{% endif %}</div>
                 </div>
               </div>
               <div class="zvhc-tier-pricing">
@@ -612,7 +644,7 @@
                       <span class="zvhc-tier-pill">Save {{ duo_save_pct }}%</span>
                     {% endif %}
                   </div>
-                  <div class="zvhc-tier-sub">60-day intensive edge &amp; crown regrowth course</div>
+                  <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}60-Day Intensive Edge &amp; Crown Regrowth Course{% else %}60-day intensive edge &amp; crown regrowth course{% endif %}</div>
                   {% if tier2_num >= 69.99 %}
                     <div class="zvhc-tier-ship">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
@@ -643,7 +675,7 @@
                       <span class="zvhc-tier-pill">Save {{ trio_save_pct }}%</span>
                     {% endif %}
                   </div>
-                  <div class="zvhc-tier-sub">90-day maximum density &amp; full restoration protocol</div>
+                  <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}90-Day Maximum Density &amp; Full Restoration Protocol{% else %}90-day maximum density &amp; full restoration protocol{% endif %}</div>
                   {% if tier3_num >= 69.99 %}
                     <div class="zvhc-tier-ship">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
@@ -715,7 +747,17 @@
         </div>
 
         <!-- Dynamic Guarantee Box -->
-        {% if product.handle == 'zvhc-batana-hair-growth-oil' or product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+        {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+          <div class="zvhc-guarantee-card" style="margin-top: 18px; margin-bottom: 22px; padding: 16px 20px; background: #FAF6F8; border: 1px solid #EAD7DD; border-radius: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <strong style="font-size: 0.88rem; color: #2B1B24; letter-spacing: 0.02em;">THE 60-DAY EDGE RECOVERY PROMISE</strong>
+            </div>
+            <p style="font-size: 0.82rem; color: #5A4651; line-height: 1.55; margin: 0;">
+              Give your hairline 60 days. Take a photo on Day 1 and Day 60. If you don’t see fuller, healthier edges and visible new baby hairs, simply email us at <a href="mailto:support@tryzavelyn.com" style="color: #B0476E; font-weight: 700; text-decoration: underline;">support@tryzavelyn.com</a> with your photos for an immediate 100% refund — no questions asked. You risk nothing; your edges gain everything.
+            </p>
+          </div>
+        {% elsif product.handle == 'zvhc-batana-hair-growth-oil' %}
           <div class="zvhc-guarantee-card" style="margin-top: 18px; margin-bottom: 22px; padding: 16px 20px; background: #FAF6F8; border: 1px solid #EAD7DD; border-radius: 12px;">
             <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
