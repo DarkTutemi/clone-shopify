@@ -580,32 +580,61 @@
           </div>
         {% endif %}
 
-        <!-- V7 Purchase Option Selector (One-Time Default / Subscribe Staged) -->
-        <div class="zvhc-purchase-options" role="tablist" aria-label="Purchase Options">
-          <div class="zvhc-purchase-tab is-active" role="tab" aria-selected="true" tabindex="0">
-            <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
-            <div>
-              <div class="zvhc-purchase-tab-title">One-Time Purchase</div>
-              <div class="zvhc-purchase-tab-sub">Single delivery, standard order</div>
-            </div>
+        {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+          <!-- Fast Tracked Dispatch Badge (Top for BotanaRoots) -->
+          <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 12px; font-size: 0.82rem; color: #166534; font-weight: 600;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #00B67A; display: inline-block; box-shadow: 0 0 0 3px rgba(0,182,122,0.25); flex-shrink: 0;"></span>
+            <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow</span>
           </div>
-          <div class="zvhc-purchase-tab is-disabled" role="tab" aria-selected="false" aria-disabled="true" tabindex="-1" title="Subscription feature launching Q1 (App configuration pending)">
-            <span class="zvhc-purchase-tab-radio"></span>
-            <div>
-              <div class="zvhc-purchase-tab-title" style="display:flex;align-items:center;gap:6px;">
-                <span>Subscribe &amp; Save 15%</span>
-                <span class="zvhc-sub-pending-pill">STAGING / Q1</span>
-              </div>
-              <div class="zvhc-purchase-tab-sub">Auto-delivery every 30/60 days</div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Fast Tracked Dispatch Badge -->
-        <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 14px; font-size: 0.82rem; color: #166534; font-weight: 600;">
-          <span style="width: 8px; height: 8px; border-radius: 50%; background: #00B67A; display: inline-block; box-shadow: 0 0 0 3px rgba(0,182,122,0.25); flex-shrink: 0;"></span>
-          <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow{% unless product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %} • Free shipping on 2+ bottles{% endunless %}</span>
-        </div>
+          <!-- V7 Purchase Option Selector (Below Dispatch Badge for BotanaRoots) -->
+          <div class="zvhc-purchase-options" role="tablist" aria-label="Purchase Options" style="margin-bottom: 14px;">
+            <div class="zvhc-purchase-tab is-active" role="tab" aria-selected="true" tabindex="0">
+              <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
+              <div>
+                <div class="zvhc-purchase-tab-title">One-Time Purchase</div>
+                <div class="zvhc-purchase-tab-sub">Single delivery, standard order</div>
+              </div>
+            </div>
+            <div class="zvhc-purchase-tab is-disabled" role="tab" aria-selected="false" aria-disabled="true" tabindex="-1" title="Subscription feature launching Q1 (App configuration pending)">
+              <span class="zvhc-purchase-tab-radio"></span>
+              <div>
+                <div class="zvhc-purchase-tab-title" style="display:flex;align-items:center;gap:6px;">
+                  <span>Subscribe &amp; Save 15%</span>
+                  <span class="zvhc-sub-pending-pill">STAGING / Q1</span>
+                </div>
+                <div class="zvhc-purchase-tab-sub">Auto-delivery every 30/60 days</div>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <!-- V7 Purchase Option Selector (Original Order for other SKUs) -->
+          <div class="zvhc-purchase-options" role="tablist" aria-label="Purchase Options">
+            <div class="zvhc-purchase-tab is-active" role="tab" aria-selected="true" tabindex="0">
+              <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
+              <div>
+                <div class="zvhc-purchase-tab-title">One-Time Purchase</div>
+                <div class="zvhc-purchase-tab-sub">Single delivery, standard order</div>
+              </div>
+            </div>
+            <div class="zvhc-purchase-tab is-disabled" role="tab" aria-selected="false" aria-disabled="true" tabindex="-1" title="Subscription feature launching Q1 (App configuration pending)">
+              <span class="zvhc-purchase-tab-radio"></span>
+              <div>
+                <div class="zvhc-purchase-tab-title" style="display:flex;align-items:center;gap:6px;">
+                  <span>Subscribe &amp; Save 15%</span>
+                  <span class="zvhc-sub-pending-pill">STAGING / Q1</span>
+                </div>
+                <div class="zvhc-purchase-tab-sub">Auto-delivery every 30/60 days</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fast Tracked Dispatch Badge (Original Order for other SKUs) -->
+          <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 14px; font-size: 0.82rem; color: #166534; font-weight: 600;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #00B67A; display: inline-block; box-shadow: 0 0 0 3px rgba(0,182,122,0.25); flex-shrink: 0;"></span>
+            <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow • Free shipping on 2+ bottles</span>
+          </div>
+        {% endif %}
 
         <!-- T01 Bundle Selection Cards (.kc-tier) — AUD-09 -->
         <div class="zvhc-bundle-group">
@@ -827,6 +856,25 @@
             </div>
           </details>
         </div>
+
+        <!-- Doctor Clinical Endorsement Card (BotanaRoots Only) -->
+        {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+          <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
+            <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
+              “With so many fakes flooding the market, BotanaRoots’s Oil stood out as the purest we tested. It shows proven efficacy in supporting scalp health, strengthening follicles, and promoting visibly thicker hair growth, including visible improvements along thinning edges and alopecia patches.”
+            </div>
+            <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
+              <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">
+              <div>
+                <div style="font-size: 0.94rem; font-weight: 800; color: #2B1B24; letter-spacing: -0.01em; line-height: 1.2;">Dr. Elaine Matthews</div>
+                <div style="display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: 0.78rem; font-weight: 600; color: #4A3843;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#00B67A" style="flex-shrink: 0;"><circle cx="12" cy="12" r="12" fill="#00B67A"/><polyline points="8 12 11 15 16 9" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Hair Restoration Specialist</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
 
       </div>
     </div>
