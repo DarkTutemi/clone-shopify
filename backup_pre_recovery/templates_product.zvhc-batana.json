@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "main": {
+      "type": "zvhc-pdp-main",
+      "settings": {}
+    },
+    "before_after": {
+      "type": "zvhc-pdp-before-after",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "zvhc-pdp-reviews",
+      "settings": {}
+    },
+    "vs_drugstore": {
+      "type": "zvhc-pdp-vs-drugstore",
+      "settings": {}
+    },
+    "how_it_works": {
+      "type": "zvhc-pdp-how-it-works",
+      "settings": {}
+    },
+    "protective_styles": {
+      "type": "zvhc-pdp-protective-styles",
+      "settings": {}
+    },
+    "harvest_origin": {
+      "type": "zvhc-pdp-harvest-origin",
+      "settings": {}
+    },
+    "regimen_pair": {
+      "type": "zvhc-pdp-regimen-pair",
+      "settings": {}
+    },
+    "faq": {
+      "type": "zvhc-pdp-faq",
+      "settings": {}
+    },
+    "delivery_guarantee": {
+      "type": "zvhc-pdp-delivery-guarantee",
+      "settings": {}
+    },
+    "customer_reviews": {
+      "type": "zvhc-pdp-customer-reviews",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "before_after",
+    "reviews",
+    "vs_drugstore",
+    "how_it_works",
+    "protective_styles",
+    "harvest_origin",
+    "regimen_pair",
+    "faq",
+    "delivery_guarantee",
+    "customer_reviews"
+  ]
+}

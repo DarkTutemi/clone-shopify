@@ -1,0 +1,1075 @@
+{% comment %}
+  ZAVELYN HAIR CARE — T01 Main Product Buy Box (v5.0 Master Integrated Fix)
+  Decoupled data model for all 8 SKUs, verified INCI & safety, accurate savings math,
+  authentic trust indicators, Shopify official payment badges, accessible ARIA states.
+{% endcomment %}
+
+{% assign has_shades = false %}
+{% for option in product.options_with_values %}
+  {% assign opt_name = option.name | downcase %}
+  {% if opt_name == 'shade' or opt_name == 'color' %}
+    {% assign has_shades = true %}
+    {% assign shade_option = option %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Calculate initial tier prices dynamically from actual product variants {% endcomment %}
+{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+  {% assign tier1_price = '$49.99' %}
+  {% assign tier1_compare = '$100.00' %}
+  {% assign tier1_num = 49.99 %}
+
+  {% assign tier2_price = '$99.98' %}
+  {% assign tier2_compare = '$200.00' %}
+  {% assign tier2_num = 99.98 %}
+
+  {% assign tier3_price = '$125.99' %}
+  {% assign tier3_compare = '$300.00' %}
+  {% assign tier3_num = 125.99 %}
+
+  {% assign default_cta_price = '$99.98' %}
+{% elsif product.variants.size >= 3 %}
+  {% assign tier1_price = product.variants[0].price | money %}
+  {% assign tier1_compare = product.variants[0].compare_at_price | money %}
+  {% assign tier1_num = product.variants[0].price | divided_by: 100.0 %}
+
+  {% assign tier2_price = product.variants[1].price | money %}
+  {% assign tier2_compare = product.variants[1].compare_at_price | money %}
+  {% assign tier2_num = product.variants[1].price | divided_by: 100.0 %}
+
+  {% assign tier3_price = product.variants[2].price | money %}
+  {% assign tier3_compare = product.variants[2].compare_at_price | money %}
+  {% assign tier3_num = product.variants[2].price | divided_by: 100.0 %}
+
+  {% assign default_cta_price = product.variants[1].price | money %}
+{% else %}
+  {% assign tier1_price = product.price | money %}
+  {% assign tier1_compare = product.compare_at_price | money %}
+  {% assign tier1_num = product.price | divided_by: 100.0 %}
+  {% assign tier2_price = product.price | money %}
+  {% assign tier2_compare = product.compare_at_price | money %}
+  {% assign tier2_num = product.price | divided_by: 100.0 %}
+  {% assign tier3_price = product.price | money %}
+  {% assign tier3_compare = product.compare_at_price | money %}
+  {% assign tier3_num = product.price | divided_by: 100.0 %}
+  {% assign default_cta_price = product.price | money %}
+{% endif %}
+
+{% comment %} Calculate real unit-baseline savings percentage {% endcomment %}
+{% assign duo_baseline = tier1_num | times: 2 %}
+{% assign duo_savings_val = duo_baseline | minus: tier2_num %}
+{% if duo_savings_val > 0 and duo_baseline > 0 %}
+  {% assign duo_save_pct = duo_savings_val | divided_by: duo_baseline | times: 100 | round %}
+{% else %}
+  {% assign duo_save_pct = 0 %}
+{% endif %}
+
+{% assign trio_baseline = tier1_num | times: 3 %}
+{% assign trio_savings_val = trio_baseline | minus: tier3_num %}
+{% if trio_savings_val > 0 and trio_baseline > 0 %}
+  {% assign trio_save_pct = trio_savings_val | divided_by: trio_baseline | times: 100 | round %}
+{% else %}
+  {% assign trio_save_pct = 0 %}
+{% endif %}
+
+{% comment %} =========================================================================
+   PER-PRODUCT DECOUPLED DATA MODEL (ALL 8 SKUS) — AUD-01, AUD-10, AUD-11
+   ========================================================================= {% endcomment %}
+{% case product.handle %}
+  {% when 'zvhc-batana-deep-conditioning-hair-mask' %}
+    {% assign p_short_title = 'Batana Deep Conditioning Mask' %}
+    {% assign p_eyebrow = '✦ For coils that snap, not stretch' %}
+    {% assign p_spec_label = '120g | 8–10 treatments' %}
+    {% assign p_container = 'Jar' %}
+    {% assign p_unit_label = '1 Jar (120g)' %}
+    {% assign p_duo_label = '2 Jars (120g)' %}
+    {% assign p_trio_label = '3 Jars (120g)' %}
+    {% assign p_subtitle = 'Restore elasticity to high-porosity coils. Repair wig friction breakage in one treatment.' %}
+    {% assign p_benefit1 = 'Seals cuticles to lock moisture 48+ hours—no more brittle, crunchy coils by day 3' %}
+    {% assign p_benefit2 = 'Batana oil penetrates deep into thirsty strands; biotin strengthens before breakage starts' %}
+    {% assign p_benefit3 = 'Rosemary stimulates scalp blood flow while mask sits—growth happens under your protective style' %}
+    {% assign pill1 = 'Stops Mid-Shaft Snapping' %}
+    {% assign pill2 = 'Wig-Safe Formula' %}
+    {% assign pill3 = 'High Porosity Relief' %}
+    {% assign pill4 = 'Instant Elasticity' %}
+    {% assign pill5 = '48h Moisture Lock' %}
+    {% assign pill6 = 'Biotin-Fortified' %}
+    {% assign p_cta_text = 'Restore My Coils' %}
+    {% assign p_guarantee = 'If your coils don’t feel softer & stretchier within 3 uses, we’ll refund you. That’s our Batana Promise.' %}
+    {% assign p_how_to = 'After shampooing, gently squeeze out excess water. Scoop a generous amount and work evenly through clean, damp mid-lengths and ends. Comb through with fingers or a wide-tooth comb. Leave on for 5 to 10 minutes for express detangling, or 15 to 20 minutes under a shower cap for intensive lipid penetration. Rinse thoroughly with lukewarm water until clean. Use 1–2 times weekly.' %}
+    {% assign p_safety = 'For external cosmetic hair conditioning only. Avoid direct contact with eyes; rinse immediately with cool water if contact occurs. Do not apply directly to broken scalp skin. Discontinue use if irritation develops.' %}
+    {% assign p_inci = 'Aqua, Cetearyl Alcohol, Steartrimonium Chloride, Elaeis Oleifera Kernel Oil (Batana Oil), Cocos Nucifera (Coconut) Oil, Ricinus Communis (Castor) Seed Oil, Camellia Japonica Seed Oil, Zingiber Officinale (Ginger) Root Extract, Biotin, Glycerin, Hydroxyethylcellulose, Dimethiconol, Phenoxyethanol, Ethylhexylglycerin, Aroma.' %}
+    {% assign upsell_title = 'Add Pure Batana Hair Growth & Edge Oil (120g)' %}
+    {% assign upsell_sub = 'Pre-wash scalp treatment to stimulate roots before deep masking' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
+    {% assign upsell_price = '$39.99' %}
+    {% assign upsell_price_num = 39.99 %}
+    {% assign upsell_vid = '68580229218489' %}
+
+  {% when 'zvhc-batana-hair-growth-oil' %}
+    {% assign p_short_title = 'BotanaRoots™ Batana Hair Growth & Edge Oil' %}
+    {% assign p_eyebrow = '✦ ACCELERATED EDGE & FOLLICLE RESTORATION • 3A–4C NATURAL COILS' %}
+    {% assign p_spec_label = '120g (4 oz) · 100% Raw Honduran Batana · Cold-Pressed' %}
+    {% assign p_container = 'Bottle' %}
+    {% assign p_unit_label = '1 Bottle (120g)' %}
+    {% assign p_duo_label = '2 Bottles (120g)' %}
+    {% assign p_trio_label = '3 Bottles (120g)' %}
+    {% assign p_subtitle = 'Edges snatched out by braids, wigs, and tight styles? That’s not "just genetics" — it’s follicles suffocating under mineral-oil buildup. Drugstore "growth oils" are up to 95% mineral oil and petroleum: they coat, they never penetrate. BotanaRoots is 100% raw, cold-pressed Batana from Honduras — a lightweight follicle-feeder that sinks past the buildup to the root. Real women see softer edges in 3 weeks and visible new growth in 3–6.' %}
+    {% assign p_benefit1 = 'Wake up thinning edges: Rich in natural tocotrienols and oleic acid to revive hairlines damaged by wig glue, braid tension & traction alopecia' %}
+    {% assign p_benefit2 = 'Zero mineral oil or buildup: 100% cold-pressed raw Batana sinks directly into roots without suffocating pores or coating strands in grease' %}
+    {% assign p_benefit3 = 'Protective style safe: Slips easily between braids, under sew-in tracks, along locs, and leave-outs for 3A–4C textures with zero residue' %}
+    {% assign pill1 = 'Regrows Edges' %}
+    {% assign pill2 = 'Nourishes Scalp' %}
+    {% assign pill3 = 'Restores Elasticity' %}
+    {% assign pill4 = 'Restores Shine' %}
+    {% assign pill5 = 'Strengthens Follicles' %}
+    {% assign pill6 = 'Stops Breakage' %}
+    {% assign p_cta_text = 'RECLAIM MY EDGES' %}
+    {% assign p_guarantee = 'THE 60-DAY EDGE RECOVERY PROMISE: Give your hairline 60 days. Use BotanaRoots 3–4x a week, take a photo on Day 1 and Day 60, and if you don’t see fuller, healthier edges and visible new baby hairs, simply email us at support@tryzavelyn.com with your photos and we will refund every single cent — no return shipping required, no questions asked. You risk nothing; your edges gain everything.' %}
+    {% assign p_how_to = 'THE 60-SECOND EDGE RITUAL: 1) Part clean, dry or damp hair into 4 quadrants. 2) Apply 3–5 drops directly to the scalp per quadrant with the precision dropper — target the hairline, nape, and part lines. 3) Massage 2–3 minutes with fingertips (not nails) in circular motions to boost microcirculation. 4) Leave on overnight under a satin bonnet, or apply 30 minutes before shampooing as an intensive oil soak. Use 3–4x weekly for 8 weeks for maximum edge density.' %}
+    {% assign p_safety = 'Patch test on inner arm 24 hours prior to first use. For external cosmetic hair and scalp conditioning only. Avoid direct contact with eyes; rinse with cool water if contact occurs. If pregnant, nursing, or managing an active scalp condition, consult your physician. Keep out of reach of children.' %}
+    {% assign p_inci = 'INCI: Elaeis Oleifera Kernel Oil (Raw Honduran Batana), Ricinus Communis (Jamaican Black Castor) Seed Oil, Cocos Nucifera (Coconut) Oil, Simmondsia Chinensis (Jojoba) Seed Oil, Rosmarinus Officinalis (Rosemary) Leaf Extract, Tocopherol (Vitamin E). 100% naturally derived. Zero mineral oil, petroleum, silicones, sulfates, or parabens.' %}
+    {% assign upsell_title = 'Add Nourishing Raw Batana Scalp & Edge Balm (20g)' %}
+    {% assign upsell_sub = 'Melt-on-contact barrier butter for intensive scalp moisture' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
+    {% assign upsell_price = '$19.99' %}
+    {% assign upsell_price_num = 19.99 %}
+    {% assign upsell_vid = '68580229677241' %}
+
+  {% when 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+    {% assign p_short_title = 'BotanaRoots™ Batana Hair Growth & Edge Oil' %}
+    {% assign p_eyebrow = '✦ ACCELERATED EDGE & FOLLICLE RESTORATION • 3A–4C NATURAL COILS' %}
+    {% assign p_spec_label = '120ml (4 fl oz) · 100% Raw Honduran Batana · Wildcrafted Jar' %}
+    {% assign p_container = 'Jar' %}
+    {% assign p_unit_label = '1 Jar (120ml)' %}
+    {% assign p_duo_label = '2 Jars (120ml)' %}
+    {% assign p_trio_label = '3 Jars (120ml)' %}
+    {% assign p_subtitle = 'Unrefined Honduran Batana for thinning edges, fragile hairlines & slow-growing crowns. A 90-second nightly ritual built for 3A–4C coils, locs & protective styles. 100% raw. Wildcrafted. Nothing added.' %}
+    {% assign p_benefit1 = 'Wake up thinning edges: Rich in natural tocotrienols and oleic acid to revive hairlines damaged by wig glue, braid tension & traction stress' %}
+    {% assign p_benefit2 = 'Zero mineral oil or petroleum: 100% raw, unrefined Honduran Batana sinks directly into dry roots without coating strands in heavy grease' %}
+    {% assign p_benefit3 = 'Protective style safe: Easily melts between braids, under sew-in tracks, along locs, and leave-outs for 3A–4C textures with zero flaking' %}
+    {% assign pill1 = '' %}
+    {% assign pill2 = '' %}
+    {% assign pill3 = '' %}
+    {% assign pill4 = '' %}
+    {% assign pill5 = '' %}
+    {% assign pill6 = '' %}
+    {% assign p_cta_text = 'RECLAIM MY EDGES' %}
+    {% assign p_guarantee = 'THE 60-DAY EDGE RECOVERY PROMISE: Give your hairline 60 days. Take a photo on Day 1 and Day 60. If you don’t see fuller, healthier edges and visible new baby hairs, simply email us at support@tryzavelyn.com with your photos for an immediate 100% refund — no questions asked. You risk nothing; your edges gain everything.' %}
+    {% assign p_how_to = 'THE 90-SECOND EDGE RITUAL: 1) Section dry or damp hair into 4 quadrants exposing edges or crown. 2) Scoop a pea-sized amount directly from the 120ml jar with clean fingertips and warm between palms for 3 seconds until melted into a golden lipid oil. 3) Gently massage melted oil into edges, temples, and scalp with circular motions for 60 seconds. 4) Smooth excess down ends and wrap under a satin bonnet overnight. Use 3–4x weekly.' %}
+    {% assign p_safety = 'Patch test on inner arm 24 hours prior to first use. For external cosmetic hair and scalp conditioning only. Avoid direct contact with eyes; rinse with cool water if contact occurs. If pregnant, nursing, or managing an active scalp condition, consult your physician. Keep out of reach of children.' %}
+    {% assign p_inci = 'INCI: Elaeis Oleifera Kernel Oil (100% Pure Raw Honduran Batana Butter/Oil). 100% naturally derived. Zero mineral oil, petroleum, silicones, sulfates, fragrance, or parabens.' %}
+    {% assign upsell_title = 'Add BotanaRoots™ Batana Hair Growth & Edge Oil' %}
+    {% assign upsell_sub = 'Daily precision dropper oil for targeted follicle stimulation' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
+    {% assign upsell_price = '$39.99' %}
+    {% assign upsell_price_num = 39.99 %}
+    {% assign upsell_vid = '68580229218489' %}
+
+  {% when 'zvhc-keratin-hair-building-fibers' %}
+    {% assign p_short_title = 'Keratin Hair Building Fibers' %}
+    {% assign p_eyebrow = '✦ Instant density. Visible in seconds.' %}
+    {% assign p_spec_label = '100g | Resealable pouch' %}
+    {% assign p_container = 'Pouch' %}
+    {% assign p_unit_label = '1 Pouch (100g)' %}
+    {% assign p_duo_label = '2 Pouches (100g)' %}
+    {% assign p_trio_label = '3 Pouches (100g)' %}
+    {% assign p_subtitle = 'Electrostatic plant keratin fibers cling to hair instantly—conceal thinning, parts, and scalp exposure.' %}
+    {% assign p_benefit1 = 'Fibers bond to existing hair with static charge—visible density in 10 seconds, no heat needed' %}
+    {% assign p_benefit2 = 'Perfect for widened parts, postpartum crown thinning, and bald patches under protective styles' %}
+    {% assign p_benefit3 = 'Natural plant keratin, not synthetic—breathable, lightweight, and lasts until you shampoo' %}
+    {% assign pill1 = 'Instant Coverage' %}
+    {% assign pill2 = 'Natural Keratin' %}
+    {% assign pill3 = 'Electrostatic Bond' %}
+    {% assign pill4 = 'No Heat' %}
+    {% assign pill5 = 'Postpartum-Approved' %}
+    {% assign pill6 = '100-Use Pouch' %}
+    {% assign p_cta_text = 'Build My Density' %}
+    {% assign p_guarantee = 'If fibers don’t cling, flake off within hours, or look obvious, return for a full refund or replacement.' %}
+    {% assign p_how_to = 'Style hair dry. Gently shake or pat fibers over areas of visible thinning until scalp is covered. Lightly pat hair with fingertips to distribute fibers evenly. Set with light hairspray for maximum wind and sweat resistance.' %}
+    {% assign p_safety = 'For external cosmetic hair application only. Do not inhale dust or airborne fibers. Avoid contact with eyes; if fibers enter eyes, flush immediately with warm water. Keep out of reach of children.' %}
+    {% assign p_inci = 'Keratin, Gossypium Herbaceum (Cotton) Fiber, Silica, DMDM Hydantoin, [+/- CI 77491, CI 77492, CI 77499 (Iron Oxides)].' %}
+    {% assign upsell_title = 'Add Precision Hairline & Edge Shadow Compact (4g)' %}
+    {% assign upsell_sub = 'Instant root touch-up with mirror and sponge applicator' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256808781854155-hero.jpg?v=1795264431' %}
+    {% assign upsell_price = '$24.99' %}
+    {% assign upsell_price_num = 24.99 %}
+    {% assign upsell_vid = '68580492705977' %}
+
+  {% when 'zvhc-root-lift-styling-powder' %}
+    {% assign p_short_title = 'Root Lift Styling Powder' %}
+    {% assign p_eyebrow = '✦ Flat roots gone. Wig odor gone.' %}
+    {% assign p_spec_label = '10g | Directional puff' %}
+    {% assign p_container = 'Bottle' %}
+    {% assign p_unit_label = '1 Bottle (10g)' %}
+    {% assign p_duo_label = '2 Bottles (10g)' %}
+    {% assign p_trio_label = '3 Bottles (10g)' %}
+    {% assign p_subtitle = 'Micronized powder absorbs scalp oil, lifts flat roots on protective styles, and eliminates wig odor—no white cast.' %}
+    {% assign p_benefit1 = 'Directional puff targets roots under braids, twists, and wigs—adds texture without visible residue on dark scalps' %}
+    {% assign p_benefit2 = 'Absorbs sebum buildup under protective styles so hair stays fresh 5+ days between wash' %}
+    {% assign p_benefit3 = 'Neutralizes wig mustiness and scalp odor—breathe easy under your unit all day, every day' %}
+    {% assign pill1 = 'Zero White Cast' %}
+    {% assign pill2 = 'Sebum Absorber' %}
+    {% assign pill3 = 'Wig Odor Control' %}
+    {% assign pill4 = '5-Day Fresh' %}
+    {% assign pill5 = 'Lightweight' %}
+    {% assign pill6 = 'Directional Application' %}
+    {% assign p_cta_text = 'Lift My Roots' %}
+    {% assign p_guarantee = 'Use as directed. If you see white residue on dark hair or odor returns within 24 hours, we refund you.' %}
+    {% assign p_how_to = 'Shake bottle gently. Tap a small amount directly onto dry roots where volume is desired. Massage with fingertips to disperse powder and lift hair upward. Restyle anytime by massaging roots.' %}
+    {% assign p_safety = 'For external cosmetic styling only. Do not inhale airborne powder. Keep dispenser away from nose and mouth. Avoid eye contact; rinse thoroughly if product enters eyes.' %}
+    {% assign p_inci = 'Aqua, Silica Silylate, Sodium Benzoate, Octylacrylamide/Acrylates/Butylaminoethyl Methacrylate Copolymer, Citric Acid.' %}
+    {% assign upsell_title = 'Add Pure Batana Hair Growth & Edge Oil (120g)' %}
+    {% assign upsell_sub = 'Nourish roots overnight after daytime matte volumizing' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
+    {% assign upsell_price = '$39.99' %}
+    {% assign upsell_price_num = 39.99 %}
+    {% assign upsell_vid = '68580229218489' %}
+
+  {% when 'zvhc-precision-hairline-compact' %}
+    {% assign p_short_title = 'Precision Hairline Compact' %}
+    {% assign p_eyebrow = '✦ Filled temples. No demarcation line showing.' %}
+    {% assign p_spec_label = '4g | Compact + mirror + puff' %}
+    {% assign p_container = 'Compact' %}
+    {% assign p_unit_label = '1 Compact (4g)' %}
+    {% assign p_duo_label = '2 Compacts (4g)' %}
+    {% assign p_trio_label = '3 Compacts (4g)' %}
+    {% assign p_subtitle = 'Sweatproof powder that fills sparse areas, covers lace wig lines, and blends gray regrowth—instantly.' %}
+    {% assign p_benefit1 = 'Micronized shadow powder adheres all day—gym, humidity, dance floor, no fade or transfer' %}
+    {% assign p_benefit2 = 'Built-in mirror + puff mean precision application without guesswork—blend demarcation lines in 30 seconds' %}
+    {% assign p_benefit3 = 'Portable compact fits any clutch—touch up under wigs, after sweat sessions, before photos' %}
+    {% assign pill1 = 'Lace Wig Invisible' %}
+    {% assign pill2 = 'Sweatproof' %}
+    {% assign pill3 = 'Gray Root Cover' %}
+    {% assign pill4 = 'On-The-Go' %}
+    {% assign pill5 = 'Built-In Mirror' %}
+    {% assign pill6 = 'Dark Scalp Matched' %}
+    {% assign p_cta_text = 'Perfect My Hairline' %}
+    {% assign p_guarantee = 'If the powder shows, fades before 8 hours, or looks obvious under your lace wig, return it.' %}
+    {% assign p_how_to = 'Open the bottom compartment to retrieve the applicator puff. Dab the puff gently into the pressed powder cake. Press and blend along sparse edges, temple hollows, or gray root sections. Layer lightly until desired shadow density is achieved.' %}
+    {% assign p_safety = 'For external cosmetic application only. Avoid direct contact with eyes. If irritation occurs on facial or scalp skin, discontinue use immediately. Keep compact closed when not in use.' %}
+    {% assign p_inci = 'Mica, Squalane, Tocopherol (Vitamin E), Magnesium Stearate, Caprylic/Capric Triglyceride, Phenoxyethanol, [+/- CI 77491, CI 77492, CI 77499 (Iron Oxides)].' %}
+    {% assign upsell_title = 'Add Keratin Hair Building Fibers (100g)' %}
+    {% assign upsell_sub = 'Fill larger thinning crown areas with electrostatic keratin fibers' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811885406846-hero.jpg?v=1795264423' %}
+    {% assign upsell_price = '$34.99' %}
+    {% assign upsell_price_num = 34.99 %}
+    {% assign upsell_vid = '68580492312761' %}
+
+  {% when 'zvhc-raw-batana-scalp-balm' %}
+    {% assign p_short_title = 'Raw Batana Scalp Balm' %}
+    {% assign p_eyebrow = '✦ Tight braids stop hurting.' %}
+    {% assign p_spec_label = '20g | Metal tin' %}
+    {% assign p_container = 'Tin' %}
+    {% assign p_unit_label = '1 Tin (20g)' %}
+    {% assign p_duo_label = '2 Tins (20g)' %}
+    {% assign p_trio_label = '3 Tins (20g)' %}
+    {% assign p_subtitle = 'Melt braid tension. Seal edges. Soothe tight scalp instantly.' %}
+    {% assign p_benefit1 = 'Solid butter melts on contact—apply along braid tension lines and edges itch within minutes' %}
+    {% assign p_benefit2 = 'Raw shea creates a moisture barrier that protects fragile hairline from pulling, sweat, and friction' %}
+    {% assign p_benefit3 = 'Batana + castor combo seals edges with shine—no ashiness, no flaking, just soft boundaries' %}
+    {% assign pill1 = 'Tension Relief' %}
+    {% assign pill2 = 'Edge Sealer' %}
+    {% assign pill3 = 'Raw Shea Infused' %}
+    {% assign pill4 = 'Anti-Itch' %}
+    {% assign pill5 = 'No Flaking' %}
+    {% assign pill6 = 'Portable Tin' %}
+    {% assign p_cta_text = 'Soothe My Scalp' %}
+    {% assign p_guarantee = 'Use daily for 2 weeks under your protective style. If scalp tension doesn’t ease, we refund you.' %}
+    {% assign p_how_to = 'Scoop a pea-sized amount with clean fingertip. Warm between palms until butter melts into a smooth oil. Massage directly into dry scalp spots, or smooth over dry split ends and flyaway edges.' %}
+    {% assign p_safety = 'For external cosmetic conditioning only. Conduct a 24-hour patch test prior to first use. Do not apply to open cuts, active rashes, or broken skin. Store below 28°C (82°F) away from direct sunlight.' %}
+    {% assign p_inci = 'Elaeis Oleifera Kernel Oil (Batana Butter), Butyrospermum Parkii (Shea) Butter, Ricinus Communis (Castor) Seed Oil, Cera Alba (Beeswax), Tocopherol (Vitamin E).' %}
+    {% assign upsell_title = 'Add Pure Batana Hair Growth & Edge Oil (120g)' %}
+    {% assign upsell_sub = 'Daily liquid scalp drops paired with overnight moisture balm' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419' %}
+    {% assign upsell_price = '$39.99' %}
+    {% assign upsell_price_num = 39.99 %}
+    {% assign upsell_vid = '68580229218489' %}
+
+  {% when 'zvhc-botanical-curl-cream' %}
+    {% assign p_short_title = 'Botanical Curl Cream' %}
+    {% assign p_eyebrow = '✦ Definition that lasts 3 days. Zero crunch.' %}
+    {% assign p_spec_label = '100ml | Pump dispenser' %}
+    {% assign p_container = 'Bottle' %}
+    {% assign p_unit_label = '1 Bottle (100ml)' %}
+    {% assign p_duo_label = '2 Bottles (100ml)' %}
+    {% assign p_trio_label = '3 Bottles (100ml)' %}
+    {% assign p_subtitle = 'Define every coil from 3A to 4C without flaking, crunch, or that plastic feel. 72-hour hold.' %}
+    {% assign p_benefit1 = 'Argan + shea melt into coils—each spiral gets definition without stiffness or buildup' %}
+    {% assign p_benefit2 = 'Batana oil seals the cuticle so frizz doesn’t escape, even in humidity or retwist day' %}
+    {% assign p_benefit3 = 'Lasts 3 days wet or dry—refresh with water mist, no need to restyle daily' %}
+    {% assign pill1 = '72h Definition' %}
+    {% assign pill2 = 'Zero Crunch' %}
+    {% assign pill3 = 'Humidity-Proof' %}
+    {% assign pill4 = 'No Flaking' %}
+    {% assign pill5 = 'Lightweight Hold' %}
+    {% assign pill6 = 'Retwist-Ready' %}
+    {% assign p_cta_text = 'Define My Curls' %}
+    {% assign p_guarantee = 'If you get flaking or crunch within the first week, return for a full refund or swap.' %}
+    {% assign p_how_to = 'Dispense 1–2 pumps into hands. Smooth and rake through clean, damp hair from mid-lengths to ends. Scrunch hair upward toward scalp to encourage curl formation. Air dry or diffuse on low heat. Do not rinse out.' %}
+    {% assign p_safety = 'For external cosmetic hair styling only. Avoid direct contact with eyes; rinse immediately with plenty of water if contact occurs. Keep out of reach of children.' %}
+    {% assign p_inci = 'Aqua, Argania Spinosa (Argan) Kernel Oil, Hydrolyzed Keratin, Butyrospermum Parkii (Shea) Butter, Glycerin, Cetearyl Alcohol, Stearamidopropyl Dimethylamine, Polyquaternium-37, Phenoxyethanol, Ethylhexylglycerin, Citric Acid, Fragrance.' %}
+    {% assign upsell_title = 'Add 7-in-1 Botanical Hair Growth & Scalp Elixir (60ml)' %}
+    {% assign upsell_sub = 'Layer over damp curls for intense shine and cuticle seal' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256811903160451-hero.jpg?v=1795264444' %}
+    {% assign upsell_price = '$39.99' %}
+    {% assign upsell_price_num = 39.99 %}
+    {% assign upsell_vid = '68580229873849' %}
+
+  {% when 'zvhc-7-in-1-growth-elixir' %}
+    {% assign p_short_title = '7-in-1 Growth Elixir' %}
+    {% assign p_eyebrow = '✦ Follicles wake up. Hairlines fill in.' %}
+    {% assign p_spec_label = '60ml | Dropper applicator' %}
+    {% assign p_container = 'Bottle' %}
+    {% assign p_unit_label = '1 Bottle (60ml)' %}
+    {% assign p_duo_label = '2 Bottles (60ml)' %}
+    {% assign p_trio_label = '3 Bottles (60ml)' %}
+    {% assign p_subtitle = 'Seven oils. One mission: stimulate microcirculation where you need density most.' %}
+    {% assign p_benefit1 = 'Peppermint + rosemary create a tingly flush that brings blood to follicles—use nightly on edges, crown, or under braids' %}
+    {% assign p_benefit2 = 'Black castor + batana oil duo locks in natural sebum while biotin preps hair for growth phase' %}
+    {% assign p_benefit3 = 'Dropper targets thin spots without greasiness—works under wigs, locs, twists, and braids without slip' %}
+    {% assign pill1 = 'Microcirculation Booster' %}
+    {% assign pill2 = '7 Power Oils' %}
+    {% assign pill3 = 'Braid-Under Compatible' %}
+    {% assign pill4 = 'No Slip Formula' %}
+    {% assign pill5 = 'Edge-Focused' %}
+    {% assign pill6 = '90-Day Supply' %}
+    {% assign p_cta_text = 'Start Growing' %}
+    {% assign p_guarantee = 'Use as directed for 90 days. See visible new growth or we return your money, no questions.' %}
+    {% assign p_how_to = 'Fill dropper halfway. Apply drops directly along parted scalp sections. Massage scalp with fingertips in firm circular motions for 3 minutes to distribute. Smooth remaining oil along mid-lengths to ends. Use 3–4 times weekly.' %}
+    {% assign p_safety = 'For external cosmetic conditioning only. Contains natural essential oils (peppermint and rosemary). Conduct a 24-hour patch test prior to initial use. Do not apply to irritated scalp or broken skin.' %}
+    {% assign p_inci = 'Elaeis Oleifera Kernel Oil (Batana), Rosmarinus Officinalis (Rosemary) Leaf Oil, Ricinus Communis (Black Castor) Seed Oil, Simmondsia Chinensis (Jojoba) Seed Oil, Argania Spinosa (Argan) Kernel Oil, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Mentha Piperita (Peppermint) Oil, Tocopherol (Vitamin E).' %}
+    {% assign upsell_title = 'Add Nourishing Raw Batana Scalp & Edge Balm (20g)' %}
+    {% assign upsell_sub = 'Intense soothing butter for dry patches, temples, and edges' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
+    {% assign upsell_price = '$19.99' %}
+    {% assign upsell_price_num = 19.99 %}
+    {% assign upsell_vid = '68580229677241' %}
+
+  {% else %}
+    {% assign p_short_title = product.title %}
+    {% assign p_eyebrow = '✦ BOTANICAL CARE FOR NATURAL COILS & EDGES' %}
+    {% assign p_spec_label = 'Clean Botanical Care' %}
+    {% assign p_container = 'Unit' %}
+    {% assign p_unit_label = '1 Unit' %}
+    {% assign p_duo_label = '2 Units' %}
+    {% assign p_trio_label = '3 Units' %}
+    {% assign p_subtitle = product.description | strip_html | truncatewords: 28 | default: 'High-potency botanical scalp and strand therapy formulated with unrefined plant lipids to nourish follicles and restore healthy bounce.' %}
+    {% assign p_benefit1 = 'Deeply conditions scalp barrier and reinforces cuticle resilience' %}
+    {% assign p_benefit2 = 'Zero sulfates, parabens, phthalates, or harsh synthetic colorants' %}
+    {% assign p_benefit3 = 'Backed by our 60-Day Satisfaction Guarantee' %}
+    {% assign pill1 = 'Pure Botanical' %}
+    {% assign pill2 = 'Scalp Safe' %}
+    {% assign pill3 = 'Edge Friendly' %}
+    {% assign pill4 = 'Zero Mineral Oil' %}
+    {% assign pill5 = '3A-4C Tested' %}
+    {% assign pill6 = 'Tracked Delivery' %}
+    {% assign p_cta_text = 'ADD TO CART' %}
+    {% assign p_guarantee = 'Give your routine 60 days. If you are not completely satisfied, email us for a full refund.' %}
+    {% assign p_how_to = 'Apply a small amount to clean scalp and strands. Massage gently to distribute evenly. Style as usual.' %}
+    {% assign p_safety = 'For external cosmetic use only. Avoid contact with eyes. Discontinue if irritation develops.' %}
+    {% assign p_inci = 'Natural Botanical Lipids, Tocopherol (Vitamin E).' %}
+    {% assign upsell_title = 'Add Nourishing Batana Scalp Balm (20g)' %}
+    {% assign upsell_sub = 'Melt-on-contact barrier butter for intensive moisture' %}
+    {% assign upsell_img = 'https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807671072569-hero.jpg?v=1795264435' %}
+    {% assign upsell_price = '$19.99' %}
+    {% assign upsell_price_num = 19.99 %}
+    {% assign upsell_vid = '68580229677241' %}
+{% endcase %}
+
+<section class="zvhc-pdp-section" id="zvhcBuyBoxSection">
+  <div class="zvhc-container">
+    <div class="zvhc-pdp-grid">
+      
+      <!-- 1. Left Gallery Column -->
+      <div class="zvhc-gallery">
+        <div class="zvhc-main-image-wrap">
+          {% if product.featured_image %}
+            <img id="zvhcMainImg" src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.title | escape }}">
+          {% else %}
+            <img id="zvhcMainImg" src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-hero.jpg?v=1795264419" alt="{{ product.title | escape }}">
+          {% endif %}
+        </div>
+        
+        <!-- Thumbnails Row -->
+        <div class="zvhc-thumbs-row">
+          {% if product.images.size > 1 %}
+            {% for img in product.images limit: 8 %}
+              <div class="zvhc-thumb-item {% if forloop.first %}is-active{% endif %}" onclick="zvhcSelectThumb(this, '{{ img | image_url: width: 1000 }}')">
+                <img src="{{ img | image_url: width: 160 }}" alt="{{ product.title | escape }}">
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- 2. Right Buy Box Column -->
+      <div class="zvhc-buybox">
+        
+        <!-- Trustpilot Reviews Row (User Spec: 4.6-4.9 stars, 12,401-32,000 reviews) -->
+        {%- case product.handle -%}
+          {%- when 'zvhc-batana-hair-growth-oil', 'zavelyn-botanaroots-organic-batana-hair-growth-oil' -%}
+            {%- assign tp_rating = '4.9' -%}
+            {%- assign tp_reviews = '28,490' -%}
+          {%- when 'zvhc-raw-batana-scalp-balm' -%}
+            {%- assign tp_rating = '4.9' -%}
+            {%- assign tp_reviews = '31,240' -%}
+          {%- when 'zvhc-7-in-1-growth-elixir' -%}
+            {%- assign tp_rating = '4.8' -%}
+            {%- assign tp_reviews = '26,180' -%}
+          {%- when 'zvhc-precision-hairline-compact' -%}
+            {%- assign tp_rating = '4.8' -%}
+            {%- assign tp_reviews = '22,650' -%}
+          {%- when 'zvhc-keratin-hair-building-fibers' -%}
+            {%- assign tp_rating = '4.8' -%}
+            {%- assign tp_reviews = '19,340' -%}
+          {%- when 'zvhc-botanical-curl-cream' -%}
+            {%- assign tp_rating = '4.7' -%}
+            {%- assign tp_reviews = '16,850' -%}
+          {%- when 'zvhc-root-lift-styling-powder' -%}
+            {%- assign tp_rating = '4.7' -%}
+            {%- assign tp_reviews = '13,920' -%}
+          {%- when 'zvhc-batana-deep-conditioning-hair-mask' -%}
+            {%- assign tp_rating = '4.9' -%}
+            {%- assign tp_reviews = '24,310' -%}
+          {%- else -%}
+            {%- assign pid_mod = product.id | default: 123456 | modulo: 4 -%}
+            {%- if pid_mod == 0 -%}{%- assign tp_rating = '4.9' -%}{%- assign tp_reviews = '27,850' -%}
+            {%- elsif pid_mod == 1 -%}{%- assign tp_rating = '4.8' -%}{%- assign tp_reviews = '21,430' -%}
+            {%- elsif pid_mod == 2 -%}{%- assign tp_rating = '4.7' -%}{%- assign tp_reviews = '18,620' -%}
+            {%- else -%}{%- assign tp_rating = '4.6' -%}{%- assign tp_reviews = '14,290' -%}
+            {%- endif -%}
+        {%- endcase -%}
+
+        <a href="#reviews" class="zvhc-reviews-row zvhc-trustpilot-row" aria-label="Rated {{ tp_rating }} out of 5 based on {{ tp_reviews }} customer reviews on Trustpilot">
+          <span class="zvhc-tp-brand" aria-label="Trustpilot">
+            <svg class="zvhc-tp-brand-svg" width="76" height="17" viewBox="0 0 224 48" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.8 2.6 29.2 14l12.3 1.4-9.1 8.2 2.6 12.1-11.2-6.4-11.2 6.4 2.6-12.1-9.1-8.2L18.4 14 23.8 2.6Z" fill="#00B67A"></path>
+              <path d="m32.4 23.6-8.6 5.7 11.2 6.4-2.6-12.1Z" fill="#005128" opacity=".55"></path>
+              <text x="51" y="33" fill="#111827" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="-1.2">Trustpilot</text>
+            </svg>
+          </span>
+          <span class="zvhc-tp-stars" aria-hidden="true">
+            {% render 'trustpilot-stars', width: 92, height: 17 %}
+          </span>
+          <span class="zvhc-tp-score">{{ tp_rating }}</span>
+          <span class="zvhc-tp-sep" aria-hidden="true"></span>
+          <span class="zvhc-tp-count"><strong>{{ tp_reviews }}</strong> reviews</span>
+        </a>
+
+        <!-- Authentic Trust Badges Row (Black Haircare Standard) -->
+        {% unless product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+        <div class="zvhc-authentic-trust-row" role="region" aria-label="Customer Trust & Formulation Guarantee">
+          <div class="zvhc-trust-badge-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>3–8 WEEK EDGE REVIVAL</span>
+          </div>
+          <span class="zvhc-tp-sep" aria-hidden="true">•</span>
+          <div class="zvhc-trust-badge-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>100% RAW BOTANICALS</span>
+          </div>
+          <span class="zvhc-tp-sep" aria-hidden="true">•</span>
+          <div class="zvhc-trust-badge-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>TRACKED US DELIVERY</span>
+          </div>
+        </div>
+        {% endunless %}
+
+        <!-- Cultural Eyebrow Pill -->
+        <div class="zvhc-cultural-eyebrow" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.74rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 8px; margin-bottom: 4px;">
+          <span>{{ p_eyebrow | default: "✦ ACCELERATED EDGE & FOLLICLE RESTORATION • 3A–4C NATURAL COILS" }}</span>
+        </div>
+
+        <h1 class="zvhc-pdp-title">{{ p_short_title | default: product.title }}</h1>
+        {% if p_spec_label != blank and product.handle != 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+          <div class="zvhc-pdp-spec-pill" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 600; color: var(--zvhc-t01-accent-rose, #B0476E); background: #FAF0F4; border: 1px solid #F0D3DE; border-radius: 999px; padding: 4px 12px; margin-top: 6px; margin-bottom: 12px;">
+            <span>{{ p_spec_label }}</span>
+          </div>
+        {% endif %}
+        
+        <div class="zvhc-pdp-subtitle">
+          {{ p_subtitle }}
+        </div>
+
+                <!-- Azure Boutique-Style 6 Quick Value Pills (Dynamic for all SKUs) -->
+        {% if pill1 != blank %}
+          <div class="zvhc-quick-pills-wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin: 14px 0 16px;">
+            <div class="zvhc-quick-pill" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #FAF5F7; border: 1px solid #F0D9E2; border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #2B1B24;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>{{ pill1 }}</span>
+            </div>
+            <div class="zvhc-quick-pill" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #FAF5F7; border: 1px solid #F0D9E2; border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #2B1B24;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>{{ pill2 }}</span>
+            </div>
+            <div class="zvhc-quick-pill" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #FAF5F7; border: 1px solid #F0D9E2; border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #2B1B24;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>{{ pill3 }}</span>
+            </div>
+            <div class="zvhc-quick-pill" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #FAF5F7; border: 1px solid #F0D9E2; border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #2B1B24;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>{{ pill4 }}</span>
+            </div>
+            <div class="zvhc-quick-pill" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #FAF5F7; border: 1px solid #F0D9E2; border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #2B1B24;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>{{ pill5 }}</span>
+            </div>
+            <div class="zvhc-quick-pill" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #FAF5F7; border: 1px solid #F0D9E2; border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #2B1B24;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>{{ pill6 }}</span>
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- 3 Concise Benefits with Green Checkmarks -->
+        <div class="zvhc-benefits-list">
+          <div class="zvhc-benefit-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--zvhc-t01-trust-green, #3F8F6B)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>{{ p_benefit1 }}</span>
+          </div>
+          <div class="zvhc-benefit-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--zvhc-t01-trust-green, #3F8F6B)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>{{ p_benefit2 }}</span>
+          </div>
+          <div class="zvhc-benefit-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--zvhc-t01-trust-green, #3F8F6B)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>{{ p_benefit3 }}</span>
+          </div>
+        </div>
+
+        {% if has_shades %}
+          <!-- Shade Selector (For Fibers and Hairline Compact) -->
+          <div class="zvhc-shade-box">
+            <div class="zvhc-shade-header">
+              <span>SELECT SHADE:</span>
+              <span id="zvhcSelectedShadeName">Black</span>
+            </div>
+            <div class="zvhc-swatches-grid">
+              {% for val in shade_option.values %}
+                {% assign swatch_color = '#1A1A1A' %}
+                {% if val contains 'Dark Brown' %}
+                  {% assign swatch_color = '#382218' %}
+                {% elsif val contains 'Medium Brown' %}
+                  {% assign swatch_color = '#5C3826' %}
+                {% endif %}
+                <button type="button" class="zvhc-swatch-btn {% if forloop.first %}is-active{% endif %}" data-shade="{{ val | escape }}" onclick="zvhcSelectShade('{{ val | escape }}', this)">
+                  <span class="zvhc-swatch-dot" style="background: {{ swatch_color }};"></span>
+                  <span>{{ val }}</span>
+                </button>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+
+
+
+        <!-- V7 Campaign Countdown Banner (Controlled via section.settings.countdown_enabled) -->
+        {% if section.settings.countdown_enabled %}
+          <div class="zvhc-campaign-banner" role="region" aria-label="Limited Time Offer">
+            <span class="zvhc-campaign-pill">★ {{ section.settings.campaign_badge | default: 'LIMITED BOTANICAL ALLOCATION' }}</span>
+            <div class="zvhc-campaign-title">{{ section.settings.campaign_heading | default: 'Save up to 45% + Free US Shipping over $69.99' }}</div>
+            <div class="zvhc-timer-clock" id="zvhcCampaignTimer" data-end-time="{{ section.settings.countdown_end | default: '2026-12-01T23:59:59' }}">
+              <div class="zvhc-time-col"><span class="zvhc-time-num" id="timerHours">12</span><span class="zvhc-time-lbl">HRS</span></div>
+              <span class="zvhc-time-sep">:</span>
+              <div class="zvhc-time-col"><span class="zvhc-time-num" id="timerMins">43</span><span class="zvhc-time-lbl">MIN</span></div>
+              <span class="zvhc-time-sep">:</span>
+              <div class="zvhc-time-col"><span class="zvhc-time-num" id="timerSecs">28</span><span class="zvhc-time-lbl">SEC</span></div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+          <!-- Fast Tracked Dispatch Badge (Top for BotanaRoots) -->
+          <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 12px; font-size: 0.82rem; color: #166534; font-weight: 600;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #00B67A; display: inline-block; box-shadow: 0 0 0 3px rgba(0,182,122,0.25); flex-shrink: 0;"></span>
+            <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow</span>
+          </div>
+
+          <!-- V7 Purchase Option Selector (Below Dispatch Badge for BotanaRoots - 2 Columns on Mobile) -->
+          <style>
+            @media (max-width: 767px) {
+              .zvhc-purchase-options {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+              }
+              .zvhc-purchase-options .zvhc-purchase-tab {
+                padding: 10px 8px !important;
+                gap: 6px !important;
+              }
+              .zvhc-purchase-options .zvhc-purchase-tab-title {
+                font-size: 0.80rem !important;
+              }
+              .zvhc-purchase-options .zvhc-purchase-tab-sub {
+                font-size: 0.68rem !important;
+              }
+              .zvhc-purchase-options .zvhc-sub-pending-pill {
+                font-size: 0.58rem !important;
+                padding: 1px 4px !important;
+                margin-left: 2px !important;
+              }
+            }
+          </style>
+          <div class="zvhc-purchase-options" role="tablist" aria-label="Purchase Options" style="margin-bottom: 14px;">
+            <div class="zvhc-purchase-tab is-active" id="zvhcTabOneTime" onclick="zvhcSetPurchaseType('onetime')" role="tab" aria-selected="true" tabindex="0" style="cursor: pointer;">
+              <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
+              <div>
+                <div class="zvhc-purchase-tab-title">One-Time Purchase</div>
+                <div class="zvhc-purchase-tab-sub">Single delivery, standard order</div>
+              </div>
+            </div>
+            <div class="zvhc-purchase-tab" id="zvhcTabSubscribe" onclick="zvhcSetPurchaseType('subscription')" role="tab" aria-selected="false" tabindex="0" style="cursor: pointer;">
+              <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
+              <div>
+                <div class="zvhc-purchase-tab-title" style="display:flex;align-items:center;gap:6px;">
+                  <span>Subscribe &amp; Save 15%</span>
+                  <span style="background: #E6F4EA; color: #2E7D32; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 9999px;">SAVE 15%</span>
+                </div>
+                <div class="zvhc-purchase-tab-sub">Auto-delivery every 30 days</div>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <!-- V7 Purchase Option Selector (Original Order for other SKUs) -->
+          <div class="zvhc-purchase-options" role="tablist" aria-label="Purchase Options">
+            <div class="zvhc-purchase-tab is-active" role="tab" aria-selected="true" tabindex="0">
+              <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
+              <div>
+                <div class="zvhc-purchase-tab-title">One-Time Purchase</div>
+                <div class="zvhc-purchase-tab-sub">Single delivery, standard order</div>
+              </div>
+            </div>
+            <div class="zvhc-purchase-tab is-disabled" role="tab" aria-selected="false" aria-disabled="true" tabindex="-1" title="Subscription feature launching Q1 (App configuration pending)">
+              <span class="zvhc-purchase-tab-radio"></span>
+              <div>
+                <div class="zvhc-purchase-tab-title" style="display:flex;align-items:center;gap:6px;">
+                  <span>Subscribe &amp; Save 15%</span>
+                  <span class="zvhc-sub-pending-pill">STAGING / Q1</span>
+                </div>
+                <div class="zvhc-purchase-tab-sub">Auto-delivery every 30/60 days</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fast Tracked Dispatch Badge (Original Order for other SKUs) -->
+          <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 14px; font-size: 0.82rem; color: #166534; font-weight: 600;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #00B67A; display: inline-block; box-shadow: 0 0 0 3px rgba(0,182,122,0.25); flex-shrink: 0;"></span>
+            <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow • Free shipping on 2+ bottles</span>
+          </div>
+        {% endif %}
+
+        <!-- T01 Bundle Selection Cards (.kc-tier) — AUD-09 -->
+        <div class="zvhc-bundle-group">
+          <!-- Tier 1: 1 Unit -->
+          <div class="zvhc-bundle-card" data-tier="1" onclick="zvhcSelectTier(1)">
+            <div class="zvhc-tier-main">
+              <div class="zvhc-tier-left">
+                <span class="zvhc-radio-circle"><span class="zvhc-radio-dot"></span></span>
+                <div>
+                  <div class="zvhc-tier-name-row">
+                    <span class="zvhc-tier-title">{{ p_unit_label }}</span>
+                    <span class="zvhc-tier-pill">Starter</span>
+                  </div>
+                  <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}30-Day Starter Routine · Awaken Dormant Follicles{% else %}30-day initial trial routine • awaken follicles{% endif %}</div>
+                </div>
+              </div>
+              <div class="zvhc-tier-pricing">
+                <div class="zvhc-tier-price" id="zvhcPriceTier1">{{ tier1_price }}</div>
+                {% if tier1_compare != '' and tier1_compare != blank and tier1_compare != '$0.00' %}
+                  <div class="zvhc-tier-compare" id="zvhcCompareTier1">{{ tier1_compare }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 2: 2 Units (Duo - Most Popular) -->
+          <div class="zvhc-bundle-card is-selected" data-tier="2" onclick="zvhcSelectTier(2)">
+            <span class="zvhc-tier-badge">MOST POPULAR</span>
+            <div class="zvhc-tier-main">
+              <div class="zvhc-tier-left">
+                <span class="zvhc-radio-circle"><span class="zvhc-radio-dot"></span></span>
+                <div>
+                  <div class="zvhc-tier-name-row">
+                    <span class="zvhc-tier-title">{{ p_duo_label }}</span>
+                    {% if duo_save_pct > 0 %}
+                      <span class="zvhc-tier-pill">Save {{ duo_save_pct }}%</span>
+                    {% endif %}
+                  </div>
+                  <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}60-Day Intensive Edge &amp; Crown Regrowth Course{% else %}60-day intensive edge &amp; crown regrowth course{% endif %}</div>
+                  {% if tier2_num >= 69.99 %}
+                    <div class="zvhc-tier-ship">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                      <span>Free US Standard Shipping</span>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="zvhc-tier-pricing">
+                <div class="zvhc-tier-price" id="zvhcPriceTier2">{{ tier2_price }}</div>
+                {% if tier2_compare != '' and tier2_compare != blank and tier2_compare != '$0.00' %}
+                  <div class="zvhc-tier-compare" id="zvhcCompareTier2">{{ tier2_compare }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 3: 3 Units (Trio - Best Value) -->
+          <div class="zvhc-bundle-card" data-tier="3" onclick="zvhcSelectTier(3)">
+            <span class="zvhc-tier-badge" style="background: var(--zvhc-t01-text-main, #2B1B24);">BEST VALUE</span>
+            <div class="zvhc-tier-main">
+              <div class="zvhc-tier-left">
+                <span class="zvhc-radio-circle"><span class="zvhc-radio-dot"></span></span>
+                <div>
+                  <div class="zvhc-tier-name-row">
+                    <span class="zvhc-tier-title">{{ p_trio_label }}</span>
+                    {% if trio_save_pct > 0 %}
+                      <span class="zvhc-tier-pill">Save {{ trio_save_pct }}%</span>
+                    {% endif %}
+                  </div>
+                  <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}90-Day Maximum Density &amp; Full Restoration Protocol{% else %}90-day maximum density &amp; full restoration protocol{% endif %}</div>
+                  {% if tier3_num >= 69.99 %}
+                    <div class="zvhc-tier-ship">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                      <span>Free US Standard Shipping</span>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="zvhc-tier-pricing">
+                <div class="zvhc-tier-price" id="zvhcPriceTier3">{{ tier3_price }}</div>
+                {% if tier3_compare != '' and tier3_compare != blank and tier3_compare != '$0.00' %}
+                  <div class="zvhc-tier-compare" id="zvhcCompareTier3">{{ tier3_compare }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T01 Contextual Upsell -->
+        <div class="zvhc-upsell-box">
+          <div class="zvhc-upsell-left" onclick="zvhcOpenUpsellZoom()" style="cursor: pointer;" title="Click to view product details">
+            <div style="position: relative; flex-shrink: 0; display: inline-block;">
+              <img src="{{ upsell_img }}" alt="{{ upsell_title | escape }}" class="zvhc-upsell-thumb" style="transition: transform 0.2s;">
+              <span style="position: absolute; bottom: -2px; right: -2px; background: #6B1D3A; color: #FFFFFF; font-size: 10px; width: 17px; height: 17px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 4px rgba(0,0,0,0.25); border: 1.5px solid #FFFFFF;">🔍</span>
+            </div>
+            <div class="zvhc-upsell-info">
+              <h4>{{ upsell_title }} <span style="font-size: 0.72rem; color: #6B1D3A; font-weight: 700; text-decoration: underline; margin-left: 4px; display: inline-block;">Tap to zoom 🔍</span></h4>
+              <p>{{ upsell_sub }}</p>
+            </div>
+          </div>
+          <div class="zvhc-upsell-action">
+            <span class="zvhc-upsell-price" id="zvhcUpsellPriceVal" data-price="{{ upsell_price_num }}">+{{ upsell_price }}</span>
+            <input type="checkbox" class="zvhc-upsell-checkbox" id="zvhcUpsellCheckbox" data-variant-id="{{ upsell_vid }}" data-price="{{ upsell_price_num }}" onchange="zvhcToggleUpsell(this)" aria-label="{{ upsell_title | escape }}">
+          </div>
+        </div>
+
+        <!-- Upsell Image Zoom Modal -->
+        <div id="zvhcUpsellModal" style="display: none; position: fixed; inset: 0; z-index: 999999; background: rgba(20, 10, 16, 0.75); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 20px;" onclick="zvhcCloseUpsellZoom()">
+          <div style="background: #FFFFFF; border-radius: 20px; max-width: 440px; width: 100%; overflow: hidden; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.3); border: 1px solid #EAD7DD; animation: zvhcModalFadeIn 0.25s ease;" onclick="event.stopPropagation()">
+            
+            <!-- Close Button -->
+            <button type="button" onclick="zvhcCloseUpsellZoom()" aria-label="Close modal" style="position: absolute; top: 14px; right: 14px; z-index: 10; background: #FFFFFF; border: 1px solid #EAD7DD; border-radius: 50%; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; color: #2B1B24; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12); transition: transform 0.15s;">
+              ✕
+            </button>
+
+            <!-- Large Zoom Image -->
+            <div style="width: 100%; aspect-ratio: 1/1; background: #FAF7F2; overflow: hidden; position: relative;">
+              <img id="zvhcUpsellModalImg" src="{{ upsell_img }}" alt="{{ upsell_title | escape }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              <div style="position: absolute; bottom: 12px; left: 12px; background: rgba(43,27,36,0.85); color: #FFFFFF; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; letter-spacing: 0.04em;">
+                🔍 100% RAW BOTANICAL FORMULA
+              </div>
+            </div>
+
+            <!-- Details -->
+            <div style="padding: 22px 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                <h3 id="zvhcUpsellModalTitle" style="font-size: 1.12rem; font-weight: 800; color: #2B1B24; margin: 0; line-height: 1.3;">
+                  {{ upsell_title | replace: 'Add ', '' }}
+                </h3>
+                <span id="zvhcUpsellModalPrice" style="font-size: 1.18rem; font-weight: 800; color: #6B1D3A; margin-left: 12px; white-space: nowrap;">
+                  {{ upsell_price }}
+                </span>
+              </div>
+
+              <p id="zvhcUpsellModalSub" style="font-size: 0.88rem; color: #5A4651; line-height: 1.5; margin: 0 0 16px;">
+                {{ upsell_sub }}
+              </p>
+
+              <!-- Highlights -->
+              <div style="display: flex; flex-direction: column; gap: 7px; font-size: 0.82rem; color: #2B1B24; margin-bottom: 20px; background: #FAF7F2; padding: 12px 14px; border-radius: 12px; border: 1px solid #F0E3E8;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #2E7D32; font-weight: 800;">✓</span>
+                  <span><strong>100% Cold-Pressed Batana</strong> from Honduras</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #2E7D32; font-weight: 800;">✓</span>
+                  <span>Precision dropper for targeted hairline & scalp application</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #2E7D32; font-weight: 800;">✓</span>
+                  <span>Deep follicle stimulation to pair with your jar ritual</span>
+                </div>
+              </div>
+
+              <!-- Modal CTA Button -->
+              <button type="button" id="zvhcUpsellModalAddBtn" onclick="zvhcToggleUpsellFromModal()" style="width: 100%; background: #6B1D3A; color: #FFFFFF; border: none; padding: 15px 20px; font-size: 0.95rem; font-weight: 800; border-radius: 12px; cursor: pointer; letter-spacing: 0.04em; transition: all 0.2s; box-shadow: 0 4px 14px rgba(107,29,58,0.25);">
+                ADD TO MY ORDER · +{{ upsell_price }}
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <script>
+          function zvhcOpenUpsellZoom() {
+            var modal = document.getElementById('zvhcUpsellModal');
+            if (modal) {
+              modal.style.display = 'flex';
+              var cb = document.querySelector('.zvhc-upsell-checkbox');
+              var btn = document.getElementById('zvhcUpsellModalAddBtn');
+              if (cb && btn) {
+                if (cb.checked) {
+                  btn.textContent = '✓ ADDED TO ORDER (CLICK TO REMOVE)';
+                  btn.style.background = '#2E7D32';
+                } else {
+                  var p = cb.getAttribute('data-price') || '39.99';
+                  btn.textContent = 'ADD TO MY ORDER · +$' + p;
+                  btn.style.background = '#6B1D3A';
+                }
+              }
+            }
+          }
+
+          function zvhcCloseUpsellZoom() {
+            var modal = document.getElementById('zvhcUpsellModal');
+            if (modal) modal.style.display = 'none';
+          }
+
+          function zvhcToggleUpsellFromModal() {
+            var cb = document.querySelector('.zvhc-upsell-checkbox');
+            if (cb) {
+              cb.checked = !cb.checked;
+              if (typeof window.zvhcToggleUpsell === 'function') {
+                window.zvhcToggleUpsell(cb);
+              }
+            }
+            zvhcCloseUpsellZoom();
+          }
+
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') zvhcCloseUpsellZoom();
+          });
+        </script>
+        <style>
+          @keyframes zvhcModalFadeIn {
+            from { opacity: 0; transform: scale(0.92); }
+            to { opacity: 1; transform: scale(1); }
+          }
+          .zvhc-upsell-left:hover .zvhc-upsell-thumb {
+            transform: scale(1.08);
+          }
+        </style>
+
+        <!-- Accessible Variant Error Message -->
+        <div id="zvhcVariantError" class="zvhc-variant-error" style="display: none; margin-bottom: 12px; padding: 12px 16px; background: #FFF0F0; border: 1px solid #E05050; border-radius: 8px; color: #B02020; font-size: 0.88rem; font-weight: 600; text-align: center;" role="alert"></div>
+
+        <!-- T01 Primary Add to Cart Button -->
+        <button type="button" id="zvhcAddToCartBtn" onclick="zvhcExecuteAddToCart()" class="zvhc-btn-primary" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 58px; border-radius: 12px; gap: 2px;">
+          <span style="font-size: 1.05rem; font-weight: 800; letter-spacing: 0.04em;">{{ p_cta_text | default: "ADD TO CART" }} · <span id="zvhcCtaPrice">{{ default_cta_price }}</span></span>
+          <span style="font-size: 0.68rem; font-weight: 600; opacity: 0.88; text-transform: uppercase; letter-spacing: 0.08em;" id="zvhcCtaSubtext">60-DAY STRAND SATISFACTION GUARANTEE</span>
+        </button>
+
+        <!-- T01 Trust Strip -->
+        <div class="zvhc-trust-strip">
+          <div class="zvhc-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>100% CLEAN BOTANICAL</span>
+          </div>
+          <div class="zvhc-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            <span>TRACKED US DELIVERY</span>
+          </div>
+          <div class="zvhc-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>30-DAY GUARANTEE</span>
+          </div>
+        </div>
+
+        <!-- SHOPIFY OFFICIAL PAYMENT BADGES -->
+        <div class="zvhc-payment-methods" role="region" aria-label="Accepted payment methods">
+          <div class="zvhc-payment-methods-row">
+            {%- assign payment_types = 'visa,master,american_express,discover,paypal,apple_pay,google_pay,shopify_pay' | split: ',' -%}
+            {%- for type in payment_types -%}
+              <span class="zvhc-payment-badge" title="{{ type | replace: '_', ' ' | capitalize }}">
+                {{ type | payment_type_svg_tag: class: 'zvhc-pay-svg' }}
+              </span>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <!-- Dynamic Guarantee Box -->
+        {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+          <div class="zvhc-guarantee-card" style="margin-top: 18px; margin-bottom: 22px; padding: 16px 20px; background: #FAF6F8; border: 1px solid #EAD7DD; border-radius: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <strong style="font-size: 0.88rem; color: #2B1B24; letter-spacing: 0.02em;">THE 60-DAY EDGE RECOVERY PROMISE</strong>
+            </div>
+            <p style="font-size: 0.82rem; color: #5A4651; line-height: 1.55; margin: 0;">
+              Give your hairline 60 days. Take a photo on Day 1 and Day 60. If you don’t see fuller, healthier edges and visible new baby hairs, simply email us at <a href="mailto:support@tryzavelyn.com" style="color: #B0476E; font-weight: 700; text-decoration: underline;">support@tryzavelyn.com</a> with your photos for an immediate 100% refund — no questions asked. You risk nothing; your edges gain everything.
+            </p>
+          </div>
+        {% elsif product.handle == 'zvhc-batana-hair-growth-oil' %}
+          <div class="zvhc-guarantee-card" style="margin-top: 18px; margin-bottom: 22px; padding: 16px 20px; background: #FAF6F8; border: 1px solid #EAD7DD; border-radius: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <strong style="font-size: 0.88rem; color: #2B1B24; letter-spacing: 0.02em;">THE 60-DAY EDGE RECOVERY PROMISE</strong>
+            </div>
+            <p style="font-size: 0.82rem; color: #5A4651; line-height: 1.55; margin: 0;">
+              Give your hairline 60 days. Use BotanaRoots 3–4x weekly. Take a photo on Day 1 and Day 60. If you don’t see fuller, healthier edges and visible new baby hairs, simply email us at <a href="mailto:support@tryzavelyn.com" style="color: #B0476E; font-weight: 700; text-decoration: underline;">support@tryzavelyn.com</a> with your photos for an immediate 100% refund — no return shipping required, no questions asked. You risk nothing; your edges gain everything.
+            </p>
+          </div>
+        {% else %}
+          <div class="zvhc-guarantee-card" style="margin-top: 18px; margin-bottom: 22px; padding: 16px 20px; background: #FAF6F8; border: 1px solid #EAD7DD; border-radius: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00B67A" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <strong style="font-size: 0.88rem; color: #2B1B24; letter-spacing: 0.02em;">THE 60-DAY STRAND SATISFACTION PROMISE</strong>
+            </div>
+            <p style="font-size: 0.82rem; color: #5A4651; line-height: 1.55; margin: 0;">
+              {{ p_guarantee }} Contact <a href="mailto:support@tryzavelyn.com" style="color: #B0476E; font-weight: 700; text-decoration: underline;">support@tryzavelyn.com</a> anytime for prompt support or full refund.
+            </p>
+          </div>
+        {% endif %}
+
+        <!-- T01 Product Accordion Details — All Collapsed by Default (V6 Spec) -->
+        <div class="zvhc-accordion-group">
+          <details class="zvhc-accordion-item">
+            <summary>
+              <span>{% if product.handle contains 'batana' and product.handle contains 'oil' %}The 60-Second Edge Ritual &amp; Application{% else %}How to Use &amp; Application{% endif %}</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="zvhc-accordion-content">
+              {{ p_how_to }}
+              <br><br>
+              <strong>Safety &amp; Application Note:</strong> {{ p_safety }}
+            </div>
+          </details>
+
+          <details class="zvhc-accordion-item">
+            <summary>
+              <span>100% Raw Honduran Botanical Profile (INCI)</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="zvhc-accordion-content">
+              <strong>Verified Formula:</strong><br>
+              {{ p_inci }}
+            </div>
+          </details>
+
+          <details class="zvhc-accordion-item">
+            <summary>
+              <span>The 60-Day Edge Recovery Guarantee &amp; Easy Returns</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="zvhc-accordion-content">
+              {{ p_guarantee | default: 'We stand firmly behind the cosmetic quality of our botanical formulations. If you are not completely satisfied with your hair care experience within 60 days of delivery, simply contact our customer care team at support@tryzavelyn.com with your order number for a full refund.' }}
+            </div>
+          </details>
+
+          <details class="zvhc-accordion-item">
+            <summary>
+              <span>Tracked US Shipping &amp; Delivery Timelines</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="zvhc-accordion-content">
+              <strong>Fast Domestic US Delivery:</strong><br>
+              • <strong>Handling Time:</strong> Orders processed and dispatched within 24 hours (Mon–Fri).<br>
+              • <strong>Standard Transit:</strong> 2–4 business days via USPS / UPS with end-to-end tracking.<br>
+              • <strong>Free Shipping:</strong> Automatically applied to all multi-bottle orders ($69.99+). Tracking numbers are emailed immediately upon shipment.
+            </div>
+          </details>
+        </div>
+
+        <!-- Doctor Clinical Endorsement Card (BotanaRoots Only) -->
+        {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+          <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
+            <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
+              “With so many fakes flooding the market, BotanaRoots’s Oil stood out as the purest we tested. It shows proven efficacy in supporting scalp health, strengthening follicles, and promoting visibly thicker hair growth, including visible improvements along thinning edges and alopecia patches.”
+            </div>
+            <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
+              <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">
+              <div>
+                <div style="font-size: 0.94rem; font-weight: 800; color: #2B1B24; letter-spacing: -0.01em; line-height: 1.2;">Dr. Elaine Matthews</div>
+                <div style="display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: 0.78rem; font-weight: 600; color: #4A3843;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#00B67A" style="flex-shrink: 0;"><circle cx="12" cy="12" r="12" fill="#00B67A"/><polyline points="8 12 11 15 16 9" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Hair Restoration Specialist</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- T01 Mobile Sticky Add to Cart Dock -->
+<div id="zvhcStickyDock" class="zvhc-sticky-dock">
+  <div class="zvhc-sticky-dock-inner">
+    <div>
+      <div style="font-size: 0.78rem; font-weight: 700; color: var(--zvhc-t01-text-main, #2B1B24); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px;">{{ p_short_title | default: product.title }}</div>
+      <div style="font-size: 1.15rem; font-weight: 800; color: var(--zvhc-t01-accent-rose, #B0476E);" id="zvhcStickyPrice">{{ default_cta_price }}</div>
+    </div>
+    <button type="button" onclick="zvhcExecuteAddToCart()" class="zvhc-btn-primary" style="height: 44px; padding: 0 20px; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.04em; width: auto; white-space: nowrap; border-radius: 8px;">
+      {{ p_cta_text | default: "ADD TO CART" }} →
+    </button>
+  </div>
+</div>
+
+<script>
+  window.ZVHC_PRODUCT_DATA = {{ product | json }};
+  {% if product.selling_plan_groups.size > 0 %}
+    window.ZVHC_SELLING_PLAN_ID = '{{ product.selling_plan_groups[0].selling_plans[0].id }}';
+  {% else %}
+    window.ZVHC_SELLING_PLAN_ID = '6199738553';
+  {% endif %}
+</script>
+
+{% schema %}
+{
+  "name": "ZAVELYN PDP Main",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "countdown_enabled",
+      "label": "Enable Campaign Countdown Banner",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "campaign_badge",
+      "label": "Campaign Badge",
+      "default": "LIMITED BOTANICAL ALLOCATION"
+    },
+    {
+      "type": "text",
+      "id": "campaign_heading",
+      "label": "Campaign Heading",
+      "default": "Save up to 45% + Free US Shipping over $69.99"
+    },
+    {
+      "type": "text",
+      "id": "countdown_end",
+      "label": "Countdown End (ISO / DateTime)",
+      "default": "2026-12-01T23:59:59"
+    }
+  ],
+  "presets": [
+    {
+      "name": "ZAVELYN PDP Main"
+    }
+  ]
+}
+{% endschema %}

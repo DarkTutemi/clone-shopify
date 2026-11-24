@@ -13,18 +13,23 @@
   var productData = null;
   var upsellIncluded = false;
   var upsellVariantId = null;
-  var isSubscription = false;
-  var sellingPlanId = '6199738553';
+  var isSubscription = true; // Default to Subscription for BotanaRoots
+  var sellingPlanId = '6199771321';
 
   window.zvhcInitT01 = function() {
     productData = window.ZVHC_PRODUCT_DATA;
     if (!productData) return;
 
-    if (window.ZVHC_SELLING_PLAN_ID) {
-      sellingPlanId = window.ZVHC_SELLING_PLAN_ID;
+    if (productData.handle === 'zavelyn-botanaroots-organic-batana-hair-growth-oil') {
+      isSubscription = true;
+      currentTier = 2;
+      sellingPlanId = window.ZVHC_SELLING_PLAN_ID || '6199771321';
+    } else {
+      isSubscription = false;
     }
+
     window.zvhcSellingPlanId = sellingPlanId;
-    window.zvhcIsSubscription = false;
+    window.zvhcIsSubscription = isSubscription;
 
     // Detect if product has shades
     var hasShades = false;
@@ -186,6 +191,14 @@
     if (!productData || !productData.variants || productData.variants.length === 0) {
       return null;
     }
+
+    // Direct exact variant matching for BotanaRoots
+    if (productData.handle === 'zavelyn-botanaroots-organic-batana-hair-growth-oil') {
+      if (tier === 1) return productData.variants.find(function(v) { return v.id == 68036047831225; }) || productData.variants[0];
+      if (tier === 2) return productData.variants.find(function(v) { return v.id == 68036048453817; }) || productData.variants[1] || productData.variants[0];
+      if (tier === 3) return productData.variants.find(function(v) { return v.id == 68036048715961; }) || productData.variants[2] || productData.variants[0];
+    }
+
     var targetSize = size || currentSize;
     var targetFormula = formula || currentFormula;
     var targetShade = shade || currentShade;
@@ -275,14 +288,39 @@
 
     var errorEl = document.getElementById('zvhcVariantError');
     var ctaBtn = document.getElementById('zvhcAddToCartBtn');
+    var isBotanaRoots = (productData.handle === 'zavelyn-botanaroots-organic-batana-hair-growth-oil');
+
+    var BOTANAROOTS_PRICING = {
+      1: { oneTime: 41.16, sub: 34.99, compare: '', unitSub: '$34.99/jar', unitOT: '$41.16/jar' },
+      2: { oneTime: 82.32, sub: 69.98, compare: '$164.64', unitSub: '~$17.50/jar', unitOT: '~$20.58/jar' },
+      3: { oneTime: 148.18, sub: 125.96, compare: '$329.28', unitSub: '~$15.75/jar', unitOT: '~$18.52/jar' }
+    };
 
     // Update prices on the 3 tier cards
     for (var t = 1; t <= 3; t++) {
       var v = window.zvhcFindVariant(t, currentShade, currentSize, currentFormula);
       var priceEl = document.getElementById('zvhcPriceTier' + t);
       var cmpEl = document.getElementById('zvhcCompareTier' + t);
+      var unitEl = document.getElementById('zvhcUnitTier' + t);
 
-      if (v) {
+      if (isBotanaRoots) {
+        var bp = BOTANAROOTS_PRICING[t];
+        if (isSubscription) {
+          if (priceEl) priceEl.textContent = '$' + bp.sub.toFixed(2) + '/mo';
+          if (cmpEl) {
+            cmpEl.textContent = bp.compare;
+            cmpEl.style.display = bp.compare ? 'block' : 'none';
+          }
+          if (unitEl) unitEl.textContent = bp.unitSub;
+        } else {
+          if (priceEl) priceEl.textContent = '$' + bp.oneTime.toFixed(2);
+          if (cmpEl) {
+            cmpEl.textContent = bp.compare;
+            cmpEl.style.display = bp.compare ? 'block' : 'none';
+          }
+          if (unitEl) unitEl.textContent = bp.unitOT;
+        }
+      } else if (v) {
         var rawPrice = parseFloat(v.price);
         if (rawPrice > 1000) rawPrice = rawPrice / 100;
 
@@ -325,11 +363,16 @@
         ctaBtn.disabled = false;
       }
 
-      var activeRaw = parseFloat(activeVariant.price);
-      if (activeRaw > 1000) activeRaw = activeRaw / 100;
+      var total = 0;
+      if (isBotanaRoots) {
+        var activeBp = BOTANAROOTS_PRICING[currentTier] || BOTANAROOTS_PRICING[2];
+        total = isSubscription ? activeBp.sub : activeBp.oneTime;
+      } else {
+        var activeRaw = parseFloat(activeVariant.price);
+        if (activeRaw > 1000) activeRaw = activeRaw / 100;
+        total = isSubscription ? (activeRaw * 0.85) : activeRaw;
+      }
 
-      var basePrice = isSubscription ? (activeRaw * 0.85) : activeRaw;
-      var total = basePrice;
       if (upsellIncluded && upsellVariantId) {
         var upsellCheckbox = document.querySelector('.zvhc-upsell-checkbox');
         var upsellVal = upsellCheckbox ? parseFloat(upsellCheckbox.getAttribute('data-price') || 0) : 0;

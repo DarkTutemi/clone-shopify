@@ -15,19 +15,19 @@
 
 {% comment %} Calculate initial tier prices dynamically from actual product variants {% endcomment %}
 {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
-  {% assign tier1_price = '$49.99' %}
-  {% assign tier1_compare = '$100.00' %}
-  {% assign tier1_num = 49.99 %}
+  {% assign tier1_price = '$34.99/mo' %}
+  {% assign tier1_compare = '$41.16' %}
+  {% assign tier1_num = 34.99 %}
 
-  {% assign tier2_price = '$99.98' %}
-  {% assign tier2_compare = '$200.00' %}
-  {% assign tier2_num = 99.98 %}
+  {% assign tier2_price = '$69.98/mo' %}
+  {% assign tier2_compare = '$164.64' %}
+  {% assign tier2_num = 69.98 %}
 
-  {% assign tier3_price = '$125.99' %}
-  {% assign tier3_compare = '$300.00' %}
-  {% assign tier3_num = 125.99 %}
+  {% assign tier3_price = '$125.96/mo' %}
+  {% assign tier3_compare = '$329.28' %}
+  {% assign tier3_num = 125.96 %}
 
-  {% assign default_cta_price = '$99.98' %}
+  {% assign default_cta_price = '$69.98/mo' %}
 {% elsif product.variants.size >= 3 %}
   {% assign tier1_price = product.variants[0].price | money %}
   {% assign tier1_compare = product.variants[0].compare_at_price | money %}
@@ -141,9 +141,9 @@
     {% assign p_eyebrow = '✦ ACCELERATED EDGE & FOLLICLE RESTORATION • 3A–4C NATURAL COILS' %}
     {% assign p_spec_label = '120ml (4 fl oz) · 100% Raw Honduran Batana · Wildcrafted Jar' %}
     {% assign p_container = 'Jar' %}
-    {% assign p_unit_label = '1 Jar (120ml)' %}
-    {% assign p_duo_label = '2 Jars (120ml)' %}
-    {% assign p_trio_label = '3 Jars (120ml)' %}
+    {% assign p_unit_label = 'Buy 1 (1x 120ml Jar)' %}
+    {% assign p_duo_label = 'Buy 2 Get 2 FREE (4x 120ml Jars)' %}
+    {% assign p_trio_label = 'Buy 4 Get 4 FREE + Extra 10% OFF (8x 120ml Jars)' %}
     {% assign p_subtitle = 'Unrefined Honduran Batana for thinning edges, fragile hairlines & slow-growing crowns. A 90-second nightly ritual built for 3A–4C coils, locs & protective styles. 100% raw. Wildcrafted. Nothing added.' %}
     {% assign p_benefit1 = 'Wake up thinning edges: Rich in natural tocotrienols and oleic acid to revive hairlines damaged by wig glue, braid tension & traction stress' %}
     {% assign p_benefit2 = 'Zero mineral oil or petroleum: 100% raw, unrefined Honduran Batana sinks directly into dry roots without coating strands in heavy grease' %}
@@ -613,21 +613,21 @@
             }
           </style>
           <div class="zvhc-purchase-options" role="tablist" aria-label="Purchase Options" style="margin-bottom: 14px;">
-            <div class="zvhc-purchase-tab is-active" id="zvhcTabOneTime" onclick="zvhcSetPurchaseType('onetime')" role="tab" aria-selected="true" tabindex="0" style="cursor: pointer;">
+            <div class="zvhc-purchase-tab" id="zvhcTabOneTime" onclick="zvhcSetPurchaseType('onetime')" role="tab" aria-selected="false" tabindex="0" style="cursor: pointer;">
               <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
               <div>
                 <div class="zvhc-purchase-tab-title">One-Time Purchase</div>
                 <div class="zvhc-purchase-tab-sub">Single delivery, standard order</div>
               </div>
             </div>
-            <div class="zvhc-purchase-tab" id="zvhcTabSubscribe" onclick="zvhcSetPurchaseType('subscription')" role="tab" aria-selected="false" tabindex="0" style="cursor: pointer;">
+            <div class="zvhc-purchase-tab is-active" id="zvhcTabSubscribe" onclick="zvhcSetPurchaseType('subscription')" role="tab" aria-selected="true" tabindex="0" style="cursor: pointer;">
               <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
               <div>
                 <div class="zvhc-purchase-tab-title" style="display:flex;align-items:center;gap:6px;">
                   <span>Subscribe &amp; Save 15%</span>
                   <span style="background: #E6F4EA; color: #2E7D32; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 9999px;">SAVE 15%</span>
                 </div>
-                <div class="zvhc-purchase-tab-sub">Auto-delivery every 30 days</div>
+                <div class="zvhc-purchase-tab-sub">Auto-delivery every month</div>
               </div>
             </div>
           </div>
@@ -672,13 +672,16 @@
                     <span class="zvhc-tier-title">{{ p_unit_label }}</span>
                     <span class="zvhc-tier-pill">Starter</span>
                   </div>
-                  <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}30-Day Starter Routine · Awaken Dormant Follicles{% else %}30-day initial trial routine • awaken follicles{% endif %}</div>
+                  <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}30-Day Starter Routine · 1 Jar Fulfillment{% else %}30-day initial trial routine • awaken follicles{% endif %}</div>
                 </div>
               </div>
               <div class="zvhc-tier-pricing">
                 <div class="zvhc-tier-price" id="zvhcPriceTier1">{{ tier1_price }}</div>
                 {% if tier1_compare != '' and tier1_compare != blank and tier1_compare != '$0.00' %}
                   <div class="zvhc-tier-compare" id="zvhcCompareTier1">{{ tier1_compare }}</div>
+                {% endif %}
+                {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+                  <div class="zvhc-tier-unit" id="zvhcUnitTier1" style="font-size: 0.72rem; color: #2E7D32; font-weight: 700; margin-top: 2px;">$34.99/jar</div>
                 {% endif %}
               </div>
             </div>
@@ -693,12 +696,14 @@
                 <div>
                   <div class="zvhc-tier-name-row">
                     <span class="zvhc-tier-title">{{ p_duo_label }}</span>
-                    {% if duo_save_pct > 0 %}
+                    {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+                      <span class="zvhc-tier-pill" style="background: #E8F5E9; color: #1B5E20;">BOGO · 4 Jars</span>
+                    {% elsif duo_save_pct > 0 %}
                       <span class="zvhc-tier-pill">Save {{ duo_save_pct }}%</span>
                     {% endif %}
                   </div>
-                  <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}60-Day Intensive Edge &amp; Crown Regrowth Course{% else %}60-day intensive edge &amp; crown regrowth course{% endif %}</div>
-                  {% if tier2_num >= 69.99 %}
+                  <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}60-Day Intensive Course · 4 Jars Fulfillment (2 Jars + 2 FREE){% else %}60-day intensive edge &amp; crown regrowth course{% endif %}</div>
+                  {% if tier2_num >= 69.99 or product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
                     <div class="zvhc-tier-ship">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
                       <span>Free US Standard Shipping</span>
@@ -710,6 +715,9 @@
                 <div class="zvhc-tier-price" id="zvhcPriceTier2">{{ tier2_price }}</div>
                 {% if tier2_compare != '' and tier2_compare != blank and tier2_compare != '$0.00' %}
                   <div class="zvhc-tier-compare" id="zvhcCompareTier2">{{ tier2_compare }}</div>
+                {% endif %}
+                {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+                  <div class="zvhc-tier-unit" id="zvhcUnitTier2" style="font-size: 0.72rem; color: #2E7D32; font-weight: 700; margin-top: 2px;">~$17.50/jar</div>
                 {% endif %}
               </div>
             </div>
@@ -724,12 +732,14 @@
                 <div>
                   <div class="zvhc-tier-name-row">
                     <span class="zvhc-tier-title">{{ p_trio_label }}</span>
-                    {% if trio_save_pct > 0 %}
+                    {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+                      <span class="zvhc-tier-pill" style="background: #E8F5E9; color: #1B5E20;">BOGO + Extra 10% · 8 Jars</span>
+                    {% elsif trio_save_pct > 0 %}
                       <span class="zvhc-tier-pill">Save {{ trio_save_pct }}%</span>
                     {% endif %}
                   </div>
-                  <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}90-Day Maximum Density &amp; Full Restoration Protocol{% else %}90-day maximum density &amp; full restoration protocol{% endif %}</div>
-                  {% if tier3_num >= 69.99 %}
+                  <div class="zvhc-tier-sub">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}120-Day Full Restoration · 8 Jars Fulfillment (4 Jars + 4 FREE + 10% OFF){% else %}90-day maximum density &amp; full restoration protocol{% endif %}</div>
+                  {% if tier3_num >= 69.99 or product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
                     <div class="zvhc-tier-ship">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
                       <span>Free US Standard Shipping</span>
@@ -741,6 +751,9 @@
                 <div class="zvhc-tier-price" id="zvhcPriceTier3">{{ tier3_price }}</div>
                 {% if tier3_compare != '' and tier3_compare != blank and tier3_compare != '$0.00' %}
                   <div class="zvhc-tier-compare" id="zvhcCompareTier3">{{ tier3_compare }}</div>
+                {% endif %}
+                {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+                  <div class="zvhc-tier-unit" id="zvhcUnitTier3" style="font-size: 0.72rem; color: #2E7D32; font-weight: 700; margin-top: 2px;">~$15.75/jar</div>
                 {% endif %}
               </div>
             </div>
@@ -878,7 +891,7 @@
         <!-- T01 Primary Add to Cart Button -->
         <button type="button" id="zvhcAddToCartBtn" onclick="zvhcExecuteAddToCart()" class="zvhc-btn-primary" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 58px; border-radius: 12px; gap: 2px;">
           <span style="font-size: 1.05rem; font-weight: 800; letter-spacing: 0.04em;">{{ p_cta_text | default: "ADD TO CART" }} · <span id="zvhcCtaPrice">{{ default_cta_price }}</span></span>
-          <span style="font-size: 0.68rem; font-weight: 600; opacity: 0.88; text-transform: uppercase; letter-spacing: 0.08em;" id="zvhcCtaSubtext">60-DAY STRAND SATISFACTION GUARANTEE</span>
+          <span style="font-size: 0.68rem; font-weight: 600; opacity: 0.88; text-transform: uppercase; letter-spacing: 0.08em;" id="zvhcCtaSubtext">{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}BILLED &amp; DELIVERED MONTHLY · CANCEL OR PAUSE ANYTIME{% else %}60-DAY STRAND SATISFACTION GUARANTEE{% endif %}</span>
         </button>
 
         <!-- T01 Trust Strip -->
@@ -1033,7 +1046,7 @@
   {% if product.selling_plan_groups.size > 0 %}
     window.ZVHC_SELLING_PLAN_ID = '{{ product.selling_plan_groups[0].selling_plans[0].id }}';
   {% else %}
-    window.ZVHC_SELLING_PLAN_ID = '6199738553';
+    window.ZVHC_SELLING_PLAN_ID = '6199771321';
   {% endif %}
 </script>
 
