@@ -13,10 +13,18 @@
   var productData = null;
   var upsellIncluded = false;
   var upsellVariantId = null;
+  var isSubscription = false;
+  var sellingPlanId = '6199738553';
 
   window.zvhcInitT01 = function() {
     productData = window.ZVHC_PRODUCT_DATA;
     if (!productData) return;
+
+    if (window.ZVHC_SELLING_PLAN_ID) {
+      sellingPlanId = window.ZVHC_SELLING_PLAN_ID;
+    }
+    window.zvhcSellingPlanId = sellingPlanId;
+    window.zvhcIsSubscription = false;
 
     // Detect if product has shades
     var hasShades = false;
@@ -112,6 +120,30 @@
         card.classList.remove('is-selected');
       }
     });
+
+    window.zvhcUpdateTierDisplay();
+  };
+
+  window.zvhcSetPurchaseType = function(type) {
+    isSubscription = (type === 'subscription');
+    window.zvhcIsSubscription = isSubscription;
+
+    var tabOneTime = document.getElementById('zvhcTabOneTime');
+    var tabSub = document.getElementById('zvhcTabSubscribe');
+
+    if (tabOneTime && tabSub) {
+      if (isSubscription) {
+        tabOneTime.classList.remove('is-active');
+        tabOneTime.setAttribute('aria-selected', 'false');
+        tabSub.classList.add('is-active');
+        tabSub.setAttribute('aria-selected', 'true');
+      } else {
+        tabOneTime.classList.add('is-active');
+        tabOneTime.setAttribute('aria-selected', 'true');
+        tabSub.classList.remove('is-active');
+        tabSub.setAttribute('aria-selected', 'false');
+      }
+    }
 
     window.zvhcUpdateTierDisplay();
   };
@@ -253,13 +285,28 @@
       if (v) {
         var rawPrice = parseFloat(v.price);
         if (rawPrice > 1000) rawPrice = rawPrice / 100;
-        var formatted = rawPrice.toFixed(2);
 
-        if (priceEl) priceEl.textContent = '$' + formatted;
-        if (cmpEl && v.compare_at_price) {
-          var rawCmp = parseFloat(v.compare_at_price);
-          if (rawCmp > 1000) rawCmp = rawCmp / 100;
-          cmpEl.textContent = '$' + rawCmp.toFixed(2);
+        if (isSubscription) {
+          var subPrice = (rawPrice * 0.85).toFixed(2);
+          if (priceEl) priceEl.textContent = '$' + subPrice + '/mo';
+          if (cmpEl) {
+            cmpEl.textContent = '$' + rawPrice.toFixed(2);
+            cmpEl.style.display = 'block';
+          }
+        } else {
+          var formatted = rawPrice.toFixed(2);
+          if (priceEl) priceEl.textContent = '$' + formatted;
+          if (cmpEl) {
+            if (v.compare_at_price) {
+              var rawCmp = parseFloat(v.compare_at_price);
+              if (rawCmp > 1000) rawCmp = rawCmp / 100;
+              cmpEl.textContent = '$' + rawCmp.toFixed(2);
+              cmpEl.style.display = 'block';
+            } else {
+              cmpEl.textContent = '';
+              cmpEl.style.display = 'none';
+            }
+          }
         }
       } else {
         if (priceEl) priceEl.textContent = 'Unavailable';
@@ -281,7 +328,8 @@
       var activeRaw = parseFloat(activeVariant.price);
       if (activeRaw > 1000) activeRaw = activeRaw / 100;
 
-      var total = activeRaw;
+      var basePrice = isSubscription ? (activeRaw * 0.85) : activeRaw;
+      var total = basePrice;
       if (upsellIncluded && upsellVariantId) {
         var upsellCheckbox = document.querySelector('.zvhc-upsell-checkbox');
         var upsellVal = upsellCheckbox ? parseFloat(upsellCheckbox.getAttribute('data-price') || 0) : 0;
@@ -289,10 +337,20 @@
       }
 
       var formattedTotal = total.toFixed(2);
+      var suffix = isSubscription ? '/mo' : '';
       var ctaPrice = document.getElementById('zvhcCtaPrice');
-      if (ctaPrice) ctaPrice.textContent = '$' + formattedTotal;
+      if (ctaPrice) ctaPrice.textContent = '$' + formattedTotal + suffix;
       var stickyPrice = document.getElementById('zvhcStickyPrice');
-      if (stickyPrice) stickyPrice.textContent = '$' + formattedTotal;
+      if (stickyPrice) stickyPrice.textContent = '$' + formattedTotal + suffix;
+
+      var ctaSub = document.getElementById('zvhcCtaSubtext');
+      if (ctaSub) {
+        if (isSubscription) {
+          ctaSub.textContent = 'BILLED & DELIVERED MONTHLY · CANCEL OR PAUSE ANYTIME';
+        } else {
+          ctaSub.textContent = '60-DAY STRAND SATISFACTION GUARANTEE';
+        }
+      }
     } else {
       // Combination unavailable - disable CTA & show accessible error
       if (ctaBtn) {
@@ -332,7 +390,12 @@
       btn.disabled = true;
     }
 
-    var itemsToAdd = [{ id: parseInt(v.id, 10), quantity: 1 }];
+    var mainItem = { id: parseInt(v.id, 10), quantity: 1 };
+    if (isSubscription && sellingPlanId) {
+      mainItem.selling_plan = parseInt(sellingPlanId, 10);
+    }
+
+    var itemsToAdd = [mainItem];
     if (upsellIncluded && upsellVariantId) {
       itemsToAdd.push({ id: parseInt(upsellVariantId, 10), quantity: 1 });
     }

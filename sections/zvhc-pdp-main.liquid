@@ -613,21 +613,21 @@
             }
           </style>
           <div class="zvhc-purchase-options" role="tablist" aria-label="Purchase Options" style="margin-bottom: 14px;">
-            <div class="zvhc-purchase-tab is-active" role="tab" aria-selected="true" tabindex="0">
+            <div class="zvhc-purchase-tab is-active" id="zvhcTabOneTime" onclick="zvhcSetPurchaseType('onetime')" role="tab" aria-selected="true" tabindex="0" style="cursor: pointer;">
               <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
               <div>
                 <div class="zvhc-purchase-tab-title">One-Time Purchase</div>
                 <div class="zvhc-purchase-tab-sub">Single delivery, standard order</div>
               </div>
             </div>
-            <div class="zvhc-purchase-tab is-disabled" role="tab" aria-selected="false" aria-disabled="true" tabindex="-1" title="Subscription feature launching Q1 (App configuration pending)">
-              <span class="zvhc-purchase-tab-radio"></span>
+            <div class="zvhc-purchase-tab" id="zvhcTabSubscribe" onclick="zvhcSetPurchaseType('subscription')" role="tab" aria-selected="false" tabindex="0" style="cursor: pointer;">
+              <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
               <div>
                 <div class="zvhc-purchase-tab-title" style="display:flex;align-items:center;gap:6px;">
                   <span>Subscribe &amp; Save 15%</span>
-                  <span class="zvhc-sub-pending-pill">STAGING / Q1</span>
+                  <span style="background: #E6F4EA; color: #2E7D32; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 9999px;">SAVE 15%</span>
                 </div>
-                <div class="zvhc-purchase-tab-sub">Auto-delivery every 30/60 days</div>
+                <div class="zvhc-purchase-tab-sub">Auto-delivery every 30 days</div>
               </div>
             </div>
           </div>
@@ -878,7 +878,7 @@
         <!-- T01 Primary Add to Cart Button -->
         <button type="button" id="zvhcAddToCartBtn" onclick="zvhcExecuteAddToCart()" class="zvhc-btn-primary" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 58px; border-radius: 12px; gap: 2px;">
           <span style="font-size: 1.05rem; font-weight: 800; letter-spacing: 0.04em;">{{ p_cta_text | default: "ADD TO CART" }} · <span id="zvhcCtaPrice">{{ default_cta_price }}</span></span>
-          <span style="font-size: 0.68rem; font-weight: 600; opacity: 0.88; text-transform: uppercase; letter-spacing: 0.08em;">60-DAY STRAND SATISFACTION GUARANTEE</span>
+          <span style="font-size: 0.68rem; font-weight: 600; opacity: 0.88; text-transform: uppercase; letter-spacing: 0.08em;" id="zvhcCtaSubtext">60-DAY STRAND SATISFACTION GUARANTEE</span>
         </button>
 
         <!-- T01 Trust Strip -->
@@ -1030,6 +1030,11 @@
 
 <script>
   window.ZVHC_PRODUCT_DATA = {{ product | json }};
+  {% if product.selling_plan_groups.size > 0 %}
+    window.ZVHC_SELLING_PLAN_ID = '{{ product.selling_plan_groups[0].selling_plans[0].id }}';
+  {% else %}
+    window.ZVHC_SELLING_PLAN_ID = '6199738553';
+  {% endif %}
 </script>
 
 {% schema %}

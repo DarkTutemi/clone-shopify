@@ -333,6 +333,10 @@
   border-color: var(--zvhc-t01-accent-rose, #B0476E);
 }
 
+.zvhc-purchase-tab .zvhc-radio-dot-sm {
+  display: none;
+}
+
 .zvhc-purchase-tab.is-active .zvhc-radio-dot-sm {
   width: 8px;
   height: 8px;
