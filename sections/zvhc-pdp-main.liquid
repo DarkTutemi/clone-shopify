@@ -580,6 +580,14 @@
           </div>
         {% endif %}
 
+        {% if product.handle == 'zvhc-batana-hair-growth-oil' %}
+          <!-- Fast Tracked Dispatch Badge (P01) -->
+          <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 12px; font-size: 0.82rem; color: #166534; font-weight: 600;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #00B67A; display: inline-block; box-shadow: 0 0 0 3px rgba(0,182,122,0.25); flex-shrink: 0;"></span>
+            <span><strong>Fast US Tracked Delivery:</strong> Orders ship within 24 hours</span>
+          </div>
+        {% endif %}
+
         {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
           <!-- Fast Tracked Dispatch Badge (Top for BotanaRoots) -->
           <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 12px; font-size: 0.82rem; color: #166534; font-weight: 600;">
@@ -1190,11 +1198,27 @@
           </details>
         </div>
 
-        <!-- Doctor Clinical Endorsement Card (BotanaRoots Only) -->
+        <!-- Doctor Clinical Endorsement Card -->
         {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
           <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
             <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
               “With so many fakes flooding the market, BotanaRoots’s Oil stood out as the purest we tested. It shows proven efficacy in supporting scalp health, strengthening follicles, and promoting visibly thicker hair growth, including visible improvements along thinning edges and alopecia patches.”
+            </div>
+            <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
+              <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">
+              <div>
+                <div style="font-size: 0.94rem; font-weight: 800; color: #2B1B24; letter-spacing: -0.01em; line-height: 1.2;">Dr. Elaine Matthews</div>
+                <div style="display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: 0.78rem; font-weight: 600; color: #4A3843;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#00B67A" style="flex-shrink: 0;"><circle cx="12" cy="12" r="12" fill="#00B67A"/><polyline points="8 12 11 15 16 9" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Hair Restoration Specialist</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% elsif product.handle == 'zvhc-batana-hair-growth-oil' %}
+          <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
+            <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
+              “The botanical synergy of Honduran Batana, Jamaican Black Castor, and Rosemary delivers a clinically targeted lipid profile. Applying it directly via precision dropper optimizes scalp absorption, helping strengthen fragile hairlines under protective style tension.”
             </div>
             <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
               <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">

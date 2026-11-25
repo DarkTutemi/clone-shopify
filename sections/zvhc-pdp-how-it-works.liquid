@@ -4,8 +4,8 @@
   BotanaRoots 120ml Jar Pilot: Luxury 2x2 Skincare Education Module
 {% endcomment %}
 
-{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
-  <!-- BOTANAROOTS BESPOKE LUXURY 4-STEP RITUAL MODULE (120ML JAR SPEC) -->
+{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' or product.handle == 'zvhc-batana-hair-growth-oil' %}
+  <!-- LUXURY 4-STEP RITUAL MODULE (BOTANAROOTS & P01) -->
   <style>
     .zvhc-botanaroots-ritual-section {
       padding: 64px 0;
@@ -148,11 +148,100 @@
         <span class="zvhc-botanaroots-eyebrow">✦ FOUR-STEP RESTORATIVE APPLICATION</span>
         <h2 class="zvhc-botanaroots-title">How To Practice The Batana Edge &amp; Follicle Ritual</h2>
         <p class="zvhc-botanaroots-sub">
-          A simple, transformative ritual designed for natural coils and protective styles. Unrefined Honduran Batana butter warms to liquid gold in seconds.
+          {% if product.handle == 'zvhc-batana-hair-growth-oil' %}
+            A targeted 90-second nightly protocol designed for 3A–4C natural coils and protective styles. Precision glass pipette delivers unrefined botanicals directly to root follicles.
+          {% else %}
+            A simple, transformative ritual designed for natural coils and protective styles. Unrefined Honduran Batana butter warms to liquid gold in seconds.
+          {% endif %}
         </p>
       </div>
 
       <div class="zvhc-botanaroots-grid">
+        {% if product.handle == 'zvhc-batana-hair-growth-oil' %}
+          <!-- Step 1 (P01) -->
+          <div class="zvhc-botanaroots-card">
+            <div>
+              <div class="zvhc-card-top-row">
+                <span class="zvhc-card-step-num">01</span>
+                <span class="zvhc-card-phase-badge">SECTION &amp; PART</span>
+              </div>
+              <div style="border-radius: 12px; overflow: hidden; margin-bottom: 16px; aspect-ratio: 1/1; background: #FAF6F8;">
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-gallery-02.jpg?v=1795264419" alt="Section &amp; Part" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy" width="400" height="400">
+              </div>
+              <h3 class="zvhc-card-step-title">Expose Scalp &amp; Thinning Parts</h3>
+              <p class="zvhc-card-step-desc">
+                Part natural hair into 4 manageable sections, or gently part along cornrows and braid rows to expose delicate scalp areas, temples, and thinning edges.
+              </p>
+            </div>
+            <div class="zvhc-card-step-tip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B0476E" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span><strong>Pro Tip:</strong> Apply on slightly damp or dry scalp right before bed or 30 minutes pre-wash.</span>
+            </div>
+          </div>
+
+          <!-- Step 2 (P01) -->
+          <div class="zvhc-botanaroots-card">
+            <div>
+              <div class="zvhc-card-top-row">
+                <span class="zvhc-card-step-num">02</span>
+                <span class="zvhc-card-phase-badge">TARGET &amp; DISPENSE</span>
+              </div>
+              <div style="border-radius: 12px; overflow: hidden; margin-bottom: 16px; aspect-ratio: 1/1; background: #FAF6F8;">
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-gallery-03.jpg?v=1795264419" alt="Target &amp; Dispense" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy" width="400" height="400">
+              </div>
+              <h3 class="zvhc-card-step-title">Direct Precision Dropper Release</h3>
+              <p class="zvhc-card-step-desc">
+                Squeeze 4–6 drops directly from the glass pipette onto the scalp. Delivers cold-pressed Batana, Black Castor, Jojoba, and Rosemary straight to roots without wasting oil on lengths.
+              </p>
+            </div>
+            <div class="zvhc-card-step-tip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B0476E" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span><strong>Pro Tip:</strong> Hold pipette at 45° angle to deliver controlled micro-drops along the hairline.</span>
+            </div>
+          </div>
+
+          <!-- Step 3 (P01) -->
+          <div class="zvhc-botanaroots-card">
+            <div>
+              <div class="zvhc-card-top-row">
+                <span class="zvhc-card-step-num">03</span>
+                <span class="zvhc-card-phase-badge">MASSAGE &amp; STIMULATE</span>
+              </div>
+              <div style="border-radius: 12px; overflow: hidden; margin-bottom: 16px; aspect-ratio: 1/1; background: #FAF6F8;">
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-gallery-04.jpg?v=1795265834" alt="Massage &amp; Stimulate" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy" width="400" height="400">
+              </div>
+              <h3 class="zvhc-card-step-title">3-Minute Follicle Activation</h3>
+              <p class="zvhc-card-step-desc">
+                Massage with firm circular fingertip motions for 3 minutes. Experience gentle botanical rosemary stimulation awakening microcirculation and delivering essential fatty acids deep into dermal roots.
+              </p>
+            </div>
+            <div class="zvhc-card-step-tip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B0476E" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span><strong>Pro Tip:</strong> Use pads of fingertips — never nails — to stimulate blood flow without scratching.</span>
+            </div>
+          </div>
+
+          <!-- Step 4 (P01) -->
+          <div class="zvhc-botanaroots-card">
+            <div>
+              <div class="zvhc-card-top-row">
+                <span class="zvhc-card-step-num">04</span>
+                <span class="zvhc-card-phase-badge">SEAL &amp; WRAP</span>
+              </div>
+              <div style="border-radius: 12px; overflow: hidden; margin-bottom: 16px; aspect-ratio: 1/1; background: #FAF6F8;">
+                <img src="https://cdn.shopify.com/s/files/1/0826/2483/9865/files/zvhc-3256807907799249-gallery-05.jpg?v=1795265836" alt="Seal &amp; Wrap" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy" width="400" height="400">
+              </div>
+              <h3 class="zvhc-card-step-title">Lock Cuticles &amp; Silk Wrap</h3>
+              <p class="zvhc-card-step-desc">
+                Smooth remaining oil down braid lengths, locs, or natural curl ribbons to seal cuticles and prevent comb snapping. Tie down with a satin wrap or silk bonnet for overnight absorption.
+              </p>
+            </div>
+            <div class="zvhc-card-step-tip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B0476E" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span><strong>Pro Tip:</strong> Non-staining botanical formula absorbs cleanly — zero grease residue on sheets or pillows.</span>
+            </div>
+          </div>
+        {% else %}
         <!-- Step 1 -->
         <div class="zvhc-botanaroots-card">
           <div>
@@ -236,6 +325,7 @@
             <span><strong>Pro Tip:</strong> Practice 3–4 nights weekly for visible new edge growth within 3–6 weeks.</span>
           </div>
         </div>
+        {% endif %}
       </div>
     </div>
   </section>
