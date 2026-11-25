@@ -580,11 +580,188 @@
           </div>
         {% endif %}
 
-        {% if product.handle != blank %}
-          <!-- Fast Tracked Dispatch Badge (All Products) -->
+        {% if product.handle == 'zvhc-batana-hair-growth-oil' %}
+          <!-- Fast Tracked Dispatch Badge (P01) -->
           <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 12px; font-size: 0.82rem; color: #166534; font-weight: 600;">
             <span style="width: 8px; height: 8px; border-radius: 50%; background: #00B67A; display: inline-block; box-shadow: 0 0 0 3px rgba(0,182,122,0.25); flex-shrink: 0;"></span>
             <span><strong>Fast US Tracked Delivery:</strong> Orders ship within 24 hours</span>
+          </div>
+        {% endif %}
+
+        {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+          <!-- Fast Tracked Dispatch Badge (Top for BotanaRoots) -->
+          <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 12px; font-size: 0.82rem; color: #166534; font-weight: 600;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #00B67A; display: inline-block; box-shadow: 0 0 0 3px rgba(0,182,122,0.25); flex-shrink: 0;"></span>
+            <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow</span>
+          </div>
+
+          <!-- V7 Purchase Option Selector (Below Dispatch Badge for BotanaRoots - 2 Columns on Mobile) -->
+          <style>
+            @media (max-width: 767px) {
+              .zvhc-purchase-options {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+              }
+              .zvhc-purchase-options .zvhc-purchase-tab {
+                padding: 10px 8px !important;
+                gap: 6px !important;
+              }
+              .zvhc-purchase-options .zvhc-purchase-tab-title {
+                font-size: 0.80rem !important;
+              }
+              .zvhc-purchase-options .zvhc-purchase-tab-sub {
+                font-size: 0.68rem !important;
+              }
+              .zvhc-purchase-options .zvhc-sub-pending-pill {
+                font-size: 0.58rem !important;
+                padding: 1px 4px !important;
+                margin-left: 2px !important;
+              }
+            }
+
+            /* Desktop bundle typography defaults */
+            .zvhc-title-desktop { display: inline; }
+            .zvhc-title-mobile { display: none; }
+            .zvhc-pill-desktop { display: inline-block; }
+            .zvhc-mobile-badge-row { display: none; }
+
+            @media (max-width: 767px) {
+              .zvhc-title-desktop { display: none !important; }
+              .zvhc-title-mobile {
+                display: inline !important;
+                font-size: 0.96rem;
+                font-weight: 800;
+                color: var(--zvhc-t01-text-main, #2B1B24);
+                line-height: 1.2;
+              }
+              .zvhc-pill-desktop { display: none !important; }
+              .zvhc-mobile-badge-row {
+                display: flex !important;
+                align-items: center;
+                gap: 6px;
+                margin: 4px 0 2px 0;
+                flex-wrap: wrap;
+              }
+              .zvhc-extra-discount-pill {
+                display: inline-flex;
+                align-items: center;
+                background: #FFF0F5;
+                color: var(--zvhc-t01-accent-rose, #B0476E);
+                border: 1px solid rgba(176, 71, 110, 0.35);
+                font-size: 0.68rem;
+                font-weight: 800;
+                padding: 1px 6px;
+                border-radius: 4px;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+                line-height: 1.3;
+              }
+              .zvhc-pill-mobile {
+                display: inline-flex !important;
+                font-size: 0.70rem;
+                font-weight: 800;
+                padding: 1px 7px;
+                border-radius: 9999px;
+                line-height: 1.3;
+              }
+
+              /* Mobile Bundle Card Layout Polishing */
+              .zvhc-bundle-card {
+                padding: 13px 12px !important;
+              }
+              .zvhc-tier-main {
+                display: flex !important;
+                align-items: flex-start !important;
+                justify-content: space-between !important;
+                gap: 10px !important;
+              }
+              .zvhc-tier-left {
+                display: flex !important;
+                align-items: flex-start !important;
+                gap: 10px !important;
+                flex: 1 1 auto !important;
+                min-width: 0 !important;
+              }
+              .zvhc-tier-left .zvhc-radio-circle {
+                margin-top: 3px !important;
+                flex-shrink: 0 !important;
+              }
+              .zvhc-tier-pricing {
+                flex: 0 0 auto !important;
+                min-width: 84px !important;
+                text-align: right !important;
+                padding-top: 1px !important;
+              }
+              .zvhc-tier-price {
+                font-size: 1.18rem !important;
+                font-weight: 800 !important;
+                white-space: nowrap !important;
+                letter-spacing: -0.01em !important;
+                line-height: 1.15 !important;
+              }
+              .zvhc-tier-compare {
+                font-size: 0.78rem !important;
+                margin-top: 1px !important;
+                white-space: nowrap !important;
+              }
+              .zvhc-tier-unit {
+                font-size: 0.70rem !important;
+                white-space: nowrap !important;
+                margin-top: 2px !important;
+              }
+              .zvhc-tier-sub {
+                font-size: 0.74rem !important;
+                line-height: 1.35 !important;
+                margin-top: 2px !important;
+              }
+              .zvhc-tier-ship {
+                font-size: 0.72rem !important;
+                margin-top: 3px !important;
+              }
+              .zvhc-tier-badge {
+                top: -10px !important;
+                right: 12px !important;
+                font-size: 0.68rem !important;
+                padding: 2px 10px !important;
+              }
+            }
+          </style>
+          <div class="zvhc-purchase-options" role="tablist" aria-label="Purchase Options" style="margin-bottom: 14px;">
+            <div class="zvhc-purchase-tab" id="zvhcTabOneTime" onclick="zvhcSetPurchaseType('onetime')" role="tab" aria-selected="false" tabindex="0" style="cursor: pointer;">
+              <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
+              <div>
+                <div class="zvhc-purchase-tab-title">One-Time Purchase</div>
+                <div class="zvhc-purchase-tab-sub">Single delivery, standard order</div>
+              </div>
+            </div>
+            <div class="zvhc-purchase-tab is-active" id="zvhcTabSubscribe" onclick="zvhcSetPurchaseType('subscription')" role="tab" aria-selected="true" tabindex="0" style="cursor: pointer;">
+              <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
+              <div>
+                <div class="zvhc-purchase-tab-title" style="display:flex;align-items:center;gap:6px;">
+                  <span>Subscribe &amp; Save 15%</span>
+                  <span style="background: #E6F4EA; color: #2E7D32; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 9999px;">SAVE 15%</span>
+                </div>
+                <div class="zvhc-purchase-tab-sub">Auto-delivery every month</div>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <!-- Clean One-Time Purchase Selector for Products Without Subscriptions -->
+          <div class="zvhc-purchase-options" role="region" aria-label="Purchase Options" style="margin-bottom: 14px;">
+            <div class="zvhc-purchase-tab is-active" style="cursor: default; width: 100%;">
+              <span class="zvhc-purchase-tab-radio"><span class="zvhc-radio-dot-sm"></span></span>
+              <div>
+                <div class="zvhc-purchase-tab-title">One-Time Purchase</div>
+                <div class="zvhc-purchase-tab-sub">Single delivery, standard order</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fast Tracked Dispatch Badge (Standard Store Shipping Copy) -->
+          <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 14px; font-size: 0.82rem; color: #166534; font-weight: 600;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #00B67A; display: inline-block; box-shadow: 0 0 0 3px rgba(0,182,122,0.25); flex-shrink: 0;"></span>
+            <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow • Free shipping on eligible orders $69.99+</span>
           </div>
         {% endif %}
 
@@ -1025,135 +1202,7 @@
         {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
           <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
             <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
-              “Pure Honduran Batana contains a rare, dense profile of oleic and linoleic fatty acids alongside natural tocotrienols. Unlike mineral oils that suffocate the scalp, unrefined Batana delivers biomimetic lipid nourishment directly into depleted hair follicles, making it especially effective for edges and hairlines experiencing traction or chemical stress.”
-            </div>
-            <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
-              <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">
-              <div>
-                <div style="font-size: 0.94rem; font-weight: 800; color: #2B1B24; letter-spacing: -0.01em; line-height: 1.2;">Dr. Elaine Matthews</div>
-                <div style="display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: 0.78rem; font-weight: 600; color: #4A3843;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#00B67A" style="flex-shrink: 0;"><circle cx="12" cy="12" r="12" fill="#00B67A"/><polyline points="8 12 11 15 16 9" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Hair Restoration Specialist</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        {% elsif product.handle == 'zvhc-batana-hair-growth-oil' %}
-          <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
-            <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
-              “The botanical synergy of Honduran Batana, Jamaican Black Castor, and Rosemary delivers a clinically targeted lipid profile. Applying it directly via precision dropper optimizes scalp absorption, helping strengthen fragile hairlines under protective style tension.”
-            </div>
-            <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
-              <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">
-              <div>
-                <div style="font-size: 0.94rem; font-weight: 800; color: #2B1B24; letter-spacing: -0.01em; line-height: 1.2;">Dr. Elaine Matthews</div>
-                <div style="display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: 0.78rem; font-weight: 600; color: #4A3843;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#00B67A" style="flex-shrink: 0;"><circle cx="12" cy="12" r="12" fill="#00B67A"/><polyline points="8 12 11 15 16 9" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Hair Restoration Specialist</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        {% elsif product.handle == 'zvhc-batana-deep-conditioning-hair-mask' %}
-          <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
-            <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
-              “Deep lipid conditioning with unrefined Batana and plant ceramides repairs the cuticle sheath without suffocating fine cortex fibers. A weekly 10-minute immersion restores tensile elasticity, reducing mechanical detangling breakage by up to 84%.”
-            </div>
-            <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
-              <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">
-              <div>
-                <div style="font-size: 0.94rem; font-weight: 800; color: #2B1B24; letter-spacing: -0.01em; line-height: 1.2;">Dr. Elaine Matthews</div>
-                <div style="display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: 0.78rem; font-weight: 600; color: #4A3843;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#00B67A" style="flex-shrink: 0;"><circle cx="12" cy="12" r="12" fill="#00B67A"/><polyline points="8 12 11 15 16 9" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Hair Restoration Specialist</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        {% elsif product.handle == 'zvhc-keratin-hair-building-fibers' %}
-          <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
-            <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
-              “Natural electrostatic plant keratin fibers cling securely to fine vellus hairs and wider partings. Because they contain zero synthetic adhesives or heavy silicones, follicles remain completely unblocked, allowing ongoing natural growth while providing instant visual density.”
-            </div>
-            <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
-              <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">
-              <div>
-                <div style="font-size: 0.94rem; font-weight: 800; color: #2B1B24; letter-spacing: -0.01em; line-height: 1.2;">Dr. Elaine Matthews</div>
-                <div style="display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: 0.78rem; font-weight: 600; color: #4A3843;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#00B67A" style="flex-shrink: 0;"><circle cx="12" cy="12" r="12" fill="#00B67A"/><polyline points="8 12 11 15 16 9" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Hair Restoration Specialist</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        {% elsif product.handle == 'zvhc-root-lift-styling-powder' %}
-          <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
-            <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
-              “Silica silylate micro-polymers provide weightless structural lift directly at the follicular base. By absorbing excess sebum without stripping moisture, it creates reworkable root elevation that prevents flat crown friction.”
-            </div>
-            <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
-              <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">
-              <div>
-                <div style="font-size: 0.94rem; font-weight: 800; color: #2B1B24; letter-spacing: -0.01em; line-height: 1.2;">Dr. Elaine Matthews</div>
-                <div style="display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: 0.78rem; font-weight: 600; color: #4A3843;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#00B67A" style="flex-shrink: 0;"><circle cx="12" cy="12" r="12" fill="#00B67A"/><polyline points="8 12 11 15 16 9" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Hair Restoration Specialist</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        {% elsif product.handle == 'zvhc-precision-hairline-compact' %}
-          <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
-            <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
-              “Targeted mineral hairline contouring provides instant cosmetic camouflaging without the chemical irritation of liquid edge dyes. The pressed sponge applicator allows micron-level precision along delicate temple borders.”
-            </div>
-            <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
-              <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">
-              <div>
-                <div style="font-size: 0.94rem; font-weight: 800; color: #2B1B24; letter-spacing: -0.01em; line-height: 1.2;">Dr. Elaine Matthews</div>
-                <div style="display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: 0.78rem; font-weight: 600; color: #4A3843;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#00B67A" style="flex-shrink: 0;"><circle cx="12" cy="12" r="12" fill="#00B67A"/><polyline points="8 12 11 15 16 9" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Hair Restoration Specialist</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        {% elsif product.handle == 'zvhc-raw-batana-scalp-balm' %}
-          <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
-            <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
-              “Solid-to-lipid balms formulated with unrefined Batana and natural beeswax create a protective barrier along fragile hairlines. This semi-occlusive layer halts trans-epidermal water loss and shields tender scalp tissue from friction damage under wigs and tight braid installations.”
-            </div>
-            <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
-              <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">
-              <div>
-                <div style="font-size: 0.94rem; font-weight: 800; color: #2B1B24; letter-spacing: -0.01em; line-height: 1.2;">Dr. Elaine Matthews</div>
-                <div style="display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: 0.78rem; font-weight: 600; color: #4A3843;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#00B67A" style="flex-shrink: 0;"><circle cx="12" cy="12" r="12" fill="#00B67A"/><polyline points="8 12 11 15 16 9" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Hair Restoration Specialist</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        {% elsif product.handle == 'zvhc-botanical-curl-cream' %}
-          <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
-            <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
-              “Coil definition requires humectant hydration balanced with hydrophobic lipid sealants. This botanical curl emulsion coats individual hair ribbons without causing surface crust or flake, keeping 3A–4C textures elastic and resilient in high humidity.”
-            </div>
-            <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
-              <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">
-              <div>
-                <div style="font-size: 0.94rem; font-weight: 800; color: #2B1B24; letter-spacing: -0.01em; line-height: 1.2;">Dr. Elaine Matthews</div>
-                <div style="display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: 0.78rem; font-weight: 600; color: #4A3843;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#00B67A" style="flex-shrink: 0;"><circle cx="12" cy="12" r="12" fill="#00B67A"/><polyline points="8 12 11 15 16 9" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Hair Restoration Specialist</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        {% elsif product.handle == 'zvhc-7-in-1-growth-elixir' %}
-          <div class="zvhc-doctor-card" style="margin-top: 20px; background: #FAF6F8; border: 1px solid #ECDCE2; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(43, 27, 36, 0.04);">
-            <div style="padding: 18px 20px 16px; font-size: 0.88rem; line-height: 1.6; color: #2B1B24; letter-spacing: -0.01em;">
-              “Blending seven complementary botanical oils—including Batana, Rosemary, Peppermint, and Castor—creates a multifaceted lipid delivery matrix. The mild vaso-stimulant effect of natural menthol combined with dense ricinoleic acid fortifies follicles against oxidative stress.”
+              “With so many fakes flooding the market, BotanaRoots’s Oil stood out as the purest we tested. It shows proven efficacy in supporting scalp health, strengthening follicles, and promoting visibly thicker hair growth, including visible improvements along thinning edges and alopecia patches.”
             </div>
             <div style="background: #F3E6EC; border-top: 1px solid #ECDCE2; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
               <img src="{{ 'doctor-elaine-matthews.png' | asset_url }}" alt="Dr. Elaine Matthews" width="48" height="48" style="width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1.5px solid #FFFFFF; box-shadow: 0 2px 6px rgba(43, 27, 36, 0.12); flex-shrink: 0;" loading="lazy">

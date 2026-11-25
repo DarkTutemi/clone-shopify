@@ -3,7 +3,7 @@
   Decoupled per-SKU — only renders for zavelyn-botanaroots-organic-batana-hair-growth-oil.
 {% endcomment %}
 
-{% if product.handle != blank %}
+{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
 
 <section id="customer-reviews-section" style="padding: 80px 0; background: #FAF7F2; border-top: 1px solid #EAD7DD;">
   <div class="zvhc-container" style="max-width: 1140px; margin: 0 auto; padding: 0 20px;">
@@ -14,48 +14,10 @@
         ★ VERIFIED COMMUNITY REVIEWS
       </div>
       <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 3.5vw, 2.6rem); color: #2B1B24; margin: 0 0 12px; font-weight: 700; line-height: 1.2;">
-        {% case product.handle %}
-          {% when 'zvhc-batana-hair-growth-oil' %}
-            Real Queens. Real Edges. Precision Dropper Results.
-          {% when 'zvhc-batana-deep-conditioning-hair-mask' %}
-            Real Queens. Real Elasticity. Deep Masking Results.
-          {% when 'zvhc-keratin-hair-building-fibers' %}
-            Real Queens. Instant Density. Keratin Fiber Results.
-          {% when 'zvhc-root-lift-styling-powder' %}
-            Real Queens. 24h Root Lift. Volume Powder Results.
-          {% when 'zvhc-precision-hairline-compact' %}
-            Real Queens. Precision Hairlines. Compact Shading Results.
-          {% when 'zvhc-raw-batana-scalp-balm' %}
-            Real Queens. Calm Scalps. Raw Batana Balm Results.
-          {% when 'zvhc-botanical-curl-cream' %}
-            Real Queens. Defined Coils. Botanical Curl Results.
-          {% when 'zvhc-7-in-1-growth-elixir' %}
-            Real Queens. Fortified Roots. 7-in-1 Elixir Results.
-          {% else %}
-            Real Queens. Real Edges. Real Growth.
-        {% endcase %}
+        Real Queens. Real Edges. Real Growth.
       </h2>
       <p style="font-size: 1rem; color: #5A4651; margin: 0 auto; max-width: 600px; line-height: 1.6;">
-        {% case product.handle %}
-          {% when 'zvhc-batana-hair-growth-oil' %}
-            See what 28,490+ women experienced using our targeted precision dropper Batana, Black Castor, Jojoba &amp; Rosemary botanical scalp oil.
-          {% when 'zvhc-batana-deep-conditioning-hair-mask' %}
-            See what 19,820+ women experienced using our intensive rinse-out Batana &amp; plant ceramide deep conditioning recovery mask.
-          {% when 'zvhc-keratin-hair-building-fibers' %}
-            See what 14,350+ women experienced concealing wide parts and thinning hairlines with instant electrostatic plant keratin fibers.
-          {% when 'zvhc-root-lift-styling-powder' %}
-            See what 12,680+ women experienced elevating flat crowns with our reworkable silica micro-polymer root lift styling powder.
-          {% when 'zvhc-precision-hairline-compact' %}
-            See what 16,910+ women experienced contouring receding edges and gray roots with our mess-free precision mineral compact.
-          {% when 'zvhc-raw-batana-scalp-balm' %}
-            See what 18,440+ women experienced soothing protective style tightness and flaking with our raw unrefined Batana &amp; beeswax balm.
-          {% when 'zvhc-botanical-curl-cream' %}
-            See what 15,730+ women experienced clumping defined, bouncy 3A–4C curl ribbons with zero crunch or flaking.
-          {% when 'zvhc-7-in-1-growth-elixir' %}
-            See what 21,560+ women experienced stimulating microcirculation with our synergistic 7-botanical-oil scalp &amp; edge growth elixir.
-          {% else %}
-            See what 28,490+ women experienced after replacing drugstore petroleum oils with pure, single-origin Honduran Batana.
-        {% endcase %}
+        See what 28,490+ women experienced after replacing drugstore petroleum oils with pure, single-origin Honduran Batana.
       </p>
     </div>
 

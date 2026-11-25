@@ -39,10 +39,6 @@
     "delivery_guarantee": {
       "type": "zvhc-pdp-delivery-guarantee",
       "settings": {}
-    },
-    "customer_reviews": {
-      "type": "zvhc-pdp-customer-reviews",
-      "settings": {}
     }
   },
   "order": [
@@ -55,7 +51,6 @@
     "protective_styles",
     "regimen_pair",
     "faq",
-    "delivery_guarantee",
-    "customer_reviews"
+    "delivery_guarantee"
   ]
 }
