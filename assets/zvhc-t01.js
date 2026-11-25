@@ -350,6 +350,13 @@
             }
           }
         }
+
+        // DYNAMIC UNIT PRICING: Calculate exact per-unit price from selected variant
+        if (unitEl) {
+          var container = (window.ZVHC_CONTAINER || 'unit').toLowerCase();
+          var unitVal = (rawPrice / t).toFixed(2);
+          unitEl.textContent = (t === 1 ? '$' : '~$') + unitVal + '/' + container;
+        }
       } else {
         if (priceEl) priceEl.textContent = 'Unavailable';
         if (cmpEl) cmpEl.textContent = '';
@@ -395,7 +402,7 @@
         if (isSubscription) {
           ctaSub.textContent = 'BILLED & DELIVERED MONTHLY · CANCEL OR PAUSE ANYTIME';
         } else {
-          ctaSub.textContent = '60-DAY STRAND SATISFACTION GUARANTEE';
+          ctaSub.textContent = window.ZVHC_GUARANTEE_LABEL || (isBotanaRoots ? '60-DAY EDGE RECOVERY PROMISE' : '30-DAY SATISFACTION GUARANTEE');
         }
       }
     } else {

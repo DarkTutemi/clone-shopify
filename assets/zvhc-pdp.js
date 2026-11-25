@@ -110,6 +110,7 @@
       if (v) {
         var priceEl = document.getElementById('zvhcPriceTier' + t);
         var cmpEl = document.getElementById('zvhcCompareTier' + t);
+        var unitEl = document.getElementById('zvhcUnitTier' + t);
         var price = (parseFloat(v.price) / 100).toFixed(2);
         if (v.price > 1000) {
           price = (parseFloat(v.price) / 100).toFixed(2);
@@ -121,6 +122,12 @@
           var cmp = parseFloat(v.compare_at_price).toFixed(2);
           if (v.compare_at_price > 1000) cmp = (parseFloat(v.compare_at_price) / 100).toFixed(2);
           cmpEl.textContent = '$' + cmp;
+        }
+        if (unitEl) {
+          var container = (window.ZVHC_CONTAINER || 'unit').toLowerCase();
+          var rawVal = parseFloat(price);
+          var unitVal = (rawVal / t).toFixed(2);
+          unitEl.textContent = (t === 1 ? '$' : '~$') + unitVal + '/' + container;
         }
       }
     }

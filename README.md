@@ -24,8 +24,8 @@ Hệ thống được thiết kế theo mô hình **Multi-Funnel Isolation (Các
 
 | Theme ID | Tên Theme trên Store | Vai trò (Role) | Trạng thái & Mô tả |
 | :--- | :--- | :---: | :--- |
-| **`189188079801`** | **ZAVELYN HAIR CARE — V5 INTEGRATED DRAFT** | `main` | **THEME LIVE CHÍNH THỨC (V5 RELEASE)**. Đang phục vụ toàn bộ khách hàng trên `https://tryzavelyn.com`. Tích hợp đầy đủ 8 SKU Hair Care, chính sách Free Shipping $69.99+, zero brand bleed, và hệ thống trust signals trung thực. |
-| **`189127983289`** | **ZAVELYN HAIR CARE — V1 — DRAFT** | `unpublished` | **THEME DỰ PHÒNG ROLLBACK**. Lưu trữ bản snapshot V3.2 trước đợt nâng cấp Master V5. |
+| **`189296967865`** | **[Draft] BotanaRoots 120ml Jar Pilot** | `main` | **THEME LIVE CHÍNH THỨC (V8.1 RELEASE)**. Đang phục vụ toàn bộ khách hàng trên `https://tryzavelyn.com`. Chuẩn hóa toàn bộ 8 sản phẩm ZAVELYN Hair Care theo Master PDP Standard của BotanaRoots, dynamic unit pricing, mobile badge layout chuẩn xác, và bảo hành 30 ngày minh bạch. |
+| **`189188079801`** | **ZAVELYN HAIR CARE — V5 INTEGRATED DRAFT** | `unpublished` | **THEME DỰ PHÒNG ROLLBACK (V5 RELEASE)**. Bản snapshot trước đợt nâng cấp Master V8/V8.1. |
 | **`187597717689`** | **Zavelyn 2.0** | `unpublished` | **THEME LƯU TRỮ LEGACY (BẢO VỆ TUYỆT ĐỐI)**. Lưu giữ nguyên trạng các funnel quảng cáo đời đầu. |
 
 - **Shopify Store URL**: `https://dsdujr-vn.myshopify.com`
@@ -198,12 +198,13 @@ node scripts/step4_strict_botanaroots_zero_change_audit.mjs
 
 ## 📝 7. Lịch Sử Nâng Cấp Gần Nhất (Recent Changelog)
 
-### Phiên bản 2.4 (Cập nhật mới nhất):
-- **Official Payment Badges**: Nâng cấp toàn bộ icon thanh toán từ vector mờ/méo sang thẻ Shopify `payment_type_svg_tag: class: 'zv-pay-svg'`.
-- **vFit Interactive FAQ Accordion**: Thêm 9 câu hỏi thường gặp về y khoa và thử nghiệm người dùng đặt ngay dưới khối *"Real Reviews from Over 100,000+ Women"*.
-- **Branded Box Packaging Media**: Thay thế ảnh giải thích công nghệ Triple Action sang ảnh hộp chính thức có logo "ZAVELYN" (`joylux_triple_tech.png?v=1793206025`).
-- **Multi-Quantity Selectors**: Hỗ trợ tăng giảm số lượng linh hoạt cho cả máy chính vFit và 2 sản phẩm add-on upsell (Eye Mask & Face Mask).
-- **ECC Evaluation Harness v2**: Nâng cấp công cụ đánh giá tự động với tỷ lệ vượt qua đạt **100% (SHIP IT READY)**.
+### Phiên bản 2.5 (V8 & V8.1 Master PDP Standardization):
+- **Golden Master BotanaRoots Lock**: Bảo toàn nguyên trạng phiên bản LIVE của BotanaRoots (`15461545935033`), Selling Plan Groups (`3657728185`, `3657466041`, `3657760953`), giá Subscribe ($34.99, $69.98, $125.96) và One-Time ($41.16, $82.32, $148.18), Trustpilot (28,490 reviews, 4.9★), xếp hạng community reviews (6x 5★ + 2x 4★).
+- **P01 Content Precision**: Sửa đổi thông số P01 Batana Growth Oil từ nhãn cũ `120g` thành chai thủy tinh nhỏ giọt `60ml Bottle (2 fl oz)` kèm công thức chuẩn Batana + Black Castor + Jojoba + Rosemary. Loại bỏ các tuyên bố 100% Raw và tên BotanaRoots khỏi P01.
+- **Shared Mobile Design Isolation**: Phân tách rõ `.zvhc-pill-desktop` và `.zvhc-pill-mobile` trong các bundle card. Khắc phục hoàn toàn tình trạng badge chen ngang tiêu đề và badge hiển thị trùng lặp trên thiết bị di động.
+- **Dynamic Variant-Based Unit Pricing**: Đơn vị giá được tính toán động 100% dựa trên selected variant, số lượng gói và container tương ứng (`/bottle`, `/jar`, `/pouch`, `/tin`, `/compact`). Tự động cập nhật tức thì khi chuyển đổi Shade × Bundle (kiểm thử hoàn hảo 9 variant của Keratin Fibers và Hairline Compact).
+- **Delivery & Guarantee Decoupling**: Phân biệt rành mạch chính sách hoàn tiền 30 ngày (Standard 30-Day Guarantee) cho 8 sản phẩm catalog và chính sách 60-Day Edge Recovery Promise cho BotanaRoots. Gỡ bỏ fallback Batana khỏi delivery section của các sản phẩm không thuộc dòng Batana.
+- **Live Theme Deployment**: Đồng bộ và xác thực mã băm SHA-256 trên toàn bộ asset của Live Theme `189296967865`.
 
 ---
 
