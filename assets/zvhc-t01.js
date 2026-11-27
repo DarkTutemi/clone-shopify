@@ -291,7 +291,7 @@
     var isBotanaRoots = (productData.handle === 'zavelyn-botanaroots-organic-batana-hair-growth-oil');
 
     var BOTANAROOTS_PRICING = {
-      1: { oneTime: 41.16, sub: 34.99, compare: '', unitSub: '$34.99/jar', unitOT: '$41.16/jar' },
+      1: { oneTime: 41.16, sub: 34.99, compare: '$82.32', unitSub: '~$17.50/jar', unitOT: '~$20.58/jar' },
       2: { oneTime: 82.32, sub: 69.98, compare: '$164.64', unitSub: '~$17.50/jar', unitOT: '~$20.58/jar' },
       3: { oneTime: 148.18, sub: 125.96, compare: '$329.28', unitSub: '~$15.75/jar', unitOT: '~$18.52/jar' }
     };
@@ -307,7 +307,7 @@
         var bp = BOTANAROOTS_PRICING[t];
         var ship2 = document.getElementById('zvhcTier2ShipBadge');
         if (ship2) {
-          ship2.style.display = isSubscription ? 'none' : 'flex';
+          ship2.style.display = 'flex';
         }
         if (isSubscription) {
           if (priceEl) priceEl.textContent = '$' + bp.sub.toFixed(2) + '/mo';

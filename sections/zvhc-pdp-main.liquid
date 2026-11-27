@@ -141,7 +141,7 @@
     {% assign p_eyebrow = '✦ ACCELERATED EDGE & FOLLICLE RESTORATION • 3A–4C NATURAL COILS' %}
     {% assign p_spec_label = '120ml (4 fl oz) · 100% Raw Honduran Batana · Wildcrafted Jar' %}
     {% assign p_container = 'Jar' %}
-    {% assign p_unit_label = 'Buy 1 (1x 120ml Jar)' %}
+    {% assign p_unit_label = 'Buy 1 Get 1 FREE (2x 120ml Jars)' %}
     {% assign p_duo_label = 'Buy 2 Get 2 FREE (4x 120ml Jars)' %}
     {% assign p_trio_label = 'Buy 4 Get 4 FREE + Extra 10% OFF (8x 120ml Jars)' %}
     {% assign p_subtitle = 'Unrefined Honduran Batana for thinning edges, fragile hairlines & slow-growing crowns. A 90-second nightly ritual built for 3A–4C coils, locs & protective styles. 100% raw. Wildcrafted. Nothing added.' %}
@@ -569,7 +569,7 @@
         {% if section.settings.countdown_enabled %}
           <div class="zvhc-campaign-banner" role="region" aria-label="Limited Time Offer">
             <span class="zvhc-campaign-pill">★ {{ section.settings.campaign_badge | default: 'LIMITED BOTANICAL ALLOCATION' }}</span>
-            <div class="zvhc-campaign-title">{{ section.settings.campaign_heading | default: 'Save up to 45% + Free US Shipping over $69.99' }}</div>
+            <div class="zvhc-campaign-title">{{ section.settings.campaign_heading | default: 'Save up to 45% + Free US Shipping over $69' }}</div>
             <div class="zvhc-timer-clock" id="zvhcCampaignTimer" data-end-time="{{ section.settings.countdown_end | default: '2026-12-01T23:59:59' }}">
               <div class="zvhc-time-col"><span class="zvhc-time-num" id="timerHours">12</span><span class="zvhc-time-lbl">HRS</span></div>
               <span class="zvhc-time-sep">:</span>
@@ -761,7 +761,7 @@
           <!-- Fast Tracked Dispatch Badge (Standard Store Shipping Copy) -->
           <div class="zvhc-dispatch-badge" style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #F3FAF6; border: 1px solid #CDEBD8; border-radius: 8px; margin-top: 14px; margin-bottom: 14px; font-size: 0.82rem; color: #166534; font-weight: 600;">
             <span style="width: 8px; height: 8px; border-radius: 50%; background: #00B67A; display: inline-block; box-shadow: 0 0 0 3px rgba(0,182,122,0.25); flex-shrink: 0;"></span>
-            <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow • Free shipping on eligible orders $69.99+</span>
+            <span><strong>Fast US Tracked Delivery:</strong> Orders ship by tomorrow • Free shipping on eligible orders $69+</span>
           </div>
         {% endif %}
 
@@ -774,12 +774,28 @@
                 <span class="zvhc-radio-circle"><span class="zvhc-radio-dot"></span></span>
                 <div>
                   <div class="zvhc-tier-name-row">
-                    <span class="zvhc-tier-title">{{ p_unit_label }}</span>
-                    <span class="zvhc-tier-pill">Starter</span>
+                    <span class="zvhc-tier-title">
+                      {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+                        <span class="zvhc-title-desktop">{{ p_unit_label }}</span>
+                        <span class="zvhc-title-mobile">Buy 1 Get 1 FREE</span>
+                      {% else %}
+                        {{ p_unit_label }}
+                      {% endif %}
+                    </span>
+                    {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+                      <span class="zvhc-tier-pill zvhc-pill-desktop" style="background: #E8F5E9; color: #1B5E20;">BOGO · 2 Jars</span>
+                    {% else %}
+                      <span class="zvhc-tier-pill">Starter</span>
+                    {% endif %}
                   </div>
+                  {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+                    <div class="zvhc-mobile-badge-row">
+                      <span class="zvhc-tier-pill zvhc-pill-mobile" style="background: #E8F5E9; color: #1B5E20;">BOGO · 2 Jars</span>
+                    </div>
+                  {% endif %}
                   <div class="zvhc-tier-sub">
                     {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
-                      30-Day Starter Routine · 1 Jar Fulfillment
+                      60-Day Starter Routine · 2 Jars Fulfillment (1 Jar + 1 FREE)
                     {% elsif product.handle contains 'hair-growth-oil' or product.handle contains 'elixir' %}
                       30-Day Starter Routine · 1 Bottle (60ml)
                     {% elsif product.handle contains 'mask' %}
@@ -802,12 +818,13 @@
               </div>
               <div class="zvhc-tier-pricing">
                 <div class="zvhc-tier-price" id="zvhcPriceTier1">{{ tier1_price }}</div>
-                {% if tier1_compare != '' and tier1_compare != blank and tier1_compare != '$0.00' %}
-                  <div class="zvhc-tier-compare" id="zvhcCompareTier1">{{ tier1_compare }}</div>
-                {% endif %}
                 {% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
-                  <div class="zvhc-tier-unit" id="zvhcUnitTier1" style="font-size: 0.72rem; color: #2E7D32; font-weight: 700; margin-top: 2px;">$34.99/jar</div>
+                  <div class="zvhc-tier-compare" id="zvhcCompareTier1">$82.32</div>
+                  <div class="zvhc-tier-unit" id="zvhcUnitTier1" style="font-size: 0.72rem; color: #2E7D32; font-weight: 700; margin-top: 2px;">~$17.50/jar</div>
                 {% else %}
+                  {% if tier1_compare != '' and tier1_compare != blank and tier1_compare != '$0.00' %}
+                    <div class="zvhc-tier-compare" id="zvhcCompareTier1">{{ tier1_compare }}</div>
+                  {% endif %}
                   <div class="zvhc-tier-unit" id="zvhcUnitTier1" style="font-size: 0.72rem; color: #2E7D32; font-weight: 700; margin-top: 2px;">{{ tier1_price }}/{{ p_container | downcase }}</div>
                 {% endif %}
               </div>
@@ -866,8 +883,8 @@
                       60-Day Intensive Duo Course
                     {% endif %}
                   </div>
-                  {% if tier2_num >= 69.99 or product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
-                    <div class="zvhc-tier-ship" id="zvhcTier2ShipBadge"{% if product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %} style="display: none;"{% endif %}>
+                  {% if tier2_num >= 69 or product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+                    <div class="zvhc-tier-ship" id="zvhcTier2ShipBadge">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
                       <span>Free US Standard Shipping</span>
                     </div>
@@ -941,7 +958,7 @@
                       90-Day Maximum Protocol · 3 Units
                     {% endif %}
                   </div>
-                  {% if tier3_num >= 69.99 or product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
+                  {% if tier3_num >= 69 or product.handle == 'zavelyn-botanaroots-organic-batana-hair-growth-oil' %}
                     <div class="zvhc-tier-ship">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
                       <span>Free US Standard Shipping</span>
@@ -1193,7 +1210,7 @@
               <strong>Fast Domestic US Delivery:</strong><br>
               • <strong>Handling Time:</strong> Orders processed and dispatched within 24 hours (Mon–Fri).<br>
               • <strong>Standard Transit:</strong> 2–4 business days via USPS / UPS with end-to-end tracking.<br>
-              • <strong>Free Shipping:</strong> Automatically applied to all eligible orders ($69.99+). Tracking numbers are emailed immediately upon shipment.
+              • <strong>Free Shipping:</strong> Automatically applied to all eligible orders ($69+). Tracking numbers are emailed immediately upon shipment.
             </div>
           </details>
         </div>
@@ -1272,7 +1289,7 @@
       "type": "text",
       "id": "campaign_heading",
       "label": "Campaign Heading",
-      "default": "Save up to 45% + Free US Shipping over $69.99"
+      "default": "Save up to 45% + Free US Shipping over $69"
     },
     {
       "type": "text",

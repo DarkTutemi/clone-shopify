@@ -19,8 +19,8 @@
     <button type="button" class="zvhc-cart-close" onclick="closeZvhcCart()" aria-label="Close bag">&times;</button>
   </div>
 
-  <!-- 2. Free US Shipping Progress Bar ($69.99 USD) -->
-  {% assign shipping_threshold = 6999 %}
+  <!-- 2. Free US Shipping Progress Bar ($69 USD) -->
+  {% assign shipping_threshold = 6900 %}
   <div class="zvhc-shipping-bar-wrap">
     <div class="zvhc-shipping-text" id="zvhcShippingText">
       {% if cart.total_price >= shipping_threshold %}
@@ -127,7 +127,7 @@
         <span class="zvhc-subtotal-price" id="zvhcSubtotalPrice">{{ cart.total_price | money }}</span>
       </div>
       <p style="font-size: 0.76rem; color: var(--zvhc-muted); margin-bottom: 14px;">
-        Taxes and shipping calculated at checkout. Free Standard US Shipping on orders $69.99+.
+        Taxes and shipping calculated at checkout. Free Standard US Shipping on orders $69+.
       </p>
 
       <a href="/checkout" class="zvhc-checkout-btn">
